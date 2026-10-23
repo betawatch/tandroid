@@ -10,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class pv extends qt {
     public int M;
@@ -91,7 +91,7 @@ public final class pv extends qt {
         while (true) {
             ArrayList arrayList = this.O;
             if (i10 >= arrayList.size()) {
-                viewGroup = ((org.telegram.ui.ActionBar.f3) this.P.y).containerView;
+                viewGroup = ((org.telegram.ui.ActionBar.h3) this.P.y).containerView;
                 viewGroup.invalidate();
                 return;
             } else {
@@ -113,16 +113,16 @@ public final class pv extends qt {
             ImageReceiver.BackgroundThreadDrawHolder[] backgroundThreadDrawHolderArr = rvVar.a;
             if (a6Var != null && (r5Var = (r5) awVar.b.get(a6Var.getDocumentId())) != null && r5Var.k != null) {
                 r5Var.t(j10);
-                ci.g3 g3Var = r5Var.k;
+                ci.f3 f3Var = r5Var.k;
                 int i11 = this.K;
-                ImageReceiver.BackgroundThreadDrawHolder drawInBackgroundThread = g3Var.setDrawInBackgroundThread(backgroundThreadDrawHolderArr[i11], i11);
+                ImageReceiver.BackgroundThreadDrawHolder drawInBackgroundThread = f3Var.setDrawInBackgroundThread(backgroundThreadDrawHolderArr[i11], i11);
                 backgroundThreadDrawHolderArr[i11] = drawInBackgroundThread;
                 drawInBackgroundThread.time = j10;
                 r5Var.setAlpha(255);
                 Rect rect = AndroidUtilities.rectTmp2;
                 rect.set(rvVar.getPaddingLeft() + rvVar.getLeft(), rvVar.getPaddingTop(), rvVar.getRight() - rvVar.getPaddingRight(), rvVar.getMeasuredHeight() - rvVar.getPaddingBottom());
                 backgroundThreadDrawHolderArr[i11].setBounds(rect);
-                int themedColor = awVar.getThemedColor(org.telegram.ui.ActionBar.h6.G6);
+                int themedColor = awVar.getThemedColor(org.telegram.ui.ActionBar.k6.G6);
                 if (themedColor != awVar.U || awVar.T == null) {
                     awVar.U = themedColor;
                     awVar.T = new PorterDuffColorFilter(themedColor, PorterDuff.Mode.SRC_IN);

@@ -1,57 +1,34 @@
 package ai;
 
-import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.ax0;
+import android.view.View;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class ta implements Runnable {
+public final /* synthetic */ class ta implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f3[] b;
-    public final /* synthetic */ Context c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.h3[] b;
 
-    public /* synthetic */ ta(Context context, org.telegram.ui.ActionBar.f3[] f3VarArr) {
-        this.a = 0;
-        this.c = context;
-        this.b = f3VarArr;
+    public /* synthetic */ ta(org.telegram.ui.ActionBar.h3[] h3VarArr, int i10) {
+        this.a = i10;
+        this.b = h3VarArr;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        org.telegram.ui.ActionBar.f3 f3Var;
-        org.telegram.ui.ActionBar.n2 n2Var;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                ax0 ax0Var = new ax0(this.c);
-                if (!AndroidUtilities.isTablet()) {
-                    org.telegram.ui.ActionBar.f3[] f3VarArr = this.b;
-                    if (!AndroidUtilities.hasDialogOnTop(f3VarArr[0].attachedFragment) && (f3Var = f3VarArr[0]) != null && (n2Var = f3Var.attachedFragment) != null) {
-                        ax0Var.makeAttached(n2Var);
-                    }
-                }
-                ax0Var.show();
+                this.b[0].dismiss();
                 break;
             case 1:
-                this.b[0].dismiss();
-                pf.d.r(this.c, LocaleController.getString(R.string.CocoonFeature1TextLink));
-                break;
-            case 2:
-                this.b[0].dismiss();
-                pf.d.t(this.c, LocaleController.getString(R.string.CocoonFeature3TextLink));
+                org.telegram.ui.ActionBar.h3 h3Var = this.b[0];
+                if (h3Var != null) {
+                    h3Var.dismiss();
+                    break;
+                }
                 break;
             default:
                 this.b[0].dismiss();
-                pf.d.r(this.c, LocaleController.getString(R.string.CocoonFooterLink));
                 break;
         }
-    }
-
-    public /* synthetic */ ta(org.telegram.ui.ActionBar.f3[] f3VarArr, Context context, int i10) {
-        this.a = i10;
-        this.b = f3VarArr;
-        this.c = context;
     }
 }

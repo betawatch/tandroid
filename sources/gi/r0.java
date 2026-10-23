@@ -2,16 +2,16 @@ package gi;
 
 import android.app.Activity;
 import android.content.DialogInterface;
-import ci.z7;
+import ci.y7;
 import java.util.Iterator;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.json.JSONObject;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Cells.b6;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.Cells.c6;
+import org.telegram.ui.Components.e5;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class r0 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -58,39 +58,39 @@ public final /* synthetic */ class r0 implements DialogInterface.OnDismissListen
                 }
                 break;
             case 2:
-                EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) this.c;
-                org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) this.b;
+                e5 e5Var = (e5) this.c;
+                org.telegram.ui.ActionBar.o2 o2Var = (org.telegram.ui.ActionBar.o2) this.b;
                 Activity activity = (Activity) this.d;
-                AndroidUtilities.hideKeyboard(editTextBoldCursor);
-                if (n2Var != null) {
-                    AndroidUtilities.requestAdjustResize(activity, n2Var.getClassGuid());
+                AndroidUtilities.hideKeyboard(e5Var);
+                if (o2Var != null) {
+                    AndroidUtilities.requestAdjustResize(activity, o2Var.getClassGuid());
                     break;
                 }
                 break;
             case 3:
                 Utilities.Callback callback2 = (Utilities.Callback) this.c;
-                org.telegram.ui.Components.r3 r3Var = (org.telegram.ui.Components.r3) this.b;
-                org.telegram.ui.Components.t3 t3Var = (org.telegram.ui.Components.t3) this.d;
-                callback2.run(Integer.valueOf(t3Var.getValue() + (r3Var.getValue() * 60)));
+                org.telegram.ui.Components.q3 q3Var = (org.telegram.ui.Components.q3) this.b;
+                org.telegram.ui.Components.s3 s3Var = (org.telegram.ui.Components.s3) this.d;
+                callback2.run(Integer.valueOf(s3Var.getValue() + (q3Var.getValue() * 60)));
                 break;
             case 4:
-                org.telegram.ui.web.a1 a1Var = (org.telegram.ui.web.a1) this.c;
+                org.telegram.ui.web.b1 b1Var = (org.telegram.ui.web.b1) this.c;
                 AtomicBoolean atomicBoolean = (AtomicBoolean) this.b;
-                z7 z7Var = (z7) this.d;
-                a1Var.getClass();
+                y7 y7Var = (y7) this.d;
+                b1Var.getClass();
                 if (!atomicBoolean.get()) {
-                    a1Var.x(z7Var, "popup_closed", new JSONObject());
+                    b1Var.x(y7Var, "popup_closed", new JSONObject());
                 }
-                a1Var.c0 = null;
-                a1Var.e0 = System.currentTimeMillis();
+                b1Var.c0 = null;
+                b1Var.e0 = System.currentTimeMillis();
                 break;
             case 5:
-                b6 b6Var = (b6) this.c;
-                org.telegram.ui.ActionBar.n2 n2Var2 = (org.telegram.ui.ActionBar.n2) this.b;
+                c6 c6Var = (c6) this.c;
+                org.telegram.ui.ActionBar.o2 o2Var2 = (org.telegram.ui.ActionBar.o2) this.b;
                 Activity activity2 = (Activity) this.d;
-                AndroidUtilities.hideKeyboard(b6Var);
-                if (n2Var2 != null) {
-                    AndroidUtilities.requestAdjustResize(activity2, n2Var2.getClassGuid());
+                AndroidUtilities.hideKeyboard(c6Var);
+                if (o2Var2 != null) {
+                    AndroidUtilities.requestAdjustResize(activity2, o2Var2.getClassGuid());
                     break;
                 }
                 break;

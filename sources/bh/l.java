@@ -7,8 +7,8 @@ import android.os.SystemClock;
 import android.view.View;
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+/* loaded from: classes4.dex */
 public final class l implements ch.a {
     public final ViewGroup c;
     public final k d;
@@ -30,7 +30,7 @@ public final class l implements ch.a {
         ViewGroup viewGroup = this.c;
         ViewGroup viewGroup2 = this.e;
         PointF pointF = this.b;
-        if (!ih.j.b(viewGroup, viewGroup2, pointF)) {
+        if (!ih.k.b(viewGroup, viewGroup2, pointF)) {
             aVar.a = true;
             return;
         }
@@ -54,7 +54,7 @@ public final class l implements ch.a {
         ViewGroup viewGroup = this.c;
         ViewGroup viewGroup2 = this.e;
         PointF pointF = this.b;
-        if (ih.j.b(viewGroup, viewGroup2, pointF)) {
+        if (ih.k.b(viewGroup, viewGroup2, pointF)) {
             canvas.save();
             canvas.clipRect(rectF);
             canvas.translate(pointF.x, pointF.y);
@@ -62,7 +62,7 @@ public final class l implements ch.a {
                 for (int i10 = 0; i10 < viewGroup.getChildCount(); i10++) {
                     View childAt = viewGroup.getChildAt(i10);
                     RectF rectF2 = this.a;
-                    if (ih.j.c(childAt, viewGroup2, rectF2) && rectF2.intersect(rectF)) {
+                    if (ih.k.c(childAt, viewGroup2, rectF2) && rectF2.intersect(rectF)) {
                         this.d.a(canvas, childAt, uptimeMillis);
                     }
                 }

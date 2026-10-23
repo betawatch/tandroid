@@ -2,10 +2,11 @@ package zf;
 
 import java.util.ArrayList;
 import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.v0;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_ephemeral;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public class q {
     public final ArrayList a = new ArrayList();
@@ -25,7 +26,7 @@ public class q {
         tL_messages_messages.messages.add(tL_message);
         ArrayList arrayList = (ArrayList) hVar.f(dialogId);
         if (arrayList == null) {
-            arrayList = org.telegram.messenger.g0.j(dialogId, hVar);
+            arrayList = v0.j(dialogId, hVar);
         }
         arrayList.add(messageObject);
     }

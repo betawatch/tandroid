@@ -5,17 +5,17 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.support.LongSparseIntArray;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class je implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ qn b;
+    public final /* synthetic */ sn b;
     public final /* synthetic */ long c;
 
-    public /* synthetic */ je(long j10, qn qnVar) {
+    public /* synthetic */ je(long j10, sn snVar) {
         this.a = 7;
         this.c = j10;
-        this.b = qnVar;
+        this.b = snVar;
     }
 
     @Override // java.lang.Runnable
@@ -28,47 +28,47 @@ public final /* synthetic */ class je implements Runnable {
                 this.b.getMessagesController().loadFullChat(this.c, 0, true);
                 break;
             case 2:
-                qn qnVar = this.b;
-                LongSparseIntArray longSparseIntArray = qnVar.M5;
+                sn snVar = this.b;
+                LongSparseIntArray longSparseIntArray = snVar.Y5;
                 long j10 = this.c;
                 longSparseIntArray.put(j10, 0);
-                org.telegram.ui.Components.s31 s31Var = qnVar.R1;
-                if (s31Var != null) {
-                    s31Var.setAllTopicsHidden(false);
+                org.telegram.ui.Components.w31 w31Var = snVar.d2;
+                if (w31Var != null) {
+                    w31Var.setAllTopicsHidden(false);
                 }
-                if (j10 == qnVar.d4) {
-                    qnVar.A0.O(false);
+                if (j10 == snVar.p4) {
+                    snVar.A0.O(false);
                     break;
                 }
                 break;
             case 3:
-                qn qnVar2 = this.b;
-                qnVar2.getClass();
-                qnVar2.presentFragment(qn.W9(this.c));
-                break;
-            case 4:
-                qn qnVar3 = this.b;
-                qnVar3.getClass();
-                qnVar3.presentFragment(ProfileActivity.m4(this.c));
-                break;
-            case 5:
-                qn qnVar4 = this.b;
-                org.telegram.ui.Components.qc v = org.telegram.ui.Components.xc.v(qnVar4.getParentActivity(), qnVar4, null, 1, this.c, 1, qnVar4.getThemedColor(org.telegram.ui.ActionBar.h6.Fi), qnVar4.getThemedColor(org.telegram.ui.ActionBar.h6.Hi), 5000, true, null);
+                sn snVar2 = this.b;
+                org.telegram.ui.Components.qc v = org.telegram.ui.Components.xc.v(snVar2.getParentActivity(), snVar2, null, 1, this.c, 1, snVar2.getThemedColor(org.telegram.ui.ActionBar.k6.Fi), snVar2.getThemedColor(org.telegram.ui.ActionBar.k6.Hi), 5000, true, null);
                 v.k = true;
                 v.k(true);
+                break;
+            case 4:
+                sn snVar3 = this.b;
+                snVar3.getClass();
+                snVar3.presentFragment(sn.W9(this.c));
+                break;
+            case 5:
+                sn snVar4 = this.b;
+                snVar4.getClass();
+                snVar4.presentFragment(ProfileActivity.o4(this.c));
                 break;
             case 6:
                 org.telegram.ui.Components.xc.a0(this.b).M(LocaleController.getString(R.string.StarsGiveawaySentPopup), AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("StarsGiveawaySentPopupInfo", (int) this.c)), R.raw.stars_topup).k(true);
                 break;
             default:
-                this.b.presentFragment(new ProfileActivity(zf.d0.b(this.c, "user_id"), null));
+                this.b.presentFragment(new ProfileActivity(si.o0.e(this.c, "user_id"), null));
                 break;
         }
     }
 
-    public /* synthetic */ je(qn qnVar, long j10, int i10) {
+    public /* synthetic */ je(sn snVar, long j10, int i10) {
         this.a = i10;
-        this.b = qnVar;
+        this.b = snVar;
         this.c = j10;
     }
 }

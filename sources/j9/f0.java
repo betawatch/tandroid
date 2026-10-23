@@ -3,8 +3,9 @@ package j9;
 import java.util.concurrent.Callable;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.concurrent.locks.LockSupport;
+import si.o0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class f0 extends AtomicReference implements Runnable {
     public static final androidx.emoji2.text.n c;
@@ -102,7 +103,7 @@ public final class f0 extends AtomicReference implements Runnable {
         } else {
             str = "running=[NOT STARTED YET]";
         }
-        StringBuilder i10 = r4.c.i(str, ", ");
+        StringBuilder i10 = o0.i(str, ", ");
         i10.append(this.a.toString());
         return i10.toString();
     }

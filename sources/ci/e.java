@@ -10,14 +10,14 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Cells.sa;
+import org.telegram.ui.Cells.ta;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.bd;
-import org.telegram.ui.df0;
-import org.telegram.ui.r21;
+import org.telegram.ui.if0;
+import org.telegram.ui.v21;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -46,15 +46,15 @@ public final /* synthetic */ class e implements Utilities.Callback {
                 break;
             case 3:
                 View view2 = (View) obj;
-                if (view2 instanceof ig.w1) {
-                    ((ig.w1) view2).c.invalidate();
+                if (view2 instanceof ig.v1) {
+                    ((ig.v1) view2).c.invalidate();
                     break;
                 }
                 break;
             case 4:
                 View view3 = (View) obj;
-                if (view3 instanceof ig.w1) {
-                    ((ig.w1) view3).d.a(false, true);
+                if (view3 instanceof ig.v1) {
+                    ((ig.v1) view3).d.a(false, true);
                     break;
                 }
                 break;
@@ -62,27 +62,27 @@ public final /* synthetic */ class e implements Utilities.Callback {
                 ((View) obj).invalidate();
                 break;
             case 6:
-                HashMap hashMap = org.telegram.ui.ActionBar.n3.K;
+                HashMap hashMap = org.telegram.ui.ActionBar.q3.K;
                 break;
             case 7:
-                int i11 = org.telegram.ui.ActionBar.l3.r;
+                int i11 = org.telegram.ui.ActionBar.o3.r;
                 break;
             case 8:
-                int i12 = sa.f;
+                int i12 = ta.n;
                 break;
             case 9:
-                bd.Y0((View) obj);
+                bd.a1((View) obj);
                 break;
             case 10:
                 View view4 = (View) obj;
-                if ((view4 instanceof org.telegram.ui.Cells.u1) && (messageObject = ((org.telegram.ui.Cells.u1) view4).getMessageObject()) != null) {
+                if ((view4 instanceof org.telegram.ui.Cells.t1) && (messageObject = ((org.telegram.ui.Cells.t1) view4).getMessageObject()) != null) {
                     messageObject.forceUpdate = true;
                     break;
                 }
                 break;
             case 11:
                 View view5 = (View) obj;
-                if ((view5 instanceof org.telegram.ui.Cells.u1) && (messageObject2 = ((org.telegram.ui.Cells.u1) view5).getMessageObject()) != null) {
+                if ((view5 instanceof org.telegram.ui.Cells.t1) && (messageObject2 = ((org.telegram.ui.Cells.t1) view5).getMessageObject()) != null) {
                     messageObject2.forceUpdate = true;
                     messageObject2.reactionsChanged = true;
                     break;
@@ -90,8 +90,8 @@ public final /* synthetic */ class e implements Utilities.Callback {
                 break;
             case 12:
                 View view6 = (View) obj;
-                if (view6 instanceof org.telegram.ui.ActionBar.y2) {
-                    ((org.telegram.ui.ActionBar.y2) view6).getTextView().invalidate();
+                if (view6 instanceof org.telegram.ui.ActionBar.z2) {
+                    ((org.telegram.ui.ActionBar.z2) view6).getTextView().invalidate();
                     break;
                 } else {
                     view6.invalidate();
@@ -104,8 +104,8 @@ public final /* synthetic */ class e implements Utilities.Callback {
                     g5Var.b.invalidate();
                     g5Var.c.invalidate();
                     break;
-                } else if (view7 instanceof ig.w1) {
-                    ((ig.w1) view7).c.invalidate();
+                } else if (view7 instanceof ig.v1) {
+                    ((ig.v1) view7).c.invalidate();
                     break;
                 } else {
                     view7.invalidate();
@@ -133,13 +133,13 @@ public final /* synthetic */ class e implements Utilities.Callback {
             case 18:
                 Long l4 = (Long) obj;
                 if (l4 != null && l4.longValue() != Long.MAX_VALUE) {
-                    org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
+                    org.telegram.ui.ActionBar.o2 U = LaunchActivity.U();
                     if (U != null) {
-                        U.presentFragment(ProfileActivity.m4(l4.longValue()));
+                        U.presentFragment(ProfileActivity.o4(l4.longValue()));
                         break;
                     }
                 } else {
-                    AndroidUtilities.runOnUIThread(new df0(i10));
+                    AndroidUtilities.runOnUIThread(new if0(i10));
                     break;
                 }
                 break;
@@ -148,7 +148,7 @@ public final /* synthetic */ class e implements Utilities.Callback {
             case 20:
                 HashSet hashSet = (HashSet) obj;
                 String str = LocaleController.getInstance().getCurrentLocaleInfo().pluralLangCode;
-                hashSet.addAll(r21.Y());
+                hashSet.addAll(v21.Y());
                 SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
                 if (hashSet.size() == 1 && TextUtils.equals((CharSequence) hashSet.iterator().next(), str)) {
                     edit.remove("translate_button_restricted_languages");
@@ -156,7 +156,7 @@ public final /* synthetic */ class e implements Utilities.Callback {
                     edit.putStringSet("translate_button_restricted_languages", hashSet);
                 }
                 edit.putInt("translate_button_restricted_languages_version", 2).apply();
-                r21.s = false;
+                v21.s = false;
                 for (int i13 = 0; i13 < 4; i13++) {
                     try {
                         MessagesController.getInstance(i13).getTranslateController().checkRestrictedLanguagesUpdate();
@@ -171,15 +171,15 @@ public final /* synthetic */ class e implements Utilities.Callback {
                 break;
             case 22:
                 View view11 = (View) obj;
-                if (view11 instanceof org.telegram.ui.web.h) {
-                    ((org.telegram.ui.web.h) view11).setChecked(false);
+                if (view11 instanceof org.telegram.ui.web.i) {
+                    ((org.telegram.ui.web.i) view11).setChecked(false);
                     break;
                 }
                 break;
             case 23:
                 View view12 = (View) obj;
-                if (view12 instanceof org.telegram.ui.web.h) {
-                    ((org.telegram.ui.web.h) view12).setChecked(false);
+                if (view12 instanceof org.telegram.ui.web.i) {
+                    ((org.telegram.ui.web.i) view12).setChecked(false);
                     break;
                 }
                 break;

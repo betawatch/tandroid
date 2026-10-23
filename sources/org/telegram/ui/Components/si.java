@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class si extends View {
     public final /* synthetic */ int a = 0;
@@ -20,24 +20,24 @@ public final class si extends View {
     public si(ViewGroup viewGroup, int i10) {
         super(viewGroup.getContext());
         this.c = new ArrayList();
-        this.e = new org.telegram.ui.dz(this, 28);
+        this.e = new org.telegram.ui.fz(this, 29);
         this.d = viewGroup;
         this.b = i10;
     }
 
     public void a() {
-        org.telegram.ui.dz dzVar = (org.telegram.ui.dz) this.e;
+        org.telegram.ui.fz fzVar = (org.telegram.ui.fz) this.e;
         ArrayList arrayList = (ArrayList) this.c;
         boolean isEmpty = arrayList.isEmpty();
         int i10 = this.b;
         if (isEmpty && getVisibility() != 8) {
-            NotificationCenter.getInstance(i10).removeDelayed(dzVar);
-            NotificationCenter.getInstance(i10).doOnIdle(dzVar);
+            NotificationCenter.getInstance(i10).removeDelayed(fzVar);
+            NotificationCenter.getInstance(i10).doOnIdle(fzVar);
         } else {
             if (arrayList.isEmpty() || getVisibility() == 0) {
                 return;
             }
-            NotificationCenter.getInstance(i10).removeDelayed(dzVar);
+            NotificationCenter.getInstance(i10).removeDelayed(fzVar);
             setVisibility(0);
         }
     }
@@ -47,19 +47,19 @@ public final class si extends View {
         switch (this.a) {
             case 0:
                 zf.y yVar = (zf.y) this.d;
-                org.telegram.ui.ActionBar.d6 d6Var = (org.telegram.ui.ActionBar.d6) this.c;
+                org.telegram.ui.ActionBar.g6 g6Var = (org.telegram.ui.ActionBar.g6) this.c;
                 int i10 = this.b;
-                yVar.b(org.telegram.ui.ActionBar.h6.m1(0.5f, org.telegram.ui.ActionBar.h6.w0(i10, d6Var)));
+                yVar.b(org.telegram.ui.ActionBar.k6.o1(0.5f, org.telegram.ui.ActionBar.k6.w0(i10, g6Var)));
                 yVar.draw(canvas);
                 zf.y yVar2 = (zf.y) this.e;
-                yVar2.b(org.telegram.ui.ActionBar.h6.m1(0.95f, org.telegram.ui.ActionBar.h6.w0(i10, d6Var)));
+                yVar2.b(org.telegram.ui.ActionBar.k6.o1(0.95f, org.telegram.ui.ActionBar.k6.w0(i10, g6Var)));
                 yVar2.draw(canvas);
                 break;
             default:
                 ArrayList arrayList = (ArrayList) this.c;
                 if (!arrayList.isEmpty()) {
                     for (int i11 = 0; i11 < arrayList.size(); i11++) {
-                        ((org.telegram.ui.mh0) arrayList.get(i11)).a(canvas);
+                        ((org.telegram.ui.qh0) arrayList.get(i11)).a(canvas);
                     }
                     break;
                 }
@@ -86,11 +86,11 @@ public final class si extends View {
         }
     }
 
-    public si(Context context, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
+    public si(Context context, int i10, org.telegram.ui.ActionBar.g6 g6Var) {
         super(context);
         this.d = new zf.y(2);
         this.e = new zf.y(2);
-        this.c = d6Var;
+        this.c = g6Var;
         this.b = i10;
     }
 }

@@ -1,53 +1,64 @@
 package org.telegram.ui;
 
-import android.text.TextUtils;
-
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class kb0 extends pg.a {
-    public final CharSequence c;
-    public final int d;
-    public final int e;
-    public final int f;
+public final /* synthetic */ class kb0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ob0 b;
+    public final /* synthetic */ String c;
 
-    public kb0(int i10, int i11, CharSequence charSequence, int i12, int i13) {
-        super(i10, false);
-        this.c = charSequence;
-        this.d = i11;
-        this.e = i12;
-        this.f = i13;
+    public /* synthetic */ kb0(ob0 ob0Var, String str, int i10) {
+        this.a = i10;
+        this.b = ob0Var;
+        this.c = str;
     }
 
-    public static kb0 b(int i10, String str) {
-        return new kb0(4, 0, str, i10, 0);
-    }
-
-    public static kb0 c(int i10, int i11, String str) {
-        return new kb0(3, i10, str, i11, 0);
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ob0 ob0Var = this.b;
+                if (ob0Var.a()) {
+                    ob0Var.w(this.c);
+                    break;
+                }
+                break;
+            case 1:
+                this.b.w(this.c);
+                break;
+            case 2:
+                ob0 ob0Var2 = this.b;
+                ob0Var2.getClass();
+                String str = this.c;
+                if ("disable".equalsIgnoreCase(str)) {
+                    ob0Var2.x("turnPasswordOffRow");
+                }
+                if ("change".equalsIgnoreCase(str)) {
+                    ob0Var2.x("changePasswordRow");
+                }
+                if ("change-email".equalsIgnoreCase(str)) {
+                    ob0Var2.x("emailRow");
+                    break;
+                }
+                break;
+            default:
+                ob0 ob0Var3 = this.b;
+                ob0Var3.getClass();
+                String str2 = this.c;
+                if ("disable".equalsIgnoreCase(str2)) {
+                    ob0Var3.x("disablePasscodeRow");
+                }
+                if ("change".equalsIgnoreCase(str2)) {
+                    ob0Var3.x("changePasscodeRow");
+                }
+                if ("auto-lock".equalsIgnoreCase(str2)) {
+                    ob0Var3.x("autoLockRow");
+                }
+                if ("fingerprint".equalsIgnoreCase(str2)) {
+                    ob0Var3.x("fingerprintRow");
+                    break;
+                }
+                break;
         }
-        if (!(obj instanceof kb0)) {
-            return false;
-        }
-        kb0 kb0Var = (kb0) obj;
-        int i10 = kb0Var.a;
-        int i11 = this.a;
-        if (i10 != i11) {
-            return false;
-        }
-        if (i11 == 3 && kb0Var.d != this.d) {
-            return false;
-        }
-        if (i11 == 5 && kb0Var.f != this.f) {
-            return false;
-        }
-        if ((i11 == 3 || i11 == 4) && kb0Var.e != this.e) {
-            return false;
-        }
-        return !(i11 == 0 || i11 == 2 || i11 == 3 || i11 == 4 || i11 == 5) || TextUtils.equals(kb0Var.c, this.c);
     }
 }

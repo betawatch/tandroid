@@ -9,7 +9,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class qd implements View.OnClickListener {
     public final /* synthetic */ int a = 1;
@@ -18,10 +18,10 @@ public final /* synthetic */ class qd implements View.OnClickListener {
     public final /* synthetic */ FrameLayout d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ qd(int i10, ei.d dVar, org.telegram.ui.ActionBar.f3 f3Var, long j10) {
+    public /* synthetic */ qd(int i10, ei.d dVar, org.telegram.ui.ActionBar.h3 h3Var, long j10) {
         this.b = i10;
         this.d = dVar;
-        this.e = f3Var;
+        this.e = h3Var;
         this.c = j10;
     }
 
@@ -33,7 +33,7 @@ public final /* synthetic */ class qd implements View.OnClickListener {
                 Context context = (Context) this.e;
                 if (view.isEnabled()) {
                     ei.d dVar = ieVar.T0;
-                    if (!dVar.N) {
+                    if (!dVar.Q) {
                         dVar.setLoading(true);
                         TLRPC.TL_payments_getStarsRevenueAdsAccountUrl tL_payments_getStarsRevenueAdsAccountUrl = new TLRPC.TL_payments_getStarsRevenueAdsAccountUrl();
                         int i10 = this.b;
@@ -45,11 +45,11 @@ public final /* synthetic */ class qd implements View.OnClickListener {
                 break;
             default:
                 ei.d dVar2 = (ei.d) this.d;
-                org.telegram.ui.ActionBar.f3 f3Var = (org.telegram.ui.ActionBar.f3) this.e;
+                org.telegram.ui.ActionBar.h3 h3Var = (org.telegram.ui.ActionBar.h3) this.e;
                 TL_phone.createConferenceCall createconferencecall = new TL_phone.createConferenceCall();
                 createconferencecall.random_id = Utilities.random.nextInt();
                 int i11 = this.b;
-                ConnectionsManager.getInstance(i11).sendRequest(createconferencecall, new ai.c0(i11, dVar2, f3Var, this.c));
+                ConnectionsManager.getInstance(i11).sendRequest(createconferencecall, new ai.c0(i11, dVar2, h3Var, this.c));
                 break;
         }
     }

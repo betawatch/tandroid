@@ -16,7 +16,7 @@ import java.util.List;
 import org.telegram.messenger.MediaController;
 import v7.s6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public abstract class w {
     public static final HashMap a = new HashMap();
@@ -139,7 +139,7 @@ public abstract class w {
         String str;
         int i10;
         MediaCodecInfo.CodecCapabilities capabilitiesForType;
-        boolean f7;
+        boolean c10;
         boolean h;
         boolean z11;
         boolean j10;
@@ -150,42 +150,42 @@ public abstract class w {
             ArrayList arrayList = new ArrayList();
             String str2 = sVar2.a;
             int k10 = uVar.k();
-            boolean v = uVar.v();
+            boolean u10 = uVar.u();
             int i11 = 0;
             while (i11 < k10) {
                 MediaCodecInfo a2 = uVar.a(i11);
                 int i12 = Build.VERSION.SDK_INT;
                 if (i12 < 29 || !a2.isAlias()) {
                     String name = a2.getName();
-                    if (h(a2, name, v, str2)) {
+                    if (h(a2, name, u10, str2)) {
                         int i13 = i11;
                         String d = d(a2, name, str2);
                         if (d != null) {
                             try {
                                 capabilitiesForType = a2.getCapabilitiesForType(d);
-                                f7 = uVar.f("tunneled-playback", d, capabilitiesForType);
+                                c10 = uVar.c("tunneled-playback", d, capabilitiesForType);
                                 h = uVar.h("tunneled-playback", capabilitiesForType);
                                 z11 = sVar2.c;
                             } catch (Exception e) {
                                 e = e;
-                                z10 = v;
+                                z10 = u10;
                                 str = name;
                             }
                             if (z11 || !h) {
-                                if (!z11 || f7) {
-                                    boolean f10 = uVar.f("secure-playback", d, capabilitiesForType);
+                                if (!z11 || c10) {
+                                    boolean c11 = uVar.c("secure-playback", d, capabilitiesForType);
                                     boolean h10 = uVar.h("secure-playback", capabilitiesForType);
                                     if (z13 || !h10) {
-                                        if (!z13 || f10) {
+                                        if (!z13 || c11) {
                                             boolean i14 = i(a2, str2);
-                                            z10 = v;
+                                            z10 = u10;
                                             try {
                                                 j10 = j(a2, str2);
                                                 if (i12 >= 29) {
                                                     z12 = a2.isVendor();
                                                 } else {
-                                                    String c10 = s6.c(a2.getName());
-                                                    z12 = (c10.startsWith("omx.google.") || c10.startsWith("c2.android.") || c10.startsWith("c2.google.")) ? false : true;
+                                                    String c12 = s6.c(a2.getName());
+                                                    z12 = (c12.startsWith("omx.google.") || c12.startsWith("c2.android.") || c12.startsWith("c2.google.")) ? false : true;
                                                 }
                                             } catch (Exception e7) {
                                                 e = e7;
@@ -196,10 +196,10 @@ public abstract class w {
                                                 e2.a.c("MediaCodecUtil", "Failed to query codec " + str + " (" + d + ")");
                                                 throw e;
                                             }
-                                            if (!(z10 && z13 == f10) && (z10 || z13)) {
+                                            if (!(z10 && z13 == c11) && (z10 || z13)) {
                                                 boolean z14 = z12;
                                                 i10 = i13;
-                                                if (!z10 && f10) {
+                                                if (!z10 && c11) {
                                                     str = name;
                                                     try {
                                                         arrayList.add(o.i(name + ".secure", str2, d, capabilitiesForType, i14, j10, z14, true));
@@ -214,7 +214,7 @@ public abstract class w {
                                                 }
                                                 i11 = i10 + 1;
                                                 sVar2 = sVar;
-                                                v = z10;
+                                                u10 = z10;
                                             } else {
                                                 i10 = i13;
                                                 try {
@@ -229,29 +229,29 @@ public abstract class w {
                                                     e2.a.c("MediaCodecUtil", "Skipping codec " + str + " (failed to query capabilities)");
                                                     i11 = i10 + 1;
                                                     sVar2 = sVar;
-                                                    v = z10;
+                                                    u10 = z10;
                                                 }
                                                 i11 = i10 + 1;
                                                 sVar2 = sVar;
-                                                v = z10;
+                                                u10 = z10;
                                             }
                                         }
                                     }
                                 }
                             }
                         }
-                        z10 = v;
+                        z10 = u10;
                         i10 = i13;
                         i11 = i10 + 1;
                         sVar2 = sVar;
-                        v = z10;
+                        u10 = z10;
                     }
                 }
-                z10 = v;
+                z10 = u10;
                 i10 = i11;
                 i11 = i10 + 1;
                 sVar2 = sVar;
-                v = z10;
+                u10 = z10;
             }
             return arrayList;
         } catch (Exception e12) {

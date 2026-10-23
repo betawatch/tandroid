@@ -7,14 +7,14 @@ import android.text.style.ReplacementSpan;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.f11;
+import org.telegram.ui.Components.i11;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class n0 extends ReplacementSpan {
     public final RectF a = new RectF();
     public final Paint b = new Paint(1);
-    public final f11 c = new f11(LocaleController.getString(R.string.LiveStoryBadge), 8.0f, AndroidUtilities.bold());
+    public final i11 c = new i11(LocaleController.getString(R.string.LiveStoryBadge), 8.0f, AndroidUtilities.bold());
 
     @Override // android.text.style.ReplacementSpan
     public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {

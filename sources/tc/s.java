@@ -9,9 +9,9 @@ import javax.net.SocketFactory;
 import javax.net.ssl.SSLSocket;
 import javax.net.ssl.SSLSocketFactory;
 import org.telegram.messenger.MediaDataController;
-import org.telegram.ui.Cells.c1;
+import org.telegram.ui.Cells.b1;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class s {
     public final SocketFactory a;
@@ -75,7 +75,7 @@ public final class s {
                         str = " (" + sSLSocket.getSession().getPeerPrincipal().toString() + ")";
                     } catch (Exception unused) {
                     }
-                    throw new i(49, c1.k("The certificate of the peer", str, " does not match the expected hostname (", str2, ")"));
+                    throw new i(49, b1.l("The certificate of the peer", str, " does not match the expected hostname (", str2, ")"));
                 }
             }
         } catch (Exception e10) {

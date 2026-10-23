@@ -1,15 +1,14 @@
 package c3;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class d0 {
-    public static final d0 c = new d0(0, 0);
-    public final long a;
-    public final long b;
+    public final f0 a;
+    public final f0 b;
 
-    public d0(long j10, long j11) {
-        this.a = j10;
-        this.b = j11;
+    public d0(f0 f0Var, f0 f0Var2) {
+        this.a = f0Var;
+        this.b = f0Var2;
     }
 
     public final boolean equals(Object obj) {
@@ -18,7 +17,7 @@ public final class d0 {
         }
         if (obj != null && d0.class == obj.getClass()) {
             d0 d0Var = (d0) obj;
-            if (this.a == d0Var.a && this.b == d0Var.b) {
+            if (this.a.equals(d0Var.a) && this.b.equals(d0Var.b)) {
                 return true;
             }
         }
@@ -26,13 +25,20 @@ public final class d0 {
     }
 
     public final int hashCode() {
-        return (((int) this.a) * 31) + ((int) this.b);
+        return this.b.hashCode() + (this.a.hashCode() * 31);
     }
 
     public final String toString() {
-        StringBuilder sb2 = new StringBuilder("[timeUs=");
-        sb2.append(this.a);
-        sb2.append(", position=");
-        return a1.g.r(sb2, this.b, "]");
+        String str;
+        StringBuilder sb2 = new StringBuilder("[");
+        f0 f0Var = this.a;
+        sb2.append(f0Var);
+        f0 f0Var2 = this.b;
+        if (f0Var.equals(f0Var2)) {
+            str = "";
+        } else {
+            str = ", " + f0Var2;
+        }
+        return a1.g.s(sb2, str, "]");
     }
 }

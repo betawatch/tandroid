@@ -1,21 +1,25 @@
 package org.telegram.ui;
 
-import android.view.accessibility.AccessibilityEvent;
-import android.view.accessibility.AccessibilityNodeInfo;
-
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class jb0 extends org.telegram.ui.Cells.d9 {
-    @Override // org.telegram.ui.Cells.d9, android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setEnabled(true);
+public final /* synthetic */ class jb0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ob0 b;
+
+    public /* synthetic */ jb0(ob0 ob0Var, int i10) {
+        this.a = i10;
+        this.b = ob0Var;
     }
 
-    @Override // android.view.View
-    public final void onPopulateAccessibilityEvent(AccessibilityEvent accessibilityEvent) {
-        super.onPopulateAccessibilityEvent(accessibilityEvent);
-        accessibilityEvent.setContentDescription(getTextView().getText());
-        setContentDescription(getTextView().getText());
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.b();
+                break;
+            default:
+                this.b.c();
+                break;
+        }
     }
 }

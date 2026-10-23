@@ -1,55 +1,40 @@
 package org.telegram.ui.ActionBar;
 
-import android.view.animation.Animation;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class d2 implements Animation.AnimationListener {
+public final class d2 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ g2 b;
 
-    public /* synthetic */ d2(Object obj, int i10) {
+    public /* synthetic */ d2(g2 g2Var, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.b = g2Var;
     }
 
-    @Override // android.view.animation.Animation.AnimationListener
-    public final void onAnimationEnd(Animation animation) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                ((f2) this.b).g1.setAlpha(0.0f);
+                g2 g2Var = this.b;
+                DialogInterface.OnShowListener onShowListener = g2Var.r1;
+                if (onShowListener != null) {
+                    onShowListener.onShow(g2Var);
+                    break;
+                }
                 break;
             default:
-                ((v4) this.b).f.post(new p(this, 12));
+                g2 g2Var2 = this.b;
+                g2Var2.u().removeView(g2Var2.o1);
+                DialogInterface.OnDismissListener onDismissListener = g2Var2.s1;
+                if (onDismissListener != null) {
+                    onDismissListener.onDismiss(g2Var2);
+                    break;
+                }
                 break;
         }
-    }
-
-    @Override // android.view.animation.Animation.AnimationListener
-    public final void onAnimationRepeat(Animation animation) {
-        int i10 = this.a;
-    }
-
-    @Override // android.view.animation.Animation.AnimationListener
-    public final void onAnimationStart(Animation animation) {
-        switch (this.a) {
-            case 0:
-                break;
-            default:
-                v4 v4Var = (v4) this.b;
-                v4Var.i.setEnabled(false);
-                v4Var.g.setVisibility(0);
-                v4Var.h.setVisibility(0);
-                break;
-        }
-    }
-
-    private final void a(Animation animation) {
-    }
-
-    private final void b(Animation animation) {
-    }
-
-    private final void c(Animation animation) {
     }
 }

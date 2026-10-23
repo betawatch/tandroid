@@ -1,55 +1,27 @@
 package org.telegram.ui;
 
-import android.view.View;
-import java.util.List;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import org.telegram.messenger.LiteMode;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class p51 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ t51 b;
-    public final /* synthetic */ Integer c;
+public final class p51 extends org.telegram.ui.Components.ux0 {
+    public final /* synthetic */ q51 A3;
 
-    public /* synthetic */ p51(t51 t51Var, Integer num, int i10) {
-        this.a = i10;
-        this.b = t51Var;
-        this.c = num;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public p51(q51 q51Var, Context context, int i10, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(context, i10, g6Var);
+        this.A3 = q51Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        t51 t51Var = this.b;
-        switch (i10) {
-            case 0:
-                t51.a(t51Var, this.c);
-                break;
-            default:
-                t51Var.getClass();
-                Integer num = this.c;
-                if (num != null) {
-                    try {
-                        t51Var.P.performHapticFeedback(0, 1);
-                    } catch (Exception unused) {
-                    }
-                    m41 m41Var = (m41) t51Var;
-                    n41 n41Var = m41Var.S;
-                    x51 x51Var = n41Var.e;
-                    List list = x51.Z1;
-                    x51Var.l();
-                    TLRPC.TL_emojiStatus tL_emojiStatus = new TLRPC.TL_emojiStatus();
-                    View view = m41Var.Q;
-                    long j10 = ((g51) view).e.documentId;
-                    tL_emojiStatus.document_id = j10;
-                    n41Var.e.p(view, Long.valueOf(j10), ((g51) m41Var.Q).e.document, m41Var.R, num);
-                    if (m41Var.R == null) {
-                        MediaDataController.getInstance(n41Var.e.V).pushRecentEmojiStatus(tL_emojiStatus);
-                        break;
-                    }
-                }
-                break;
-        }
+    @Override // org.telegram.ui.Components.ux0
+    public final boolean G1() {
+        return LiteMode.isEnabled(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD) || this.A3.F.W == 4;
+    }
+
+    @Override // org.telegram.ui.Components.ux0
+    public final void K1(int i10) {
+        super.K1(i10);
+        this.A3.d(false);
     }
 }

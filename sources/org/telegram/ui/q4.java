@@ -1,88 +1,38 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.view.ViewGroup;
+import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class q4 extends org.telegram.ui.Components.im0 {
-    public final Context c;
+public final class q4 extends org.telegram.ui.ActionBar.o2 {
+    public org.telegram.ui.Components.mm0 a;
+    public p4 b;
 
-    public q4(Context context) {
-        this.c = context;
-    }
-
-    @Override // org.telegram.ui.Components.im0
-    public final boolean D(s4.b1 b1Var) {
-        int b10 = b1Var.b();
-        if (b10 != 1) {
-            ti.a aVar = ti.e.b;
-            aVar.a();
-            if (!aVar.d || b10 != 2) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    @Override // s4.g0
-    public final int h() {
-        return 4;
-    }
-
-    @Override // s4.g0
-    public final int j(int i10) {
-        if (i10 == 0) {
-            return 0;
-        }
-        if (i10 == 1) {
-            return 1;
-        }
-        return i10 == 2 ? 2 : 3;
-    }
-
-    @Override // s4.g0
-    public final void v(s4.b1 b1Var, int i10) {
-        ti.a aVar = ti.e.b;
-        aVar.a();
-        boolean z10 = aVar.d;
-        int i11 = b1Var.f;
-        if (i11 == 0) {
-            ((org.telegram.ui.Cells.l4) b1Var.a).setText(LocaleController.getString(R.string.AudioRecorderGeneral));
-            return;
-        }
-        if (i11 == 1) {
-            ((org.telegram.ui.Cells.v8) b1Var.a).f(LocaleController.getString(R.string.AudioRecorderUseNewRecorder), z10, false);
-        } else {
-            if (i11 != 2) {
-                ((org.telegram.ui.Cells.d9) b1Var.a).setText(LocaleController.getString(R.string.AudioRecorderGeneralInfo));
-                return;
-            }
-            org.telegram.ui.Cells.ba baVar = (org.telegram.ui.Cells.ba) b1Var.a;
-            baVar.setEnabled(z10);
-            baVar.c(LocaleController.getString(R.string.AudioRecorderNoiseSuppression), LocaleController.getString(((ri.h) ti.e.c.a()) == ri.h.b ? R.string.AudioRecorderNoiseSuppressionRNNoise : R.string.AudioRecorderNoiseSuppressionOff), false, false);
-        }
-    }
-
-    @Override // s4.g0
-    public final s4.b1 x(ViewGroup viewGroup, int i10) {
-        FrameLayout frameLayout;
-        Context context = this.c;
-        if (i10 == 0) {
-            frameLayout = new org.telegram.ui.Cells.l4(context);
-        } else if (i10 == 1) {
-            frameLayout = new org.telegram.ui.Cells.v8(context);
-        } else if (i10 == 2) {
-            org.telegram.ui.Cells.ba baVar = new org.telegram.ui.Cells.ba(context);
-            baVar.setCanDisable(true);
-            frameLayout = baVar;
-        } else {
-            frameLayout = new org.telegram.ui.Cells.d9(context);
-        }
-        frameLayout.setLayoutParams(new s4.o0(-1, -2));
-        return new org.telegram.ui.Components.tl0(frameLayout);
+    @Override // org.telegram.ui.ActionBar.o2
+    public final View createView(Context context) {
+        this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
+        this.actionBar.setAllowOverlayTitle(true);
+        this.actionBar.setTitle(LocaleController.getString(R.string.AudioRecorderSettings));
+        this.actionBar.setActionBarMenuOnItemClick(new ah.s(this, 22));
+        FrameLayout frameLayout = new FrameLayout(context);
+        org.telegram.ui.ActionBar.r6.i(org.telegram.ui.ActionBar.k6.a7, frameLayout, null);
+        this.fragmentView = frameLayout;
+        org.telegram.ui.Components.mm0 mm0Var = new org.telegram.ui.Components.mm0(context, null);
+        this.a = mm0Var;
+        mm0Var.t1();
+        this.actionBar.setAdaptiveBackground(this.a);
+        this.a.setLayoutManager(new s4.b0());
+        this.a.setVerticalScrollBarEnabled(false);
+        org.telegram.ui.Components.mm0 mm0Var2 = this.a;
+        p4 p4Var = new p4(context);
+        this.b = p4Var;
+        mm0Var2.setAdapter(p4Var);
+        this.a.setOnItemClickListener(new h(this, 2));
+        frameLayout.addView(this.a, w7.z5.c(-1.0f, -1));
+        return this.fragmentView;
     }
 }

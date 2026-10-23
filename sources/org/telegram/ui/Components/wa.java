@@ -9,9 +9,9 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class wa extends lw0 {
+public final class wa extends ow0 {
     public final /* synthetic */ boolean w0;
     public final /* synthetic */ boolean x0;
     public final /* synthetic */ bb y0;
@@ -24,12 +24,12 @@ public final class wa extends lw0 {
         this.x0 = z11;
     }
 
-    @Override // org.telegram.ui.Components.lw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.ow0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         bb bbVar = this.y0;
-        bbVar.J(canvas, this);
-        super.dispatchDraw(canvas);
         bbVar.I(canvas, this);
+        super.dispatchDraw(canvas);
+        bbVar.G(canvas, this);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -38,7 +38,7 @@ public final class wa extends lw0 {
         if (motionEvent.getAction() == 0) {
             float y3 = motionEvent.getY();
             bb bbVar = this.y0;
-            drawable = ((org.telegram.ui.ActionBar.f3) bbVar).shadowDrawable;
+            drawable = ((org.telegram.ui.ActionBar.h3) bbVar).shadowDrawable;
             if (y3 < drawable.getBounds().top) {
                 bbVar.dismiss();
             }
@@ -57,7 +57,7 @@ public final class wa extends lw0 {
     /* JADX WARN: Removed duplicated region for block: B:31:0x0095  */
     /* JADX WARN: Removed duplicated region for block: B:38:0x00c1  */
     /* JADX WARN: Removed duplicated region for block: B:49:0x00b1  */
-    @Override // org.telegram.ui.Components.lw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.ow0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -77,10 +77,10 @@ public final class wa extends lw0 {
             return;
         }
         int childCount = getChildCount();
-        int R = R();
+        int Q = Q();
         int paddingBottom = getPaddingBottom();
-        z11 = ((org.telegram.ui.ActionBar.f3) bbVar).keyboardVisible;
-        if (!z11 && bbVar.Q != null && R <= AndroidUtilities.dp(20.0f) && !AndroidUtilities.isInMultiwindow && !AndroidUtilities.isTablet()) {
+        z11 = ((org.telegram.ui.ActionBar.h3) bbVar).keyboardVisible;
+        if (!z11 && bbVar.Q != null && Q <= AndroidUtilities.dp(20.0f) && !AndroidUtilities.isInMultiwindow && !AndroidUtilities.isTablet()) {
             paddingBottom += bbVar.Q.getEmojiPadding();
         }
         setBottomClip(paddingBottom);
@@ -115,7 +115,7 @@ public final class wa extends lw0 {
                                 measuredHeight = getMeasuredHeight();
                                 measuredHeight2 = childAt.getMeasuredHeight();
                             } else {
-                                measuredHeight = getMeasuredHeight() + R;
+                                measuredHeight = getMeasuredHeight() + Q;
                                 measuredHeight2 = childAt.getMeasuredHeight();
                             }
                             i19 = measuredHeight - measuredHeight2;
@@ -131,7 +131,7 @@ public final class wa extends lw0 {
                     childAt.layout(i16, i19, measuredWidth + i16, measuredHeight3 + i19);
                 } else {
                     i14 = (((i12 - i10) - measuredWidth) - layoutParams.rightMargin) - getPaddingRight();
-                    i15 = ((org.telegram.ui.ActionBar.f3) bbVar).backgroundPaddingLeft;
+                    i15 = ((org.telegram.ui.ActionBar.h3) bbVar).backgroundPaddingLeft;
                 }
                 i16 = i14 - i15;
                 if (i22 == 16) {
@@ -142,7 +142,7 @@ public final class wa extends lw0 {
                 childAt.layout(i16, i19, measuredWidth + i16, measuredHeight3 + i19);
             }
         }
-        S();
+        R();
     }
 
     @Override // android.widget.FrameLayout, android.view.View
@@ -153,7 +153,7 @@ public final class wa extends lw0 {
         int size = View.MeasureSpec.getSize(i11);
         bb bbVar = this.y0;
         bbVar.h = size;
-        bbVar.E(i10, i11);
+        bbVar.D(i10, i11);
         if (this.w0) {
             i11 = View.MeasureSpec.makeMeasureSpec(bbVar.h, TLObject.FLAG_30);
         }
@@ -173,7 +173,7 @@ public final class wa extends lw0 {
         }
         int i13 = 0;
         if (AndroidUtilities.dp(20.0f) >= 0) {
-            z10 = ((org.telegram.ui.ActionBar.f3) bbVar).keyboardVisible;
+            z10 = ((org.telegram.ui.ActionBar.h3) bbVar).keyboardVisible;
             int emojiPadding = (z10 || (quVar = bbVar.Q) == null) ? 0 : quVar.getEmojiPadding();
             if (!AndroidUtilities.isInMultiwindow) {
                 size3 -= emojiPadding;

@@ -1,18 +1,34 @@
 package u2;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public final class r0 extends c3.v {
-    public final /* synthetic */ x0 b;
+public final /* synthetic */ class r0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ y0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r0(x0 x0Var, c3.c0 c0Var) {
-        super(c0Var);
-        this.b = x0Var;
+    public /* synthetic */ r0(y0 y0Var, int i10) {
+        this.a = i10;
+        this.b = y0Var;
     }
 
-    @Override // c3.v, c3.c0
-    public final long h() {
-        return this.b.T;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.b0 = true;
+                break;
+            case 1:
+                this.b.w();
+                break;
+            default:
+                y0 y0Var = this.b;
+                if (!y0Var.h0) {
+                    e0 e0Var = y0Var.I;
+                    e0Var.getClass();
+                    e0Var.b(y0Var);
+                    break;
+                }
+                break;
+        }
     }
 }

@@ -12,7 +12,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class n20 extends ViewGroup {
     public AnimatorSet a;
@@ -76,12 +76,12 @@ public final class n20 extends ViewGroup {
                 } else {
                     i13 = i14;
                     if (childAt.getMeasuredWidth() + i16 > dp) {
-                        dp2 = org.telegram.messenger.g0.C(8.0f, childAt.getMeasuredHeight(), dp2);
+                        dp2 = org.telegram.messenger.v0.C(8.0f, childAt.getMeasuredHeight(), dp2);
                         i16 = i13;
                     }
                 }
                 if (childAt.getMeasuredWidth() + i17 > dp) {
-                    dp3 = org.telegram.messenger.g0.C(8.0f, childAt.getMeasuredHeight(), dp3);
+                    dp3 = org.telegram.messenger.v0.C(8.0f, childAt.getMeasuredHeight(), dp3);
                     i17 = i13;
                 }
                 int dp4 = AndroidUtilities.dp(13.0f) + i16;
@@ -110,9 +110,9 @@ public final class n20 extends ViewGroup {
                     }
                 }
                 if (!contains) {
-                    i16 = org.telegram.messenger.g0.C(9.0f, childAt.getMeasuredWidth(), i16);
+                    i16 = org.telegram.messenger.v0.C(9.0f, childAt.getMeasuredWidth(), i16);
                 }
-                i17 = org.telegram.messenger.g0.C(9.0f, childAt.getMeasuredWidth(), i17);
+                i17 = org.telegram.messenger.v0.C(9.0f, childAt.getMeasuredWidth(), i17);
             } else {
                 i13 = i14;
             }
@@ -124,7 +124,7 @@ public final class n20 extends ViewGroup {
             A = AndroidUtilities.dp(372.0f) / 3;
         } else {
             Point point = AndroidUtilities.displaySize;
-            A = org.telegram.messenger.nk.A(158.0f, Math.min(point.x, point.y), 3);
+            A = org.telegram.messenger.sl.A(158.0f, Math.min(point.x, point.y), 3);
         }
         if (dp - i16 < A) {
             dp2 += AndroidUtilities.dp(40.0f);

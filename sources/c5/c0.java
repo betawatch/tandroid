@@ -17,6 +17,7 @@ import b2.r0;
 import b2.u0;
 import com.google.android.gms.internal.play_billing.i4;
 import e2.m0;
+import i2.o1;
 import j$.util.DesugarCollections;
 import java.net.URI;
 import java.nio.ByteBuffer;
@@ -32,9 +33,9 @@ import javax.net.ssl.SSLSocketFactory;
 import org.telegram.messenger.MediaDataController;
 import v7.q8;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class c0 implements e2.d, r2.u, c3.g0 {
+public final /* synthetic */ class c0 implements e2.d, r2.u, c3.i0 {
     public final /* synthetic */ int a;
     public int b;
     public Object c;
@@ -65,7 +66,12 @@ public final /* synthetic */ class c0 implements e2.d, r2.u, c3.g0 {
         return obj;
     }
 
-    public void c(int i10, int i11, int i12) {
+    @Override // r2.u
+    public boolean c(String str, String str2, MediaCodecInfo.CodecCapabilities codecCapabilities) {
+        return codecCapabilities.isFeatureSupported(str);
+    }
+
+    public void d(int i10, int i11, int i12) {
         if (i12 == 0 || i10 >= i11) {
             return;
         }
@@ -94,7 +100,7 @@ public final /* synthetic */ class c0 implements e2.d, r2.u, c3.g0 {
         iArr3[i17] = i12;
     }
 
-    public void d(long j10) {
+    public void e(long j10) {
         int i10 = this.b;
         long[] jArr = (long[]) this.c;
         if (i10 == jArr.length) {
@@ -106,7 +112,7 @@ public final /* synthetic */ class c0 implements e2.d, r2.u, c3.g0 {
         jArr2[i11] = j10;
     }
 
-    public void e(long[] jArr) {
+    public void f(long[] jArr) {
         int length = this.b + jArr.length;
         long[] jArr2 = (long[]) this.c;
         if (length > jArr2.length) {
@@ -114,11 +120,6 @@ public final /* synthetic */ class c0 implements e2.d, r2.u, c3.g0 {
         }
         System.arraycopy(jArr, 0, (long[]) this.c, this.b, jArr.length);
         this.b = length;
-    }
-
-    @Override // r2.u
-    public boolean f(String str, String str2, MediaCodecInfo.CodecCapabilities codecCapabilities) {
-        return codecCapabilities.isFeatureSupported(str);
     }
 
     @Override // e2.d
@@ -273,7 +274,7 @@ public final /* synthetic */ class c0 implements e2.d, r2.u, c3.g0 {
                         str2 = str2 + ":" + port;
                     }
                     if (rawQuery != null) {
-                        str3 = a1.g.C(str3, "?", rawQuery);
+                        str3 = a1.g.D(str3, "?", rawQuery);
                     }
                     return new tc.u(z10, userInfo, str2, str3, sVar);
                 }
@@ -317,9 +318,9 @@ public final /* synthetic */ class c0 implements e2.d, r2.u, c3.g0 {
         if (i10 >= 0 && i10 < this.b) {
             return ((long[]) this.c)[i10];
         }
-        StringBuilder l4 = i2.e.l(i10, "Invalid index ", ", size is ");
-        l4.append(this.b);
-        throw new IndexOutOfBoundsException(l4.toString());
+        StringBuilder n10 = o1.n(i10, "Invalid index ", ", size is ");
+        n10.append(this.b);
+        throw new IndexOutOfBoundsException(n10.toString());
     }
 
     public boolean o(int i10) {
@@ -406,14 +407,14 @@ public final /* synthetic */ class c0 implements e2.d, r2.u, c3.g0 {
         }
     }
 
-    @Override // e2.d
-    public j9.y u(byte[] bArr) {
-        return q8.c(((e2.d) this.c).u(bArr), new j5.b(this, 18));
+    @Override // r2.u
+    public boolean u() {
+        return true;
     }
 
-    @Override // r2.u
-    public boolean v() {
-        return true;
+    @Override // e2.d
+    public j9.y v(byte[] bArr) {
+        return q8.c(((e2.d) this.c).v(bArr), new j5.b(this, 18));
     }
 
     public void w(Object instance) {

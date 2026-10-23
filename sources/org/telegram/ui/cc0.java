@@ -1,60 +1,54 @@
 package org.telegram.ui;
 
-import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.IMapsProvider;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class cc0 implements org.telegram.ui.Components.gu0 {
-    public final /* synthetic */ nc0 a;
+public final /* synthetic */ class cc0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ sc0 b;
+    public final /* synthetic */ IMapsProvider.IMapView c;
 
-    public cc0(nc0 nc0Var) {
-        this.a = nc0Var;
+    public /* synthetic */ cc0(sc0 sc0Var, IMapsProvider.IMapView iMapView, int i10) {
+        this.a = i10;
+        this.b = sc0Var;
+        this.c = iMapView;
     }
 
-    @Override // org.telegram.ui.Components.gu0
-    public final void R() {
-        nc0 nc0Var = this.a;
-        dc0 dc0Var = nc0Var.K0;
-        int c02 = dc0Var == null ? 0 : dc0Var.c0(8);
-        nc0Var.L0.setText(LocaleController.formatPluralString("LocationStories", c02, new Object[0]));
-        bc0 bc0Var = nc0Var.T;
-        boolean z10 = c02 > 0;
-        if (bc0Var.i0 != z10) {
-            bc0Var.i0 = z10;
-            bc0Var.l();
-            nc0Var.U.v0(0, AndroidUtilities.dp(200.0f), null);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                sc0 sc0Var = this.b;
+                IMapsProvider.IMapView iMapView = this.c;
+                if (sc0Var.K != null && sc0Var.getParentActivity() != null) {
+                    try {
+                        iMapView.onCreate(null);
+                        ApplicationLoader.getMapsProvider().initializeMaps(ApplicationLoader.applicationContext);
+                        sc0Var.K.getMapAsync(new dc0(sc0Var, 0));
+                        sc0Var.u0 = true;
+                        if (sc0Var.v0) {
+                            sc0Var.K.onResume();
+                            break;
+                        }
+                    } catch (Exception e) {
+                        FileLog.e(e);
+                        return;
+                    }
+                }
+                break;
+            default:
+                sc0 sc0Var2 = this.b;
+                IMapsProvider.IMapView iMapView2 = this.c;
+                try {
+                    iMapView2.onCreate(null);
+                } catch (Exception unused) {
+                }
+                AndroidUtilities.runOnUIThread(new cc0(sc0Var2, iMapView2, 0));
+                break;
         }
-    }
-
-    @Override // org.telegram.ui.Components.gu0
-    public final boolean T() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.gu0
-    public final org.telegram.ui.Components.jm0 f() {
-        return this.a.U;
-    }
-
-    @Override // org.telegram.ui.Components.gu0
-    public final TLRPC.Chat g() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.gu0
-    public final boolean h(TLRPC.ChatParticipant chatParticipant, boolean z10, boolean z11, View view) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.gu0
-    public final boolean q() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.gu0
-    public final void C() {
     }
 }

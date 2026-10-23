@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class n7 extends View {
     public final /* synthetic */ t7 a;
@@ -114,11 +114,11 @@ public final class n7 extends View {
             i15++;
             p7 p7Var = (p7) obj2;
             float clamp01 = f22 - Utilities.clamp01(p7Var.c / 0.42f);
-            float z10 = org.telegram.ui.Cells.c1.z(clamp01, clamp01, clamp01, f22);
+            float x10 = org.telegram.ui.Cells.b1.x(clamp01, clamp01, clamp01, f22);
             paint2.setColor(-1);
             paint2.setAlpha((int) (clamp01 * 90.0f));
             paint2.setStrokeWidth(AndroidUtilities.dp(2.4f) * clamp01);
-            canvas.drawCircle(p7Var.a, p7Var.b, com.google.android.gms.internal.play_billing.k3.A(z10, 0.43f, 0.42f, t7Var2.U()), paint2);
+            canvas.drawCircle(p7Var.a, p7Var.b, com.google.android.gms.internal.play_billing.k3.A(x10, 0.43f, 0.42f, t7Var2.U()), paint2);
             arrayList3 = arrayList3;
             size2 = size2;
             f22 = 1.0f;

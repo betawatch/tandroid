@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.TextView;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class hf implements Runnable {
     public final /* synthetic */ int a;
@@ -40,13 +40,13 @@ public final class hf implements Runnable {
                     if (chatActivityEnterView.z3) {
                         if (chatActivityEnterView.R1 != 0) {
                             chatActivityEnterView.j1(currentPage != 0 ? 1 : 2, true);
-                            chatActivityEnterView.J();
+                            chatActivityEnterView.I();
                         } else if (!z11) {
                             chatActivityEnterView.k1(false, true, false, true);
                         }
                     }
                     if (z10 != chatActivityEnterView.x3 || z12 != chatActivityEnterView.y3) {
-                        chatActivityEnterView.I(true);
+                        chatActivityEnterView.F(true);
                         break;
                     }
                 }
@@ -56,12 +56,12 @@ public final class hf implements Runnable {
                 wp wpVar = (wp) callback;
                 s4.n0 layoutManager = wpVar.w.getLayoutManager();
                 if (layoutManager != null) {
-                    int min = i11 > wpVar.Q ? Math.min(i11 + 1, wpVar.h.d.size() - 1) : Math.max(i11 - 1, 0);
-                    qp qpVar = wpVar.H;
-                    qpVar.a = min;
-                    layoutManager.w0(qpVar);
+                    int min = i11 > wpVar.P ? Math.min(i11 + 1, wpVar.h.d.size() - 1) : Math.max(i11 - 1, 0);
+                    rp rpVar = wpVar.G;
+                    rpVar.a = min;
+                    layoutManager.w0(rpVar);
                 }
-                wpVar.Q = i11;
+                wpVar.P = i11;
                 break;
             default:
                 int i12 = this.b;
@@ -83,7 +83,7 @@ public final class hf implements Runnable {
                     x8Var.e = animatorSet;
                     animatorSet.setDuration(150L);
                     ((AnimatorSet) x8Var.e).playTogether(arrayList);
-                    ((AnimatorSet) x8Var.e).addListener(new c80(this, 8));
+                    ((AnimatorSet) x8Var.e).addListener(new i60(this, 9));
                     ((AnimatorSet) x8Var.e).start();
                     break;
                 }

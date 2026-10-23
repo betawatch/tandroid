@@ -1,9 +1,29 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public interface kk0 {
-    void e(ArrayList arrayList);
+public final class kk0 extends s4.r0 {
+    public final /* synthetic */ s4.b0 a;
+    public final /* synthetic */ qk0 b;
+
+    public kk0(qk0 qk0Var, s4.b0 b0Var) {
+        this.b = qk0Var;
+        this.a = b0Var;
+    }
+
+    @Override // s4.r0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        int loadCount;
+        qk0 qk0Var = this.b;
+        if (qk0Var.w && qk0Var.x && !qk0Var.v) {
+            int N0 = this.a.N0();
+            int h = qk0Var.f.h() - 1;
+            loadCount = qk0Var.getLoadCount();
+            if (N0 >= h - loadCount) {
+                qk0Var.c();
+            }
+        }
+    }
 }

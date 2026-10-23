@@ -1,44 +1,29 @@
 package org.telegram.ui.ActionBar;
 
-import android.view.animation.Animation;
-import android.view.animation.Transformation;
+import android.view.View;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class o4 extends Animation {
+public final /* synthetic */ class o4 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ v4 e;
+    public final /* synthetic */ y4 b;
 
-    public /* synthetic */ o4(v4 v4Var, float f7, float f10, int i10, int i11) {
-        this.a = i11;
-        this.e = v4Var;
-        this.b = f7;
-        this.c = f10;
-        this.d = i10;
+    public /* synthetic */ o4(y4 y4Var, int i10) {
+        this.a = i10;
+        this.b = y4Var;
     }
 
-    @Override // android.view.animation.Animation
-    public final void applyTransformation(float f7, Transformation transformation) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                float f10 = this.b;
-                float y3 = com.google.android.gms.internal.play_billing.k3.y(this.c, f10, f7, f10);
-                v4 v4Var = this.e;
-                v4Var.i.setX(y3 + (v4Var.f.getWidth() - this.d));
-                float f11 = 1.0f - f7;
-                v4Var.l.setAlpha(f11);
-                v4Var.j.setAlpha(f11);
+                this.b.g();
+                break;
+            case 1:
+                this.b.g();
                 break;
             default:
-                float f12 = this.b;
-                float y10 = com.google.android.gms.internal.play_billing.k3.y(this.c, f12, f7, f12);
-                v4 v4Var2 = this.e;
-                v4Var2.i.setX(y10 + (v4Var2.f.getWidth() - this.d));
-                v4Var2.l.setAlpha(f7);
-                v4Var2.j.setAlpha(f7);
+                this.b.g();
                 break;
         }
     }

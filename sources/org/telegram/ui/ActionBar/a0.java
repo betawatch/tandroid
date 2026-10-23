@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -19,7 +19,7 @@ public final /* synthetic */ class a0 implements View.OnClickListener {
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
-        g5 g5Var;
+        k5 k5Var;
         switch (this.a) {
             case 0:
                 u0 u0Var = this.b;
@@ -36,11 +36,11 @@ public final /* synthetic */ class a0 implements View.OnClickListener {
                     u0Var.m();
                 } else {
                     TextView textView = u0Var.h;
-                    if (textView != null && textView.getVisibility() == 0 && ((g5Var = u0Var.H) == null || g5Var.a())) {
+                    if (textView != null && textView.getVisibility() == 0 && ((k5Var = u0Var.H) == null || k5Var.a())) {
                         u0Var.h.setVisibility(8);
-                        g5 g5Var2 = u0Var.H;
-                        if (g5Var2 != null) {
-                            g5Var2.k();
+                        k5 k5Var2 = u0Var.H;
+                        if (k5Var2 != null) {
+                            k5Var2.k();
                         }
                     }
                 }
@@ -63,7 +63,7 @@ public final /* synthetic */ class a0 implements View.OnClickListener {
                 } else {
                     q0 q0Var = u0Var2.P;
                     if (q0Var != null) {
-                        q0Var.j(((Integer) view.getTag()).intValue());
+                        q0Var.h(((Integer) view.getTag()).intValue());
                         break;
                     }
                 }
@@ -77,7 +77,7 @@ public final /* synthetic */ class a0 implements View.OnClickListener {
                 } else {
                     q0 q0Var2 = u0Var3.P;
                     if (q0Var2 != null) {
-                        q0Var2.j(((Integer) view.getTag()).intValue());
+                        q0Var2.h(((Integer) view.getTag()).intValue());
                         break;
                     }
                 }
@@ -101,7 +101,7 @@ public final /* synthetic */ class a0 implements View.OnClickListener {
                 } else {
                     q0 q0Var3 = u0Var4.P;
                     if (q0Var3 != null) {
-                        q0Var3.j(((Integer) view.getTag()).intValue());
+                        q0Var3.h(((Integer) view.getTag()).intValue());
                         break;
                     }
                 }

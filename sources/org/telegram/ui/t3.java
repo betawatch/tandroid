@@ -1,11 +1,47 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.tl.TL_iv;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class t3 {
-    public int a;
-    public Object b;
-    public TL_iv.PageBlock c;
+public final /* synthetic */ class t3 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ w3 b;
+
+    public /* synthetic */ t3(w3 w3Var, int i10) {
+        this.a = i10;
+        this.b = w3Var;
+    }
+
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                w3 w3Var = this.b;
+                w3Var.I = floatValue;
+                w3Var.c.invalidate();
+                w3Var.i();
+                w3Var.h();
+                break;
+            case 1:
+                w3 w3Var2 = this.b;
+                w3Var2.getClass();
+                w3Var2.w = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                w3Var2.n();
+                w3Var2.i();
+                w3Var2.h();
+                break;
+            default:
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                w3 w3Var3 = this.b;
+                w3Var3.x = floatValue2;
+                if (!w3Var3.n) {
+                    w3Var3.n();
+                }
+                w3Var3.i();
+                w3Var3.h();
+                break;
+        }
+    }
 }

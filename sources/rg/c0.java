@@ -1,66 +1,31 @@
 package rg;
 
-import org.telegram.ui.gt0;
-import org.telegram.ui.qq0;
+import android.content.Context;
+import android.graphics.Bitmap;
+import org.telegram.ui.jt0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class c0 implements qg.e1 {
-    public final /* synthetic */ qq0 a;
-    public final /* synthetic */ gt0 b;
+public final class c0 extends qg.e1 {
+    public final /* synthetic */ Bitmap E;
+    public final /* synthetic */ jt0 F;
 
-    public c0(gt0 gt0Var, qq0 qq0Var) {
-        this.b = gt0Var;
-        this.a = qq0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c0(jt0 jt0Var, Context context, qg.s0 s0Var, Bitmap bitmap, Bitmap bitmap2) {
+        super(context, s0Var, bitmap, null, null);
+        this.F = jt0Var;
+        this.E = bitmap2;
     }
 
     @Override // qg.e1
-    public final void a() {
-        this.a.run();
-    }
-
-    @Override // qg.e1
-    public final void b() {
-        d0 d0Var = this.b.X0;
-        if (d0Var != null) {
-            d0Var.invalidate();
+    public final void g(qg.m mVar) {
+        int indexOf = qg.m.a.indexOf(mVar);
+        int i10 = indexOf + 1;
+        if (i10 <= 1 || this.E != null) {
+            indexOf = i10;
         }
-    }
-
-    @Override // qg.e1
-    public final void c() {
-        gt0 gt0Var = this.b;
-        if (gt0Var.k1) {
-            gt0Var.k1 = false;
-        } else {
-            gt0Var.t1.b(1);
-            gt0Var.o((qg.m) qg.m.a.get(0));
-        }
-    }
-
-    @Override // qg.e1
-    public final boolean d() {
-        gt0 gt0Var = this.b;
-        boolean z10 = gt0Var.S0 == null;
-        if (!z10) {
-            gt0Var.s0(null, true);
-        }
-        return z10;
-    }
-
-    @Override // qg.e1
-    public final void e() {
-        gt0 gt0Var = this.b;
-        gt0Var.F0.a.e();
-        gt0Var.l1.setViewHidden(false);
-    }
-
-    @Override // qg.e1
-    public final void f() {
-        gt0 gt0Var = this.b;
-        if (gt0Var.S0 != null) {
-            gt0Var.s0(null, true);
-        }
-        gt0Var.l1.setViewHidden(true);
+        jt0 jt0Var = this.F;
+        jt0Var.t1.b(indexOf);
+        jt0Var.n(mVar);
     }
 }

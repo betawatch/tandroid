@@ -1,41 +1,16 @@
 package org.telegram.ui;
 
-import android.content.ClipData;
-import android.content.ClipboardManager;
-import android.text.style.ClickableSpan;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class bx0 extends ClickableSpan {
-    public final /* synthetic */ String a;
-    public final /* synthetic */ cx0 b;
+public final class bx0 extends s4.k {
+    public final /* synthetic */ PrivacyControlActivity F;
 
-    public bx0(cx0 cx0Var, String str) {
-        this.b = cx0Var;
-        this.a = str;
+    public bx0(PrivacyControlActivity privacyControlActivity) {
+        this.F = privacyControlActivity;
     }
 
-    @Override // android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        org.telegram.ui.Components.qc b10;
-        ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", this.a));
-        org.telegram.ui.Components.xc a02 = org.telegram.ui.Components.xc.a0(this.b.d);
-        String string = LocaleController.getString(R.string.LinkCopied);
-        org.telegram.ui.ActionBar.d6 resourceProvider = this.b.d.getResourceProvider();
-        a02.getClass();
-        if (AndroidUtilities.shouldShowClipboardToast()) {
-            org.telegram.ui.Components.yb ybVar = new org.telegram.ui.Components.yb(a02.W(), resourceProvider);
-            ybVar.c(R.raw.voip_invite, 36, 36, "Wibe", "Circle");
-            ybVar.b.setText(string);
-            b10 = a02.b(ybVar, 1500);
-        } else {
-            b10 = new org.telegram.ui.Components.pb();
-        }
-        b10.j();
+    @Override // s4.k
+    public final void P(s4.b1 b1Var) {
+        this.F.e.invalidate();
     }
 }

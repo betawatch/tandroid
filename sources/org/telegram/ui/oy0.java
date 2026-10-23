@@ -1,66 +1,45 @@
 package org.telegram.ui;
 
-import androidx.recyclerview.widget.RecyclerView;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class oy0 extends s4.r0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ProfileActivity b;
+public final class oy0 extends s4.b0 {
+    public final /* synthetic */ ProfileActivity I;
 
-    public /* synthetic */ oy0(ProfileActivity profileActivity, int i10) {
-        this.a = i10;
-        this.b = profileActivity;
+    public oy0(ProfileActivity profileActivity) {
+        this.I = profileActivity;
     }
 
-    @Override // s4.r0
-    public final void a(RecyclerView recyclerView, int i10) {
-        switch (this.a) {
-            case 0:
-                if (i10 == 1) {
-                    AndroidUtilities.hideKeyboard(this.b.getParentActivity().getCurrentFocus());
-                    break;
+    @Override // s4.b0, s4.n0
+    public final int o0(int i10, qf.e eVar, s4.y0 y0Var) {
+        ProfileActivity profileActivity = this.I;
+        View m10 = profileActivity.c.m(0);
+        if (m10 != null && !profileActivity.G0) {
+            int top = m10.getTop() - profileActivity.V3();
+            boolean z10 = profileActivity.p2;
+            if (z10 || top <= i10) {
+                if (z10) {
+                    if (i10 >= top) {
+                        profileActivity.p2 = false;
+                    } else if (profileActivity.a.getScrollState() == 1 && !profileActivity.q2) {
+                        i10 /= 2;
+                    }
                 }
-                break;
-            default:
-                ProfileActivity profileActivity = this.b;
-                if (i10 == 1) {
-                    AndroidUtilities.hideKeyboard(profileActivity.getParentActivity().getCurrentFocus());
-                }
-                if (profileActivity.G0 && i10 != 2) {
-                    profileActivity.G0 = false;
-                }
-                org.telegram.ui.ActionBar.u0 u0Var = profileActivity.V0;
-                if (u0Var != null) {
-                    boolean z10 = i10 != 0;
-                    profileActivity.A1 = z10;
-                    u0Var.setEnabled((z10 || profileActivity.q2) ? false : true);
-                }
-                nz0 nz0Var = profileActivity.O;
-                boolean z11 = profileActivity.a.I1;
-                nz0Var.getClass();
-                break;
+            } else if (!profileActivity.o0.X0.isEmpty() && profileActivity.f0.getImageReceiver().hasNotThumb() && !AndroidUtilities.isAccessibilityScreenReaderEnabled() && ((!profileActivity.o2 && !AndroidUtilities.isTablet()) || profileActivity.J0)) {
+                profileActivity.p2 = profileActivity.K2 == null;
+            }
+            i10 = top;
         }
+        if (!profileActivity.P1 || profileActivity.a.P0) {
+            return super.o0(i10, eVar, y0Var);
+        }
+        return 0;
     }
 
-    @Override // s4.r0
-    public void b(RecyclerView recyclerView, int i10, int i11) {
-        switch (this.a) {
-            case 1:
-                ProfileActivity profileActivity = this.b;
-                org.telegram.ui.Components.r40 r40Var = profileActivity.X;
-                if (r40Var != null) {
-                    r40Var.b(true);
-                }
-                profileActivity.A3();
-                if (profileActivity.D1 != null && !profileActivity.E1 && profileActivity.c.N0() > profileActivity.w4 - 8) {
-                    profileActivity.R3(false);
-                }
-                nz0 nz0Var = profileActivity.O;
-                nz0Var.setPinnedToTop(nz0Var.getY() <= 0.0f);
-                profileActivity.U4();
-                break;
-        }
+    @Override // s4.b0, s4.n0
+    public final boolean y0() {
+        return this.I.r0 != null;
     }
 }

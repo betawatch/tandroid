@@ -1,140 +1,41 @@
 package rg;
 
-import ai.wa;
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.jm0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public abstract class i1 extends jm0 {
-    public static final Paint a3;
-    public static final Paint b3;
-    public static final Path c3;
-    public static final Paint d3;
-    public final Paint V2;
-    public final Paint W2;
-    public int X2;
-    public qg.v0 Y2;
-    public q0.a Z2;
+public final class i1 extends View {
+    public int a;
+    public float b;
+    public final /* synthetic */ j1 c;
 
-    static {
-        Paint paint = new Paint(1);
-        a3 = paint;
-        Paint paint2 = new Paint(1);
-        b3 = paint2;
-        paint.setColor(-2013265920);
-        paint2.setColor(-1996488705);
-        c3 = new Path();
-        d3 = new Paint(1);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public i1(j1 j1Var, Context context) {
+        super(context);
+        this.c = j1Var;
+        setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
+        setLayoutParams(new s4.o0(-2, 0));
     }
 
-    public i1(Context context) {
-        super(context, null);
-        this.V2 = new Paint(1);
-        Paint paint = new Paint(1);
-        this.W2 = paint;
-        this.X2 = -1;
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(AndroidUtilities.dp(2.0f));
-        setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
-        setLayoutManager(new s4.s(7));
-        setAdapter(new g1(this, context));
-        setOverScrollMode(2);
-        setOnItemClickListener(new wa(this, 19));
-    }
-
-    public static void x1(Canvas canvas, RectF rectF, int i10) {
-        float f7 = rectF.left;
-        while (f7 <= rectF.right) {
-            float f10 = rectF.top;
-            while (f10 <= rectF.bottom) {
-                float f11 = i10;
-                float f12 = f7 + f11;
-                float f13 = f10 + f11;
-                Paint paint = a3;
-                Canvas canvas2 = canvas;
-                canvas2.drawRect(f7, f10, f12, f13, paint);
-                float f14 = i10 * 2;
-                float f15 = f7 + f14;
-                Paint paint2 = b3;
-                float f16 = f10;
-                canvas2.drawRect(f12, f16, f15, f13, paint2);
-                float f17 = f16 + f14;
-                canvas2.drawRect(f12, f13, f15, f17, paint);
-                canvas2.drawRect(f7, f13, f12, f17, paint2);
-                canvas = canvas2;
-                f10 = f17;
-            }
-            f7 += i10 * 2;
-            canvas = canvas;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        j1 j1Var = this.c;
+        j1Var.Y2.setColor(this.a);
+        float min = Math.min((getWidth() - getPaddingLeft()) - getPaddingRight(), (getHeight() - getPaddingTop()) - getPaddingBottom()) / 2.0f;
+        if (this.b != 0.0f) {
+            min -= (j1Var.Z2.getStrokeWidth() + AndroidUtilities.dp(3.0f)) * this.b;
         }
-    }
-
-    public static void y1(float f7, float f10, float f11, int i10, Canvas canvas) {
-        Paint paint = d3;
-        paint.setColor(i10);
-        if (paint.getAlpha() == 255) {
-            canvas.drawCircle(f7, f10, f11, paint);
-            return;
+        float width = ((getWidth() / 2.0f) + getPaddingLeft()) - getPaddingRight();
+        float height = ((getHeight() / 2.0f) + getPaddingTop()) - getPaddingBottom();
+        j1.D1(width, height, min, this.a, canvas);
+        if (this.b != 0.0f) {
+            j1Var.Z2.setColor(this.a);
+            j1Var.Z2.setAlpha(255);
+            canvas.drawCircle(width, height, (Math.min((getWidth() - getPaddingLeft()) - getPaddingRight(), (getHeight() - getPaddingTop()) - getPaddingBottom()) / 2.0f) - AndroidUtilities.dp(2.0f), j1Var.Z2);
         }
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(f7 - f11, f10 - f11, f7 + f11, f10 + f11);
-        paint.setAlpha(255);
-        canvas.drawArc(rectF, -45.0f, -180.0f, true, paint);
-        Path path = c3;
-        path.rewind();
-        path.moveTo(rectF.centerX(), rectF.centerY());
-        path.lineTo((float) i2.e.f(-1.5707963267948966d, rectF.width() / 2.0f, rectF.centerX()), (float) ((Math.sin(-1.5707963267948966d) * (rectF.height() / 2.0f)) + rectF.centerY()));
-        path.moveTo(rectF.centerX(), rectF.centerY());
-        path.lineTo((float) i2.e.f(4.71238898038469d, rectF.width() / 2.0f, rectF.centerX()), (float) ((Math.sin(4.71238898038469d) * (rectF.height() / 2.0f)) + rectF.centerY()));
-        path.addArc(rectF, -45.0f, 180.0f);
-        canvas.save();
-        canvas.clipPath(path);
-        x1(canvas, rectF, AndroidUtilities.dp(4.0f));
-        canvas.restore();
-        paint.setColor(i10);
-        canvas.drawArc(rectF, -45.0f, 180.0f, true, paint);
-    }
-
-    public int getSelectedColorIndex() {
-        return this.X2;
-    }
-
-    public void setColorListener(q0.a aVar) {
-        this.Z2 = aVar;
-    }
-
-    public void setColorPalette(qg.v0 v0Var) {
-        this.Y2 = v0Var;
-        getAdapter().l();
-    }
-
-    public void setSelectedColorIndex(int i10) {
-        this.X2 = i10;
-        getAdapter().l();
-    }
-
-    public final void z1(float f7, boolean z10) {
-        float interpolation = z10 ? bs.g.getInterpolation(f7) : bs.i.getInterpolation(f7);
-        float childCount = 1.0f / (getChildCount() - 1);
-        for (int i10 = 0; i10 < getChildCount(); i10++) {
-            View childAt = getChildAt(i10);
-            if (i10 == 0) {
-                childAt.setAlpha(interpolation == 1.0f ? 1.0f : 0.0f);
-            } else {
-                float f10 = i10 * childCount;
-                float min = Math.min(interpolation, f10) / f10;
-                childAt.setScaleX(min);
-                childAt.setScaleY(min);
-            }
-        }
-        invalidate();
     }
 }

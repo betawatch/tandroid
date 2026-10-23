@@ -5,7 +5,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.view.View;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class m9 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -33,14 +33,14 @@ public final class m9 extends AnimatorListenerAdapter {
                         n9Var.h.clear();
                         n9Var.b = null;
                         n9Var.c = false;
-                        o9Var.a.setAllowDrawCursor(true);
-                        a9 a9Var = o9Var.f;
+                        o9Var.b.setAllowDrawCursor(true);
+                        a9 a9Var = o9Var.h;
                         if (a9Var != null) {
                             a9Var.run();
                         }
-                        if (o9Var.K) {
+                        if (o9Var.L) {
                             o9Var.fullScroll(130);
-                            o9Var.K = false;
+                            o9Var.L = false;
                             break;
                         }
                     } else {
@@ -61,14 +61,14 @@ public final class m9 extends AnimatorListenerAdapter {
                         arrayList3.clear();
                         n9Var2.b = null;
                         n9Var2.c = false;
-                        o9Var2.a.setAllowDrawCursor(true);
-                        a9 a9Var2 = o9Var2.f;
+                        o9Var2.b.setAllowDrawCursor(true);
+                        a9 a9Var2 = o9Var2.h;
                         if (a9Var2 != null) {
                             a9Var2.run();
                         }
-                        if (o9Var2.K) {
+                        if (o9Var2.L) {
                             o9Var2.fullScroll(130);
-                            o9Var2.K = false;
+                            o9Var2.L = false;
                             break;
                         }
                     } else {

@@ -7,7 +7,7 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 final class AudioRecorderV2Controller {
     private boolean finishRequested;
@@ -20,7 +20,7 @@ final class AudioRecorderV2Controller {
     private final HashSet<Long> deliveredOutputIds = new HashSet<>();
     private ri.m previousState = ri.m.a;
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public interface Listener {
         void onCompleted(ri.l lVar);
 
@@ -43,15 +43,15 @@ final class AudioRecorderV2Controller {
 
     public AudioRecorderV2Controller(Context context, File file, final Listener listener) {
         this.listener = listener;
-        ci.p4 p4Var = new ci.p4(context, 2);
-        p4Var.c = file;
+        ci.o4 o4Var = new ci.o4(context, 2);
+        o4Var.c = file;
         ri.h hVar = (ri.h) ti.e.c.a();
         if (hVar == null) {
             throw new IllegalArgumentException("Noise suppression mode is required");
         }
-        p4Var.d = hVar;
-        p4Var.a = false;
-        p4Var.e = new ri.f() { // from class: org.telegram.messenger.AudioRecorderV2Controller.3
+        o4Var.d = hVar;
+        o4Var.a = false;
+        o4Var.e = new ri.f() { // from class: org.telegram.messenger.AudioRecorderV2Controller.3
             @Override // ri.f
             public void onCompleted(ri.l lVar) {
                 listener.onCompleted(lVar);
@@ -118,8 +118,8 @@ final class AudioRecorderV2Controller {
             public /* bridge */ /* synthetic */ void onPreviewProgress(long j10, long j11) {
             }
         };
-        p4Var.f = new 2(listener);
-        p4Var.g = new ri.g() { // from class: org.telegram.messenger.AudioRecorderV2Controller.1
+        o4Var.f = new 2(listener);
+        o4Var.g = new ri.g() { // from class: org.telegram.messenger.AudioRecorderV2Controller.1
             @Override // ri.g
             public void error(String str, Throwable th2) {
                 FileLog.e("AudioRecorderV2 " + str, th2);
@@ -132,13 +132,13 @@ final class AudioRecorderV2Controller {
                 }
             }
         };
-        if (((ri.f) p4Var.e) == null) {
+        if (((ri.f) o4Var.e) == null) {
             throw new IllegalStateException("Session listener is required");
         }
-        if (((ri.k) p4Var.f) == null) {
+        if (((ri.k) o4Var.f) == null) {
             throw new IllegalStateException("Output listener is required");
         }
-        this.session = new ri.o(p4Var);
+        this.session = new ri.o(o4Var);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -230,9 +230,9 @@ final class AudioRecorderV2Controller {
         }
         oVar.s = max;
         oVar.t = max2;
-        i2.i0 i0Var = oVar.B;
-        if (i0Var != null) {
-            i0Var.Z0(5, max);
+        i2.h0 h0Var = oVar.B;
+        if (h0Var != null) {
+            h0Var.Z0(5, max);
         }
         fVar.onPreviewProgress(oVar.s, j12);
         fVar.onStateChanged(oVar.e());
@@ -301,7 +301,7 @@ final class AudioRecorderV2Controller {
         return false;
     }
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public class 2 implements ri.k {
         final /* synthetic */ Listener val$listener;
 

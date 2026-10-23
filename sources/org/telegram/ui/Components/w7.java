@@ -4,7 +4,7 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class w7 extends s4.v {
     public final /* synthetic */ k8 d;
@@ -34,16 +34,16 @@ public final class w7 extends s4.v {
         int b10 = b1Var.b();
         int b11 = b1Var2.b();
         k8 k8Var = this.d;
-        if (!k8Var.v0) {
-            k8Var.w0.move(b10, b11);
+        if (!k8Var.u0) {
+            k8Var.v0.move(b10, b11);
         } else {
             if (b10 <= 0 || b11 <= 0) {
                 return false;
             }
-            k8Var.w0.move(b10 - 1, b11 - 1);
+            k8Var.v0.move(b10 - 1, b11 - 1);
         }
-        k8Var.x0.clear();
-        k8Var.x0.addAll(k8Var.w0.list);
+        k8Var.w0.clear();
+        k8Var.w0.addAll(k8Var.v0.list);
         k8Var.s.p(b10, b11);
         return true;
     }
@@ -52,7 +52,7 @@ public final class w7 extends s4.v {
     public final void p(s4.b1 b1Var, int i10) {
         v7 v7Var = this.d.n;
         if (b1Var != null) {
-            v7Var.d1(false);
+            v7Var.e1(false);
         }
         if (i10 != 0) {
             v7Var.I0(false);

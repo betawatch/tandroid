@@ -1,165 +1,206 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
+import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
+import java.util.ArrayList;
 import java.util.TreeSet;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class kr implements Runnable {
-    public final /* synthetic */ e2 E;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f3 F;
+    public final /* synthetic */ Utilities.Callback E;
+    public final /* synthetic */ org.telegram.ui.ActionBar.h3 F;
+    public final /* synthetic */ d2 G;
+    public final /* synthetic */ org.telegram.ui.ActionBar.g6 H;
+    public final /* synthetic */ org.telegram.ui.Cells.e9 I;
+    public final /* synthetic */ Context J;
     public final /* synthetic */ boolean[] a;
     public final /* synthetic */ int[] b;
-    public final /* synthetic */ ai.cb c;
-    public final /* synthetic */ String[] d;
-    public final /* synthetic */ ei.d e;
-    public final /* synthetic */ org.telegram.ui.Cells.i3 f;
-    public final /* synthetic */ TreeSet h;
-    public final /* synthetic */ lg n;
-    public final /* synthetic */ org.telegram.ui.Cells.d9 r;
-    public final /* synthetic */ org.telegram.ui.ActionBar.d6 s;
-    public final /* synthetic */ int[] v;
-    public final /* synthetic */ Runnable[] w;
-    public final /* synthetic */ int[] x;
-    public final /* synthetic */ int y;
+    public final /* synthetic */ org.telegram.ui.Cells.h3 c;
+    public final /* synthetic */ TreeSet d;
+    public final /* synthetic */ String[] e;
+    public final /* synthetic */ jr f;
+    public final /* synthetic */ org.telegram.ui.Cells.h3 h;
+    public final /* synthetic */ int[] n;
+    public final /* synthetic */ ai.db r;
+    public final /* synthetic */ ei.d s;
+    public final /* synthetic */ boolean v;
+    public final /* synthetic */ int w;
+    public final /* synthetic */ TLRPC.User x;
+    public final /* synthetic */ boolean[] y;
 
-    public /* synthetic */ kr(boolean[] zArr, int[] iArr, ai.cb cbVar, String[] strArr, ei.d dVar, org.telegram.ui.Cells.i3 i3Var, TreeSet treeSet, lg lgVar, org.telegram.ui.Cells.d9 d9Var, org.telegram.ui.ActionBar.d6 d6Var, int[] iArr2, Runnable[] runnableArr, int[] iArr3, int i10, e2 e2Var, org.telegram.ui.ActionBar.f3 f3Var) {
+    public /* synthetic */ kr(boolean[] zArr, int[] iArr, org.telegram.ui.Cells.h3 h3Var, TreeSet treeSet, String[] strArr, jr jrVar, org.telegram.ui.Cells.h3 h3Var2, int[] iArr2, ai.db dbVar, ei.d dVar, boolean z10, int i10, TLRPC.User user, boolean[] zArr2, Utilities.Callback callback, org.telegram.ui.ActionBar.h3 h3Var3, d2 d2Var, org.telegram.ui.ActionBar.g6 g6Var, org.telegram.ui.Cells.e9 e9Var, Context context) {
         this.a = zArr;
         this.b = iArr;
-        this.c = cbVar;
-        this.d = strArr;
-        this.e = dVar;
-        this.f = i3Var;
-        this.h = treeSet;
-        this.n = lgVar;
-        this.r = d9Var;
-        this.s = d6Var;
-        this.v = iArr2;
-        this.w = runnableArr;
-        this.x = iArr3;
-        this.y = i10;
-        this.E = e2Var;
-        this.F = f3Var;
+        this.c = h3Var;
+        this.d = treeSet;
+        this.e = strArr;
+        this.f = jrVar;
+        this.h = h3Var2;
+        this.n = iArr2;
+        this.r = dbVar;
+        this.s = dVar;
+        this.v = z10;
+        this.w = i10;
+        this.x = user;
+        this.y = zArr2;
+        this.E = callback;
+        this.F = h3Var3;
+        this.G = d2Var;
+        this.H = g6Var;
+        this.I = e9Var;
+        this.J = context;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
+        final org.telegram.ui.Cells.h3 h3Var = this.h;
+        org.telegram.ui.Cells.f3 f3Var = h3Var.d;
         final boolean[] zArr = this.a;
-        if (zArr[0] || this.b[0] >= 0) {
+        if (zArr[0]) {
             return;
         }
-        this.c.run();
-        final String[] strArr = this.d;
-        strArr[0] = null;
-        final ei.d dVar = this.e;
-        dVar.setLoading(false);
-        dVar.setEnabled(false);
-        String charSequence = this.f.getText().toString();
+        final int[] iArr = this.b;
+        if (iArr[0] >= 0) {
+            return;
+        }
+        final org.telegram.ui.Cells.h3 h3Var2 = this.c;
+        String charSequence = h3Var2.getText().toString();
         StringBuilder u10 = a1.g.u(charSequence);
         boolean a2 = nr.a(charSequence, "bot");
-        final TreeSet treeSet = this.h;
+        final TreeSet treeSet = this.d;
         u10.append((a2 || nr.c(charSequence, treeSet) != null) ? "" : "bot");
-        final String sb2 = u10.toString();
-        boolean isEmpty = TextUtils.isEmpty(charSequence);
-        final lg lgVar = this.n;
+        String sb2 = u10.toString();
+        final String[] strArr = this.e;
+        if (!TextUtils.equals(strArr[0], sb2)) {
+            this.f.run();
+            return;
+        }
+        String trim = f3Var.getText().toString().trim();
+        boolean isEmpty = TextUtils.isEmpty(trim);
+        final int[] iArr2 = this.n;
         if (isEmpty) {
-            lgVar.run();
+            int i10 = -iArr2[0];
+            iArr2[0] = i10;
+            AndroidUtilities.shakeViewSpring(h3Var, i10);
             return;
         }
-        int length = sb2.length();
-        final org.telegram.ui.Cells.d9 d9Var = this.r;
-        final org.telegram.ui.ActionBar.d6 d6Var = this.s;
-        if (length < 4 || sb2.length() > 32) {
-            d9Var.setText(LocaleController.getString(sb2.length() < 4 ? R.string.UsernameInvalidShort : R.string.UsernameInvalidLong));
-            d9Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.q7, d6Var));
-            return;
-        }
-        d9Var.setText(LocaleController.getString(R.string.UsernameChecking));
-        d9Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.B6, d6Var));
-        final int[] iArr = this.v;
-        final int i10 = iArr[0];
-        final Runnable[] runnableArr = this.w;
-        final int[] iArr2 = this.x;
-        final int i11 = this.y;
-        final e2 e2Var = this.E;
-        final org.telegram.ui.ActionBar.f3 f3Var = this.F;
-        Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.hr
-            @Override // java.lang.Runnable
-            public final void run() {
-                runnableArr[0] = null;
-                final boolean[] zArr2 = zArr;
-                if (zArr2[0]) {
+        this.r.run();
+        final ei.d dVar = this.s;
+        dVar.setLoading(true);
+        dVar.setEnabled(false);
+        f3Var.setEnabled(false);
+        h3Var2.d.setEnabled(false);
+        final TL_bots.createBot createbot = new TL_bots.createBot();
+        createbot.via_deeplink = this.v;
+        createbot.username = strArr[0];
+        createbot.name = trim;
+        final int i11 = this.w;
+        MessagesController messagesController = MessagesController.getInstance(i11);
+        final TLRPC.User user = this.x;
+        createbot.manager_id = messagesController.getInputUser(user);
+        ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i11);
+        org.telegram.messenger.a aVar = new org.telegram.messenger.a();
+        final boolean[] zArr2 = this.y;
+        final Utilities.Callback callback = this.E;
+        final org.telegram.ui.ActionBar.h3 h3Var3 = this.F;
+        final d2 d2Var = this.G;
+        final org.telegram.ui.ActionBar.g6 g6Var = this.H;
+        final org.telegram.ui.Cells.e9 e9Var = this.I;
+        final Context context = this.J;
+        iArr[0] = connectionsManager.sendRequestTyped(createbot, aVar, new Utilities.Callback2() { // from class: org.telegram.ui.Components.hr
+            @Override // org.telegram.messenger.Utilities.Callback2
+            public final void run(Object obj, Object obj2) {
+                String userName;
+                TLRPC.User user2 = (TLRPC.User) obj;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
+                if (zArr[0]) {
                     return;
                 }
-                final int[] iArr3 = iArr;
-                int i12 = iArr3[0];
-                final int i13 = i10;
-                if (i13 != i12) {
+                iArr[0] = -1;
+                ei.d dVar2 = dVar;
+                dVar2.setLoading(false);
+                dVar2.setEnabled(true);
+                h3Var.d.setEnabled(true);
+                h3Var2.d.setEnabled(true);
+                int i12 = i11;
+                org.telegram.ui.ActionBar.h3 h3Var4 = h3Var3;
+                if (user2 != null) {
+                    zArr2[0] = true;
+                    MessagesController.getInstance(i12).putUser(user2, false);
+                    ArrayList arrayList = new ArrayList();
+                    arrayList.add(user2);
+                    MessagesStorage.getInstance(i12).putUsersAndChats(arrayList, null, false, false);
+                    callback.run(user2);
+                    h3Var4.dismiss();
                     return;
                 }
-                TL_bots.checkUsername checkusername = new TL_bots.checkUsername();
-                final String str = sb2;
-                checkusername.username = str;
-                final int i14 = i11;
-                ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i14);
-                org.telegram.messenger.a aVar = new org.telegram.messenger.a();
-                final int[] iArr4 = iArr2;
-                final String[] strArr2 = strArr;
-                final ei.d dVar2 = dVar;
-                final lg lgVar2 = lgVar;
-                final TreeSet treeSet2 = treeSet;
-                final e2 e2Var2 = e2Var;
-                final org.telegram.ui.ActionBar.d6 d6Var2 = d6Var;
-                final org.telegram.ui.Cells.d9 d9Var2 = d9Var;
-                final org.telegram.ui.ActionBar.f3 f3Var2 = f3Var;
-                iArr4[0] = connectionsManager.sendRequestTyped(checkusername, aVar, new Utilities.Callback2() { // from class: org.telegram.ui.Components.jr
-                    @Override // org.telegram.messenger.Utilities.Callback2
-                    public final void run(Object obj, Object obj2) {
-                        TLRPC.Bool bool = (TLRPC.Bool) obj;
-                        TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
-                        if (zArr2[0]) {
-                            return;
+                if (tL_error != null) {
+                    String str = createbot.username;
+                    String str2 = tL_error.text;
+                    TreeSet treeSet2 = treeSet;
+                    d2 d2Var2 = d2Var;
+                    org.telegram.ui.ActionBar.g6 g6Var2 = g6Var;
+                    CharSequence d = nr.d(i12, str, treeSet2, str2, d2Var2, g6Var2);
+                    if (d != null) {
+                        strArr[0] = null;
+                        dVar2.setEnabled(false);
+                        org.telegram.ui.Cells.e9 e9Var2 = e9Var;
+                        e9Var2.setText(d);
+                        org.telegram.ui.ActionBar.r6.W(e9Var2.getTextView(), org.telegram.ui.ActionBar.k6.q7, g6Var2);
+                        int[] iArr3 = iArr2;
+                        int i13 = -iArr3[0];
+                        iArr3[0] = i13;
+                        AndroidUtilities.shakeViewSpring(e9Var2, i13);
+                    } else if ("BOT_CREATE_LIMIT_EXCEEDED".equalsIgnoreCase(tL_error.text)) {
+                        MessagesController messagesController2 = MessagesController.getInstance(i12);
+                        boolean isPremium = UserConfig.getInstance(i12).isPremium();
+                        xc xcVar = new xc(h3Var4.topBulletinContainer, g6Var2);
+                        int i14 = R.raw.error;
+                        String string = LocaleController.getString(R.string.CreateManagedBotLimitTitle);
+                        SpannableStringBuilder replaceSingleLink = AndroidUtilities.replaceSingleLink(isPremium ? LocaleController.formatString(R.string.CreateManagedBotLimitText, Integer.valueOf(messagesController2.config.botsCreateLimitPremium.get())) : LocaleController.formatString(R.string.CreateManagedBotLimitTextPremium, Integer.valueOf(messagesController2.config.botsCreateLimitPremium.get()), Integer.valueOf(messagesController2.config.botsCreateLimitDefault.get())), org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Gi, g6Var2), new zp(h3Var4, 3));
+                        ee eeVar = new ee(23, h3Var4, context);
+                        if (replaceSingleLink == null) {
+                            replaceSingleLink = new SpannableStringBuilder(replaceSingleLink);
                         }
-                        if (i13 != iArr3[0]) {
-                            return;
+                        int charSequenceIndexOf = AndroidUtilities.charSequenceIndexOf(replaceSingleLink, "@BotFather");
+                        if (charSequenceIndexOf >= 0) {
+                            replaceSingleLink.setSpan(new org.telegram.ui.Cells.i(g6Var2, eeVar, 6), charSequenceIndexOf, charSequenceIndexOf + 10, 33);
                         }
-                        iArr4[0] = -1;
-                        boolean z10 = bool instanceof TLRPC.TL_boolTrue;
-                        String str2 = str;
-                        ei.d dVar3 = dVar2;
-                        if (z10) {
-                            strArr2[0] = str2;
-                            dVar3.setEnabled(true);
-                            lgVar2.run();
-                            return;
+                        qc M = xcVar.M(string, replaceSingleLink, i14);
+                        M.j = 8000;
+                        M.j();
+                    } else {
+                        String str3 = tL_error.text;
+                        if (str3 != null && str3.startsWith("FLOOD_WAIT_")) {
+                            new xc(h3Var4.topBulletinContainer, g6Var2).M(LocaleController.getString(R.string.CreateManagedBotLimitTitle), LocaleController.formatString(R.string.CreateManagedBotLimitTextTime, LocaleController.formatDuration(Integer.parseInt(tL_error.text.substring(11)))), R.raw.error).j();
+                        } else if ("MANAGER_PERMISSION_MISSING".equalsIgnoreCase(tL_error.text)) {
+                            TLRPC.User user3 = user;
+                            if (TextUtils.isEmpty(UserObject.getPublicUsername(user3))) {
+                                userName = UserObject.getUserName(user3);
+                            } else {
+                                userName = "@" + UserObject.getPublicUsername(user3);
+                            }
+                            new xc(h3Var4.topBulletinContainer, g6Var2).Q(R.raw.error, 36, AndroidUtilities.replaceSingleLinkBold(LocaleController.formatString(R.string.CreateManagedBotUnsupported, userName), org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Gi, g6Var2))).j();
+                        } else {
+                            org.telegram.ui.Cells.b1.s(h3Var4.topBulletinContainer, g6Var2, tL_error, false);
                         }
-                        String str3 = tL_error == null ? "USERNAME_OCCUPIED" : tL_error.text;
-                        int i15 = i14;
-                        TreeSet treeSet3 = treeSet2;
-                        e2 e2Var3 = e2Var2;
-                        org.telegram.ui.ActionBar.d6 d6Var3 = d6Var2;
-                        CharSequence d = nr.d(i15, str2, treeSet3, str3, e2Var3, d6Var3);
-                        CharSequence string = d != null ? d : LocaleController.getString(R.string.CreateManagedBotUsernameCheckFailed);
-                        org.telegram.ui.Cells.d9 d9Var3 = d9Var2;
-                        d9Var3.setText(string);
-                        d9Var3.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.q7, d6Var3));
-                        if (d != null || tL_error == null) {
-                            return;
-                        }
-                        dVar3.setEnabled(true);
-                        org.telegram.ui.Cells.c1.t(f3Var2.topBulletinContainer, d6Var3, tL_error, false);
                     }
-                });
+                    AndroidUtilities.hideKeyboard(h3Var4.getCurrentFocus());
+                }
             }
-        };
-        runnableArr[0] = runnable;
-        AndroidUtilities.runOnUIThread(runnable, 300L);
+        }, 1024);
     }
 }

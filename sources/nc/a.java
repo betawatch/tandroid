@@ -1,12 +1,13 @@
 package nc;
 
 import androidx.car.app.navigation.model.Maneuver;
+import i2.o1;
 import java.nio.ByteBuffer;
 import java.util.Arrays;
 import java.util.HashMap;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class a extends b {
     public static final HashMap U;
@@ -84,20 +85,20 @@ public final class a extends b {
         hashMap2.put(10, "(reserved)");
         hashMap2.put(11, "(reserved)");
         hashMap2.put(12, "TTSI");
-        i2.e.q(13, hashMap2, "Main synthetic", 14, "Wavetable synthesis");
-        i2.e.q(15, hashMap2, "General MIDI", 16, "Algorithmic Synthesis and Audio FX");
-        i2.e.q(17, hashMap2, "ER AAC LC", 18, "(reserved)");
-        i2.e.q(19, hashMap2, "ER AAC LTP", 20, "ER AAC Scalable");
-        i2.e.q(21, hashMap2, "ER TwinVQ", 22, "ER BSAC");
-        i2.e.q(23, hashMap2, "ER AAC LD", 24, "ER CELP");
-        i2.e.q(25, hashMap2, "ER HVXC", 26, "ER HILN");
-        i2.e.q(27, hashMap2, "ER Parametric", 28, "SSC");
-        i2.e.q(29, hashMap2, "PS", 30, "MPEG Surround");
-        i2.e.q(31, hashMap2, "(escape)", 32, "Layer-1");
-        i2.e.q(33, hashMap2, "Layer-2", 34, "Layer-3");
-        i2.e.q(35, hashMap2, "DST", 36, "ALS");
-        i2.e.q(37, hashMap2, "SLS", 38, "SLS non-core");
-        i2.e.q(39, hashMap2, "ER AAC ELD", 40, "SMR Simple");
+        o1.r(13, hashMap2, "Main synthetic", 14, "Wavetable synthesis");
+        o1.r(15, hashMap2, "General MIDI", 16, "Algorithmic Synthesis and Audio FX");
+        o1.r(17, hashMap2, "ER AAC LC", 18, "(reserved)");
+        o1.r(19, hashMap2, "ER AAC LTP", 20, "ER AAC Scalable");
+        o1.r(21, hashMap2, "ER TwinVQ", 22, "ER BSAC");
+        o1.r(23, hashMap2, "ER AAC LD", 24, "ER CELP");
+        o1.r(25, hashMap2, "ER HVXC", 26, "ER HILN");
+        o1.r(27, hashMap2, "ER Parametric", 28, "SSC");
+        o1.r(29, hashMap2, "PS", 30, "MPEG Surround");
+        o1.r(31, hashMap2, "(escape)", 32, "Layer-1");
+        o1.r(33, hashMap2, "Layer-2", 34, "Layer-3");
+        o1.r(35, hashMap2, "DST", 36, "ALS");
+        o1.r(37, hashMap2, "SLS", 38, "SLS non-core");
+        o1.r(39, hashMap2, "ER AAC ELD", 40, "SMR Simple");
         hashMap2.put(41, "SMR Main");
     }
 

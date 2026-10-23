@@ -3,10 +3,10 @@ package z7;
 import java.util.Map;
 import java.util.Set;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public abstract class lg implements k {
-    public transient fd a;
+    public transient ed a;
     public transient e9.e b;
 
     public final Map a() {
@@ -21,14 +21,14 @@ public abstract class lg implements k {
     }
 
     public final Set b() {
-        fd fdVar = this.a;
-        if (fdVar != null) {
-            return fdVar;
+        ed edVar = this.a;
+        if (edVar != null) {
+            return edVar;
         }
         mg mgVar = (mg) this;
-        fd fdVar2 = new fd(mgVar, mgVar.c);
-        this.a = fdVar2;
-        return fdVar2;
+        ed edVar2 = new ed(mgVar, mgVar.c);
+        this.a = edVar2;
+        return edVar2;
     }
 
     public final boolean equals(Object obj) {

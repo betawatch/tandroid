@@ -1,7 +1,7 @@
 package zh;
 
 import ai.q1;
-import ai.wa;
+import ai.xa;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.PorterDuff;
@@ -26,12 +26,12 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.kv;
-import org.telegram.ui.Components.ml0;
 import org.telegram.ui.Components.o5;
+import org.telegram.ui.Components.pl0;
 import org.telegram.ui.Components.r5;
 import w7.z5;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public abstract class r extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static final long[] K = {5449505950283078474L, 5420315771991497307L, 5373141891321699086L, 5373026167722876724L, 5435957248314579621L, 5440354006335495210L, 5436040291507247633L, 5445284980978621387L, 5442983582882601962L, 5409008750893734809L, 5371017798065592581L, 5472030678633684592L, 5467583879948803288L, 5471952986970267163L, 5415696465945173620L, 5397915559037785261L, 5283020991981693429L, 5283051451889756068L, 5282816560128336499L, 5465449362807070392L, 5470012829983580233L};
@@ -47,7 +47,7 @@ public abstract class r extends FrameLayout implements NotificationCenter.Notifi
     public final m c;
     public final s4.s d;
     public final k e;
-    public final ml0 f;
+    public final pl0 f;
     public final q h;
     public final ArrayList n;
     public int r;
@@ -76,12 +76,12 @@ public abstract class r extends FrameLayout implements NotificationCenter.Notifi
         this.d = sVar;
         sVar.O = new q1(k0Var, 9);
         mVar.setLayoutManager(sVar);
-        ml0 ml0Var = new ml0(mVar, sVar);
-        this.f = ml0Var;
-        ml0Var.i = new k1(k0Var, 2);
+        pl0 pl0Var = new pl0(mVar, sVar);
+        this.f = pl0Var;
+        pl0Var.i = new k1(k0Var, 2);
         mVar.setAdapter(kVar);
         mVar.setSelectorDrawableColor(0);
-        mVar.setOnItemClickListener(new wa(j0Var, 25));
+        mVar.setOnItemClickListener(new xa(j0Var, 25));
         mVar.setItemAnimator(null);
         mVar.setOverScrollMode(2);
         mVar.setVerticalScrollBarEnabled(false);
@@ -266,7 +266,7 @@ public abstract class r extends FrameLayout implements NotificationCenter.Notifi
                     r5.h(i12).b(j12, new o5() { // from class: zh.h
                         @Override // org.telegram.ui.Components.o5
                         public final void a(TLRPC.Document document7) {
-                            AndroidUtilities.runOnUIThread(new u2.j0(22, r.this, document7));
+                            AndroidUtilities.runOnUIThread(new u2.k0(22, r.this, document7));
                         }
                     });
                 }

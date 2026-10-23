@@ -1,45 +1,13 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatMessageSharedResources;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class av0 extends org.telegram.ui.Cells.u1 {
-    public final /* synthetic */ int Ge = 1;
-
-    public /* synthetic */ av0(Context context, int i10) {
-        super(context, i10);
-    }
-
-    @Override // org.telegram.ui.Cells.u1
-    public int getParentWidth() {
-        int i10;
-        int dp;
-        switch (this.Ge) {
-            case 1:
-                if (getMeasuredWidth() != 0) {
-                    i10 = getMeasuredWidth();
-                    dp = AndroidUtilities.dp(24.0f);
-                } else {
-                    i10 = AndroidUtilities.displaySize.x;
-                    dp = AndroidUtilities.dp(24.0f);
-                }
-                return i10 - dp;
-            default:
-                return super.getParentWidth();
-        }
-    }
-
-    @Override // android.view.View
-    public final boolean isPressed() {
-        switch (this.Ge) {
-        }
+public final class av0 extends MessageObject {
+    @Override // org.telegram.messenger.MessageObject
+    public final boolean canDeleteMessage(boolean z10, TLRPC.Chat chat) {
         return false;
-    }
-
-    public /* synthetic */ av0(Context context, int i10, boolean z10, ChatMessageSharedResources chatMessageSharedResources, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, i10, z10, chatMessageSharedResources, d6Var);
     }
 }

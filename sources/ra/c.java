@@ -21,7 +21,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import r9.n;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class c implements d {
     public static final Object m = new Object();
@@ -83,32 +83,32 @@ public final class c implements d {
         r2.c = r3;
         r2.b = 3;
         r2 = r2.a();
-        r4.E(r2);
+        r4.G(r2);
      */
     /* JADX WARN: Finally extract failed */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void b() {
-        sa.a j02;
+        sa.a Q;
         synchronized (m) {
             try {
                 l9.h hVar = this.a;
                 hVar.a();
-                n2.e a2 = n2.e.a(hVar.a);
+                n2.e f7 = n2.e.f(hVar.a);
                 try {
-                    j02 = this.c.j0();
-                    int i10 = j02.b;
+                    Q = this.c.Q();
+                    int i10 = Q.b;
                     boolean z10 = true;
                     if (i10 != 2 && i10 != 1) {
                         z10 = false;
                     }
-                    if (a2 != null) {
-                        a2.k0();
+                    if (f7 != null) {
+                        f7.R();
                     }
                 } catch (Throwable th2) {
-                    if (a2 != null) {
-                        a2.k0();
+                    if (f7 != null) {
+                        f7.R();
                     }
                     throw th2;
                 }
@@ -116,7 +116,7 @@ public final class c implements d {
                 throw th3;
             }
         }
-        k(j02);
+        k(Q);
         this.i.execute(new b(this, 1));
     }
 
@@ -236,15 +236,15 @@ public final class c implements d {
             try {
                 l9.h hVar = this.a;
                 hVar.a();
-                n2.e a2 = n2.e.a(hVar.a);
+                n2.e f7 = n2.e.f(hVar.a);
                 try {
-                    this.c.E(aVar);
-                    if (a2 != null) {
-                        a2.k0();
+                    this.c.G(aVar);
+                    if (f7 != null) {
+                        f7.R();
                     }
                 } catch (Throwable th2) {
-                    if (a2 != null) {
-                        a2.k0();
+                    if (f7 != null) {
+                        f7.R();
                     }
                     throw th2;
                 }

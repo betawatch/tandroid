@@ -2,20 +2,20 @@ package yh;
 
 import android.content.Context;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.g6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ Context b;
-    public final /* synthetic */ d6 c;
+    public final /* synthetic */ g6 c;
     public final /* synthetic */ TL_stars.StarGift d;
 
-    public /* synthetic */ p(Context context, d6 d6Var, TL_stars.StarGift starGift, int i10) {
+    public /* synthetic */ p(Context context, g6 g6Var, TL_stars.StarGift starGift, int i10) {
         this.a = i10;
         this.b = context;
-        this.c = d6Var;
+        this.c = g6Var;
         this.d = starGift;
     }
 
@@ -23,12 +23,12 @@ public final /* synthetic */ class p implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                d6 d6Var = this.c;
-                v.V(this.b, this.d, d6Var);
+                g6 g6Var = this.c;
+                v.U(this.b, this.d, g6Var);
                 break;
             default:
-                d6 d6Var2 = this.c;
-                v.V(this.b, this.d, d6Var2);
+                g6 g6Var2 = this.c;
+                v.U(this.b, this.d, g6Var2);
                 break;
         }
     }

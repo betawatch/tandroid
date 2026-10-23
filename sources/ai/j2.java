@@ -12,16 +12,16 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.bz0;
+import org.telegram.ui.Components.ez0;
 import org.telegram.ui.Components.g30;
-import org.telegram.ui.Components.i90;
+import org.telegram.ui.Components.j90;
 import org.telegram.ui.Components.lg;
 import org.telegram.ui.Components.mz;
 import org.telegram.ui.Components.ny;
-import org.telegram.ui.Components.qy0;
-import org.telegram.ui.g01;
+import org.telegram.ui.Components.ty0;
+import org.telegram.ui.k01;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j2 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -29,10 +29,10 @@ public final /* synthetic */ class j2 implements RequestDelegate {
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
 
-    public /* synthetic */ j2(ei.k9 k9Var, org.telegram.ui.ActionBar.b2 b2Var, TL_phone.getGroupCallStreamRtmpUrl getgroupcallstreamrtmpurl) {
+    public /* synthetic */ j2(ei.k9 k9Var, org.telegram.ui.ActionBar.c2 c2Var, TL_phone.getGroupCallStreamRtmpUrl getgroupcallstreamrtmpurl) {
         this.a = 6;
         this.b = k9Var;
-        this.d = b2Var;
+        this.d = c2Var;
         this.c = getgroupcallstreamrtmpurl;
     }
 
@@ -40,10 +40,10 @@ public final /* synthetic */ class j2 implements RequestDelegate {
     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                l7.R((l7) this.b, (TLRPC.TL_messageActionStarGift) this.c, (org.telegram.ui.ActionBar.b2) this.d, tLObject);
+                l7.Q((l7) this.b, (TLRPC.TL_messageActionStarGift) this.c, (org.telegram.ui.ActionBar.c2) this.d, tLObject);
                 break;
             case 1:
-                l7.M0((l7) this.b, (pf.c) this.c, (TL_stars.TL_starGiftUnique) this.d, tLObject, tL_error);
+                l7.L0((l7) this.b, (pf.c) this.c, (TL_stars.TL_starGiftUnique) this.d, tLObject, tL_error);
                 break;
             case 2:
                 AndroidUtilities.runOnUIThread(new t0(this.b, tL_error, this.c, (Object) tLObject, (TLObject) this.d, 2));
@@ -55,13 +55,13 @@ public final /* synthetic */ class j2 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new t0(this.b, tL_error, this.c, (Object) tLObject, (TLObject) this.d, 1));
                 break;
             case 5:
-                AndroidUtilities.runOnUIThread(new y0((ci.h4) this.b, tLObject, (TL_stories.StoryItem) this.c, (Utilities.Callback) this.d, 7));
+                AndroidUtilities.runOnUIThread(new y0((ci.g4) this.b, tLObject, (TL_stories.StoryItem) this.c, (Utilities.Callback) this.d, 7));
                 break;
             case 6:
-                AndroidUtilities.runOnUIThread(new t0(this.b, (org.telegram.ui.ActionBar.b2) this.d, tLObject, (TLObject) this.c, (Object) tL_error, 12));
+                AndroidUtilities.runOnUIThread(new t0(this.b, (org.telegram.ui.ActionBar.c2) this.d, tLObject, (TLObject) this.c, (Object) tL_error, 12));
                 break;
             case 7:
-                AndroidUtilities.runOnUIThread(new y0((ei.d) this.b, tLObject, (org.telegram.ui.ActionBar.f3) this.c, (gi.r1) this.d, 13));
+                AndroidUtilities.runOnUIThread(new y0((ei.d) this.b, tLObject, (org.telegram.ui.ActionBar.h3) this.c, (gi.r1) this.d, 13));
                 break;
             case 8:
                 AndroidUtilities.runOnUIThread(new y0(tLObject, (boolean[]) this.b, (org.telegram.ui.web.r) this.c, (TLRPC.UserFull) this.d, 16));
@@ -70,16 +70,16 @@ public final /* synthetic */ class j2 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new y0((ig.y) this.b, tLObject, (TL_account.TL_businessChatLink) this.c, (Runnable) this.d, 21));
                 break;
             case 10:
-                AndroidUtilities.runOnUIThread(new ei.z1((ig.k0) this.b, (TL_account.TL_connectedBot) this.c, (TL_account.TL_businessBotRecipients) this.d, 27));
+                AndroidUtilities.runOnUIThread(new ei.z1((ig.j0) this.b, (TL_account.TL_connectedBot) this.c, (TL_account.TL_businessBotRecipients) this.d, 27));
                 break;
             case 11:
-                AndroidUtilities.runOnUIThread(new t0((ig.a2) this.b, tLObject, (ArrayList) this.c, (TLRPC.TL_messages_sendQuickReplyMessages) this.d, tL_error, 17));
+                AndroidUtilities.runOnUIThread(new t0((ig.z1) this.b, tLObject, (ArrayList) this.c, (TLRPC.TL_messages_sendQuickReplyMessages) this.d, tL_error, 17));
                 break;
             case 12:
-                AndroidUtilities.runOnUIThread(new org.telegram.messenger.camera.i(tLObject, (org.telegram.ui.ActionBar.f6) this.b, (org.telegram.ui.ActionBar.g6) this.c, (TLRPC.TL_theme) this.d, 4));
+                AndroidUtilities.runOnUIThread(new org.telegram.messenger.camera.i(tLObject, (org.telegram.ui.ActionBar.i6) this.b, (org.telegram.ui.ActionBar.j6) this.c, (TLRPC.TL_theme) this.d, 4));
                 break;
             case 13:
-                AndroidUtilities.runOnUIThread(new org.telegram.messenger.camera.i((ny) this.b, (org.telegram.ui.ActionBar.b2[]) this.c, tLObject, (org.telegram.ui.ActionBar.a3) this.d, 24));
+                AndroidUtilities.runOnUIThread(new org.telegram.messenger.camera.i((ny) this.b, (org.telegram.ui.ActionBar.c2[]) this.c, tLObject, (org.telegram.ui.ActionBar.b3) this.d, 24));
                 break;
             case 14:
                 AndroidUtilities.runOnUIThread(new org.telegram.messenger.camera.i((mz) this.b, (TLRPC.TL_messages_getStickers) this.c, tLObject, (Runnable) this.d));
@@ -88,49 +88,49 @@ public final /* synthetic */ class j2 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new lg(this.b, this.c, (ArrayList) this.d, 7));
                 break;
             case 16:
-                AndroidUtilities.runOnUIThread(new i90(tL_error, (ei.d) this.b, (org.telegram.ui.ActionBar.f3) this.c, (Runnable) this.d));
+                AndroidUtilities.runOnUIThread(new j90(tL_error, (ei.d) this.b, (org.telegram.ui.r6) this.c, (Runnable) this.d));
                 break;
             case 17:
-                AndroidUtilities.runOnUIThread(new g30((qy0) this.b, (String) this.c, tL_error, tLObject, (TextView) this.d, 1));
+                AndroidUtilities.runOnUIThread(new g30((ty0) this.b, (String) this.c, tL_error, tLObject, (TextView) this.d, 1));
                 break;
             case 18:
-                AndroidUtilities.runOnUIThread(new g30((bz0) this.b, tLObject, (TLRPC.UserFull) this.c, (TL_account.TL_birthday) this.d, tL_error, 2));
+                AndroidUtilities.runOnUIThread(new g30((ez0) this.b, tLObject, (TLRPC.UserFull) this.c, (TL_account.TL_birthday) this.d, tL_error, 2));
                 break;
             case 19:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.web.b0((org.telegram.ui.web.a1) this.b, tL_error, (String) this.c, (TLRPC.TL_inputInvoiceSlug) this.d, tLObject));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.web.b0((org.telegram.ui.web.b1) this.b, tL_error, (String) this.c, (TLRPC.TL_inputInvoiceSlug) this.d, tLObject));
                 break;
             case 20:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.web.b0((org.telegram.ui.web.a1) this.b, tLObject, (String[]) this.c, tL_error, (org.telegram.ui.ActionBar.b2) this.d));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.web.b0((org.telegram.ui.web.b1) this.b, tLObject, (String[]) this.c, tL_error, (org.telegram.ui.ActionBar.c2) this.d));
                 break;
             case 21:
-                AndroidUtilities.runOnUIThread(new g01(tL_error, (Utilities.Callback) this.b, tLObject, (MessagesController) this.c, (Utilities.Callback) this.d, 9));
+                AndroidUtilities.runOnUIThread(new k01(tL_error, (Utilities.Callback) this.b, tLObject, (MessagesController) this.c, (Utilities.Callback) this.d, 9));
                 break;
             case 22:
-                AndroidUtilities.runOnUIThread(new g01(tL_error, (org.telegram.messenger.w) this.b, tLObject, (MessagesController) this.c, (org.telegram.messenger.k2) this.d, 10));
+                AndroidUtilities.runOnUIThread(new k01(tL_error, (org.telegram.messenger.w) this.b, tLObject, (MessagesController) this.c, (org.telegram.messenger.k2) this.d, 10));
                 break;
             case 23:
-                ug.u uVar = (ug.u) this.b;
+                ug.t tVar = (ug.t) this.b;
                 MessagesController messagesController = (MessagesController) this.c;
-                ug.x xVar = (ug.x) this.d;
+                ug.w wVar = (ug.w) this.d;
                 if (tL_error == null) {
                     if (tLObject != null) {
                         messagesController.lambda$processUpdates$377((TLRPC.Updates) tLObject, false);
-                        AndroidUtilities.runOnUIThread(new tg.p(xVar, 4));
+                        AndroidUtilities.runOnUIThread(new tg.p(wVar, 4));
                         break;
                     }
                 } else {
-                    AndroidUtilities.runOnUIThread(new u2.j0(4, uVar, tL_error));
+                    AndroidUtilities.runOnUIThread(new u2.k0(4, tVar, tL_error));
                     break;
                 }
                 break;
             case 24:
-                AndroidUtilities.runOnUIThread(new g01(tLObject, (MessagesController) this.b, (ci.z2) this.c, (ug.f) this.d, tL_error, 11));
+                AndroidUtilities.runOnUIThread(new k01(tLObject, (MessagesController) this.b, (ci.y2) this.c, (ug.e) this.d, tL_error, 11));
                 break;
             case 25:
-                AndroidUtilities.runOnUIThread(new g01((ug.m1) this.b, tLObject, (TLRPC.UserFull) this.c, (TL_account.TL_birthday) this.d, tL_error, 12));
+                AndroidUtilities.runOnUIThread(new k01((ug.l1) this.b, tLObject, (TLRPC.UserFull) this.c, (TL_account.TL_birthday) this.d, tL_error, 12));
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new g01((yh.x4) this.b, tLObject, (TLRPC.TL_inputStorePaymentGiftPremium) this.c, tL_error, (TLRPC.TL_payments_canPurchaseStore) this.d, 13));
+                AndroidUtilities.runOnUIThread(new k01((yh.x4) this.b, tLObject, (TLRPC.TL_inputStorePaymentGiftPremium) this.c, tL_error, (TLRPC.TL_payments_canPurchaseStore) this.d, 13));
                 break;
         }
     }

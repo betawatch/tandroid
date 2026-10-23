@@ -1,7 +1,7 @@
 package mg;
 
 import ah.p0;
-import ai.me;
+import ai.ne;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
@@ -32,14 +32,14 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.VideoEditedInfo;
-import org.telegram.messenger.g0;
+import org.telegram.messenger.v0;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.b2;
+import org.telegram.ui.ActionBar.c2;
 import org.telegram.ui.BubbleActivity;
 import org.telegram.ui.Components.Crop.CropAreaView;
-import org.telegram.ui.Components.r71;
+import org.telegram.ui.Components.z71;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public class p extends FrameLayout implements a {
     public float E;
@@ -56,7 +56,7 @@ public class p extends FrameLayout implements a {
     public final CropAreaView a;
     public final ImageView b;
     public final Matrix c;
-    public r71 d;
+    public z71 d;
     public g e;
     public final RectF f;
     public final RectF h;
@@ -358,7 +358,7 @@ public class p extends FrameLayout implements a {
         float f10 = nVar.f * cropWidth;
         cropState.transformRotation = (int) nVar.h;
         if (BuildVars.LOGS_ENABLED) {
-            g0.o(cropState.transformRotation, new StringBuilder("set transformRotation = "));
+            v0.n(cropState.transformRotation, new StringBuilder("set transformRotation = "));
         }
         while (true) {
             i10 = cropState.transformRotation;
@@ -451,7 +451,7 @@ public class p extends FrameLayout implements a {
         ofFloat5.setInterpolator(accelerateDecelerateInterpolator);
         ofFloat.setInterpolator(accelerateDecelerateInterpolator);
         animatorSet2.playTogether(ofFloat2, ofFloat3, ofFloat4, ofFloat5, ofFloat);
-        animatorSet2.addListener(new me(10, cropAreaView, rectF));
+        animatorSet2.addListener(new ne(10, cropAreaView, rectF));
         animatorSet2.start();
         this.h.set(rectF);
     }
@@ -565,9 +565,9 @@ public class p extends FrameLayout implements a {
     }
 
     public int getCurrentHeight() {
-        r71 r71Var = this.d;
-        if (r71Var != null) {
-            return r71Var.getVideoHeight();
+        z71 z71Var = this.d;
+        if (z71Var != null) {
+            return z71Var.getVideoHeight();
         }
         Bitmap bitmap = this.w;
         if (bitmap == null) {
@@ -578,9 +578,9 @@ public class p extends FrameLayout implements a {
     }
 
     public int getCurrentWidth() {
-        r71 r71Var = this.d;
-        if (r71Var != null) {
-            return r71Var.getVideoWidth();
+        z71 z71Var = this.d;
+        if (z71Var != null) {
+            return z71Var.getVideoWidth();
         }
         Bitmap bitmap = this.w;
         if (bitmap == null) {
@@ -793,10 +793,10 @@ public class p extends FrameLayout implements a {
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getContext());
         alertDialog$Builder.f(strArr, new j(i11, this, numArr));
-        b2 b2Var = alertDialog$Builder.a;
-        b2Var.setCanceledOnTouchOutside(true);
-        b2Var.setOnCancelListener(new pc(this, i10));
-        b2Var.show();
+        c2 c2Var = alertDialog$Builder.a;
+        c2Var.setCanceledOnTouchOutside(true);
+        c2Var.setOnCancelListener(new pc(this, i10));
+        c2Var.show();
     }
 
     @Override // android.view.ViewGroup
@@ -929,7 +929,7 @@ public class p extends FrameLayout implements a {
         matrix.postTranslate(cropAreaView.getCropCenterX(), cropAreaView.getCropCenterY());
         if (!this.x || this.J || z10) {
             q();
-            this.M.v();
+            this.M.u();
         }
         invalidate();
     }

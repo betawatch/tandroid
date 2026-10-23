@@ -1,39 +1,78 @@
 package org.telegram.ui;
 
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.video.VideoPlayerHolderBase;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_iv;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import java.util.HashSet;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public abstract class b70 {
-    public String F;
-    public int G;
-    public org.telegram.ui.ActionBar.m1 H;
-    public org.telegram.ui.ActionBar.f3 I;
-    public org.telegram.ui.Components.y90 b;
-    public d3 d;
-    public int e;
-    public View f;
-    public boolean h;
-    public TLRPC.Chat n;
-    public boolean r;
-    public View s;
-    public org.telegram.ui.Components.ba0 v;
-    public VideoPlayerHolderBase w;
-    public z2 x;
-    public int a = 0;
-    public final org.telegram.ui.Components.u90 c = new org.telegram.ui.Components.u90();
-    public final a0.h y = new a0.h();
-    public ArrayList E = new ArrayList();
+public final class b70 extends LinearLayout implements org.telegram.ui.ActionBar.b6 {
+    public final org.telegram.ui.Components.iu a;
+    public boolean b;
+    public int c;
+    public ot d;
+    public String e;
+    public final a70 f;
+    public final /* synthetic */ e70 h;
 
-    public abstract int a();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b70(e70 e70Var, Context context) {
+        super(context);
+        this.h = e70Var;
+        this.f = new a70(this);
+        TextView g10 = org.telegram.messenger.v0.g(context, 1, 16.0f);
+        org.telegram.ui.ActionBar.r6.W(g10, org.telegram.ui.ActionBar.k6.j5, null);
+        g10.setText("t.me/addemoji/");
+        org.telegram.ui.Components.iu iuVar = new org.telegram.ui.Components.iu(context, null);
+        this.a = iuVar;
+        iuVar.setLines(1);
+        iuVar.setSingleLine(true);
+        iuVar.setInputType(16384);
+        iuVar.setTextSize(1, 16.0f);
+        org.telegram.ui.ActionBar.r6.W(iuVar, org.telegram.ui.ActionBar.k6.Ud, null);
+        org.telegram.ui.ActionBar.r6.I(iuVar, org.telegram.ui.ActionBar.k6.hc, null);
+        org.telegram.ui.ActionBar.r6.E(iuVar, org.telegram.ui.ActionBar.k6.uf, null);
+        int i10 = org.telegram.ui.ActionBar.k6.Vd;
+        org.telegram.ui.ActionBar.r6.m(iuVar, 34, i10, null);
+        org.telegram.ui.ActionBar.r6.F(iuVar, i10, null);
+        org.telegram.ui.ActionBar.r6.m(iuVar, 30, org.telegram.ui.ActionBar.k6.Wd, null);
+        org.telegram.ui.ActionBar.r6.m(iuVar, 36, org.telegram.ui.ActionBar.k6.vf, null);
+        iuVar.setBackground(null);
+        iuVar.setHint(LocaleController.getString(R.string.AddEmojiPackLinkHint));
+        addView(g10, w7.z5.t(-2, -2, 16, 20, 0, 0, 0));
+        addView(iuVar, w7.z5.t(-1, -2, 16, -4, 0, 0, 0));
+        org.telegram.ui.ActionBar.r6.i(org.telegram.ui.ActionBar.k6.d6, this, null);
+        setPadding(0, AndroidUtilities.dp(5.0f), 0, AndroidUtilities.dp(5.0f));
+        setWillNotDraw(false);
+    }
 
-    public abstract int b();
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.b) {
+            canvas.drawLine(AndroidUtilities.dp(20.0f), getHeight() - 1, getWidth() - getPaddingRight(), getHeight() - 1, org.telegram.ui.ActionBar.k6.k0);
+        }
+    }
 
-    public abstract void c(j4 j4Var, org.telegram.ui.Components.j11 j11Var);
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void updateColors() {
+        org.telegram.ui.Components.iu iuVar = this.a;
+        try {
+            iuVar.setHintColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Vd, false));
+            iuVar.setCursorColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Wd, false));
+            iuVar.setHandlesColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.vf, false));
+            invalidate();
+        } catch (Exception e) {
+            FileLog.e(e);
+        }
+    }
 
-    public abstract boolean d(TL_iv.PageBlock pageBlock, j4 j4Var);
+    @Override // org.telegram.ui.ActionBar.b6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+    }
 }

@@ -11,38 +11,38 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.g80;
+import org.telegram.ui.Components.h80;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class g7 extends yh.g1 {
-    public TL_wallet.nftItem o0;
-    public t7 p0;
-    public float q0;
-    public boolean r0;
-    public ValueAnimator s0;
+    public ValueAnimator A0;
+    public TL_wallet.nftItem w0;
+    public t7 x0;
+    public float y0;
+    public boolean z0;
 
     @Override // yh.g1
-    public final void a(g80 g80Var, Canvas canvas, float f7, float f10, float f11) {
-        if (this.q0 == 1.0f) {
-            super.a(g80Var, canvas, f7, f10, f11);
+    public final void b(h80 h80Var, Canvas canvas, float f7, float f10, float f11) {
+        if (this.y0 == 1.0f) {
+            super.b(h80Var, canvas, f7, f10, f11);
             return;
         }
         canvas.save();
-        float f12 = this.q0;
+        float f12 = this.y0;
         canvas.scale(f12, f12, f7 / 2.0f, f10 / 2.0f);
-        super.a(g80Var, canvas, f7, f10, f11);
+        super.b(h80Var, canvas, f7, f10, f11);
         canvas.restore();
     }
 
     @Override // android.view.View
     public final void draw(Canvas canvas) {
-        if (this.q0 == 1.0f) {
+        if (this.y0 == 1.0f) {
             super.draw(canvas);
             return;
         }
         canvas.save();
-        float f7 = this.q0;
+        float f7 = this.y0;
         canvas.scale(f7, f7, getWidth() / 2.0f, getHeight() / 2.0f);
         super.draw(canvas);
         canvas.restore();
@@ -56,7 +56,7 @@ public final class g7 extends yh.g1 {
         float f10;
         boolean drawChild = super.drawChild(canvas, view, j10);
         FrameLayout frameLayout = this.d;
-        if (view == frameLayout && (t7Var = this.p0) != null) {
+        if (view == frameLayout && (t7Var = this.x0) != null) {
             RectF rectF = t7Var.H;
             Paint paint = t7Var.x;
             s7 s7Var = t7Var.k1;
@@ -109,54 +109,54 @@ public final class g7 extends yh.g1 {
     @Override // android.view.ViewGroup, android.view.View
     public final void drawableStateChanged() {
         super.drawableStateChanged();
-        if (isPressed() == this.r0) {
+        if (isPressed() == this.z0) {
             return;
         }
         boolean isPressed = isPressed();
-        this.r0 = isPressed;
-        l(isPressed ? 0.96f : 1.0f, isPressed ? 80L : 350L, isPressed ? null : new OvershootInterpolator(1.5f));
+        this.z0 = isPressed;
+        m(isPressed ? 0.96f : 1.0f, isPressed ? 80L : 350L, isPressed ? null : new OvershootInterpolator(1.5f));
     }
 
-    public final void l(float f7, long j10, OvershootInterpolator overshootInterpolator) {
-        ValueAnimator valueAnimator = this.s0;
+    public final void m(float f7, long j10, OvershootInterpolator overshootInterpolator) {
+        ValueAnimator valueAnimator = this.A0;
         if (valueAnimator != null) {
             valueAnimator.cancel();
         }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.q0, f7);
-        this.s0 = ofFloat;
-        ofFloat.addUpdateListener(new b3(this, 5));
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.y0, f7);
+        this.A0 = ofFloat;
+        ofFloat.addUpdateListener(new a3(this, 5));
         if (overshootInterpolator != null) {
-            this.s0.setInterpolator(overshootInterpolator);
+            this.A0.setInterpolator(overshootInterpolator);
         }
-        this.s0.setDuration(j10);
-        this.s0.start();
+        this.A0.setDuration(j10);
+        this.A0.start();
     }
 
-    public final void m(float f7) {
-        this.q0 = f7;
+    public final void n(float f7) {
+        this.y0 = f7;
         invalidate();
         if (getParent() instanceof View) {
             ((View) getParent()).invalidate();
         }
     }
 
-    public final void n() {
-        ValueAnimator valueAnimator = this.s0;
+    public final void o() {
+        ValueAnimator valueAnimator = this.A0;
         if (valueAnimator != null) {
             valueAnimator.cancel();
         }
-        if (this.q0 == 1.0f) {
+        if (this.y0 == 1.0f) {
             return;
         }
-        setScaleX(getScaleX() * this.q0);
-        setScaleY(getScaleY() * this.q0);
-        m(1.0f);
+        setScaleX(getScaleX() * this.y0);
+        setScaleY(getScaleY() * this.y0);
+        n(1.0f);
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        t7 t7Var = this.p0;
+        t7 t7Var = this.x0;
         if (t7Var != null) {
             t7Var.i(this);
         }
@@ -164,7 +164,7 @@ public final class g7 extends yh.g1 {
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
-        t7 t7Var = this.p0;
+        t7 t7Var = this.x0;
         if (t7Var != null) {
             t7Var.h.remove(this);
         }

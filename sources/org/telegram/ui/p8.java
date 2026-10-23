@@ -7,7 +7,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p8 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -36,11 +36,11 @@ public final /* synthetic */ class p8 implements View.OnClickListener {
                     break;
                 }
             case 1:
-                this.b.k0(true);
+                this.b.j0(true);
                 break;
             case 2:
                 m9 m9Var2 = this.b;
-                org.telegram.ui.Components.i80 H = org.telegram.ui.Components.i80.H(m9Var2, m9Var2.F);
+                org.telegram.ui.Components.j80 H = org.telegram.ui.Components.j80.H(m9Var2, m9Var2.F);
                 H.s = 8;
                 if (m9Var2.getUserConfig().showCallsTab) {
                     H.c(R.drawable.msg_archive_hide, LocaleController.getString(R.string.HideCallTab), new m8(m9Var2, 1), false);
@@ -52,7 +52,7 @@ public final /* synthetic */ class p8 implements View.OnClickListener {
             default:
                 m9 m9Var3 = this.b;
                 m9Var3.getClass();
-                m9.m0(m9Var3);
+                m9.l0(m9Var3);
                 break;
         }
     }

@@ -1,0 +1,49 @@
+package org.telegram.ui;
+
+import android.content.Context;
+import org.telegram.tgnet.ConnectionsManager;
+
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+/* loaded from: classes3.dex */
+public final class pi0 extends org.telegram.ui.Cells.t1 {
+    public int Ge;
+    public int He;
+    public int Ie;
+    public final /* synthetic */ qi0 Je;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public pi0(qi0 qi0Var, Context context, int i10, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(context, i10, true, null, g6Var);
+        this.Je = qi0Var;
+        this.Ge = ConnectionsManager.DEFAULT_DATACENTER_ID;
+        this.He = ConnectionsManager.DEFAULT_DATACENTER_ID;
+        this.Ie = -1;
+    }
+
+    @Override // android.view.View
+    public final boolean isPressed() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Cells.t1, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        if (!this.Zc.w0 || i11 == 0 || this.Ge == Integer.MAX_VALUE || i13 == 0 || this.He == Integer.MAX_VALUE) {
+            return;
+        }
+        if (this.Ie == (getMessageObject() == null ? 0 : getMessageObject().getId())) {
+            if (!this.Je.v0) {
+                setTranslationY(-(i11 - this.Ge));
+                animate().translationY(0.0f).setDuration(320L).setInterpolator(org.telegram.ui.Components.bs.h).start();
+            }
+            this.Ge = getTop();
+            this.He = getBottom();
+            this.Ie = getMessageObject() != null ? getMessageObject().getId() : 0;
+        }
+    }
+
+    @Override // org.telegram.ui.Cells.t1
+    public final wh.f v3() {
+        return wh.f.d(1, this, this.Je.E);
+    }
+}

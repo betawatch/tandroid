@@ -19,10 +19,11 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import n6.l;
+import org.telegram.ui.Wallet.m4;
 import u6.e;
 import u6.f;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class a {
     public static final long n = TimeUnit.DAYS.toMillis(366);
@@ -126,12 +127,12 @@ public final class a {
                 if (this.g) {
                     TextUtils.isEmpty(null);
                 }
-                c cVar = (c) this.k.get(null);
-                if (cVar == null) {
-                    cVar = new c();
-                    this.k.put(null, cVar);
+                b bVar = (b) this.k.get(null);
+                if (bVar == null) {
+                    bVar = new b();
+                    this.k.put(null, bVar);
                 }
-                cVar.a++;
+                bVar.a++;
                 this.i.getClass();
                 long elapsedRealtime = SystemClock.elapsedRealtime();
                 long j11 = Long.MAX_VALUE - elapsedRealtime > max ? elapsedRealtime + max : Long.MAX_VALUE;
@@ -141,7 +142,7 @@ public final class a {
                     if (scheduledFuture != null) {
                         scheduledFuture.cancel(false);
                     }
-                    this.d = this.m.schedule(new b(this, 0), max, TimeUnit.MILLISECONDS);
+                    this.d = this.m.schedule(new m4(this, 3), max, TimeUnit.MILLISECONDS);
                 }
             } catch (Throwable th2) {
                 throw th2;
@@ -167,10 +168,10 @@ public final class a {
                     TextUtils.isEmpty(null);
                 }
                 if (this.k.containsKey(null)) {
-                    c cVar = (c) this.k.get(null);
-                    if (cVar != null) {
-                        int i10 = cVar.a - 1;
-                        cVar.a = i10;
+                    b bVar = (b) this.k.get(null);
+                    if (bVar != null) {
+                        int i10 = bVar.a - 1;
+                        bVar.a = i10;
                         if (i10 == 0) {
                             this.k.remove(null);
                         }
@@ -215,7 +216,7 @@ public final class a {
                     d();
                     Iterator it = this.k.values().iterator();
                     while (it.hasNext()) {
-                        ((c) it.next()).a = 0;
+                        ((b) it.next()).a = 0;
                     }
                     this.k.clear();
                     ScheduledFuture scheduledFuture = this.d;

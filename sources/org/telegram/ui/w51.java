@@ -1,6 +1,61 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.NotificationCenter;
+
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public interface w51 {
+public final class w51 extends AnimatorListenerAdapter {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ Runnable b;
+    public final /* synthetic */ boolean[] c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ Runnable e;
+    public final /* synthetic */ x51 f;
+
+    public w51(x51 x51Var, boolean z10, Runnable runnable, boolean[] zArr, boolean z11, Runnable runnable2) {
+        this.f = x51Var;
+        this.a = z10;
+        this.b = runnable;
+        this.c = zArr;
+        this.d = z11;
+        this.e = runnable2;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        Runnable runnable;
+        x51 x51Var = this.f;
+        l0 l0Var = x51Var.s;
+        boolean z10 = this.a;
+        float f7 = z10 ? 1.0f : 0.0f;
+        x51Var.I = f7;
+        AndroidUtilities.lerp(x51Var.c, x51Var.d, f7, x51Var.e);
+        l0Var.invalidate();
+        if (!z10) {
+            x51Var.v.setAlpha(x51Var.I);
+        }
+        if (x51Var.I < 0.5f && !z10 && (runnable = this.b) != null) {
+            boolean[] zArr = this.c;
+            if (!zArr[0]) {
+                zArr[0] = true;
+                runnable.run();
+            }
+        }
+        if (!z10) {
+            if (this.d) {
+                x51Var.a.b = false;
+                x51Var.P.h0.invalidate();
+            }
+            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 4);
+        }
+        x51Var.K = null;
+        l0Var.invalidate();
+        Runnable runnable2 = this.e;
+        if (runnable2 != null) {
+            runnable2.run();
+        }
+    }
 }

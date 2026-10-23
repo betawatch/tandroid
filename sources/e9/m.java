@@ -9,10 +9,10 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.RandomAccess;
 import z7.cg;
-import z7.ee;
+import z7.de;
 import z7.mg;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public class m extends AbstractCollection implements List {
     public final /* synthetic */ int a = 0;
@@ -555,7 +555,7 @@ public class m extends AbstractCollection implements List {
                 mg mgVar = (mg) this.h;
                 boolean z12 = subList3 instanceof RandomAccess;
                 Object obj3 = this.b;
-                return z12 ? new ee(mgVar, obj3, subList3, mVar3) : new m(mgVar, obj3, subList3, mVar3);
+                return z12 ? new de(mgVar, obj3, subList3, mVar3) : new m(mgVar, obj3, subList3, mVar3);
         }
     }
 

@@ -1,83 +1,20 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class mf1 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ vf1 b;
+public final class mf1 extends bg1 {
+    public final /* synthetic */ TwoStepVerificationActivity k0;
 
-    public /* synthetic */ mf1(vf1 vf1Var, int i10) {
-        this.a = i10;
-        this.b = vf1Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public mf1(TwoStepVerificationActivity twoStepVerificationActivity, int i10, TL_account.Password password) {
+        super(i10, 4, password);
+        this.k0 = twoStepVerificationActivity;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                vf1 vf1Var = this.b;
-                EditTextBoldCursor editTextBoldCursor = vf1Var.n;
-                if (editTextBoldCursor != null && editTextBoldCursor.getVisibility() == 0) {
-                    vf1Var.n.requestFocus();
-                    AndroidUtilities.showKeyboard(vf1Var.n);
-                    break;
-                }
-                break;
-            case 1:
-                vf1 vf1Var2 = this.b;
-                id0 id0Var = vf1Var2.w;
-                if (id0Var != null && id0Var.getVisibility() == 0) {
-                    vf1Var2.w.f[0].requestFocus();
-                    break;
-                }
-                break;
-            case 2:
-                int i10 = 0;
-                while (true) {
-                    tr[] trVarArr = this.b.w.f;
-                    if (i10 >= trVarArr.length) {
-                        break;
-                    } else {
-                        trVarArr[i10].i(0.0f);
-                        i10++;
-                    }
-                }
-            case 3:
-                vf1 vf1Var3 = this.b;
-                EditTextBoldCursor editTextBoldCursor2 = vf1Var3.n;
-                if (editTextBoldCursor2 != null) {
-                    if (editTextBoldCursor2.length() != 0) {
-                        vf1Var3.f0[2].P(49);
-                        vf1Var3.f0[2].T(0.0f, false);
-                        vf1Var3.a.d();
-                        break;
-                    } else {
-                        vf1Var3.F0(true);
-                        break;
-                    }
-                }
-                break;
-            case 4:
-                vf1 vf1Var4 = this.b;
-                if (vf1Var4.g0 != null) {
-                    vf1Var4.F0(false);
-                    break;
-                }
-                break;
-            case 5:
-                vf1.f0(this.b);
-                break;
-            case 6:
-                AndroidUtilities.runOnUIThread(new mf1(this.b, 7), 150L);
-                break;
-            default:
-                for (tr trVar : this.b.w.f) {
-                    trVar.i(0.0f);
-                }
-                break;
-        }
+    @Override // org.telegram.ui.bg1
+    public final void B0() {
+        this.k0.N = true;
     }
 }

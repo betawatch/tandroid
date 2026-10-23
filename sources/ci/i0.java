@@ -2,13 +2,13 @@ package ci;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class i0 extends s4.k {
-    public final /* synthetic */ n2 F;
+    public final /* synthetic */ m2 F;
 
-    public i0(n2 n2Var) {
-        this.F = n2Var;
+    public i0(m2 m2Var) {
+        this.F = m2Var;
     }
 
     @Override // s4.k

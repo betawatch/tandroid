@@ -1,20 +1,28 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.NotificationCenter;
+import android.content.Context;
+import android.widget.LinearLayout;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class gt implements View.OnAttachStateChangeListener {
-    public ft a;
+public final class gt extends LinearLayout {
+    public final org.telegram.ui.Components.w9 a;
+    public final org.telegram.ui.ActionBar.n5 b;
+    public final org.telegram.ui.ActionBar.g6 c;
+    public TLRPC.StickerSetCovered d;
 
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewAttachedToWindow(View view) {
-        NotificationCenter.getGlobalInstance().addObserver(this.a, NotificationCenter.emojiLoaded);
-    }
-
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewDetachedFromWindow(View view) {
-        NotificationCenter.getGlobalInstance().removeObserver(this.a, NotificationCenter.emojiLoaded);
+    public gt(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(context);
+        this.c = g6Var;
+        org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
+        this.a = w9Var;
+        org.telegram.ui.ActionBar.n5 n5Var = new org.telegram.ui.ActionBar.n5(context);
+        this.b = n5Var;
+        n5Var.setTextSize(16);
+        n5Var.setTextColor(-1);
+        setOrientation(0);
+        addView(w9Var, w7.z5.t(24, 24, 17, 17, 0, 17, 0));
+        addView(n5Var, w7.z5.t(-2, -2, 17, 0, 0, 12, 0));
     }
 }

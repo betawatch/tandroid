@@ -11,10 +11,10 @@ import java.nio.ByteBuffer;
 import java.nio.FloatBuffer;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
-import org.telegram.messenger.nk;
+import org.telegram.messenger.sl;
 import org.telegram.ui.Components.RLottieNative;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class d0 {
     public static c0 D;
@@ -281,7 +281,7 @@ public final class d0 {
         }
         String glGetShaderInfoLog = GLES20.glGetShaderInfoLog(glCreateShader);
         GLES20.glDeleteShader(glCreateShader);
-        throw new IllegalStateException(r4.c.h("Unable to compile shader: ", glGetShaderInfoLog));
+        throw new IllegalStateException(o0.h("Unable to compile shader: ", glGetShaderInfoLog));
     }
 
     public static void d(int i10) {
@@ -290,9 +290,9 @@ public final class d0 {
     }
 
     public static FloatBuffer i(float[] fArr) {
-        FloatBuffer h = nk.h(ByteBuffer.allocateDirect(fArr.length * 4));
-        h.put(fArr).position(0);
-        return h;
+        FloatBuffer i10 = sl.i(ByteBuffer.allocateDirect(fArr.length * 4));
+        i10.put(fArr).position(0);
+        return i10;
     }
 
     public static FloatBuffer j(Size size, int i10, boolean z10) {

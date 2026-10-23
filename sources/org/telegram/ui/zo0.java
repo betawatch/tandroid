@@ -1,19 +1,42 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
-/* loaded from: classes3.dex */
-public final class zo0 extends o51 {
-    public final /* synthetic */ cp0 e;
+import android.os.Build;
+import androidx.recyclerview.widget.RecyclerView;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zo0(cp0 cp0Var, yo0 yo0Var) {
-        super(yo0Var);
-        this.e = cp0Var;
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+/* loaded from: classes3.dex */
+public final class zo0 extends s4.r0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ fp0 b;
+
+    public zo0(fp0 fp0Var, int i10) {
+        this.b = fp0Var;
+        this.a = i10;
     }
 
-    @Override // org.telegram.ui.o51, android.widget.PopupWindow
-    public final void dismiss() {
-        super.dismiss();
-        this.e.o0 = null;
+    @Override // s4.r0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        bh.f fVar;
+        fp0 fp0Var = this.b;
+        lp0 lp0Var = fp0Var.p0;
+        if (i11 != 0) {
+            lp0Var.D0(1);
+        }
+        if (Build.VERSION.SDK_INT >= 31 && (fVar = lp0Var.f0) != null) {
+            fVar.f(i10, i11);
+        }
+        fp0Var.h();
+        if (fp0Var.K != null) {
+            if (fp0Var.J == null || !fp0Var.c()) {
+                return;
+            }
+            fp0Var.J.g(false);
+            return;
+        }
+        ai.y9 y9Var = this.a == 1 ? lp0Var.c : lp0Var.b;
+        if (y9Var == null || !fp0Var.c()) {
+            return;
+        }
+        y9Var.a();
     }
 }

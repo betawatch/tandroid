@@ -6,7 +6,7 @@ import android.text.TextUtils;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class z10 extends e8 {
     public final /* synthetic */ Context E;
@@ -40,12 +40,12 @@ public final class z10 extends e8 {
                     textView.setTextSize(1, 15.0f);
                 } else if (i10 == 4) {
                     textView.setGravity(51);
-                    textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.t7, fragmentContextView.q0));
+                    org.telegram.ui.ActionBar.r6.W(textView, org.telegram.ui.ActionBar.k6.t7, fragmentContextView.q0);
                     textView.setTypeface(AndroidUtilities.bold());
                     textView.setTextSize(1, 15.0f);
                 } else if (i10 == 1 || i10 == 3) {
                     textView.setGravity(19);
-                    textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.A7, fragmentContextView.q0));
+                    org.telegram.ui.ActionBar.r6.W(textView, org.telegram.ui.ActionBar.k6.A7, fragmentContextView.q0);
                     textView.setTypeface(AndroidUtilities.bold());
                     textView.setTextSize(1, 14.0f);
                 }
@@ -58,7 +58,7 @@ public final class z10 extends e8 {
                 textView2.setEllipsize(TextUtils.TruncateAt.END);
                 textView2.setGravity(3);
                 textView2.setTextSize(1, 13.0f);
-                textView2.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.x7, this.F.q0));
+                org.telegram.ui.ActionBar.r6.W(textView2, org.telegram.ui.ActionBar.k6.x7, this.F.q0);
                 return textView2;
         }
     }

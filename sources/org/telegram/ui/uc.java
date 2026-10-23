@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.view.View;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class uc implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -21,12 +21,15 @@ public final /* synthetic */ class uc implements Utilities.Callback {
             case 0:
                 zc zcVar = this.b;
                 zcVar.getClass();
-                ((org.telegram.ui.Components.r21) view).setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.i5, zcVar.b));
+                if (view instanceof org.telegram.ui.Components.v21) {
+                    view.setBackgroundColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.i5, zcVar.b));
+                    break;
+                }
                 break;
             default:
-                if (view instanceof org.telegram.ui.Components.r21) {
-                    org.telegram.ui.Components.r21 r21Var = (org.telegram.ui.Components.r21) view;
-                    r21Var.setFallbackWallpaper(r21Var.G.a.b ? null : this.b.v);
+                if (view instanceof org.telegram.ui.Components.v21) {
+                    org.telegram.ui.Components.v21 v21Var = (org.telegram.ui.Components.v21) view;
+                    v21Var.setFallbackWallpaper(v21Var.G.a.b ? null : this.b.v);
                     break;
                 }
                 break;

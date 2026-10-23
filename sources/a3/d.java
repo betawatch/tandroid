@@ -2,24 +2,24 @@ package a3;
 
 import ai.b1;
 import ai.b7;
-import ai.cd;
 import ai.d6;
 import ai.dd;
 import ai.e6;
 import ai.e7;
+import ai.ed;
 import ai.f7;
 import ai.h1;
 import ai.h6;
 import ai.j7;
 import ai.k7;
 import ai.l1;
-import ai.md;
+import ai.nd;
 import ai.t5;
 import ai.u5;
 import ai.v5;
 import ai.w5;
-import ai.wc;
 import ai.x5;
+import ai.xc;
 import ai.z5;
 import android.animation.ValueAnimator;
 import android.content.Context;
@@ -34,24 +34,24 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.ActionBar.o2;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.ax0;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.jm0;
-import org.telegram.ui.Components.vj0;
+import org.telegram.ui.Components.dx0;
+import org.telegram.ui.Components.mm0;
 import org.telegram.ui.Components.w9;
+import org.telegram.ui.Components.yj0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.t7;
+import org.telegram.ui.Wallet.u4;
 import org.telegram.ui.Wallet.v4;
-import org.telegram.ui.Wallet.w4;
-import org.telegram.ui.qn;
+import org.telegram.ui.sn;
 import sg.y0;
 import v7.y7;
 import v7.z7;
 import w7.d8;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements Runnable {
     public final /* synthetic */ int a;
@@ -80,7 +80,7 @@ public final /* synthetic */ class d implements Runnable {
         int i12 = 0;
         switch (this.a) {
             case 0:
-                ((f) this.b).h.U();
+                ((f) this.b).h.Y();
                 return;
             case 1:
                 ((w) this.b).m--;
@@ -100,27 +100,27 @@ public final /* synthetic */ class d implements Runnable {
                 ((ValueAnimator) this.b).start();
                 return;
             case 5:
-                n2 n2Var = ((ah.n0) this.b).f2.r;
-                if (n2Var instanceof qn) {
-                    n2Var.showDialog(new y0(n2Var, 11, false));
+                o2 o2Var = ((ah.n0) this.b).g2.r;
+                if (o2Var instanceof sn) {
+                    o2Var.showDialog(new y0(o2Var, 11, false));
                     return;
                 }
-                n2 R = LaunchActivity.R();
+                o2 R = LaunchActivity.R();
                 if (R != null) {
-                    R.showDialog(new y0(n2Var, 11, false));
+                    R.showDialog(new y0(o2Var, 11, false));
                     return;
                 }
                 return;
             case 6:
                 ai.c cVar = (ai.c) this.b;
                 cVar.getClass();
-                new dd(cVar.getContext(), cVar.b).show();
+                new ed(cVar.getContext(), cVar.b).show();
                 return;
             case 7:
                 ai.w wVar = (ai.w) this.b;
                 wVar.getClass();
                 try {
-                    jm0 currentListView = wVar.x0.F.getCurrentListView();
+                    mm0 currentListView = wVar.x0.F.getCurrentListView();
                     if (currentListView == null || currentListView.getAdapter() == null) {
                         return;
                     }
@@ -130,10 +130,10 @@ public final /* synthetic */ class d implements Runnable {
                     return;
                 }
             case 8:
-                new ax0(((ai.o0) this.b).getContext()).show();
+                new dx0(((ai.o0) this.b).getContext()).show();
                 return;
             case 9:
-                AndroidUtilities.showKeyboard(((b1) this.b).d0);
+                AndroidUtilities.showKeyboard(((b1) this.b).e0);
                 return;
             case 10:
                 AndroidUtilities.showKeyboard(((h1) this.b).h);
@@ -142,10 +142,10 @@ public final /* synthetic */ class d implements Runnable {
                 AndroidUtilities.showKeyboard(((l1) this.b).c);
                 return;
             case 12:
-                v4 v4Var = (v4) ((k7) this.b);
-                t7 t7Var = v4Var.c.i0;
+                u4 u4Var = (u4) ((k7) this.b);
+                t7 t7Var = u4Var.c.i0;
                 if (t7Var != null) {
-                    TL_wallet.nftItem nftitem = v4Var.b;
+                    TL_wallet.nftItem nftitem = u4Var.b;
                     if (t7Var.A()) {
                         t7Var.c0(t7Var.v(nftitem));
                         return;
@@ -154,10 +154,10 @@ public final /* synthetic */ class d implements Runnable {
                 }
                 return;
             case 13:
-                w4 w4Var = (w4) ((j7) this.b);
-                t7 t7Var2 = w4Var.b.i0;
+                v4 v4Var = (v4) ((j7) this.b);
+                t7 t7Var2 = v4Var.b.i0;
                 if (t7Var2 != null) {
-                    t7Var2.b0(w4Var.a);
+                    t7Var2.b0(v4Var.a);
                     return;
                 }
                 return;
@@ -312,8 +312,8 @@ public final /* synthetic */ class d implements Runnable {
                     }
                     int i17 = 1 - f7Var.u0;
                     f7Var.u0 = i17;
-                    vj0 lottieAnimation = w9VarArr[2 - i17].getImageReceiver().getLottieAnimation();
-                    vj0 lottieAnimation2 = w9VarArr[f7Var.u0 + 1].getImageReceiver().getLottieAnimation();
+                    yj0 lottieAnimation = w9VarArr[2 - i17].getImageReceiver().getLottieAnimation();
+                    yj0 lottieAnimation2 = w9VarArr[f7Var.u0 + 1].getImageReceiver().getLottieAnimation();
                     if (lottieAnimation2 != null && lottieAnimation != null) {
                         lottieAnimation2.T(lottieAnimation.t(), false);
                     }
@@ -346,10 +346,10 @@ public final /* synthetic */ class d implements Runnable {
                 ((l1[]) this.b)[0].dismiss();
                 return;
             case 23:
-                wc wcVar = (wc) this.b;
-                wcVar.getClass();
+                xc xcVar = (xc) this.b;
+                xcVar.getClass();
                 try {
-                    jm0 currentListView2 = ((md) wcVar.M0).R.getCurrentListView();
+                    mm0 currentListView2 = ((nd) xcVar.M0).T.getCurrentListView();
                     if (currentListView2 == null || currentListView2.getAdapter() == null) {
                         return;
                     }
@@ -359,10 +359,10 @@ public final /* synthetic */ class d implements Runnable {
                     return;
                 }
             case 24:
-                pf.d.r(((cd) this.b).getContext(), LocaleController.getString(R.string.StarsTOSLink));
+                pf.d.r(((dd) this.b).getContext(), LocaleController.getString(R.string.StarsTOSLink));
                 return;
             case 25:
-                pf.d.r(((dd) this.b).getContext(), LocaleController.getString(R.string.StarsTOSLink));
+                pf.d.r(((ed) this.b).getContext(), LocaleController.getString(R.string.StarsTOSLink));
                 return;
             case 26:
                 ((androidx.activity.m) this.b).invalidateOptionsMenu();

@@ -3,18 +3,18 @@ package org.telegram.ui;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ue implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ qn b;
-    public final /* synthetic */ org.telegram.ui.Components.zm0 c;
+    public final /* synthetic */ sn b;
+    public final /* synthetic */ org.telegram.ui.Components.cn0 c;
     public final /* synthetic */ String d;
 
-    public /* synthetic */ ue(qn qnVar, org.telegram.ui.Components.zm0 zm0Var, String str, int i10) {
+    public /* synthetic */ ue(sn snVar, org.telegram.ui.Components.cn0 cn0Var, String str, int i10) {
         this.a = i10;
-        this.b = qnVar;
-        this.c = zm0Var;
+        this.b = snVar;
+        this.c = cn0Var;
         this.d = str;
     }
 
@@ -37,17 +37,17 @@ public final /* synthetic */ class ue implements Runnable {
                 break;
             case 2:
                 this.c.dismiss();
-                AndroidUtilities.addToClipboard("@" + this.d);
-                a02 = org.telegram.ui.Components.xc.a0(this.b);
-                i10 = R.string.UsernameCopied;
-                break;
-            default:
-                this.c.dismiss();
                 AndroidUtilities.addToClipboard(this.d);
                 a02 = org.telegram.ui.Components.xc.a0(this.b);
                 i10 = R.string.CardNumberCopied;
                 break;
+            default:
+                this.c.dismiss();
+                AndroidUtilities.addToClipboard("@" + this.d);
+                a02 = org.telegram.ui.Components.xc.a0(this.b);
+                i10 = R.string.UsernameCopied;
+                break;
         }
-        org.telegram.messenger.nk.p(i10, a02);
+        org.telegram.messenger.sl.p(i10, a02);
     }
 }

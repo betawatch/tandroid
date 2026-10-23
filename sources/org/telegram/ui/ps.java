@@ -1,54 +1,35 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import android.content.Context;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class ps implements TextWatcher {
-    public final /* synthetic */ EditTextBoldCursor a;
+public final class ps extends hg.t1 {
+    public final /* synthetic */ ContactsActivity K;
 
-    public ps(EditTextBoldCursor editTextBoldCursor) {
-        this.a = editTextBoldCursor;
+    public ps(ContactsActivity contactsActivity, Context context, a0.h hVar, boolean z10, boolean z11, boolean z12) {
+        this.K = contactsActivity;
+        this.d = new ArrayList();
+        this.e = new ArrayList();
+        this.H = new ArrayList();
+        this.c = context;
+        this.h = hVar;
+        this.r = z10;
+        this.s = z11;
+        this.x = 0;
+        this.v = z12;
+        this.w = true;
+        hg.a2 a2Var = new hg.a2(true);
+        this.f = a2Var;
+        a2Var.a = new hg.q1(this);
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        try {
-            String obj = editable.toString();
-            if (obj.isEmpty()) {
-                return;
-            }
-            int intValue = Utilities.parseInt((CharSequence) obj).intValue();
-            EditTextBoldCursor editTextBoldCursor = this.a;
-            if (intValue < 0) {
-                editTextBoldCursor.setText("0");
-                editTextBoldCursor.setSelection(editTextBoldCursor.length());
-                return;
-            }
-            if (intValue > 300) {
-                editTextBoldCursor.setText("300");
-                editTextBoldCursor.setSelection(editTextBoldCursor.length());
-                return;
-            }
-            if (obj.equals("" + intValue)) {
-                return;
-            }
-            editTextBoldCursor.setText("" + intValue);
-            editTextBoldCursor.setSelection(editTextBoldCursor.length());
-        } catch (Exception e) {
-            FileLog.e(e);
+    @Override // hg.t1
+    public final void F() {
+        if (this.y || this.f.e() || h() != 0) {
+            return;
         }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        this.K.e.e(false, true);
     }
 }

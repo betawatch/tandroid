@@ -6,7 +6,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.camera.CameraView;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class z implements Runnable {
     public final /* synthetic */ b0 a;
@@ -40,9 +40,9 @@ public final class z implements Runnable {
             try {
                 textureView.getBitmap(this.a.k0);
                 b0 b0Var2 = this.a;
-                xf.c f11 = b0.f(b0Var2.k0, b0Var2.i0, b0Var2.j0, b0Var2.O);
+                z4.b f11 = b0.f(b0Var2.k0, b0Var2.i0, b0Var2.j0, b0Var2.O);
                 if (f11 != null) {
-                    AndroidUtilities.runOnUIThread(new u2.j0(26, this, f11));
+                    AndroidUtilities.runOnUIThread(new u2.k0(26, this, f11));
                     return;
                 }
             } catch (Throwable th2) {

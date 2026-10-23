@@ -9,7 +9,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class y6 extends j1.b {
     public final Rect o;
@@ -104,9 +104,9 @@ public final class y6 extends j1.b {
     }
 
     @Override // j1.b
-    public final void l(int i10, s0.c cVar) {
-        AccessibilityNodeInfo accessibilityNodeInfo = cVar.a;
-        cVar.i("android.widget.Button");
+    public final void l(int i10, s0.d dVar) {
+        AccessibilityNodeInfo accessibilityNodeInfo = dVar.a;
+        dVar.i("android.widget.Button");
         boolean z10 = false;
         Rect rect = this.o;
         z6 z6Var = this.p;
@@ -116,14 +116,14 @@ public final class y6 extends j1.b {
             float f10 = dp;
             float f11 = z6Var.j0;
             rect.set((int) (f7 - f10), (int) (f11 - f10), (int) (f7 + f10), (int) (f11 + f10));
-            cVar.h(rect);
-            cVar.j((z6Var.r0 && z6Var.A0) ? LocaleController.getString(R.string.AccDescrLockRecording) : LocaleController.getString(R.string.AccDescrCameraGallery));
+            dVar.h(rect);
+            dVar.j((z6Var.r0 && z6Var.A0) ? LocaleController.getString(R.string.AccDescrLockRecording) : LocaleController.getString(R.string.AccDescrCameraGallery));
             if (!z6Var.u0 && !z6Var.b()) {
                 z10 = true;
             }
             accessibilityNodeInfo.setEnabled(z10);
             if (z10) {
-                cVar.b(s0.b.c);
+                dVar.b(s0.c.c);
                 return;
             }
             return;
@@ -134,20 +134,20 @@ public final class y6 extends j1.b {
             float f13 = dp2;
             float f14 = z6Var.j0;
             rect.set((int) (f12 - f13), (int) (f14 - f13), (int) (f12 + f13), (int) (f14 + f13));
-            cVar.h(rect);
-            cVar.j(z6Var.b() ? LocaleController.getString(R.string.Send) : z6Var.r0 ? LocaleController.getString(R.string.AccDescrStopRecording) : z6Var.o0 ? LocaleController.getString(R.string.AccDescrStartRecording) : LocaleController.getString(R.string.AccDescrTakePhoto));
+            dVar.h(rect);
+            dVar.j(z6Var.b() ? LocaleController.getString(R.string.Send) : z6Var.r0 ? LocaleController.getString(R.string.AccDescrStopRecording) : z6Var.o0 ? LocaleController.getString(R.string.AccDescrStartRecording) : LocaleController.getString(R.string.AccDescrTakePhoto));
             accessibilityNodeInfo.setEnabled(!z6Var.u0);
             if (z6Var.u0) {
                 return;
             }
-            cVar.b(s0.b.c);
+            dVar.b(s0.c.c);
             return;
         }
         if (i10 != 2) {
             rect.set(0, 0, 1, 1);
-            cVar.h(rect);
-            cVar.p(false);
-            cVar.j("");
+            dVar.h(rect);
+            dVar.p(false);
+            dVar.j("");
             return;
         }
         int dp3 = AndroidUtilities.dp(22.0f);
@@ -155,14 +155,14 @@ public final class y6 extends j1.b {
         float f16 = dp3;
         float f17 = z6Var.j0;
         rect.set((int) (f15 - f16), (int) (f17 - f16), (int) (f15 + f16), (int) (f17 + f16));
-        cVar.h(rect);
-        cVar.j(LocaleController.getString(R.string.AccDescrSwitchCamera));
+        dVar.h(rect);
+        dVar.j(LocaleController.getString(R.string.AccDescrSwitchCamera));
         if (!z6Var.u0 && !z6Var.b()) {
             z10 = true;
         }
         accessibilityNodeInfo.setEnabled(z10);
         if (z10) {
-            cVar.b(s0.b.c);
+            dVar.b(s0.c.c);
         }
     }
 }

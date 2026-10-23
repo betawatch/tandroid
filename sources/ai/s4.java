@@ -2,9 +2,9 @@ package ai;
 
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class s4 implements org.telegram.ui.ActionBar.a2 {
+public final /* synthetic */ class s4 implements org.telegram.ui.ActionBar.z1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ l7 b;
     public final /* synthetic */ TL_stars.TL_starGiftUnique c;
@@ -15,11 +15,11 @@ public final /* synthetic */ class s4 implements org.telegram.ui.ActionBar.a2 {
         this.c = tL_starGiftUnique;
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public final void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    @Override // org.telegram.ui.ActionBar.z1
+    public final void g(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
         switch (this.a) {
             case 0:
-                l7.W(this.b, this.c, b2Var);
+                l7.V(this.b, this.c, c2Var);
                 break;
             default:
                 pf.d.t(this.b.getContext(), "https://fragment.com/gift/" + this.c.slug);

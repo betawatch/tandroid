@@ -12,7 +12,7 @@ import r9.b;
 import r9.j;
 import w7.w8;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public class TransportRegistrar implements ComponentRegistrar {
     private static final String LIBRARY_NAME = "fire-transport";
@@ -28,7 +28,7 @@ public class TransportRegistrar implements ComponentRegistrar {
         m0 a2 = r9.a.a(f.class);
         a2.d = LIBRARY_NAME;
         a2.a(j.a(Context.class));
-        a2.f = new fh.b(16);
+        a2.f = new fh.b(18);
         return Arrays.asList(a2.b(), w8.a(LIBRARY_NAME, "18.1.8"));
     }
 }

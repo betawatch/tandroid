@@ -2,12 +2,13 @@ package l2;
 
 import b2.v0;
 import b2.w;
+import c3.q;
 import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.List;
 import t7.u;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class l {
     public final y2.m a;
@@ -30,7 +31,7 @@ public final class l {
         m2.m mVar2;
         j[] jVarArr;
         w wVar;
-        c3.o hVar2;
+        q hVar2;
         v2.e eVar2;
         ?? obj = new Object();
         obj.a = mVar;
@@ -81,7 +82,7 @@ public final class l {
                 v2.e eVar3 = eVar2;
                 int i16 = i14;
                 long j11 = d;
-                jVarArr[i16] = new j(j11, mVar2, bVar, eVar3, 0L, mVar2.c());
+                jVarArr[i16] = new j(j11, mVar2, bVar, eVar3, 0L, mVar2.d());
                 i14 = i16 + 1;
                 lVar = this;
                 oVar2 = oVar;
@@ -96,7 +97,7 @@ public final class l {
                 v2.e eVar32 = eVar2;
                 int i162 = i14;
                 long j112 = d;
-                jVarArr[i162] = new j(j112, mVar2, bVar, eVar32, 0L, mVar2.c());
+                jVarArr[i162] = new j(j112, mVar2, bVar, eVar32, 0L, mVar2.d());
                 i14 = i162 + 1;
                 lVar = this;
                 oVar2 = oVar;
@@ -110,7 +111,7 @@ public final class l {
             v2.e eVar322 = eVar2;
             int i1622 = i14;
             long j1122 = d;
-            jVarArr[i1622] = new j(j1122, mVar2, bVar, eVar322, 0L, mVar2.c());
+            jVarArr[i1622] = new j(j1122, mVar2, bVar, eVar322, 0L, mVar2.d());
             i14 = i1622 + 1;
             lVar = this;
             oVar2 = oVar;

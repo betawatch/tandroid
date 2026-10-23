@@ -24,39 +24,39 @@ import w7.p8;
 import x7.da;
 import z7.bg;
 import z7.eg;
+import z7.fb;
 import z7.fg;
 import z7.gb;
 import z7.gg;
 import z7.hb;
 import z7.hg;
 import z7.i1;
-import z7.ib;
 import z7.ig;
 import z7.jg;
 import z7.kg;
-import z7.qa;
+import z7.wf;
 import z7.xf;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class f extends rb.e {
     public static final k6.c[] k = {j.c};
     public static final xb.a l = xb.a.a;
     public final Context d;
     public final bc.e e;
-    public final xf f;
-    public final qa g;
+    public final wf f;
+    public final xf g;
     public boolean h = true;
     public boolean i;
     public eg j;
 
-    public f(g gVar, bc.e eVar, xf xfVar, qa qaVar) {
+    public f(g gVar, bc.e eVar, wf wfVar, xf xfVar) {
         l.i(gVar, "MlKitContext can not be null");
         l.i(eVar, "SubjectSegmenterOptions can not be null");
         this.d = gVar.b();
         this.e = eVar;
-        this.f = xfVar;
-        this.g = qaVar;
+        this.f = wfVar;
+        this.g = xfVar;
     }
 
     @Override // rb.i
@@ -71,7 +71,7 @@ public final class f extends rb.e {
                     j.c(this.d, cVarArr);
                     this.i = true;
                 }
-                f(hb.c, elapsedRealtime);
+                f(gb.c, elapsedRealtime);
                 throw new nb.a("Waiting for the subject segmentation optional module to be downloaded. Please wait.", 14);
             }
             try {
@@ -95,13 +95,13 @@ public final class f extends rb.e {
                     Parcel obtain = Parcel.obtain();
                     obtain.writeInterfaceToken(egVar.c);
                     egVar.R0(obtain, 1);
-                    f(hb.b, elapsedRealtime);
+                    f(gb.b, elapsedRealtime);
                 } catch (RemoteException e) {
-                    f(hb.d, elapsedRealtime);
+                    f(gb.d, elapsedRealtime);
                     throw new nb.a("Failed to init module subject segmenter", e);
                 }
             } catch (Exception e7) {
-                f(hb.f, elapsedRealtime);
+                f(gb.f, elapsedRealtime);
                 throw new nb.a("Failed to load subject segmentation module", e7);
             }
         } catch (Throwable th2) {
@@ -124,15 +124,15 @@ public final class f extends rb.e {
                 Log.e("SubjectSegmenterTask", "Failed to release subject segmenter");
             }
             this.h = true;
-            xf xfVar = this.f;
-            ib ibVar = ib.Q4;
-            xfVar.getClass();
+            wf wfVar = this.f;
+            hb hbVar = hb.Q4;
+            wfVar.getClass();
             long elapsedRealtime = SystemClock.elapsedRealtime();
-            if (xfVar.d(ibVar, elapsedRealtime)) {
-                xfVar.i.put(ibVar, Long.valueOf(elapsedRealtime));
+            if (wfVar.d(hbVar, elapsedRealtime)) {
+                wfVar.i.put(hbVar, Long.valueOf(elapsedRealtime));
                 s3 s3Var = new s3();
-                s3Var.c = gb.b;
-                m.a.execute(new p(xfVar, new a5.a(s3Var, 0), ibVar, xfVar.c(), 8));
+                s3Var.c = fb.b;
+                m.a.execute(new p(wfVar, new a5.a(s3Var, 0), hbVar, wfVar.c(), 8));
             }
         } finally {
             this.j = null;
@@ -185,7 +185,7 @@ public final class f extends rb.e {
                             fVar = this;
                             aVar2 = aVar;
                             try {
-                                fVar.g(hb.b, elapsedRealtime, this.h, aVar2, V0);
+                                fVar.g(gb.b, elapsedRealtime, this.h, aVar2, V0);
                                 fVar.h = false;
                                 float[] fArr2 = V0.b;
                                 if (fArr2 != null) {
@@ -196,7 +196,7 @@ public final class f extends rb.e {
                                             allocate2.rewind();
                                         } catch (RemoteException e) {
                                             e = e;
-                                            fVar.g(hb.e, elapsedRealtime, fVar.h, aVar2, null);
+                                            fVar.g(gb.e, elapsedRealtime, fVar.h, aVar2, null);
                                             throw new nb.a("Failed to run thin subject segmenter.", e);
                                         }
                                     } catch (RemoteException e7) {
@@ -227,29 +227,29 @@ public final class f extends rb.e {
         }
     }
 
-    public final void f(hb hbVar, long j10) {
-        this.f.b(new e(this, hbVar, j10), ib.O4);
+    public final void f(gb gbVar, long j10) {
+        this.f.b(new e(this, gbVar, j10), hb.O4);
     }
 
-    public final void g(hb hbVar, long j10, boolean z10, wb.a aVar, jg jgVar) {
+    public final void g(gb gbVar, long j10, boolean z10, wb.a aVar, jg jgVar) {
         long elapsedRealtime = SystemClock.elapsedRealtime() - j10;
-        this.f.b(new d(this, elapsedRealtime, hbVar, z10, aVar, jgVar), ib.P4);
+        this.f.b(new d(this, elapsedRealtime, gbVar, z10, aVar, jgVar), hb.P4);
         u2.c cVar = new u2.c(17, false);
         cVar.d = this.e.a();
-        cVar.b = hbVar;
+        cVar.b = gbVar;
         cVar.c = Boolean.valueOf(z10);
         m.a.execute(new da(this.f, new i1(cVar), elapsedRealtime));
         long currentTimeMillis = System.currentTimeMillis();
         long j11 = currentTimeMillis - elapsedRealtime;
-        qa qaVar = this.g;
-        int i10 = hbVar.a;
-        synchronized (qaVar) {
-            AtomicLong atomicLong = (AtomicLong) qaVar.b;
+        xf xfVar = this.g;
+        int i10 = gbVar.a;
+        synchronized (xfVar) {
+            AtomicLong atomicLong = (AtomicLong) xfVar.b;
             long elapsedRealtime2 = SystemClock.elapsedRealtime();
-            if (atomicLong.get() != -1 && elapsedRealtime2 - ((AtomicLong) qaVar.b).get() <= TimeUnit.MINUTES.toMillis(30L)) {
+            if (atomicLong.get() != -1 && elapsedRealtime2 - ((AtomicLong) xfVar.b).get() <= TimeUnit.MINUTES.toMillis(30L)) {
                 return;
             }
-            ((p6.b) qaVar.a).f(new o(0, Arrays.asList(new n6.j(24336, i10, 0, j11, currentTimeMillis, null, null, 0, -1)))).addOnFailureListener(new ad.d(qaVar, elapsedRealtime2, 10));
+            ((p6.b) xfVar.a).f(new o(0, Arrays.asList(new n6.j(24336, i10, 0, j11, currentTimeMillis, null, null, 0, -1)))).addOnFailureListener(new ad.d(xfVar, elapsedRealtime2, 10));
         }
     }
 }

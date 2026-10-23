@@ -6,9 +6,9 @@ import java.util.regex.Pattern;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.cy;
+import org.telegram.ui.ey;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class fg implements Runnable {
     public final /* synthetic */ int a;
@@ -29,7 +29,7 @@ public final /* synthetic */ class fg implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        ci.r7 r7Var;
+        ci.q7 q7Var;
         TL_stories.StoryItem storyItem;
         int i10 = this.a;
         Object obj = this.f;
@@ -44,12 +44,12 @@ public final /* synthetic */ class fg implements Runnable {
             default:
                 LaunchActivity launchActivity = (LaunchActivity) obj2;
                 TLObject tLObject = (TLObject) obj;
-                Pattern pattern = LaunchActivity.C1;
+                Pattern pattern = LaunchActivity.E1;
                 if (tLObject instanceof TL_stories.TL_stories_stories) {
                     TL_stories.TL_stories_stories tL_stories_stories = (TL_stories.TL_stories_stories) tLObject;
                     int i11 = 0;
                     while (true) {
-                        r7Var = null;
+                        q7Var = null;
                         if (i11 >= tL_stories_stories.stories.size()) {
                             storyItem = null;
                         } else if (tL_stories_stories.stories.get(i11).id == this.d) {
@@ -61,22 +61,22 @@ public final /* synthetic */ class fg implements Runnable {
                     if (storyItem != null) {
                         long j10 = this.b;
                         storyItem.dialogId = j10;
-                        org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
+                        org.telegram.ui.ActionBar.o2 R = LaunchActivity.R();
                         if (R != null) {
-                            if (R instanceof cy) {
+                            if (R instanceof ey) {
                                 try {
-                                    r7Var = ci.r7.a(((cy) R).E0.h);
+                                    q7Var = ci.q7.a(((ey) R).E0.h);
                                 } catch (Exception unused) {
                                 }
                             }
-                            ci.r7 r7Var2 = r7Var;
+                            ci.q7 q7Var2 = q7Var;
                             R.getOrCreateStoryViewer().v();
                             ArrayList arrayList = new ArrayList();
                             arrayList.add(Long.valueOf(j10));
                             if (this.c) {
                                 R.getOrCreateStoryViewer().w1 = true;
                             }
-                            R.getOrCreateStoryViewer().G(launchActivity, storyItem, arrayList, 0, null, null, r7Var2, false);
+                            R.getOrCreateStoryViewer().G(launchActivity, storyItem, arrayList, 0, null, null, q7Var2, false);
                             break;
                         }
                     }

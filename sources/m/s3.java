@@ -13,12 +13,12 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicMarkableReference;
 import ki.c6;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.i80;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.Components.j80;
 import w7.z5;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class s3 implements n5.b {
     public Object a;
@@ -49,9 +49,9 @@ public final class s3 implements n5.b {
 
     public void a() {
         e(null);
-        i80 i80Var = (i80) this.c;
-        if (i80Var != null) {
-            i80Var.u();
+        j80 j80Var = (j80) this.c;
+        if (j80Var != null) {
+            j80Var.u();
             this.c = null;
         }
         this.d = null;
@@ -60,7 +60,7 @@ public final class s3 implements n5.b {
     }
 
     public void b(c6 c6Var, ArrayList arrayList) {
-        d6 d6Var = (d6) this.b;
+        g6 g6Var = (g6) this.b;
         LinearLayout linearLayout = (LinearLayout) this.d;
         if (linearLayout == null) {
             return;
@@ -72,9 +72,9 @@ public final class s3 implements n5.b {
             Object obj = arrayList.get(i10);
             i10++;
             ki.n0 n0Var = (ki.n0) obj;
-            ki.m0 m0Var = new ki.m0(c6Var.getContext(), n0Var, d6Var);
+            ki.m0 m0Var = new ki.m0(c6Var.getContext(), n0Var, g6Var);
             m0Var.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(12.0f), 0);
-            m0Var.setBackground(h6.Z(h6.w0(h6.i6, d6Var), 0, 0));
+            m0Var.setBackground(k6.Z(k6.w0(k6.i6, g6Var), 0, 0));
             m0Var.setOnClickListener(new ai.v0(this, c6Var, n0Var, 13));
             ((LinearLayout) this.d).addView(m0Var, z5.n(-1, 48));
         }
@@ -116,7 +116,7 @@ public final class s3 implements n5.b {
         float[] fArr3 = (float[]) this.h;
         float f12 = 1.0f / fArr3[3];
         fArr[i12] = com.google.android.gms.internal.play_billing.k3.t(fArr3[0], f12, 0.5f, 0.5f) * i10;
-        fArr[i12 + 1] = org.telegram.ui.Cells.c1.z(fArr3[1], f12, 0.5f, 0.5f) * i11;
+        fArr[i12 + 1] = org.telegram.ui.Cells.b1.x(fArr3[1], f12, 0.5f, 0.5f) * i11;
         return fArr3[2] * f12;
     }
 
@@ -135,8 +135,8 @@ public final class s3 implements n5.b {
     }
 
     public void f(c6 c6Var, String str) {
-        i80 i80Var;
-        i80 i80Var2;
+        j80 j80Var;
+        j80 j80Var2;
         if (str == null) {
             a();
             return;
@@ -147,13 +147,13 @@ public final class s3 implements n5.b {
             return;
         }
         e(c6Var);
-        if (((c6) this.f) == c6Var && a2.equals((ArrayList) this.e) && (i80Var2 = (i80) this.c) != null && i80Var2.D()) {
+        if (((c6) this.f) == c6Var && a2.equals((ArrayList) this.e) && (j80Var2 = (j80) this.c) != null && j80Var2.D()) {
             return;
         }
-        if (((c6) this.f) == c6Var && (i80Var = (i80) this.c) != null && i80Var.D() && ((LinearLayout) this.d) != null) {
+        if (((c6) this.f) == c6Var && (j80Var = (j80) this.c) != null && j80Var.D() && ((LinearLayout) this.d) != null) {
             this.e = a2;
             b(c6Var, a2);
-            ((i80) this.c).O();
+            ((j80) this.c).O();
             return;
         }
         a();
@@ -164,21 +164,21 @@ public final class s3 implements n5.b {
         this.d = linearLayout;
         linearLayout.setOrientation(1);
         b(c6Var, a2);
-        i80 h = ((ki.o0) this.a).h(c6Var.getEditText());
-        h.Q = true;
-        h.s = 0;
-        h.t = false;
-        h.r((LinearLayout) this.d, z5.n(220, -2));
-        h.X = AndroidUtilities.dp(240.0f);
-        h.i = 3;
-        h.a0(-AndroidUtilities.dp(12.0f), 0.0f);
-        h.p = new ki.u(this, 2);
-        h.d0 = true;
-        if (h.D()) {
-            h.C();
+        j80 i10 = ((ki.o0) this.a).i(c6Var.getEditText());
+        i10.Q = true;
+        i10.s = 0;
+        i10.t = false;
+        i10.r((LinearLayout) this.d, z5.n(220, -2));
+        i10.X = AndroidUtilities.dp(240.0f);
+        i10.i = 3;
+        i10.a0(-AndroidUtilities.dp(12.0f), 0.0f);
+        i10.p = new ki.u(this, 2);
+        i10.d0 = true;
+        if (i10.D()) {
+            i10.C();
         }
-        h.Z();
-        this.c = h;
+        i10.Z();
+        this.c = i10;
     }
 
     @Override // hd.a
@@ -215,9 +215,9 @@ public final class s3 implements n5.b {
         this.h = new float[4];
     }
 
-    public s3(ki.o0 o0Var, d6 d6Var) {
+    public s3(ki.o0 o0Var, g6 g6Var) {
         this.a = o0Var;
-        this.b = d6Var;
+        this.b = g6Var;
     }
 
     public s3(String str, ca.c cVar, com.google.firebase.messaging.r rVar) {

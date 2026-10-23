@@ -1,21 +1,15 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.graphics.Outline;
+import android.view.View;
+import android.view.ViewOutlineProvider;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class gt0 extends FragmentContextView {
-    public final /* synthetic */ uv0 R0;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gt0(uv0 uv0Var, Context context, org.telegram.ui.ActionBar.n2 n2Var, uv0 uv0Var2, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, n2Var, uv0Var2, false, d6Var);
-        this.R0 = uv0Var;
-    }
-
-    @Override // org.telegram.ui.Components.FragmentContextView, android.view.View
-    public final void setVisibility(int i10) {
-        uv0 uv0Var = this.R0;
-        uv0Var.P0.i(uv0Var.Q0, i10 == 0, true);
+public final class gt0 extends ViewOutlineProvider {
+    @Override // android.view.ViewOutlineProvider
+    public final void getOutline(View view, Outline outline) {
+        outline.setRoundRect(0, 0, view.getWidth(), view.getHeight(), AndroidUtilities.dp(16.0f));
     }
 }

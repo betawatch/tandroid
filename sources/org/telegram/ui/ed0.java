@@ -1,104 +1,46 @@
 package org.telegram.ui;
 
-import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ed0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ md0 b;
+    public final /* synthetic */ ue0 b;
 
-    public /* synthetic */ ed0(md0 md0Var, int i10) {
+    public /* synthetic */ ed0(ue0 ue0Var, int i10) {
         this.a = i10;
-        this.b = md0Var;
+        this.b = ue0Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.p();
+                this.b.L.m();
                 break;
             case 1:
-                md0 md0Var = this.b;
-                md0Var.postDelayed(new ed0(md0Var, 2), 150L);
-                ed0 ed0Var = md0Var.S;
-                md0Var.removeCallbacks(ed0Var);
-                md0Var.postDelayed(ed0Var, 3000L);
-                md0Var.R = true;
+                ue0 ue0Var = this.b;
+                ue0Var.M = null;
+                ue0Var.N = null;
+                ue0Var.o(true);
+                ue0Var.e.h(null, null, ue0Var.f, null);
+                jd jdVar = ue0Var.n;
+                org.telegram.ui.Components.yj0 yj0Var = ue0Var.I;
+                jdVar.setAnimation(yj0Var);
+                yj0Var.M(0);
+                ue0Var.K = true;
                 break;
             case 2:
-                id0 id0Var = this.b.a;
-                int i10 = 0;
-                id0Var.e = false;
-                id0Var.f[0].requestFocus();
-                while (true) {
-                    tr[] trVarArr = id0Var.f;
-                    if (i10 >= trVarArr.length) {
-                        break;
-                    } else {
-                        trVarArr[i10].i(0.0f);
-                        i10++;
-                    }
-                }
-            case 3:
-                md0 md0Var2 = this.b;
-                md0Var2.postDelayed(new ed0(md0Var2, 5), 150L);
-                break;
-            case 4:
-                md0 md0Var3 = this.b;
-                ld0 ld0Var = md0Var3.Q;
-                boolean z10 = false;
-                md0Var3.R = false;
-                int i11 = 0;
-                while (true) {
-                    tr[] trVarArr2 = md0Var3.a.f;
-                    if (i11 >= trVarArr2.length) {
-                        if (ld0Var.getCurrentView() != md0Var3.e) {
-                            ld0Var.showNext();
-                            FrameLayout frameLayout = md0Var3.h;
-                            if (md0Var3.f.getVisibility() != 0 && md0Var3.W.F != 3 && !md0Var3.P) {
-                                z10 = true;
-                            }
-                            AndroidUtilities.updateViewVisibilityAnimated(frameLayout, z10, 1.0f, true);
-                            break;
-                        }
-                    } else {
-                        trVarArr2[i11].i(0.0f);
-                        i11++;
-                    }
-                }
-                break;
-            case 5:
-                id0 id0Var2 = this.b.a;
-                int i12 = 0;
-                id0Var2.e = false;
-                id0Var2.f[0].requestFocus();
-                while (true) {
-                    tr[] trVarArr3 = id0Var2.f;
-                    if (i12 >= trVarArr3.length) {
-                        break;
-                    } else {
-                        trVarArr3[i12].i(0.0f);
-                        i12++;
-                    }
-                }
-            case 6:
-                this.b.q(true);
-                break;
-            case 7:
-                this.b.r();
+                this.b.K = true;
                 break;
             default:
-                md0 md0Var4 = this.b;
-                org.telegram.ui.Components.yj0 yj0Var = md0Var4.w;
-                yj0Var.getAnimatedDrawable().N(0, false, false);
-                yj0Var.d();
-                id0 id0Var3 = md0Var4.a;
-                if (id0Var3 != null && id0Var3.f != null) {
-                    id0Var3.setText("");
-                    id0Var3.f[0].requestFocus();
+                EditTextBoldCursor editTextBoldCursor = this.b.c;
+                if (editTextBoldCursor != null) {
+                    editTextBoldCursor.requestFocus();
+                    editTextBoldCursor.setSelection(editTextBoldCursor.length());
+                    AndroidUtilities.showKeyboard(editTextBoldCursor);
                     break;
                 }
                 break;

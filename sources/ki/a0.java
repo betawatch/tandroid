@@ -5,7 +5,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public abstract class a0 extends FrameLayout implements l4 {
     public a a;
@@ -28,15 +28,15 @@ public abstract class a0 extends FrameLayout implements l4 {
         this.b.a(aVar, new j5.b(this, 2));
     }
 
-    public int e() {
+    public int d() {
         return 0;
     }
 
-    public void f(int i10) {
+    public void e(int i10) {
         int i11;
         int d = w7.i.d(this.a);
         int i12 = 0;
-        int e = (i10 > 0 || d > 0) ? e() : 0;
+        int d10 = (i10 > 0 || d > 0) ? d() : 0;
         a aVar = this.a;
         if (aVar == null || !aVar.n) {
             i11 = this.e;
@@ -51,8 +51,8 @@ public abstract class a0 extends FrameLayout implements l4 {
                 i12 = AndroidUtilities.dp(com.google.android.gms.internal.play_billing.k3.v(r7, 1, 16, 10));
             }
         }
-        int i13 = i10 + e;
-        int i14 = d + e;
+        int i13 = i10 + d10;
+        int i14 = d + d10;
         int i15 = this.d;
         int i16 = this.f;
         if (LocaleController.isRTL) {
@@ -62,7 +62,7 @@ public abstract class a0 extends FrameLayout implements l4 {
         }
     }
 
-    public final void g(int i10, int i11, int i12, int i13) {
+    public final void f(int i10, int i11, int i12, int i13) {
         this.d = i10;
         this.e = i11;
         this.f = i12;

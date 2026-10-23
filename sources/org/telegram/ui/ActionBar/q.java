@@ -4,7 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class q extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -21,12 +21,12 @@ public final class q extends AnimatorListenerAdapter {
         ActionBarLayout actionBarLayout = this.b;
         switch (i10) {
             case 0:
-                Drawable drawable = ActionBarLayout.p1;
-                actionBarLayout.F(false);
+                Drawable drawable = ActionBarLayout.v1;
+                actionBarLayout.G(false);
                 break;
             default:
-                Drawable drawable2 = ActionBarLayout.p1;
-                actionBarLayout.F(false);
+                Drawable drawable2 = ActionBarLayout.v1;
+                actionBarLayout.G(false);
                 break;
         }
     }
@@ -35,7 +35,7 @@ public final class q extends AnimatorListenerAdapter {
     public void onAnimationStart(Animator animator) {
         switch (this.a) {
             case 0:
-                this.b.v0 = System.currentTimeMillis();
+                this.b.B0 = System.currentTimeMillis();
                 break;
             default:
                 super.onAnimationStart(animator);

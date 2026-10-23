@@ -1,33 +1,60 @@
 package ci;
 
+import android.view.View;
 import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.messenger.support.LongSparseLongArray;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Cells.wa;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final class ha implements Runnable {
-    public final /* synthetic */ ia a;
+public final class ha {
+    public static final ha[] f = new ha[4];
+    public final int a;
+    public final LongSparseLongArray b = new LongSparseLongArray();
+    public final ArrayList c = new ArrayList();
+    public final ArrayList d = new ArrayList();
+    public final ga e;
 
-    public ha(ia iaVar) {
-        this.a = iaVar;
+    public ha(int i10) {
+        new ArrayList();
+        this.e = new ga(this);
+        this.a = i10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        ia iaVar = this.a;
-        int i10 = iaVar.a;
-        ArrayList arrayList = iaVar.d;
+    public final void a(org.telegram.ui.Components.ia iaVar) {
+        TLRPC.UserStatus userStatus;
+        long currentTimeMillis = System.currentTimeMillis();
+        ArrayList arrayList = this.c;
+        arrayList.clear();
+        for (int i10 = 0; i10 < iaVar.getChildCount(); i10++) {
+            View childAt = iaVar.getChildAt(i10);
+            long dialogId = childAt instanceof org.telegram.ui.Cells.q2 ? ((org.telegram.ui.Cells.q2) childAt).getDialogId() : childAt instanceof wa ? ((wa) childAt).getDialogId() : 0L;
+            int i11 = this.a;
+            LongSparseLongArray longSparseLongArray = this.b;
+            if (dialogId > 0) {
+                TLRPC.User user = MessagesController.getInstance(i11).getUser(Long.valueOf(dialogId));
+                if (user != null && !user.bot && !user.self && !user.contact && (userStatus = user.status) != null && !(userStatus instanceof TLRPC.TL_userStatusEmpty) && currentTimeMillis - longSparseLongArray.get(dialogId, 0L) > 3600000) {
+                    longSparseLongArray.put(dialogId, currentTimeMillis);
+                    arrayList.add(Long.valueOf(dialogId));
+                }
+            } else {
+                TLRPC.Chat chat = MessagesController.getInstance(i11).getChat(Long.valueOf(-dialogId));
+                if (ChatObject.isChannel(chat) && !ChatObject.isMonoForum(chat) && currentTimeMillis - longSparseLongArray.get(dialogId, 0L) > 3600000) {
+                    longSparseLongArray.put(dialogId, currentTimeMillis);
+                    arrayList.add(Long.valueOf(dialogId));
+                }
+            }
+        }
         if (arrayList.isEmpty()) {
             return;
         }
-        ArrayList arrayList2 = new ArrayList(arrayList);
-        arrayList.clear();
-        TL_stories.TL_stories_getPeerMaxIDs tL_stories_getPeerMaxIDs = new TL_stories.TL_stories_getPeerMaxIDs();
-        for (int i11 = 0; i11 < arrayList2.size(); i11++) {
-            tL_stories_getPeerMaxIDs.id.add(MessagesController.getInstance(i10).getInputPeer(((Long) arrayList2.get(i11)).longValue()));
-        }
-        ConnectionsManager.getInstance(i10).sendRequestTyped(tL_stories_getPeerMaxIDs, new org.telegram.messenger.a(), new ai.r5(5, this, arrayList2));
+        this.d.addAll(arrayList);
+        ga gaVar = this.e;
+        AndroidUtilities.cancelRunOnUIThread(gaVar);
+        AndroidUtilities.runOnUIThread(gaVar, 300L);
     }
 }

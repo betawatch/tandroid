@@ -2,7 +2,7 @@ package si;
 
 import android.hardware.camera2.CameraDevice;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class e extends CameraDevice.StateCallback {
     public final /* synthetic */ int a;
@@ -211,10 +211,10 @@ public final class e extends CameraDevice.StateCallback {
                             }
                         }
                         j jVar7 = this.b;
-                        l0 l0Var = jVar7.x0;
-                        if (l0Var != null && l0Var == jVar7.w0.b) {
+                        m0 m0Var = jVar7.x0;
+                        if (m0Var != null && m0Var == jVar7.w0.b) {
                             jVar7.x0 = null;
-                            if (!jVar7.c0(l0Var)) {
+                            if (!jVar7.c0(m0Var)) {
                                 this.b.t();
                                 break;
                             }

@@ -7,15 +7,15 @@ import android.view.ViewGroup;
 import java.lang.ref.WeakReference;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+/* loaded from: classes4.dex */
 public final class b {
     public final gh.a a;
     public int b;
     public int c;
     public re.b d;
     public re.b e;
-    public ih.j f;
+    public ih.k f;
     public ViewGroup g;
     public ni.e h;
     public boolean i;
@@ -33,32 +33,32 @@ public final class b {
     }
 
     public final dh.d c(View view, eh.a aVar, boolean z10) {
-        dh.d f7 = this.a.f();
-        if (this.i && Build.VERSION.SDK_INT >= 33 && (f7 instanceof dh.e)) {
-            dh.e eVar = (dh.e) f7;
-            eVar.P = new g(eVar.K);
+        dh.d d = this.a.d();
+        if (this.i && Build.VERSION.SDK_INT >= 33 && (d instanceof dh.e)) {
+            dh.e eVar = (dh.e) d;
+            eVar.g0 = new g(eVar.b0);
         }
-        f7.o(aVar);
+        d.o(aVar);
         int i10 = this.b;
         int i11 = this.c;
-        f7.h = i10;
-        f7.i = i11;
+        d.n = i10;
+        d.r = i11;
         re.b bVar = this.e;
         if (bVar != null && view != null) {
             bVar.add(view);
         }
         ni.e eVar2 = this.h;
         if (eVar2 != null && view != null) {
-            eVar2.d.add(new ni.d(view, f7));
+            eVar2.d.add(new ni.d(view, d));
         }
         if (this.f != null && this.g != null && view != null) {
-            this.f.d(view, this.g, new h0(3, f7, new WeakReference(view)), z10);
+            this.f.d(view, this.g, new h0(3, d, new WeakReference(view)), z10);
         }
         re.b bVar2 = this.d;
         if (bVar2 != null) {
-            bVar2.add(f7);
+            bVar2.add(d);
         }
-        return f7;
+        return d;
     }
 
     public final void d() {
@@ -75,8 +75,8 @@ public final class b {
         this.e = bVar;
     }
 
-    public final void f(ih.j jVar, ViewGroup viewGroup) {
-        this.f = jVar;
+    public final void f(ih.k kVar, ViewGroup viewGroup) {
+        this.f = kVar;
         this.g = viewGroup;
     }
 }

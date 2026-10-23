@@ -17,14 +17,14 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class l6 extends FrameLayout {
     public final int a;
     public int b;
     public final ai.w1 c;
     public final FrameLayout d;
-    public final ci.s8 e;
+    public final ci.r8 e;
     public boolean f;
     public boolean h;
 
@@ -37,13 +37,13 @@ public final class l6 extends FrameLayout {
         TLRPC.User currentUser = UserConfig.getInstance(i10).getCurrentUser();
         ai.w1 w1Var = new ai.w1(this, getContext());
         this.c = w1Var;
-        ci.m4 m4Var = new ci.m4(getContext(), null);
-        m4Var.a.getAvatarDrawable().m(i10, currentUser);
-        ci.k4 k4Var = m4Var.a;
-        k4Var.e(currentUser, k4Var.getAvatarDrawable());
-        m4Var.b.l(Emoji.replaceEmoji(UserObject.getUserName(currentUser), m4Var.b.getPaint().getFontMetricsInt(), false), false);
-        m4Var.c(LocaleController.getString(R.string.RightNow), false);
-        w1Var.addView(m4Var, w7.z5.d(-1, -2.0f, 55, 0.0f, 17.0f, 0.0f, 0.0f));
+        ci.l4 l4Var = new ci.l4(getContext(), null);
+        l4Var.a.getAvatarDrawable().m(i10, currentUser);
+        ci.j4 j4Var = l4Var.a;
+        j4Var.e(currentUser, j4Var.getAvatarDrawable());
+        l4Var.b.l(Emoji.replaceEmoji(UserObject.getUserName(currentUser), l4Var.b.getPaint().getFontMetricsInt(), false), false);
+        l4Var.c(LocaleController.getString(R.string.RightNow), false);
+        w1Var.addView(l4Var, w7.z5.d(-1, -2.0f, 55, 0.0f, 17.0f, 0.0f, 0.0f));
         ImageView imageView = new ImageView(activity);
         imageView.setImageDrawable(getContext().getResources().getDrawable(R.drawable.ic_close_white).mutate());
         imageView.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
@@ -51,18 +51,18 @@ public final class l6 extends FrameLayout {
         addView(w1Var, w7.z5.c(-2.0f, -1));
         FrameLayout frameLayout = new FrameLayout(getContext());
         this.d = frameLayout;
-        ci.s8 s8Var = new ci.s8(getContext(), bVar);
-        this.e = s8Var;
-        s8Var.s0 = true;
-        s8Var.setTranslationY(AndroidUtilities.dp(8.0f));
-        frameLayout.addView(s8Var, w7.z5.d(-1, -1.0f, 87, 0.0f, 0.0f, 0.0f, 64.0f));
+        ci.r8 r8Var = new ci.r8(getContext(), bVar);
+        this.e = r8Var;
+        r8Var.s0 = true;
+        r8Var.setTranslationY(AndroidUtilities.dp(8.0f));
+        frameLayout.addView(r8Var, w7.z5.d(-1, -1.0f, 87, 0.0f, 0.0f, 0.0f, 64.0f));
         ImageView imageView2 = new ImageView(activity);
         imageView2.setImageResource(R.drawable.msg_share);
         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
         imageView2.setColorFilter(new PorterDuffColorFilter(-1, mode));
         frameLayout.addView(imageView2, w7.z5.d(28, 28.0f, 85, 0.0f, 0.0f, 12.0f, 16.0f));
         FrameLayout frameLayout2 = new FrameLayout(activity);
-        frameLayout2.setBackground(org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(22.0f), i0.a.o(-16777216, 122)));
+        frameLayout2.setBackground(org.telegram.ui.ActionBar.k6.c0(AndroidUtilities.dp(22.0f), i0.a.o(-16777216, 122)));
         TextView textView = new TextView(activity);
         textView.setTextSize(1, 18.0f);
         textView.setTextColor(1694498815);

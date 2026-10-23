@@ -8,9 +8,9 @@ import android.graphics.drawable.Drawable;
 import androidx.appcompat.widget.ActionBarContainer;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.ui.Components.f11;
+import org.telegram.ui.Components.i11;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class w3 extends Drawable {
     public final /* synthetic */ int a;
@@ -34,8 +34,8 @@ public final class w3 extends Drawable {
                 canvas.save();
                 canvas.translate(0.0f, AndroidUtilities.dp(1.0f));
                 gi.d3 d3Var = (gi.d3) this.b;
-                d3Var.I0.setBounds(getBounds());
-                d3Var.I0.draw(canvas);
+                d3Var.M0.setBounds(getBounds());
+                d3Var.M0.draw(canvas);
                 canvas.restore();
                 break;
             case 2:
@@ -71,7 +71,7 @@ public final class w3 extends Drawable {
                 imageReceiver.draw(canvas);
                 break;
             case 5:
-                ((f11) this.b).c(getBounds().centerX() - (((f11) this.b).c / 2.0f), getBounds().centerY(), 1.0f, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false), canvas);
+                ((i11) this.b).c(getBounds().centerX() - (((i11) this.b).c / 2.0f), getBounds().centerY(), 1.0f, org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.G6, false), canvas);
                 break;
             case 6:
                 canvas.save();
@@ -167,7 +167,7 @@ public final class w3 extends Drawable {
     public final void setAlpha(int i10) {
         switch (this.a) {
             case 1:
-                ((gi.d3) this.b).I0.setAlpha(i10);
+                ((gi.d3) this.b).M0.setAlpha(i10);
                 break;
             case 4:
                 ((ImageReceiver) this.b).setAlpha(i10 / 255.0f);
@@ -194,7 +194,7 @@ public final class w3 extends Drawable {
     public final void setColorFilter(ColorFilter colorFilter) {
         switch (this.a) {
             case 1:
-                ((gi.d3) this.b).I0.setColorFilter(colorFilter);
+                ((gi.d3) this.b).M0.setColorFilter(colorFilter);
                 break;
             case 4:
                 ((ImageReceiver) this.b).setColorFilter(colorFilter);
@@ -224,7 +224,7 @@ public final class w3 extends Drawable {
 
     public w3(String str) {
         this.a = 5;
-        this.b = new f11(str.substring(0, !str.isEmpty() ? 1 : 0), 14.0f, AndroidUtilities.bold());
+        this.b = new i11(str.substring(0, !str.isEmpty() ? 1 : 0), 14.0f, AndroidUtilities.bold());
     }
 
     private final void a(int i10) {

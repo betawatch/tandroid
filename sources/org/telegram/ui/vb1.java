@@ -1,19 +1,20 @@
 package org.telegram.ui;
 
-import android.widget.EditText;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class vb1 extends org.telegram.ui.ActionBar.g5 {
-    @Override // org.telegram.ui.ActionBar.g5
-    public final void m() {
+public final class vb1 extends AnimatorListenerAdapter {
+    public final /* synthetic */ qc1 a;
+
+    public vb1(qc1 qc1Var) {
+        this.a = qc1Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.g5
-    public final void n() {
-    }
-
-    @Override // org.telegram.ui.ActionBar.g5
-    public final void q(EditText editText) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        qc1 qc1Var = this.a;
+        qc1Var.K0[qc1Var.X0 != null ? (char) 0 : (char) 2].setVisibility(4);
     }
 }

@@ -1,17 +1,14 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.ConnectionsManager;
+import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class c4 extends TL_iv.PageBlock {
-    public boolean a;
-    public boolean b;
-    public d4 c;
-    public TL_iv.PageBlock d;
-    public TL_iv.RichText e;
-    public String f;
-    public d3 i;
-    public int j = ConnectionsManager.DEFAULT_DATACENTER_ID;
+    public final ArrayList a = new ArrayList();
+    public int b;
+    public int c;
+    public int d;
+    public int e;
 }

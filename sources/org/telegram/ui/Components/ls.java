@@ -10,9 +10,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ls implements MessagesStorage.LongCallback, yl0 {
+public final /* synthetic */ class ls implements MessagesStorage.LongCallback, bm0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ ps b;
 
@@ -21,16 +21,16 @@ public final /* synthetic */ class ls implements MessagesStorage.LongCallback, y
         this.b = psVar;
     }
 
-    @Override // org.telegram.ui.Components.yl0
+    @Override // org.telegram.ui.Components.bm0
     public /* synthetic */ boolean P0(View view) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.yl0
-    public void d(float f7, float f10, int i10, View view) {
+    @Override // org.telegram.ui.Components.bm0
+    public void c(float f7, float f10, int i10, View view) {
         boolean z10;
         ps psVar = this.b;
-        h61 G = psVar.X.G(i10 - 1);
+        m61 G = psVar.X.G(i10 - 1);
         if (G == null) {
             return;
         }
@@ -43,7 +43,7 @@ public final /* synthetic */ class ls implements MessagesStorage.LongCallback, y
         if (i11 == 103) {
             boolean z11 = !psVar.p0;
             psVar.p0 = z11;
-            ((org.telegram.ui.Cells.u8) view).setChecked(z11);
+            ((org.telegram.ui.Cells.v8) view).setChecked(z11);
             return;
         }
         int i12 = G.a;
@@ -56,11 +56,11 @@ public final /* synthetic */ class ls implements MessagesStorage.LongCallback, y
             }
             if (i13 == 1) {
                 osVar2.e(i14);
-                psVar.V();
+                psVar.U();
                 return;
             } else if (i11 == 3) {
                 osVar.e(i14);
-                psVar.V();
+                psVar.U();
                 return;
             } else {
                 if (i13 == 2) {
@@ -82,28 +82,28 @@ public final /* synthetic */ class ls implements MessagesStorage.LongCallback, y
                 }
                 if (i11 == 2) {
                     tL_chatBannedRights.invite_users = !tL_chatBannedRights.invite_users;
-                    psVar.W();
+                    psVar.V();
                 } else if (i11 == 3) {
                     tL_chatBannedRights.pin_messages = !tL_chatBannedRights.pin_messages;
-                    psVar.W();
+                    psVar.V();
                 } else if (i11 == 4) {
                     tL_chatBannedRights.change_info = !tL_chatBannedRights.change_info;
-                    psVar.W();
+                    psVar.V();
                 } else if (i11 == 5) {
                     tL_chatBannedRights.manage_topics = !tL_chatBannedRights.manage_topics;
-                    psVar.W();
+                    psVar.V();
                 } else if (i11 == 0) {
                     tL_chatBannedRights.send_plain = !tL_chatBannedRights.send_plain;
-                    psVar.W();
+                    psVar.V();
                 }
                 psVar.X.N(true);
                 return;
             }
             if (i12 == 40) {
                 psVar.y0 = !psVar.y0;
-                psVar.K();
+                psVar.J();
                 psVar.X.N(true);
-                psVar.u();
+                psVar.t();
                 return;
             }
             if (i11 == 100) {
@@ -111,10 +111,10 @@ public final /* synthetic */ class ls implements MessagesStorage.LongCallback, y
                 boolean z12 = !psVar.C0;
                 psVar.C0 = z12;
                 psVar.D0 = z12;
-                psVar.K();
+                psVar.J();
                 psVar.X.N(true);
-                psVar.u();
-                psVar.P();
+                psVar.t();
+                psVar.O();
                 return;
             }
             if (i12 == 38) {
@@ -127,7 +127,7 @@ public final /* synthetic */ class ls implements MessagesStorage.LongCallback, y
                     osVar4.g();
                 }
                 psVar.X.N(true);
-                psVar.W();
+                psVar.V();
                 return;
             }
             return;
@@ -138,12 +138,12 @@ public final /* synthetic */ class ls implements MessagesStorage.LongCallback, y
         }
         if (i11 == 1) {
             osVar2.d();
-            psVar.V();
+            psVar.U();
             return;
         }
         if (i11 == 3) {
             osVar.d();
-            psVar.V();
+            psVar.U();
             return;
         }
         if (i11 == 2) {
@@ -162,27 +162,27 @@ public final /* synthetic */ class ls implements MessagesStorage.LongCallback, y
             if (i11 == 6) {
                 z10 = true;
                 tL_chatBannedRights.send_photos = !tL_chatBannedRights.send_photos;
-                psVar.W();
+                psVar.V();
             } else {
                 z10 = true;
                 if (i11 == 7) {
                     tL_chatBannedRights.send_videos = !tL_chatBannedRights.send_videos;
-                    psVar.W();
+                    psVar.V();
                 } else if (i11 == 9) {
                     tL_chatBannedRights.send_audios = !tL_chatBannedRights.send_audios;
-                    psVar.W();
+                    psVar.V();
                 } else if (i11 == 8) {
                     tL_chatBannedRights.send_docs = !tL_chatBannedRights.send_docs;
-                    psVar.W();
+                    psVar.V();
                 } else if (i11 == 11) {
                     tL_chatBannedRights.send_roundvideos = !tL_chatBannedRights.send_roundvideos;
-                    psVar.W();
+                    psVar.V();
                 } else if (i11 == 10) {
                     tL_chatBannedRights.send_voices = !tL_chatBannedRights.send_voices;
-                    psVar.W();
+                    psVar.V();
                 } else if (i11 == 15) {
                     tL_chatBannedRights.send_reactions = !tL_chatBannedRights.send_reactions;
-                    psVar.W();
+                    psVar.V();
                 } else {
                     if (i11 == 12) {
                         boolean z14 = !tL_chatBannedRights.send_stickers;
@@ -190,15 +190,15 @@ public final /* synthetic */ class ls implements MessagesStorage.LongCallback, y
                         tL_chatBannedRights.send_gifs = z14;
                         tL_chatBannedRights.send_games = z14;
                         tL_chatBannedRights.send_stickers = z14;
-                        psVar.W();
+                        psVar.V();
                     } else if (i11 == 14) {
                         if (tL_chatBannedRights.send_plain || psVar.v0.send_plain) {
                             int i15 = 0;
                             while (true) {
-                                if (i15 >= psVar.X.x.size()) {
+                                if (i15 >= psVar.X.y.size()) {
                                     break;
                                 }
-                                h61 G2 = psVar.X.G(i15);
+                                m61 G2 = psVar.X.G(i15);
                                 if (G2.a == 39 && G2.d == 0) {
                                     s4.b1 K = psVar.d.K(i15 + 1);
                                     if (K != null) {
@@ -215,19 +215,19 @@ public final /* synthetic */ class ls implements MessagesStorage.LongCallback, y
                             return;
                         }
                         tL_chatBannedRights.embed_links = !tL_chatBannedRights.embed_links;
-                        psVar.W();
+                        psVar.V();
                     } else if (i11 == 13) {
                         z10 = true;
                         tL_chatBannedRights.send_polls = !tL_chatBannedRights.send_polls;
-                        psVar.W();
+                        psVar.V();
                     } else {
                         z10 = true;
                         if (i11 == 101) {
                             psVar.C0 = !psVar.C0;
-                            psVar.P();
+                            psVar.O();
                         } else if (i11 == 102) {
                             psVar.D0 = !psVar.D0;
-                            psVar.P();
+                            psVar.O();
                         }
                     }
                     z10 = true;
@@ -243,25 +243,25 @@ public final /* synthetic */ class ls implements MessagesStorage.LongCallback, y
             case 0:
                 ps psVar = this.b;
                 psVar.getClass();
-                org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
+                org.telegram.ui.ActionBar.o2 R = LaunchActivity.R();
                 if (R != null) {
-                    R.presentFragment(org.telegram.ui.qn.W9(j10));
+                    R.presentFragment(org.telegram.ui.sn.W9(j10));
                 }
                 psVar.dismiss();
                 break;
             default:
                 ps psVar2 = this.b;
                 psVar2.getClass();
-                org.telegram.ui.ActionBar.n2 R2 = LaunchActivity.R();
+                org.telegram.ui.ActionBar.o2 R2 = LaunchActivity.R();
                 if (R2 != null) {
-                    R2.presentFragment(org.telegram.ui.qn.W9(j10));
+                    R2.presentFragment(org.telegram.ui.sn.W9(j10));
                 }
                 psVar2.dismiss();
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.yl0
+    @Override // org.telegram.ui.Components.bm0
     public /* synthetic */ void a0(View view, float f7, float f10) {
     }
 }

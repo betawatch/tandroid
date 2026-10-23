@@ -22,14 +22,15 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import androidx.core.graphics.drawable.IconCompat;
+import androidx.lifecycle.j0;
 import androidx.lifecycle.n0;
 import androidx.lifecycle.p0;
 import androidx.lifecycle.q0;
 import androidx.lifecycle.s0;
 import androidx.lifecycle.t0;
 import b2.v0;
-import c3.j0;
-import ci.v7;
+import c3.l0;
+import ci.u7;
 import com.google.android.gms.cast.CastDevice;
 import com.google.android.gms.internal.cast.z5;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -80,15 +81,16 @@ import m.s3;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.Components.a00;
-import org.telegram.ui.Components.c81;
 import org.telegram.ui.Components.e00;
-import org.telegram.ui.Components.r71;
+import org.telegram.ui.Components.g81;
+import org.telegram.ui.Components.j81;
 import org.telegram.ui.Components.z71;
+import si.o0;
 import v7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public final class e implements com.google.android.gms.common.api.internal.r, z71, z3.d, j4.a0, OnCompleteListener, n5.b {
+public final class e implements com.google.android.gms.common.api.internal.r, g81, z3.d, j4.a0, OnCompleteListener, n5.b {
     public static e e;
     public final /* synthetic */ int a;
     public Object b;
@@ -126,12 +128,12 @@ public final class e implements com.google.android.gms.common.api.internal.r, z7
             return str;
         }
         if (!str.contains("?")) {
-            return a1.g.C(str, "?", sb3);
+            return a1.g.D(str, "?", sb3);
         }
         if (!str.endsWith("&")) {
             sb3 = "&".concat(sb3);
         }
-        return r4.c.u(str, sb3);
+        return o0.u(str, sb3);
     }
 
     @Override // j4.a0
@@ -157,11 +159,11 @@ public final class e implements com.google.android.gms.common.api.internal.r, z7
             a2.w = e7;
             b2.w wVar2 = new b2.w(a2);
             this.b = wVar2;
-            ((j0) this.d).b(wVar2);
+            ((l0) this.d).b(wVar2);
         }
         int a10 = xVar.a();
-        ((j0) this.d).d(a10, xVar);
-        ((j0) this.d).c(d, 1, a10, 0, null);
+        ((l0) this.d).d(a10, xVar);
+        ((l0) this.d).c(d, 1, a10, 0, null);
     }
 
     @Override // com.google.android.gms.common.api.internal.r
@@ -190,11 +192,11 @@ public final class e implements com.google.android.gms.common.api.internal.r, z7
     }
 
     @Override // j4.a0
-    public void b(k0 k0Var, c3.q qVar, j4.f0 f0Var) {
+    public void b(k0 k0Var, c3.s sVar, j4.f0 f0Var) {
         this.c = k0Var;
         f0Var.b();
         f0Var.c();
-        j0 j02 = qVar.j0(f0Var.c, 5);
+        l0 j02 = sVar.j0(f0Var.c, 5);
         this.d = j02;
         j02.b((b2.w) this.b);
     }
@@ -490,7 +492,7 @@ public final class e implements com.google.android.gms.common.api.internal.r, z7
             try {
                 viewModel = s0Var.W0(cls, bVar);
             } catch (AbstractMethodError unused) {
-                viewModel = s0Var.f(cls);
+                viewModel = s0Var.c(cls);
             }
             kotlin.jvm.internal.i.e(viewModel, "viewModel");
             p0 p0Var2 = (p0) linkedHashMap.put(key, viewModel);
@@ -506,7 +508,7 @@ public final class e implements com.google.android.gms.common.api.internal.r, z7
             if (oVar != null) {
                 m.q qVar = n0Var.e;
                 kotlin.jvm.internal.i.b(qVar);
-                androidx.lifecycle.j0.a(p0Var, qVar, oVar);
+                j0.a(p0Var, qVar, oVar);
             }
         }
         kotlin.jvm.internal.i.c(p0Var, "null cannot be cast to non-null type T of androidx.lifecycle.ViewModelProvider.get");
@@ -579,53 +581,53 @@ public final class e implements com.google.android.gms.common.api.internal.r, z7
         scheduledFuture.cancel(false);
     }
 
-    @Override // org.telegram.ui.Components.z71
-    public void onError(c81 c81Var, Exception exc) {
+    @Override // org.telegram.ui.Components.g81
+    public void onError(j81 j81Var, Exception exc) {
         t9 t9Var = ((r6) this.d).N;
         if (t9Var != null) {
             t9Var.run();
         }
     }
 
-    @Override // org.telegram.ui.Components.z71
+    @Override // org.telegram.ui.Components.g81
     public /* synthetic */ void onRenderedFirstFrame(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.z71
+    @Override // org.telegram.ui.Components.g81
     public void onStateChanged(boolean z10, int i10) {
         r6 r6Var = (r6) this.d;
         o6 o6Var = r6Var.K;
-        c81 c81Var = r6Var.e;
-        if (c81Var == null) {
+        j81 j81Var = r6Var.e;
+        if (j81Var == null) {
             return;
         }
-        if (c81Var.y()) {
+        if (j81Var.y()) {
             AndroidUtilities.runOnUIThread(o6Var);
         } else {
             AndroidUtilities.cancelRunOnUIThread(o6Var);
         }
     }
 
-    @Override // org.telegram.ui.Components.z71
+    @Override // org.telegram.ui.Components.g81
     public /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.z71
+    @Override // org.telegram.ui.Components.g81
     public void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
         ((r6) this.d).i();
     }
 
-    @Override // org.telegram.ui.Components.z71
+    @Override // org.telegram.ui.Components.g81
     public void onVideoSizeChanged(int i10, int i11, int i12, float f7) {
         r6 r6Var = (r6) this.d;
         a8 a8Var = (a8) this.b;
         if (a8Var != null) {
             z7 q6 = r6Var.e.q(a8Var.d1);
             a8Var.d1 = q6;
-            r71 r71Var = r6Var.n;
-            if (r71Var != null) {
-                r71Var.setHDRInfo(q6);
+            z71 z71Var = r6Var.n;
+            if (z71Var != null) {
+                z71Var.setHDRInfo(q6);
             }
         }
         int i13 = (int) (i10 * f7);
@@ -638,13 +640,13 @@ public final class e implements com.google.android.gms.common.api.internal.r, z7
             a8Var.A();
         }
         r6Var.b();
-        r71 r71Var2 = r6Var.n;
-        if (r71Var2 != null) {
+        z71 z71Var2 = r6Var.n;
+        if (z71Var2 != null) {
             int i15 = r6Var.f;
             int i16 = r6Var.h;
-            r71Var2.d = i15;
-            r71Var2.e = i16;
-            e00 e00Var = r71Var2.b;
+            z71Var2.d = i15;
+            z71Var2.e = i16;
+            e00 e00Var = z71Var2.b;
             if (e00Var == null) {
                 return;
             }
@@ -660,7 +662,7 @@ public final class e implements com.google.android.gms.common.api.internal.r, z7
     */
     public boolean p() {
         com.google.firebase.messaging.m mVar;
-        if (((ya.d) this.d).N("gcm.n.noui")) {
+        if (((ya.c) this.d).N("gcm.n.noui")) {
             return true;
         }
         FirebaseMessagingService firebaseMessagingService = (FirebaseMessagingService) this.c;
@@ -682,7 +684,7 @@ public final class e implements com.google.android.gms.common.api.internal.r, z7
                 }
             }
         }
-        String W = ((ya.d) this.d).W("gcm.n.image");
+        String W = ((ya.c) this.d).W("gcm.n.image");
         if (!TextUtils.isEmpty(W)) {
             try {
                 mVar = new com.google.firebase.messaging.m(new URL(W));
@@ -692,10 +694,10 @@ public final class e implements com.google.android.gms.common.api.internal.r, z7
             if (mVar != null) {
                 ExecutorService executorService = (ExecutorService) this.b;
                 TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
-                mVar.b = executorService.submit(new v7(9, mVar, taskCompletionSource));
+                mVar.b = executorService.submit(new u7(9, mVar, taskCompletionSource));
                 mVar.c = taskCompletionSource.getTask();
             }
-            com.google.firebase.messaging.i a2 = com.google.firebase.messaging.e.a((FirebaseMessagingService) this.c, (ya.d) this.d);
+            com.google.firebase.messaging.i a2 = com.google.firebase.messaging.e.a((FirebaseMessagingService) this.c, (ya.c) this.d);
             e0.q qVar = (e0.q) a2.a;
             if (mVar != null) {
                 try {
@@ -728,7 +730,7 @@ public final class e implements com.google.android.gms.common.api.internal.r, z7
         mVar = null;
         if (mVar != null) {
         }
-        com.google.firebase.messaging.i a22 = com.google.firebase.messaging.e.a((FirebaseMessagingService) this.c, (ya.d) this.d);
+        com.google.firebase.messaging.i a22 = com.google.firebase.messaging.e.a((FirebaseMessagingService) this.c, (ya.c) this.d);
         e0.q qVar2 = (e0.q) a22.a;
         if (mVar != null) {
         }
@@ -742,15 +744,8 @@ public final class e implements com.google.android.gms.common.api.internal.r, z7
         ((HashMap) this.d).put(str, str2);
     }
 
-    public void r(dc.i iVar, Object obj) {
-        if (((EnumMap) this.d) == null) {
-            this.d = new EnumMap(dc.i.class);
-        }
-        ((EnumMap) this.d).put((EnumMap) iVar, (dc.i) obj);
-    }
-
     @Override // z3.d
-    public List s(long j10) {
+    public List r(long j10) {
         List list = (List) this.b;
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList();
@@ -775,13 +770,20 @@ public final class e implements com.google.android.gms.common.api.internal.r, z7
         return arrayList;
     }
 
+    public void s(dc.i iVar, Object obj) {
+        if (((EnumMap) this.d) == null) {
+            this.d = new EnumMap(dc.i.class);
+        }
+        ((EnumMap) this.d).put((EnumMap) iVar, (dc.i) obj);
+    }
+
     public void t(y2.a aVar) {
-        j2.k kVar = (j2.k) ((HashMap) this.b).remove(aVar);
-        kVar.getClass();
-        i2.i iVar = (i2.i) ((i2.j) this.d).p.get(kVar);
-        if (iVar != null) {
-            synchronized (iVar) {
-                iVar.d--;
+        j2.j jVar = (j2.j) ((HashMap) this.b).remove(aVar);
+        jVar.getClass();
+        i2.h hVar = (i2.h) ((i2.i) this.d).p.get(jVar);
+        if (hVar != null) {
+            synchronized (hVar) {
+                hVar.d--;
             }
         }
     }
@@ -850,20 +852,20 @@ public final class e implements com.google.android.gms.common.api.internal.r, z7
         }
     }
 
-    @Override // z3.d
-    public int u() {
-        return ((long[]) this.d).length;
-    }
-
-    public void v(String str) {
+    public void u(String str) {
         if (str == null) {
             throw new NullPointerException("Null backendName");
         }
         this.b = str;
     }
 
+    @Override // z3.d
+    public int v() {
+        return ((long[]) this.d).length;
+    }
+
     public synchronized void w() {
-        ((i2.j) this.d).c.e();
+        ((i2.i) this.d).c.e();
     }
 
     public void x(int i10, String str, String str2) {
@@ -879,7 +881,7 @@ public final class e implements com.google.android.gms.common.api.internal.r, z7
         this.d = obj3;
     }
 
-    @Override // org.telegram.ui.Components.z71
+    @Override // org.telegram.ui.Components.g81
     public void onRenderedFirstFrame() {
         a8 a8Var = (a8) this.b;
         Runnable[] runnableArr = (Runnable[]) this.c;
@@ -898,10 +900,10 @@ public final class e implements com.google.android.gms.common.api.internal.r, z7
         }
         Runnable runnable = runnableArr[0];
         if (runnable == null) {
-            r71 r71Var = r6Var.n;
-            if (r71Var != null) {
+            z71 z71Var = r6Var.n;
+            if (z71Var != null) {
                 if (q6Var == null || !q6Var.g) {
-                    r71Var.animate().alpha(1.0f).setDuration(180L).withEndAction(new p6(0, this, a8Var)).start();
+                    z71Var.animate().alpha(1.0f).setDuration(180L).withEndAction(new p6(0, this, a8Var)).start();
                     return;
                 }
                 return;
@@ -978,11 +980,11 @@ public final class e implements com.google.android.gms.common.api.internal.r, z7
         this.c = bVar;
     }
 
-    @Override // org.telegram.ui.Components.z71
+    @Override // org.telegram.ui.Components.g81
     public /* synthetic */ void onSeekFinished(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.z71
+    @Override // org.telegram.ui.Components.g81
     public /* synthetic */ void onSeekStarted(j2.a aVar) {
     }
 
@@ -1042,11 +1044,11 @@ public final class e implements com.google.android.gms.common.api.internal.r, z7
         kotlin.jvm.internal.i.e(store, "store");
     }
 
-    public e(FirebaseMessagingService firebaseMessagingService, ya.d dVar, ExecutorService executorService) {
+    public e(FirebaseMessagingService firebaseMessagingService, ya.c cVar, ExecutorService executorService) {
         this.a = 10;
         this.b = executorService;
         this.c = firebaseMessagingService;
-        this.d = dVar;
+        this.d = cVar;
     }
 
     public e(Context context, LocationManager locationManager) {
@@ -1113,26 +1115,26 @@ public final class e implements com.google.android.gms.common.api.internal.r, z7
         this.b = null;
     }
 
-    public e(View view, ih.j jVar) {
+    public e(View view, ih.k kVar) {
         ViewTreeObserver viewTreeObserver;
         ViewTreeObserver viewTreeObserver2;
         this.a = 20;
         n6 n6Var = new n6(this, 2);
         this.b = view;
-        this.c = jVar;
+        this.c = kVar;
         view.addOnAttachStateChangeListener(n6Var);
         if (!view.isAttachedToWindow() || (viewTreeObserver2 = (ViewTreeObserver) this.d) == (viewTreeObserver = view.getViewTreeObserver())) {
             return;
         }
         if (viewTreeObserver2 != null) {
             if (viewTreeObserver2.isAlive()) {
-                ((ViewTreeObserver) this.d).removeOnPreDrawListener(jVar);
+                ((ViewTreeObserver) this.d).removeOnPreDrawListener(kVar);
             }
             this.d = null;
         }
         this.d = viewTreeObserver;
         if (viewTreeObserver.isAlive()) {
-            viewTreeObserver.addOnPreDrawListener(jVar);
+            viewTreeObserver.addOnPreDrawListener(kVar);
         }
     }
 
@@ -1218,10 +1220,10 @@ public final class e implements com.google.android.gms.common.api.internal.r, z7
         this.c = runnableArr;
     }
 
-    public e(i2.j jVar, j2.k kVar) {
+    public e(i2.i iVar, j2.j jVar) {
         this.a = 18;
-        this.d = jVar;
+        this.d = iVar;
         this.b = new HashMap();
-        this.c = kVar;
+        this.c = jVar;
     }
 }

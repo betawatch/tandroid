@@ -1,90 +1,69 @@
 package org.telegram.ui.Components;
 
-import android.app.Dialog;
-import android.os.Bundle;
-import android.view.KeyEvent;
-import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
-import android.widget.FrameLayout;
-import java.util.WeakHashMap;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.R;
-import org.telegram.ui.LaunchActivity;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class oe0 extends Dialog {
-    public final FrameLayout a;
-    public final ne0 b;
+public final class oe0 extends Drawable implements Drawable.Callback {
+    public final dh.d a;
+    public final RectF b = new RectF();
+    public int c = 255;
 
-    public oe0(LaunchActivity launchActivity) {
-        super(launchActivity, R.style.TransparentDialog);
-        AndroidUtilities.enableEdgeToEdge(getWindow());
-        FrameLayout frameLayout = new FrameLayout(launchActivity);
-        this.a = frameLayout;
-        k2 k2Var = new k2(27);
-        WeakHashMap weakHashMap = r0.i0.a;
-        r0.a0.i(frameLayout, k2Var);
-        ne0 ne0Var = new ne0(this, launchActivity);
-        this.b = ne0Var;
-        frameLayout.addView(ne0Var, w7.z5.e(-1, -1, 119));
+    public oe0(dh.d dVar) {
+        this.a = dVar;
+        dVar.setCallback(this);
     }
 
-    @Override // android.app.Dialog, android.content.DialogInterface
-    public final void dismiss() {
-        LaunchActivity launchActivity;
-        if (!this.b.i() || (launchActivity = LaunchActivity.H1) == null) {
-            return;
-        }
-        launchActivity.moveTaskToBack(true);
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        this.a.draw(canvas);
+        Rect bounds = getBounds();
+        RectF rectF = this.b;
+        rectF.set(bounds);
+        float min = Math.min(rectF.width(), rectF.height()) / 2.0f;
+        float f7 = this.c / 255.0f;
+        zh.t.c(canvas, rectF, min, f7);
+        zh.t.a(canvas, rectF, min, 0, f7);
     }
 
-    @Override // android.app.Dialog, android.view.Window.Callback
-    public final boolean dispatchKeyEvent(KeyEvent keyEvent) {
-        LaunchActivity launchActivity;
-        if (keyEvent.getKeyCode() != 4 || keyEvent.getRepeatCount() != 0) {
-            return super.dispatchKeyEvent(keyEvent);
-        }
-        if (this.b.i() && (launchActivity = LaunchActivity.H1) != null) {
-            launchActivity.moveTaskToBack(true);
-        }
-        return true;
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -3;
     }
 
-    @Override // android.app.Dialog
-    public final void onBackPressed() {
-        LaunchActivity launchActivity;
-        if (!this.b.i() || (launchActivity = LaunchActivity.H1) == null) {
-            return;
-        }
-        launchActivity.moveTaskToBack(true);
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void invalidateDrawable(Drawable drawable) {
+        invalidateSelf();
     }
 
-    @Override // android.app.Dialog
-    public final void onCreate(Bundle bundle) {
-        super.onCreate(bundle);
-        Window window = getWindow();
-        window.setWindowAnimations(R.style.DialogNoAnimation);
-        ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(-1, -1);
-        FrameLayout frameLayout = this.a;
-        setContentView(frameLayout, layoutParams);
-        WindowManager.LayoutParams attributes = window.getAttributes();
-        attributes.width = -1;
-        attributes.height = -1;
-        attributes.gravity = 119;
-        attributes.dimAmount = 0.0f;
-        int i10 = attributes.flags & (-3);
-        attributes.flags = i10;
-        attributes.softInputMode = 16;
-        if (!BuildVars.DEBUG_PRIVATE_VERSION) {
-            attributes.flags = i10 | 8192;
-            AndroidUtilities.logFlagSecure();
-        }
-        attributes.flags |= -2013198976;
-        window.setAttributes(attributes);
-        frameLayout.setSystemUiVisibility(256);
-        AndroidUtilities.setLightNavigationBar((Dialog) this, false);
+    @Override // android.graphics.drawable.Drawable
+    public final void onBoundsChange(Rect rect) {
+        this.a.setBounds(rect);
+    }
+
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j10) {
+        scheduleSelf(runnable, j10);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.c = i10;
+        this.a.setAlpha(i10);
+        invalidateSelf();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        this.a.getClass();
+    }
+
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void unscheduleDrawable(Drawable drawable, Runnable runnable) {
+        unscheduleSelf(runnable);
     }
 }

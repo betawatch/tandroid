@@ -2,25 +2,25 @@ package ai;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class v extends ei.d {
-    public final /* synthetic */ int h0;
+    public final /* synthetic */ int k0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ v(int i10, Context context, org.telegram.ui.ActionBar.d6 d6Var, boolean z10) {
-        super(context, d6Var, z10);
-        this.h0 = i10;
+    public /* synthetic */ v(int i10, Context context, org.telegram.ui.ActionBar.g6 g6Var, boolean z10) {
+        super(context, g6Var, z10);
+        this.k0 = i10;
     }
 
     @Override // ei.d
-    public boolean i() {
-        switch (this.h0) {
+    public boolean j() {
+        switch (this.k0) {
             case 0:
                 return false;
             case 1:
             default:
-                return super.i();
+                return super.j();
             case 2:
                 return false;
         }

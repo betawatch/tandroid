@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c implements Runnable {
     public final /* synthetic */ int a;
@@ -31,15 +31,15 @@ public final /* synthetic */ class c implements Runnable {
                 }
                 break;
             case 2:
-                AndroidUtilities.showKeyboard(this.b.A0.b);
+                AndroidUtilities.showKeyboard(this.b.A0.d);
                 break;
             case 3:
                 e0 e0Var3 = this.b;
-                e0Var3.m0(0, 0, false);
+                e0Var3.l0(0, 0, false);
                 e0Var3.dismiss();
                 break;
             default:
-                e0.R(this.b);
+                e0.Q(this.b);
                 break;
         }
     }

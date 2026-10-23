@@ -15,7 +15,7 @@ import java.util.function.Consumer;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d0 implements Consumer {
     public final /* synthetic */ n0 a;
@@ -103,7 +103,7 @@ public final /* synthetic */ class d0 implements Consumer {
         float clamp01 = c1Var2 != null ? Utilities.clamp01(c1Var2.f1) : f7;
         float f19 = f7 - clamp01;
         boolean z11 = z10;
-        float z12 = org.telegram.ui.Cells.c1.z(f19, f19, f19, f7);
+        float x10 = org.telegram.ui.Cells.b1.x(f19, f19, f19, f7);
         float V0 = z11 ? n0Var.d.V0() : -1.0f;
         if (V0 >= 0.0f) {
             float f20 = f7 - V0;
@@ -114,7 +114,7 @@ public final /* synthetic */ class d0 implements Consumer {
             max = 1.0f;
         } else {
             f11 = V0;
-            max = Math.max(mVar2.getScaleX(), (0.25f * z12) + 0.75f);
+            max = Math.max(mVar2.getScaleX(), (0.25f * x10) + 0.75f);
         }
         if (z11) {
             rectF = rectF2;
@@ -210,7 +210,7 @@ public final /* synthetic */ class d0 implements Consumer {
         matrix.postTranslate(0.0f, f25);
         n0Var.V.setLocalMatrix(matrix);
         canvas3.drawRect(0.0f, f25, width, Math.max(f26 + f25, AndroidUtilities.dp(200.0f) + mVar2.getHeight()), paint4);
-        boolean z13 = f10 < 1.0f && !z11;
+        boolean z12 = f10 < 1.0f && !z11;
         float f27 = z11 ? clamp01 : f10;
         c1 c1Var3 = n0Var.d;
         float f28 = 90.0f;
@@ -232,7 +232,7 @@ public final /* synthetic */ class d0 implements Consumer {
                 f18 = ((1.0f - ((f30 * f30) * f30)) * 0.15f) + 0.85f;
             } else {
                 float max3 = Math.max(0.0f, Math.min(1.0f, ((-f27) * 150.0f) / 90.0f));
-                f18 = org.telegram.ui.Cells.c1.z(max3, 0.15f, max3, 1.0f);
+                f18 = org.telegram.ui.Cells.b1.x(max3, 0.15f, max3, 1.0f);
                 f17 = 1.0f - max3;
             }
             if (qVar.getScaleX() != f18) {
@@ -264,7 +264,7 @@ public final /* synthetic */ class d0 implements Consumer {
                 if (f32 == 0.0f) {
                     f32 = childAt.getHeight();
                 }
-                if (!z13 || f32 <= 0.0f) {
+                if (!z12 || f32 <= 0.0f) {
                     canvas2 = canvas3;
                     f16 = 1.0f;
                 } else {
@@ -276,7 +276,7 @@ public final /* synthetic */ class d0 implements Consumer {
                     } else {
                         canvas2 = canvas3;
                         float max6 = Math.max(0.0f, Math.min(1.0f, (((-f10) * 150.0f) - (Math.max(0.0f, ((height3 - max4) / f32) - 0.5f) * Math.min(25.0f, 60.0f / Math.max(1.0f, max5 - 1.0f)))) / f33));
-                        f16 = org.telegram.ui.Cells.c1.z(max6, 0.4f, max6, 1.0f);
+                        f16 = org.telegram.ui.Cells.b1.x(max6, 0.4f, max6, 1.0f);
                     }
                 }
                 if (lVar.r != f16) {
@@ -291,7 +291,7 @@ public final /* synthetic */ class d0 implements Consumer {
             canvas3 = canvas2;
         }
         Canvas canvas4 = canvas3;
-        if (!z13 || f32 <= 0.0f) {
+        if (!z12 || f32 <= 0.0f) {
             canvas = canvas4;
             f15 = 1.0f;
         } else {

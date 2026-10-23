@@ -16,12 +16,12 @@ import ei.c5;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.nk;
+import org.telegram.messenger.sl;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.k6;
 import w7.z5;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class f extends FrameLayout {
     public final Paint a;
@@ -55,7 +55,7 @@ public final class f extends FrameLayout {
         ImageView imageView = new ImageView(context);
         this.e = imageView;
         imageView.setImageResource(R.drawable.msg_photo_flip);
-        imageView.setBackgroundDrawable(h6.g0(1090519039, 1, -1));
+        imageView.setBackgroundDrawable(k6.g0(1090519039, 1, -1));
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
         imageView.setScaleType(scaleType);
         final int i10 = 0;
@@ -101,7 +101,7 @@ public final class f extends FrameLayout {
         ImageView imageView2 = new ImageView(context);
         this.c = imageView2;
         imageView2.setImageResource(R.drawable.msg_photo_cropfix);
-        imageView2.setBackgroundDrawable(h6.g0(1090519039, 1, -1));
+        imageView2.setBackgroundDrawable(k6.g0(1090519039, 1, -1));
         imageView2.setScaleType(scaleType);
         final int i11 = 1;
         imageView2.setOnClickListener(new View.OnClickListener(this) { // from class: mg.d
@@ -146,7 +146,7 @@ public final class f extends FrameLayout {
         ImageView imageView3 = new ImageView(context);
         this.d = imageView3;
         imageView3.setImageResource(R.drawable.msg_photo_rotate);
-        imageView3.setBackgroundDrawable(h6.g0(1090519039, 1, -1));
+        imageView3.setBackgroundDrawable(k6.g0(1090519039, 1, -1));
         imageView3.setScaleType(scaleType);
         final int i12 = 2;
         imageView3.setOnClickListener(new View.OnClickListener(this) { // from class: mg.d
@@ -241,7 +241,7 @@ public final class f extends FrameLayout {
                 float dp = (width - AndroidUtilities.dp(2.5f)) / 2;
                 RectF rectF = this.r;
                 rectF.left = dp;
-                rectF.top = nk.A(22.0f, height, 2);
+                rectF.top = sl.A(22.0f, height, 2);
                 rectF.right = (AndroidUtilities.dp(2.5f) + width) / 2;
                 rectF.bottom = (AndroidUtilities.dp(22.0f) + height) / 2;
                 canvas2.drawRoundRect(rectF, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), paint);
@@ -325,11 +325,11 @@ public final class f extends FrameLayout {
     }
 
     public void setMirrored(boolean z10) {
-        this.e.setColorFilter(z10 ? new PorterDuffColorFilter(h6.x0(null, h6.zf, false), PorterDuff.Mode.MULTIPLY) : null);
+        this.e.setColorFilter(z10 ? new PorterDuffColorFilter(k6.x0(null, k6.zf, false), PorterDuff.Mode.MULTIPLY) : null);
     }
 
     public void setRotated(boolean z10) {
-        this.d.setColorFilter(z10 ? new PorterDuffColorFilter(h6.x0(null, h6.zf, false), PorterDuff.Mode.MULTIPLY) : null);
+        this.d.setColorFilter(z10 ? new PorterDuffColorFilter(k6.x0(null, k6.zf, false), PorterDuff.Mode.MULTIPLY) : null);
     }
 
     public void setFreeform(boolean z10) {

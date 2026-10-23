@@ -1,17 +1,10 @@
 package androidx.activity;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
 import android.app.NotificationManager;
 import android.content.Context;
-import android.graphics.RectF;
 import android.text.TextUtils;
 import android.util.Log;
-import android.util.Property;
-import android.view.View;
 import android.view.ViewConfiguration;
-import android.view.animation.DecelerateInterpolator;
-import android.widget.TextView;
 import androidx.appcompat.widget.ActionMenuView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.biometric.f0;
@@ -19,26 +12,25 @@ import androidx.fragment.app.j0;
 import androidx.lifecycle.z;
 import c5.c0;
 import c5.h0;
-import ci.aa;
-import ci.j8;
-import ci.q4;
+import ci.i8;
+import ci.p4;
+import ci.p9;
 import ci.q9;
-import ci.r9;
+import ci.z9;
 import com.google.android.gms.common.api.internal.c1;
 import com.google.android.gms.common.api.internal.l1;
 import com.google.android.gms.common.api.internal.o0;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import ei.xa;
 import java.io.IOException;
+import ki.g0;
+import ki.h1;
 import m.s1;
-import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.Cells.a0;
-import org.telegram.ui.Cells.s6;
-import org.telegram.ui.Cells.u5;
-import rg.v2;
+import org.telegram.ui.ActionBar.k6;
+import rg.w2;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class i implements Runnable {
     public final /* synthetic */ int a;
@@ -141,21 +133,21 @@ public final class i implements Runnable {
                 zVar.c(iVar2);
                 return;
             case 9:
-                q4 q4Var = (q4) this.b;
-                if (q4Var.K1 && q4Var.b1) {
-                    aa aaVar = ((r9) q4Var.Q1).d;
-                    aaVar.l1 = false;
-                    aaVar.P();
+                p4 p4Var = (p4) this.b;
+                if (p4Var.K1 && p4Var.b1) {
+                    z9 z9Var = ((q9) p4Var.Q1).d;
+                    z9Var.l1 = false;
+                    z9Var.P();
                     return;
                 }
                 return;
             case 10:
-                ((q9) this.b).L0 = false;
+                ((p9) this.b).L0 = false;
                 return;
             case 11:
-                j8 j8Var = (j8) this.b;
-                j8Var.b = false;
-                j8Var.invalidate();
+                i8 i8Var = (i8) this.b;
+                i8Var.b = false;
+                i8Var.invalidate();
                 return;
             case 12:
                 com.google.android.gms.common.api.internal.f0 f0Var2 = (com.google.android.gms.common.api.internal.f0) this.b;
@@ -199,8 +191,8 @@ public final class i implements Runnable {
                 }
             case 18:
                 rg.j jVar = ((xa) this.b).J0;
-                if (jVar instanceof v2) {
-                    ((v2) jVar).getEditText();
+                if (jVar instanceof w2) {
+                    ((w2) jVar).getEditText();
                     return;
                 }
                 return;
@@ -222,6 +214,18 @@ public final class i implements Runnable {
                 }
                 return;
             case 23:
+                ((g0) this.b).h();
+                return;
+            case 24:
+                h1 h1Var = (h1) this.b;
+                if (k6.g1()) {
+                    h1Var.postDelayed(this, 100L);
+                    return;
+                } else {
+                    h1Var.m();
+                    return;
+                }
+            case 25:
                 lg.e eVar3 = (lg.e) this.b;
                 eVar3.f.animate().setDuration(120L).alpha(0.0f);
                 eVar3.h.animate().setListener(null).start();
@@ -231,51 +235,31 @@ public final class i implements Runnable {
                 }
                 eVar3.h.animate().setDuration(120L).alpha(1.0f).start();
                 return;
-            case 24:
+            case 26:
                 s1 s1Var = (s1) this.b;
                 s1Var.w = null;
                 s1Var.drawableStateChanged();
                 return;
-            case 25:
+            case 27:
                 ActionMenuView actionMenuView = ((Toolbar) this.b).a;
                 if (actionMenuView == null || (iVar = actionMenuView.J) == null) {
                     return;
                 }
                 iVar.l();
                 return;
-            case 26:
+            case 28:
                 Object obj2 = ((a6.i) this.b).b;
                 return;
-            case 27:
-                a0 a0Var = (a0) this.b;
-                if (a0Var.b == null) {
-                    a0Var.b = new androidx.emoji2.text.j(a0Var, 3);
-                }
-                androidx.emoji2.text.j jVar2 = a0Var.b;
-                int i11 = a0Var.c + 1;
-                a0Var.c = i11;
-                jVar2.b = i11;
-                a0Var.postDelayed(jVar2, ViewConfiguration.getLongPressTimeout() - ViewConfiguration.getTapTimeout());
-                return;
-            case 28:
-                u5 u5Var = (u5) this.b;
-                TextView textView = u5Var.b;
-                textView.setTag(null);
-                AnimatorSet animatorSet = new AnimatorSet();
-                u5Var.d = animatorSet;
-                Property property = View.ALPHA;
-                animatorSet.playTogether(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 0.0f), ObjectAnimator.ofFloat(u5Var.a, (Property<TextView, Float>) property, 1.0f));
-                u5Var.d.setDuration(250L);
-                u5Var.d.setInterpolator(new DecelerateInterpolator());
-                u5Var.d.addListener(new m.a(this, 14));
-                u5Var.d.start();
-                return;
             default:
-                s6 s6Var = (s6) this.b;
-                s6Var.a();
-                RectF rectF = s6Var.f;
-                s6Var.invalidate(((int) rectF.left) - 5, ((int) rectF.top) - 5, ((int) rectF.right) + 5, ((int) rectF.bottom) + 5);
-                AndroidUtilities.runOnUIThread(s6Var.v, 1000L);
+                org.telegram.ui.Cells.z zVar2 = (org.telegram.ui.Cells.z) this.b;
+                if (zVar2.b == null) {
+                    zVar2.b = new androidx.emoji2.text.j(zVar2, 3);
+                }
+                androidx.emoji2.text.j jVar2 = zVar2.b;
+                int i11 = zVar2.c + 1;
+                zVar2.c = i11;
+                jVar2.b = i11;
+                zVar2.postDelayed(jVar2, ViewConfiguration.getLongPressTimeout() - ViewConfiguration.getTapTimeout());
                 return;
         }
     }
@@ -286,7 +270,7 @@ public final class i implements Runnable {
     }
 
     public i(a6.i iVar, int i10) {
-        this.a = 26;
+        this.a = 28;
         this.b = iVar;
     }
 }

@@ -3,11 +3,11 @@ package com.google.android.gms.internal.cast;
 import android.content.Context;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.messenger.MediaController;
-import org.telegram.ui.Components.c81;
+import org.telegram.ui.Components.j81;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.y9;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class a implements d6.h, y6.c {
     public int a;
@@ -44,17 +44,17 @@ public final class a implements d6.h, y6.c {
     }
 
     @Override // d6.h
-    public /* bridge */ /* synthetic */ void q(d6.f fVar, int i10) {
+    public /* bridge */ /* synthetic */ void r(d6.f fVar, int i10) {
     }
 
     @Override // d6.h
-    public void r(d6.f fVar) {
+    public void u(d6.f fVar) {
         b5.d.d(false);
         b5.d.C();
     }
 
     @Override // d6.h
-    public void v(d6.f fVar, String str) {
+    public void w(d6.f fVar, String str) {
         d6.c cVar = (d6.c) fVar;
         if (cVar == null) {
             return;
@@ -78,9 +78,9 @@ public final class a implements d6.h, y6.c {
         int i10 = this.a;
         long j10 = -1;
         if (i10 == 0) {
-            c81 c81Var = PhotoViewer.u1().F2;
-            if (c81Var != null) {
-                j10 = c81Var.n();
+            j81 j81Var = PhotoViewer.u1().F2;
+            if (j81Var != null) {
+                j10 = j81Var.n();
             }
         } else if (i10 == 1) {
             j10 = MediaController.getInstance().getCurrentPosition();
@@ -91,13 +91,13 @@ public final class a implements d6.h, y6.c {
         b5.d.d(true);
     }
 
-    @Override // d6.h
-    public /* bridge */ /* synthetic */ void w(d6.f fVar, int i10) {
+    @Override // y6.c
+    public int y(Context context, String str) {
+        return this.a;
     }
 
-    @Override // y6.c
-    public int z(Context context, String str) {
-        return this.a;
+    @Override // d6.h
+    public /* bridge */ /* synthetic */ void z(d6.f fVar, int i10) {
     }
 
     public /* synthetic */ a(int i10) {

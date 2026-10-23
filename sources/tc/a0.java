@@ -5,9 +5,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
-import org.telegram.ui.Wallet.z0;
+import org.telegram.ui.Wallet.y0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class a0 extends z {
     public final LinkedList b;
@@ -36,14 +36,14 @@ public final class a0 extends z {
             while (i10 < size) {
                 Object obj = arrayList.get(i10);
                 i10++;
-                z0 z0Var = (z0) obj;
+                y0 y0Var = (y0) obj;
                 try {
                     try {
-                        z0Var.getClass();
+                        y0Var.getClass();
                     } catch (Throwable unused) {
                     }
                 } catch (Throwable unused2) {
-                    z0Var.getClass();
+                    y0Var.getClass();
                 }
             }
         }
@@ -69,12 +69,12 @@ public final class a0 extends z {
             while (i10 < size) {
                 Object obj = arrayList.get(i10);
                 i10++;
-                z0 z0Var = (z0) obj;
+                y0 y0Var = (y0) obj;
                 try {
                     try {
-                        z0Var.getClass();
+                        y0Var.getClass();
                     } catch (Throwable unused) {
-                        z0Var.getClass();
+                        y0Var.getClass();
                     }
                 } catch (Throwable unused2) {
                 }
@@ -225,14 +225,14 @@ public final class a0 extends z {
         while (i12 < size) {
             Object obj = arrayList.get(i12);
             i12++;
-            z0 z0Var = (z0) obj;
+            y0 y0Var = (y0) obj;
             try {
                 try {
-                    z0Var.getClass();
+                    y0Var.getClass();
                 } catch (Throwable unused2) {
                 }
             } catch (Throwable unused3) {
-                z0Var.getClass();
+                y0Var.getClass();
             }
         }
         if (this.e != null) {
@@ -241,12 +241,12 @@ public final class a0 extends z {
             while (i11 < size2) {
                 Object obj2 = arrayList2.get(i11);
                 i11++;
-                z0 z0Var2 = (z0) obj2;
+                y0 y0Var2 = (y0) obj2;
                 try {
                     try {
-                        z0Var2.getClass();
+                        y0Var2.getClass();
                     } catch (Throwable unused4) {
-                        z0Var2.getClass();
+                        y0Var2.getClass();
                     }
                 } catch (Throwable unused5) {
                 }
@@ -281,12 +281,12 @@ public final class a0 extends z {
             while (i11 < size3) {
                 Object obj3 = arrayList3.get(i11);
                 i11++;
-                z0 z0Var3 = (z0) obj3;
+                y0 y0Var3 = (y0) obj3;
                 try {
                     try {
-                        z0Var3.getClass();
+                        y0Var3.getClass();
                     } catch (Throwable unused6) {
-                        z0Var3.getClass();
+                        y0Var3.getClass();
                     }
                 } catch (Throwable unused7) {
                 }
@@ -300,12 +300,12 @@ public final class a0 extends z {
             while (i11 < size4) {
                 Object obj4 = arrayList4.get(i11);
                 i11++;
-                z0 z0Var4 = (z0) obj4;
+                y0 y0Var4 = (y0) obj4;
                 try {
                     try {
-                        z0Var4.getClass();
+                        y0Var4.getClass();
                     } catch (Throwable unused8) {
-                        z0Var4.getClass();
+                        y0Var4.getClass();
                     }
                 } catch (Throwable unused9) {
                 }

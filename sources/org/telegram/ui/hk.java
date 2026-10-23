@@ -1,39 +1,55 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.ConnectionsManager;
+import android.view.View;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class hk extends org.telegram.ui.Components.nd {
-    public final /* synthetic */ boolean e;
-    public final /* synthetic */ qn f;
+public final class hk extends org.telegram.ui.Components.od {
+    public final /* synthetic */ sn d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public hk(qn qnVar, Context context, boolean z10) {
+    public hk(sn snVar, Context context) {
         super(context);
-        this.f = qnVar;
-        this.e = z10;
+        this.d = snVar;
     }
 
-    @Override // org.telegram.ui.Components.nd
-    public final void d() {
-        int dp = this.e ? AndroidUtilities.dp(4.0f) : 0;
-        int i10 = org.telegram.ui.ActionBar.h6.ve;
-        qn qnVar = this.f;
-        setBackground(org.telegram.ui.ActionBar.h6.X(AndroidUtilities.dp(19.0f), 436207615 & qnVar.getThemedColor(i10), dp, AndroidUtilities.dp(3.0f), 0, AndroidUtilities.dp(3.0f)));
-        getImageView().setColorFilter(new PorterDuffColorFilter(qnVar.getThemedColor(i10), PorterDuff.Mode.MULTIPLY));
-        getTextView().setTextColor(qnVar.getThemedColor(i10));
+    @Override // android.view.View
+    public final boolean hasOverlappingRendering() {
+        return false;
     }
 
-    @Override // org.telegram.ui.Components.nd
-    public final void setEditButton(boolean z10) {
-        super.setEditButton(z10);
-        if (this.e) {
-            getTextView().setMaxWidth(z10 ? AndroidUtilities.dp(116.0f) : ConnectionsManager.DEFAULT_DATACENTER_ID);
+    @Override // android.view.View
+    public final void setTranslationY(float f7) {
+        super.setTranslationY(f7);
+        sn snVar = this.d;
+        gk gkVar = snVar.Y;
+        if (gkVar != null) {
+            gkVar.invalidate();
         }
+        if (getVisibility() != 8) {
+            snVar.m9(true);
+            FrameLayout frameLayout = snVar.P;
+            if (frameLayout != null) {
+                frameLayout.setTranslationY(f7);
+            }
+            snVar.t9();
+            snVar.w9();
+            View view = snVar.fragmentView;
+            if (view != null) {
+                view.invalidate();
+            }
+        }
+    }
+
+    @Override // android.view.View
+    public final void setVisibility(int i10) {
+        FrameLayout frameLayout;
+        super.setVisibility(i10);
+        if (i10 != 8 || (frameLayout = this.d.P) == null) {
+            return;
+        }
+        frameLayout.setTranslationY(0.0f);
     }
 }

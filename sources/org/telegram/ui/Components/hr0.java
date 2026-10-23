@@ -1,333 +1,59 @@
 package org.telegram.ui.Components;
 
-import android.content.SharedPreferences;
-import android.text.Spanned;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.util.Property;
 import android.view.View;
-import android.view.ViewPropertyAnimator;
-import java.util.ArrayList;
-import java.util.Arrays;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.SavedMessagesController;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class hr0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public abstract class hr0 extends FrameLayout {
+    public View a;
+    public org.telegram.ui.ActionBar.n5 b;
+    public org.telegram.ui.ActionBar.n5 c;
+    public ai.jc d;
+    public int e;
+    public AnimatorSet f;
+    public Paint h;
+    public RectF n;
 
-    public /* synthetic */ hr0(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public final void a(int i10) {
+        if (this.e == i10) {
+            return;
+        }
+        this.e = i10;
+        AnimatorSet animatorSet = this.f;
+        if (animatorSet != null) {
+            animatorSet.cancel();
+        }
+        AnimatorSet animatorSet2 = new AnimatorSet();
+        this.f = animatorSet2;
+        animatorSet2.playTogether(ObjectAnimator.ofFloat(this.d, (Property<ai.jc, Float>) View.TRANSLATION_X, this.e == 0 ? 0.0f : r0.getMeasuredWidth()));
+        this.f.setDuration(180L);
+        this.f.setInterpolator(bs.g);
+        this.f.addListener(new i60(this, 19));
+        this.f.start();
+        ((uq0) this).r.f1();
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        String[] currentKeyboardLanguage;
-        ArrayList arrayList;
-        ArrayList arrayList2;
-        int i10 = this.a;
-        Object obj = this.b;
-        switch (i10) {
-            case 0:
-                ((ir0) obj).setVisibility(8);
-                break;
-            case 1:
-                uv0 uv0Var = ((js0) obj).G;
-                if (uv0Var.C1) {
-                    uv0Var.d1(false);
-                    break;
-                }
-                break;
-            case 2:
-                ((st0) obj).r.o1(false);
-                break;
-            case 3:
-                org.telegram.ui.ActionBar.n2 n2Var = ((du0) obj).f.v1;
-                if (n2Var != null) {
-                    n2Var.presentFragment(new PremiumPreviewFragment(0, "similar_channels"));
-                    break;
-                }
-                break;
-            case 4:
-                ((hr0) obj).run();
-                break;
-            case 5:
-                ev0 ev0Var = (ev0) obj;
-                ArrayList arrayList3 = ev0Var.f;
-                if (ev0Var.h) {
-                    ev0Var.h = false;
-                    ArrayList<Long> arrayList4 = new ArrayList<>();
-                    for (int i11 = 0; i11 < arrayList3.size(); i11++) {
-                        if (((SavedMessagesController.SavedDialog) arrayList3.get(i11)).pinned) {
-                            arrayList4.add(Long.valueOf(((SavedMessagesController.SavedDialog) arrayList3.get(i11)).dialogId));
-                        }
-                    }
-                    ev0Var.x.v1.getMessagesController().getSavedMessagesController().updatePinnedOrder(arrayList4);
-                    break;
-                }
-                break;
-            case 6:
-                ((fv0) obj).F();
-                break;
-            case 7:
-                ((lw0) obj).X();
-                break;
-            case 8:
-                ((uw0) obj).getClass();
-                break;
-            case 9:
-                mx0 mx0Var = (mx0) obj;
-                if (!mx0Var.w) {
-                    mx0Var.y = 0.0f;
-                    break;
-                }
-                break;
-            case 10:
-                ((xy0) obj).b();
-                break;
-            case 11:
-                iz0 iz0Var = (iz0) obj;
-                int i12 = iz0Var.a;
-                iz0Var.F = null;
-                gz0 gz0Var = iz0Var.c;
-                if (gz0Var != null && gz0Var.getEditField() != null && iz0Var.c.getFieldText() != null) {
-                    int selectionStart = iz0Var.c.getEditField().getSelectionStart();
-                    int selectionEnd = iz0Var.c.getEditField().getSelectionEnd();
-                    if (selectionStart != selectionEnd) {
-                        iz0Var.s = false;
-                        ah.x xVar = iz0Var.d;
-                        if (xVar != null) {
-                            xVar.invalidate();
-                            break;
-                        }
-                    } else {
-                        CharSequence fieldText = iz0Var.c.getFieldText();
-                        boolean z10 = fieldText instanceof Spanned;
-                        Emoji.EmojiSpan[] emojiSpanArr = z10 ? (Emoji.EmojiSpan[]) ((Spanned) fieldText).getSpans(Math.max(0, selectionEnd - 24), selectionEnd, Emoji.EmojiSpan.class) : null;
-                        if (emojiSpanArr == null || emojiSpanArr.length <= 0 || !SharedConfig.suggestAnimatedEmoji || !UserConfig.getInstance(i12).isPremium()) {
-                            a6[] a6VarArr = z10 ? (a6[]) ((Spanned) fieldText).getSpans(Math.max(0, selectionEnd), selectionEnd, a6.class) : null;
-                            if ((a6VarArr == null || a6VarArr.length == 0) && selectionEnd < 52) {
-                                iz0Var.s = true;
-                                iz0Var.c();
-                                iz0Var.T = null;
-                                String substring = fieldText.toString().substring(0, selectionEnd);
-                                if (substring != null) {
-                                    String str = iz0Var.H;
-                                    if (str == null || iz0Var.G != 1 || !str.equals(substring) || iz0Var.x || (arrayList = iz0Var.w) == null || arrayList.isEmpty()) {
-                                        int i13 = iz0Var.I + 1;
-                                        iz0Var.I = i13;
-                                        long currentTimeMillis = System.currentTimeMillis();
-                                        if (iz0Var.J == null || Math.abs(currentTimeMillis - iz0Var.L) > 360) {
-                                            iz0Var.L = currentTimeMillis;
-                                            currentKeyboardLanguage = AndroidUtilities.getCurrentKeyboardLanguage();
-                                        } else {
-                                            iz0Var.L = currentTimeMillis;
-                                            currentKeyboardLanguage = iz0Var.J;
-                                        }
-                                        String[] strArr = iz0Var.J;
-                                        if (strArr == null || !Arrays.equals(currentKeyboardLanguage, strArr)) {
-                                            MediaDataController.getInstance(i12).fetchNewEmojiKeywords(currentKeyboardLanguage);
-                                        }
-                                        iz0Var.J = currentKeyboardLanguage;
-                                        Runnable runnable = iz0Var.K;
-                                        if (runnable != null) {
-                                            AndroidUtilities.cancelRunOnUIThread(runnable);
-                                            iz0Var.K = null;
-                                        }
-                                        iz0Var.K = new ai.cb(iz0Var, currentKeyboardLanguage, substring, i13, 29);
-                                        ArrayList arrayList5 = iz0Var.w;
-                                        if (arrayList5 == null || arrayList5.isEmpty()) {
-                                            AndroidUtilities.runOnUIThread(iz0Var.K, 600L);
-                                        } else {
-                                            iz0Var.K.run();
-                                        }
-                                    } else {
-                                        iz0Var.v = false;
-                                        iz0Var.c();
-                                        iz0Var.d.setVisibility(0);
-                                        iz0Var.U = AndroidUtilities.dp(10.0f);
-                                        iz0Var.d.invalidate();
-                                    }
-                                }
-                                ah.x xVar2 = iz0Var.d;
-                                if (xVar2 != null) {
-                                    xVar2.invalidate();
-                                    break;
-                                }
-                            }
-                        } else {
-                            Emoji.EmojiSpan emojiSpan = emojiSpanArr[emojiSpanArr.length - 1];
-                            if (emojiSpan != null) {
-                                Spanned spanned = (Spanned) fieldText;
-                                int spanStart = spanned.getSpanStart(emojiSpan);
-                                int spanEnd = spanned.getSpanEnd(emojiSpan);
-                                if (selectionStart == spanEnd) {
-                                    String substring2 = fieldText.toString().substring(spanStart, spanEnd);
-                                    iz0Var.s = true;
-                                    iz0Var.c();
-                                    iz0Var.T = emojiSpan;
-                                    iz0Var.W = null;
-                                    iz0Var.V = null;
-                                    if (substring2 != null) {
-                                        String str2 = iz0Var.H;
-                                        if (str2 == null || iz0Var.G != 2 || !str2.equals(substring2) || iz0Var.x || (arrayList2 = iz0Var.w) == null || arrayList2.isEmpty()) {
-                                            int i14 = iz0Var.I + 1;
-                                            iz0Var.I = i14;
-                                            Runnable runnable2 = iz0Var.K;
-                                            if (runnable2 != null) {
-                                                AndroidUtilities.cancelRunOnUIThread(runnable2);
-                                            }
-                                            iz0Var.K = new org.telegram.ui.i4(iz0Var, substring2, i14, 27);
-                                            ArrayList arrayList6 = iz0Var.w;
-                                            if (arrayList6 == null || arrayList6.isEmpty()) {
-                                                AndroidUtilities.runOnUIThread(iz0Var.K, 600L);
-                                            } else {
-                                                iz0Var.K.run();
-                                            }
-                                        } else {
-                                            iz0Var.v = false;
-                                            iz0Var.c();
-                                            ah.x xVar3 = iz0Var.d;
-                                            if (xVar3 != null) {
-                                                xVar3.setVisibility(0);
-                                                iz0Var.d.invalidate();
-                                            }
-                                        }
-                                    }
-                                    ah.x xVar4 = iz0Var.d;
-                                    if (xVar4 != null) {
-                                        xVar4.invalidate();
-                                        break;
-                                    }
-                                }
-                            }
-                        }
-                        Runnable runnable3 = iz0Var.K;
-                        if (runnable3 != null) {
-                            AndroidUtilities.cancelRunOnUIThread(runnable3);
-                            iz0Var.K = null;
-                        }
-                        iz0Var.s = false;
-                        ah.x xVar5 = iz0Var.d;
-                        if (xVar5 != null) {
-                            xVar5.invalidate();
-                            break;
-                        }
-                    }
-                } else {
-                    iz0Var.s = false;
-                    iz0Var.v = true;
-                    ah.x xVar6 = iz0Var.d;
-                    if (xVar6 != null) {
-                        xVar6.invalidate();
-                        break;
-                    }
-                }
-                break;
-            case 12:
-                oz0 oz0Var = (oz0) obj;
-                oz0Var.G = null;
-                oz0Var.b();
-                break;
-            case 13:
-                boolean[] zArr = (boolean[]) obj;
-                if (!zArr[0]) {
-                    SharedPreferences globalMainSettings = MessagesController.getGlobalMainSettings();
-                    globalMainSettings.edit().putInt("showchattagsinfo", globalMainSettings.getInt("showchattagsinfo", 3) - 1).apply();
-                    zArr[0] = true;
-                    break;
-                }
-                break;
-            case 14:
-                ((m11) obj).a();
-                break;
-            case 15:
-                ArrayList arrayList7 = ((s11) obj).a;
-                for (int i15 = 0; i15 < arrayList7.size(); i15++) {
-                    ((View) arrayList7.get(i15)).setVisibility(8);
-                    if (arrayList7.get(i15) instanceof org.telegram.ui.Cells.u1) {
-                        ((org.telegram.ui.Cells.u1) arrayList7.get(i15)).J3(false, false);
-                        ((org.telegram.ui.Cells.u1) arrayList7.get(i15)).L3(false, false, false);
-                    }
-                }
-                break;
-            case 16:
-                r21 r21Var = (r21) obj;
-                r21Var.J = null;
-                r21Var.H.animate().scaleX(1.0f).scaleY(1.0f).setDuration(150L).setInterpolator(bs.f).start();
-                break;
-            case 17:
-                v21 v21Var = (v21) obj;
-                ViewPropertyAnimator duration = v21Var.animate().alpha(0.0f).setListener(new c80(v21Var, 28)).setDuration(300L);
-                v21Var.b = duration;
-                duration.start();
-                break;
-            case 18:
-                x21 x21Var = (x21) obj;
-                Utilities.Callback callback = x21Var.b;
-                if (callback != null) {
-                    callback.run(Long.valueOf(x21Var.a.s));
-                    break;
-                }
-                break;
-            case 19:
-                s31 s31Var = ((i31) obj).b;
-                if (s31Var.k()) {
-                    s31Var.l();
-                    break;
-                }
-                break;
-            case 20:
-                MessageObject messageObject = (MessageObject) obj;
-                NotificationCenter.getInstance(messageObject.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.voiceTranscriptionUpdate, messageObject);
-                break;
-            case 21:
-                ((Utilities.Callback2) obj).run(null, Boolean.FALSE);
-                break;
-            case 22:
-                ((org.telegram.ui.ActionBar.m1) obj).dismiss();
-                break;
-            case 23:
-                ((d51) obj).c.setVisibility(8);
-                break;
-            case 24:
-                ((org.telegram.ui.rk) obj).c.presentFragment(new org.telegram.ui.r21());
-                break;
-            case 25:
-                ((o51) obj).requestLayout();
-                break;
-            case 26:
-                ((f61) obj).f();
-                break;
-            case 27:
-                UndoView undoView = (UndoView) obj;
-                int i16 = UndoView.e0;
-                undoView.getClass();
-                try {
-                    undoView.f.performHapticFeedback(3, 2);
-                    break;
-                } catch (Exception unused) {
-                    return;
-                }
-            case 28:
-                ((e71) obj).invalidateSelf();
-                break;
-            default:
-                e00 e00Var = ((r71) obj).b;
-                if (e00Var != null) {
-                    e00Var.d(false, true, false);
-                    break;
-                }
-                break;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int size = (View.MeasureSpec.getSize(i10) - AndroidUtilities.dp(28.0f)) / 2;
+        ((FrameLayout.LayoutParams) this.c.getLayoutParams()).width = size;
+        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.b.getLayoutParams();
+        layoutParams.width = size;
+        layoutParams.leftMargin = AndroidUtilities.dp(14.0f) + size;
+        ai.jc jcVar = this.d;
+        ((FrameLayout.LayoutParams) jcVar.getLayoutParams()).width = size;
+        AnimatorSet animatorSet = this.f;
+        if (animatorSet != null) {
+            animatorSet.cancel();
         }
+        jcVar.setTranslationX(this.e == 0 ? 0.0f : r2.width);
+        super.onMeasure(i10, i11);
     }
 }

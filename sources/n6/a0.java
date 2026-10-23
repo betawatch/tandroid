@@ -6,8 +6,9 @@ import android.os.Looper;
 import android.os.Message;
 import android.text.TextUtils;
 import android.util.Log;
+import i2.o1;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class a0 extends com.google.android.gms.internal.cast.a0 {
     public final /* synthetic */ g a;
@@ -97,7 +98,7 @@ public final class a0 extends com.google.android.gms.internal.cast.a0 {
         }
         int i13 = message.what;
         if (i13 != 2 && i13 != 1 && i13 != 7) {
-            Log.wtf("GmsClient", i2.e.j(i13, "Don't know how to handle message: "), new Exception());
+            Log.wtf("GmsClient", o1.k(i13, "Don't know how to handle message: "), new Exception());
             return;
         }
         w wVar4 = (w) message.obj;

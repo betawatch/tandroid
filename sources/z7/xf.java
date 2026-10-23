@@ -1,77 +1,26 @@
 package z7;
 
 import android.content.Context;
-import android.os.SystemClock;
-import com.google.android.gms.tasks.Task;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicLong;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public final class xf {
-    public static m k;
-    public static final r l;
-    public final String a;
-    public final String b;
-    public final vf c;
-    public final rb.k d;
-    public final Task e;
-    public final Task f;
-    public final String g;
-    public final int h;
-    public final HashMap i = new HashMap();
-    public final HashMap j = new HashMap();
+public final class xf implements n5.b {
+    public final Object a;
+    public final Object b;
 
-    static {
-        Object[] objArr = {"optional-module-barcode", "com.google.android.gms.vision.barcode"};
-        objArr[0].getClass();
-        objArr[1].getClass();
-        l = new r(objArr);
+    public xf(Context context) {
+        this.b = new AtomicLong(-1L);
+        this.a = new p6.b(context, p6.b.k, new n6.p("mlkit:vision"), com.google.android.gms.common.api.i.c);
     }
 
-    public xf(Context context, rb.k kVar, vf vfVar) {
-        this.a = context.getPackageName();
-        this.b = rb.c.a(context);
-        this.d = kVar;
-        this.c = vfVar;
-        ag.b();
-        this.g = "subject-segmentation";
-        rb.f a2 = rb.f.a();
-        c5.y yVar = new c5.y(this, 10);
-        a2.getClass();
-        this.e = rb.f.b(yVar);
-        rb.f a10 = rb.f.a();
-        kVar.getClass();
-        t7.p pVar = new t7.p(kVar, 4);
-        a10.getClass();
-        this.f = rb.f.b(pVar);
-        r rVar = l;
-        this.h = rVar.containsKey("subject-segmentation") ? y6.e.d(context, (String) rVar.get("subject-segmentation"), false) : -1;
+    @Override // hd.a
+    public Object get() {
+        return new m5.d((Context) ((n5.c) this.a).a, (m.g3) ((ki.t1) this.b).get());
     }
 
-    public static long a(ArrayList arrayList, double d) {
-        return ((Long) arrayList.get(Math.max(((int) Math.ceil((d / 100.0d) * arrayList.size())) - 1, 0))).longValue();
-    }
-
-    public final void b(wf wfVar, ib ibVar) {
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        if (d(ibVar, elapsedRealtime)) {
-            this.i.put(ibVar, Long.valueOf(elapsedRealtime));
-            rb.m.a.execute(new com.google.android.gms.internal.cast.p(this, wfVar.zza(), ibVar, c(), 8));
-        }
-    }
-
-    public final String c() {
-        Task task = this.e;
-        if (task.isSuccessful()) {
-            return (String) task.getResult();
-        }
-        return n6.i.c.a(this.g);
-    }
-
-    public final boolean d(ib ibVar, long j10) {
-        HashMap hashMap = this.i;
-        return hashMap.get(ibVar) == null || j10 - ((Long) hashMap.get(ibVar)).longValue() > TimeUnit.SECONDS.toMillis(30L);
+    public xf(n5.c cVar, ki.t1 t1Var) {
+        this.a = cVar;
+        this.b = t1Var;
     }
 }

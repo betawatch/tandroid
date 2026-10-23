@@ -14,7 +14,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class tg implements Runnable {
     public final /* synthetic */ int a;
@@ -67,7 +67,7 @@ public final /* synthetic */ class tg implements Runnable {
                 ((TopicsController) this.b).lambda$processUpdate$22((List) this.c);
                 break;
             case 12:
-                ((TopicsController) this.b).lambda$pinTopic$19((org.telegram.ui.ActionBar.n2) this.c);
+                ((TopicsController) this.b).lambda$pinTopic$19((org.telegram.ui.ActionBar.o2) this.c);
                 break;
             case 13:
                 ((TopicsController) this.b).lambda$onTopicsDeletedServerSide$23((ArrayList) this.c);

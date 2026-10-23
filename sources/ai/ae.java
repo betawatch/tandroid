@@ -1,71 +1,79 @@
 package ai;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.graphics.RectF;
-import android.view.View;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ja0;
+import android.content.Context;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final class ae extends AnimatorListenerAdapter {
-    public final /* synthetic */ ah.g1 a;
-    public final /* synthetic */ View b;
-    public final /* synthetic */ ci.q0[] c;
-    public final /* synthetic */ boolean[] d;
-    public final /* synthetic */ RectF e;
-    public final /* synthetic */ Runnable f;
-    public final /* synthetic */ le h;
+public final class ae extends tg.n {
+    public final /* synthetic */ int i0;
 
-    public ae(le leVar, ah.g1 g1Var, View view, ci.q0[] q0VarArr, boolean[] zArr, RectF rectF, Runnable runnable) {
-        this.h = leVar;
-        this.a = g1Var;
-        this.b = view;
-        this.c = q0VarArr;
-        this.d = zArr;
-        this.e = rectF;
-        this.f = runnable;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ ae(Context context, int i10, int i11, int i12) {
+        super(context, i10, i11);
+        this.i0 = i12;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        ja0 ja0Var;
-        le leVar = this.h;
-        zd zdVar = leVar.K;
-        zdVar.setVisibility(4);
-        zdVar.setPaused(true);
-        ah.g1 g1Var = this.a;
-        if (g1Var != null) {
-            g1Var.l = true;
+    @Override // tg.n
+    public void n() {
+        switch (this.i0) {
+            case 0:
+                break;
+            default:
+                super.n();
+                break;
         }
-        View view = this.b;
-        if (view != null) {
-            view.invalidate();
+    }
+
+    @Override // tg.n, android.view.TextureView, android.view.View
+    public void onAttachedToWindow() {
+        switch (this.i0) {
+            case 1:
+                super.onAttachedToWindow();
+                setPaused(false);
+                break;
+            case 2:
+                super.onAttachedToWindow();
+                setPaused(false);
+                break;
+            case 3:
+                super.onAttachedToWindow();
+                setPaused(false);
+                break;
+            case 4:
+                super.onAttachedToWindow();
+                setPaused(false);
+                break;
+            default:
+                super.onAttachedToWindow();
+                break;
         }
-        ci.q0 q0Var = this.c[0];
-        if (q0Var != null) {
-            q0Var.setDrawStar(true);
+    }
+
+    @Override // tg.n, android.view.View
+    public void onDetachedFromWindow() {
+        switch (this.i0) {
+            case 1:
+                super.onDetachedFromWindow();
+                setPaused(true);
+                break;
+            case 2:
+                super.onDetachedFromWindow();
+                setPaused(true);
+                break;
+            case 3:
+                super.onDetachedFromWindow();
+                setPaused(true);
+                break;
+            case 4:
+                super.onDetachedFromWindow();
+                setPaused(true);
+                break;
+            default:
+                super.onDetachedFromWindow();
+                break;
         }
-        super/*org.telegram.ui.ActionBar.f3*/.dismissInternal();
-        boolean[] zArr = this.d;
-        if (!zArr[0]) {
-            zArr[0] = true;
-            RectF rectF = this.e;
-            LaunchActivity.c0(rectF.centerX(), rectF.centerY(), 1.5f);
-            try {
-                leVar.container.performHapticFeedback(0, 1);
-            } catch (Exception unused) {
-            }
-            Runnable runnable = this.f;
-            if (runnable != null) {
-                runnable.run();
-            }
-        }
-        LaunchActivity launchActivity = LaunchActivity.H1;
-        if (launchActivity == null || (ja0Var = launchActivity.x0) == null) {
-            return;
-        }
-        ja0Var.c(true);
+    }
+
+    private final void p() {
     }
 }

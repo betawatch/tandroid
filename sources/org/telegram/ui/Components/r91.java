@@ -1,28 +1,12 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.graphics.Bitmap;
+import java.io.File;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class r91 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ s91 b;
+public interface r91 {
+    void a();
 
-    public /* synthetic */ r91(s91 s91Var, int i10) {
-        this.a = i10;
-        this.b = s91Var;
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.b.y = null;
-                break;
-            default:
-                this.b.y = null;
-                break;
-        }
-    }
+    void b(File file, Bitmap bitmap, boolean z10);
 }

@@ -1,79 +1,46 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.text.TextPaint;
+import android.content.Context;
+import android.graphics.Matrix;
+import android.view.TextureView;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class bg0 extends View {
-    public long E;
-    public float F;
-    public float G;
-    public float H;
-    public rc0 I;
-    public TextPaint a;
-    public TextPaint b;
-    public StaticLayout c;
-    public float d;
-    public float e;
-    public StaticLayout f;
-    public float h;
-    public float n;
-    public boolean r;
-    public f6 s;
-    public boolean v;
-    public dg0 w;
-    public ei.t9 x;
-    public boolean y;
+public final class bg0 extends TextureView {
+    public final /* synthetic */ hg0 a;
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        float e = this.s.e(this.r);
-        if (e <= 0.0f || this.c == null || this.f == null) {
-            return;
-        }
-        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) (e * 255.0f), 31);
-        canvas.save();
-        canvas.translate(((getWidth() - this.d) / 2.0f) - this.e, getHeight() * 0.22f);
-        this.c.draw(canvas);
-        canvas.restore();
-        canvas.save();
-        canvas.translate(((getWidth() - this.h) / 2.0f) - this.n, (getHeight() * 0.22f) + AndroidUtilities.dp(60.0f));
-        this.f.draw(canvas);
-        canvas.restore();
-        canvas.restore();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public bg0(hg0 hg0Var, Context context) {
+        super(context);
+        this.a = hg0Var;
     }
 
     @Override // android.view.View
     public final void onMeasure(int i10, int i11) {
-        setMeasuredDimension(View.MeasureSpec.getSize(i10), View.MeasureSpec.getSize(i11));
-        TextPaint textPaint = this.a;
-        textPaint.setColor(-1);
-        textPaint.setShadowLayer(AndroidUtilities.dp(8.0f), 0.0f, 0.0f, 805306368);
-        textPaint.setTextSize(AndroidUtilities.dp(34.0f));
-        TextPaint textPaint2 = this.b;
-        textPaint2.setColor(-1);
-        textPaint2.setShadowLayer(AndroidUtilities.dp(12.0f), 0.0f, 0.0f, 805306368);
-        textPaint2.setTextSize(AndroidUtilities.dp(58.0f));
-        if (this.c == null) {
-            StaticLayout staticLayout = new StaticLayout(LocaleController.getString(R.string.Enhance), textPaint, getMeasuredWidth(), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-            this.c = staticLayout;
-            this.d = staticLayout.getLineCount() > 0 ? this.c.getLineWidth(0) : 0.0f;
-            this.e = this.c.getLineCount() > 0 ? this.c.getLineLeft(0) : 0.0f;
+        View.MeasureSpec.getSize(i10);
+        super.onMeasure(i10, i11);
+    }
+
+    @Override // android.view.TextureView
+    public final void setTransform(Matrix matrix) {
+        super.setTransform(matrix);
+        e00 e00Var = this.a.l0;
+        if (e00Var != null) {
+            int width = getWidth();
+            int height = getHeight();
+            pa paVar = e00Var.I;
+            if (paVar == null) {
+                return;
+            }
+            Matrix matrix2 = paVar.v;
+            matrix.invert(matrix2);
+            float f7 = width;
+            float f10 = height;
+            matrix2.preScale(f7, f10);
+            matrix2.postScale(1.0f / f7, 1.0f / f10);
+            paVar.c(matrix2);
+            e00Var.d(false, false, false);
         }
-    }
-
-    public void setAllowTouch(boolean z10) {
-        this.v = z10;
-    }
-
-    public void setFilterView(dg0 dg0Var) {
-        this.w = dg0Var;
     }
 }

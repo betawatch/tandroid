@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class lo implements o8 {
     public final /* synthetic */ org.telegram.ui.ActionBar.m1[] a;
@@ -15,20 +15,20 @@ public final class lo implements o8 {
 
     @Override // org.telegram.ui.Components.o8
     public final void H0(int i10, int i11) {
-        org.telegram.ui.qn qnVar = this.b.G;
-        if (qnVar == null) {
+        org.telegram.ui.sn snVar = this.b.G;
+        if (snVar == null) {
             return;
         }
-        qnVar.getMessagesController().setDialogHistoryTTL(qnVar.a(), i10);
-        TLRPC.ChatFull chatFull = qnVar.Z7;
-        TLRPC.UserFull userFull = qnVar.a8;
+        snVar.getMessagesController().setDialogHistoryTTL(snVar.a(), i10);
+        TLRPC.ChatFull chatFull = snVar.l8;
+        TLRPC.UserFull userFull = snVar.m8;
         if (userFull == null && chatFull == null) {
             return;
         }
-        qnVar.T7();
-        UndoView undoView = qnVar.y3;
+        snVar.T7();
+        UndoView undoView = snVar.K3;
         if (undoView != null) {
-            undoView.k(qnVar.a(), i11, qnVar.i(), Integer.valueOf(userFull != null ? userFull.ttl_period : chatFull.ttl_period), null, null);
+            undoView.k(snVar.a(), i11, snVar.i(), Integer.valueOf(userFull != null ? userFull.ttl_period : chatFull.ttl_period), null, null);
         }
     }
 

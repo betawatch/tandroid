@@ -1,11 +1,12 @@
 package hb;
 
+import i2.o1;
 import java.io.Serializable;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public class u0 extends eb.u {
     public static eb.i a(mb.a aVar, int i10) {
@@ -20,7 +21,7 @@ public class u0 extends eb.u {
             return new eb.m(Boolean.valueOf(aVar.n()));
         }
         if (c10 != 8) {
-            throw new IllegalStateException("Unexpected token: ".concat(i2.e.E(i10)));
+            throw new IllegalStateException("Unexpected token: ".concat(o1.E(i10)));
         }
         aVar.t();
         return eb.k.a;
@@ -91,7 +92,7 @@ public class u0 extends eb.u {
                 lVar.C();
                 return iVar;
             }
-            throw new IllegalStateException("Unexpected " + i2.e.E(x10) + " when reading a JsonElement.");
+            throw new IllegalStateException("Unexpected " + o1.E(x10) + " when reading a JsonElement.");
         }
         int x11 = aVar.x();
         int c10 = m1.j.c(x11);

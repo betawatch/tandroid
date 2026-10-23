@@ -1,24 +1,94 @@
 package org.telegram.ui;
 
-import java.util.Iterator;
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class se1 implements org.telegram.ui.ActionBar.a2 {
-    public final /* synthetic */ ue1 a;
+public final class se1 extends org.telegram.ui.Components.d91 {
+    public final ArrayList a;
+    public final /* synthetic */ te1 b;
 
-    public /* synthetic */ se1(ue1 ue1Var) {
-        this.a = ue1Var;
+    public se1(te1 te1Var) {
+        this.b = te1Var;
+        ArrayList arrayList = new ArrayList();
+        this.a = arrayList;
+        arrayList.add(new pe1(0));
+        pe1 pe1Var = new pe1(2);
+        pe1Var.b = 0;
+        arrayList.add(pe1Var);
+        pe1 pe1Var2 = new pe1(2);
+        pe1Var2.b = 1;
+        arrayList.add(pe1Var2);
+        pe1 pe1Var3 = new pe1(2);
+        pe1Var3.b = 2;
+        arrayList.add(pe1Var3);
+        pe1 pe1Var4 = new pe1(2);
+        pe1Var4.b = 3;
+        arrayList.add(pe1Var4);
+        pe1 pe1Var5 = new pe1(2);
+        pe1Var5.b = 4;
+        arrayList.add(pe1Var5);
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        xe1 xe1Var = this.a.a;
-        Iterator it = xe1Var.e.iterator();
-        while (it.hasNext()) {
-            xe1.U(xe1Var, ((Integer) it.next()).intValue());
+    @Override // org.telegram.ui.Components.d91
+    public final void b(View view, int i10, int i11) {
+        te1 te1Var = this.b;
+        te1Var.K(view, i10, te1Var.b0, true);
+    }
+
+    @Override // org.telegram.ui.Components.d91
+    public final View d(int i10) {
+        int i11;
+        te1 te1Var = this.b;
+        ye1 ye1Var = te1Var.t0;
+        if (i10 == 1) {
+            return te1Var.T;
         }
-        xe1Var.e.clear();
-        xe1Var.V();
+        if (i10 == 2) {
+            i11 = ((org.telegram.ui.ActionBar.o2) ye1Var).currentAccount;
+            org.telegram.ui.Components.xn0 xn0Var = new org.telegram.ui.Components.xn0(i11, ye1Var);
+            xn0Var.b.j(new re1(0));
+            xn0Var.setUiCallback(te1Var);
+            return xn0Var;
+        }
+        i10 i10Var = new i10(ye1Var);
+        i10Var.setChatPreviewDelegate(te1Var.r0);
+        i10Var.setUiCallback(te1Var);
+        i10Var.b.j(new re1(1));
+        return i10Var;
+    }
+
+    @Override // org.telegram.ui.Components.d91
+    public final int e() {
+        return this.a.size();
+    }
+
+    @Override // org.telegram.ui.Components.d91
+    public final CharSequence g(int i10) {
+        ArrayList arrayList = this.a;
+        if (((pe1) arrayList.get(i10)).a == 0) {
+            return LocaleController.getString(R.string.SearchMessages);
+        }
+        if (((pe1) arrayList.get(i10)).a == 1) {
+            return LocaleController.getString(R.string.DownloadsTabs);
+        }
+        hg.o0 o0Var = hg.q0.d3[((pe1) arrayList.get(i10)).b];
+        String str = o0Var.c;
+        return str != null ? str : LocaleController.getString(o0Var.b);
+    }
+
+    @Override // org.telegram.ui.Components.d91
+    public final int h(int i10) {
+        ArrayList arrayList = this.a;
+        if (((pe1) arrayList.get(i10)).a == 0) {
+            return 1;
+        }
+        if (((pe1) arrayList.get(i10)).a == 1) {
+            return 2;
+        }
+        return ((pe1) arrayList.get(i10)).a + i10;
     }
 }

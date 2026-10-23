@@ -1,9 +1,25 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.tl.TL_iv;
+import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class ka0 extends TL_iv.RichText {
-    public int a;
+public final class ka0 extends gd.h {
+    public static final Pattern e = Pattern.compile("\\$([^\\s\\$][^\\$]*?)(?<!\\s)\\$(?![0-9])");
+
+    @Override // gd.h
+    public final df.p b() {
+        String a2 = a(e);
+        if (a2 == null) {
+            return null;
+        }
+        bd.d dVar = new bd.d();
+        dVar.g = com.google.android.gms.internal.play_billing.k3.i(1, 1, a2);
+        return dVar;
+    }
+
+    @Override // gd.h
+    public final char d() {
+        return '$';
+    }
 }

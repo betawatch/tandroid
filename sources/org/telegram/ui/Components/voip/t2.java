@@ -16,13 +16,13 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.p31;
-import org.telegram.ui.fo;
+import org.telegram.ui.ho;
 import w7.z5;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public class t2 extends FrameLayout {
     public String E;
@@ -34,7 +34,7 @@ public class t2 extends FrameLayout {
     public float K;
     public boolean L;
     public float M;
-    public org.telegram.ui.Cells.z N;
+    public org.telegram.ui.Cells.y N;
     public boolean O;
     public boolean P;
     public float Q;
@@ -117,7 +117,7 @@ public class t2 extends FrameLayout {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.Q, this.P ? 1.0f : 0.0f);
             this.U = ofFloat;
             ofFloat.addUpdateListener(new s2(this, 0));
-            this.U.addListener(new p31(this, 15));
+            this.U.addListener(new p31(this, 16));
             this.U.setDuration(150L);
             this.U.start();
         }
@@ -136,11 +136,11 @@ public class t2 extends FrameLayout {
             int alpha = Color.alpha(i12);
             float f10 = this.T;
             if (alpha != 255 || AndroidUtilities.computePerceivedBrightness(i12) <= 0.5d) {
-                org.telegram.ui.Cells.z i02 = h6.i0(AndroidUtilities.dp(f10), 0, i0.a.o(-1, (int) (f7 * 76.5f)));
+                org.telegram.ui.Cells.y i02 = k6.i0(AndroidUtilities.dp(f10), 0, i0.a.o(-1, (int) (f7 * 76.5f)));
                 this.N = i02;
                 i02.setCallback(this);
             } else {
-                org.telegram.ui.Cells.z i03 = h6.i0(AndroidUtilities.dp(f10), 0, i0.a.o(-16777216, (int) (f7 * 25.5f)));
+                org.telegram.ui.Cells.y i03 = k6.i0(AndroidUtilities.dp(f10), 0, i0.a.o(-16777216, (int) (f7 * 25.5f)));
                 this.N = i03;
                 i03.setCallback(this);
             }
@@ -201,7 +201,7 @@ public class t2 extends FrameLayout {
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         this.v = ofFloat;
         ofFloat.addUpdateListener(new ah.k0(9, this, z14));
-        this.v.addListener(new fo(26, this, z14));
+        this.v.addListener(new ho(26, this, z14));
         this.v.setDuration(150L).start();
         invalidate();
     }
@@ -222,9 +222,9 @@ public class t2 extends FrameLayout {
     @Override // android.view.ViewGroup, android.view.View
     public final void drawableStateChanged() {
         super.drawableStateChanged();
-        org.telegram.ui.Cells.z zVar = this.N;
-        if (zVar != null) {
-            zVar.setState(getDrawableState());
+        org.telegram.ui.Cells.y yVar = this.N;
+        if (yVar != null) {
+            yVar.setState(getDrawableState());
         }
     }
 
@@ -235,9 +235,9 @@ public class t2 extends FrameLayout {
     @Override // android.view.ViewGroup, android.view.View
     public final void jumpDrawablesToCurrentState() {
         super.jumpDrawablesToCurrentState();
-        org.telegram.ui.Cells.z zVar = this.N;
-        if (zVar != null) {
-            zVar.jumpToCurrentState();
+        org.telegram.ui.Cells.y yVar = this.N;
+        if (yVar != null) {
+            yVar.jumpToCurrentState();
         }
     }
 
@@ -271,7 +271,7 @@ public class t2 extends FrameLayout {
                     canvas.drawCircle(width, dp, dp2, paint);
                 }
                 if (this.N == null) {
-                    org.telegram.ui.Cells.z i02 = h6.i0(AndroidUtilities.dp(f13), 0, -16777216);
+                    org.telegram.ui.Cells.y i02 = k6.i0(AndroidUtilities.dp(f13), 0, -16777216);
                     this.N = i02;
                     i02.setCallback(this);
                 }

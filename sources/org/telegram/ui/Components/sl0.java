@@ -1,44 +1,53 @@
 package org.telegram.ui.Components;
 
-import android.view.MotionEvent;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
 import android.view.View;
-import android.view.ViewConfiguration;
-import android.view.ViewParent;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class sl0 implements View.OnTouchListener {
-    public float a;
-    public float b;
-    public boolean c;
+public final class sl0 extends Drawable {
+    public final Paint a = new Paint(1);
+    public final /* synthetic */ View b;
+    public final /* synthetic */ Path c;
+    public final /* synthetic */ RectF d;
+    public final /* synthetic */ mm0 e;
 
-    @Override // android.view.View.OnTouchListener
-    public final boolean onTouch(View view, MotionEvent motionEvent) {
-        ViewParent parent = view.getParent();
-        if (parent != null) {
-            if (motionEvent.getAction() == 0) {
-                this.a = motionEvent.getX();
-                this.b = motionEvent.getY();
-                this.c = true;
-                parent.requestDisallowInterceptTouchEvent(true);
-            }
-            if (motionEvent.getAction() == 2) {
-                float x10 = this.a - motionEvent.getX();
-                float y3 = this.b - motionEvent.getY();
-                float scaledTouchSlop = ViewConfiguration.get(view.getContext()).getScaledTouchSlop();
-                if (this.c) {
-                    if (Math.sqrt((y3 * y3) + (x10 * x10)) > scaledTouchSlop) {
-                        this.c = false;
-                        parent.requestDisallowInterceptTouchEvent(false);
-                        return false;
-                    }
-                }
-            } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-                this.c = false;
-                parent.requestDisallowInterceptTouchEvent(false);
-                return false;
-            }
-        }
-        return false;
+    public sl0(mm0 mm0Var, View view, Path path, RectF rectF) {
+        this.e = mm0Var;
+        this.b = view;
+        this.c = path;
+        this.d = rectF;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        canvas.save();
+        View view = this.b;
+        canvas.translate(-view.getX(), -view.getY());
+        canvas.clipPath(this.c);
+        int w02 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.d6, this.e.n2);
+        Paint paint = this.a;
+        paint.setColor(i0.a.o(w02, paint.getAlpha()));
+        canvas.drawRect(this.d, paint);
+        canvas.restore();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.a.setAlpha(i10);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

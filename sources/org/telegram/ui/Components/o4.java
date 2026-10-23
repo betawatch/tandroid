@@ -1,23 +1,50 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.graphics.Point;
+import android.widget.LinearLayout;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class o4 extends od0 {
-    public final /* synthetic */ int[] w0;
+public final class o4 extends LinearLayout {
+    public boolean a;
+    public final /* synthetic */ qd0 b;
+    public final /* synthetic */ qd0 c;
+    public final /* synthetic */ qd0 d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o4(Context context, org.telegram.ui.ActionBar.d6 d6Var, int[] iArr) {
-        super(context, d6Var);
-        this.w0 = iArr;
+    public o4(Context context, qd0 qd0Var, qd0 qd0Var2, qd0 qd0Var3) {
+        super(context);
+        this.b = qd0Var;
+        this.c = qd0Var2;
+        this.d = qd0Var3;
+        this.a = false;
     }
 
-    @Override // org.telegram.ui.Components.od0
-    public final CharSequence d(int i10) {
-        int i11 = this.w0[i10];
-        return i11 == 0 ? LocaleController.getString(R.string.MuteNever) : i11 < 60 ? LocaleController.formatPluralString("Minutes", i11, new Object[0]) : i11 < 1440 ? LocaleController.formatPluralString("Hours", i11 / 60, new Object[0]) : i11 < 10080 ? LocaleController.formatPluralString("Days", i11 / 1440, new Object[0]) : i11 < 44640 ? LocaleController.formatPluralString("Weeks", i11 / 10080, new Object[0]) : i11 < 525600 ? LocaleController.formatPluralString("Months", i11 / 44640, new Object[0]) : LocaleController.formatPluralString("Years", i11 / 525600, new Object[0]);
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        this.a = true;
+        Point point = AndroidUtilities.displaySize;
+        int i12 = point.x > point.y ? 3 : 5;
+        qd0 qd0Var = this.b;
+        qd0Var.setItemCount(i12);
+        qd0 qd0Var2 = this.c;
+        qd0Var2.setItemCount(i12);
+        qd0 qd0Var3 = this.d;
+        qd0Var3.setItemCount(i12);
+        qd0Var.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i12;
+        qd0Var2.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i12;
+        qd0Var3.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i12;
+        this.a = false;
+        super.onMeasure(i10, i11);
+    }
+
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.a) {
+            return;
+        }
+        super.requestLayout();
     }
 }

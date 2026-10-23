@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class b8 extends e8 {
     public final /* synthetic */ Context E;
@@ -22,27 +22,38 @@ public final class b8 extends e8 {
 
     @Override // org.telegram.ui.Components.e8
     public final TextView a() {
+        org.telegram.ui.ActionBar.g6 g6Var;
+        org.telegram.ui.ActionBar.g6 g6Var2;
+        org.telegram.ui.ActionBar.g6 g6Var3;
         switch (this.y) {
             case 0:
-                ma0 ma0Var = new ma0(this.E);
-                ma0Var.setTextColor(this.F.getThemedColor(org.telegram.ui.ActionBar.h6.Oi));
-                ma0Var.setTextSize(1, 17.0f);
-                ma0Var.setTypeface(AndroidUtilities.bold());
-                ma0Var.setEllipsize(TextUtils.TruncateAt.END);
-                ma0Var.setSingleLine(true);
-                return ma0Var;
+                na0 na0Var = new na0(this.E);
+                int i10 = org.telegram.ui.ActionBar.k6.Oi;
+                g6Var = ((org.telegram.ui.ActionBar.h3) this.F).resourcesProvider;
+                org.telegram.ui.ActionBar.r6.W(na0Var, i10, g6Var);
+                na0Var.setTextSize(1, 17.0f);
+                na0Var.setTypeface(AndroidUtilities.bold());
+                na0Var.setEllipsize(TextUtils.TruncateAt.END);
+                na0Var.setSingleLine(true);
+                return na0Var;
             default:
-                ma0 ma0Var2 = new ma0(this.E);
-                int i10 = org.telegram.ui.ActionBar.h6.Si;
+                na0 na0Var2 = new na0(this.E);
+                int i11 = org.telegram.ui.ActionBar.k6.Si;
                 k8 k8Var = this.F;
-                ma0Var2.setTextColor(k8Var.getThemedColor(i10));
-                ma0Var2.setTextSize(1, 13.0f);
-                ma0Var2.setEllipsize(TextUtils.TruncateAt.END);
-                ma0Var2.setSingleLine(true);
-                ma0Var2.setPadding(AndroidUtilities.dp(6.0f), 0, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(1.0f));
-                ma0Var2.setBackground(org.telegram.ui.ActionBar.h6.Z(k8Var.getThemedColor(org.telegram.ui.ActionBar.h6.i6), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f)));
-                ma0Var2.setOnClickListener(new org.telegram.ui.ActionBar.s1(28, this, ma0Var2));
-                return ma0Var2;
+                g6Var2 = ((org.telegram.ui.ActionBar.h3) k8Var).resourcesProvider;
+                org.telegram.ui.ActionBar.r6.W(na0Var2, i11, g6Var2);
+                na0Var2.setTextSize(1, 13.0f);
+                na0Var2.setEllipsize(TextUtils.TruncateAt.END);
+                na0Var2.setSingleLine(true);
+                na0Var2.setPadding(AndroidUtilities.dp(6.0f), 0, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(1.0f));
+                int i12 = org.telegram.ui.ActionBar.k6.i6;
+                org.telegram.ui.Cells.y Z = org.telegram.ui.ActionBar.k6.Z(k8Var.getThemedColor(i12), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
+                org.telegram.ui.ActionBar.n6 O = org.telegram.ui.ActionBar.r6.O(i12);
+                g6Var3 = ((org.telegram.ui.ActionBar.h3) k8Var).resourcesProvider;
+                na0Var2.setBackground(Z);
+                org.telegram.ui.ActionBar.r6.k(na0Var2, Z, null, O, g6Var3);
+                na0Var2.setOnClickListener(new org.telegram.ui.ActionBar.s1(28, this, na0Var2));
+                return na0Var2;
         }
     }
 }

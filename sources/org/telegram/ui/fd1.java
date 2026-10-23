@@ -1,44 +1,28 @@
 package org.telegram.ui;
 
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class fd1 extends org.telegram.ui.Components.im0 {
-    public final ArrayList c = new ArrayList();
-    public final ArrayList d = new ArrayList();
-    public ed1 e;
-    public int f;
-    public final /* synthetic */ gd1 h;
+public final class fd1 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ gd1 b;
 
-    public fd1(gd1 gd1Var) {
-        this.h = gd1Var;
+    public /* synthetic */ fd1(gd1 gd1Var, int i10) {
+        this.a = i10;
+        this.b = gd1Var;
     }
 
-    @Override // org.telegram.ui.Components.im0
-    public final boolean D(s4.b1 b1Var) {
-        return true;
-    }
-
-    @Override // s4.g0
-    public final int h() {
-        return this.c.size();
-    }
-
-    @Override // s4.g0
-    public final void v(s4.b1 b1Var, int i10) {
-        ArrayList arrayList = this.c;
-        TLRPC.Chat chat = (TLRPC.Chat) arrayList.get(i10);
-        String str = (String) this.d.get(i10);
-        org.telegram.ui.Cells.f4 f4Var = (org.telegram.ui.Cells.f4) b1Var.a;
-        f4Var.e(chat, chat.title, str, i10 != arrayList.size() - 1);
-        f4Var.c(this.h.w.contains(Long.valueOf(chat.id)), false);
-    }
-
-    @Override // s4.g0
-    public final s4.b1 x(ViewGroup viewGroup, int i10) {
-        return new org.telegram.ui.Components.tl0(new org.telegram.ui.Cells.f4(viewGroup.getContext(), 1, 0, false));
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                this.b.s.s.setVisibility(8);
+                break;
+            default:
+                this.b.s.a.setVisibility(8);
+                break;
+        }
     }
 }

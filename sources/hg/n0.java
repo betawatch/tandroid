@@ -1,33 +1,35 @@
 package hg;
 
 import android.content.Context;
+import android.graphics.drawable.ShapeDrawable;
 import android.widget.FrameLayout;
 import android.widget.TextView;
+import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.b6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.w9;
-import org.telegram.ui.Components.zq;
+import org.telegram.ui.Components.yq;
 import w7.z5;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class n0 extends FrameLayout {
-    public static final /* synthetic */ int f = 0;
-    public final d6 a;
+public final class n0 extends FrameLayout implements b6 {
+    public final g6 a;
     public final w9 b;
     public final TextView c;
-    public zq d;
+    public yq d;
     public o0 e;
 
-    public n0(Context context, d6 d6Var) {
+    public n0(Context context, g6 g6Var) {
         super(context);
-        this.a = d6Var;
+        this.a = g6Var;
         w9 w9Var = new w9(context);
         this.b = w9Var;
         addView(w9Var, z5.c(30.0f, 30));
@@ -35,25 +37,7 @@ public final class n0 extends FrameLayout {
         this.c = textView;
         textView.setTextSize(1, 14.0f);
         addView(textView, z5.d(-2, -2.0f, 16, 36.0f, 0.0f, 14.0f, 0.0f));
-        a();
-    }
-
-    public final void a() {
-        int dp = AndroidUtilities.dp(28.0f);
-        int i10 = h6.ci;
-        d6 d6Var = this.a;
-        setBackground(h6.c0(dp, h6.w0(i10, d6Var)));
-        this.c.setTextColor(h6.w0(h6.G6, d6Var));
-        zq zqVar = this.d;
-        if (zqVar != null) {
-            if (this.e.d == 7) {
-                h6.w1(zqVar, h6.w0(h6.Oh, d6Var), false);
-                h6.w1(this.d, h6.w0(h6.Sh, d6Var), true);
-            } else {
-                h6.w1(zqVar, h6.w0(h6.Oh, d6Var), false);
-                h6.w1(this.d, h6.w0(h6.Sh, d6Var), true);
-            }
-        }
+        updateColors();
     }
 
     public void setData(o0 o0Var) {
@@ -63,39 +47,39 @@ public final class n0 extends FrameLayout {
         int i10 = o0Var.d;
         String str = o0Var.c;
         TextView textView = this.c;
-        d6 d6Var = this.a;
+        g6 g6Var = this.a;
         if (i10 == 7) {
-            zq M = h6.M(AndroidUtilities.dp(32.0f), R.drawable.chats_archive);
+            yq M = k6.M(AndroidUtilities.dp(32.0f), R.drawable.chats_archive);
             this.d = M;
             int dp = AndroidUtilities.dp(16.0f);
             int dp2 = AndroidUtilities.dp(16.0f);
             M.e = dp;
             M.f = dp2;
-            h6.w1(this.d, h6.w0(h6.Oh, d6Var), false);
-            h6.w1(this.d, h6.w0(h6.Sh, d6Var), true);
+            k6.y1(this.d, k6.w0(k6.Oh, g6Var), false);
+            k6.y1(this.d, k6.w0(k6.Sh, g6Var), true);
             w9Var.setImageDrawable(this.d);
             textView.setText(str);
             return;
         }
-        zq M2 = h6.M(AndroidUtilities.dp(32.0f), o0Var.a);
+        yq M2 = k6.M(AndroidUtilities.dp(32.0f), o0Var.a);
         this.d = M2;
-        int i11 = h6.Oh;
-        h6.w1(M2, h6.w0(i11, d6Var), false);
-        zq zqVar = this.d;
-        int i12 = h6.Sh;
-        h6.w1(zqVar, h6.w0(i12, d6Var), true);
+        int i11 = k6.Oh;
+        k6.y1(M2, k6.w0(i11, g6Var), false);
+        yq yqVar = this.d;
+        int i12 = k6.Sh;
+        k6.y1(yqVar, k6.w0(i12, g6Var), true);
         if (o0Var.d == 4) {
             TLObject tLObject = o0Var.f;
             if (tLObject instanceof TLRPC.User) {
                 TLRPC.User user = (TLRPC.User) tLObject;
                 if (UserConfig.getInstance(UserConfig.selectedAccount).getCurrentUser().id == user.id) {
-                    zq M3 = h6.M(AndroidUtilities.dp(32.0f), R.drawable.chats_saved);
+                    yq M3 = k6.M(AndroidUtilities.dp(32.0f), R.drawable.chats_saved);
                     int dp3 = AndroidUtilities.dp(16.0f);
                     int dp4 = AndroidUtilities.dp(16.0f);
                     M3.e = dp3;
                     M3.f = dp4;
-                    h6.w1(M3, h6.w0(i11, d6Var), false);
-                    h6.w1(M3, h6.w0(i12, d6Var), true);
+                    k6.y1(M3, k6.w0(i11, g6Var), false);
+                    k6.y1(M3, k6.w0(i12, g6Var), true);
                     w9Var.setImageDrawable(M3);
                 } else {
                     w9Var.getImageReceiver().setRoundRadius(AndroidUtilities.dp(16.0f));
@@ -110,5 +94,37 @@ public final class n0 extends FrameLayout {
             w9Var.setImageDrawable(this.d);
         }
         textView.setText(str);
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void updateColors() {
+        o0 o0Var;
+        boolean z10 = getBackground() instanceof ShapeDrawable;
+        g6 g6Var = this.a;
+        if (z10) {
+            k6.z1(k6.w0(k6.ci, g6Var), getBackground());
+            invalidate();
+        } else {
+            setBackground(k6.c0(AndroidUtilities.dp(28.0f), k6.w0(k6.ci, g6Var)));
+        }
+        TextView textView = this.c;
+        if (textView != null) {
+            textView.setTextColor(k6.w0(k6.G6, g6Var));
+        }
+        yq yqVar = this.d;
+        if (yqVar == null || (o0Var = this.e) == null) {
+            return;
+        }
+        if (o0Var.d == 7) {
+            k6.y1(yqVar, k6.w0(k6.Oh, g6Var), false);
+            k6.y1(this.d, k6.w0(k6.Sh, g6Var), true);
+        } else {
+            k6.y1(yqVar, k6.w0(k6.Oh, g6Var), false);
+            k6.y1(this.d, k6.w0(k6.Sh, g6Var), true);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

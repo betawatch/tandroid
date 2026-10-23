@@ -9,20 +9,20 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class l extends fr0 {
-    public final /* synthetic */ e0 c1;
+public final class l extends ir0 {
+    public final /* synthetic */ e0 e1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l(e0 e0Var, Context context, String str, String str2, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, null, str, false, str2, false, d6Var);
-        this.c1 = e0Var;
+    public l(e0 e0Var, Context context, String str, String str2, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(context, null, str, false, str2, false, g6Var);
+        this.e1 = e0Var;
     }
 
-    @Override // org.telegram.ui.Components.fr0
-    public final void T0(a0.h hVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        FrameLayout frameLayout = this.c1.G0;
+    @Override // org.telegram.ui.Components.ir0
+    public final void W0(a0.h hVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
+        FrameLayout frameLayout = this.e1.G0;
         if (z10) {
             xc xcVar = new xc(frameLayout, this.resourcesProvider);
             if (hVar.m() == 1) {

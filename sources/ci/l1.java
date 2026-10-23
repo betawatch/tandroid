@@ -1,106 +1,135 @@
 package ci;
 
+import android.content.Context;
+import android.content.res.Configuration;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import android.graphics.RectF;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
-import android.view.View;
-import android.view.WindowManager;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.ew0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final class l1 extends GestureDetector.SimpleOnGestureListener {
-    public float a;
-    public float b;
-    public final /* synthetic */ int c;
+public final class l1 extends FrameLayout {
+    public final /* synthetic */ int a;
+    public Path b;
 
-    public l1(int i10) {
-        ew0 ew0Var = p1.X;
-        this.c = i10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public l1(Context context, int i10) {
+        super(context);
+        this.a = i10;
+        switch (i10) {
+            case 1:
+                super(context);
+                this.b = new Path();
+                setClipChildren(false);
+                setClipToPadding(false);
+                break;
+            default:
+                break;
+        }
     }
 
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public final boolean onDown(MotionEvent motionEvent) {
-        p1 p1Var = p1.Z;
-        if (p1Var.H) {
-            for (int i10 = 1; i10 < p1Var.e.getChildCount(); i10++) {
-                View childAt = p1Var.e.getChildAt(i10);
-                if (childAt.dispatchTouchEvent(motionEvent)) {
-                    p1Var.G = childAt;
-                    return true;
+    @Override // android.view.ViewGroup, android.view.View
+    public void dispatchDraw(Canvas canvas) {
+        switch (this.a) {
+            case 1:
+                int save = canvas.save();
+                canvas.clipPath(this.b);
+                super.dispatchDraw(canvas);
+                canvas.restoreToCount(save);
+                break;
+            default:
+                super.dispatchDraw(canvas);
+                break;
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        switch (this.a) {
+            case 0:
+                int action = motionEvent.getAction();
+                o1 o1Var = o1.Z;
+                if (o1Var.G != null) {
+                    MotionEvent obtain = MotionEvent.obtain(motionEvent);
+                    obtain.offsetLocation(o1Var.G.getX(), o1Var.G.getY());
+                    boolean dispatchTouchEvent = o1Var.G.dispatchTouchEvent(motionEvent);
+                    obtain.recycle();
+                    if (action == 1 || action == 3) {
+                        o1Var.G = null;
+                    }
+                    if (dispatchTouchEvent) {
+                        return true;
+                    }
                 }
-            }
+                MotionEvent obtain2 = MotionEvent.obtain(motionEvent);
+                obtain2.offsetLocation(motionEvent.getRawX() - motionEvent.getX(), motionEvent.getRawY() - motionEvent.getY());
+                boolean onTouchEvent = o1Var.x.onTouchEvent(obtain2);
+                obtain2.recycle();
+                boolean z10 = !o1Var.x.isInProgress() && ((GestureDetector) o1Var.y.b).onTouchEvent(motionEvent);
+                if (action == 1 || action == 3) {
+                    o1Var.E = false;
+                    o1Var.F = false;
+                    o1.k kVar = o1Var.P;
+                    if (!kVar.f) {
+                        float f7 = o1Var.N;
+                        kVar.b = f7;
+                        kVar.c = true;
+                        kVar.u.i = (o1Var.J / 2.0f) + f7 >= ((float) AndroidUtilities.displaySize.x) / 2.0f ? (r2 - r7) - AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(16.0f);
+                        o1Var.P.h();
+                    }
+                    o1.k kVar2 = o1Var.Q;
+                    if (!kVar2.f) {
+                        kVar2.b = o1Var.O;
+                        kVar2.c = true;
+                        kVar2.u.i = w7.r.a(r2, AndroidUtilities.dp(16.0f), (AndroidUtilities.displaySize.y - o1Var.K) - AndroidUtilities.dp(16.0f));
+                        o1Var.Q.h();
+                    }
+                }
+                return onTouchEvent || z10;
+            default:
+                return super.dispatchTouchEvent(motionEvent);
         }
-        this.a = p1Var.N;
-        this.b = p1Var.O;
-        return true;
     }
 
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public final boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent2, float f7, float f10) {
-        p1 p1Var = p1.Z;
-        if (!p1Var.E || p1Var.F) {
-            return false;
+    @Override // android.view.View
+    public void onConfigurationChanged(Configuration configuration) {
+        switch (this.a) {
+            case 0:
+                AndroidUtilities.checkDisplaySize(getContext(), configuration);
+                o1 o1Var = o1.Z;
+                AndroidUtilities.setPreferredMaxRefreshRate(o1Var.b, o1Var.d, o1Var.c);
+                o1Var.i();
+                break;
+            default:
+                super.onConfigurationChanged(configuration);
+                break;
         }
-        o1.k kVar = p1Var.P;
-        kVar.a = f7;
-        float f11 = p1Var.N;
-        kVar.b = f11;
-        kVar.c = true;
-        kVar.u.i = (f7 / 7.0f) + ((p1Var.J / 2.0f) + f11) >= ((float) AndroidUtilities.displaySize.x) / 2.0f ? (r3 - r2) - AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(16.0f);
-        p1Var.P.h();
-        o1.k kVar2 = p1Var.Q;
-        kVar2.a = f7;
-        kVar2.b = p1Var.O;
-        kVar2.c = true;
-        kVar2.u.i = w7.r.a((f10 / 10.0f) + r9, AndroidUtilities.dp(16.0f), (AndroidUtilities.displaySize.y - p1Var.K) - AndroidUtilities.dp(16.0f));
-        p1Var.Q.h();
-        return true;
     }
 
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public final boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f7, float f10) {
-        p1 p1Var = p1.Z;
-        if (!p1Var.E && p1Var.I == null && !p1Var.F) {
-            float abs = Math.abs(f7);
-            float f11 = this.c;
-            if (abs >= f11 || Math.abs(f10) >= f11) {
-                p1Var.E = true;
-                p1Var.P.c();
-                p1Var.Q.c();
-            }
+    @Override // android.view.View
+    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
+        switch (this.a) {
+            case 0:
+                super.onSizeChanged(i10, i11, i12, i13);
+                Path path = this.b;
+                path.rewind();
+                RectF rectF = AndroidUtilities.rectTmp;
+                rectF.set(0.0f, 0.0f, i10, i11);
+                path.addRoundRect(rectF, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), Path.Direction.CW);
+                break;
+            default:
+                super.onSizeChanged(i10, i11, i12, i13);
+                Path path2 = this.b;
+                float paddingLeft = (i10 - getPaddingLeft()) - getPaddingRight();
+                float paddingTop = (i11 - getPaddingTop()) - getPaddingBottom();
+                path2.rewind();
+                path2.addRoundRect(0.0f, 0.0f, paddingLeft, paddingTop, (paddingLeft * 0.15f) / 2.0f, (0.15f * paddingTop) / 1.212122f, Path.Direction.CW);
+                path2.offset(getPaddingLeft(), getPaddingTop());
+                break;
         }
-        if (p1Var.E) {
-            WindowManager.LayoutParams layoutParams = p1Var.c;
-            float rawX = (motionEvent2.getRawX() + this.a) - motionEvent.getRawX();
-            p1Var.N = rawX;
-            layoutParams.x = (int) rawX;
-            WindowManager.LayoutParams layoutParams2 = p1Var.c;
-            float rawY = (motionEvent2.getRawY() + this.b) - motionEvent.getRawY();
-            p1Var.O = rawY;
-            layoutParams2.y = (int) rawY;
-            AndroidUtilities.updateViewLayout(p1Var.b, p1Var.d, p1Var.c);
-        }
-        return true;
-    }
-
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public final boolean onSingleTapUp(MotionEvent motionEvent) {
-        p1 p1Var = p1.Z;
-        androidx.fragment.app.d dVar = p1Var.U;
-        if (p1Var.I == null) {
-            if (p1Var.T) {
-                AndroidUtilities.cancelRunOnUIThread(dVar);
-                p1Var.T = false;
-            }
-            boolean z10 = !p1Var.H;
-            p1Var.H = z10;
-            p1Var.o(z10);
-            if (p1Var.H && !p1Var.T) {
-                AndroidUtilities.runOnUIThread(dVar, 2500L);
-                p1Var.T = true;
-            }
-        }
-        return true;
     }
 }

@@ -3,7 +3,7 @@ package ki;
 import android.view.KeyEvent;
 import android.view.View;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class l3 extends w7.j0 {
     public final /* synthetic */ u3 a;
@@ -19,27 +19,27 @@ public final class l3 extends w7.j0 {
         this.a.p();
         w3 w3Var = this.b;
         if (z10) {
-            j3 j3Var = w3Var.l3;
-            w3Var.n3 = j3Var.B0;
-            w3Var.o3 = j3Var.C0;
-            w3Var.p3 = j3Var.D0;
+            j3 j3Var = w3Var.o3;
+            w3Var.q3 = j3Var.B0;
+            w3Var.r3 = j3Var.C0;
+            w3Var.s3 = j3Var.D0;
             w3Var.setEditTextsLocked(true);
-            w3Var.o3();
-            w3Var.W2();
+            w3Var.t3();
+            w3Var.b3();
             return;
         }
-        final int i10 = w3Var.n3;
-        final int i11 = w3Var.o3;
-        final int i12 = w3Var.p3;
-        w3Var.n3 = -1;
-        w3Var.o3 = -1;
-        w3Var.p3 = 0;
-        boolean z11 = w3Var.q3;
-        final float f7 = w3Var.r3;
-        final float f10 = w3Var.s3;
-        w3Var.q3 = false;
+        final int i10 = w3Var.q3;
+        final int i11 = w3Var.r3;
+        final int i12 = w3Var.s3;
+        w3Var.q3 = -1;
+        w3Var.r3 = -1;
+        w3Var.s3 = 0;
+        boolean z11 = w3Var.t3;
+        final float f7 = w3Var.u3;
+        final float f10 = w3Var.v3;
+        w3Var.t3 = false;
         w3Var.setEditTextsLocked(false);
-        w3Var.W2();
+        w3Var.b3();
         if (z11) {
             w3Var.post(new Runnable() { // from class: ki.k3
                 @Override // java.lang.Runnable
@@ -52,23 +52,23 @@ public final class l3 extends w7.j0 {
                         float f12 = f10;
                         if (z12) {
                             c6 c6Var = (c6) childAt;
-                            if (w3.i4(c6Var.getEditText(), f11, f12)) {
+                            if (w3.n4(c6Var.getEditText(), f11, f12)) {
                                 return;
                             }
-                            if (c6Var.n() && w3.i4(c6Var.getAuthorEditText(), f11, f12)) {
+                            if (c6Var.m() && w3.n4(c6Var.getAuthorEditText(), f11, f12)) {
                                 return;
                             }
                         } else if (childAt instanceof l0) {
-                            if (w3.i4(((l0) childAt).getCaptionEditText(), f11, f12)) {
+                            if (w3.n4(((l0) childAt).getCaptionEditText(), f11, f12)) {
                                 return;
                             }
-                        } else if ((childAt instanceof t0) && w3.i4(((t0) childAt).getEditText(), f11, f12)) {
+                        } else if ((childAt instanceof t0) && w3.n4(((t0) childAt).getEditText(), f11, f12)) {
                             return;
                         }
                     }
                     int i14 = i10;
                     if (i14 >= 0) {
-                        w3.L1(w3Var2, i14, i12, i11);
+                        w3.Q1(w3Var2, i14, i12, i11);
                     }
                 }
             });

@@ -2,12 +2,12 @@ package org.telegram.ui.Components;
 
 import android.graphics.Canvas;
 import android.view.View;
+import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public class GroupCreateCheckBox extends View {
-    public static final /* synthetic */ int b = 0;
+public class GroupCreateCheckBox extends View implements org.telegram.ui.ActionBar.b6 {
     public float a;
 
     public float getProgress() {
@@ -17,7 +17,7 @@ public class GroupCreateCheckBox extends View {
     @Override // android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        org.telegram.ui.ActionBar.h6.v0(0);
+        updateColors();
         throw null;
     }
 
@@ -42,6 +42,16 @@ public class GroupCreateCheckBox extends View {
         }
         this.a = f7;
         invalidate();
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void updateColors() {
+        org.telegram.ui.ActionBar.k6.v0(0);
+        throw null;
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 
     public void setCheckScale(float f7) {

@@ -6,6 +6,7 @@ import android.media.MediaFormat;
 import android.opengl.GLES20;
 import android.os.Bundle;
 import android.view.Surface;
+import i2.o1;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.Map;
@@ -20,7 +21,7 @@ import org.webrtc.ThreadUtils;
 import org.webrtc.VideoEncoder;
 import org.webrtc.VideoFrame;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 class HardwareVideoEncoder implements VideoEncoder {
     private static final int DEQUEUE_OUTPUT_BUFFER_TIMEOUT_US = 100000;
@@ -66,7 +67,7 @@ class HardwareVideoEncoder implements VideoEncoder {
     private final VideoFrameDrawer videoFrameDrawer = new VideoFrameDrawer();
     private final BlockingDeque<EncodedImage.Builder> outputBuilders = new LinkedBlockingDeque();
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public static class BusyCount {
         private int count;
         private final Object countLock;
@@ -568,7 +569,7 @@ class HardwareVideoEncoder implements VideoEncoder {
         if (i10 == 21 || i10 == 2141391872 || i10 == 2141391876) {
             return true;
         }
-        throw new IllegalArgumentException(i2.e.j(i10, "Unsupported colorFormat: "));
+        throw new IllegalArgumentException(o1.k(i10, "Unsupported colorFormat: "));
     }
 
     @Override // org.webrtc.VideoEncoder

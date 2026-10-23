@@ -1,20 +1,35 @@
 package ai;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
-/* loaded from: classes4.dex */
-public final class ce {
-    public float a;
-    public float b;
-    public float c;
-    public float d;
-    public float e;
-    public long f;
-    public long g;
-    public float h;
-    public float i;
-    public final /* synthetic */ de j;
+import android.view.animation.Interpolator;
+import org.telegram.messenger.sl;
 
-    public ce(de deVar) {
-        this.j = deVar;
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+/* loaded from: classes4.dex */
+public final class ce implements Interpolator {
+    public final /* synthetic */ int a;
+
+    public /* synthetic */ ce(int i10) {
+        this.a = i10;
+    }
+
+    @Override // android.animation.TimeInterpolator
+    public final float getInterpolation(float f7) {
+        switch (this.a) {
+            case 0:
+                return (float) Math.pow(f7, 2.0d);
+            case 1:
+                if (f7 < 0.33f) {
+                    return (f7 / 0.33f) * 0.1f;
+                }
+                float f10 = f7 - 0.33f;
+                return f10 < 0.33f ? sl.x(f10, 0.34f, 0.15f, 0.1f) : (((f10 - 0.34f) / 0.33f) * 0.05f) - 0.05f;
+            case 2:
+                return f7 * f7 * f7 * f7 * f7;
+            case 3:
+            case 4:
+            default:
+                float f11 = f7 - 1.0f;
+                return (f11 * f11 * f11 * f11 * f11) + 1.0f;
+        }
     }
 }

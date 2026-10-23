@@ -12,35 +12,35 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class og implements ev0, vx {
+public final /* synthetic */ class og implements hv0, xx {
     public final /* synthetic */ boolean a;
     public final /* synthetic */ int b;
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
 
-    public /* synthetic */ og(qn qnVar, boolean z10, MessageObject messageObject, int i10) {
-        this.c = qnVar;
+    public /* synthetic */ og(sn snVar, boolean z10, MessageObject messageObject, int i10) {
+        this.c = snVar;
         this.a = z10;
         this.d = messageObject;
         this.b = i10;
     }
 
-    @Override // org.telegram.ui.vx
+    @Override // org.telegram.ui.xx
     public /* synthetic */ boolean D() {
         return false;
     }
 
-    @Override // org.telegram.ui.vx
-    public /* synthetic */ boolean J(cy cyVar) {
+    @Override // org.telegram.ui.xx
+    public /* synthetic */ boolean J(ey eyVar) {
         return false;
     }
 
-    @Override // org.telegram.ui.ev0
-    public void b(TLRPC.MessageMedia messageMedia) {
+    @Override // org.telegram.ui.hv0
+    public void a(TLRPC.MessageMedia messageMedia) {
         int i10;
-        qn qnVar = (qn) this.c;
+        sn snVar = (sn) this.c;
         MessageObject messageObject = (MessageObject) this.d;
         if (!this.a) {
             if (messageMedia instanceof TLRPC.TL_messageMediaToDo) {
@@ -50,11 +50,11 @@ public final /* synthetic */ class og implements ev0, vx {
                 }
             }
             messageObject.messageOwner.media = messageMedia;
-            qnVar.getSendMessagesHelper().editMessage(messageObject, null, null, null, null, null, null, false, false, null);
+            snVar.getSendMessagesHelper().editMessage(messageObject, null, null, null, null, null, null, false, false, null);
             return;
         }
         TLRPC.TL_messages_appendTodoList tL_messages_appendTodoList = new TLRPC.TL_messages_appendTodoList();
-        tL_messages_appendTodoList.peer = qnVar.getMessagesController().getInputPeer(messageObject.getDialogId());
+        tL_messages_appendTodoList.peer = snVar.getMessagesController().getInputPeer(messageObject.getDialogId());
         tL_messages_appendTodoList.msg_id = messageObject.getId();
         if (messageMedia instanceof TLRPC.TL_messageMediaToDo) {
             TLRPC.TL_messageMediaToDo tL_messageMediaToDo = (TLRPC.TL_messageMediaToDo) messageMedia;
@@ -83,14 +83,14 @@ public final /* synthetic */ class og implements ev0, vx {
             }
         }
         messageObject.messageOwner.media = messageMedia;
-        qnVar.getConnectionsManager().sendRequest(tL_messages_appendTodoList, null);
+        snVar.getConnectionsManager().sendRequest(tL_messages_appendTodoList, null);
     }
 
-    @Override // org.telegram.ui.vx
-    public boolean w(cy cyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, re1 re1Var) {
+    @Override // org.telegram.ui.xx
+    public boolean w(ey eyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, ye1 ye1Var) {
         LaunchActivity launchActivity = (LaunchActivity) this.c;
         String str = (String) this.d;
-        Pattern pattern = LaunchActivity.C1;
+        Pattern pattern = LaunchActivity.E1;
         long j10 = ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId;
         Bundle bundle = new Bundle();
         bundle.putBoolean("scrollToTopOnResume", true);
@@ -103,10 +103,10 @@ public final /* synthetic */ class og implements ev0, vx {
             bundle.putLong("chat_id", -j10);
         }
         int i12 = this.b;
-        if (MessagesController.getInstance(i12).checkCanOpenChat(bundle, cyVar)) {
+        if (MessagesController.getInstance(i12).checkCanOpenChat(bundle, eyVar)) {
             NotificationCenter.getInstance(i12).lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeChats, new Object[0]);
             MediaDataController.getInstance(i12).saveDraft(j10, 0, str, null, null, false, 0L);
-            ((ActionBarLayout) launchActivity.O()).S(new qn(bundle), true, false);
+            ((ActionBarLayout) launchActivity.O()).T(new sn(bundle), true, false);
         }
         return true;
     }

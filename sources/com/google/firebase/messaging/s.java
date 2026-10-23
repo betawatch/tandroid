@@ -13,7 +13,6 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.Surface;
 import android.view.ViewGroup;
-import ci.t6;
 import com.google.android.gms.internal.cast.z5;
 import e2.m0;
 import ei.a2;
@@ -25,6 +24,7 @@ import ei.h2;
 import ei.k2;
 import ei.m3;
 import ei.ma;
+import ei.n2;
 import ei.n9;
 import ei.o1;
 import ei.o5;
@@ -57,9 +57,9 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.f3;
-import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.js0;
+import org.telegram.ui.ActionBar.h3;
+import org.telegram.ui.ActionBar.o2;
+import org.telegram.ui.Components.ms0;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.ti;
 import org.telegram.ui.Components.w9;
@@ -67,7 +67,7 @@ import org.telegram.ui.Stories.recorder.FfmpegAudioWaveformLoader;
 import sg.y0;
 import v7.s6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class s implements Runnable {
     public final /* synthetic */ int a;
@@ -277,9 +277,9 @@ public final /* synthetic */ class s implements Runnable {
                 return;
             case 3:
                 di.r rVar = (di.r) this.b;
-                js0 js0Var = rVar.W;
-                t6 t6Var = rVar.a;
-                js0Var.a(t6Var == null ? "" : t6Var.E);
+                ms0 ms0Var = rVar.W;
+                ci.s6 s6Var = rVar.a;
+                ms0Var.a(s6Var == null ? "" : s6Var.E);
                 return;
             case 4:
                 a();
@@ -307,7 +307,7 @@ public final /* synthetic */ class s implements Runnable {
             case 10:
                 o5 o5Var = (o5) this.b;
                 qc.e();
-                y0 y0Var = new y0((n2) new a5(o5Var), 14, false);
+                y0 y0Var = new y0((o2) new a5(o5Var), 14, false);
                 y0Var.setOnDismissListener(new e1(0));
                 y0Var.show();
                 return;
@@ -319,8 +319,8 @@ public final /* synthetic */ class s implements Runnable {
                 ArrayList arrayList = a2Var.v;
                 ArrayList arrayList2 = a2Var.s;
                 b2 b2Var = a2Var.N;
-                ei.n2 n2Var = b2Var.s;
-                i10 = ((f3) n2Var).currentAccount;
+                n2 n2Var = b2Var.s;
+                i10 = ((h3) n2Var).currentAccount;
                 MediaDataController mediaDataController = MediaDataController.getInstance(i10);
                 String str2 = a2Var.H;
                 if ("premium".equalsIgnoreCase(str2)) {
@@ -337,7 +337,7 @@ public final /* synthetic */ class s implements Runnable {
                     a2Var.x = recentStickers.size() + a2Var.x;
                     a2Var.I = a2Var.H;
                     a2Var.l();
-                    o1.x1(b2Var.b, 0, 0);
+                    o1.C1(b2Var.b, 0, 0);
                     b2Var.f.c(false);
                     b2Var.e.n(false);
                     return;
@@ -346,14 +346,14 @@ public final /* synthetic */ class s implements Runnable {
                     TLRPC.TL_messages_getStickers tL_messages_getStickers = new TLRPC.TL_messages_getStickers();
                     tL_messages_getStickers.emoticon = a2Var.H;
                     tL_messages_getStickers.hash = 0L;
-                    i12 = ((f3) n2Var).currentAccount;
+                    i12 = ((h3) n2Var).currentAccount;
                     ConnectionsManager.getInstance(i12).sendRequest(tL_messages_getStickers, new ai.g(12, a2Var, str2));
                     return;
                 }
                 String[] currentKeyboardLanguage = AndroidUtilities.getCurrentKeyboardLanguage();
                 String[] strArr = a2Var.J;
                 if (strArr == null || !Arrays.equals(currentKeyboardLanguage, strArr)) {
-                    i11 = ((f3) n2Var).currentAccount;
+                    i11 = ((h3) n2Var).currentAccount;
                     MediaDataController.getInstance(i11).fetchNewEmojiKeywords(currentKeyboardLanguage);
                 }
                 a2Var.J = currentKeyboardLanguage;
@@ -361,10 +361,10 @@ public final /* synthetic */ class s implements Runnable {
                 return;
             case 13:
                 h2 h2Var = (h2) ((ai.u) this.b).b;
-                if (h2Var.h) {
+                if (h2Var.n) {
                     return;
                 }
-                h2Var.n.setVisibility(8);
+                h2Var.r.setVisibility(8);
                 return;
             case 14:
                 k2 k2Var = (k2) ((e6.r) this.b).b;

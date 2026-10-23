@@ -3,9 +3,9 @@ package org.telegram.ui.Components;
 import android.content.Context;
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class o00 extends im0 {
+public final class o00 extends lm0 {
     public final Context c;
     public final /* synthetic */ s00 d;
 
@@ -14,7 +14,7 @@ public final class o00 extends im0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.im0
+    @Override // org.telegram.ui.Components.lm0
     public final boolean D(s4.b1 b1Var) {
         return true;
     }
@@ -65,6 +65,6 @@ public final class o00 extends im0 {
 
     @Override // s4.g0
     public final s4.b1 x(ViewGroup viewGroup, int i10) {
-        return new tl0(new q00(this.d, this.c));
+        return new wl0(new q00(this.d, this.c));
     }
 }

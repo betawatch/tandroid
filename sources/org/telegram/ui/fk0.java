@@ -1,123 +1,117 @@
 package org.telegram.ui;
 
-import android.graphics.Typeface;
-import android.graphics.drawable.Drawable;
-import android.media.AudioRecordingConfiguration;
-import android.media.MediaRoute2Info;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import java.util.ArrayList;
+import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class fk0 implements org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.kd0, Utilities.Callback2Return, org.telegram.ui.Components.ow0, q3.g, g2.g, qg.k0 {
-    public final /* synthetic */ int a;
+public final class fk0 extends org.telegram.ui.Components.lm0 {
+    public final Context c;
+    public ArrayList d = new ArrayList();
+    public ArrayList e = new ArrayList();
+    public ek0 f;
+    public final hg.a2 h;
+    public final /* synthetic */ NotificationsCustomSettingsActivity n;
 
-    public /* synthetic */ fk0(int i10) {
-        this.a = i10;
+    public fk0(NotificationsCustomSettingsActivity notificationsCustomSettingsActivity, Context context) {
+        this.n = notificationsCustomSettingsActivity;
+        this.c = context;
+        hg.a2 a2Var = new hg.a2(true);
+        this.h = a2Var;
+        a2Var.a = new xt(this, 24);
     }
 
-    public static /* bridge */ /* synthetic */ AudioRecordingConfiguration c(Object obj) {
-        return (AudioRecordingConfiguration) obj;
+    @Override // org.telegram.ui.Components.lm0
+    public final boolean D(s4.b1 b1Var) {
+        return true;
     }
 
-    public static /* bridge */ /* synthetic */ MediaRoute2Info d(Object obj) {
-        return (MediaRoute2Info) obj;
+    public final Object E(int i10) {
+        if (i10 >= 0 && i10 < this.d.size()) {
+            return this.d.get(i10);
+        }
+        int g10 = com.google.android.gms.internal.play_billing.k3.g(1, i10, this.d);
+        hg.a2 a2Var = this.h;
+        ArrayList arrayList = a2Var.e;
+        if (g10 < 0 || g10 >= arrayList.size()) {
+            return null;
+        }
+        return a2Var.e.get(g10);
     }
 
-    @Override // qg.k0
-    public Typeface a() {
-        switch (this.a) {
-            case 25:
-                return AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM);
-            case 26:
-                return AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM_ITALIC);
-            case 27:
-                return Typeface.create("serif", 1);
-            case 28:
-                return AndroidUtilities.getTypeface("fonts/rcondensedbold.ttf");
-            default:
-                return AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MONO);
+    public final void F(String str) {
+        if (this.f != null) {
+            Utilities.searchQueue.cancelRunnable(this.f);
+            this.f = null;
+        }
+        if (str != null) {
+            DispatchQueue dispatchQueue = Utilities.searchQueue;
+            ek0 ek0Var = new ek0(this, str, 0);
+            this.f = ek0Var;
+            dispatchQueue.postRunnable(ek0Var, 300L);
+            return;
+        }
+        this.d.clear();
+        this.e.clear();
+        this.h.f(null, null);
+        hg.a2 a2Var = this.h;
+        int i10 = this.n.s;
+        a2Var.g(null, true, (i10 == 1 || i10 == 3) ? false : true, true, false, 0L, false, 0, 0);
+        l();
+    }
+
+    @Override // s4.g0
+    public final int h() {
+        int size = this.d.size();
+        ArrayList arrayList = this.h.e;
+        return !arrayList.isEmpty() ? arrayList.size() + 1 + size : size;
+    }
+
+    @Override // s4.g0
+    public final int j(int i10) {
+        return i10 == this.d.size() ? 1 : 0;
+    }
+
+    @Override // s4.g0
+    public final void v(s4.b1 b1Var, int i10) {
+        int i11 = b1Var.f;
+        View view = b1Var.a;
+        if (i11 != 0) {
+            if (i11 != 1) {
+                return;
+            }
+            ((org.telegram.ui.Cells.u3) view).setText(LocaleController.getString("AddToExceptions", R.string.AddToExceptions));
+            return;
+        }
+        org.telegram.ui.Cells.wa waVar = (org.telegram.ui.Cells.wa) view;
+        if (i10 < this.d.size()) {
+            waVar.f((ik0) this.d.get(i10), (CharSequence) this.e.get(i10), i10 != this.d.size() - 1);
+            waVar.setAddButtonVisible(false);
+        } else {
+            int g10 = com.google.android.gms.internal.play_billing.k3.g(1, i10, this.d);
+            ArrayList arrayList = this.h.e;
+            waVar.d((TLObject) arrayList.get(g10), null, LocaleController.getString("NotificationsOn", R.string.NotificationsOn), g10 != arrayList.size() - 1);
+            waVar.setAddButtonVisible(true);
         }
     }
 
-    @Override // q3.g
-    public boolean b(int i10, int i11, int i12, int i13, int i14) {
-        return false;
-    }
-
-    @Override // g2.g
-    public g2.h createDataSource() {
-        return new g2.b(ApplicationLoader.applicationContext);
-    }
-
-    @Override // org.telegram.ui.Components.kd0
-    public String e(int i10) {
-        return i10 == 0 ? LocaleController.getString(R.string.AutoLockDisabled) : i10 == 1 ? LocaleController.formatString("AutoLockInTime", R.string.AutoLockInTime, LocaleController.formatPluralString("Minutes", 1, new Object[0])) : i10 == 2 ? LocaleController.formatString("AutoLockInTime", R.string.AutoLockInTime, LocaleController.formatPluralString("Minutes", 5, new Object[0])) : i10 == 3 ? LocaleController.formatString("AutoLockInTime", R.string.AutoLockInTime, LocaleController.formatPluralString("Hours", 1, new Object[0])) : i10 == 4 ? LocaleController.formatString("AutoLockInTime", R.string.AutoLockInTime, LocaleController.formatPluralString("Hours", 5, new Object[0])) : "";
-    }
-
-    @Override // org.telegram.ui.ActionBar.a2
-    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        switch (this.a) {
-            case 0:
-                b2Var.dismiss();
-                break;
-            case 1:
-            case 5:
-            case 8:
-            case 9:
-            case 10:
-            case 11:
-            case 12:
-            case 14:
-            default:
-                b2Var.dismiss();
-                break;
-            case 2:
-                Drawable[] drawableArr = PhotoViewer.U8;
-                break;
-            case 3:
-                b2Var.dismiss();
-                break;
-            case 4:
-                b2Var.dismiss();
-                break;
-            case 6:
-                b2Var.dismiss();
-                break;
-            case 7:
-                b2Var.dismiss();
-                break;
-            case 13:
-                b2Var.dismiss();
-                break;
-            case 15:
-                b2Var.dismiss();
-                break;
-            case 16:
-                b2Var.dismiss();
-                break;
-            case 17:
-                b2Var.dismiss();
-                break;
+    @Override // s4.g0
+    public final s4.b1 x(ViewGroup viewGroup, int i10) {
+        View waVar;
+        if (i10 != 0) {
+            waVar = new org.telegram.ui.Cells.u3(this.c, null);
+            waVar.setBackgroundColor(0);
+            waVar.setTag(-33024);
+        } else {
+            waVar = new org.telegram.ui.Cells.wa(4, 0, this.c, null, false, true);
         }
-    }
-
-    @Override // org.telegram.ui.Components.ow0
-    public void h(int i10) {
-        SharedConfig.proxyRotationTimeout = i10;
-        SharedConfig.saveConfig();
-    }
-
-    @Override // org.telegram.messenger.Utilities.Callback2Return
-    public Object run(Object obj, Object obj2) {
-        return ((Integer) obj).intValue() == 0 ? ai.md.Y0(false, LocaleController.formatPluralStringComma("Stars", ((Integer) obj2).intValue()), 0.66f, null) : LocaleController.formatNumber(r4.intValue(), ',');
-    }
-
-    @Override // org.telegram.ui.Components.ow0
-    public /* synthetic */ void m() {
+        return new org.telegram.ui.Components.wl0(waVar);
     }
 }

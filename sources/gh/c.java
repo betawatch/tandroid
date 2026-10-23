@@ -4,8 +4,8 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import dh.f;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+/* loaded from: classes4.dex */
 public final class c implements a {
     public final Paint a = new Paint(1);
 
@@ -14,7 +14,7 @@ public final class c implements a {
     }
 
     @Override // gh.a
-    public final dh.d f() {
+    public final dh.d d() {
         return new f(this);
     }
 

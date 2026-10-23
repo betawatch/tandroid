@@ -4,20 +4,21 @@ import b2.s0;
 import b2.t0;
 import b2.v;
 import b2.v0;
-import c3.g0;
+import c3.i0;
 import c5.c0;
-import ci.c7;
+import ci.b7;
 import e2.x;
 import e9.k0;
 import e9.l0;
 import e9.n0;
+import i2.o1;
 import j$.util.Objects;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.UUID;
 import org.telegram.messenger.TranslateController;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public abstract class p {
     public static final int[] a = {1769172845, 1769172786, 1769172787, 1769172788, 1769172789, 1769172790, 1769172793, 1635148593, 1752589105, 1751479857, 1635135537, 1836069937, 1836069938, 862401121, 862401122, 862417462, 862417718, 862414134, 862414646, 1295275552, 1295270176, 1714714144, 1801741417, 1295275600, 1903435808, 1297305174, 1684175153, 1769172332, 1885955686};
@@ -127,12 +128,12 @@ public abstract class p {
             xVar.O(10);
             int H = xVar.H();
             if (H > 0) {
-                String j10 = i2.e.j(H, "");
+                String k10 = o1.k(H, "");
                 int H2 = xVar.H();
                 if (H2 > 0) {
-                    j10 = j10 + "/" + H2;
+                    k10 = k10 + "/" + H2;
                 }
-                return new q3.n(str, null, n0.y(j10));
+                return new q3.n(str, null, n0.y(k10));
             }
         }
         e2.a.l("MetadataUtil", "Failed to parse index/count attribute: " + f2.f.a(i10));
@@ -273,8 +274,8 @@ public abstract class p {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    public static g0 m(c3.p pVar, boolean z10, boolean z11) {
-        g0 g0Var;
+    public static i0 m(c3.r rVar, boolean z10, boolean z11) {
+        i0 i0Var;
         int i10;
         long j10;
         int i11;
@@ -283,7 +284,7 @@ public abstract class p {
         long j11;
         int i14;
         int[] iArr;
-        long length = pVar.getLength();
+        long length = rVar.getLength();
         long j12 = -1;
         int i15 = (length > (-1L) ? 1 : (length == (-1L) ? 0 : -1));
         long j13 = 4096;
@@ -297,14 +298,14 @@ public abstract class p {
         boolean z12 = false;
         while (i18 < i16) {
             xVar.K(8);
-            if (!pVar.j(xVar.a, i17, 8, true)) {
+            if (!rVar.j(xVar.a, i17, 8, true)) {
                 break;
             }
             long C = xVar.C();
             int m10 = xVar.m();
             if (C == 1) {
                 j10 = j12;
-                pVar.b(8, 8, xVar.a);
+                rVar.a(8, 8, xVar.a);
                 i12 = 16;
                 xVar.M(16);
                 C = xVar.u();
@@ -312,10 +313,10 @@ public abstract class p {
             } else {
                 j10 = j12;
                 if (C == 0) {
-                    long length2 = pVar.getLength();
+                    long length2 = rVar.getLength();
                     if (length2 != j10) {
                         i11 = i18;
-                        C = (length2 - pVar.k()) + 8;
+                        C = (length2 - rVar.k()) + 8;
                         i12 = 8;
                     }
                 }
@@ -325,13 +326,13 @@ public abstract class p {
             long j14 = C;
             long j15 = i12;
             if (j14 < j15) {
-                g0Var = null;
+                i0Var = null;
                 if (m10 != 1718773093 || i12 != 8) {
-                    return new c7(m10, j14, i12);
+                    return new b7(m10, j14, i12);
                 }
                 j14 = j15;
             } else {
-                g0Var = null;
+                i0Var = null;
             }
             int i19 = i11 + i12;
             if (m10 == 1836019574 || m10 == 1970628964) {
@@ -362,15 +363,15 @@ public abstract class p {
                             if (m10 != 1718909296) {
                                 i14 = 0;
                                 if (i20 != 0) {
-                                    pVar.l(i20);
+                                    rVar.l(i20);
                                 }
                             } else {
                                 if (i20 < 8) {
-                                    return new c7(m10, i20, 8);
+                                    return new b7(m10, i20, 8);
                                 }
                                 xVar.K(i20);
                                 i14 = 0;
-                                pVar.b(0, i20, xVar.a);
+                                rVar.a(0, i20, xVar.a);
                                 int m11 = xVar.m();
                                 if (c(m11, z11)) {
                                     z12 = true;
@@ -393,7 +394,7 @@ public abstract class p {
                                         i21++;
                                     }
                                 } else {
-                                    iArr = g0Var;
+                                    iArr = i0Var;
                                 }
                                 if (!z12) {
                                     return new c0(m11, iArr);
@@ -415,8 +416,8 @@ public abstract class p {
             j12 = j10;
             length = j11;
         }
-        g0Var = null;
+        i0Var = null;
         i10 = i17;
-        return !z12 ? m.a : z10 != i10 ? i10 != 0 ? i.b : i.c : g0Var;
+        return !z12 ? m.a : z10 != i10 ? i10 != 0 ? i.b : i.c : i0Var;
     }
 }

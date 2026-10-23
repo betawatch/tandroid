@@ -6,10 +6,10 @@ import android.graphics.Matrix;
 import android.graphics.RectF;
 import android.view.View;
 import android.view.ViewGroup;
-import ih.j;
+import ih.k;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+/* loaded from: classes4.dex */
 public abstract class d {
     public static final Matrix a = new Matrix();
     public static final RectF b = new RectF();
@@ -24,7 +24,7 @@ public abstract class d {
             return;
         }
         RectF rectF2 = c;
-        if (j.c(view, viewGroup, rectF2)) {
+        if (k.c(view, viewGroup, rectF2)) {
             float f7 = rectF2.left;
             float f10 = rectF2.top;
             RectF rectF3 = b;

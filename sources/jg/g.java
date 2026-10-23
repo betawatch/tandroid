@@ -1,7 +1,7 @@
 package jg;
 
 import ah.l0;
-import ai.me;
+import ai.ne;
 import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ValueAnimator;
@@ -22,15 +22,15 @@ import android.view.ViewConfiguration;
 import com.google.android.gms.internal.play_billing.k3;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.g0;
+import org.telegram.messenger.v0;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.pp0;
-import org.telegram.ui.z81;
+import org.telegram.ui.e91;
+import org.telegram.ui.sp0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public abstract class g extends View implements i {
     public static final boolean A1;
@@ -93,7 +93,7 @@ public abstract class g extends View implements i {
     public final Rect V;
     public float V0;
     public final Path W;
-    public final d6 W0;
+    public final g6 W0;
     public int X0;
     public int Y0;
     public final Rect Z0;
@@ -156,7 +156,7 @@ public abstract class g extends View implements i {
 
     /* JADX WARN: Type inference failed for: r1v10, types: [jg.b] */
     /* JADX WARN: Type inference failed for: r1v9, types: [jg.b] */
-    public g(Context context, d6 d6Var) {
+    public g(Context context, g6 g6Var) {
         super(context);
         this.b = new ArrayList(10);
         this.c = new ArrayList(25);
@@ -269,7 +269,7 @@ public abstract class g extends View implements i {
         arrayList.add(rect);
         this.b1 = 0L;
         this.i1 = false;
-        this.W0 = d6Var;
+        this.W0 = g6Var;
         t();
         this.A0 = ViewConfiguration.get(context).getScaledTouchSlop();
     }
@@ -404,9 +404,9 @@ public abstract class g extends View implements i {
             e eVar = this.Q0;
             if (eVar != null) {
                 getSelectedDate();
-                z81 z81Var = (z81) ((pp0) eVar).b;
-                z81Var.f();
-                z81Var.b.t0.d(false, false);
+                e91 e91Var = (e91) ((sp0) eVar).b;
+                e91Var.f();
+                e91Var.b.t0.d(false, false);
             }
             B();
             invalidate();
@@ -565,7 +565,7 @@ public abstract class g extends View implements i {
             }
             ValueAnimator e = e(0.0f, 255.0f, new l0(5, this, f7));
             this.b0 = e;
-            e.addListener(new me(7, this, f7));
+            e.addListener(new ne(7, this, f7));
             this.b0.start();
         }
     }
@@ -608,23 +608,23 @@ public abstract class g extends View implements i {
     }
 
     public final void G() {
-        int i10 = this.x0 ? h6.Zi : h6.Yi;
-        d6 d6Var = this.W0;
-        int w02 = h6.w0(i10, d6Var);
+        int i10 = this.x0 ? k6.Zi : k6.Yi;
+        g6 g6Var = this.W0;
+        int w02 = k6.w0(i10, g6Var);
         this.N.setColor(w02);
-        this.O.setColor(h6.w0(this.x0 ? h6.Zi : h6.Yi, d6Var));
-        int w03 = h6.w0(h6.Yi, d6Var);
+        this.O.setColor(k6.w0(this.x0 ? k6.Zi : k6.Yi, g6Var));
+        int w03 = k6.w0(k6.Yi, g6Var);
         this.P.setColor(w03);
-        int w04 = h6.w0(h6.aj, d6Var);
+        int w04 = k6.w0(k6.aj, g6Var);
         Paint paint = this.L;
         paint.setColor(w04);
-        int w05 = h6.w0(h6.bj, d6Var);
+        int w05 = k6.w0(k6.bj, g6Var);
         Paint paint2 = this.M;
         paint2.setColor(w05);
-        this.Q.setColor(h6.w0(h6.dj, d6Var));
-        this.R.setColor(h6.w0(h6.cj, d6Var));
-        this.S.setColor(h6.w0(h6.d6, d6Var));
-        this.T.setColor(h6.w0(h6.ej, d6Var));
+        this.Q.setColor(k6.w0(k6.dj, g6Var));
+        this.R.setColor(k6.w0(k6.cj, g6Var));
+        this.S.setColor(k6.w0(k6.d6, g6Var));
+        this.T.setColor(k6.w0(k6.ej, g6Var));
         this.t0.b();
         this.n = paint.getAlpha();
         this.r = paint2.getAlpha();
@@ -713,7 +713,7 @@ public abstract class g extends View implements i {
                     }
                     ValueAnimator duration = e(0.0f, 1.0f, new l0(6, this, bVar4)).setDuration(200L);
                     this.c0 = duration;
-                    duration.addListener(new me(8, this, bVar4));
+                    duration.addListener(new ne(8, this, bVar4));
                     this.c0.start();
                 }
             }
@@ -959,9 +959,9 @@ public abstract class g extends View implements i {
                                 c10 = c11;
                                 TextPaint textPaint = this.P;
                                 if (f15 < f17) {
-                                    textPaint.setAlpha((int) (i11 * g0.x(f17, f15, f17, f7) * this.h * f10));
+                                    textPaint.setAlpha((int) (i11 * v0.y(f17, f15, f17, f7) * this.h * f10));
                                 } else if (f15 > f16) {
-                                    textPaint.setAlpha((int) (i11 * g0.x(f15, f16, f12, f7) * this.h * f10));
+                                    textPaint.setAlpha((int) (i11 * v0.y(f15, f16, f12, f7) * this.h * f10));
                                 } else {
                                     textPaint.setAlpha((int) (i11 * this.h * f10));
                                 }
@@ -1236,7 +1236,7 @@ public abstract class g extends View implements i {
                     f10 = f15;
                     canvas2.drawRect(f10, i22, getMeasuredWidth() - f15, i20, paint3);
                 }
-                canvas2.drawBitmap(this.a.c(i21, (int) (getMeasuredWidth() - (f10 * 2.0f))), f10, (getMeasuredHeight() - i13) - i21, paint);
+                canvas2.drawBitmap(this.a.a(i21, (int) (getMeasuredWidth() - (f10 * 2.0f))), f10, (getMeasuredHeight() - i13) - i21, paint);
                 if (this.h0 == null) {
                     Rect rect = this.V;
                     rect.set(i11, i22, i12, i20);
@@ -1321,7 +1321,7 @@ public abstract class g extends View implements i {
         Paint paint42 = this.K;
         if (bVar == null) {
         }
-        canvas2.drawBitmap(this.a.c(i21, (int) (getMeasuredWidth() - (f10 * 2.0f))), f10, (getMeasuredHeight() - i13) - i21, paint);
+        canvas2.drawBitmap(this.a.a(i21, (int) (getMeasuredWidth() - (f10 * 2.0f))), f10, (getMeasuredHeight() - i13) - i21, paint);
         if (this.h0 == null) {
         }
     }
@@ -1438,7 +1438,7 @@ public abstract class g extends View implements i {
             float f10 = 2.0f * f7;
             this.p0 = Bitmap.createBitmap((int) (measuredWidth2 - f10), i13, Bitmap.Config.ARGB_4444);
             this.q0 = new Canvas(this.p0);
-            this.a.c(i13, (int) (getMeasuredWidth() - f10));
+            this.a.a(i13, (int) (getMeasuredWidth() - f10));
             w();
             if (this.u0) {
                 x((this.G0 * this.g0.k) - f7);

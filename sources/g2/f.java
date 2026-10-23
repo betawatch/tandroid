@@ -6,9 +6,10 @@ import b2.w0;
 import e2.m0;
 import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
+import si.o0;
 import v7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class f extends c {
     public m a;
@@ -54,7 +55,7 @@ public final class f extends c {
             try {
                 this.b = Base64.decode(str2, 0);
             } catch (IllegalArgumentException e) {
-                throw new w0(r4.c.h("Error while parsing Base64 encoded string: ", str2), e, true, 0);
+                throw new w0(o0.h("Error while parsing Base64 encoded string: ", str2), e, true, 0);
             }
         } else {
             this.b = URLDecoder.decode(str2, StandardCharsets.US_ASCII.name()).getBytes(StandardCharsets.UTF_8);

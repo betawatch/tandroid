@@ -1,66 +1,25 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import org.telegram.messenger.LocaleController;
+import android.view.View;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qa0 implements org.telegram.ui.Components.e5, org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.ow0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ab0 b;
+public final class qa0 implements View.OnAttachStateChangeListener {
+    public final /* synthetic */ LaunchActivity a;
 
-    public /* synthetic */ qa0(ab0 ab0Var, int i10) {
-        this.a = i10;
-        this.b = ab0Var;
+    public qa0(LaunchActivity launchActivity) {
+        this.a = launchActivity;
     }
 
-    @Override // org.telegram.ui.Components.e5
-    public void C(int i10, int i11, boolean z10) {
-        this.b.V(i10);
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewAttachedToWindow(View view) {
+        LaunchActivity launchActivity = this.a;
+        launchActivity.getWindowManager().addCrossWindowBlurEnabledListener(launchActivity.e1);
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        ab0 ab0Var = this.b;
-        ab0Var.T.a(ab0Var.e);
-        ab0Var.finishFragment();
-    }
-
-    @Override // org.telegram.ui.Components.ow0
-    public void h(int i10) {
-        switch (this.a) {
-            case 2:
-                ab0 ab0Var = this.b;
-                if (i10 >= ab0Var.P.size()) {
-                    ab0Var.w.setText("");
-                    break;
-                } else {
-                    ab0Var.w.setText(LocaleController.formatDateAudio(ab0Var.getConnectionsManager().getCurrentTime() + ((Integer) r1.get(i10)).intValue(), false));
-                    break;
-                }
-            default:
-                ab0 ab0Var2 = this.b;
-                ab0Var2.F.clearFocus();
-                ab0Var2.O = true;
-                ArrayList arrayList = ab0Var2.R;
-                if (i10 < arrayList.size()) {
-                    ab0Var2.F.setText(((Integer) arrayList.get(i10)).toString());
-                } else {
-                    ab0Var2.F.setText("");
-                }
-                ab0Var2.O = false;
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.ow0
-    public /* synthetic */ void m() {
-        int i10 = this.a;
-    }
-
-    private final /* synthetic */ void a() {
-    }
-
-    private final /* synthetic */ void b() {
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewDetachedFromWindow(View view) {
+        LaunchActivity launchActivity = this.a;
+        launchActivity.getWindowManager().removeCrossWindowBlurEnabledListener(launchActivity.e1);
     }
 }

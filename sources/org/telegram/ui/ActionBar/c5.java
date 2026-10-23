@@ -1,31 +1,27 @@
 package org.telegram.ui.ActionBar;
 
-import ai.x9;
-import org.telegram.ui.jn;
-import org.telegram.ui.ln;
-import org.telegram.ui.on;
-
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class c5 {
-    public final g6 a;
-    public final int b;
-    public final boolean c;
-    public final boolean d;
-    public boolean e;
-    public x9 h;
-    public jn i;
-    public jn j;
-    public ln k;
-    public on m;
-    public boolean f = true;
-    public boolean g = true;
-    public long l = 200;
+    public static final c5 a;
+    public static final c5 b;
+    public static final /* synthetic */ c5[] c;
 
-    public c5(g6 g6Var, int i10, boolean z10, boolean z11) {
-        this.a = g6Var;
-        this.b = i10;
-        this.c = z10;
-        this.d = z11;
+    static {
+        c5 c5Var = new c5("BACK", 0);
+        a = c5Var;
+        c5 c5Var2 = new c5("MENU", 1);
+        b = c5Var2;
+        c = new c5[]{c5Var, c5Var2};
+    }
+
+    public static c5 valueOf(String str) {
+        return (c5) Enum.valueOf(c5.class, str);
+    }
+
+    public static c5[] values() {
+        return (c5[]) c.clone();
     }
 }

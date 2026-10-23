@@ -1,17 +1,49 @@
 package org.telegram.ui;
 
-import android.text.Editable;
+import android.content.Context;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public interface iq0 {
-    void a();
+public final class iq0 extends org.telegram.ui.Components.b10 {
+    public final /* synthetic */ int U;
 
-    void b(Editable editable);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ iq0(Context context, int i10, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(context, g6Var);
+        this.U = i10;
+    }
 
-    boolean e();
+    @Override // org.telegram.ui.Components.b10
+    public int getColumnsCount() {
+        switch (this.U) {
+            case 0:
+                return 3;
+            default:
+                return super.getColumnsCount();
+        }
+    }
 
-    void g();
+    @Override // org.telegram.ui.Components.b10
+    public int getViewType() {
+        switch (this.U) {
+            case 0:
+                return 2;
+            default:
+                return super.getViewType();
+        }
+    }
 
-    void h(int i10, boolean z10, boolean z11);
+    @Override // org.telegram.ui.Components.b10, android.view.View
+    public void onMeasure(int i10, int i11) {
+        switch (this.U) {
+            case 1:
+                setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(104.0f));
+                break;
+            default:
+                super.onMeasure(i10, i11);
+                break;
+        }
+    }
 }

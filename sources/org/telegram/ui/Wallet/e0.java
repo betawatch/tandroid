@@ -1,147 +1,66 @@
 package org.telegram.ui.Wallet;
 
-import android.text.TextUtils;
-import ei.ka;
-import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
+import org.telegram.ui.Wallet.WalletEngine2;
+import org.telegram.ui.if0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final class e0 {
-    public String e;
-    public boolean g;
-    public boolean h;
-    public boolean i;
-    public boolean j;
-    public String k;
-    public final /* synthetic */ m0 m;
-    public final ArrayList a = new ArrayList();
-    public final ArrayList b = new ArrayList();
-    public final ArrayList c = new ArrayList();
-    public final ArrayList d = new ArrayList();
-    public String f = "";
-    public int l = -1;
+public final /* synthetic */ class e0 implements Utilities.Callback2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ f0 b;
 
-    public e0(m0 m0Var) {
-        this.m = m0Var;
-        this.e = m0Var.s();
+    public /* synthetic */ e0(f0 f0Var, int i10) {
+        this.a = i10;
+        this.b = f0Var;
     }
 
-    public static void a(e0 e0Var, TL_wallet.walletTransaction wallettransaction) {
-        ArrayList arrayList = e0Var.c;
-        int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            if (((TL_wallet.walletTransaction) obj) == wallettransaction) {
-                if (wallettransaction.failed && !e0Var.d(wallettransaction.nft.address)) {
-                    e0Var.b.add(0, wallettransaction.nft);
-                }
-                e0Var.h();
-                e0Var.g();
-                return;
-            }
-        }
-    }
-
-    public final void b() {
-        if (this.l >= 0) {
-            ConnectionsManager.getInstance(this.m.a).cancelRequest(this.l, true);
-            this.l = -1;
-        }
-        if (this.j) {
-            this.g = false;
-            this.h = false;
-        }
-        this.j = false;
-        this.i = false;
-    }
-
-    public final void c() {
-        b();
-        this.a.clear();
-        this.b.clear();
-        this.c.clear();
-        this.f = "";
-        this.g = false;
-        this.h = false;
-        this.k = null;
-        g();
-    }
-
-    public final boolean d(String str) {
-        ArrayList arrayList = this.b;
-        int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            if (m0.a(((TL_wallet.nftItem) obj).address, str)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public final void e() {
-        if (this.i || this.g) {
-            return;
-        }
-        f(!this.h);
-    }
-
-    public final void f(boolean z10) {
-        if (TextUtils.isEmpty(this.e)) {
-            return;
-        }
-        TL_wallet.getNfts getnfts = new TL_wallet.getNfts();
-        String str = z10 ? "" : this.f;
-        getnfts.offset = str;
-        getnfts.limit = TextUtils.isEmpty(str) ? 5 : 20;
-        this.i = true;
-        this.j = z10;
-        this.k = null;
-        g();
-        this.l = ConnectionsManager.getInstance(this.m.a).sendRequestTyped(getnfts, new org.telegram.messenger.a(), new ka(3, this, z10));
-    }
-
-    public final void g() {
-        ArrayList arrayList = new ArrayList(this.d);
-        int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            ((Runnable) obj).run();
-        }
-    }
-
-    public final void h() {
-        ArrayList arrayList = this.a;
-        arrayList.clear();
-        ArrayList arrayList2 = this.b;
-        int size = arrayList2.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList2.get(i10);
-            i10++;
-            TL_wallet.nftItem nftitem = (TL_wallet.nftItem) obj;
-            ArrayList arrayList3 = this.c;
-            int size2 = arrayList3.size();
-            int i11 = 0;
-            while (true) {
-                if (i11 >= size2) {
-                    arrayList.add(nftitem);
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
+        switch (this.a) {
+            case 0:
+                WalletEngine2.ImportedWalletProof importedWalletProof = (WalletEngine2.ImportedWalletProof) obj;
+                String str = (String) obj2;
+                f0 f0Var = this.b;
+                l0 l0Var = f0Var.d;
+                if (importedWalletProof != null) {
+                    TL_wallet.disableBackup disablebackup = new TL_wallet.disableBackup();
+                    disablebackup.new_public_key = f0Var.c;
+                    TL_wallet.walletOwnershipProof walletownershipproof = new TL_wallet.walletOwnershipProof();
+                    disablebackup.proof = walletownershipproof;
+                    walletownershipproof.signature = importedWalletProof.signature;
+                    walletownershipproof.timestamp = importedWalletProof.timestamp;
+                    ConnectionsManager.getInstance(l0Var.a).sendRequestTyped(disablebackup, new org.telegram.messenger.a(), new e0(f0Var, 1));
+                    break;
+                } else {
+                    if (str == null) {
+                        str = "NULL_ERROR";
+                    }
+                    l0.i("disable backup: failed to prove challenge: ".concat(str));
                     break;
                 }
-                Object obj2 = arrayList3.get(i11);
-                i11++;
-                TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) obj2;
-                if (wallettransaction.failed || !m0.a(wallettransaction.nft.address, nftitem.address)) {
+            default:
+                TL_wallet.WalletState walletState = (TL_wallet.WalletState) obj;
+                Object obj3 = (TLRPC.TL_error) obj2;
+                l0 l0Var2 = this.b.d;
+                if (walletState != null) {
+                    l0Var2.i0(walletState);
+                    l0Var2.P();
+                    AndroidUtilities.runOnUIThread(new if0(8), 1000L);
+                    break;
+                } else {
+                    StringBuilder sb2 = new StringBuilder("disable backup: failed to disable backup on server: ");
+                    if (obj3 == null) {
+                        obj3 = "NULL_ERROR";
+                    }
+                    sb2.append(obj3);
+                    l0.i(sb2.toString());
+                    break;
                 }
-            }
         }
     }
 }

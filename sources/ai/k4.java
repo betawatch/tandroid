@@ -6,10 +6,10 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.uv0;
+import org.telegram.ui.Components.xv0;
 import org.telegram.ui.eh;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class k4 implements Utilities.Callback {
     public final /* synthetic */ int a = 0;
@@ -35,7 +35,7 @@ public final /* synthetic */ class k4 implements Utilities.Callback {
             case 0:
                 TLRPC.Document document = (TLRPC.Document) obj2;
                 if (((Boolean) obj).booleanValue()) {
-                    ga.y(i11, false).Q(j10);
+                    ha.y(i11, false).Q(j10);
                     AndroidUtilities.runOnUIThread(new a3.l0(new o4(j10, i12), document, LocaleController.getString(R.string.Gift2MovedToProfile), 8));
                     break;
                 }
@@ -45,7 +45,7 @@ public final /* synthetic */ class k4 implements Utilities.Callback {
                 AndroidUtilities.runOnUIThread(new eh(26, (org.telegram.ui.Components.qc) obj2, (tL_messages_stickerSet == null || (stickerSet = tL_messages_stickerSet.set) == null) ? LocaleController.getString(R.string.AddEmojiNotFound) : i11 == 1 ? AndroidUtilities.replaceTags(LocaleController.formatString("TopicContainsEmojiPackSingle", R.string.TopicContainsEmojiPackSingle, stickerSet.title)) : i11 == 2 ? AndroidUtilities.replaceTags(LocaleController.formatString("StoryContainsEmojiPackSingle", R.string.StoryContainsEmojiPackSingle, stickerSet.title)) : AndroidUtilities.replaceTags(LocaleController.formatString("MessageContainsEmojiPackSingle", R.string.MessageContainsEmojiPackSingle, stickerSet.title))), Math.max(1L, 750 - (System.currentTimeMillis() - j10)));
                 break;
             default:
-                ((uv0) obj2).getStoriesController().b(i11, j10, (ArrayList) obj);
+                ((xv0) obj2).getStoriesController().b(i11, j10, (ArrayList) obj);
                 break;
         }
     }
@@ -56,8 +56,8 @@ public final /* synthetic */ class k4 implements Utilities.Callback {
         this.c = j10;
     }
 
-    public /* synthetic */ k4(uv0 uv0Var, long j10, int i10) {
-        this.d = uv0Var;
+    public /* synthetic */ k4(xv0 xv0Var, long j10, int i10) {
+        this.d = xv0Var;
         this.c = j10;
         this.b = i10;
     }

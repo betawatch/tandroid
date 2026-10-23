@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.Set;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class l9 extends e9.j2 {
     public final /* synthetic */ e9.e b;
@@ -100,7 +100,7 @@ public final class l9 extends e9.j2 {
                 ceil = size < 1073741824 ? (int) Math.ceil(size / 0.75d) : ConnectionsManager.DEFAULT_DATACENTER_ID;
             } else {
                 if (size < 0) {
-                    throw new IllegalArgumentException(i2.e.j(size, "expectedSize cannot be negative but was: "));
+                    throw new IllegalArgumentException(i2.o1.k(size, "expectedSize cannot be negative but was: "));
                 }
                 ceil = size + 1;
             }
@@ -111,12 +111,12 @@ public final class l9 extends e9.j2 {
                 }
             }
             mg mgVar = (mg) this.b.e;
-            fd fdVar = mgVar.a;
-            if (fdVar == null) {
-                fdVar = new fd(mgVar, mgVar.c);
-                mgVar.a = fdVar;
+            ed edVar = mgVar.a;
+            if (edVar == null) {
+                edVar = new ed(mgVar, mgVar.c);
+                mgVar.a = edVar;
             }
-            return fdVar.retainAll(hashSet);
+            return edVar.retainAll(hashSet);
         }
     }
 

@@ -1,13 +1,11 @@
 package ci;
 
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.InputSerializedData;
 import org.telegram.tgnet.OutputSerializedData;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class q1 extends TLRPC.TL_messageMediaStory {
     @Override // org.telegram.tgnet.TLRPC.TL_messageMediaStory, org.telegram.tgnet.TLObject
@@ -15,16 +13,13 @@ public final class q1 extends TLRPC.TL_messageMediaStory {
         this.user_id = inputSerializedData.readInt64(z10);
         this.id = inputSerializedData.readInt32(z10);
         this.storyItem = TL_stories.StoryItem.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-        this.via_mention = inputSerializedData.readBool(z10);
-        this.peer = MessagesController.getInstance(UserConfig.selectedAccount).getPeer(this.user_id);
     }
 
     @Override // org.telegram.tgnet.TLRPC.TL_messageMediaStory, org.telegram.tgnet.TLObject
     public final void serializeToStream(OutputSerializedData outputSerializedData) {
-        outputSerializedData.writeInt32(-946147811);
+        outputSerializedData.writeInt32(-946147809);
         outputSerializedData.writeInt64(this.user_id);
         outputSerializedData.writeInt32(this.id);
         this.storyItem.serializeToStream(outputSerializedData);
-        outputSerializedData.writeBool(this.via_mention);
     }
 }

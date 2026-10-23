@@ -1,62 +1,62 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class tj implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ qn b;
+    public final /* synthetic */ sn b;
 
-    public /* synthetic */ tj(qn qnVar, int i10) {
+    public /* synthetic */ tj(sn snVar, int i10) {
         this.a = i10;
-        this.b = qnVar;
+        this.b = snVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         int i10 = this.a;
-        qn qnVar = this.b;
+        sn snVar = this.b;
         switch (i10) {
             case 0:
-                int i11 = qn.Ic;
-                qnVar.c7();
+                int i11 = sn.Vc;
+                snVar.c7();
                 break;
             case 1:
-                qn.j2(qnVar);
+                sn.j2(snVar);
                 break;
             case 2:
-                qn.j2(qnVar);
+                sn.j2(snVar);
                 break;
             case 3:
-                int i12 = qn.Ic;
-                qnVar.Qa();
+                int i12 = sn.Vc;
+                snVar.Qa();
                 break;
             case 4:
-                int i13 = qn.Ic;
-                qnVar.Qa();
+                int i13 = sn.Vc;
+                snVar.Qa();
                 break;
             case 5:
-                int i14 = qn.Ic;
-                qnVar.Qa();
+                int i14 = sn.Vc;
+                snVar.Qa();
                 break;
             case 6:
-                int i15 = qn.Ic;
-                qnVar.Qa();
+                int i15 = sn.Vc;
+                snVar.Qa();
                 break;
             case 7:
-                int i16 = qn.Ic;
-                qnVar.Qa();
+                int i16 = sn.Vc;
+                snVar.Qa();
                 break;
             case 8:
-                int i17 = qn.Ic;
-                qnVar.Qa();
+                int i17 = sn.Vc;
+                snVar.Qa();
                 break;
             case 9:
-                int i18 = qn.Ic;
-                qnVar.Qa();
+                int i18 = sn.Vc;
+                snVar.Qa();
                 break;
             default:
-                int i19 = qn.Ic;
-                qnVar.Qa();
+                int i19 = sn.Vc;
+                snVar.Qa();
                 break;
         }
     }

@@ -1,41 +1,104 @@
 package org.telegram.ui.Cells;
 
-import android.view.View;
-import org.telegram.ui.Components.yc;
-import org.telegram.ui.n01;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.ir0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class l0 extends yc {
-    public final /* synthetic */ int k;
-    public final /* synthetic */ Object l;
+public final class l0 extends Drawable {
+    public final /* synthetic */ int a;
+    public final Paint b;
+    public final Object c;
+    public final /* synthetic */ Object d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ l0(u1 u1Var, u1 u1Var2, int i10) {
-        super(u1Var);
-        this.k = i10;
-        this.l = u1Var2;
+    public l0(t1 t1Var, int[] iArr, Paint paint) {
+        this.a = 0;
+        this.c = t1Var;
+        this.d = iArr;
+        this.b = paint;
     }
 
-    @Override // org.telegram.ui.Components.yc
-    public final void b() {
-        switch (this.k) {
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        switch (this.a) {
             case 0:
-                ((u1) this.l).a3();
-                break;
-            case 1:
-                ((u1) this.l).a3();
+                t1 t1Var = (t1) this.c;
+                int v = org.telegram.ui.ActionBar.k6.v(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.ra, t1Var.Id), org.telegram.ui.ActionBar.k6.o1(0.5f, org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.y6, t1Var.Id)));
+                int[] iArr = (int[]) this.d;
+                int i10 = iArr[0];
+                Paint paint = this.b;
+                if (v != i10) {
+                    int alpha = paint.getAlpha();
+                    iArr[0] = v;
+                    paint.setColor(v);
+                    paint.setAlpha(alpha);
+                }
+                canvas.drawCircle(getBounds().centerX(), getBounds().centerY(), getBounds().width() / 2.0f, paint);
                 break;
             default:
-                ((n01) this.l).invalidateSelf();
+                Rect bounds = getBounds();
+                float dp = AndroidUtilities.dp(25.0f);
+                float f7 = bounds.top;
+                ir0 ir0Var = (ir0) this.d;
+                float min = Math.min(f7, ir0Var.n - ir0Var.b.getY());
+                int themedColor = ir0Var.getThemedColor(org.telegram.ui.ActionBar.k6.h5);
+                Paint paint2 = this.b;
+                paint2.setColor(themedColor);
+                Path path = (Path) this.c;
+                path.rewind();
+                path.addRoundRect(bounds.left, min, bounds.right, bounds.bottom + dp, dp, dp, Path.Direction.CW);
+                canvas.save();
+                canvas.clipRect(bounds);
+                canvas.drawPath(path, paint2);
+                canvas.restore();
                 break;
         }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l0(n01 n01Var) {
-        super((View) null);
-        this.k = 2;
-        this.l = n01Var;
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        switch (this.a) {
+            case 0:
+                return -2;
+            default:
+                return -3;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        switch (this.a) {
+            case 0:
+                this.b.setAlpha(org.telegram.ui.ActionBar.k6.o1(i10 / 255.0f, ((int[]) this.d)[0]));
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        switch (this.a) {
+            case 0:
+                this.b.setColorFilter(colorFilter);
+                break;
+        }
+    }
+
+    public l0(ir0 ir0Var) {
+        this.a = 1;
+        this.d = ir0Var;
+        this.b = new Paint(1);
+        this.c = new Path();
+    }
+
+    private final void a(int i10) {
+    }
+
+    private final void b(ColorFilter colorFilter) {
     }
 }

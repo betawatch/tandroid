@@ -7,59 +7,76 @@ import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public abstract class ia extends jm0 {
-    public int V2;
-    public int W2;
-    public int X2;
-    public boolean Y2;
+public abstract class ia extends mm0 {
+    public int Y2;
     public int Z2;
-    public boolean a3;
+    public int a3;
+    public boolean b3;
+    public int c3;
+    public boolean d3;
 
-    @Override // org.telegram.ui.Components.jm0, android.view.ViewGroup, android.view.View
+    public int C1() {
+        return AndroidUtilities.dp(203.0f);
+    }
+
+    public final void D1() {
+        if (getLayoutParams() == null) {
+            return;
+        }
+        if (!SharedConfig.chatBlurEnabled()) {
+            this.Y2 = 0;
+            ((ViewGroup.MarginLayoutParams) getLayoutParams()).topMargin = 0;
+        } else {
+            this.Y2 = C1();
+            ((ViewGroup.MarginLayoutParams) getLayoutParams()).topMargin = -this.Y2;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.mm0, android.view.ViewGroup, android.view.View
     public void dispatchDraw(Canvas canvas) {
-        if (this.V2 == 0 || Z0()) {
+        if (this.Y2 == 0 || a1()) {
             super.dispatchDraw(canvas);
         } else {
-            canvas.clipRect(0, this.V2, getMeasuredWidth(), getMeasuredHeight() + this.Z2);
+            canvas.clipRect(0, this.Y2, getMeasuredWidth(), getMeasuredHeight() + this.c3);
             super.dispatchDraw(canvas);
         }
     }
 
-    @Override // org.telegram.ui.Components.jm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public boolean drawChild(Canvas canvas, View view, long j10) {
-        if (view.getY() + view.getMeasuredHeight() >= this.V2 || this.a3 || Z0()) {
+        if (view.getY() + view.getMeasuredHeight() >= this.Y2 || this.d3 || a1()) {
             return super.drawChild(canvas, view, j10);
         }
         return true;
     }
 
-    @Override // org.telegram.ui.Components.jm0, ch.a
+    @Override // org.telegram.ui.Components.mm0, ch.a
     public final void f(Canvas canvas, RectF rectF) {
-        this.a3 = true;
+        this.d3 = true;
         super.f(canvas, rectF);
-        this.a3 = false;
+        this.d3 = false;
     }
 
-    @Override // org.telegram.ui.Components.jm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        y1();
+        D1();
     }
 
-    @Override // org.telegram.ui.Components.jm0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public void onMeasure(int i10, int i11) {
-        this.Y2 = true;
-        y1();
-        super.setPadding(getPaddingLeft(), this.W2 + this.V2, getPaddingRight(), getPaddingBottom());
-        this.Y2 = false;
+        this.b3 = true;
+        D1();
+        super.setPadding(getPaddingLeft(), this.Z2 + this.Y2, getPaddingRight(), getPaddingBottom());
+        this.b3 = false;
         super.onMeasure(i10, i11);
     }
 
-    @Override // org.telegram.ui.Components.jm0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
+    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
     public void requestLayout() {
-        if (this.Y2) {
+        if (this.b3) {
             return;
         }
         super.requestLayout();
@@ -67,25 +84,8 @@ public abstract class ia extends jm0 {
 
     @Override // android.view.View
     public final void setPadding(int i10, int i11, int i12, int i13) {
-        this.W2 = i11;
-        this.X2 = i13;
-        super.setPadding(i10, i11 + this.V2, i12, i13);
-    }
-
-    public int x1() {
-        return AndroidUtilities.dp(203.0f);
-    }
-
-    public final void y1() {
-        if (getLayoutParams() == null) {
-            return;
-        }
-        if (!SharedConfig.chatBlurEnabled()) {
-            this.V2 = 0;
-            ((ViewGroup.MarginLayoutParams) getLayoutParams()).topMargin = 0;
-        } else {
-            this.V2 = x1();
-            ((ViewGroup.MarginLayoutParams) getLayoutParams()).topMargin = -this.V2;
-        }
+        this.Z2 = i11;
+        this.a3 = i13;
+        super.setPadding(i10, i11 + this.Y2, i12, i13);
     }
 }

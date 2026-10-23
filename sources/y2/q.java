@@ -1,14 +1,15 @@
 package y2;
 
+import i2.o1;
 import java.util.ArrayList;
 import java.util.Collections;
-import org.telegram.ui.jg0;
+import org.telegram.ui.o70;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class q {
-    public static final jg0 g = new jg0(27);
-    public static final jg0 h = new jg0(28);
+    public static final o70 g = new o70(28);
+    public static final o70 h = new o70(29);
     public int d;
     public int e;
     public int f;
@@ -82,6 +83,6 @@ public final class q {
         if (arrayList.isEmpty()) {
             return Float.NaN;
         }
-        return ((p) i2.e.h(1, arrayList)).c;
+        return ((p) o1.i(1, arrayList)).c;
     }
 }

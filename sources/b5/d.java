@@ -33,7 +33,7 @@ import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.x9;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public abstract class d {
     public static int a;
@@ -171,7 +171,7 @@ public abstract class d {
     }
 
     public static Context f() {
-        LaunchActivity launchActivity = LaunchActivity.H1;
+        LaunchActivity launchActivity = LaunchActivity.J1;
         return launchActivity == null ? ApplicationLoader.applicationContext : launchActivity;
     }
 

@@ -1,16 +1,40 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
-/* loaded from: classes3.dex */
-public final class gb1 extends s4.k {
-    public final /* synthetic */ kc1 F;
+import org.telegram.messenger.ChannelBoostsController;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.tl.TL_stories;
 
-    public gb1(kc1 kc1Var) {
-        this.F = kc1Var;
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class gb1 implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ qc1 b;
+
+    public /* synthetic */ gb1(qc1 qc1Var, int i10) {
+        this.a = i10;
+        this.b = qc1Var;
     }
 
-    @Override // s4.k
-    public final void P(s4.b1 b1Var) {
-        this.F.u0.f1();
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        switch (this.a) {
+            case 0:
+                qc1 qc1Var = this.b;
+                qc1Var.getClass();
+                qc1Var.o1 = ((Float) obj).floatValue();
+                qc1Var.y0.invalidate();
+                qc1Var.V0();
+                break;
+            case 1:
+                qc1 qc1Var2 = this.b;
+                qc1Var2.W1 = (TL_stories.TL_premium_boostsStatus) obj;
+                qc1Var2.V1 = true;
+                qc1Var2.h1(true);
+                qc1Var2.U1 = false;
+                break;
+            default:
+                qc1.U(this.b, (ChannelBoostsController.CanApplyBoost) obj);
+                break;
+        }
     }
 }

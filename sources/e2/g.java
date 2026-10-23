@@ -11,7 +11,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public abstract class g {
     public static final byte[] a = {0, 0, 0, 1};
@@ -182,7 +182,7 @@ public abstract class g {
             switch (c10) {
                 case 0:
                     if (split.length != 4) {
-                        k3.r("Ignoring malformed AC-4 codec string: ", str2, "CodecSpecificDataUtil");
+                        k3.q("Ignoring malformed AC-4 codec string: ", str2, "CodecSpecificDataUtil");
                         break;
                     } else {
                         try {
@@ -240,13 +240,13 @@ public abstract class g {
                                 }
                             }
                         } catch (NumberFormatException unused) {
-                            k3.r("Ignoring malformed AC-4 codec string: ", str2, "CodecSpecificDataUtil");
+                            k3.q("Ignoring malformed AC-4 codec string: ", str2, "CodecSpecificDataUtil");
                             return null;
                         }
                     }
                 case 1:
                     if (split.length < 4) {
-                        k3.r("Ignoring malformed APV codec string: ", str2, "CodecSpecificDataUtil");
+                        k3.q("Ignoring malformed APV codec string: ", str2, "CodecSpecificDataUtil");
                         break;
                     } else {
                         try {
@@ -273,7 +273,7 @@ public abstract class g {
                     }
                 case 2:
                     if (split.length < 4) {
-                        k3.r("Ignoring malformed AV1 codec string: ", str2, "CodecSpecificDataUtil");
+                        k3.q("Ignoring malformed AV1 codec string: ", str2, "CodecSpecificDataUtil");
                         break;
                     } else {
                         try {
@@ -375,7 +375,7 @@ public abstract class g {
                                 break;
                             }
                         } catch (NumberFormatException unused2) {
-                            k3.r("Ignoring malformed AV1 codec string: ", str2, "CodecSpecificDataUtil");
+                            k3.q("Ignoring malformed AV1 codec string: ", str2, "CodecSpecificDataUtil");
                             return null;
                         }
                     }
@@ -383,7 +383,7 @@ public abstract class g {
                 case 3:
                 case 4:
                     if (split.length < 2) {
-                        k3.r("Ignoring malformed AVC codec string: ", str2, "CodecSpecificDataUtil");
+                        k3.q("Ignoring malformed AVC codec string: ", str2, "CodecSpecificDataUtil");
                         break;
                     } else {
                         try {
@@ -522,13 +522,13 @@ public abstract class g {
                             if (i15 == i16) {
                             }
                         } catch (NumberFormatException unused3) {
-                            k3.r("Ignoring malformed AVC codec string: ", str2, "CodecSpecificDataUtil");
+                            k3.q("Ignoring malformed AVC codec string: ", str2, "CodecSpecificDataUtil");
                             return null;
                         }
                     }
                 case 7:
                     if (split.length < 4) {
-                        k3.r("Ignoring malformed IAMF codec string: ", str2, "CodecSpecificDataUtil");
+                        k3.q("Ignoring malformed IAMF codec string: ", str2, "CodecSpecificDataUtil");
                         break;
                     } else {
                         try {
@@ -650,30 +650,30 @@ public abstract class g {
                                 }
                             }
                         } catch (NumberFormatException unused4) {
-                            k3.r("Ignoring malformed MP4A codec string: ", str2, "CodecSpecificDataUtil");
+                            k3.q("Ignoring malformed MP4A codec string: ", str2, "CodecSpecificDataUtil");
                             break;
                         }
                     } else {
-                        k3.r("Ignoring malformed MP4A codec string: ", str2, "CodecSpecificDataUtil");
+                        k3.q("Ignoring malformed MP4A codec string: ", str2, "CodecSpecificDataUtil");
                         break;
                     }
                     break;
                 case '\t':
                     Pair pair = new Pair(1, 1);
                     if (split.length < 3) {
-                        k3.r("Ignoring malformed H263 codec string: ", str2, "CodecSpecificDataUtil");
+                        k3.q("Ignoring malformed H263 codec string: ", str2, "CodecSpecificDataUtil");
                         break;
                     } else {
                         try {
                             break;
                         } catch (NumberFormatException unused5) {
-                            k3.r("Ignoring malformed H263 codec string: ", str2, "CodecSpecificDataUtil");
+                            k3.q("Ignoring malformed H263 codec string: ", str2, "CodecSpecificDataUtil");
                             return pair;
                         }
                     }
                 case '\n':
                     if (split.length < 3) {
-                        k3.r("Ignoring malformed VP9 codec string: ", str2, "CodecSpecificDataUtil");
+                        k3.q("Ignoring malformed VP9 codec string: ", str2, "CodecSpecificDataUtil");
                         break;
                     } else {
                         try {
@@ -744,14 +744,14 @@ public abstract class g {
                                 }
                             }
                         } catch (NumberFormatException unused6) {
-                            k3.r("Ignoring malformed VP9 codec string: ", str2, "CodecSpecificDataUtil");
+                            k3.q("Ignoring malformed VP9 codec string: ", str2, "CodecSpecificDataUtil");
                             return null;
                         }
                     }
                 case 11:
                 case '\f':
                     if (split.length < 3) {
-                        k3.r("Ignoring malformed VVC codec string: ", str2, "CodecSpecificDataUtil");
+                        k3.q("Ignoring malformed VVC codec string: ", str2, "CodecSpecificDataUtil");
                         break;
                     } else {
                         try {
@@ -1005,7 +1005,7 @@ public abstract class g {
                                 if (num2 == null) {
                                     break;
                                 } else {
-                                    k3.r("Unknown VVC level string: ", str5, "CodecSpecificDataUtil");
+                                    k3.q("Unknown VVC level string: ", str5, "CodecSpecificDataUtil");
                                     break;
                                 }
                             }
@@ -1013,7 +1013,7 @@ public abstract class g {
                             if (num2 == null) {
                             }
                         } catch (NumberFormatException unused7) {
-                            k3.r("Ignoring malformed VVC codec string: ", str2, "CodecSpecificDataUtil");
+                            k3.q("Ignoring malformed VVC codec string: ", str2, "CodecSpecificDataUtil");
                             return null;
                         }
                     }
@@ -1022,12 +1022,12 @@ public abstract class g {
             return null;
         }
         if (split.length < 3) {
-            k3.r("Ignoring malformed Dolby Vision codec string: ", str2, "CodecSpecificDataUtil");
+            k3.q("Ignoring malformed Dolby Vision codec string: ", str2, "CodecSpecificDataUtil");
             return null;
         }
         Matcher matcher = c.matcher(split[1]);
         if (!matcher.matches()) {
-            k3.r("Ignoring malformed Dolby Vision codec string: ", str2, "CodecSpecificDataUtil");
+            k3.q("Ignoring malformed Dolby Vision codec string: ", str2, "CodecSpecificDataUtil");
             return null;
         }
         String group = matcher.group(1);
@@ -1150,7 +1150,7 @@ public abstract class g {
                     break;
             }
             if (num != null) {
-                k3.r("Unknown Dolby Vision profile string: ", group, "CodecSpecificDataUtil");
+                k3.q("Unknown Dolby Vision profile string: ", group, "CodecSpecificDataUtil");
                 return null;
             }
             String str6 = split[2];
@@ -1292,7 +1292,7 @@ public abstract class g {
                 if (num2 == null) {
                     return new Pair(num, num2);
                 }
-                k3.r("Unknown Dolby Vision level string: ", str6, "CodecSpecificDataUtil");
+                k3.q("Unknown Dolby Vision level string: ", str6, "CodecSpecificDataUtil");
                 return null;
             }
             num2 = null;
@@ -1319,12 +1319,12 @@ public abstract class g {
         int i10;
         Integer num;
         if (strArr.length < 4) {
-            k3.r("Ignoring malformed HEVC codec string: ", str, "CodecSpecificDataUtil");
+            k3.q("Ignoring malformed HEVC codec string: ", str, "CodecSpecificDataUtil");
             return null;
         }
         Matcher matcher = c.matcher(strArr[1]);
         if (!matcher.matches()) {
-            k3.r("Ignoring malformed HEVC codec string: ", str, "CodecSpecificDataUtil");
+            k3.q("Ignoring malformed HEVC codec string: ", str, "CodecSpecificDataUtil");
             return null;
         }
         String group = matcher.group(1);
@@ -1335,7 +1335,7 @@ public abstract class g {
             i10 = (nVar == null || nVar.c != 6) ? 2 : 4096;
         } else {
             if (!"6".equals(group)) {
-                k3.r("Unknown HEVC profile string: ", group, "CodecSpecificDataUtil");
+                k3.q("Unknown HEVC profile string: ", group, "CodecSpecificDataUtil");
                 return null;
             }
             i10 = 6;
@@ -1607,7 +1607,7 @@ public abstract class g {
             if (num == null) {
                 return new Pair(Integer.valueOf(i10), num);
             }
-            k3.r("Unknown HEVC level string: ", str2, "CodecSpecificDataUtil");
+            k3.q("Unknown HEVC level string: ", str2, "CodecSpecificDataUtil");
             return null;
         }
         num = null;

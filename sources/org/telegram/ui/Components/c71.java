@@ -1,233 +1,26 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public class c71 extends jm0 {
-    public s4.b0 V2;
-    public final u61 W2;
-    public s4.y X2;
-    public boolean Y2;
-    public boolean Z2;
-    public boolean a3;
-    public s4.b1 b3;
-    public boolean c3;
+public final /* synthetic */ class c71 implements Utilities.Callback5, Utilities.Callback5Return {
+    public final /* synthetic */ e71 a;
 
-    public c71(org.telegram.ui.ActionBar.n2 n2Var, Utilities.Callback2 callback2, Utilities.Callback5 callback5, Utilities.Callback5Return callback5Return) {
-        this(n2Var.getContext(), n2Var.getCurrentAccount(), n2Var.getClassGuid(), false, callback2, callback5, callback5Return, n2Var.getResourceProvider());
+    @Override // org.telegram.messenger.Utilities.Callback5Return
+    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        ((Integer) obj3).getClass();
+        ((Float) obj4).getClass();
+        ((Float) obj5).getClass();
+        return Boolean.valueOf(this.a.X((m61) obj, (View) obj2));
     }
 
-    public final View A1(Object obj) {
-        int i10 = 0;
-        while (true) {
-            u61 u61Var = this.W2;
-            if (i10 >= u61Var.x.size()) {
-                i10 = -1;
-                break;
-            }
-            h61 G = u61Var.G(i10);
-            if (G != null && G.G == obj) {
-                break;
-            }
-            i10++;
-        }
-        return U0(i10);
-    }
-
-    public boolean B1() {
-        return false;
-    }
-
-    public final void C1(Utilities.Callback2 callback2, boolean z10) {
-        this.Z2 = z10;
-        s4.y yVar = new s4.y(new di.f(this, 4));
-        this.X2 = yVar;
-        yVar.d(this);
-        this.W2.L = callback2;
-    }
-
-    @Override // org.telegram.ui.Components.jm0, android.view.ViewGroup, android.view.View
-    public void dispatchDraw(Canvas canvas) {
-        if (!b1()) {
-            u61 u61Var = this.W2;
-            ArrayList arrayList = u61Var.F;
-            for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                s61 s61Var = (s61) arrayList.get(i10);
-                int i11 = s61Var.b;
-                if (i11 >= 0) {
-                    int i12 = s61Var.a;
-                    int w02 = org.telegram.ui.ActionBar.h6.w0(u61Var.n ? org.telegram.ui.ActionBar.h6.h5 : org.telegram.ui.ActionBar.h6.d6, u61Var.v);
-                    if (i11 >= i12 && i12 >= 0 && i11 >= 0) {
-                        int i13 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-                        int i14 = TLObject.FLAG_31;
-                        for (int i15 = 0; i15 < getChildCount(); i15++) {
-                            View childAt = getChildAt(i15);
-                            if (childAt != null) {
-                                int R = RecyclerView.R(childAt);
-                                int top = childAt.getTop();
-                                if (R >= i12 && R <= i11) {
-                                    i13 = Math.min(top, i13);
-                                    i14 = Math.max((int) ((childAt.getAlpha() * childAt.getHeight()) + top), i14);
-                                }
-                            }
-                        }
-                        if (i13 < i14) {
-                            if (this.s2 == null) {
-                                this.s2 = new Paint(1);
-                            }
-                            this.s2.setColor(w02);
-                            canvas.drawRect(0.0f, i13, getWidth(), i14, this.s2);
-                        }
-                    }
-                }
-            }
-        }
-        super.dispatchDraw(canvas);
-    }
-
-    public int getSpanCount() {
-        s4.b0 b0Var = this.V2;
-        if (b0Var instanceof wz) {
-            return ((wz) b0Var).J;
-        }
-        return -1;
-    }
-
-    @Override // org.telegram.ui.Components.jm0
-    public final void p1() {
-        q1(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(16.0f), false);
-    }
-
-    @Override // org.telegram.ui.Components.jm0
-    public final void q1(int i10, float f7, boolean z10) {
-        s1(new vi(this, 3), new gi.c(6), i10, f7, new tv(this, 28), z10);
-    }
-
-    public void setReorderLongPressEnabled(boolean z10) {
-        this.c3 = z10;
-    }
-
-    @Override // org.telegram.ui.Components.jm0
-    public void setSections(boolean z10) {
-        q1(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(16.0f), z10);
-    }
-
-    public void setSpanCount(int i10) {
-        s4.b0 b0Var = this.V2;
-        if (b0Var instanceof wz) {
-            ((wz) b0Var).y1(i10);
-            return;
-        }
-        if (b0Var == null || i10 == -1) {
-            return;
-        }
-        getContext();
-        di.h hVar = new di.h(this, i10);
-        hVar.O = new it0(this, hVar, 1);
-        this.V2 = hVar;
-        setLayoutManager(hVar);
-    }
-
-    public final void x1(boolean z10) {
-        if (this.a3 == z10) {
-            return;
-        }
-        this.a3 = z10;
-        this.W2.M = z10;
-        AndroidUtilities.forEachViews((RecyclerView) this, (Utilities.Callback<View>) new z2(this, 13));
-    }
-
-    public final int y1(int i10) {
-        int i11 = 0;
-        while (true) {
-            u61 u61Var = this.W2;
-            if (i11 >= u61Var.x.size()) {
-                return -1;
-            }
-            h61 G = u61Var.G(i11);
-            if (G != null && G.d == i10) {
-                return i11;
-            }
-            i11++;
-        }
-    }
-
-    public final View z1(int i10) {
-        int i11 = 0;
-        while (true) {
-            u61 u61Var = this.W2;
-            if (i11 >= u61Var.x.size()) {
-                i11 = -1;
-                break;
-            }
-            h61 G = u61Var.G(i11);
-            if (G != null && G.d == i10) {
-                break;
-            }
-            i11++;
-        }
-        return U0(i11);
-    }
-
-    public c71(Context context, int i10, int i11, boolean z10, Utilities.Callback2 callback2, Utilities.Callback5 callback5, Utilities.Callback5Return callback5Return, org.telegram.ui.ActionBar.d6 d6Var) {
-        this(context, i10, i11, z10, callback2, callback5, callback5Return, d6Var, -1, 1);
-    }
-
-    public c71(Context context, int i10, int i11, boolean z10, Utilities.Callback2 callback2, Utilities.Callback5 callback5, Utilities.Callback5Return callback5Return, org.telegram.ui.ActionBar.d6 d6Var, int i12, int i13) {
-        super(context, d6Var);
-        this.c3 = true;
-        if (i12 == -1) {
-            y61 y61Var = new y61(this, i13);
-            this.V2 = y61Var;
-            setLayoutManager(y61Var);
-        } else {
-            z61 z61Var = new z61(this, i12);
-            z61Var.O = new a71(this, z61Var);
-            this.V2 = z61Var;
-            setLayoutManager(z61Var);
-        }
-        u61 u61Var = new u61(this, context, i10, i11, z10, callback2, d6Var);
-        this.W2 = u61Var;
-        setAdapter(u61Var);
-        if (callback5 != null) {
-            setOnItemClickListener(new q2(22, this, callback5));
-        }
-        if (callback5Return != null) {
-            setOnItemLongClickListener(new q2(23, this, callback5Return));
-        }
-        b71 b71Var = new b71(this);
-        b71Var.m = false;
-        b71Var.C = false;
-        b71Var.o(bs.h);
-        b71Var.n(350L);
-        setItemAnimator(b71Var);
-    }
-
-    public void D1() {
-    }
-
-    public void E1() {
-    }
-
-    public void F1(s4.b1 b1Var) {
-    }
-
-    public void G1(s4.b1 b1Var) {
-    }
-
-    public void H1(s4.b1 b1Var) {
-    }
-
-    public void I1() {
+    @Override // org.telegram.messenger.Utilities.Callback5
+    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        ((Integer) obj3).getClass();
+        ((Float) obj4).getClass();
+        ((Float) obj5).getClass();
+        this.a.W((m61) obj, (View) obj2);
     }
 }

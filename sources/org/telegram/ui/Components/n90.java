@@ -1,21 +1,43 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
+import android.widget.FrameLayout;
+import android.widget.PopupWindow;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class n90 extends gj0 {
-    public final /* synthetic */ q90 n;
+public final class n90 implements PopupWindow.OnDismissListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ FrameLayout b;
+    public final /* synthetic */ View c;
+    public final /* synthetic */ ViewTreeObserver.OnPreDrawListener d;
+    public final /* synthetic */ ViewGroup e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n90(q90 q90Var, Context context, String str, String str2, String str3) {
-        super(context, str, str2, str3, false);
-        this.n = q90Var;
+    public /* synthetic */ n90(ViewGroup viewGroup, View view, FrameLayout frameLayout, ViewTreeObserver.OnPreDrawListener onPreDrawListener, int i10) {
+        this.a = i10;
+        this.e = viewGroup;
+        this.c = view;
+        this.b = frameLayout;
+        this.d = onPreDrawListener;
     }
 
-    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
-    public final void dismiss() {
-        super.dismiss();
-        this.n.E = null;
+    @Override // android.widget.PopupWindow.OnDismissListener
+    public final void onDismiss() {
+        switch (this.a) {
+            case 0:
+                ((r90) this.e).s = null;
+                ei.g6 g6Var = (ei.g6) this.c;
+                g6Var.animate().cancel();
+                g6Var.animate().alpha(0.0f).setDuration(150L).setListener(new i60(this, 4));
+                break;
+            default:
+                ((org.telegram.ui.mz) this.e).x = null;
+                ei.g6 g6Var2 = (ei.g6) this.c;
+                g6Var2.animate().cancel();
+                g6Var2.animate().alpha(0.0f).setDuration(150L).setListener(new p31(this, 27));
+                break;
+        }
     }
 }

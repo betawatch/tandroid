@@ -1,15 +1,24 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import android.content.Context;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class q41 extends ActionBarPopupWindow$ActionBarPopupWindowLayout {
-    @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout, android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(Math.min((int) (AndroidUtilities.displaySize.y * 0.33f), View.MeasureSpec.getSize(i11)), TLObject.FLAG_30));
+public final class q41 extends y41 {
+    public final /* synthetic */ Runnable Z;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public q41(Context context, String str, String str2, CharSequence charSequence, Runnable runnable) {
+        super(context, str, str2, charSequence, null, 0, false, null);
+        this.Z = runnable;
+    }
+
+    @Override // org.telegram.ui.Components.y41, org.telegram.ui.ActionBar.h3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.k2
+    public final void dismiss() {
+        super.dismiss();
+        Runnable runnable = this.Z;
+        if (runnable != null) {
+            runnable.run();
+        }
     }
 }

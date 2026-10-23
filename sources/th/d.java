@@ -3,39 +3,39 @@ package th;
 import android.graphics.Canvas;
 import android.graphics.Rect;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Cells.u1;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.Cells.t1;
 import org.telegram.ui.Components.bs;
+import org.telegram.ui.Components.ck0;
 import org.telegram.ui.Components.p6;
-import org.telegram.ui.Components.zj0;
 import zf.p;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class d extends c {
     public final p6 d;
-    public final zj0 e;
+    public final ck0 e;
     public final ne.b f;
     public float h;
 
-    public d(u1 u1Var, d6 d6Var) {
-        super(d6Var);
-        zj0 zj0Var = new zj0(u1Var);
-        this.e = zj0Var;
-        zj0Var.d(null, true, false);
-        zj0Var.v = 650.0f;
-        zj0Var.e(0.69f, false);
-        zj0Var.p.setStrokeWidth(AndroidUtilities.dp(1.5f));
-        this.f = new ne.b(u1Var, bs.h, 260L);
+    public d(t1 t1Var, g6 g6Var) {
+        super(g6Var);
+        ck0 ck0Var = new ck0(t1Var);
+        this.e = ck0Var;
+        ck0Var.d(null, true, false);
+        ck0Var.v = 650.0f;
+        ck0Var.e(0.69f, false);
+        ck0Var.p.setStrokeWidth(AndroidUtilities.dp(1.5f));
+        this.f = new ne.b(t1Var, bs.h, 260L);
         p6 p6Var = new p6(true, false, false);
         this.d = p6Var;
         p6Var.x(AndroidUtilities.bold());
         p6Var.w(AndroidUtilities.dp(13.0f));
         p6Var.b = 17;
-        int w02 = h6.w0(h6.i6, d6Var);
+        int w02 = k6.w0(k6.i6, g6Var);
         if (this.b != w02) {
-            h6.C1(this.a, w02, false);
+            k6.E1(this.a, w02, false);
             this.b = w02;
         }
     }

@@ -1,36 +1,98 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import android.os.Handler;
+import android.os.Looper;
+import android.view.TextureView;
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class y11 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ThemeEditorView b;
+public final class y11 extends TextureView {
+    public static Boolean f;
+    public w11 a;
+    public final o1.a b;
+    public final ArrayList c;
+    public Runnable d;
+    public boolean e;
 
-    public /* synthetic */ y11(ThemeEditorView themeEditorView, int i10) {
-        this.a = i10;
-        this.b = themeEditorView;
+    public y11(Context context, Runnable runnable) {
+        super(context);
+        this.b = new o1.a(this, 1);
+        this.c = new ArrayList();
+        this.d = runnable;
+        setOpaque(false);
+        setSurfaceTextureListener(new t50(this, 2));
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                ThemeEditorView themeEditorView = this.b;
-                w11 w11Var = themeEditorView.a;
-                if (w11Var != null) {
-                    w11Var.setBackground(null);
-                    themeEditorView.h.removeView(themeEditorView.a);
-                    break;
+    public static void b(Runnable runnable) {
+        if (runnable == null) {
+            return;
+        }
+        if (Thread.currentThread() != Looper.getMainLooper().getThread()) {
+            AndroidUtilities.runOnUIThread(runnable);
+        } else {
+            runnable.run();
+        }
+    }
+
+    public static boolean c() {
+        if (f == null) {
+            f = Boolean.valueOf(MessagesController.getGlobalMainSettings().getBoolean("nothanos", false));
+        }
+        Boolean bool = f;
+        return bool == null || !bool.booleanValue();
+    }
+
+    public final void a(View view) {
+        int i10 = 0;
+        int i11 = 0;
+        boolean z10 = false;
+        while (true) {
+            ArrayList arrayList = this.c;
+            if (i11 >= arrayList.size()) {
+                break;
+            }
+            x11 x11Var = (x11) arrayList.get(i11);
+            if (x11Var.a == view) {
+                Runnable runnable = x11Var.d;
+                if (runnable != null) {
+                    b(runnable);
+                    x11Var.d = null;
                 }
-                break;
-            default:
-                ThemeEditorView themeEditorView2 = this.b;
-                org.telegram.ui.ActionBar.h6.s1(themeEditorView2.m, true, false, false);
-                themeEditorView2.a();
-                break;
+                arrayList.remove(i11);
+                i11--;
+                z10 = true;
+            }
+            i11++;
+        }
+        if (z10) {
+            return;
+        }
+        w11 w11Var = this.a;
+        ArrayList arrayList2 = w11Var.W;
+        if (w11Var.b.get()) {
+            Handler handler = w11Var.getHandler();
+            if (handler != null) {
+                handler.sendMessage(handler.obtainMessage(5, view));
+                return;
+            }
+            while (i10 < arrayList2.size()) {
+                v11 v11Var = (v11) arrayList2.get(i10);
+                if (v11Var.a.contains(view)) {
+                    Runnable runnable2 = v11Var.f;
+                    if (runnable2 != null) {
+                        b(runnable2);
+                        v11Var.f = null;
+                    }
+                    arrayList2.remove(i10);
+                    i10--;
+                }
+                i10++;
+            }
         }
     }
 }

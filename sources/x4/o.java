@@ -20,15 +20,15 @@ import android.util.TypedValue;
 import android.util.Xml;
 import java.io.IOException;
 import java.util.ArrayDeque;
-import org.telegram.ui.Components.br;
+import org.telegram.ui.Components.ar;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import v7.j8;
 import v7.x7;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public final class o extends br {
+public final class o extends ar {
     public static final PorterDuff.Mode v = PorterDuff.Mode.SRC_IN;
     public m c;
     public PorterDuffColorFilter d;
@@ -227,7 +227,7 @@ public final class o extends br {
         return drawable != null ? drawable.getIntrinsicWidth() : (int) this.c.b.h;
     }
 
-    @Override // org.telegram.ui.Components.br, android.graphics.drawable.Drawable
+    @Override // org.telegram.ui.Components.ar, android.graphics.drawable.Drawable
     public final int getOpacity() {
         Drawable drawable = (Drawable) this.b;
         if (drawable != null) {
@@ -368,7 +368,7 @@ public final class o extends br {
         }
     }
 
-    @Override // org.telegram.ui.Components.br, android.graphics.drawable.Drawable
+    @Override // org.telegram.ui.Components.ar, android.graphics.drawable.Drawable
     public final void setAlpha(int i10) {
         Drawable drawable = (Drawable) this.b;
         if (drawable != null) {
@@ -389,7 +389,7 @@ public final class o extends br {
         }
     }
 
-    @Override // org.telegram.ui.Components.br, android.graphics.drawable.Drawable
+    @Override // org.telegram.ui.Components.ar, android.graphics.drawable.Drawable
     public final void setColorFilter(ColorFilter colorFilter) {
         Drawable drawable = (Drawable) this.b;
         if (drawable != null) {

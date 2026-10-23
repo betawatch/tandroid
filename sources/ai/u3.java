@@ -7,22 +7,22 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.l70;
+import org.telegram.ui.Components.m70;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u3 implements Utilities.Callback {
     public final /* synthetic */ int a;
     public final /* synthetic */ long b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f3 c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.h3 c;
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
     public final /* synthetic */ TLObject f;
     public final /* synthetic */ TLObject g;
 
-    public /* synthetic */ u3(org.telegram.ui.ActionBar.f3 f3Var, Object obj, Object obj2, long j10, TLObject tLObject, TLObject tLObject2, int i10) {
+    public /* synthetic */ u3(org.telegram.ui.ActionBar.h3 h3Var, Object obj, Object obj2, long j10, TLObject tLObject, TLObject tLObject2, int i10) {
         this.a = i10;
-        this.c = f3Var;
+        this.c = h3Var;
         this.d = obj;
         this.e = obj2;
         this.b = j10;
@@ -34,10 +34,10 @@ public final /* synthetic */ class u3 implements Utilities.Callback {
     public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                l7.R0((l7) this.c, (pf.c) this.d, (ug.m1) this.e, this.b, (TL_stars.TL_starGiftUnique) this.f, (TL_wallet.nftItem) this.g, (TL_stars.starGiftDepositPayload) obj);
+                l7.Q0((l7) this.c, (pf.c) this.d, (ug.l1) this.e, this.b, (TL_stars.TL_starGiftUnique) this.f, (TL_wallet.nftItem) this.g, (TL_stars.starGiftDepositPayload) obj);
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.e((l70) this.c, (org.telegram.ui.ActionBar.b2) this.d, (Context) this.e, this.b, (TLRPC.TL_chatInviteExported) this.f, (TLRPC.TL_chatInviteImporter) this.g, (TLRPC.ChannelParticipant) obj));
+                AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.e((m70) this.c, (org.telegram.ui.ActionBar.c2) this.d, (Context) this.e, this.b, (TLRPC.TL_chatInviteExported) this.f, (TLRPC.TL_chatInviteImporter) this.g, (TLRPC.ChannelParticipant) obj));
                 break;
         }
     }

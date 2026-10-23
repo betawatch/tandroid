@@ -8,11 +8,11 @@ import org.telegram.messenger.RichMessageLayout;
 import org.telegram.tgnet.QuickAckDelegate;
 import org.telegram.tgnet.RequestTimeDelegate;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.dj0;
+import org.telegram.ui.hj0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class d implements org.telegram.ui.ActionBar.a2, RequestTimeDelegate, MessagesController.ErrorDelegate, dj0, QuickAckDelegate {
+public final /* synthetic */ class d implements org.telegram.ui.ActionBar.z1, RequestTimeDelegate, MessagesController.ErrorDelegate, hj0, QuickAckDelegate {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -23,19 +23,19 @@ public final /* synthetic */ class d implements org.telegram.ui.ActionBar.a2, Re
         this.c = obj2;
     }
 
-    @Override // org.telegram.ui.dj0
-    public void b(Canvas canvas) {
+    @Override // org.telegram.ui.hj0
+    public void a(Canvas canvas) {
         ((RichMessageLayout.RichThinkingBlock) this.b).lambda$onDrawFaded$0((View) this.c, canvas);
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    @Override // org.telegram.ui.ActionBar.z1
+    public void g(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
         switch (this.a) {
             case 0:
-                AndroidUtilities.lambda$isMapsInstalled$11((String) this.b, (org.telegram.ui.ActionBar.n2) this.c, b2Var, i10);
+                AndroidUtilities.lambda$isMapsInstalled$11((String) this.b, (org.telegram.ui.ActionBar.o2) this.c, c2Var, i10);
                 break;
             default:
-                AndroidUtilities.lambda$showProxyAlert$20((SharedPreferences) this.b, (h0) this.c, b2Var, i10);
+                AndroidUtilities.lambda$showProxyAlert$20((SharedPreferences) this.b, (g0) this.c, c2Var, i10);
                 break;
         }
     }

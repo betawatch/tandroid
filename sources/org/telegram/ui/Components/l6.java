@@ -9,7 +9,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.camera.Camera2Session;
 import org.telegram.messenger.camera.CameraSession;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l6 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -47,8 +47,8 @@ public final /* synthetic */ class l6 implements ValueAnimator.AnimatorUpdateLis
                 break;
             case 2:
                 k8 k8Var = (k8) this.b;
-                k8Var.J.setCustomPaddingRight(((Integer) valueAnimator.getAnimatedValue()).intValue());
-                k8Var.M.setCustomPaddingRight(((Integer) valueAnimator.getAnimatedValue()).intValue());
+                k8Var.I.setCustomPaddingRight(((Integer) valueAnimator.getAnimatedValue()).intValue());
+                k8Var.L.setCustomPaddingRight(((Integer) valueAnimator.getAnimatedValue()).intValue());
                 break;
             case 3:
                 e9 e9Var = (e9) this.b;
@@ -123,14 +123,14 @@ public final /* synthetic */ class l6 implements ValueAnimator.AnimatorUpdateLis
             case 14:
                 wp wpVar = (wp) this.b;
                 wpVar.getClass();
-                wpVar.g0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                wpVar.J.setTranslationY((-AndroidUtilities.dp(7.0f)) * wpVar.g0);
+                wpVar.f0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                wpVar.I.setTranslationY((-AndroidUtilities.dp(7.0f)) * wpVar.f0);
                 break;
             case 15:
-                fr frVar = (fr) this.b;
-                frVar.getClass();
-                frVar.l = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                View view = frVar.H;
+                er erVar = (er) this.b;
+                erVar.getClass();
+                erVar.l = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                View view = erVar.H;
                 if (view != null) {
                     view.invalidate();
                     break;
@@ -232,15 +232,15 @@ public final /* synthetic */ class l6 implements ValueAnimator.AnimatorUpdateLis
                 }
                 break;
             case 27:
-                m60 m60Var = (m60) this.b;
-                if (!m60Var.s0) {
-                    CameraSession cameraSession = m60Var.t0;
+                n60 n60Var = (n60) this.b;
+                if (!n60Var.s0) {
+                    CameraSession cameraSession = n60Var.t0;
                     if (cameraSession != null) {
                         cameraSession.setZoom(((Float) valueAnimator.getAnimatedValue()).floatValue());
                         break;
                     }
                 } else {
-                    Camera2Session camera2Session = m60Var.w0;
+                    Camera2Session camera2Session = n60Var.w0;
                     if (camera2Session != null) {
                         camera2Session.setZoom(((Float) valueAnimator.getAnimatedValue()).floatValue());
                         break;
@@ -248,12 +248,12 @@ public final /* synthetic */ class l6 implements ValueAnimator.AnimatorUpdateLis
                 }
                 break;
             case 28:
-                v70.Q((v70) this.b, valueAnimator);
+                x70.P((x70) this.b, valueAnimator);
                 break;
             default:
-                v70 v70Var = ((u70) this.b).e;
-                v70Var.k0 = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                viewGroup = ((org.telegram.ui.ActionBar.f3) v70Var).containerView;
+                x70 x70Var = ((w70) this.b).e;
+                x70Var.k0 = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+                viewGroup = ((org.telegram.ui.ActionBar.h3) x70Var).containerView;
                 viewGroup.invalidate();
                 break;
         }

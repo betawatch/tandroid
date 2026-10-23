@@ -2,52 +2,28 @@ package ci;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class r2 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ q4 b;
+    public final /* synthetic */ View b;
 
-    public /* synthetic */ r2(q4 q4Var, int i10) {
+    public /* synthetic */ r2(int i10, View view) {
         this.a = i10;
-        this.b = q4Var;
+        this.b = view;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
-        x2 x2Var;
-        Runnable runnable;
         switch (this.a) {
             case 0:
-                q4 q4Var = this.b;
-                q4Var.t3 = 0.0f;
-                q4Var.r3.setAlpha(1.0f);
-                q4Var.r3.setVisibility(8);
-                q4Var.r3.n();
+                AndroidUtilities.removeFromParent(this.b);
                 break;
             default:
-                super.onAnimationEnd(animator);
-                q4 q4Var2 = this.b;
-                q4Var2.N2.unlock();
-                q4Var2.H2 = q4Var2.o2;
-                v2 v2Var = q4Var2.b2;
-                if (v2Var != null && (runnable = v2Var.w) != null) {
-                    runnable.run();
-                    v2Var.w = null;
-                }
-                if (q4Var2.K1 && !q4Var2.v2) {
-                    aa aaVar = ((r9) q4Var2.Q1).d;
-                    if (aaVar.x) {
-                        aaVar.x = false;
-                        aaVar.P();
-                    }
-                }
-                if (!q4Var2.v2 && (x2Var = q4Var2.d3) != null) {
-                    x2Var.setVisibility(8);
-                }
-                q4Var2.V2 = true;
-                q4Var2.invalidate();
+                AndroidUtilities.removeFromParent(this.b);
                 break;
         }
     }

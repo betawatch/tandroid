@@ -8,12 +8,13 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public class n2 extends org.telegram.ui.ActionBar.f3 implements NotificationCenter.NotificationCenterDelegate {
-    public static int G = 1;
-    public ig.g E;
-    public Utilities.CallbackReturn F;
+public class n2 extends org.telegram.ui.ActionBar.h3 implements NotificationCenter.NotificationCenterDelegate {
+    public static int H = 1;
+    public Utilities.Callback3Return E;
+    public ig.g F;
+    public Utilities.CallbackReturn G;
     public String b;
     public int c;
     public final f1 d;
@@ -24,12 +25,12 @@ public class n2 extends org.telegram.ui.ActionBar.f3 implements NotificationCent
     public final boolean r;
     public final boolean s;
     public boolean v;
-    public ai.q w;
-    public float x;
-    public Utilities.Callback3Return y;
+    public int w;
+    public ai.q x;
+    public float y;
 
-    public n2(Context context, org.telegram.ui.ActionBar.d6 d6Var, boolean z10, boolean z11) {
-        super(1, context, d6Var, true);
+    public n2(Context context, org.telegram.ui.ActionBar.g6 g6Var, boolean z10, boolean z11) {
+        super(1, context, g6Var, true);
         this.b = null;
         this.c = -1;
         this.d = new f1();
@@ -38,13 +39,14 @@ public class n2 extends org.telegram.ui.ActionBar.f3 implements NotificationCent
         this.r = z10;
         this.s = z11;
         this.useSmoothKeyboard = true;
-        fixNavigationBar(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.h5, d6Var));
+        fixNavigationBar(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.h5, g6Var));
+        this.w = this.navBarColor;
         this.occupyNavigationBar = true;
         setUseLightStatusBar(false);
         this.containerView = new j1(this, context);
         h1 h1Var = new h1(this, context, 0);
         this.f = h1Var;
-        h1Var.b = z10 ? 0 : G;
+        h1Var.b = z10 ? 0 : H;
         h1Var.setAdapter(new i1(this, z10, context));
         this.containerView.addView(h1Var, w7.z5.e(-1, -1, 87));
         new b4(this.containerView, false, new d1(this, 0));
@@ -70,7 +72,7 @@ public class n2 extends org.telegram.ui.ActionBar.f3 implements NotificationCent
         MediaDataController.getInstance(this.currentAccount).loadRecents(7, false, true, false);
     }
 
-    public static /* synthetic */ void n(n2 n2Var) {
+    public static /* synthetic */ void m(n2 n2Var) {
         boolean z10 = n2Var.v;
         boolean z11 = n2Var.keyboardVisible;
         if (z10 != z11) {
@@ -80,13 +82,13 @@ public class n2 extends org.telegram.ui.ActionBar.f3 implements NotificationCent
             if (n2Var.keyboardVisible) {
                 int i10 = AndroidUtilities.displaySize.y;
                 int i11 = n2Var.keyboardHeight;
-                f7 = Math.min(0.0f, Math.max(((i10 - i11) * 0.3f) - n2Var.x, (-i11) / 3.0f));
+                f7 = Math.min(0.0f, Math.max(((i10 - i11) * 0.3f) - n2Var.y, (-i11) / 3.0f));
             }
             n2Var.container.animate().translationY(f7).setDuration(250L).setInterpolator(org.telegram.ui.ActionBar.o1.w).start();
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.f3
+    @Override // org.telegram.ui.ActionBar.h3
     public final boolean canDismissWithSwipe() {
         return this.f.getTranslationY() >= ((float) ((int) this.n));
     }
@@ -108,33 +110,49 @@ public class n2 extends org.telegram.ui.ActionBar.f3 implements NotificationCent
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
+    @Override // org.telegram.ui.ActionBar.h3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.k2
     public final void dismiss() {
         NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.stickersDidLoad);
         NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.groupStickersDidLoad);
-        p0();
+        q0();
         super.dismiss();
         FileLog.disableGson(false);
     }
 
-    @Override // org.telegram.ui.ActionBar.f3
+    @Override // org.telegram.ui.ActionBar.h3
     public final int getContainerViewHeight() {
         return this.containerView.getMeasuredHeight() <= 0 ? AndroidUtilities.displaySize.y : (int) (this.containerView.getMeasuredHeight() - this.f.getY());
-    }
-
-    public boolean m0(Integer num) {
-        return true;
     }
 
     public boolean n0(Integer num) {
         return true;
     }
 
-    public boolean o0(Runnable runnable) {
+    public boolean o0(Integer num) {
         return true;
     }
 
-    public final void p0() {
+    @Override // org.telegram.ui.ActionBar.h3
+    public final void onThemeColorsChanged() {
+        int w02;
+        super.onThemeColorsChanged();
+        try {
+            if (this.navBarColorKey >= 0 || this.navBarColor != this.w || (w02 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.h5, this.resourcesProvider)) == this.navBarColor) {
+                return;
+            }
+            this.navBarColor = w02;
+            this.w = w02;
+            setOverlayNavBarColor(w02);
+        } catch (Exception e) {
+            FileLog.e(e);
+        }
+    }
+
+    public boolean p0(Runnable runnable) {
+        return true;
+    }
+
+    public final void q0() {
         h2 h2Var;
         this.keyboardVisible = false;
         this.container.animate().translationY(0.0f).setDuration(250L).setInterpolator(org.telegram.ui.ActionBar.o1.w).start();
@@ -142,24 +160,24 @@ public class n2 extends org.telegram.ui.ActionBar.f3 implements NotificationCent
             if (view instanceof b2) {
                 h2 h2Var2 = ((b2) view).f;
                 if (h2Var2 != null) {
-                    AndroidUtilities.hideKeyboard(h2Var2.d);
+                    AndroidUtilities.hideKeyboard(h2Var2.e);
                 }
             } else if ((view instanceof v1) && (h2Var = ((v1) view).d) != null) {
-                AndroidUtilities.hideKeyboard(h2Var.d);
+                AndroidUtilities.hideKeyboard(h2Var.e);
             }
         }
     }
 
-    public final void q0(int i10) {
-        if (m0(Integer.valueOf(i10))) {
-            if ((i10 != 1 || o0(new ah.g(this, i10, 7))) && ((Boolean) this.F.run(Integer.valueOf(i10))).booleanValue()) {
+    public final void r0(int i10) {
+        if (n0(Integer.valueOf(i10))) {
+            if ((i10 != 1 || p0(new ah.g(this, i10, 7))) && ((Boolean) this.G.run(Integer.valueOf(i10))).booleanValue()) {
                 dismiss();
             }
         }
     }
 
-    public final void r0(Utilities.CallbackReturn callbackReturn) {
-        this.F = callbackReturn;
+    public final void s0(Utilities.CallbackReturn callbackReturn) {
+        this.G = callbackReturn;
         for (View view : this.f.getViewPages()) {
             if (view instanceof b2) {
                 a2 a2Var = ((b2) view).c;

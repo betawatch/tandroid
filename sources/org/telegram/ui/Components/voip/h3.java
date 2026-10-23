@@ -12,9 +12,9 @@ import android.graphics.PorterDuffXfermode;
 import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.vj0;
+import org.telegram.ui.Components.yj0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class h3 extends View {
     public final o1 E;
@@ -22,9 +22,9 @@ public final class h3 extends View {
     public float G;
     public float H;
     public float I;
-    public vj0 a;
-    public vj0 b;
-    public vj0 c;
+    public yj0 a;
+    public yj0 b;
+    public yj0 c;
     public final Paint d;
     public final Paint e;
     public final Paint f;
@@ -129,8 +129,8 @@ public final class h3 extends View {
             this.r = 0;
             this.w = 100;
             if (i10 == 3 || i10 == 1) {
-                vj0 vj0Var = this.b;
-                vj0Var.N(vj0Var.e[0] - 1, false, false);
+                yj0 yj0Var = this.b;
+                yj0Var.N(yj0Var.e[0] - 1, false, false);
             }
         } else {
             this.s = 0;
@@ -163,13 +163,13 @@ public final class h3 extends View {
         float f14 = -x10;
         float f15 = f14 - f12;
         float f16 = -y3;
-        lVar.H(f15, f16 - f13, (i11 * 1.12f) / ((Bitmap) lVar.c).getHeight(), o1Var.h);
-        o1Var.c.E(f14, f16, o1Var.f - x10, o1Var.g - y3);
-        vj0 vj0Var = this.c;
+        lVar.y(f15, f16 - f13, (i11 * 1.12f) / ((Bitmap) lVar.c).getHeight(), o1Var.h);
+        o1Var.c.w(f14, f16, o1Var.f - x10, o1Var.g - y3);
+        yj0 yj0Var = this.c;
         Paint paint2 = this.e;
         Paint paint3 = this.d;
         int i12 = this.n;
-        if (vj0Var != null) {
+        if (yj0Var != null) {
             if (this.w > 20) {
                 Paint paint4 = this.f;
                 paint4.setAlpha((int) ((r1 * 35) / 100.0f));
@@ -266,7 +266,7 @@ public final class h3 extends View {
                     z10 = true;
                 }
                 if ((z11 || z10) && (g3Var = this.x) != null) {
-                    g3Var.c(this);
+                    g3Var.f(this);
                 }
             }
         } else if (action == 3) {

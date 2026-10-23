@@ -1,35 +1,44 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.xc;
-
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u2 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.n2 b;
+    public final /* synthetic */ y2 b;
 
-    public /* synthetic */ u2(int i10, org.telegram.ui.ActionBar.n2 n2Var) {
+    public /* synthetic */ u2(y2 y2Var, int i10) {
         this.a = i10;
-        this.b = n2Var;
+        this.b = y2Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                org.telegram.ui.ActionBar.n2 n2Var = this.b;
-                o5.D0(n2Var.getContext(), n2Var.getResourceProvider());
-                break;
-            case 1:
-                this.b.presentFragment(new o5());
+                y2 y2Var = this.b;
+                if (!y2Var.S && !y2Var.R) {
+                    y2Var.a(1.0f);
+                    break;
+                }
                 break;
             default:
-                org.telegram.ui.ActionBar.n2 n2Var2 = this.b;
-                if (xc.a(n2Var2)) {
-                    xc.a0(n2Var2).M(LocaleController.getString(R.string.WalletCreated), LocaleController.getString(R.string.WalletCreatedInfo), R.raw.contact_check).j();
-                    break;
+                y2 y2Var2 = this.b;
+                if (!y2Var2.S && !y2Var2.R) {
+                    hh.d.c(y2Var2.E, y2Var2.h);
+                    y2Var2.F.d();
+                    x5 x5Var = y2Var2.r;
+                    u2 u2Var = new u2(y2Var2, 0);
+                    s5 s5Var = x5Var.y;
+                    if (s5Var == null) {
+                        u2Var.run();
+                        break;
+                    } else if (s5Var.b == null) {
+                        s5Var.d = u2Var;
+                        break;
+                    } else {
+                        u2Var.run();
+                        break;
+                    }
                 }
                 break;
         }

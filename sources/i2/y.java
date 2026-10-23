@@ -1,59 +1,40 @@
 package i2;
 
-import android.os.Bundle;
-import org.telegram.messenger.GenericProvider;
-import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.xc;
-import org.telegram.ui.ng0;
+import e9.x1;
+import java.util.List;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class y implements e2.o, e2.j, p.a, GenericProvider {
+public final /* synthetic */ class y implements e2.o, m4.g1 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
+    public final /* synthetic */ List b;
 
-    public /* synthetic */ y(int i10, boolean z10) {
+    public /* synthetic */ y(int i10, x1 x1Var) {
         this.a = i10;
-        this.b = z10;
+        this.b = x1Var;
     }
 
-    @Override // e2.j
-    public void accept(Object obj) {
+    @Override // m4.g1
+    public Object a(m4.f0 f0Var, m4.v vVar, int i10) {
         switch (this.a) {
-            case 2:
-                ((m4.m1) obj).X(this.b);
-                break;
-            case 3:
-                ((m4.m1) obj).q0(this.b);
-                break;
-            default:
-                ((m4.m1) obj).w(this.b);
-                break;
         }
-    }
-
-    @Override // p.a
-    public qc c(xc xcVar) {
-        return xcVar.k(this.b);
+        return f0Var.l(vVar, this.b);
     }
 
     @Override // e2.o
     public void invoke(Object obj) {
         switch (this.a) {
             case 0:
-                ((b2.d1) obj).onShuffleModeEnabledChanged(this.b);
+                ((b2.d1) obj).onCues(this.b);
                 break;
             default:
-                ((b2.d1) obj).onSkipSilenceEnabledChanged(this.b);
+                ((j2.b) obj).getClass();
                 break;
         }
     }
 
-    @Override // org.telegram.messenger.GenericProvider
-    public Object provide(Object obj) {
-        Bundle h = a1.g.h("afterSignup", this.b);
-        ng0 ng0Var = new ng0();
-        ng0Var.l0(h);
-        return ng0Var;
+    public /* synthetic */ y(j2.a aVar, List list) {
+        this.a = 1;
+        this.b = list;
     }
 }

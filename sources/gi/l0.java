@@ -1,6 +1,7 @@
 package gi;
 
 import android.content.Context;
+import android.graphics.PorterDuff;
 import android.text.SpannableStringBuilder;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -9,12 +10,13 @@ import org.telegram.messenger.Emoji;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.r6;
 import org.telegram.ui.Components.a6;
 import w7.z5;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class l0 extends FrameLayout {
     public final wh.n a;
@@ -49,7 +51,7 @@ public final class l0 extends FrameLayout {
         spannableStringBuilder.append(Emoji.replaceEmoji(keyboardButton.text, nVar.getPaint().getFontMetricsInt(), false));
         ImageView imageView = new ImageView(getContext());
         this.b = imageView;
-        imageView.setColorFilter(h6.w0(h6.Xe, n0Var.a));
+        r6.t(imageView, k6.Xe, n0Var.a, PorterDuff.Mode.SRC_ATOP);
         if (ag.c.b(keyboardButton)) {
             imageView.setImageResource(R.drawable.bot_webview);
             imageView.setVisibility(0);
@@ -63,28 +65,28 @@ public final class l0 extends FrameLayout {
     public final void a() {
         int i10;
         int i11;
-        int m12;
+        int o12;
         int k10;
         int dp = AndroidUtilities.dp(21.0f);
         int dp2 = AndroidUtilities.dp(11.0f);
-        int i12 = h6.Ye;
-        d6 d6Var = this.n.a;
-        int w02 = h6.w0(i12, d6Var);
-        int w03 = h6.w0(h6.Ze, d6Var);
-        int w04 = h6.w0(h6.Xe, d6Var);
+        int i12 = k6.Ye;
+        g6 g6Var = this.n.a;
+        int w02 = k6.w0(i12, g6Var);
+        int w03 = k6.w0(k6.Ze, g6Var);
+        int w04 = k6.w0(k6.Xe, g6Var);
         TL_keyboard.KeyboardButtonStyle keyboardButtonStyle = this.c.style;
         if (keyboardButtonStyle != null) {
             if (keyboardButtonStyle.bg_primary) {
-                m12 = h6.m1(0.8f, h6.w0(h6.dl, d6Var));
-                k10 = i0.a.k(h6.w0(h6.i6, d6Var), m12);
+                o12 = k6.o1(0.8f, k6.w0(k6.dl, g6Var));
+                k10 = i0.a.k(k6.w0(k6.i6, g6Var), o12);
             } else if (keyboardButtonStyle.bg_danger) {
-                m12 = h6.m1(0.8f, h6.w0(h6.el, d6Var));
-                k10 = i0.a.k(h6.w0(h6.i6, d6Var), m12);
+                o12 = k6.o1(0.8f, k6.w0(k6.el, g6Var));
+                k10 = i0.a.k(k6.w0(k6.i6, g6Var), o12);
             } else if (keyboardButtonStyle.bg_success) {
-                m12 = h6.m1(0.8f, h6.w0(h6.fl, d6Var));
-                k10 = i0.a.k(h6.w0(h6.i6, d6Var), m12);
+                o12 = k6.o1(0.8f, k6.w0(k6.fl, g6Var));
+                k10 = i0.a.k(k6.w0(k6.i6, g6Var), o12);
             }
-            i10 = m12;
+            i10 = o12;
             i11 = k10;
             w04 = -1;
             this.b.setColorFilter(w04);
@@ -92,7 +94,7 @@ public final class l0 extends FrameLayout {
             boolean z10 = this.d;
             int i13 = (z10 || !this.e) ? dp2 : dp;
             boolean z11 = this.f;
-            setBackground(h6.j0(i13, (z11 || !this.e) ? dp2 : dp, (z11 || !this.h) ? dp2 : dp, (z10 || !this.h) ? dp2 : dp, i10, i11, i11));
+            setBackground(k6.j0(i13, (z11 || !this.e) ? dp2 : dp, (z11 || !this.h) ? dp2 : dp, (z10 || !this.h) ? dp2 : dp, i10, i11, i11));
         }
         i10 = w02;
         i11 = w03;
@@ -102,6 +104,6 @@ public final class l0 extends FrameLayout {
         if (z102) {
         }
         boolean z112 = this.f;
-        setBackground(h6.j0(i13, (z112 || !this.e) ? dp2 : dp, (z112 || !this.h) ? dp2 : dp, (z102 || !this.h) ? dp2 : dp, i10, i11, i11));
+        setBackground(k6.j0(i13, (z112 || !this.e) ? dp2 : dp, (z112 || !this.h) ? dp2 : dp, (z102 || !this.h) ? dp2 : dp, i10, i11, i11));
     }
 }

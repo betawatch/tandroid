@@ -11,16 +11,16 @@ import android.text.TextUtils;
 import android.view.MotionEvent;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public class zc extends x90 {
+public class zc extends y90 {
     public final Path L;
     public final RectF M;
     public ad N;
     public ad O;
 
-    public zc(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, d6Var);
+    public zc(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(context, g6Var);
         this.L = new Path();
         this.M = new RectF();
     }
@@ -39,7 +39,7 @@ public class zc extends x90 {
         this.O = null;
     }
 
-    @Override // org.telegram.ui.Components.x90, android.widget.TextView, android.view.View
+    @Override // org.telegram.ui.Components.y90, android.widget.TextView, android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         Layout layout;
         ad adVar;

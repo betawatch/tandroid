@@ -38,35 +38,36 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.a90;
-import org.telegram.ui.Components.c90;
+import org.telegram.ui.Components.UndoView;
+import org.telegram.ui.Components.b90;
 import org.telegram.ui.Components.d90;
-import org.telegram.ui.Components.fy0;
+import org.telegram.ui.Components.e90;
 import org.telegram.ui.Components.hk;
+import org.telegram.ui.Components.iy0;
 import org.telegram.ui.Components.mk;
-import org.telegram.ui.Components.q90;
-import org.telegram.ui.Components.qy0;
+import org.telegram.ui.Components.r90;
+import org.telegram.ui.Components.ty0;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.ah;
-import org.telegram.ui.ck0;
-import org.telegram.ui.cn;
-import org.telegram.ui.dp;
+import org.telegram.ui.an0;
+import org.telegram.ui.bg1;
+import org.telegram.ui.dn;
 import org.telegram.ui.eh;
-import org.telegram.ui.eo0;
-import org.telegram.ui.ep;
-import org.telegram.ui.gm0;
-import org.telegram.ui.im0;
-import org.telegram.ui.jm;
-import org.telegram.ui.on;
-import org.telegram.ui.q50;
+import org.telegram.ui.fp;
+import org.telegram.ui.gp;
+import org.telegram.ui.io0;
+import org.telegram.ui.km;
+import org.telegram.ui.km0;
+import org.telegram.ui.mm0;
+import org.telegram.ui.oj0;
 import org.telegram.ui.qn;
-import org.telegram.ui.u60;
-import org.telegram.ui.ve0;
-import org.telegram.ui.vf1;
-import org.telegram.ui.vm0;
-import org.telegram.ui.wo;
+import org.telegram.ui.re0;
+import org.telegram.ui.sn;
+import org.telegram.ui.u50;
+import org.telegram.ui.y60;
+import org.telegram.ui.yo;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x9 implements Runnable {
     public final /* synthetic */ int a;
@@ -75,9 +76,9 @@ public final /* synthetic */ class x9 implements Runnable {
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ x9(ci.m3 m3Var, View view, ah.i1 i1Var, boolean z10, boolean z11) {
+    public /* synthetic */ x9(ci.l3 l3Var, View view, ah.i1 i1Var, boolean z10, boolean z11) {
         this.a = 1;
-        this.c = m3Var;
+        this.c = l3Var;
         this.d = view;
         this.e = i1Var;
         this.b = z10;
@@ -87,17 +88,17 @@ public final /* synthetic */ class x9 implements Runnable {
         byte[] bArr;
         int i10;
         int i11;
-        im0 im0Var = (im0) this.c;
+        mm0 mm0Var = (mm0) this.c;
         TL_account.passwordSettings passwordsettings = (TL_account.passwordSettings) this.d;
         boolean z10 = this.b;
         byte[] bArr2 = (byte[]) this.e;
-        vm0 vm0Var = im0Var.e;
-        vm0Var.d1 = passwordsettings.email;
+        an0 an0Var = mm0Var.e;
+        an0Var.d1 = passwordsettings.email;
         if (z10) {
-            vm0Var.e1 = vm0Var.P0;
+            an0Var.e1 = an0Var.P0;
         }
-        byte[] bArr3 = vm0Var.c1;
-        byte[] bArr4 = vm0Var.e1;
+        byte[] bArr3 = an0Var.c1;
+        byte[] bArr4 = an0Var.e1;
         if (bArr3 == null || bArr3.length != 32) {
             bArr = null;
         } else {
@@ -109,33 +110,33 @@ public final /* synthetic */ class x9 implements Runnable {
             System.arraycopy(bArr3, 0, bArr, 0, 32);
             Utilities.aesCbcEncryptionByteArraySafe(bArr, bArr5, bArr6, 0, 32, 0, 0);
         }
-        if (vm0.Y0(bArr, Long.valueOf(vm0Var.b1)) && bArr2.length != 0 && vm0Var.b1 != 0) {
-            if (vm0Var.c != 0) {
-                im0Var.a();
+        if (an0.Y0(bArr, Long.valueOf(an0Var.b1)) && bArr2.length != 0 && an0Var.b1 != 0) {
+            if (an0Var.c != 0) {
+                mm0Var.a();
                 return;
             }
             TL_account.getAllSecureValues getallsecurevalues = new TL_account.getAllSecureValues();
-            i11 = ((org.telegram.ui.ActionBar.n2) vm0Var).currentAccount;
-            ConnectionsManager.getInstance(i11).sendRequest(getallsecurevalues, new gm0(im0Var, 0));
+            i11 = ((org.telegram.ui.ActionBar.o2) an0Var).currentAccount;
+            ConnectionsManager.getInstance(i11).sendRequest(getallsecurevalues, new km0(mm0Var, 0));
             return;
         }
         if (z10) {
-            i10 = ((org.telegram.ui.ActionBar.n2) vm0Var).currentAccount;
+            i10 = ((org.telegram.ui.ActionBar.o2) an0Var).currentAccount;
             UserConfig.getInstance(i10).resetSavedPassword();
-            vm0Var.N0 = 0;
-            vm0Var.Q1();
+            an0Var.N0 = 0;
+            an0Var.R1();
             return;
         }
-        TL_account.authorizationForm authorizationform = vm0Var.y;
+        TL_account.authorizationForm authorizationform = an0Var.y;
         if (authorizationform != null) {
             authorizationform.values.clear();
-            vm0Var.y.errors.clear();
+            an0Var.y.errors.clear();
         }
-        byte[] bArr7 = vm0Var.c1;
+        byte[] bArr7 = an0Var.c1;
         if (bArr7 == null || bArr7.length == 0) {
-            Utilities.globalQueue.postRunnable(new ve0(im0Var, im0Var.b, im0Var.d, 13));
+            Utilities.globalQueue.postRunnable(new re0(mm0Var, mm0Var.b, mm0Var.d, 14));
         } else {
-            im0Var.b();
+            mm0Var.b();
         }
     }
 
@@ -145,17 +146,19 @@ public final /* synthetic */ class x9 implements Runnable {
         int i11;
         String[] split;
         int i12;
-        org.telegram.ui.ActionBar.d6 d6Var;
-        ic icVar;
+        org.telegram.ui.ActionBar.g6 g6Var;
+        jc jcVar;
         byte[] bArr;
+        byte[] bArr2;
         int i13 = 16;
         int i14 = 4;
         int i15 = 3;
         int i16 = 13;
+        int i17 = 6;
         r9 = null;
         String str = null;
         boolean z10 = true;
-        int i17 = 0;
+        int i18 = 0;
         switch (this.a) {
             case 0:
                 y9 y9Var = (y9) this.c;
@@ -163,7 +166,7 @@ public final /* synthetic */ class x9 implements Runnable {
                 TLObject tLObject = (TLObject) this.e;
                 boolean z11 = this.b;
                 ArrayList arrayList = y9Var.l;
-                int i18 = y9Var.a;
+                int i19 = y9Var.a;
                 if (iArr[0] != y9Var.m) {
                     return;
                 }
@@ -171,8 +174,8 @@ public final /* synthetic */ class x9 implements Runnable {
                 y9Var.m = -1;
                 if (tLObject instanceof TL_stars.TL_payments_savedStarGifts) {
                     TL_stars.TL_payments_savedStarGifts tL_payments_savedStarGifts = (TL_stars.TL_payments_savedStarGifts) tLObject;
-                    MessagesController.getInstance(i18).putUsers(tL_payments_savedStarGifts.users, false);
-                    MessagesController.getInstance(i18).putChats(tL_payments_savedStarGifts.chats, false);
+                    MessagesController.getInstance(i19).putUsers(tL_payments_savedStarGifts.users, false);
+                    MessagesController.getInstance(i19).putChats(tL_payments_savedStarGifts.chats, false);
                     if (z11) {
                         arrayList.clear();
                     }
@@ -184,15 +187,15 @@ public final /* synthetic */ class x9 implements Runnable {
                 } else {
                     y9Var.j = true;
                 }
-                NotificationCenter.getInstance(i18).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starUserGiftsLoaded, Long.valueOf(y9Var.b), y9Var);
+                NotificationCenter.getInstance(i19).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starUserGiftsLoaded, Long.valueOf(y9Var.b), y9Var);
                 return;
             case 1:
-                ci.m3 m3Var = (ci.m3) this.c;
+                ci.l3 l3Var = (ci.l3) this.c;
                 View view = (View) this.d;
                 ah.i1 i1Var = (ah.i1) this.e;
                 boolean z12 = this.b;
-                ci.q4 q4Var = m3Var.a;
-                org.telegram.ui.Components.f5.Z(q4Var.C2, 1, q4Var.B1, new ci.l3(m3Var, z12, i1Var, view));
+                ci.p4 p4Var = l3Var.a;
+                org.telegram.ui.Components.f5.a0(p4Var.C2, 1, p4Var.B1, new ci.k3(l3Var, z12, i1Var, view));
                 return;
             case 2:
                 ei.t1 t1Var = (ei.t1) this.c;
@@ -205,7 +208,7 @@ public final /* synthetic */ class x9 implements Runnable {
                         TLRPC.messages_BotResults messages_botresults = (TLRPC.messages_BotResults) tLObject2;
                         ei.n2 n2Var = v1Var.r;
                         ArrayList arrayList2 = v1Var.n;
-                        i10 = ((org.telegram.ui.ActionBar.f3) n2Var).currentAccount;
+                        i10 = ((org.telegram.ui.ActionBar.h3) n2Var).currentAccount;
                         MessagesStorage.getInstance(i10).saveBotCache(str2, messages_botresults);
                         t1Var.h = messages_botresults.next_offset;
                         if (z13) {
@@ -255,40 +258,40 @@ public final /* synthetic */ class x9 implements Runnable {
                 h0Var.I.clear();
                 h0Var.d = true;
                 h0Var.l();
-                h0Var.Q();
+                h0Var.P();
                 return;
             case 5:
                 Context context = (Context) this.c;
                 boolean z16 = this.b;
-                i2.i0 i0Var = (i2.i0) this.d;
-                j2.k kVar = (j2.k) this.e;
-                j2.i o10 = j2.i.o(context);
+                i2.h0 h0Var2 = (i2.h0) this.d;
+                j2.j jVar = (j2.j) this.e;
+                j2.h o10 = j2.h.o(context);
                 if (o10 == null) {
                     e2.a.l("ExoPlayerImpl", "MediaMetricsService unavailable.");
                     return;
                 }
                 if (z16) {
-                    j2.f fVar = i0Var.s;
-                    fVar.getClass();
-                    fVar.f.a(o10);
+                    j2.e eVar = h0Var2.s;
+                    eVar.getClass();
+                    eVar.f.a(o10);
                 }
                 LogSessionId q6 = o10.q();
-                synchronized (kVar) {
-                    j2.j jVar = kVar.b;
-                    jVar.getClass();
-                    jVar.f(q6);
+                synchronized (jVar) {
+                    j2.i iVar = jVar.b;
+                    iVar.getClass();
+                    iVar.f(q6);
                 }
                 return;
             case 6:
                 EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) this.c;
-                org.telegram.ui.ActionBar.n2 n2Var2 = (org.telegram.ui.ActionBar.n2) this.d;
+                org.telegram.ui.ActionBar.o2 o2Var = (org.telegram.ui.ActionBar.o2) this.d;
                 boolean z17 = this.b;
                 ki.t3 t3Var = (ki.t3) this.e;
                 String trim = editTextBoldCursor.getText().toString().trim();
                 if (TextUtils.isEmpty(trim)) {
                     return;
                 }
-                ki.j4.k(n2Var2, z17, new ah.h0(24, t3Var, trim));
+                ki.j4.k(o2Var, z17, new ah.h0(24, t3Var, trim));
                 return;
             case 7:
                 m4.f0 f0Var = (m4.f0) this.c;
@@ -328,59 +331,59 @@ public final /* synthetic */ class x9 implements Runnable {
                 return;
             case 9:
                 String[] strArr = (String[]) this.c;
-                org.telegram.ui.ActionBar.g6 g6Var = (org.telegram.ui.ActionBar.g6) this.d;
+                org.telegram.ui.ActionBar.j6 j6Var = (org.telegram.ui.ActionBar.j6) this.d;
                 boolean z19 = this.b;
                 org.telegram.ui.ActionBar.p pVar = (org.telegram.ui.ActionBar.p) this.e;
                 try {
-                    org.telegram.ui.ActionBar.h6.g0 = org.telegram.ui.ActionBar.h6.tl.get(org.telegram.ui.ActionBar.h6.g5, -1);
-                    int i19 = 21;
+                    org.telegram.ui.ActionBar.k6.g0 = org.telegram.ui.ActionBar.k6.tl.get(org.telegram.ui.ActionBar.k6.g5, -1);
+                    int i20 = 21;
                     if (TextUtils.isEmpty(strArr[0])) {
                         try {
-                            if (g6Var.c != null) {
-                                new File(g6Var.c).delete();
+                            if (j6Var.c != null) {
+                                new File(j6Var.c).delete();
                             }
                         } catch (Exception unused2) {
                         }
-                        g6Var.c = null;
-                        org.telegram.ui.ActionBar.h6.h0 = null;
+                        j6Var.c = null;
+                        org.telegram.ui.ActionBar.k6.h0 = null;
                     } else {
-                        org.telegram.ui.ActionBar.h6.h0 = strArr[0];
-                        String absolutePath = new File(ApplicationLoader.getFilesDirFixed(), Utilities.MD5(org.telegram.ui.ActionBar.h6.h0) + ".wp").getAbsolutePath();
+                        org.telegram.ui.ActionBar.k6.h0 = strArr[0];
+                        String absolutePath = new File(ApplicationLoader.getFilesDirFixed(), Utilities.MD5(org.telegram.ui.ActionBar.k6.h0) + ".wp").getAbsolutePath();
                         try {
-                            String str3 = g6Var.c;
+                            String str3 = j6Var.c;
                             if (str3 != null && !str3.equals(absolutePath)) {
-                                new File(g6Var.c).delete();
+                                new File(j6Var.c).delete();
                             }
                         } catch (Exception unused3) {
                         }
-                        g6Var.c = absolutePath;
+                        j6Var.c = absolutePath;
                         try {
-                            Uri parse = Uri.parse(org.telegram.ui.ActionBar.h6.h0);
-                            g6Var.e = parse.getQueryParameter("slug");
+                            Uri parse = Uri.parse(org.telegram.ui.ActionBar.k6.h0);
+                            j6Var.e = parse.getQueryParameter("slug");
                             String queryParameter = parse.getQueryParameter("mode");
                             if (queryParameter != null && (split = queryParameter.toLowerCase().split(" ")) != null && split.length > 0) {
-                                for (int i20 = 0; i20 < split.length; i20++) {
-                                    if ("blur".equals(split[i20])) {
-                                        g6Var.h = true;
-                                    } else if ("motion".equals(split[i20])) {
-                                        g6Var.n = true;
+                                for (int i21 = 0; i21 < split.length; i21++) {
+                                    if ("blur".equals(split[i21])) {
+                                        j6Var.h = true;
+                                    } else if ("motion".equals(split[i21])) {
+                                        j6Var.n = true;
                                     }
                                 }
                             }
                             Utilities.parseInt((CharSequence) parse.getQueryParameter("intensity")).getClass();
-                            g6Var.x = 45;
+                            j6Var.x = 45;
                             try {
                                 String queryParameter2 = parse.getQueryParameter("bg_color");
                                 if (!TextUtils.isEmpty(queryParameter2)) {
-                                    g6Var.r = Integer.parseInt(queryParameter2.substring(0, 6), 16) | (-16777216);
+                                    j6Var.r = Integer.parseInt(queryParameter2.substring(0, 6), 16) | (-16777216);
                                     if (queryParameter2.length() >= 13 && AndroidUtilities.isValidWallChar(queryParameter2.charAt(6))) {
-                                        g6Var.s = Integer.parseInt(queryParameter2.substring(7, 13), 16) | (-16777216);
+                                        j6Var.s = Integer.parseInt(queryParameter2.substring(7, 13), 16) | (-16777216);
                                     }
                                     if (queryParameter2.length() >= 20 && AndroidUtilities.isValidWallChar(queryParameter2.charAt(13))) {
-                                        g6Var.v = Integer.parseInt(queryParameter2.substring(14, 20), 16) | (-16777216);
+                                        j6Var.v = Integer.parseInt(queryParameter2.substring(14, 20), 16) | (-16777216);
                                     }
                                     if (queryParameter2.length() == 27 && AndroidUtilities.isValidWallChar(queryParameter2.charAt(20))) {
-                                        g6Var.w = Integer.parseInt(queryParameter2.substring(21), 16) | (-16777216);
+                                        j6Var.w = Integer.parseInt(queryParameter2.substring(21), 16) | (-16777216);
                                     }
                                 }
                             } catch (Exception unused4) {
@@ -388,7 +391,7 @@ public final /* synthetic */ class x9 implements Runnable {
                             try {
                                 String queryParameter3 = parse.getQueryParameter("rotation");
                                 if (!TextUtils.isEmpty(queryParameter3)) {
-                                    g6Var.x = Utilities.parseInt((CharSequence) queryParameter3).intValue();
+                                    j6Var.x = Utilities.parseInt((CharSequence) queryParameter3).intValue();
                                 }
                             } catch (Exception unused5) {
                             }
@@ -396,139 +399,160 @@ public final /* synthetic */ class x9 implements Runnable {
                             FileLog.e(th2);
                         }
                     }
-                    if (!z19 && org.telegram.ui.ActionBar.h6.M == null) {
-                        org.telegram.ui.ActionBar.h6.K = g6Var;
-                        if (org.telegram.ui.ActionBar.h6.I != org.telegram.ui.ActionBar.h6.J) {
+                    if (!z19 && org.telegram.ui.ActionBar.k6.M == null) {
+                        org.telegram.ui.ActionBar.k6.K = j6Var;
+                        if (org.telegram.ui.ActionBar.k6.I != org.telegram.ui.ActionBar.k6.J) {
                             z10 = false;
                         }
                         if (z10) {
-                            org.telegram.ui.ActionBar.h6.T = 2000;
-                            org.telegram.ui.ActionBar.h6.U = SystemClock.elapsedRealtime();
-                            AndroidUtilities.runOnUIThread(new ah.j(i19), 2100L);
+                            org.telegram.ui.ActionBar.k6.T = 2000;
+                            org.telegram.ui.ActionBar.k6.U = SystemClock.elapsedRealtime();
+                            AndroidUtilities.runOnUIThread(new ah.j(i20), 2100L);
                         }
                     }
-                    org.telegram.ui.ActionBar.h6.I = g6Var;
-                    org.telegram.ui.ActionBar.h6.o1(false, false);
+                    org.telegram.ui.ActionBar.k6.I = j6Var;
+                    org.telegram.ui.ActionBar.k6.q1(false, false);
                 } catch (Exception e11) {
                     FileLog.e(e11);
                 }
-                if (org.telegram.ui.ActionBar.h6.M == null && !org.telegram.ui.ActionBar.h6.Q) {
-                    MessagesController.getInstance(g6Var.E).saveTheme(g6Var, g6Var.k(false), z19, false);
+                if (org.telegram.ui.ActionBar.k6.M == null && !org.telegram.ui.ActionBar.k6.Q) {
+                    MessagesController.getInstance(j6Var.E).saveTheme(j6Var, j6Var.k(false), z19, false);
                 }
                 pVar.run();
                 return;
             case 10:
-                qn.v0((qn) this.c, (String) this.d, (MessageObject) this.e, this.b);
+                sn.m0((sn) this.c, (String) this.d, (MessageObject) this.e, this.b);
                 return;
             case 11:
-                cn cnVar = (cn) this.c;
-                TLRPC.Message message = (TLRPC.Message) this.d;
+                sn snVar = (sn) this.c;
+                org.telegram.ui.ActionBar.i6 i6Var = (org.telegram.ui.ActionBar.i6) this.d;
+                org.telegram.ui.ActionBar.j6 j6Var2 = (org.telegram.ui.ActionBar.j6) this.e;
                 boolean z20 = this.b;
+                if (i6Var == null) {
+                    UndoView undoView = snVar.K3;
+                    org.telegram.ui.ActionBar.k6.H1(j6Var2, false, -1, undoView != null ? undoView.getUndoButton() : null);
+                    return;
+                }
+                snVar.getClass();
+                org.telegram.ui.ActionBar.i6 k10 = j6Var2.k(false);
+                int i22 = i6Var.a;
+                UndoView undoView2 = snVar.K3;
+                org.telegram.ui.ActionBar.k6.H1(j6Var2, false, i22, undoView2 != null ? undoView2.getUndoButton() : null);
+                if (z20) {
+                    org.telegram.ui.ActionBar.k6.k0(j6Var2, k10, true);
+                    return;
+                }
+                return;
+            case 12:
+                dn dnVar = (dn) this.c;
+                TLRPC.Message message = (TLRPC.Message) this.d;
+                boolean z21 = this.b;
                 MessageObject messageObject = (MessageObject) this.e;
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-                int i21 = R.string.SuggestedMessageAcceptInfo;
-                qn qnVar = cnVar.a;
-                spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatString(i21, qnVar.getMessagesController().getPeerName(DialogObject.getPeerDialogId(message.from_id)))));
+                int i23 = R.string.SuggestedMessageAcceptInfo;
+                sn snVar2 = dnVar.a;
+                spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatString(i23, snVar2.getMessagesController().getPeerName(DialogObject.getPeerDialogId(message.from_id)))));
                 spannableStringBuilder.append((CharSequence) "\n\n");
                 ag.a m10 = ag.a.m(message.suggested_post.price);
-                int i22 = m10.a == ag.b.b ? qnVar.getMessagesController().config.tonSuggestedPostCommissionPermille.get() : qnVar.getMessagesController().config.starsSuggestedPostCommissionPermille.get();
-                if (z20) {
-                    m10 = ag.a.i((m10.b / 1000) * i22, m10.a);
+                int i24 = m10.a == ag.b.b ? snVar2.getMessagesController().config.tonSuggestedPostCommissionPermille.get() : snVar2.getMessagesController().config.starsSuggestedPostCommissionPermille.get();
+                if (z21) {
+                    m10 = ag.a.i((m10.b / 1000) * i24, m10.a);
                 }
                 if (message.suggested_post.schedule_date == 0) {
-                    if (z20) {
-                        spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatString(R.string.SuggestedMessageAcceptInfoAnytimeAdmin2, m10.f(), gi.l.H0(i22))));
+                    if (z21) {
+                        spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatString(R.string.SuggestedMessageAcceptInfoAnytimeAdmin2, m10.f(), gi.l.H0(i24))));
                     } else {
                         spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatString(R.string.SuggestedMessageAcceptInfoAnytimeUser2, m10.f())));
                     }
-                } else if (z20) {
-                    spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatString(R.string.SuggestedMessageAcceptInfoAdmin2, m10.f(), h1.p(message.suggested_post.schedule_date), gi.l.H0(i22))));
+                } else if (z21) {
+                    spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatString(R.string.SuggestedMessageAcceptInfoAdmin2, m10.f(), h1.p(message.suggested_post.schedule_date), gi.l.H0(i24))));
                 } else {
                     spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatString(R.string.SuggestedMessageAcceptInfoUser2, m10.f(), h1.p(message.suggested_post.schedule_date))));
                 }
                 spannableStringBuilder.append(' ');
-                int i23 = R.string.SuggestedMessageAcceptInfo3;
-                i12 = ((org.telegram.ui.ActionBar.n2) qnVar).currentAccount;
-                spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatString(i23, Long.valueOf(MessagesController.getInstance(i12).config.starsSuggestedPostAgeMin.get(TimeUnit.HOURS)))));
+                int i25 = R.string.SuggestedMessageAcceptInfo3;
+                i12 = ((org.telegram.ui.ActionBar.o2) snVar2).currentAccount;
+                spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatString(i25, Long.valueOf(MessagesController.getInstance(i12).config.starsSuggestedPostAgeMin.get(TimeUnit.HOURS)))));
                 org.telegram.ui.Components.qc[] qcVarArr = new org.telegram.ui.Components.qc[1];
-                org.telegram.ui.w5 w5Var = new org.telegram.ui.w5(qcVarArr, 4);
-                org.telegram.ui.ActionBar.b2[] b2VarArr = new org.telegram.ui.ActionBar.b2[1];
-                org.telegram.ui.ActionBar.b2 u02 = org.telegram.ui.Components.f5.u0(qnVar, LocaleController.getString(R.string.SuggestedPostAcceptTitle), spannableStringBuilder, LocaleController.getString(message.suggested_post.schedule_date == 0 ? R.string.Next : R.string.SuggestedPostPublish), false, new t0(cnVar, message, b2VarArr, messageObject, w5Var, 26));
-                b2VarArr[0] = u02;
-                u02.setOnDismissListener(w5Var);
-                if (z20 && m10.a == ag.b.a) {
-                    org.telegram.ui.Components.kb a2 = org.telegram.ui.Components.lb.a(qnVar.getParentActivity());
-                    d6Var = ((org.telegram.ui.ActionBar.n2) qnVar).resourceProvider;
-                    org.telegram.ui.Components.qc G = new org.telegram.ui.Components.xc(a2, d6Var).G(R.raw.info, 10, LocaleController.getString(R.string.SuggestedMessageAcceptStarsDisclaimer));
+                org.telegram.ui.v5 v5Var = new org.telegram.ui.v5(qcVarArr, 4);
+                org.telegram.ui.ActionBar.c2[] c2VarArr = new org.telegram.ui.ActionBar.c2[1];
+                org.telegram.ui.ActionBar.c2 v02 = org.telegram.ui.Components.f5.v0(snVar2, LocaleController.getString(R.string.SuggestedPostAcceptTitle), spannableStringBuilder, LocaleController.getString(message.suggested_post.schedule_date == 0 ? R.string.Next : R.string.SuggestedPostPublish), false, new t0(dnVar, message, c2VarArr, messageObject, v5Var, 26));
+                c2VarArr[0] = v02;
+                v02.setOnDismissListener(v5Var);
+                if (z21 && m10.a == ag.b.a) {
+                    org.telegram.ui.Components.kb a2 = org.telegram.ui.Components.lb.a(snVar2.getParentActivity());
+                    g6Var = ((org.telegram.ui.ActionBar.o2) snVar2).resourceProvider;
+                    org.telegram.ui.Components.qc G = new org.telegram.ui.Components.xc(a2, g6Var).G(R.raw.info, 10, LocaleController.getString(R.string.SuggestedMessageAcceptStarsDisclaimer));
                     G.j = 60000;
                     G.k(true);
                     qcVarArr[0] = G;
                     return;
                 }
                 return;
-            case 12:
-                on onVar = (on) this.c;
-                onVar.l((org.telegram.ui.ActionBar.c4) this.d, (TLRPC.WallPaper) this.e, this.b);
-                onVar.h(onVar.n);
-                jm jmVar = onVar.V.X0;
-                if (jmVar == null || (icVar = jmVar.L) == null) {
+            case 13:
+                qn qnVar = (qn) this.c;
+                qnVar.r((org.telegram.ui.ActionBar.f4) this.d, (TLRPC.WallPaper) this.e, this.b);
+                qnVar.o(qnVar.h);
+                km kmVar = qnVar.F.j1;
+                if (kmVar == null || (jcVar = kmVar.L) == null) {
                     return;
                 }
-                icVar.invalidate();
+                jcVar.invalidate();
                 return;
-            case 13:
-                wo woVar = (wo) this.c;
+            case 14:
+                yo yoVar = (yo) this.c;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) this.d;
                 TLObject tLObject3 = (TLObject) this.e;
-                boolean z21 = this.b;
+                boolean z22 = this.b;
                 if (tL_error == null) {
                     TLRPC.TL_chatInviteExported tL_chatInviteExported = (TLRPC.TL_chatInviteExported) tLObject3;
-                    woVar.l0 = tL_chatInviteExported;
-                    TLRPC.ChatFull chatFull = woVar.Y;
+                    yoVar.m0 = tL_chatInviteExported;
+                    TLRPC.ChatFull chatFull = yoVar.Z;
                     if (chatFull != null) {
                         chatFull.exported_invite = tL_chatInviteExported;
                     }
-                    if (z21) {
-                        if (woVar.getParentActivity() == null) {
+                    if (z22) {
+                        if (yoVar.getParentActivity() == null) {
                             return;
                         }
-                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(woVar.getParentActivity());
+                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(yoVar.getParentActivity());
                         alertDialog$Builder.a.T = LocaleController.getString(R.string.RevokeAlertNewLink);
                         alertDialog$Builder.a.R = LocaleController.getString(R.string.RevokeLink);
                         alertDialog$Builder.h(LocaleController.getString(R.string.OK), null);
-                        woVar.showDialog(alertDialog$Builder.a);
+                        yoVar.showDialog(alertDialog$Builder.a);
                     }
                 }
-                q90 q90Var = woVar.G;
-                if (q90Var != null) {
-                    TLRPC.TL_chatInviteExported tL_chatInviteExported2 = woVar.l0;
-                    q90Var.setLink(tL_chatInviteExported2 != null ? tL_chatInviteExported2.link : null);
-                    woVar.G.c(woVar.l0, woVar.Z);
+                r90 r90Var = yoVar.H;
+                if (r90Var != null) {
+                    TLRPC.TL_chatInviteExported tL_chatInviteExported2 = yoVar.m0;
+                    r90Var.setLink(tL_chatInviteExported2 != null ? tL_chatInviteExported2.link : null);
+                    yoVar.H.c(yoVar.m0, yoVar.a0);
                     return;
                 }
                 return;
-            case 14:
-                ep epVar = (ep) this.c;
-                TLRPC.Chat chat = (TLRPC.Chat) this.d;
-                boolean z22 = this.b;
-                d90 d90Var = (d90) this.e;
-                chat.join_to_send = z22;
-                epVar.x.d.getMessagesController().toggleChatJoinToSend(chat.id, z22, new y7(epVar, z22, chat, 18), new eh(17, epVar, d90Var));
-                return;
             case 15:
-                ep epVar2 = (ep) this.c;
-                TLRPC.Chat chat2 = (TLRPC.Chat) this.d;
+                gp gpVar = (gp) this.c;
+                TLRPC.Chat chat = (TLRPC.Chat) this.d;
                 boolean z23 = this.b;
-                c90 c90Var = (c90) this.e;
-                chat2.join_request = z23;
-                epVar2.x.d.getMessagesController().toggleChatJoinRequest(chat2.id, z23, new dp(epVar2, i17), new eh(i13, epVar2, c90Var));
+                e90 e90Var = (e90) this.e;
+                chat.join_to_send = z23;
+                int i26 = 17;
+                gpVar.x.d.getMessagesController().toggleChatJoinToSend(chat.id, z23, new y7(gpVar, z23, chat, i26), new eh(i26, gpVar, e90Var));
                 return;
             case 16:
+                gp gpVar2 = (gp) this.c;
+                TLRPC.Chat chat2 = (TLRPC.Chat) this.d;
                 boolean z24 = this.b;
+                d90 d90Var = (d90) this.e;
+                chat2.join_request = z24;
+                gpVar2.x.d.getMessagesController().toggleChatJoinRequest(chat2.id, z24, new fp(gpVar2, i18), new eh(i13, gpVar2, d90Var));
+                return;
+            case 17:
+                boolean z25 = this.b;
                 TLRPC.Chat chat3 = (TLRPC.Chat) this.c;
                 AlertDialog$Builder alertDialog$Builder2 = (AlertDialog$Builder) this.d;
                 boolean[] zArr = (boolean[]) this.e;
-                if (z24 && ChatObject.isChannel(chat3)) {
+                if (z25 && ChatObject.isChannel(chat3)) {
                     View d = alertDialog$Builder2.a.d(-1);
                     if (d instanceof TextView) {
                         TextView textView = (TextView) d;
@@ -550,10 +574,10 @@ public final /* synthetic */ class x9 implements Runnable {
                     return;
                 }
                 return;
-            case 17:
+            case 18:
                 mk mkVar = (mk) this.c;
                 String str4 = (String) this.d;
-                boolean z25 = this.b;
+                boolean z26 = this.b;
                 ArrayList arrayList3 = (ArrayList) this.e;
                 mkVar.getClass();
                 String lowerCase = str4.trim().toLowerCase();
@@ -565,27 +589,27 @@ public final /* synthetic */ class x9 implements Runnable {
                 if (!lowerCase.equals(translitString) && translitString.length() != 0) {
                     str = translitString;
                 }
-                int i24 = (str != null ? 1 : 0) + 1;
-                String[] strArr2 = new String[i24];
+                int i27 = (str != null ? 1 : 0) + 1;
+                String[] strArr2 = new String[i27];
                 strArr2[0] = lowerCase;
                 if (str != null) {
                     strArr2[1] = str;
                 }
                 ArrayList arrayList4 = new ArrayList();
-                if (!z25) {
-                    for (int i25 = 0; i25 < arrayList3.size(); i25++) {
-                        hk hkVar = (hk) arrayList3.get(i25);
+                if (!z26) {
+                    for (int i28 = 0; i28 < arrayList3.size(); i28++) {
+                        hk hkVar = (hk) arrayList3.get(i28);
                         File file = hkVar.f;
                         if (file != null && !file.isDirectory()) {
-                            int i26 = 0;
+                            int i29 = 0;
                             while (true) {
-                                if (i26 < i24) {
-                                    String str5 = strArr2[i26];
+                                if (i29 < i27) {
+                                    String str5 = strArr2[i29];
                                     String str6 = hkVar.b;
                                     if (str6 != null ? str6.toLowerCase().contains(str5) : false) {
                                         arrayList4.add(hkVar);
                                     } else {
-                                        i26++;
+                                        i29++;
                                     }
                                 }
                             }
@@ -594,172 +618,176 @@ public final /* synthetic */ class x9 implements Runnable {
                 }
                 AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.ee(i16, mkVar, arrayList4));
                 return;
-            case 18:
-                a90.v((a90) this.c, (TLRPC.TL_error) this.d, this.b, (TLRPC.TL_messages_importChatInvite) this.e);
-                return;
             case 19:
-                fy0 fy0Var = (fy0) this.c;
+                b90.u((b90) this.c, (TLRPC.TL_error) this.d, this.b, (TLRPC.TL_messages_importChatInvite) this.e);
+                return;
+            case 20:
+                iy0 iy0Var = (iy0) this.c;
                 TLObject tLObject4 = (TLObject) this.e;
-                boolean z26 = this.b;
-                org.telegram.ui.ActionBar.b2 b2Var = (org.telegram.ui.ActionBar.b2) this.d;
-                qy0 qy0Var = fy0Var.a;
+                boolean z27 = this.b;
+                org.telegram.ui.ActionBar.c2 c2Var = (org.telegram.ui.ActionBar.c2) this.d;
+                ty0 ty0Var = iy0Var.a;
                 if (tLObject4 instanceof TLRPC.TL_messages_stickerSet) {
                     TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) tLObject4;
                     MediaDataController.getInstance(UserConfig.selectedAccount).putStickerSet(tL_messages_stickerSet);
-                    if (z26) {
+                    if (z27) {
                         MediaDataController.getInstance(UserConfig.selectedAccount).toggleStickerSet(null, tLObject4, 0, null, false, false);
                     } else {
-                        qy0Var.S = tL_messages_stickerSet;
-                        qy0Var.u0();
-                        qy0Var.C0();
+                        ty0Var.S = tL_messages_stickerSet;
+                        ty0Var.v0();
+                        ty0Var.D0();
                     }
                 }
-                b2Var.dismiss();
+                c2Var.dismiss();
                 return;
-            case 20:
-                org.telegram.ui.ActionBar.f3 f3Var = (org.telegram.ui.ActionBar.f3) this.c;
+            case 21:
+                org.telegram.ui.ActionBar.h3 h3Var = (org.telegram.ui.ActionBar.h3) this.c;
                 EditTextBoldCursor editTextBoldCursor2 = (EditTextBoldCursor) this.d;
-                boolean z27 = this.b;
-                org.telegram.ui.ActionBar.b2 b2Var2 = (org.telegram.ui.ActionBar.b2) this.e;
-                if (f3Var != null && !f3Var.isDismissed()) {
-                    f3Var.setFocusable(true);
+                boolean z28 = this.b;
+                org.telegram.ui.ActionBar.c2 c2Var2 = (org.telegram.ui.ActionBar.c2) this.e;
+                if (h3Var != null && !h3Var.isDismissed()) {
+                    h3Var.setFocusable(true);
                     editTextBoldCursor2.requestFocus();
-                    if (z27) {
-                        AndroidUtilities.runOnUIThread(new ah(i15, editTextBoldCursor2));
+                    if (z28) {
+                        AndroidUtilities.runOnUIThread(new ah(editTextBoldCursor2, i15));
                         return;
                     }
                     return;
                 }
-                if (b2Var2 == null || !b2Var2.isShowing()) {
+                if (c2Var2 == null || !c2Var2.isShowing()) {
                     return;
                 }
-                b2Var2.l(true);
+                c2Var2.l(true);
                 editTextBoldCursor2.requestFocus();
-                if (z27) {
-                    AndroidUtilities.runOnUIThread(new ah(i14, editTextBoldCursor2));
+                if (z28) {
+                    AndroidUtilities.runOnUIThread(new ah(editTextBoldCursor2, i14));
                     return;
                 }
                 return;
-            case 21:
-                q50 q50Var = (q50) this.c;
+            case 22:
+                u50 u50Var = (u50) this.c;
                 TLObject tLObject5 = (TLObject) this.e;
                 TLRPC.ChatFull chatFull2 = (TLRPC.ChatFull) this.d;
-                boolean z28 = this.b;
+                boolean z29 = this.b;
                 if (tLObject5 instanceof TLRPC.TL_chatInviteExported) {
                     TLRPC.TL_chatInviteExported tL_chatInviteExported3 = (TLRPC.TL_chatInviteExported) tLObject5;
                     if (chatFull2 != null) {
                         chatFull2.exported_invite = tL_chatInviteExported3;
                         return;
                     } else {
-                        q50Var.v1(null, tL_chatInviteExported3.link, true, z28);
+                        u50Var.u1(null, tL_chatInviteExported3.link, true, z29);
                         return;
                     }
                 }
                 return;
-            case 22:
-                u60 u60Var = (u60) this.c;
+            case 23:
+                y60 y60Var = (y60) this.c;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) this.d;
                 TLObject tLObject6 = (TLObject) this.e;
-                boolean z29 = this.b;
+                boolean z30 = this.b;
                 if (tL_error2 == null) {
-                    u60Var.f = (TLRPC.TL_chatInviteExported) tLObject6;
-                    if (z29) {
-                        if (u60Var.getParentActivity() == null) {
+                    y60Var.f = (TLRPC.TL_chatInviteExported) tLObject6;
+                    if (z30) {
+                        if (y60Var.getParentActivity() == null) {
                             return;
                         }
-                        AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(u60Var.getParentActivity());
+                        AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(y60Var.getParentActivity());
                         alertDialog$Builder3.a.T = LocaleController.getString(R.string.RevokeAlertNewLink);
                         alertDialog$Builder3.a.R = LocaleController.getString(R.string.RevokeLink);
                         alertDialog$Builder3.h(LocaleController.getString(R.string.OK), null);
-                        u60Var.showDialog(alertDialog$Builder3.a);
+                        y60Var.showDialog(alertDialog$Builder3.a);
                     }
                 }
-                u60Var.e = false;
-                u60Var.a.l();
+                y60Var.e = false;
+                y60Var.a.l();
                 return;
-            case 23:
-                im0 im0Var = (im0) this.c;
+            case 24:
+                mm0 mm0Var = (mm0) this.c;
                 TLRPC.TL_error tL_error3 = (TLRPC.TL_error) this.d;
                 TLObject tLObject7 = (TLObject) this.e;
-                boolean z30 = this.b;
-                vm0 vm0Var = im0Var.e;
+                boolean z31 = this.b;
+                an0 an0Var = mm0Var.e;
                 if (tL_error3 == null) {
                     TL_account.Password password = (TL_account.Password) tLObject7;
-                    vm0Var.J = password;
+                    an0Var.J = password;
                     TwoStepVerificationActivity.m0(password);
-                    vm0Var.A1(z30);
+                    an0Var.A1(z31);
                     return;
                 }
                 return;
-            case 24:
-                im0 im0Var2 = (im0) this.c;
+            case 25:
+                mm0 mm0Var2 = (mm0) this.c;
                 TLObject tLObject8 = (TLObject) this.e;
                 String str7 = (String) this.d;
-                boolean z31 = this.b;
-                vm0 vm0Var2 = im0Var2.e;
+                boolean z32 = this.b;
+                an0 an0Var2 = mm0Var2.e;
                 TL_account.passwordSettings passwordsettings = (TL_account.passwordSettings) tLObject8;
                 TLRPC.TL_secureSecretSettings tL_secureSecretSettings = passwordsettings.secure_settings;
                 if (tL_secureSecretSettings != null) {
-                    vm0Var2.c1 = tL_secureSecretSettings.secure_secret;
-                    vm0Var2.b1 = tL_secureSecretSettings.secure_secret_id;
+                    an0Var2.c1 = tL_secureSecretSettings.secure_secret;
+                    an0Var2.b1 = tL_secureSecretSettings.secure_secret_id;
                     TLRPC.SecurePasswordKdfAlgo securePasswordKdfAlgo = tL_secureSecretSettings.secure_algo;
                     if (securePasswordKdfAlgo instanceof TLRPC.TL_securePasswordKdfAlgoSHA512) {
                         bArr = ((TLRPC.TL_securePasswordKdfAlgoSHA512) securePasswordKdfAlgo).salt;
-                        vm0Var2.e1 = Utilities.computeSHA512(bArr, AndroidUtilities.getStringBytes(str7), bArr);
-                    } else if (securePasswordKdfAlgo instanceof TLRPC.TL_securePasswordKdfAlgoPBKDF2HMACSHA512iter100000) {
-                        TLRPC.TL_securePasswordKdfAlgoPBKDF2HMACSHA512iter100000 tL_securePasswordKdfAlgoPBKDF2HMACSHA512iter100000 = (TLRPC.TL_securePasswordKdfAlgoPBKDF2HMACSHA512iter100000) securePasswordKdfAlgo;
-                        byte[] bArr2 = tL_securePasswordKdfAlgoPBKDF2HMACSHA512iter100000.salt;
-                        vm0Var2.e1 = Utilities.computePBKDF2(AndroidUtilities.getStringBytes(str7), tL_securePasswordKdfAlgoPBKDF2HMACSHA512iter100000.salt);
-                        bArr = bArr2;
+                        an0Var2.e1 = Utilities.computeSHA512(bArr, AndroidUtilities.getStringBytes(str7), bArr);
                     } else {
+                        if (securePasswordKdfAlgo instanceof TLRPC.TL_securePasswordKdfAlgoPBKDF2HMACSHA512iter100000) {
+                            TLRPC.TL_securePasswordKdfAlgoPBKDF2HMACSHA512iter100000 tL_securePasswordKdfAlgoPBKDF2HMACSHA512iter100000 = (TLRPC.TL_securePasswordKdfAlgoPBKDF2HMACSHA512iter100000) securePasswordKdfAlgo;
+                            byte[] bArr3 = tL_securePasswordKdfAlgoPBKDF2HMACSHA512iter100000.salt;
+                            an0Var2.e1 = Utilities.computePBKDF2(AndroidUtilities.getStringBytes(str7), tL_securePasswordKdfAlgoPBKDF2HMACSHA512iter100000.salt);
+                            bArr2 = bArr3;
+                            AndroidUtilities.runOnUIThread(new x9(mm0Var2, passwordsettings, z32, bArr2, 26));
+                            return;
+                        }
                         if (securePasswordKdfAlgo instanceof TLRPC.TL_securePasswordKdfAlgoUnknown) {
-                            AndroidUtilities.runOnUIThread(new ck0(im0Var2, 5));
+                            AndroidUtilities.runOnUIThread(new oj0(mm0Var2, i17));
                             return;
                         }
                         bArr = new byte[0];
                     }
                 } else {
-                    TLRPC.SecurePasswordKdfAlgo securePasswordKdfAlgo2 = vm0Var2.J.new_secure_algo;
+                    TLRPC.SecurePasswordKdfAlgo securePasswordKdfAlgo2 = an0Var2.J.new_secure_algo;
                     if (securePasswordKdfAlgo2 instanceof TLRPC.TL_securePasswordKdfAlgoPBKDF2HMACSHA512iter100000) {
                         TLRPC.TL_securePasswordKdfAlgoPBKDF2HMACSHA512iter100000 tL_securePasswordKdfAlgoPBKDF2HMACSHA512iter1000002 = (TLRPC.TL_securePasswordKdfAlgoPBKDF2HMACSHA512iter100000) securePasswordKdfAlgo2;
-                        byte[] bArr3 = tL_securePasswordKdfAlgoPBKDF2HMACSHA512iter1000002.salt;
-                        vm0Var2.e1 = Utilities.computePBKDF2(AndroidUtilities.getStringBytes(str7), tL_securePasswordKdfAlgoPBKDF2HMACSHA512iter1000002.salt);
-                        bArr = bArr3;
+                        byte[] bArr4 = tL_securePasswordKdfAlgoPBKDF2HMACSHA512iter1000002.salt;
+                        an0Var2.e1 = Utilities.computePBKDF2(AndroidUtilities.getStringBytes(str7), tL_securePasswordKdfAlgoPBKDF2HMACSHA512iter1000002.salt);
+                        bArr = bArr4;
                     } else {
                         bArr = new byte[0];
                     }
-                    vm0Var2.c1 = null;
-                    vm0Var2.b1 = 0L;
+                    an0Var2.c1 = null;
+                    an0Var2.b1 = 0L;
                 }
-                AndroidUtilities.runOnUIThread(new x9(im0Var2, passwordsettings, z31, bArr, 25));
-                return;
-            case 25:
-                a();
+                bArr2 = bArr;
+                AndroidUtilities.runOnUIThread(new x9(mm0Var2, passwordsettings, z32, bArr2, 26));
                 return;
             case 26:
-                eo0 eo0Var = (eo0) this.c;
+                a();
+                return;
+            case 27:
+                io0 io0Var = (io0) this.c;
                 TLRPC.TL_error tL_error4 = (TLRPC.TL_error) this.d;
                 TLObject tLObject9 = (TLObject) this.e;
-                boolean z32 = this.b;
+                boolean z33 = this.b;
                 if (tL_error4 == null) {
                     TL_account.Password password2 = (TL_account.Password) tLObject9;
-                    eo0Var.a0 = password2;
+                    io0Var.a0 = password2;
                     TwoStepVerificationActivity.m0(password2);
-                    eo0Var.A0(z32);
+                    io0Var.A0(z33);
                     return;
                 }
                 return;
-            case 27:
-                vf1.c0((vf1) this.c, (TLRPC.TL_error) this.d, (TLObject) this.e, this.b);
+            case 28:
+                bg1.c0((bg1) this.c, (TLRPC.TL_error) this.d, (TLObject) this.e, this.b);
                 return;
             default:
-                qg.t0 t0Var = (qg.t0) this.c;
+                qg.s0 s0Var = (qg.s0) this.c;
                 a5.a aVar = (a5.a) this.d;
                 a5.a aVar2 = (a5.a) this.e;
-                boolean z33 = this.b;
-                t0Var.f.f(new qg.r0(t0Var, aVar, i17));
-                t0Var.f.f(new qg.r0(t0Var, aVar2, i17));
-                t0Var.E = z33;
+                boolean z34 = this.b;
+                s0Var.f.f(new qg.q0(s0Var, aVar, i18));
+                s0Var.f.f(new qg.q0(s0Var, aVar2, i18));
+                s0Var.E = z34;
                 return;
         }
     }
@@ -796,16 +824,16 @@ public final /* synthetic */ class x9 implements Runnable {
         this.e = obj3;
     }
 
-    public /* synthetic */ x9(fy0 fy0Var, TLObject tLObject, boolean z10, org.telegram.ui.ActionBar.b2 b2Var) {
-        this.a = 19;
-        this.c = fy0Var;
+    public /* synthetic */ x9(iy0 iy0Var, TLObject tLObject, boolean z10, org.telegram.ui.ActionBar.c2 c2Var) {
+        this.a = 20;
+        this.c = iy0Var;
         this.e = tLObject;
         this.b = z10;
-        this.d = b2Var;
+        this.d = c2Var;
     }
 
     public /* synthetic */ x9(boolean z10, TLRPC.Chat chat, AlertDialog$Builder alertDialog$Builder, boolean[] zArr) {
-        this.a = 16;
+        this.a = 17;
         this.b = z10;
         this.c = chat;
         this.d = alertDialog$Builder;

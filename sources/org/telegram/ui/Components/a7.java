@@ -4,9 +4,9 @@ import android.view.View;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class a7 implements org.telegram.ui.ActionBar.q0, zl0 {
+public final /* synthetic */ class a7 implements org.telegram.ui.ActionBar.q0, cm0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ k8 b;
 
@@ -15,33 +15,33 @@ public final /* synthetic */ class a7 implements org.telegram.ui.ActionBar.q0, z
         this.b = k8Var;
     }
 
-    @Override // org.telegram.ui.Components.zl0
-    public boolean a(int i10, View view) {
-        boolean z10 = view instanceof org.telegram.ui.Cells.x;
+    @Override // org.telegram.ui.Components.cm0
+    public boolean d(int i10, View view) {
+        boolean z10 = view instanceof org.telegram.ui.Cells.w;
         k8 k8Var = this.b;
         if (!z10) {
             k8Var.getClass();
             return false;
         }
-        if (k8Var.t0()) {
+        if (k8Var.z0()) {
             return false;
         }
-        org.telegram.ui.Cells.x xVar = (org.telegram.ui.Cells.x) view;
-        k8Var.C0(xVar, xVar.getMessageObject());
+        org.telegram.ui.Cells.w wVar = (org.telegram.ui.Cells.w) view;
+        k8Var.I0(wVar, wVar.getMessageObject());
         return true;
     }
 
     @Override // org.telegram.ui.ActionBar.q0
-    public void j(int i10) {
+    public void h(int i10) {
         switch (this.a) {
             case 0:
                 k8 k8Var = this.b;
                 k8Var.getClass();
                 if (i10 >= 0) {
-                    float[] fArr = k8.U0;
+                    float[] fArr = k8.Z0;
                     if (i10 < 6) {
                         MediaController.getInstance().setPlaybackSpeed(true, fArr[i10]);
-                        k8Var.F0(true);
+                        k8Var.L0(true);
                         break;
                     }
                 }
@@ -58,7 +58,7 @@ public final /* synthetic */ class a7 implements org.telegram.ui.ActionBar.q0, z
                     k8Var2.s.l();
                     if (z10 != SharedConfig.playOrderReversed) {
                         k8Var2.n.B0();
-                        k8Var2.x0(false);
+                        k8Var2.D0(false);
                     }
                 } else if (i10 == 4) {
                     if (SharedConfig.repeatMode == 1) {
@@ -71,10 +71,10 @@ public final /* synthetic */ class a7 implements org.telegram.ui.ActionBar.q0, z
                 } else {
                     SharedConfig.setRepeatMode(2);
                 }
-                k8Var2.H0();
+                k8Var2.N0();
                 break;
             default:
-                this.b.u0(i10);
+                this.b.A0(i10);
                 break;
         }
     }

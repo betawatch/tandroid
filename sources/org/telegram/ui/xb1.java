@@ -1,54 +1,45 @@
 package org.telegram.ui;
 
-import android.graphics.Bitmap;
-import android.graphics.Point;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.VideoEditedInfo;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class xb1 extends zt0 {
-    public final /* synthetic */ MediaController.PhotoEntry a;
-    public final /* synthetic */ yb1 b;
+public final class xb1 extends AnimatorListenerAdapter {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ qc1 e;
 
-    public xb1(yb1 yb1Var, MediaController.PhotoEntry photoEntry) {
-        this.b = yb1Var;
-        this.a = photoEntry;
+    public xb1(qc1 qc1Var, boolean z10, int i10, int i11, boolean z11) {
+        this.e = qc1Var;
+        this.a = z10;
+        this.b = i10;
+        this.c = i11;
+        this.d = z11;
     }
 
-    @Override // org.telegram.ui.zt0, org.telegram.ui.hu0
-    public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11) {
-        kc1 kc1Var = this.b.a;
-        MediaController.PhotoEntry photoEntry = this.a;
-        if (photoEntry.imagePath != null) {
-            File file = new File(FileLoader.getDirectory(4), Utilities.random.nextInt() + ".jpg");
-            Point realScreenSize = AndroidUtilities.getRealScreenSize();
-            Bitmap loadBitmap = ImageLoader.loadBitmap(photoEntry.imagePath, null, (float) realScreenSize.x, (float) realScreenSize.y, true);
-            try {
-                loadBitmap.compress(Bitmap.CompressFormat.JPEG, 87, new FileOutputStream(file));
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            }
-            File file2 = new File(photoEntry.imagePath);
-            kc1Var.B1 = new th1(file2, file2, "");
-            kc1Var.C1 = loadBitmap;
-            kc1Var.b2 = 0;
-            kc1Var.x0.requestLayout();
-            kc1Var.b1(false);
-            kc1Var.w1 = null;
-            kc1Var.i1();
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        qc1 qc1Var = this.e;
+        FrameLayout[] frameLayoutArr = qc1Var.M0;
+        qc1Var.s1 = null;
+        int i10 = this.c;
+        int i11 = this.b;
+        boolean z10 = this.a;
+        if (z10 && frameLayoutArr[i11].getVisibility() == 0) {
+            frameLayoutArr[i11].setAlpha(1.0f);
+            frameLayoutArr[i11].setVisibility(4);
+        } else if (!z10) {
+            frameLayoutArr[i10].setVisibility(4);
         }
-    }
-
-    @Override // org.telegram.ui.zt0, org.telegram.ui.hu0
-    public final boolean z() {
-        return false;
+        int i12 = qc1Var.b;
+        if (i12 == 1 || i12 == 2) {
+            qc1Var.K0[this.d ? (char) 0 : (char) 2].setVisibility(4);
+        } else if (i10 == 1) {
+            frameLayoutArr[i11].setAlpha(0.0f);
+        }
     }
 }

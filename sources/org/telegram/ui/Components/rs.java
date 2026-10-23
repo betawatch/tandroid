@@ -6,16 +6,16 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class rs {
-    public final org.telegram.ui.Cells.r2 a;
+    public final org.telegram.ui.Cells.q2 a;
     public final ArrayList b = new ArrayList();
     public final ArrayList c = new ArrayList();
     public qs d = null;
 
-    public rs(org.telegram.ui.Cells.r2 r2Var) {
-        this.a = r2Var;
+    public rs(org.telegram.ui.Cells.q2 q2Var) {
+        this.a = q2Var;
     }
 
     public final void a(Canvas canvas, int i10) {
@@ -36,17 +36,17 @@ public final class rs {
                 break;
             }
             qs qsVar = (qs) arrayList.get(i11);
-            dp = org.telegram.messenger.nk.y(4.0f, qsVar.e, dp);
+            dp = org.telegram.messenger.sl.y(4.0f, qsVar.g, dp);
             if (dp < 0) {
                 break;
             }
             if (LocaleController.isRTL) {
-                canvas.translate(-qsVar.e, 0.0f);
+                canvas.translate(-qsVar.g, 0.0f);
                 qsVar.a(canvas);
                 canvas.translate(-AndroidUtilities.dp(4.0f), 0.0f);
             } else {
                 qsVar.a(canvas);
-                canvas.translate(AndroidUtilities.dp(4.0f) + qsVar.e, 0.0f);
+                canvas.translate(AndroidUtilities.dp(4.0f) + qsVar.g, 0.0f);
             }
             i11++;
         }
@@ -56,23 +56,26 @@ public final class rs {
             if (qsVar2 == null || qsVar2.a != size) {
                 qs qsVar3 = new qs();
                 qsVar3.a = size;
-                f11 f11Var = new f11(i2.e.j(size, "+"), 10.0f, AndroidUtilities.bold());
-                f11Var.s(this.a);
-                qsVar3.c = f11Var;
+                i11 i11Var = new i11(i2.o1.k(size, "+"), 10.0f, AndroidUtilities.bold());
+                i11Var.s(this.a);
+                qsVar3.c = i11Var;
                 int dp2 = AndroidUtilities.dp(9.32f);
-                f11 f11Var2 = qsVar3.c;
-                qsVar3.e = dp2 + ((int) f11Var2.c);
-                f11Var2.j();
-                qsVar3.d = org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.n8, false);
+                i11 i11Var2 = qsVar3.c;
+                qsVar3.g = dp2 + ((int) i11Var2.c);
+                i11Var2.j();
+                int i12 = org.telegram.ui.ActionBar.k6.n8;
+                qsVar3.f = i12;
+                qsVar3.e = true;
+                qsVar3.d = org.telegram.ui.ActionBar.k6.x0(null, i12, false);
                 this.d = qsVar3;
             }
             if (LocaleController.isRTL) {
-                canvas.translate(-this.d.e, 0.0f);
+                canvas.translate(-this.d.g, 0.0f);
                 this.d.a(canvas);
                 canvas.translate(-AndroidUtilities.dp(4.0f), 0.0f);
             } else {
                 this.d.a(canvas);
-                canvas.translate(AndroidUtilities.dp(4.0f) + this.d.e, 0.0f);
+                canvas.translate(AndroidUtilities.dp(4.0f) + this.d.g, 0.0f);
             }
         }
         canvas.restore();

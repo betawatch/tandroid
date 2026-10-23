@@ -1,15 +1,15 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class ki implements kw0 {
+public final class ki implements nw0 {
     public final /* synthetic */ ti a;
 
     public ki(ti tiVar) {
         this.a = tiVar;
     }
 
-    @Override // org.telegram.ui.Components.kw0
+    @Override // org.telegram.ui.Components.nw0
     public final void G(int i10, boolean z10) {
         ti tiVar = this.a;
         li liVar = tiVar.B0;

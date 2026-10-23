@@ -2,10 +2,10 @@ package yh;
 
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.d91;
+import org.telegram.ui.Components.k91;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p1 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -26,12 +26,12 @@ public final /* synthetic */ class p1 implements Utilities.Callback {
             default:
                 p2 p2Var2 = this.b;
                 p2Var2.f(true);
-                d91 d91Var = p2Var2.n;
+                k91 k91Var = p2Var2.n;
                 int i10 = ((TL_stars.TL_starGiftCollection) obj).collection_id;
-                d91Var.d(i10, p2Var2.e.f(i10) + 1);
-                org.telegram.ui.ActionBar.n2 n2Var = p2Var2.a;
-                if (n2Var instanceof ProfileActivity) {
-                    ((ProfileActivity) n2Var).G4(true);
+                k91Var.d(i10, p2Var2.e.f(i10) + 1);
+                org.telegram.ui.ActionBar.o2 o2Var = p2Var2.a;
+                if (o2Var instanceof ProfileActivity) {
+                    ((ProfileActivity) o2Var).I4(true);
                 }
                 p2Var2.n();
                 break;

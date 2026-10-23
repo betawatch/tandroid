@@ -11,48 +11,23 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.zl0;
-import org.telegram.ui.cy;
-import org.telegram.ui.nx;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.Components.cm0;
+import org.telegram.ui.ey;
+import org.telegram.ui.px;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class w implements f0, zl0 {
+public final /* synthetic */ class w implements f0, cm0 {
     public final /* synthetic */ h0 a;
 
     public /* synthetic */ w(h0 h0Var) {
         this.a = h0Var;
     }
 
-    @Override // org.telegram.ui.Components.zl0
-    public boolean a(int i10, View view) {
-        TLRPC.User user;
-        nx nxVar = this.a.U;
-        if (nxVar != null) {
-            Long l4 = (Long) view.getTag();
-            long longValue = l4.longValue();
-            cy cyVar = nxVar.a;
-            if (cyVar.getParentActivity() != null && (user = cyVar.getMessagesController().getUser(l4)) != null) {
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(cyVar.getParentActivity());
-                String string = LocaleController.getString(R.string.ChatHintsDeleteAlertTitle);
-                org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-                b2Var.R = string;
-                b2Var.T = AndroidUtilities.replaceTags(LocaleController.formatString("ChatHintsDeleteAlert", R.string.ChatHintsDeleteAlert, ContactsController.formatName(user.first_name, user.last_name)));
-                alertDialog$Builder.k(LocaleController.getString(R.string.StickersRemove), new ci.d1(nxVar, longValue, 9));
-                alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-                cyVar.showDialog(b2Var);
-                TextView textView = (TextView) b2Var.d(-1);
-                if (textView != null) {
-                    textView.setTextColor(cyVar.getThemedColor(h6.q7));
-                }
-            }
-        }
-        return true;
-    }
-
     @Override // hg.f0
-    public void b(a0.h hVar, ArrayList arrayList) {
+    public void a(a0.h hVar, ArrayList arrayList) {
         h0 h0Var = this.a;
         int i10 = h0Var.s0;
         h0Var.t0 = arrayList;
@@ -70,5 +45,31 @@ public final /* synthetic */ class w implements f0, zl0 {
         }
         h0Var.G(null);
         h0Var.l();
+    }
+
+    @Override // org.telegram.ui.Components.cm0
+    public boolean d(int i10, View view) {
+        TLRPC.User user;
+        px pxVar = this.a.U;
+        if (pxVar != null) {
+            Long l4 = (Long) view.getTag();
+            long longValue = l4.longValue();
+            ey eyVar = pxVar.a;
+            if (eyVar.getParentActivity() != null && (user = eyVar.getMessagesController().getUser(l4)) != null) {
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(eyVar.getParentActivity());
+                String string = LocaleController.getString(R.string.ChatHintsDeleteAlertTitle);
+                org.telegram.ui.ActionBar.c2 c2Var = alertDialog$Builder.a;
+                c2Var.R = string;
+                c2Var.T = AndroidUtilities.replaceTags(LocaleController.formatString("ChatHintsDeleteAlert", R.string.ChatHintsDeleteAlert, ContactsController.formatName(user.first_name, user.last_name)));
+                alertDialog$Builder.k(LocaleController.getString(R.string.StickersRemove), new ci.d1(pxVar, longValue, 9));
+                alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
+                eyVar.showDialog(c2Var);
+                TextView textView = (TextView) c2Var.d(-1);
+                if (textView != null) {
+                    r6.W(textView, k6.q7, eyVar.getResourceProvider());
+                }
+            }
+        }
+        return true;
     }
 }

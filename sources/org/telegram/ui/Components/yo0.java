@@ -1,9 +1,12 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public interface yo0 {
-    void b(float f7);
+public final class yo0 {
+    public final int a;
+    public int b;
 
-    void c(float f7);
+    public yo0(int i10) {
+        this.a = i10;
+    }
 }

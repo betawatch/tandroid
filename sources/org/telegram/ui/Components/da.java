@@ -10,19 +10,23 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.FileLog;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class da extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
+public final class da extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.ActionBar.b6 {
+    public int E;
+    public int F;
     public TextView a;
     public TextView b;
     public ah.x c;
     public ah.x d;
-    public zj0 e;
+    public ck0 e;
     public ScrollView f;
     public AnimatorSet h;
     public TLRPC.TL_help_appUpdate n;
@@ -31,6 +35,7 @@ public final class da extends FrameLayout implements NotificationCenter.Notifica
     public int v;
     public GradientDrawable w;
     public GradientDrawable x;
+    public boolean y;
 
     public final void a(boolean z10) {
         ah.x xVar = this.d;
@@ -54,7 +59,7 @@ public final class da extends FrameLayout implements NotificationCenter.Notifica
             xVar.setEnabled(true);
             this.h.playTogether(ObjectAnimator.ofFloat(xVar2, (Property<ah.x, Float>) property3, 0.1f), ObjectAnimator.ofFloat(xVar2, (Property<ah.x, Float>) property2, 0.1f), ObjectAnimator.ofFloat(xVar2, (Property<ah.x, Float>) property, 0.0f), ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property3, 1.0f), ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property2, 1.0f), ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 1.0f));
         }
-        this.h.addListener(new org.telegram.ui.fo(i10, this, z10));
+        this.h.addListener(new org.telegram.ui.ho(i10, this, z10));
         this.h.setDuration(150L);
         this.h.start();
     }
@@ -110,5 +115,49 @@ public final class da extends FrameLayout implements NotificationCenter.Notifica
             NotificationCenter.getInstance(this.s).removeObserver(this, NotificationCenter.fileLoadFailed);
             NotificationCenter.getInstance(this.s).removeObserver(this, NotificationCenter.fileLoadProgressChanged);
         }
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void updateColors() {
+        int x02;
+        ScrollView scrollView;
+        GradientDrawable gradientDrawable = this.x;
+        GradientDrawable gradientDrawable2 = this.w;
+        try {
+            int x03 = org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.d6, false);
+            if (this.y) {
+                if (x03 != this.E) {
+                }
+                x02 = org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.s8, false);
+                scrollView = this.f;
+                if (scrollView != null && (!this.y || x02 != this.F)) {
+                    this.F = x02;
+                    AndroidUtilities.setScrollViewEdgeEffectColor(scrollView, x02);
+                }
+                this.y = true;
+                invalidate();
+            }
+            this.E = x03;
+            if (gradientDrawable2 != null) {
+                gradientDrawable2.setColors(new int[]{x03, 0});
+            }
+            if (gradientDrawable != null) {
+                gradientDrawable.setColors(new int[]{x03, 0});
+            }
+            x02 = org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.s8, false);
+            scrollView = this.f;
+            if (scrollView != null) {
+                this.F = x02;
+                AndroidUtilities.setScrollViewEdgeEffectColor(scrollView, x02);
+            }
+            this.y = true;
+            invalidate();
+        } catch (Exception e) {
+            FileLog.e(e);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

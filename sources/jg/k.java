@@ -6,12 +6,12 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.text.TextPaint;
-import ci.v4;
+import ci.u4;
 import com.google.android.gms.internal.play_billing.k3;
 import java.util.ArrayList;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.k6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class k extends g {
     @Override // jg.g
@@ -47,7 +47,7 @@ public final class k extends g {
                     if (animator != null) {
                         animator.cancel();
                     }
-                    ValueAnimator e = g.e(this.j0, this.l0, new v4(this, 4));
+                    ValueAnimator e = g.e(this.j0, this.l0, new u4(this, 4));
                     this.d0 = e;
                     e.start();
                 }
@@ -442,7 +442,7 @@ public final class k extends g {
                     } else {
                         if (charSequenceArr == null || arrayList.size() < 2) {
                             i14 = i20;
-                            textPaint2.setColor(h6.w0(h6.Yi, this.W0));
+                            textPaint2.setColor(k6.w0(k6.Yi, this.W0));
                             textPaint2.setAlpha((int) k3.C(dVar2.f, this.f, f12, f7));
                         } else {
                             i14 = i20;

@@ -8,24 +8,27 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
+import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.y5;
+import org.telegram.ui.ActionBar.b6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.k6;
 import w7.z5;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
-/* loaded from: classes3.dex */
-public final class d extends FrameLayout implements y5 {
-    public final d6 a;
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+/* loaded from: classes4.dex */
+public final class d extends FrameLayout implements b6 {
+    public final g6 a;
     public final ImageView b;
     public final TextView c;
+    public int d;
+    public boolean e;
 
-    public d(Context context, d6 d6Var) {
+    public d(Context context, g6 g6Var) {
         super(context);
-        this.a = d6Var;
+        this.a = g6Var;
         ImageView imageView = new ImageView(context);
         this.b = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
@@ -39,26 +42,38 @@ public final class d extends FrameLayout implements y5 {
         textView.setSingleLine(true);
         textView.setEllipsize(TextUtils.TruncateAt.END);
         addView(textView, z5.d(-2, -2.0f, 8388627, 50.0f, 0.0f, 16.0f, 0.0f));
-        d();
+        updateColors();
     }
 
-    @Override // org.telegram.ui.ActionBar.y5
-    public final void d() {
-        int i10 = h6.Wk;
-        d6 d6Var = this.a;
-        int i11 = (int) 153.0f;
-        this.c.setTextColor(i0.a.o(h6.w0(i10, d6Var), i11));
-        PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(i0.a.o(h6.w0(i10, d6Var), i11), PorterDuff.Mode.MULTIPLY);
-        ImageView imageView = this.b;
-        imageView.setColorFilter(porterDuffColorFilter);
-        imageView.setBackground(h6.g0(i0.a.o(h6.w0(i10, d6Var), (int) 25.5f), 1, -1));
+    public final int a(float f7) {
+        return i0.a.o(k6.w0(k6.Wk, this.a), (int) (f7 * 255.0f));
     }
 
-    public /* bridge */ /* synthetic */ int[] getColorKeys() {
-        return null;
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void addColorKeys(HashSet hashSet) {
+        hashSet.add(Integer.valueOf(k6.Wk));
     }
 
     public void setOnBackClickListener(View.OnClickListener onClickListener) {
         this.b.setOnClickListener(onClickListener);
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void updateColors() {
+        this.c.setTextColor(a(0.6f));
+        int a2 = a(1.0f);
+        if (this.e && a2 == this.d) {
+            return;
+        }
+        this.e = true;
+        this.d = a2;
+        PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(a(0.6f), PorterDuff.Mode.MULTIPLY);
+        ImageView imageView = this.b;
+        imageView.setColorFilter(porterDuffColorFilter);
+        if (imageView.getBackground() != null) {
+            k6.E1(imageView.getBackground(), a(0.1f), true);
+        } else {
+            imageView.setBackground(k6.g0(a(0.1f), 1, -1));
+        }
     }
 }

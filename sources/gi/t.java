@@ -12,17 +12,18 @@ import java.util.WeakHashMap;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.c71;
-import org.telegram.ui.Components.h61;
-import org.telegram.ui.Components.u61;
-import org.telegram.ui.l5;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.Components.b71;
+import org.telegram.ui.Components.j71;
+import org.telegram.ui.Components.m61;
+import org.telegram.ui.k5;
 import w7.z5;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final class t extends org.telegram.ui.ActionBar.n2 {
-    public c71 a;
+public final class t extends org.telegram.ui.ActionBar.o2 {
+    public j71 a;
     public final ArrayList b;
     public final HashMap c;
 
@@ -41,27 +42,27 @@ public final class t extends org.telegram.ui.ActionBar.n2 {
             if (spannableStringBuilder == null) {
                 spannableStringBuilder = new SpannableStringBuilder();
                 spannableStringBuilder.append((CharSequence) "a   ");
-                l5 l5Var = new l5(null, 24.0f, tVar.currentAccount);
-                l5Var.e(qVar.a);
-                spannableStringBuilder.setSpan(l5Var, 0, 1, 33);
+                k5 k5Var = new k5(null, 24.0f, tVar.currentAccount);
+                k5Var.e(qVar.a);
+                spannableStringBuilder.setSpan(k5Var, 0, 1, 33);
                 spannableStringBuilder.append((CharSequence) UserObject.getUserName(qVar.a));
                 hashMap.put(qVar, spannableStringBuilder);
             }
-            h61 i11 = h61.i(i10, spannableStringBuilder);
+            m61 i11 = m61.i(i10, spannableStringBuilder);
             i11.K(!qVar.b);
             arrayList.add(i11);
         }
-        i2.e.B(R.string.PrivacyBiometryBotsInfo, arrayList);
+        i2.o1.B(R.string.PrivacyBiometryBotsInfo, arrayList);
     }
 
-    public static void V(t tVar, h61 h61Var) {
+    public static void V(t tVar, m61 m61Var) {
         int i10;
-        u61 u61Var;
+        b71 b71Var;
         ArrayList arrayList = tVar.b;
-        if (h61Var.a != 4 || (i10 = h61Var.d) < 0 || i10 >= arrayList.size()) {
+        if (m61Var.a != 4 || (i10 = m61Var.d) < 0 || i10 >= arrayList.size()) {
             return;
         }
-        q qVar = (q) arrayList.get(h61Var.d);
+        q qVar = (q) arrayList.get(m61Var.d);
         qVar.b = !qVar.b;
         Activity parentActivity = tVar.getParentActivity();
         int i11 = tVar.currentAccount;
@@ -75,24 +76,24 @@ public final class t extends org.telegram.ui.ActionBar.n2 {
             edit.putString(String.valueOf(j10), "");
         }
         edit.apply();
-        c71 c71Var = tVar.a;
-        if (c71Var == null || (u61Var = c71Var.W2) == null) {
+        j71 j71Var = tVar.a;
+        if (j71Var == null || (b71Var = j71Var.Z2) == null) {
             return;
         }
-        u61Var.N(true);
+        b71Var.N(true);
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.o2
     public final View createView(Context context) {
-        i2.e.y(false, this.actionBar);
+        i2.o1.y(false, this.actionBar);
         this.actionBar.setAllowOverlayTitle(true);
         this.actionBar.setTitle(LocaleController.getString(R.string.PrivacyBiometryBots));
         this.actionBar.setActionBarMenuOnItemClick(new ah.s(this, 2));
         FrameLayout frameLayout = new FrameLayout(context);
-        frameLayout.setBackgroundColor(h6.w0(h6.a7, this.resourceProvider));
-        c71 c71Var = new c71(this, new ai.q(this, 24), new s(this), new s(this));
-        this.a = c71Var;
-        frameLayout.addView(c71Var, z5.e(-1, -1, 119));
+        r6.i(k6.a7, frameLayout, this.resourceProvider);
+        j71 j71Var = new j71(this, new ai.q(this, 24), new s(this), new s(this));
+        this.a = j71Var;
+        frameLayout.addView(j71Var, z5.e(-1, -1, 119));
         r.d(getParentActivity(), this.currentAccount, new ai.r0(this, 24));
         this.fragmentView = frameLayout;
         return frameLayout;

@@ -1,7 +1,9 @@
 package ie;
 
 import be.f0;
+import com.google.android.gms.internal.play_billing.k3;
 import ge.r;
+import i2.o1;
 import java.io.Closeable;
 import java.lang.Thread;
 import java.util.ArrayList;
@@ -11,8 +13,9 @@ import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 import java.util.concurrent.atomic.AtomicLongFieldUpdater;
 import java.util.concurrent.atomic.AtomicReferenceArray;
 import java.util.concurrent.locks.LockSupport;
+import org.telegram.ui.Cells.b1;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class c implements Executor, Closeable {
     public static final /* synthetic */ AtomicLongFieldUpdater n = AtomicLongFieldUpdater.newUpdater(c.class, "parkedWorkersStack$volatile");
@@ -36,16 +39,16 @@ public final class c implements Executor, Closeable {
         this.c = j10;
         this.d = str;
         if (i10 < 1) {
-            throw new IllegalArgumentException(i2.e.k(i10, "Core pool size ", " should be at least 1").toString());
+            throw new IllegalArgumentException(o1.l(i10, "Core pool size ", " should be at least 1").toString());
         }
         if (i11 < i10) {
             throw new IllegalArgumentException(a1.g.l(i11, i10, "Max pool size ", " should be greater than or equals to core pool size ").toString());
         }
         if (i11 > 2097150) {
-            throw new IllegalArgumentException(i2.e.k(i11, "Max pool size ", " should not exceed maximal supported number of threads 2097150").toString());
+            throw new IllegalArgumentException(o1.l(i11, "Max pool size ", " should not exceed maximal supported number of threads 2097150").toString());
         }
         if (j10 <= 0) {
-            throw new IllegalArgumentException(r4.c.g(j10, "Idle worker keep alive time ", " must be positive").toString());
+            throw new IllegalArgumentException(b1.k(j10, "Idle worker keep alive time ", " must be positive").toString());
         }
         this.e = new f();
         this.f = new f();
@@ -392,9 +395,9 @@ public final class c implements Executor, Closeable {
         int i17 = this.a;
         sb5.append(i17);
         sb5.append(", max = ");
-        i2.e.w(sb5, this.b, "}, Worker States {CPU = ", i10, ", blocking = ");
-        i2.e.w(sb5, i11, ", parked = ", i12, ", dormant = ");
-        i2.e.w(sb5, i13, ", terminated = ", i14, "}, running workers queues = ");
+        k3.r(sb5, this.b, "}, Worker States {CPU = ", i10, ", blocking = ");
+        k3.r(sb5, i11, ", parked = ", i12, ", dormant = ");
+        k3.r(sb5, i13, ", terminated = ", i14, "}, running workers queues = ");
         sb5.append(arrayList);
         sb5.append(", global CPU queue size = ");
         sb5.append(this.e.c());

@@ -14,15 +14,16 @@ import android.view.ViewParent;
 import android.view.ViewPropertyAnimator;
 import android.view.WindowInsets;
 import android.widget.FrameLayout;
-import ci.v4;
+import ci.u4;
 import ei.i6;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
+import org.telegram.messenger.sl;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.pg1;
+import org.telegram.ui.vg1;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class s1 extends FrameLayout {
     public float E;
@@ -53,7 +54,7 @@ public final class s1 extends FrameLayout {
     public float d;
     public ValueAnimator d0;
     public boolean e;
-    public final v4 e0;
+    public final u4 e0;
     public int f;
     public ValueAnimator f0;
     public final i6 g0;
@@ -82,7 +83,7 @@ public final class s1 extends FrameLayout {
         this.K = 0.0f;
         this.Q = -1.0f;
         this.R = true;
-        this.e0 = new v4(this, 10);
+        this.e0 = new u4(this, 10);
         this.g0 = new i6(this, 11);
         this.r = ViewConfiguration.get(activity).getScaledTouchSlop();
         setOutlineProvider(new dh.b(this, 4));
@@ -243,7 +244,7 @@ public final class s1 extends FrameLayout {
         canvas.scale((1.0f / getScaleX()) * s1Var.J * s1Var.K, (1.0f / getScaleY()) * s1Var.J * s1Var.K, f7, f10);
         canvas.drawCircle(f7, f10, AndroidUtilities.dp(14.0f), s1Var.w);
         Drawable drawable = s1Var.x;
-        drawable.setBounds(org.telegram.ui.Cells.c1.w(2, measuredWidth, drawable), org.telegram.ui.Cells.c1.f(2, measuredHeight, drawable), org.telegram.ui.Cells.c1.B(2, measuredWidth, drawable), org.telegram.ui.Cells.c1.A(2, measuredHeight, drawable));
+        drawable.setBounds(org.telegram.ui.Cells.b1.f(2, measuredWidth, drawable), sl.d(2, measuredHeight, drawable), org.telegram.ui.Cells.b1.y(2, measuredWidth, drawable), org.telegram.ui.Cells.b1.u(2, measuredHeight, drawable));
         drawable.draw(canvas);
         canvas.restore();
         if (s1Var.O) {
@@ -303,7 +304,7 @@ public final class s1 extends FrameLayout {
         }
         r1 r1Var = this.i0;
         if (r1Var != null) {
-            ((pg1) r1Var).b.d0.d(this.J, this.P);
+            ((vg1) r1Var).b.d0.d(this.J, this.P);
         }
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
         if (getMeasuredHeight() != this.f && getMeasuredWidth() != this.h) {

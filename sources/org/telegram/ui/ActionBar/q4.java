@@ -1,23 +1,83 @@
 package org.telegram.ui.ActionBar;
 
-import android.view.MenuItem;
-import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.Transformation;
+import android.widget.RelativeLayout;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class q4 implements View.OnClickListener {
-    public final /* synthetic */ v4 a;
+public final class q4 extends Animation {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ float d;
+    public final /* synthetic */ y4 e;
 
-    public q4(v4 v4Var) {
-        this.a = v4Var;
+    public /* synthetic */ q4(y4 y4Var, int i10, int i11, float f7, float f10, int i12) {
+        this.a = i12;
+        this.e = y4Var;
+        this.b = i10;
+        this.c = i11;
+        this.d = f10;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        MenuItem.OnMenuItemClickListener onMenuItemClickListener;
-        if (!(view.getTag() instanceof MenuItem) || (onMenuItemClickListener = this.a.K) == null) {
-            return;
+    @Override // android.view.animation.Animation
+    public final void applyTransformation(float f7, Transformation transformation) {
+        switch (this.a) {
+            case 0:
+                int i10 = this.b;
+                int i11 = this.c;
+                int i12 = (int) (f7 * (i10 - i11));
+                y4 y4Var = this.e;
+                RelativeLayout relativeLayout = y4Var.f;
+                y4.l(relativeLayout, relativeLayout.getLayoutParams().width, i11 + i12);
+                if (y4Var.M) {
+                    relativeLayout.setY(this.d - relativeLayout.getHeight());
+                    y4.a(y4Var);
+                    break;
+                }
+                break;
+            case 1:
+                int i13 = this.b;
+                int i14 = this.c;
+                y4 y4Var2 = this.e;
+                RelativeLayout relativeLayout2 = y4Var2.f;
+                y4.l(relativeLayout2, ((int) (f7 * (i13 - i14))) + i14, relativeLayout2.getLayoutParams().height);
+                relativeLayout2.setX(this.d - relativeLayout2.getWidth());
+                y4Var2.g.setX(relativeLayout2.getWidth() - i14);
+                y4Var2.h.setX(relativeLayout2.getWidth() - i13);
+                break;
+            case 2:
+                int i15 = this.b;
+                int i16 = this.c;
+                int i17 = (int) (f7 * (i15 - i16));
+                y4 y4Var3 = this.e;
+                RelativeLayout relativeLayout3 = y4Var3.f;
+                y4.l(relativeLayout3, relativeLayout3.getLayoutParams().width, i17 + i16);
+                if (y4Var3.M) {
+                    relativeLayout3.setY(this.d - (relativeLayout3.getHeight() - i16));
+                    y4.a(y4Var3);
+                    break;
+                }
+                break;
+            default:
+                int i18 = this.b;
+                int i19 = this.c;
+                y4 y4Var4 = this.e;
+                RelativeLayout relativeLayout4 = y4Var4.f;
+                y4.l(relativeLayout4, ((int) (f7 * (i18 - i19))) + i19, relativeLayout4.getLayoutParams().height);
+                relativeLayout4.setX(this.d - relativeLayout4.getWidth());
+                y4Var4.g.setX(relativeLayout4.getWidth() - i18);
+                y4Var4.h.setX(relativeLayout4.getWidth() - i19);
+                break;
         }
-        onMenuItemClickListener.onMenuItemClick((MenuItem) view.getTag());
+    }
+
+    public /* synthetic */ q4(y4 y4Var, int i10, int i11, float f7, int i12) {
+        this.a = i12;
+        this.e = y4Var;
+        this.b = i10;
+        this.c = i11;
+        this.d = f7;
     }
 }

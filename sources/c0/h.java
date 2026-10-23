@@ -12,9 +12,10 @@ import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import java.util.concurrent.locks.LockSupport;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import si.o0;
 import v7.g0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public abstract class h implements y {
     public static final boolean d = Boolean.parseBoolean(System.getProperty("guava.concurrent.generate_cancellation_cause", "false"));
@@ -240,7 +241,7 @@ public abstract class h implements y {
         t10.append(timeUnit.toString().toLowerCase(locale));
         String sb2 = t10.toString();
         if (nanos + 1000 < 0) {
-            String u10 = r4.c.u(sb2, " (plus ");
+            String u10 = o0.u(sb2, " (plus ");
             long j11 = -nanos;
             long convert = timeUnit.convert(j11, TimeUnit.NANOSECONDS);
             long nanos2 = j11 - timeUnit.toNanos(convert);
@@ -248,19 +249,19 @@ public abstract class h implements y {
             if (convert > 0) {
                 String str = u10 + convert + " " + lowerCase;
                 if (z10) {
-                    str = r4.c.u(str, ",");
+                    str = o0.u(str, ",");
                 }
-                u10 = r4.c.u(str, " ");
+                u10 = o0.u(str, " ");
             }
             if (z10) {
                 u10 = u10 + nanos2 + " nanoseconds ";
             }
-            sb2 = r4.c.u(u10, "delay)");
+            sb2 = o0.u(u10, "delay)");
         }
         if (isDone()) {
-            throw new TimeoutException(r4.c.u(sb2, " but future completed as timeout expired"));
+            throw new TimeoutException(o0.u(sb2, " but future completed as timeout expired"));
         }
-        throw new TimeoutException(a1.g.C(sb2, " for ", hVar));
+        throw new TimeoutException(a1.g.D(sb2, " for ", hVar));
     }
 
     /* JADX WARN: Multi-variable type inference failed */

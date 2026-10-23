@@ -1,106 +1,205 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.app.Dialog;
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapShader;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.os.Build;
 import android.os.Bundle;
-import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
+import j$.util.Objects;
+import java.util.HashMap;
+import java.util.regex.Pattern;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.Vector;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class a50 extends Dialog {
-    public final ci.i3 a;
-    public final v10 b;
-    public Bitmap c;
-    public Paint d;
-    public BitmapShader e;
-    public final Matrix f;
-    public float h;
-    public ValueAnimator n;
-    public boolean r;
+public final /* synthetic */ class a50 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
 
-    public a50(Context context, v10 v10Var) {
-        super(context, R.style.TransparentDialog);
-        this.f = new Matrix();
-        this.b = v10Var;
-        v10Var.setVisibility(4);
-        AndroidUtilities.makeGlobalBlurBitmap(new org.telegram.ui.Components.qy(10, this, v10Var), 14.0f);
-        ci.i3 i3Var = new ci.i3(this, context, v10Var);
-        this.a = i3Var;
-        i3Var.setOnClickListener(new a(this, 29));
+    public /* synthetic */ a50(int i10, Object obj, Object obj2) {
+        this.a = i10;
+        this.c = obj;
+        this.b = obj2;
     }
 
-    public final void b(float f7, z40 z40Var) {
-        ValueAnimator valueAnimator = this.n;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-            this.n = null;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        int i10 = this.a;
+        int i11 = 26;
+        int i12 = 0;
+        int i13 = 1;
+        Object obj = this.b;
+        Object obj2 = this.c;
+        switch (i10) {
+            case 0:
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.j90(obj2, tL_error, tLObject, obj, 14));
+                break;
+            case 1:
+                a70 a70Var = (a70) obj2;
+                if (Objects.equals(a70Var.a.e, (String) obj)) {
+                    AndroidUtilities.runOnUIThread(new ot(i11, a70Var, tLObject));
+                    break;
+                }
+                break;
+            case 2:
+                n70 n70Var = (n70) obj2;
+                String str = (String) obj;
+                if (tLObject instanceof Vector) {
+                    Vector vector = (Vector) tLObject;
+                    if (!vector.objects.isEmpty()) {
+                        TLRPC.LangPackString langPackString = (TLRPC.LangPackString) vector.objects.get(0);
+                        if (langPackString instanceof TLRPC.TL_langPackString) {
+                            AndroidUtilities.runOnUIThread(new lq(n70Var, (TLRPC.TL_langPackString) langPackString, str, 11));
+                            break;
+                        }
+                    }
+                }
+                break;
+            case 3:
+                Pattern pattern = LaunchActivity.E1;
+                AndroidUtilities.runOnUIThread(new lq((LaunchActivity) obj2, tLObject, (org.telegram.ui.ActionBar.j6) obj, 18));
+                break;
+            case 4:
+                Pattern pattern2 = LaunchActivity.E1;
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.j90(obj2, tLObject, obj, tL_error, 18));
+                break;
+            case 5:
+                AndroidUtilities.runOnUIThread(new lq((ob0) obj2, tLObject, (String) obj, 21));
+                break;
+            case 6:
+                AndroidUtilities.runOnUIThread(new lq((lb0) obj2, tLObject, (TLRPC.User) obj, 22));
+                break;
+            case 7:
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.j90(obj2, tLObject, obj, tL_error, 20));
+                break;
+            case 8:
+                ig0 ig0Var = (ig0) obj2;
+                Bundle bundle = (Bundle) obj;
+                if (tLObject != null && !(((TLRPC.auth_SentCode) tLObject).type instanceof TLRPC.TL_auth_sentCodeTypeFirebaseSms)) {
+                    AndroidUtilities.runOnUIThread(new lq(ig0Var, bundle, tLObject, i11));
+                    break;
+                } else {
+                    AndroidUtilities.runOnUIThread(new tc0(ig0Var, 2));
+                    break;
+                }
+                break;
+            case 9:
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.j90(obj2, tLObject, obj, tL_error, 23));
+                break;
+            case 10:
+                AndroidUtilities.runOnUIThread(new re0((mf0) obj2, tL_error, (TL_account.confirmPhone) obj, i13));
+                break;
+            case 11:
+                AndroidUtilities.runOnUIThread(new re0((hg0) obj2, tLObject, (HashMap) obj, 6));
+                break;
+            case 12:
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.j90(obj2, tL_error, tLObject, obj, 27));
+                break;
+            case 13:
+                AndroidUtilities.runOnUIThread(new re0((rj0) obj2, tLObject, (org.telegram.ui.Components.qy) obj, 9));
+                break;
+            case 14:
+                cm0 cm0Var = (cm0) obj2;
+                cm0Var.getClass();
+                cm0Var.a(tL_error, (TLRPC.TL_secureValue) tLObject, (TLRPC.TL_secureValue) obj);
+                break;
+            case 15:
+                AndroidUtilities.runOnUIThread(new re0((wm0) obj2, tL_error, (TL_account.verifyPhone) obj, 15));
+                break;
+            case 16:
+                io0 io0Var = (io0) obj2;
+                TLObject tLObject2 = (TLObject) obj;
+                if (!(tLObject instanceof TLRPC.TL_payments_validatedRequestedInfo)) {
+                    AndroidUtilities.runOnUIThread(new hn0(io0Var, tL_error, tLObject2, i13));
+                    break;
+                } else {
+                    AndroidUtilities.runOnUIThread(new bh0(16, io0Var, (TLRPC.TL_payments_validatedRequestedInfo) tLObject));
+                    break;
+                }
+            case 17:
+                io0 io0Var2 = (io0) obj2;
+                TLRPC.TL_payments_sendPaymentForm tL_payments_sendPaymentForm = (TLRPC.TL_payments_sendPaymentForm) obj;
+                int i14 = 17;
+                if (tLObject == null) {
+                    x10 x10Var = io0Var2.e1;
+                    if (x10Var == null || !((Boolean) x10Var.run(tL_error)).booleanValue()) {
+                        AndroidUtilities.runOnUIThread(new re0(io0Var2, tL_error, tL_payments_sendPaymentForm, i14));
+                        break;
+                    }
+                } else if (!(tLObject instanceof TLRPC.TL_payments_paymentResult)) {
+                    if (tLObject instanceof TLRPC.TL_payments_paymentVerificationNeeded) {
+                        AndroidUtilities.runOnUIThread(new bn0(io0Var2, tLObject, i13));
+                        break;
+                    }
+                } else {
+                    Utilities.Callback callback = io0Var2.c1;
+                    if (callback == null) {
+                        TLRPC.Updates updates = ((TLRPC.TL_payments_paymentResult) tLObject).updates;
+                        TLRPC.Message[] messageArr = new TLRPC.Message[1];
+                        int size = updates.updates.size();
+                        int i15 = 0;
+                        while (true) {
+                            if (i15 < size) {
+                                TLRPC.Update update = updates.updates.get(i15);
+                                if (update instanceof TL_update.TL_updateNewMessage) {
+                                    messageArr[0] = ((TL_update.TL_updateNewMessage) update).message;
+                                } else if (update instanceof TL_update.TL_updateNewChannelMessage) {
+                                    messageArr[0] = ((TL_update.TL_updateNewChannelMessage) update).message;
+                                } else {
+                                    i15++;
+                                }
+                            }
+                        }
+                        io0Var2.getMessagesController().lambda$processUpdates$377(updates, false);
+                        AndroidUtilities.runOnUIThread(new bh0(i14, io0Var2, messageArr));
+                        break;
+                    } else {
+                        callback.run((TLRPC.TL_payments_paymentResult) tLObject);
+                        break;
+                    }
+                }
+                break;
+            case 18:
+                AndroidUtilities.runOnUIThread(new jn0((io0) obj2, tLObject, tL_error, (TL_account.getTmpPassword) obj, 1));
+                break;
+            case 19:
+                AndroidUtilities.runOnUIThread(new jn0((bw0) obj2, tL_error, tLObject, (TL_stars.updatePaidMessagesPrice) obj, 6));
+                break;
+            case 20:
+                AndroidUtilities.runOnUIThread(new jn0((PrivacyControlActivity) obj2, tL_error, tLObject, (boolean[]) obj, 7));
+                break;
+            case 21:
+                AndroidUtilities.runOnUIThread(new mv0(5, (PrivacySettingsActivity) obj2, (org.telegram.ui.Cells.w8) obj));
+                break;
+            case 22:
+                AndroidUtilities.runOnUIThread(new jn0((ProfileActivity) obj2, tL_error, tLObject, (String) obj, 13));
+                break;
+            case 23:
+                AndroidUtilities.runOnUIThread(new jn0((ProfileActivity) obj2, tLObject, tL_error, (int[]) obj, 10));
+                break;
+            case 24:
+                AndroidUtilities.runOnUIThread(new jn0((ProfileActivity) obj2, tLObject, (TLRPC.TL_username) obj, tL_error, 11));
+                break;
+            case 25:
+                AndroidUtilities.runOnUIThread(new jn0((yz0) obj2, tLObject, (TLRPC.TL_username) obj, tL_error, 15));
+                break;
+            case 26:
+                AndroidUtilities.runOnUIThread(new re0((g71) obj2, tL_error, (TLRPC.TL_authorization) obj, 29));
+                break;
+            case 27:
+                AndroidUtilities.runOnUIThread(new h71((i71) obj2, tL_error, (TLRPC.TL_authorization) obj, i12));
+                break;
+            case 28:
+                AndroidUtilities.runOnUIThread(new jn0((k71) obj2, tLObject, tL_error, (n9) obj, 18));
+                break;
+            default:
+                AndroidUtilities.runOnUIThread(new jn0((c81) obj2, tL_error, tLObject, (String) obj, 19));
+                break;
         }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.h, f7);
-        this.n = ofFloat;
-        ofFloat.addUpdateListener(new e3(this, 16));
-        this.n.addListener(new ai.p7(this, f7, z40Var, 4));
-        this.n.setDuration(420L);
-        this.n.setInterpolator(org.telegram.ui.Components.bs.h);
-        this.n.start();
-    }
-
-    @Override // android.app.Dialog, android.content.DialogInterface
-    public final void dismiss() {
-        if (this.r) {
-            return;
-        }
-        this.r = true;
-        b(0.0f, new z40(this, 0));
-        try {
-            WindowManager.LayoutParams attributes = getWindow().getAttributes();
-            attributes.flags |= 16;
-            getWindow().setAttributes(attributes);
-        } catch (Exception e) {
-            FileLog.e(e);
-        }
-    }
-
-    @Override // android.app.Dialog
-    public final void onCreate(Bundle bundle) {
-        super.onCreate(bundle);
-        Window window = getWindow();
-        window.setWindowAnimations(R.style.DialogNoAnimation);
-        setContentView(this.a, new ViewGroup.LayoutParams(-1, -1));
-        WindowManager.LayoutParams attributes = window.getAttributes();
-        attributes.width = -1;
-        attributes.height = -1;
-        attributes.gravity = 119;
-        attributes.dimAmount = 0.0f;
-        int i10 = attributes.flags & (-3);
-        attributes.softInputMode = 48;
-        attributes.flags = (-2013069056) | i10;
-        if (!BuildVars.DEBUG_PRIVATE_VERSION) {
-            attributes.flags = i10 | (-2013060864);
-            AndroidUtilities.logFlagSecure();
-        }
-        attributes.flags |= 1152;
-        if (Build.VERSION.SDK_INT >= 28) {
-            attributes.layoutInDisplayCutoutMode = 1;
-        }
-        window.setAttributes(attributes);
-    }
-
-    @Override // android.app.Dialog
-    public final void show() {
-        super.show();
-        b(1.0f, null);
-        AndroidUtilities.runOnUIThread(new z40(this, 1), 16L);
     }
 }

@@ -1,82 +1,76 @@
 package org.telegram.ui;
 
-import android.content.Intent;
-import android.net.Uri;
+import android.view.View;
+import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.UserConfig;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class kl0 implements org.telegram.ui.ActionBar.a2, nt, km0 {
+public final /* synthetic */ class kl0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ vm0 b;
+    public final /* synthetic */ an0 b;
 
-    public /* synthetic */ kl0(vm0 vm0Var, int i10) {
+    public /* synthetic */ kl0(an0 an0Var, int i10) {
         this.a = i10;
-        this.b = vm0Var;
+        this.b = an0Var;
     }
 
-    @Override // org.telegram.ui.nt
-    public void L0(ht htVar) {
-        switch (this.a) {
-            case 2:
-                vm0 vm0Var = this.b;
-                vm0Var.Y[5].setText(htVar.a);
-                vm0Var.s = htVar.d;
-                break;
-            default:
-                vm0 vm0Var2 = this.b;
-                vm0Var2.Y[0].setText(htVar.a);
-                if (vm0Var2.U0.indexOf(htVar.a) != -1) {
-                    vm0Var2.Z0 = true;
-                    String str = (String) vm0Var2.V0.get(htVar.a);
-                    vm0Var2.Y[1].setText(str);
-                    String str2 = (String) vm0Var2.X0.get(str);
-                    vm0Var2.Y[2].setHintText(str2 != null ? str2.replace('X', (char) 8211) : null);
-                    vm0Var2.Z0 = false;
-                }
-                AndroidUtilities.runOnUIThread(new hl0(vm0Var2, 3), 300L);
-                vm0Var2.Y[2].requestFocus();
-                EditTextBoldCursor editTextBoldCursor = vm0Var2.Y[2];
-                editTextBoldCursor.setSelection(editTextBoldCursor.length());
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.a2
-    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        ViewGroup viewGroup;
         switch (this.a) {
             case 0:
-                vm0 vm0Var = this.b;
-                vm0Var.getClass();
-                try {
-                    Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-                    intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
-                    vm0Var.getParentActivity().startActivity(intent);
+                an0 an0Var = this.b;
+                ViewGroup[] viewGroupArr = an0Var.Z;
+                if (viewGroupArr != null && (viewGroup = viewGroupArr[0]) != null && viewGroup.getVisibility() == 0) {
+                    an0Var.Y[0].requestFocus();
+                    AndroidUtilities.showKeyboard(an0Var.Y[0]);
                     break;
-                } catch (Exception e) {
-                    FileLog.e(e);
-                    return;
                 }
+                break;
             case 1:
-                this.b.finishFragment();
+                an0 an0Var2 = this.b;
+                an0Var2.presentFragment(an0Var2.h1, true);
+                an0Var2.h1 = null;
                 break;
             case 2:
+                an0 an0Var3 = this.b;
+                EditTextBoldCursor[] editTextBoldCursorArr = an0Var3.a0;
+                if (editTextBoldCursorArr != null) {
+                    an0Var3.H1(editTextBoldCursorArr[0]);
+                    break;
+                }
+                break;
             case 3:
-            default:
-                vm0.a0(this.b);
+                AndroidUtilities.showKeyboard(this.b.Y[2]);
                 break;
             case 4:
-                pf.d.r(r3.getParentActivity(), "https://telegram.org/deactivate?phone=" + UserConfig.getInstance(this.b.currentAccount).getClientPhone());
+                this.b.w1();
+                break;
+            case 5:
+                int i10 = 0;
+                while (true) {
+                    an0 an0Var4 = this.b;
+                    if (i10 >= an0Var4.c0.getChildCount()) {
+                        an0Var4.w1();
+                        an0Var4.q1.clear();
+                        an0Var4.p1.clear();
+                        an0Var4.y.values.clear();
+                        an0Var4.Q1();
+                        break;
+                    } else {
+                        View childAt = an0Var4.c0.getChildAt(i10);
+                        if (childAt instanceof zm0) {
+                            an0Var4.c0.removeView(childAt);
+                            i10--;
+                        }
+                        i10++;
+                    }
+                }
+            default:
+                this.b.finishFragment();
                 break;
         }
-    }
-
-    @Override // org.telegram.ui.km0
-    public void p(String str, String str2) {
-        this.b.w1();
     }
 }

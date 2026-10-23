@@ -1,95 +1,34 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
+import android.transition.Transition;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class v11 extends org.telegram.ui.Components.im0 {
-    public final /* synthetic */ Context c;
-    public final /* synthetic */ z11 d;
+public final class v11 implements Transition.TransitionListener {
+    public final /* synthetic */ Runnable a;
 
-    public v11(z11 z11Var, Context context) {
-        this.d = z11Var;
-        this.c = context;
+    public v11(Runnable runnable) {
+        this.a = runnable;
     }
 
-    @Override // org.telegram.ui.Components.im0
-    public final boolean D(s4.b1 b1Var) {
-        int i10 = b1Var.f;
-        return i10 == 3 || i10 == 2;
+    @Override // android.transition.Transition.TransitionListener
+    public final void onTransitionEnd(Transition transition) {
+        this.a.run();
     }
 
-    @Override // s4.g0
-    public final int h() {
-        z11 z11Var = this.d;
-        return z11Var.h + (z11Var.f < 0 ? z11Var.getMediaDataController().getReactionsList().size() : 0) + 1;
+    @Override // android.transition.Transition.TransitionListener
+    public final void onTransitionCancel(Transition transition) {
     }
 
-    @Override // s4.g0
-    public final int j(int i10) {
-        if (i10 == 0) {
-            return 0;
-        }
-        z11 z11Var = this.d;
-        if (i10 == z11Var.d) {
-            return 2;
-        }
-        if (i10 == z11Var.f) {
-            return 3;
-        }
-        return i10 == h() - 1 ? 4 : 1;
+    @Override // android.transition.Transition.TransitionListener
+    public final void onTransitionPause(Transition transition) {
     }
 
-    @Override // s4.g0
-    public final void v(s4.b1 b1Var, int i10) {
-        int i11;
-        int i12;
-        if (j(i10) != 1) {
-            return;
-        }
-        org.telegram.ui.Cells.y yVar = (org.telegram.ui.Cells.y) b1Var.a;
-        z11 z11Var = this.d;
-        TLRPC.TL_availableReaction tL_availableReaction = z11Var.getMediaDataController().getReactionsList().get(i10 - z11Var.e);
-        String str = tL_availableReaction.reaction;
-        i11 = ((org.telegram.ui.ActionBar.n2) z11Var).currentAccount;
-        boolean contains = str.contains(MediaDataController.getInstance(i11).getDoubleTapReaction());
-        i12 = ((org.telegram.ui.ActionBar.n2) z11Var).currentAccount;
-        yVar.a(tL_availableReaction, contains, i12);
+    @Override // android.transition.Transition.TransitionListener
+    public final void onTransitionResume(Transition transition) {
     }
 
-    @Override // s4.g0
-    public final s4.b1 x(ViewGroup viewGroup, int i10) {
-        org.telegram.ui.ActionBar.d5 d5Var;
-        View view;
-        z11 z11Var = this.d;
-        Context context = this.c;
-        if (i10 == 0) {
-            d5Var = ((org.telegram.ui.ActionBar.n2) z11Var).parentLayout;
-            org.telegram.ui.Cells.fa faVar = new org.telegram.ui.Cells.fa(context, d5Var, 2);
-            faVar.setImportantForAccessibility(4);
-            faVar.r = z11Var;
-            view = faVar;
-        } else if (i10 == 2) {
-            org.telegram.ui.Cells.d9 d9Var = new org.telegram.ui.Cells.d9(context);
-            d9Var.setText(LocaleController.getString(R.string.DoubleTapPreviewRational));
-            view = d9Var;
-        } else if (i10 == 3) {
-            y11 y11Var = new y11(z11Var, context);
-            y11Var.a(false);
-            view = y11Var;
-        } else if (i10 != 4) {
-            view = new org.telegram.ui.Cells.y(context, true, true);
-        } else {
-            View unVar = new org.telegram.ui.Components.un(context, 23);
-            unVar.setTag(-33024);
-            view = unVar;
-        }
-        return new org.telegram.ui.Components.tl0(view);
+    @Override // android.transition.Transition.TransitionListener
+    public final void onTransitionStart(Transition transition) {
     }
 }

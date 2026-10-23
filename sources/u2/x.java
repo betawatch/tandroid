@@ -1,68 +1,73 @@
 package u2;
 
-import android.util.Pair;
-import java.util.HashMap;
 import org.telegram.tgnet.ConnectionsManager;
+import v7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public final class x extends u1 {
-    public final int l;
-    public final HashMap m;
-    public final HashMap n;
+public final class x extends i2.a {
+    public final b2.o1 h;
+    public final int i;
+    public final int j;
+    public final int k;
 
-    public x(a aVar) {
-        super(new b0(aVar, false));
-        this.l = ConnectionsManager.DEFAULT_DATACENTER_ID;
-        this.m = new HashMap();
-        this.n = new HashMap();
-    }
-
-    @Override // u2.u1
-    public final void A(b2.o1 o1Var) {
-        int i10 = this.l;
-        n(i10 != Integer.MAX_VALUE ? new w(o1Var, i10) : new v(o1Var, 0));
-    }
-
-    @Override // u2.a
-    public final e0 c(g0 g0Var, androidx.biometric.e eVar, long j10) {
-        int i10 = this.l;
-        a aVar = this.k;
-        if (i10 == Integer.MAX_VALUE) {
-            return aVar.c(g0Var, eVar, j10);
-        }
-        Object obj = g0Var.a;
-        int i11 = i2.a.g;
-        g0 a2 = g0Var.a(((Pair) obj).second);
-        this.m.put(a2, g0Var);
-        e0 c10 = aVar.c(a2, eVar, j10);
-        this.n.put(c10, a2);
-        return c10;
-    }
-
-    @Override // u2.u1, u2.a
-    public final b2.o1 h() {
-        b0 b0Var = (b0) this.k;
-        int i10 = this.l;
-        return i10 != Integer.MAX_VALUE ? new w(b0Var.o, i10) : new v(b0Var.o, 0);
-    }
-
-    @Override // u2.u1, u2.a
-    public final boolean j() {
-        return false;
-    }
-
-    @Override // u2.a
-    public final void o(e0 e0Var) {
-        this.k.o(e0Var);
-        g0 g0Var = (g0) this.n.remove(e0Var);
-        if (g0Var != null) {
-            this.m.remove(g0Var);
+    public x(b2.o1 o1Var, int i10) {
+        super(new j1(i10));
+        this.h = o1Var;
+        int h = o1Var.h();
+        this.i = h;
+        this.j = o1Var.o();
+        this.k = i10;
+        if (h > 0) {
+            u6.o("LoopingMediaSource contains too many periods", i10 <= ConnectionsManager.DEFAULT_DATACENTER_ID / h);
         }
     }
 
-    @Override // u2.u1
-    public final g0 z(g0 g0Var) {
-        return this.l != Integer.MAX_VALUE ? (g0) this.m.get(g0Var) : g0Var;
+    @Override // b2.o1
+    public final int h() {
+        return this.i * this.k;
+    }
+
+    @Override // b2.o1
+    public final int o() {
+        return this.j * this.k;
+    }
+
+    @Override // i2.a
+    public final int q(Object obj) {
+        if (obj instanceof Integer) {
+            return ((Integer) obj).intValue();
+        }
+        return -1;
+    }
+
+    @Override // i2.a
+    public final int r(int i10) {
+        return i10 / this.i;
+    }
+
+    @Override // i2.a
+    public final int s(int i10) {
+        return i10 / this.j;
+    }
+
+    @Override // i2.a
+    public final Object t(int i10) {
+        return Integer.valueOf(i10);
+    }
+
+    @Override // i2.a
+    public final int u(int i10) {
+        return i10 * this.i;
+    }
+
+    @Override // i2.a
+    public final int v(int i10) {
+        return i10 * this.j;
+    }
+
+    @Override // i2.a
+    public final b2.o1 x(int i10) {
+        return this.h;
     }
 }

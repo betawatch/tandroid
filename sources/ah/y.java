@@ -9,38 +9,38 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Components.a6;
 import org.telegram.ui.Components.r5;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.x51;
+import org.telegram.ui.b61;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class y extends x51 {
-    public boolean d2;
-    public final /* synthetic */ a0 e2;
+public final class y extends b61 {
+    public boolean e2;
+    public final /* synthetic */ a0 f2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y(a0 a0Var, a0 a0Var2, Activity activity, d6 d6Var, int i10) {
-        super(a0Var2, activity, false, null, 6, false, d6Var, 16, i10);
-        this.e2 = a0Var;
-        this.d2 = true;
+    public y(a0 a0Var, a0 a0Var2, Activity activity, g6 g6Var, int i10) {
+        super(a0Var2, activity, false, null, 6, false, g6Var, 16, i10);
+        this.f2 = a0Var;
+        this.e2 = true;
         setDrawBackground(false);
     }
 
-    @Override // org.telegram.ui.x51, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.b61, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         super.onLayout(z10, i10, i11, i12, i13);
-        if (this.d2) {
-            this.d2 = false;
-            this.e2.b.s(null);
+        if (this.e2) {
+            this.e2 = false;
+            this.f2.b.s(null);
         }
     }
 
-    @Override // org.telegram.ui.x51
+    @Override // org.telegram.ui.b61
     public final void p(View view, Long l4, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
-        a0 a0Var = this.e2;
+        a0 a0Var = this.f2;
         int i10 = a0Var.J;
         ArrayList arrayList = a0Var.F;
         LinkedHashMap linkedHashMap = a0Var.E;

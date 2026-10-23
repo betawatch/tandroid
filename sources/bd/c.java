@@ -5,7 +5,7 @@ import df.p;
 import gd.h;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class c extends h {
     public static final Pattern e = Pattern.compile("(\\${2})([\\s\\S]+?)\\1");
@@ -17,7 +17,7 @@ public final class c extends h {
             return null;
         }
         d dVar = new d();
-        dVar.g = k3.j(2, 2, a2);
+        dVar.g = k3.i(2, 2, a2);
         return dVar;
     }
 

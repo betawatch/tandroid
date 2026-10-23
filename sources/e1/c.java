@@ -1,6 +1,5 @@
 package e1;
 
-import ai.o2;
 import android.app.Activity;
 import android.view.View;
 import android.widget.ImageView;
@@ -11,8 +10,7 @@ import b2.t0;
 import b2.t1;
 import b2.y0;
 import c3.g;
-import c3.u;
-import ci.e6;
+import ci.d6;
 import com.google.android.gms.tasks.OnSuccessListener;
 import e2.m0;
 import e2.o;
@@ -43,12 +41,12 @@ import f2.w;
 import gi.l;
 import gi.s4;
 import hi.t;
-import ig.d2;
+import i2.b0;
 import ig.e1;
-import ig.f1;
-import ig.h1;
-import ig.x1;
-import ig.z1;
+import ig.g1;
+import ig.n1;
+import ig.w1;
+import ig.y1;
 import j4.c0;
 import java.io.File;
 import java.io.IOException;
@@ -71,22 +69,24 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_bots;
-import org.telegram.ui.ActionBar.a2;
-import org.telegram.ui.ActionBar.b2;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.ActionBar.c2;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.o2;
+import org.telegram.ui.ActionBar.z1;
 import org.telegram.ui.Cells.i5;
-import org.telegram.ui.Cells.q8;
-import org.telegram.ui.Cells.v8;
+import org.telegram.ui.Cells.r8;
+import org.telegram.ui.Cells.w8;
+import org.telegram.ui.Components.cm0;
 import org.telegram.ui.Components.f5;
-import org.telegram.ui.Components.h61;
-import org.telegram.ui.Components.ll0;
-import org.telegram.ui.Components.zl0;
-import qg.v1;
+import org.telegram.ui.Components.m61;
+import org.telegram.ui.Components.ol0;
+import qg.u1;
+import u2.d0;
+import u2.v;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class c implements OnSuccessListener, l1, a2, ll0, zl0, Utilities.Callback5, v1, CameraController.VideoTakeCallback, g, o, w {
+public final /* synthetic */ class c implements OnSuccessListener, l1, z1, ol0, cm0, Utilities.Callback5, u1, CameraController.VideoTakeCallback, g, o, w {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -95,8 +95,25 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, ll0, 
         this.b = obj;
     }
 
-    @Override // org.telegram.ui.Components.zl0
-    public boolean a(int i10, View view) {
+    @Override // org.telegram.ui.Components.ol0
+    public void a() {
+        ((o1) this.b).invalidate();
+    }
+
+    @Override // f2.w
+    public void b(long j10, x xVar) {
+        switch (this.a) {
+            case 28:
+                c3.b.c(j10, xVar, ((c0) this.b).c);
+                break;
+            default:
+                c3.b.d(j10, xVar, ((c0) this.b).c);
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.cm0
+    public boolean d(int i10, View view) {
         q3 q3Var = (q3) this.b;
         ArrayList arrayList = q3Var.b0;
         ArrayList arrayList2 = q3Var.h0;
@@ -139,24 +156,7 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, ll0, 
         return true;
     }
 
-    @Override // org.telegram.ui.Components.ll0
-    public void b() {
-        ((o1) this.b).invalidate();
-    }
-
-    @Override // f2.w
-    public void c(long j10, x xVar) {
-        switch (this.a) {
-            case 28:
-                c3.b.c(j10, xVar, ((c0) this.b).c);
-                break;
-            default:
-                c3.b.d(j10, xVar, ((c0) this.b).c);
-                break;
-        }
-    }
-
-    @Override // qg.v1
+    @Override // qg.u1
     public void e() {
         xa xaVar = (xa) this.b;
         TextView textView = xaVar.o1;
@@ -170,8 +170,8 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, ll0, 
         textView.setClickable(a2);
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public void g(b2 b2Var, int i10) {
+    @Override // org.telegram.ui.ActionBar.z1
+    public void g(c2 c2Var, int i10) {
         int i11;
         switch (this.a) {
             case 2:
@@ -182,7 +182,7 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, ll0, 
                 }
                 xa xaVar = vbVar.v1;
                 if (xaVar != null) {
-                    xaVar.p0();
+                    xaVar.o0();
                 }
                 lb lbVar = vbVar.c1;
                 if (lbVar != null) {
@@ -217,17 +217,17 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, ll0, 
             case 11:
                 l lVar = (l) this.b;
                 TL_bots.updateStarRefProgram updatestarrefprogram = new TL_bots.updateStarRefProgram();
-                updatestarrefprogram.bot = lVar.getMessagesController().getInputUser(lVar.P);
+                updatestarrefprogram.bot = lVar.getMessagesController().getInputUser(lVar.R);
                 updatestarrefprogram.commission_permille = 0;
-                b2 b2Var2 = new b2(lVar.getParentActivity(), 3, null);
-                b2Var2.r(150L);
-                lVar.getConnectionsManager().sendRequest(updatestarrefprogram, new gi.b(lVar, b2Var2, 0));
+                c2 c2Var2 = new c2(lVar.getParentActivity(), 3, null);
+                c2Var2.r(150L);
+                lVar.getConnectionsManager().sendRequest(updatestarrefprogram, new gi.b(lVar, c2Var2, 0));
                 break;
             default:
-                x1 x1Var = ((ig.o1) this.b).a;
-                i11 = ((n2) x1Var).currentAccount;
-                ig.a2 f7 = ig.a2.f(i11);
-                ArrayList arrayList = x1Var.b;
+                w1 w1Var = ((n1) this.b).a;
+                i11 = ((o2) w1Var).currentAccount;
+                ig.z1 f7 = ig.z1.f(i11);
+                ArrayList arrayList = w1Var.b;
                 int i12 = f7.a;
                 int i13 = 0;
                 while (i13 < arrayList.size()) {
@@ -239,12 +239,12 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, ll0, 
                 }
                 if (!arrayList.isEmpty()) {
                     for (int i14 = 0; i14 < arrayList.size(); i14++) {
-                        z1 c10 = f7.c(((Integer) arrayList.get(i14)).intValue());
+                        y1 c10 = f7.c(((Integer) arrayList.get(i14)).intValue());
                         f7.b.remove(c10);
                         f7.a(c10.b);
                         TLRPC.TL_messages_deleteQuickReplyShortcut tL_messages_deleteQuickReplyShortcut = new TLRPC.TL_messages_deleteQuickReplyShortcut();
                         tL_messages_deleteQuickReplyShortcut.shortcut_id = c10.a;
-                        ConnectionsManager.getInstance(i12).sendRequest(tL_messages_deleteQuickReplyShortcut, new e6(6));
+                        ConnectionsManager.getInstance(i12).sendRequest(tL_messages_deleteQuickReplyShortcut, new d6(6));
                         if ("hello".equals(c10.b)) {
                             ConnectionsManager.getInstance(i12).sendRequest(new TL_account.updateBusinessGreetingMessage(), null);
                             TLRPC.UserFull userFull = MessagesController.getInstance(i12).getUserFull(UserConfig.getInstance(i12).getClientUserId());
@@ -268,7 +268,7 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, ll0, 
                     messagesStorage.getStorageQueue().postRunnable(new w0(2, arrayList, messagesStorage));
                     NotificationCenter.getInstance(i12).lambda$postNotificationNameOnUIThread$1(NotificationCenter.quickRepliesUpdated, new Object[0]);
                 }
-                x1.X(x1Var);
+                w1.X(w1Var);
                 break;
         }
     }
@@ -286,7 +286,7 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, ll0, 
                 ((d1) obj).onCues((d2.c) this.b);
                 break;
             case 17:
-                ((d1) obj).onMediaMetadataChanged(((i2.c0) this.b).a.Q);
+                ((d1) obj).onMediaMetadataChanged(((b0) this.b).a.Q);
                 break;
             case 18:
                 ((d1) obj).onMetadata((t0) this.b);
@@ -297,7 +297,7 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, ll0, 
             case 22:
             case 23:
             default:
-                ((j2.b) obj).b((u2.c0) this.b);
+                ((j2.b) obj).b((d0) this.b);
                 break;
             case 24:
                 ((j2.b) obj).h((y0) this.b);
@@ -306,14 +306,14 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, ll0, 
                 ((j2.b) obj).onSeekStarted((j2.a) this.b);
                 break;
             case 26:
-                ((j2.b) obj).a((i2.f) this.b);
+                ((j2.b) obj).a((i2.e) this.b);
                 break;
         }
     }
 
     @Override // c3.g
     public long k(long j10) {
-        return m0.j((j10 * r0.e) / 1000000, 0L, ((u) this.b).j - 1);
+        return m0.j((j10 * r0.e) / 1000000, 0L, ((c3.w) this.b).j - 1);
     }
 
     @Override // org.telegram.messenger.camera.CameraController.VideoTakeCallback
@@ -431,12 +431,12 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, ll0, 
         switch (this.a) {
             case 5:
                 ma maVar = (ma) this.b;
-                h61 h61Var = (h61) obj;
+                m61 m61Var = (m61) obj;
                 ((Integer) obj3).getClass();
                 ((Float) obj4).getClass();
                 ((Float) obj5).getClass();
-                int i11 = h61Var.d;
-                a8 a8Var = (a8) h61Var.G;
+                int i11 = m61Var.d;
+                a8 a8Var = (a8) m61Var.G;
                 maVar.c(false, true);
                 vb vbVar = maVar.O;
                 if (a8Var != vbVar.K1 && !vbVar.X1) {
@@ -446,9 +446,9 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, ll0, 
                     xa xaVar = vbVar.v1;
                     a8 a8Var2 = vbVar.K1;
                     if (xaVar != null && a8Var2 != null) {
-                        if (xaVar.t0()) {
+                        if (xaVar.s0()) {
                             a8Var2.f();
-                            Utilities.searchQueue.postRunnable(new w9(vbVar, xaVar, a8Var2.i0, a8Var2.j0, a8Var2, xaVar.O0.getPainting().E, xaVar.t0(), gVar, 0));
+                            Utilities.searchQueue.postRunnable(new w9(vbVar, xaVar, a8Var2.i0, a8Var2.j0, a8Var2, xaVar.O0.getPainting().E, xaVar.s0(), gVar, 0));
                             break;
                         } else {
                             gVar.run();
@@ -464,170 +464,170 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, ll0, 
                 ((Integer) obj3).getClass();
                 ((Float) obj4).getClass();
                 ((Float) obj5).getClass();
-                ((s4) this.b).V((h61) obj);
+                ((s4) this.b).V((m61) obj);
                 break;
             case 20:
-                f1 f1Var = (f1) this.b;
-                h61 h61Var2 = (h61) obj;
+                e1 e1Var = (e1) this.b;
+                m61 m61Var2 = (m61) obj;
                 View view = (View) obj2;
                 ((Integer) obj3).getClass();
                 float floatValue = ((Float) obj4).floatValue();
                 ((Float) obj5).getClass();
-                int i12 = h61Var2.d;
+                int i12 = m61Var2.d;
                 if (i12 == -1) {
-                    boolean z10 = !f1Var.e;
-                    f1Var.e = z10;
-                    ((v8) view).setChecked(z10);
-                    f1Var.a.W2.N(true);
-                    f1Var.Y(true);
+                    boolean z10 = !e1Var.f;
+                    e1Var.f = z10;
+                    ((w8) view).setChecked(z10);
+                    e1Var.a.Z2.N(true);
+                    e1Var.Y(true);
                     break;
                 } else if (i12 == -2) {
-                    d2 d2Var = new d2(null);
-                    d2Var.n = f1Var.r;
-                    d2Var.c = new o2(24, f1Var, view);
-                    f1Var.presentFragment(d2Var);
+                    ig.c2 c2Var = new ig.c2(null);
+                    c2Var.n = e1Var.s;
+                    c2Var.c = new ai.o2(24, e1Var, view);
+                    e1Var.presentFragment(c2Var);
                     break;
-                } else if (h61Var2.a == 5 && i12 >= 0 && i12 < f1Var.h.length) {
+                } else if (m61Var2.a == 5 && i12 >= 0 && i12 < e1Var.n.length) {
                     if (!LocaleController.isRTL ? floatValue < view.getMeasuredWidth() - AndroidUtilities.dp(76.0f) : floatValue > AndroidUtilities.dp(76.0f)) {
-                        int i13 = (h61Var2.d + 6) % 7;
+                        int i13 = (m61Var2.d + 6) % 7;
                         int i14 = 0;
-                        for (int i15 = 0; i15 < f1Var.h[i13].size(); i15++) {
-                            if (((e1) f1Var.h[i13].get(i15)).b > i14) {
-                                i14 = ((e1) f1Var.h[i13].get(i15)).b;
+                        for (int i15 = 0; i15 < e1Var.n[i13].size(); i15++) {
+                            if (((ig.d1) e1Var.n[i13].get(i15)).b > i14) {
+                                i14 = ((ig.d1) e1Var.n[i13].get(i15)).b;
                             }
                         }
                         int max = Math.max(0, i14 - 1439);
-                        int i16 = (h61Var2.d + 1) % 7;
+                        int i16 = (m61Var2.d + 1) % 7;
                         int i17 = 1440;
-                        for (int i18 = 0; i18 < f1Var.h[i16].size(); i18++) {
-                            if (((e1) f1Var.h[i16].get(i18)).a < i17) {
-                                i17 = ((e1) f1Var.h[i16].get(i18)).a;
+                        for (int i18 = 0; i18 < e1Var.n[i16].size(); i18++) {
+                            if (((ig.d1) e1Var.n[i16].get(i18)).a < i17) {
+                                i17 = ((ig.d1) e1Var.n[i16].get(i18)).a;
                             }
                         }
                         int i19 = i17 + 1439;
-                        CharSequence charSequence = h61Var2.l;
-                        ArrayList arrayList = f1Var.h[h61Var2.d];
+                        CharSequence charSequence = m61Var2.l;
+                        ArrayList arrayList = e1Var.n[m61Var2.d];
                         int i20 = 0;
                         for (int i21 = 0; i21 < 7; i21++) {
-                            ArrayList arrayList2 = f1Var.h[i21];
+                            ArrayList arrayList2 = e1Var.n[i21];
                             if (arrayList2 != null) {
                                 i20 = Math.max(1, arrayList2.size()) + i20;
                             }
                         }
-                        h1 h1Var = new h1(charSequence, arrayList, max, i19, 28 - i20);
-                        h1Var.f = new bc(f1Var, 22);
-                        h1Var.h = new t(6, f1Var, h61Var2);
-                        f1Var.presentFragment(h1Var);
+                        g1 g1Var = new g1(charSequence, arrayList, max, i19, 28 - i20);
+                        g1Var.f = new bc(e1Var, 22);
+                        g1Var.h = new t(6, e1Var, m61Var2);
+                        e1Var.presentFragment(g1Var);
                         break;
                     } else {
-                        if (f1Var.h[h61Var2.d].isEmpty()) {
+                        if (e1Var.n[m61Var2.d].isEmpty()) {
                             ((i5) view).setChecked(true);
-                            f1Var.h[h61Var2.d].add(new e1(0, 1439));
-                            f1Var.X(h61Var2.d);
+                            e1Var.n[m61Var2.d].add(new ig.d1(0, 1439));
+                            e1Var.X(m61Var2.d);
                         } else {
-                            f1Var.h[h61Var2.d].clear();
+                            e1Var.n[m61Var2.d].clear();
                             ((i5) view).setChecked(false);
                         }
-                        ((i5) view).setValue(f1.a0(f1Var.h[h61Var2.d]));
-                        f1Var.Y(true);
+                        ((i5) view).setValue(e1.a0(e1Var.n[m61Var2.d]));
+                        e1Var.Y(true);
                         break;
                     }
                 }
                 break;
             case 21:
-                final h1 h1Var2 = (h1) this.b;
-                h61 h61Var3 = (h61) obj;
+                final g1 g1Var2 = (g1) this.b;
+                m61 m61Var3 = (m61) obj;
                 final View view2 = (View) obj2;
                 ((Integer) obj3).getClass();
                 ((Float) obj4).getClass();
                 ((Float) obj5).getClass();
-                int i22 = h1Var2.c;
-                int i23 = h1Var2.d;
-                ArrayList arrayList3 = h1Var2.b;
-                int i24 = h61Var3.d;
+                int i22 = g1Var2.c;
+                int i23 = g1Var2.d;
+                ArrayList arrayList3 = g1Var2.b;
+                int i24 = m61Var3.d;
                 if (i24 == -1) {
-                    h1Var2.r = !h1Var2.r;
+                    g1Var2.r = !g1Var2.r;
                     arrayList3.clear();
-                    if (h1Var2.r) {
-                        arrayList3.add(new e1(0, 1439));
+                    if (g1Var2.r) {
+                        arrayList3.add(new ig.d1(0, 1439));
                     }
-                    v8 v8Var = (v8) view2;
-                    boolean z11 = h1Var2.r;
-                    h61Var3.e = z11;
-                    v8Var.setChecked(z11);
-                    boolean z12 = h1Var2.r;
-                    v8Var.b(h6.x0(null, z12 ? h6.f6 : h6.e6, false), z12);
-                    h1Var2.n.W2.N(true);
-                    bc bcVar = h1Var2.f;
+                    w8 w8Var = (w8) view2;
+                    boolean z11 = g1Var2.r;
+                    m61Var3.e = z11;
+                    w8Var.setChecked(z11);
+                    boolean z12 = g1Var2.r;
+                    w8Var.b(k6.x0(null, z12 ? k6.f6 : k6.e6, false), z12);
+                    g1Var2.n.Z2.N(true);
+                    bc bcVar = g1Var2.f;
                     if (bcVar != null) {
                         bcVar.run();
                         break;
                     }
                 } else if (i24 == -2) {
-                    if (arrayList3.isEmpty() || h1Var2.U()) {
-                        if (h1Var2.U()) {
+                    if (arrayList3.isEmpty() || g1Var2.U()) {
+                        if (g1Var2.U()) {
                             arrayList3.clear();
                         }
                         int clamp = Utilities.clamp(480, i23 - 1, i22);
-                        arrayList3.add(new e1(clamp, Utilities.clamp(1200, i23, clamp + 1)));
+                        arrayList3.add(new ig.d1(clamp, Utilities.clamp(1200, i23, clamp + 1)));
                     } else {
-                        int i25 = ((e1) i2.e.h(1, arrayList3)).b;
+                        int i25 = ((ig.d1) i2.o1.i(1, arrayList3)).b;
                         int clamp2 = Utilities.clamp(i25 + 30, i23 - 1, i22);
-                        arrayList3.add(new e1(clamp2, Utilities.clamp((i25 + 1560) / 2, i23, clamp2 + 1)));
+                        arrayList3.add(new ig.d1(clamp2, Utilities.clamp((i25 + 1560) / 2, i23, clamp2 + 1)));
                     }
-                    bc bcVar2 = h1Var2.f;
+                    bc bcVar2 = g1Var2.f;
                     if (bcVar2 != null) {
                         bcVar2.run();
                     }
-                    h1Var2.n.W2.N(true);
+                    g1Var2.n.Z2.N(true);
                     break;
-                } else if (h61Var3.a == 3 && (i10 = i24 / 3) >= 0 && i10 < arrayList3.size()) {
+                } else if (m61Var3.a == 3 && (i10 = i24 / 3) >= 0 && i10 < arrayList3.size()) {
                     int i26 = i10 - 1;
-                    e1 e1Var = i26 >= 0 ? (e1) arrayList3.get(i26) : null;
-                    final e1 e1Var2 = (e1) arrayList3.get(i10);
+                    ig.d1 d1Var = i26 >= 0 ? (ig.d1) arrayList3.get(i26) : null;
+                    final ig.d1 d1Var2 = (ig.d1) arrayList3.get(i10);
                     int i27 = i10 + 1;
-                    e1 e1Var3 = i27 < arrayList3.size() ? (e1) arrayList3.get(i27) : null;
-                    int i28 = h61Var3.d % 3;
+                    ig.d1 d1Var3 = i27 < arrayList3.size() ? (ig.d1) arrayList3.get(i27) : null;
+                    int i28 = m61Var3.d % 3;
                     if (i28 == 0) {
-                        Activity parentActivity = h1Var2.getParentActivity();
+                        Activity parentActivity = g1Var2.getParentActivity();
                         String string = LocaleController.getString(R.string.BusinessHoursDayOpenHourPicker);
-                        int i29 = e1Var2.a;
-                        if (e1Var != null) {
-                            i22 = e1Var.b + 1;
+                        int i29 = d1Var2.a;
+                        if (d1Var != null) {
+                            i22 = d1Var.b + 1;
                         }
                         final int i30 = 0;
-                        f5.W(parentActivity, string, i29, i22, e1Var2.b - 1, new Utilities.Callback() { // from class: ig.g1
+                        f5.X(parentActivity, string, i29, i22, d1Var2.b - 1, new Utilities.Callback() { // from class: ig.f1
                             @Override // org.telegram.messenger.Utilities.Callback
                             public final void run(Object obj6) {
                                 Integer num = (Integer) obj6;
                                 switch (i30) {
                                     case 0:
-                                        h1 h1Var3 = h1Var2;
-                                        boolean V = h1Var3.V();
-                                        q8 q8Var = (q8) view2;
+                                        g1 g1Var3 = g1Var2;
+                                        boolean V = g1Var3.V();
+                                        r8 r8Var = (r8) view2;
                                         int intValue = num.intValue();
-                                        e1Var2.a = intValue;
-                                        q8Var.u(e1.a(intValue), true);
-                                        if (V != h1Var3.V()) {
-                                            h1Var3.n.W2.N(true);
+                                        d1Var2.a = intValue;
+                                        r8Var.w(d1.a(intValue), true);
+                                        if (V != g1Var3.V()) {
+                                            g1Var3.n.Z2.N(true);
                                         }
-                                        bc bcVar3 = h1Var3.f;
+                                        bc bcVar3 = g1Var3.f;
                                         if (bcVar3 != null) {
                                             bcVar3.run();
                                             break;
                                         }
                                         break;
                                     default:
-                                        h1 h1Var4 = h1Var2;
-                                        boolean V2 = h1Var4.V();
-                                        q8 q8Var2 = (q8) view2;
+                                        g1 g1Var4 = g1Var2;
+                                        boolean V2 = g1Var4.V();
+                                        r8 r8Var2 = (r8) view2;
                                         int intValue2 = num.intValue();
-                                        e1Var2.b = intValue2;
-                                        q8Var2.u(e1.a(intValue2), true);
-                                        if (V2 != h1Var4.V()) {
-                                            h1Var4.n.W2.N(true);
+                                        d1Var2.b = intValue2;
+                                        r8Var2.w(d1.a(intValue2), true);
+                                        if (V2 != g1Var4.V()) {
+                                            g1Var4.n.Z2.N(true);
                                         }
-                                        bc bcVar4 = h1Var4.f;
+                                        bc bcVar4 = g1Var4.f;
                                         if (bcVar4 != null) {
                                             bcVar4.run();
                                             break;
@@ -638,46 +638,46 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, ll0, 
                         });
                         break;
                     } else if (i28 == 1) {
-                        Activity parentActivity2 = h1Var2.getParentActivity();
+                        Activity parentActivity2 = g1Var2.getParentActivity();
                         String string2 = LocaleController.getString(R.string.BusinessHoursDayCloseHourPicker);
-                        int i31 = e1Var2.b;
-                        int i32 = e1Var2.a + 1;
-                        if (e1Var3 != null) {
-                            i23 = e1Var3.a - 1;
+                        int i31 = d1Var2.b;
+                        int i32 = d1Var2.a + 1;
+                        if (d1Var3 != null) {
+                            i23 = d1Var3.a - 1;
                         }
                         final int i33 = 1;
-                        f5.W(parentActivity2, string2, i31, i32, i23, new Utilities.Callback() { // from class: ig.g1
+                        f5.X(parentActivity2, string2, i31, i32, i23, new Utilities.Callback() { // from class: ig.f1
                             @Override // org.telegram.messenger.Utilities.Callback
                             public final void run(Object obj6) {
                                 Integer num = (Integer) obj6;
                                 switch (i33) {
                                     case 0:
-                                        h1 h1Var3 = h1Var2;
-                                        boolean V = h1Var3.V();
-                                        q8 q8Var = (q8) view2;
+                                        g1 g1Var3 = g1Var2;
+                                        boolean V = g1Var3.V();
+                                        r8 r8Var = (r8) view2;
                                         int intValue = num.intValue();
-                                        e1Var2.a = intValue;
-                                        q8Var.u(e1.a(intValue), true);
-                                        if (V != h1Var3.V()) {
-                                            h1Var3.n.W2.N(true);
+                                        d1Var2.a = intValue;
+                                        r8Var.w(d1.a(intValue), true);
+                                        if (V != g1Var3.V()) {
+                                            g1Var3.n.Z2.N(true);
                                         }
-                                        bc bcVar3 = h1Var3.f;
+                                        bc bcVar3 = g1Var3.f;
                                         if (bcVar3 != null) {
                                             bcVar3.run();
                                             break;
                                         }
                                         break;
                                     default:
-                                        h1 h1Var4 = h1Var2;
-                                        boolean V2 = h1Var4.V();
-                                        q8 q8Var2 = (q8) view2;
+                                        g1 g1Var4 = g1Var2;
+                                        boolean V2 = g1Var4.V();
+                                        r8 r8Var2 = (r8) view2;
                                         int intValue2 = num.intValue();
-                                        e1Var2.b = intValue2;
-                                        q8Var2.u(e1.a(intValue2), true);
-                                        if (V2 != h1Var4.V()) {
-                                            h1Var4.n.W2.N(true);
+                                        d1Var2.b = intValue2;
+                                        r8Var2.w(d1.a(intValue2), true);
+                                        if (V2 != g1Var4.V()) {
+                                            g1Var4.n.Z2.N(true);
                                         }
-                                        bc bcVar4 = h1Var4.f;
+                                        bc bcVar4 = g1Var4.f;
                                         if (bcVar4 != null) {
                                             bcVar4.run();
                                             break;
@@ -690,10 +690,10 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, ll0, 
                     } else if (i28 == 2) {
                         arrayList3.remove(i10);
                         if (arrayList3.isEmpty()) {
-                            arrayList3.add(new e1(0, 1439));
+                            arrayList3.add(new ig.d1(0, 1439));
                         }
-                        h1Var2.n.W2.N(true);
-                        bc bcVar3 = h1Var2.f;
+                        g1Var2.n.Z2.N(true);
+                        bc bcVar3 = g1Var2.f;
                         if (bcVar3 != null) {
                             bcVar3.run();
                             break;
@@ -705,14 +705,14 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, ll0, 
                 ((Integer) obj3).getClass();
                 ((Float) obj4).getClass();
                 ((Float) obj5).getClass();
-                d2.U((d2) this.b, (h61) obj, (View) obj2);
+                ig.c2.U((ig.c2) this.b, (m61) obj, (View) obj2);
                 break;
         }
     }
 
-    public /* synthetic */ c(j2.a aVar, u2.u uVar, u2.c0 c0Var, IOException iOException, boolean z10) {
+    public /* synthetic */ c(j2.a aVar, v vVar, d0 d0Var, IOException iOException, boolean z10) {
         this.a = 27;
-        this.b = c0Var;
+        this.b = d0Var;
     }
 
     public /* synthetic */ c(Object obj, int i10) {

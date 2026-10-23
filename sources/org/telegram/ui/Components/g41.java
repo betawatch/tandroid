@@ -1,27 +1,28 @@
 package org.telegram.ui.Components;
 
-import android.view.ViewGroup;
+import org.telegram.messenger.LanguageDetector;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class g41 extends s4.k {
-    public final /* synthetic */ t41 F;
+public final /* synthetic */ class g41 implements LanguageDetector.StringCallback, LanguageDetector.ExceptionCallback {
+    public final /* synthetic */ String a;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ Utilities.Callback2 c;
 
-    public g41(t41 t41Var) {
-        this.F = t41Var;
+    public /* synthetic */ g41(String str, String str2, Utilities.Callback2 callback2) {
+        this.a = str;
+        this.b = str2;
+        this.c = callback2;
     }
 
-    @Override // s4.k
-    public final void O() {
-        ViewGroup viewGroup;
-        viewGroup = ((org.telegram.ui.ActionBar.f3) this.F).containerView;
-        viewGroup.invalidate();
+    @Override // org.telegram.messenger.LanguageDetector.StringCallback
+    public void run(String str) {
+        y41.I(this.a, str, this.b, this.c);
     }
 
-    @Override // s4.k
-    public final void P(s4.b1 b1Var) {
-        ViewGroup viewGroup;
-        viewGroup = ((org.telegram.ui.ActionBar.f3) this.F).containerView;
-        viewGroup.invalidate();
+    @Override // org.telegram.messenger.LanguageDetector.ExceptionCallback
+    public void run(Exception exc) {
+        y41.I(this.a, "en", this.b, this.c);
     }
 }

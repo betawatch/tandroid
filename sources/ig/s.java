@@ -6,25 +6,25 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.i5;
 import org.telegram.ui.Components.p6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class s extends EditTextBoldCursor {
     public final i5 b;
     public int c;
     public final p6 d;
-    public final /* synthetic */ d6 e;
+    public final /* synthetic */ g6 e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public s(Context context, d6 d6Var) {
+    public s(Context context, g6 g6Var) {
         super(context);
-        this.e = d6Var;
+        this.e = g6Var;
         this.b = new i5(this);
         p6 p6Var = new p6(false, true, true);
         this.d = p6Var;
@@ -37,7 +37,7 @@ public final class s extends EditTextBoldCursor {
     @Override // android.view.View
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
-        int a2 = this.b.a(h6.w0(this.c < 0 ? h6.p7 : h6.P5, this.e), false);
+        int a2 = this.b.a(k6.w0(this.c < 0 ? k6.p7 : k6.P5, this.e), false);
         p6 p6Var = this.d;
         p6Var.u(a2);
         p6Var.setBounds(getScrollX(), 0, getWidth() + getScrollX(), getHeight());

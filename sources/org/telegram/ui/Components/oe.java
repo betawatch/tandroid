@@ -9,16 +9,16 @@ import org.telegram.messenger.NotificationsController;
 import org.telegram.messenger.NotificationsSettingsFacade;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class oe implements View.OnClickListener {
-    public final /* synthetic */ org.telegram.ui.qn a;
+    public final /* synthetic */ org.telegram.ui.sn a;
     public final /* synthetic */ Activity b;
     public final /* synthetic */ ChatActivityEnterView c;
 
-    public oe(ChatActivityEnterView chatActivityEnterView, org.telegram.ui.qn qnVar, Activity activity) {
+    public oe(ChatActivityEnterView chatActivityEnterView, org.telegram.ui.sn snVar, Activity activity) {
         this.c = chatActivityEnterView;
-        this.a = qnVar;
+        this.a = snVar;
         this.b = activity;
     }
 
@@ -26,21 +26,21 @@ public final class oe implements View.OnClickListener {
     public final void onClick(View view) {
         String str;
         int i10;
-        org.telegram.ui.qn qnVar = this.a;
-        if (qnVar == null) {
+        org.telegram.ui.sn snVar = this.a;
+        if (snVar == null) {
             return;
         }
         ChatActivityEnterView chatActivityEnterView = this.c;
         chatActivityEnterView.g2 = !chatActivityEnterView.g2;
         if (chatActivityEnterView.e0 == null) {
-            chatActivityEnterView.e0 = new yr(this.b, R.drawable.input_notify_on, org.telegram.ui.ActionBar.h6.Wk);
+            chatActivityEnterView.e0 = new yr(this.b, R.drawable.input_notify_on, org.telegram.ui.ActionBar.k6.Wk);
         }
         chatActivityEnterView.e0.a(chatActivityEnterView.g2, true);
         chatActivityEnterView.I1.setImageDrawable(chatActivityEnterView.e0);
         MessagesController.getNotificationsSettings(chatActivityEnterView.Q).edit().putBoolean(NotificationsSettingsFacade.PROPERTY_SILENT + chatActivityEnterView.Q2, chatActivityEnterView.g2).commit();
-        NotificationsController.getInstance(chatActivityEnterView.Q).updateServerNotificationsSettings(chatActivityEnterView.Q2, qnVar == null ? 0L : qnVar.d());
-        qnVar.T7();
-        UndoView undoView = qnVar.y3;
+        NotificationsController.getInstance(chatActivityEnterView.Q).updateServerNotificationsSettings(chatActivityEnterView.Q2, snVar == null ? 0L : snVar.d());
+        snVar.T7();
+        UndoView undoView = snVar.K3;
         if (undoView != null) {
             undoView.j(!chatActivityEnterView.g2 ? 54 : 55, 0L, null);
         }

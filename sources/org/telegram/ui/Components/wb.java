@@ -1,16 +1,16 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class wb extends yb implements vb {
-    public x90 d;
+    public y90 d;
 
     @Override // org.telegram.ui.Components.yb
     public void setTextColor(int i10) {
         super.setTextColor(i10);
-        x90 x90Var = this.d;
-        if (x90Var != null) {
-            x90Var.setTextColor(i10);
+        y90 y90Var = this.d;
+        if (y90Var != null) {
+            y90Var.setTextColor(i10);
         }
     }
 }

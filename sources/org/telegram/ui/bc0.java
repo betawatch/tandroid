@@ -1,51 +1,69 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import java.util.ArrayList;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.UserObject;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.IMapsProvider;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class bc0 extends hg.s0 {
-    public boolean m0;
-    public final /* synthetic */ nc0 n0;
+public final /* synthetic */ class bc0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ sc0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bc0(nc0 nc0Var, Context context, int i10, long j10, org.telegram.ui.ActionBar.d6 d6Var, boolean z10, boolean z11) {
-        super(context, i10, j10, false, d6Var, false, z10, z11);
-        this.n0 = nc0Var;
-        this.m0 = true;
+    public /* synthetic */ bc0(sc0 sc0Var, int i10) {
+        this.a = i10;
+        this.b = sc0Var;
     }
 
-    @Override // hg.s0
-    public final void K() {
-        this.n0.q0(null);
-    }
-
-    @Override // hg.s0
-    public final void N(ArrayList arrayList) {
-        int i10;
-        nc0 nc0Var = this.n0;
-        MessageObject messageObject = nc0Var.B0;
-        if (messageObject != null && messageObject.isLiveLocation()) {
-            if (arrayList != null) {
-                i10 = 0;
-                for (int i11 = 0; i11 < arrayList.size(); i11++) {
-                    hc0 hc0Var = (hc0) arrayList.get(i11);
-                    if (hc0Var != null && !UserObject.isUserSelf(hc0Var.c)) {
-                        i10++;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                sc0 sc0Var = this.b;
+                IMapsProvider.ICameraUpdate iCameraUpdate = sc0Var.J;
+                if (iCameraUpdate != null) {
+                    sc0Var.I.moveCamera(iCameraUpdate);
+                    sc0Var.J = null;
+                    break;
+                }
+                break;
+            case 1:
+                sc0 sc0Var2 = this.b;
+                sc0Var2.getLocationController().setProximityLocation(sc0Var2.e0, 0, true);
+                sc0Var2.G = false;
+                break;
+            case 2:
+                sc0 sc0Var3 = this.b;
+                IMapsProvider.IMap iMap = sc0Var3.I;
+                if (iMap != null) {
+                    iMap.setPadding(AndroidUtilities.dp(70.0f), 0, AndroidUtilities.dp(70.0f), AndroidUtilities.dp(10.0f));
+                }
+                if (!sc0Var3.R.getRadiusSet()) {
+                    double d = sc0Var3.P;
+                    if (d > 0.0d) {
+                        sc0Var3.O.setRadius(d);
+                    } else {
+                        IMapsProvider.ICircle iCircle = sc0Var3.O;
+                        if (iCircle != null) {
+                            iCircle.remove();
+                            sc0Var3.O = null;
+                        }
                     }
                 }
-            } else {
-                i10 = 0;
-            }
-            if (this.m0 && i10 == 1) {
-                nc0Var.i0 = ((hc0) arrayList.get(0)).a;
-            }
-            this.m0 = false;
-            nc0Var.Z.setVisibility(i10 != 1 ? 8 : 0);
+                sc0Var3.R = null;
+                break;
+            case 3:
+                pc0 pc0Var = this.b.x;
+                if (pc0Var != null) {
+                    pc0Var.a();
+                    break;
+                }
+                break;
+            case 4:
+                sc0.V(this.b);
+                break;
+            default:
+                AndroidUtilities.runOnUIThread(new bc0(this.b, 0));
+                break;
         }
-        super.N(arrayList);
     }
 }

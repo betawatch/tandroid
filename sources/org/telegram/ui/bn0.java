@@ -1,68 +1,71 @@
 package org.telegram.ui;
 
-import android.widget.FrameLayout;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import org.telegram.messenger.FileLog;
+import android.app.Activity;
+import android.webkit.WebView;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class bn0 implements OnCompleteListener, org.telegram.ui.ActionBar.a2, nt {
+public final /* synthetic */ class bn0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ eo0 b;
+    public final /* synthetic */ io0 b;
+    public final /* synthetic */ TLObject c;
 
-    public /* synthetic */ bn0(eo0 eo0Var, int i10) {
+    public /* synthetic */ bn0(io0 io0Var, TLObject tLObject, int i10) {
         this.a = i10;
-        this.b = eo0Var;
+        this.b = io0Var;
+        this.c = tLObject;
     }
 
-    @Override // org.telegram.ui.nt
-    public void L0(ht htVar) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
-            case 2:
-                eo0 eo0Var = this.b;
-                eo0Var.A0 = htVar;
-                eo0Var.f[4].setText(htVar.a);
+            case 0:
+                io0.e0(this.b, this.c);
                 break;
-            default:
-                eo0 eo0Var2 = this.b;
-                eo0Var2.A0 = htVar;
-                eo0Var2.f[4].setText(htVar.a);
-                eo0Var2.B0 = htVar.d;
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.a2
-    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        switch (this.a) {
             case 1:
-                eo0 eo0Var = this.b;
-                eo0Var.I0(eo0Var.R0[0]);
+                io0 io0Var = this.b;
+                Utilities.Callback callback = io0Var.d1;
+                TLObject tLObject = this.c;
+                if (callback != null) {
+                    callback.run((TLRPC.TL_payments_paymentVerificationNeeded) tLObject);
+                }
+                io0Var.D0(false);
+                io0Var.z0 = true;
+                io0Var.H0(true, true);
+                org.telegram.ui.Components.cr crVar = io0Var.r;
+                if (crVar != null) {
+                    crVar.setVisibility(0);
+                }
+                org.telegram.ui.ActionBar.u0 u0Var = io0Var.n;
+                if (u0Var != null) {
+                    u0Var.setEnabled(false);
+                    io0Var.n.getContentView().setVisibility(4);
+                }
+                org.telegram.ui.ActionBar.h5 parentLayout = io0Var.getParentLayout();
+                Activity parentActivity = io0Var.getParentActivity();
+                io0Var.getMessagesController().newMessageCallback = new e7(io0Var, parentLayout, parentActivity, 17);
+                WebView webView = io0Var.w;
+                if (webView != null) {
+                    webView.setVisibility(0);
+                    WebView webView2 = io0Var.w;
+                    String str = ((TLRPC.TL_payments_paymentVerificationNeeded) tLObject).url;
+                    io0Var.x = str;
+                    webView2.loadUrl(str);
+                }
+                io0Var.a1 = true;
+                io0Var.f1 = 3;
+                ho0 ho0Var = io0Var.Z0;
+                if (ho0Var != null) {
+                    ho0Var.a(3);
+                    break;
+                }
                 break;
-            case 2:
             default:
-                eo0 eo0Var2 = this.b;
-                eo0Var2.D0(true);
-                eo0Var2.z0();
+                io0.c0(this.b, this.c);
                 break;
-            case 3:
-                this.b.A0(true);
-                break;
-        }
-    }
-
-    @Override // com.google.android.gms.tasks.OnCompleteListener
-    public void onComplete(Task task) {
-        eo0 eo0Var = this.b;
-        eo0Var.getClass();
-        if (!task.isSuccessful()) {
-            FileLog.e("isReadyToPay failed", task.getException());
-            return;
-        }
-        FrameLayout frameLayout = eo0Var.O;
-        if (frameLayout != null) {
-            frameLayout.setVisibility(0);
         }
     }
 }

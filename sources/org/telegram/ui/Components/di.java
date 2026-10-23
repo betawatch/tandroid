@@ -9,23 +9,25 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class di implements TextWatcher {
     public boolean a;
     public boolean b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.n2 c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.o2 c;
     public final /* synthetic */ ti d;
 
-    public di(ti tiVar, org.telegram.ui.ActionBar.n2 n2Var) {
+    public di(ti tiVar, org.telegram.ui.ActionBar.o2 o2Var) {
         this.d = tiVar;
-        this.c = n2Var;
+        this.c = o2Var;
     }
 
     @Override // android.text.TextWatcher
     public final void afterTextChanged(Editable editable) {
         boolean z10;
         int i10;
+        org.telegram.ui.ActionBar.g6 g6Var;
+        org.telegram.ui.ActionBar.g6 g6Var2;
         ti tiVar = this.d;
         q6 q6Var = tiVar.s;
         ci ciVar = tiVar.S0;
@@ -51,7 +53,7 @@ public final class di implements TextWatcher {
         tiVar.e.a(codePointCount > 0, true);
         int i12 = tiVar.K;
         if (i12 <= 0 || (i10 = i12 - tiVar.L) > 100) {
-            q6Var2.animate().alpha(0.0f).scaleX(0.5f).scaleY(0.5f).setDuration(100L).setListener(new org.telegram.ui.nq(this, 10));
+            q6Var2.animate().alpha(0.0f).scaleX(0.5f).scaleY(0.5f).setDuration(100L).setListener(new org.telegram.ui.pq(this, 10));
             q6Var.setAlpha(0.0f);
             z10 = true;
         } else {
@@ -69,10 +71,14 @@ public final class di implements TextWatcher {
             q6Var2.animate().setListener(null).cancel();
             q6Var2.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(100L).start();
             if (i10 < 0) {
-                q6Var2.setTextColor(tiVar.getThemedColor(org.telegram.ui.ActionBar.h6.p7));
+                int i13 = org.telegram.ui.ActionBar.k6.p7;
+                g6Var2 = ((org.telegram.ui.ActionBar.h3) tiVar).resourcesProvider;
+                org.telegram.ui.ActionBar.r6.a0(q6Var2, i13, g6Var2);
                 z10 = false;
             } else {
-                q6Var2.setTextColor(tiVar.getThemedColor(org.telegram.ui.ActionBar.h6.y6));
+                int i14 = org.telegram.ui.ActionBar.k6.y6;
+                g6Var = ((org.telegram.ui.ActionBar.h3) tiVar).resourcesProvider;
+                org.telegram.ui.ActionBar.r6.a0(q6Var2, i14, g6Var);
                 z10 = true;
             }
             q6Var.c(LocaleController.formatNumber(j10, ','), false, true);
@@ -84,15 +90,15 @@ public final class di implements TextWatcher {
         }
         if (!tiVar.l2 && !MessagesController.getInstance(i11).premiumFeaturesBlocked() && !UserConfig.getInstance(i11).isPremium() && tiVar.L > MessagesController.getInstance(i11).captionLengthLimitDefault && tiVar.L < MessagesController.getInstance(i11).captionLengthLimitPremium) {
             tiVar.l2 = true;
-            tiVar.S1(this.c);
+            tiVar.W1(this.c);
         }
         if (tiVar.c0) {
             if (ciVar.getEditText().getLineCount() > 2 && !TextUtils.isEmpty(ciVar.getText().toString().trim())) {
                 z11 = true;
             }
-            tiVar.Q1(z11);
+            tiVar.U1(z11);
         }
-        tiVar.f1(true);
+        tiVar.i1(true);
     }
 
     @Override // android.text.TextWatcher
@@ -101,13 +107,13 @@ public final class di implements TextWatcher {
             this.a = true;
         }
         ti tiVar = this.d;
-        if (tiVar.E2 == null) {
-            ti.S(tiVar);
+        if (tiVar.H2 == null) {
+            ti.R(tiVar);
         }
-        if (tiVar.E2.getAdapter() != null) {
-            tiVar.E2.setReversed(true);
-            tiVar.E2.getAdapter().U(charSequence, tiVar.S0.getEditText().getSelectionStart(), null, false, false);
-            tiVar.Y1();
+        if (tiVar.H2.getAdapter() != null) {
+            tiVar.H2.setReversed(true);
+            tiVar.H2.getAdapter().U(charSequence, tiVar.S0.getEditText().getSelectionStart(), null, false, false);
+            tiVar.c2();
         }
     }
 

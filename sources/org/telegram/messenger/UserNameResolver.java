@@ -9,7 +9,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public class UserNameResolver {
     private static final long CACHE_TIME = 3600000;
@@ -17,7 +17,7 @@ public class UserNameResolver {
     android.util.LruCache<String, CachedPeer> resolvedCache = new android.util.LruCache<>(100);
     HashMap<String, ArrayList<Utilities.Callback<Long>>> resolvingConsumers = new HashMap<>();
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public class CachedPeer {
         final long peerId;
         final long time = System.currentTimeMillis();
@@ -33,7 +33,7 @@ public class UserNameResolver {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void lambda$resolve$0(String str, TLRPC.TL_error tL_error, TLObject tLObject) {
-        org.telegram.ui.ActionBar.n2 R;
+        org.telegram.ui.ActionBar.o2 R;
         ArrayList<Utilities.Callback<Long>> remove = this.resolvingConsumers.remove(str);
         if (remove == null) {
             return;
@@ -68,7 +68,7 @@ public class UserNameResolver {
         if (str3 == null || !str3.contains("FLOOD_WAIT") || (R = LaunchActivity.R()) == null) {
             return;
         }
-        nk.q(R.string.FloodWait, org.telegram.ui.Components.xc.a0(R), null);
+        sl.q(R.string.FloodWait, org.telegram.ui.Components.xc.a0(R), null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -112,7 +112,7 @@ public class UserNameResolver {
                 StringBuilder sb2 = new StringBuilder("resolve username from cache ");
                 sb2.append(str);
                 sb2.append(" ");
-                i2.e.x(sb2, cachedPeer.peerId);
+                i2.o1.x(sb2, cachedPeer.peerId);
                 return null;
             }
             this.resolvedCache.remove(str);

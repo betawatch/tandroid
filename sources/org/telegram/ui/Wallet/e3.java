@@ -1,67 +1,53 @@
 package org.telegram.ui.Wallet;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.c71;
-import org.telegram.ui.Components.g61;
-import org.telegram.ui.Components.h61;
-import org.telegram.ui.Components.jm0;
-import org.telegram.ui.Components.u61;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final class e3 extends g61 {
-    public static final /* synthetic */ int a = 0;
+public final class e3 {
+    public final HashSet a = new HashSet();
+    public final HashMap b = new HashMap();
 
-    static {
-        g61.setup(new e3());
-    }
-
-    public static boolean a(TL_wallet.walletTransaction wallettransaction, TL_wallet.walletTransaction wallettransaction2) {
-        TL_wallet.walletTransaction wallettransaction3 = wallettransaction instanceof d3 ? ((d3) wallettransaction).a : wallettransaction;
-        TL_wallet.walletTransaction wallettransaction4 = wallettransaction2 instanceof d3 ? ((d3) wallettransaction2).a : wallettransaction2;
-        return wallettransaction3 == wallettransaction4 || m0.f0(wallettransaction, wallettransaction2) || m0.f0(wallettransaction3, wallettransaction4);
-    }
-
-    @Override // org.telegram.ui.Components.g61
-    public final void bindView(View view, h61 h61Var, boolean z10, u61 u61Var, c71 c71Var) {
-        ((g3) view).h((TL_wallet.walletTransaction) h61Var.G, (f3) h61Var.H, z10);
-    }
-
-    @Override // org.telegram.ui.Components.g61
-    public final boolean contentsEquals(h61 h61Var, h61 h61Var2) {
-        Object obj = h61Var.G;
-        if (!(obj instanceof TL_wallet.walletTransaction)) {
-            return false;
+    public static String c(int i10, String str) {
+        if (str.length() <= (i10 * 2) + 1) {
+            return str;
         }
-        Object obj2 = h61Var2.G;
-        if (obj2 instanceof TL_wallet.walletTransaction) {
-            return ((TL_wallet.walletTransaction) obj).equals((TL_wallet.walletTransaction) obj2);
-        }
-        return false;
+        return str.substring(0, i10) + "…" + str.substring(str.length() - i10);
     }
 
-    @Override // org.telegram.ui.Components.g61
-    public final View createView(Context context, jm0 jm0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
-        return new g3(context, i10, d6Var);
+    public final String a(String str) {
+        if (str == null) {
+            return null;
+        }
+        String str2 = (String) this.b.get(str);
+        return str2 == null ? str : str2;
     }
 
-    @Override // org.telegram.ui.Components.g61
-    public final boolean equals(h61 h61Var, h61 h61Var2) {
-        Object obj = h61Var.G;
-        if (!(obj instanceof TL_wallet.walletTransaction)) {
-            return false;
+    public final void b(int i10, ArrayList arrayList) {
+        HashMap hashMap = new HashMap();
+        int size = arrayList.size();
+        int i11 = 0;
+        while (i11 < size) {
+            Object obj = arrayList.get(i11);
+            i11++;
+            String str = (String) obj;
+            String c10 = c(i10, str);
+            ArrayList arrayList2 = (ArrayList) hashMap.get(c10);
+            if (arrayList2 == null) {
+                arrayList2 = new ArrayList();
+                hashMap.put(c10, arrayList2);
+            }
+            arrayList2.add(str);
         }
-        Object obj2 = h61Var2.G;
-        if (obj2 instanceof TL_wallet.walletTransaction) {
-            return a((TL_wallet.walletTransaction) obj, (TL_wallet.walletTransaction) obj2);
+        for (ArrayList arrayList3 : hashMap.values()) {
+            if (arrayList3.size() == 1) {
+                String str2 = (String) arrayList3.get(0);
+                this.b.put(str2, c(i10, str2));
+            } else {
+                b(i10 + 1, arrayList3);
+            }
         }
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.g61
-    public final boolean isClickable() {
-        return true;
     }
 }

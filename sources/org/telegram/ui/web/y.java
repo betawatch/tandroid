@@ -1,15 +1,15 @@
 package org.telegram.ui.web;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class y implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ a1 b;
+    public final /* synthetic */ b1 b;
     public final /* synthetic */ String c;
 
-    public /* synthetic */ y(a1 a1Var, String str, int i10) {
+    public /* synthetic */ y(b1 b1Var, String str, int i10) {
         this.a = i10;
-        this.b = a1Var;
+        this.b = b1Var;
         this.c = str;
     }
 
@@ -17,24 +17,24 @@ public final /* synthetic */ class y implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                x0 x0Var = this.b.a;
-                if (x0Var != null) {
-                    x0Var.d(this.c);
+                y0 y0Var = this.b.a;
+                if (y0Var != null) {
+                    y0Var.d(this.c);
                     break;
                 }
                 break;
             default:
-                a1 a1Var = this.b;
-                a1Var.N = false;
-                a1Var.P = 0L;
-                a1Var.T = false;
+                b1 b1Var = this.b;
+                b1Var.N = false;
+                b1Var.P = 0L;
+                b1Var.T = false;
                 String str = this.c;
-                a1Var.b = str;
-                a1Var.c();
-                x0 x0Var2 = a1Var.a;
-                if (x0Var2 != null) {
-                    x0Var2.onResume();
-                    a1Var.a.loadUrl(str);
+                b1Var.b = str;
+                b1Var.c();
+                y0 y0Var2 = b1Var.a;
+                if (y0Var2 != null) {
+                    y0Var2.onResume();
+                    b1Var.a.loadUrl(str);
                     break;
                 }
                 break;

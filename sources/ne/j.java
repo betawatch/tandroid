@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class j implements Iterable {
     public final f a;
@@ -28,7 +28,7 @@ public final class j implements Iterable {
 
     public final void h(float f7) {
         i iVar = this.d;
-        boolean z10 = iVar.a.k(f7) || (iVar.c.a(f7) || (iVar.g.a(f7) || (iVar.f.a(f7) || (iVar.e.a(f7) || (iVar.d.a(f7) || iVar.b.a(f7))))));
+        boolean z10 = iVar.a.u(f7) || (iVar.c.a(f7) || (iVar.g.a(f7) || (iVar.f.a(f7) || (iVar.e.a(f7) || (iVar.d.a(f7) || iVar.b.a(f7))))));
         ArrayList arrayList = this.b;
         int size = arrayList.size();
         int i10 = 0;
@@ -44,7 +44,7 @@ public final class j implements Iterable {
             z10 = z11 || z10;
         }
         if (z10) {
-            this.a.F();
+            this.a.E();
             if (f7 == 1.0f) {
                 p(true);
             }
@@ -137,7 +137,7 @@ public final class j implements Iterable {
             iVar.g.d(i11);
             iVar.d.d(i12);
             iVar.e.d(i13);
-            iVar.a.c();
+            iVar.a.a();
             return;
         }
         m mVar2 = iVar.f;
@@ -165,9 +165,9 @@ public final class j implements Iterable {
             o();
             mVar3.c = f17;
         }
-        if (fVar.i()) {
+        if (fVar.r()) {
             o();
-            fVar.m();
+            fVar.x();
         }
     }
 
@@ -211,7 +211,7 @@ public final class j implements Iterable {
         iVar.f.c(z10);
         iVar.g.c(z10);
         iVar.c.c(z10);
-        iVar.a.h(z10);
+        iVar.a.k(z10);
     }
 
     public final void q(List list, boolean z10) {
@@ -255,7 +255,7 @@ public final class j implements Iterable {
             }
             i.a(iVar, size2, false);
             n(false);
-            this.a.F();
+            this.a.E();
             return;
         }
         if (list != null && !list.isEmpty()) {

@@ -16,10 +16,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.bs;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class q5 extends ViewGroup {
     public final RectF E;
@@ -35,7 +35,7 @@ public final class q5 extends ViewGroup {
     public int O;
     public int P;
     public g6 a;
-    public final org.telegram.ui.ActionBar.d6 b;
+    public final org.telegram.ui.ActionBar.g6 b;
     public int[] c;
     public int[] d;
     public int[] e;
@@ -49,7 +49,7 @@ public final class q5 extends ViewGroup {
     public final Paint x;
     public final RectF y;
 
-    public q5(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+    public q5(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
         super(context);
         this.c = new int[0];
         this.d = new int[0];
@@ -66,7 +66,7 @@ public final class q5 extends ViewGroup {
         this.y = new RectF();
         this.E = new RectF();
         this.F = new Path();
-        this.b = d6Var;
+        this.b = g6Var;
         setClipChildren(false);
         setClipToPadding(false);
         setWillNotDraw(false);
@@ -124,27 +124,27 @@ public final class q5 extends ViewGroup {
     }
 
     public final void b() {
-        int i10 = h6.qh;
-        org.telegram.ui.ActionBar.d6 d6Var = this.b;
-        this.n.setColor(h6.w0(i10, d6Var));
-        int w02 = h6.w0(h6.M6, d6Var);
+        int i10 = k6.qh;
+        org.telegram.ui.ActionBar.g6 g6Var = this.b;
+        this.n.setColor(k6.w0(i10, g6Var));
+        int w02 = k6.w0(k6.M6, g6Var);
         int red = Color.red(w02);
         int green = Color.green(w02);
         int blue = Color.blue(w02);
-        this.r.setColor(h6.w0(h6.ph, d6Var));
+        this.r.setColor(k6.w0(k6.ph, g6Var));
         this.s.setColor(Color.argb(20, red, green, blue));
         this.H = 255;
-        int i11 = h6.Oh;
-        this.v.setColor(h6.w0(i11, d6Var));
+        int i11 = k6.Oh;
+        this.v.setColor(k6.w0(i11, g6Var));
         Paint.Style style = Paint.Style.FILL;
         Paint paint = this.w;
         paint.setStyle(style);
-        this.O = h6.w0(h6.E6, d6Var);
-        this.P = h6.w0(h6.Sh, d6Var);
+        this.O = k6.w0(k6.E6, g6Var);
+        this.P = k6.w0(k6.Sh, g6Var);
         paint.setColor(this.O);
         Paint paint2 = this.x;
         paint2.setStyle(style);
-        paint2.setColor(h6.w0(i11, d6Var));
+        paint2.setColor(k6.w0(i11, g6Var));
         invalidate();
     }
 
@@ -813,9 +813,9 @@ public final class q5 extends ViewGroup {
         this.d = new int[i18];
         int dp5 = AndroidUtilities.dp(g6Var2.a.compact ? 20.0f : 50.0f);
         int i20 = this.a.a.compact ? 5 : 12;
-        int b10 = i19 == 2 ? org.telegram.messenger.g0.b(i20 * 4, size / 2, 0) : Math.max(0, Math.round(size / 1.5f));
+        int g10 = i19 == 2 ? i2.o1.g(i20 * 4, size / 2, 0) : Math.max(0, Math.round(size / 1.5f));
         float f7 = i20 * 2;
-        int y3 = org.telegram.messenger.g0.y(f7, b10, dp5);
+        int b10 = org.telegram.messenger.v0.b(f7, g10, dp5);
         for (int i21 = 0; i21 < i19; i21++) {
             this.c[i21] = dp5;
         }
@@ -832,7 +832,7 @@ public final class q5 extends ViewGroup {
                 if (g6.n(r5Var.b) == 1 && (a2 = this.a.a(r5Var.b)) >= 0 && a2 < i19) {
                     int dp6 = AndroidUtilities.dp(f7) + Math.round(Layout.getDesiredWidth(h1Var.getText(), h1Var.getPaint()));
                     int[] iArr = this.c;
-                    iArr[a2] = Math.max(iArr[a2], Math.min(y3, dp6));
+                    iArr[a2] = Math.max(iArr[a2], Math.min(b10, dp6));
                 }
             }
             i22++;
@@ -853,7 +853,7 @@ public final class q5 extends ViewGroup {
                         for (int i25 = a10; i25 < min; i25++) {
                             i24 += this.c[i25];
                         }
-                        int min2 = Math.min((min - a10) * y3, AndroidUtilities.dp(f7) + Math.round(Layout.getDesiredWidth(h1Var2.getText(), h1Var2.getPaint()))) - i24;
+                        int min2 = Math.min((min - a10) * b10, AndroidUtilities.dp(f7) + Math.round(Layout.getDesiredWidth(h1Var2.getText(), h1Var2.getPaint()))) - i24;
                         while (a10 < min && min2 > 0) {
                             int i26 = ((min2 + r14) - 1) / (min - a10);
                             int[] iArr2 = this.c;

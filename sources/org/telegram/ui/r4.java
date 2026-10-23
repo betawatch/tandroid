@@ -1,38 +1,26 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class r4 extends org.telegram.ui.ActionBar.n2 {
-    public org.telegram.ui.Components.jm0 a;
-    public q4 b;
+public final class r4 implements Runnable {
+    public final /* synthetic */ u4 a;
 
-    @Override // org.telegram.ui.ActionBar.n2
-    public final View createView(Context context) {
-        this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setTitle(LocaleController.getString(R.string.AudioRecorderSettings));
-        this.actionBar.setActionBarMenuOnItemClick(new ah.s(this, 22));
-        FrameLayout frameLayout = new FrameLayout(context);
-        frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.a7, false));
-        this.fragmentView = frameLayout;
-        org.telegram.ui.Components.jm0 jm0Var = new org.telegram.ui.Components.jm0(context, null);
-        this.a = jm0Var;
-        jm0Var.p1();
-        this.actionBar.setAdaptiveBackground(this.a);
-        this.a.setLayoutManager(new s4.b0());
-        this.a.setVerticalScrollBarEnabled(false);
-        org.telegram.ui.Components.jm0 jm0Var2 = this.a;
-        q4 q4Var = new q4(context);
-        this.b = q4Var;
-        jm0Var2.setAdapter(q4Var);
-        this.a.setOnItemClickListener(new i(this, 2));
-        frameLayout.addView(this.a, w7.z5.c(-1.0f, -1));
-        return this.fragmentView;
+    public r4(u4 u4Var) {
+        this.a = u4Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        UsersSelectActivity usersSelectActivity = new UsersSelectActivity(null);
+        usersSelectActivity.N = new a0.h();
+        usersSelectActivity.O = new ArrayList();
+        usersSelectActivity.x = 1;
+        usersSelectActivity.G = false;
+        u4 u4Var = this.a;
+        usersSelectActivity.R = u4Var.U();
+        usersSelectActivity.n = new a1(this, 2);
+        u4Var.presentFragment(usersSelectActivity);
     }
 }

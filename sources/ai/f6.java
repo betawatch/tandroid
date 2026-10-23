@@ -3,7 +3,6 @@ package ai;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
@@ -12,7 +11,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class f6 extends View {
     public final v6 a;
@@ -24,7 +23,7 @@ public final class f6 extends View {
         v6 v6Var = new v6(this, tL_starGiftUnique, 60, 0.27f);
         this.a = v6Var;
         v6Var.K = 3;
-        org.telegram.ui.Components.h9 h9Var = new org.telegram.ui.Components.h9((org.telegram.ui.ActionBar.d6) null);
+        org.telegram.ui.Components.h9 h9Var = new org.telegram.ui.Components.h9((org.telegram.ui.ActionBar.g6) null);
         h9Var.p(tLObject);
         ImageReceiver imageReceiver = new ImageReceiver(this);
         this.b = imageReceiver;
@@ -32,7 +31,7 @@ public final class f6 extends View {
         imageReceiver.setForUserOrChat(tLObject, h9Var);
         Drawable mutate = context.getDrawable(R.drawable.chats_undo).mutate();
         this.c = mutate;
-        mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.z6, false), PorterDuff.Mode.MULTIPLY));
+        org.telegram.ui.ActionBar.r6.z(this, mutate, org.telegram.ui.ActionBar.k6.z6, null, PorterDuff.Mode.MULTIPLY);
         mutate.setBounds(AndroidUtilities.dp(-12.0f), AndroidUtilities.dp(-12.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f));
     }
 

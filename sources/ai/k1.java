@@ -4,7 +4,7 @@ import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class k1 implements TextWatcher {
     public final /* synthetic */ l1 a;
@@ -22,7 +22,7 @@ public final class k1 implements TextWatcher {
             editable.delete(indexOf + 3, obj.length());
         }
         l1 l1Var = this.a;
-        l1Var.o(!z10 ? ag.a.h(editable.toString(), l1Var.E.a) : ag.a.i(0L, l1Var.E.a), false, false, true);
+        l1Var.n(!z10 ? ag.a.h(editable.toString(), l1Var.E.a) : ag.a.i(0L, l1Var.E.a), false, false, true);
         l1Var.b.c(l1Var.c.isFocused(), true ^ TextUtils.isEmpty(l1Var.c.getText()));
     }
 

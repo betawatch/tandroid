@@ -1,8 +1,8 @@
 package org.telegram.ui.Components.voip;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final class s0 implements z4.e {
+public final class s0 implements z4.f {
     public int a = 0;
     public int b;
     public final /* synthetic */ v0 c;
@@ -11,18 +11,10 @@ public final class s0 implements z4.e {
         this.c = v0Var;
     }
 
-    @Override // z4.e
-    public final void a(float f7, int i10, int i11) {
-        v0 v0Var = this.c;
-        v0Var.x = i10;
-        v0Var.w = f7;
-        v0Var.d();
-    }
-
     /* JADX WARN: Type inference failed for: r0v1, types: [boolean] */
     /* JADX WARN: Type inference failed for: r0v2, types: [boolean] */
-    @Override // z4.e
-    public final void b(int i10) {
+    @Override // z4.f
+    public final void a(int i10) {
         int i11 = this.a;
         v0 v0Var = this.c;
         if (i11 == 0) {
@@ -41,7 +33,15 @@ public final class s0 implements z4.e {
         }
     }
 
-    @Override // z4.e
+    @Override // z4.f
+    public final void b(float f7, int i10, int i11) {
+        v0 v0Var = this.c;
+        v0Var.x = i10;
+        v0Var.w = f7;
+        v0Var.d();
+    }
+
+    @Override // z4.f
     public final void c(int i10) {
         this.a = i10;
         if (i10 == 0) {

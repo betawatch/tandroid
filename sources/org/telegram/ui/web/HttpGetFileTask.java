@@ -18,7 +18,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public class HttpGetFileTask extends AsyncTask<String, Void, File> {
     private Utilities.Callback<File> doneCallback;
@@ -182,7 +182,7 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
                                                     if (contentLengthLong > r16) {
                                                         float clamp01 = Utilities.clamp01(j11 / contentLengthLong);
                                                         if (this.progressCallback != null) {
-                                                            AndroidUtilities.runOnUIThread(new org.telegram.ui.c0(this, clamp01, 5));
+                                                            AndroidUtilities.runOnUIThread(new org.telegram.ui.b0(this, clamp01, 5));
                                                         }
                                                     }
                                                     j10 = r16;

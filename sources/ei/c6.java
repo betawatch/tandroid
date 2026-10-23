@@ -3,7 +3,6 @@ package ei;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
 import android.view.MotionEvent;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -11,7 +10,7 @@ import android.widget.TextView;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.bs;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class c6 extends LinearLayout {
     public final TextView a;
@@ -29,9 +28,9 @@ public final class c6 extends LinearLayout {
         super(context);
         this.r = f6Var;
         setOrientation(0);
-        int i10 = org.telegram.ui.ActionBar.h6.i6;
+        int i10 = org.telegram.ui.ActionBar.k6.i6;
         t5 t5Var = f6Var.G1;
-        setBackground(org.telegram.ui.ActionBar.h6.g0(org.telegram.ui.ActionBar.h6.w0(i10, t5Var), 2, -1));
+        setBackground(org.telegram.ui.ActionBar.k6.g0(org.telegram.ui.ActionBar.k6.w0(i10, t5Var), 2, -1));
         ah.v vVar = new ah.v(this, context);
         this.b = vVar;
         addView(vVar, w7.z5.t(-2, -2, 19, 16, 0, 16, 0));
@@ -40,25 +39,26 @@ public final class c6 extends LinearLayout {
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
         imageView.setScaleType(scaleType);
         ImageView imageView2 = this.c;
-        int i11 = org.telegram.ui.ActionBar.h6.E8;
-        imageView2.setColorFilter(org.telegram.ui.ActionBar.h6.w0(i11, t5Var));
+        int i11 = org.telegram.ui.ActionBar.k6.E8;
+        PorterDuff.Mode mode = PorterDuff.Mode.SRC_ATOP;
+        org.telegram.ui.ActionBar.r6.t(imageView2, i11, t5Var, mode);
         vVar.addView(this.c, w7.z5.e(-2, -2, 17));
         ImageView imageView3 = new ImageView(context);
         this.d = imageView3;
         imageView3.setScaleType(scaleType);
-        this.d.setColorFilter(org.telegram.ui.ActionBar.h6.w0(i11, t5Var));
+        org.telegram.ui.ActionBar.r6.t(this.d, i11, t5Var, mode);
         this.d.setVisibility(8);
         vVar.addView(this.d, w7.z5.e(-2, -2, 17));
         TextView textView = new TextView(context);
         this.a = textView;
-        textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(i11, t5Var));
+        org.telegram.ui.ActionBar.r6.W(textView, i11, t5Var);
         textView.setTextSize(1, 16.0f);
         addView(textView, w7.z5.t(-2, -2, 19, 0, 0, 16, 0));
         ImageView imageView4 = new ImageView(context);
         this.n = imageView4;
         imageView4.setImageResource(R.drawable.msg_text_check);
         imageView4.setScaleType(scaleType);
-        imageView4.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.h7, t5Var), PorterDuff.Mode.MULTIPLY));
+        org.telegram.ui.ActionBar.r6.t(imageView4, org.telegram.ui.ActionBar.k6.h7, t5Var, PorterDuff.Mode.MULTIPLY);
         imageView4.setVisibility(8);
         addView(imageView4, w7.z5.n(50, -1));
     }

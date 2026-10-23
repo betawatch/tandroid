@@ -2,14 +2,14 @@ package z7;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public final class yf implements uf {
+public final class yf implements tf {
     public final r9.n a;
-    public final tf b;
+    public final sf b;
 
-    public yf(Context context, tf tfVar) {
-        this.b = tfVar;
+    public yf(Context context, sf sfVar) {
+        this.b = sfVar;
         j5.a aVar = j5.a.e;
         l5.t.b(context);
         l5.r c10 = l5.t.a().c(aVar);
@@ -19,9 +19,9 @@ public final class yf implements uf {
         this.a = new r9.n(new v7.a9(c10, 7));
     }
 
-    @Override // z7.uf
+    @Override // z7.tf
     public final void a(a5.a aVar) {
         this.b.getClass();
-        ((l5.s) this.a.get()).a(aVar.b != 0 ? new i5.a(null, aVar.F(), i5.d.a, null) : new i5.a(null, aVar.F(), i5.d.b, null), new k2.f0(4));
+        ((l5.s) this.a.get()).a(aVar.b != 0 ? new i5.a(null, aVar.F(), i5.d.a, null) : new i5.a(null, aVar.F(), i5.d.b, null), new k2.f(8));
     }
 }

@@ -1,86 +1,62 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import java.util.ArrayList;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.Button;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class ra1 extends org.telegram.ui.Cells.ma {
-    public final /* synthetic */ int h3 = 1;
-    public final /* synthetic */ Object i3;
+public final class ra1 extends View {
+    public static final /* synthetic */ int c = 0;
+    public final Paint a;
+    public int[] b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ra1(Context context, org.telegram.ui.ActionBar.n2 n2Var, ArrayList arrayList, ArrayList arrayList2, org.telegram.ui.ActionBar.a3 a3Var) {
-        super(context, n2Var, 2, arrayList, arrayList2);
-        this.i3 = a3Var;
+    public ra1(Context context) {
+        super(context);
+        this.a = new Paint(1);
+        this.b = new int[7];
     }
 
-    @Override // org.telegram.ui.Cells.ma
-    public void A1(org.telegram.ui.ActionBar.g6 g6Var) {
-        CharSequence[] charSequenceArr;
-        boolean z10;
-        int[] iArr;
-        switch (this.h3) {
-            case 0:
-                ua1 ua1Var = ((ua1) this.i3).e.a;
-                ThemeActivity themeActivity = ua1Var.e;
-                if (themeActivity.getParentActivity() != null) {
-                    if ((g6Var.F == null || g6Var.U) && themeActivity.f != 1) {
-                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(themeActivity.getParentActivity());
-                        if (g6Var.b == null) {
-                            charSequenceArr = new CharSequence[]{null, LocaleController.getString("ExportTheme", R.string.ExportTheme)};
-                            iArr = new int[]{0, R.drawable.msg_shareout};
-                            z10 = false;
-                        } else {
-                            TLRPC.TL_theme tL_theme = g6Var.F;
-                            boolean z11 = tL_theme == null || !tL_theme.isDefault;
-                            String string = LocaleController.getString("ShareFile", R.string.ShareFile);
-                            String string2 = LocaleController.getString("ExportTheme", R.string.ExportTheme);
-                            TLRPC.TL_theme tL_theme2 = g6Var.F;
-                            String string3 = (tL_theme2 == null || (!tL_theme2.isDefault && tL_theme2.creator)) ? LocaleController.getString("Edit", R.string.Edit) : null;
-                            TLRPC.TL_theme tL_theme3 = g6Var.F;
-                            boolean z12 = z11;
-                            charSequenceArr = new CharSequence[]{string, string2, string3, (tL_theme3 == null || !tL_theme3.creator) ? null : LocaleController.getString("ThemeSetUrl", R.string.ThemeSetUrl), z11 ? LocaleController.getString("Delete", R.string.Delete) : null};
-                            z10 = z12;
-                            iArr = new int[]{R.drawable.msg_share, R.drawable.msg_shareout, R.drawable.msg_edit, R.drawable.msg_link, R.drawable.msg_delete};
-                        }
-                        mg.j jVar = new mg.j(13, ua1Var, g6Var);
-                        org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-                        b2Var.P = charSequenceArr;
-                        b2Var.Q = iArr;
-                        b2Var.M = jVar;
-                        themeActivity.showDialog(b2Var);
-                        if (z10) {
-                            b2Var.m(b2Var.N0.size() - 1, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.q7, false), org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.p7, false));
-                            break;
-                        }
-                    }
-                }
-                break;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        float measuredWidth = getMeasuredWidth() * 0.5f;
+        float measuredHeight = getMeasuredHeight() * 0.5f;
+        float dp = AndroidUtilities.dp(5.0f);
+        float dp2 = AndroidUtilities.dp(20.0f) - dp;
+        Paint.Style style = Paint.Style.FILL;
+        Paint paint = this.a;
+        paint.setStyle(style);
+        int i10 = 0;
+        paint.setColor(this.b[0]);
+        canvas.drawCircle(measuredWidth, measuredHeight, dp, paint);
+        double d = 0.0d;
+        while (i10 < 6) {
+            float sin = (((float) Math.sin(d)) * dp2) + measuredWidth;
+            float cos = measuredHeight - (((float) Math.cos(d)) * dp2);
+            i10++;
+            paint.setColor(this.b[i10]);
+            canvas.drawCircle(sin, cos, dp, paint);
+            d += 1.0471975511965976d;
         }
     }
 
-    @Override // org.telegram.ui.Cells.ma
-    public final void B1() {
-        Runnable runnable;
-        switch (this.h3) {
-            case 0:
-                ((ua1) this.i3).e.A0(false);
-                break;
-            default:
-                runnable = ((org.telegram.ui.ActionBar.a3) this.i3).a.dismissRunnable;
-                runnable.run();
-                break;
-        }
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setText(LocaleController.getString("ColorPickerMainColor", R.string.ColorPickerMainColor));
+        accessibilityNodeInfo.setClassName(Button.class.getName());
+        accessibilityNodeInfo.setEnabled(true);
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ra1(ua1 ua1Var, Context context, org.telegram.ui.ActionBar.n2 n2Var, int i10, ArrayList arrayList, ArrayList arrayList2) {
-        super(context, n2Var, i10, arrayList, arrayList2);
-        this.i3 = ua1Var;
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(62.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(62.0f), TLObject.FLAG_30));
     }
 }

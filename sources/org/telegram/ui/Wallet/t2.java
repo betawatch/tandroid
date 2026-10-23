@@ -1,53 +1,36 @@
 package org.telegram.ui.Wallet;
 
-import android.app.Activity;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class t2 implements View.OnClickListener {
+public final /* synthetic */ class t2 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.o2 b;
 
-    public /* synthetic */ t2(Object obj, int i10) {
+    public /* synthetic */ t2(int i10, org.telegram.ui.ActionBar.o2 o2Var) {
         this.a = i10;
-        this.b = obj;
+        this.b = o2Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((z2) this.b).dismiss();
+                org.telegram.ui.ActionBar.o2 o2Var = this.b;
+                o5.D0(o2Var.getContext(), o2Var.getResourceProvider());
                 break;
             case 1:
-                pf.d.t((Activity) this.b, "https://fragment.com/");
-                break;
-            case 2:
-                ((l4) this.b).dismiss();
-                break;
-            case 3:
-                ((Runnable) this.b).run();
-                break;
-            case 4:
-                m6 m6Var = (m6) this.b;
-                if (!m6Var.x && m6Var.r && !m6Var.h.b()) {
-                    m6Var.h.setProgress(0.0f);
-                    m6Var.h.d();
-                    break;
-                }
-                break;
-            case 5:
-                ((n8) this.b).b(!r3.x);
-                break;
-            case 6:
-                ((org.telegram.ui.Cells.a2) this.b).c(!r3.b(), true);
+                this.b.presentFragment(new o5());
                 break;
             default:
-                d9 d9Var = ((h9) this.b).b;
-                d9Var.requestFocus();
-                AndroidUtilities.showKeyboard(d9Var);
+                org.telegram.ui.ActionBar.o2 o2Var2 = this.b;
+                if (xc.a(o2Var2)) {
+                    xc.a0(o2Var2).M(LocaleController.getString(R.string.WalletCreated), LocaleController.getString(R.string.WalletCreatedInfo), R.raw.contact_check).j();
+                    break;
+                }
                 break;
         }
     }

@@ -18,7 +18,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class w9 implements Runnable {
     public final /* synthetic */ int a;
@@ -78,7 +78,7 @@ public final /* synthetic */ class w9 implements Runnable {
         int size;
         int i10;
         f6 f6Var2;
-        rg.e1 r02;
+        rg.f1 q02;
         ImageReceiver imageReceiver;
         int i11;
         f6 f6Var3;
@@ -106,7 +106,7 @@ public final /* synthetic */ class w9 implements Runnable {
                 ArrayList arrayList4 = new ArrayList();
                 f6 f6Var5 = this.c;
                 a8 a8Var5 = this.f;
-                f6Var5.s0(arrayList4, false, false, false, false, a8Var5);
+                f6Var5.r0(arrayList4, false, false, false, false, a8Var5);
                 if (!a8Var5.K) {
                     a8Var5.S0 = Utilities.clamp(f6Var5.getLcm(), 7500L, 5000L);
                 }
@@ -115,12 +115,12 @@ public final /* synthetic */ class w9 implements Runnable {
                 boolean z11 = a8Var5.K;
                 boolean E = a8Var5.E();
                 arrayList4.clear();
-                Bitmap s02 = f6Var5.s0(arrayList4, true, false, false, !z11, a8Var5);
+                Bitmap r02 = f6Var5.r0(arrayList4, true, false, false, !z11, a8Var5);
                 if (arrayList4.isEmpty()) {
                     arrayList4 = null;
                 }
                 File w9 = a8.w(i13, "png");
-                arrayList3.add(new y9(s02, w9, 0));
+                arrayList3.add(new y9(r02, w9, 0));
                 final ArrayList arrayList6 = arrayList5;
                 if (a8Var5.u) {
                     long j10 = a8Var5.z0;
@@ -138,12 +138,12 @@ public final /* synthetic */ class w9 implements Runnable {
                             if (a8Var5.u && a8Var5.K) {
                                 int i14 = a8Var5.k0;
                                 int i15 = a8Var5.l0;
-                                r02 = f6Var.r0();
-                                if (r02 != null) {
-                                    rg.x0 x0Var = r02.r0;
+                                q02 = f6Var.q0();
+                                if (q02 != null) {
+                                    rg.x0 x0Var = q02.r0;
                                     if (x0Var.getChildCount() == 1 && i14 > 0 && i15 > 0) {
-                                        if (x0Var.getChildAt(0) instanceof org.telegram.ui.Cells.u1) {
-                                            imageReceiver = ((org.telegram.ui.Cells.u1) x0Var.getChildAt(0)).getPhotoImage();
+                                        if (x0Var.getChildAt(0) instanceof org.telegram.ui.Cells.t1) {
+                                            imageReceiver = ((org.telegram.ui.Cells.t1) x0Var.getChildAt(0)).getPhotoImage();
                                             if (imageReceiver != null && ((int) imageReceiver.getImageWidth()) > 0 && ((int) imageReceiver.getImageHeight()) > 0) {
                                                 float f7 = i14;
                                                 float f10 = i15;
@@ -175,7 +175,7 @@ public final /* synthetic */ class w9 implements Runnable {
                                                 File w10 = a8.w(i13, "webp");
                                                 arrayList3.add(new y9(createBitmap2, w10, 2));
                                                 file4 = w10;
-                                                if (f6Var.t0()) {
+                                                if (f6Var.s0()) {
                                                     a8Var2 = a8Var;
                                                     file5 = a8Var2.R0;
                                                     file6 = a8Var2.Q0;
@@ -187,10 +187,10 @@ public final /* synthetic */ class w9 implements Runnable {
                                                     } else {
                                                         f6Var2 = f6Var;
                                                         a8 a8Var6 = a8Var;
-                                                        Bitmap s03 = f6Var2.s0(new ArrayList(), false, true, false, false, a8Var6);
+                                                        Bitmap r03 = f6Var2.r0(new ArrayList(), false, true, false, false, a8Var6);
                                                         a8Var2 = a8Var6;
                                                         file5 = a8.w(i13, "png");
-                                                        arrayList3.add(new y9(s03, file5, 3));
+                                                        arrayList3.add(new y9(r03, file5, 3));
                                                     }
                                                     if (!this.h) {
                                                         file7 = file5;
@@ -491,7 +491,7 @@ public final /* synthetic */ class w9 implements Runnable {
                                             File w102 = a8.w(i13, "webp");
                                             arrayList3.add(new y9(createBitmap22, w102, 2));
                                             file4 = w102;
-                                            if (f6Var.t0()) {
+                                            if (f6Var.s0()) {
                                             }
                                             file7 = file5;
                                             final int i1922 = 1;
@@ -634,7 +634,7 @@ public final /* synthetic */ class w9 implements Runnable {
                             file3 = w9;
                             a8Var = a8Var5;
                             file4 = null;
-                            if (f6Var.t0()) {
+                            if (f6Var.s0()) {
                             }
                             file7 = file5;
                             final int i19222 = 1;
@@ -773,8 +773,8 @@ public final /* synthetic */ class w9 implements Runnable {
                 if (a8Var5.u) {
                     int i142 = a8Var5.k0;
                     int i152 = a8Var5.l0;
-                    r02 = f6Var.r0();
-                    if (r02 != null) {
+                    q02 = f6Var.q0();
+                    if (q02 != null) {
                     }
                     imageReceiver = null;
                     if (imageReceiver != null) {
@@ -785,7 +785,7 @@ public final /* synthetic */ class w9 implements Runnable {
                 file3 = w9;
                 a8Var = a8Var5;
                 file4 = null;
-                if (f6Var.t0()) {
+                if (f6Var.s0()) {
                 }
                 file7 = file5;
                 final int i192222 = 1;
@@ -923,7 +923,7 @@ public final /* synthetic */ class w9 implements Runnable {
                 ArrayList arrayList8 = new ArrayList();
                 f6 f6Var6 = this.c;
                 a8 a8Var8 = this.f;
-                f6Var6.s0(arrayList8, false, false, false, false, a8Var8);
+                f6Var6.r0(arrayList8, false, false, false, false, a8Var8);
                 if (!a8Var8.K) {
                     a8Var8.S0 = Utilities.clamp(f6Var6.getLcm(), 7500L, 5000L);
                 }
@@ -932,11 +932,11 @@ public final /* synthetic */ class w9 implements Runnable {
                 boolean z13 = a8Var8.K;
                 boolean E2 = a8Var8.E();
                 arrayList8.clear();
-                Bitmap s04 = f6Var6.s0(arrayList8, true, false, false, !z13, a8Var8);
+                Bitmap r04 = f6Var6.r0(arrayList8, true, false, false, !z13, a8Var8);
                 ArrayList arrayList10 = arrayList8.isEmpty() ? null : arrayList8;
-                File pathToAttach = FileLoader.getInstance(i20).getPathToAttach(ImageLoader.scaleAndSaveImage(s04, Bitmap.CompressFormat.PNG, a8Var8.i0, a8Var8.j0, 87, false, 101, 101), true);
-                if (s04 != null && !s04.isRecycled()) {
-                    s04.recycle();
+                File pathToAttach = FileLoader.getInstance(i20).getPathToAttach(ImageLoader.scaleAndSaveImage(r04, Bitmap.CompressFormat.PNG, a8Var8.i0, a8Var8.j0, 87, false, 101, 101), true);
+                if (r04 != null && !r04.isRecycled()) {
+                    r04.recycle();
                 }
                 boolean z14 = a8Var8.u;
                 int i21 = this.d;
@@ -975,12 +975,12 @@ public final /* synthetic */ class w9 implements Runnable {
                 if (a8Var8.u && a8Var8.K) {
                     int i23 = a8Var8.k0;
                     int i24 = a8Var8.l0;
-                    rg.e1 r03 = f6Var3.r0();
-                    if (r03 != null) {
-                        rg.x0 x0Var2 = r03.r0;
+                    rg.f1 q03 = f6Var3.q0();
+                    if (q03 != null) {
+                        rg.x0 x0Var2 = q03.r0;
                         if (x0Var2.getChildCount() == 1 && i23 > 0 && i24 > 0) {
-                            if (x0Var2.getChildAt(0) instanceof org.telegram.ui.Cells.u1) {
-                                imageReceiver2 = ((org.telegram.ui.Cells.u1) x0Var2.getChildAt(0)).getPhotoImage();
+                            if (x0Var2.getChildAt(0) instanceof org.telegram.ui.Cells.t1) {
+                                imageReceiver2 = ((org.telegram.ui.Cells.t1) x0Var2.getChildAt(0)).getPhotoImage();
                                 if (imageReceiver2 != null && ((int) imageReceiver2.getImageWidth()) > 0 && ((int) imageReceiver2.getImageHeight()) > 0) {
                                     float f13 = i23;
                                     float f14 = i24;
@@ -1028,10 +1028,10 @@ public final /* synthetic */ class w9 implements Runnable {
                                     } else {
                                         f6Var4 = f6Var3;
                                         a8Var4 = a8Var3;
-                                        Bitmap s05 = f6Var4.s0(new ArrayList(), false, true, false, false, a8Var4);
-                                        file12 = FileLoader.getInstance(i20).getPathToAttach(ImageLoader.scaleAndSaveImage(s05, Bitmap.CompressFormat.PNG, i21, i22, 87, false, 101, 101), z10);
-                                        if (s05 != null && !s05.isRecycled()) {
-                                            s05.recycle();
+                                        Bitmap r05 = f6Var4.r0(new ArrayList(), false, true, false, false, a8Var4);
+                                        file12 = FileLoader.getInstance(i20).getPathToAttach(ImageLoader.scaleAndSaveImage(r05, Bitmap.CompressFormat.PNG, i21, i22, 87, false, 101, 101), z10);
+                                        if (r05 != null && !r05.isRecycled()) {
+                                            r05.recycle();
                                         }
                                     }
                                     if (this.h) {

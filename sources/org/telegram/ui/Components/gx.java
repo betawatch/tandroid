@@ -6,9 +6,9 @@ import android.util.Property;
 import android.view.MotionEvent;
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class gx extends z4.g {
+public final class gx extends z4.h {
     public final /* synthetic */ tz w0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -17,7 +17,7 @@ public final class gx extends z4.g {
         this.w0 = tzVar;
     }
 
-    @Override // z4.g, android.view.ViewGroup
+    @Override // z4.h, android.view.ViewGroup
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         if (this.w0.f) {
             return false;
@@ -32,11 +32,11 @@ public final class gx extends z4.g {
         }
     }
 
-    @Override // z4.g
+    @Override // z4.h
     public final void x(int i10, boolean z10) {
         tz tzVar = this.w0;
         vx vxVar = tzVar.I;
-        tz.c(tzVar, i10 == 1);
+        tz.a(tzVar, i10 == 1);
         if (i10 != getCurrentItem()) {
             super.x(i10, z10);
             return;

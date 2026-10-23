@@ -11,10 +11,11 @@ import java.util.Map;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import si.o0;
 import v7.e5;
 import v7.f5;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class m implements ef.a {
     public static final Pattern i = Pattern.compile("^[!\"#\\$%&'\\(\\)\\*\\+,\\-\\./:;<=>\\?@\\[\\\\\\]\\^_`\\{\\|\\}~\\p{Pc}\\p{Pd}\\p{Pe}\\p{Pf}\\p{Pi}\\p{Po}\\p{Ps}]");
@@ -208,7 +209,7 @@ public final class m implements ef.a {
                             int end = matcher.find() ? matcher.end() - matcher.start() : 0;
                             i10 = 0;
                             if (end > 0) {
-                                sVar3.g = k3.j(end, 0, str4);
+                                sVar3.g = k3.i(end, 0, str4);
                             }
                             gVar = end >= 2 ? new df.g(1) : new df.g(2);
                             pVar2 = gVar;
@@ -229,16 +230,16 @@ public final class m implements ef.a {
                         String d11 = d(o);
                         if (d11 != null) {
                             i11 = 1;
-                            String j10 = k3.j(1, 1, d11);
-                            kVar = new df.k(1, r4.c.h("mailto:", j10), null);
-                            kVar.b(new df.s(j10));
+                            String i14 = k3.i(1, 1, d11);
+                            kVar = new df.k(1, o0.h("mailto:", i14), null);
+                            kVar.b(new df.s(i14));
                         } else {
                             i11 = 1;
                             String d12 = d(p);
                             if (d12 != null) {
-                                String j11 = k3.j(1, 1, d12);
-                                kVar = new df.k(1, j11, null);
-                                kVar.b(new df.s(j11));
+                                String i15 = k3.i(1, 1, d12);
+                                kVar = new df.k(1, i15, null);
+                                kVar.b(new df.s(i15));
                             } else {
                                 pVar2 = null;
                                 if (pVar2 == null) {
@@ -258,11 +259,11 @@ public final class m implements ef.a {
                     } else if (g10 != '`') {
                         switch (g10) {
                             case '[':
-                                int i14 = this.f;
-                                this.f = i14 + 1;
+                                int i16 = this.f;
+                                this.f = i16 + 1;
                                 df.s sVar4 = new df.s("[");
                                 e eVar = this.h;
-                                e eVar2 = new e(sVar4, i14, eVar, this.g, false);
+                                e eVar2 = new e(sVar4, i16, eVar, this.g, false);
                                 if (eVar != null) {
                                     eVar.d = true;
                                 }
@@ -277,11 +278,11 @@ public final class m implements ef.a {
                                 } else {
                                     if (this.f < this.e.length()) {
                                         String str5 = this.e;
-                                        int i15 = this.f;
-                                        if (k.matcher(str5.substring(i15, i15 + 1)).matches()) {
+                                        int i17 = this.f;
+                                        if (k.matcher(str5.substring(i17, i17 + 1)).matches()) {
                                             String str6 = this.e;
-                                            int i16 = this.f;
-                                            df.s sVar5 = new df.s(str6.substring(i16, i16 + 1));
+                                            int i18 = this.f;
+                                            df.s sVar5 = new df.s(str6.substring(i18, i18 + 1));
                                             this.f++;
                                             pVar2 = sVar5;
                                             break;
@@ -292,8 +293,8 @@ public final class m implements ef.a {
                                 pVar2 = sVar;
                                 break;
                             case ']':
-                                int i17 = this.f + 1;
-                                this.f = i17;
+                                int i19 = this.f + 1;
+                                this.f = i19;
                                 e eVar3 = this.h;
                                 if (eVar3 != null) {
                                     df.s sVar6 = (df.s) eVar3.e;
@@ -315,8 +316,8 @@ public final class m implements ef.a {
                                             if (str3 != null) {
                                                 d(pattern);
                                                 String str7 = this.e;
-                                                int i18 = this.f;
-                                                if (s.matcher(str7.substring(i18 - 1, i18)).matches()) {
+                                                int i20 = this.f;
+                                                if (s.matcher(str7.substring(i20 - 1, i20)).matches()) {
                                                     int c10 = e5.c(this.f, this.e);
                                                     if (c10 == -1) {
                                                         str2 = null;
@@ -333,7 +334,7 @@ public final class m implements ef.a {
                                                     this.f++;
                                                     z10 = true;
                                                 } else {
-                                                    this.f = i17;
+                                                    this.f = i19;
                                                 }
                                             } else {
                                                 str2 = null;
@@ -346,17 +347,17 @@ public final class m implements ef.a {
                                             str3 = null;
                                         }
                                         if (!z10) {
-                                            int i19 = this.f;
-                                            if (i19 < this.e.length() && this.e.charAt(this.f) == '[') {
-                                                int i20 = this.f + 1;
-                                                int b10 = e5.b(i20, this.e);
-                                                int i21 = b10 - i20;
-                                                if (b10 != -1 && i21 <= 999 && b10 < this.e.length() && this.e.charAt(b10) == ']') {
+                                            int i21 = this.f;
+                                            if (i21 < this.e.length() && this.e.charAt(this.f) == '[') {
+                                                int i22 = this.f + 1;
+                                                int b10 = e5.b(i22, this.e);
+                                                int i23 = b10 - i22;
+                                                if (b10 != -1 && i23 <= 999 && b10 < this.e.length() && this.e.charAt(b10) == ']') {
                                                     this.f = b10 + 1;
                                                 }
                                             }
-                                            int i22 = this.f - i19;
-                                            String substring3 = i22 > 2 ? this.e.substring(i19, i22 + i19) : !eVar3.d ? this.e.substring(eVar3.b, i17) : null;
+                                            int i24 = this.f - i21;
+                                            String substring3 = i24 > 2 ? this.e.substring(i21, i24 + i21) : !eVar3.d ? this.e.substring(eVar3.b, i19) : null;
                                             if (substring3 != null) {
                                                 Pattern pattern2 = cf.a.a;
                                                 df.m mVar = (df.m) ((Map) this.d.c).get(cf.a.c.matcher(substring3.substring(i12, substring3.length() - 1).trim().toLowerCase(Locale.ROOT)).replaceAll(" "));
@@ -368,7 +369,7 @@ public final class m implements ef.a {
                                             }
                                         }
                                         if (!z10) {
-                                            this.f = i17;
+                                            this.f = i19;
                                             this.h = (e) this.h.f;
                                             sVar = new df.s("]");
                                             pVar2 = sVar;
@@ -413,17 +414,17 @@ public final class m implements ef.a {
                             default:
                                 if (this.b.get(g10)) {
                                     gf.a aVar = (gf.a) this.c.get(Character.valueOf(g10));
-                                    int i23 = this.f;
-                                    int i24 = i13;
+                                    int i25 = this.f;
+                                    int i26 = i13;
                                     while (g() == g10) {
-                                        i24++;
+                                        i26++;
                                         this.f++;
                                     }
-                                    if (i24 < aVar.c()) {
-                                        this.f = i23;
+                                    if (i26 < aVar.c()) {
+                                        this.f = i25;
                                         r52 = pVar4;
                                     } else {
-                                        String substring4 = i23 == 0 ? "\n" : this.e.substring(i23 - 1, i23);
+                                        String substring4 = i25 == 0 ? "\n" : this.e.substring(i25 - 1, i25);
                                         char g11 = g();
                                         String valueOf = g11 != 0 ? String.valueOf(g11) : "\n";
                                         Pattern pattern3 = i;
@@ -432,39 +433,39 @@ public final class m implements ef.a {
                                         boolean matches2 = pattern4.matcher(substring4).matches();
                                         boolean matches3 = pattern3.matcher(valueOf).matches();
                                         boolean matches4 = pattern4.matcher(valueOf).matches();
-                                        int i25 = (matches4 || !(!matches3 || matches2 || matches)) ? i13 : 1;
-                                        int i26 = (matches2 || !(!matches || matches4 || matches3)) ? i13 : 1;
+                                        int i27 = (matches4 || !(!matches3 || matches2 || matches)) ? i13 : 1;
+                                        int i28 = (matches2 || !(!matches || matches4 || matches3)) ? i13 : 1;
                                         if (g10 == '_') {
-                                            int i27 = (i25 == 0 || !(i26 == 0 || matches)) ? i13 : 1;
-                                            if (i26 == 0 || !(i25 == 0 || matches3)) {
+                                            int i29 = (i27 == 0 || !(i28 == 0 || matches)) ? i13 : 1;
+                                            if (i28 == 0 || !(i27 == 0 || matches3)) {
                                                 r82 = i13;
-                                                r42 = i27;
+                                                r42 = i29;
                                             } else {
                                                 r82 = 1;
-                                                r42 = i27;
+                                                r42 = i29;
                                             }
                                         } else {
-                                            int i28 = (i25 == 0 || g10 != aVar.e()) ? i13 : 1;
-                                            int i29 = (i26 == 0 || g10 != aVar.a()) ? i13 : 1;
-                                            r42 = i28;
-                                            r82 = i29;
+                                            int i30 = (i27 == 0 || g10 != aVar.e()) ? i13 : 1;
+                                            int i31 = (i28 == 0 || g10 != aVar.a()) ? i13 : 1;
+                                            r42 = i30;
+                                            r82 = i31;
                                         }
-                                        this.f = i23;
-                                        r52 = new l(i24, r42, r82);
+                                        this.f = i25;
+                                        r52 = new l(i26, r42, r82);
                                     }
                                     if (r52 != 0) {
-                                        int i30 = r52.a;
-                                        int i31 = this.f;
-                                        int i32 = i31 + i30;
-                                        this.f = i32;
-                                        df.s sVar7 = new df.s(this.e.substring(i31, i32));
+                                        int i32 = r52.a;
+                                        int i33 = this.f;
+                                        int i34 = i33 + i32;
+                                        this.f = i34;
+                                        df.s sVar7 = new df.s(this.e.substring(i33, i34));
                                         boolean z12 = r52.c;
                                         boolean z13 = r52.b;
                                         f fVar = this.g;
                                         f fVar2 = new f(sVar7, g10, z12, z13, fVar);
                                         this.g = fVar2;
-                                        fVar2.g = i30;
-                                        fVar2.h = i30;
+                                        fVar2.g = i32;
+                                        fVar2.h = i32;
                                         if (fVar != null) {
                                             fVar.f = fVar2;
                                         }
@@ -475,19 +476,19 @@ public final class m implements ef.a {
                                     pVar2 = pVar4;
                                     i10 = i13;
                                 } else {
-                                    int i33 = this.f;
+                                    int i35 = this.f;
                                     int length = this.e.length();
                                     while (true) {
-                                        int i34 = this.f;
-                                        if (i34 != length) {
-                                            if (!this.a.get(this.e.charAt(i34))) {
+                                        int i36 = this.f;
+                                        if (i36 != length) {
+                                            if (!this.a.get(this.e.charAt(i36))) {
                                                 this.f++;
                                             }
                                         }
                                     }
-                                    int i35 = this.f;
-                                    if (i33 != i35) {
-                                        pVar2 = new df.s(this.e.substring(i33, i35));
+                                    int i37 = this.f;
+                                    if (i35 != i37) {
+                                        pVar2 = new df.s(this.e.substring(i35, i37));
                                         i10 = i13;
                                     }
                                     pVar2 = pVar4;
@@ -498,21 +499,21 @@ public final class m implements ef.a {
                     } else {
                         String d14 = d(n);
                         if (d14 != null) {
-                            int i36 = this.f;
+                            int i38 = this.f;
                             do {
                                 d = d(m);
                                 if (d == null) {
-                                    this.f = i36;
+                                    this.f = i38;
                                     sVar2 = new df.s(d14);
                                     pVar2 = sVar2;
                                 }
                             } while (!d.equals(d14));
                             df.d dVar = new df.d(0);
-                            String replace = this.e.substring(i36, this.f - d14.length()).replace('\n', ' ');
+                            String replace = this.e.substring(i38, this.f - d14.length()).replace('\n', ' ');
                             if (replace.length() >= 3 && replace.charAt(0) == ' ' && replace.charAt(replace.length() - 1) == ' ') {
                                 int length2 = replace.length();
                                 if (f5.b(' ', replace, 0, length2) != length2) {
-                                    replace = k3.j(1, 1, replace);
+                                    replace = k3.i(1, 1, replace);
                                 }
                             }
                             dVar.h = replace;
@@ -523,13 +524,13 @@ public final class m implements ef.a {
                     }
                     i10 = 0;
                 } else {
-                    int i37 = this.f + 1;
-                    this.f = i37;
+                    int i39 = this.f + 1;
+                    this.f = i39;
                     if (g() == '[') {
                         this.f++;
                         df.s sVar8 = new df.s("![");
                         e eVar5 = this.h;
-                        e eVar6 = new e(sVar8, i37, eVar5, this.g, true);
+                        e eVar6 = new e(sVar8, i39, eVar5, this.g, true);
                         if (eVar5 != null) {
                             eVar5.d = true;
                         }
@@ -626,8 +627,8 @@ public final class m implements ef.a {
                     df.s sVar2 = fVar4.a;
                     fVar4.g -= i10;
                     fVar2.g -= i10;
-                    sVar2.g = k3.j(i10, 0, sVar2.g);
-                    sVar.g = k3.j(i10, 0, sVar.g);
+                    sVar2.g = k3.i(i10, 0, sVar2.g);
+                    sVar.g = k3.i(i10, 0, sVar.g);
                     f fVar5 = fVar2.e;
                     while (fVar5 != null && fVar5 != fVar4) {
                         f fVar6 = fVar5.e;

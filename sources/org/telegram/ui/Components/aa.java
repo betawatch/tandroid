@@ -10,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class aa extends View {
     public Bitmap a;
@@ -29,7 +29,7 @@ public final class aa extends View {
         Paint paint = this.c;
         int i10 = 0;
         while (i10 < this.d) {
-            paint.setColor(org.telegram.ui.ActionBar.h6.x0(null, i10 < this.e ? org.telegram.ui.ActionBar.h6.m5 : org.telegram.ui.ActionBar.h6.t5, false));
+            paint.setColor(org.telegram.ui.ActionBar.k6.x0(null, i10 < this.e ? org.telegram.ui.ActionBar.k6.m5 : org.telegram.ui.ActionBar.k6.t5, false));
             canvas.drawBitmap(i10 < this.e ? this.a : this.b, AndroidUtilities.dp(48.0f) * i10, 0.0f, paint);
             i10++;
         }
@@ -38,7 +38,7 @@ public final class aa extends View {
     @Override // android.view.View
     public final void onMeasure(int i10, int i11) {
         int i12 = this.d;
-        setMeasuredDimension(org.telegram.messenger.g0.D(16.0f, i12 - 1, AndroidUtilities.dp(32.0f) * i12), AndroidUtilities.dp(32.0f));
+        setMeasuredDimension(org.telegram.messenger.v0.D(16.0f, i12 - 1, AndroidUtilities.dp(32.0f) * i12), AndroidUtilities.dp(32.0f));
     }
 
     @Override // android.view.View

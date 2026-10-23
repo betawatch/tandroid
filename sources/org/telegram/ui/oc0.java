@@ -1,42 +1,46 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
+import android.util.Property;
+import android.view.View;
+import android.view.animation.OvershootInterpolator;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class oc0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ dg0 b;
+public final class oc0 implements ValueAnimator.AnimatorUpdateListener {
+    public boolean a;
+    public final float[] b = {0.0f, 1.0f};
+    public final /* synthetic */ FrameLayout c;
+    public final /* synthetic */ pc0 d;
 
-    public /* synthetic */ oc0(dg0 dg0Var, int i10) {
-        this.a = i10;
-        this.b = dg0Var;
+    public oc0(pc0 pc0Var, FrameLayout frameLayout) {
+        this.d = pc0Var;
+        this.c = frameLayout;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.c0 = false;
-                break;
-            case 1:
-                dg0 dg0Var = this.b;
-                dg0Var.r0 = false;
-                dg0Var.x1(true, true);
-                break;
-            default:
-                dg0 dg0Var2 = this.b;
-                if (dg0Var2.getParentActivity() != null && !dg0Var2.getParentActivity().isFinishing() && dg0Var2.getParentActivity() != null) {
-                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(dg0Var2.getParentActivity());
-                    alertDialog$Builder.a.R = LocaleController.getString(R.string.RestorePasswordNoEmailTitle);
-                    alertDialog$Builder.a.T = LocaleController.getString(R.string.SafetyNetErrorOccurred);
-                    alertDialog$Builder.k(LocaleController.getString(R.string.OK), new uc0(dg0Var2, 1));
-                    alertDialog$Builder.o();
-                    break;
-                }
-                break;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        float lerp = AndroidUtilities.lerp(this.b, valueAnimator.getAnimatedFraction());
+        if (lerp >= 0.7f && !this.a) {
+            pc0 pc0Var = this.d;
+            sc0 sc0Var = pc0Var.b;
+            sc0 sc0Var2 = pc0Var.b;
+            if (sc0Var.o0 != null) {
+                AnimatorSet animatorSet = new AnimatorSet();
+                animatorSet.playTogether(ObjectAnimator.ofFloat(sc0Var2.o0, (Property<FrameLayout, Float>) View.SCALE_X, 0.0f, 1.0f), ObjectAnimator.ofFloat(sc0Var2.o0, (Property<FrameLayout, Float>) View.SCALE_Y, 0.0f, 1.0f), ObjectAnimator.ofFloat(sc0Var2.o0, (Property<FrameLayout, Float>) View.ALPHA, 0.0f, 1.0f));
+                animatorSet.setInterpolator(new OvershootInterpolator(1.02f));
+                animatorSet.setDuration(250L);
+                animatorSet.start();
+                this.a = true;
+            }
         }
+        float interpolation = lerp <= 0.5f ? org.telegram.ui.Components.bs.g.getInterpolation(lerp / 0.5f) * 1.1f : lerp <= 0.75f ? 1.1f - (org.telegram.ui.Components.bs.g.getInterpolation((lerp - 0.5f) / 0.25f) * 0.2f) : (org.telegram.ui.Components.bs.g.getInterpolation((lerp - 0.75f) / 0.25f) * 0.1f) + 0.9f;
+        FrameLayout frameLayout = this.c;
+        frameLayout.setScaleX(interpolation);
+        frameLayout.setScaleY(interpolation);
     }
 }

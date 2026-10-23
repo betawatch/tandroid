@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.concurrent.Executor;
 import v7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class f implements p0 {
     public final a0 a;
@@ -232,7 +232,7 @@ public final class f implements p0 {
     public final void p(long j10, long j11) {
         try {
             this.c.a(j10, j11);
-        } catch (i2.n e) {
+        } catch (i2.m e) {
             throw new o0(e, this.f);
         }
     }

@@ -1,9 +1,18 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public interface y01 {
-    void O();
+public final /* synthetic */ class y01 implements org.telegram.ui.ActionBar.z1 {
+    public final /* synthetic */ d11 a;
+    public final /* synthetic */ String b;
 
-    void r(ek0 ek0Var);
+    public /* synthetic */ y01(d11 d11Var, String str) {
+        this.a = d11Var;
+        this.b = str;
+    }
+
+    @Override // org.telegram.ui.ActionBar.z1
+    public void g(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
+        d11.W(this.a, this.b);
+    }
 }

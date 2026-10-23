@@ -1,143 +1,187 @@
 package org.telegram.ui.Cells;
 
-import android.graphics.Rect;
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.view.ActionMode;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.fu;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.LanguageDetector;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.y41;
+import org.telegram.ui.v21;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class l9 extends ActionMode.Callback2 {
-    public final /* synthetic */ int a = 0;
-    public final ActionMode.Callback b;
-    public final /* synthetic */ Object c;
+public final class l9 implements ActionMode.Callback {
+    public String a = null;
+    public final /* synthetic */ ba b;
 
-    public l9(EditTextBoldCursor editTextBoldCursor, ActionMode.Callback callback) {
-        this.c = editTextBoldCursor;
-        this.b = callback;
+    public l9(ba baVar) {
+        this.b = baVar;
+    }
+
+    public final void a(Menu menu) {
+        LocaleController.getInstance().getCurrentLocale().getLanguage();
+        MenuItem findItem = menu.findItem(3);
+        if (findItem == null) {
+            return;
+        }
+        findItem.setVisible((this.b.k0 == null || ((this.a == null || v21.Y().contains(this.a)) && LanguageDetector.hasSupport())) ? false : true);
     }
 
     @Override // android.view.ActionMode.Callback
     public final boolean onActionItemClicked(ActionMode actionMode, MenuItem menuItem) {
-        switch (this.a) {
-            case 0:
-                ((k9) this.b).onActionItemClicked(actionMode, menuItem);
-                return true;
-            case 1:
-                return this.b.onActionItemClicked(actionMode, menuItem);
-            default:
-                return ((fu) this.b).onActionItemClicked(actionMode, menuItem);
+        CharSequence s10;
+        ba baVar = this.b;
+        g gVar = baVar.m0;
+        if (baVar.x()) {
+            int itemId = menuItem.getItemId();
+            if (itemId == 16908321) {
+                if (baVar.x() && baVar.b()) {
+                    if (!baVar.C()) {
+                        CharSequence r10 = baVar.r();
+                        if (r10 != null) {
+                            AndroidUtilities.addToClipboard(r10);
+                        }
+                    }
+                    baVar.u();
+                    baVar.f(true);
+                    w7.j0 j0Var = baVar.D;
+                    if (j0Var != null) {
+                        j0Var.b();
+                        return true;
+                    }
+                }
+            } else {
+                if (itemId != 16908319) {
+                    if (itemId == 3) {
+                        if (baVar.k0 != null) {
+                            String language = LocaleController.getInstance().getCurrentLocale().getLanguage();
+                            org.telegram.ui.s sVar = baVar.k0;
+                            CharSequence r11 = baVar.r();
+                            String str = this.a;
+                            g gVar2 = new g(this, 8);
+                            org.telegram.ui.k4 k4Var = sVar.a;
+                            y41.T(k4Var.L, k4Var.M, str, language, r11, null, gVar2);
+                        }
+                        baVar.u();
+                        return true;
+                    }
+                    if (itemId == R.id.menu_quote) {
+                        if (baVar.x()) {
+                            w9 w9Var = baVar.W;
+                            MessageObject messageObject = w9Var instanceof t1 ? ((t1) w9Var).getMessageObject() : null;
+                            if (messageObject != null && baVar.r() != null) {
+                                baVar.I(messageObject, baVar.u, baVar.v);
+                                baVar.f(true);
+                            }
+                        }
+                        baVar.u();
+                        return true;
+                    }
+                    if (itemId == 16908320) {
+                        baVar.D();
+                        baVar.u();
+                        return true;
+                    }
+                    if (itemId != 16908322) {
+                        baVar.f(false);
+                        return true;
+                    }
+                    baVar.H();
+                    baVar.u();
+                    return true;
+                }
+                if (!baVar.J() && (s10 = baVar.s(baVar.W, false)) != null) {
+                    baVar.u = 0;
+                    baVar.v = s10.length();
+                    baVar.u();
+                    baVar.w();
+                    AndroidUtilities.cancelRunOnUIThread(gVar);
+                    AndroidUtilities.runOnUIThread(gVar);
+                    return true;
+                }
+            }
         }
+        return true;
     }
 
     @Override // android.view.ActionMode.Callback
     public final boolean onCreateActionMode(ActionMode actionMode, Menu menu) {
-        switch (this.a) {
-            case 0:
-                ((k9) this.b).onCreateActionMode(actionMode, menu);
-                return true;
-            case 1:
-                return this.b.onCreateActionMode(actionMode, menu);
-            default:
-                return ((fu) this.b).onCreateActionMode(actionMode, menu);
-        }
-    }
-
-    @Override // android.view.ActionMode.Callback
-    public final void onDestroyActionMode(ActionMode actionMode) {
-        switch (this.a) {
-            case 0:
-                break;
-            case 1:
-                this.b.onDestroyActionMode(actionMode);
-                EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) this.c;
-                editTextBoldCursor.f();
-                editTextBoldCursor.floatingActionMode = null;
-                break;
-            default:
-                ((fu) this.b).onDestroyActionMode(actionMode);
-                break;
-        }
-    }
-
-    @Override // android.view.ActionMode.Callback2
-    public final void onGetContentRect(ActionMode actionMode, View view, Rect rect) {
-        int i10;
-        switch (this.a) {
-            case 0:
-                aa aaVar = (aa) this.c;
-                if (aaVar.x()) {
-                    aaVar.O();
-                    int[] l4 = aaVar.l();
-                    int i11 = 1;
-                    if (aaVar.W != null) {
-                        int i12 = -aaVar.m();
-                        int[] B = aaVar.B(aaVar.u);
-                        i10 = B[0] + aaVar.a;
-                        int dp = ((i12 / 2) + ((B[1] + aaVar.b) + l4[1])) - AndroidUtilities.dp(4.0f);
-                        if (dp >= 1) {
-                            i11 = dp;
-                        }
-                    } else {
-                        i10 = 0;
-                    }
-                    int width = aaVar.F.getWidth();
-                    aaVar.N();
-                    if (aaVar.W != null) {
-                        width = aaVar.B(aaVar.v)[0] + aaVar.a;
-                    }
-                    rect.set(Math.min(i10, width), i11, Math.max(i10, width), i11 + 1);
-                    break;
-                }
-                break;
-            case 1:
-                ActionMode.Callback callback = this.b;
-                if (!(callback instanceof ActionMode.Callback2)) {
-                    super.onGetContentRect(actionMode, view, rect);
-                    break;
-                } else {
-                    ((ActionMode.Callback2) callback).onGetContentRect(actionMode, view, rect);
-                    break;
-                }
-            default:
-                ActionMode.Callback callback2 = (ActionMode.Callback) this.c;
-                if (!(callback2 instanceof ActionMode.Callback2)) {
-                    super.onGetContentRect(actionMode, view, rect);
-                    break;
-                } else {
-                    ((ActionMode.Callback2) callback2).onGetContentRect(actionMode, view, rect);
-                    break;
-                }
-        }
+        menu.add(0, android.R.id.copy, 0, android.R.string.copy);
+        menu.add(0, R.id.menu_quote, 1, LocaleController.getString(R.string.Quote));
+        menu.add(0, 3, 2, LocaleController.getString(R.string.TranslateMessage));
+        menu.add(0, android.R.id.cut, 3, android.R.string.cut);
+        menu.add(0, android.R.id.paste, 4, android.R.string.paste);
+        menu.add(0, android.R.id.selectAll, 5, android.R.string.selectAll);
+        return true;
     }
 
     @Override // android.view.ActionMode.Callback
     public final boolean onPrepareActionMode(ActionMode actionMode, Menu menu) {
-        switch (this.a) {
-            case 0:
-                ((k9) this.b).onPrepareActionMode(actionMode, menu);
-                return true;
-            case 1:
-                return this.b.onPrepareActionMode(actionMode, menu);
-            default:
-                return ((fu) this.b).a.onPrepareActionMode(actionMode, menu);
+        ClipboardManager clipboardManager;
+        ba baVar;
+        w9 w9Var;
+        MenuItem findItem = menu.findItem(R.id.menu_quote);
+        if (findItem != null) {
+            findItem.setVisible(this.b.e());
         }
+        MenuItem findItem2 = menu.findItem(android.R.id.copy);
+        if (findItem2 != null) {
+            findItem2.setVisible(this.b.b());
+        }
+        MenuItem findItem3 = menu.findItem(android.R.id.selectAll);
+        boolean z10 = false;
+        if (findItem3 != null && (w9Var = (baVar = this.b).W) != null) {
+            CharSequence s10 = baVar.s(w9Var, false);
+            if (!this.b.b()) {
+                findItem3.setVisible(false);
+            } else if (this.b.j()) {
+                findItem3.setVisible(true);
+            } else {
+                ba baVar2 = this.b;
+                if (baVar2.Z || (baVar2.u <= 0 && baVar2.v >= s10.length() - 1)) {
+                    findItem3.setVisible(false);
+                } else {
+                    findItem3.setVisible(true);
+                }
+            }
+        }
+        MenuItem findItem4 = menu.findItem(android.R.id.cut);
+        if (findItem4 != null) {
+            findItem4.setVisible(this.b instanceof ki.j3);
+        }
+        MenuItem findItem5 = menu.findItem(android.R.id.paste);
+        if (findItem5 != null) {
+            ba baVar3 = this.b;
+            if (baVar3 instanceof ki.j3) {
+                try {
+                    aa aaVar = baVar3.C;
+                    Context context = aaVar != null ? aaVar.getContext() : ApplicationLoader.applicationContext;
+                    if (context != null && (clipboardManager = (ClipboardManager) context.getSystemService("clipboard")) != null) {
+                        if (clipboardManager.hasPrimaryClip()) {
+                            z10 = true;
+                        }
+                    }
+                } catch (Exception unused) {
+                }
+            }
+            findItem5.setVisible(z10);
+        }
+        if (this.b.k0 == null || !LanguageDetector.hasSupport() || this.b.r() == null) {
+            this.a = null;
+            a(menu);
+        } else {
+            LanguageDetector.detectLanguage(this.b.r().toString(), new k9(this, menu), new k9(this, menu));
+        }
+        return true;
     }
 
-    public l9(fu fuVar, ActionMode.Callback callback) {
-        this.b = fuVar;
-        this.c = callback;
-    }
-
-    public l9(aa aaVar, k9 k9Var) {
-        this.c = aaVar;
-        this.b = k9Var;
-    }
-
-    private final void a(ActionMode actionMode) {
+    @Override // android.view.ActionMode.Callback
+    public final void onDestroyActionMode(ActionMode actionMode) {
     }
 }

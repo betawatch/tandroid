@@ -13,9 +13,9 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.bh;
 import org.telegram.ui.fj;
-import org.telegram.ui.qn;
+import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q5 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -40,7 +40,7 @@ public final /* synthetic */ class q5 implements Utilities.Callback {
         SpannableStringBuilder spannableStringBuilder;
         int size;
         int i10;
-        org.telegram.ui.ActionBar.d6 d6Var;
+        org.telegram.ui.ActionBar.g6 g6Var;
         int i11 = this.a;
         Object obj2 = this.d;
         switch (i11) {
@@ -87,23 +87,23 @@ public final /* synthetic */ class q5 implements Utilities.Callback {
                 }
                 break;
             case 1:
-                qn.R0((qn) obj2, this.b, this.c, (Long) obj);
+                sn.V0((sn) obj2, this.b, this.c, (Long) obj);
                 break;
             default:
                 fj fjVar = (fj) obj2;
                 Long l4 = (Long) obj;
-                qn qnVar = fjVar.b;
-                if (qnVar.getParentActivity() != null) {
-                    Activity parentActivity = qnVar.getParentActivity();
+                sn snVar = fjVar.b;
+                if (snVar.getParentActivity() != null) {
+                    Activity parentActivity = snVar.getParentActivity();
                     String string = LocaleController.getString(R.string.RemoveMessageFeeTitle);
-                    int i13 = ChatObject.isMonoForum(qnVar.e) ? R.string.RemoveMessageFeeMessageChannel : R.string.RemoveMessageFeeMessage;
+                    int i13 = ChatObject.isMonoForum(snVar.e) ? R.string.RemoveMessageFeeMessageChannel : R.string.RemoveMessageFeeMessage;
                     long j10 = this.b;
                     SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString(i13, DialogObject.getShortName(j10)));
                     String formatPluralStringComma = l4.longValue() > 0 ? LocaleController.formatPluralStringComma("RemoveMessageFeeRefund", (int) l4.longValue()) : null;
                     String string2 = LocaleController.getString(R.string.Confirm);
                     bh bhVar = new bh(fjVar, j10, this.c, l4, 1);
-                    d6Var = ((org.telegram.ui.ActionBar.n2) qnVar).resourceProvider;
-                    org.telegram.ui.Components.f5.h0(parentActivity, string, replaceTags, formatPluralStringComma, string2, bhVar, d6Var, true);
+                    g6Var = ((org.telegram.ui.ActionBar.o2) snVar).resourceProvider;
+                    org.telegram.ui.Components.f5.i0(parentActivity, string, replaceTags, formatPluralStringComma, string2, bhVar, g6Var, true);
                     break;
                 }
                 break;

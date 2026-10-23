@@ -8,15 +8,15 @@ import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class on implements ri {
-    public final /* synthetic */ org.telegram.ui.ActionBar.n2 a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.o2 a;
     public final /* synthetic */ Utilities.Callback b;
     public final /* synthetic */ mn c;
 
-    public on(Utilities.Callback callback, org.telegram.ui.ActionBar.n2 n2Var, mn mnVar) {
-        this.a = n2Var;
+    public on(Utilities.Callback callback, org.telegram.ui.ActionBar.o2 o2Var, mn mnVar) {
+        this.a = o2Var;
         this.b = callback;
         this.c = mnVar;
     }
@@ -27,8 +27,8 @@ public final class on implements ri {
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = mnVar.j0;
         Utilities.Callback callback = this.b;
         if (i10 == 15) {
-            org.telegram.ui.ActionBar.n2 n2Var = this.a;
-            f5.f0(n2Var.getContext(), n2Var.getResourceProvider(), null, null, new nn(0, callback), null);
+            org.telegram.ui.ActionBar.o2 o2Var = this.a;
+            f5.g0(o2Var.getContext(), o2Var.getResourceProvider(), null, null, new nn(0, callback), null);
         } else if (i10 == 7 || i10 == 8) {
             HashMap<Object, Object> selectedPhotos = chatAttachAlertPhotoLayout.getSelectedPhotos();
             ArrayList<Object> selectedPhotosOrder = chatAttachAlertPhotoLayout.getSelectedPhotosOrder();
@@ -92,12 +92,12 @@ public final class on implements ri {
     }
 
     @Override // org.telegram.ui.Components.ri
-    public final void u(gh ghVar) {
+    public final void r(gh ghVar) {
         NotificationCenter.getInstance(this.a.getCurrentAccount()).doOnIdle(ghVar);
     }
 
     @Override // org.telegram.ui.Components.ri
-    public final boolean v() {
+    public final boolean u() {
         return false;
     }
 

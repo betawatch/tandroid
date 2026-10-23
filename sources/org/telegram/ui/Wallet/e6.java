@@ -11,27 +11,27 @@ import android.view.animation.PathInterpolator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.ti;
-import org.telegram.ui.qn;
+import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class e6 {
     public final ViewGroup a;
     public final View b;
     public final ti c;
     public final m6 d;
-    public final qn e;
+    public final sn e;
     public final TL_wallet.walletTransaction f;
     public final Runnable g;
     public final b6 h;
     public final m6 i;
-    public final k9 j = new k9();
+    public final l9 j = new l9();
     public final PathInterpolator k = new PathInterpolator(0.3f, 0.0f, 0.8f, 0.15f);
     public final float l;
     public final AnimatorSet m;
     public final RectF n;
     public final RectF o;
-    public org.telegram.ui.Cells.w0 p;
+    public org.telegram.ui.Cells.v0 p;
     public final c6 q;
     public float r;
     public boolean s;
@@ -44,7 +44,7 @@ public final class e6 {
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r1v3, types: [java.lang.Runnable, org.telegram.ui.Wallet.a6] */
     /* JADX WARN: Type inference failed for: r7v0, types: [org.telegram.ui.Wallet.a6] */
-    public e6(ViewGroup viewGroup, View view, m6 m6Var, qn qnVar, TL_wallet.walletTransaction wallettransaction, Runnable runnable, ti tiVar) {
+    public e6(ViewGroup viewGroup, View view, m6 m6Var, sn snVar, TL_wallet.walletTransaction wallettransaction, Runnable runnable, ti tiVar) {
         AnimatorSet animatorSet = new AnimatorSet();
         this.m = animatorSet;
         this.o = new RectF();
@@ -73,18 +73,18 @@ public final class e6 {
                         if (!e6Var.v && !e6Var.u) {
                             e6Var.e();
                             e6Var.b(rectF2.centerX(), rectF2.centerY(), rectF2.width());
-                            org.telegram.ui.Cells.w0 u82 = e6Var.e.u8(e6Var.f);
+                            org.telegram.ui.Cells.v0 u82 = e6Var.e.u8(e6Var.f);
                             if (u82 != null && u82.getWidth() > 0) {
-                                org.telegram.ui.Cells.w0 w0Var = e6Var.p;
-                                if (w0Var != u82) {
-                                    if (w0Var != null) {
-                                        w0Var.I0.i(false);
+                                org.telegram.ui.Cells.v0 v0Var = e6Var.p;
+                                if (v0Var != u82) {
+                                    if (v0Var != null) {
+                                        v0Var.I0.i(false);
                                     }
                                     e6Var.p = u82;
                                 }
-                                m3 m3Var = e6Var.p.I0.m;
-                                if (e6Var.t && c6Var.n && m3Var != null && m3Var.n && m3Var.getWidth() > 0 && !e6Var.p.isLayoutRequested()) {
-                                    rectF.set(e6Var.c(m3Var));
+                                l3 l3Var = e6Var.p.I0.m;
+                                if (e6Var.t && c6Var.n && l3Var != null && l3Var.n && l3Var.getWidth() > 0 && !e6Var.p.isLayoutRequested()) {
+                                    rectF.set(e6Var.c(l3Var));
                                     if (rectF.centerY() > 0.0f && rectF.centerY() < viewGroup2.getHeight() && f7 > 0.01f) {
                                         e6Var.u = true;
                                         e6Var.p.I0.i(true);
@@ -127,10 +127,10 @@ public final class e6 {
         this.b = view;
         this.d = m6Var;
         this.l = m6Var.getAlpha();
-        this.e = qnVar;
+        this.e = snVar;
         this.f = wallettransaction;
         this.g = runnable;
-        RectF a2 = v9.a(viewGroup, m6Var);
+        RectF a2 = w9.a(viewGroup, m6Var);
         this.n = a2;
         e();
         b6 b6Var = new b6(this, viewGroup.getContext());
@@ -168,18 +168,18 @@ public final class e6 {
                         if (!e6Var.v && !e6Var.u) {
                             e6Var.e();
                             e6Var.b(rectF2.centerX(), rectF2.centerY(), rectF2.width());
-                            org.telegram.ui.Cells.w0 u82 = e6Var.e.u8(e6Var.f);
+                            org.telegram.ui.Cells.v0 u82 = e6Var.e.u8(e6Var.f);
                             if (u82 != null && u82.getWidth() > 0) {
-                                org.telegram.ui.Cells.w0 w0Var = e6Var.p;
-                                if (w0Var != u82) {
-                                    if (w0Var != null) {
-                                        w0Var.I0.i(false);
+                                org.telegram.ui.Cells.v0 v0Var = e6Var.p;
+                                if (v0Var != u82) {
+                                    if (v0Var != null) {
+                                        v0Var.I0.i(false);
                                     }
                                     e6Var.p = u82;
                                 }
-                                m3 m3Var = e6Var.p.I0.m;
-                                if (e6Var.t && c6Var2.n && m3Var != null && m3Var.n && m3Var.getWidth() > 0 && !e6Var.p.isLayoutRequested()) {
-                                    rectF.set(e6Var.c(m3Var));
+                                l3 l3Var = e6Var.p.I0.m;
+                                if (e6Var.t && c6Var2.n && l3Var != null && l3Var.n && l3Var.getWidth() > 0 && !e6Var.p.isLayoutRequested()) {
+                                    rectF.set(e6Var.c(l3Var));
                                     if (rectF.centerY() > 0.0f && rectF.centerY() < viewGroup2.getHeight() && f7 > 0.01f) {
                                         e6Var.u = true;
                                         e6Var.p.I0.i(true);
@@ -246,18 +246,18 @@ public final class e6 {
                         if (!e6Var.v && !e6Var.u) {
                             e6Var.e();
                             e6Var.b(rectF2.centerX(), rectF2.centerY(), rectF2.width());
-                            org.telegram.ui.Cells.w0 u82 = e6Var.e.u8(e6Var.f);
+                            org.telegram.ui.Cells.v0 u82 = e6Var.e.u8(e6Var.f);
                             if (u82 != null && u82.getWidth() > 0) {
-                                org.telegram.ui.Cells.w0 w0Var = e6Var.p;
-                                if (w0Var != u82) {
-                                    if (w0Var != null) {
-                                        w0Var.I0.i(false);
+                                org.telegram.ui.Cells.v0 v0Var = e6Var.p;
+                                if (v0Var != u82) {
+                                    if (v0Var != null) {
+                                        v0Var.I0.i(false);
                                     }
                                     e6Var.p = u82;
                                 }
-                                m3 m3Var = e6Var.p.I0.m;
-                                if (e6Var.t && c6Var2.n && m3Var != null && m3Var.n && m3Var.getWidth() > 0 && !e6Var.p.isLayoutRequested()) {
-                                    rectF.set(e6Var.c(m3Var));
+                                l3 l3Var = e6Var.p.I0.m;
+                                if (e6Var.t && c6Var2.n && l3Var != null && l3Var.n && l3Var.getWidth() > 0 && !e6Var.p.isLayoutRequested()) {
+                                    rectF.set(e6Var.c(l3Var));
                                     if (rectF.centerY() > 0.0f && rectF.centerY() < viewGroup2.getHeight() && f7 > 0.01f) {
                                         e6Var.u = true;
                                         e6Var.p.I0.i(true);
@@ -297,7 +297,7 @@ public final class e6 {
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         ofFloat.setDuration(600L);
         ofFloat.setInterpolator(new LinearInterpolator());
-        ofFloat.addUpdateListener(new b3(this, 3));
+        ofFloat.addUpdateListener(new a3(this, 3));
         animatorSet.playTogether(ofFloat);
         animatorSet.addListener(new d6(this, tiVar, m6Var));
         b6Var.post(r12);
@@ -313,25 +313,25 @@ public final class e6 {
         b6Var.removeCallbacks(a6Var);
         m6 m6Var = this.i;
         m6Var.l(null);
-        org.telegram.ui.Cells.w0 w0Var = this.p;
-        if (w0Var != null) {
-            w0Var.I0.i(false);
+        org.telegram.ui.Cells.v0 v0Var = this.p;
+        if (v0Var != null) {
+            v0Var.I0.i(false);
             if (z10 && this.r >= 1.0f) {
                 RectF rectF = this.o;
-                if (!rectF.isEmpty() && this.p.isAttachedToWindow() && m0.G(this.p.getMessageObject(), this.f)) {
+                if (!rectF.isEmpty() && this.p.isAttachedToWindow() && l0.G(this.p.getMessageObject(), this.f)) {
                     float centerY = (((rectF.centerY() - (Math.min(this.n.centerY(), rectF.centerY()) - AndroidUtilities.dp(150.0f))) * 2.0f) / 0.6f) / AndroidUtilities.density;
-                    n3 n3Var = this.p.I0;
-                    n3Var.l();
+                    m3 m3Var = this.p.I0;
+                    m3Var.l();
                     o1.k kVar = new o1.k(new o1.j(0.0f));
-                    n3Var.b0 = kVar;
+                    m3Var.b0 = kVar;
                     o1.l lVar = new o1.l(0.0f);
                     lVar.a(0.65f);
                     lVar.b(200.0f);
                     kVar.u = lVar;
-                    n3Var.b0.e(0.001f);
-                    n3Var.b0.a = Math.max(20.0f, Math.min(36.0f, centerY * 0.04f));
-                    n3Var.b0.b(new h3(n3Var, 1));
-                    n3Var.b0.h();
+                    m3Var.b0.e(0.001f);
+                    m3Var.b0.a = Math.max(20.0f, Math.min(36.0f, centerY * 0.04f));
+                    m3Var.b0.b(new g3(m3Var, 1));
+                    m3Var.b0.h();
                 }
             }
         }
@@ -346,13 +346,13 @@ public final class e6 {
         if (tiVar == null) {
             this.b.setTranslationY(0.0f);
         } else {
-            tiVar.M1(1.0f);
+            tiVar.Q1(1.0f);
         }
         ViewGroup viewGroup = this.a;
         if (tiVar != null && z10 && this.j.d()) {
-            qn qnVar = this.e;
-            if (qnVar.getParentLayout() != null) {
-                ViewGroup view = qnVar.getParentLayout().getView();
+            sn snVar = this.e;
+            if (snVar.getParentLayout() != null) {
+                ViewGroup view = snVar.getParentLayout().getView();
                 if (view.isAttachedToWindow()) {
                     viewGroup.getLocationOnScreen(new int[2]);
                     view.getLocationOnScreen(new int[2]);
@@ -365,7 +365,7 @@ public final class e6 {
             }
         }
         this.g.run();
-        AndroidUtilities.runOnUIThread(new z3(9, this, viewGroup), 650L);
+        AndroidUtilities.runOnUIThread(new y3(9, this, viewGroup), 650L);
     }
 
     public final void b(float f7, float f10, float f11) {
@@ -386,14 +386,14 @@ public final class e6 {
         c6Var.setScaleY(f13);
     }
 
-    public final RectF c(m3 m3Var) {
+    public final RectF c(l3 l3Var) {
         ti tiVar = this.c;
         ViewGroup viewGroup = this.a;
         if (tiVar == null) {
-            return v9.a(viewGroup, m3Var);
+            return w9.a(viewGroup, l3Var);
         }
-        ViewGroup viewGroup2 = (ViewGroup) m3Var.getRootView();
-        RectF a2 = v9.a(viewGroup2, m3Var);
+        ViewGroup viewGroup2 = (ViewGroup) l3Var.getRootView();
+        RectF a2 = w9.a(viewGroup2, l3Var);
         int[] iArr = new int[2];
         viewGroup2.getLocationOnScreen(iArr);
         a2.offset(iArr[0], iArr[1]);
@@ -433,9 +433,9 @@ public final class e6 {
             ti tiVar = this.c;
             RectF rectF = this.n;
             if (tiVar == null) {
-                v9.f(m6Var, this.b, viewGroup, rectF);
+                w9.f(m6Var, this.b, viewGroup, rectF);
             } else {
-                rectF.set(v9.a(viewGroup, m6Var));
+                rectF.set(w9.a(viewGroup, m6Var));
                 rectF.offset(0.0f, tiVar.o2 - tiVar.y0);
             }
         }

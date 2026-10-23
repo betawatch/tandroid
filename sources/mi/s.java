@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class s {
     public static final HashMap b;
@@ -85,12 +85,12 @@ public final class s {
                 if (i16 > i14) {
                     break;
                 }
-                c0Var.c(i12, i16, iArr4[i10]);
+                c0Var.d(i12, i16, iArr4[i10]);
                 i12 = iArr3[i10];
                 i10--;
             }
             if (i10 >= 0) {
-                c0Var.c(i12, i14, iArr4[i10]);
+                c0Var.d(i12, i14, iArr4[i10]);
             }
             int i17 = iArr[i13 + 4];
             int i18 = i17 < 0 ? 0 : iArr2[i17];
@@ -114,7 +114,7 @@ public final class s {
             i12 = i14;
         }
         while (i10 >= 0) {
-            c0Var.c(i12, iArr3[i10], iArr4[i10]);
+            c0Var.d(i12, iArr3[i10], iArr4[i10]);
             i12 = iArr3[i10];
             i10--;
         }

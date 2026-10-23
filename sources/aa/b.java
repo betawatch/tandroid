@@ -89,7 +89,7 @@ import z9.z;
 import z9.z0;
 import z9.z1;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class b {
     public static final t1 a;
@@ -375,7 +375,7 @@ public final class b {
                         str = str.concat(" libraryName");
                     }
                     if (str6 == null) {
-                        str = r4.c.u(str, " buildId");
+                        str = si.o0.u(str, " buildId");
                     }
                     if (!str.isEmpty()) {
                         throw new IllegalStateException("Missing required properties:".concat(str));
@@ -568,7 +568,7 @@ public final class b {
                         str10 = str10.concat(" importance");
                     }
                     if (list == null) {
-                        str10 = r4.c.u(str10, " frames");
+                        str10 = si.o0.u(str10, " frames");
                     }
                     if (!str10.isEmpty()) {
                         throw new IllegalStateException("Missing required properties:".concat(str10));
@@ -644,7 +644,7 @@ public final class b {
                         str = str.concat(" size");
                     }
                     if (str11 == null) {
-                        str = r4.c.u(str, " name");
+                        str = si.o0.u(str, " name");
                     }
                     if (!str.isEmpty()) {
                         throw new IllegalStateException("Missing required properties:".concat(str));
@@ -806,7 +806,7 @@ public final class b {
                         }
                     }
                     jsonReader.endObject();
-                    lVar.d = lVar2.l();
+                    lVar.d = lVar2.i();
                     break;
                 case 1:
                     jsonReader.beginObject();
@@ -1034,7 +1034,7 @@ public final class b {
                                                 str4 = str4.concat(" code");
                                             }
                                             if (l4 == null) {
-                                                str4 = r4.c.u(str4, " address");
+                                                str4 = si.o0.u(str4, " address");
                                             }
                                             if (!str4.isEmpty()) {
                                                 throw new IllegalStateException("Missing required properties:".concat(str4));
@@ -1152,7 +1152,7 @@ public final class b {
             }
         }
         jsonReader.endObject();
-        return lVar.k();
+        return lVar.h();
     }
 
     public static p0 f(JsonReader jsonReader) {
@@ -1200,7 +1200,7 @@ public final class b {
             str3 = str3.concat(" frames");
         }
         if (num == null) {
-            str3 = r4.c.u(str3, " overflowCount");
+            str3 = si.o0.u(str3, " overflowCount");
         }
         if (str3.isEmpty()) {
             return new p0(str, str2, list, p0Var, num.intValue());

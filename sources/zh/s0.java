@@ -7,9 +7,9 @@ import android.graphics.Paint;
 import com.google.android.gms.internal.play_billing.k3;
 import java.nio.ByteBuffer;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.cz0;
+import org.telegram.ui.Components.fz0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s0 implements Runnable {
     public final /* synthetic */ int a;
@@ -67,7 +67,7 @@ public final /* synthetic */ class s0 implements Runnable {
                 c1.s(iArr, bArr, i10);
                 createBitmap2.setPixels(iArr, 0, i13, 0, 0, i13, i13);
                 createBitmap2.prepareToDraw();
-                AndroidUtilities.runOnUIThread(new cz0(c1Var, createBitmap2, iArr, i10, 23));
+                AndroidUtilities.runOnUIThread(new fz0(c1Var, createBitmap2, iArr, i10, 24));
                 return;
             case 1:
                 this.b.F0(this.c);

@@ -12,7 +12,7 @@ import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class id extends Drawable {
     public static final gd H = new gd(0);
@@ -47,7 +47,7 @@ public final class id extends Drawable {
     public final float[] z = new float[4];
     public int A = -1;
     public float E = 1.0f;
-    public final pg F = new pg(this, 16);
+    public final pg F = new pg(this, 17);
     public int G = 255;
 
     public id() {
@@ -69,10 +69,24 @@ public final class id extends Drawable {
         hdVar2.e = 0.55f;
         hdVar2.f = 0.55f;
         hdVar2.g = 128;
-        e(0, false);
+        g(0, false);
     }
 
-    public final void a(float f7, float f10, float f11, float[] fArr) {
+    public static int e(int i10) {
+        return i10 != 0 ? i10 != 1 ? i10 != 3 ? org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.bh, false) : i0.a.f(0.5f, i0.a.f(0.5f, org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.ih, false), org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.jh, false)), org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.kh, false)) : i0.a.f(0.5f, org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Zg, false), org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.ah, false)) : i0.a.f(0.5f, org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Xg, false), org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Yg, false));
+    }
+
+    public final void a(int i10) {
+        this.B = i10;
+        hd hdVar = this.q;
+        hdVar.h = i10;
+        hd hdVar2 = this.r;
+        hdVar2.h = i10;
+        hdVar.a();
+        hdVar2.a();
+    }
+
+    public final void b(float f7, float f10, float f11, float[] fArr) {
         double d = f11;
         float cos = (float) Math.cos(d);
         float sin = (float) Math.sin(d);
@@ -83,7 +97,7 @@ public final class id extends Drawable {
         fArr[3] = cos;
     }
 
-    public final void b(Canvas canvas, hd hdVar, float f7, float f10, float f11) {
+    public final void c(Canvas canvas, hd hdVar, float f7, float f10, float f11) {
         int i10;
         char c10;
         int i11 = hdVar.x;
@@ -154,7 +168,7 @@ public final class id extends Drawable {
                 float f31 = this.c;
                 if (f29 < f30) {
                     c10 = c11;
-                    a(this.k, -this.l, (f29 / (f31 * this.j)) - 1.5707964f, fArr5);
+                    b(this.k, -this.l, (f29 / (f31 * this.j)) - 1.5707964f, fArr5);
                 } else {
                     c10 = c11;
                     float f32 = f29 - f30;
@@ -167,7 +181,7 @@ public final class id extends Drawable {
                     } else {
                         float f34 = f32 - f33;
                         if (f34 < f30) {
-                            a(this.k, this.l, f34 / (f31 * this.j), fArr5);
+                            b(this.k, this.l, f34 / (f31 * this.j), fArr5);
                         } else {
                             float f35 = f34 - f30;
                             if (f35 < f28) {
@@ -178,7 +192,7 @@ public final class id extends Drawable {
                             } else {
                                 float f36 = f35 - f28;
                                 if (f36 < f30) {
-                                    a(-this.k, this.l, (f36 / (f31 * this.j)) + 1.5707964f, fArr5);
+                                    b(-this.k, this.l, (f36 / (f31 * this.j)) + 1.5707964f, fArr5);
                                 } else {
                                     float f37 = f36 - f30;
                                     if (f37 < f33) {
@@ -187,7 +201,7 @@ public final class id extends Drawable {
                                         fArr5[c10] = f26;
                                         fArr5[3] = -1.0f;
                                     } else {
-                                        a(-this.k, -this.l, ((f37 - f33) / (f31 * this.j)) + 3.1415927f, fArr5);
+                                        b(-this.k, -this.l, ((f37 - f33) / (f31 * this.j)) + 3.1415927f, fArr5);
                                     }
                                 }
                             }
@@ -237,7 +251,7 @@ public final class id extends Drawable {
         canvas.drawPath(path, hdVar.i);
     }
 
-    public final float c() {
+    public final float d() {
         hd hdVar = this.q;
         float f7 = hdVar.d;
         float f10 = hdVar.f;
@@ -248,14 +262,6 @@ public final class id extends Drawable {
         float f15 = (f13 * f14) + f12;
         hd hdVar2 = this.r;
         return Math.max(f15, (f14 * hdVar2.e) + (f11 * hdVar2.f) + hdVar2.d);
-    }
-
-    public final void d(float f7) {
-        this.w = f7;
-        if (LiteMode.isEnabled(512)) {
-            float f10 = this.w - this.v;
-            this.x = f10 / (((f10 > 0.0f ? 400.0f : 500.0f) * 0.55f) + 100.0f);
-        }
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -296,70 +302,43 @@ public final class id extends Drawable {
             if (f14 > 1.0f) {
                 this.E = 1.0f;
             }
-            int f15 = i0.a.f(this.E, this.C, this.D);
-            this.B = f15;
-            hdVar2.h = f15;
-            hdVar.h = f15;
-            hdVar2.a();
-            hdVar.a();
+            a(i0.a.f(this.E, this.C, this.D));
         }
         float exactCenterX = bounds.exactCenterX();
         float exactCenterY = bounds.exactCenterY();
-        float f16 = 1.0f - (this.v * 0.7f);
-        float f17 = hdVar2.f;
-        float f18 = this.e;
-        float A = com.google.android.gms.internal.play_billing.k3.A((float) Math.sin(this.s), 0.5f, 0.5f, f17 * f18 * f16);
-        float A2 = com.google.android.gms.internal.play_billing.k3.A((float) Math.sin(this.s + hdVar.b), 0.5f, 0.5f, f18 * hdVar.f * f16);
-        b(canvas, this.q, exactCenterX, exactCenterY, A);
-        b(canvas, this.r, exactCenterX, exactCenterY, A2);
+        float f15 = 1.0f - (this.v * 0.7f);
+        float f16 = hdVar2.f;
+        float f17 = this.e;
+        float A = com.google.android.gms.internal.play_billing.k3.A((float) Math.sin(this.s), 0.5f, 0.5f, f16 * f17 * f15);
+        float A2 = com.google.android.gms.internal.play_billing.k3.A((float) Math.sin(this.s + hdVar.b), 0.5f, 0.5f, f17 * hdVar.f * f15);
+        c(canvas, this.q, exactCenterX, exactCenterY, A);
+        c(canvas, this.r, exactCenterX, exactCenterY, A2);
         if (this.E < 1.0f) {
             invalidateSelf();
         }
     }
 
-    public final void e(int i10, boolean z10) {
-        if (i10 != this.A || this.E < 1.0f) {
-            this.A = i10;
-            int x02 = i10 != 0 ? i10 != 1 ? i10 != 3 ? org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.bh, false) : i0.a.f(0.5f, i0.a.f(0.5f, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.ih, false), org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.jh, false)), org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.kh, false)) : i0.a.f(0.5f, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Zg, false), org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.ah, false)) : i0.a.f(0.5f, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Xg, false), org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Yg, false));
-            if (z10 && this.B != 0 && LiteMode.isEnabled(512)) {
-                this.C = this.B;
-                this.D = x02;
-                this.E = 0.0f;
-            } else {
-                this.E = 1.0f;
-                this.B = x02;
-                hd hdVar = this.q;
-                hdVar.h = x02;
-                hd hdVar2 = this.r;
-                hdVar2.h = x02;
-                hdVar.a();
-                hdVar2.a();
-            }
-            invalidateSelf();
+    public final void f(float f7) {
+        this.w = f7;
+        if (LiteMode.isEnabled(512)) {
+            float f10 = this.w - this.v;
+            this.x = f10 / (((f10 > 0.0f ? 400.0f : 500.0f) * 0.55f) + 100.0f);
         }
     }
 
-    public final void f(boolean z10) {
-        VoIPService sharedInstance = VoIPService.getSharedInstance();
-        if (sharedInstance == null) {
-            return;
-        }
-        int callState = sharedInstance.getCallState();
-        if (!sharedInstance.isSwitchingStream() && (callState == 1 || callState == 2 || callState == 6 || callState == 5)) {
-            e(2, z10);
-            return;
-        }
-        ChatObject.Call call = sharedInstance.groupCall;
-        if (call == null) {
-            e(sharedInstance.isMicMute() ? 1 : 0, z10);
-            return;
-        }
-        TLRPC.GroupCallParticipant groupCallParticipant = (TLRPC.GroupCallParticipant) call.participants.f(sharedInstance.getSelfId());
-        if ((groupCallParticipant == null || groupCallParticipant.can_self_unmute || !groupCallParticipant.muted || ChatObject.canManageCalls(sharedInstance.getChat())) && !sharedInstance.groupCall.call.rtmp_stream) {
-            e(sharedInstance.isMicMute() ? 1 : 0, z10);
-        } else {
-            sharedInstance.setMicMute(true, false, false);
-            e(3, z10);
+    public final void g(int i10, boolean z10) {
+        if (i10 != this.A || this.E < 1.0f) {
+            this.A = i10;
+            int e = e(i10);
+            if (z10 && this.B != 0 && LiteMode.isEnabled(512)) {
+                this.C = this.B;
+                this.D = e;
+                this.E = 0.0f;
+            } else {
+                this.E = 1.0f;
+                a(e);
+            }
+            invalidateSelf();
         }
     }
 
@@ -373,19 +352,43 @@ public final class id extends Drawable {
         return -3;
     }
 
+    public final void h(boolean z10) {
+        VoIPService sharedInstance = VoIPService.getSharedInstance();
+        if (sharedInstance == null) {
+            return;
+        }
+        int callState = sharedInstance.getCallState();
+        if (!sharedInstance.isSwitchingStream() && (callState == 1 || callState == 2 || callState == 6 || callState == 5)) {
+            g(2, z10);
+            return;
+        }
+        ChatObject.Call call = sharedInstance.groupCall;
+        if (call == null) {
+            g(sharedInstance.isMicMute() ? 1 : 0, z10);
+            return;
+        }
+        TLRPC.GroupCallParticipant groupCallParticipant = (TLRPC.GroupCallParticipant) call.participants.f(sharedInstance.getSelfId());
+        if ((groupCallParticipant == null || groupCallParticipant.can_self_unmute || !groupCallParticipant.muted || ChatObject.canManageCalls(sharedInstance.getChat())) && !sharedInstance.groupCall.call.rtmp_stream) {
+            g(sharedInstance.isMicMute() ? 1 : 0, z10);
+        } else {
+            sharedInstance.setMicMute(true, false, false);
+            g(3, z10);
+        }
+    }
+
     @Override // android.graphics.drawable.Drawable
     public final void onBoundsChange(Rect rect) {
         super.onBoundsChange(rect);
         if (getBounds().isEmpty()) {
             return;
         }
-        float c10 = c() + AndroidUtilities.dp(1.0f);
+        float d = d() + AndroidUtilities.dp(1.0f);
         float min = (Math.min(r6.width(), r6.height()) / 2.0f) - AndroidUtilities.dp(2.0f);
-        if (c10 > min) {
-            c10 = Math.max(0.0f, min);
+        if (d > min) {
+            d = Math.max(0.0f, min);
         }
-        this.h = (r6.width() / 2.0f) - c10;
-        float height = (r6.height() / 2.0f) - c10;
+        this.h = (r6.width() / 2.0f) - d;
+        float height = (r6.height() / 2.0f) - d;
         this.i = height;
         float f7 = this.h;
         if (f7 < 1.0f || height < 1.0f) {

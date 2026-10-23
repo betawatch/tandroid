@@ -14,13 +14,13 @@ import ei.bc;
 import ei.ea;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.GenericProvider;
-import org.telegram.ui.Components.ew0;
+import org.telegram.ui.Components.hw0;
 import org.telegram.ui.Components.qc;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public abstract class e4 extends FrameLayout {
-    public static final ew0 b0 = new ew0(new fh.b(11), new fh.b(12));
+    public static final hw0 b0 = new hw0(new fh.b(13), new fh.b(14));
     public Runnable E;
     public d4 F;
     public o1.k G;
@@ -53,7 +53,7 @@ public abstract class e4 extends FrameLayout {
     public boolean s;
     public o1.k v;
     public boolean w;
-    public org.telegram.ui.web.x0 x;
+    public org.telegram.ui.web.y0 x;
     public Runnable y;
 
     public e4(Context context) {
@@ -62,7 +62,7 @@ public abstract class e4 extends FrameLayout {
         this.f = 0.0f;
         this.h = -1.0f;
         this.n = -2.14748365E9f;
-        this.I = new fh.b(13);
+        this.I = new fh.b(15);
         this.M = true;
         this.R = 0.0f;
         this.S = false;
@@ -79,8 +79,8 @@ public abstract class e4 extends FrameLayout {
     }
 
     public final boolean b(boolean z10) {
-        org.telegram.ui.web.x0 x0Var = this.x;
-        if (x0Var == null || !x0Var.N) {
+        org.telegram.ui.web.y0 y0Var = this.x;
+        if (y0Var == null || !y0Var.N) {
             return true;
         }
         return z10 ? this.O : this.P;
@@ -220,7 +220,7 @@ public abstract class e4 extends FrameLayout {
             kVar3.c();
         }
         o1.k kVar4 = new o1.k(this, b0, f7);
-        kVar4.u = org.telegram.ui.Cells.c1.l(f7, 1200.0f, 1.0f);
+        kVar4.u = org.telegram.ui.Cells.b1.m(f7, 1200.0f, 1.0f);
         kVar4.a(new b4(0, this, runnable));
         this.G = kVar4;
         kVar4.h();
@@ -320,7 +320,7 @@ public abstract class e4 extends FrameLayout {
             kVar2.c();
         }
         o1.k kVar3 = new o1.k(new o1.j(f10));
-        kVar3.u = org.telegram.ui.Cells.c1.l(f7, 1400.0f, 1.0f);
+        kVar3.u = org.telegram.ui.Cells.b1.m(f7, 1400.0f, 1.0f);
         kVar3.b(new o1.g() { // from class: gi.a4
             @Override // o1.g
             public final void a(o1.h hVar, float f12, float f13) {
@@ -378,7 +378,7 @@ public abstract class e4 extends FrameLayout {
         super.setTranslationY(f7);
     }
 
-    public void setWebView(org.telegram.ui.web.x0 x0Var) {
-        this.x = x0Var;
+    public void setWebView(org.telegram.ui.web.y0 y0Var) {
+        this.x = y0Var;
     }
 }

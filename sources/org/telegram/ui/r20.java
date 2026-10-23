@@ -1,20 +1,31 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class r20 extends g.o {
-    public final /* synthetic */ q50 c;
+    public final /* synthetic */ u50 c;
 
-    public r20(q50 q50Var) {
-        this.c = q50Var;
+    public r20(u50 u50Var) {
+        this.c = u50Var;
     }
 
     @Override // g.o
     public final int i(int i10) {
-        int size = this.c.o2.e.size();
-        if (size > 1 && size != 2) {
-            return (size != 3 || i10 == 0 || i10 == 1) ? 3 : 6;
+        o50 o50Var;
+        int i11;
+        int i12;
+        int i13 = u50.F3 ? 6 : 2;
+        if (u50.G3 || i10 < (i11 = (o50Var = this.c.P).G) || i10 >= (i12 = o50Var.H)) {
+            return i13;
         }
-        return 6;
+        int i14 = i12 - i11;
+        int i15 = (i10 != i12 - 1 || (!u50.F3 && i14 % 2 == 0)) ? 1 : 2;
+        if (!u50.F3) {
+            return i15;
+        }
+        if (i14 == 1) {
+            return 6;
+        }
+        return i14 == 2 ? 3 : 2;
     }
 }

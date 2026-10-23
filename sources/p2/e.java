@@ -10,6 +10,7 @@ import e9.m2;
 import e9.n0;
 import e9.y0;
 import g2.b0;
+import i2.o1;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Collections;
@@ -18,12 +19,12 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import org.telegram.messenger.MediaDataController;
-import org.telegram.ui.fk0;
+import org.telegram.ui.web.d0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class e implements y2.g {
-    public static final fk0 J = new fk0(20);
+    public static final d0 J = new d0(2);
     public n0 E;
     public Uri F;
     public n G;
@@ -50,17 +51,6 @@ public final class e implements y2.g {
         this.c = dVar;
     }
 
-    @Override // y2.g
-    public final void J(y2.i iVar, long j10, long j11, boolean z10) {
-        y2.o oVar = (y2.o) iVar;
-        long j12 = oVar.a;
-        g2.m mVar = oVar.b;
-        b0 b0Var = oVar.d;
-        u2.u uVar = new u2.u(mVar, b0Var.c, b0Var.d, j10, j11, b0Var.b);
-        this.c.getClass();
-        this.f.q(uVar, 4, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
-    }
-
     public final void a(List list) {
         for (int i10 = 0; i10 < list.size(); i10++) {
             x xVar = (x) list.get(i10);
@@ -80,14 +70,14 @@ public final class e implements y2.g {
         }
         n a2 = d.a(dVar, uri);
         if (a2 != null && z10) {
-            i(uri);
+            h(uri);
             d dVar2 = (d) hashMap.get(uri);
             dVar2.getClass();
             HashMap hashMap2 = dVar2.b;
-            c cVar = (c) i2.e.i(hashMap2, uri, uri);
+            c cVar = (c) o1.j(hashMap2, uri, uri);
             cVar.getClass();
             if (!cVar.w) {
-                c cVar2 = (c) i2.e.i(hashMap2, uri, uri);
+                c cVar2 = (c) o1.j(hashMap2, uri, uri);
                 cVar2.getClass();
                 cVar2.w = true;
                 n a10 = d.a(dVar2, uri);
@@ -137,7 +127,7 @@ public final class e implements y2.g {
         long j12 = oVar.a;
         g2.m mVar = oVar.b;
         b0 b0Var = oVar.d;
-        u2.u uVar = new u2.u(mVar, b0Var.c, b0Var.d, j10, j11, b0Var.b);
+        u2.v vVar = new u2.v(mVar, b0Var.c, b0Var.d, j10, j11, b0Var.b);
         int i11 = oVar.c;
         this.c.getClass();
         Throwable th2 = iOException;
@@ -153,7 +143,7 @@ public final class e implements y2.g {
         }
         min = -9223372036854775807L;
         boolean z10 = min == -9223372036854775807L;
-        this.f.t(uVar, i11, iOException, z10);
+        this.f.t(vVar, i11, iOException, z10);
         return z10 ? y2.l.f : new k4.d(0, min, false);
     }
 
@@ -176,7 +166,7 @@ public final class e implements y2.g {
         if (dVar == null) {
             return false;
         }
-        c cVar = (c) i2.e.i(dVar.b, uri, uri);
+        c cVar = (c) o1.j(dVar.b, uri, uri);
         cVar.getClass();
         if (cVar.e == null) {
             return false;
@@ -187,23 +177,7 @@ public final class e implements y2.g {
         return nVar.o || (i10 = nVar.d) == 2 || i10 == 1 || cVar.f + max > elapsedRealtime;
     }
 
-    @Override // y2.g
-    public final void h(y2.i iVar, long j10, long j11, int i10) {
-        u2.u uVar;
-        y2.o oVar = (y2.o) iVar;
-        if (i10 == 0) {
-            long j12 = oVar.a;
-            uVar = new u2.u(oVar.b, j10);
-        } else {
-            long j13 = oVar.a;
-            g2.m mVar = oVar.b;
-            b0 b0Var = oVar.d;
-            uVar = new u2.u(mVar, b0Var.c, b0Var.d, j10, j11, b0Var.b);
-        }
-        this.f.v(uVar, oVar.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L, i10);
-    }
-
-    public final void i(Uri uri) {
+    public final void h(Uri uri) {
         if (uri.equals(this.F)) {
             return;
         }
@@ -222,7 +196,7 @@ public final class e implements y2.g {
                         return;
                     } else {
                         Uri d = d(uri);
-                        c cVar = (c) i2.e.i(dVar.b, uri, uri);
+                        c cVar = (c) o1.j(dVar.b, uri, uri);
                         cVar.getClass();
                         cVar.c(d);
                         return;
@@ -233,10 +207,10 @@ public final class e implements y2.g {
         }
     }
 
-    public final void j(Uri uri) {
+    public final void i(Uri uri) {
         d dVar = (d) this.d.get(uri);
         if (dVar != null) {
-            c cVar = (c) i2.e.i(dVar.b, uri, uri);
+            c cVar = (c) o1.j(dVar.b, uri, uri);
             cVar.getClass();
             cVar.c.a();
             IOException iOException = cVar.v;
@@ -244,6 +218,22 @@ public final class e implements y2.g {
                 throw iOException;
             }
         }
+    }
+
+    @Override // y2.g
+    public final void j(y2.i iVar, long j10, long j11, int i10) {
+        u2.v vVar;
+        y2.o oVar = (y2.o) iVar;
+        if (i10 == 0) {
+            long j12 = oVar.a;
+            vVar = new u2.v(oVar.b, j10);
+        } else {
+            long j13 = oVar.a;
+            g2.m mVar = oVar.b;
+            b0 b0Var = oVar.d;
+            vVar = new u2.v(mVar, b0Var.c, b0Var.d, j10, j11, b0Var.b);
+        }
+        this.f.v(vVar, oVar.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L, i10);
     }
 
     @Override // y2.g
@@ -279,21 +269,32 @@ public final class e implements y2.g {
             a(this.E);
             g2.m mVar = oVar.b;
             b0 b0Var = oVar.d;
-            u2.u uVar = new u2.u(mVar, b0Var.c, b0Var.d, j10, j11, b0Var.b);
+            u2.v vVar2 = new u2.v(mVar, b0Var.c, b0Var.d, j10, j11, b0Var.b);
             d dVar = (d) this.d.get(this.F);
             dVar.getClass();
             if (z10) {
                 Uri uri = oVar.d.c;
-                c cVar = (c) i2.e.i(dVar.b, uri, uri);
+                c cVar = (c) o1.j(dVar.b, uri, uri);
                 cVar.getClass();
-                cVar.d((n) rVar, uVar);
+                cVar.d((n) rVar, vVar2);
             } else {
                 d.b(dVar, this.F, false);
             }
             this.c.getClass();
-            this.f.r(uVar, 4, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
+            this.f.r(vVar2, 4, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
         } catch (w0 e) {
             this.v = e;
         }
+    }
+
+    @Override // y2.g
+    public final void z(y2.i iVar, long j10, long j11, boolean z10) {
+        y2.o oVar = (y2.o) iVar;
+        long j12 = oVar.a;
+        g2.m mVar = oVar.b;
+        b0 b0Var = oVar.d;
+        u2.v vVar = new u2.v(mVar, b0Var.c, b0Var.d, j10, j11, b0Var.b);
+        this.c.getClass();
+        this.f.q(vVar, 4, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
     }
 }

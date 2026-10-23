@@ -1,22 +1,18 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class n61 implements View.OnLongClickListener {
-    public final /* synthetic */ TLRPC.TL_authorization a;
-    public final /* synthetic */ u61 b;
+public final class n61 extends s4.r0 {
+    public final /* synthetic */ o61 a;
 
-    public n61(u61 u61Var, TLRPC.TL_authorization tL_authorization) {
-        this.b = u61Var;
-        this.a = tL_authorization;
+    public n61(o61 o61Var) {
+        this.a = o61Var;
     }
 
-    @Override // android.view.View.OnLongClickListener
-    public final boolean onLongClick(View view) {
-        u61.n(this.b, this.a.country);
-        return true;
+    @Override // s4.r0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        this.a.P();
     }
 }

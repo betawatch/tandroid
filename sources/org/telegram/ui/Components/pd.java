@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.animation.ValueAnimator;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class pd implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -40,7 +40,7 @@ public final /* synthetic */ class pd implements ValueAnimator.AnimatorUpdateLis
                 chatActivityEnterView.m1.invalidate();
                 break;
             case 4:
-                int i11 = ChatActivityEnterView.n5;
+                int i11 = ChatActivityEnterView.r5;
                 chatActivityEnterView.w0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 dg dgVar = chatActivityEnterView.U0;
                 if (dgVar != null) {
@@ -52,16 +52,16 @@ public final /* synthetic */ class pd implements ValueAnimator.AnimatorUpdateLis
                 chatActivityEnterView.J1.setTranslationX(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             case 6:
-                int i12 = ChatActivityEnterView.n5;
+                int i12 = ChatActivityEnterView.r5;
                 chatActivityEnterView.N1.setTransformToSeekbar(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 if (!chatActivityEnterView.c1) {
                     chatActivityEnterView.h1.setAlpha(chatActivityEnterView.N1.getTransformToSeekbarProgressStep3());
                     chatActivityEnterView.h1.invalidate();
                 }
-                chatActivityEnterView.v0();
+                chatActivityEnterView.u0();
                 break;
             default:
-                int i13 = ChatActivityEnterView.n5;
+                int i13 = ChatActivityEnterView.r5;
                 chatActivityEnterView.getClass();
                 float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 chatActivityEnterView.w1.setScaleX(AndroidUtilities.lerp(0.6f, 1.0f, floatValue));

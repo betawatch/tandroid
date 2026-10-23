@@ -10,7 +10,7 @@ import android.graphics.RectF;
 import com.google.android.gms.internal.play_billing.k3;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class p0 extends i {
     public final /* synthetic */ int n = 2;
@@ -493,8 +493,8 @@ public final class p0 extends i {
         }
     }
 
-    public p0(w2 w2Var, Context context) {
-        super(w2Var, context);
+    public p0(x2 x2Var, Context context) {
+        super(x2Var, context);
         Paint paint = new Paint(1);
         this.r = paint;
         this.s = new Path();
@@ -509,24 +509,24 @@ public final class p0 extends i {
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
     }
 
-    public p0(v2 v2Var, Context context) {
-        super(v2Var, context);
+    public p0(w2 w2Var, Context context) {
+        super(w2Var, context);
         Paint paint = new Paint(1);
         this.r = paint;
         this.s = new Path();
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
     }
 
-    public p0(y1 y1Var, Context context) {
-        super(y1Var, context);
+    public p0(z1 z1Var, Context context) {
+        super(z1Var, context);
         Paint paint = new Paint(1);
         this.r = paint;
         this.s = new Path();
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
     }
 
-    public p0(e1 e1Var, Context context) {
-        super(e1Var, context);
+    public p0(f1 f1Var, Context context) {
+        super(f1Var, context);
         Paint paint = new Paint(1);
         this.r = paint;
         this.s = new Path();

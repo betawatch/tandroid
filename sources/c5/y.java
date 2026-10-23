@@ -29,9 +29,9 @@ import java.util.concurrent.Callable;
 import v7.y8;
 import w7.la;
 import x7.fa;
-import z7.xf;
+import z7.wf;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class y implements Callable {
     public final /* synthetic */ int a;
@@ -294,9 +294,9 @@ public final /* synthetic */ class y implements Callable {
                 ((com.google.firebase.messaging.u) this.b).run();
                 return null;
             default:
-                xf xfVar = (xf) this.b;
-                xfVar.getClass();
-                return n6.i.c.a(xfVar.g);
+                wf wfVar = (wf) this.b;
+                wfVar.getClass();
+                return n6.i.c.a(wfVar.g);
         }
     }
 }

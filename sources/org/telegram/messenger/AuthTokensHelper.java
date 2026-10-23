@@ -7,7 +7,7 @@ import org.telegram.messenger.NotificationBadge;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public class AuthTokensHelper {
     public static void addLogOutToken(TLRPC.TL_auth_loggedOut tL_auth_loggedOut) {
@@ -15,7 +15,7 @@ public class AuthTokensHelper {
         int i10 = sharedPreferences.getInt(NotificationBadge.NewHtcHomeBadger.COUNT, 0);
         SerializedData serializedData = new SerializedData(tL_auth_loggedOut.getObjectSize());
         tL_auth_loggedOut.serializeToStream(serializedData);
-        sharedPreferences.edit().putString(i2.e.j(i10, "log_out_token_"), Utilities.bytesToHex(serializedData.toByteArray())).putInt(NotificationBadge.NewHtcHomeBadger.COUNT, i10 + 1).apply();
+        sharedPreferences.edit().putString(i2.o1.k(i10, "log_out_token_"), Utilities.bytesToHex(serializedData.toByteArray())).putInt(NotificationBadge.NewHtcHomeBadger.COUNT, i10 + 1).apply();
         BackupAgent.requestBackup();
     }
 

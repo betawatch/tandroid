@@ -1,11 +1,11 @@
 package v3;
 
 import android.util.Pair;
-import c3.b0;
 import c3.d0;
+import c3.f0;
 import e2.m0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class c implements h {
     public final long[] a;
@@ -30,13 +30,13 @@ public final class c implements h {
     }
 
     @Override // v3.h
-    public final long a(long j10) {
-        return m0.S(((Long) i(j10, this.a, this.b).second).longValue());
+    public final long a() {
+        return -1L;
     }
 
     @Override // v3.h
-    public final long b() {
-        return -1L;
+    public final long b(long j10) {
+        return m0.S(((Long) i(j10, this.a, this.b).second).longValue());
     }
 
     @Override // v3.h
@@ -44,21 +44,21 @@ public final class c implements h {
         return 0L;
     }
 
-    @Override // c3.c0
+    @Override // c3.e0
     public final boolean d() {
         return true;
     }
 
-    @Override // c3.c0
+    @Override // c3.e0
     public final /* synthetic */ boolean e() {
         return false;
     }
 
-    @Override // c3.c0
-    public final b0 f(long j10) {
+    @Override // c3.e0
+    public final d0 f(long j10) {
         Pair i10 = i(m0.h0(m0.j(j10, 0L, this.c)), this.b, this.a);
-        d0 d0Var = new d0(m0.S(((Long) i10.first).longValue()), ((Long) i10.second).longValue());
-        return new b0(d0Var, d0Var);
+        f0 f0Var = new f0(m0.S(((Long) i10.first).longValue()), ((Long) i10.second).longValue());
+        return new d0(f0Var, f0Var);
     }
 
     @Override // v3.h
@@ -66,7 +66,7 @@ public final class c implements h {
         return -2147483647;
     }
 
-    @Override // c3.c0
+    @Override // c3.e0
     public final long h() {
         return this.c;
     }

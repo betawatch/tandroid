@@ -1,27 +1,80 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class t90 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ u90 b;
-    public final /* synthetic */ y90 c;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.view.MotionEvent;
+import android.view.ViewConfiguration;
+import org.telegram.messenger.AndroidUtilities;
 
-    public /* synthetic */ t90(u90 u90Var, y90 y90Var, int i10) {
-        this.a = i10;
-        this.b = u90Var;
-        this.c = y90Var;
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+/* loaded from: classes3.dex */
+public class t90 extends org.telegram.ui.ActionBar.n5 {
+    public final v90 M0;
+    public final Paint N0;
+    public z90 O0;
+
+    public t90(Context context) {
+        super(context);
+        this.M0 = new v90(this);
+        this.N0 = new Paint(1);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.k(this.c, false);
-                break;
-            default:
-                this.b.k(this.c, false);
-                break;
+    private int getLinkColor() {
+        return i0.a.o(getTextColor(), (int) (Color.alpha(getTextColor()) * 0.1175f));
+    }
+
+    @Override // org.telegram.ui.ActionBar.n5, android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (isClickable()) {
+            RectF rectF = AndroidUtilities.rectTmp;
+            rectF.set(0.0f, 0.0f, getPaddingRight() + getTextWidth() + getPaddingLeft(), getHeight());
+            int linkColor = getLinkColor();
+            Paint paint = this.N0;
+            paint.setColor(linkColor);
+            canvas.drawRoundRect(rectF, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), paint);
         }
+        super.onDraw(canvas);
+        if (isClickable() && this.M0.f(canvas)) {
+            invalidate();
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.n5, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        if (!isClickable()) {
+            return super.onTouchEvent(motionEvent);
+        }
+        v90 v90Var = this.M0;
+        if (v90Var != null) {
+            if (motionEvent.getAction() == 0) {
+                z90 z90Var = new z90(null, null, motionEvent.getX(), motionEvent.getY(), 0);
+                z90Var.d(getLinkColor());
+                this.O0 = z90Var;
+                v90Var.a(z90Var, null);
+                s90 b10 = this.O0.b();
+                b10.e(null, 0, 0.0f, 0.0f);
+                b10.addRect(0.0f, 0.0f, getPaddingRight() + getTextWidth() + getPaddingLeft(), getHeight(), Path.Direction.CW);
+                AndroidUtilities.runOnUIThread(new yt(20, this, z90Var), ViewConfiguration.getLongPressTimeout());
+                return true;
+            }
+            if (motionEvent.getAction() == 1) {
+                v90Var.d(true);
+                if (this.O0 != null) {
+                    performClick();
+                }
+                this.O0 = null;
+                return true;
+            }
+            if (motionEvent.getAction() == 3) {
+                v90Var.d(true);
+                this.O0 = null;
+                return true;
+            }
+        }
+        return this.O0 != null || super.onTouchEvent(motionEvent);
     }
 }

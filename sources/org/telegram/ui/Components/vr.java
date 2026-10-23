@@ -2,42 +2,41 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
 import android.text.SpannableStringBuilder;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class vr extends g61 {
+public final class vr extends l61 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        g61.setup(new vr());
+        l61.setup(new vr());
     }
 
-    @Override // org.telegram.ui.Components.g61
-    public final void bindView(View view, h61 h61Var, boolean z10, u61 u61Var, c71 c71Var) {
-        org.telegram.ui.Cells.b9 b9Var = (org.telegram.ui.Cells.b9) view;
-        b9Var.c(h61Var.l, h61Var.n, !h61Var.j);
-        wh.n nVar = b9Var.a;
-        if (h61Var.l instanceof SpannableStringBuilder) {
+    @Override // org.telegram.ui.Components.l61
+    public final void bindView(View view, m61 m61Var, boolean z10, b71 b71Var, j71 j71Var) {
+        org.telegram.ui.Cells.c9 c9Var = (org.telegram.ui.Cells.c9) view;
+        c9Var.c(m61Var.l, m61Var.n, !m61Var.j);
+        wh.n nVar = c9Var.a;
+        if (m61Var.l instanceof SpannableStringBuilder) {
             nVar.setTextSize(1, 13.0f);
             nVar.setTranslationY(AndroidUtilities.dp(2.0f));
             nVar.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MONO));
         }
     }
 
-    @Override // org.telegram.ui.Components.g61
-    public final View createView(Context context, jm0 jm0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
-        org.telegram.ui.Cells.b9 b9Var = new org.telegram.ui.Cells.b9(context, d6Var, true);
-        b9Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.d6, d6Var));
+    @Override // org.telegram.ui.Components.l61
+    public final View createView(Context context, mm0 mm0Var, int i10, int i11, org.telegram.ui.ActionBar.g6 g6Var) {
+        org.telegram.ui.Cells.c9 c9Var = new org.telegram.ui.Cells.c9(context, g6Var, true);
+        org.telegram.ui.ActionBar.r6.i(org.telegram.ui.ActionBar.k6.d6, c9Var, g6Var);
         Drawable mutate = context.getDrawable(R.drawable.msg_copy).mutate();
-        mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.L6, d6Var), PorterDuff.Mode.MULTIPLY));
-        b9Var.setImage(mutate);
-        b9Var.setImageClickListener(new ai.v0(this, context, b9Var, 22));
-        return b9Var;
+        org.telegram.ui.ActionBar.r6.z(c9Var, mutate, org.telegram.ui.ActionBar.k6.L6, g6Var, PorterDuff.Mode.MULTIPLY);
+        c9Var.setImage(mutate);
+        c9Var.setImageClickListener(new ai.v0(this, context, c9Var, 22));
+        return c9Var;
     }
 }

@@ -1,63 +1,76 @@
 package rg;
 
-import android.view.GestureDetector;
-import android.view.MotionEvent;
-import com.google.android.gms.internal.play_billing.k3;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.sl;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.mm0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class u1 extends GestureDetector.SimpleOnGestureListener {
-    public float a;
-    public boolean b;
-    public float c;
-    public final /* synthetic */ w1 d;
+public final class u1 extends mm0 implements NotificationCenter.NotificationCenterDelegate {
+    public final Path Y2;
+    public q0.a Z2;
 
-    public u1(w1 w1Var) {
-        this.d = w1Var;
+    public u1(Context context) {
+        super(context, null);
+        this.Y2 = new Path();
+        setWillNotDraw(false);
+        setLayoutManager(new s4.b0());
+        setAdapter(new t1());
+        setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
+        setClipToPadding(false);
     }
 
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public final boolean onDown(MotionEvent motionEvent) {
-        w1 w1Var = this.d;
-        boolean contains = w1Var.e.contains(motionEvent.getX(), motionEvent.getY());
-        if (w1Var.f != contains) {
-            w1Var.f = contains;
-            w1Var.invalidate();
-            if (contains) {
-                v1 v1Var = w1Var.K;
-                this.a = v1Var != null ? v1Var.get() : w1Var.H.c;
-                this.b = false;
-            }
-        }
-        return w1Var.f;
+    @Override // org.telegram.ui.Components.mm0
+    public final Integer X0(int i10) {
+        return 285212671;
     }
 
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public final boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f7, float f10) {
-        w1 w1Var = this.d;
-        if (w1Var.f) {
-            if (!this.b) {
-                this.c = motionEvent.getY() - motionEvent2.getY();
-                this.b = true;
-            }
-            float f11 = this.a;
-            float y3 = ((motionEvent.getY() - motionEvent2.getY()) - this.c) / w1Var.e.height();
-            float f12 = w1Var.G;
-            float f13 = w1Var.F;
-            float a2 = w7.r.a(k3.y(f12, f13, y3, f11), f13, f12);
-            v1 v1Var = w1Var.K;
-            if (v1Var != null) {
-                v1Var.U(a2);
-            } else {
-                w1Var.H.c = a2;
-            }
-            w1Var.w.d(a2, true);
-            Runnable runnable = w1Var.I;
-            if (runnable != null) {
-                runnable.run();
-            }
-            w1Var.invalidate();
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        if (i10 == NotificationCenter.customTypefacesLoaded) {
+            getAdapter().l();
         }
-        return w1Var.f;
+    }
+
+    @Override // androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final void draw(Canvas canvas) {
+        q0.a aVar = this.Z2;
+        if (aVar != null) {
+            Path path = this.Y2;
+            aVar.accept(path);
+            canvas.save();
+            canvas.clipPath(path);
+        }
+        super.draw(canvas);
+        if (this.Z2 != null) {
+            canvas.restore();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.customTypefacesLoaded);
+    }
+
+    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.customTypefacesLoaded);
+    }
+
+    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, sl.C(16.0f, AndroidUtilities.dp(48.0f) * Math.min(qg.l0.c().size(), 6), TLObject.FLAG_30));
+    }
+
+    public void setMaskProvider(q0.a aVar) {
+        this.Z2 = aVar;
+        invalidate();
     }
 }

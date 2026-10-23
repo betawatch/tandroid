@@ -9,12 +9,12 @@ import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.DataSettingsActivity;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.bx;
-import org.telegram.ui.cy;
+import org.telegram.ui.dx;
+import org.telegram.ui.ey;
 import org.telegram.ui.gf;
-import org.telegram.ui.wt;
+import org.telegram.ui.zt;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f2 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -44,13 +44,13 @@ public final /* synthetic */ class f2 implements Utilities.Callback {
                     break;
                 } else {
                     l7Var.k0.setLoading(false);
-                    l7Var.W2(true);
+                    l7Var.V2(true);
                     break;
                 }
             case 1:
                 DataSettingsActivity dataSettingsActivity = (DataSettingsActivity) this.c;
                 Long l4 = (Long) obj;
-                AndroidUtilities.cancelRunOnUIThread((wt) this.d);
+                AndroidUtilities.cancelRunOnUIThread((zt) this.d);
                 dataSettingsActivity.W = dataSettingsActivity.W || System.currentTimeMillis() - this.b > 120;
                 dataSettingsActivity.Y = l4.longValue();
                 dataSettingsActivity.X = false;
@@ -60,13 +60,13 @@ public final /* synthetic */ class f2 implements Utilities.Callback {
                 }
                 break;
             case 2:
-                bx bxVar = (bx) this.c;
+                dx dxVar = (dx) this.c;
                 Runnable runnable = (Runnable) obj;
-                ((org.telegram.ui.ActionBar.b2) this.d).r(150L);
-                cy cyVar = bxVar.b;
-                Boolean bool = cyVar.G.bot_participant;
+                ((org.telegram.ui.ActionBar.c2) this.d).r(150L);
+                ey eyVar = dxVar.b;
+                Boolean bool = eyVar.G.bot_participant;
                 if (bool != null && bool.booleanValue()) {
-                    cyVar.getMessagesController().addUserToChat(this.b, cyVar.getMessagesController().getUser(Long.valueOf(cyVar.H)), 0, null, cyVar, false, runnable, new gf(8, runnable));
+                    eyVar.getMessagesController().addUserToChat(this.b, eyVar.getMessagesController().getUser(Long.valueOf(eyVar.H)), 0, null, eyVar, false, runnable, new gf(8, runnable));
                     break;
                 } else {
                     runnable.run();

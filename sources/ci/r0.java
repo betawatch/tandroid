@@ -1,6 +1,6 @@
 package ci;
 
-import ai.de;
+import ai.ee;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -11,10 +11,10 @@ import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class r0 extends LinearLayout {
-    public de a;
+    public ee a;
     public final Path b;
     public final Paint c;
     public long d;
@@ -66,12 +66,12 @@ public final class r0 extends LinearLayout {
             canvas2 = canvas;
         }
         if (this.a == null) {
-            this.a = new de(1, MediaDataController.MAX_LINKS_COUNT);
+            this.a = new ee(1, MediaDataController.MAX_LINKS_COUNT);
         }
         this.a.f(0, 0, getWidth(), getHeight());
-        de deVar = this.a;
-        deVar.h = 30.0f;
-        deVar.d();
+        ee eeVar = this.a;
+        eeVar.h = 30.0f;
+        eeVar.d();
         this.a.b(canvas2, -1, 0.85f);
         invalidate();
         canvas2.restore();

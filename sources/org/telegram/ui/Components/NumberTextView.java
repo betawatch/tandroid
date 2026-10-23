@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public class NumberTextView extends View {
     public final ArrayList a;
@@ -76,8 +76,8 @@ public class NumberTextView extends View {
         arrayList2.clear();
         if (this.h) {
             Locale locale = Locale.US;
-            sb2 = i2.e.j(this.f, "#");
-            sb3 = i2.e.j(i10, "#");
+            sb2 = i2.o1.k(this.f, "#");
+            sb3 = i2.o1.k(i10, "#");
         } else {
             Locale locale2 = Locale.US;
             int i12 = this.f;
@@ -127,7 +127,7 @@ public class NumberTextView extends View {
             ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "progress", z11 ? -1.0f : 1.0f, f11);
             this.d = ofFloat;
             ofFloat.setDuration(this.h ? 180L : 150L);
-            this.d.addListener(new c80(this, 5));
+            this.d.addListener(new i60(this, 6));
             this.d.start();
         }
         invalidate();
@@ -251,6 +251,6 @@ public class NumberTextView extends View {
         a(this.f, false);
     }
 
-    public void setOnTextWidthProgressChangedListener(pd0 pd0Var) {
+    public void setOnTextWidthProgressChangedListener(rd0 rd0Var) {
     }
 }

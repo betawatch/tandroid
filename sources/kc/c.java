@@ -5,6 +5,7 @@ import c5.c0;
 import com.google.firebase.messaging.q;
 import e0.f0;
 import ec.h;
+import i2.o1;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.nio.charset.UnsupportedCharsetException;
@@ -12,7 +13,7 @@ import java.util.ArrayList;
 import java.util.Map;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public abstract class c {
     public static final int[] a = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 36, -1, -1, -1, 37, 38, -1, -1, -1, -1, 39, 40, -1, 41, 42, 43, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 44, -1, -1, -1, -1, -1, -1, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, -1, -1, -1, -1, -1};
@@ -514,7 +515,7 @@ public abstract class c {
                                     throw new IllegalArgumentException("No data bytes provided");
                                 }
                                 if (i76 >= arrayList3.size()) {
-                                    gc.b bVar7 = (gc.b) i2.e.h(1, arrayList3);
+                                    gc.b bVar7 = (gc.b) o1.i(1, arrayList3);
                                     int size2 = arrayList3.size();
                                     eVar2 = eVar3;
                                     gc.b bVar8 = bVar7;
@@ -641,10 +642,10 @@ public abstract class c {
                                 }
                             }
                             if (i90 != aVar9.e()) {
-                                StringBuilder l4 = i2.e.l(i90, "Interleaving error: ", " and ");
-                                l4.append(aVar9.e());
-                                l4.append(" differ.");
-                                throw new q(l4.toString());
+                                StringBuilder n10 = o1.n(i90, "Interleaving error: ", " and ");
+                                n10.append(aVar9.e());
+                                n10.append(" differ.");
+                                throw new q(n10.toString());
                             }
                             f0 f0Var = new f0();
                             f0Var.b = -1;

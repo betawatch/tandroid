@@ -6,7 +6,7 @@ import android.transition.TransitionValues;
 import android.view.View;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class h extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -44,10 +44,10 @@ public final class h extends AnimatorListenerAdapter {
                 }
                 break;
             case 3:
-                n3 n3Var = (n3) this.b;
-                if (n3Var.F == animator) {
-                    n3Var.G = n3Var.H;
-                    Iterator it = n3Var.I.iterator();
+                q3 q3Var = (q3) this.b;
+                if (q3Var.F == animator) {
+                    q3Var.G = q3Var.H;
+                    Iterator it = q3Var.I.iterator();
                     while (it.hasNext()) {
                         ((Runnable) it.next()).run();
                     }
@@ -55,16 +55,16 @@ public final class h extends AnimatorListenerAdapter {
                 }
                 break;
             default:
-                w3 w3Var = (w3) this.b;
-                n3 n3Var2 = w3Var.a;
-                if (n3Var2 != null) {
-                    n3Var2.b = true;
-                    n3Var2.invalidate();
+                z3 z3Var = (z3) this.b;
+                q3 q3Var2 = z3Var.a;
+                if (q3Var2 != null) {
+                    q3Var2.b = true;
+                    q3Var2.invalidate();
                 }
-                w3Var.V = w3Var.U ? 1.0f : 0.0f;
-                w3Var.invalidate();
-                if (!w3Var.U) {
-                    w3Var.R.clear();
+                z3Var.V = z3Var.U ? 1.0f : 0.0f;
+                z3Var.invalidate();
+                if (!z3Var.U) {
+                    z3Var.R.clear();
                     break;
                 }
                 break;

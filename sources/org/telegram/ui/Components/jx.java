@@ -2,9 +2,9 @@ package org.telegram.ui.Components;
 
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class jx implements z4.e {
+public final class jx implements z4.f {
     public final /* synthetic */ boolean a;
     public final /* synthetic */ tz b;
 
@@ -13,8 +13,50 @@ public final class jx implements z4.e {
         this.a = z10;
     }
 
-    @Override // z4.e
-    public final void a(float f7, int i10, int i11) {
+    @Override // z4.f
+    public final void a(int i10) {
+        tz tzVar = this.b;
+        gx gxVar = tzVar.h;
+        boolean z10 = false;
+        if (gxVar != null) {
+            int currentItem = gxVar.getCurrentItem();
+            int i11 = currentItem == 2 ? 1 : currentItem == 1 ? 2 : 0;
+            if (tzVar.A1 != i11) {
+                tzVar.A1 = i11;
+                MessagesController.getGlobalEmojiSettings().edit().putInt("selected_page", i11).commit();
+            }
+        }
+        tzVar.L(i10 == 0, true);
+        if (i10 == 2 && (this.a || tzVar.v0)) {
+            z10 = true;
+        }
+        tzVar.Q(z10, true);
+        if (tzVar.t1.z()) {
+            if (i10 == 0) {
+                rw rwVar = tzVar.V;
+                if (rwVar != null) {
+                    rwVar.d.requestFocus();
+                    return;
+                }
+                return;
+            }
+            if (i10 == 1) {
+                xw xwVar = tzVar.o0;
+                if (xwVar != null) {
+                    xwVar.d.requestFocus();
+                    return;
+                }
+                return;
+            }
+            dx dxVar = tzVar.G0;
+            if (dxVar != null) {
+                dxVar.d.requestFocus();
+            }
+        }
+    }
+
+    @Override // z4.f
+    public final void b(float f7, int i10, int i11) {
         float f10;
         tz tzVar = this.b;
         gz gzVar = tzVar.G0;
@@ -91,53 +133,11 @@ public final class jx implements z4.e {
         if ((i10 != 0 || f7 <= f10) && i10 != 1) {
             z10 = false;
         }
-        tz.c(tzVar, z10);
+        tz.a(tzVar, z10);
         tzVar.Y();
     }
 
-    @Override // z4.e
-    public final void b(int i10) {
-        tz tzVar = this.b;
-        gx gxVar = tzVar.h;
-        boolean z10 = false;
-        if (gxVar != null) {
-            int currentItem = gxVar.getCurrentItem();
-            int i11 = currentItem == 2 ? 1 : currentItem == 1 ? 2 : 0;
-            if (tzVar.A1 != i11) {
-                tzVar.A1 = i11;
-                MessagesController.getGlobalEmojiSettings().edit().putInt("selected_page", i11).commit();
-            }
-        }
-        tzVar.L(i10 == 0, true);
-        if (i10 == 2 && (this.a || tzVar.v0)) {
-            z10 = true;
-        }
-        tzVar.Q(z10, true);
-        if (tzVar.t1.z()) {
-            if (i10 == 0) {
-                rw rwVar = tzVar.V;
-                if (rwVar != null) {
-                    rwVar.d.requestFocus();
-                    return;
-                }
-                return;
-            }
-            if (i10 == 1) {
-                xw xwVar = tzVar.o0;
-                if (xwVar != null) {
-                    xwVar.d.requestFocus();
-                    return;
-                }
-                return;
-            }
-            dx dxVar = tzVar.G0;
-            if (dxVar != null) {
-                dxVar.d.requestFocus();
-            }
-        }
-    }
-
-    @Override // z4.e
+    @Override // z4.f
     public final void c(int i10) {
     }
 }

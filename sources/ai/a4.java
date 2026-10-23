@@ -17,15 +17,15 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.aa0;
 import org.telegram.ui.Components.aw;
+import org.telegram.ui.Components.ba0;
 import org.telegram.ui.Components.fo;
 import org.telegram.ui.Components.ky;
 import org.telegram.ui.Components.sy;
-import org.telegram.ui.Components.ty0;
-import org.telegram.ui.qn;
+import org.telegram.ui.Components.wy0;
+import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a4 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -42,9 +42,9 @@ public final /* synthetic */ class a4 implements Utilities.Callback {
 
     @Override // org.telegram.messenger.Utilities.Callback
     public final void run(Object obj) {
-        ci.t6 t6Var;
+        ci.s6 s6Var;
         ArrayList<TLRPC.Document> arrayList;
-        TLRPC.ChatFull u12;
+        TLRPC.ChatFull x12;
         int i10 = this.a;
         int i11 = 0;
         Object obj2 = this.d;
@@ -55,7 +55,7 @@ public final /* synthetic */ class a4 implements Utilities.Callback {
                 l7 l7Var = (l7) obj4;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj;
                 ((pf.c) obj3).b();
-                ((ug.m1[]) obj2)[0].dismiss();
+                ((ug.l1[]) obj2)[0].dismiss();
                 if (tL_error == null) {
                     l7Var.dismiss();
                     break;
@@ -64,46 +64,46 @@ public final /* synthetic */ class a4 implements Utilities.Callback {
                     break;
                 }
             case 1:
-                ci.v3 v3Var = (ci.v3) obj4;
-                v3Var.getClass();
+                ci.u3 u3Var = (ci.u3) obj4;
+                u3Var.getClass();
                 ArrayList arrayList2 = new ArrayList(1);
                 arrayList2.add((TLRPC.InputStickerSet) obj);
-                aw awVar = new aw(((ci.aa) obj3).f, v3Var.getContext(), (org.telegram.ui.ActionBar.d6) obj2, arrayList2);
-                ci.j4 j4Var = v3Var.z0.Q1;
-                if (j4Var != null) {
-                    ((ci.r9) j4Var).h(awVar);
+                aw awVar = new aw(((ci.z9) obj3).f, u3Var.getContext(), (org.telegram.ui.ActionBar.g6) obj2, arrayList2);
+                ci.i4 i4Var = u3Var.z0.Q1;
+                if (i4Var != null) {
+                    ((ci.q9) i4Var).h(awVar);
                     break;
                 }
                 break;
             case 2:
-                ci.h4 h4Var = (ci.h4) obj4;
+                ci.g4 g4Var = (ci.g4) obj4;
                 TL_stories.StoryItem storyItem = (TL_stories.StoryItem) obj3;
                 TL_stories.StoryItem storyItem2 = (TL_stories.StoryItem) obj2;
                 Utilities.Callback callback = (Utilities.Callback) obj;
-                ci.q4 q4Var = h4Var.l;
-                if ((storyItem instanceof ci.s6) && (t6Var = ((ci.s6) storyItem).a) != null) {
-                    a3.l0 l0Var = new a3.l0(t6Var, storyItem2, callback, 21);
-                    if (t6Var.F != 0) {
-                        ConnectionsManager.getInstance(t6Var.c).cancelRequest(t6Var.F, true);
-                        t6Var.F = 0;
+                ci.p4 p4Var = g4Var.l;
+                if ((storyItem instanceof ci.r6) && (s6Var = ((ci.r6) storyItem).a) != null) {
+                    a3.l0 l0Var = new a3.l0(s6Var, storyItem2, callback, 21);
+                    if (s6Var.F != 0) {
+                        ConnectionsManager.getInstance(s6Var.c).cancelRequest(s6Var.F, true);
+                        s6Var.F = 0;
                     }
-                    t6Var.C = false;
-                    t6Var.D = false;
-                    t6Var.H(l0Var);
+                    s6Var.C = false;
+                    s6Var.D = false;
+                    s6Var.H(l0Var);
                     break;
                 } else {
                     TL_stories.TL_stories_getStoriesByID tL_stories_getStoriesByID = new TL_stories.TL_stories_getStoriesByID();
-                    tL_stories_getStoriesByID.peer = MessagesController.getInstance(q4Var.C2).getInputPeer(storyItem.dialogId);
+                    tL_stories_getStoriesByID.peer = MessagesController.getInstance(p4Var.C2).getInputPeer(storyItem.dialogId);
                     tL_stories_getStoriesByID.id.add(Integer.valueOf(storyItem.id));
-                    ConnectionsManager.getInstance(q4Var.C2).sendRequest(tL_stories_getStoriesByID, new j2(h4Var, storyItem, callback, 5));
+                    ConnectionsManager.getInstance(p4Var.C2).sendRequest(tL_stories_getStoriesByID, new j2(g4Var, storyItem, callback, 5));
                     break;
                 }
                 break;
             case 3:
-                ci.b7 b7Var = (ci.b7) obj;
-                ci.q4 q4Var2 = ((ci.h4) obj4).l;
-                q4Var2.S1.c(b7Var.a, q4Var2.B1, (TL_stories.StoryItem) obj3);
-                new org.telegram.ui.Components.xc(q4Var2.c1, (org.telegram.ui.ActionBar.d6) obj2).Q(R.raw.contact_check, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.StoryAddedToAlbumX, b7Var.b))).j();
+                ci.a7 a7Var = (ci.a7) obj;
+                ci.p4 p4Var2 = ((ci.g4) obj4).l;
+                p4Var2.S1.c(a7Var.a, p4Var2.B1, (TL_stories.StoryItem) obj3);
+                new org.telegram.ui.Components.xc(p4Var2.c1, (org.telegram.ui.ActionBar.g6) obj2).Q(R.raw.contact_check, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.StoryAddedToAlbumX, a7Var.b))).j();
                 break;
             case 4:
                 ei.f7 f7Var = (ei.f7) obj4;
@@ -129,26 +129,26 @@ public final /* synthetic */ class a4 implements Utilities.Callback {
             case 5:
                 Utilities.Callback callback2 = (Utilities.Callback) obj3;
                 TLRPC.InputPeer inputPeer = (TLRPC.InputPeer) obj2;
-                ((org.telegram.ui.ActionBar.b2) obj4).dismiss();
+                ((org.telegram.ui.ActionBar.c2) obj4).dismiss();
                 if (((Boolean) obj).booleanValue() && callback2 != null) {
                     callback2.run(inputPeer);
                     break;
                 }
                 break;
             case 6:
-                org.telegram.ui.Components.k8.L((org.telegram.ui.Components.k8) obj4, (org.telegram.ui.ActionBar.b2) obj3, (TLRPC.Document) obj2, (TLRPC.InputFile) obj);
+                org.telegram.ui.Components.k8.L((org.telegram.ui.Components.k8) obj4, (org.telegram.ui.ActionBar.c2) obj3, (TLRPC.Document) obj2, (TLRPC.InputFile) obj);
                 break;
             case 7:
                 fo foVar = (fo) obj4;
-                qn qnVar = (qn) obj3;
+                sn snVar = (sn) obj3;
                 TLRPC.TL_messageMediaToDo tL_messageMediaToDo = (TLRPC.TL_messageMediaToDo) obj2;
                 Long l10 = (Long) obj;
-                if (!qnVar.c()) {
-                    foVar.j0.d(tL_messageMediaToDo, null, null, null, true, 0, l10.longValue());
+                if (!snVar.c()) {
+                    foVar.j0.c(tL_messageMediaToDo, null, null, null, true, 0, l10.longValue());
                     foVar.b.dismiss(true);
                     break;
                 } else {
-                    org.telegram.ui.Components.f5.K(qnVar.getParentActivity(), qnVar.a(), new u2(foVar, tL_messageMediaToDo, l10, 28));
+                    org.telegram.ui.Components.f5.L(snVar.getParentActivity(), snVar.a(), new u2(foVar, tL_messageMediaToDo, l10, 28));
                     break;
                 }
             case 8:
@@ -176,52 +176,52 @@ public final /* synthetic */ class a4 implements Utilities.Callback {
                 runnable.run();
                 break;
             case 9:
-                org.telegram.ui.ActionBar.b2 b2Var = (org.telegram.ui.ActionBar.b2) obj3;
-                ty0 ty0Var = (ty0) obj2;
-                ((org.telegram.ui.ActionBar.b2) obj4).dismiss();
+                org.telegram.ui.ActionBar.c2 c2Var = (org.telegram.ui.ActionBar.c2) obj3;
+                wy0 wy0Var = (wy0) obj2;
+                ((org.telegram.ui.ActionBar.c2) obj4).dismiss();
                 if (!((Boolean) obj).booleanValue()) {
-                    ty0Var.setErrorText(".");
-                    AndroidUtilities.shakeViewSpring(ty0Var, -6.0f);
+                    wy0Var.setErrorText(".");
+                    AndroidUtilities.shakeViewSpring(wy0Var, -6.0f);
                     BotWebViewVibrationEffect.APP_ERROR.vibrate();
-                    AndroidUtilities.showKeyboard(ty0Var);
+                    AndroidUtilities.showKeyboard(wy0Var);
                     break;
                 } else {
-                    b2Var.dismiss();
+                    c2Var.dismiss();
                     break;
                 }
             case 10:
-                org.telegram.ui.web.a1 a1Var = (org.telegram.ui.web.a1) obj4;
+                org.telegram.ui.web.b1 b1Var = (org.telegram.ui.web.b1) obj4;
                 String str2 = (String) obj3;
-                ci.z7 z7Var = (ci.z7) obj2;
+                ci.y7 y7Var = (ci.y7) obj2;
                 Boolean bool = (Boolean) obj;
-                a1Var.getClass();
+                b1Var.getClass();
                 try {
                     JSONObject jSONObject = new JSONObject();
                     jSONObject.put("status", bool.booleanValue() ? TextUtils.isEmpty(str2) ? "removed" : "updated" : "failed");
-                    a1Var.x(z7Var, "biometry_token_updated", jSONObject);
+                    b1Var.x(y7Var, "biometry_token_updated", jSONObject);
                     break;
                 } catch (Exception e) {
                     FileLog.e(e);
                     return;
                 }
             case 11:
-                sg.k0 k0Var = (sg.k0) obj4;
+                sg.j0 j0Var = (sg.j0) obj4;
                 TL_stories.TL_premium_myBoosts tL_premium_myBoosts = (TL_stories.TL_premium_myBoosts) obj2;
                 TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = (TL_stories.TL_premium_boostsStatus) obj;
-                k0Var.getClass();
-                ((aa0) obj3).setLoading(false);
+                j0Var.getClass();
+                ((ba0) obj3).setLoading(false);
                 if (tL_premium_boostsStatus != null) {
-                    k0Var.b0.boosts++;
-                    if (k0Var.h0 == 32 && (u12 = k0Var.u1()) != null) {
-                        u12.boosts_applied++;
+                    j0Var.b0.boosts++;
+                    if (j0Var.h0 == 32 && (x12 = j0Var.x1()) != null) {
+                        x12.boosts_applied++;
                     }
-                    k0Var.A1();
-                    k0Var.G1(tL_premium_boostsStatus, k0Var.e0);
-                    ChannelBoostsController.CanApplyBoost canApplyBoost = k0Var.c0;
-                    canApplyBoost.isMaxLvl = k0Var.b0.next_level_boosts <= 0;
+                    j0Var.D1();
+                    j0Var.J1(tL_premium_boostsStatus, j0Var.e0);
+                    ChannelBoostsController.CanApplyBoost canApplyBoost = j0Var.c0;
+                    canApplyBoost.isMaxLvl = j0Var.b0.next_level_boosts <= 0;
                     canApplyBoost.boostedNow = true;
                     canApplyBoost.setMyBoosts(tL_premium_myBoosts);
-                    k0Var.C1();
+                    j0Var.F1();
                     break;
                 }
                 break;
@@ -229,16 +229,16 @@ public final /* synthetic */ class a4 implements Utilities.Callback {
                 yh.m mVar = (yh.m) obj4;
                 mVar.getClass();
                 ((boolean[]) obj3)[0] = false;
-                new yh.c(mVar.getContext(), (org.telegram.ui.ActionBar.d6) obj2, mVar.l0, (List) obj).show();
+                new yh.c(mVar.getContext(), (org.telegram.ui.ActionBar.g6) obj2, mVar.l0, (List) obj).show();
                 break;
             default:
                 yh.v vVar = (yh.v) obj4;
-                org.telegram.ui.ActionBar.d6 d6Var = (org.telegram.ui.ActionBar.d6) obj2;
+                org.telegram.ui.ActionBar.g6 g6Var = (org.telegram.ui.ActionBar.g6) obj2;
                 List list = (List) obj;
                 vVar.getClass();
                 ((boolean[]) obj3)[0] = false;
                 if (vVar.m0 != null) {
-                    new yh.c(vVar.getContext(), d6Var, vVar.m0, list).show();
+                    new yh.c(vVar.getContext(), g6Var, vVar.m0, list).show();
                     vVar.dismiss();
                     break;
                 }

@@ -1,7 +1,8 @@
 package lg;
 
-import ai.md;
+import ai.nd;
 import android.content.Context;
+import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.transition.ChangeBounds;
 import android.transition.Fade;
@@ -12,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.google.firebase.messaging.r;
+import i2.o1;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.text.SimpleDateFormat;
@@ -22,24 +24,24 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BillingController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.g0;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Cells.z;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.Cells.y;
 import org.telegram.ui.Components.RadialProgressView;
-import org.telegram.ui.Components.zq;
+import org.telegram.ui.Components.yq;
 import org.telegram.ui.ie;
 import w7.z5;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public class e extends FrameLayout {
     public boolean E;
     public boolean F;
     public boolean G;
     public Drawable H;
-    public z I;
-    public final d6 J;
+    public y I;
+    public final g6 J;
     public final androidx.activity.i K;
     public DecimalFormat L;
     public boolean a;
@@ -57,7 +59,7 @@ public class e extends FrameLayout {
     public boolean x;
     public boolean y;
 
-    public e(Context context, d6 d6Var) {
+    public e(Context context, g6 g6Var) {
         super(context);
         this.n = new SimpleDateFormat("E, ");
         this.r = new SimpleDateFormat("MMM dd");
@@ -65,8 +67,8 @@ public class e extends FrameLayout {
         this.v = new SimpleDateFormat("d MMM");
         this.w = new SimpleDateFormat(" HH:mm");
         this.G = true;
-        this.K = new androidx.activity.i(this, 23);
-        this.J = d6Var;
+        this.K = new androidx.activity.i(this, 25);
+        this.J = g6Var;
         setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
         LinearLayout linearLayout = new LinearLayout(getContext());
         this.b = linearLayout;
@@ -103,25 +105,26 @@ public class e extends FrameLayout {
     }
 
     public void b() {
-        int i10 = h6.j5;
-        d6 d6Var = this.J;
-        this.d.setTextColor(h6.w0(i10, d6Var));
-        this.e.setTextColor(h6.w0(i10, d6Var));
-        int i11 = h6.gj;
-        this.f.setColorFilter(h6.w0(i11, d6Var));
-        this.h.setProgressColor(h6.w0(i11, d6Var));
+        int i10 = k6.j5;
+        TextView textView = this.d;
+        g6 g6Var = this.J;
+        r6.W(textView, i10, g6Var);
+        r6.W(this.e, i10, g6Var);
+        int i11 = k6.gj;
+        r6.t(this.f, i11, g6Var, PorterDuff.Mode.SRC_ATOP);
+        this.h.setProgressColor(k6.w0(i11, g6Var));
         this.H = getContext().getResources().getDrawable(R.drawable.stats_tooltip).mutate();
         int dp = AndroidUtilities.dp(4.0f);
-        this.I = h6.j0(dp, dp, dp, dp, h6.w0(h6.h5, d6Var), h6.w0(h6.i6, d6Var), -16777216);
-        zq zqVar = new zq(this.H, this.I, AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f));
-        zqVar.w = true;
-        setBackground(zqVar);
+        this.I = k6.j0(dp, dp, dp, dp, k6.w0(k6.h5, g6Var), k6.w0(k6.i6, g6Var), -16777216);
+        yq yqVar = new yq(this.H, this.I, AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f));
+        yqVar.w = true;
+        setBackground(yqVar);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:45:0x0260  */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x02be  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x02c1  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x02bd  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x02c0  */
     /* JADX WARN: Removed duplicated region for block: B:72:0x0277  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -176,9 +179,9 @@ public class e extends FrameLayout {
             kg.a aVar = fVar.a;
             if (z13) {
                 LinearLayout linearLayout = (LinearLayout) rVar.e;
-                org.telegram.ui.Components.z5 z5Var = (org.telegram.ui.Components.z5) rVar.b;
                 TextView textView2 = (TextView) rVar.d;
                 TextView textView3 = (TextView) rVar.c;
+                org.telegram.ui.Components.z5 z5Var = (org.telegram.ui.Components.z5) rVar.b;
                 if (linearLayout.getMeasuredHeight() == 0) {
                     linearLayout.requestLayout();
                 }
@@ -204,7 +207,7 @@ public class e extends FrameLayout {
                             i17 = 2;
                         }
                         decimalFormat2.setMaximumFractionDigits(i17);
-                        charSequence = ie.f0("TON " + this.L.format(j12 / 1.0E9d), z5Var.getPaint(), 0.82f, 0.0f, false);
+                        charSequence = ie.e0("TON " + this.L.format(j12 / 1.0E9d), z5Var.getPaint(), 0.82f, 0.0f, false);
                     } else {
                         charSequence = "≈" + BillingController.getInstance().formatCurrency((long) (j12 / f7), "USD");
                     }
@@ -229,26 +232,27 @@ public class e extends FrameLayout {
                         objArr[0] = aVar.d;
                         textView3.setText(LocaleController.formatString(i26, objArr));
                     } else if (i11 == 2) {
-                        textView3.setText(md.Y0(false, LocaleController.formatString(i23 == 0 ? R.string.ChartInXTR : R.string.ChartInUSD, aVar.d), 0.7f, null));
+                        textView3.setText(nd.Y0(false, LocaleController.formatString(i23 == 0 ? R.string.ChartInXTR : R.string.ChartInUSD, aVar.d), 0.7f, null));
                     } else {
                         textView3.setText(aVar.d);
                     }
                     i13 = aVar.g;
-                    d6 d6Var = this.J;
-                    if (i13 >= 0 || !h6.d1(i13)) {
-                        z5Var.setTextColor(!h6.B0().q() ? aVar.i : aVar.h);
+                    g6 g6Var = this.J;
+                    if (i13 >= 0 || !k6.e1(i13)) {
+                        r6.r(z5Var);
+                        z5Var.setTextColor(!k6.C0().q() ? aVar.i : aVar.h);
                     } else {
-                        z5Var.setTextColor(h6.w0(aVar.g, d6Var));
+                        r6.W(z5Var, aVar.g, g6Var);
                     }
-                    int i27 = h6.j5;
-                    textView3.setTextColor(h6.w0(i27, d6Var));
+                    int i27 = k6.j5;
+                    r6.W(textView3, i27, g6Var);
                     if (this.E || textView2 == null) {
                         i14 = i24;
                         i15 = 2;
                         i16 = 1;
                     } else {
                         textView2.setVisibility(0);
-                        textView2.setTextColor(h6.w0(i27, d6Var));
+                        r6.W(textView2, i27, g6Var);
                         i14 = i24;
                         float f11 = ((f) arrayList.get(i14)).a.a[i10] / j11;
                         if (f11 >= 0.1f || f11 == 0.0f) {
@@ -263,7 +267,7 @@ public class e extends FrameLayout {
                         }
                     }
                 } else if (i23 == 0) {
-                    charSequence = md.Y0(false, g0.h(j12, ' ', new StringBuilder("XTR ")), 0.7f, null);
+                    charSequence = nd.Y0(false, o1.m(j12, ' ', new StringBuilder("XTR ")), 0.7f, null);
                 } else {
                     charSequence = "≈" + BillingController.getInstance().formatCurrency((long) (j12 / f7), "USD");
                 }
@@ -272,12 +276,13 @@ public class e extends FrameLayout {
                 if (i11 != i12) {
                 }
                 i13 = aVar.g;
-                d6 d6Var2 = this.J;
+                g6 g6Var2 = this.J;
                 if (i13 >= 0) {
                 }
-                z5Var.setTextColor(!h6.B0().q() ? aVar.i : aVar.h);
-                int i272 = h6.j5;
-                textView3.setTextColor(h6.w0(i272, d6Var2));
+                r6.r(z5Var);
+                z5Var.setTextColor(!k6.C0().q() ? aVar.i : aVar.h);
+                int i272 = k6.j5;
+                r6.W(textView3, i272, g6Var2);
                 if (this.E) {
                 }
                 i14 = i24;

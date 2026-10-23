@@ -17,7 +17,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class pg implements Runnable {
     public final /* synthetic */ int a;
@@ -36,7 +36,7 @@ public final /* synthetic */ class pg implements Runnable {
         Object obj = this.b;
         switch (i10) {
             case 0:
-                ChatActivityEnterView chatActivityEnterView = ((sg) obj).V;
+                ChatActivityEnterView chatActivityEnterView = ((sg) obj).b0;
                 if (!MediaController.getInstance().isRecordingPaused()) {
                     MessagesController.getGlobalMainSettings().edit().putInt("voicepausehint", 3).apply();
                 }
@@ -62,23 +62,28 @@ public final /* synthetic */ class pg implements Runnable {
                 AndroidUtilities.showKeyboard((EditText) obj);
                 break;
             case 4:
-                SparseArray sparseArray = r5.q;
-                ((r5) obj).v();
+                e5 e5Var = (e5) obj;
+                e5Var.requestFocus();
+                AndroidUtilities.showKeyboard(e5Var);
                 break;
             case 5:
+                SparseArray sparseArray = r5.r;
+                ((r5) obj).v();
+                break;
+            case 6:
                 n5 n5Var = (n5) obj;
                 ArrayList arrayList = new ArrayList(n5Var.c);
                 n5Var.c.clear();
                 MessagesStorage.getInstance(n5Var.e).getStorageQueue().postRunnable(new k5(n5Var, arrayList, i11));
                 n5Var.d = null;
                 break;
-            case 6:
+            case 7:
                 ((p5) obj).invalidate();
                 break;
-            case 7:
+            case 8:
                 ((o1.k) obj).h();
                 break;
-            case 8:
+            case 9:
                 q6 q6Var = (q6) obj;
                 CharSequence charSequence = q6Var.f;
                 if (charSequence != null) {
@@ -88,18 +93,18 @@ public final /* synthetic */ class pg implements Runnable {
                     break;
                 }
                 break;
-            case 9:
+            case 10:
                 ((j8) obj).n.n.setVisibility(8);
                 break;
-            case 10:
+            case 11:
                 ((p8) obj).c.Y0();
                 break;
-            case 11:
+            case 12:
                 fa faVar = (fa) obj;
                 faVar.o = true;
                 faVar.d.invalidate();
                 break;
-            case 12:
+            case 13:
                 ea eaVar = (ea) obj;
                 if (!eaVar.a) {
                     fa faVar2 = eaVar.d;
@@ -117,19 +122,19 @@ public final /* synthetic */ class pg implements Runnable {
                     }
                 }
                 break;
-            case 13:
+            case 14:
                 ja jaVar = ((pa) obj).t;
                 if (jaVar != null) {
                     jaVar.d();
                     break;
                 }
                 break;
-            case 14:
+            case 15:
                 ja jaVar2 = (ja) obj;
                 jaVar2.o = jaVar2.n.b;
                 jaVar2.d();
                 break;
-            case 15:
+            case 16:
                 qc qcVar = ((jb) obj).b;
                 ub ubVar = qcVar.e;
                 ubVar.transitionRunningEnter = false;
@@ -139,7 +144,7 @@ public final /* synthetic */ class pg implements Runnable {
                     break;
                 }
                 break;
-            case 16:
+            case 17:
                 id idVar = (id) obj;
                 idVar.getClass();
                 if (LiteMode.isEnabled(512)) {
@@ -147,7 +152,7 @@ public final /* synthetic */ class pg implements Runnable {
                     break;
                 }
                 break;
-            case 17:
+            case 18:
                 kd kdVar = (kd) obj;
                 if (kdVar.o1) {
                     kdVar.o1 = false;
@@ -155,21 +160,21 @@ public final /* synthetic */ class pg implements Runnable {
                     break;
                 }
                 break;
-            case 18:
+            case 19:
                 ((Dialog) obj).dismiss();
                 break;
-            case 19:
+            case 20:
                 ChatActivityEnterView chatActivityEnterView2 = ((rf) obj).f;
-                int i12 = ChatActivityEnterView.n5;
+                int i12 = ChatActivityEnterView.r5;
                 chatActivityEnterView2.n1();
                 break;
-            case 20:
+            case 21:
                 ((ah) obj).s = null;
                 break;
-            case 21:
+            case 22:
                 ((ji) obj).B0.D1.l();
                 break;
-            case 22:
+            case 23:
                 nk nkVar = (nk) ((androidx.mediarouter.app.f) obj).b;
                 try {
                     File file = nkVar.O;
@@ -184,19 +189,19 @@ public final /* synthetic */ class pg implements Runnable {
                     FileLog.e(e);
                     return;
                 }
-            case 23:
+            case 24:
                 ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout2 = ((im) obj).b;
                 boolean z10 = ChatAttachAlertPhotoLayout.q1;
                 chatAttachAlertPhotoLayout2.p0(-1, true);
                 break;
-            case 24:
+            case 25:
                 ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout3 = ((fm) obj).c;
                 if (chatAttachAlertPhotoLayout3.P != null && !chatAttachAlertPhotoLayout3.b.isDismissed()) {
                     chatAttachAlertPhotoLayout3.P.setSystemUiVisibility(1028);
                     break;
                 }
                 break;
-            case 25:
+            case 26:
                 bn bnVar = (bn) obj;
                 ti tiVar = bnVar.b;
                 if (bnVar.Q && (chatAttachAlertPhotoLayout = tiVar.j0) != null) {
@@ -207,19 +212,16 @@ public final /* synthetic */ class pg implements Runnable {
                     break;
                 }
                 break;
-            case 26:
-                fo foVar = (fo) obj;
-                foVar.k1 = -1;
-                foVar.j1 = null;
-                break;
             case 27:
-                ((yo) obj).n();
+                fo foVar = (fo) obj;
+                foVar.l1 = -1;
+                foVar.k1 = null;
                 break;
             case 28:
-                ((ap) obj).setVisibility(8);
+                ((yo) obj).o();
                 break;
             default:
-                ((zp) obj).b.a();
+                ((ap) obj).setVisibility(8);
                 break;
         }
     }

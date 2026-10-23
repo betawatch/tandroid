@@ -6,7 +6,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class u6 extends FrameLayout {
     public org.telegram.ui.Components.q6 a;
@@ -17,7 +17,7 @@ public final class u6 extends FrameLayout {
         q6Var.a();
         q6Var.c(String.format("%d%%", Integer.valueOf((int) Math.ceil(w7.r.a(f7, 0.0f, 1.0f) * 100.0f))), !LocaleController.isRTL, true);
         t6 t6Var = this.b;
-        t6Var.d = f7;
+        t6Var.c = f7;
         t6Var.invalidate();
     }
 

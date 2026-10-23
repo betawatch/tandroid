@@ -4,23 +4,23 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class pj extends li.m {
     public Runnable W;
-    public final /* synthetic */ qn X;
+    public final /* synthetic */ sn X;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public pj(qn qnVar, qn qnVar2, nj njVar, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(qnVar2, njVar, d6Var);
-        this.X = qnVar;
+    public pj(sn snVar, sn snVar2, nj njVar, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(snVar2, njVar, g6Var);
+        this.X = snVar;
     }
 
     @Override // s4.k
     public final void F() {
-        qn qnVar = this.X;
-        if (qnVar.H9 == -1) {
-            qnVar.H9 = qnVar.getNotificationCenter().setAnimationInProgress(qnVar.H9, qn.Oc, false);
+        sn snVar = this.X;
+        if (snVar.T9 == -1) {
+            snVar.T9 = snVar.getNotificationCenter().setAnimationInProgress(snVar.T9, sn.bd, false);
         }
     }
 
@@ -39,8 +39,8 @@ public final class pj extends li.m {
 
     @Override // li.m
     public final void W() {
-        qn qnVar = this.X;
-        qnVar.H9 = qnVar.getNotificationCenter().setAnimationInProgress(qnVar.H9, qn.Oc, false);
+        sn snVar = this.X;
+        snVar.T9 = snVar.getNotificationCenter().setAnimationInProgress(snVar.T9, sn.bd, false);
         Runnable runnable = this.W;
         if (runnable != null) {
             AndroidUtilities.cancelRunOnUIThread(runnable);
@@ -49,10 +49,10 @@ public final class pj extends li.m {
         if (BuildVars.LOGS_ENABLED) {
             FileLog.d("chatItemAnimator disable notifications");
         }
-        org.telegram.ui.ActionBar.v2 v2Var = qnVar.Y.getAdjustPanLayoutHelper().h;
-        AndroidUtilities.cancelRunOnUIThread(v2Var);
-        v2Var.run();
-        org.telegram.ui.Components.af afVar = qnVar.Y.Y3;
+        org.telegram.ui.ActionBar.w2 w2Var = snVar.Y.getAdjustPanLayoutHelper().h;
+        AndroidUtilities.cancelRunOnUIThread(w2Var);
+        w2Var.run();
+        org.telegram.ui.Components.af afVar = snVar.Y.Y3;
         AndroidUtilities.cancelRunOnUIThread(afVar);
         afVar.run();
     }

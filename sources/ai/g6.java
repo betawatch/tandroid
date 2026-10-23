@@ -5,14 +5,16 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.view.View;
+import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final class g6 extends View {
+public final class g6 extends View implements org.telegram.ui.ActionBar.b6 {
     public final v6 a;
     public final ImageReceiver b;
     public final Path c;
@@ -24,16 +26,17 @@ public final class g6 extends View {
         this.c = path;
         Paint paint = new Paint(1);
         this.d = paint;
+        org.telegram.ui.ActionBar.q6 q6Var = org.telegram.ui.ActionBar.r6.a;
         v6 v6Var = new v6(this, starGift, 60, 0.27f);
         this.a = v6Var;
         v6Var.K = 3;
-        org.telegram.ui.Components.h9 h9Var = new org.telegram.ui.Components.h9((org.telegram.ui.ActionBar.d6) null);
+        org.telegram.ui.Components.h9 h9Var = new org.telegram.ui.Components.h9((org.telegram.ui.ActionBar.g6) null);
         h9Var.p(tLObject);
         ImageReceiver imageReceiver = new ImageReceiver(this);
         this.b = imageReceiver;
         imageReceiver.setRoundRadius(AndroidUtilities.dp(30.0f));
         imageReceiver.setForUserOrChat(tLObject, h9Var);
-        paint.setColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.E6, false));
+        paint.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.E6, false));
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeCap(Paint.Cap.ROUND);
         paint.setStrokeJoin(Paint.Join.ROUND);
@@ -81,20 +84,34 @@ public final class g6 extends View {
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLObject.FLAG_30));
     }
 
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void updateColors() {
+        Paint paint = this.d;
+        try {
+            int i10 = org.telegram.ui.ActionBar.k6.E6;
+            paint.setColor(org.telegram.ui.ActionBar.k6.x0(null, i10, false));
+            paint.setColor(org.telegram.ui.ActionBar.k6.x0(null, i10, false));
+            invalidate();
+        } catch (Exception e) {
+            FileLog.e(e);
+        }
+    }
+
     public g6(Context context, TL_stars.TL_starGiftUnique tL_starGiftUnique) {
         super(context);
         Path path = new Path();
         this.c = path;
         Paint paint = new Paint(1);
         this.d = paint;
+        org.telegram.ui.ActionBar.q6 q6Var = org.telegram.ui.ActionBar.r6.a;
         v6 v6Var = new v6(this, tL_starGiftUnique, 60, 0.27f);
         this.a = v6Var;
         v6Var.K = 3;
         ImageReceiver imageReceiver = new ImageReceiver(this);
         this.b = imageReceiver;
         imageReceiver.setRoundRadius(AndroidUtilities.dp(30.0f));
-        imageReceiver.setImageBitmap(org.telegram.ui.Cells.t6.a(60, "fragment"));
-        paint.setColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.E6, false));
+        imageReceiver.setImageBitmap(org.telegram.ui.Cells.v6.a(60, "fragment"));
+        paint.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.E6, false));
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeCap(Paint.Cap.ROUND);
         paint.setStrokeJoin(Paint.Join.ROUND);
@@ -103,5 +120,9 @@ public final class g6 extends View {
         path.moveTo(0.0f, -AndroidUtilities.dp(8.0f));
         path.lineTo(AndroidUtilities.dp(6.166f), 0.0f);
         path.lineTo(0.0f, AndroidUtilities.dp(8.0f));
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

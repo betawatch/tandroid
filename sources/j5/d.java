@@ -31,9 +31,10 @@ import k5.v;
 import ki.t1;
 import m5.e;
 import org.telegram.messenger.MediaDataController;
+import si.o0;
 import w7.i6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class d implements e {
     public final t1 a;
@@ -78,7 +79,7 @@ public final class d implements e {
         try {
             return new URL(str);
         } catch (MalformedURLException e) {
-            throw new IllegalArgumentException(r4.c.h("Invalid url: ", str), e);
+            throw new IllegalArgumentException(o0.h("Invalid url: ", str), e);
         }
     }
 
@@ -103,13 +104,13 @@ public final class d implements e {
             throw new IllegalStateException("Property \"autoMetadata\" has not been set");
         }
         hashMap2.put("sdk-version", String.valueOf(i10));
-        c10.c("model", Build.MODEL);
-        c10.c("hardware", Build.HARDWARE);
-        c10.c("device", Build.DEVICE);
-        c10.c("product", Build.PRODUCT);
-        c10.c("os-uild", Build.ID);
-        c10.c("manufacturer", Build.MANUFACTURER);
-        c10.c("fingerprint", Build.FINGERPRINT);
+        c10.b("model", Build.MODEL);
+        c10.b("hardware", Build.HARDWARE);
+        c10.b("device", Build.DEVICE);
+        c10.b("product", Build.PRODUCT);
+        c10.b("os-uild", Build.ID);
+        c10.b("manufacturer", Build.MANUFACTURER);
+        c10.b("fingerprint", Build.FINGERPRINT);
         Calendar.getInstance();
         long offset = TimeZone.getDefault().getOffset(Calendar.getInstance().getTimeInMillis()) / MediaDataController.MAX_STYLE_RUNS_COUNT;
         HashMap hashMap3 = (HashMap) c10.f;
@@ -140,17 +141,17 @@ public final class d implements e {
                 throw new IllegalStateException("Property \"autoMetadata\" has not been set");
             }
             hashMap.put("mobile-subtype", String.valueOf(subtype));
-            c10.c("country", Locale.getDefault().getCountry());
-            c10.c("locale", Locale.getDefault().getLanguage());
+            c10.b("country", Locale.getDefault().getCountry());
+            c10.b("locale", Locale.getDefault().getLanguage());
             Context context = this.c;
-            c10.c("mcc_mnc", ((TelephonyManager) context.getSystemService("phone")).getSimOperator());
+            c10.b("mcc_mnc", ((TelephonyManager) context.getSystemService("phone")).getSimOperator());
             try {
                 i11 = context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionCode;
             } catch (PackageManager.NameNotFoundException e) {
                 i6.b("CctTransportBackend", "Unable to find version code for package", e);
             }
-            c10.c("application_build", Integer.toString(i11));
-            return c10.h();
+            c10.b("application_build", Integer.toString(i11));
+            return c10.f();
         }
         SparseArray sparseArray3 = t.a;
         subtype = 0;

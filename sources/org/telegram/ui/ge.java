@@ -15,7 +15,7 @@ import org.telegram.messenger.BillingController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class ge extends LinearLayout {
     public final LinearLayout a;
@@ -25,7 +25,7 @@ public final class ge extends LinearLayout {
     public final TextView e;
     public final DecimalFormat f;
 
-    public ge(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+    public ge(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
         super(context);
         this.b = new LinearLayout[2];
         this.c = new org.telegram.ui.Components.z5[2];
@@ -42,17 +42,17 @@ public final class ge extends LinearLayout {
             this.c[i10] = new org.telegram.ui.Components.z5(context);
             this.c[i10].setTypeface(AndroidUtilities.bold());
             this.c[i10].setTextSize(1, 16.0f);
-            this.c[i10].setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.G6, d6Var));
+            org.telegram.ui.ActionBar.r6.W(this.c[i10], org.telegram.ui.ActionBar.k6.G6, g6Var);
             this.b[i10].addView(this.c[i10], w7.z5.t(-2, -2, 80, 0, 0, 5, 0));
             this.d[i10] = new org.telegram.ui.Components.z5(context);
             this.d[i10].setTextSize(1, 11.5f);
-            this.d[i10].setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.y6, d6Var));
+            org.telegram.ui.ActionBar.r6.W(this.d[i10], org.telegram.ui.ActionBar.k6.y6, g6Var);
             this.b[i10].addView(this.d[i10], w7.z5.q(-2, -2, 80));
         }
         TextView textView = new TextView(context);
         this.e = textView;
         textView.setTextSize(1, 13.0f);
-        textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.y6, d6Var));
+        org.telegram.ui.ActionBar.r6.W(textView, org.telegram.ui.ActionBar.k6.y6, g6Var);
         addView(textView, w7.z5.t(-1, -2, 55, 22, 5, 22, 9));
         DecimalFormatSymbols decimalFormatSymbols = new DecimalFormatSymbols(Locale.US);
         decimalFormatSymbols.setDecimalSeparator('.');
@@ -83,7 +83,7 @@ public final class ge extends LinearLayout {
             if (i11 == 0 && !feVar.a) {
                 linearLayoutArr[i11].setVisibility(8);
             } else if (i11 != 1 || feVar.g) {
-                SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(r4.c.u(str, " "));
+                SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(si.o0.u(str, " "));
                 boolean equalsIgnoreCase = "TON".equalsIgnoreCase(str);
                 TextView[] textViewArr = this.c;
                 if (equalsIgnoreCase) {
@@ -97,16 +97,16 @@ public final class ge extends LinearLayout {
                         i10 = i11;
                         spannableStringBuilder2.append((CharSequence) format);
                     }
-                    spannableStringBuilder = ie.f0(spannableStringBuilder2, textViewArr[i10].getPaint(), 1.05f, 0.0f, true);
+                    spannableStringBuilder = ie.e0(spannableStringBuilder2, textViewArr[i10].getPaint(), 1.05f, 0.0f, true);
                 } else {
                     i10 = i11;
                     if ("XTR".equalsIgnoreCase(str)) {
                         if (i10 == 0) {
                             spannableStringBuilder2.append((CharSequence) LocaleController.formatNumber(feVar.d, ' '));
                         } else {
-                            spannableStringBuilder2.append((CharSequence) ai.md.K0(feVar.i, 0.8f, ' '));
+                            spannableStringBuilder2.append((CharSequence) ai.nd.K0(feVar.i, 0.8f, ' '));
                         }
-                        spannableStringBuilder = ai.md.Y0(false, spannableStringBuilder2, 0.7f, null);
+                        spannableStringBuilder = ai.nd.Y0(false, spannableStringBuilder2, 0.7f, null);
                     } else {
                         spannableStringBuilder2.append((CharSequence) Long.toString(feVar.d));
                         spannableStringBuilder = spannableStringBuilder2;

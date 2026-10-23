@@ -4,7 +4,7 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m1 implements Runnable {
     public final /* synthetic */ int a;
@@ -25,46 +25,46 @@ public final /* synthetic */ class m1 implements Runnable {
         switch (i10) {
             case 0:
                 w3 w3Var = d2Var.P;
-                ArrayList arrayList = w3.q4;
+                ArrayList arrayList = w3.t4;
                 TL_iv.pageBlockPullquote pageblockpullquote = new TL_iv.pageBlockPullquote();
                 pageblockpullquote.caption = new TL_iv.textEmpty();
-                w3Var.V4(this.c, pageblockpullquote, 0, 0, false, false);
+                w3Var.a5(this.c, pageblockpullquote, 0, 0, false, false);
                 break;
             case 1:
-                d2Var.P.W4(aVar, new TL_iv.pageBlockPreformatted());
+                d2Var.P.b5(aVar, new TL_iv.pageBlockPreformatted());
                 break;
             case 2:
-                d2Var.P.W4(aVar, new TL_iv.pageBlockFooter());
+                d2Var.P.b5(aVar, new TL_iv.pageBlockFooter());
                 break;
             case 3:
-                d2Var.P.W4(aVar, new TL_iv.pageBlockParagraph());
+                d2Var.P.b5(aVar, new TL_iv.pageBlockParagraph());
                 break;
             case 4:
                 w3 w3Var2 = d2Var.P;
-                ArrayList arrayList2 = w3.q4;
+                ArrayList arrayList2 = w3.t4;
                 TL_iv.pageBlockBlockquote pageblockblockquote = new TL_iv.pageBlockBlockquote();
                 pageblockblockquote.caption = new TL_iv.textEmpty();
-                w3Var2.V4(this.c, pageblockblockquote, 0, 0, false, false);
+                w3Var2.a5(this.c, pageblockblockquote, 0, 0, false, false);
                 break;
             case 5:
-                d2Var.P.X4(aVar, 0);
+                d2Var.P.c5(aVar, 0);
                 break;
             case 6:
-                d2Var.P.X4(aVar, 1);
+                d2Var.P.c5(aVar, 1);
                 break;
             case 7:
-                d2Var.P.X4(aVar, 2);
+                d2Var.P.c5(aVar, 2);
                 break;
             case 8:
-                d2Var.P.X4(aVar, 3);
+                d2Var.P.c5(aVar, 3);
                 break;
             default:
-                View A1 = d2Var.P.A1(aVar);
-                if (!(A1 instanceof o4)) {
-                    d2Var.P.W2.N(false);
+                View F1 = d2Var.P.F1(aVar);
+                if (!(F1 instanceof o4)) {
+                    d2Var.P.Z2.N(false);
                     break;
                 } else {
-                    ((o4) A1).h(aVar, d2Var.P.getMapDelegate());
+                    ((o4) F1).g(aVar, d2Var.P.getMapDelegate());
                     break;
                 }
         }

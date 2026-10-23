@@ -1,29 +1,87 @@
 package org.telegram.ui;
 
-import android.text.TextPaint;
-import android.text.style.ClickableSpan;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.Vector;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class lm0 extends ClickableSpan {
-    public final /* synthetic */ vm0 a;
+public final /* synthetic */ class lm0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ mm0 b;
+    public final /* synthetic */ TLRPC.TL_error c;
+    public final /* synthetic */ TLObject d;
 
-    public lm0(vm0 vm0Var) {
-        this.a = vm0Var;
+    public /* synthetic */ lm0(mm0 mm0Var, TLObject tLObject, TLRPC.TL_error tL_error) {
+        this.a = 0;
+        this.b = mm0Var;
+        this.d = tLObject;
+        this.c = tL_error;
     }
 
-    @Override // android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        vm0 vm0Var = this.a;
-        pf.d.r(vm0Var.getParentActivity(), vm0Var.y.privacy_policy_url);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                mm0 mm0Var = this.b;
+                TLObject tLObject = this.d;
+                TLRPC.TL_error tL_error = this.c;
+                an0 an0Var = mm0Var.e;
+                if (tLObject instanceof Vector) {
+                    an0Var.y = new TL_account.authorizationForm();
+                    Vector vector = (Vector) tLObject;
+                    int size = vector.objects.size();
+                    for (int i10 = 0; i10 < size; i10++) {
+                        an0Var.y.values.add((TLRPC.TL_secureValue) vector.objects.get(i10));
+                    }
+                    mm0Var.a();
+                    break;
+                } else {
+                    if ("APP_VERSION_OUTDATED".equals(tL_error.text)) {
+                        org.telegram.ui.Components.f5.x0(an0Var.getParentActivity(), LocaleController.getString(R.string.UpdateAppAlert), true);
+                    } else {
+                        an0Var.L1(LocaleController.getString(R.string.AppName), tL_error.text);
+                    }
+                    an0Var.M1(true, false);
+                    break;
+                }
+            case 1:
+                mm0 mm0Var2 = this.b;
+                TLRPC.TL_error tL_error2 = this.c;
+                TLObject tLObject2 = this.d;
+                if (tL_error2 == null) {
+                    TL_account.Password password = (TL_account.Password) tLObject2;
+                    mm0Var2.e.J = password;
+                    TwoStepVerificationActivity.m0(password);
+                    mm0Var2.b();
+                    break;
+                } else {
+                    mm0Var2.getClass();
+                    break;
+                }
+            default:
+                mm0 mm0Var3 = this.b;
+                TLRPC.TL_error tL_error3 = this.c;
+                TLObject tLObject3 = this.d;
+                if (tL_error3 == null) {
+                    TL_account.Password password2 = (TL_account.Password) tLObject3;
+                    mm0Var3.e.J = password2;
+                    TwoStepVerificationActivity.m0(password2);
+                    Utilities.globalQueue.postRunnable(new re0(mm0Var3, mm0Var3.b, mm0Var3.d, 14));
+                    break;
+                }
+                break;
+        }
     }
 
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        super.updateDrawState(textPaint);
-        textPaint.setUnderlineText(true);
-        textPaint.setTypeface(AndroidUtilities.bold());
+    public /* synthetic */ lm0(mm0 mm0Var, TLRPC.TL_error tL_error, TLObject tLObject, int i10) {
+        this.a = i10;
+        this.b = mm0Var;
+        this.c = tL_error;
+        this.d = tLObject;
     }
 }

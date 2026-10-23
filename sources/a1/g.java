@@ -5,14 +5,16 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
-import c3.j0;
+import androidx.fragment.app.j0;
+import c3.l0;
+import com.google.android.gms.internal.cast.y4;
 import e2.x;
 import java.util.ArrayList;
 import java.util.Iterator;
 import kotlin.jvm.internal.i;
 import m1.j;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public abstract /* synthetic */ class g {
     public static void A(StringBuilder sb2, String str, String str2, String str3, String str4) {
@@ -26,11 +28,15 @@ public abstract /* synthetic */ class g {
         return ((f7 * f10) / f11) + f12;
     }
 
-    public static String C(String str, String str2, String str3) {
+    public static int C(int i10, int i11, int i12) {
+        return y4.o(i10) + i11 + i12;
+    }
+
+    public static String D(String str, String str2, String str3) {
         return str + str2 + str3;
     }
 
-    public static /* synthetic */ int D(String str) {
+    public static /* synthetic */ int E(String str) {
         if (str == null) {
             throw new NullPointerException("Name is null");
         }
@@ -85,14 +91,14 @@ public abstract /* synthetic */ class g {
         throw new IllegalArgumentException("No enum constant fi.iki.elonen.NanoHTTPD.Method.".concat(str));
     }
 
-    public static void a(j0 j0Var, x xVar, int i10) {
-        j0Var.g(xVar, i10, 0);
+    public static void a(l0 l0Var, x xVar, int i10) {
+        l0Var.g(xVar, i10, 0);
     }
 
     public static final void b(int i10, View view, ViewGroup container) {
         i.e(view, "view");
         i.e(container, "container");
-        if (androidx.fragment.app.j0.K(2)) {
+        if (j0.K(2)) {
             Log.v("FragmentManager", "SpecialEffectsController: Calling apply state");
         }
         int c10 = j.c(i10);
@@ -100,7 +106,7 @@ public abstract /* synthetic */ class g {
             ViewParent parent = view.getParent();
             ViewGroup viewGroup = parent instanceof ViewGroup ? (ViewGroup) parent : null;
             if (viewGroup != null) {
-                if (androidx.fragment.app.j0.K(2)) {
+                if (j0.K(2)) {
                     Log.v("FragmentManager", "SpecialEffectsController: Removing view " + view + " from container " + viewGroup);
                 }
                 viewGroup.removeView(view);
@@ -109,12 +115,12 @@ public abstract /* synthetic */ class g {
             return;
         }
         if (c10 == 1) {
-            if (androidx.fragment.app.j0.K(2)) {
+            if (j0.K(2)) {
                 Log.v("FragmentManager", "SpecialEffectsController: Setting view " + view + " to VISIBLE");
             }
             ViewParent parent2 = view.getParent();
             if ((parent2 instanceof ViewGroup ? (ViewGroup) parent2 : null) == null) {
-                if (androidx.fragment.app.j0.K(2)) {
+                if (j0.K(2)) {
                     Log.v("FragmentManager", "SpecialEffectsController: Adding view " + view + " to Container " + container);
                 }
                 container.addView(view);
@@ -123,7 +129,7 @@ public abstract /* synthetic */ class g {
             return;
         }
         if (c10 == 2) {
-            if (androidx.fragment.app.j0.K(2)) {
+            if (j0.K(2)) {
                 Log.v("FragmentManager", "SpecialEffectsController: Setting view " + view + " to GONE");
             }
             view.setVisibility(8);
@@ -132,7 +138,7 @@ public abstract /* synthetic */ class g {
         if (c10 != 3) {
             return;
         }
-        if (androidx.fragment.app.j0.K(2)) {
+        if (j0.K(2)) {
             Log.v("FragmentManager", "SpecialEffectsController: Setting view " + view + " to INVISIBLE");
         }
         view.setVisibility(4);
@@ -143,7 +149,7 @@ public abstract /* synthetic */ class g {
             return 0;
         }
         try {
-            return D(str);
+            return E(str);
         } catch (IllegalArgumentException unused) {
             return 0;
         }

@@ -1,85 +1,66 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.RectF;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
+import android.animation.Animator;
+import android.animation.ObjectAnimator;
+import android.transition.Fade;
+import android.transition.TransitionValues;
+import android.view.View;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class q31 extends FrameLayout {
-    public final Paint a;
-    public final Paint b;
-    public final RectF c;
-    public final org.telegram.ui.Components.u21 d;
-    public boolean e;
-    public long f;
-    public long h;
-    public final org.telegram.ui.Components.vj0 n;
-    public final TextPaint r;
-    public StaticLayout s;
-    public float v;
-    public float w;
-    public final /* synthetic */ SecretMediaViewer x;
+public final class q31 extends Fade {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ SecretMediaViewer d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public q31(SecretMediaViewer secretMediaViewer, Activity activity) {
-        super(activity);
-        this.x = secretMediaViewer;
-        this.c = new RectF();
-        this.d = new org.telegram.ui.Components.u21();
-        this.r = new TextPaint(1);
-        setWillNotDraw(false);
-        Paint paint = new Paint(1);
-        this.b = paint;
-        paint.setStrokeWidth(AndroidUtilities.dp(1.5f));
-        paint.setColor(-1644826);
-        Paint.Cap cap = Paint.Cap.ROUND;
-        paint.setStrokeCap(cap);
-        Paint.Style style = Paint.Style.STROKE;
-        paint.setStyle(style);
-        Paint paint2 = new Paint(1);
-        this.a = paint2;
-        paint2.setStyle(style);
-        paint2.setStrokeCap(cap);
-        paint2.setColor(-1644826);
-        paint2.setStrokeWidth(AndroidUtilities.dp(2.0f));
-        new Paint(1).setColor(2130706432);
-        org.telegram.ui.Components.vj0 vj0Var = new org.telegram.ui.Components.vj0(R.raw.fire_on, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f));
-        this.n = vj0Var;
-        vj0Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-        vj0Var.R(this);
-        vj0Var.start();
+    public q31(SecretMediaViewer secretMediaViewer, boolean z10, boolean z11, int i10) {
+        super(1);
+        this.a = i10;
+        switch (i10) {
+            case 1:
+                this.d = secretMediaViewer;
+                this.b = z10;
+                this.c = z11;
+                super(2);
+                break;
+            default:
+                this.d = secretMediaViewer;
+                this.b = z10;
+                this.c = z11;
+                break;
+        }
     }
 
-    /*  JADX ERROR: NullPointerException in pass: LoopRegionVisitor
-        java.lang.NullPointerException: Cannot invoke "jadx.core.dex.instructions.args.SSAVar.use(jadx.core.dex.instructions.args.RegisterArg)" because "ssaVar" is null
-        	at jadx.core.dex.nodes.InsnNode.rebindArgs(InsnNode.java:493)
-        	at jadx.core.dex.nodes.InsnNode.rebindArgs(InsnNode.java:496)
-        */
-    @Override // android.view.View
-    public final void onDraw(android.graphics.Canvas r15) {
-        /*
-            Method dump skipped, instructions count: 217
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: org.telegram.ui.q31.onDraw(android.graphics.Canvas):void");
+    @Override // android.transition.Fade, android.transition.Visibility
+    public Animator onAppear(ViewGroup viewGroup, View view, TransitionValues transitionValues, TransitionValues transitionValues2) {
+        switch (this.a) {
+            case 0:
+                Animator onAppear = super.onAppear(viewGroup, view, transitionValues, transitionValues2);
+                if (this.b && !this.c && view == this.d.Z) {
+                    onAppear.addListener(new v70(this, 23));
+                    ((ObjectAnimator) onAppear).addUpdateListener(new g11(this, 2));
+                }
+                return onAppear;
+            default:
+                return super.onAppear(viewGroup, view, transitionValues, transitionValues2);
+        }
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        float measuredWidth = getMeasuredWidth() - AndroidUtilities.dp(35.0f);
-        float measuredHeight = getMeasuredHeight() / 2.0f;
-        float dpf2 = AndroidUtilities.dpf2(10.5f);
-        this.c.set(measuredWidth - dpf2, measuredHeight - dpf2, measuredWidth + dpf2, dpf2 + measuredHeight);
-        setPivotX(measuredWidth);
-        setPivotY(measuredHeight);
+    @Override // android.transition.Fade, android.transition.Visibility
+    public Animator onDisappear(ViewGroup viewGroup, View view, TransitionValues transitionValues, TransitionValues transitionValues2) {
+        switch (this.a) {
+            case 1:
+                Animator onDisappear = super.onDisappear(viewGroup, view, transitionValues, transitionValues2);
+                if (!this.b && this.c && view == this.d.Z) {
+                    onDisappear.addListener(new v70(this, 24));
+                    ((ObjectAnimator) onDisappear).addUpdateListener(new g11(this, 3));
+                }
+                return onDisappear;
+            default:
+                return super.onDisappear(viewGroup, view, transitionValues, transitionValues2);
+        }
     }
 }

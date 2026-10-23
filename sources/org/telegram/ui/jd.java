@@ -2,9 +2,9 @@ package org.telegram.ui;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class jd extends org.telegram.ui.Components.yj0 {
+public final class jd extends org.telegram.ui.Components.bk0 {
     public final /* synthetic */ int r;
     public final /* synthetic */ Object s;
 
@@ -20,7 +20,7 @@ public final class jd extends org.telegram.ui.Components.yj0 {
         switch (this.r) {
             case 0:
                 super.invalidate(i10, i11, i12, i13);
-                ((md) this.s).f.invalidate();
+                ((md) this.s).h.invalidate();
                 break;
             case 1:
             default:
@@ -28,11 +28,11 @@ public final class jd extends org.telegram.ui.Components.yj0 {
                 break;
             case 2:
                 super.invalidate(i10, i11, i12, i13);
-                ((s60) this.s).e.invalidate();
+                ((w60) this.s).e.invalidate();
                 break;
             case 3:
                 super.invalidate(i10, i11, i12, i13);
-                ((ne0) this.s).h.invalidate();
+                ((ue0) this.s).h.invalidate();
                 break;
         }
     }
@@ -42,7 +42,7 @@ public final class jd extends org.telegram.ui.Components.yj0 {
         switch (this.r) {
             case 0:
                 super.invalidate();
-                ((md) this.s).f.invalidate();
+                ((md) this.s).h.invalidate();
                 break;
             case 1:
                 super.invalidate();
@@ -50,11 +50,11 @@ public final class jd extends org.telegram.ui.Components.yj0 {
                 break;
             case 2:
                 super.invalidate();
-                ((s60) this.s).e.invalidate();
+                ((w60) this.s).e.invalidate();
                 break;
             default:
                 super.invalidate();
-                ((ne0) this.s).h.invalidate();
+                ((ue0) this.s).h.invalidate();
                 break;
         }
     }

@@ -3,9 +3,9 @@ package org.telegram.ui.ActionBar;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import org.telegram.ui.Components.lw0;
+import org.telegram.ui.Components.ow0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class d extends y {
     public final /* synthetic */ k h;
@@ -25,7 +25,7 @@ public final class d extends y {
             kVar.M0.set(0, 0, getMeasuredWidth(), getMeasuredHeight());
             paint.setColor(kVar.w);
             canvas2 = canvas;
-            kVar.J0.J(canvas2, 0.0f, kVar.M0, paint, true);
+            kVar.J0.I(canvas2, 0.0f, kVar.M0, paint, true);
         } else {
             canvas2 = canvas;
         }
@@ -35,18 +35,18 @@ public final class d extends y {
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        lw0 lw0Var = this.h.J0;
-        if (lw0Var != null) {
-            lw0Var.T.add(this);
+        ow0 ow0Var = this.h.J0;
+        if (ow0Var != null) {
+            ow0Var.T.add(this);
         }
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        lw0 lw0Var = this.h.J0;
-        if (lw0Var != null) {
-            lw0Var.T.remove(this);
+        ow0 ow0Var = this.h.J0;
+        if (ow0Var != null) {
+            ow0Var.T.remove(this);
         }
     }
 

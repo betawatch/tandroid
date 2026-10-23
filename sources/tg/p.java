@@ -1,6 +1,6 @@
 package tg;
 
-import ai.de;
+import ai.ee;
 import android.graphics.Bitmap;
 import android.opengl.EGL14;
 import android.opengl.EGLDisplay;
@@ -14,18 +14,17 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.f3;
-import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.h3;
+import org.telegram.ui.ActionBar.o2;
+import org.telegram.ui.Components.b71;
 import org.telegram.ui.Components.qy;
-import org.telegram.ui.Components.u61;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.df0;
+import org.telegram.ui.if0;
 import sg.m1;
 import ug.a0;
-import ug.b0;
-import ug.u;
-import ug.x;
+import ug.w;
+import ug.z;
 import yh.c0;
 import yh.d1;
 import yh.j1;
@@ -33,7 +32,7 @@ import yh.l1;
 import yh.o1;
 import yh.p2;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p implements Runnable {
     public final /* synthetic */ int a;
@@ -70,7 +69,7 @@ public final /* synthetic */ class p implements Runnable {
         ?? r11;
         r rVar;
         int i11;
-        d6 d6Var;
+        g6 g6Var;
         switch (this.a) {
             case 0:
                 q qVar = (q) this.b;
@@ -348,28 +347,28 @@ public final /* synthetic */ class p implements Runnable {
                 }
                 return;
             case 4:
-                ((x) this.b).run(null);
+                ((w) this.b).run(null);
                 return;
             case 5:
                 ((qy) this.b).run(Collections.EMPTY_LIST);
                 return;
             case 6:
-                ((u) this.b).run(null);
+                ((ug.t) this.b).run(null);
                 return;
             case 7:
-                b0 b0Var = ((a0) this.b).r;
-                n2 n2Var = b0Var.n;
-                i11 = ((f3) b0Var).currentAccount;
-                d6Var = ((f3) b0Var).resourcesProvider;
-                m1 m1Var = new m1(n2Var, i11, null, null, null, d6Var);
+                a0 a0Var = ((z) this.b).r;
+                o2 o2Var = a0Var.n;
+                i11 = ((h3) a0Var).currentAccount;
+                g6Var = ((h3) a0Var).resourcesProvider;
+                m1 m1Var = new m1(o2Var, i11, null, null, null, g6Var);
                 m1Var.J0 = true;
                 m1Var.c0 = true;
-                b0Var.n.showDialog(m1Var);
+                a0Var.n.showDialog(m1Var);
                 return;
             case 8:
-                ((f3) this.b).dismiss();
+                ((h3) this.b).dismiss();
                 NotificationCenter.getInstance(UserConfig.selectedAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.didStartedMultiGiftsSelector, new Object[0]);
-                AndroidUtilities.runOnUIThread(new df0(22), 220L);
+                AndroidUtilities.runOnUIThread(new if0(22), 220L);
                 return;
             case 9:
                 ((uh.f) this.b).d0.N(true);
@@ -393,9 +392,9 @@ public final /* synthetic */ class p implements Runnable {
                 ((c0) this.b).onBackPressed();
                 return;
             case 15:
-                u61 u61Var = ((o1) this.b).Y;
-                if (u61Var != null) {
-                    u61Var.N(false);
+                b71 b71Var = ((o1) this.b).Y;
+                if (b71Var != null) {
+                    b71Var.N(false);
                     return;
                 }
                 return;
@@ -407,9 +406,9 @@ public final /* synthetic */ class p implements Runnable {
                 return;
             case 18:
                 l1 l1Var = (l1) this.b;
-                de deVar = l1Var.e;
-                if (deVar != null) {
-                    deVar.d();
+                ee eeVar = l1Var.e;
+                if (eeVar != null) {
+                    eeVar.d();
                     l1Var.invalidateSelf();
                     return;
                 }

@@ -5,11 +5,11 @@ import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.gh;
 import org.telegram.ui.Components.hi;
-import org.telegram.ui.Components.jm0;
 import org.telegram.ui.Components.li;
+import org.telegram.ui.Components.mm0;
 import org.telegram.ui.Components.ti;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class c5 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -29,14 +29,14 @@ public final class c5 extends AnimatorListenerAdapter {
         switch (this.a) {
             case 0:
                 l7 l7Var = (l7) this.d;
-                l7Var.o2();
+                l7Var.n2();
                 k5 k5Var = l7Var.g0;
                 int i10 = this.b;
                 k5Var.setVisibility(i10 == 0 ? 0 : 8);
                 l7Var.s0.setVisibility(i10 == 1 ? 0 : 8);
                 l7Var.B0.setVisibility(i10 == 2 ? 0 : 8);
                 l7Var.D0.setVisibility(i10 == 3 ? 0 : 8);
-                l7Var.X2();
+                l7Var.W2();
                 l7Var.c1 = null;
                 Runnable runnable = (Runnable) this.c;
                 if (runnable != null) {
@@ -64,7 +64,7 @@ public final class c5 extends AnimatorListenerAdapter {
                 break;
             default:
                 a5.a aVar = (a5.a) this.d;
-                ((jm0) aVar.d).scrollBy(0, this.b - ((int[]) this.c)[0]);
+                ((mm0) aVar.d).scrollBy(0, this.b - ((int[]) this.c)[0]);
                 aVar.c = null;
                 break;
         }

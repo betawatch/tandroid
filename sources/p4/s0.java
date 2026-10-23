@@ -18,10 +18,10 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.concurrent.Executor;
 import org.telegram.messenger.MessageObject;
-import org.telegram.ui.Cells.k7;
-import org.telegram.ui.Components.y31;
+import org.telegram.ui.Components.c41;
+import org.telegram.ui.Wallet.m4;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class s0 {
     public boolean a;
@@ -35,8 +35,8 @@ public final class s0 {
 
     public s0(Context context, e eVar) {
         this.f = new ArrayList();
-        this.g = new androidx.mediarouter.app.f(this, 9);
-        this.h = new k7(this, 29);
+        this.g = new androidx.mediarouter.app.f(this, 10);
+        this.h = new m4(this, 2);
         this.b = context;
         this.c = eVar;
         this.d = new Handler();
@@ -51,13 +51,13 @@ public final class s0 {
             if (message == null || !message.contains("compressed")) {
                 return null;
             }
-            ((r4.d) this.c).x();
+            ((r4.c) this.c).v();
             return null;
         }
     }
 
     public void b(int i10, Serializable serializable) {
-        ((Executor) this.b).execute(new y31(this, i10, serializable, 24));
+        ((Executor) this.b).execute(new c41(this, i10, serializable, 24));
     }
 
     public void c() {
@@ -167,10 +167,10 @@ public final class s0 {
         }
     }
 
-    public s0(AssetManager assetManager, Executor executor, r4.d dVar, String str, File file) {
+    public s0(AssetManager assetManager, Executor executor, r4.c cVar, String str, File file) {
         this.a = false;
         this.b = executor;
-        this.c = dVar;
+        this.c = cVar;
         this.f = str;
         this.e = file;
         int i10 = Build.VERSION.SDK_INT;
@@ -179,24 +179,24 @@ public final class s0 {
             switch (i10) {
                 case 24:
                 case 25:
-                    bArr = r4.e.h;
+                    bArr = r4.d.h;
                     break;
                 case 26:
-                    bArr = r4.e.g;
+                    bArr = r4.d.g;
                     break;
                 case 27:
-                    bArr = r4.e.f;
+                    bArr = r4.d.f;
                     break;
                 case 28:
                 case 29:
                 case MessageObject.TYPE_GIFT_STARS /* 30 */:
-                    bArr = r4.e.e;
+                    bArr = r4.d.e;
                     break;
                 case MessageObject.TYPE_GIFT_THEME_UPDATE /* 31 */:
                 case 32:
                 case 33:
                 case 34:
-                    bArr = r4.e.d;
+                    bArr = r4.d.d;
                     break;
             }
         }

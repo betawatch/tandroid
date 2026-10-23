@@ -1,7 +1,47 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public interface ke0 {
-    void j(me0 me0Var);
+public final class ke0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ei.x8 b;
+
+    public /* synthetic */ ke0(ei.x8 x8Var, int i10) {
+        this.a = i10;
+        this.b = x8Var;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                ei.x8 x8Var = this.b;
+                AnimatorSet animatorSet = (AnimatorSet) x8Var.e;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    x8Var.e = null;
+                    break;
+                }
+                break;
+            case 1:
+                ei.x8 x8Var2 = this.b;
+                AnimatorSet animatorSet2 = (AnimatorSet) x8Var2.e;
+                if (animatorSet2 != null && animatorSet2.equals(animator)) {
+                    x8Var2.e = null;
+                    break;
+                }
+                break;
+            default:
+                ei.x8 x8Var3 = this.b;
+                AnimatorSet animatorSet3 = (AnimatorSet) x8Var3.e;
+                if (animatorSet3 != null && animatorSet3.equals(animator)) {
+                    x8Var3.e = null;
+                    break;
+                }
+                break;
+        }
+    }
 }

@@ -1,23 +1,27 @@
 package rg;
 
-import org.telegram.ui.gt0;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.View;
+import org.telegram.ui.jt0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class e0 implements c {
-    public final /* synthetic */ gt0 a;
+public final class e0 extends View {
+    public final /* synthetic */ jt0 a;
 
-    public e0(gt0 gt0Var) {
-        this.a = gt0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public e0(jt0 jt0Var, Context context) {
+        super(context);
+        this.a = jt0Var;
     }
 
-    @Override // rg.c
-    public final void a() {
-        this.a.s0(null, true);
-    }
-
-    @Override // rg.c
-    public final j b() {
-        return this.a.S0;
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        c0 c0Var = this.a.W0;
+        if (c0Var != null) {
+            c0Var.d(canvas);
+        }
     }
 }

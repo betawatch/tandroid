@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class cz extends ImageView {
     public int a;
@@ -27,7 +27,11 @@ public final class cz extends ImageView {
         super(context);
         this.f = new ImageReceiver.BackgroundThreadDrawHolder[2];
         setScaleType(ImageView.ScaleType.CENTER);
-        setBackground(org.telegram.ui.ActionBar.h6.Z(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.i6, false), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f)));
+        int i10 = org.telegram.ui.ActionBar.k6.i6;
+        org.telegram.ui.Cells.y Z = org.telegram.ui.ActionBar.k6.Z(org.telegram.ui.ActionBar.k6.x0(null, i10, false), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f));
+        org.telegram.ui.ActionBar.n6 O = org.telegram.ui.ActionBar.r6.O(i10);
+        setBackground(Z);
+        org.telegram.ui.ActionBar.r6.k(this, Z, null, O, null);
     }
 
     public final void a(Drawable drawable, boolean z10) {
@@ -86,8 +90,8 @@ public final class cz extends ImageView {
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(f7, 0.0f);
                 this.n = ofFloat;
                 ofFloat.addUpdateListener(new l6(this, 22));
-                this.n.addListener(new org.telegram.ui.nq(this, 25));
-                org.telegram.messenger.nk.l(5.0f, this.n);
+                this.n.addListener(new org.telegram.ui.pq(this, 26));
+                org.telegram.messenger.sl.l(5.0f, this.n);
                 this.n.setDuration(350L);
                 this.n.start();
             }

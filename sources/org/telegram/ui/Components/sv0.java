@@ -1,33 +1,76 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class sv0 extends rv0 {
-    public final /* synthetic */ tv0 G;
+public final class sv0 extends ci.ia {
+    public final /* synthetic */ uv0 h;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public sv0(tv0 tv0Var, Context context, int i10) {
-        super(tv0Var.e, context, i10, false);
-        this.G = tv0Var;
+    public sv0(uv0 uv0Var, ci.h7 h7Var, long j10, int i10) {
+        super(i10, j10, h7Var);
+        this.h = uv0Var;
     }
 
-    @Override // org.telegram.ui.Components.rv0, s4.g0
-    public final void l() {
-        super.l();
-        tv0 tv0Var = this.G;
-        uv0 uv0Var = tv0Var.e;
-        int i10 = tv0Var.a;
-        int[] iArr = uv0.d2;
-        nu0 W = uv0Var.W(i10);
-        if (W != null && W.r.getVisibility() == 0) {
-            tv0Var.d.l();
+    @Override // ci.ia
+    public final void a(ArrayList arrayList) {
+        ws0 ws0Var;
+        MessageObject messageObject;
+        uv0 uv0Var = this.h;
+        xv0 xv0Var = uv0Var.F;
+        int i10 = 0;
+        while (true) {
+            qu0[] qu0VarArr = xv0Var.k0;
+            if (i10 >= qu0VarArr.length) {
+                ws0Var = null;
+                break;
+            }
+            ws0 ws0Var2 = qu0VarArr[i10].h;
+            if (ws0Var2 != null && ws0Var2.getAdapter() == uv0Var) {
+                ws0Var = xv0Var.k0[i10].h;
+                break;
+            }
+            i10++;
         }
-        if (W != null) {
-            et0 et0Var = W.w;
-            ci.a7 a7Var = this.s;
-            et0Var.e(a7Var != null && (a7Var.k() || (uv0Var.j0() && this.s.g() > 0)), true);
+        if (ws0Var != null) {
+            for (int i11 = 0; i11 < ws0Var.getChildCount(); i11++) {
+                View childAt = ws0Var.getChildAt(i11);
+                if ((childAt instanceof org.telegram.ui.Cells.s7) && (messageObject = ((org.telegram.ui.Cells.s7) childAt).getMessageObject()) != null && messageObject.isStory()) {
+                    arrayList.add(Integer.valueOf(messageObject.storyItem.id));
+                }
+            }
         }
+    }
+
+    @Override // ci.ia
+    public final boolean d(ArrayList arrayList, TL_stories.TL_stories_storyViews tL_stories_storyViews) {
+        TL_stories.StoryItem storyItem;
+        ci.z6 z6Var = this.h.s;
+        ArrayList<TL_stories.StoryViews> arrayList2 = tL_stories_storyViews.views;
+        z6Var.getClass();
+        if (arrayList != null && arrayList2 != null) {
+            boolean z10 = false;
+            for (int i10 = 0; i10 < arrayList.size(); i10++) {
+                Integer num = (Integer) arrayList.get(i10);
+                num.intValue();
+                if (i10 >= arrayList2.size()) {
+                    break;
+                }
+                TL_stories.StoryViews storyViews = arrayList2.get(i10);
+                MessageObject messageObject = (MessageObject) z6Var.j.get(num);
+                if (messageObject != null && (storyItem = messageObject.storyItem) != null) {
+                    storyItem.views = storyViews;
+                    z10 = true;
+                }
+            }
+            if (z10) {
+                z6Var.x();
+            }
+        }
+        return true;
     }
 }

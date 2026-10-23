@@ -1,22 +1,57 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class vq0 extends org.telegram.ui.Cells.e7 {
-    public final /* synthetic */ xq0 N;
+public final class vq0 implements TextWatcher {
+    public final /* synthetic */ ir0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public vq0(xq0 xq0Var, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, 0, d6Var);
-        this.N = xq0Var;
+    public vq0(ir0 ir0Var) {
+        this.a = ir0Var;
     }
 
-    @Override // org.telegram.ui.Cells.e7
-    public final String a() {
-        return this.N.f.b0 ? LocaleController.getString(R.string.RepostToStory) : LocaleController.getString(R.string.FwdMyStory);
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        ir0 ir0Var = this.a;
+        ar0 ar0Var = ir0Var.L;
+        wx0 wx0Var = ir0Var.R;
+        k20 k20Var = ir0Var.z0;
+        if (!TextUtils.isEmpty(k20Var.r.getText())) {
+            ir0Var.P0(false);
+        }
+        if (ir0Var.B0) {
+            String obj = k20Var.r.getText().toString();
+            if (obj.length() != 0) {
+                if (wx0Var != null) {
+                    wx0Var.d.setText(LocaleController.getString(R.string.NoResult));
+                }
+            } else if (ir0Var.G.getAdapter() != ar0Var) {
+                int O0 = ir0.O0(ir0Var);
+                wx0Var.d.setText(LocaleController.getString(R.string.NoResult));
+                wx0Var.e(false, true);
+                ir0Var.P0(false);
+                ar0Var.l();
+                if (O0 > 0) {
+                    ir0Var.I.h1(0, -O0);
+                }
+            }
+            er0 er0Var = ir0Var.N;
+            if (er0Var != null) {
+                er0Var.E(obj);
+            }
+        }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

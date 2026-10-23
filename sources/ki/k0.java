@@ -11,21 +11,23 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Cells.n9;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.Cells.o9;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class k0 {
     public final h1 a;
-    public final org.telegram.ui.ActionBar.d6 b;
+    public final org.telegram.ui.ActionBar.g6 b;
     public final j0 c;
     public boolean d;
 
-    public k0(Context context, org.telegram.ui.ActionBar.d6 d6Var, j0 j0Var) {
-        this.b = d6Var;
+    public k0(Context context, org.telegram.ui.ActionBar.g6 g6Var, j0 j0Var) {
+        this.b = g6Var;
         this.c = j0Var;
-        h1 h1Var = new h1(context, d6Var);
+        h1 h1Var = new h1(context, g6Var);
         this.a = h1Var;
         h1Var.setPadding(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f));
         h1Var.setAllowNewlines(false);
@@ -57,10 +59,13 @@ public final class k0 {
 
     public final void a() {
         h1 h1Var = this.a;
-        h1Var.t();
-        int w02 = h6.w0(h6.G6, this.b);
-        h1Var.setTextColor(h6.m1(0.5f, w02));
-        h1Var.setHintTextColor(h6.m1(0.35f, w02));
+        h1Var.updateColors();
+        int i10 = k6.G6;
+        org.telegram.ui.ActionBar.g6 g6Var = this.b;
+        k6.w0(i10, g6Var);
+        r6.X(h1Var, r6.M(0.5f, i10), g6Var);
+        n6 M = r6.M(0.35f, i10);
+        r6.o(h1Var, 1, M.a, -1, 2, M.d, g6Var);
     }
 
     public final void b() {
@@ -82,7 +87,7 @@ public final class k0 {
 
     public final void c(Canvas canvas) {
         j0 j0Var = this.c;
-        n9 w9 = j0Var.w();
+        o9 w9 = j0Var.w();
         if (w9 != null) {
             if (this.a.getLayout() == null) {
                 return;

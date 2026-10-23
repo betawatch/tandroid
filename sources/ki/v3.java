@@ -5,7 +5,7 @@ import android.text.SpannableStringBuilder;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class v3 {
     public final h1 a;
@@ -41,11 +41,11 @@ public final class v3 {
                 return;
             }
             w3 w3Var = this.f;
-            h2 h2Var = w3Var.H3;
+            h2 h2Var = w3Var.K3;
             if (h2Var != null) {
                 h2Var.d();
             }
-            j3 j3Var = w3Var.l3;
+            j3 j3Var = w3Var.o3;
             if (j3Var != null) {
                 j3Var.f(false);
             }
@@ -65,23 +65,23 @@ public final class v3 {
                 textbutton.style = new TL_keyboard.RichButtonStyle();
             }
             k4 k4Var3 = new k4(textbutton);
-            k4Var3.a(w3Var.d3, h1Var, w3Var.e3);
+            k4Var3.a(w3Var.g3, h1Var, w3Var.h3);
             text.setSpan(k4Var3, i10, i11, 33);
             k4Var3.d(text);
             h1Var.setSelection(Math.min(i11, h1Var.length()));
-            w3Var.G3 = true;
+            w3Var.J3 = true;
             try {
                 h1Var.notifySpansChanged();
                 h1Var.requestLayout();
                 h1Var.invalidateEffects();
-                w3Var.G3 = false;
-                h2 h2Var2 = w3Var.H3;
+                w3Var.J3 = false;
+                h2 h2Var2 = w3Var.K3;
                 if (h2Var2 != null) {
                     h2Var2.h();
                 }
-                w3Var.f3.onContentChanged();
+                w3Var.i3.onContentChanged();
             } catch (Throwable th2) {
-                w3Var.G3 = false;
+                w3Var.J3 = false;
                 throw th2;
             }
         }

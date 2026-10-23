@@ -1,9 +1,10 @@
 package lg;
 
 import android.widget.TextView;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.r6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class g extends e {
     public TextView M;
@@ -16,7 +17,7 @@ public final class g extends e {
             return;
         }
         super.b();
-        textView.setTextColor(h6.x0(null, h6.j5, false));
+        r6.W(textView, k6.j5, null);
     }
 
     @Override // lg.e

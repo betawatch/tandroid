@@ -26,7 +26,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.xp;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class p7 extends FrameLayout {
     public final org.telegram.ui.Components.w9 a;
@@ -70,12 +70,12 @@ public final class p7 extends FrameLayout {
         p5Var.addView(textView, w7.z5.d(-2, -2.0f, 19, 13.0f, -0.7f, 0.0f, 0.0f));
         View view = new View(context);
         this.d = view;
-        view.setBackgroundDrawable(org.telegram.ui.ActionBar.h6.L0(false));
+        view.setBackgroundDrawable(org.telegram.ui.ActionBar.k6.M0(false));
         addView(view, w7.z5.c(-1.0f, -1));
         xp xpVar = new xp(context, 21, null);
         this.e = xpVar;
         xpVar.setVisibility(4);
-        xpVar.b(-1, org.telegram.ui.ActionBar.h6.Lh, org.telegram.ui.ActionBar.h6.k7);
+        xpVar.b(-1, org.telegram.ui.ActionBar.k6.Lh, org.telegram.ui.ActionBar.k6.k7);
         xpVar.setDrawUnchecked(false);
         xpVar.setDrawBackgroundAsArc(1);
         addView(xpVar, w7.z5.d(24, 24.0f, 53, 0.0f, 1.0f, 1.0f, 0.0f));
@@ -109,7 +109,7 @@ public final class p7 extends FrameLayout {
             accessibilityNodeInfo.setText(LocaleController.getString(R.string.AttachLivePhoto));
         } else if (this.n.isVideo()) {
             StringBuilder sb2 = new StringBuilder();
-            c1.n(R.string.AttachVideo, ", ", sb2);
+            b1.o(R.string.AttachVideo, ", ", sb2);
             sb2.append(LocaleController.formatDuration((int) this.n.getDuration()));
             accessibilityNodeInfo.setText(sb2.toString());
         } else {

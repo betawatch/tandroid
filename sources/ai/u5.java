@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u5 implements Comparator {
     public final /* synthetic */ int a;
@@ -40,18 +40,18 @@ public final /* synthetic */ class u5 implements Comparator {
                 float[] fArr = ((x5) this.b).r;
                 return Float.compare(fArr[((Integer) obj).intValue()], fArr[((Integer) obj2).intValue()]);
             case 1:
-                ci.i7 i7Var = (ci.i7) this.b;
-                int i10 = i7Var.a;
+                ci.h7 h7Var = (ci.h7) this.b;
+                int i10 = h7Var.a;
                 TL_stories.PeerStories peerStories = (TL_stories.PeerStories) obj;
                 TL_stories.PeerStories peerStories2 = (TL_stories.PeerStories) obj2;
                 long peerDialogId = DialogObject.getPeerDialogId(peerStories.peer);
                 long peerDialogId2 = DialogObject.getPeerDialogId(peerStories2.peer);
-                boolean K = i7Var.K(peerDialogId);
-                boolean K2 = i7Var.K(peerDialogId2);
-                boolean J = i7Var.J(peerDialogId);
-                boolean J2 = i7Var.J(peerDialogId2);
-                boolean F = i7Var.F(peerDialogId);
-                boolean F2 = i7Var.F(peerDialogId2);
+                boolean K = h7Var.K(peerDialogId);
+                boolean K2 = h7Var.K(peerDialogId2);
+                boolean J = h7Var.J(peerDialogId);
+                boolean J2 = h7Var.J(peerDialogId2);
+                boolean F = h7Var.F(peerDialogId);
+                boolean F2 = h7Var.F(peerDialogId2);
                 if (F != F2) {
                     return (F2 ? 1 : 0) - (F ? 1 : 0);
                 }
@@ -71,7 +71,7 @@ public final /* synthetic */ class u5 implements Comparator {
                 TLRPC.User user2 = MessagesController.getInstance(i10).getUser(Long.valueOf(peerDialogId2));
                 ?? r12 = user2 == null ? 0 : user2.premium;
                 if (r02 == r12) {
-                    return (peerStories2.stories.isEmpty() ? 0 : ((TL_stories.StoryItem) i2.e.h(1, peerStories2.stories)).date) - (peerStories.stories.isEmpty() ? 0 : ((TL_stories.StoryItem) i2.e.h(1, peerStories.stories)).date);
+                    return (peerStories2.stories.isEmpty() ? 0 : ((TL_stories.StoryItem) i2.o1.i(1, peerStories2.stories)).date) - (peerStories.stories.isEmpty() ? 0 : ((TL_stories.StoryItem) i2.o1.i(1, peerStories.stories)).date);
                 }
                 return r12 - r02;
             case 2:
@@ -97,7 +97,7 @@ public final /* synthetic */ class u5 implements Comparator {
                 return b10 != b11 ? Integer.compare(b10, b11) : Integer.compare(g6Var.a(pagetablecell), g6Var.a(pagetablecell2));
             case 4:
                 r2.v vVar = (r2.v) this.b;
-                return vVar.b(obj2) - vVar.b(obj);
+                return vVar.d(obj2) - vVar.d(obj);
             case 5:
                 SparseIntArray sparseIntArray = (SparseIntArray) this.b;
                 return sparseIntArray.get(((sg.h) obj).e, ConnectionsManager.DEFAULT_DATACENTER_ID) - sparseIntArray.get(((sg.h) obj2).e, ConnectionsManager.DEFAULT_DATACENTER_ID);

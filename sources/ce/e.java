@@ -15,8 +15,9 @@ import j9.u;
 import java.util.concurrent.CancellationException;
 import kd.h;
 import kotlin.jvm.internal.i;
+import si.o0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class e extends a0 implements k0 {
     public final Handler c;
@@ -109,6 +110,6 @@ public final class e extends a0 implements k0 {
             return str;
         }
         String handler = this.c.toString();
-        return this.d ? r4.c.u(handler, ".immediate") : handler;
+        return this.d ? o0.u(handler, ".immediate") : handler;
     }
 }

@@ -5,7 +5,7 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public abstract class c1 implements Comparable {
     public static int c(byte b10) {
@@ -33,7 +33,7 @@ public abstract class c1 implements Comparable {
         if (cls.isInstance(this)) {
             return (c1) cls.cast(this);
         }
-        throw new b1(k3.k("Expected a ", cls.getName(), " value, but got ", getClass().getName()));
+        throw new b1(k3.j("Expected a ", cls.getName(), " value, but got ", getClass().getName()));
     }
 
     public abstract int zza();

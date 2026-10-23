@@ -1,23 +1,21 @@
 package org.telegram.ui;
 
-import android.view.ViewGroup;
+import android.graphics.Rect;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class j30 extends org.telegram.ui.Components.li0 {
-    public final /* synthetic */ q50 s1;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j30(q50 q50Var, LaunchActivity launchActivity, m40 m40Var, w40 w40Var, i30 i30Var) {
-        super(launchActivity, m40Var, w40Var, i30Var);
-        this.s1 = q50Var;
-    }
-
-    @Override // android.view.View
-    public final void invalidate() {
-        ViewGroup viewGroup;
-        super.invalidate();
-        viewGroup = ((org.telegram.ui.ActionBar.f3) this.s1).containerView;
-        viewGroup.invalidate();
+public final class j30 extends s4.m0 {
+    @Override // s4.m0
+    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.y0 y0Var) {
+        recyclerView.getClass();
+        RecyclerView.R(view);
+        if (u50.F3) {
+            rect.set(0, AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f));
+        } else {
+            rect.set(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
+        }
     }
 }

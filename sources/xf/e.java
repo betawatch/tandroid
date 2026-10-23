@@ -1,9 +1,8 @@
 package xf;
 
-import android.os.Binder;
+import android.os.IInterface;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public abstract class e extends Binder implements f {
-    public static final /* synthetic */ int a = 0;
+public interface e extends IInterface {
 }

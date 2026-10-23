@@ -12,6 +12,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
+import java.util.HashSet;
 import ne.d;
 import ne.e;
 import org.telegram.messenger.AndroidUtilities;
@@ -22,22 +23,23 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.b6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.Components.bk0;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.p6;
-import org.telegram.ui.Components.vj0;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.yj0;
-import org.telegram.ui.og0;
+import org.telegram.ui.sg0;
 import sg.b1;
 import w7.r;
 import w7.z5;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
-/* loaded from: classes3.dex */
-public final class b extends FrameLayout implements og0, d {
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+/* loaded from: classes4.dex */
+public final class b extends FrameLayout implements sg0, d, b6 {
     public static final RectF V = new RectF();
     public TLRPC.TL_attachMenuBot E;
     public final TextPaint F;
@@ -57,9 +59,9 @@ public final class b extends FrameLayout implements og0, d {
     public TextPaint T;
     public h9 U;
     public final TextView a;
-    public final yj0 b;
+    public final bk0 b;
     public w9 c;
-    public d6 d;
+    public g6 d;
     public final Paint e;
     public final p6 f;
     public final ne.b h;
@@ -79,10 +81,10 @@ public final class b extends FrameLayout implements og0, d {
         this.n = new ne.b(1, this, bsVar, 380L, false);
         this.r = new ne.b(2, this, bsVar, 380L, false);
         this.S = 1.0f;
-        yj0 yj0Var = new yj0(context);
-        this.b = yj0Var;
-        addView(yj0Var, z5.d(44, 44.0f, 49, 0.0f, -6.0f, 0.0f, 0.0f));
-        yj0Var.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.SRC_IN));
+        bk0 bk0Var = new bk0(context);
+        this.b = bk0Var;
+        addView(bk0Var, z5.d(44, 44.0f, 49, 0.0f, -6.0f, 0.0f, 0.0f));
+        bk0Var.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.SRC_IN));
         TextView textView = new TextView(context);
         this.a = textView;
         textView.setTextSize(1, 12.0f);
@@ -102,21 +104,44 @@ public final class b extends FrameLayout implements og0, d {
         p6Var.w(AndroidUtilities.dp(10.0f));
     }
 
-    public static b b(Context context, d6 d6Var, a aVar, int i10) {
+    public static b c(Context context, g6 g6Var, a aVar, int i10) {
         b bVar = new b(context);
-        bVar.d = d6Var;
+        bVar.d = g6Var;
         bVar.y = aVar;
         bVar.a.setText(LocaleController.getString(i10));
-        bVar.a(false);
+        bVar.b(false);
         bVar.b.setLayoutParams(z5.d(24, 24.0f, 49, 0.0f, 4.0f, 0.0f, 0.0f));
-        bVar.w = h6.w0(h6.cl, d6Var);
-        bVar.s = h6.w0(h6.al, d6Var);
-        bVar.v = h6.w0(h6.bl, d6Var);
-        bVar.f();
+        bVar.w = k6.w0(k6.cl, g6Var);
+        bVar.s = k6.w0(k6.al, g6Var);
+        bVar.v = k6.w0(k6.bl, g6Var);
+        bVar.a();
         return bVar;
     }
 
-    public final void a(boolean z10) {
+    public final void a() {
+        int i10 = this.w;
+        int i11 = this.s;
+        ne.b bVar = this.h;
+        int f7 = i0.a.f(bVar.e, i10, i11);
+        int f10 = i0.a.f(bVar.e, this.w, this.v);
+        PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(f7, PorterDuff.Mode.SRC_IN);
+        w9 w9Var = this.c;
+        if (w9Var != null && this.M) {
+            w9Var.setColorFilter(porterDuffColorFilter);
+            this.c.invalidate();
+        }
+        this.b.setColorFilter(porterDuffColorFilter);
+        this.a.setTextColor(f10);
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void addColorKeys(HashSet hashSet) {
+        hashSet.add(Integer.valueOf(k6.cl));
+        hashSet.add(Integer.valueOf(k6.al));
+        hashSet.add(Integer.valueOf(k6.bl));
+    }
+
+    public final void b(boolean z10) {
         TLRPC.Document document;
         boolean z11 = this.h.f;
         TLRPC.TL_attachMenuBot tL_attachMenuBot = this.E;
@@ -130,10 +155,10 @@ public final class b extends FrameLayout implements og0, d {
             if (animatedAttachMenuBotIcon == null || (document = animatedAttachMenuBotIcon.icon) == null) {
                 this.c.b();
             } else if (this.P != document.id) {
-                this.c.l(ImageLocation.getForDocument(document), "24_24_lastframe", ImageLocation.getForDocument(document), "24_24_lastframe", z12 ? null : DocumentObject.getSvgThumb(document, h6.a7, 1.0f), this.E);
+                this.c.l(ImageLocation.getForDocument(document), "24_24_lastframe", ImageLocation.getForDocument(document), "24_24_lastframe", z12 ? null : DocumentObject.getSvgThumb(document, k6.a7, 1.0f), this.E);
                 this.P = document.id;
             }
-            f();
+            a();
             return;
         }
         a aVar = this.y;
@@ -143,10 +168,10 @@ public final class b extends FrameLayout implements og0, d {
         int i10 = aVar.b;
         int i11 = aVar.a;
         int i12 = aVar.c;
-        yj0 yj0Var = this.b;
+        bk0 bk0Var = this.b;
         if (i12 != -1) {
-            yj0Var.setImageResource(i12);
-            f();
+            bk0Var.setImageResource(i12);
+            a();
             return;
         }
         int i13 = z11 ? i11 : i10;
@@ -154,11 +179,11 @@ public final class b extends FrameLayout implements og0, d {
             boolean z13 = this.N != z11;
             if (this.O != i13) {
                 this.O = i13;
-                yj0Var.f(i13, 24, 24, null);
+                bk0Var.f(i13, 24, 24, null);
                 z13 = true;
             }
             if (z13) {
-                vj0 animatedDrawable = yj0Var.getAnimatedDrawable();
+                yj0 animatedDrawable = bk0Var.getAnimatedDrawable();
                 if (animatedDrawable == null) {
                     return;
                 }
@@ -192,23 +217,23 @@ public final class b extends FrameLayout implements og0, d {
         if (i11 != i10) {
             if (this.O != i13) {
                 this.O = i13;
-                yj0Var.f(i13, 24, 24, null);
-                yj0Var.getAnimatedDrawable().h = false;
+                bk0Var.f(i13, 24, 24, null);
+                bk0Var.getAnimatedDrawable().h = false;
                 if (!z10) {
-                    yj0Var.getAnimatedDrawable().T(0.99f, true);
+                    bk0Var.getAnimatedDrawable().T(0.99f, true);
                     return;
                 } else {
-                    yj0Var.getAnimatedDrawable().M(0);
-                    yj0Var.d();
+                    bk0Var.getAnimatedDrawable().M(0);
+                    bk0Var.d();
                     return;
                 }
             }
             return;
         }
-        if (yj0Var.getAnimatedDrawable() == null) {
-            yj0Var.f(this.y.a, 24, 24, null);
+        if (bk0Var.getAnimatedDrawable() == null) {
+            bk0Var.f(this.y.a, 24, 24, null);
         }
-        vj0 animatedDrawable2 = yj0Var.getAnimatedDrawable();
+        yj0 animatedDrawable2 = bk0Var.getAnimatedDrawable();
         if (animatedDrawable2 == null) {
             return;
         }
@@ -224,19 +249,13 @@ public final class b extends FrameLayout implements og0, d {
                 animatedDrawable2.M(iArr[0]);
                 animatedDrawable2.P(0);
             }
-            yj0Var.d();
+            bk0Var.d();
         }
     }
 
-    public final float c() {
+    public final float d() {
         float measureText = this.F.measureText(this.a.getText().toString());
         return Math.min(AndroidUtilities.dp(84.0f), (int) ((AndroidUtilities.lerp(AndroidUtilities.dpf2(16.0f), AndroidUtilities.dp(8.0f), r.a((measureText - AndroidUtilities.dp(40.0f)) / AndroidUtilities.dp(16.0f), 0.0f, 1.0f)) * 2.0f) + measureText));
-    }
-
-    public final void d(String str, boolean z10, boolean z11) {
-        this.f.t(str, z11, true);
-        this.n.a(!TextUtils.isEmpty(str), z11);
-        this.r.a(z10, z11);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -246,7 +265,7 @@ public final class b extends FrameLayout implements og0, d {
         RectF rectF = V;
         Paint paint = this.e;
         if (f7 > 0.0f && !this.K) {
-            paint.setColor(h6.m1(me.a.a.getInterpolation(f7) * 0.09f, this.s));
+            paint.setColor(k6.o1(me.a.a.getInterpolation(f7) * 0.09f, this.s));
             rectF.set(0.0f, 0.0f, width, getHeight());
             float min = Math.min(rectF.width(), rectF.height()) / 2.0f;
             float a2 = r.a(this.S, 0.0f, 1.0f) * AndroidUtilities.lerp(0.6f, 1.0f, f7);
@@ -275,7 +294,7 @@ public final class b extends FrameLayout implements og0, d {
             float f12 = dpf24 / 2.0f;
             rectF.set((dpf22 - f11) - dpf2, (dpf23 - f12) - dpf2, f11 + dpf22 + dpf2, f12 + dpf23 + dpf2);
             canvas.scale(f10, f10, dpf22, dpf23);
-            canvas.drawRoundRect(rectF, dpf25, dpf25, h6.Ll);
+            canvas.drawRoundRect(rectF, dpf25, dpf25, k6.Ml);
             rectF.inset(dpf2, dpf2);
             if (this.x) {
                 if (this.L == null) {
@@ -288,7 +307,7 @@ public final class b extends FrameLayout implements og0, d {
                 this.L.setBounds(dpf27, dpf28, AndroidUtilities.dp(14.0f) + dpf27, AndroidUtilities.dp(14.0f) + dpf28);
                 this.L.draw(canvas);
             } else {
-                paint.setColor(i0.a.f(this.r.e, h6.x0(null, h6.hl, false), h6.x0(null, h6.r7, false)));
+                paint.setColor(i0.a.f(this.r.e, k6.x0(null, k6.hl, false), k6.x0(null, k6.r7, false)));
                 canvas.drawRoundRect(rectF, dpf26, dpf26, paint);
                 p6Var.p(rectF);
                 p6Var.draw(canvas);
@@ -300,36 +319,42 @@ public final class b extends FrameLayout implements og0, d {
         }
     }
 
-    public final void e(boolean z10, boolean z11) {
+    public final void e(String str, boolean z10, boolean z11) {
+        this.f.t(str, z11, true);
+        this.n.a(!TextUtils.isEmpty(str), z11);
+        this.r.a(z10, z11);
+    }
+
+    public final void f(boolean z10, boolean z11) {
         this.h.a(z10, z11);
-        a(z11);
+        b(z11);
         this.a.setTypeface(z10 ? AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_EXTRA_BOLD) : AndroidUtilities.bold());
     }
 
-    public final void f() {
-        int i10 = this.w;
-        int i11 = this.s;
-        ne.b bVar = this.h;
-        int f7 = i0.a.f(bVar.e, i10, i11);
-        int f10 = i0.a.f(bVar.e, this.w, this.v);
-        PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(f7, PorterDuff.Mode.SRC_IN);
-        w9 w9Var = this.c;
-        if (w9Var != null && this.M) {
-            w9Var.setColorFilter(porterDuffColorFilter);
-            this.c.invalidate();
-        }
-        this.b.setColorFilter(porterDuffColorFilter);
-        this.a.setTextColor(f10);
+    public final void g() {
+        this.w = k6.w0(k6.cl, this.d);
+        this.s = k6.w0(k6.al, this.d);
+        this.v = k6.w0(k6.bl, this.d);
+        a();
+        invalidate();
     }
 
     public w9 getBackupImageView() {
         return this.c;
     }
 
+    @Override // ne.d
+    public final void o(int i10, float f7, float f10, e eVar) {
+        if (i10 == 0) {
+            a();
+        }
+        invalidate();
+    }
+
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
         if (this.Q) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(((int) c()) + this.R, TLObject.FLAG_30), i11);
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(((int) d()) + this.R, TLObject.FLAG_30), i11);
         } else {
             super.onMeasure(i10, i11);
         }
@@ -345,14 +370,6 @@ public final class b extends FrameLayout implements og0, d {
         }
     }
 
-    @Override // ne.d
-    public final void r(int i10, float f7, float f10, e eVar) {
-        if (i10 == 0) {
-            f();
-        }
-        invalidate();
-    }
-
     public void setAdditionalWidth(int i10) {
         this.R = i10;
         this.Q = true;
@@ -362,9 +379,9 @@ public final class b extends FrameLayout implements og0, d {
         TextView textView = this.a;
         textView.setScaleX(f7);
         textView.setScaleY(f7);
-        yj0 yj0Var = this.b;
-        yj0Var.setScaleX(f7);
-        yj0Var.setScaleY(f7);
+        bk0 bk0Var = this.b;
+        bk0Var.setScaleX(f7);
+        bk0Var.setScaleY(f7);
         w9 w9Var = this.c;
         if (w9Var != null) {
             w9Var.setScaleX(f7);
@@ -391,7 +408,7 @@ public final class b extends FrameLayout implements og0, d {
         this.O = 0;
         this.P = 0L;
         this.b.a();
-        a(false);
+        b(false);
     }
 
     public void setText(CharSequence charSequence) {
@@ -416,6 +433,14 @@ public final class b extends FrameLayout implements og0, d {
             this.a.setTranslationX(measuredWidth);
             invalidate();
         }
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void updateColors() {
+        if (this.w == k6.w0(k6.cl, this.d) && this.s == k6.w0(k6.al, this.d) && this.v == k6.w0(k6.bl, this.d)) {
+            return;
+        }
+        g();
     }
 
     @Override // ne.d

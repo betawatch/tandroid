@@ -8,7 +8,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b3 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -29,7 +29,7 @@ public final /* synthetic */ class b3 implements RequestDelegate {
     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                l7.G0(this.b, this.c, (l7) this.d, (Utilities.Callback) this.e, tLObject, tL_error);
+                l7.F0(this.b, this.c, (l7) this.d, (Utilities.Callback) this.e, tLObject, tL_error);
                 break;
             case 1:
                 ((MediaDataController) this.d).lambda$getMediaCounts$129((int[]) this.e, this.b, this.c, tLObject, tL_error);

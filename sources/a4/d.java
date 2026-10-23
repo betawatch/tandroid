@@ -2,19 +2,16 @@ package a4;
 
 import ah.i1;
 import ah.j1;
-import ai.ee;
+import ai.fe;
 import android.util.Pair;
 import ci.q;
-import ci.s4;
+import ci.r4;
 import ci.w0;
 import ei.ac;
 import hg.g0;
 import hg.y1;
-import ig.z1;
 import java.io.File;
 import java.util.Comparator;
-import org.telegram.messenger.camera.CameraController;
-import org.telegram.messenger.camera.Size;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
@@ -23,7 +20,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Stories.ProfileStoriesView;
 import s4.b1;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements Comparator {
     public final /* synthetic */ int a;
@@ -36,7 +33,6 @@ public final /* synthetic */ class d implements Comparator {
     public final int compare(Object obj, Object obj2) {
         int i10;
         int i11;
-        int lambda$initCamera$0;
         switch (this.a) {
             case 0:
                 return Integer.compare(((e) obj2).b, ((e) obj).b);
@@ -53,7 +49,7 @@ public final /* synthetic */ class d implements Comparator {
                 i11 = ((TL_stars.SavedStarGift) obj).date;
                 break;
             case 5:
-                return (int) (((ee) obj2).d - ((ee) obj).d);
+                return (int) (((fe) obj2).d - ((fe) obj).d);
             case 6:
                 long j10 = ((bi.b) obj2).c;
                 long j11 = ((bi.b) obj).c;
@@ -82,7 +78,7 @@ public final /* synthetic */ class d implements Comparator {
                 return ((Integer) ((Pair) obj).first).intValue() - ((Integer) ((Pair) obj2).first).intValue();
             case 14:
                 int i13 = ProfileStoriesView.s0;
-                return (int) (((s4) obj2).i - ((s4) obj).i);
+                return (int) (((r4) obj2).i - ((r4) obj).i);
             case 15:
                 return (int) (((Long) obj2).longValue() - ((Long) obj).longValue());
             case 16:
@@ -116,7 +112,7 @@ public final /* synthetic */ class d implements Comparator {
             case 23:
                 return ((TL_account.TL_businessWeeklyOpen) obj).start_minute - ((TL_account.TL_businessWeeklyOpen) obj2).start_minute;
             case 24:
-                return ((z1) obj).c - ((z1) obj2).c;
+                return ((ig.y1) obj).c - ((ig.y1) obj2).c;
             case 25:
                 i10 = Integer.bitCount(((Integer) obj2).intValue());
                 i11 = Integer.bitCount(((Integer) obj).intValue());
@@ -130,7 +126,7 @@ public final /* synthetic */ class d implements Comparator {
                 i10 = ((b1) obj2).a.getTop();
                 i11 = ((b1) obj).a.getTop();
                 break;
-            case 28:
+            default:
                 byte[] bArr = (byte[]) obj;
                 byte[] bArr2 = (byte[]) obj2;
                 if (bArr.length != bArr2.length) {
@@ -144,9 +140,6 @@ public final /* synthetic */ class d implements Comparator {
                     }
                 }
                 return 0;
-            default:
-                lambda$initCamera$0 = CameraController.lambda$initCamera$0((Size) obj, (Size) obj2);
-                return lambda$initCamera$0;
         }
         return i10 - i11;
     }

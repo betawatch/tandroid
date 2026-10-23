@@ -1,441 +1,282 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.app.Activity;
 import android.text.TextUtils;
-import android.view.View;
-import android.widget.EditText;
-import android.widget.ImageView;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.HashtagSearchController;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.RichMessageLayout;
+import org.telegram.messenger.RichQuote;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class in extends org.telegram.ui.ActionBar.g5 {
-    public float r;
-    public final /* synthetic */ qn s;
+public final class in {
+    public MessageObject a;
+    public int b;
+    public int c;
+    public byte[] e;
+    public boolean f;
+    public boolean h;
+    public String i;
+    public ArrayList j;
+    public TLRPC.TodoItem k;
+    public TLRPC.PollAnswer l;
+    public boolean m;
+    public ArrayList n;
+    public int o;
+    public boolean g = false;
+    public int d = -1;
 
-    public in(qn qnVar) {
-        this.s = qnVar;
+    public in(MessageObject messageObject, int i10, int i11) {
+        TLRPC.Message message;
+        this.a = messageObject;
+        this.b = i10;
+        this.c = i11;
+        boolean z10 = false;
+        if (messageObject != null && (message = messageObject.messageOwner) != null && message.rich_message != null) {
+            z10 = true;
+        }
+        this.m = z10;
+        f();
     }
 
-    @Override // org.telegram.ui.ActionBar.g5
-    public final boolean a() {
-        return this.s.u3 == null;
+    public static in b(MessageObject messageObject) {
+        TLRPC.Message message = messageObject.messageOwner;
+        if (message == null) {
+            return null;
+        }
+        if (message.message == null && (message == null || message.rich_message == null)) {
+            return null;
+        }
+        return c(messageObject, 0, Math.min(MessagesController.getInstance(messageObject.currentAccount).quoteLengthMax, d(messageObject)));
     }
 
-    @Override // org.telegram.ui.ActionBar.g5
-    public final boolean b() {
-        qn qnVar = this.s;
-        if (!qnVar.Bc.f) {
-            if (qnVar.u3 != null && qnVar.p1 != null) {
-                View currentView = qnVar.q1.getCurrentView();
-                qn qnVar2 = currentView instanceof sn ? ((sn) currentView).a : qnVar;
-                if (!qnVar2.zc.f) {
-                    qnVar2.Qb(true);
-                    return false;
+    public static in c(MessageObject messageObject, int i10, int i11) {
+        if (messageObject == null) {
+            return null;
+        }
+        messageObject.getDialogId();
+        return new in(messageObject, i10, i11);
+    }
+
+    public static int d(MessageObject messageObject) {
+        CharSequence charSequence;
+        TLRPC.Message message = messageObject.messageOwner;
+        if (message == null) {
+            return 0;
+        }
+        if (message == null || message.rich_message == null) {
+            String str = message.message;
+            if (str == null) {
+                return 0;
+            }
+            return str.length();
+        }
+        RichMessageLayout richMessageLayout = messageObject.richLayout;
+        if (richMessageLayout == null || (charSequence = richMessageLayout.joinedText) == null) {
+            return 0;
+        }
+        return charSequence.length();
+    }
+
+    public final void a(MessageObject messageObject) {
+        String str;
+        int i10;
+        int i11;
+        TL_iv.RichMessage richMessage;
+        if (this.m) {
+            TLRPC.Message message = messageObject.messageOwner;
+            if (message == null || (richMessage = message.rich_message) == null) {
+                FileLog.e("ReplyQuote.checkEdit: rich message is null");
+                this.f = false;
+                return;
+            }
+            this.a = messageObject;
+            String str2 = this.i;
+            if (str2 == null || !RichQuote.containsQuote(richMessage, str2)) {
+                this.b = 0;
+                this.c = Math.min(MessagesController.getInstance(messageObject.currentAccount).quoteLengthMax, d(messageObject));
+                this.f = true;
+                return;
+            }
+            int[] findQuote = RichQuote.canQuote(messageObject) ? RichQuote.findQuote(messageObject, this.i, this.o) : null;
+            RichQuote fromSelection = findQuote != null ? RichQuote.fromSelection(messageObject, findQuote[0], findQuote[1]) : null;
+            if (fromSelection != null) {
+                this.b = findQuote[0];
+                this.c = findQuote[1];
+                e(fromSelection.offset, fromSelection.fragments);
+            } else {
+                this.b = -1;
+                this.c = -1;
+            }
+            this.f = false;
+            return;
+        }
+        TLRPC.Message message2 = messageObject.messageOwner;
+        if (message2 == null || (str = message2.message) == null) {
+            FileLog.e("ReplyQuote.checkEdit: message is null");
+            this.f = false;
+            return;
+        }
+        int i12 = this.c;
+        if (i12 < this.b || i12 > str.length() || this.b > messageObject.messageOwner.message.length() || (i10 = this.b) < 0 || (i11 = this.c) < 0) {
+            FileLog.e("ReplyQuote.checkEdit: start/end are invalid (" + this.b + ", " + this.c + ", len=" + messageObject.messageOwner.message.length() + ")");
+            this.f = false;
+            return;
+        }
+        if (TextUtils.equals(this.i, messageObject.messageOwner.message.substring(i10, i11))) {
+            this.a = messageObject;
+            f();
+            this.f = false;
+            return;
+        }
+        int indexOf = messageObject.messageOwner.message.indexOf(this.i);
+        if (indexOf >= 0) {
+            this.a = messageObject;
+            this.c = (this.c - this.b) + indexOf;
+            this.b = indexOf;
+            f();
+            this.f = false;
+            return;
+        }
+        this.a = messageObject;
+        this.b = 0;
+        this.c = messageObject.messageOwner.message.length();
+        f();
+        this.f = true;
+    }
+
+    public final void e(int i10, ArrayList arrayList) {
+        this.n = arrayList;
+        this.o = i10;
+        if (arrayList == null || arrayList.isEmpty()) {
+            this.n = null;
+            this.i = null;
+            this.j = null;
+        } else {
+            ArrayList arrayList2 = new ArrayList();
+            this.j = arrayList2;
+            String flatText = RichQuote.flatText(arrayList, arrayList2);
+            this.i = flatText;
+            flatText.getClass();
+        }
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r6v12, types: [org.telegram.tgnet.TLRPC$TL_messageEntitySpoiler] */
+    /* JADX WARN: Type inference failed for: r6v13, types: [org.telegram.tgnet.TLRPC$TL_messageEntityStrike] */
+    /* JADX WARN: Type inference failed for: r6v14, types: [org.telegram.tgnet.TLRPC$TL_messageEntityUnderline] */
+    /* JADX WARN: Type inference failed for: r6v15, types: [org.telegram.tgnet.TLRPC$TL_messageEntityItalic] */
+    /* JADX WARN: Type inference failed for: r6v17, types: [org.telegram.tgnet.TLRPC$TL_messageEntityBold] */
+    public final boolean f() {
+        TLRPC.Message message;
+        String str;
+        int i10;
+        TLRPC.TL_messageEntityCustomEmoji tL_messageEntityCustomEmoji;
+        int i11;
+        if (this.m) {
+            int i12 = this.b;
+            if (i12 >= 0 && (i11 = this.c) >= 0) {
+                RichQuote fromSelection = RichQuote.fromSelection(this.a, i12, i11);
+                if (fromSelection != null) {
+                    e(fromSelection.offset, fromSelection.fragments);
+                    return true;
                 }
-                int currentPosition = qnVar.p1.a.getCurrentPosition();
-                int i10 = qnVar.r1;
-                if (currentPosition != i10) {
-                    qnVar.p1.a.d(i10, i10);
-                    return false;
-                }
-            } else if (qnVar.zc.f) {
-                qnVar.Qb(false);
+                FileLog.e("ReplyQuote: failed to build a rich quote (" + this.b + ", " + this.c + ")");
+                e(0, null);
                 return false;
+            }
+            if (this.n == null) {
+                return false;
+            }
+        } else {
+            MessageObject messageObject = this.a;
+            if (messageObject == null || (message = messageObject.messageOwner) == null || (str = message.message) == null) {
+                FileLog.e("ReplyQuote: message is null");
+                return false;
+            }
+            if (this.g) {
+                TLRPC.TodoItem findTodoItem = MessageObject.findTodoItem(messageObject, this.d);
+                if (findTodoItem == null) {
+                    FileLog.e("ReplyQuote: todo task is not found");
+                    return false;
+                }
+                this.k = findTodoItem;
+                return true;
+            }
+            if (this.h) {
+                TLRPC.PollAnswer findPollItem = MessageObject.findPollItem(messageObject, this.e);
+                if (findPollItem == null) {
+                    FileLog.e("ReplyQuote: poll item is not found");
+                    return false;
+                }
+                this.l = findPollItem;
+                return true;
+            }
+            int i13 = this.c;
+            if (i13 < this.b || i13 > str.length() || this.b > this.a.messageOwner.message.length() || (i10 = this.b) < 0 || this.c < 0) {
+                FileLog.e("ReplyQuote: start/end are invalid (" + this.b + ", " + this.c + ", len=" + this.a.messageOwner.message.length() + ")");
+                return false;
+            }
+            String str2 = this.a.messageOwner.message;
+            int max = Math.max(0, i10);
+            while (max < this.c && Character.isWhitespace(str2.charAt(max))) {
+                max++;
+            }
+            int min = Math.min(this.c, str2.length());
+            while (min > max && Character.isWhitespace(str2.charAt(min - 1))) {
+                min--;
+            }
+            if (max == min) {
+                FileLog.e("ReplyQuote: message is full of whitespace");
+                return false;
+            }
+            this.i = this.a.messageOwner.message.substring(max, min);
+            ArrayList arrayList = this.j;
+            if (arrayList != null) {
+                arrayList.clear();
+            }
+            ArrayList<TLRPC.MessageEntity> arrayList2 = this.a.messageOwner.entities;
+            if (arrayList2 != null && !arrayList2.isEmpty()) {
+                for (int i14 = 0; i14 < this.a.messageOwner.entities.size(); i14++) {
+                    TLRPC.MessageEntity messageEntity = this.a.messageOwner.entities.get(i14);
+                    int i15 = messageEntity.offset;
+                    if (AndroidUtilities.intersect1dInclusive(max, min, i15, messageEntity.length + i15)) {
+                        if (messageEntity instanceof TLRPC.TL_messageEntityBold) {
+                            tL_messageEntityCustomEmoji = new TLRPC.TL_messageEntityBold();
+                        } else if (messageEntity instanceof TLRPC.TL_messageEntityItalic) {
+                            tL_messageEntityCustomEmoji = new TLRPC.TL_messageEntityItalic();
+                        } else if (messageEntity instanceof TLRPC.TL_messageEntityUnderline) {
+                            tL_messageEntityCustomEmoji = new TLRPC.TL_messageEntityUnderline();
+                        } else if (messageEntity instanceof TLRPC.TL_messageEntityStrike) {
+                            tL_messageEntityCustomEmoji = new TLRPC.TL_messageEntityStrike();
+                        } else if (messageEntity instanceof TLRPC.TL_messageEntitySpoiler) {
+                            tL_messageEntityCustomEmoji = new TLRPC.TL_messageEntitySpoiler();
+                        } else if (messageEntity instanceof TLRPC.TL_messageEntityCustomEmoji) {
+                            TLRPC.TL_messageEntityCustomEmoji tL_messageEntityCustomEmoji2 = new TLRPC.TL_messageEntityCustomEmoji();
+                            TLRPC.TL_messageEntityCustomEmoji tL_messageEntityCustomEmoji3 = (TLRPC.TL_messageEntityCustomEmoji) messageEntity;
+                            tL_messageEntityCustomEmoji2.document_id = tL_messageEntityCustomEmoji3.document_id;
+                            tL_messageEntityCustomEmoji2.document = tL_messageEntityCustomEmoji3.document;
+                            tL_messageEntityCustomEmoji = tL_messageEntityCustomEmoji2;
+                        }
+                        int i16 = messageEntity.offset;
+                        int i17 = i16 - max;
+                        int i18 = (i16 + messageEntity.length) - max;
+                        if ((i17 >= 0 || i18 >= 0) && (i17 <= min || i18 <= min)) {
+                            tL_messageEntityCustomEmoji.offset = Math.max(0, i17);
+                            tL_messageEntityCustomEmoji.length = Math.min(i18, min - max) - tL_messageEntityCustomEmoji.offset;
+                            if (this.j == null) {
+                                this.j = new ArrayList();
+                            }
+                            this.j.add(tL_messageEntityCustomEmoji);
+                        }
+                    }
+                }
             }
         }
         return true;
-    }
-
-    @Override // org.telegram.ui.ActionBar.g5
-    public final boolean f() {
-        return this.s.n3;
-    }
-
-    @Override // org.telegram.ui.ActionBar.g5
-    public final void k() {
-        qn qnVar = this.s;
-        qnVar.O7();
-        if (qnVar.o3 != null || qnVar.p3 != null) {
-            ImageView imageView = qnVar.T2;
-            if (imageView != null) {
-                imageView.callOnClick();
-                return;
-            }
-            return;
-        }
-        if (qnVar.n3) {
-            qnVar.I1.getAdapter().U(null, 0, null, false, true);
-            qnVar.n3 = false;
-            qnVar.j0.H("", true);
-        }
-        qnVar.j0.setSearchFieldHint(LocaleController.getString(qnVar.J9() ? R.string.SavedTagSearchHint : R.string.Search));
-        qnVar.S2.setVisibility(0);
-        ImageView imageView2 = qnVar.T2;
-        if (imageView2 != null) {
-            imageView2.setVisibility(0);
-        }
-        qnVar.o3 = null;
-        qnVar.p3 = null;
-    }
-
-    @Override // org.telegram.ui.ActionBar.g5
-    public final void m() {
-        TLRPC.Chat chat;
-        int i10;
-        int i11;
-        MessageObject messageObject;
-        qn qnVar = this.s;
-        qnVar.s3 = false;
-        qnVar.Ac();
-        qnVar.Nc();
-        ImageView imageView = qnVar.S2;
-        if (imageView != null) {
-            imageView.setVisibility(0);
-        }
-        ImageView imageView2 = qnVar.T2;
-        if (imageView2 != null) {
-            imageView2.setVisibility(0);
-        }
-        if (qnVar.n3) {
-            qnVar.I1.getAdapter().U(null, 0, null, false, true);
-            qnVar.n3 = false;
-        }
-        qnVar.I1.setReversed(false);
-        qnVar.I1.getAdapter().k0 = false;
-        qnVar.p7();
-        qnVar.o3 = null;
-        qnVar.p3 = null;
-        qnVar.u3 = null;
-        qnVar.j0.setSearchFieldHint(LocaleController.getString(qnVar.J9() ? R.string.SavedTagSearchHint : R.string.Search));
-        qnVar.j0.setSearchFieldCaption(null);
-        qnVar.Ac.a(false, true);
-        qnVar.Bc.a(false, true);
-        org.telegram.ui.ActionBar.x xVar = qnVar.i0;
-        if (xVar != null && xVar.o != null) {
-            org.telegram.ui.ActionBar.u0 u0Var = qnVar.h0;
-            if (u0Var != null) {
-                u0Var.setVisibility(8);
-            }
-            org.telegram.ui.ActionBar.x xVar2 = qnVar.i0;
-            if (xVar2 != null) {
-                xVar2.f(0);
-                qn.S3(qnVar);
-            }
-            org.telegram.ui.ActionBar.x xVar3 = qnVar.e0;
-            if (xVar3 != null) {
-                xVar3.f(8);
-            }
-            ur urVar = qnVar.d0;
-            if (urVar != null) {
-                urVar.b(false);
-            }
-            org.telegram.ui.ActionBar.u0 u0Var2 = qnVar.m0;
-            if (u0Var2 != null && qnVar.K9) {
-                u0Var2.setVisibility(8);
-            }
-            org.telegram.ui.ActionBar.x xVar4 = qnVar.n0;
-            if (xVar4 != null && qnVar.L9) {
-                xVar4.f(8);
-            }
-            org.telegram.ui.ActionBar.u0 u0Var3 = qnVar.k0;
-            if (u0Var3 != null) {
-                u0Var3.setVisibility(8);
-            }
-        } else if (qnVar.Y.i0() && TextUtils.isEmpty(qnVar.Y.getSlowModeTimer()) && ((chat = qnVar.e) == null || ChatObject.canSendPlain(chat))) {
-            org.telegram.ui.ActionBar.u0 u0Var4 = qnVar.h0;
-            if (u0Var4 != null) {
-                u0Var4.setVisibility(8);
-            }
-            org.telegram.ui.ActionBar.x xVar5 = qnVar.i0;
-            if (xVar5 != null) {
-                xVar5.f(8);
-            }
-            org.telegram.ui.ActionBar.x xVar6 = qnVar.e0;
-            if (xVar6 != null) {
-                xVar6.f(0);
-            }
-            ur urVar2 = qnVar.d0;
-            if (urVar2 != null) {
-                urVar2.b(true);
-            }
-            org.telegram.ui.ActionBar.u0 u0Var5 = qnVar.m0;
-            if (u0Var5 != null && qnVar.K9) {
-                u0Var5.setVisibility(8);
-            }
-            org.telegram.ui.ActionBar.x xVar7 = qnVar.n0;
-            if (xVar7 != null && qnVar.L9) {
-                xVar7.f(8);
-            }
-            org.telegram.ui.ActionBar.u0 u0Var6 = qnVar.k0;
-            if (u0Var6 != null) {
-                u0Var6.setVisibility(8);
-            }
-        } else {
-            org.telegram.ui.ActionBar.u0 u0Var7 = qnVar.h0;
-            if (u0Var7 != null) {
-                u0Var7.setVisibility(0);
-            }
-            org.telegram.ui.ActionBar.x xVar8 = qnVar.n0;
-            if (xVar8 != null && qnVar.L9) {
-                xVar8.f(0);
-            }
-            org.telegram.ui.ActionBar.u0 u0Var8 = qnVar.k0;
-            if (u0Var8 != null) {
-                u0Var8.setVisibility(0);
-            }
-            org.telegram.ui.ActionBar.u0 u0Var9 = qnVar.m0;
-            if (u0Var9 != null && qnVar.K9) {
-                u0Var9.setVisibility(0);
-            }
-            org.telegram.ui.ActionBar.x xVar9 = qnVar.i0;
-            if (xVar9 != null) {
-                xVar9.f(8);
-            }
-            org.telegram.ui.ActionBar.x xVar10 = qnVar.e0;
-            if (xVar10 != null) {
-                xVar10.f(8);
-            }
-            ur urVar3 = qnVar.d0;
-            if (urVar3 != null) {
-                urVar3.b(false);
-            }
-        }
-        if (qnVar.q1 != null) {
-            if (qnVar.p1.a.getCurrentPosition() != 0) {
-                qnVar.p1.a.d(0, 0);
-                qnVar.s1 = true;
-            } else {
-                qnVar.q1.h.clear();
-            }
-        }
-        int i12 = qnVar.R3;
-        if (i12 == 3 || i12 == 8 || ((qnVar.d4 == 0 && !UserObject.isReplyUser(qnVar.f)) || ((messageObject = qnVar.X3) != null && messageObject.getRepliesCount() < 10))) {
-            qnVar.j0.setVisibility(8);
-        }
-        qnVar.o0 = false;
-        qnVar.getMediaDataController().clearFoundMessageObjects();
-        if (qnVar.O3 == 3) {
-            i11 = ((org.telegram.ui.ActionBar.n2) qnVar).currentAccount;
-            HashtagSearchController.getInstance(i11).clearSearchResults(3);
-        } else {
-            i10 = ((org.telegram.ui.ActionBar.n2) qnVar).currentAccount;
-            HashtagSearchController.getInstance(i10).clearSearchResults();
-        }
-        hg.n1 n1Var = qnVar.M3;
-        if (n1Var != null) {
-            n1Var.l();
-        }
-        qnVar.Ma();
-        qnVar.mc(false);
-        qnVar.Dc(0, true);
-        qnVar.bd(false);
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.r, 0.0f);
-        ofFloat.addUpdateListener(new hn(this, 1));
-        ofFloat.setInterpolator(org.telegram.ui.Components.bs.h);
-        ofFloat.setDuration(320L);
-        ofFloat.start();
-        qnVar.zc.a(false, true);
-        qnVar.Mc();
-        qnVar.q3 = null;
-        qnVar.Nc();
-        qnVar.Ac();
-        qk qkVar = qnVar.o1;
-        if (qkVar != null) {
-            qkVar.d.M(new xq(2));
-            qkVar.h = 0L;
-            qnVar.o1.g(false);
-        }
-        ck ckVar = qnVar.p1;
-        if (ckVar != null) {
-            ckVar.b(false);
-        }
-        qnVar.pb(false);
-    }
-
-    @Override // org.telegram.ui.ActionBar.g5
-    public final void n() {
-        ck ckVar;
-        int i10;
-        qn qnVar = this.s;
-        qnVar.s3 = true;
-        qnVar.Ac();
-        qnVar.Nc();
-        if (((qnVar.d4 != 0 && qnVar.R3 != 3) || UserObject.isReplyUser(qnVar.f)) && !qnVar.dc) {
-            qnVar.qa(null);
-        }
-        if (qnVar.W4) {
-            qnVar.saveKeyboardPositionBeforeTransition();
-            if (!qnVar.Pa) {
-                Activity parentActivity = qnVar.getParentActivity();
-                i10 = ((org.telegram.ui.ActionBar.n2) qnVar).classGuid;
-                AndroidUtilities.requestAdjustResize(parentActivity, i10);
-            }
-            AndroidUtilities.runOnUIThread(new ti(this, 10), 500L);
-            aj ajVar = qnVar.g2;
-            if (ajVar != null) {
-                ajVar.b(true);
-            }
-            org.telegram.ui.Components.r40 r40Var = qnVar.i2;
-            if (r40Var != null) {
-                r40Var.b(true);
-            }
-        }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.r, 1.0f);
-        ofFloat.addUpdateListener(new hn(this, 0));
-        ofFloat.setInterpolator(org.telegram.ui.Components.bs.h);
-        ofFloat.setDuration(320L);
-        ofFloat.start();
-        qk qkVar = qnVar.o1;
-        if (qkVar != null) {
-            qkVar.g(!qnVar.Pa && qkVar.a() && qnVar.u3 == null);
-        }
-        if (qnVar.u3 == null || (ckVar = qnVar.p1) == null) {
-            return;
-        }
-        int currentPosition = ckVar.a.getCurrentPosition();
-        int i11 = qnVar.r1;
-        if (currentPosition != i11) {
-            qnVar.p1.a.d(i11, i11);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.g5
-    public final void o(hg.o0 o0Var) {
-        qn qnVar = this.s;
-        qk qkVar = qnVar.o1;
-        if (qkVar != null) {
-            qkVar.d.M(new xq(2));
-            qkVar.h = 0L;
-        }
-        qnVar.q3 = null;
-        qnVar.Nc();
-        qnVar.Ac();
-        qnVar.pb(false);
-    }
-
-    @Override // org.telegram.ui.ActionBar.g5
-    public final void p(ei.e2 e2Var) {
-        int i10;
-        int i11;
-        int i12;
-        int i13;
-        org.telegram.ui.ActionBar.d6 d6Var;
-        qn qnVar = this.s;
-        boolean z10 = false;
-        qnVar.Kc(0, 0, -1);
-        String obj = e2Var != null ? e2Var.getText().toString() : qnVar.t3;
-        qnVar.t3 = obj;
-        if (TextUtils.isEmpty(obj) || !(qnVar.t3.startsWith("$") || qnVar.t3.startsWith("#"))) {
-            qnVar.u3 = null;
-            ck ckVar = qnVar.p1;
-            if (ckVar != null) {
-                ckVar.b(false);
-                qnVar.Mc();
-            }
-            ck ckVar2 = qnVar.p1;
-            if (ckVar2 != null && ckVar2.a.getCurrentPosition() != 0) {
-                qnVar.p1.a.d(0, 0);
-            }
-        } else {
-            qnVar.P7();
-            if (qnVar.t3.contains("@")) {
-                String str = qnVar.t3;
-                d6Var = ((org.telegram.ui.ActionBar.n2) qnVar).resourceProvider;
-                qnVar.presentFragment(new org.telegram.ui.Components.k40(str, d6Var));
-                return;
-            }
-            if (qnVar.u3 == null) {
-                qnVar.u3 = qnVar.t3;
-                ValueAnimator ofFloat = ValueAnimator.ofFloat(this.r, 1.0f);
-                ofFloat.addUpdateListener(new hn(this, 2));
-                ofFloat.setInterpolator(org.telegram.ui.Components.bs.h);
-                ofFloat.setDuration(320L);
-                ofFloat.start();
-                qk qkVar = qnVar.o1;
-                if (qkVar != null) {
-                    if (!qnVar.Pa && qkVar.a() && qnVar.u3 == null) {
-                        z10 = true;
-                    }
-                    qkVar.g(z10);
-                }
-            }
-            qnVar.u3 = qnVar.t3;
-            qnVar.U6(true);
-            i11 = ((org.telegram.ui.ActionBar.n2) qnVar).currentAccount;
-            HashtagSearchController.getInstance(i11).putToHistory(qnVar.u3);
-            qnVar.t1.f.N(true);
-            View currentView = qnVar.q1.getCurrentView();
-            if (qnVar.O3 == 3) {
-                i13 = ((org.telegram.ui.ActionBar.n2) qnVar).currentAccount;
-                HashtagSearchController.getInstance(i13).clearSearchResults(3);
-            } else {
-                i12 = ((org.telegram.ui.ActionBar.n2) qnVar).currentAccount;
-                HashtagSearchController.getInstance(i12).clearSearchResults();
-            }
-            if (currentView instanceof sn) {
-                ((sn) currentView).a.Oc(qnVar.u3);
-            }
-            qnVar.Mc();
-            qnVar.d2.e(true, true);
-            qnVar.Qb(true);
-            z10 = true;
-        }
-        ck ckVar3 = qnVar.p1;
-        if (ckVar3 != null) {
-            ckVar3.b(z10);
-        }
-        MediaDataController mediaDataController = qnVar.getMediaDataController();
-        String str2 = qnVar.t3;
-        long j10 = qnVar.T5;
-        long j11 = qnVar.L6;
-        i10 = ((org.telegram.ui.ActionBar.n2) qnVar).classGuid;
-        mediaDataController.searchMessagesInChat(str2, j10, j11, i10, 0, qnVar.d4, qnVar.o3, qnVar.p3, qnVar.q3);
-    }
-
-    @Override // org.telegram.ui.ActionBar.g5
-    public final void q(EditText editText) {
-        qn qnVar = this.s;
-        ne.b bVar = qnVar.Bc;
-        if (qnVar.u3 == null) {
-            qnVar.Qb(false);
-        }
-        qnVar.O7();
-        if (qnVar.n3) {
-            qnVar.I1.getAdapter().U("@" + editText.getText().toString(), 0, qnVar.u6, true, true);
-        } else if (qnVar.o3 == null && qnVar.p3 == null && qnVar.T2 != null && TextUtils.equals(editText.getText(), LocaleController.getString(R.string.SearchFrom))) {
-            qnVar.T2.callOnClick();
-        }
-        if (qnVar.u3 != null) {
-            boolean z10 = editText.length() == 0;
-            if (z10 != bVar.f) {
-                if (z10) {
-                    qnVar.P7();
-                }
-                bVar.a(z10, true);
-                ei.h1 h1Var = qnVar.q1;
-                if (h1Var != null) {
-                    h1Var.D(0);
-                }
-                if (z10) {
-                    qnVar.Qb(true);
-                }
-                qnVar.mc(false);
-            }
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.g5
-    public final boolean u() {
-        return this.s.u3 == null;
     }
 }

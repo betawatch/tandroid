@@ -1,47 +1,16 @@
 package org.telegram.ui.ActionBar;
 
-import android.graphics.Point;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class a4 implements Utilities.Callback {
-    public final /* synthetic */ Utilities.Callback a;
-    public final /* synthetic */ TLRPC.WallPaper b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ long e;
-
-    public /* synthetic */ a4(Utilities.Callback callback, TLRPC.WallPaper wallPaper, int i10, int i11, long j10) {
-        this.a = callback;
-        this.b = wallPaper;
-        this.c = i10;
-        this.d = i11;
-        this.e = j10;
-    }
-
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        eg.a aVar = (eg.a) obj;
-        Utilities.Callback callback = this.a;
-        if (aVar != null) {
-            callback.run(aVar);
-            return;
+public final class a4 extends c2 {
+    @Override // org.telegram.ui.ActionBar.c2
+    public final int f(int i10) {
+        if (i10 == k6.h5) {
+            return -14277082;
         }
-        TLRPC.WallPaper wallPaper = this.b;
-        ImageLocation forDocument = ImageLocation.getForDocument(wallPaper.document);
-        ImageReceiver imageReceiver = new ImageReceiver();
-        imageReceiver.setAllowLoadingOnAttachedOnly(false);
-        Point point = AndroidUtilities.displaySize;
-        int min = Math.min(point.x, point.y);
-        Point point2 = AndroidUtilities.displaySize;
-        imageReceiver.setImage(forDocument, (min / AndroidUtilities.density) + "_" + (Math.max(point2.x, point2.y) / AndroidUtilities.density) + "_f", null, ".jpg", wallPaper, 1);
-        imageReceiver.setDelegate(new org.telegram.tgnet.f(this.c, this.d, this.e, callback));
-        ImageLoader.getInstance().loadImageForImageReceiver(imageReceiver);
+        if (i10 == k6.j5 || i10 == k6.H5 || i10 == k6.A5) {
+            return -1;
+        }
+        return k6.w0(i10, this.T0);
     }
 }

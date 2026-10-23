@@ -5,7 +5,7 @@ import org.telegram.tgnet.TLMethod;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class xj implements Runnable {
     public final /* synthetic */ int a;
@@ -54,7 +54,7 @@ public final /* synthetic */ class xj implements Runnable {
                 org.telegram.ui.ActionBar.e1 e1Var6 = (org.telegram.ui.ActionBar.e1) this.n;
                 org.telegram.ui.ActionBar.e1 e1Var7 = (org.telegram.ui.ActionBar.e1) this.s;
                 if (e1Var != null) {
-                    e1Var.g(LocaleController.getString(y9Var.e ? R.string.Gift2FilterSortByValue : R.string.Gift2FilterSortByDate), y9Var.e ? R.drawable.menu_sort_value : R.drawable.menu_sort_date, null);
+                    e1Var.j(LocaleController.getString(y9Var.e ? R.string.Gift2FilterSortByValue : R.string.Gift2FilterSortByDate), y9Var.e ? R.drawable.menu_sort_value : R.drawable.menu_sort_date, null);
                 }
                 e1Var2.setChecked(TLObject.hasFlag(y9Var.g, 1));
                 e1Var3.setChecked(TLObject.hasFlag(y9Var.g, 2));
@@ -76,7 +76,7 @@ public final /* synthetic */ class xj implements Runnable {
                 org.telegram.ui.ActionBar.e1 e1Var13 = (org.telegram.ui.ActionBar.e1) this.n;
                 org.telegram.ui.ActionBar.e1 e1Var14 = (org.telegram.ui.ActionBar.e1) this.s;
                 ai.y9 y9Var2 = h4Var.c.Y;
-                e1Var8.g(LocaleController.getString(y9Var2.e ? R.string.Gift2FilterSortByValue : R.string.Gift2FilterSortByDate), y9Var2.e ? R.drawable.menu_sort_value : R.drawable.menu_sort_date, null);
+                e1Var8.j(LocaleController.getString(y9Var2.e ? R.string.Gift2FilterSortByValue : R.string.Gift2FilterSortByDate), y9Var2.e ? R.drawable.menu_sort_value : R.drawable.menu_sort_date, null);
                 e1Var9.setChecked(TLObject.hasFlag(y9Var2.g, 1));
                 e1Var10.setChecked(TLObject.hasFlag(y9Var2.g, 2));
                 e1Var11.setChecked(TLObject.hasFlag(y9Var2.g, 4));

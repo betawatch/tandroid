@@ -6,9 +6,9 @@ import android.widget.LinearLayout;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class zh implements z4.e {
+public final class zh implements z4.f {
     public final /* synthetic */ AtomicBoolean a;
     public final /* synthetic */ LinearLayout b;
     public final /* synthetic */ int c;
@@ -27,8 +27,13 @@ public final class zh implements z4.e {
         this.g = iArr;
     }
 
-    @Override // z4.e
-    public final void a(float f7, int i10, int i11) {
+    @Override // z4.f
+    public final void a(int i10) {
+        this.f.getSwipeBack().f(this.g[0], this.e.get(i10), true);
+    }
+
+    @Override // z4.f
+    public final void b(float f7, int i10, int i11) {
         HorizontalScrollView horizontalScrollView;
         if (this.a.get()) {
             return;
@@ -43,13 +48,13 @@ public final class zh implements z4.e {
             if (i12 >= childCount) {
                 break;
             }
-            org.telegram.ui.Components.ok0 ok0Var = (org.telegram.ui.Components.ok0) linearLayout.getChildAt(i12);
-            ok0Var.setOutlineProgress(i12 == i10 ? 1.0f - f7 : i12 == (i10 + 1) % this.c ? f7 : 0.0f);
+            org.telegram.ui.Components.rk0 rk0Var = (org.telegram.ui.Components.rk0) linearLayout.getChildAt(i12);
+            rk0Var.setOutlineProgress(i12 == i10 ? 1.0f - f7 : i12 == (i10 + 1) % this.c ? f7 : 0.0f);
             if (i12 == i10) {
-                f10 = ok0Var.getX() - ((horizontalScrollView.getWidth() - ok0Var.getWidth()) / 2.0f);
+                f10 = rk0Var.getX() - ((horizontalScrollView.getWidth() - rk0Var.getWidth()) / 2.0f);
             }
             if (i12 == i10 + 1) {
-                f11 = ok0Var.getX() - ((horizontalScrollView.getWidth() - ok0Var.getWidth()) / 2.0f);
+                f11 = rk0Var.getX() - ((horizontalScrollView.getWidth() - rk0Var.getWidth()) / 2.0f);
             }
             i12++;
         }
@@ -60,12 +65,7 @@ public final class zh implements z4.e {
         this.f.getSwipeBack().f(this.g[0], (int) ((sparseIntArray.get(i10 + 1, 0) * f7) + ((1.0f - f7) * sparseIntArray.get(i10, 0))), false);
     }
 
-    @Override // z4.e
-    public final void b(int i10) {
-        this.f.getSwipeBack().f(this.g[0], this.e.get(i10), true);
-    }
-
-    @Override // z4.e
+    @Override // z4.f
     public final void c(int i10) {
         if (i10 == 0) {
             this.a.set(false);

@@ -5,7 +5,7 @@ import j$.util.Objects;
 import java.net.IDN;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class q0 {
     public int a;
@@ -15,12 +15,12 @@ public final class q0 {
     public Object e;
     public Object f;
 
-    public q0(b2.w wVar, b2.w wVar2, int i10, int i11, o oVar, c2.j jVar) {
+    public q0(b2.w wVar, b2.w wVar2, int i10, int i11, p pVar, c2.j jVar) {
         this.c = wVar;
         this.d = wVar2;
         this.a = i10;
         this.b = i11;
-        this.e = oVar;
+        this.e = pVar;
         this.f = jVar;
     }
 

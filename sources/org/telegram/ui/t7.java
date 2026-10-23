@@ -8,7 +8,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class t7 extends j7 {
     public final /* synthetic */ v7 n;
@@ -22,7 +22,7 @@ public final class t7 extends j7 {
     @Override // s4.g0
     public final void v(s4.b1 b1Var, int i10) {
         n7 n7Var = (n7) b1Var.a;
-        org.telegram.ui.Cells.h7 h7Var = (org.telegram.ui.Cells.h7) n7Var.b.getChildAt(0);
+        org.telegram.ui.Cells.j7 j7Var = (org.telegram.ui.Cells.j7) n7Var.b.getChildAt(0);
         bi.b bVar = ((p7) this.e.get(i10)).d;
         boolean z10 = bVar == n7Var.getTag();
         boolean z11 = i10 != this.e.size() - 1;
@@ -36,7 +36,7 @@ public final class t7 extends j7 {
             TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
             tL_message.from_id = tL_peerUser;
             TLRPC.Peer peer = tL_message.peer_id;
-            long clientUserId = UserConfig.getInstance(v7Var.d.getCurrentAccount()).getClientUserId();
+            long clientUserId = UserConfig.getInstance(v7Var.e.getCurrentAccount()).getClientUserId();
             tL_peerUser.user_id = clientUserId;
             peer.user_id = clientUserId;
             tL_message.date = (int) (System.currentTimeMillis() / 1000);
@@ -66,30 +66,30 @@ public final class t7 extends j7 {
                 bi.a aVar = new bi.a();
                 bVar.e = aVar;
                 aVar.a = true;
-                Utilities.globalQueue.postRunnable(new t1(v7Var, bVar, tL_documentAttributeAudio, 4));
+                Utilities.globalQueue.postRunnable(new s1(v7Var, bVar, tL_documentAttributeAudio, 4));
             }
             tL_documentAttributeAudio.flags |= 3;
             tL_message.media.document.attributes.add(tL_documentAttributeAudio);
             TLRPC.TL_documentAttributeFilename tL_documentAttributeFilename = new TLRPC.TL_documentAttributeFilename();
             tL_documentAttributeFilename.file_name = bVar.a.getName();
             tL_message.media.document.attributes.add(tL_documentAttributeFilename);
-            MessageObject messageObject = new MessageObject(v7Var.d.getCurrentAccount(), tL_message, false, false);
+            MessageObject messageObject = new MessageObject(v7Var.e.getCurrentAccount(), tL_message, false, false);
             bVar.f = messageObject;
             messageObject.mediaExists = true;
         }
-        h7Var.f(bVar.f, z11);
+        j7Var.f(bVar.f, z11);
         boolean z12 = bVar.e.a;
         boolean z13 = !z12;
         if (!z10) {
-            h7Var.g0 = !z12 ? 1.0f : 0.0f;
+            j7Var.g0 = !z12 ? 1.0f : 0.0f;
         }
-        if (h7Var.f0 != z13) {
-            h7Var.f0 = z13;
-            h7Var.invalidate();
+        if (j7Var.f0 != z13) {
+            j7Var.f0 = z13;
+            j7Var.invalidate();
         }
         n7Var.d = z11;
         n7Var.c.setText(AndroidUtilities.formatFileSize(bVar.c));
-        n7Var.a.a(this.n.f.j.contains(bVar), z10);
+        n7Var.a.a(this.n.h.j.contains(bVar), z10);
     }
 
     @Override // s4.g0
@@ -99,6 +99,6 @@ public final class t7 extends j7 {
         s7 s7Var = new s7(this, viewGroup.getContext(), n7Var);
         s7Var.setCheckForButtonPress(true);
         n7Var.b.addView(s7Var);
-        return new org.telegram.ui.Components.tl0(n7Var);
+        return new org.telegram.ui.Components.wl0(n7Var);
     }
 }

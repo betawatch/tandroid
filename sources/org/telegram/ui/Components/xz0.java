@@ -1,22 +1,29 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.view.View;
+import android.util.Pair;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public interface xz0 extends org.telegram.ui.Cells.y9 {
-    void attach(View view);
+public final class xz0 extends ArrayList {
+    public final Class a;
+    public final Class b;
 
-    void detach(View view);
+    public xz0(Class cls, Class cls2) {
+        this.a = cls;
+        this.b = cls2;
+    }
 
-    void draw(Canvas canvas, View view);
-
-    int getEmojiOnlyCount();
-
-    void setRow(int i10);
-
-    void setX(int i10);
-
-    void setY(int i10);
+    /* JADX WARN: Multi-variable type inference failed */
+    public final m.g3 h() {
+        int size = size();
+        Object[] objArr = (Object[]) Array.newInstance((Class<?>) this.a, size);
+        Object[] objArr2 = (Object[]) Array.newInstance((Class<?>) this.b, size);
+        for (int i10 = 0; i10 < size; i10++) {
+            objArr[i10] = ((Pair) get(i10)).first;
+            objArr2[i10] = ((Pair) get(i10)).second;
+        }
+        return new m.g3(objArr, objArr2);
+    }
 }

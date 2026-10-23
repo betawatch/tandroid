@@ -6,7 +6,7 @@ import com.google.android.gms.common.data.DataHolder;
 import java.util.HashMap;
 import java.util.Map;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class k extends l6.a {
     public final /* synthetic */ int d;
@@ -33,7 +33,7 @@ public final class k extends l6.a {
                     dataHolder.c(i11, "event_type");
                     str = dataHolder.d[this.c].getInt(i11, dataHolder.c.getInt("event_type")) == 2 ? "deleted" : "unknown";
                 }
-                return org.telegram.ui.Cells.c1.k("DataEventRef{ type=", str, ", dataitem=", new k(dataHolder, this.b, this.e, 1).toString(), " }");
+                return org.telegram.ui.Cells.b1.l("DataEventRef{ type=", str, ", dataitem=", new k(dataHolder, this.b, this.e, 1).toString(), " }");
             default:
                 boolean isLoggable = Log.isLoggable("DataItem", 3);
                 DataHolder dataHolder2 = this.a;

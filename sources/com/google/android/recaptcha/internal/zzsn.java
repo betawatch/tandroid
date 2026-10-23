@@ -2,7 +2,7 @@ package com.google.android.recaptcha.internal;
 
 import com.google.android.recaptcha.internal.zzsh;
 import com.google.android.recaptcha.internal.zzsn;
-import i2.e;
+import i2.o1;
 import j$.util.concurrent.ConcurrentHashMap;
 import java.io.IOException;
 import java.io.InputStream;
@@ -12,7 +12,7 @@ import java.util.Map;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public abstract class zzsn<MessageType extends zzsn<MessageType, BuilderType>, BuilderType extends zzsh<MessageType, BuilderType>> extends zzpw<MessageType, BuilderType> {
     private static final Map zzb = new ConcurrentHashMap();
@@ -251,7 +251,7 @@ public abstract class zzsn<MessageType extends zzsn<MessageType, BuilderType>, B
             if (zza >= 0) {
                 return zza;
             }
-            throw new IllegalStateException(e.j(zza, "serialized size must be non-negative, was "));
+            throw new IllegalStateException(o1.k(zza, "serialized size must be non-negative, was "));
         }
         int i10 = this.zzd & ConnectionsManager.DEFAULT_DATACENTER_ID;
         if (i10 != Integer.MAX_VALUE) {
@@ -259,7 +259,7 @@ public abstract class zzsn<MessageType extends zzsn<MessageType, BuilderType>, B
         }
         int zza2 = zzugVar.zza(this);
         if (zza2 < 0) {
-            throw new IllegalStateException(e.j(zza2, "serialized size must be non-negative, was "));
+            throw new IllegalStateException(o1.k(zza2, "serialized size must be non-negative, was "));
         }
         this.zzd = (this.zzd & TLObject.FLAG_31) | zza2;
         return zza2;
@@ -300,7 +300,7 @@ public abstract class zzsn<MessageType extends zzsn<MessageType, BuilderType>, B
             if (zzf >= 0) {
                 return zzf;
             }
-            throw new IllegalStateException(e.j(zzf, "serialized size must be non-negative, was "));
+            throw new IllegalStateException(o1.k(zzf, "serialized size must be non-negative, was "));
         }
         int i10 = this.zzd & ConnectionsManager.DEFAULT_DATACENTER_ID;
         if (i10 != Integer.MAX_VALUE) {
@@ -308,7 +308,7 @@ public abstract class zzsn<MessageType extends zzsn<MessageType, BuilderType>, B
         }
         int zzf2 = zzf(null);
         if (zzf2 < 0) {
-            throw new IllegalStateException(e.j(zzf2, "serialized size must be non-negative, was "));
+            throw new IllegalStateException(o1.k(zzf2, "serialized size must be non-negative, was "));
         }
         this.zzd = (this.zzd & TLObject.FLAG_31) | zzf2;
         return zzf2;

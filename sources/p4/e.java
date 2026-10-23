@@ -26,12 +26,12 @@ import java.util.concurrent.Executor;
 import k2.w0;
 import ki.t1;
 import m.g3;
-import org.telegram.ui.Cells.c1;
-import org.telegram.ui.Cells.k7;
-import org.telegram.ui.Components.ml0;
-import org.telegram.ui.web.z1;
+import org.telegram.ui.Cells.b1;
+import org.telegram.ui.Components.pl0;
+import org.telegram.ui.Wallet.m4;
+import org.telegram.ui.web.a2;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class e {
     public static final /* synthetic */ int F = 0;
@@ -44,7 +44,7 @@ public final class e {
     public v d;
     public q e;
     public com.google.android.gms.internal.cast.q f;
-    public ml0 g;
+    public pl0 g;
     public final Context h;
     public final e2.s n;
     public final t1 o;
@@ -107,7 +107,7 @@ public final class e {
                 this.r = (i10 >= 30 || !z10) ? null : new k(context, new l2.f(this, 14));
                 j0 f0Var = i10 < 24 ? new f0(context, this) : new j0(context, this);
                 this.s = f0Var;
-                this.t = new i2.t1(new z1(this, i11));
+                this.t = new i2.t1(new a2(this, i11));
                 a(f0Var, true);
                 g3Var = this.r;
                 if (g3Var != null) {
@@ -126,7 +126,7 @@ public final class e {
                     intentFilter.addAction("android.intent.action.PACKAGE_RESTARTED");
                     intentFilter.addDataScheme("package");
                     ((Context) s0Var.b).registerReceiver((androidx.mediarouter.app.f) s0Var.g, intentFilter, null, handler);
-                    handler.post((k7) s0Var.h);
+                    handler.post((m4) s0Var.h);
                     return;
                 }
                 return;
@@ -142,7 +142,7 @@ public final class e {
         if (i10 < 24) {
         }
         this.s = f0Var;
-        this.t = new i2.t1(new z1(this, i11));
+        this.t = new i2.t1(new a2(this, i11));
         a(f0Var, true);
         g3Var = this.r;
         if (g3Var != null) {
@@ -169,7 +169,7 @@ public final class e {
     public final String b(u uVar, String str) {
         String flattenToShortString = ((ComponentName) uVar.d.b).flattenToShortString();
         boolean z10 = uVar.c;
-        String C = z10 ? str : a1.g.C(flattenToShortString, ":", str);
+        String D = z10 ? str : a1.g.D(flattenToShortString, ":", str);
         HashMap hashMap = this.k;
         if (!z10) {
             ArrayList arrayList = this.j;
@@ -180,17 +180,17 @@ public final class e {
                     i10 = -1;
                     break;
                 }
-                if (((v) arrayList.get(i10)).c.equals(C)) {
+                if (((v) arrayList.get(i10)).c.equals(D)) {
                     break;
                 }
                 i10++;
             }
             if (i10 >= 0) {
-                Log.w("GlobalMediaRouter", c1.k("Either ", str, " isn't unique in ", flattenToShortString, " or we're trying to assign a unique ID for an already added route"));
+                Log.w("GlobalMediaRouter", b1.l("Either ", str, " isn't unique in ", flattenToShortString, " or we're trying to assign a unique ID for an already added route"));
                 int i11 = 2;
                 while (true) {
                     Locale locale = Locale.US;
-                    String str2 = C + "_" + i11;
+                    String str2 = D + "_" + i11;
                     int size2 = arrayList.size();
                     int i12 = 0;
                     while (true) {
@@ -211,8 +211,8 @@ public final class e {
                 }
             }
         }
-        hashMap.put(new q0.b(flattenToShortString, str), C);
-        return C;
+        hashMap.put(new q0.b(flattenToShortString, str), D);
+        return D;
     }
 
     public final v c() {
@@ -292,43 +292,43 @@ public final class e {
 
     public final void h(e eVar, v vVar, q qVar, int i10, v vVar2, Collection collection) {
         final com.google.android.gms.internal.cast.q qVar2;
-        ml0 ml0Var = this.g;
-        if (ml0Var != null) {
-            ml0Var.a();
+        pl0 pl0Var = this.g;
+        if (pl0Var != null) {
+            pl0Var.a();
             this.g = null;
         }
-        ml0 ml0Var2 = new ml0(eVar, vVar, qVar, i10, vVar2, collection);
-        this.g = ml0Var2;
+        pl0 pl0Var2 = new pl0(eVar, vVar, qVar, i10, vVar2, collection);
+        this.g = pl0Var2;
         int i11 = 3;
-        if (ml0Var2.b != 3 || (qVar2 = this.f) == null) {
-            ml0Var2.b();
+        if (pl0Var2.b != 3 || (qVar2 = this.f) == null) {
+            pl0Var2.b();
             return;
         }
         final v vVar3 = this.d;
-        final v vVar4 = (v) ml0Var2.g;
+        final v vVar4 = (v) pl0Var2.g;
         com.google.android.gms.internal.cast.q.c.b("Prepare transfer from Route(%s) to Route(%s)", vVar3, vVar4);
         c0.l a2 = v7.h0.a(new c0.j() { // from class: com.google.android.gms.internal.cast.o
             @Override // c0.j
-            public final Object a(c0.i iVar) {
+            public final Object b(c0.i iVar) {
                 q qVar3 = q.this;
                 qVar3.getClass();
                 return Boolean.valueOf(qVar3.b.post(new p(qVar3, vVar3, vVar4, iVar, 0)));
             }
         });
-        ml0 ml0Var3 = this.g;
-        e eVar2 = (e) ((WeakReference) ml0Var3.j).get();
-        if (eVar2 == null || eVar2.g != ml0Var3) {
+        pl0 pl0Var3 = this.g;
+        e eVar2 = (e) ((WeakReference) pl0Var3.j).get();
+        if (eVar2 == null || eVar2.g != pl0Var3) {
             Log.w("AxMediaRouter", "Router is released. Cancel transfer");
-            ml0Var3.a();
+            pl0Var3.a();
         } else {
-            if (((c0.l) ml0Var3.k) != null) {
+            if (((c0.l) pl0Var3.k) != null) {
                 throw new IllegalStateException("future is already set");
             }
-            ml0Var3.k = a2;
-            z1 z1Var = new z1(ml0Var3, i11);
+            pl0Var3.k = a2;
+            a2 a2Var = new a2(pl0Var3, i11);
             b bVar = eVar2.a;
             Objects.requireNonNull(bVar);
-            a2.b.a(z1Var, new i2.g0(bVar, i11));
+            a2.b.a(a2Var, new i2.f0(bVar, i11));
         }
     }
 
@@ -433,7 +433,7 @@ public final class e {
         int i10 = 0;
         t1Var.c = false;
         t1Var.b = SystemClock.elapsedRealtime();
-        ((Handler) t1Var.d).removeCallbacks((z1) t1Var.e);
+        ((Handler) t1Var.d).removeCallbacks((a2) t1Var.e);
         ArrayList arrayList2 = this.i;
         int size = arrayList2.size();
         int i11 = 0;
@@ -448,7 +448,7 @@ public final class e {
                 if (t1Var2.c) {
                     long j13 = t1Var2.a;
                     if (j13 > j12) {
-                        ((Handler) t1Var2.d).postDelayed((z1) t1Var2.e, j13);
+                        ((Handler) t1Var2.d).postDelayed((a2) t1Var2.e, j13);
                     }
                 }
                 boolean z12 = t1Var2.c;

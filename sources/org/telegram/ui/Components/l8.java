@@ -6,13 +6,13 @@ import java.util.Random;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LiteMode;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class l8 {
     public float f;
     public boolean g;
     public final Paint h;
-    public org.telegram.ui.Cells.u1 i;
+    public org.telegram.ui.Cells.t1 i;
     public int p;
     public int q;
     public float r;
@@ -26,15 +26,15 @@ public final class l8 {
     public final float m = 120.0f;
     public final int n = 61;
     public final float[] o = new float[6];
-    public final cq[] a = new cq[2];
+    public final dq[] a = new dq[2];
 
     public l8() {
         for (int i10 = 0; i10 < 2; i10++) {
-            cq[] cqVarArr = this.a;
-            cq cqVar = new cq();
-            cqVarArr[i10] = cqVar;
-            cqVar.g = AndroidUtilities.dp(24.0f);
-            cqVar.k = 1.0f;
+            dq[] dqVarArr = this.a;
+            dq dqVar = new dq();
+            dqVarArr[i10] = dqVar;
+            dqVar.g = AndroidUtilities.dp(24.0f);
+            dqVar.k = 1.0f;
         }
         this.h = new Paint(1);
     }
@@ -106,10 +106,10 @@ public final class l8 {
                 iArr[i12] = (int) (fArr[i12] * f11);
                 i12++;
             }
-            cq[] cqVarArr = this.a;
-            cq cqVar = cqVarArr[0];
-            while (i10 < cqVar.f) {
-                float[] fArr4 = cqVar.j;
+            dq[] dqVarArr = this.a;
+            dq dqVar = dqVarArr[0];
+            while (i10 < dqVar.f) {
+                float[] fArr4 = dqVar.j;
                 fArr4[i10] = iArr[i10 / 2];
                 fArr4[i10 + 1] = 0.0f;
                 i10 += 2;
@@ -119,9 +119,9 @@ public final class l8 {
             for (int i13 = 0; i13 < 3; i13++) {
                 iArr[i13] = (int) (fArr[i13 + 3] * f11);
             }
-            cq cqVar2 = cqVarArr[z11 ? 1 : 0];
-            for (int i14 = 0; i14 < cqVar2.f; i14 += 2) {
-                float[] fArr5 = cqVar2.j;
+            dq dqVar2 = dqVarArr[z11 ? 1 : 0];
+            for (int i14 = 0; i14 < dqVar2.f; i14 += 2) {
+                float[] fArr5 = dqVar2.j;
                 fArr5[i14] = iArr[i14 / 2];
                 fArr5[i14 + 1] = 0.0f;
             }
@@ -129,9 +129,9 @@ public final class l8 {
             if (dp > AndroidUtilities.dp(26.0f)) {
                 dp = AndroidUtilities.dp(26.0f);
             }
-            cq cqVar3 = cqVarArr[0];
-            cqVarArr[z11 ? 1 : 0].g = dp;
-            cqVar3.g = dp;
+            dq dqVar3 = dqVarArr[0];
+            dqVarArr[z11 ? 1 : 0].g = dp;
+            dqVar3.g = dp;
             canvas.save();
             float f20 = (float) (this.r + 0.6d);
             this.r = f20;
@@ -139,35 +139,35 @@ public final class l8 {
             canvas.save();
             float f21 = (this.f * 0.04f) + 1.0f;
             canvas.scale(f21, f21, f7, f10);
-            cq cqVar4 = cqVarArr[0];
+            dq dqVar4 = dqVarArr[0];
             Paint paint = this.h;
-            cqVar4.a(f7, f10, canvas, paint);
+            dqVar4.a(f7, f10, canvas, paint);
             canvas.restore();
             canvas.rotate(60.0f, f7, f10);
             float y3 = com.google.android.gms.internal.play_billing.k3.y(1.0f, this.f, 0.04f, 1.0f);
             canvas.scale(y3, y3, f7, f10);
-            cqVarArr[z11 ? 1 : 0].a(f7, f10, canvas, paint);
+            dqVarArr[z11 ? 1 : 0].a(f7, f10, canvas, paint);
             canvas.restore();
         }
     }
 
-    public final void c(Canvas canvas, float f7, float f10, boolean z10, float f11, org.telegram.ui.ActionBar.d6 d6Var) {
+    public final void c(Canvas canvas, float f7, float f10, boolean z10, float f11, org.telegram.ui.ActionBar.g6 g6Var) {
         if (LiteMode.isEnabled(32)) {
             int i10 = this.n;
             Paint paint = this.h;
             if (z10) {
-                paint.setColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Nb, d6Var));
+                paint.setColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Nb, g6Var));
                 paint.setAlpha((int) (i10 * f11));
             } else {
-                paint.setColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.ie, d6Var));
+                paint.setColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.ie, g6Var));
                 paint.setAlpha((int) (i10 * f11));
             }
             b(canvas, f7, f10);
         }
     }
 
-    public final void d(org.telegram.ui.Cells.u1 u1Var) {
-        this.i = u1Var;
+    public final void d(org.telegram.ui.Cells.t1 t1Var) {
+        this.i = t1Var;
     }
 
     public final void e(boolean z10, boolean z11, float[] fArr) {

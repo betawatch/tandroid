@@ -5,7 +5,7 @@ import java.nio.ByteBuffer;
 import java.util.Date;
 import w7.c7;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class k extends com.googlecode.mp4parser.c {
     public static final /* synthetic */ te.b E;
@@ -98,19 +98,19 @@ public final class k extends com.googlecode.mp4parser.c {
         com.googlecode.mp4parser.g.a().getClass();
         com.googlecode.mp4parser.g.b(b10);
         StringBuilder sb2 = new StringBuilder("MediaHeaderBox[creationTime=");
-        k3.p(te.a.b(s, this, this));
+        k3.o(te.a.b(s, this, this));
         sb2.append(this.e);
         sb2.append(";modificationTime=");
-        k3.p(te.a.b(v, this, this));
+        k3.o(te.a.b(v, this, this));
         sb2.append(this.f);
         sb2.append(";timescale=");
-        k3.p(te.a.b(w, this, this));
+        k3.o(te.a.b(w, this, this));
         sb2.append(this.h);
         sb2.append(";duration=");
-        k3.p(te.a.b(x, this, this));
+        k3.o(te.a.b(x, this, this));
         sb2.append(this.n);
         sb2.append(";language=");
-        k3.p(te.a.b(y, this, this));
+        k3.o(te.a.b(y, this, this));
         return a1.g.s(sb2, this.r, "]");
     }
 }

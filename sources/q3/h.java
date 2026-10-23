@@ -14,13 +14,13 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Locale;
-import org.telegram.ui.fk0;
+import org.telegram.ui.web.d0;
 import v7.s6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class h extends w7.m {
-    public static final fk0 b = new fk0(22);
+    public static final d0 b = new d0(4);
     public final g a;
 
     public h(g gVar) {

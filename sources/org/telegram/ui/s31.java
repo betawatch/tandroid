@@ -1,66 +1,55 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaController;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class s31 implements Runnable {
+public final class s31 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ x31 b;
+    public final /* synthetic */ SecretMediaViewer b;
 
-    public /* synthetic */ s31(x31 x31Var, int i10) {
+    public /* synthetic */ s31(SecretMediaViewer secretMediaViewer, int i10) {
         this.a = i10;
-        this.b = x31Var;
+        this.b = secretMediaViewer;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                x31 x31Var = this.b;
-                s31 s31Var = x31Var.Z;
-                if (x31Var.w != null) {
-                    x31Var.a0 = r2.n() / x31Var.w.p();
-                    v31 v31Var = x31Var.N;
-                    if (v31Var != null) {
-                        v31Var.Xd = (x31Var.w.p() - x31Var.w.n()) / 1000;
-                        x31Var.N.q4();
-                        org.telegram.ui.Components.gp0 seekBarWaveform = x31Var.N.getSeekBarWaveform();
-                        if (seekBarWaveform != null) {
-                            float f7 = x31Var.a0;
-                            seekBarWaveform.J = true;
-                            seekBarWaveform.K = f7;
-                            org.telegram.ui.Cells.u1 u1Var = seekBarWaveform.n;
-                            if (u1Var != null) {
-                                u1Var.invalidate();
-                            }
-                        }
-                    }
-                    if (x31Var.w.y()) {
-                        AndroidUtilities.cancelRunOnUIThread(s31Var);
-                        AndroidUtilities.runOnUIThread(s31Var, 16L);
-                        break;
-                    }
+                SecretMediaViewer secretMediaViewer = this.b;
+                Runnable runnable = secretMediaViewer.o0;
+                if (runnable != null) {
+                    runnable.run();
+                    secretMediaViewer.o0 = null;
+                    break;
                 }
                 break;
             case 1:
-                super/*android.app.Dialog*/.dismiss();
+                SecretMediaViewer secretMediaViewer2 = this.b;
+                AnimatorSet animatorSet = secretMediaViewer2.G;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    secretMediaViewer2.F.setVisibility(8);
+                    secretMediaViewer2.G = null;
+                    secretMediaViewer2.a0.scrollTo(0, 0);
+                    break;
+                }
                 break;
             case 2:
-                super/*android.app.Dialog*/.dismiss();
+                SecretMediaViewer secretMediaViewer3 = this.b;
+                Runnable runnable2 = secretMediaViewer3.o0;
+                if (runnable2 != null) {
+                    runnable2.run();
+                    secretMediaViewer3.o0 = null;
+                    break;
+                }
                 break;
             default:
-                x31 x31Var2 = this.b;
-                if (x31Var2.d == null) {
-                    AndroidUtilities.runOnUIThread(new s31(x31Var2, 2));
-                    org.telegram.ui.Cells.u1 u1Var2 = x31Var2.O;
-                    if (u1Var2 != null) {
-                        u1Var2.setVisibility(0);
-                        x31Var2.O.invalidate();
-                    }
-                }
-                MediaController.getInstance().tryResumePausedAudio();
+                SecretMediaViewer secretMediaViewer4 = this.b;
+                secretMediaViewer4.K0 = null;
+                secretMediaViewer4.e.invalidate();
                 break;
         }
     }

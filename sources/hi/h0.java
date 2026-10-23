@@ -4,20 +4,20 @@ import android.content.Context;
 import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.c71;
-import org.telegram.ui.Components.h61;
+import org.telegram.ui.Components.j71;
+import org.telegram.ui.Components.m61;
 import s4.b1;
 import w7.z5;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public abstract class h0 extends FrameLayout {
     public org.telegram.ui.ActionBar.k a;
     public final kh.f b;
     public final FrameLayout c;
-    public c71 d;
+    public j71 d;
     public boolean e;
     public final /* synthetic */ k0 f;
 
@@ -32,7 +32,7 @@ public abstract class h0 extends FrameLayout {
         addView(frameLayout, z5.e(-1, -1, 119));
         kh.f fVar = new kh.f(getContext());
         this.b = fVar;
-        fVar.setupColorKey(h6.a7);
+        fVar.setupColorKey(k6.a7);
         fVar.setFadeZoneBottom(AndroidUtilities.dp(72.0f) + AndroidUtilities.navigationBarHeight);
         fVar.setFadeHeightBottom(AndroidUtilities.dp(24.0f));
         fVar.setFadeZoneTop(AndroidUtilities.dp(64.0f) + AndroidUtilities.statusBarHeight);
@@ -56,7 +56,7 @@ public abstract class h0 extends FrameLayout {
             View childAt = this.d.getChildAt(i10);
             b1 T = this.d.T(childAt);
             if (T != null) {
-                h61 G = this.d.W2.G(T.b());
+                m61 G = this.d.Z2.G(T.b());
                 if (G != null && G.d != 99) {
                     f7 = Math.min(childAt.getY() + this.c.getPaddingTop(), f7);
                 }

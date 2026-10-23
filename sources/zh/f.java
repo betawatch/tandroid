@@ -17,9 +17,9 @@ import java.util.Random;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.TelegramQRCodeWriter;
-import org.telegram.messenger.nk;
+import org.telegram.messenger.sl;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class f {
     public static final float S;
@@ -152,7 +152,7 @@ public final class f {
                     float f11 = i14 + 0.5f;
                     float f12 = eVar.f;
                     int i15 = (int) ((f11 * f12) + f10);
-                    int b10 = (int) nk.b(i13, 0.5f, f12, f10);
+                    int b10 = (int) sl.b(i13, 0.5f, f12, f10);
                     boolean z10 = false;
                     for (int i16 = -1; i16 <= 1 && !z10; i16++) {
                         z10 = Color.alpha(encode.getPixel(Math.max(0, Math.min(eVar.b - 1, ((int) ((((float) i16) * eVar.f) * 0.3f)) + i15)), b10)) > 40;
@@ -192,7 +192,7 @@ public final class f {
 
     public static float h(e eVar, float f7) {
         float f10 = 1.0f - f7;
-        return nk.b(eVar.e, 6.0f, 1.0f - (((f10 * 0.45f) + 0.55f) * (f10 * f10)), -1.5f);
+        return sl.b(eVar.e, 6.0f, 1.0f - (((f10 * 0.45f) + 0.55f) * (f10 * f10)), -1.5f);
     }
 
     public static boolean i(e eVar, int i10, int i11) {
@@ -303,7 +303,7 @@ public final class f {
                         float f11 = eVar.g;
                         float f12 = eVar.f;
                         fArr[i16] = ((i18 + 0.5f) * f12) + f11;
-                        eVar.o[i16] = nk.b(i17, 0.5f, f12, f11);
+                        eVar.o[i16] = sl.b(i17, 0.5f, f12, f11);
                         float f13 = hypot * 0.5f;
                         eVar.p[i16] = i22 ? f13 * 0.85f : f13 + (floor * 0.06f);
                         eVar.q[i16] = eVar.h[i21];
@@ -432,7 +432,7 @@ public final class f {
         int i17;
         int i18;
         float f22;
-        float x10;
+        float y3;
         float f23;
         float f24;
         float f25;
@@ -580,7 +580,7 @@ public final class f {
                                 if (f42 < 0.08f) {
                                     f23 = f42 / 0.08f;
                                 } else {
-                                    x10 = org.telegram.messenger.g0.x(f42, 0.08f, 0.92f, 1.0f);
+                                    y3 = org.telegram.messenger.v0.y(f42, 0.08f, 0.92f, 1.0f);
                                     if (isNaN) {
                                         dp = (rectF5.top - AndroidUtilities.dp(56.0f)) - fArr10[i18];
                                         if (dp > 0.0f) {
@@ -593,17 +593,17 @@ public final class f {
                                     }
                                 }
                             } else if (f42 < 0.35f) {
-                                x10 = 1.0f;
+                                y3 = 1.0f;
                                 if (isNaN && !rectF5.isEmpty()) {
                                     dp = (rectF5.top - AndroidUtilities.dp(56.0f)) - fArr10[i18];
                                     if (dp > 0.0f) {
                                         f24 = 1.0f;
-                                        x10 *= Math.max(0.0f, 1.0f - (dp / AndroidUtilities.dp(24.0f)));
+                                        y3 *= Math.max(0.0f, 1.0f - (dp / AndroidUtilities.dp(24.0f)));
                                         float f432 = f24 - f42;
                                         float f442 = fArr9[i18] * (f24 - ((f24 - (f432 * f432)) * (isNaN ? 0.35f : 0.85f)));
                                         if (bArr[i18] != 2) {
                                             paint4.setColor(-1);
-                                            float f45 = x10 * 255.0f;
+                                            float f45 = y3 * 255.0f;
                                             paint4.setAlpha((int) (f45 * 0.9f));
                                             canvas2.drawCircle(fArr11[i18], fArr10[i18], f442, paint4);
                                             paint4.setAlpha((int) (f45 * 0.22f));
@@ -625,7 +625,7 @@ public final class f {
                                                 f26 = Math.min(1.0f, Math.max(max3, Math.max(f48 - f49, Math.max(0.0f, f49 - rectF5.bottom))) / AndroidUtilities.dp(36.0f));
                                             }
                                             paint4.setColor(f26 > f25 ? k(f26, fVar.y, -1) : fVar.y);
-                                            paint4.setAlpha((int) (x10 * 255.0f));
+                                            paint4.setAlpha((int) (y3 * 255.0f));
                                             canvas2.save();
                                             canvas2.rotate(fArr4[i18], fArr11[i18], fArr10[i18]);
                                             float f50 = fArr11[i18];
@@ -637,7 +637,7 @@ public final class f {
                                             if (bArr[i18] == 1) {
                                                 float sin = (float) Math.sin(Math.min(1.0f, f42 * f17) * 3.141592653589793d);
                                                 paint4.setColor(-1);
-                                                paint4.setAlpha((int) (x10 * 200.0f * sin));
+                                                paint4.setAlpha((int) (y3 * 200.0f * sin));
                                                 canvas2.drawRoundRect(rectF, f53, f53, paint4);
                                             }
                                             canvas2.restore();
@@ -653,9 +653,9 @@ public final class f {
                                 if (bArr[i18] != 2) {
                                 }
                             } else {
-                                f23 = org.telegram.messenger.g0.x(f42, 0.35f, 0.65f, 1.0f);
+                                f23 = org.telegram.messenger.v0.y(f42, 0.35f, 0.65f, 1.0f);
                             }
-                            x10 = f23;
+                            y3 = f23;
                             if (isNaN) {
                             }
                             f24 = 1.0f;
@@ -735,7 +735,7 @@ public final class f {
                                     double d = radians;
                                     fArr8[i26] = (Math.min(1.0f, max4 / (f11 * 0.5f)) * Math.signum(f65) * nextFloat * 0.18f) + (((float) Math.sin(d)) * nextFloat);
                                     fArr7[i26] = (-((float) Math.cos(d))) * nextFloat;
-                                    fArr6[i26] = org.telegram.ui.Cells.c1.d(random, 0.06f, 0.24f);
+                                    fArr6[i26] = org.telegram.ui.Cells.b1.d(random, 0.06f, 0.24f);
                                     fArr5[i26] = (-(((eVar4.e - 1) - i23) / 4)) * 0.018f;
                                     fArr4[i26] = random.nextFloat() * 90.0f;
                                     fArr3[i26] = (random.nextFloat() - 0.5f) * 720.0f;
@@ -900,10 +900,10 @@ public final class f {
                                 }
                                 float nextFloat3 = (random.nextFloat() * AndroidUtilities.dp(150.0f)) + AndroidUtilities.dp(110.0f);
                                 float f85 = f83;
-                                float d10 = org.telegram.ui.Cells.c1.d(random, 0.35f, f69);
+                                float d10 = org.telegram.ui.Cells.b1.d(random, 0.35f, f69);
                                 fArr8[i39] = ((random.nextFloat() - 0.5f) * AndroidUtilities.dp(90.0f)) + (f85 * nextFloat3 * d10);
                                 fArr7[i39] = k3.D(1.0f, d10, nextFloat3, (f20 * nextFloat3) * d10) - AndroidUtilities.dp(30.0f);
-                                fArr6[i39] = org.telegram.ui.Cells.c1.d(random, 0.2f, f39);
+                                fArr6[i39] = org.telegram.ui.Cells.b1.d(random, 0.2f, f39);
                                 fArr5[i39] = 0.0f;
                                 fArr4[i39] = random.nextFloat() * 90.0f;
                                 fArr3[i39] = (random.nextFloat() - 0.5f) * 720.0f;
@@ -942,7 +942,7 @@ public final class f {
                         eVar3 = eVar;
                         float f92 = f90 + f88;
                         i14 = i28;
-                        n(fVar.L, fVar.M, fVar.P, i31, r4.c.c(f89, f72, f14, dpf2), r4.c.c(f90, f72, f15, dpf22), r4.c.c(f91, f72, f14, dpf2), r4.c.c(f92, f72, f15, dpf22), f89, f90, f91, f92, (((int) k3.B(min4, 0.25f, 1.0f, 255.0f)) << 24) | fVar.o());
+                        n(fVar.L, fVar.M, fVar.P, i31, si.o0.c(f89, f72, f14, dpf2), si.o0.c(f90, f72, f15, dpf22), si.o0.c(f91, f72, f14, dpf2), si.o0.c(f92, f72, f15, dpf22), f89, f90, f91, f92, (((int) k3.B(min4, 0.25f, 1.0f, 255.0f)) << 24) | fVar.o());
                         i31++;
                         i30 = i12 + 1;
                         eVar = eVar3;
@@ -984,7 +984,7 @@ public final class f {
                     int i44 = i42 * 4;
                     int i45 = iArr2[i44];
                     int i46 = iArr2[i44 + 1];
-                    float c10 = r4.c.c(eVar6.i[(i46 * eVar6.e) + i45], f93, (r6 - 1) - i46, 1.6f);
+                    float c10 = si.o0.c(eVar6.i[(i46 * eVar6.e) + i45], f93, (r6 - 1) - i46, 1.6f);
                     if (h10 <= c10) {
                         i11 = i41;
                         z12 = false;
@@ -1081,13 +1081,13 @@ public final class f {
         float f15;
         float f16;
         float f17;
-        float z10;
+        float x10;
         int i10;
         float f18;
         float f19;
         Paint paint;
         float f20;
-        float x10;
+        float y3;
         float f21 = f7;
         float f22 = f10;
         float f23 = f12;
@@ -1123,14 +1123,14 @@ public final class f {
                             float d = (f12 - ((eVar.i[i19] * 0.06f) + a1.g.d((float) Math.hypot(f29 - f27, f30 - f27), f28, 0.52f, f25))) / 0.367f;
                             if (d > 0.0f) {
                                 if (d >= 1.0f) {
-                                    z10 = 1.0f;
+                                    x10 = 1.0f;
                                 } else {
                                     float f31 = 1.0f - d;
-                                    z10 = org.telegram.ui.Cells.c1.z(f31, f31, f31, 1.0f);
+                                    x10 = org.telegram.ui.Cells.b1.x(f31, f31, f31, 1.0f);
                                 }
-                                float l4 = this.q == 2 ? (0.6f * z10) + 0.4f : l(d);
+                                float l4 = this.q == 2 ? (0.6f * x10) + 0.4f : l(d);
                                 if (this.q != 2) {
-                                    z10 = Math.min(1.0f, d * 6.0f);
+                                    x10 = Math.min(1.0f, d * 6.0f);
                                 }
                                 int i20 = eVar.j;
                                 if (i17 < i20 || i17 >= (i10 = eVar.k) || i16 < i20 || i16 >= i10) {
@@ -1158,7 +1158,7 @@ public final class f {
                                     float f41 = ((ceil2 - i22) / f38) * f26 * f34;
                                     f13 = f26;
                                     rectF.set(d10 - f40, d11 - f41, d10 + f40, d11 + f41);
-                                    paint2.setAlpha((int) (z10 * 255.0f));
+                                    paint2.setAlpha((int) (x10 * 255.0f));
                                     e eVar2 = this.n;
                                     canvas.drawBitmap(eVar.a, rect, rectF, paint2);
                                     paint2.setAlpha(255);
@@ -1235,7 +1235,7 @@ public final class f {
         float min = Math.min(1.0f, Math.max(0.0f, f23) / 0.1f);
         float f53 = eVar.f * 0.5f;
         float f54 = 1.0f;
-        boolean z11 = true;
+        boolean z10 = true;
         int i29 = 0;
         int i30 = 0;
         int i31 = 0;
@@ -1265,7 +1265,7 @@ public final class f {
                         n(this.L, this.M, this.P, i30, f57 - A, f58 - A, f57 + A, f58 + A, min2 * 48, eVar.d, r7 + 48, r5 + 48, (((int) (f60 * 255.0f)) << 24) | o());
                         i30++;
                     }
-                    z11 = false;
+                    z10 = false;
                 }
                 if (f59 > 0.0f) {
                     float f61 = i26;
@@ -1282,21 +1282,21 @@ public final class f {
             } else {
                 paint = paint3;
                 float f68 = (f54 - f19) * 0.2f;
-                boolean z12 = f19 < f54 ? false : z11;
+                boolean z11 = f19 < f54 ? false : z10;
                 if (f19 < 0.7f) {
                     f20 = f68;
-                    x10 = f54;
+                    y3 = f54;
                 } else {
                     f20 = f68;
-                    x10 = org.telegram.messenger.g0.x(f19, 0.7f, 0.3f, f54);
+                    y3 = org.telegram.messenger.v0.y(f19, 0.7f, 0.3f, f54);
                 }
-                float f69 = 0.9f * min * x10;
+                float f69 = 0.9f * min * y3;
                 if (f20 <= 0.01f || f69 <= 0.004f) {
-                    z11 = z12;
+                    z10 = z11;
                 } else {
                     float f70 = f53 * f52 * f20;
                     n(this.L, this.M, this.P, i30, f57 - f70, f58 - f70, f57 + f70, f58 + f70, 0.0f, eVar.d, 48.0f, r5 + 48, (((int) (f69 * 255.0f)) << 24) | o());
-                    z11 = z12;
+                    z10 = z11;
                     i30++;
                 }
             }
@@ -1307,8 +1307,8 @@ public final class f {
         }
         Paint paint4 = paint3;
         float max = 1.0f - Math.max(0.0f, Math.min(1.0f, (f12 - 0.05f) / 0.45f));
-        float z13 = org.telegram.ui.Cells.c1.z(max, max, max, 1.0f);
-        if (z13 > 0.0f) {
+        float x11 = org.telegram.ui.Cells.b1.x(max, max, max, 1.0f);
+        if (x11 > 0.0f) {
             int i32 = eVar.j;
             while (i32 < eVar.k) {
                 int i33 = eVar.j;
@@ -1319,22 +1319,22 @@ public final class f {
                         float f72 = eVar.f;
                         float f73 = (i33 * f72) + f71;
                         float f74 = (i32 * f72) + f71;
-                        f18 = z13;
+                        f18 = x11;
                         float f75 = f73 + f72;
                         float f76 = f74 + f72;
                         n(this.N, this.O, this.Q, i34, (f73 * f52) + f21, (f74 * f52) + f22, (f75 * f52) + f21, (f76 * f52) + f22, f73, f74, f75, f76, (((int) ((min * 255.0f) * f18)) << 24) | o());
                         i34++;
                     } else {
-                        f18 = z13;
+                        f18 = x11;
                     }
                     i33++;
-                    z13 = f18;
+                    x11 = f18;
                 }
                 i32++;
                 i31 = i34;
             }
         }
-        if (z11 && min >= 1.0f) {
+        if (z10 && min >= 1.0f) {
             rectF.set(f21, f22, f21 + f11, f22 + f11);
             canvas.drawBitmap(eVar.a, eVar.c, rectF, paint2);
             return;

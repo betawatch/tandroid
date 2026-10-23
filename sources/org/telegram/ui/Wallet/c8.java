@@ -2,37 +2,37 @@ package org.telegram.ui.Wallet;
 
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c8 implements Utilities.Callback {
     public final /* synthetic */ int a = 0;
-    public final /* synthetic */ h8 b;
+    public final /* synthetic */ i8 b;
     public final /* synthetic */ Utilities.Callback c;
-    public final /* synthetic */ q0 d;
-    public final /* synthetic */ m0 e;
+    public final /* synthetic */ p0 d;
+    public final /* synthetic */ l0 e;
 
-    public /* synthetic */ c8(h8 h8Var, Utilities.Callback callback, m0 m0Var, q0 q0Var) {
-        this.b = h8Var;
+    public /* synthetic */ c8(i8 i8Var, Utilities.Callback callback, l0 l0Var, p0 p0Var) {
+        this.b = i8Var;
         this.c = callback;
-        this.e = m0Var;
-        this.d = q0Var;
+        this.e = l0Var;
+        this.d = p0Var;
     }
 
     @Override // org.telegram.messenger.Utilities.Callback
     public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                h8.Y(this.b, this.c, this.e, this.d, (j0) obj);
+                i8.Y(this.b, this.c, this.e, this.d, (i0) obj);
                 break;
             default:
-                d0 d0Var = (d0) obj;
+                c0 c0Var = (c0) obj;
                 Utilities.Callback callback = this.c;
-                if (d0Var != null) {
-                    byte[] bArr = d0Var.c;
-                    q0 q0Var = this.d;
+                if (c0Var != null) {
+                    byte[] bArr = c0Var.c;
+                    p0 p0Var = this.d;
                     boolean z10 = false;
                     if (bArr == null) {
-                        byte[][] m10 = q0Var.m();
+                        byte[][] m10 = p0Var.m();
                         if (m10.length <= 0) {
                             callback.run("STORAGE_NO_PUBLIC_KEY");
                             break;
@@ -40,12 +40,12 @@ public final /* synthetic */ class c8 implements Utilities.Callback {
                             bArr = m10[0];
                         }
                     }
-                    if (!q0Var.f(bArr)) {
+                    if (!p0Var.f(bArr)) {
                         callback.run("STORAGE_OLD_PUBLIC_KEY");
                         break;
                     } else {
-                        c8 c8Var = new c8(this.b, callback, this.e, q0Var);
-                        q0.h.execute(new org.telegram.ui.Components.r2(q0Var, q0Var.l(), bArr == null ? "" : q0.o(bArr), z10, c8Var));
+                        c8 c8Var = new c8(this.b, callback, this.e, p0Var);
+                        p0.h.execute(new org.telegram.ui.Components.q2(p0Var, p0Var.l(), bArr == null ? "" : p0.o(bArr), z10, c8Var));
                         break;
                     }
                 } else {
@@ -55,10 +55,10 @@ public final /* synthetic */ class c8 implements Utilities.Callback {
         }
     }
 
-    public /* synthetic */ c8(h8 h8Var, Utilities.Callback callback, q0 q0Var, m0 m0Var) {
-        this.b = h8Var;
+    public /* synthetic */ c8(i8 i8Var, Utilities.Callback callback, p0 p0Var, l0 l0Var) {
+        this.b = i8Var;
         this.c = callback;
-        this.d = q0Var;
-        this.e = m0Var;
+        this.d = p0Var;
+        this.e = l0Var;
     }
 }

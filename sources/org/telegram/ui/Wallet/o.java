@@ -1,94 +1,154 @@
 package org.telegram.ui.Wallet;
 
+import android.text.TextUtils;
+import android.view.View;
 import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_wallet;
+import org.telegram.ui.Components.e71;
+import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o implements Utilities.Callback {
-    public final /* synthetic */ int a = 2;
+    public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
-    public final /* synthetic */ m0 c;
+    public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
 
-    public /* synthetic */ o(m0 m0Var, d0 d0Var, String str, Runnable runnable) {
-        this.c = m0Var;
-        this.d = d0Var;
-        this.b = str;
-        this.e = runnable;
+    public /* synthetic */ o(Object obj, Object obj2, Object obj3, int i10) {
+        this.a = i10;
+        this.b = obj;
+        this.c = obj2;
+        this.d = obj3;
     }
 
     @Override // org.telegram.messenger.Utilities.Callback
     public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                d0 d0Var = (d0) this.d;
-                String str = (String) this.b;
-                Runnable runnable = (Runnable) this.e;
-                m0 m0Var = this.c;
-                m0Var.getClass();
-                d0Var.c = (byte[]) obj;
-                if (m0Var.N.get(str) == d0Var) {
-                    m0Var.h0(d0Var);
-                    m0Var.J();
+                l0 l0Var = (l0) this.b;
+                Utilities.Callback2 callback2 = (Utilities.Callback2) this.c;
+                String str = (String) this.d;
+                byte[] bArr = (byte[]) obj;
+                l0Var.getClass();
+                if (bArr != null) {
+                    TL_wallet.walletUserAddress walletuseraddress = new TL_wallet.walletUserAddress();
+                    walletuseraddress.user_id = 0L;
+                    walletuseraddress.address = str;
+                    walletuseraddress.public_key = bArr;
+                    l0Var.M.put(str, walletuseraddress);
+                    callback2.run(walletuseraddress, null);
+                    break;
+                } else {
+                    callback2.run(null, null);
+                    break;
                 }
-                runnable.run();
-                return;
             case 1:
-                w7.U((w7) this.d, (String) this.b, this.c, (org.telegram.ui.ActionBar.n2) this.e, (String) obj);
-                return;
-            case 2:
-                h8 h8Var = (h8) this.d;
-                Utilities.Callback callback = (Utilities.Callback) this.b;
-                ArrayList arrayList = (ArrayList) this.e;
-                m0 m0Var2 = this.c;
+                e2 e2Var = (e2) this.b;
+                a2 a2Var = (a2) this.c;
+                ki.c cVar = (ki.c) this.d;
                 String str2 = (String) obj;
-                if (str2 != null) {
-                    callback.run(str2);
-                    return;
+                e2Var.getClass();
+                a2Var.p = !a2Var.n && !e2Var.i(a2Var) && e2Var.y(a2Var) && str2 == null;
+                cVar.run(null, str2);
+                break;
+            case 2:
+                e2 e2Var2 = (e2) this.b;
+                a2 a2Var2 = (a2) this.c;
+                Utilities.Callback callback = (Utilities.Callback) this.d;
+                String str3 = (String) obj;
+                e2Var2.getClass();
+                a2Var2.m = false;
+                if (a2Var2.r == null && e2Var2.g == a2Var2) {
+                    e2Var2.g = null;
                 }
-                j0 d = j0.d(arrayList);
-                try {
-                    m0Var2.B(true, false, d, new x(10, h8Var, callback));
-                    d.close();
-                    return;
-                } catch (Throwable th2) {
-                    try {
-                        d.close();
-                    } catch (Throwable th3) {
-                        th2.addSuppressed(th3);
+                callback.run(str3);
+                break;
+            case 3:
+                e2 e2Var3 = (e2) this.b;
+                TL_wallet.tonConnectSession tonconnectsession = (TL_wallet.tonConnectSession) this.c;
+                k kVar = (k) this.d;
+                e2Var3.getClass();
+                AndroidUtilities.runOnUIThread(new w6((Object) e2Var3, (Object) tonconnectsession, (String) obj, (Object) kVar, 7));
+                break;
+            case 4:
+                TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) this.b;
+                ci.s sVar = (ci.s) this.c;
+                TL_wallet.walletTransaction[] wallettransactionArr = (TL_wallet.walletTransaction[]) this.d;
+                TL_wallet.walletTransaction wallettransaction2 = (TL_wallet.walletTransaction) obj;
+                if (wallettransaction2 != null) {
+                    wallettransaction2.incoming = wallettransaction.incoming;
+                    wallettransaction2.peer = wallettransaction.peer;
+                    wallettransactionArr[0] = wallettransaction2;
+                    sVar.run(wallettransaction2);
+                    break;
+                }
+                break;
+            case 5:
+                ei.d dVar = (ei.d) this.b;
+                j2[] j2VarArr = (j2[]) this.c;
+                org.telegram.ui.ActionBar.g6 g6Var = (org.telegram.ui.ActionBar.g6) this.d;
+                String str4 = (String) obj;
+                dVar.setLoading(false);
+                if (!TextUtils.isEmpty(str4)) {
+                    new xc(j2VarArr[0].topBulletinContainer, g6Var).e0(str4, false);
+                    break;
+                } else {
+                    j2VarArr[0].dismiss();
+                    break;
+                }
+            case 6:
+                i8 i8Var = (i8) this.c;
+                l0 l0Var2 = (l0) this.b;
+                l0Var2.j0(new e2.o0((Object) l0Var2, (Object) new n(i8Var, (Utilities.Callback) obj, (ArrayList) this.d, l0Var2), true, false, 3));
+                break;
+            case 7:
+                s9 s9Var = (s9) this.c;
+                l0 l0Var3 = (l0) this.b;
+                TLRPC.User user = (TLRPC.User) this.d;
+                String str5 = (String) obj;
+                if (!s9Var.n) {
+                    if (!TextUtils.isEmpty(str5) && l0.a(s9Var.e, l0Var3.s())) {
+                        b0 b0Var = new b0(l0Var3, str5, s9Var.d, null, new p(s9Var, l0Var3, user, str5));
+                        l0Var3.j0(b0Var);
+                        s9Var.h = new m(b0Var, 1);
+                        break;
+                    } else {
+                        s9Var.f = false;
+                        s9Var.Y.setLoading(false);
+                        xc.a0(s9Var).e0(TextUtils.isEmpty(str5) ? LocaleController.getString(R.string.WalletRecipientUnavailable) : "WALLET_CHANGED", false);
+                        break;
                     }
-                    throw th2;
                 }
+                break;
+            case 8:
+                ((org.telegram.ui.Cells.i6) ((View) obj)).t((TLRPC.User) this.b, null, (CharSequence) this.c, (CharSequence) this.d, false, false);
+                break;
             default:
-                h8 h8Var2 = (h8) this.d;
-                String str3 = (String) this.b;
-                q0 q0Var = (q0) this.e;
-                m0 m0Var3 = this.c;
-                m0Var3.t(str3, new c8(h8Var2, (Utilities.Callback) obj, q0Var, m0Var3));
-                return;
+                ei.d dVar2 = (ei.d) this.b;
+                j2 j2Var = (j2) this.c;
+                org.telegram.ui.ActionBar.g6 g6Var2 = (org.telegram.ui.ActionBar.g6) this.d;
+                String str6 = (String) obj;
+                dVar2.setLoading(false);
+                if (str6 != null) {
+                    xc.c0(str6, j2Var.topBulletinContainer, g6Var2);
+                    break;
+                } else {
+                    j2Var.dismiss();
+                    break;
+                }
         }
     }
 
-    public /* synthetic */ o(w7 w7Var, String str, m0 m0Var, org.telegram.ui.ActionBar.n2 n2Var) {
-        this.d = w7Var;
-        this.b = str;
-        this.c = m0Var;
-        this.e = n2Var;
-    }
-
-    public /* synthetic */ o(h8 h8Var, Utilities.Callback callback, ArrayList arrayList, m0 m0Var) {
-        this.d = h8Var;
-        this.b = callback;
-        this.e = arrayList;
-        this.c = m0Var;
-    }
-
-    public /* synthetic */ o(h8 h8Var, m0 m0Var, String str, q0 q0Var) {
-        this.d = h8Var;
-        this.c = m0Var;
-        this.b = str;
-        this.e = q0Var;
+    public /* synthetic */ o(e71 e71Var, l0 l0Var, Object obj, int i10) {
+        this.a = i10;
+        this.c = e71Var;
+        this.b = l0Var;
+        this.d = obj;
     }
 }

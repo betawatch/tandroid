@@ -1,68 +1,103 @@
 package org.telegram.ui;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class r41 extends FrameLayout {
-    public final Path a;
-    public final Paint b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.d6 e;
-    public final /* synthetic */ Integer f;
-    public final /* synthetic */ x51 h;
+public final class r41 implements org.telegram.ui.Components.dm0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.g6 c;
+    public final /* synthetic */ Integer d;
+    public final /* synthetic */ b61 e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r41(x51 x51Var, Context context, boolean z10, boolean z11, org.telegram.ui.ActionBar.d6 d6Var, Integer num) {
-        super(context);
-        this.h = x51Var;
-        this.c = z10;
-        this.d = z11;
-        this.e = d6Var;
-        this.f = num;
-        this.a = new Path();
-        this.b = new Paint(1);
+    public r41(b61 b61Var, int i10, Context context, org.telegram.ui.ActionBar.g6 g6Var, Integer num) {
+        this.e = b61Var;
+        this.a = i10;
+        this.b = context;
+        this.c = g6Var;
+        this.d = num;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        x51 x51Var = this.h;
-        if (!x51Var.Q0) {
-            super.dispatchDraw(canvas);
-            return;
+    @Override // org.telegram.ui.Components.dm0
+    public final boolean c(float f7, float f10, int i10, View view) {
+        b61 b61Var = this.e;
+        int i11 = b61Var.V;
+        int i12 = this.a;
+        if (i12 != 11 && i12 != 13 && b61Var.h1) {
+            boolean z10 = view instanceof k51;
+            if (z10 && (i12 == 1 || i12 == 8)) {
+                b61Var.l();
+                try {
+                    b61Var.performHapticFeedback(0);
+                } catch (Exception unused) {
+                }
+                k51 k51Var = (k51) view;
+                if (!k51Var.s && !UserConfig.getInstance(i11).isPremium()) {
+                    org.telegram.ui.Components.a6 a6Var = k51Var.e;
+                    TLRPC.Document document = a6Var.document;
+                    if (document == null) {
+                        document = org.telegram.ui.Components.r5.f(i11, a6Var.documentId);
+                    }
+                    b61Var.p(k51Var, Long.valueOf(k51Var.e.documentId), document, k51Var.v, null);
+                    return true;
+                }
+                b61Var.S0 = k51Var;
+                b61Var.U0 = 0.0f;
+                b61Var.T0 = false;
+                if (k51Var.s) {
+                    b61Var.setBigReactionAnimatedEmoji(null);
+                    TLRPC.TL_availableReaction tL_availableReaction = MediaDataController.getInstance(i11).getReactionsMap().get(b61Var.S0.x.f);
+                    if (tL_availableReaction != null) {
+                        b61Var.V0.setImage(ImageLocation.getForDocument(tL_availableReaction.select_animation), "60_60_pcache", null, null, null, 0L, "tgs", b61Var.S0.x, 0);
+                    }
+                } else {
+                    b61Var.setBigReactionAnimatedEmoji(new org.telegram.ui.Components.r5(4, i11, b61Var.S0.e.documentId));
+                }
+                b61Var.h0.invalidate();
+                b61Var.m();
+                return true;
+            }
+            if (z10) {
+                k51 k51Var2 = (k51) view;
+                if (k51Var2.e != null && (i12 == 0 || i12 == 12 || i12 == 9 || i12 == 10)) {
+                    TL_stars.TL_starGiftUnique tL_starGiftUnique = k51Var2.v;
+                    q41 q41Var = new q41(this, this.b, b61Var.U1, b61Var, k51Var2, this.c, view, tL_starGiftUnique);
+                    b61Var.X0 = q41Var;
+                    q41Var.show();
+                    try {
+                        view.performHapticFeedback(0, 1);
+                    } catch (Exception unused2) {
+                    }
+                    return true;
+                }
+            }
         }
-        if (!this.c) {
-            super.dispatchDraw(canvas);
-            return;
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.dm0
+    public final void h() {
+        b61 b61Var = this.e;
+        if (b61Var.S0 != null) {
+            b61Var.T0 = true;
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(b61Var.U0, 0.0f);
+            ofFloat.addUpdateListener(new g11(this, 6));
+            ofFloat.addListener(new v70(this, 25));
+            ofFloat.setDuration(150L);
+            ofFloat.setInterpolator(org.telegram.ui.Components.bs.f);
+            ofFloat.start();
         }
-        canvas.save();
-        boolean z10 = this.d;
-        Paint paint = this.b;
-        if (z10) {
-            org.telegram.ui.ActionBar.h6.m(paint);
-        }
-        paint.setColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.G8, this.e));
-        paint.setAlpha((int) (getAlpha() * 255.0f));
-        float width = (this.f == null ? getWidth() / 2.0f : r1.intValue()) + AndroidUtilities.dp(20.0f);
-        float width2 = (getWidth() - getPaddingLeft()) - getPaddingRight();
-        float height = (getHeight() - getPaddingBottom()) - getPaddingTop();
-        if (x51Var.n()) {
-            AndroidUtilities.rectTmp.set((width - (x51Var.a1 * width)) + getPaddingLeft(), com.google.android.gms.internal.play_billing.k3.y(1.0f, x51Var.b1, height, getPaddingTop()), ((width2 - width) * x51Var.a1) + getPaddingLeft() + width, getPaddingTop() + height);
-        } else {
-            AndroidUtilities.rectTmp.set((width - (x51Var.a1 * width)) + getPaddingLeft(), getPaddingTop(), ((width2 - width) * x51Var.a1) + getPaddingLeft() + width, (height * x51Var.b1) + getPaddingTop());
-        }
-        Path path = this.a;
-        path.rewind();
-        path.addRoundRect(AndroidUtilities.rectTmp, AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), Path.Direction.CW);
-        canvas.drawPath(path, paint);
-        canvas.clipPath(path);
-        super.dispatchDraw(canvas);
-        canvas.restore();
+    }
+
+    @Override // org.telegram.ui.Components.dm0
+    public final /* synthetic */ void o(float f7) {
     }
 }

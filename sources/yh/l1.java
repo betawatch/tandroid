@@ -1,6 +1,6 @@
 package yh;
 
-import ai.de;
+import ai.ee;
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
 import android.graphics.Paint;
@@ -11,17 +11,17 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import org.telegram.messenger.LiteMode;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class l1 extends Drawable {
     public final int a;
     public final RectF b;
     public final Path c;
     public final Paint d;
-    public final de e;
+    public final ee e;
     public boolean f;
     public tg.p g;
-    public ig.l0 h;
+    public ig.k0 h;
     public boolean i;
 
     public l1(int i10) {
@@ -50,15 +50,15 @@ public final class l1 extends Drawable {
         Paint paint = this.d;
         Path path = this.c;
         canvas.drawPath(path, paint);
-        de deVar = this.e;
-        if (deVar != null) {
+        ee eeVar = this.e;
+        if (eeVar != null) {
             if (this.f || !this.i) {
                 canvas.save();
                 canvas.clipPath(path);
                 if (this.g == null) {
-                    deVar.d();
+                    eeVar.d();
                 }
-                deVar.a(canvas, this.a);
+                eeVar.a(canvas, this.a);
                 canvas.restore();
                 if (this.g == null) {
                     invalidateSelf();
@@ -81,9 +81,9 @@ public final class l1 extends Drawable {
         Path path = this.c;
         path.rewind();
         path.addRoundRect(rectF, min, min, Path.Direction.CW);
-        de deVar = this.e;
-        if (deVar != null) {
-            deVar.g(rectF);
+        ee eeVar = this.e;
+        if (eeVar != null) {
+            eeVar.g(rectF);
         }
     }
 
@@ -105,7 +105,7 @@ public final class l1 extends Drawable {
         this.a = i10;
         paint.setColor(i11);
         if (Build.VERSION.SDK_INT >= 29) {
-            this.e = new de(1, 25);
+            this.e = new ee(1, 25);
         } else {
             this.e = null;
         }

@@ -1,38 +1,39 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.view.View;
-import android.view.ViewGroup;
-import org.telegram.messenger.AndroidUtilities;
+import android.animation.AnimatorSet;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class ok extends vu0 {
-    public ok(ViewGroup viewGroup, ViewGroup viewGroup2) {
-        super(viewGroup, viewGroup2);
+public final class ok implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ sn b;
+
+    public /* synthetic */ ok(sn snVar, int i10) {
+        this.a = i10;
+        this.b = snVar;
     }
 
-    @Override // org.telegram.ui.vu0
-    public final void c(Canvas canvas, float f7, float f10, float f11, float f12, float f13) {
-        if (f7 > 0.0f) {
-            View view = this.e;
-            if (view instanceof org.telegram.ui.Cells.u1) {
-                org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) view;
-                int max = (int) Math.max(f12, f11);
-                int min = (int) Math.min(f13, u1Var.getMeasuredHeight() + f11);
-                RectF rectF = AndroidUtilities.rectTmp;
-                rectF.set(f10, max, u1Var.getMeasuredWidth() + f10, min);
-                canvas.saveLayerAlpha(rectF, (int) (f7 * 255.0f), 31);
-                canvas.translate(f10, f11 + u1Var.getPaddingTop());
-                u1Var.Ed = true;
-                u1Var.Y1(canvas);
-                if (u1Var.f4() && u1Var.getCurrentMessagesGroup() == null) {
-                    u1Var.m2(1.0f, canvas, false);
+    @Override // java.lang.Runnable
+    public final void run() {
+        org.telegram.ui.Components.ch chVar;
+        FrameLayout frameLayout;
+        switch (this.a) {
+            case 0:
+                sn snVar = this.b;
+                AnimatorSet animatorSet = snVar.ha;
+                if (animatorSet != null && !animatorSet.isRunning()) {
+                    snVar.ha.start();
+                    break;
                 }
-                u1Var.Ed = false;
-                canvas.restore();
-            }
+                break;
+            default:
+                sn snVar2 = this.b;
+                if (snVar2.a3 == this && (chVar = snVar2.Y0) != null && (frameLayout = snVar2.Z2) != null) {
+                    chVar.i(frameLayout, false, true);
+                    break;
+                }
+                break;
         }
     }
 }

@@ -10,9 +10,8 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
-import ug.r;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public class ChannelBoostsController {
     public static final int BOOSTS_FOR_LEVEL_1 = 1;
@@ -21,7 +20,7 @@ public class ChannelBoostsController {
     private final int currentAccount;
     private final MessagesController messagesController;
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public static class CanApplyBoost {
         public boolean alreadyActive;
         public int boostCount = 0;
@@ -115,7 +114,7 @@ public class ChannelBoostsController {
                     this.canApply = true;
                 } else if (arrayList3.size() >= 1) {
                     this.needSelector = true;
-                    if (!r.i()) {
+                    if (!ug.q.i()) {
                         TL_stories.TL_myBoost tL_myBoost7 = (TL_stories.TL_myBoost) arrayList3.get(0);
                         this.replaceDialogId = DialogObject.getPeerDialogId(tL_myBoost7.peer);
                         this.slot = tL_myBoost7.slot;
@@ -145,23 +144,23 @@ public class ChannelBoostsController {
             callback.run((TL_stories.TL_premium_boostsStatus) tLObject);
             return;
         }
-        org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
+        org.telegram.ui.ActionBar.o2 R = LaunchActivity.R();
         if (tL_error == null || R == null || !"CHANNEL_PRIVATE".equals(tL_error.text)) {
             org.telegram.ui.Components.xc.X().f0(tL_error, false);
         } else {
-            LaunchActivity launchActivity = LaunchActivity.H1;
+            LaunchActivity launchActivity = LaunchActivity.J1;
             if (launchActivity == null || !launchActivity.isFinishing()) {
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(R.getContext(), 0, R.getResourceProvider());
                 alertDialog$Builder.a.R = LocaleController.getString(R.string.AppName);
                 HashMap hashMap = new HashMap();
-                int i10 = org.telegram.ui.ActionBar.h6.L5;
-                hashMap.put("info1", Integer.valueOf(org.telegram.ui.ActionBar.h6.x0(null, i10, false)));
-                hashMap.put("info2", Integer.valueOf(org.telegram.ui.ActionBar.h6.x0(null, i10, false)));
-                alertDialog$Builder.m(R.raw.not_available, 52, org.telegram.ui.ActionBar.h6.x0(null, i10, false), hashMap);
+                int i10 = org.telegram.ui.ActionBar.k6.L5;
+                hashMap.put("info1", Integer.valueOf(org.telegram.ui.ActionBar.k6.x0(null, i10, false)));
+                hashMap.put("info2", Integer.valueOf(org.telegram.ui.ActionBar.k6.x0(null, i10, false)));
+                alertDialog$Builder.m(R.raw.not_available, 52, org.telegram.ui.ActionBar.k6.x0(null, i10, false), hashMap);
                 alertDialog$Builder.a.W = true;
                 alertDialog$Builder.a.R = LocaleController.getString(R.string.ChannelPrivate);
                 alertDialog$Builder.a.T = LocaleController.getString(R.string.ChannelCantOpenPrivate2);
-                g0.p(R.string.Close, alertDialog$Builder, null);
+                v0.o(R.string.Close, alertDialog$Builder, null);
             }
         }
         callback.run(null);
@@ -169,7 +168,7 @@ public class ChannelBoostsController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$getBoostsStats$1(Utilities.Callback callback, TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new h0(tLObject, callback, tL_error, 12));
+        AndroidUtilities.runOnUIThread(new g0(tLObject, callback, tL_error, 12));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -191,13 +190,13 @@ public class ChannelBoostsController {
     }
 
     public void applyBoost(long j10, int i10, Utilities.Callback<TL_stories.TL_premium_myBoosts> callback, Utilities.Callback<TLRPC.TL_error> callback2) {
-        r.a(-j10, Arrays.asList(Integer.valueOf(i10)), callback, callback2);
+        ug.q.a(-j10, Arrays.asList(Integer.valueOf(i10)), callback, callback2);
     }
 
     public void getBoostsStats(long j10, Utilities.Callback<TL_stories.TL_premium_boostsStatus> callback) {
         TL_stories.TL_premium_getBoostsStatus tL_premium_getBoostsStatus = new TL_stories.TL_premium_getBoostsStatus();
         tL_premium_getBoostsStatus.peer = this.messagesController.getInputPeer(j10);
-        this.connectionsManager.sendRequest(tL_premium_getBoostsStatus, new v0(0, callback));
+        this.connectionsManager.sendRequest(tL_premium_getBoostsStatus, new u0(0, callback));
     }
 
     public void userCanBoostChannel(long j10, TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus, Utilities.Callback<CanApplyBoost> callback) {

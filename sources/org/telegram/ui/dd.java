@@ -1,8 +1,13 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class dd implements Runnable {
+public final /* synthetic */ class dd implements RequestDelegate {
     public final /* synthetic */ int a;
     public final /* synthetic */ md b;
 
@@ -11,38 +16,23 @@ public final /* synthetic */ class dd implements Runnable {
         this.b = mdVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                md mdVar = this.b;
-                mdVar.j0 = true;
-                mdVar.h0();
+                AndroidUtilities.runOnUIThread(new h0(19, this.b, tLObject));
                 break;
             case 1:
-                md mdVar2 = this.b;
-                mdVar2.x = null;
-                mdVar2.y = null;
-                mdVar2.l0 = null;
-                mdVar2.m0 = null;
-                mdVar2.o0 = null;
-                mdVar2.n0 = null;
-                mdVar2.p0 = 0.0d;
-                mdVar2.e0(false, true);
-                mdVar2.e.h(null, null, mdVar2.s, null);
-                mdVar2.h.setAnimation(mdVar2.J);
-                mdVar2.J.M(0);
+                AndroidUtilities.runOnUIThread(new h0(17, this.b, tL_error));
                 break;
             case 2:
-                this.b.g0(true);
+                if (tLObject instanceof TLRPC.TL_boolTrue) {
+                    AndroidUtilities.runOnUIThread(new cd(this.b, 3));
+                    break;
+                }
                 break;
             default:
-                md mdVar3 = this.b;
-                mdVar3.j0 = true;
-                if (mdVar3.w.length() > 0) {
-                    mdVar3.d0(mdVar3.w.getText().toString());
-                }
-                mdVar3.h0();
+                AndroidUtilities.runOnUIThread(new s1(this.b, tL_error, tLObject, 11));
                 break;
         }
     }

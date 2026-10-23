@@ -1,101 +1,67 @@
 package org.telegram.ui;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.content.Context;
-import android.graphics.Rect;
-import android.os.Build;
-import android.util.Property;
-import android.view.View;
-import android.widget.ScrollView;
-import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class uf1 extends ScrollView {
-    public final int[] a;
-    public final Rect b;
-    public boolean c;
-    public final /* synthetic */ vf1 d;
+public final /* synthetic */ class uf1 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ bg1 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public uf1(vf1 vf1Var, Context context) {
-        super(context);
-        this.d = vf1Var;
-        this.a = new int[2];
-        this.b = new Rect();
-        this.c = true;
+    public /* synthetic */ uf1(bg1 bg1Var, int i10) {
+        this.a = i10;
+        this.b = bg1Var;
     }
 
-    @Override // android.widget.ScrollView, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        this.c = false;
-        super.onLayout(z10, i10, i11, i12, i13);
-    }
-
-    @Override // android.view.View
-    public final void onScrollChanged(int i10, int i11, int i12, int i13) {
-        org.telegram.ui.ActionBar.k kVar;
-        org.telegram.ui.ActionBar.k kVar2;
-        super.onScrollChanged(i10, i11, i12, i13);
-        vf1 vf1Var = this.d;
-        TextView textView = vf1Var.c;
-        if (textView == null) {
-            return;
-        }
-        int[] iArr = this.a;
-        textView.getLocationOnScreen(iArr);
-        int measuredHeight = vf1Var.c.getMeasuredHeight() + iArr[1];
-        kVar = ((org.telegram.ui.ActionBar.n2) vf1Var).actionBar;
-        boolean z10 = measuredHeight < kVar.getBottom();
-        if (z10 != (vf1Var.c.getTag() == null)) {
-            vf1Var.c.setTag(z10 ? null : 1);
-            AnimatorSet animatorSet = vf1Var.K;
-            if (animatorSet != null) {
-                animatorSet.cancel();
-                vf1Var.K = null;
-            }
-            AnimatorSet animatorSet2 = new AnimatorSet();
-            vf1Var.K = animatorSet2;
-            ei.g6 g6Var = vf1Var.y;
-            float[] fArr = {z10 ? 1.0f : 0.0f};
-            Property property = View.ALPHA;
-            ObjectAnimator ofFloat = ObjectAnimator.ofFloat(g6Var, (Property<ei.g6, Float>) property, fArr);
-            kVar2 = ((org.telegram.ui.ActionBar.n2) vf1Var).actionBar;
-            animatorSet2.playTogether(ofFloat, ObjectAnimator.ofFloat(kVar2.getTitleTextView(), (Property<org.telegram.ui.ActionBar.j5, Float>) property, z10 ? 1.0f : 0.0f));
-            vf1Var.K.setDuration(150L);
-            vf1Var.K.addListener(new tf1(this, 0));
-            vf1Var.K.start();
-        }
-    }
-
-    @Override // android.widget.ScrollView, android.view.ViewGroup, android.view.ViewParent
-    public final void requestChildFocus(View view, View view2) {
-        if (Build.VERSION.SDK_INT < 29 && view2 != null && !this.c) {
-            scrollToDescendant(view2);
-        }
-        super.requestChildFocus(view, view2);
-    }
-
-    @Override // android.widget.ScrollView, android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        this.c = true;
-        super.requestLayout();
-    }
-
-    @Override // android.widget.ScrollView
-    public final void scrollToDescendant(View view) {
-        Rect rect = this.b;
-        view.getDrawingRect(rect);
-        offsetDescendantRectToMyCoords(view, rect);
-        rect.bottom = AndroidUtilities.dp(120.0f) + rect.bottom;
-        int computeScrollDeltaToGetChildRectOnScreen = computeScrollDeltaToGetChildRectOnScreen(rect);
-        if (computeScrollDeltaToGetChildRectOnScreen < 0) {
-            computeScrollDeltaToGetChildRectOnScreen -= (getMeasuredHeight() - view.getMeasuredHeight()) / 2;
-        }
-        if (computeScrollDeltaToGetChildRectOnScreen != 0) {
-            smoothScrollBy(0, computeScrollDeltaToGetChildRectOnScreen);
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                final int i10 = 0;
+                final bg1 bg1Var = this.b;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.wf1
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i10) {
+                            case 0:
+                                bg1.b0(bg1Var, tL_error, tLObject);
+                                break;
+                            default:
+                                bg1.h0(bg1Var, tL_error, tLObject);
+                                break;
+                        }
+                    }
+                });
+                break;
+            case 1:
+                AndroidUtilities.runOnUIThread(new xf1(this.b, tL_error, 0));
+                break;
+            case 2:
+                AndroidUtilities.runOnUIThread(new xf1(this.b, tL_error, 1));
+                break;
+            case 3:
+                AndroidUtilities.runOnUIThread(new xf1(this.b, tL_error, 2));
+                break;
+            default:
+                final int i11 = 1;
+                final bg1 bg1Var2 = this.b;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.wf1
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i11) {
+                            case 0:
+                                bg1.b0(bg1Var2, tL_error, tLObject);
+                                break;
+                            default:
+                                bg1.h0(bg1Var2, tL_error, tLObject);
+                                break;
+                        }
+                    }
+                });
+                break;
         }
     }
 }

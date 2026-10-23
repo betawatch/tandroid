@@ -10,11 +10,11 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.CheckBoxBase;
-import org.telegram.ui.Components.i80;
+import org.telegram.ui.Components.j80;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t5 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -42,10 +42,10 @@ public final /* synthetic */ class t5 implements View.OnClickListener {
                         boolean z11 = aVar2.f;
                         w3 w3Var = ((e3) z5Var).a;
                         aVar2.f = z11;
-                        h2 h2Var = w3Var.H3;
+                        h2 h2Var = w3Var.K3;
                         if (h2Var != null) {
                             h2Var.d();
-                            w3Var.H3.h();
+                            w3Var.K3.h();
                             break;
                         }
                     }
@@ -61,8 +61,8 @@ public final /* synthetic */ class t5 implements View.OnClickListener {
                         ArrayList arrayList = new ArrayList(set);
                         Collections.sort(arrayList);
                         TL_iv.pageBlockPreformatted pageblockpreformatted = (TL_iv.pageBlockPreformatted) aVar3.b;
-                        i80 M = w3Var2.f3.M(view);
-                        M.W(h6.c0(AndroidUtilities.dp(3.0f), h6.w0(h6.d6, w3Var2.e3)));
+                        j80 M = w3Var2.i3.M(view);
+                        M.W(k6.c0(AndroidUtilities.dp(3.0f), k6.w0(k6.d6, w3Var2.h3)));
                         M.Z = true;
                         M.X = AndroidUtilities.dp(350.0f);
                         M.i(new o2(w3Var2, aVar3, 25), LocaleController.getString(R.string.ArticleNone), TextUtils.isEmpty(pageblockpreformatted.language));
@@ -76,7 +76,7 @@ public final /* synthetic */ class t5 implements View.OnClickListener {
                             Object obj = arrayList.get(i10);
                             i10++;
                             String str = (String) obj;
-                            M.i(new ig.e2(w3Var2, aVar3, str, 5), MessageObject.TextLayoutBlock.capitalizeLanguage(str), TextUtils.equals(str, pageblockpreformatted.language));
+                            M.i(new ig.d2(w3Var2, aVar3, str, 5), MessageObject.TextLayoutBlock.capitalizeLanguage(str), TextUtils.equals(str, pageblockpreformatted.language));
                         }
                         M.Z();
                         break;

@@ -5,29 +5,28 @@ import b2.v;
 import b2.v0;
 import b2.w;
 import b2.w0;
-import c3.a0;
-import c3.l0;
+import c3.c0;
+import c3.n0;
 import e0.f0;
 import e2.x;
-import e9.n0;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class j extends i {
     public f0 n;
     public int o;
     public boolean p;
-    public a0 q;
-    public l0 r;
+    public c0 q;
+    public n0 r;
 
     @Override // x3.i
     public final void a(long j10) {
         this.g = j10;
         this.p = j10 != 0;
-        a0 a0Var = this.q;
-        this.o = a0Var != null ? a0Var.e : 0;
+        c0 c0Var = this.q;
+        this.o = c0Var != null ? c0Var.e : 0;
     }
 
     @Override // x3.i
@@ -39,8 +38,8 @@ public final class j extends i {
         f0 f0Var = this.n;
         f0Var.getClass();
         int i10 = f0Var.b;
-        a0 a0Var = (a0) f0Var.c;
-        int i11 = !((bi.a[]) f0Var.f)[(b10 >> 1) & (255 >>> (8 - i10))].a ? a0Var.e : a0Var.f;
+        c0 c0Var = (c0) f0Var.c;
+        int i11 = !((bi.a[]) f0Var.f)[(b10 >> 1) & (255 >>> (8 - i10))].a ? c0Var.e : c0Var.f;
         long j10 = this.p ? (this.o + i11) / 4 : 0;
         byte[] bArr = xVar.a;
         int length = bArr.length;
@@ -70,9 +69,9 @@ public final class j extends i {
             ((w) eVar.b).getClass();
             return false;
         }
-        a0 a0Var = this.q;
+        c0 c0Var = this.q;
         int i10 = 4;
-        if (a0Var == null) {
+        if (c0Var == null) {
             c3.b.w(1, xVar, false);
             xVar.s();
             int A = xVar.A();
@@ -89,24 +88,24 @@ public final class j extends i {
             int pow2 = (int) Math.pow(2.0d, (A2 & 240) >> 4);
             xVar.A();
             ?? copyOf = Arrays.copyOf(xVar.a, xVar.c);
-            a0 a0Var2 = new a0();
-            a0Var2.a = A;
-            a0Var2.b = s10;
-            a0Var2.c = o10;
-            a0Var2.d = i11;
-            a0Var2.e = pow;
-            a0Var2.f = pow2;
-            a0Var2.g = copyOf;
-            this.q = a0Var2;
+            c0 c0Var2 = new c0();
+            c0Var2.a = A;
+            c0Var2.b = s10;
+            c0Var2.c = o10;
+            c0Var2.d = i11;
+            c0Var2.e = pow;
+            c0Var2.f = pow2;
+            c0Var2.g = copyOf;
+            this.q = c0Var2;
         } else {
-            l0 l0Var = this.r;
-            if (l0Var == null) {
+            n0 n0Var = this.r;
+            if (n0Var == null) {
                 this.r = c3.b.u(xVar, true, true);
             } else {
                 int i12 = xVar.c;
                 byte[] bArr = new byte[i12];
                 System.arraycopy(xVar.a, 0, bArr, 0, i12);
-                int i13 = a0Var.a;
+                int i13 = c0Var.a;
                 int i14 = 5;
                 c3.b.w(5, xVar, false);
                 int A3 = xVar.A() + 1;
@@ -334,7 +333,7 @@ public final class j extends i {
                                     i56++;
                                     g28 >>>= 1;
                                 }
-                                f0Var = new f0(a0Var, l0Var, bArr, aVarArr, i56);
+                                f0Var = new f0(c0Var, n0Var, bArr, aVarArr, i56);
                             }
                         }
                     }
@@ -346,18 +345,18 @@ public final class j extends i {
         if (f0Var == null) {
             return true;
         }
-        a0 a0Var3 = (a0) f0Var.c;
+        c0 c0Var3 = (c0) f0Var.c;
         ArrayList arrayList = new ArrayList();
-        arrayList.add((byte[]) a0Var3.g);
+        arrayList.add((byte[]) c0Var3.g);
         arrayList.add((byte[]) f0Var.e);
-        t0 r10 = c3.b.r(n0.v(((l0) f0Var.d).a));
+        t0 r10 = c3.b.r(e9.n0.v(((n0) f0Var.d).a));
         v vVar = new v();
         vVar.q = v0.n("audio/ogg");
         vVar.r = v0.n("audio/vorbis");
-        vVar.h = a0Var3.d;
-        vVar.i = a0Var3.c;
-        vVar.J = a0Var3.a;
-        vVar.K = a0Var3.b;
+        vVar.h = c0Var3.d;
+        vVar.i = c0Var3.c;
+        vVar.J = c0Var3.a;
+        vVar.K = c0Var3.b;
         vVar.u = arrayList;
         vVar.k = r10;
         eVar.b = new w(vVar);

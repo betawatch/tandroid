@@ -1,13 +1,25 @@
 package org.telegram.ui.Components;
 
-import android.widget.TextView;
-import org.telegram.messenger.Emoji;
+import android.app.Activity;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class m3 extends TextView {
-    @Override // android.widget.TextView
-    public final void setText(CharSequence charSequence, TextView.BufferType bufferType) {
-        super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), false), bufferType);
+public final class m3 extends FrameLayout {
+    public final /* synthetic */ org.telegram.ui.Cells.z1[] a;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public m3(Activity activity, org.telegram.ui.Cells.z1[] z1VarArr) {
+        super(activity);
+        this.a = z1VarArr;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        org.telegram.ui.Cells.z1[] z1VarArr = this.a;
+        if (z1VarArr[0] != null) {
+            setMeasuredDimension(getMeasuredWidth(), z1VarArr[0].getMeasuredHeight() + getMeasuredHeight());
+        }
     }
 }

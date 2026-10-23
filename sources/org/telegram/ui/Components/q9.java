@@ -3,19 +3,19 @@ package org.telegram.ui.Components;
 import android.graphics.Bitmap;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q9 implements u9 {
     public final /* synthetic */ v9 a;
     public final /* synthetic */ w7.w5[] b;
     public final /* synthetic */ Runnable[] c;
-    public final /* synthetic */ t60[] d;
+    public final /* synthetic */ u60[] d;
 
-    public /* synthetic */ q9(v9 v9Var, w7.w5[] w5VarArr, Runnable[] runnableArr, t60[] t60VarArr) {
+    public /* synthetic */ q9(v9 v9Var, w7.w5[] w5VarArr, Runnable[] runnableArr, u60[] u60VarArr) {
         this.a = v9Var;
         this.b = w5VarArr;
         this.c = runnableArr;
-        this.d = t60VarArr;
+        this.d = u60VarArr;
     }
 
     @Override // org.telegram.ui.Components.u9
@@ -23,15 +23,15 @@ public final /* synthetic */ class q9 implements u9 {
         v9 v9Var = this.a;
         w7.w5[] w5VarArr = this.b;
         Runnable[] runnableArr = this.c;
-        t60[] t60VarArr = this.d;
+        u60[] u60VarArr = this.d;
         w5VarArr[0] = null;
         if (v9Var.e.contains(runnableArr)) {
             Utilities.globalQueue.cancelRunnables(runnableArr);
             v9Var.e.remove(runnableArr);
         }
-        for (t60 t60Var : t60VarArr) {
-            Bitmap bitmap = (Bitmap) v9Var.b.remove(t60Var);
-            v9Var.c.remove(t60Var);
+        for (u60 u60Var : u60VarArr) {
+            Bitmap bitmap = (Bitmap) v9Var.b.remove(u60Var);
+            v9Var.c.remove(u60Var);
             if (bitmap != null) {
                 bitmap.recycle();
             }

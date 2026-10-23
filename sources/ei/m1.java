@@ -10,9 +10,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LiteMode;
 import org.telegram.ui.Components.qt;
-import org.telegram.ui.Components.vj0;
+import org.telegram.ui.Components.yj0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class m1 extends qt {
     public int M;
@@ -30,11 +30,11 @@ public final class m1 extends qt {
         if (r5Var != null) {
             r5Var.setAlpha((int) (f7 * 255.0f));
             r5Var.draw(canvas);
-        } else if (n1Var.e != null) {
+        } else if (n1Var.f != null) {
             canvas.save();
-            canvas.clipRect(n1Var.e.getImageX(), n1Var.e.getImageY(), n1Var.e.getImageX2(), n1Var.e.getImageY2());
-            n1Var.e.setAlpha(f7);
-            n1Var.e.draw(canvas);
+            canvas.clipRect(n1Var.f.getImageX(), n1Var.f.getImageY(), n1Var.f.getImageX2(), n1Var.f.getImageY2());
+            n1Var.f.setAlpha(f7);
+            n1Var.f.draw(canvas);
             canvas.restore();
         }
     }
@@ -74,11 +74,11 @@ public final class m1 extends qt {
             }
             n1 n1Var = (n1) arrayList.get(i10);
             n1Var.getClass();
-            org.telegram.ui.Components.r5 r5Var = n1Var.c;
+            org.telegram.ui.Components.r5 r5Var = n1Var.d;
             if (r5Var != null) {
-                r5Var.setColorFilter(this.R.f3);
+                r5Var.setColorFilter(this.R.i3);
             }
-            n1Var.n.draw(canvas, n1Var.h[this.K]);
+            n1Var.r.draw(canvas, n1Var.n[this.K]);
             i10++;
         }
     }
@@ -96,16 +96,16 @@ public final class m1 extends qt {
                 float alpha = n1Var.getAlpha() * f7;
                 Rect rect = AndroidUtilities.rectTmp2;
                 rect.set(n1Var.getPaddingLeft() + ((int) n1Var.getX()), n1Var.getPaddingTop(), (n1Var.getWidth() + ((int) n1Var.getX())) - n1Var.getPaddingRight(), n1Var.getHeight() - n1Var.getPaddingBottom());
-                org.telegram.ui.Components.r5 r5Var2 = n1Var.c;
+                org.telegram.ui.Components.r5 r5Var2 = n1Var.d;
                 if (r5Var2 != null) {
                     r5Var2.setBounds(rect);
                 }
-                ImageReceiver imageReceiver = n1Var.e;
+                ImageReceiver imageReceiver = n1Var.f;
                 if (imageReceiver != null) {
                     imageReceiver.setImageCoords(rect);
                 }
-                PorterDuffColorFilter porterDuffColorFilter = this.R.f3;
-                if (porterDuffColorFilter != null && (r5Var = n1Var.c) != null) {
+                PorterDuffColorFilter porterDuffColorFilter = this.R.i3;
+                if (porterDuffColorFilter != null && (r5Var = n1Var.d) != null) {
                     r5Var.setColorFilter(porterDuffColorFilter);
                 }
                 if (scale != 1.0f) {
@@ -130,7 +130,7 @@ public final class m1 extends qt {
                 this.R.invalidate();
                 return;
             }
-            ImageReceiver.BackgroundThreadDrawHolder backgroundThreadDrawHolder = ((n1) arrayList.get(i10)).h[this.K];
+            ImageReceiver.BackgroundThreadDrawHolder backgroundThreadDrawHolder = ((n1) arrayList.get(i10)).n[this.K];
             if (backgroundThreadDrawHolder != null) {
                 backgroundThreadDrawHolder.release();
             }
@@ -155,29 +155,29 @@ public final class m1 extends qt {
         for (int i11 = 0; i11 < this.O.size(); i11++) {
             n1 n1Var = (n1) this.O.get(i11);
             n1Var.getClass();
-            ImageReceiver.BackgroundThreadDrawHolder[] backgroundThreadDrawHolderArr = n1Var.h;
-            org.telegram.ui.Components.r5 r5Var = n1Var.c;
-            ImageReceiver imageReceiver = r5Var != null ? r5Var.k : n1Var.e;
+            ImageReceiver.BackgroundThreadDrawHolder[] backgroundThreadDrawHolderArr = n1Var.n;
+            org.telegram.ui.Components.r5 r5Var = n1Var.d;
+            ImageReceiver imageReceiver = r5Var != null ? r5Var.k : n1Var.f;
             if (imageReceiver != null) {
                 imageReceiver.setAlpha(n1Var.getAlpha());
-                org.telegram.ui.Components.r5 r5Var2 = n1Var.c;
+                org.telegram.ui.Components.r5 r5Var2 = n1Var.d;
                 if (r5Var2 != null) {
-                    r5Var2.setColorFilter(this.R.f3);
+                    r5Var2.setColorFilter(this.R.i3);
                 }
                 int i12 = this.K;
                 ImageReceiver.BackgroundThreadDrawHolder drawInBackgroundThread = imageReceiver.setDrawInBackgroundThread(backgroundThreadDrawHolderArr[i12], i12);
                 backgroundThreadDrawHolderArr[i12] = drawInBackgroundThread;
                 drawInBackgroundThread.time = j10;
-                n1Var.n = imageReceiver;
+                n1Var.r = imageReceiver;
                 if (imageReceiver.getLottieAnimation() != null) {
-                    n1Var.n.getLottieAnimation().V(j10);
+                    n1Var.r.getLottieAnimation().V(j10);
                 }
-                if (n1Var.n.getAnimation() != null) {
-                    n1Var.n.getAnimation().D(j10);
+                if (n1Var.r.getAnimation() != null) {
+                    n1Var.r.getAnimation().D(j10);
                 }
                 Rect rect = AndroidUtilities.rectTmp2;
                 rect.set(n1Var.getPaddingLeft(), n1Var.getPaddingTop(), n1Var.getWidth() - n1Var.getPaddingRight(), n1Var.getHeight() - n1Var.getPaddingBottom());
-                vj0 lottieAnimation = imageReceiver.getLottieAnimation();
+                yj0 lottieAnimation = imageReceiver.getLottieAnimation();
                 if (lottieAnimation == null || (i10 = lottieAnimation.c) == 0) {
                     org.telegram.ui.Components.e6 animation = imageReceiver.getAnimation();
                     if (animation == null || animation.getIntrinsicHeight() == 0) {

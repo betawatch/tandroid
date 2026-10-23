@@ -5,7 +5,7 @@ import org.telegram.messenger.RichMessageLayout;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t2 implements l5, f1 {
     public final /* synthetic */ w3 a;
@@ -16,7 +16,7 @@ public final /* synthetic */ class t2 implements l5, f1 {
 
     public void a(h1 h1Var, k4 k4Var, boolean z10) {
         w3 w3Var = this.a;
-        u3 u3Var = w3Var.f3;
+        u3 u3Var = w3Var.i3;
         Editable text = h1Var.getText();
         int spanStart = text == null ? -1 : text.getSpanStart(k4Var);
         int spanEnd = text != null ? text.getSpanEnd(k4Var) : -1;
@@ -24,7 +24,7 @@ public final /* synthetic */ class t2 implements l5, f1 {
             return;
         }
         if (z10) {
-            w3Var.p3(false);
+            w3Var.u3(false);
             u3Var.V(new v3(w3Var, h1Var, spanStart, spanEnd, k4Var), h1Var);
             return;
         }
@@ -32,7 +32,7 @@ public final /* synthetic */ class t2 implements l5, f1 {
         if (textbutton == null) {
             return;
         }
-        h2 h2Var = w3Var.H3;
+        h2 h2Var = w3Var.K3;
         if (h2Var != null) {
             h2Var.d();
         }
@@ -58,7 +58,7 @@ public final /* synthetic */ class t2 implements l5, f1 {
         }
         text2.removeSpan(k4Var);
         k4 k4Var2 = new k4(textbutton);
-        k4Var2.a(w3Var.d3, h1Var, w3Var.e3);
+        k4Var2.a(w3Var.g3, h1Var, w3Var.h3);
         text2.setSpan(k4Var2, spanStart, spanEnd, 33);
         h1Var.notifySpansChanged();
         h1Var.requestLayout();

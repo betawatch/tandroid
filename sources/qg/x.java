@@ -6,13 +6,13 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.t2;
-import org.telegram.ui.sl0;
+import org.telegram.ui.Components.s2;
+import org.telegram.ui.wl0;
 import w7.z5;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class x extends LinearLayout {
     public final w a;
@@ -53,7 +53,7 @@ public final class x extends LinearLayout {
         EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
         this.d = editTextBoldCursor;
         editTextBoldCursor.setTextSize(1, 16.0f);
-        editTextBoldCursor.setBackground(h6.c0(AndroidUtilities.dp(10.0f), 436207615));
+        editTextBoldCursor.setBackground(k6.c0(AndroidUtilities.dp(10.0f), 436207615));
         editTextBoldCursor.setPadding(0, 0, 0, 0);
         editTextBoldCursor.setTextColor(-1);
         editTextBoldCursor.setGravity(17);
@@ -61,9 +61,9 @@ public final class x extends LinearLayout {
         editTextBoldCursor.setImeOptions(6);
         editTextBoldCursor.setImeActionLabel(LocaleController.getString(R.string.Done), 6);
         editTextBoldCursor.setTypeface(AndroidUtilities.bold());
-        editTextBoldCursor.addTextChangedListener(new sl0(this));
+        editTextBoldCursor.addTextChangedListener(new wl0(this));
         editTextBoldCursor.setOnFocusChangeListener(new ah.u0(this, 7));
-        editTextBoldCursor.setOnEditorActionListener(new t2(5));
+        editTextBoldCursor.setOnEditorActionListener(new s2(5));
         linearLayout.addView(editTextBoldCursor, z5.n(72, 36));
     }
 }

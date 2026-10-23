@@ -1,39 +1,45 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
-import org.telegram.messenger.SavedMessagesController;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatMessageSharedResources;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class dv0 extends org.telegram.ui.Cells.r2 {
-    public final /* synthetic */ ev0 a5;
+public final class dv0 extends org.telegram.ui.Cells.t1 {
+    public final /* synthetic */ int Ge = 1;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public dv0(ev0 ev0Var, Context context) {
-        super(context, true);
-        this.a5 = ev0Var;
+    public /* synthetic */ dv0(Context context, int i10) {
+        super(context, i10);
     }
 
-    @Override // org.telegram.ui.Cells.r2
-    public final boolean Q() {
+    @Override // org.telegram.ui.Cells.t1
+    public int getParentWidth() {
+        int i10;
+        int dp;
+        switch (this.Ge) {
+            case 1:
+                if (getMeasuredWidth() != 0) {
+                    i10 = getMeasuredWidth();
+                    dp = AndroidUtilities.dp(24.0f);
+                } else {
+                    i10 = AndroidUtilities.displaySize.x;
+                    dp = AndroidUtilities.dp(24.0f);
+                }
+                return i10 - dp;
+            default:
+                return super.getParentWidth();
+        }
+    }
+
+    @Override // android.view.View
+    public final boolean isPressed() {
+        switch (this.Ge) {
+        }
         return false;
     }
 
-    @Override // org.telegram.ui.Cells.r2
-    public final boolean getIsPinned() {
-        ev0 ev0Var = this.a5;
-        ArrayList arrayList = ev0Var.f;
-        mu0 mu0Var = ev0Var.s;
-        if (mu0Var == null || mu0Var.getAdapter() != ev0Var) {
-            return false;
-        }
-        ev0Var.s.getClass();
-        int R = RecyclerView.R(this);
-        if (R < 0 || R >= arrayList.size()) {
-            return false;
-        }
-        return ((SavedMessagesController.SavedDialog) arrayList.get(R)).pinned;
+    public /* synthetic */ dv0(Context context, int i10, boolean z10, ChatMessageSharedResources chatMessageSharedResources, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(context, i10, z10, chatMessageSharedResources, g6Var);
     }
 }

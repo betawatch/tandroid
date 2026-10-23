@@ -1,9 +1,11 @@
 package gi;
 
-import ai.cb;
+import ai.db;
 import ai.l7;
-import ai.ua;
 import ai.v9;
+import ai.va;
+import ai.x9;
+import android.util.SparseIntArray;
 import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
@@ -15,11 +17,11 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.k10;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.xc;
+import org.telegram.ui.di1;
 import org.telegram.ui.p6;
-import org.telegram.ui.wh1;
-import org.telegram.ui.wq0;
+import org.telegram.ui.zq0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g4 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -27,26 +29,29 @@ public final /* synthetic */ class g4 implements Utilities.Callback {
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
 
-    public /* synthetic */ g4(Object obj, int i10, Object obj2, int i11) {
-        this.a = i11;
-        this.c = obj;
+    public /* synthetic */ g4(int i10, org.telegram.ui.ActionBar.p pVar, x9 x9Var) {
+        this.a = 2;
         this.b = i10;
-        this.d = obj2;
+        this.c = pVar;
+        this.d = x9Var;
     }
 
     @Override // org.telegram.messenger.Utilities.Callback
     public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new cb((TLRPC.UserFull) obj, (org.telegram.ui.web.r) this.c, this.b, (TLRPC.User) this.d, 3));
+                AndroidUtilities.runOnUIThread(new db((TLRPC.UserFull) obj, (org.telegram.ui.web.r) this.c, this.b, (TLRPC.User) this.d, 3));
                 break;
             case 1:
-                org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) this.c;
+                org.telegram.ui.ActionBar.o2 o2Var = (org.telegram.ui.ActionBar.o2) this.c;
                 TLRPC.Chat chat = (TLRPC.Chat) this.d;
                 TLRPC.Chat chat2 = (TLRPC.Chat) obj;
-                n2Var.showDialog(new ji.a(n2Var.getContext(), chat, -chat2.id, new ua(n2Var, this.b, chat2, chat, 1)));
+                o2Var.showDialog(new ji.a(o2Var.getContext(), chat, -chat2.id, new va(o2Var, this.b, chat2, chat, 1)));
                 break;
             case 2:
+                AndroidUtilities.runOnUIThread(new db(this.b, (org.telegram.ui.ActionBar.p) this.c, (SparseIntArray) obj, (x9) this.d, 10));
+                break;
+            case 3:
                 p6 p6Var = (p6) this.c;
                 int[] iArr = (int[]) this.d;
                 int i10 = this.b;
@@ -54,7 +59,7 @@ public final /* synthetic */ class g4 implements Utilities.Callback {
                 float f10 = i10;
                 p6Var.run(Float.valueOf((w7.r.a(((Float) obj).floatValue(), 0.0f, 1.0f) * (1.0f / f10)) + (f7 / f10)), Boolean.FALSE);
                 break;
-            case 3:
+            case 4:
                 k10 k10Var = (k10) this.c;
                 Utilities.Callback callback = (Utilities.Callback) this.d;
                 int i11 = this.b;
@@ -63,15 +68,15 @@ public final /* synthetic */ class g4 implements Utilities.Callback {
                 k10Var.dismiss();
                 callback.run(Integer.valueOf(i11));
                 break;
-            case 4:
-                Utilities.themeQueue.postRunnable(new wh1((rg.n2) this.c, this.b, (List) obj, new ArrayList(), (wq0) this.d, 1));
+            case 5:
+                Utilities.themeQueue.postRunnable(new di1((rg.o2) this.c, this.b, (List) obj, new ArrayList(), (zq0) this.d, 1));
                 break;
             default:
                 yh.p2 p2Var = (yh.p2) this.c;
                 int i12 = this.b;
                 yh.l2 l2Var = (yh.l2) this.d;
                 ArrayList arrayList = (ArrayList) obj;
-                org.telegram.ui.ActionBar.n2 n2Var2 = p2Var.a;
+                org.telegram.ui.ActionBar.o2 o2Var2 = p2Var.a;
                 v9 v9Var = p2Var.e;
                 v9Var.a(i12, arrayList);
                 l2Var.f(true);
@@ -82,13 +87,13 @@ public final /* synthetic */ class g4 implements Utilities.Callback {
                     if (arrayList.size() <= 1) {
                         if (arrayList.size() == 1) {
                             TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) arrayList.get(0);
-                            qc R = xc.a0(n2Var2).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2AddedToCollection, l7.Y1(savedStarGift.gift), c10.title)));
+                            qc R = xc.a0(o2Var2).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2AddedToCollection, l7.X1(savedStarGift.gift), c10.title)));
                             R.r = false;
                             R.j();
                             break;
                         }
                     } else {
-                        qc R2 = xc.a0(n2Var2).R(((TL_stars.SavedStarGift) arrayList.get(0)).gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("Gift2AddedToCollectionMany", arrayList.size(), c10.title)));
+                        qc R2 = xc.a0(o2Var2).R(((TL_stars.SavedStarGift) arrayList.get(0)).gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("Gift2AddedToCollectionMany", arrayList.size(), c10.title)));
                         R2.r = false;
                         R2.j();
                         break;
@@ -96,6 +101,13 @@ public final /* synthetic */ class g4 implements Utilities.Callback {
                 }
                 break;
         }
+    }
+
+    public /* synthetic */ g4(Object obj, int i10, Object obj2, int i11) {
+        this.a = i11;
+        this.c = obj;
+        this.b = i10;
+        this.d = obj2;
     }
 
     public /* synthetic */ g4(Object obj, Object obj2, int i10, int i11) {

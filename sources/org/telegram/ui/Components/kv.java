@@ -10,7 +10,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class kv extends s4.r0 {
     public final /* synthetic */ int a;
@@ -25,97 +25,94 @@ public final class kv extends s4.r0 {
     public void a(RecyclerView recyclerView, int i10) {
         int i11;
         int i12;
+        wl0 wl0Var;
         int i13;
-        tl0 tl0Var;
-        org.telegram.ui.Wallet.n8 n8Var;
+        wl0 wl0Var2;
+        org.telegram.ui.Wallet.o8 o8Var;
         int i14 = this.a;
         sg.p1 p1Var = null;
         Object obj = this.b;
         switch (i14) {
             case 3:
-                hb0 hb0Var = (hb0) obj;
-                hb0Var.V2 = i10 != 0;
-                hb0Var.W2 = i10 == 1;
+                ib0 ib0Var = (ib0) obj;
+                ib0Var.Y2 = i10 != 0;
+                ib0Var.Z2 = i10 == 1;
                 break;
             case 5:
-                lh0 lh0Var = (lh0) obj;
-                fh0 fh0Var = lh0Var.b;
+                oh0 oh0Var = (oh0) obj;
+                ih0 ih0Var = oh0Var.b;
                 if (i10 == 0) {
                     int dp = AndroidUtilities.dp(13.0f);
-                    int i15 = lh0Var.E;
-                    i11 = ((org.telegram.ui.ActionBar.f3) lh0Var).backgroundPaddingTop;
+                    int i15 = oh0Var.E;
+                    i11 = ((org.telegram.ui.ActionBar.h3) oh0Var).backgroundPaddingTop;
                     int i16 = (i15 - i11) - dp;
-                    i12 = ((org.telegram.ui.ActionBar.f3) lh0Var).backgroundPaddingTop;
-                    if (i12 + i16 < org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() && fh0Var.canScrollVertically(1)) {
-                        fh0Var.getChildAt(0);
-                        tl0 tl0Var2 = (tl0) fh0Var.K(0);
-                        if (tl0Var2 != null) {
-                            View view = tl0Var2.a;
-                            if (view.getTop() > AndroidUtilities.dp(7.0f)) {
-                                fh0Var.v0(0, view.getTop() - AndroidUtilities.dp(7.0f), null);
-                                break;
-                            }
+                    i12 = ((org.telegram.ui.ActionBar.h3) oh0Var).backgroundPaddingTop;
+                    if (i12 + i16 < org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() && ih0Var.canScrollVertically(1) && (wl0Var = (wl0) ih0Var.K(0)) != null) {
+                        View view = wl0Var.a;
+                        if (view.getTop() > AndroidUtilities.dp(7.0f)) {
+                            ih0Var.v0(0, view.getTop() - AndroidUtilities.dp(7.0f), null);
+                            break;
                         }
                     }
                 }
                 break;
             case 7:
-                jm0 jm0Var = (jm0) obj;
+                mm0 mm0Var = (mm0) obj;
                 if (i10 == 0) {
-                    if (jm0Var.t2) {
-                        jm0Var.t2 = false;
+                    if (mm0Var.t2) {
+                        mm0Var.t2 = false;
                         NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
                     }
-                } else if (!jm0Var.t2 && jm0Var.v1) {
-                    jm0Var.t2 = true;
+                } else if (!mm0Var.t2 && mm0Var.v1) {
+                    mm0Var.t2 = true;
                     NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 512);
                 }
-                if (i10 != 0 && jm0Var.L1 != null) {
-                    bm0 bm0Var = jm0Var.c1;
-                    if (bm0Var != null) {
-                        AndroidUtilities.cancelRunOnUIThread(bm0Var);
-                        jm0Var.c1 = null;
+                if (i10 != 0 && mm0Var.L1 != null) {
+                    em0 em0Var = mm0Var.c1;
+                    if (em0Var != null) {
+                        AndroidUtilities.cancelRunOnUIThread(em0Var);
+                        mm0Var.c1 = null;
                     }
                     MotionEvent obtain = MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0);
                     try {
-                        jm0Var.K1.k(obtain);
+                        mm0Var.K1.k(obtain);
                     } catch (Exception e) {
                         FileLog.e(e);
                     }
-                    jm0Var.L1.onTouchEvent(obtain);
+                    mm0Var.L1.onTouchEvent(obtain);
                     obtain.recycle();
-                    View view2 = jm0Var.L1;
-                    jm0Var.h1(view2, 0.0f, 0.0f, false);
-                    jm0Var.L1 = null;
-                    jm0Var.k1(null, view2);
-                    jm0Var.N1 = false;
+                    View view2 = mm0Var.L1;
+                    mm0Var.j1(view2, 0.0f, 0.0f, false);
+                    mm0Var.L1 = null;
+                    mm0Var.m1(null, view2);
+                    mm0Var.N1 = false;
                 }
-                s4.r0 r0Var = jm0Var.Y0;
+                s4.r0 r0Var = mm0Var.Y0;
                 if (r0Var != null) {
                     r0Var.a(recyclerView, i10);
                 }
                 boolean z10 = i10 == 1 || i10 == 2;
-                jm0Var.I1 = z10;
+                mm0Var.I1 = z10;
                 if (z10) {
-                    jm0Var.J1 = true;
+                    mm0Var.J1 = true;
                     break;
                 }
                 break;
             case 8:
-                un0 un0Var = (un0) obj;
+                xn0 xn0Var = (xn0) obj;
                 if (i10 == 1) {
-                    AndroidUtilities.hideKeyboard(un0Var.F.getCurrentFocus());
+                    AndroidUtilities.hideKeyboard(xn0Var.F.getCurrentFocus());
                 }
-                un0Var.a();
+                xn0Var.a();
                 break;
             case 12:
-                l71 l71Var = (l71) obj;
-                ai.u1 u1Var = l71Var.d;
-                if (i10 == 0 && l71Var.G) {
-                    int i17 = l71Var.y;
-                    i13 = ((org.telegram.ui.ActionBar.f3) l71Var).backgroundPaddingTop;
-                    if (AndroidUtilities.dp(13.0f) + i13 + i17 < AndroidUtilities.statusBarHeight * 2 && u1Var.canScrollVertically(1) && (tl0Var = (tl0) u1Var.K(0)) != null) {
-                        View view3 = tl0Var.a;
+                s71 s71Var = (s71) obj;
+                ai.u1 u1Var = s71Var.d;
+                if (i10 == 0 && s71Var.G) {
+                    int i17 = s71Var.y;
+                    i13 = ((org.telegram.ui.ActionBar.h3) s71Var).backgroundPaddingTop;
+                    if (AndroidUtilities.dp(13.0f) + i13 + i17 < AndroidUtilities.statusBarHeight * 2 && u1Var.canScrollVertically(1) && (wl0Var2 = (wl0) u1Var.K(0)) != null) {
+                        View view3 = wl0Var2.a;
                         if (view3.getTop() > 0) {
                             u1Var.v0(0, view3.getTop(), null);
                             break;
@@ -124,38 +121,38 @@ public final class kv extends s4.r0 {
                 }
                 break;
             case 14:
-                if (i10 == 1 && (n8Var = ((org.telegram.ui.Wallet.o5) obj).h0) != null) {
-                    n8Var.a();
+                if (i10 == 1 && (o8Var = ((org.telegram.ui.Wallet.o5) obj).h0) != null) {
+                    o8Var.a();
                     break;
                 }
                 break;
             case 19:
-                sg.t0 t0Var = (sg.t0) obj;
+                sg.s0 s0Var = (sg.s0) obj;
                 if (i10 == 1) {
-                    t0Var.b3 = true;
+                    s0Var.e3 = true;
                 }
                 if (i10 == 0) {
                     for (int i18 = 0; i18 < recyclerView.getChildCount(); i18++) {
-                        sg.p1 p1Var2 = (sg.p1) t0Var.getChildAt(i18);
+                        sg.p1 p1Var2 = (sg.p1) s0Var.getChildAt(i18);
                         if (p1Var == null || p1Var2.a > p1Var.a) {
                             p1Var = p1Var2;
                         }
                     }
                     if (p1Var != null) {
-                        t0Var.x1(p1Var, true);
-                        t0Var.b3 = false;
-                        t0Var.v0(0, p1Var.getTop() - ((t0Var.getMeasuredHeight() - p1Var.getMeasuredHeight()) / 2), AndroidUtilities.overshootInterpolator);
+                        s0Var.C1(p1Var, true);
+                        s0Var.e3 = false;
+                        s0Var.v0(0, p1Var.getTop() - ((s0Var.getMeasuredHeight() - p1Var.getMeasuredHeight()) / 2), AndroidUtilities.overshootInterpolator);
                     }
-                    t0Var.y1();
+                    s0Var.D1();
                     break;
                 } else {
-                    AndroidUtilities.cancelRunOnUIThread(t0Var.c3);
+                    AndroidUtilities.cancelRunOnUIThread(s0Var.f3);
                     break;
                 }
                 break;
             case 20:
                 if (i10 == 1) {
-                    AndroidUtilities.hideKeyboard(((ug.y0) obj).Y.getEditText());
+                    AndroidUtilities.hideKeyboard(((ug.x0) obj).Y.getEditText());
                     break;
                 }
                 break;
@@ -181,7 +178,7 @@ public final class kv extends s4.r0 {
         String str;
         TLRPC.User user;
         String str2;
-        ql0 ql0Var;
+        tl0 tl0Var;
         org.telegram.ui.Wallet.k5 k5Var;
         switch (this.a) {
             case 0:
@@ -199,52 +196,52 @@ public final class kv extends s4.r0 {
                 s00Var.invalidate();
                 break;
             case 2:
-                v00.G((v00) this.b);
+                v00.F((v00) this.b);
                 break;
             case 3:
-                hb0 hb0Var = (hb0) this.b;
-                s4.n0 layoutManager = hb0Var.getLayoutManager();
-                ib0 ib0Var = hb0Var.Z2;
-                bb0 bb0Var = ib0Var.d;
-                int N0 = layoutManager == bb0Var ? bb0Var.N0() : ib0Var.c.N0();
+                ib0 ib0Var = (ib0) this.b;
+                s4.n0 layoutManager = ib0Var.getLayoutManager();
+                jb0 jb0Var = ib0Var.c3;
+                cb0 cb0Var = jb0Var.d;
+                int N0 = layoutManager == cb0Var ? cb0Var.N0() : jb0Var.c.N0();
                 if ((N0 == -1 ? 0 : N0) > 0) {
-                    hg.j1 j1Var = ib0Var.f;
+                    hg.j1 j1Var = jb0Var.f;
                     if (N0 > j1Var.M0 - 5 && j1Var.u0 == 0 && (str = j1Var.s0) != null && str.length() != 0 && (user = j1Var.w0) != null && (str2 = j1Var.r0) != null) {
                         j1Var.T(true, user, str2, j1Var.s0);
                     }
                 }
-                boolean z10 = !hb0Var.canScrollVertically(-1);
-                hb0Var.canScrollVertically(1);
-                ib0Var.n(z10);
-                ib0Var.b();
+                boolean z10 = !ib0Var.canScrollVertically(-1);
+                ib0Var.canScrollVertically(1);
+                jb0Var.n(z10);
+                jb0Var.b();
                 break;
             case 4:
-                ic0 ic0Var = (ic0) this.b;
-                org.telegram.ui.y8 y8Var = ic0Var.b;
-                bc0 bc0Var = ic0Var.f;
-                for (int i12 = 0; i12 < bc0Var.getChildCount(); i12++) {
-                    View childAt = bc0Var.getChildAt(i12);
-                    if (childAt instanceof org.telegram.ui.Cells.u1) {
-                        ((org.telegram.ui.Cells.u1) childAt).Z3(y8Var.getMeasuredWidth(), y8Var.getBackgroundSizeY());
+                lc0 lc0Var = (lc0) this.b;
+                org.telegram.ui.y8 y8Var = lc0Var.b;
+                ec0 ec0Var = lc0Var.f;
+                for (int i12 = 0; i12 < ec0Var.getChildCount(); i12++) {
+                    View childAt = ec0Var.getChildAt(i12);
+                    if (childAt instanceof org.telegram.ui.Cells.t1) {
+                        ((org.telegram.ui.Cells.t1) childAt).Y3(y8Var.getMeasuredWidth(), y8Var.getBackgroundSizeY());
                     }
                 }
-                ac0 ac0Var = ic0Var.e;
-                if (ac0Var != null) {
-                    ac0Var.w();
+                dc0 dc0Var = lc0Var.e;
+                if (dc0Var != null) {
+                    dc0Var.w();
                     break;
                 }
                 break;
             case 5:
-                lh0 lh0Var = (lh0) this.b;
-                if (lh0Var.b.getChildCount() > 0) {
-                    lh0.v(lh0Var);
+                oh0 oh0Var = (oh0) this.b;
+                if (oh0Var.b.getChildCount() > 0) {
+                    oh0.v(oh0Var);
                     break;
                 }
                 break;
             case 6:
-                dl0 dl0Var = (dl0) this.b;
-                ai.u1 u1Var = dl0Var.b;
-                int[] iArr = dl0Var.f0;
+                gl0 gl0Var = (gl0) this.b;
+                ai.u1 u1Var = gl0Var.b;
+                int[] iArr = gl0Var.f0;
                 if (recyclerView.getChildCount() > 2) {
                     recyclerView.getLocationInWindow(iArr);
                     int i13 = iArr[0];
@@ -254,77 +251,77 @@ public final class kv extends s4.r0 {
                     if (Float.isNaN(min)) {
                         min = 1.0f;
                     }
-                    dl0.b(dl0Var, childAt2, min);
+                    gl0.b(gl0Var, childAt2, min);
                     View childAt3 = recyclerView.getChildAt(recyclerView.getChildCount() - 1);
                     childAt3.getLocationInWindow(iArr);
                     float min2 = ((1.0f - Math.min(1.0f, (-Math.min((recyclerView.getWidth() + i13) - (childAt3.getWidth() + iArr[0]), 0.0f)) / childAt3.getWidth())) * 0.39999998f) + 0.6f;
                     if (Float.isNaN(min2)) {
                         min2 = 1.0f;
                     }
-                    dl0.b(dl0Var, childAt3, min2);
+                    gl0.b(gl0Var, childAt3, min2);
                 }
                 for (int i14 = 1; i14 < u1Var.getChildCount() - 1; i14++) {
-                    dl0.b(dl0Var, u1Var.getChildAt(i14), 1.0f);
+                    gl0.b(gl0Var, u1Var.getChildAt(i14), 1.0f);
                 }
-                dl0Var.invalidate();
+                gl0Var.invalidate();
                 break;
             case 7:
-                jm0 jm0Var = (jm0) this.b;
-                Rect rect = jm0Var.E1;
-                s4.r0 r0Var = jm0Var.Y0;
+                mm0 mm0Var = (mm0) this.b;
+                Rect rect = mm0Var.E1;
+                s4.r0 r0Var = mm0Var.Y0;
                 if (r0Var != null) {
                     r0Var.b(recyclerView, i10, i11);
                 }
-                if (jm0Var.C1 != -1) {
+                if (mm0Var.C1 != -1) {
                     rect.offset(-i10, -i11);
-                    org.telegram.ui.Cells.z zVar = jm0Var.B1;
-                    if (zVar != null) {
-                        zVar.setBounds(rect);
+                    org.telegram.ui.Cells.y yVar = mm0Var.B1;
+                    if (yVar != null) {
+                        yVar.setBounds(rect);
                     }
-                    jm0Var.invalidate();
+                    mm0Var.invalidate();
                 } else {
                     rect.setEmpty();
                 }
-                jm0Var.L0(false);
-                if (i11 != 0 && (ql0Var = jm0Var.d1) != null) {
-                    ql0Var.b();
+                mm0Var.L0(false);
+                if (i11 != 0 && (tl0Var = mm0Var.d1) != null) {
+                    tl0Var.b();
                 }
-                ul0 ul0Var = jm0Var.S1;
-                if (ul0Var != null) {
-                    jm0Var.e1(ul0Var, 700, false);
+                xl0 xl0Var = mm0Var.S1;
+                if (xl0Var != null) {
+                    mm0Var.f1(xl0Var, 700, false);
                     break;
                 }
                 break;
             case 9:
-                yv0.n((yv0) this.b);
+                bw0.m((bw0) this.b);
                 break;
             case 10:
-                ((ax0) this.b).X.V();
+                ((dx0) this.b).X.V();
                 break;
             case 11:
-                qy0.P((qy0) this.b);
+                ty0.Q((ty0) this.b);
                 break;
             case 12:
-                ((l71) this.b).M();
+                ((s71) this.b).L();
                 break;
             case 13:
-                ((d91) this.b).invalidate();
+                ((k91) this.b).invalidate();
                 break;
             case 14:
                 org.telegram.ui.Wallet.o5 o5Var = (org.telegram.ui.Wallet.o5) this.b;
                 if (i11 != 0 && recyclerView.getScrollState() == 1 && (k5Var = o5Var.p0) != null && k5Var.f) {
                     k5Var.d = true;
                 }
-                o5Var.N0();
+                o5Var.O0();
                 break;
             case 15:
                 int[] iArr2 = (int[]) this.b;
                 iArr2[0] = iArr2[0] + i11;
                 break;
             case 16:
-                org.telegram.ui.Wallet.r9 r9Var = (org.telegram.ui.Wallet.r9) this.b;
-                if (r9Var.a.I1) {
-                    AndroidUtilities.hideKeyboard(r9Var.M);
+                org.telegram.ui.Wallet.s9 s9Var = (org.telegram.ui.Wallet.s9) this.b;
+                if (s9Var.a.I1) {
+                    AndroidUtilities.hideKeyboard(s9Var.M);
                     break;
                 }
                 break;
@@ -334,9 +331,9 @@ public final class kv extends s4.r0 {
                     if (TextUtils.isEmpty(pVar.s)) {
                         pVar.d.d();
                     } else {
-                        org.telegram.ui.web.i iVar = pVar.e;
-                        if (iVar != null) {
-                            iVar.d();
+                        org.telegram.ui.web.j jVar = pVar.e;
+                        if (jVar != null) {
+                            jVar.d();
                         }
                     }
                 }
@@ -346,21 +343,21 @@ public final class kv extends s4.r0 {
                 }
                 break;
             case 18:
-                org.telegram.ui.web.f1 f1Var = (org.telegram.ui.web.f1) this.b;
-                if (f1Var.a.I1) {
-                    AndroidUtilities.hideKeyboard(f1Var.fragmentView);
+                org.telegram.ui.web.g1 g1Var = (org.telegram.ui.web.g1) this.b;
+                if (g1Var.a.I1) {
+                    AndroidUtilities.hideKeyboard(g1Var.fragmentView);
                     break;
                 }
                 break;
             case 19:
-                sg.t0 t0Var = (sg.t0) this.b;
+                sg.s0 s0Var = (sg.s0) this.b;
                 if (recyclerView.getScrollState() == 1) {
-                    t0Var.x1(null, true);
+                    s0Var.C1(null, true);
                 }
-                t0Var.invalidate();
+                s0Var.invalidate();
                 break;
             case 21:
-                ((uh.f) this.b).S();
+                ((uh.f) this.b).R();
                 break;
             case 22:
                 s4.b0 b0Var = (s4.b0) recyclerView.getLayoutManager();
@@ -386,10 +383,10 @@ public final class kv extends s4.r0 {
                         }
                     }
                 }
-                org.telegram.messenger.nk.t(g4Var.h.animate().alpha((g4Var.K && g4Var.n.canScrollVertically(-1)) ? 1.0f : 0.0f), bs.h, 320L);
+                org.telegram.messenger.sl.t(g4Var.h.animate().alpha((g4Var.K && g4Var.n.canScrollVertically(-1)) ? 1.0f : 0.0f), bs.h, 320L);
                 break;
             case 24:
-                ((yh.f4) this.b).a0();
+                ((yh.f4) this.b).Z();
                 break;
             case 25:
                 zh.c cVar = (zh.c) this.b;

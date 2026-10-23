@@ -11,7 +11,7 @@ import android.graphics.PorterDuffXfermode;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class l10 extends Drawable {
     public final Drawable a;
@@ -40,8 +40,8 @@ public final class l10 extends Drawable {
         Paint paint2 = new Paint(1);
         this.e = paint2;
         paint2.setStyle(Paint.Style.FILL);
-        int[] iArr = org.telegram.ui.ActionBar.h6.r8;
-        paint2.setColor(org.telegram.ui.ActionBar.h6.x0(null, iArr[i11 % iArr.length], false));
+        int[] iArr = org.telegram.ui.ActionBar.k6.r8;
+        paint2.setColor(org.telegram.ui.ActionBar.k6.x0(null, iArr[i11 % iArr.length], false));
         paint2.setPathEffect(new CornerPathEffect(AndroidUtilities.dp(1.0f)));
     }
 

@@ -1,52 +1,38 @@
 package org.telegram.ui;
 
-import android.widget.TextView;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class sf1 extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ vf1 a;
+public final /* synthetic */ class sf1 implements org.telegram.ui.ActionBar.z1 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ bg1 b;
 
-    public sf1(vf1 vf1Var) {
-        this.a = vf1Var;
+    public /* synthetic */ sf1(bg1 bg1Var, int i10) {
+        this.a = i10;
+        this.b = bg1Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i10) {
-        org.telegram.ui.ActionBar.d5 d5Var;
-        vf1 vf1Var = this.a;
-        if (i10 == -1) {
-            if (vf1Var.G >= 0) {
-                d5Var = ((org.telegram.ui.ActionBar.n2) vf1Var).parentLayout;
-                if (d5Var.getFragmentStack().size() == 1) {
-                    vf1Var.I0();
-                    return;
-                }
-            }
-            vf1Var.finishFragment();
-            return;
-        }
-        if (i10 == 1) {
-            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(vf1Var.getParentActivity());
-            TL_account.Password password = vf1Var.U;
-            String string = (password == null || !password.has_password) ? LocaleController.getString(R.string.CancelPasswordQuestion) : LocaleController.getString(R.string.CancelEmailQuestion);
-            String string2 = LocaleController.getString(R.string.CancelEmailQuestionTitle);
-            String string3 = LocaleController.getString(R.string.Abort);
-            org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-            b2Var.T = string;
-            b2Var.R = string2;
-            alertDialog$Builder.k(string3, new pp0(this, 23));
-            alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-            org.telegram.ui.ActionBar.b2 b2Var2 = alertDialog$Builder.a;
-            vf1Var.showDialog(b2Var2);
-            TextView textView = (TextView) b2Var2.d(-1);
-            if (textView != null) {
-                textView.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.q7, false));
-            }
+    @Override // org.telegram.ui.ActionBar.z1
+    public final void g(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
+        switch (this.a) {
+            case 0:
+                this.b.finishFragment();
+                break;
+            case 1:
+                bg1 bg1Var = this.b;
+                bg1Var.B0();
+                bg1Var.finishFragment();
+                break;
+            case 2:
+                bg1 bg1Var2 = this.b;
+                bg1Var2.R = "";
+                bg1Var2.E0(false);
+                break;
+            case 3:
+                bg1.a0(this.b);
+                break;
+            default:
+                bg1.X(this.b);
+                break;
         }
     }
 }

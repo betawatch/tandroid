@@ -5,7 +5,6 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.ShapeDrawable;
 import android.os.SystemClock;
@@ -18,14 +17,14 @@ import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.messenger.nk;
+import org.telegram.messenger.sl;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.b10;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.zq;
+import org.telegram.ui.Components.yq;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class t4 extends FrameLayout {
     public static b10 x;
@@ -34,7 +33,7 @@ public final class t4 extends FrameLayout {
     public final org.telegram.ui.Components.w9 c;
     public final ShapeDrawable d;
     public boolean e;
-    public final org.telegram.ui.ActionBar.d6 f;
+    public final org.telegram.ui.ActionBar.g6 f;
     public boolean h;
     public CharSequence n;
     public String r;
@@ -42,13 +41,13 @@ public final class t4 extends FrameLayout {
     public float v;
     public ValueAnimator w;
 
-    public t4(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+    public t4(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
         super(context);
         this.v = 0.0f;
-        this.f = d6Var;
+        this.f = g6Var;
         org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
         this.c = w9Var;
-        ShapeDrawable K = org.telegram.ui.ActionBar.h6.K(AndroidUtilities.dp(42.0f), -1);
+        ShapeDrawable K = org.telegram.ui.ActionBar.k6.K(AndroidUtilities.dp(42.0f), -1);
         this.d = K;
         w9Var.setBackground(K);
         w9Var.s(AndroidUtilities.dp(30.0f), AndroidUtilities.dp(30.0f));
@@ -61,7 +60,7 @@ public final class t4 extends FrameLayout {
         q6Var.setScaleProperty(0.6f);
         q6Var.setTextSize(AndroidUtilities.dp(16.0f));
         q6Var.setEllipsizeByGradient(true);
-        q6Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.G6, d6Var));
+        org.telegram.ui.ActionBar.r6.a0(q6Var, org.telegram.ui.ActionBar.k6.G6, g6Var);
         q6Var.setTypeface(AndroidUtilities.bold());
         q6Var.setGravity(LocaleController.isRTL ? 5 : 3);
         q6Var.getDrawable().M = AndroidUtilities.displaySize.x;
@@ -74,7 +73,7 @@ public final class t4 extends FrameLayout {
         q6Var2.b(0.4f, 350L, bsVar);
         q6Var2.setTextSize(AndroidUtilities.dp(14.0f));
         q6Var2.setEllipsizeByGradient(true);
-        q6Var2.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.A6, d6Var));
+        org.telegram.ui.ActionBar.r6.a0(q6Var2, org.telegram.ui.ActionBar.k6.A6, g6Var);
         q6Var2.setGravity(LocaleController.isRTL ? 5 : 3);
         boolean z12 = LocaleController.isRTL;
         addView(q6Var2, w7.z5.d(-1, 20.0f, (z12 ? 5 : 3) | 48, z12 ? 16 : 73, 35.0f, z12 ? 73 : 16, 0.0f));
@@ -131,19 +130,19 @@ public final class t4 extends FrameLayout {
         if (tL_messageMediaVenue != null && (str = tL_messageMediaVenue.icon) != null) {
             if ("pin".equals(str) || tL_messageMediaVenue.icon.startsWith("emoji")) {
                 Drawable mutate = getResources().getDrawable(R.drawable.pin).mutate();
-                mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.ni, this.f), PorterDuff.Mode.MULTIPLY));
-                zq zqVar = new zq(org.telegram.ui.ActionBar.h6.K(AndroidUtilities.dp(42.0f), 0), mutate);
+                org.telegram.ui.ActionBar.r6.z(this, mutate, org.telegram.ui.ActionBar.k6.ni, this.f, PorterDuff.Mode.MULTIPLY);
+                yq yqVar = new yq(org.telegram.ui.ActionBar.k6.K(AndroidUtilities.dp(42.0f), 0), mutate);
                 int dp = AndroidUtilities.dp(42.0f);
                 int dp2 = AndroidUtilities.dp(42.0f);
-                zqVar.h = dp;
-                zqVar.n = dp2;
+                yqVar.h = dp;
+                yqVar.n = dp2;
                 int dp3 = AndroidUtilities.dp(24.0f);
                 int dp4 = AndroidUtilities.dp(24.0f);
-                zqVar.e = dp3;
-                zqVar.f = dp4;
-                w9Var.setImageDrawable(zqVar);
+                yqVar.e = dp3;
+                yqVar.f = dp4;
+                w9Var.setImageDrawable(yqVar);
             } else {
-                w9Var.f(tL_messageMediaVenue.icon, null, null);
+                w9Var.g(tL_messageMediaVenue.icon, null, null);
             }
         }
         this.d.getPaint().setColor(a2);
@@ -215,9 +214,9 @@ public final class t4 extends FrameLayout {
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         b10 b10Var = x;
-        org.telegram.ui.ActionBar.d6 d6Var = this.f;
+        org.telegram.ui.ActionBar.g6 g6Var = this.f;
         if (b10Var == null) {
-            b10 b10Var2 = new b10(getContext(), d6Var);
+            b10 b10Var2 = new b10(getContext(), g6Var);
             x = b10Var2;
             b10Var2.setIsSingleCell(true);
         }
@@ -230,19 +229,19 @@ public final class t4 extends FrameLayout {
         b10Var3.P = measuredHeight;
         b10Var3.Q = dp * (-indexOfChild);
         x.setViewType(4);
-        x.d();
-        x.h();
+        x.updateColors();
+        x.g();
         canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) ((1.0f - this.v) * 255.0f), 31);
-        canvas.translate(AndroidUtilities.dp(2.0f), nk.A(56.0f, getMeasuredHeight(), 2));
+        canvas.translate(AndroidUtilities.dp(2.0f), sl.A(56.0f, getMeasuredHeight(), 2));
         x.draw(canvas);
         canvas.restore();
         super.onDraw(canvas);
         if (this.e) {
-            Paint n10 = d6Var == null ? null : d6Var.n("paintDivider");
-            if (n10 == null) {
-                n10 = org.telegram.ui.ActionBar.h6.k0;
+            Paint d = g6Var == null ? null : g6Var.d("paintDivider");
+            if (d == null) {
+                d = org.telegram.ui.ActionBar.k6.k0;
             }
-            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(72.0f), getHeight() - 1, LocaleController.isRTL ? getWidth() - AndroidUtilities.dp(72.0f) : getWidth(), getHeight() - 1, n10);
+            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(72.0f), getHeight() - 1, LocaleController.isRTL ? getWidth() - AndroidUtilities.dp(72.0f) : getWidth(), getHeight() - 1, d);
         }
     }
 

@@ -1,6 +1,6 @@
 package m4;
 
-import ai.ua;
+import ai.va;
 import ai.y7;
 import android.animation.ValueAnimator;
 import android.content.Context;
@@ -35,17 +35,17 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.ActionBar.b6;
-import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.o2;
+import org.telegram.ui.Components.bp0;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.xo0;
-import org.telegram.ui.t21;
+import org.telegram.ui.x21;
 import v7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class z implements Runnable {
     public final /* synthetic */ int a;
@@ -113,7 +113,7 @@ public final /* synthetic */ class z implements Runnable {
                 ((i1) this.b).b.m((v) this.c);
                 return;
             case 4:
-                ((ua) this.b).run((SpannableString) this.c);
+                ((va) this.b).run((SpannableString) this.c);
                 return;
             case 5:
                 mi.r rVar = (mi.r) this.b;
@@ -173,7 +173,7 @@ public final /* synthetic */ class z implements Runnable {
                                                     mi.n nVar = pVar.a;
                                                     pVar.a = null;
                                                     if (nVar != null) {
-                                                        nVar.a(qVar2);
+                                                        nVar.d(qVar2);
                                                     }
                                                 } catch (LinkageError | RuntimeException e12) {
                                                     if (rVar.c != null) {
@@ -257,7 +257,7 @@ public final /* synthetic */ class z implements Runnable {
                 ((VideoAds) this.b).lambda$show$16((Utilities.Callback) this.c);
                 return;
             case 12:
-                t21.U((Context) this.b, null, false, (ci.k0) this.c, null);
+                x21.T((Context) this.b, null, false, (ci.k0) this.c, null);
                 return;
             case 13:
                 ((ConferenceCall) this.b).lambda$processUpdates$4((TLRPC.Updates) this.c);
@@ -288,82 +288,82 @@ public final /* synthetic */ class z implements Runnable {
                 return;
             case 22:
                 org.telegram.ui.ActionBar.k kVar = (org.telegram.ui.ActionBar.k) this.b;
-                boolean canScrollVertically = ((xo0) this.c).canScrollVertically(-1);
+                boolean canScrollVertically = ((bp0) this.c).canScrollVertically(-1);
                 boolean z10 = !canScrollVertically;
-                if (kVar.r1 == z10) {
+                if (kVar.s1 == z10) {
                     return;
                 }
-                ValueAnimator valueAnimator = kVar.t1;
+                ValueAnimator valueAnimator = kVar.u1;
                 if (valueAnimator != null) {
                     valueAnimator.cancel();
                 }
-                float f11 = kVar.s1;
-                kVar.r1 = z10;
+                float f11 = kVar.t1;
+                kVar.s1 = z10;
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(f11, canScrollVertically ? 0.0f : 1.0f);
-                kVar.t1 = ofFloat;
+                kVar.u1 = ofFloat;
                 ofFloat.addUpdateListener(new org.telegram.ui.ActionBar.a(kVar, r11));
-                kVar.t1.addListener(new org.telegram.ui.ActionBar.c(kVar, z10, i11));
-                kVar.t1.setDuration(320L);
-                kVar.t1.setInterpolator(bs.h);
-                kVar.t1.start();
+                kVar.u1.addListener(new org.telegram.ui.ActionBar.c(kVar, z10, i11));
+                kVar.u1.setDuration(320L);
+                kVar.u1.setInterpolator(bs.h);
+                kVar.u1.start();
                 return;
             case 23:
                 org.telegram.ui.ActionBar.k kVar2 = (org.telegram.ui.ActionBar.k) this.b;
                 boolean canScrollVertically2 = ((RecyclerView) this.c).canScrollVertically(-1);
                 boolean z11 = !canScrollVertically2;
-                if (kVar2.r1 == z11) {
+                if (kVar2.s1 == z11) {
                     return;
                 }
-                ValueAnimator valueAnimator2 = kVar2.t1;
+                ValueAnimator valueAnimator2 = kVar2.u1;
                 if (valueAnimator2 != null) {
                     valueAnimator2.cancel();
                 }
-                float f12 = kVar2.s1;
-                kVar2.r1 = z11;
+                float f12 = kVar2.t1;
+                kVar2.s1 = z11;
                 ValueAnimator ofFloat2 = ValueAnimator.ofFloat(f12, canScrollVertically2 ? 0.0f : 1.0f);
-                kVar2.t1 = ofFloat2;
+                kVar2.u1 = ofFloat2;
                 ofFloat2.addUpdateListener(new org.telegram.ui.ActionBar.a(kVar2, i10));
-                kVar2.t1.addListener(new org.telegram.ui.ActionBar.c(kVar2, z11, r11));
-                kVar2.t1.setDuration(320L);
-                kVar2.t1.setInterpolator(bs.h);
-                kVar2.t1.start();
+                kVar2.u1.addListener(new org.telegram.ui.ActionBar.c(kVar2, z11, r11));
+                kVar2.u1.setDuration(320L);
+                kVar2.u1.setInterpolator(bs.h);
+                kVar2.u1.start();
                 return;
             case 24:
                 ActionBarLayout actionBarLayout = (ActionBarLayout) this.b;
-                n2 n2Var = (n2) this.c;
-                Drawable drawable = ActionBarLayout.p1;
-                actionBarLayout.b0(n2Var, false);
+                o2 o2Var = (o2) this.c;
+                Drawable drawable = ActionBarLayout.v1;
+                actionBarLayout.c0(o2Var, false);
                 actionBarLayout.setVisibility(8);
-                View view2 = actionBarLayout.B0;
+                View view2 = actionBarLayout.H0;
                 if (view2 != null) {
                     view2.setVisibility(8);
                     return;
                 }
                 return;
             case 25:
-                n2 n2Var2 = (n2) this.b;
-                n2 n2Var3 = (n2) this.c;
-                Drawable drawable2 = ActionBarLayout.p1;
-                if (n2Var2 != null) {
-                    n2Var2.onTransitionAnimationEnd(false, false);
+                o2 o2Var2 = (o2) this.b;
+                o2 o2Var3 = (o2) this.c;
+                Drawable drawable2 = ActionBarLayout.v1;
+                if (o2Var2 != null) {
+                    o2Var2.onTransitionAnimationEnd(false, false);
                 }
-                n2Var3.onTransitionAnimationEnd(true, false);
-                n2Var3.onBecomeFullyVisible();
+                o2Var3.onTransitionAnimationEnd(true, false);
+                o2Var3.onBecomeFullyVisible();
                 return;
             case 26:
-                c6 c6Var = (c6) this.b;
+                f6 f6Var = (f6) this.b;
                 ArrayList arrayList3 = (ArrayList) this.c;
                 int size3 = arrayList3.size();
                 int i13 = 0;
                 while (i13 < size3) {
-                    f6 f6Var = (f6) arrayList3.get(i13);
-                    File d = f6Var.d();
+                    i6 i6Var = (i6) arrayList3.get(i13);
+                    File d = i6Var.d();
                     if (d == null || d.length() <= 0) {
                         if (arrayList == null) {
                             arrayList = new ArrayList();
                         }
-                        if (!arrayList.contains(f6Var.o)) {
-                            arrayList.add(f6Var.o);
+                        if (!arrayList.contains(i6Var.o)) {
+                            arrayList.add(i6Var.o);
                         }
                     } else {
                         arrayList3.remove(i13);
@@ -382,23 +382,23 @@ public final /* synthetic */ class z implements Runnable {
                     tL_inputWallPaperSlug.slug = (String) arrayList.get(i14);
                     getmultiwallpapers.wallpapers.add(tL_inputWallPaperSlug);
                 }
-                ConnectionsManager.getInstance(c6Var.a).sendRequest(getmultiwallpapers, new ai.g(27, c6Var, arrayList3));
+                ConnectionsManager.getInstance(f6Var.a).sendRequest(getmultiwallpapers, new ai.g(27, f6Var, arrayList3));
                 return;
             case 27:
-                c6 c6Var2 = (c6) this.b;
-                b6 b6Var = (b6) this.c;
-                TLRPC.TL_wallPaper tL_wallPaper = b6Var.a;
+                f6 f6Var2 = (f6) this.b;
+                e6 e6Var = (e6) this.c;
+                TLRPC.TL_wallPaper tL_wallPaper = e6Var.a;
                 File pathToAttach = FileLoader.getInstance(UserConfig.selectedAccount).getPathToAttach(tL_wallPaper.document, true);
-                ArrayList arrayList4 = b6Var.b;
+                ArrayList arrayList4 = e6Var.b;
                 int size5 = arrayList4.size();
                 ArrayList arrayList5 = null;
                 for (int i15 = 0; i15 < size5; i15++) {
-                    f6 f6Var2 = (f6) arrayList4.get(i15);
-                    if (f6Var2.o.equals(tL_wallPaper.slug)) {
-                        Bitmap b10 = c6.b(bitmap, "application/x-tgwallpattern".equals(tL_wallPaper.document.mime_type), pathToAttach, f6Var2);
+                    i6 i6Var2 = (i6) arrayList4.get(i15);
+                    if (i6Var2.o.equals(tL_wallPaper.slug)) {
+                        Bitmap b10 = f6.b(bitmap, "application/x-tgwallpattern".equals(tL_wallPaper.document.mime_type), pathToAttach, i6Var2);
                         if (arrayList5 == null) {
                             arrayList5 = new ArrayList();
-                            arrayList5.add(f6Var2);
+                            arrayList5.add(i6Var2);
                         }
                         bitmap = b10;
                     }
@@ -406,15 +406,15 @@ public final /* synthetic */ class z implements Runnable {
                 if (bitmap != null) {
                     bitmap.recycle();
                 }
-                AndroidUtilities.runOnUIThread(new y7(c6Var2, arrayList5, (boolean) r11, 13));
+                AndroidUtilities.runOnUIThread(new y7(f6Var2, arrayList5, (boolean) r11, 13));
                 return;
             case 28:
-                g6 g6Var = (g6) this.b;
-                g6Var.d((File) this.c, g6Var.h0);
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.p(g6Var, 19));
+                j6 j6Var = (j6) this.b;
+                j6Var.d((File) this.c, j6Var.h0);
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.p(j6Var, 19));
                 return;
             default:
-                ((org.telegram.ui.p) this.b).X((TLRPC.TL_messages_archivedStickers) this.c);
+                ((org.telegram.ui.o) this.b).X((TLRPC.TL_messages_archivedStickers) this.c);
                 return;
         }
     }

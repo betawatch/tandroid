@@ -11,10 +11,9 @@ import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.Map;
 import org.telegram.messenger.MediaDataController;
-import sg.y;
 import v7.b8;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class i extends t1 {
     public static final i F0 = new i(new h());
@@ -126,11 +125,11 @@ public final class i extends t1 {
                 if (entry.getValue() != null) {
                     throw new ClassCastException();
                 }
-                arrayList2.add((u2.s1) entry.getKey());
+                arrayList2.add((u2.t1) entry.getKey());
                 arrayList.add(Integer.valueOf(keyAt));
             }
             c10.putIntArray(Q0, b8.f(arrayList));
-            c10.putParcelableArrayList(R0, e2.e.h(arrayList2, new y(26)));
+            c10.putParcelableArrayList(R0, e2.e.h(arrayList2, new v0.k(8)));
             SparseArray<? extends Parcelable> sparseArray3 = new SparseArray<>(sparseArray.size());
             if (sparseArray.size() > 0) {
                 sparseArray.keyAt(0);
@@ -168,8 +167,8 @@ public final class i extends t1 {
                                         Map map2 = (Map) sparseArray.valueAt(indexOfKey);
                                         if (map2.size() == map.size()) {
                                             for (Map.Entry entry : map.entrySet()) {
-                                                u2.s1 s1Var = (u2.s1) entry.getKey();
-                                                if (map2.containsKey(s1Var) && Objects.equals(entry.getValue(), map2.get(s1Var))) {
+                                                u2.t1 t1Var = (u2.t1) entry.getKey();
+                                                if (map2.containsKey(t1Var) && Objects.equals(entry.getValue(), map2.get(t1Var))) {
                                                 }
                                             }
                                         }

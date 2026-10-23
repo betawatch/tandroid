@@ -1,14 +1,14 @@
 package org.scilab.forge.jlatexmath;
 
 import a1.g;
-import r4.c;
+import si.o0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public class NewEnvironmentMacro extends NewCommandMacro {
     public static void addNewEnvironment(String str, String str2, String str3, int i10) {
-        String u10 = c.u(str, "@env");
-        StringBuilder i11 = c.i(str2, " #");
+        String u10 = o0.u(str, "@env");
+        StringBuilder i11 = o0.i(str2, " #");
         int i12 = i10 + 1;
         i11.append(i12);
         i11.append(" ");
@@ -20,8 +20,8 @@ public class NewEnvironmentMacro extends NewCommandMacro {
         if (NewCommandMacro.macrocode.get(str + "@env") == null) {
             throw new ParseException(g.p("Environment ", str, "is not defined ! Use newenvironment instead ..."));
         }
-        String u10 = c.u(str, "@env");
-        StringBuilder i11 = c.i(str2, " #");
+        String u10 = o0.u(str, "@env");
+        StringBuilder i11 = o0.i(str2, " #");
         int i12 = i10 + 1;
         i11.append(i12);
         i11.append(" ");

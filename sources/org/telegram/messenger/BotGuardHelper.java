@@ -7,13 +7,13 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public class BotGuardHelper extends BaseController {
     private static volatile BotGuardHelper[] Instance = new BotGuardHelper[4];
     private final LongSparseLongArray queryIdToBotId;
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public static class GuardBotDecisionResultNotification {
         public final long dialogId;
         public final long guardBotId;
@@ -63,12 +63,12 @@ public class BotGuardHelper extends BaseController {
 
     public void closeGuardBotWebApp(long j10, long j11, TLRPC.JoinChatBotResult joinChatBotResult) {
         getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.guardBotDecisionResult, new GuardBotDecisionResultNotification(j10, this.queryIdToBotId.get(j11, 0L), j11, joinChatBotResult));
-        HashSet hashSet = gi.d3.W0;
+        HashSet hashSet = gi.d3.a1;
         if (hashSet != null) {
             Iterator it = hashSet.iterator();
             while (it.hasNext()) {
                 gi.d3 d3Var = (gi.d3) it.next();
-                gi.t4 t4Var = d3Var.v0;
+                gi.t4 t4Var = d3Var.w0;
                 if (t4Var != null && t4Var.g == 5) {
                     long j12 = t4Var.b;
                     if (j12 == j10 || j12 == 0) {
@@ -88,8 +88,8 @@ public class BotGuardHelper extends BaseController {
     }
 
     private void openGuardBotWebApp(long j10, long j11, long j12, boolean z10) {
-        org.telegram.ui.ActionBar.n2 R;
-        if (LaunchActivity.H1 == null || (R = LaunchActivity.R()) == null) {
+        org.telegram.ui.ActionBar.o2 R;
+        if (LaunchActivity.J1 == null || (R = LaunchActivity.R()) == null) {
             return;
         }
         TLRPC.User user = getMessagesController().getUser(Long.valueOf(j11));
@@ -98,18 +98,18 @@ public class BotGuardHelper extends BaseController {
                 openGuardBotWebApp(j10, j11, j12, true);
                 return;
             } else {
-                org.telegram.ui.Components.f5.n(R, user, new o0(this, j10, j11, j12, 0), new z1(8));
+                org.telegram.ui.Components.f5.o(R, user, new n0(this, j10, j11, j12, 0), new z1(8));
                 return;
             }
         }
         this.queryIdToBotId.put(j12, j11);
-        org.telegram.ui.ActionBar.n2 R2 = LaunchActivity.R();
+        org.telegram.ui.ActionBar.o2 R2 = LaunchActivity.R();
         gi.t4 b10 = gi.t4.b(this.currentAccount, j10, j11, null, null, 5, 0, 0L, null, false, null, null, 0, false, false);
         b10.d = j12;
-        gi.d3 d3Var = new gi.d3(LaunchActivity.H1, null);
+        gi.d3 d3Var = new gi.d3(LaunchActivity.J1, null);
         d3Var.x(false);
-        d3Var.A0 = true;
-        d3Var.k0 = LaunchActivity.H1;
+        d3Var.B0 = true;
+        d3Var.l0 = LaunchActivity.J1;
         d3Var.t(R2, b10);
         d3Var.show();
     }

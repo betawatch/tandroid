@@ -5,30 +5,29 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.view.View;
+import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class ss extends View {
+public final class ss extends View implements org.telegram.ui.ActionBar.b6 {
     public final ne.b a;
     public final Paint b;
     public final RectF c;
     public final RectF d;
     public final RectF e;
-    public final hq f;
+    public final zp f;
 
     public ss(Context context) {
         super(context);
         this.a = new ne.b(this, bs.h, 380L);
-        Paint paint = new Paint(1);
-        this.b = paint;
+        this.b = new Paint(1);
         this.c = new RectF();
         this.d = new RectF();
         this.e = new RectF();
-        this.f = new hq(this, 5);
-        paint.setColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.hl, false));
-        invalidate();
+        this.f = new zp(this, 6);
+        updateColors();
     }
 
     @Override // android.view.View
@@ -61,5 +60,15 @@ public final class ss extends View {
         super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(paddingTop + currentActionBarHeight, TLObject.FLAG_30));
         this.c.set(0.0f, 0.0f, getMeasuredWidth(), paddingTop);
         this.d.set(AndroidUtilities.dp(12.0f), ((currentActionBarHeight / 2) + paddingTop) - AndroidUtilities.dp(15.0f), AndroidUtilities.dp(30.0f) + AndroidUtilities.dp(12.0f), AndroidUtilities.dp(30.0f) + r6);
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void updateColors() {
+        this.b.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.hl, false));
+        invalidate();
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

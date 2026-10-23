@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class z8 extends s4.r0 {
     public boolean a;
@@ -24,9 +24,9 @@ public final class z8 extends s4.r0 {
         int L0 = m9Var.c.L0();
         int abs = L0 == -1 ? 0 : Math.abs(m9Var.c.N0() - L0) + 1;
         if (abs > 0) {
-            int size = m9Var.d.W2.x.size();
+            int size = m9Var.d.Z2.y.size();
             if (!m9Var.J && !m9Var.H && !arrayList.isEmpty() && abs + L0 >= size - 5) {
-                AndroidUtilities.runOnUIThread(new i0(7, this, (i9) i2.e.h(1, arrayList)));
+                AndroidUtilities.runOnUIThread(new h0(7, this, (i9) i2.o1.i(1, arrayList)));
             }
         }
         View childAt = recyclerView.getChildAt(0);
@@ -40,6 +40,6 @@ public final class z8 extends s4.r0 {
             return;
         }
         fVar.f(i10, i11);
-        m9Var.f0();
+        m9Var.e0();
     }
 }

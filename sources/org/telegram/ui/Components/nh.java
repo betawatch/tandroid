@@ -5,7 +5,7 @@ import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class nh implements o1.g {
     public final /* synthetic */ int a = 0;
@@ -35,8 +35,8 @@ public final /* synthetic */ class nh implements o1.g {
                 hiVar.getClass();
                 hiVar.a(liVar, valueOf);
                 tiVar.a1.setAlpha(AndroidUtilities.lerp(this.c, this.d, f11));
-                tiVar.b2(tiVar.B0, 0);
-                tiVar.b2(tiVar.C0, 0);
+                tiVar.f2(tiVar.B0, 0);
+                tiVar.f2(tiVar.C0, 0);
                 if (!(tiVar.C0 instanceof bn) || this.b) {
                     f11 = 1.0f - f11;
                 }
@@ -48,21 +48,21 @@ public final /* synthetic */ class nh implements o1.g {
                 linearLayout2.setTranslationX(f12 * AndroidUtilities.dp(16.0f));
                 break;
             default:
-                tp0 tp0Var = (tp0) this.e;
+                xp0 xp0Var = (xp0) this.e;
                 boolean z10 = this.b;
                 if (z10) {
-                    if (f7 > this.c / 2.0f || !tp0Var.s) {
+                    if (f7 > this.c / 2.0f || !xp0Var.s) {
                     }
-                } else if (f7 < this.d / 2.0f || !tp0Var.r) {
+                } else if (f7 < this.d / 2.0f || !xp0Var.r) {
                 }
-                tp0Var.s = !z10;
-                tp0Var.r = z10;
+                xp0Var.s = !z10;
+                xp0Var.r = z10;
                 break;
         }
     }
 
-    public /* synthetic */ nh(tp0 tp0Var, boolean z10, float f7, float f10) {
-        this.e = tp0Var;
+    public /* synthetic */ nh(xp0 xp0Var, boolean z10, float f7, float f10) {
+        this.e = xp0Var;
         this.b = z10;
         this.c = f7;
         this.d = f10;

@@ -3,7 +3,7 @@ package c3;
 import android.util.Base64;
 import b2.t0;
 import b2.w0;
-import e2.m0;
+import i2.o1;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -12,7 +12,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.OneUIUtilities;
 import v7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final int[] a = {96000, 88200, 64000, 48000, 44100, 32000, 24000, 22050, androidx.car.app.media.b.AUDIO_CONTENT_SAMPLING_RATE, 12000, 11025, 8000, 7350};
@@ -41,7 +41,7 @@ public abstract class b {
     public static final int[] x = {32000, OneUIUtilities.ONE_UI_4_0, 48000, 56000, 64000, 80000, 96000, 112000, 128000, 160000, 192000, 224000, 256000, 320000};
     public static final int[] y = {8000, androidx.car.app.media.b.AUDIO_CONTENT_SAMPLING_RATE, 24000, 32000, OneUIUtilities.ONE_UI_4_0, 48000, 56000, 64000, 80000, 96000, 112000, 128000, 144000, 160000};
 
-    public static boolean a(e2.x xVar, u uVar, int i10, s sVar) {
+    public static boolean a(e2.x xVar, w wVar, int i10, u uVar) {
         long C = xVar.C();
         long j10 = C >>> 16;
         if (j10 != i10) {
@@ -54,38 +54,38 @@ public abstract class b {
         int i14 = (int) ((C >> 1) & 7);
         boolean z11 = (C & 1) == 1;
         if (i13 <= 7) {
-            if (i13 != uVar.g - 1) {
+            if (i13 != wVar.g - 1) {
                 return false;
             }
-        } else if (i13 > 10 || uVar.g != 2) {
+        } else if (i13 > 10 || wVar.g != 2) {
             return false;
         }
-        if (!(i14 == 0 || i14 == uVar.i) || z11) {
+        if (!(i14 == 0 || i14 == wVar.i) || z11) {
             return false;
         }
         try {
             long I = xVar.I();
             if (!z10) {
-                I *= uVar.b;
+                I *= wVar.b;
             }
-            long j11 = uVar.j;
+            long j11 = wVar.j;
             if (j11 != 0 && I > j11) {
                 return false;
             }
-            sVar.a = I;
+            uVar.a = I;
             int s10 = s(i11, xVar);
-            long j12 = uVar.j;
+            long j12 = wVar.j;
             boolean z12 = j12 == 0 || I + ((long) s10) >= j12;
             if (s10 == -1) {
                 return false;
             }
-            if ((!z12 && s10 < uVar.a) || s10 > uVar.b) {
+            if ((!z12 && s10 < wVar.a) || s10 > wVar.b) {
                 return false;
             }
-            int i15 = uVar.e;
+            int i15 = wVar.e;
             if (i12 != 0) {
                 if (i12 <= 11) {
-                    if (i12 != uVar.f) {
+                    if (i12 != wVar.f) {
                         return false;
                     }
                 } else if (i12 != 12) {
@@ -109,9 +109,9 @@ public abstract class b {
             int i17 = i16 - 1;
             int i18 = 0;
             for (int i19 = xVar.b; i19 < i17; i19++) {
-                i18 = m0.l[i18 ^ (bArr[i19] & 255)];
+                i18 = e2.m0.l[i18 ^ (bArr[i19] & 255)];
             }
-            String str = m0.a;
+            String str = e2.m0.a;
             if (A != i18) {
                 return false;
             }
@@ -138,7 +138,7 @@ public abstract class b {
         }
     }
 
-    public static void c(long j10, e2.x xVar, j0[] j0VarArr) {
+    public static void c(long j10, e2.x xVar, l0[] l0VarArr) {
         int i10;
         while (true) {
             if (xVar.a() <= 1) {
@@ -186,24 +186,24 @@ public abstract class b {
                     z10 &= m10 == 1195456820;
                 }
                 if (z10) {
-                    d(j10, xVar, j0VarArr);
+                    d(j10, xVar, l0VarArr);
                 }
             }
             xVar.N(i13);
         }
     }
 
-    public static void d(long j10, e2.x xVar, j0[] j0VarArr) {
+    public static void d(long j10, e2.x xVar, l0[] l0VarArr) {
         int A = xVar.A();
         if ((A & 64) != 0) {
             xVar.O(1);
             int i10 = (A & 31) * 3;
             int i11 = xVar.b;
-            for (j0 j0Var : j0VarArr) {
+            for (l0 l0Var : l0VarArr) {
                 xVar.N(i11);
-                j0Var.d(i10, xVar);
+                l0Var.d(i10, xVar);
                 u6.p(j10 != -9223372036854775807L);
-                j0Var.c(j10, 1, i10, 0, null);
+                l0Var.c(j10, 1, i10, 0, null);
             }
         }
     }
@@ -490,7 +490,7 @@ public abstract class b {
         }
         int l4 = l(gVar);
         int g11 = gVar.g(4);
-        String j10 = i2.e.j(g10, "mp4a.40.");
+        String k10 = o1.k(g10, "mp4a.40.");
         if (g10 == 5 || g10 == 29) {
             l4 = l(gVar);
             int g12 = gVar.g(5);
@@ -557,7 +557,7 @@ public abstract class b {
         a aVar = new a();
         aVar.b = l4;
         aVar.c = i10;
-        aVar.a = j10;
+        aVar.a = k10;
         return aVar;
     }
 
@@ -626,7 +626,7 @@ public abstract class b {
         ArrayList arrayList = new ArrayList();
         for (int i10 = 0; i10 < list.size(); i10++) {
             String str = (String) list.get(i10);
-            String str2 = m0.a;
+            String str2 = e2.m0.a;
             String[] split = str.split("=", 2);
             if (split.length != 2) {
                 e2.a.l("VorbisUtil", "Failed to parse Vorbis comment: ".concat(str));
@@ -700,7 +700,7 @@ public abstract class b {
         return new n4.s(8, jArr, jArr2);
     }
 
-    public static l0 u(e2.x xVar, boolean z10, boolean z11) {
+    public static n0 u(e2.x xVar, boolean z10, boolean z11) {
         if (z10) {
             w(3, xVar, false);
         }
@@ -713,7 +713,7 @@ public abstract class b {
         if (z11 && (xVar.A() & 1) == 0) {
             throw w0.a(null, "framing bit expected to be set");
         }
-        return new l0(strArr);
+        return new n0(strArr);
     }
 
     public static void v(a4.g gVar) {

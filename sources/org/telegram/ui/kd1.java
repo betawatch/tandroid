@@ -1,24 +1,106 @@
 package org.telegram.ui;
 
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class kd1 extends org.telegram.ui.Components.lw0 {
-    public boolean w0;
+public final /* synthetic */ class kd1 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ld1 b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ int d;
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        R();
-        if (getKeyboardHeight() != 0 || this.w0) {
-            this.w0 = true;
-            setPadding(0, 0, 0, 0);
-        } else {
-            int i12 = MessagesController.getGlobalEmojiSettings().getInt("kbd_height", AndroidUtilities.dp(200.0f));
-            this.f = i12;
-            setPadding(0, 0, 0, i12);
+    public /* synthetic */ kd1(ld1 ld1Var, String str, int i10, int i11) {
+        this.a = i11;
+        this.b = ld1Var;
+        this.c = str;
+        this.d = i10;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:38:0x009d A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x00ac A[SYNTHETIC] */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ld1 ld1Var = this.b;
+                String str = this.c;
+                int i10 = this.d;
+                ld1Var.getClass();
+                Utilities.searchQueue.postRunnable(new kd1(ld1Var, str, i10, 1));
+                break;
+            default:
+                ld1 ld1Var2 = this.b;
+                String str2 = this.c;
+                int i11 = this.d;
+                md1 md1Var = ld1Var2.h;
+                ArrayList arrayList = md1Var.f;
+                String lowerCase = str2.trim().toLowerCase();
+                String str3 = null;
+                if (lowerCase.length() != 0) {
+                    String translitString = LocaleController.getInstance().getTranslitString(lowerCase);
+                    if (!lowerCase.equals(translitString) && translitString.length() != 0) {
+                        str3 = translitString;
+                    }
+                    int i12 = (str3 != null ? 1 : 0) + 1;
+                    String[] strArr = new String[i12];
+                    strArr[0] = lowerCase;
+                    if (str3 != null) {
+                        strArr[1] = str3;
+                    }
+                    ArrayList arrayList2 = new ArrayList();
+                    int i13 = 0;
+                    ArrayList arrayList3 = new ArrayList();
+                    int i14 = 0;
+                    while (i14 < arrayList.size()) {
+                        TLRPC.Chat chat = (TLRPC.Chat) arrayList.get(i14);
+                        int i15 = i13;
+                        int i16 = i15;
+                        while (true) {
+                            if (i15 >= 2) {
+                                break;
+                            }
+                            String publicUsername = i15 == 0 ? chat.title : ChatObject.getPublicUsername(chat);
+                            if (publicUsername != null) {
+                                String lowerCase2 = publicUsername.toLowerCase();
+                                while (i13 < i12) {
+                                    String str4 = strArr[i13];
+                                    if (!lowerCase2.startsWith(str4)) {
+                                        int i17 = i13;
+                                        if (!org.telegram.messenger.v0.w(" ", str4, lowerCase2)) {
+                                            i13 = i17 + 1;
+                                        }
+                                    }
+                                    i16 = 1;
+                                    if (i16 == 0) {
+                                        arrayList2.add(chat);
+                                        arrayList3.add((String) md1Var.h.get(i14));
+                                    }
+                                }
+                                if (i16 == 0) {
+                                }
+                            }
+                            i15++;
+                            i13 = 0;
+                        }
+                        i14++;
+                        i13 = 0;
+                    }
+                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.fz0(ld1Var2, i11, arrayList2, arrayList3, 15));
+                    break;
+                } else {
+                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.fz0(ld1Var2, i11, str3, str3, 15));
+                    break;
+                }
+                break;
         }
-        super.onMeasure(i10, i11);
     }
 }

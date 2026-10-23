@@ -2,43 +2,43 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 import android.view.accessibility.AccessibilityNodeInfo;
-import org.telegram.ui.kc1;
+import org.telegram.ui.qc1;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class jm extends org.telegram.ui.ActionBar.u0 {
-    public final /* synthetic */ int v0;
-    public final /* synthetic */ Object w0;
+    public final /* synthetic */ int x0;
+    public final /* synthetic */ Object y0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ jm(li liVar, Context context, org.telegram.ui.ActionBar.y yVar, org.telegram.ui.ActionBar.d6 d6Var, int i10) {
-        super(context, yVar, 0, 0, false, d6Var);
-        this.v0 = i10;
-        this.w0 = liVar;
+    public /* synthetic */ jm(li liVar, Context context, org.telegram.ui.ActionBar.y yVar, org.telegram.ui.ActionBar.g6 g6Var, int i10) {
+        super(context, yVar, 0, 0, false, g6Var);
+        this.x0 = i10;
+        this.y0 = liVar;
     }
 
     @Override // org.telegram.ui.ActionBar.u0, android.view.View
     public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        switch (this.v0) {
+        switch (this.x0) {
             case 0:
                 super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                accessibilityNodeInfo.setText(((ChatAttachAlertPhotoLayout) this.w0).x.getText());
+                accessibilityNodeInfo.setText(((ChatAttachAlertPhotoLayout) this.y0).x.getText());
                 break;
             case 1:
                 super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                accessibilityNodeInfo.setText(((bn) this.w0).x.getText());
+                accessibilityNodeInfo.setText(((bn) this.y0).x.getText());
                 break;
             default:
                 super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                accessibilityNodeInfo.setText(((kc1) this.w0).h.getText());
+                accessibilityNodeInfo.setText(((qc1) this.y0).h.getText());
                 break;
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public jm(kc1 kc1Var, Context context, org.telegram.ui.ActionBar.y yVar) {
+    public jm(qc1 qc1Var, Context context, org.telegram.ui.ActionBar.y yVar) {
         super(context, yVar, 0, 0);
-        this.v0 = 2;
-        this.w0 = kc1Var;
+        this.x0 = 2;
+        this.y0 = qc1Var;
     }
 }

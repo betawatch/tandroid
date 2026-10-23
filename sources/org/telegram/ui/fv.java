@@ -1,30 +1,38 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
+import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class fv implements Runnable {
+public final /* synthetic */ class fv implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ cy b;
-    public final /* synthetic */ TLRPC.TL_attachMenuBot c;
-    public final /* synthetic */ LaunchActivity d;
+    public final /* synthetic */ ey b;
 
-    public /* synthetic */ fv(cy cyVar, TLRPC.TL_attachMenuBot tL_attachMenuBot, LaunchActivity launchActivity, int i10) {
+    public /* synthetic */ fv(ey eyVar, int i10) {
         this.a = i10;
-        this.b = cyVar;
-        this.c = tL_attachMenuBot;
-        this.d = launchActivity;
+        this.b = eyVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                cy.i0(this.b, this.c, this.d);
+                ey.h0(this.b);
+                break;
+            case 1:
+                ey eyVar = this.b;
+                if (eyVar.S3 != null) {
+                    eyVar.getMessagesController().removeSuggestion(0L, eyVar.S3);
+                    eyVar.S3 = null;
+                    eyVar.J4();
+                    break;
+                }
+                break;
+            case 2:
+                this.b.Z3(true);
                 break;
             default:
-                cy.p0(this.b, this.c, this.d);
+                this.b.Z3(true);
                 break;
         }
     }

@@ -2,15 +2,15 @@ package org.telegram.ui;
 
 import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class me implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ qn b;
+    public final /* synthetic */ sn b;
 
-    public /* synthetic */ me(qn qnVar, int i10) {
+    public /* synthetic */ me(sn snVar, int i10) {
         this.a = i10;
-        this.b = qnVar;
+        this.b = snVar;
     }
 
     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
@@ -18,38 +18,38 @@ public final /* synthetic */ class me implements ValueAnimator.AnimatorUpdateLis
         switch (this.a) {
             case 0:
                 float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                qn qnVar = this.b;
-                qnVar.K8 = floatValue;
-                jm jmVar = qnVar.X0;
-                if (jmVar != null) {
-                    jmVar.invalidate();
-                    qnVar.x0.invalidate();
+                sn snVar = this.b;
+                snVar.W8 = floatValue;
+                km kmVar = snVar.j1;
+                if (kmVar != null) {
+                    kmVar.invalidate();
+                    snVar.x0.invalidate();
                     break;
                 }
                 break;
             case 1:
-                qn qnVar2 = this.b;
-                qnVar2.getClass();
-                qnVar2.i3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                qnVar2.qc();
+                sn snVar2 = this.b;
+                snVar2.getClass();
+                snVar2.u3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                snVar2.sc();
                 break;
             case 2:
-                qn qnVar3 = this.b;
-                qnVar3.getClass();
-                qnVar3.i3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                qnVar3.qc();
+                sn snVar3 = this.b;
+                snVar3.getClass();
+                snVar3.u3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                snVar3.sc();
                 break;
             case 3:
-                qn qnVar4 = this.b;
-                qnVar4.getClass();
-                qnVar4.Ea = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                qnVar4.t9();
+                sn snVar4 = this.b;
+                snVar4.getClass();
+                snVar4.Qa = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                snVar4.t9();
                 break;
             default:
-                qn qnVar5 = this.b;
-                qnVar5.getClass();
-                qnVar5.Ea = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                qnVar5.t9();
+                sn snVar5 = this.b;
+                snVar5.getClass();
+                snVar5.Qa = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                snVar5.t9();
                 break;
         }
     }

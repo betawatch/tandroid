@@ -5,16 +5,17 @@ import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.widget.FrameLayout;
+import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.y5;
+import org.telegram.ui.ActionBar.b6;
+import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.w9;
 import w7.z5;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final class n extends FrameLayout implements y5 {
+public final class n extends FrameLayout implements b6 {
     public final w9 a;
 
     public n(Context context) {
@@ -28,7 +29,7 @@ public final class n extends FrameLayout implements y5 {
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
-        Drawable drawable = h6.S0;
+        Drawable drawable = k6.S0;
         w9 w9Var = this.a;
         zf.p.a(canvas, drawable, (w9Var.getWidth() / 2.0f) + w9Var.getLeft(), (w9Var.getHeight() / 2.0f) + w9Var.getTop(), w9Var.getHeight());
     }
@@ -38,7 +39,11 @@ public final class n extends FrameLayout implements y5 {
         super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(136.0f), TLObject.FLAG_30));
     }
 
-    @Override // org.telegram.ui.ActionBar.y5
-    public final void d() {
+    @Override // org.telegram.ui.ActionBar.b6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void updateColors() {
     }
 }

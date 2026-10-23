@@ -9,9 +9,9 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.nk;
+import org.telegram.messenger.sl;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class v1 {
     public long a;
@@ -157,7 +157,7 @@ public final class v1 {
             long j13 = this.o;
             float clamp2 = 1.0f - Utilities.clamp((j10 - j13) / Math.max(1L, this.a - j13), 1.0f, 0.0f);
             min2 *= (2.2f * clamp2 * clamp2) + 0.15f;
-            this.e = nk.x(f14, f11, AndroidUtilities.dp(5.0f), this.e);
+            this.e = sl.x(f14, f11, AndroidUtilities.dp(5.0f), this.e);
         }
         this.d = (this.j * min2) + this.d;
         this.e = (this.k * min2) + this.e;
@@ -196,7 +196,7 @@ public final class v1 {
         float f13 = 0.0f;
         this.n = 0.0f;
         if (w1Var.m) {
-            this.c = org.telegram.ui.Cells.c1.d(Utilities.fastRandom, 0.6f, 0.4f);
+            this.c = org.telegram.ui.Cells.b1.d(Utilities.fastRandom, 0.6f, 0.4f);
         }
         if (w1Var.B) {
             float abs = Math.abs(Utilities.fastRandom.nextInt() % rectF.width()) + rectF.left;
@@ -238,8 +238,8 @@ public final class v1 {
             if (w1Var.J) {
                 float width = rectF.width();
                 float f19 = w1Var.j;
-                float y3 = k3.y(width, f19, org.telegram.ui.Cells.c1.g(Utilities.fastRandom, MediaDataController.MAX_STYLE_RUNS_COUNT) / 1000.0f, f19);
-                float g10 = org.telegram.ui.Cells.c1.g(Utilities.fastRandom, 360);
+                float y3 = k3.y(width, f19, org.telegram.ui.Cells.b1.g(Utilities.fastRandom, MediaDataController.MAX_STYLE_RUNS_COUNT) / 1000.0f, f19);
+                float g10 = org.telegram.ui.Cells.b1.g(Utilities.fastRandom, 360);
                 if (!w1Var.f[this.l] || this.s) {
                     f10 = 0.0f;
                 } else {
@@ -274,7 +274,7 @@ public final class v1 {
             this.q = f7;
         }
         if (w1Var.h) {
-            float min = (Math.min(rectF.width(), rectF.height()) * org.telegram.ui.Cells.c1.d(Utilities.fastRandom, 1.2f, 0.6f)) / 2.0f;
+            float min = (Math.min(rectF.width(), rectF.height()) * org.telegram.ui.Cells.b1.d(Utilities.fastRandom, 1.2f, 0.6f)) / 2.0f;
             float cos = (((float) Math.cos(radians)) * min) + rectF.centerX() + 0.0f;
             this.d = cos;
             this.f = cos;

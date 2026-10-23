@@ -4,7 +4,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class hi extends s6 {
     public final /* synthetic */ int b;
@@ -50,22 +50,22 @@ public final class hi extends s6 {
                         li liVar2 = tiVar.C0;
                         fo foVar = tiVar.m0;
                         if (liVar2 == foVar || tiVar.B0 == foVar) {
-                            tiVar.e2(liVar2 == foVar ? 1 : 0);
+                            tiVar.i2(liVar2 == foVar ? 1 : 0);
                         }
                         li liVar3 = tiVar.C0;
                         fo foVar2 = tiVar.n0;
                         if (liVar3 == foVar2 || tiVar.B0 == foVar2) {
-                            tiVar.e2(liVar3 == foVar2 ? 1 : 0);
+                            tiVar.i2(liVar3 == foVar2 ? 1 : 0);
                         }
                         tiVar.C0.setTranslationY(AndroidUtilities.dp(78.0f) * f7);
                         tiVar.B0.v(1.0f - Math.min(1.0f, f7 / 0.7f));
                         tiVar.B0.l(tiVar.o2);
                     }
                     if (tiVar.w1 != null) {
-                        tiVar.e2(1);
+                        tiVar.i2(1);
                     }
-                    tiVar.b1();
-                    viewGroup = ((org.telegram.ui.ActionBar.f3) tiVar).containerView;
+                    tiVar.e1();
+                    viewGroup = ((org.telegram.ui.ActionBar.h3) tiVar).containerView;
                     viewGroup.invalidate();
                     break;
                 }

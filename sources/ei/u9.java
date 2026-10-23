@@ -14,13 +14,13 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.nk;
+import org.telegram.messenger.sl;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u9 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -61,25 +61,25 @@ public final /* synthetic */ class u9 implements Utilities.Callback {
                 vb vbVar2 = this.b;
                 vbVar2.V(a8Var2, false);
                 int i10 = vbVar2.c;
-                ci.i7 storiesController = MessagesController.getInstance(i10).getStoriesController();
+                ci.h7 storiesController = MessagesController.getInstance(i10).getStoriesController();
                 a0.h hVar = storiesController.e;
                 int i11 = storiesController.a;
                 ArrayList arrayList = storiesController.h;
                 ArrayList arrayList2 = storiesController.g;
-                ci.h7 h7Var = new ci.h7(storiesController, a8Var2);
+                ci.g7 g7Var = new ci.g7(storiesController, a8Var2);
                 boolean z11 = a8Var2.g;
-                long j10 = h7Var.J;
+                long j10 = g7Var.J;
                 if (z11) {
                     HashMap hashMap = (HashMap) hVar.f(j10);
                     if (hashMap == null) {
                         hashMap = new HashMap();
                         hVar.k(hashMap, j10);
                     }
-                    hashMap.put(Integer.valueOf(a8Var2.f), h7Var);
+                    hashMap.put(Integer.valueOf(a8Var2.f), g7Var);
                 } else {
-                    storiesController.d(j10, h7Var, storiesController.b, false);
+                    storiesController.d(j10, g7Var, storiesController.b, false);
                 }
-                storiesController.d(j10, h7Var, storiesController.c, true);
+                storiesController.d(j10, g7Var, storiesController.c, true);
                 if (j10 != UserConfig.getInstance(i11).clientUserId) {
                     int i12 = 0;
                     while (true) {
@@ -113,7 +113,7 @@ public final /* synthetic */ class u9 implements Utilities.Callback {
                         storiesController.O(j10);
                     }
                 }
-                h7Var.d();
+                g7Var.d();
                 NotificationCenter.getInstance(i11).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesUpdated, new Object[0]);
                 if (a8Var2.c && !a8Var2.g) {
                     MessagesController.getInstance(i10).getStoriesController().w.b(a8Var2);
@@ -158,7 +158,7 @@ public final /* synthetic */ class u9 implements Utilities.Callback {
                     lbVar.getWindow().setAttributes(lbVar.b);
                 }
                 kbVar.setTouchable(true);
-                new xc(kbVar, bVar).G(R.raw.fire_on, 3, AndroidUtilities.replaceSingleTag(LocaleController.formatPluralString("StoryPeriodPremium", intValue, new Object[0]), org.telegram.ui.ActionBar.h6.gc, 0, new t9(vbVar4, 27), bVar)).k(true);
+                new xc(kbVar, bVar).G(R.raw.fire_on, 3, AndroidUtilities.replaceSingleTag(LocaleController.formatPluralString("StoryPeriodPremium", intValue, new Object[0]), org.telegram.ui.ActionBar.k6.gc, 0, new t9(vbVar4, 27), bVar)).k(true);
                 break;
             case 6:
                 Boolean bool = (Boolean) obj;
@@ -170,13 +170,13 @@ public final /* synthetic */ class u9 implements Utilities.Callback {
                         gcVar.G = true;
                         zb zbVar = gcVar.a;
                         if (zbVar != null) {
-                            zbVar.D(true);
+                            zbVar.t(true);
                         }
                     }
                 }
                 vbVar5.X0.x(2, bool.booleanValue());
                 vbVar5.Y0.clearAnimation();
-                nk.s(vbVar5.Y0.animate(), bool.booleanValue() ? 0.0f : 1.0f, 120L);
+                sl.s(vbVar5.Y0.animate(), bool.booleanValue() ? 0.0f : 1.0f, 120L);
                 org.telegram.ui.Components.qc qcVar = org.telegram.ui.Components.qc.w;
                 if (qcVar != null && qcVar.a == 2) {
                     qcVar.l();
@@ -303,8 +303,8 @@ public final /* synthetic */ class u9 implements Utilities.Callback {
                                         vbVar11.G();
                                         xa xaVar = vbVar11.v1;
                                         if (xaVar != null) {
-                                            xaVar.Q0(1);
-                                            xaVar.z0();
+                                            xaVar.P0(1);
+                                            xaVar.y0();
                                             break;
                                         }
                                     }
@@ -312,9 +312,9 @@ public final /* synthetic */ class u9 implements Utilities.Callback {
                                     vbVar11.k0(0, false, true);
                                     xa xaVar2 = vbVar11.v1;
                                     if (xaVar2 != null) {
-                                        xaVar2.Q0(2);
+                                        xaVar2.P0(2);
                                         xaVar2.l2 = true;
-                                        xaVar2.n0(true);
+                                        xaVar2.m0(true);
                                         vbVar11.v1.M0 = true;
                                         break;
                                     }
@@ -324,8 +324,8 @@ public final /* synthetic */ class u9 implements Utilities.Callback {
                                 xa xaVar3 = vbVar11.v1;
                                 if (xaVar3 != null) {
                                     xaVar3.M0 = false;
-                                    xaVar3.Q0(0);
-                                    xaVar3.C0(null, true);
+                                    xaVar3.P0(0);
+                                    xaVar3.B0(null, true);
                                     break;
                                 }
                             }

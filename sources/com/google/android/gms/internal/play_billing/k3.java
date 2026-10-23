@@ -1,8 +1,6 @@
 package com.google.android.gms.internal.play_billing;
 
-import android.content.Context;
 import android.view.View;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.car.app.hardware.common.CarZone;
 import androidx.car.app.navigation.model.Maneuver;
@@ -12,10 +10,9 @@ import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.voip.VoIPService;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.tl0;
+import org.telegram.ui.Components.wl0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public abstract /* synthetic */ class k3 {
     public static float A(float f7, float f10, float f11, float f12) {
@@ -633,22 +630,26 @@ public abstract /* synthetic */ class k3 {
         return i10 + i11;
     }
 
-    public static TextView i(LinearLayout linearLayout, TextView textView, LinearLayout.LayoutParams layoutParams, Context context) {
-        linearLayout.addView(textView, layoutParams);
-        return new TextView(context);
-    }
-
-    public static String j(int i10, int i11, String str) {
+    public static String i(int i10, int i11, String str) {
         return str.substring(i11, str.length() - i10);
     }
 
-    public static String k(String str, String str2, String str3, String str4) {
+    public static String j(String str, String str2, String str3, String str4) {
         return str + str2 + str3 + str4;
     }
 
-    public static tl0 l(View view, View view2, int i10, int i11) {
+    public static StringBuilder k(String str, int i10, String str2, int i11, String str3) {
+        StringBuilder sb2 = new StringBuilder(str);
+        sb2.append(i10);
+        sb2.append(str2);
+        sb2.append(i11);
+        sb2.append(str3);
+        return sb2;
+    }
+
+    public static wl0 l(View view, View view2, int i10, int i11) {
         view.setLayoutParams(new s4.o0(i10, i11));
-        return new tl0(view2);
+        return new wl0(view2);
     }
 
     public static void m(float f7, int i10, TextView textView) {
@@ -661,22 +662,24 @@ public abstract /* synthetic */ class k3 {
         hashMap.put(str2, Integer.valueOf(i11));
     }
 
-    public static void o(int i10, boolean[] zArr, boolean z10, TextView textView, int i11) {
-        textView.setTextColor(h6.x0(zArr, i10, z10));
-        textView.setGravity(i11);
-    }
-
-    public static void p(com.google.firebase.messaging.r rVar) {
+    public static void o(com.google.firebase.messaging.r rVar) {
         com.googlecode.mp4parser.g.a().getClass();
         com.googlecode.mp4parser.g.b(rVar);
     }
 
-    public static void q(hg.m mVar, int i10, ArrayList arrayList) {
+    public static void p(hg.m mVar, int i10, ArrayList arrayList) {
         arrayList.add(new hg.k(mVar, i10));
     }
 
-    public static void r(String str, String str2, String str3) {
+    public static void q(String str, String str2, String str3) {
         e2.a.l(str3, str + str2);
+    }
+
+    public static void r(StringBuilder sb2, int i10, String str, int i11, String str2) {
+        sb2.append(i10);
+        sb2.append(str);
+        sb2.append(i11);
+        sb2.append(str2);
     }
 
     public static /* synthetic */ boolean s(Object obj) {

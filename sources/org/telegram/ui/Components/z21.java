@@ -1,35 +1,37 @@
 package org.telegram.ui.Components;
 
 import android.view.View;
-import org.telegram.messenger.Utilities;
+import android.view.ViewPropertyAnimator;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class z21 implements ne.d, Utilities.Callback5, Utilities.Callback5Return {
-    public final /* synthetic */ s31 a;
+public final class z21 extends TextView {
+    public View a;
+    public ViewPropertyAnimator b;
+    public boolean c;
+    public kr0 d;
 
-    @Override // ne.d
-    public void r(int i10, float f7, float f10, ne.e eVar) {
-        this.a.g();
+    public final void a() {
+        if (this.a == null) {
+            return;
+        }
+        View view = (View) getParent();
+        int i10 = 0;
+        int i11 = 0;
+        for (View view2 = this.a; view2 != view; view2 = (View) view2.getParent()) {
+            i11 += view2.getTop();
+            i10 += view2.getLeft();
+        }
+        int width = ((this.a.getWidth() / 2) + i10) - (getMeasuredWidth() / 2);
+        setTranslationX(width >= 0 ? getMeasuredWidth() + width > view.getMeasuredWidth() ? (view.getMeasuredWidth() - getMeasuredWidth()) - AndroidUtilities.dp(16.0f) : width : 0);
+        setTranslationY(i11 - getMeasuredHeight());
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback5Return
-    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        return Boolean.valueOf(s31.c(this.a, (h61) obj, (View) obj2));
-    }
-
-    @Override // org.telegram.messenger.Utilities.Callback5
-    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        s31.a(this.a, (h61) obj);
-    }
-
-    @Override // ne.d
-    public /* synthetic */ void H(float f7, int i10) {
+    @Override // android.widget.TextView, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        a();
     }
 }

@@ -1,48 +1,106 @@
 package ai;
 
-import android.content.Context;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import java.util.ArrayList;
+import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationsController;
+import org.telegram.messenger.TopicsController;
+import org.telegram.tgnet.tl.TL_communities;
+import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final class ud extends ie {
-    public final /* synthetic */ boolean m0;
-    public final /* synthetic */ int n0;
-    public final /* synthetic */ le o0;
+public final /* synthetic */ class ud implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ Object d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ud(le leVar, Context context, org.telegram.ui.ActionBar.d6 d6Var, boolean z10, int i10) {
-        super(context, d6Var);
-        this.o0 = leVar;
-        this.m0 = z10;
-        this.n0 = i10;
+    public /* synthetic */ ud(Object obj, long j10, boolean z10, int i10) {
+        this.a = i10;
+        this.d = obj;
+        this.c = j10;
+        this.b = z10;
     }
 
-    @Override // ai.ie
-    public final void e(int i10) {
-        long j10 = i10;
-        le leVar = this.o0;
-        leVar.u(j10);
-        ei.d dVar = leVar.x;
-        if (dVar != null) {
-            dVar.g(md.W0(false, LocaleController.formatString(R.string.StarsReactionSend, LocaleController.formatNumber(j10, ',')), leVar.R), true, true);
-        }
-        if (this.m0) {
-            ci.v0 v0Var = leVar.G;
-            v0Var.g = j10;
-            leVar.H.set(v0Var);
-            int i11 = this.n0;
-            f(ci.u.b(i11, i10, 3), ci.u.b(i11, i10, 4), true);
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10;
+        int i11;
+        switch (this.a) {
+            case 0:
+                me meVar = (me) this.d;
+                long j10 = this.c;
+                meVar.F = j10;
+                meVar.E = j10;
+                if (this.b) {
+                    ci.v0 v0Var = meVar.G;
+                    v0Var.c = j10;
+                    meVar.H.set(v0Var);
+                }
+                meVar.s();
+                meVar.J.a(true, true);
+                le leVar = meVar.y;
+                if (leVar != null) {
+                    leVar.setMyPrivacy(meVar.E);
+                    break;
+                }
+                break;
+            case 1:
+                ei.k9 k9Var = (ei.k9) this.d;
+                ei.r9 r9Var = k9Var.W;
+                boolean z10 = this.b;
+                long j11 = this.c;
+                if (z10) {
+                    i11 = ((org.telegram.ui.ActionBar.h3) r9Var).currentAccount;
+                    MessagesController.getInstance(i11).loadChannelParticipants(Long.valueOf(j11), new ei.c9(k9Var, j11, 0), 200);
+                    break;
+                } else {
+                    i10 = ((org.telegram.ui.ActionBar.h3) r9Var).currentAccount;
+                    MessagesController.getInstance(i10).loadFullChat(j11, 0, true);
+                    break;
+                }
+            case 2:
+                hi.s0 s0Var = (hi.s0) this.d;
+                s0Var.i = null;
+                a0.h hVar = s0Var.g;
+                long j12 = this.c;
+                hVar.l(j12);
+                ArrayList arrayList = s0Var.j;
+                if (arrayList != null) {
+                    for (int size = arrayList.size() - 1; size >= 0; size--) {
+                        if (DialogObject.getPeerDialogId(((TL_communities.CommunityPeerRequest) s0Var.j.get(size)).peer) == j12) {
+                            s0Var.j.remove(size);
+                        }
+                    }
+                }
+                s0Var.a();
+                hi.r0 r0Var = s0Var.h;
+                if (r0Var != null) {
+                    r0Var.q();
+                }
+                MessagesController.getInstance(s0Var.d).resolveCommunityJoinPendingRequest(s0Var.e, j12, !this.b, new hi.q0(s0Var, 2));
+                break;
+            case 3:
+                ((MediaDataController) this.d).lambda$markFeaturedStickersByIdAsRead$67(this.b, this.c);
+                break;
+            case 4:
+                ((NotificationsController) this.d).lambda$setOpenedInBubble$5(this.b, this.c);
+                break;
+            case 5:
+                ((TopicsController) this.d).lambda$reloadTopics$24(this.c, this.b);
+                break;
+            default:
+                sn.A0((sn) this.d, this.c, this.b);
+                break;
         }
     }
 
-    @Override // ai.ie
-    public final void setValue(int i10) {
-        super.setValue(i10);
-        if (this.m0) {
-            int i11 = this.n0;
-            f(ci.u.b(i11, i10, 3), ci.u.b(i11, i10, 4), true);
-        }
+    public /* synthetic */ ud(Object obj, boolean z10, long j10, int i10) {
+        this.a = i10;
+        this.d = obj;
+        this.b = z10;
+        this.c = j10;
     }
 }

@@ -3,22 +3,22 @@ package rg;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
 import android.view.MotionEvent;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.r6;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.tf1;
+import org.telegram.ui.ve1;
 import w7.z5;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class l0 extends LinearLayout {
     public final TextView a;
-    public final k0 b;
+    public final ah.v b;
     public ImageView c;
     public ImageView d;
     public float e;
@@ -32,36 +32,37 @@ public final class l0 extends LinearLayout {
         super(context);
         this.r = m0Var;
         setOrientation(0);
-        int i10 = h6.i6;
-        fh.a aVar = m0Var.Q1;
-        setBackground(h6.g0(h6.w0(i10, aVar), 2, -1));
-        k0 k0Var = new k0(this, context);
-        this.b = k0Var;
-        addView(k0Var, z5.t(-2, -2, 19, 16, 0, 16, 0));
+        int i10 = k6.i6;
+        u uVar = m0Var.Q1;
+        setBackground(k6.g0(k6.w0(i10, uVar), 2, -1));
+        ah.v vVar = new ah.v(this, context);
+        this.b = vVar;
+        addView(vVar, z5.t(-2, -2, 19, 16, 0, 16, 0));
         ImageView imageView = new ImageView(context);
         this.c = imageView;
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
         imageView.setScaleType(scaleType);
         ImageView imageView2 = this.c;
-        int i11 = h6.E8;
-        imageView2.setColorFilter(h6.w0(i11, aVar));
-        k0Var.addView(this.c, z5.e(-2, -2, 17));
+        int i11 = k6.E8;
+        PorterDuff.Mode mode = PorterDuff.Mode.SRC_ATOP;
+        r6.t(imageView2, i11, uVar, mode);
+        vVar.addView(this.c, z5.e(-2, -2, 17));
         ImageView imageView3 = new ImageView(context);
         this.d = imageView3;
         imageView3.setScaleType(scaleType);
-        this.d.setColorFilter(h6.w0(i11, aVar));
+        r6.t(this.d, i11, uVar, mode);
         this.d.setVisibility(8);
-        k0Var.addView(this.d, z5.e(-2, -2, 17));
+        vVar.addView(this.d, z5.e(-2, -2, 17));
         TextView textView = new TextView(context);
         this.a = textView;
-        textView.setTextColor(h6.w0(i11, aVar));
+        r6.W(textView, i11, uVar);
         textView.setTextSize(1, 16.0f);
         addView(textView, z5.t(-2, -2, 19, 0, 0, 16, 0));
         ImageView imageView4 = new ImageView(context);
         this.n = imageView4;
         imageView4.setImageResource(R.drawable.msg_text_check);
         imageView4.setScaleType(scaleType);
-        imageView4.setColorFilter(new PorterDuffColorFilter(h6.w0(h6.h7, aVar), PorterDuff.Mode.MULTIPLY));
+        r6.t(imageView4, k6.h7, uVar, PorterDuff.Mode.MULTIPLY);
         imageView4.setVisibility(8);
         addView(imageView4, z5.n(50, -1));
     }
@@ -85,7 +86,7 @@ public final class l0 extends LinearLayout {
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         this.h = ofFloat;
         ofFloat.addUpdateListener(new ah.k0(12, this, z10));
-        this.h.addListener(new tf1(this, 13));
+        this.h.addListener(new ve1(this, 14));
         this.h.setInterpolator(bs.h);
         this.h.setDuration(420L);
         this.h.start();

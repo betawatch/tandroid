@@ -4,7 +4,7 @@ import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class l9 implements ne.h, qe.a {
     public final ImageReceiver a;
@@ -18,7 +18,7 @@ public final class l9 implements ne.h, qe.a {
         ImageReceiver imageReceiver = new ImageReceiver(viewGroup);
         this.a = imageReceiver;
         imageReceiver.setRoundRadius(m9Var.e / 2);
-        h9 h9Var = new h9((org.telegram.ui.ActionBar.d6) null);
+        h9 h9Var = new h9((org.telegram.ui.ActionBar.g6) null);
         this.b = h9Var;
         h9Var.u(AndroidUtilities.dp(22.0f));
     }

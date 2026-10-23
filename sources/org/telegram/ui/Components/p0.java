@@ -1,31 +1,48 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
+import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class p0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ EditTextBoldCursor b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.b2 c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.n2 d;
+public final /* synthetic */ class p0 implements View.OnClickListener {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ LinearLayout b;
+    public final /* synthetic */ int[] c;
 
-    public /* synthetic */ p0(EditTextBoldCursor editTextBoldCursor, org.telegram.ui.ActionBar.b2 b2Var, org.telegram.ui.ActionBar.n2 n2Var, int i10) {
-        this.a = i10;
-        this.b = editTextBoldCursor;
-        this.c = b2Var;
-        this.d = n2Var;
+    public /* synthetic */ p0(LinearLayout linearLayout, int[] iArr) {
+        this.b = linearLayout;
+        this.c = iArr;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new p0(this.b, this.c, this.d, 1));
+                this.c[0] = ((Integer) view.getTag()).intValue();
+                LinearLayout linearLayout = this.b;
+                int childCount = linearLayout.getChildCount();
+                for (int i10 = 0; i10 < childCount; i10++) {
+                    View childAt = linearLayout.getChildAt(i10);
+                    if (childAt instanceof org.telegram.ui.Cells.l6) {
+                        ((org.telegram.ui.Cells.l6) childAt).c.a(childAt == view, true);
+                    }
+                }
                 break;
             default:
-                f5.d0(this.b, this.c, this.d);
+                LinearLayout linearLayout2 = this.b;
+                int childCount2 = linearLayout2.getChildCount();
+                for (int i11 = 0; i11 < childCount2; i11++) {
+                    org.telegram.ui.Cells.l6 l6Var = (org.telegram.ui.Cells.l6) linearLayout2.getChildAt(i11);
+                    l6Var.c.a(l6Var == view, true);
+                }
+                this.c[0] = org.telegram.ui.Cells.y8.f[((Integer) view.getTag()).intValue()];
                 break;
         }
+    }
+
+    public /* synthetic */ p0(int[] iArr, LinearLayout linearLayout) {
+        this.c = iArr;
+        this.b = linearLayout;
     }
 }

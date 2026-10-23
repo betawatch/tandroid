@@ -1,55 +1,27 @@
 package org.telegram.ui;
 
-import android.graphics.drawable.Drawable;
+import android.view.View;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class kr implements Drawable.Callback {
+public final /* synthetic */ class kr implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Drawable b;
+    public final /* synthetic */ org.telegram.ui.Components.th0 b;
 
-    public /* synthetic */ kr(int i10, Drawable drawable) {
+    public /* synthetic */ kr(org.telegram.ui.Components.th0 th0Var, int i10) {
         this.a = i10;
-        this.b = drawable;
+        this.b = th0Var;
     }
 
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void invalidateDrawable(Drawable drawable) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                ((lr) this.b).invalidateSelf();
+                this.b.b(true);
                 break;
             default:
-                org.telegram.ui.Cells.w0 w0Var = ((n01) this.b).h;
-                if (w0Var != null) {
-                    w0Var.invalidate();
-                    break;
-                }
+                this.b.b(true);
                 break;
         }
-    }
-
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j10) {
-        switch (this.a) {
-            case 0:
-                ((lr) this.b).scheduleSelf(runnable, j10);
-                break;
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void unscheduleDrawable(Drawable drawable, Runnable runnable) {
-        switch (this.a) {
-            case 0:
-                ((lr) this.b).unscheduleSelf(runnable);
-                break;
-        }
-    }
-
-    private final void b(Drawable drawable, Runnable runnable) {
-    }
-
-    private final void a(Drawable drawable, Runnable runnable, long j10) {
     }
 }

@@ -8,10 +8,10 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.nk;
-import org.telegram.ui.Components.vj0;
+import org.telegram.messenger.sl;
+import org.telegram.ui.Components.yj0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class c4 extends FrameLayout {
     public static final /* synthetic */ int d = 0;
@@ -21,7 +21,7 @@ public final class c4 extends FrameLayout {
 
     public c4(Context context) {
         super(context);
-        LinearLayout e = nk.e(context, 1);
+        LinearLayout e = sl.e(context, 1);
         addView(e, w7.z5.e(-2, -2, 17));
         org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
         this.a = w9Var;
@@ -34,7 +34,7 @@ public final class c4 extends FrameLayout {
         e.addView(textView, w7.z5.t(-2, -2, 1, 0, 8, 0, 0));
         d dVar = new d(context, null, true);
         this.b = dVar;
-        dVar.g(LocaleController.getString(R.string.LiveStoryDisconnectedContinue), false, true);
+        dVar.i(LocaleController.getString(R.string.LiveStoryDisconnectedContinue), false, true);
         e.addView(dVar, w7.z5.t((int) ((dVar.d.e() + AndroidUtilities.dp(24.0f)) / AndroidUtilities.density), 38, 1, 0, 18, 0, 0));
         dVar.setOnClickListener(new ah.f(3));
         setBackground(new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, new int[]{-16777216, -11184811}));
@@ -46,7 +46,7 @@ public final class c4 extends FrameLayout {
         if (i10 != 0 || this.c) {
             return;
         }
-        this.a.setImageDrawable(new vj0(R.raw.utyan_empty2, AndroidUtilities.dp(130.0f), AndroidUtilities.dp(130.0f)));
+        this.a.setImageDrawable(new yj0(R.raw.utyan_empty2, AndroidUtilities.dp(130.0f), AndroidUtilities.dp(130.0f)));
         this.c = true;
     }
 }

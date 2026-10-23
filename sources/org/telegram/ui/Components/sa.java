@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class sa extends View {
     public final Paint a;
@@ -16,19 +16,19 @@ public final class sa extends View {
     public int c;
     public int d;
     public final RectF e;
-    public final z4.g f;
+    public final z4.h f;
     public final int h;
     public int n;
     public int r;
 
-    public sa(Context context, z4.g gVar, int i10) {
+    public sa(Context context, z4.h hVar, int i10) {
         super(context);
         this.a = new Paint(1);
         new DecelerateInterpolator();
         this.e = new RectF();
         this.n = -1;
         this.r = -1;
-        this.f = gVar;
+        this.f = hVar;
         this.h = i10;
     }
 
@@ -39,9 +39,9 @@ public final class sa extends View {
         int i10 = this.n;
         Paint paint = this.a;
         if (i10 >= 0) {
-            paint.setColor((org.telegram.ui.ActionBar.h6.x0(null, i10, false) & 16777215) | (-1275068416));
+            paint.setColor((org.telegram.ui.ActionBar.k6.x0(null, i10, false) & 16777215) | (-1275068416));
         } else {
-            paint.setColor(org.telegram.ui.ActionBar.h6.B0().q() ? -11184811 : -4473925);
+            paint.setColor(org.telegram.ui.ActionBar.k6.C0().q() ? -11184811 : -4473925);
         }
         this.d = this.f.getCurrentItem();
         int i11 = 0;
@@ -59,7 +59,7 @@ public final class sa extends View {
         }
         int i13 = this.r;
         if (i13 >= 0) {
-            paint.setColor(org.telegram.ui.ActionBar.h6.x0(null, i13, false));
+            paint.setColor(org.telegram.ui.ActionBar.k6.x0(null, i13, false));
         } else {
             paint.setColor(-14509328);
         }

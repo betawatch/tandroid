@@ -6,44 +6,44 @@ import android.os.Handler;
 import android.os.SystemClock;
 import android.os.Trace;
 import androidx.media3.decoder.SimpleDecoderOutputBuffer;
-import b2.v;
-import b2.v0;
+import b2.g;
 import b2.w;
 import b2.z0;
 import e2.g0;
 import e2.m0;
 import e9.n0;
+import h2.f;
 import h2.h;
 import h2.l;
 import hi.t;
 import i2.b;
 import i2.e;
-import i2.f;
-import i2.g;
+import i2.o1;
 import i2.p1;
-import i2.w0;
-import ig.e2;
-import j2.k;
+import i2.v0;
+import ig.d2;
+import j2.j;
+import k2.a0;
 import k2.i0;
 import k2.k0;
-import k2.p;
 import k2.q;
 import k2.r;
 import k2.r0;
+import k2.s;
 import k2.t0;
-import k2.u;
-import k2.y;
+import k2.v;
+import k2.x;
 import k2.z;
 import org.telegram.tgnet.TLObject;
 import v7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public final class FfmpegAudioRenderer extends b implements w0 {
+public final class FfmpegAudioRenderer extends b implements v0 {
     public final qf.b I;
-    public final z J;
+    public final a0 J;
     public final h K;
-    public f L;
+    public e L;
     public w M;
     public int N;
     public int O;
@@ -70,10 +70,10 @@ public final class FfmpegAudioRenderer extends b implements w0 {
     public long j0;
     public long k0;
 
-    public FfmpegAudioRenderer(Handler handler, u uVar, z zVar) {
+    public FfmpegAudioRenderer(Handler handler, v vVar, a0 a0Var) {
         super(1);
-        this.I = new qf.b(handler, uVar);
-        this.J = zVar;
+        this.I = new qf.b(handler, vVar);
+        this.J = a0Var;
         this.K = new h(0, 0);
         this.V = 0;
         this.X = true;
@@ -97,18 +97,18 @@ public final class FfmpegAudioRenderer extends b implements w0 {
         String str = wVar.s;
         int i11 = wVar.L;
         int i12 = wVar.K;
-        if (!v0.i(str)) {
-            return e.c(0, 0, 0, 0);
+        if (!b2.v0.i(str)) {
+            return o1.c(0, 0, 0, 0);
         }
         String str2 = wVar.s;
         str2.getClass();
         String str3 = FfmpegLibrary.a;
-        if (v0.i(str2)) {
+        if (b2.v0.i(str2)) {
             if (FfmpegLibrary.d(str2)) {
                 w E = m0.E(2, i12, i11);
-                z zVar = this.J;
+                a0 a0Var = this.J;
                 i10 = 4;
-                if (((t0) zVar).j(E) == 0) {
+                if (((t0) a0Var).j(E) == 0) {
                 }
                 if (wVar.T != 0) {
                     i10 = 2;
@@ -118,7 +118,7 @@ public final class FfmpegAudioRenderer extends b implements w0 {
         } else {
             i10 = 0;
         }
-        return i10 <= 2 ? e.c(i10, 0, 0, 0) : i10 | 168;
+        return i10 <= 2 ? o1.c(i10, 0, 0, 0) : i10 | 168;
     }
 
     @Override // i2.b
@@ -135,10 +135,10 @@ public final class FfmpegAudioRenderer extends b implements w0 {
             i10 = 5760;
         }
         w E = m0.E(2, i12, i11);
-        z zVar = this.J;
+        a0 a0Var = this.J;
         boolean z10 = true;
-        if (((t0) zVar).j(E) != 0) {
-            z10 = ((t0) zVar).j(m0.E(4, i12, i11)) != 2 ? false : true ^ "audio/ac3".equals(wVar.s);
+        if (((t0) a0Var).j(E) != 0) {
+            z10 = ((t0) a0Var).j(m0.E(4, i12, i11)) != 2 ? false : true ^ "audio/ac3".equals(wVar.s);
         }
         FfmpegAudioDecoder ffmpegAudioDecoder = new FfmpegAudioDecoder(i10, wVar, z10);
         Trace.endSection();
@@ -182,20 +182,20 @@ public final class FfmpegAudioRenderer extends b implements w0 {
                 ((t0) this.J).t();
                 this.k0 = this.j0;
                 return false;
-            } catch (y e) {
-                throw d(e, e.c, e.b, 5002);
+            } catch (z e) {
+                throw c(e, e.c, e.b, 5002);
             }
         }
         this.k0 = -9223372036854775807L;
         if (this.X) {
             FfmpegAudioDecoder ffmpegAudioDecoder = this.Q;
             ffmpegAudioDecoder.getClass();
-            v vVar = new v();
-            vVar.r = v0.n("audio/raw");
+            b2.v vVar = new b2.v();
+            vVar.r = b2.v0.n("audio/raw");
             vVar.J = ffmpegAudioDecoder.u;
             vVar.K = ffmpegAudioDecoder.v;
             vVar.L = ffmpegAudioDecoder.q;
-            v a2 = new w(vVar).a();
+            b2.v a2 = new w(vVar).a();
             a2.M = this.N;
             a2.N = this.O;
             w wVar = this.M;
@@ -210,9 +210,9 @@ public final class FfmpegAudioRenderer extends b implements w0 {
             ((t0) this.J).c(new w(a2), null);
             this.X = false;
         }
-        z zVar = this.J;
+        a0 a0Var = this.J;
         SimpleDecoderOutputBuffer simpleDecoderOutputBuffer2 = this.S;
-        if (!((t0) zVar).m(simpleDecoderOutputBuffer2.timeUs, 1, simpleDecoderOutputBuffer2.b)) {
+        if (!((t0) a0Var).m(simpleDecoderOutputBuffer2.timeUs, 1, simpleDecoderOutputBuffer2.b)) {
             this.k0 = this.S.timeUs;
             return false;
         }
@@ -300,7 +300,7 @@ public final class FfmpegAudioRenderer extends b implements w0 {
             return;
         }
         n2.h hVar = this.U;
-        e.D(this.T, hVar);
+        o1.D(this.T, hVar);
         this.T = hVar;
         if (hVar != null && hVar.h() == null && this.T.g() == null) {
             return;
@@ -320,15 +320,15 @@ public final class FfmpegAudioRenderer extends b implements w0 {
                 handler.post(new h0(bVar, name, elapsedRealtime2, j10, 3));
             }
             this.L.a++;
-        } catch (h2.f e) {
+        } catch (f e) {
             e2.a.d("DecoderAudioRenderer", "Audio codec error", e);
             Handler handler2 = (Handler) bVar.b;
             if (handler2 != null) {
-                handler2.post(new q(bVar, e, 0));
+                handler2.post(new r(bVar, e, 0));
             }
-            throw d(e, this.M, false, 4001);
+            throw c(e, this.M, false, 4001);
         } catch (OutOfMemoryError e7) {
-            throw d(e7, this.M, false, 4001);
+            throw c(e7, this.M, false, 4001);
         }
     }
 
@@ -336,7 +336,7 @@ public final class FfmpegAudioRenderer extends b implements w0 {
         w wVar = (w) bVar.c;
         wVar.getClass();
         n2.h hVar = (n2.h) bVar.b;
-        e.D(this.U, hVar);
+        o1.D(this.U, hVar);
         this.U = hVar;
         w wVar2 = this.M;
         this.M = wVar;
@@ -349,13 +349,13 @@ public final class FfmpegAudioRenderer extends b implements w0 {
             w wVar3 = this.M;
             Handler handler = (Handler) bVar2.b;
             if (handler != null) {
-                handler.post(new e2(bVar2, wVar3, null, 1));
+                handler.post(new d2(bVar2, wVar3, null, 1));
                 return;
             }
             return;
         }
-        g gVar = hVar != this.T ? new g(ffmpegAudioDecoder.getName(), wVar2, wVar, 0, 128) : new g(ffmpegAudioDecoder.getName(), wVar2, wVar, 0, 1);
-        if (gVar.d == 0) {
+        i2.f fVar = hVar != this.T ? new i2.f(ffmpegAudioDecoder.getName(), wVar2, wVar, 0, 128) : new i2.f(ffmpegAudioDecoder.getName(), wVar2, wVar, 0, 1);
+        if (fVar.d == 0) {
             if (this.W) {
                 this.V = 1;
             } else {
@@ -367,7 +367,7 @@ public final class FfmpegAudioRenderer extends b implements w0 {
         w wVar4 = this.M;
         Handler handler2 = (Handler) bVar2.b;
         if (handler2 != null) {
-            handler2.post(new e2(bVar2, wVar4, gVar, 1));
+            handler2.post(new d2(bVar2, wVar4, fVar, 1));
         }
     }
 
@@ -390,7 +390,7 @@ public final class FfmpegAudioRenderer extends b implements w0 {
             }
             this.Q = null;
         }
-        e.D(this.T, null);
+        o1.D(this.T, null);
         this.T = null;
     }
 
@@ -413,7 +413,7 @@ public final class FfmpegAudioRenderer extends b implements w0 {
         }
     }
 
-    @Override // i2.w0
+    @Override // i2.v0
     public final long a() {
         if (this.n == 2) {
             M();
@@ -421,19 +421,19 @@ public final class FfmpegAudioRenderer extends b implements w0 {
         return this.Y;
     }
 
-    @Override // i2.w0
+    @Override // i2.v0
     public final boolean b() {
         boolean z10 = this.f0;
         this.f0 = false;
         return z10;
     }
 
-    @Override // i2.b, i2.l1
-    public final void c(int i10, Object obj) {
-        z zVar = this.J;
+    @Override // i2.b, i2.k1
+    public final void d(int i10, Object obj) {
+        a0 a0Var = this.J;
         if (i10 == 2) {
             float floatValue = ((Float) obj).floatValue();
-            t0 t0Var = (t0) zVar;
+            t0 t0Var = (t0) a0Var;
             if (t0Var.H != floatValue) {
                 t0Var.H = floatValue;
                 if (t0Var.p()) {
@@ -446,7 +446,7 @@ public final class FfmpegAudioRenderer extends b implements w0 {
         }
         if (i10 == 3) {
             b2.f fVar = (b2.f) obj;
-            t0 t0Var2 = (t0) zVar;
+            t0 t0Var2 = (t0) a0Var;
             if (t0Var2.u.equals(fVar)) {
                 return;
             }
@@ -458,12 +458,12 @@ public final class FfmpegAudioRenderer extends b implements w0 {
             return;
         }
         if (i10 == 6) {
-            ((t0) zVar).A((b2.g) obj);
+            ((t0) a0Var).A((g) obj);
             return;
         }
         if (i10 == 12) {
             AudioDeviceInfo audioDeviceInfo = (AudioDeviceInfo) obj;
-            t0 t0Var3 = (t0) zVar;
+            t0 t0Var3 = (t0) a0Var;
             t0Var3.T = audioDeviceInfo;
             i0 i0Var = t0Var3.t;
             if (i0Var != null) {
@@ -473,7 +473,7 @@ public final class FfmpegAudioRenderer extends b implements w0 {
             return;
         }
         if (i10 == 9) {
-            t0 t0Var4 = (t0) zVar;
+            t0 t0Var4 = (t0) a0Var;
             t0Var4.y = ((Boolean) obj).booleanValue();
             r0 r0Var = new r0(t0Var4.D() ? z0.d : t0Var4.x, -9223372036854775807L, -9223372036854775807L);
             if (t0Var4.p()) {
@@ -485,7 +485,7 @@ public final class FfmpegAudioRenderer extends b implements w0 {
             }
         }
         if (i10 == 10) {
-            ((t0) zVar).z(((Integer) obj).intValue());
+            ((t0) a0Var).z(((Integer) obj).intValue());
             return;
         }
         if (i10 != 19) {
@@ -493,12 +493,12 @@ public final class FfmpegAudioRenderer extends b implements w0 {
                 return;
             }
             obj.getClass();
-            ((t0) zVar).y((p) obj);
+            ((t0) a0Var).y((q) obj);
             return;
         }
         obj.getClass();
         int intValue = ((Integer) obj).intValue();
-        t0 t0Var5 = (t0) zVar;
+        t0 t0Var5 = (t0) a0Var;
         t0Var5.getClass();
         if (intValue == 0 || intValue == -1) {
             intValue = -1;
@@ -510,7 +510,7 @@ public final class FfmpegAudioRenderer extends b implements w0 {
         t0Var5.v();
     }
 
-    @Override // i2.w0
+    @Override // i2.v0
     public final void f(z0 z0Var) {
         ((t0) this.J).C(z0Var);
     }
@@ -530,7 +530,7 @@ public final class FfmpegAudioRenderer extends b implements w0 {
         return 10000L;
     }
 
-    @Override // i2.w0
+    @Override // i2.v0
     public final z0 h() {
         return ((t0) this.J).x;
     }
@@ -567,7 +567,7 @@ public final class FfmpegAudioRenderer extends b implements w0 {
         this.g0 = false;
         this.k0 = -9223372036854775807L;
         try {
-            e.D(this.U, null);
+            o1.D(this.U, null);
             this.U = null;
             K();
             ((t0) this.J).w();
@@ -578,35 +578,35 @@ public final class FfmpegAudioRenderer extends b implements w0 {
 
     @Override // i2.b
     public final void o(boolean z10, boolean z11) {
-        f fVar = new f();
-        this.L = fVar;
+        e eVar = new e();
+        this.L = eVar;
         qf.b bVar = this.I;
         Handler handler = (Handler) bVar.b;
         if (handler != null) {
-            handler.post(new r(bVar, fVar, 1));
+            handler.post(new s(bVar, eVar, 1));
         }
         p1 p1Var = this.d;
         p1Var.getClass();
         boolean z12 = p1Var.b;
-        z zVar = this.J;
+        a0 a0Var = this.J;
         if (z12) {
-            t0 t0Var = (t0) zVar;
+            t0 t0Var = (t0) a0Var;
             u6.p(t0Var.P);
             if (!t0Var.V) {
                 t0Var.V = true;
                 t0Var.v();
             }
         } else {
-            t0 t0Var2 = (t0) zVar;
+            t0 t0Var2 = (t0) a0Var;
             if (t0Var2.V) {
                 t0Var2.V = false;
                 t0Var2.v();
             }
         }
-        k kVar = this.f;
-        kVar.getClass();
-        t0 t0Var3 = (t0) zVar;
-        t0Var3.m = kVar;
+        j jVar = this.f;
+        jVar.getClass();
+        t0 t0Var3 = (t0) a0Var;
+        t0Var3.m = jVar;
         g0 g0Var = this.h;
         g0Var.getClass();
         ((k0) t0Var3.r).g = g0Var;
@@ -658,7 +658,7 @@ public final class FfmpegAudioRenderer extends b implements w0 {
     }
 
     @Override // i2.b
-    public final void u(w[] wVarArr, long j10, long j11, u2.g0 g0Var) {
+    public final void u(w[] wVarArr, long j10, long j11, u2.h0 h0Var) {
         this.P = false;
         if (this.c0 == -9223372036854775807L) {
             L(j11);
@@ -681,8 +681,8 @@ public final class FfmpegAudioRenderer extends b implements w0 {
                 ((t0) this.J).t();
                 this.k0 = this.j0;
                 return;
-            } catch (y e) {
-                throw d(e, e.c, e.b, 5002);
+            } catch (z e) {
+                throw c(e, e.c, e.b, 5002);
             }
         }
         if (this.M == null) {
@@ -699,8 +699,8 @@ public final class FfmpegAudioRenderer extends b implements w0 {
                         ((t0) this.J).t();
                         this.k0 = this.j0;
                         return;
-                    } catch (y e7) {
-                        throw d(e7, null, false, 5002);
+                    } catch (z e7) {
+                        throw c(e7, null, false, 5002);
                     }
                 }
                 return;
@@ -718,26 +718,26 @@ public final class FfmpegAudioRenderer extends b implements w0 {
                 Trace.endSection();
                 synchronized (this.L) {
                 }
-            } catch (h2.f e10) {
+            } catch (f e10) {
                 e2.a.d("DecoderAudioRenderer", "Audio codec error", e10);
                 qf.b bVar2 = this.I;
                 Handler handler = (Handler) bVar2.b;
                 if (handler != null) {
-                    handler.post(new q(bVar2, e10, 0));
+                    handler.post(new r(bVar2, e10, 0));
                 }
-                throw d(e10, this.M, false, 4003);
-            } catch (k2.v e11) {
-                throw d(e11, e11.a, false, 5001);
-            } catch (k2.w e12) {
-                throw d(e12, e12.b, e12.a, 5001);
-            } catch (y e13) {
-                throw d(e13, e13.c, e13.b, 5002);
+                throw c(e10, this.M, false, 4003);
+            } catch (k2.w e11) {
+                throw c(e11, e11.a, false, 5001);
+            } catch (x e12) {
+                throw c(e12, e12.b, e12.a, 5001);
+            } catch (z e13) {
+                throw c(e13, e13.c, e13.b, 5002);
             }
         }
     }
 
     @Override // i2.b
-    public final w0 i() {
+    public final v0 i() {
         return this;
     }
 }

@@ -27,7 +27,7 @@ import org.webrtc.MediaStreamTrack;
 import org.webrtc.VideoSink;
 import org.webrtc.voiceengine.WebRtcAudioTrack;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class h1 implements NotificationCenter.NotificationCenterDelegate, AudioManager.OnAudioFocusChangeListener {
     public static h1 W;
@@ -231,7 +231,7 @@ public final class h1 implements NotificationCenter.NotificationCenterDelegate, 
         if (this.w) {
             return;
         }
-        NativeInstance makeGroup = NativeInstance.makeGroup(org.telegram.ui.Components.voip.d2.d("live_" + this.f.id), 0L, false, SharedConfig.noiseSupression, new y0(this, 0), new aa.a(29), new y0(this, 2), new y0(this, 3), new y0(this, 4), new y0(this, 5), false);
+        NativeInstance makeGroup = NativeInstance.makeGroup(org.telegram.ui.Components.voip.d2.d("live_" + this.f.id), 0L, false, SharedConfig.noiseSupression, new y0(this, 0), new c3.m(1), new y0(this, 2), new y0(this, 3), new y0(this, 4), new y0(this, 5), false);
         this.E = makeGroup;
         makeGroup.setOnStateUpdatedListener(new g1(this));
         this.E.resetGroupInstance(false, false);
@@ -368,8 +368,8 @@ public final class h1 implements NotificationCenter.NotificationCenterDelegate, 
 
     public final void v(float f7) {
         float clamp01 = Utilities.clamp01(f7);
-        p1 p1Var = p1.Z;
-        if (p1Var.S && p1Var.v == this) {
+        o1 o1Var = o1.Z;
+        if (o1Var.S && o1Var.v == this) {
             clamp01 = 1.0f;
         }
         FileLog.d("setVolume(" + clamp01 + ")");

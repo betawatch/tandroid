@@ -2,22 +2,22 @@ package k4;
 
 import a1.g;
 import b2.w0;
-import c3.p;
+import c3.r;
 import e2.x;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public abstract class e {
     public static final byte[] a = {0, 0, 0, 0, 16, 0, Byte.MIN_VALUE, 0, 0, -86, 0, 56, -101, 113};
     public static final byte[] b = {0, 0, 33, 7, -45, 17, -122, 68, -56, -63, -54, 0, 0, 0};
 
-    public static boolean a(p pVar) {
+    public static boolean a(r rVar) {
         x xVar = new x(8);
-        int i10 = d.b(pVar, xVar).a;
+        int i10 = d.b(rVar, xVar).a;
         if (i10 != 1380533830 && i10 != 1380333108) {
             return false;
         }
-        pVar.b(0, 4, xVar.a);
+        rVar.a(0, 4, xVar.a);
         xVar.N(0);
         int m10 = xVar.m();
         if (m10 == 1463899717) {
@@ -27,8 +27,8 @@ public abstract class e {
         return false;
     }
 
-    public static d b(int i10, p pVar, x xVar) {
-        d b10 = d.b(pVar, xVar);
+    public static d b(int i10, r rVar, x xVar) {
+        d b10 = d.b(rVar, xVar);
         while (true) {
             int i11 = b10.a;
             if (i11 == i10) {
@@ -43,8 +43,8 @@ public abstract class e {
             if (j11 > 2147483647L) {
                 throw w0.c("Chunk is too large (~2GB+) to skip; id: " + i11);
             }
-            pVar.r((int) j11);
-            b10 = d.b(pVar, xVar);
+            rVar.r((int) j11);
+            b10 = d.b(rVar, xVar);
         }
     }
 }

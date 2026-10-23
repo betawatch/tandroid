@@ -26,7 +26,7 @@ import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
 import w7.c7;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public class MP4Builder {
     private boolean splitMdat;
@@ -80,7 +80,7 @@ public class MP4Builder {
         }
         f5.e eVar = new f5.e("ctts");
         eVar.e = Collections.EMPTY_LIST;
-        k3.p(te.a.c(f5.e.f, eVar, eVar, arrayList));
+        k3.o(te.a.c(f5.e.f, eVar, eVar, arrayList));
         eVar.e = arrayList;
         pVar.a(eVar);
     }
@@ -123,19 +123,19 @@ public class MP4Builder {
         rc.d dVar = rc.d.j;
         mVar.v = dVar;
         Date date = new Date();
-        k3.p(te.a.c(f5.m.Q, mVar, mVar, date));
+        k3.o(te.a.c(f5.m.Q, mVar, mVar, date));
         mVar.e = date;
         long j10 = 4294967296L;
         if (c7.a(date) >= 4294967296L) {
             mVar.h();
         }
         Date date2 = new Date();
-        k3.p(te.a.c(f5.m.R, mVar, mVar, date2));
+        k3.o(te.a.c(f5.m.R, mVar, mVar, date2));
         mVar.f = date2;
         if (c7.a(date2) >= 4294967296L) {
             mVar.h();
         }
-        k3.p(te.a.c(f5.m.U, mVar, mVar, dVar));
+        k3.o(te.a.c(f5.m.U, mVar, mVar, dVar));
         mVar.v = dVar;
         long timescale = getTimescale(mp4Movie);
         ArrayList<Track> tracks = mp4Movie.getTracks();
@@ -156,15 +156,15 @@ public class MP4Builder {
             j10 = j12;
         }
         long j13 = j10;
-        k3.p(te.a.c(f5.m.T, mVar, mVar, new Long(j11)));
+        k3.o(te.a.c(f5.m.T, mVar, mVar, new Long(j11)));
         mVar.n = j11;
         if (j11 >= j13) {
             mVar.h();
         }
-        k3.p(te.a.c(f5.m.S, mVar, mVar, new Long(timescale)));
+        k3.o(te.a.c(f5.m.S, mVar, mVar, new Long(timescale)));
         mVar.h = timescale;
         long size2 = mp4Movie.getTracks().size() + 1;
-        k3.p(te.a.c(f5.m.V, mVar, mVar, new Long(size2)));
+        k3.o(te.a.c(f5.m.V, mVar, mVar, new Long(size2)));
         mVar.w = size2;
         lVar.a(mVar);
         ArrayList<Track> tracks2 = mp4Movie.getTracks();
@@ -214,7 +214,7 @@ public class MP4Builder {
         }
         t tVar = new t("stco");
         tVar.f = new long[0];
-        k3.p(te.a.c(t.n, tVar, tVar, jArr));
+        k3.o(te.a.c(t.n, tVar, tVar, jArr));
         tVar.f = jArr;
         pVar.a(tVar);
     }
@@ -223,7 +223,7 @@ public class MP4Builder {
         r rVar = new r("stsc");
         rVar.e = Collections.EMPTY_LIST;
         LinkedList linkedList = new LinkedList();
-        k3.p(te.a.c(r.h, rVar, rVar, linkedList));
+        k3.o(te.a.c(r.h, rVar, rVar, linkedList));
         rVar.e = linkedList;
         int size = track.getSamples().size();
         int i10 = -1;
@@ -235,7 +235,7 @@ public class MP4Builder {
             i12++;
             if (i13 == size - 1 || size2 != track.getSamples().get(i13 + 1).getOffset()) {
                 if (i10 != i12) {
-                    k3.p(te.a.b(r.f, rVar, rVar));
+                    k3.o(te.a.b(r.f, rVar, rVar));
                     rVar.e.add(new q(i11, i12, 1L));
                     i10 = i12;
                 }
@@ -256,7 +256,7 @@ public class MP4Builder {
             return;
         }
         u uVar = new u("stss");
-        k3.p(te.a.c(u.h, uVar, uVar, syncSamples));
+        k3.o(te.a.c(u.h, uVar, uVar, syncSamples));
         uVar.e = syncSamples;
         pVar.a(uVar);
     }
@@ -265,7 +265,7 @@ public class MP4Builder {
         f5.o oVar = new f5.o("stsz");
         oVar.f = new long[0];
         long[] jArr = this.track2SampleSizes.get(track);
-        k3.p(te.a.c(f5.o.s, oVar, oVar, jArr));
+        k3.o(te.a.c(f5.o.s, oVar, oVar, jArr));
         oVar.f = jArr;
         pVar.a(oVar);
     }
@@ -283,7 +283,7 @@ public class MP4Builder {
         }
         w wVar = new w("stts");
         wVar.e = Collections.EMPTY_LIST;
-        k3.p(te.a.c(w.f, wVar, wVar, arrayList));
+        k3.o(te.a.c(w.f, wVar, wVar, arrayList));
         wVar.e = arrayList;
         pVar.a(wVar);
     }
@@ -306,46 +306,46 @@ public class MP4Builder {
         com.googlecode.mp4parser.g.b(c12);
         yVar.g(yVar.d() | 4);
         if (track.isAudio()) {
-            k3.p(te.a.c(y.W, yVar, yVar, dVar));
+            k3.o(te.a.c(y.W, yVar, yVar, dVar));
             yVar.w = dVar;
         } else {
             rc.d matrix = mp4Movie.getMatrix();
-            k3.p(te.a.c(y.W, yVar, yVar, matrix));
+            k3.o(te.a.c(y.W, yVar, yVar, matrix));
             yVar.w = matrix;
         }
-        k3.p(te.a.c(y.U, yVar, yVar, new Integer(0)));
+        k3.o(te.a.c(y.U, yVar, yVar, new Integer(0)));
         yVar.s = 0;
         Date creationTime = track.getCreationTime();
-        k3.p(te.a.c(y.P, yVar, yVar, creationTime));
+        k3.o(te.a.c(y.P, yVar, yVar, creationTime));
         yVar.e = creationTime;
         if (c7.a(creationTime) >= 4294967296L) {
             yVar.h();
         }
         long timescale = (getTimescale(mp4Movie) * track.getDuration()) / track.getTimeScale();
-        k3.p(te.a.c(y.S, yVar, yVar, new Long(timescale)));
+        k3.o(te.a.c(y.S, yVar, yVar, new Long(timescale)));
         yVar.n = timescale;
         if (timescale >= 4294967296L) {
             yVar.g(1);
         }
         double height = track.getHeight();
-        k3.p(te.a.c(y.Y, yVar, yVar, new Double(height)));
+        k3.o(te.a.c(y.Y, yVar, yVar, new Double(height)));
         yVar.y = height;
         double width = track.getWidth();
-        k3.p(te.a.c(y.X, yVar, yVar, new Double(width)));
+        k3.o(te.a.c(y.X, yVar, yVar, new Double(width)));
         yVar.x = width;
-        k3.p(te.a.c(y.T, yVar, yVar, new Integer(0)));
+        k3.o(te.a.c(y.T, yVar, yVar, new Integer(0)));
         yVar.r = 0;
         Date date = new Date();
-        k3.p(te.a.c(y.Q, yVar, yVar, date));
+        k3.o(te.a.c(y.Q, yVar, yVar, date));
         yVar.f = date;
         if (c7.a(date) >= 4294967296L) {
             yVar.h();
         }
         long trackId = track.getTrackId() + 1;
-        k3.p(te.a.c(y.R, yVar, yVar, new Long(trackId)));
+        k3.o(te.a.c(y.R, yVar, yVar, new Long(trackId)));
         yVar.h = trackId;
         float volume = track.getVolume();
-        k3.p(te.a.c(y.V, yVar, yVar, new Float(volume)));
+        k3.o(te.a.c(y.V, yVar, yVar, new Float(volume)));
         yVar.v = volume;
         xVar.a(yVar);
         f5.h hVar = new f5.h("mdia", 2);
@@ -355,25 +355,25 @@ public class MP4Builder {
         kVar.f = new Date();
         kVar.r = "eng";
         Date creationTime2 = track.getCreationTime();
-        k3.p(te.a.c(f5.k.E, kVar, kVar, creationTime2));
+        k3.o(te.a.c(f5.k.E, kVar, kVar, creationTime2));
         kVar.e = creationTime2;
         long duration = track.getDuration();
-        k3.p(te.a.c(f5.k.G, kVar, kVar, new Long(duration)));
+        k3.o(te.a.c(f5.k.G, kVar, kVar, new Long(duration)));
         kVar.n = duration;
         long timeScale = track.getTimeScale();
-        k3.p(te.a.c(f5.k.F, kVar, kVar, new Long(timeScale)));
+        k3.o(te.a.c(f5.k.F, kVar, kVar, new Long(timeScale)));
         kVar.h = timeScale;
-        k3.p(te.a.c(f5.k.H, kVar, kVar, "eng"));
+        k3.o(te.a.c(f5.k.H, kVar, kVar, "eng"));
         kVar.r = "eng";
         hVar.a(kVar);
         f5.j jVar = new f5.j("hdlr");
         jVar.f = null;
         jVar.s = true;
         String str = track.isAudio() ? "SoundHandle" : "VideoHandle";
-        k3.p(te.a.c(f5.j.x, jVar, jVar, str));
+        k3.o(te.a.c(f5.j.x, jVar, jVar, str));
         jVar.f = str;
         String handler = track.getHandler();
-        k3.p(te.a.c(f5.j.y, jVar, jVar, handler));
+        k3.o(te.a.c(f5.j.y, jVar, jVar, handler));
         jVar.e = handler;
         hVar.a(jVar);
         f5.h hVar2 = new f5.h("minf", 3);
@@ -541,7 +541,7 @@ public class MP4Builder {
     public void createSidx(Track track, f5.p pVar) {
     }
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public static class InterleaveChunkMdat implements f5.b {
         private long contentSize;
         private long dataOffset;

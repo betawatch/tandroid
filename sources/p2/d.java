@@ -5,10 +5,11 @@ import android.os.SystemClock;
 import e9.m2;
 import e9.n0;
 import e9.y0;
+import i2.o1;
 import java.util.HashMap;
 import v7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class d {
     public final x a;
@@ -30,20 +31,20 @@ public final class d {
     }
 
     public static n a(d dVar, Uri uri) {
-        c cVar = (c) i2.e.i(dVar.b, uri, uri);
+        c cVar = (c) o1.j(dVar.b, uri, uri);
         cVar.getClass();
         return cVar.e;
     }
 
     public static void b(d dVar, Uri uri, boolean z10) {
-        c cVar = (c) i2.e.i(dVar.b, uri, uri);
+        c cVar = (c) o1.j(dVar.b, uri, uri);
         cVar.getClass();
         cVar.c(z10 ? cVar.a() : cVar.a);
     }
 
     public static boolean c(d dVar, Uri uri, long j10) {
         HashMap hashMap = dVar.b;
-        c cVar = (c) i2.e.i(hashMap, uri, uri);
+        c cVar = (c) o1.j(hashMap, uri, uri);
         cVar.getClass();
         cVar.r = SystemClock.elapsedRealtime() + j10;
         e eVar = dVar.c;
@@ -56,7 +57,7 @@ public final class d {
                 u6.p(xVar.b.containsKey(str));
                 xVar.d = str;
                 if (c10.equals(eVar.F)) {
-                    eVar.i(cVar2.a);
+                    eVar.h(cVar2.a);
                 }
                 c cVar3 = (c) hashMap.get(c10);
                 cVar3.getClass();
@@ -79,12 +80,12 @@ public final class d {
                 d dVar2 = (d) eVar.d.get(c11);
                 dVar2.getClass();
                 HashMap hashMap2 = dVar2.b;
-                c cVar4 = (c) i2.e.i(hashMap2, c11, c11);
+                c cVar4 = (c) o1.j(hashMap2, c11, c11);
                 cVar4.getClass();
                 if (elapsedRealtime2 > cVar4.r) {
                     eVar.F = c11;
                     Uri d = eVar.d(c11);
-                    c cVar5 = (c) i2.e.i(hashMap2, c11, c11);
+                    c cVar5 = (c) o1.j(hashMap2, c11, c11);
                     cVar5.getClass();
                     cVar5.c(d);
                     z10 = true;

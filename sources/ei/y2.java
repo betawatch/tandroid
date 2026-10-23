@@ -1,6 +1,6 @@
 package ei;
 
-import ai.me;
+import ai.ne;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
@@ -15,9 +15,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.bs;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final class y2 extends org.telegram.ui.ActionBar.g5 {
+public final class y2 extends org.telegram.ui.ActionBar.k5 {
     public AnimatorSet r;
     public final /* synthetic */ q3 s;
 
@@ -25,7 +25,7 @@ public final class y2 extends org.telegram.ui.ActionBar.g5 {
         this.s = q3Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.g5
+    @Override // org.telegram.ui.ActionBar.k5
     public final void m() {
         q3 q3Var = this.s;
         z2 z2Var = q3Var.d;
@@ -61,11 +61,11 @@ public final class y2 extends org.telegram.ui.ActionBar.g5 {
         animatorSet2.setDuration(320L);
         this.r.setInterpolator(bs.h);
         this.r.playTogether(arrayList);
-        this.r.addListener(new me(3, this, searchField));
+        this.r.addListener(new ne(3, this, searchField));
         this.r.start();
     }
 
-    @Override // org.telegram.ui.ActionBar.g5
+    @Override // org.telegram.ui.ActionBar.k5
     public final void n() {
         q3 q3Var = this.s;
         z2 z2Var = q3Var.d;
@@ -108,7 +108,7 @@ public final class y2 extends org.telegram.ui.ActionBar.g5 {
         this.r.start();
     }
 
-    @Override // org.telegram.ui.ActionBar.g5
+    @Override // org.telegram.ui.ActionBar.k5
     public final void q(EditText editText) {
         String obj = editText.getText().toString();
         g3 g3Var = this.s.r;

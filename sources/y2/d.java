@@ -2,9 +2,9 @@ package y2;
 
 import e2.m0;
 import java.util.Arrays;
-import u2.a1;
+import u2.b1;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class d {
     public int c;
@@ -41,18 +41,18 @@ public final class d {
         return aVar;
     }
 
-    public final synchronized void b(a1 a1Var) {
-        while (a1Var != null) {
+    public final synchronized void b(b1 b1Var) {
+        while (b1Var != null) {
             a[] aVarArr = this.f;
             int i10 = this.e;
             this.e = i10 + 1;
-            a aVar = (a) a1Var.c;
+            a aVar = (a) b1Var.c;
             aVar.getClass();
             aVarArr[i10] = aVar;
             this.d--;
-            a1Var = (a1) a1Var.d;
-            if (a1Var == null || ((a) a1Var.c) == null) {
-                a1Var = null;
+            b1Var = (b1) b1Var.d;
+            if (b1Var == null || ((a) b1Var.c) == null) {
+                b1Var = null;
             }
         }
     }

@@ -7,7 +7,7 @@ import android.graphics.Paint;
 import android.widget.LinearLayout;
 import org.telegram.ui.Components.bs;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class i9 extends LinearLayout {
     public float a;
@@ -56,12 +56,12 @@ public final class i9 extends LinearLayout {
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        org.telegram.ui.ActionBar.d6 d6Var;
+        org.telegram.ui.ActionBar.g6 g6Var;
         super.dispatchDraw(canvas);
-        int i10 = org.telegram.ui.ActionBar.h6.a7;
+        int i10 = org.telegram.ui.ActionBar.k6.a7;
         k9 k9Var = this.h;
-        d6Var = ((org.telegram.ui.ActionBar.f3) k9Var.W).resourcesProvider;
-        int w02 = org.telegram.ui.ActionBar.h6.w0(i10, d6Var);
+        g6Var = ((org.telegram.ui.ActionBar.h3) k9Var.W).resourcesProvider;
+        int w02 = org.telegram.ui.ActionBar.k6.w0(i10, g6Var);
         Paint paint = this.e;
         paint.setColor(w02);
         paint.setAlpha((int) (this.f.d(k9Var.f.canScrollVertically(1) ? 1.0f : 0.0f, false) * 255.0f));

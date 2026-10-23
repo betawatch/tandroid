@@ -1,31 +1,31 @@
 package u2;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public final class d implements e1 {
-    public final e1 a;
+public final class d implements f1 {
+    public final f1 a;
     public boolean b;
     public final /* synthetic */ e c;
 
-    public d(e eVar, e1 e1Var) {
+    public d(e eVar, f1 f1Var) {
         this.c = eVar;
-        this.a = e1Var;
+        this.a = f1Var;
     }
 
-    @Override // u2.e1
+    @Override // u2.f1
     public final void a() {
         this.a.a();
     }
 
-    @Override // u2.e1
+    @Override // u2.f1
     public final boolean f() {
-        return !this.c.b() && this.a.f();
+        return !this.c.e() && this.a.f();
     }
 
-    @Override // u2.e1
+    @Override // u2.f1
     public final int g(qf.b bVar, h2.h hVar, int i10) {
         e eVar = this.c;
-        if (eVar.b()) {
+        if (eVar.e()) {
             return -3;
         }
         if (this.b) {
@@ -68,9 +68,9 @@ public final class d implements e1 {
         return -5;
     }
 
-    @Override // u2.e1
+    @Override // u2.f1
     public final int m(long j10) {
-        if (this.c.b()) {
+        if (this.c.e()) {
             return -3;
         }
         return this.a.m(j10);

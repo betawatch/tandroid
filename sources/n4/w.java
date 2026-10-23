@@ -12,7 +12,7 @@ import android.os.Bundle;
 import android.os.Process;
 import android.provider.Settings;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class w {
     public static final Object b = new Object();
@@ -56,7 +56,7 @@ public final class w {
                 if (i11 < 28) {
                     i10 = applicationInfo.uid;
                 }
-                if (i10 == 1000 || i10 == Process.myUid() || context.checkPermission("android.permission.MEDIA_CONTENT_CONTROL", vVar.b, vVar.c) == 0 || qVar.W(vVar, "android.permission.STATUS_BAR_SERVICE") || qVar.W(vVar, "android.permission.MEDIA_CONTENT_CONTROL")) {
+                if (i10 == 1000 || i10 == Process.myUid() || context.checkPermission("android.permission.MEDIA_CONTENT_CONTROL", vVar.b, vVar.c) == 0 || qVar.U(vVar, "android.permission.STATUS_BAR_SERVICE") || qVar.U(vVar, "android.permission.MEDIA_CONTENT_CONTROL")) {
                     return true;
                 }
                 String string = Settings.Secure.getString((ContentResolver) qVar.c, "enabled_notification_listeners");

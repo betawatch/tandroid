@@ -13,7 +13,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class s5 extends FrameLayout {
     public final org.telegram.ui.Components.w9 a;
@@ -53,7 +53,7 @@ public final class s5 extends FrameLayout {
         w9Var.setScaleY(1.0f);
         if (stargiftattributebackdrop == null) {
             w9Var.setAlpha(1.0f);
-            w9Var.setImageDrawable(org.telegram.ui.ActionBar.h6.K(AndroidUtilities.dp(26.0f), org.telegram.ui.ActionBar.h6.m1(0.25f, -1)));
+            w9Var.setImageDrawable(org.telegram.ui.ActionBar.k6.K(AndroidUtilities.dp(26.0f), org.telegram.ui.ActionBar.k6.o1(0.25f, -1)));
             return;
         }
         w9Var.setAlpha(1.0f);

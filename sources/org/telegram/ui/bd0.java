@@ -1,31 +1,41 @@
 package org.telegram.ui;
 
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class bd0 implements RequestDelegate {
+public final /* synthetic */ class bd0 implements org.telegram.ui.Components.nw0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ md0 b;
-    public final /* synthetic */ String c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.o2 b;
 
-    public /* synthetic */ bd0(md0 md0Var, String str, int i10) {
+    public /* synthetic */ bd0(int i10, org.telegram.ui.ActionBar.o2 o2Var) {
         this.a = i10;
-        this.b = md0Var;
-        this.c = str;
+        this.b = o2Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // org.telegram.ui.Components.nw0
+    public final void G(int i10, boolean z10) {
+        xf0 xf0Var;
+        al0 al0Var;
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new dd0(this.b, tL_error, this.c, tLObject));
+                ig0 ig0Var = (ig0) this.b;
+                if (i10 > AndroidUtilities.dp(20.0f) && ig0Var.l1()) {
+                    AndroidUtilities.hideKeyboard(ig0Var.fragmentView);
+                }
+                if (i10 <= AndroidUtilities.dp(20.0f) && (xf0Var = ig0Var.T) != null) {
+                    xf0Var.run();
+                    ig0Var.T = null;
+                    break;
+                }
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new dd0(this.b, tL_error, tLObject, this.c));
+                PasscodeActivity passcodeActivity = (PasscodeActivity) this.b;
+                if (i10 >= AndroidUtilities.dp(20.0f) && (al0Var = passcodeActivity.T) != null) {
+                    al0Var.run();
+                    passcodeActivity.T = null;
+                    break;
+                }
                 break;
         }
     }

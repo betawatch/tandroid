@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public abstract class CacheFetcher<Args, R> {
     private HashMap<Pair<Integer, Args>, R> cachedResults;
@@ -100,7 +100,7 @@ public abstract class CacheFetcher<Args, R> {
             cacheResult(pair, obj2);
             callCallbacks(pair, obj2, false);
         }
-        getRemote(i10, obj, l4.longValue(), new Utilities.Callback4() { // from class: org.telegram.messenger.r0
+        getRemote(i10, obj, l4.longValue(), new Utilities.Callback4() { // from class: org.telegram.messenger.q0
             @Override // org.telegram.messenger.Utilities.Callback4
             public final void run(Object obj3, Object obj4, Object obj5, Object obj6) {
                 CacheFetcher.this.lambda$fetch$0(pair, obj2, i10, obj, (Boolean) obj3, obj4, (Long) obj5, (Boolean) obj6);
@@ -127,7 +127,7 @@ public abstract class CacheFetcher<Args, R> {
         if (callback == null) {
             return;
         }
-        AndroidUtilities.runOnUIThread(new h0(this, pair, callback, 11));
+        AndroidUtilities.runOnUIThread(new g0(this, pair, callback, 11));
     }
 
     private void saveLastRequested(Pair<Integer, Args> pair) {
@@ -163,7 +163,7 @@ public abstract class CacheFetcher<Args, R> {
         R cachedResult = getCachedResult(pair);
         if (cachedResult == null || shouldRequest(pair)) {
             saveCallback(pair, callback);
-            getLocal(i10, args, new Utilities.Callback2() { // from class: org.telegram.messenger.s0
+            getLocal(i10, args, new Utilities.Callback2() { // from class: org.telegram.messenger.r0
                 @Override // org.telegram.messenger.Utilities.Callback2
                 public final void run(Object obj, Object obj2) {
                     CacheFetcher.this.lambda$fetch$1(pair, args, i10, (Long) obj, obj2);

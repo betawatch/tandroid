@@ -1,57 +1,59 @@
 package org.telegram.ui.ActionBar;
 
-import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
-import android.os.SystemClock;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.MediaController;
+import org.telegram.ui.Components.bs;
+import org.telegram.ui.Components.eq;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class o5 implements SensorEventListener {
-    @Override // android.hardware.SensorEventListener
-    public final void onSensorChanged(SensorEvent sensorEvent) {
-        float f7 = sensorEvent.values[0];
-        if (f7 <= 0.0f) {
-            f7 = 0.1f;
-        }
-        if (ApplicationLoader.mainInterfacePaused || !ApplicationLoader.isScreenOn) {
-            return;
-        }
-        if (f7 > 500.0f) {
-            h6.h = 1.0f;
-        } else {
-            h6.h = ((float) Math.ceil((Math.log(f7) * 9.932299613952637d) + 27.05900001525879d)) / 100.0f;
-        }
-        if (h6.h > h6.q) {
-            if (h6.k) {
-                h6.k = false;
-                AndroidUtilities.cancelRunOnUIThread(h6.m);
-            }
-            if (h6.j) {
-                return;
-            }
-            h6.j = true;
-            AndroidUtilities.runOnUIThread(h6.l, Math.abs(h6.i - SystemClock.elapsedRealtime()) < 12000 ? 12000L : 1800L);
-            return;
-        }
-        if (MediaController.getInstance().isRecordingOrListeningByProximity()) {
-            return;
-        }
-        if (h6.j) {
-            h6.j = false;
-            AndroidUtilities.cancelRunOnUIThread(h6.l);
-        }
-        if (h6.k) {
-            return;
-        }
-        h6.k = true;
-        AndroidUtilities.runOnUIThread(h6.m, Math.abs(h6.i - SystemClock.elapsedRealtime()) < 12000 ? 12000L : 1800L);
+public abstract class o5 extends TextView {
+    public boolean a;
+    public final org.telegram.ui.Components.f6 b;
+    public final eq c;
+
+    public o5(Context context) {
+        super(context);
+        this.a = false;
+        this.b = new org.telegram.ui.Components.f6(this, 320L, bs.h);
+        this.c = new eq(-1);
     }
 
-    @Override // android.hardware.SensorEventListener
-    public final void onAccuracyChanged(Sensor sensor, int i10) {
+    @Override // android.widget.TextView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        Canvas canvas2;
+        float e = this.b.e(this.a);
+        if (e < 1.0f) {
+            if (e <= 0.0f) {
+                canvas.save();
+                canvas2 = canvas;
+            } else {
+                canvas2 = canvas;
+                canvas2.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) ((1.0f - e) * 255.0f), 31);
+            }
+            canvas2.translate(0.0f, AndroidUtilities.dp(6.0f) * e);
+            super.onDraw(canvas2);
+            canvas2.restore();
+        } else {
+            canvas2 = canvas;
+        }
+        if (e > 0.0f) {
+            int width = getWidth() / 2;
+            int height = getHeight() / 2;
+            int dp = width - ((int) ((1.0f - e) * AndroidUtilities.dp(6.0f)));
+            eq eqVar = this.c;
+            eqVar.setAlpha((int) (e * 255.0f));
+            eqVar.setBounds(dp - (eqVar.getIntrinsicWidth() / 2), height - (eqVar.getIntrinsicWidth() / 2), (eqVar.getIntrinsicWidth() / 2) + dp, (eqVar.getIntrinsicHeight() / 2) + height);
+            eqVar.draw(canvas2);
+            invalidate();
+        }
+    }
+
+    @Override // android.widget.TextView
+    public void setTextColor(int i10) {
+        super.setTextColor(i10);
+        this.c.b(i10);
     }
 }

@@ -20,7 +20,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.TreeSet;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public abstract class e0 {
     public static Bitmap a(int i10, int i11, byte[] bArr) {
@@ -78,10 +78,10 @@ public abstract class e0 {
             e9.l0 l0Var = e9.n0.b;
             return x1.e;
         }
-        TreeSet treeSet = new TreeSet(Comparator$-EL.reversed(Comparator$-CC.comparing(new k2.f(0))));
+        TreeSet treeSet = new TreeSet(Comparator$-EL.reversed(Comparator$-CC.comparing(new k2.g(0))));
         Iterator it = list.iterator();
         while (it.hasNext()) {
-            AudioDescriptor b10 = j2.e.b(it.next());
+            AudioDescriptor b10 = k2.f.b(it.next());
             if (b10.getStandard() == 1) {
                 byte[] descriptor = b10.getDescriptor();
                 if (descriptor.length != 3) {
@@ -110,9 +110,9 @@ public abstract class e0 {
         builder.setAuthenticationRequired(false);
     }
 
-    public static void f(MediaDrm mediaDrm, byte[] bArr, j2.k kVar) {
+    public static void f(MediaDrm mediaDrm, byte[] bArr, j2.j jVar) {
         LogSessionId logSessionId;
-        LogSessionId a2 = kVar.a();
+        LogSessionId a2 = jVar.a();
         logSessionId = LogSessionId.LOG_SESSION_ID_NONE;
         if (a2.equals(logSessionId)) {
             return;
@@ -122,9 +122,9 @@ public abstract class e0 {
         playbackComponent.setLogSessionId(a2);
     }
 
-    public static void g(com.google.firebase.messaging.l lVar, j2.k kVar) {
+    public static void g(com.google.firebase.messaging.l lVar, j2.j jVar) {
         LogSessionId logSessionId;
-        LogSessionId a2 = kVar.a();
+        LogSessionId a2 = jVar.a();
         logSessionId = LogSessionId.LOG_SESSION_ID_NONE;
         if (a2.equals(logSessionId)) {
             return;

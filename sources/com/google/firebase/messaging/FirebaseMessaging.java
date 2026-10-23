@@ -25,7 +25,7 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public class FirebaseMessaging {
     public static final long k = TimeUnit.HOURS.toSeconds(8);
@@ -294,7 +294,7 @@ public class FirebaseMessaging {
                     Log.d("FirebaseMessaging", "Making new request for: " + c10);
                 }
                 l lVar = this.c;
-                task = lVar.q(lVar.J(n.c((l9.h) lVar.a), "*", new Bundle())).onSuccessTask(this.h, new u2(this, c10, d, 5)).continueWithTask((Executor) iVar.a, new h0(9, iVar, c10));
+                task = lVar.m(lVar.A(n.c((l9.h) lVar.a), "*", new Bundle())).onSuccessTask(this.h, new u2(this, c10, d, 5)).continueWithTask((Executor) iVar.a, new h0(9, iVar, c10));
                 ((a0.f) iVar.b).put(c10, task);
             } else if (Log.isLoggable("FirebaseMessaging", 3)) {
                 Log.d("FirebaseMessaging", "Joining ongoing request for: " + c10);

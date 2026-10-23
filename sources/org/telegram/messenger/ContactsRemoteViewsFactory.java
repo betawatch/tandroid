@@ -16,7 +16,7 @@ import android.widget.RemoteViewsService;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 class ContactsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
     private AccountInstance accountInstance;
@@ -30,7 +30,7 @@ class ContactsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactor
 
     public ContactsRemoteViewsFactory(Context context, Intent intent) {
         this.mContext = context;
-        org.telegram.ui.ActionBar.h6.S(context);
+        org.telegram.ui.ActionBar.k6.S(context);
         this.appWidgetId = intent.getIntExtra("appWidgetId", 0);
         SharedPreferences sharedPreferences = context.getSharedPreferences("shortcut_widget", 0);
         int i10 = sharedPreferences.getInt("account" + this.appWidgetId, -1);
@@ -144,7 +144,7 @@ class ContactsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactor
                             h9Var.g(1);
                         }
                     } else {
-                        org.telegram.ui.Components.h9 h9Var2 = new org.telegram.ui.Components.h9((org.telegram.ui.ActionBar.d6) null);
+                        org.telegram.ui.Components.h9 h9Var2 = new org.telegram.ui.Components.h9((org.telegram.ui.ActionBar.g6) null);
                         h9Var2.k(this.accountInstance.getCurrentAccount(), chat);
                         h9Var = h9Var2;
                     }

@@ -1,37 +1,30 @@
 package org.telegram.ui.Wallet;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.ti;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final class u9 extends AnimatorListenerAdapter {
-    public final /* synthetic */ ti a;
-    public final /* synthetic */ m6 b;
-    public final /* synthetic */ v9 c;
+public final class u9 extends FrameLayout {
+    public final /* synthetic */ w9 a;
 
-    public u9(v9 v9Var, ti tiVar, m6 m6Var) {
-        this.c = v9Var;
-        this.a = tiVar;
-        this.b = m6Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public u9(w9 w9Var, Context context) {
+        super(context);
+        this.a = w9Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationCancel(Animator animator) {
-        this.c.b();
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        this.c.b();
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationStart(Animator animator) {
-        if (this.a != null) {
-            AndroidUtilities.hideKeyboard(this.b);
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        canvas.save();
+        canvas.translate(-getLeft(), -getTop());
+        w9 w9Var = this.a;
+        w9Var.j.c(canvas);
+        canvas.restore();
+        super.dispatchDraw(canvas);
+        if (w9Var.j.d()) {
+            postInvalidateOnAnimation();
         }
     }
 }

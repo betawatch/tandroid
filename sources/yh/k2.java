@@ -3,23 +3,23 @@ package yh;
 import ai.l7;
 import android.content.Context;
 import android.view.View;
-import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class k2 extends l7 {
     public final /* synthetic */ int B1;
     public final /* synthetic */ Object C1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ k2(l2 l2Var, Context context, int i10, long j10, d6 d6Var, int i11) {
-        super(context, i10, j10, d6Var, null);
+    public /* synthetic */ k2(l2 l2Var, Context context, int i10, long j10, g6 g6Var, int i11) {
+        super(context, i10, j10, g6Var, null);
         this.B1 = i11;
         this.C1 = l2Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.f3
+    @Override // org.telegram.ui.ActionBar.h3
     public int getBottomInset() {
         switch (this.B1) {
             case 3:
@@ -29,7 +29,7 @@ public final class k2 extends l7 {
         }
     }
 
-    @Override // ai.l7, org.telegram.ui.ActionBar.f3, org.telegram.ui.ActionBar.j2
+    @Override // ai.l7, org.telegram.ui.ActionBar.h3, org.telegram.ui.ActionBar.k2
     public xc getBulletinFactory() {
         switch (this.B1) {
             case 0:
@@ -44,8 +44,8 @@ public final class k2 extends l7 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k2(l7 l7Var, Context context, int i10, long j10, d6 d6Var, View view) {
-        super(context, i10, j10, d6Var, view);
+    public k2(l7 l7Var, Context context, int i10, long j10, g6 g6Var, View view) {
+        super(context, i10, j10, g6Var, view);
         this.B1 = 3;
         this.C1 = l7Var;
     }

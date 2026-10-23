@@ -2,7 +2,7 @@ package m4;
 
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements Runnable {
     public final /* synthetic */ int a;
@@ -34,25 +34,25 @@ public final /* synthetic */ class e implements Runnable {
                 }
                 break;
             case 1:
-                this.b.g.O0(this.c, TLObject.FLAG_31, 1, i1.Q0(new k2.f0(15)));
+                this.b.g.O0(this.c, TLObject.FLAG_31, 1, i1.Q0(new k2.f(19)));
                 break;
             case 2:
-                this.b.g.O0(this.c, TLObject.FLAG_31, 9, i1.Q0(new k2.f0(24)));
+                this.b.g.O0(this.c, TLObject.FLAG_31, 9, i1.Q0(new k2.f(28)));
                 break;
             case 3:
-                this.b.g.O0(this.c, TLObject.FLAG_31, 7, i1.Q0(new k2.f0(20)));
+                this.b.g.O0(this.c, TLObject.FLAG_31, 7, i1.Q0(new k2.f(24)));
                 break;
             case 4:
-                this.b.g.O0(this.c, TLObject.FLAG_31, 12, i1.Q0(new k2.f0(23)));
+                this.b.g.O0(this.c, TLObject.FLAG_31, 12, i1.Q0(new k2.f(27)));
                 break;
             case 5:
-                this.b.g.O0(this.c, TLObject.FLAG_31, 11, i1.Q0(new k2.f0(19)));
+                this.b.g.O0(this.c, TLObject.FLAG_31, 11, i1.Q0(new k2.f(23)));
                 break;
             case 6:
-                this.b.g.O0(this.c, TLObject.FLAG_31, 3, i1.Q0(new v0(0)));
+                this.b.g.O0(this.c, TLObject.FLAG_31, 3, i1.Q0(new v0(4)));
                 break;
             case 7:
-                this.b.g.O0(this.c, TLObject.FLAG_31, 1, i1.Q0(new k2.f0(15)));
+                this.b.g.O0(this.c, TLObject.FLAG_31, 1, i1.Q0(new k2.f(19)));
                 break;
             case 8:
                 this.b.g.M0(this.c, TLObject.FLAG_31);

@@ -1,11 +1,11 @@
 package j4;
 
-import c3.j0;
+import c3.l0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class r {
-    public final j0 a;
+    public final l0 a;
     public long b;
     public boolean c;
     public int d;
@@ -19,8 +19,8 @@ public final class r {
     public long l;
     public boolean m;
 
-    public r(j0 j0Var) {
-        this.a = j0Var;
+    public r(l0 l0Var) {
+        this.a = l0Var;
     }
 
     public final void a(int i10) {

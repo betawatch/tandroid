@@ -1,6 +1,6 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ep implements Runnable {
     public final /* synthetic */ int a;
@@ -18,37 +18,37 @@ public final /* synthetic */ class ep implements Runnable {
                 this.b.h.l();
                 break;
             case 1:
-                this.b.u(true);
+                this.b.v(true);
                 break;
             case 2:
                 wp wpVar = this.b;
-                org.telegram.ui.qn qnVar = wpVar.v;
-                org.telegram.ui.ActionBar.n2 d02 = org.telegram.ui.p91.d0(qnVar.getMessagesController().getChat(Long.valueOf(-qnVar.a())), true);
-                org.telegram.ui.ActionBar.l2 l2Var = new org.telegram.ui.ActionBar.l2();
-                l2Var.a = true;
-                d02.setResourceProvider(qnVar.getResourceProvider());
-                l2Var.c = new rc(7);
-                l2Var.d = new ep(wpVar, 3);
-                l2Var.b = new ep(wpVar, 4);
-                l2Var.e = true;
-                wpVar.X = d02;
-                qnVar.showAsSheet(d02, l2Var);
+                org.telegram.ui.sn snVar = wpVar.v;
+                org.telegram.ui.ActionBar.o2 d02 = org.telegram.ui.u91.d0(snVar.getMessagesController().getChat(Long.valueOf(-snVar.a())), true);
+                org.telegram.ui.ActionBar.m2 m2Var = new org.telegram.ui.ActionBar.m2();
+                m2Var.a = true;
+                d02.setResourceProvider(snVar.getResourceProvider());
+                m2Var.c = new rc(7);
+                m2Var.d = new ep(wpVar, 3);
+                m2Var.b = new ep(wpVar, 4);
+                m2Var.e = true;
+                wpVar.W = d02;
+                snVar.showAsSheet(d02, m2Var);
                 break;
             case 3:
-                this.b.w();
+                this.b.z();
                 break;
             case 4:
-                this.b.X = null;
+                this.b.W = null;
                 break;
             case 5:
-                this.b.w();
+                this.b.z();
                 break;
             case 6:
-                this.b.X = null;
+                this.b.W = null;
                 break;
             default:
                 wp wpVar2 = this.b;
-                wpVar2.U.f(wpVar2.G, true);
+                wpVar2.T.f(wpVar2.F, true);
                 break;
         }
     }

@@ -1,9 +1,9 @@
 package gi;
 
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.h61;
+import org.telegram.ui.Components.m61;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s implements Utilities.Callback5, Utilities.Callback5Return {
     public final /* synthetic */ t a;
@@ -22,6 +22,6 @@ public final /* synthetic */ class s implements Utilities.Callback5, Utilities.C
         ((Integer) obj3).getClass();
         ((Float) obj4).getClass();
         ((Float) obj5).getClass();
-        t.V(this.a, (h61) obj);
+        t.V(this.a, (m61) obj);
     }
 }

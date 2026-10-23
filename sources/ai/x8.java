@@ -2,9 +2,9 @@ package ai;
 
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.df0;
+import org.telegram.ui.if0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x8 implements Runnable {
     public final /* synthetic */ int a;
@@ -37,7 +37,7 @@ public final /* synthetic */ class x8 implements Runnable {
                     zArr2[0] = true;
                     callback2.run(Boolean.TRUE);
                 }
-                AndroidUtilities.runOnUIThread(new df0(4), 220L);
+                AndroidUtilities.runOnUIThread(new if0(4), 220L);
                 break;
             default:
                 boolean[] zArr3 = this.b;
@@ -50,7 +50,7 @@ public final /* synthetic */ class x8 implements Runnable {
         }
     }
 
-    public /* synthetic */ x8(ga gaVar, boolean[] zArr, Utilities.Callback callback) {
+    public /* synthetic */ x8(ha haVar, boolean[] zArr, Utilities.Callback callback) {
         this.a = 0;
         this.b = zArr;
         this.c = callback;

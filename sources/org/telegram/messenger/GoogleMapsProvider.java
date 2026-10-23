@@ -27,11 +27,11 @@ import java.util.List;
 import java.util.Map;
 import org.telegram.messenger.IMapsProvider;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public class GoogleMapsProvider implements IMapsProvider {
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public static final class GoogleCameraUpdate implements IMapsProvider.ICameraUpdate {
         private h8.a cameraUpdate;
 
@@ -40,7 +40,7 @@ public class GoogleMapsProvider implements IMapsProvider {
         }
     }
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public static final class GoogleCircleOptions implements IMapsProvider.ICircleOptions {
         private j8.b circleOptions;
 
@@ -106,7 +106,7 @@ public class GoogleMapsProvider implements IMapsProvider {
         }
     }
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public static final class GoogleLatLngBounds implements IMapsProvider.ILatLngBounds {
         private LatLngBounds bounds;
 
@@ -131,7 +131,7 @@ public class GoogleMapsProvider implements IMapsProvider {
         }
     }
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public static final class GoogleLatLngBoundsBuilder implements IMapsProvider.ILatLngBoundsBuilder {
         private j8.d builder;
 
@@ -180,13 +180,13 @@ public class GoogleMapsProvider implements IMapsProvider {
         }
     }
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public static final class GoogleMapImpl implements IMapsProvider.IMap {
         private h8.c googleMap;
         private Map<j8.a, GoogleCircle> implToAbsCircleMap;
         private Map<j8.f, GoogleMarker> implToAbsMarkerMap;
 
-        /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+        /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
         public final class GoogleCircle implements IMapsProvider.ICircle {
             private j8.a circle;
 
@@ -280,7 +280,7 @@ public class GoogleMapsProvider implements IMapsProvider {
             }
         }
 
-        /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+        /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
         public final class GoogleMarker implements IMapsProvider.IMarker {
             private j8.f marker;
 
@@ -832,7 +832,7 @@ public class GoogleMapsProvider implements IMapsProvider {
         }
     }
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public static final class GoogleMapStyleOptions implements IMapsProvider.IMapStyleOptions {
         private j8.e mapStyleOptions;
 
@@ -841,7 +841,7 @@ public class GoogleMapsProvider implements IMapsProvider {
         }
     }
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public static final class GoogleMapView implements IMapsProvider.IMapView {
         private IMapsProvider.ITouchInterceptor dispatchInterceptor;
         private GLSurfaceView glSurfaceView;
@@ -849,7 +849,7 @@ public class GoogleMapsProvider implements IMapsProvider {
         private h8.d mapView;
         private Runnable onLayoutListener;
 
-        /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+        /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
         public class 1 extends h8.d {
             public 1(Context context) {
                 super(context);
@@ -962,7 +962,7 @@ public class GoogleMapsProvider implements IMapsProvider {
         }
     }
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public static final class GoogleMarkerOptions implements IMapsProvider.IMarkerOptions {
         private j8.g markerOptions;
 
@@ -1024,7 +1024,7 @@ public class GoogleMapsProvider implements IMapsProvider {
         }
     }
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public static final class GoogleProjection implements IMapsProvider.IProjection {
         private h8.g projection;
 
@@ -1051,7 +1051,7 @@ public class GoogleMapsProvider implements IMapsProvider {
         }
     }
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public static final class GoogleUISettings implements IMapsProvider.IUISettings {
         private h8.h uiSettings;
 

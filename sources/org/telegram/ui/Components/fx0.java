@@ -1,70 +1,34 @@
 package org.telegram.ui.Components;
 
-import android.text.Layout;
-import android.text.SpannableStringBuilder;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import android.text.TextUtils;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
+import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public abstract class fx0 {
-    public static final Layout.Alignment[] a = Layout.Alignment.values();
+public final class fx0 {
+    public MessagesController.PeerColor a;
+    public org.telegram.ui.ActionBar.g6 b;
+    public int c;
+    public int d;
+    public float e;
 
-    public static Layout.Alignment a() {
-        Layout.Alignment[] alignmentArr = a;
-        return alignmentArr.length >= 5 ? alignmentArr[4] : Layout.Alignment.ALIGN_OPPOSITE;
-    }
-
-    public static StaticLayout b(CharSequence charSequence, TextPaint textPaint, int i10, float f7, int i11, int i12) {
-        return c(charSequence, textPaint, i10, Layout.Alignment.ALIGN_NORMAL, f7, TextUtils.TruncateAt.END, i11, i12, true);
-    }
-
-    public static StaticLayout c(CharSequence charSequence, TextPaint textPaint, int i10, Layout.Alignment alignment, float f7, TextUtils.TruncateAt truncateAt, int i11, int i12, boolean z10) {
-        CharSequence charSequence2 = charSequence;
-        try {
-            if (i12 == 1) {
-                int indexOf = TextUtils.indexOf(charSequence2, "\n") - 1;
-                if (indexOf > 0) {
-                    charSequence2 = SpannableStringBuilder.valueOf(charSequence2.subSequence(0, indexOf)).append((CharSequence) "…");
-                }
-                CharSequence ellipsize = TextUtils.ellipsize(charSequence2, textPaint, i11, TextUtils.TruncateAt.END);
-                return new StaticLayout(ellipsize, 0, ellipsize.length(), textPaint, i10, alignment, 1.0f, f7, false);
-            }
-            StaticLayout build = StaticLayout.Builder.obtain(charSequence2, 0, charSequence2.length(), textPaint, i10).setAlignment(alignment).setLineSpacing(f7, 1.0f).setIncludePad(false).setEllipsize(null).setEllipsizedWidth(i11).setMaxLines(i12).setBreakStrategy(1).setHyphenationFrequency(0).build();
-            int i13 = 0;
-            while (true) {
-                if (i13 >= build.getLineCount()) {
-                    break;
-                }
-                if (build.getLineRight(i13) > i10) {
-                    build = StaticLayout.Builder.obtain(charSequence2, 0, charSequence2.length(), textPaint, i10).setAlignment(alignment).setLineSpacing(f7, 1.0f).setIncludePad(false).setEllipsize(null).setEllipsizedWidth(i11).setMaxLines(i12).setBreakStrategy(0).setHyphenationFrequency(0).build();
-                    break;
-                }
-                i13++;
-            }
-            if (build.getLineCount() <= i12) {
-                return build;
-            }
-            int i14 = i12 - 1;
-            float lineLeft = build.getLineLeft(i14);
-            float lineWidth = build.getLineWidth(i14);
-            int offsetForHorizontal = lineLeft != 0.0f ? build.getOffsetForHorizontal(i14, lineLeft) : build.getOffsetForHorizontal(i14, lineWidth);
-            if (lineWidth < i11 - AndroidUtilities.dp(10.0f)) {
-                offsetForHorizontal += 3;
-            }
-            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(charSequence2.subSequence(0, Math.max(0, offsetForHorizontal - 3)));
-            spannableStringBuilder.append((CharSequence) "…");
-            return StaticLayout.Builder.obtain(spannableStringBuilder, 0, spannableStringBuilder.length(), textPaint, i10).setAlignment(alignment).setLineSpacing(f7, 1.0f).setIncludePad(false).setEllipsize(((a6[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), a6.class)).length > 0 ? null : truncateAt).setEllipsizedWidth(i11).setMaxLines(i12).setBreakStrategy(z10 ? 1 : 0).setHyphenationFrequency(0).build();
-        } catch (Exception e) {
-            FileLog.e(e);
-            return null;
+    public final void a(MessagesController.PeerColor peerColor) {
+        this.a = peerColor;
+        if (peerColor == null) {
+            this.c = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.A8, this.b);
+            this.d = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.s8, this.b);
+            this.c = i0.a.f(this.e, this.c, 603979776);
+            this.d = i0.a.f(this.e, this.d, -1);
+            return;
         }
-    }
-
-    public static StaticLayout d(CharSequence charSequence, TextPaint textPaint, boolean z10, int i10, int i11) {
-        return StaticLayout.Builder.obtain(charSequence, 0, charSequence.length(), textPaint, i10).setAlignment(Layout.Alignment.ALIGN_CENTER).setLineSpacing(0.0f, 1.0f).setIncludePad(z10).setEllipsize(TextUtils.TruncateAt.END).setEllipsizedWidth(i10).setMaxLines(i11).setBreakStrategy(1).setHyphenationFrequency(0).build();
+        int bgColor1 = peerColor.getBgColor1(org.telegram.ui.ActionBar.k6.I.q());
+        int bgColor2 = peerColor.getBgColor2(org.telegram.ui.ActionBar.k6.I.q());
+        org.telegram.ui.ActionBar.g6 g6Var = this.b;
+        int f7 = i0.a.f(0.75f, bgColor2, bgColor1);
+        int w02 = AndroidUtilities.computePerceivedBrightness(f7) > 0.721f ? org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.v6, g6Var) : org.telegram.ui.ActionBar.k6.b(0.08f, -0.08f, f7);
+        this.c = w02;
+        this.d = AndroidUtilities.computePerceivedBrightness(w02) > 0.721f ? -16777216 : -1;
+        this.c = i0.a.f(this.e, this.c, 603979776);
+        this.d = i0.a.f(this.e, this.d, -1);
     }
 }

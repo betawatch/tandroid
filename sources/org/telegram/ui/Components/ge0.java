@@ -1,178 +1,31 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.animation.ValueAnimator;
-import android.graphics.Point;
-import android.util.Property;
-import android.view.View;
-import android.view.ViewTreeObserver;
-import android.view.animation.DecelerateInterpolator;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class ge0 implements ViewTreeObserver.OnGlobalLayoutListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Runnable c;
-    public final /* synthetic */ me0 d;
+public final class ge0 extends v7.l {
+    public final /* synthetic */ pe0 a;
 
-    public ge0(me0 me0Var, int i10, int i11, Runnable runnable) {
-        this.d = me0Var;
-        this.a = i10;
-        this.b = i11;
-        this.c = runnable;
+    public ge0(pe0 pe0Var) {
+        this.a = pe0Var;
     }
 
-    @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
-    public final void onGlobalLayout() {
-        float f7;
-        int dp;
-        ci.i4 i4Var;
-        yj0 yj0Var;
-        AnimatorSet animatorSet;
-        me0 me0Var = this.d;
-        ci.i4 i4Var2 = me0Var.e;
-        ArrayList arrayList = me0Var.W;
-        int[] iArr = me0Var.h0;
-        yj0 yj0Var2 = me0Var.M;
-        me0Var.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-        if (me0Var.P || !me0Var.isAttachedToWindow()) {
-            return;
-        }
-        me0Var.setAlpha(1.0f);
-        int i10 = 0;
-        yj0Var2.getAnimatedDrawable().N(0, false, false);
-        yj0Var2.getAnimatedDrawable().P(37);
-        yj0Var2.d();
-        me0Var.o(true);
-        AndroidUtilities.runOnUIThread(new rc0(this, 4), 350L);
-        AnimatorSet animatorSet2 = new AnimatorSet();
-        me0Var.Q = animatorSet2;
-        ArrayList arrayList2 = new ArrayList();
-        Point point = AndroidUtilities.displaySize;
-        int i11 = point.x;
-        int i12 = point.y + AndroidUtilities.statusBarHeight;
-        int i13 = this.a;
-        int i14 = i11 - i13;
-        int i15 = i14 * i14;
-        int i16 = this.b;
-        int i17 = i12 - i16;
-        int i18 = i17 * i17;
-        double sqrt = Math.sqrt(i18 + i15);
-        int i19 = i13 * i13;
-        int i20 = 1;
-        double sqrt2 = Math.sqrt(i18 + i19);
-        int i21 = i16 * i16;
-        yj0 yj0Var3 = yj0Var2;
-        final double max = Math.max(Math.max(Math.max(sqrt, sqrt2), Math.sqrt(i19 + i21)), Math.sqrt(i21 + i15));
-        arrayList.clear();
-        int childCount = i4Var2.getChildCount();
-        int i22 = 0;
-        while (i22 < childCount) {
-            View childAt = i4Var2.getChildAt(i22);
-            childAt.setScaleX(0.7f);
-            childAt.setScaleY(0.7f);
-            childAt.setAlpha(0.0f);
-            ie0 ie0Var = new ie0();
-            childAt.getLocationInWindow(iArr);
-            int measuredWidth = i13 - ((childAt.getMeasuredWidth() / 2) + iArr[0]);
-            int measuredHeight = i16 - ((childAt.getMeasuredHeight() / 2) + iArr[i20]);
-            int i23 = (measuredHeight * measuredHeight) + (measuredWidth * measuredWidth);
-            ArrayList arrayList3 = arrayList2;
-            ie0Var.b = ((float) Math.sqrt(i23)) - AndroidUtilities.dp(40.0f);
-            if (i22 != -1) {
-                animatorSet = new AnimatorSet();
-                Property property = View.SCALE_X;
-                i4Var = i4Var2;
-                int i24 = i20;
-                float[] fArr = new float[i24];
-                fArr[0] = 1.0f;
-                ObjectAnimator ofFloat = ObjectAnimator.ofFloat(childAt, (Property<View, Float>) property, fArr);
-                Property property2 = View.SCALE_Y;
-                float[] fArr2 = new float[i24];
-                fArr2[0] = 1.0f;
-                ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(childAt, (Property<View, Float>) property2, fArr2);
-                Animator[] animatorArr = new Animator[2];
-                animatorArr[0] = ofFloat;
-                animatorArr[i24] = ofFloat2;
-                animatorSet.playTogether(animatorArr);
-                yj0Var = yj0Var3;
-                animatorSet.setDuration(140L);
-                animatorSet.setInterpolator(new DecelerateInterpolator());
-            } else {
-                i4Var = i4Var2;
-                yj0Var = yj0Var3;
-                animatorSet = null;
-            }
-            AnimatorSet animatorSet3 = new AnimatorSet();
-            ie0Var.a = animatorSet3;
-            yj0 yj0Var4 = yj0Var;
-            animatorSet3.playTogether(ObjectAnimator.ofFloat(childAt, (Property<View, Float>) View.SCALE_X, i22 == -1 ? 0.9f : 0.6f, i22 == -1 ? 1.0f : 1.04f), ObjectAnimator.ofFloat(childAt, (Property<View, Float>) View.SCALE_Y, i22 != -1 ? 0.6f : 0.9f, i22 == -1 ? 1.0f : 1.04f), ObjectAnimator.ofFloat(childAt, (Property<View, Float>) View.ALPHA, 0.0f, 1.0f));
-            ie0Var.a.addListener(new c80(animatorSet, 7));
-            ie0Var.a.setDuration(i22 == -1 ? 232L : 200L);
-            ie0Var.a.setInterpolator(new DecelerateInterpolator());
-            arrayList.add(ie0Var);
-            i22++;
-            arrayList2 = arrayList3;
-            i4Var2 = i4Var;
-            yj0Var3 = yj0Var4;
-            i20 = 1;
-        }
-        ArrayList arrayList4 = arrayList2;
-        yj0 yj0Var5 = yj0Var3;
-        arrayList4.add(ObjectAnimator.ofFloat(me0Var.v, (Property<ah.v, Float>) View.ALPHA, 0.0f, 1.0f));
-        ValueAnimator ofFloat3 = ValueAnimator.ofFloat(0.0f, 1.0f);
-        arrayList4.add(ofFloat3);
-        ofFloat3.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ee0
-            @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-            public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                me0 me0Var2 = ge0.this.d;
-                double animatedFraction = max * valueAnimator.getAnimatedFraction();
-                int i25 = 0;
-                while (true) {
-                    ArrayList arrayList5 = me0Var2.W;
-                    if (i25 >= arrayList5.size()) {
-                        return;
-                    }
-                    ie0 ie0Var2 = (ie0) arrayList5.get(i25);
-                    if (ie0Var2.b <= animatedFraction) {
-                        ie0Var2.a.start();
-                        arrayList5.remove(i25);
-                        i25--;
-                    }
-                    i25++;
-                }
-            }
-        });
-        bs bsVar = bs.h;
-        animatorSet2.setInterpolator(bsVar);
-        animatorSet2.setDuration(500L);
-        ValueAnimator ofFloat4 = ValueAnimator.ofFloat(me0Var.a0, 1.0f);
-        ofFloat4.addUpdateListener(new b80(this, 3));
-        ofFloat4.addListener(new fe0(this, i10));
-        ofFloat4.setDuration(420L);
-        ofFloat4.setInterpolator(bsVar);
-        arrayList4.add(ofFloat4);
-        animatorSet2.playTogether(arrayList4);
-        animatorSet2.addListener(new fe0(this, 1));
-        animatorSet2.start();
-        AnimatorSet animatorSet4 = new AnimatorSet();
-        me0Var.R = animatorSet4;
-        animatorSet4.setDuration(332L);
-        if (AndroidUtilities.isTablet() || me0Var.getContext().getResources().getConfiguration().orientation != 2) {
-            f7 = i11 / 2.0f;
-            dp = AndroidUtilities.dp(29.0f);
-        } else {
-            f7 = (SharedConfig.passcodeType == 0 ? i11 / 2.0f : i11) / 2.0f;
-            dp = AndroidUtilities.dp(30.0f);
-        }
-        animatorSet4.playTogether(ObjectAnimator.ofFloat(yj0Var5, (Property<yj0, Float>) View.TRANSLATION_X, i13 - AndroidUtilities.dp(29.0f), f7 - dp), ObjectAnimator.ofFloat(yj0Var5, (Property<yj0, Float>) View.TRANSLATION_Y, i16 - AndroidUtilities.dp(29.0f), me0Var.L), ObjectAnimator.ofFloat(yj0Var5, (Property<yj0, Float>) View.SCALE_X, 0.5f, 1.0f), ObjectAnimator.ofFloat(yj0Var5, (Property<yj0, Float>) View.SCALE_Y, 0.5f, 1.0f));
-        animatorSet4.setInterpolator(bs.g);
-        animatorSet4.start();
+    @Override // v7.l
+    public final void a(int i10, CharSequence charSequence) {
+        FileLog.d("PasscodeView onAuthenticationError " + i10 + " \"" + ((Object) charSequence) + "\"");
+        this.a.o(true);
+    }
+
+    @Override // v7.l
+    public final void b() {
+        FileLog.d("PasscodeView onAuthenticationFailed");
+        this.a.o(true);
+    }
+
+    @Override // v7.l
+    public final void c(androidx.biometric.t tVar) {
+        FileLog.d("PasscodeView onAuthenticationSucceeded");
+        this.a.n(true);
     }
 }

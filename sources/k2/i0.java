@@ -10,17 +10,17 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.concurrent.ScheduledExecutorService;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class i0 {
     public static final Object t = new Object();
     public static ScheduledExecutorService u;
     public static int v;
     public final AudioTrack a;
-    public final o b;
+    public final p b;
     public final float c;
     public final a6.i d;
-    public d0 e;
+    public e0 e;
     public final l0 f;
     public final boolean g;
     public final int h;
@@ -36,21 +36,21 @@ public final class i0 {
     public int r;
     public boolean s;
 
-    public i0(AudioTrack audioTrack, o oVar, a6.i iVar, float f7, e2.g0 g0Var) {
+    public i0(AudioTrack audioTrack, p pVar, a6.i iVar, float f7, e2.g0 g0Var) {
         this.a = audioTrack;
-        this.b = oVar;
+        this.b = pVar;
         this.c = f7;
         this.d = iVar;
-        boolean M = e2.m0.M(oVar.a);
+        boolean M = e2.m0.M(pVar.a);
         this.g = M;
         if (M) {
-            this.h = e2.m0.u(oVar.a) * Integer.bitCount(oVar.c);
+            this.h = e2.m0.u(pVar.a) * Integer.bitCount(pVar.c);
         } else {
             this.h = -1;
         }
-        this.f = new l0(new ya.d(this, 26), g0Var, audioTrack, oVar.a, this.h, oVar.f);
+        this.f = new l0(new ya.c(this, 26), g0Var, audioTrack, pVar.a, this.h, pVar.f);
         if (Build.VERSION.SDK_INT >= 24 && iVar != null) {
-            this.e = new d0(audioTrack, iVar);
+            this.e = new e0(audioTrack, iVar);
         }
         this.i = c() ? new h0(this) : null;
     }
@@ -75,7 +75,7 @@ public final class i0 {
     public final long a() {
         l0 l0Var;
         e2.g0 g0Var;
-        b0 b0Var;
+        c0 c0Var;
         AudioTrack audioTrack;
         long j10;
         boolean z10;
@@ -86,7 +86,7 @@ public final class i0 {
         int i10;
         long j11;
         boolean z12;
-        a0 a0Var;
+        b0 b0Var;
         boolean timestamp;
         long j12;
         boolean z13;
@@ -98,7 +98,7 @@ public final class i0 {
         Integer num;
         l0 l0Var3 = this.f;
         e2.g0 g0Var2 = l0Var3.b;
-        b0 b0Var2 = l0Var3.h;
+        c0 c0Var2 = l0Var3.h;
         AudioTrack audioTrack2 = l0Var3.d;
         if (audioTrack2.getPlayState() == 3) {
             long[] jArr = l0Var3.c;
@@ -128,7 +128,7 @@ public final class i0 {
                 }
                 l0Var = l0Var3;
                 g0Var = g0Var2;
-                b0Var = b0Var2;
+                c0Var = c0Var2;
                 audioTrack = audioTrack2;
             }
             long j13 = l0Var3.n;
@@ -160,26 +160,26 @@ public final class i0 {
                         }
                         float f7 = l0Var3.i;
                         long b11 = l0Var3.b(nanoTime);
-                        a0Var = b0Var2.a;
-                        a0 a0Var2 = b0Var2.a;
-                        int i16 = b0Var2.b;
+                        b0Var = c0Var2.a;
+                        b0 b0Var2 = c0Var2.a;
+                        int i16 = c0Var2.b;
                         if (!z12) {
                         }
-                        b0Var2.g = nanoTime;
-                        AudioTrack audioTrack3 = a0Var.a;
-                        AudioTimestamp audioTimestamp2 = a0Var.b;
+                        c0Var2.g = nanoTime;
+                        AudioTrack audioTrack3 = b0Var.a;
+                        AudioTimestamp audioTimestamp2 = b0Var.b;
                         timestamp = audioTrack3.getTimestamp(audioTimestamp2);
                         if (timestamp) {
                         }
                         if (timestamp) {
                         }
                         i11 = 4;
-                        i12 = b0Var.d;
+                        i12 = c0Var.d;
                         if (i12 == 0) {
                         }
                         g0Var.getClass();
                         long nanoTime2 = System.nanoTime() / j10;
-                        if (b0Var.d != 2) {
+                        if (c0Var.d != 2) {
                         }
                         if (z11) {
                         }
@@ -195,13 +195,13 @@ public final class i0 {
             z12 = j13 == l0Var3.n;
             float f72 = l0Var3.i;
             long b112 = l0Var3.b(nanoTime);
-            a0Var = b0Var2.a;
-            a0 a0Var22 = b0Var2.a;
-            int i162 = b0Var2.b;
-            if (!z12 || nanoTime - b0Var2.g >= b0Var2.f) {
-                b0Var2.g = nanoTime;
-                AudioTrack audioTrack32 = a0Var.a;
-                AudioTimestamp audioTimestamp22 = a0Var.b;
+            b0Var = c0Var2.a;
+            b0 b0Var22 = c0Var2.a;
+            int i162 = c0Var2.b;
+            if (!z12 || nanoTime - c0Var2.g >= c0Var2.f) {
+                c0Var2.g = nanoTime;
+                AudioTrack audioTrack32 = b0Var.a;
+                AudioTimestamp audioTimestamp22 = b0Var.b;
                 timestamp = audioTrack32.getTimestamp(audioTimestamp22);
                 if (timestamp) {
                     l0Var = l0Var3;
@@ -211,88 +211,88 @@ public final class i0 {
                     l0Var = l0Var3;
                     long j15 = audioTimestamp22.framePosition;
                     j12 = b112;
-                    long j16 = a0Var.d;
+                    long j16 = b0Var.d;
                     if (j16 > j15) {
                         g0Var = g0Var2;
-                        if (a0Var.f) {
-                            a0Var.g += j16;
-                            a0Var.f = false;
+                        if (b0Var.f) {
+                            b0Var.g += j16;
+                            b0Var.f = false;
                         } else {
-                            a0Var.c++;
+                            b0Var.c++;
                         }
                     } else {
                         g0Var = g0Var2;
                     }
-                    a0Var.d = j15;
-                    a0Var.e = j15 + a0Var.g + (a0Var.c << 32);
+                    b0Var.d = j15;
+                    b0Var.e = j15 + b0Var.g + (b0Var.c << 32);
                 }
                 if (timestamp) {
-                    b0Var = b0Var2;
+                    c0Var = c0Var2;
                     audioTrack = audioTrack2;
                     z13 = timestamp;
                     audioTimestamp = audioTimestamp22;
                 } else {
-                    ya.d dVar = b0Var2.c;
+                    ya.c cVar = c0Var2.c;
                     long j17 = audioTimestamp22.nanoTime / 1000;
                     z13 = timestamp;
                     audioTimestamp = audioTimestamp22;
-                    long B = e2.m0.B(nanoTime - (a0Var22.b.nanoTime / 1000), f72) + e2.m0.Y(i162, a0Var22.e);
+                    long B = e2.m0.B(nanoTime - (b0Var22.b.nanoTime / 1000), f72) + e2.m0.Y(i162, b0Var22.e);
                     if (Math.abs(j17 - nanoTime) <= 5000000) {
-                        b0Var = b0Var2;
+                        c0Var = c0Var2;
                         long j18 = j12;
                         if (Math.abs(B - j18) > 5000000) {
-                            long j19 = a0Var.e;
-                            dVar.getClass();
+                            long j19 = b0Var.e;
+                            cVar.getClass();
                             audioTrack = audioTrack2;
-                            e2.a.l("AudioTrackAudioOutput", "Spurious audio timestamp (frame position mismatch): " + j19 + ", " + j17 + ", " + nanoTime + ", " + j18 + ", " + ((i0) dVar.b).b());
-                            b0Var = b0Var;
+                            e2.a.l("AudioTrackAudioOutput", "Spurious audio timestamp (frame position mismatch): " + j19 + ", " + j17 + ", " + nanoTime + ", " + j18 + ", " + ((i0) cVar.b).b());
+                            c0Var = c0Var;
                             i11 = 4;
-                            b0Var.a(4);
+                            c0Var.a(4);
                         } else {
                             audioTrack = audioTrack2;
                             i11 = 4;
-                            if (b0Var.d == 4) {
-                                b0Var.a(0);
+                            if (c0Var.d == 4) {
+                                c0Var.a(0);
                             }
                         }
-                        i12 = b0Var.d;
+                        i12 = c0Var.d;
                         if (i12 == 0) {
                             AudioTimestamp audioTimestamp3 = audioTimestamp;
                             z10 = false;
                             if (z13) {
                                 long j20 = audioTimestamp3.nanoTime;
-                                if (j20 / 1000 >= b0Var.e) {
-                                    b0Var.h = a0Var.e;
-                                    b0Var.i = j20 / 1000;
-                                    b0Var.a(1);
+                                if (j20 / 1000 >= c0Var.e) {
+                                    c0Var.h = b0Var.e;
+                                    c0Var.i = j20 / 1000;
+                                    c0Var.a(1);
                                 }
-                            } else if (nanoTime - b0Var.e > j11) {
-                                b0Var.a(3);
+                            } else if (nanoTime - c0Var.e > j11) {
+                                c0Var.a(3);
                             }
                         } else if (i12 == 1) {
                             AudioTimestamp audioTimestamp4 = audioTimestamp;
                             if (z13) {
-                                long j21 = a0Var.e;
-                                long j22 = b0Var.h;
+                                long j21 = b0Var.e;
+                                long j22 = c0Var.h;
                                 if (j21 > j22) {
-                                    if (Math.abs((e2.m0.B(nanoTime - (a0Var22.b.nanoTime / 1000), f72) + e2.m0.Y(i162, a0Var22.e)) - (e2.m0.B(nanoTime - b0Var.i, f72) + e2.m0.Y(i162, j22))) < 1000) {
-                                        b0Var.a(2);
+                                    if (Math.abs((e2.m0.B(nanoTime - (b0Var22.b.nanoTime / 1000), f72) + e2.m0.Y(i162, b0Var22.e)) - (e2.m0.B(nanoTime - c0Var.i, f72) + e2.m0.Y(i162, j22))) < 1000) {
+                                        c0Var.a(2);
                                     }
                                 }
-                                if (nanoTime - b0Var.e > 2000000) {
-                                    b0Var.a(3);
+                                if (nanoTime - c0Var.e > 2000000) {
+                                    c0Var.a(3);
                                 } else {
-                                    b0Var.h = a0Var.e;
-                                    b0Var.i = audioTimestamp4.nanoTime / 1000;
+                                    c0Var.h = b0Var.e;
+                                    c0Var.i = audioTimestamp4.nanoTime / 1000;
                                 }
                             } else {
                                 z10 = false;
-                                b0Var.a(0);
+                                c0Var.a(0);
                             }
                         } else if (i12 == 2) {
                             z10 = false;
                             if (!z13) {
-                                b0Var.a(0);
+                                c0Var.a(0);
                             }
                         } else if (i12 != 3) {
                             if (i12 != i11) {
@@ -300,24 +300,24 @@ public final class i0 {
                             }
                         } else if (z13) {
                             z10 = false;
-                            b0Var.a(0);
+                            c0Var.a(0);
                         }
                         g0Var.getClass();
                         long nanoTime22 = System.nanoTime() / j10;
-                        z11 = b0Var.d != 2 ? true : z10;
+                        z11 = c0Var.d != 2 ? true : z10;
                         if (z11) {
                             l0Var2 = l0Var;
                             b10 = l0Var2.b(nanoTime22);
                         } else {
                             l0Var2 = l0Var;
                             float f10 = l0Var2.i;
-                            a0 a0Var3 = b0Var.a;
-                            b10 = e2.m0.B(nanoTime22 - (a0Var3.b.nanoTime / j10), f10) + e2.m0.Y(b0Var.b, a0Var3.e);
+                            b0 b0Var3 = c0Var.a;
+                            b10 = e2.m0.B(nanoTime22 - (b0Var3.b.nanoTime / j10), f10) + e2.m0.Y(c0Var.b, b0Var3.e);
                         }
                         long j142 = b10;
                         playState = audioTrack.getPlayState();
                         if (playState != 3) {
-                            if (z11 || ((i10 = b0Var.d) != 0 && i10 != 1)) {
+                            if (z11 || ((i10 = c0Var.d) != 0 && i10 != 1)) {
                                 l0Var2.d(j142);
                             }
                             long j23 = l0Var2.z;
@@ -338,20 +338,20 @@ public final class i0 {
                         }
                         return j142;
                     }
-                    long j27 = a0Var.e;
-                    dVar.getClass();
-                    e2.a.l("AudioTrackAudioOutput", "Spurious audio timestamp (system clock mismatch): " + j27 + ", " + j17 + ", " + nanoTime + ", " + j12 + ", " + ((i0) dVar.b).b());
-                    b0Var2.a(4);
-                    b0Var = b0Var2;
+                    long j27 = b0Var.e;
+                    cVar.getClass();
+                    e2.a.l("AudioTrackAudioOutput", "Spurious audio timestamp (system clock mismatch): " + j27 + ", " + j17 + ", " + nanoTime + ", " + j12 + ", " + ((i0) cVar.b).b());
+                    c0Var2.a(4);
+                    c0Var = c0Var2;
                     audioTrack = audioTrack2;
                 }
                 i11 = 4;
-                i12 = b0Var.d;
+                i12 = c0Var.d;
                 if (i12 == 0) {
                 }
                 g0Var.getClass();
                 long nanoTime222 = System.nanoTime() / j10;
-                if (b0Var.d != 2) {
+                if (c0Var.d != 2) {
                 }
                 if (z11) {
                 }
@@ -363,19 +363,19 @@ public final class i0 {
             }
             l0Var = l0Var3;
             g0Var = g0Var2;
-            b0Var = b0Var2;
+            c0Var = c0Var2;
             audioTrack = audioTrack2;
         } else {
             l0Var = l0Var3;
             g0Var = g0Var2;
-            b0Var = b0Var2;
+            c0Var = c0Var2;
             audioTrack = audioTrack2;
             j10 = 1000;
         }
         z10 = false;
         g0Var.getClass();
         long nanoTime2222 = System.nanoTime() / j10;
-        if (b0Var.d != 2) {
+        if (c0Var.d != 2) {
         }
         if (z11) {
         }
@@ -421,12 +421,12 @@ public final class i0 {
         l0Var.h.a.f = true;
     }
 
-    public final void f(j2.k kVar) {
+    public final void f(j2.j jVar) {
         LogSessionId logSessionId;
         if (Build.VERSION.SDK_INT < 31) {
             return;
         }
-        LogSessionId a2 = kVar.a();
+        LogSessionId a2 = jVar.a();
         logSessionId = LogSessionId.LOG_SESSION_ID_NONE;
         if (a2.equals(logSessionId)) {
             return;
@@ -443,16 +443,17 @@ public final class i0 {
         e eVar;
         int i11;
         long j11 = j10;
-        o oVar = this.b;
+        p pVar = this.b;
         boolean z11 = this.g;
         if (!z11 && this.q == 0) {
-            this.q = t0.k(oVar.a, byteBuffer);
+            this.q = t0.k(pVar.a, byteBuffer);
         }
         e2.r rVar = this.j;
         rVar.getClass();
         Thread currentThread = Thread.currentThread();
         Thread thread = rVar.a;
         AudioTrack audioTrack2 = this.a;
+        int i12 = 1;
         if (currentThread == thread) {
             long b10 = b();
             if (Build.VERSION.SDK_INT >= 24) {
@@ -471,13 +472,13 @@ public final class i0 {
             boolean z14 = i11 > this.r;
             this.r = i11;
             if (z14) {
-                rVar.e(-1, new j2.e(27));
+                rVar.e(-1, new f(i12));
             }
         } else {
             audioTrack = audioTrack2;
         }
         int remaining = byteBuffer.remaining();
-        if (oVar.d) {
+        if (pVar.d) {
             if (j11 == Long.MIN_VALUE) {
                 j11 = this.n;
             } else {
@@ -537,6 +538,6 @@ public final class i0 {
             k0Var.h = bVar;
             eVar.b(bVar);
         }
-        throw new h(write, z10);
+        throw new i(write, z10);
     }
 }

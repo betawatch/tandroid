@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ek;
 import org.telegram.ui.Components.ti;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class s1 implements ek {
     public final /* synthetic */ ti a;
@@ -24,7 +24,7 @@ public final class s1 implements ek {
         boolean isEmpty = arrayList.isEmpty();
         d2 d2Var = this.b;
         if (!isEmpty) {
-            d2Var.P.d2((String) arrayList.get(0));
+            d2Var.P.i2((String) arrayList.get(0));
         } else if (!arrayList3.isEmpty()) {
             w3 w3Var = d2Var.P;
             MessageObject messageObject = (MessageObject) arrayList3.get(0);
@@ -32,7 +32,7 @@ public final class s1 implements ek {
             if (messageObject != null && messageObject.getDocument() != null) {
                 TLRPC.Document document = messageObject.getDocument();
                 TLRPC.Message message = messageObject.messageOwner;
-                w3Var.e2(document, message != null ? message.attachPath : null);
+                w3Var.j2(document, message != null ? message.attachPath : null);
             }
         }
         this.a.dismiss(true);

@@ -1,7 +1,7 @@
 package ih;
 
 import ah.x;
-import ai.ic;
+import ai.jc;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Path;
@@ -14,14 +14,16 @@ import android.view.RoundedCorner;
 import android.view.View;
 import android.view.WindowInsets;
 import android.widget.FrameLayout;
+import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.g0;
+import org.telegram.messenger.v0;
+import org.telegram.ui.ActionBar.b6;
 import r0.k1;
 import w7.z5;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
-/* loaded from: classes3.dex */
-public final class f extends FrameLayout {
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+/* loaded from: classes4.dex */
+public final class f extends FrameLayout implements b6 {
     public float E;
     public int F;
     public final Rect G;
@@ -31,7 +33,7 @@ public final class f extends FrameLayout {
     public float K;
     public boolean L;
     public qh.g a;
-    public final ic b;
+    public final jc b;
     public final FrameLayout c;
     public final x d;
     public boolean e;
@@ -57,7 +59,7 @@ public final class f extends FrameLayout {
         x xVar = new x(this, context, 8);
         this.d = xVar;
         addView(xVar, z5.e(-1, -2, 80));
-        this.b = new ic(this, context, 6);
+        this.b = new jc(this, context, 6);
     }
 
     public final void a(boolean z10) {
@@ -102,8 +104,8 @@ public final class f extends FrameLayout {
             KeyEvent.Callback childAt = xVar.getChildAt(i11);
             if (childAt instanceof qh.a) {
                 qh.a aVar = (qh.a) childAt;
-                aVar.a(i10);
-                aVar.b(c10);
+                aVar.b(i10);
+                aVar.c(c10);
             }
         }
     }
@@ -147,7 +149,7 @@ public final class f extends FrameLayout {
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        this.h.setBounds(0, getMeasuredHeight() - ((int) this.v), getMeasuredWidth(), g0.y(58.0f, getMeasuredHeight() - ((int) this.v), getMeasuredHeight()));
+        this.h.setBounds(0, getMeasuredHeight() - ((int) this.v), getMeasuredWidth(), v0.b(58.0f, getMeasuredHeight() - ((int) this.v), getMeasuredHeight()));
         int measuredHeight = getMeasuredHeight() - this.r;
         int round = Math.round(this.x);
         int measuredWidth = getMeasuredWidth() - Math.round(this.y);
@@ -171,7 +173,7 @@ public final class f extends FrameLayout {
         boolean z10 = view == this.d;
         if (z10) {
             canvas.save();
-            canvas.clipPath(this.h.j.k);
+            canvas.clipPath(this.h.v.k);
         }
         boolean drawChild = super.drawChild(canvas, view, j10);
         if (z10) {
@@ -233,7 +235,7 @@ public final class f extends FrameLayout {
             int x10 = (int) motionEvent.getX();
             int y3 = (int) motionEvent.getY();
             dh.d dVar2 = this.f;
-            this.L = (dVar2 != null && dVar2.l == 255 && dVar2.getBounds().contains(x10, y3)) || ((dVar = this.h) != null && dVar.getBounds().contains(x10, y3));
+            this.L = (dVar2 != null && dVar2.x == 255 && dVar2.getBounds().contains(x10, y3)) || ((dVar = this.h) != null && dVar.getBounds().contains(x10, y3));
         }
         if (action == 1 || action == 3) {
             this.L = false;
@@ -278,15 +280,32 @@ public final class f extends FrameLayout {
 
     public void setUnderKeyboardBackgroundDrawable(dh.d dVar) {
         this.h = dVar;
-        dVar.m = true;
+        dVar.y = true;
         dVar.r(AndroidUtilities.dp(29.0f), AndroidUtilities.dp(29.0f), 0.0f, 0.0f);
         this.h.u(AndroidUtilities.dp(32.0f));
         dh.d dVar2 = this.h;
-        dVar2.j.g = 0.4f;
+        dVar2.v.g = 0.4f;
         dVar2.k();
     }
 
     public void setWindowInsetsProvider(qh.g gVar) {
         this.a = gVar;
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void updateColors() {
+        dh.d dVar = this.f;
+        if (dVar != null) {
+            dVar.updateColors();
+        }
+        dh.d dVar2 = this.h;
+        if (dVar2 != null) {
+            dVar2.updateColors();
+        }
+        invalidate();
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

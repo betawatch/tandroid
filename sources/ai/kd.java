@@ -1,91 +1,80 @@
 package ai;
 
 import android.content.Context;
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.h61;
-import org.telegram.ui.Components.w81;
+import android.widget.FrameLayout;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.ui.Components.b10;
+import org.telegram.ui.Components.j71;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final class kd extends w81 {
-    public final Context a;
-    public final int b;
-    public final boolean c;
+public final class kd extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
+    public final j71 a;
+    public final org.telegram.ui.ActionBar.g6 b;
+    public final int c;
     public final int d;
-    public final org.telegram.ui.ActionBar.d6 e;
+    public final boolean e;
     public final long f;
-    public final ArrayList g = new ArrayList();
+    public final jd h;
 
-    public kd(Context context, int i10, boolean z10, long j10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
-        this.a = context;
-        this.b = i10;
-        this.c = z10;
-        this.d = i11;
-        this.e = d6Var;
+    public kd(Context context, boolean z10, long j10, int i10, int i11, int i12, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(context);
+        this.d = i10;
+        this.e = z10;
+        this.c = i11;
         this.f = j10;
-        i();
+        this.b = g6Var;
+        this.h = new jd(j10, i11, i10, z10);
+        j71 j71Var = new j71(context, i11, i12, true, new q(this, 10), new a1.c(this, 11), null, g6Var);
+        this.a = j71Var;
+        addView(j71Var, w7.z5.c(-1.0f, -1));
+        j71Var.setOnScrollListener(new ah.d0(this, 4));
     }
 
-    @Override // org.telegram.ui.Components.w81
-    public final View d(int i10) {
-        return new jd(this.a, this.c, this.f, i10, this.b, this.d, this.e);
-    }
-
-    @Override // org.telegram.ui.Components.w81
-    public final int e() {
-        return this.g.size();
-    }
-
-    @Override // org.telegram.ui.Components.w81
-    public final CharSequence g(int i10) {
-        int h = h(i10);
-        return h != 0 ? h != 1 ? h != 2 ? "" : LocaleController.getString(R.string.StarsTransactionsOutgoing) : LocaleController.getString(R.string.StarsTransactionsIncoming) : LocaleController.getString(R.string.StarsTransactionsAll);
-    }
-
-    @Override // org.telegram.ui.Components.w81
-    public final int h(int i10) {
-        if (i10 < 0) {
-            return 0;
-        }
-        ArrayList arrayList = this.g;
-        if (i10 >= arrayList.size()) {
-            return 0;
-        }
-        return ((h61) arrayList.get(i10)).z;
-    }
-
-    public final void i() {
-        ArrayList arrayList = this.g;
-        arrayList.clear();
-        long j10 = this.f;
-        int i10 = this.b;
-        if (j10 == 0) {
-            ga y3 = ga.y(i10, this.c);
-            arrayList.add(h61.C(0));
-            if (y3.O(1)) {
-                arrayList.add(h61.C(1));
-            }
-            if (y3.O(2)) {
-                arrayList.add(h61.C(2));
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        int i12 = NotificationCenter.starTransactionsLoaded;
+        j71 j71Var = this.a;
+        if (i10 != i12) {
+            if (i10 == NotificationCenter.botStarsTransactionsLoaded && ((Long) objArr[0]).longValue() == this.f) {
+                j71Var.Z2.N(true);
                 return;
             }
             return;
         }
-        k0 g10 = k0.g(i10);
-        arrayList.add(h61.C(0));
-        if (!g10.k(j10).a[1].isEmpty()) {
-            arrayList.add(h61.C(1));
-        }
-        if (g10.k(j10).a[2].isEmpty()) {
+        j71Var.Z2.N(true);
+        if (j71Var.canScrollVertically(1)) {
+            for (int i13 = 0; i13 < j71Var.getChildCount(); i13++) {
+                if (!(j71Var.getChildAt(i13) instanceof b10)) {
+                }
+            }
             return;
         }
-        arrayList.add(h61.C(2));
+        this.h.run();
     }
 
-    @Override // org.telegram.ui.Components.w81
-    public final void b(View view, int i10, int i11) {
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        long j10 = this.f;
+        int i10 = this.c;
+        if (j10 != 0) {
+            NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.botStarsTransactionsLoaded);
+        } else {
+            NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.starTransactionsLoaded);
+        }
+        this.a.Z2.N(false);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        long j10 = this.f;
+        int i10 = this.c;
+        if (j10 != 0) {
+            NotificationCenter.getInstance(i10).removeObserver(this, NotificationCenter.botStarsTransactionsLoaded);
+        } else {
+            NotificationCenter.getInstance(i10).removeObserver(this, NotificationCenter.starTransactionsLoaded);
+        }
     }
 }

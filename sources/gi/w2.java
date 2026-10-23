@@ -4,11 +4,11 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_bots;
-import org.telegram.ui.ActionBar.d5;
+import org.telegram.ui.ActionBar.h5;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class w2 implements Runnable {
     public final /* synthetic */ int a;
@@ -26,20 +26,20 @@ public final /* synthetic */ class w2 implements Runnable {
                 TL_bots.toggleUserEmojiStatusPermission toggleuseremojistatuspermission = new TL_bots.toggleUserEmojiStatusPermission();
                 y2 y2Var = this.b;
                 d3 d3Var = y2Var.d;
-                toggleuseremojistatuspermission.bot = MessagesController.getInstance(d3Var.G).getInputUser(d3Var.H);
+                toggleuseremojistatuspermission.bot = MessagesController.getInstance(d3Var.H).getInputUser(d3Var.I);
                 toggleuseremojistatuspermission.enabled = false;
-                ConnectionsManager.getInstance(d3Var.G).sendRequest(toggleuseremojistatuspermission, new x2(y2Var, 1));
+                ConnectionsManager.getInstance(d3Var.H).sendRequest(toggleuseremojistatuspermission, new x2(y2Var, 1));
                 break;
             case 1:
                 d3 d3Var2 = this.b.d;
-                u0.e(d3Var2.getContext(), d3Var2.G, d3Var2.H).l(false, null);
+                u0.e(d3Var2.getContext(), d3Var2.H, d3Var2.I).l(false, null);
                 break;
             default:
                 d3 d3Var3 = this.b.d;
-                org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
+                org.telegram.ui.ActionBar.o2 U = LaunchActivity.U();
                 if (U != null && U.getParentLayout() != null) {
-                    d5 parentLayout = U.getParentLayout();
-                    U.presentFragment(ProfileActivity.m4(d3Var3.H));
+                    h5 parentLayout = U.getParentLayout();
+                    U.presentFragment(ProfileActivity.o4(d3Var3.I));
                     AndroidUtilities.scrollToFragmentRow(parentLayout, "botPermissionLocation");
                     d3Var3.k(true);
                     break;

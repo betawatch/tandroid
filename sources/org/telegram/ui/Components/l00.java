@@ -9,7 +9,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Emoji;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class l00 extends s4.k {
     public final /* synthetic */ s00 F;
@@ -33,7 +33,7 @@ public final class l00 extends s4.k {
                 }
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
                 ofFloat.addUpdateListener(new k00(q00Var, 0));
-                ofFloat.addListener(new org.telegram.ui.nq(q00Var, 26));
+                ofFloat.addListener(new org.telegram.ui.pq(q00Var, 27));
                 q00Var.a = ofFloat;
                 ofFloat.setDuration(this.e);
                 ofFloat.start();
@@ -151,7 +151,7 @@ public final class l00 extends s4.k {
                     i14 = translationX;
                     i15 = translationY;
                     z18 = false;
-                    int ceil = (int) Math.ceil(org.telegram.ui.ActionBar.h6.L0.measureText(valueOf));
+                    int ceil = (int) Math.ceil(org.telegram.ui.ActionBar.k6.L0.measureText(valueOf));
                     Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
                     z17 = true;
                     q00Var.L = new StaticLayout(spannableStringBuilder, textPaint2, ceil, alignment, 1.0f, 0.0f, false);
@@ -162,10 +162,10 @@ public final class l00 extends s4.k {
                     i15 = translationY;
                     z17 = true;
                     z18 = false;
-                    int ceil2 = (int) Math.ceil(org.telegram.ui.ActionBar.h6.L0.measureText(valueOf));
+                    int ceil2 = (int) Math.ceil(org.telegram.ui.ActionBar.k6.L0.measureText(valueOf));
                     Layout.Alignment alignment2 = Layout.Alignment.ALIGN_CENTER;
                     q00Var.L = new StaticLayout(valueOf, textPaint2, ceil2, alignment2, 1.0f, 0.0f, false);
-                    q00Var.K = new StaticLayout(valueOf2, textPaint2, (int) Math.ceil(org.telegram.ui.ActionBar.h6.L0.measureText(valueOf2)), alignment2, 1.0f, 0.0f, false);
+                    q00Var.K = new StaticLayout(valueOf2, textPaint2, (int) Math.ceil(org.telegram.ui.ActionBar.k6.L0.measureText(valueOf2)), alignment2, 1.0f, 0.0f, false);
                 }
             }
             z10 = z17;

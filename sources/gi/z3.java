@@ -4,27 +4,32 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.view.View;
+import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.ew0;
+import org.telegram.messenger.FileLog;
+import org.telegram.ui.ActionBar.b6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.Components.hw0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public class z3 extends View {
-    public final ew0 a;
+public class z3 extends View implements b6 {
+    public final hw0 a;
     public final Paint b;
     public float c;
     public o1.k d;
+    public final g6 e;
 
-    public z3(Context context, d6 d6Var) {
+    public z3(Context context, g6 g6Var) {
         super(context);
-        ew0 ew0Var = new ew0(new fh.b(9), new fh.b(10));
-        ew0Var.c = 100.0f;
-        this.a = ew0Var;
+        hw0 hw0Var = new hw0(new fh.b(11), new fh.b(12));
+        hw0Var.c = 100.0f;
+        this.a = hw0Var;
         Paint paint = new Paint(1);
         this.b = paint;
-        paint.setColor(h6.w0(h6.Oh, d6Var));
+        this.e = g6Var;
+        paint.setColor(k6.w0(k6.Oh, g6Var));
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(AndroidUtilities.dp(2.0f));
         paint.setStrokeCap(Paint.Cap.ROUND);
@@ -72,5 +77,19 @@ public class z3 extends View {
         }
         kVar.u.i = f7 * 100.0f;
         kVar.h();
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void updateColors() {
+        try {
+            this.b.setColor(k6.w0(k6.Oh, this.e));
+            invalidate();
+        } catch (Exception e) {
+            FileLog.e(e);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

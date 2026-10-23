@@ -3,7 +3,7 @@ package rh;
 import androidx.recyclerview.widget.RecyclerView;
 import s4.r0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class l extends r0 {
     public final /* synthetic */ p a;
@@ -20,7 +20,7 @@ public final class l extends r0 {
         if (pVar.h || pVar.i) {
             return;
         }
-        if ((r2.c.W2.x.size() - 1) - this.b.c.V2.M0() < 5) {
+        if ((r2.c.Z2.y.size() - 1) - this.b.c.Y2.M0() < 5) {
             pVar.a();
         }
     }

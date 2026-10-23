@@ -5,7 +5,7 @@ import java.nio.ByteBuffer;
 import java.util.Date;
 import w7.c7;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class y extends com.googlecode.mp4parser.c {
     public static final /* synthetic */ te.b E;
@@ -149,33 +149,33 @@ public final class y extends com.googlecode.mp4parser.c {
         com.googlecode.mp4parser.g.a().getClass();
         com.googlecode.mp4parser.g.b(b10);
         StringBuilder sb2 = new StringBuilder("TrackHeaderBox[creationTime=");
-        k3.p(te.a.b(E, this, this));
+        k3.o(te.a.b(E, this, this));
         sb2.append(this.e);
         sb2.append(";modificationTime=");
-        k3.p(te.a.b(F, this, this));
+        k3.o(te.a.b(F, this, this));
         sb2.append(this.f);
         sb2.append(";trackId=");
-        k3.p(te.a.b(G, this, this));
+        k3.o(te.a.b(G, this, this));
         sb2.append(this.h);
         sb2.append(";duration=");
-        k3.p(te.a.b(H, this, this));
+        k3.o(te.a.b(H, this, this));
         sb2.append(this.n);
         sb2.append(";layer=");
-        k3.p(te.a.b(I, this, this));
+        k3.o(te.a.b(I, this, this));
         sb2.append(this.r);
         sb2.append(";alternateGroup=");
-        k3.p(te.a.b(J, this, this));
+        k3.o(te.a.b(J, this, this));
         sb2.append(this.s);
         sb2.append(";volume=");
-        k3.p(te.a.b(K, this, this));
+        k3.o(te.a.b(K, this, this));
         sb2.append(this.v);
         sb2.append(";matrix=");
         sb2.append(this.w);
         sb2.append(";width=");
-        k3.p(te.a.b(L, this, this));
+        k3.o(te.a.b(L, this, this));
         sb2.append(this.x);
         sb2.append(";height=");
-        k3.p(te.a.b(M, this, this));
+        k3.o(te.a.b(M, this, this));
         sb2.append(this.y);
         sb2.append("]");
         return sb2.toString();

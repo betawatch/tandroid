@@ -3,36 +3,36 @@ package org.telegram.ui;
 import android.animation.ValueAnimator;
 import android.view.View;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class ui implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.n2 b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.o2 b;
 
-    public /* synthetic */ ui(int i10, org.telegram.ui.ActionBar.n2 n2Var) {
+    public /* synthetic */ ui(int i10, org.telegram.ui.ActionBar.o2 o2Var) {
         this.a = i10;
-        this.b = n2Var;
+        this.b = o2Var;
     }
 
     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                qn qnVar = (qn) this.b;
-                qnVar.la = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                qnVar.X0.invalidate();
+                sn snVar = (sn) this.b;
+                snVar.xa = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                snVar.j1.invalidate();
                 break;
             case 1:
-                cy cyVar = (cy) this.b;
-                cyVar.H0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                View view = cyVar.fragmentView;
+                ey eyVar = (ey) this.b;
+                eyVar.H0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                View view = eyVar.fragmentView;
                 if (view != null) {
                     view.invalidate();
                     break;
                 }
                 break;
             default:
-                ((kc1) this.b).x0.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                ((qc1) this.b).y0.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
         }
     }

@@ -14,22 +14,21 @@ import org.telegram.tgnet.ConnectionsManager;
 import r0.l0;
 import r0.m0;
 import w7.e9;
-import z7.fe;
+import z7.ee;
+import z7.fb;
 import z7.g;
 import z7.gb;
-import z7.hb;
 import z7.ig;
 import z7.jg;
 import z7.qa;
 import z7.ra;
-import z7.sa;
-import z7.ue;
-import z7.wa;
-import z7.wf;
+import z7.te;
+import z7.va;
+import z7.vf;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class d implements wf {
+public final /* synthetic */ class d implements vf {
     public long a;
     public boolean b;
     public final Object c;
@@ -37,10 +36,10 @@ public final /* synthetic */ class d implements wf {
     public Object e;
     public final Object f;
 
-    public /* synthetic */ d(f fVar, long j10, hb hbVar, boolean z10, wb.a aVar, jg jgVar) {
+    public /* synthetic */ d(f fVar, long j10, gb gbVar, boolean z10, wb.a aVar, jg jgVar) {
         this.c = fVar;
         this.a = j10;
-        this.d = hbVar;
+        this.d = gbVar;
         this.b = z10;
         this.e = aVar;
         this.f = jgVar;
@@ -91,21 +90,22 @@ public final /* synthetic */ class d implements wf {
         this.b = true;
     }
 
-    @Override // z7.wf
+    @Override // z7.vf
     public a5.a zza() {
         int i10;
         f fVar = (f) this.c;
         long j10 = this.a;
-        hb hbVar = (hb) this.d;
+        gb gbVar = (gb) this.d;
         boolean z10 = this.b;
         wb.a aVar = (wb.a) this.e;
         jg jgVar = (jg) this.f;
         z5 z5Var = new z5();
+        boolean z11 = false;
         u2.c cVar = new u2.c(18, false);
         cVar.b = Long.valueOf(j10 & Long.MAX_VALUE);
-        cVar.c = hbVar;
+        cVar.c = gbVar;
         cVar.d = Boolean.valueOf(z10);
-        z5Var.b = new wa(cVar);
+        z5Var.b = new va(cVar);
         int i11 = aVar.e;
         f.l.getClass();
         int i12 = aVar.e;
@@ -124,10 +124,10 @@ public final /* synthetic */ class d implements wf {
             }
             i10 = 0;
         }
-        qa qaVar = new qa();
-        qaVar.a = i11 != -1 ? i11 != 35 ? i11 != 842094169 ? i11 != 16 ? i11 != 17 ? ra.b : ra.d : ra.c : ra.e : ra.f : ra.h;
-        qaVar.b = Integer.valueOf(i10 & ConnectionsManager.DEFAULT_DATACENTER_ID);
-        z5Var.c = new sa(qaVar);
+        n2.e eVar = new n2.e(29, z11);
+        eVar.b = i11 != -1 ? i11 != 35 ? i11 != 842094169 ? i11 != 16 ? i11 != 17 ? qa.b : qa.d : qa.c : qa.e : qa.f : qa.h;
+        eVar.c = Integer.valueOf(i10 & ConnectionsManager.DEFAULT_DATACENTER_ID);
+        z5Var.c = new ra(eVar);
         z5Var.a = fVar.e.a();
         if (jgVar != null) {
             List list = jgVar.d;
@@ -141,12 +141,12 @@ public final /* synthetic */ class d implements wf {
                 Object[] objArr = new Object[4];
                 int i13 = 0;
                 for (ig igVar : list2) {
-                    qi.e eVar = new qi.e();
-                    eVar.a = Integer.valueOf(igVar.c & ConnectionsManager.DEFAULT_DATACENTER_ID);
-                    eVar.b = Integer.valueOf(igVar.d & ConnectionsManager.DEFAULT_DATACENTER_ID);
-                    eVar.c = Integer.valueOf(igVar.e & ConnectionsManager.DEFAULT_DATACENTER_ID);
-                    eVar.d = Integer.valueOf(igVar.f & ConnectionsManager.DEFAULT_DATACENTER_ID);
-                    ue ueVar = new ue(eVar);
+                    qi.e eVar2 = new qi.e();
+                    eVar2.a = Integer.valueOf(igVar.c & ConnectionsManager.DEFAULT_DATACENTER_ID);
+                    eVar2.b = Integer.valueOf(igVar.d & ConnectionsManager.DEFAULT_DATACENTER_ID);
+                    eVar2.c = Integer.valueOf(igVar.e & ConnectionsManager.DEFAULT_DATACENTER_ID);
+                    eVar2.d = Integer.valueOf(igVar.f & ConnectionsManager.DEFAULT_DATACENTER_ID);
+                    te teVar = new te(eVar2);
                     int i14 = i13 + 1;
                     int length2 = objArr.length;
                     if (length2 < i14) {
@@ -160,15 +160,15 @@ public final /* synthetic */ class d implements wf {
                         }
                         objArr = Arrays.copyOf(objArr, i15);
                     }
-                    objArr[i13] = ueVar;
+                    objArr[i13] = teVar;
                     i13 = i14;
                 }
                 z5Var.d = z7.i.q(i13, objArr);
             }
         }
         s3 s3Var = new s3();
-        s3Var.c = gb.b;
-        s3Var.f = new fe(z5Var);
+        s3Var.c = fb.b;
+        s3Var.f = new ee(z5Var);
         return new a5.a(s3Var, 0);
     }
 

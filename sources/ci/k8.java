@@ -1,43 +1,57 @@
 package ci;
 
-import android.animation.ValueAnimator;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class k8 implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class k8 implements o1.g {
     public final /* synthetic */ int a;
-    public final /* synthetic */ s8 b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ float d;
+    public final /* synthetic */ FrameLayout b;
 
-    public /* synthetic */ k8(s8 s8Var, float f7, float f10, int i10) {
+    public /* synthetic */ k8(int i10, FrameLayout frameLayout) {
         this.a = i10;
-        this.b = s8Var;
-        this.c = f7;
-        this.d = f10;
+        this.b = frameLayout;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // o1.g
+    public final void a(o1.h hVar, float f7, float f10) {
         switch (this.a) {
             case 0:
-                s8 s8Var = this.b;
-                s8Var.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                s8Var.setScrollY((int) AndroidUtilities.lerp(this.c, 0.0f, floatValue));
-                r8 r8Var = s8Var.b0;
-                r8Var.w = AndroidUtilities.lerp(this.d, 0.0f, floatValue);
-                r8Var.invalidate();
+                r8 r8Var = (r8) this.b;
+                r8Var.d0 = f7;
+                r8Var.f0 = f10;
+                break;
+            case 1:
+                ei.f6 f6Var = (ei.f6) this.b;
+                float f11 = f7 / 1000.0f;
+                f6Var.t1 = f11;
+                rg.u1 u1Var = f6Var.m1;
+                u1Var.setAlpha(f11);
+                u1Var.invalidate();
+                f6Var.U0.invalidate();
+                f6Var.l1.getTypefaceCell().setAlpha(1.0f - f6Var.t1);
+                break;
+            case 2:
+                ng.i iVar = (ng.i) this.b;
+                float f12 = f7 / 1000.0f;
+                ah.v vVar = iVar.a;
+                vVar.setPivotX(AndroidUtilities.dp(28.0f));
+                vVar.setPivotY(AndroidUtilities.dp(28.0f));
+                vVar.setScaleX(f12);
+                vVar.setScaleY(f12);
+                vVar.setAlpha(w7.r.a(f12, 0.0f, 1.0f));
+                iVar.invalidate();
                 break;
             default:
-                s8 s8Var2 = this.b;
-                s8Var2.getClass();
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                s8Var2.setScrollY((int) AndroidUtilities.lerp(this.c, Math.min((s8Var2.getMeasuredHeight() - s8Var2.u0) - AndroidUtilities.dp(64.0f), s8Var2.r0.getBottom() - s8Var2.getMeasuredHeight()), floatValue2));
-                r8 r8Var2 = s8Var2.b0;
-                r8Var2.w = AndroidUtilities.lerp(this.d, 1.0f, floatValue2);
-                r8Var2.invalidate();
+                rg.m0 m0Var = (rg.m0) this.b;
+                float f13 = f7 / 1000.0f;
+                m0Var.D1 = f13;
+                rg.u1 u1Var2 = m0Var.v1;
+                u1Var2.setAlpha(f13);
+                u1Var2.invalidate();
+                m0Var.d1.invalidate();
+                m0Var.u1.getTypefaceCell().setAlpha(1.0f - m0Var.D1);
                 break;
         }
     }

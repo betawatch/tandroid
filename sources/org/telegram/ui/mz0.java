@@ -1,54 +1,32 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.view.ViewGroup;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class mz0 implements ei.mb {
-    public final /* synthetic */ ProfileActivity a;
+public final class mz0 implements aq {
+    public final /* synthetic */ ey a;
+    public final /* synthetic */ nz0 b;
 
-    public mz0(ProfileActivity profileActivity) {
-        this.a = profileActivity;
+    public mz0(nz0 nz0Var, ey eyVar) {
+        this.b = nz0Var;
+        this.a = eyVar;
     }
 
-    @Override // ei.mb
-    public final ei.qb a(long j10) {
-        ProfileActivity profileActivity = this.a;
-        if (j10 != profileActivity.a()) {
-            return null;
-        }
-        profileActivity.f0.setRoundRadiusForExpand((int) AndroidUtilities.lerp(profileActivity.c4(), 0.0f, profileActivity.l2));
-        ry0 ry0Var = profileActivity.f0;
-        boolean isForum = ChatObject.isForum(profileActivity.F2);
-        if (ry0Var == null || ry0Var.getRootView() == null) {
-            return null;
-        }
-        float scaleX = ((View) ry0Var.getParent()).getScaleX();
-        float imageWidth = ry0Var.getImageReceiver().getImageWidth() * scaleX;
-        float f7 = isForum ? 0.32f * imageWidth : imageWidth;
-        ei.ob obVar = new ei.ob(ry0Var, 0);
-        float[] fArr = new float[2];
-        ry0Var.getRootView().getLocationOnScreen(new int[2]);
-        AndroidUtilities.getViewPositionInParent(ry0Var, (ViewGroup) ry0Var.getRootView(), fArr);
-        float imageX = (ry0Var.getImageReceiver().getImageX() * scaleX) + r4[0] + fArr[0];
-        float imageY = (ry0Var.getImageReceiver().getImageY() * scaleX) + r4[1] + fArr[1];
-        obVar.c.set(imageX, imageY, imageX + imageWidth, imageWidth + imageY);
-        obVar.e = ry0Var.getImageReceiver();
-        obVar.b = f7;
-        return obVar;
+    @Override // org.telegram.ui.aq
+    public final void b(int i10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
+        nz0 nz0Var = this.b;
+        nz0Var.b.O1 = true;
+        this.a.removeSelfFromStack();
+        NotificationCenter notificationCenter = nz0Var.b.getNotificationCenter();
+        ProfileActivity profileActivity = nz0Var.b;
+        int i11 = NotificationCenter.closeChats;
+        notificationCenter.removeObserver(profileActivity, i11);
+        nz0Var.b.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(i11, new Object[0]);
     }
 
-    @Override // ei.mb
-    public final void c(long j10, ai.v3 v3Var) {
-        ProfileActivity profileActivity = this.a;
-        profileActivity.f0.setHasStories(profileActivity.j4());
-        if (j10 == profileActivity.a() && profileActivity.p2 && profileActivity.l2 > 0.0f) {
-            profileActivity.c.h1(0, profileActivity.T3() - profileActivity.a.getPaddingTop());
-            profileActivity.a.post(new cb0(profileActivity, 14));
-        }
-        AndroidUtilities.runOnUIThread(v3Var, 30L);
+    @Override // org.telegram.ui.aq
+    public final void a(TLRPC.User user) {
     }
 }

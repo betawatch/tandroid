@@ -16,10 +16,10 @@ import android.view.Surface;
 import com.google.android.gms.internal.play_billing.k3;
 import java.util.concurrent.CountDownLatch;
 import k2.w0;
-import org.telegram.ui.Components.cy0;
+import org.telegram.ui.Components.fy0;
 import org.webrtc.EglBase;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class t {
     public EGLSurface B;
@@ -54,9 +54,9 @@ public final class t {
     public Size c;
     public float c0;
     public final Surface d;
-    public l0 d0;
+    public m0 d0;
     public final Surface e;
-    public l0 e0;
+    public m0 e0;
     public final boolean f;
     public int f0;
     public final int g;
@@ -136,7 +136,7 @@ public final class t {
         if (z10) {
             return;
         }
-        StringBuilder i10 = r4.c.i(str, ": 0x");
+        StringBuilder i10 = o0.i(str, ": 0x");
         i10.append(Integer.toHexString(EGL14.eglGetError()));
         throw new IllegalStateException(i10.toString());
     }
@@ -243,7 +243,7 @@ public final class t {
                 if (!z11) {
                     long elapsedRealtimeNanos2 = SystemClock.elapsedRealtimeNanos();
                     float f7 = (elapsedRealtimeNanos2 - this.Y) / 1000000.0f;
-                    int d = t0.d(this.d0, this.e0, Math.round(f7));
+                    int d = v0.d(this.d0, this.e0, Math.round(f7));
                     this.i.b("camera switch first new frame: waitMs=" + f7 + ", rollingAverageMs=" + d);
                     this.W = 3;
                     this.X = elapsedRealtimeNanos2;
@@ -262,7 +262,7 @@ public final class t {
             c cVar = this.s;
             if (cVar != null) {
                 w0 w0Var = cVar.a;
-                ((s0) w0Var.b).i.post(new p2.b(27, w0Var, e));
+                ((u0) w0Var.b).i.post(new p2.b(27, w0Var, e));
             }
         }
     }
@@ -379,7 +379,7 @@ public final class t {
                 c cVar = this.s;
                 if (cVar != null) {
                     w0 w0Var = cVar.a;
-                    ((s0) w0Var.b).i.post(new p2.b(27, w0Var, e));
+                    ((u0) w0Var.b).i.post(new p2.b(27, w0Var, e));
                 }
             }
         } catch (RuntimeException e7) {
@@ -701,7 +701,7 @@ public final class t {
             return;
         }
         CountDownLatch countDownLatch = new CountDownLatch(1);
-        handler.post(new cy0(this, handlerThread, countDownLatch, 20));
+        handler.post(new fy0(this, handlerThread, countDownLatch, 20));
         try {
             countDownLatch.await();
         } catch (InterruptedException unused) {

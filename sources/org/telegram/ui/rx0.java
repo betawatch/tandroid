@@ -1,71 +1,38 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLObject;
+import java.util.List;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class rx0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ProfileActivity b;
-    public final /* synthetic */ TLRPC.TL_error c;
-    public final /* synthetic */ TLObject d;
-    public final /* synthetic */ TLRPC.TL_channels_getParticipants e;
+public final /* synthetic */ class rx0 implements MessagesStorage.BooleanCallback, gs {
+    public final /* synthetic */ ProfileActivity a;
+    public final /* synthetic */ TLRPC.User b;
 
-    public /* synthetic */ rx0(ProfileActivity profileActivity, TLRPC.TL_error tL_error, TLObject tLObject, TLRPC.TL_channels_getParticipants tL_channels_getParticipants, int i10) {
-        this.a = i10;
-        this.b = profileActivity;
-        this.c = tL_error;
-        this.d = tLObject;
-        this.e = tL_channels_getParticipants;
+    public /* synthetic */ rx0(ProfileActivity profileActivity, TLRPC.User user) {
+        this.a = profileActivity;
+        this.b = user;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ProfileActivity profileActivity = this.b;
-                profileActivity.getNotificationCenter().doOnIdle(new rx0(profileActivity, this.c, this.d, this.e, 1));
-                break;
-            default:
-                ProfileActivity profileActivity2 = this.b;
-                if (this.c == null) {
-                    profileActivity2.getClass();
-                    TLRPC.TL_channels_channelParticipants tL_channels_channelParticipants = (TLRPC.TL_channels_channelParticipants) this.d;
-                    profileActivity2.getMessagesController().putUsers(tL_channels_channelParticipants.users, false);
-                    profileActivity2.getMessagesController().putChats(tL_channels_channelParticipants.chats, false);
-                    if (tL_channels_channelParticipants.users.size() < 200) {
-                        profileActivity2.E1 = true;
-                    }
-                    if (this.e.offset == 0) {
-                        profileActivity2.D1.b();
-                        profileActivity2.v2.participants = new TLRPC.TL_chatParticipants();
-                        profileActivity2.getMessagesStorage().putUsersAndChats(tL_channels_channelParticipants.users, tL_channels_channelParticipants.chats, true, true);
-                        profileActivity2.getMessagesStorage().updateChannelUsers(profileActivity2.g1, tL_channels_channelParticipants.participants);
-                    }
-                    for (int i10 = 0; i10 < tL_channels_channelParticipants.participants.size(); i10++) {
-                        TLRPC.TL_chatChannelParticipant tL_chatChannelParticipant = new TLRPC.TL_chatChannelParticipant();
-                        TLRPC.ChannelParticipant channelParticipant = tL_channels_channelParticipants.participants.get(i10);
-                        tL_chatChannelParticipant.channelParticipant = channelParticipant;
-                        tL_chatChannelParticipant.inviter_id = channelParticipant.inviter_id;
-                        long peerId = MessageObject.getPeerId(channelParticipant.peer);
-                        tL_chatChannelParticipant.user_id = peerId;
-                        tL_chatChannelParticipant.date = tL_chatChannelParticipant.channelParticipant.date;
-                        if (profileActivity2.D1.h(peerId) < 0) {
-                            TLRPC.ChatFull chatFull = profileActivity2.v2;
-                            if (chatFull.participants == null) {
-                                chatFull.participants = new TLRPC.TL_chatParticipants();
-                            }
-                            profileActivity2.v2.participants.participants.add(tL_chatChannelParticipant);
-                            profileActivity2.D1.k(tL_chatChannelParticipant, tL_chatChannelParticipant.user_id);
-                        }
-                    }
-                }
-                profileActivity2.C1 = false;
-                profileActivity2.F4();
-                profileActivity2.e5(true, false);
-                break;
+    @Override // org.telegram.ui.gs
+    public void b() {
+        ProfileActivity.g0(this.a, this.b);
+    }
+
+    @Override // org.telegram.messenger.MessagesStorage.BooleanCallback
+    public void run(boolean z10) {
+        ProfileActivity profileActivity = this.a;
+        if (profileActivity.getParentLayout() != null) {
+            List fragmentStack = profileActivity.getParentLayout().getFragmentStack();
+            if (((fragmentStack == null || fragmentStack.size() < 2) ? null : (org.telegram.ui.ActionBar.o2) si.o0.g(2, fragmentStack)) instanceof sn) {
+                ((ActionBarLayout) profileActivity.getParentLayout()).Z(fragmentStack.size() - 2);
+            }
         }
+        profileActivity.O1 = true;
+        profileActivity.finishFragment();
+        profileActivity.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needDeleteDialog, Long.valueOf(profileActivity.j1), this.b, profileActivity.F2, Boolean.valueOf(z10));
     }
 }

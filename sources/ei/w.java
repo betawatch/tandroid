@@ -3,9 +3,9 @@ package ei;
 import android.content.Context;
 import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.tl0;
+import org.telegram.ui.Components.wl0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class w extends s4.g0 {
     public final /* synthetic */ Context c;
@@ -37,8 +37,8 @@ public final class w extends s4.g0 {
     public final s4.b1 x(ViewGroup viewGroup, int i10) {
         x xVar = new x(this.c);
         xVar.setLayoutParams(new s4.o0(AndroidUtilities.dp(46.0f), AndroidUtilities.dp(56.0f)));
-        xVar.setBackground(org.telegram.ui.ActionBar.h6.g0(553648127, 1, -1));
-        return new tl0(xVar);
+        xVar.setBackground(org.telegram.ui.ActionBar.k6.g0(553648127, 1, -1));
+        return new wl0(xVar);
     }
 
     @Override // s4.g0

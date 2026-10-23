@@ -17,20 +17,20 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class xc extends org.telegram.ui.Components.im0 {
+public final class xc extends org.telegram.ui.Components.lm0 {
     public final /* synthetic */ int c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.d6 d;
+    public final /* synthetic */ org.telegram.ui.ActionBar.g6 d;
     public final /* synthetic */ zc e;
 
-    public xc(zc zcVar, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
+    public xc(zc zcVar, int i10, org.telegram.ui.ActionBar.g6 g6Var) {
         this.e = zcVar;
         this.c = i10;
-        this.d = d6Var;
+        this.d = g6Var;
     }
 
-    @Override // org.telegram.ui.Components.im0
+    @Override // org.telegram.ui.Components.lm0
     public final boolean D(s4.b1 b1Var) {
         return true;
     }
@@ -40,7 +40,7 @@ public final class xc extends org.telegram.ui.Components.im0 {
         return this.e.c.size();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:145:0x02ea  */
+    /* JADX WARN: Removed duplicated region for block: B:145:0x02e6  */
     @Override // s4.g0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -52,10 +52,10 @@ public final class xc extends org.telegram.ui.Components.im0 {
         int v;
         int intValue;
         String[] split;
-        org.telegram.ui.Components.r21 r21Var = (org.telegram.ui.Components.r21) b1Var.a;
+        org.telegram.ui.Components.v21 v21Var = (org.telegram.ui.Components.v21) b1Var.a;
         zc zcVar = this.e;
         ArrayList arrayList = zcVar.c;
-        org.telegram.ui.ActionBar.g6 i11 = ((org.telegram.ui.Components.vp) arrayList.get(i10)).a.i(((org.telegram.ui.Components.vp) arrayList.get(i10)).c);
+        org.telegram.ui.ActionBar.j6 i11 = ((org.telegram.ui.Components.vp) arrayList.get(i10)).a.i(((org.telegram.ui.Components.vp) arrayList.get(i10)).c);
         if (i11 != null && i11.b != null && !i11.T && new File(i11.b).exists()) {
             HashMap hashMap = zcVar.x;
             if (i11.b != null) {
@@ -65,7 +65,7 @@ public final class xc extends org.telegram.ui.Components.im0 {
                     boolean z12 = false;
                     while (true) {
                         try {
-                            int read = fileInputStream2.read(org.telegram.ui.Cells.ma.g3);
+                            int read = fileInputStream2.read(org.telegram.ui.Cells.na.j3);
                             if (read == -1) {
                                 fileInputStream = fileInputStream2;
                                 break;
@@ -78,7 +78,7 @@ public final class xc extends org.telegram.ui.Components.im0 {
                                     fileInputStream = fileInputStream2;
                                     break;
                                 }
-                                byte[] bArr = org.telegram.ui.Cells.ma.g3;
+                                byte[] bArr = org.telegram.ui.Cells.na.j3;
                                 if (bArr[i14] == 10) {
                                     int i16 = i14 - i15;
                                     int i17 = i16 + 1;
@@ -149,7 +149,7 @@ public final class xc extends org.telegram.ui.Components.im0 {
                                                 break;
                                             }
                                             int indexOf = str.indexOf(61);
-                                            if (indexOf != -1 && ((v = org.telegram.ui.ActionBar.g5.v(str.substring(0, indexOf))) == org.telegram.ui.ActionBar.h6.ra || v == org.telegram.ui.ActionBar.h6.Aa || v == org.telegram.ui.ActionBar.h6.Nd || v == org.telegram.ui.ActionBar.h6.Od || v == org.telegram.ui.ActionBar.h6.Pd || v == org.telegram.ui.ActionBar.h6.Qd)) {
+                                            if (indexOf != -1 && ((v = org.telegram.ui.ActionBar.k5.v(str.substring(0, indexOf))) == org.telegram.ui.ActionBar.k6.ra || v == org.telegram.ui.ActionBar.k6.Aa || v == org.telegram.ui.ActionBar.k6.Nd || v == org.telegram.ui.ActionBar.k6.Od || v == org.telegram.ui.ActionBar.k6.Pd || v == org.telegram.ui.ActionBar.k6.Qd)) {
                                                 String substring2 = str.substring(indexOf + 1);
                                                 if (substring2.length() <= 0 || substring2.charAt(0) != '#') {
                                                     intValue = Utilities.parseInt((CharSequence) substring2).intValue();
@@ -160,17 +160,17 @@ public final class xc extends org.telegram.ui.Components.im0 {
                                                         intValue = Utilities.parseInt((CharSequence) substring2).intValue();
                                                     }
                                                 }
-                                                if (v == org.telegram.ui.ActionBar.h6.ra) {
+                                                if (v == org.telegram.ui.ActionBar.k6.ra) {
                                                     i11.Q = intValue;
-                                                } else if (v == org.telegram.ui.ActionBar.h6.Aa) {
+                                                } else if (v == org.telegram.ui.ActionBar.k6.Aa) {
                                                     i11.R = intValue;
-                                                } else if (v == org.telegram.ui.ActionBar.h6.Nd) {
+                                                } else if (v == org.telegram.ui.ActionBar.k6.Nd) {
                                                     i11.L = intValue;
-                                                } else if (v == org.telegram.ui.ActionBar.h6.Od) {
+                                                } else if (v == org.telegram.ui.ActionBar.k6.Od) {
                                                     i11.M = intValue;
-                                                } else if (v == org.telegram.ui.ActionBar.h6.Pd) {
+                                                } else if (v == org.telegram.ui.ActionBar.k6.Pd) {
                                                     i11.N = intValue;
-                                                } else if (v == org.telegram.ui.ActionBar.h6.Qd) {
+                                                } else if (v == org.telegram.ui.ActionBar.k6.Qd) {
                                                     i11.O = intValue;
                                                 }
                                             }
@@ -215,11 +215,11 @@ public final class xc extends org.telegram.ui.Components.im0 {
                     z10 = true;
                     i11.T = true;
                     org.telegram.ui.Components.vp vpVar = (org.telegram.ui.Components.vp) arrayList.get(i10);
-                    r21Var.setEnabled(z10);
-                    r21Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.i5, false));
-                    r21Var.f(vpVar, 0L, false);
-                    r21Var.g(vpVar.d, false);
-                    r21Var.setFallbackWallpaper(vpVar.a.b ? null : zcVar.v);
+                    v21Var.setEnabled(z10);
+                    org.telegram.ui.ActionBar.r6.i(org.telegram.ui.ActionBar.k6.i5, v21Var, null);
+                    v21Var.f(vpVar, 0L, false);
+                    v21Var.g(vpVar.d, false);
+                    v21Var.setFallbackWallpaper(vpVar.a.b ? null : zcVar.v);
                 }
                 if (!hashMap.containsKey(i11)) {
                     hashMap.put(i11, i11.e);
@@ -233,16 +233,16 @@ public final class xc extends org.telegram.ui.Components.im0 {
         }
         z10 = true;
         org.telegram.ui.Components.vp vpVar2 = (org.telegram.ui.Components.vp) arrayList.get(i10);
-        r21Var.setEnabled(z10);
-        r21Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.i5, false));
-        r21Var.f(vpVar2, 0L, false);
-        r21Var.g(vpVar2.d, false);
-        r21Var.setFallbackWallpaper(vpVar2.a.b ? null : zcVar.v);
+        v21Var.setEnabled(z10);
+        org.telegram.ui.ActionBar.r6.i(org.telegram.ui.ActionBar.k6.i5, v21Var, null);
+        v21Var.f(vpVar2, 0L, false);
+        v21Var.g(vpVar2.d, false);
+        v21Var.setFallbackWallpaper(vpVar2.a.b ? null : zcVar.v);
     }
 
     @Override // s4.g0
     public final s4.b1 x(ViewGroup viewGroup, int i10) {
-        return new org.telegram.ui.Components.tl0(new wc(this.c, 3, viewGroup.getContext(), this.d));
+        return new org.telegram.ui.Components.wl0(new wc(this.c, 3, viewGroup.getContext(), this.d));
     }
 
     @Override // s4.g0
@@ -255,8 +255,8 @@ public final class xc extends org.telegram.ui.Components.im0 {
             return;
         }
         org.telegram.ui.Components.vp vpVar = (org.telegram.ui.Components.vp) arrayList.get(b10);
-        org.telegram.ui.Components.r21 r21Var = (org.telegram.ui.Components.r21) view;
-        r21Var.g(vpVar.d, false);
-        r21Var.setFallbackWallpaper(vpVar.a.b ? null : zcVar.v);
+        org.telegram.ui.Components.v21 v21Var = (org.telegram.ui.Components.v21) view;
+        v21Var.g(vpVar.d, false);
+        v21Var.setFallbackWallpaper(vpVar.a.b ? null : zcVar.v);
     }
 }

@@ -10,24 +10,28 @@ import android.view.ActionMode;
 import android.view.GestureDetector;
 import android.view.Menu;
 import android.view.MotionEvent;
+import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.b6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.r6;
 import org.telegram.ui.Components.iu;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public abstract class w0 extends iu {
-    public final d6 c;
+public abstract class w0 extends iu implements b6 {
+    public final g6 c;
     public final le.b d;
     public Runnable e;
     public int f;
 
-    public w0(Context context, int i10, d6 d6Var) {
-        super(context, d6Var);
-        this.c = d6Var;
+    public w0(Context context, int i10, g6 g6Var) {
+        super(context, g6Var);
+        this.c = g6Var;
         this.d = new le.b(getContext(), new v0());
         setBackground(null);
         setIncludeFontPadding(true);
@@ -41,14 +45,14 @@ public abstract class w0 extends iu {
         setTextSize(1, 22.0f);
         setGravity(80);
         setPadding(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(18.0f), AndroidUtilities.dp(12.0f));
-        setTextColor(h6.w0(h6.Ud, d6Var));
-        setLinkTextColor(h6.w0(h6.hc, d6Var));
-        setHighlightColor(h6.w0(h6.uf, d6Var));
-        int i13 = h6.Vd;
-        setHintColor(h6.w0(i13, d6Var));
-        setHintTextColor(h6.w0(i13, d6Var));
-        setCursorColor(h6.w0(h6.Wd, d6Var));
-        setHandlesColor(h6.w0(h6.vf, d6Var));
+        r6.W(this, k6.Ud, g6Var);
+        r6.I(this, k6.hc, g6Var);
+        r6.E(this, k6.uf, g6Var);
+        int i13 = k6.Vd;
+        r6.m(this, 34, i13, g6Var);
+        r6.F(this, i13, g6Var);
+        r6.m(this, 30, k6.Wd, g6Var);
+        r6.m(this, 36, k6.vf, g6Var);
         if (i11 >= 28) {
             setFallbackLineSpacing(false);
         }
@@ -143,5 +147,22 @@ public abstract class w0 extends iu {
 
     public void setOnFocused(Runnable runnable) {
         this.e = runnable;
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void updateColors() {
+        g6 g6Var = this.c;
+        try {
+            setHintColor(k6.w0(k6.Vd, g6Var));
+            setCursorColor(k6.w0(k6.Wd, g6Var));
+            setHandlesColor(k6.w0(k6.vf, g6Var));
+            invalidate();
+        } catch (Exception e) {
+            FileLog.e(e);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

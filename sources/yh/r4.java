@@ -4,11 +4,11 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.view.View;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.lw0;
+import org.telegram.ui.Components.ow0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final class r4 extends lw0 {
+public final class r4 extends ow0 {
     public int w0;
     public final /* synthetic */ x4 x0;
 
@@ -19,18 +19,18 @@ public final class r4 extends lw0 {
         this.w0 = -1;
     }
 
-    @Override // org.telegram.ui.Components.lw0
+    @Override // org.telegram.ui.Components.ow0
+    public final boolean O() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.ow0
     public final boolean P() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.lw0
-    public final boolean Q() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.lw0
-    public final void T() {
+    @Override // org.telegram.ui.Components.ow0
+    public final void S() {
         this.x0.d.invalidate();
     }
 
@@ -42,12 +42,12 @@ public final class r4 extends lw0 {
         return super.drawChild(canvas, view, j10);
     }
 
-    @Override // org.telegram.ui.Components.lw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.ow0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         super.onLayout(z10, i10, i11, i12, i13);
         x4 x4Var = this.x0;
         x4Var.i0.setTranslationY(((i13 - i11) - r4.getMeasuredHeight()) / 2.0f);
-        x4Var.k0.a0(x4Var.k0.getY() + x4Var.i0.getY(), getBackgroundSizeY());
+        x4Var.k0.Z(x4Var.k0.getY() + x4Var.i0.getY(), getBackgroundSizeY());
     }
 
     @Override // android.widget.FrameLayout, android.view.View

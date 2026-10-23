@@ -29,20 +29,22 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.c4;
-import org.telegram.ui.Components.iz0;
-import org.telegram.ui.Components.js0;
+import org.telegram.ui.ActionBar.f4;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.k10;
 import org.telegram.ui.Components.k40;
 import org.telegram.ui.Components.kw;
+import org.telegram.ui.Components.lz0;
+import org.telegram.ui.Components.ms0;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.up;
 import org.telegram.ui.Components.vp;
 import org.telegram.ui.Components.wp;
-import org.telegram.ui.hm;
-import org.telegram.ui.io;
+import org.telegram.ui.im;
+import org.telegram.ui.ko;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t implements Runnable {
     public final /* synthetic */ int a;
@@ -57,8 +59,9 @@ public final /* synthetic */ class t implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
+        j6 u10;
         int i10 = this.a;
-        int i11 = 1;
+        char c10 = 1;
         boolean z10 = this.b;
         Object obj = this.c;
         switch (i10) {
@@ -83,19 +86,19 @@ public final /* synthetic */ class t implements Runnable {
             case 2:
                 l7 l7Var = (l7) obj;
                 l7Var.getClass();
-                l7Var.S2(l7Var.j1, AndroidUtilities.replaceTags(LocaleController.formatString(z10 ? R.string.Gift2ActionWearDone : R.string.Gift2ActionWearOffDone, l7Var.X1())), true);
+                l7Var.R2(l7Var.j1, AndroidUtilities.replaceTags(LocaleController.formatString(z10 ? R.string.Gift2ActionWearDone : R.string.Gift2ActionWearOffDone, l7Var.W1())), true);
                 break;
             case 3:
                 l7 l7Var2 = ((i5) obj).T;
-                TL_stars.SavedStarGift c22 = l7Var2.c2(z10);
-                if (c22 != null) {
+                TL_stars.SavedStarGift b22 = l7Var2.b2(z10);
+                if (b22 != null) {
                     l7Var2.e1 = true;
-                    l7Var2.M2(c22, l7Var2.G0);
+                    l7Var2.L2(b22, l7Var2.G0);
                 } else {
-                    TL_stars.TL_starGiftUnique d22 = l7Var2.d2(z10);
-                    if (d22 != null) {
+                    TL_stars.TL_starGiftUnique c22 = l7Var2.c2(z10);
+                    if (c22 != null) {
                         l7Var2.e1 = true;
-                        l7Var2.K2(d22.slug, d22, l7Var2.G0);
+                        l7Var2.J2(c22.slug, c22, l7Var2.G0);
                     }
                 }
                 l7Var2.U0 = -1;
@@ -107,12 +110,12 @@ public final /* synthetic */ class t implements Runnable {
                 break;
             case 4:
                 di.r rVar = (di.r) obj;
-                js0 js0Var = rVar.W;
+                ms0 ms0Var = rVar.W;
                 if (!z10) {
-                    js0Var.b(rVar.a.E);
+                    ms0Var.b(rVar.a.E);
                     break;
                 } else {
-                    new di.u(js0Var.a, LocaleController.getString(R.string.ProfileBotPreviewLanguageChoose), new ai.r0(js0Var, 10)).show();
+                    new di.u(ms0Var.a, LocaleController.getString(R.string.ProfileBotPreviewLanguageChoose), new ai.r0(ms0Var, 10)).show();
                     break;
                 }
             case 5:
@@ -156,8 +159,8 @@ public final /* synthetic */ class t implements Runnable {
                 }
             case 10:
                 d3 d3Var = (d3) obj;
-                b3 b3Var = d3Var.y;
-                v2 v2Var = d3Var.x;
+                b3 b3Var = d3Var.E;
+                v2 v2Var = d3Var.y;
                 if (v2Var.getWebView() != null) {
                     v2Var.getWebView().animate().cancel();
                     v2Var.getWebView().animate().alpha(0.0f).start();
@@ -165,9 +168,9 @@ public final /* synthetic */ class t implements Runnable {
                 b3Var.setLoadProgress(0.0f);
                 b3Var.setAlpha(1.0f);
                 b3Var.setVisibility(0);
-                v2Var.setBotUser(z10 ? null : MessagesController.getInstance(d3Var.G).getUser(Long.valueOf(d3Var.H)));
+                v2Var.setBotUser(z10 ? null : MessagesController.getInstance(d3Var.H).getUser(Long.valueOf(d3Var.I)));
                 if (!z10) {
-                    v2Var.s(d3Var.G, d3Var.H);
+                    v2Var.s(d3Var.H, d3Var.I);
                 }
                 NotificationCenter.getInstance(v2Var.M).doOnIdle(new org.telegram.ui.web.t(v2Var, 2));
                 break;
@@ -175,12 +178,12 @@ public final /* synthetic */ class t implements Runnable {
                 ((hi.s0) obj).f(z10, false);
                 break;
             case 12:
-                k2.u uVar2 = (k2.u) ((qf.b) obj).c;
+                k2.v vVar = (k2.v) ((qf.b) obj).c;
                 String str = e2.m0.a;
-                i2.i0 i0Var = ((i2.c0) uVar2).a;
-                if (i0Var.d0 != z10) {
-                    i0Var.d0 = z10;
-                    i0Var.m.e(23, new i2.y(i11, z10));
+                i2.h0 h0Var = ((i2.b0) vVar).a;
+                if (h0Var.d0 != z10) {
+                    h0Var.d0 = z10;
+                    h0Var.m.e(23, new i2.x(c10 == true ? 1 : 0, z10));
                     break;
                 }
                 break;
@@ -218,31 +221,35 @@ public final /* synthetic */ class t implements Runnable {
                 pf.d.r((Context) obj, LocaleController.getString(z10 ? R.string.BotMonetizationInfoTONLink : R.string.MonetizationInfoTONLink));
                 break;
             case 24:
-                iz0 iz0Var = ((hm) obj).c.d1;
-                if (iz0Var != null && z10) {
-                    iz0Var.setVisibility(8);
+                lz0 lz0Var = ((im) obj).c.p1;
+                if (lz0Var != null && z10) {
+                    lz0Var.setVisibility(8);
                     break;
                 }
                 break;
             case 25:
-                io ioVar = (io) obj;
-                ioVar.x0.autotranslation = z10;
-                ioVar.getMessagesController().putChat(ioVar.x0, false);
+                ko koVar = (ko) obj;
+                koVar.w0.autotranslation = z10;
+                koVar.getMessagesController().putChat(koVar.w0, false);
                 break;
             case 26:
                 wp wpVar = (wp) obj;
                 up upVar = wpVar.h;
                 if (upVar != null && upVar.d != null && !wpVar.isDismissed()) {
-                    wpVar.C(z10, true);
-                    if (wpVar.M != null) {
-                        wpVar.P = true;
-                        TLRPC.WallPaper wallPaper = wpVar.x() ? null : wpVar.n.h;
-                        c4 c4Var = wpVar.M.a;
-                        if (c4Var.a) {
-                            wpVar.n.k(null, wallPaper, false, Boolean.valueOf(z10), false);
+                    wpVar.F(z10, true);
+                    if (wpVar.L != null) {
+                        wpVar.O = true;
+                        TLRPC.WallPaper wallPaper = wpVar.A() ? null : wpVar.n.g;
+                        f4 f4Var = wpVar.L.a;
+                        if (f4Var.a) {
+                            wpVar.n.q(null, wallPaper, false, Boolean.valueOf(z10), false);
                         } else {
-                            wpVar.n.k(c4Var, wallPaper, false, Boolean.valueOf(z10), false);
+                            wpVar.n.q(f4Var, wallPaper, false, Boolean.valueOf(z10), false);
                         }
+                    }
+                    if (AndroidUtilities.isTablet() && (u10 = wp.u(z10)) != null && u10 != k6.I) {
+                        wpVar.i0 = z10 != wpVar.s;
+                        wpVar.J(u10);
                     }
                     if (upVar.d != null) {
                         while (r3 < upVar.d.size()) {

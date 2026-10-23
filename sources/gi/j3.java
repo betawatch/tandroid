@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import android.util.SparseArray;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
-import ci.o5;
+import ci.n5;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -20,16 +20,16 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_payments;
-import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Components.b10;
 import org.telegram.ui.Components.ck;
 import org.telegram.ui.Components.mk;
 import org.telegram.ui.Components.nk;
-import org.telegram.ui.Components.x90;
 import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.y90;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j3 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -46,17 +46,17 @@ public final /* synthetic */ class j3 implements Runnable {
     public final /* synthetic */ Object w;
     public final /* synthetic */ Object x;
 
-    public /* synthetic */ j3(ei.d dVar, TLObject tLObject, int i10, long j10, org.telegram.ui.ActionBar.f3 f3Var, TL_payments.starRefProgram starrefprogram, long j11, boolean z10, Context context, d6 d6Var, TLRPC.User user, TLRPC.TL_error tL_error) {
+    public /* synthetic */ j3(ei.d dVar, TLObject tLObject, int i10, long j10, org.telegram.ui.ActionBar.h3 h3Var, TL_payments.starRefProgram starrefprogram, long j11, boolean z10, Context context, g6 g6Var, TLRPC.User user, TLRPC.TL_error tL_error) {
         this.n = dVar;
         this.d = tLObject;
         this.b = i10;
         this.f = j10;
-        this.r = f3Var;
+        this.r = h3Var;
         this.s = starrefprogram;
         this.h = j11;
         this.e = z10;
         this.v = context;
-        this.w = d6Var;
+        this.w = g6Var;
         this.x = user;
         this.c = tL_error;
     }
@@ -67,7 +67,7 @@ public final /* synthetic */ class j3 implements Runnable {
      */
     /* JADX WARN: Code restructure failed: missing block: B:79:0x01ff, code lost:
     
-        r9.getViewTreeObserver().addOnPreDrawListener(new org.telegram.ui.oq(r13, (org.telegram.ui.Components.b10) r2, r1, r12));
+        r9.getViewTreeObserver().addOnPreDrawListener(new org.telegram.ui.qq(r13, (org.telegram.ui.Components.b10) r2, r1, r12));
      */
     /* JADX WARN: Code restructure failed: missing block: B:80:0x020d, code lost:
     
@@ -83,7 +83,7 @@ public final /* synthetic */ class j3 implements Runnable {
     */
     public final void run() {
         TL_payments.connectedBotStarRef connectedbotstarref;
-        org.telegram.ui.ActionBar.n2 U;
+        org.telegram.ui.ActionBar.o2 U;
         int i10;
         ArrayList arrayList;
         int i11 = this.a;
@@ -99,15 +99,15 @@ public final /* synthetic */ class j3 implements Runnable {
         Object obj6 = this.n;
         switch (i11) {
             case 0:
-                org.telegram.ui.ActionBar.f3 f3Var = (org.telegram.ui.ActionBar.f3) obj5;
+                org.telegram.ui.ActionBar.h3 h3Var = (org.telegram.ui.ActionBar.h3) obj5;
                 TL_payments.starRefProgram starrefprogram = (TL_payments.starRefProgram) obj4;
                 Context context = (Context) obj3;
-                d6 d6Var = (d6) obj2;
+                g6 g6Var = (g6) obj2;
                 TLRPC.User user = (TLRPC.User) obj;
                 ((ei.d) obj6).setLoading(false);
                 if (!(tLObject instanceof TL_payments.connectedStarRefBots)) {
                     if (tL_error != null) {
-                        org.telegram.ui.Cells.c1.t(f3Var.topBulletinContainer, d6Var, tL_error, false);
+                        org.telegram.ui.Cells.b1.s(h3Var.topBulletinContainer, g6Var, tL_error, false);
                         break;
                     }
                 } else {
@@ -134,7 +134,7 @@ public final /* synthetic */ class j3 implements Runnable {
                     d.h = false;
                     NotificationCenter.getInstance(i13).lambda$postNotificationNameOnUIThread$1(NotificationCenter.channelConnectedBotsUpdate, Long.valueOf(d.b));
                     d.a();
-                    f3Var.dismiss();
+                    h3Var.dismiss();
                     int i14 = 0;
                     while (true) {
                         if (i14 < connectedstarrefbots.connected_bots.size()) {
@@ -146,7 +146,7 @@ public final /* synthetic */ class j3 implements Runnable {
                             connectedbotstarref = null;
                         }
                     }
-                    if ((j10 != j11 || z10) && (U = LaunchActivity.U()) != null && (!(U instanceof u3) || ((u3) U).P != j11)) {
+                    if ((j10 != j11 || z10) && (U = LaunchActivity.U()) != null && (!(U instanceof u3) || ((u3) U).R != j11)) {
                         U.presentFragment(new u3(j11));
                     }
                     if (connectedbotstarref != null) {
@@ -165,7 +165,7 @@ public final /* synthetic */ class j3 implements Runnable {
                                 }
                             }
                         }
-                        new xc(u3.I0(context, i12, connectedbotstarref, j11, d6Var).topBulletinContainer, d6Var).V(Arrays.asList(user), LocaleController.getString(R.string.AffiliateProgramJoinedTitle), LocaleController.getString(R.string.AffiliateProgramJoinedText), null).j();
+                        new xc(u3.I0(context, i12, connectedbotstarref, j11, g6Var).topBulletinContainer, g6Var).V(Arrays.asList(user), LocaleController.getString(R.string.AffiliateProgramJoinedTitle), LocaleController.getString(R.string.AffiliateProgramJoinedText), null).j();
                         break;
                     }
                 }
@@ -184,14 +184,14 @@ public final /* synthetic */ class j3 implements Runnable {
                 ArrayList arrayList9 = mkVar.N;
                 ArrayList arrayList10 = mkVar.L;
                 nk nkVar = mkVar.X;
-                o5 o5Var = nkVar.L;
+                n5 n5Var = nkVar.L;
                 if (this.b == mkVar.T) {
                     mkVar.S = false;
                     if (tL_error == null) {
                         ck ckVar = nkVar.r;
-                        o5Var.e(false, true);
-                        x90 x90Var = o5Var.e;
-                        wh.n nVar = o5Var.d;
+                        n5Var.e(false, true);
+                        y90 y90Var = n5Var.e;
+                        wh.n nVar = n5Var.d;
                         TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
                         mkVar.G = messages_messages.next_rate;
                         ck ckVar2 = ckVar;
@@ -232,12 +232,12 @@ public final /* synthetic */ class j3 implements Runnable {
                         if (arrayList9.isEmpty()) {
                             if (TextUtils.isEmpty(mkVar.K) && this.f == 0 && j10 == 0) {
                                 nVar.setText(LocaleController.getString(R.string.SearchEmptyViewTitle));
-                                x90Var.setVisibility(0);
-                                x90Var.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitleFiles));
+                                y90Var.setVisibility(0);
+                                y90Var.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitleFiles));
                             } else {
                                 nVar.setText(LocaleController.getString(R.string.SearchEmptyViewTitle2));
-                                x90Var.setVisibility(0);
-                                x90Var.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
+                                y90Var.setVisibility(0);
+                                y90Var.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
                             }
                         }
                         if (!z10) {
@@ -284,12 +284,12 @@ public final /* synthetic */ class j3 implements Runnable {
                             break;
                         }
                     } else {
-                        wh.n nVar2 = o5Var.d;
-                        x90 x90Var2 = o5Var.e;
+                        wh.n nVar2 = n5Var.d;
+                        y90 y90Var2 = n5Var.e;
                         nVar2.setText(LocaleController.getString(R.string.SearchEmptyViewTitle2));
-                        x90Var2.setVisibility(0);
-                        x90Var2.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
-                        o5Var.e(false, true);
+                        y90Var2.setVisibility(0);
+                        y90Var2.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
+                        n5Var.e(false, true);
                         break;
                     }
                 }

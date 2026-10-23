@@ -1,38 +1,70 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.DialogObject;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class jx0 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ mx0 b;
+public final class jx0 {
+    public final p5 a;
+    public Drawable b;
 
-    public /* synthetic */ jx0(mx0 mx0Var, int i10) {
-        this.a = i10;
-        this.b = mx0Var;
+    public jx0(FrameLayout frameLayout) {
+        this(18, frameLayout);
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                mx0 mx0Var = this.b;
-                mx0Var.getClass();
-                mx0Var.E = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                mx0Var.invalidate();
-                break;
-            case 1:
-                mx0 mx0Var2 = this.b;
-                mx0Var2.getClass();
-                mx0Var2.m(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            default:
-                mx0 mx0Var3 = this.b;
-                mx0Var3.getClass();
-                mx0Var3.y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                mx0Var3.invalidate();
-                break;
+    public final p5 a(TLObject tLObject, boolean z10, int i10) {
+        return tLObject instanceof TLRPC.User ? b((TLRPC.User) tLObject, null, i10, z10) : tLObject instanceof TLRPC.Chat ? b(null, (TLRPC.Chat) tLObject, i10, z10) : b(null, null, i10, z10);
+    }
+
+    public final p5 b(TLRPC.User user, TLRPC.Chat chat, int i10, boolean z10) {
+        p5 p5Var = this.a;
+        if (chat != null && chat.verified) {
+            Drawable drawable = this.b;
+            if (drawable == null) {
+                drawable = new yq(org.telegram.ui.ActionBar.k6.f1, org.telegram.ui.ActionBar.k6.i1);
+            }
+            this.b = drawable;
+            p5Var.g(drawable, z10);
+            p5Var.k(null);
+            return p5Var;
         }
+        if (chat != null && DialogObject.getEmojiStatusDocumentId(chat.emoji_status) != 0) {
+            p5Var.j(DialogObject.getEmojiStatusDocumentId(chat.emoji_status), z10);
+            p5Var.k(Integer.valueOf(i10));
+            return p5Var;
+        }
+        if (user != null && user.verified) {
+            Drawable drawable2 = this.b;
+            if (drawable2 == null) {
+                drawable2 = new yq(org.telegram.ui.ActionBar.k6.f1, org.telegram.ui.ActionBar.k6.i1);
+            }
+            this.b = drawable2;
+            p5Var.g(drawable2, z10);
+            p5Var.k(null);
+            return p5Var;
+        }
+        if (user != null && DialogObject.getEmojiStatusDocumentId(user.emoji_status) != 0) {
+            p5Var.j(DialogObject.getEmojiStatusDocumentId(user.emoji_status), z10);
+            p5Var.k(Integer.valueOf(i10));
+            return p5Var;
+        }
+        if (user == null || !user.premium) {
+            p5Var.g(null, z10);
+            p5Var.k(null);
+            return p5Var;
+        }
+        p5Var.g(sg.b1.d().e, z10);
+        p5Var.k(Integer.valueOf(i10));
+        return p5Var;
+    }
+
+    public jx0(int i10, View view) {
+        this.a = new p5(AndroidUtilities.dp(i10), view);
     }
 }

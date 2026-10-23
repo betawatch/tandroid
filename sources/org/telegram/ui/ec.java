@@ -6,7 +6,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ec implements Utilities.Callback3 {
     public final /* synthetic */ bd a;
@@ -29,10 +29,10 @@ public final /* synthetic */ class ec implements Utilities.Callback3 {
         int i11 = this.b;
         if (i11 == i10) {
             bdVar.n = l4.longValue();
-            bdVar.a1(true);
+            bdVar.c1(true);
         } else if (i11 == bdVar.c0) {
             bdVar.w = l4.longValue();
-            bdVar.b1();
+            bdVar.d1();
         } else if (i11 == bdVar.f0) {
             if (l4.longValue() == 0) {
                 bdVar.y = null;
@@ -54,10 +54,10 @@ public final /* synthetic */ class ec implements Utilities.Callback3 {
                 }
                 bdVar.y = tL_emojiStatus;
             }
-            bdVar.b1();
+            bdVar.d1();
         }
-        bdVar.X0(true);
-        ((oc) this.c).c(l4.longValue(), tL_starGiftUnique != null, true);
         bdVar.Z0(true);
+        ((oc) this.c).c(l4.longValue(), tL_starGiftUnique != null, true);
+        bdVar.b1(true);
     }
 }

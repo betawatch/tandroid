@@ -1,27 +1,27 @@
 package ai;
 
 import android.os.Bundle;
-import org.telegram.ui.qn;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final class yd extends qn {
-    public final /* synthetic */ boolean Rc;
-    public final /* synthetic */ le Sc;
+public final class yd extends ProfileActivity {
+    public final /* synthetic */ boolean J6;
+    public final /* synthetic */ me K6;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public yd(le leVar, Bundle bundle, boolean z10) {
-        super(bundle);
-        this.Sc = leVar;
-        this.Rc = z10;
+    public yd(me meVar, Bundle bundle, boolean z10) {
+        super(bundle, null);
+        this.K6 = meVar;
+        this.J6 = z10;
     }
 
-    @Override // org.telegram.ui.qn, org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ProfileActivity, org.telegram.ui.ActionBar.o2
     public final void onFragmentDestroy() {
         super.onFragmentDestroy();
-        if (this.Rc) {
+        if (this.J6) {
             return;
         }
-        this.Sc.show();
+        this.K6.show();
     }
 }

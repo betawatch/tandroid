@@ -14,7 +14,7 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class y {
     public static final long i = TimeUnit.HOURS.toSeconds(8);
@@ -67,7 +67,7 @@ public final class y {
         lVar.getClass();
         Bundle bundle = new Bundle();
         bundle.putString("gcm.topic", "/topics/" + str);
-        a(lVar.q(lVar.J(a2, "/topics/" + str, bundle)));
+        a(lVar.m(lVar.A(a2, "/topics/" + str, bundle)));
     }
 
     public final void c(String str) {
@@ -77,7 +77,7 @@ public final class y {
         Bundle bundle = new Bundle();
         bundle.putString("gcm.topic", "/topics/" + str);
         bundle.putString("delete", "1");
-        a(lVar.q(lVar.J(a2, "/topics/" + str, bundle)));
+        a(lVar.m(lVar.A(a2, "/topics/" + str, bundle)));
     }
 
     public final void e(v vVar) {

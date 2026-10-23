@@ -2,9 +2,9 @@ package org.telegram.ui;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class s7 extends org.telegram.ui.Cells.h7 {
+public final class s7 extends org.telegram.ui.Cells.j7 {
     public final /* synthetic */ n7 l0;
     public final /* synthetic */ t7 m0;
 
@@ -15,7 +15,7 @@ public final class s7 extends org.telegram.ui.Cells.h7 {
         this.l0 = n7Var;
     }
 
-    @Override // org.telegram.ui.Cells.h7
+    @Override // org.telegram.ui.Cells.j7
     public final void a() {
         v7 v7Var = this.m0.n;
         n7 n7Var = this.l0;

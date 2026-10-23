@@ -1,26 +1,26 @@
 package org.telegram.ui;
 
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class ys extends org.telegram.ui.ActionBar.m1 {
-    public final /* synthetic */ at o;
+    public final /* synthetic */ dt o;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ys(at atVar, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
-        super(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
-        this.o = atVar;
+    public ys(dt dtVar, ViewGroup viewGroup) {
+        super(viewGroup, -2, -2);
+        this.o = dtVar;
     }
 
     @Override // org.telegram.ui.ActionBar.m1, android.widget.PopupWindow
     public final void dismiss() {
         d(true);
-        et etVar = this.o.a;
-        etVar.k = null;
-        etVar.K = false;
-        if (etVar.R) {
-            etVar.n();
+        ht htVar = this.o.a;
+        htVar.k = null;
+        htVar.K = false;
+        if (htVar.R) {
+            htVar.l();
         }
     }
 }

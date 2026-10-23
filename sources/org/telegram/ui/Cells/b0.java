@@ -2,90 +2,116 @@ package org.telegram.ui.Cells;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.view.View;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.text.Layout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
-import org.telegram.messenger.nk;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.f11;
-import org.telegram.ui.Components.y21;
+import org.telegram.ui.Components.i11;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public abstract class b0 extends View {
-    public final org.telegram.ui.ActionBar.d6 a;
-    public final c0 b;
-    public final y21 c;
-    public int d;
-    public float e;
+public final class b0 extends Drawable {
+    public final RectF a = new RectF();
+    public final int b;
+    public final org.telegram.ui.ActionBar.g6 c;
+    public final i11 d;
+    public final i11 e;
+    public final Drawable f;
+    public final Drawable g;
+    public int h;
+    public int i;
+    public final Paint j;
 
-    public b0(Context context, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context);
-        this.a = d6Var;
-        this.b = new c0(context, i10, d6Var);
-        y21 y21Var = new y21(i10, this, d6Var, true);
-        this.c = y21Var;
-        y21Var.e = new f11("", 14.0f, AndroidUtilities.bold());
+    public b0(Context context, int i10, org.telegram.ui.ActionBar.g6 g6Var) {
+        Paint paint = new Paint(1);
+        this.j = paint;
+        this.b = i10;
+        this.c = g6Var;
+        i11 i11Var = new i11(LocaleController.getString(R.string.BotForumAskForStartNewChatTitle), 14.0f, AndroidUtilities.bold());
+        this.d = i11Var;
+        Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
+        i11Var.a();
+        i11 i11Var2 = new i11("", 13.0f, null);
+        this.e = i11Var2;
+        i11Var2.n(4);
+        i11Var2.a();
+        Drawable mutate = context.getResources().getDrawable(R.drawable.filled_topic_new_24).mutate();
+        this.f = mutate;
+        PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
+        mutate.setColorFilter(new PorterDuffColorFilter(-1, mode));
+        Drawable mutate2 = context.getResources().getDrawable(R.drawable.arrow_more).mutate();
+        this.g = mutate2;
+        mutate2.setColorFilter(new PorterDuffColorFilter(-1, mode));
+        mutate2.setAlpha(153);
+        paint.setColor(-16777216);
+        paint.setAlpha(30);
     }
 
-    public final void a(float f7, int i10) {
-        this.d = i10;
-        this.e = f7;
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        org.telegram.ui.ActionBar.g6 g6Var = this.c;
+        Paint V0 = org.telegram.ui.ActionBar.k6.V0("paintChatActionBackground", g6Var);
+        float dp = AndroidUtilities.dp(16.0f);
+        float dp2 = AndroidUtilities.dp(16.0f);
+        RectF rectF = this.a;
+        canvas.drawRoundRect(rectF, dp, dp2, V0);
+        if (g6Var != null ? g6Var.f() : org.telegram.ui.ActionBar.k6.c1()) {
+            canvas.drawRoundRect(rectF, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), org.telegram.ui.ActionBar.k6.V0("paintChatActionBackgroundDarken", g6Var));
+        }
+        canvas.save();
+        canvas.translate(0.0f, rectF.top + AndroidUtilities.dp(17.0f));
+        canvas.drawCircle(rectF.centerX(), AndroidUtilities.dp(35.0f), AndroidUtilities.dp(35.0f), this.j);
+        int centerX = (int) (rectF.centerX() - AndroidUtilities.dp(20.0f));
+        int dp3 = AndroidUtilities.dp(15.0f);
+        int dp4 = AndroidUtilities.dp(40.0f) + centerX;
+        int dp5 = AndroidUtilities.dp(40.0f) + dp3;
+        Drawable drawable = this.f;
+        drawable.setBounds(centerX, dp3, dp4, dp5);
+        drawable.draw(canvas);
+        canvas.translate(0.0f, AndroidUtilities.dp(70.0f));
+        canvas.translate(0.0f, AndroidUtilities.dp(14.0f));
+        float centerX2 = rectF.centerX();
+        i11 i11Var = this.d;
+        this.d.c(centerX2 - (i11Var.l() / 2.0f), i11Var.j() / 2.0f, 1.0f, -1, canvas);
+        canvas.translate(0.0f, i11Var.j());
+        canvas.translate(0.0f, AndroidUtilities.dp(4.0f));
+        float centerX3 = rectF.centerX();
+        i11 i11Var2 = this.e;
+        this.e.c(centerX3 - (i11Var2.l() / 2.0f), 0.0f, 1.0f, -1, canvas);
+        canvas.translate(0.0f, i11Var2.j());
+        canvas.translate(0.0f, AndroidUtilities.dp(2.0f));
+        int centerX4 = (int) (rectF.centerX() - AndroidUtilities.dp(10.0f));
+        int centerX5 = (int) (rectF.centerX() + AndroidUtilities.dp(10.0f));
+        int dp6 = AndroidUtilities.dp(20.0f);
+        Drawable drawable2 = this.g;
+        drawable2.setBounds(centerX4, 0, centerX5, dp6);
+        drawable2.draw(canvas);
+        canvas.restore();
     }
 
-    public int getSideMenuWidth() {
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
         return 0;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        int sideMenuWidth = getSideMenuWidth();
-        int measuredWidth = getMeasuredWidth();
-        c0 c0Var = this.b;
-        int i10 = ((measuredWidth - c0Var.h) + sideMenuWidth) / 2;
-        int dp = AndroidUtilities.dp(34.0f);
-        int measuredWidth2 = getMeasuredWidth();
-        float f7 = sideMenuWidth;
-        float f10 = f7 / 2.0f;
-        org.telegram.ui.ActionBar.d6 d6Var = this.a;
-        if (d6Var != null) {
-            d6Var.d(f10, this.e, measuredWidth2, this.d);
-        } else {
-            org.telegram.ui.ActionBar.h6.q(f10, this.e, measuredWidth2, this.d);
-        }
-        this.c.c(canvas, getWidth(), f7, 0.0f, 1.0f, 1.0f, false);
-        c0Var.setBounds(i10, dp, c0Var.h + i10, c0Var.i + dp);
-        c0Var.draw(canvas);
+    @Override // android.graphics.drawable.Drawable
+    public final void onBoundsChange(Rect rect) {
+        super.onBoundsChange(rect);
+        this.a.set(rect);
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), nk.C(40.0f, this.b.i, TLObject.FLAG_30));
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
     }
 
-    public void setDialogId(long j10) {
-        c0 c0Var = this.b;
-        f11 f11Var = c0Var.d;
-        TLRPC.User user = MessagesController.getInstance(c0Var.b).getUser(Long.valueOf(j10));
-        f11 f11Var2 = c0Var.e;
-        f11Var2.n(1);
-        f11Var2.q(9999.0f);
-        f11Var2.r(LocaleController.formatString(R.string.BotForumAskForStartNewChat, UserObject.getUserName(user)));
-        float b10 = (f11Var2.b() / 2.0f) * 1.2f;
-        f11Var2.n(4);
-        float f7 = (int) (AndroidUtilities.displaySize.x * 0.95f);
-        f11Var2.q(Math.min(f7, b10));
-        if (f11Var2.b.getLineCount() > 2) {
-            f11Var2.q(Math.min(f7, b10 * 1.2f));
-        }
-        float min = Math.min(Math.max(Math.max(0.0f, f11Var2.b()), f11Var.b()) + AndroidUtilities.dp(32.0f), f7);
-        float j11 = f11Var2.j() + f11Var.j() + AndroidUtilities.dp(17.0f) + 0.0f + AndroidUtilities.dp(70.0f) + AndroidUtilities.dp(14.0f) + AndroidUtilities.dp(4.0f) + AndroidUtilities.dp(2.0f) + AndroidUtilities.dp(20.0f) + AndroidUtilities.dp(5.0f);
-        c0Var.h = (int) min;
-        c0Var.i = (int) j11;
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

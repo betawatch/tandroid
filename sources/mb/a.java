@@ -1,14 +1,15 @@
 package mb;
 
 import a1.g;
-import i2.e;
+import com.google.android.gms.internal.play_billing.k3;
+import i2.o1;
 import j$.util.Objects;
 import java.io.Closeable;
 import java.io.EOFException;
 import java.io.Reader;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public class a implements Closeable {
     public final Reader a;
@@ -217,7 +218,7 @@ public class a implements Closeable {
     public final IllegalStateException E(String str) {
         String str2 = x() == 9 ? "adapter-not-null-safe" : "unexpected-json-structure";
         StringBuilder v = g.v("Expected ", str, " but was ");
-        v.append(e.E(x()));
+        v.append(o1.E(x()));
         v.append(m());
         v.append("\nSee ");
         v.append("https://github.com/google/gson/blob/main/Troubleshooting.md#".concat(str2));
@@ -679,7 +680,7 @@ public class a implements Closeable {
                 case 8:
                     break;
                 default:
-                    throw new AssertionError(e.j(i12, "Unknown scope value: "));
+                    throw new AssertionError(o1.k(i12, "Unknown scope value: "));
             }
             i10++;
         }
@@ -727,9 +728,9 @@ public class a implements Closeable {
     }
 
     final String m() {
-        StringBuilder m10 = e.m(" at line ", this.e + 1, " column ", (this.c - this.f) + 1, " path ");
-        m10.append(h());
-        return m10.toString();
+        StringBuilder k10 = k3.k(" at line ", this.e + 1, " column ", (this.c - this.f) + 1, " path ");
+        k10.append(h());
+        return k10.toString();
     }
 
     public boolean n() {

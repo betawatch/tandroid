@@ -2,9 +2,10 @@ package j9;
 
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
+import si.o0;
 import v7.q8;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class p extends s implements Runnable {
     public y n;
@@ -38,7 +39,7 @@ public final class p extends s implements Runnable {
         }
         if (kVar == null) {
             if (k10 != null) {
-                return r4.c.u(str, k10);
+                return o0.u(str, k10);
             }
             return null;
         }

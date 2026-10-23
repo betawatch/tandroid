@@ -10,6 +10,7 @@ import android.os.Build;
 import android.os.Process;
 import android.os.SystemClock;
 import android.view.Surface;
+import com.google.android.gms.internal.play_billing.k3;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
@@ -18,7 +19,7 @@ import k2.w0;
 import org.telegram.messenger.MediaController;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class m implements s {
     public long A;
@@ -122,7 +123,7 @@ public final class m implements s {
         this.m = createEncoderByType;
         MediaCodecInfo.VideoCapabilities videoCapabilities = createEncoderByType.getCodecInfo().getCapabilitiesForType(MediaController.VIDEO_MIME_TYPE).getVideoCapabilities();
         if (!videoCapabilities.isSizeSupported(i10, i10) || !videoCapabilities.areSizeAndRateSupported(i10, i10, i11)) {
-            throw new IOException(a1.g.n(i11, " fps", i2.e.m("Video encoder does not support ", i10, "x", i10, " at ")));
+            throw new IOException(a1.g.n(i11, " fps", k3.k("Video encoder does not support ", i10, "x", i10, " at ")));
         }
         this.f.b("video encoder configure: codec=" + this.m.getName() + ", format=" + createVideoFormat);
         this.m.configure(createVideoFormat, (Surface) null, (MediaCrypto) null, 1);
@@ -356,7 +357,7 @@ public final class m implements s {
         this.f.a(sb2.toString(), runtimeException);
         if (this.h.compareAndSet(false, true)) {
             w0 w0Var = this.g.a;
-            ((s0) w0Var.b).i.post(new p2.b(27, w0Var, runtimeException));
+            ((u0) w0Var.b).i.post(new p2.b(27, w0Var, runtimeException));
         }
     }
 

@@ -10,9 +10,9 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ia;
-import org.telegram.ui.xx;
+import org.telegram.ui.zx;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class l extends FrameLayout {
     public boolean a;
@@ -48,7 +48,7 @@ public final class l extends FrameLayout {
         int i14 = mVar.r;
         boolean z10 = i14 == 0 && mVar.h == 0 && MessagesController.getInstance(mVar.F).dialogs_dict.f(DialogObject.makeFolderDialogId(1)) != null;
         View view = (View) getParent();
-        int i15 = view instanceof ia ? ((ia) view).V2 : 0;
+        int i15 = view instanceof ia ? ((ia) view).Y2 : 0;
         boolean z11 = mVar.J;
         int paddingTop = view.getPaddingTop();
         int paddingBottom = view.getPaddingBottom();
@@ -91,7 +91,7 @@ public final class l extends FrameLayout {
                 int i20 = (size - 1) + i18;
                 ArrayList arrayList = mVar.d;
                 if (arrayList != null) {
-                    i20 = org.telegram.messenger.g0.C(52.0f, (mVar.d.size() - 1) + (AndroidUtilities.dp(58.0f) * arrayList.size()), i20);
+                    i20 = org.telegram.messenger.v0.C(52.0f, (mVar.d.size() - 1) + (AndroidUtilities.dp(58.0f) * arrayList.size()), i20);
                 }
                 int i21 = z10 ? dp + 1 : 0;
                 if (i20 < i17) {
@@ -100,8 +100,8 @@ public final class l extends FrameLayout {
                         i12 -= AndroidUtilities.statusBarHeight;
                         if (!z11 && !mVar.S) {
                             i12 -= org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
-                            if (getParent() instanceof xx) {
-                                i13 = ((xx) getParent()).r3;
+                            if (getParent() instanceof zx) {
+                                i13 = ((zx) getParent()).u3;
                                 i12 -= i13;
                             }
                         }
@@ -114,8 +114,8 @@ public final class l extends FrameLayout {
                             i12 -= AndroidUtilities.statusBarHeight;
                             if (!z11 && !mVar.S) {
                                 i12 -= org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
-                                if (getParent() instanceof xx) {
-                                    i13 = ((xx) getParent()).r3;
+                                if (getParent() instanceof zx) {
+                                    i13 = ((zx) getParent()).u3;
                                     i12 -= i13;
                                 }
                             }

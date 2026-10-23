@@ -13,12 +13,12 @@ import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.telegram.tgnet.TLObject;
-import r4.c;
+import si.o0;
 import z3.d;
 import z3.l;
 import z3.m;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class a implements m {
     public static final Pattern d = Pattern.compile("\\s*((?:(\\d+):)?(\\d+):(\\d+)(?:,(\\d{3}))?)\\s*-->\\s*((?:(\\d+):)?(\\d+):(\\d+)(?:,(\\d{3}))?)\\s*");
@@ -209,7 +209,7 @@ public final class a implements m {
 
     @Override // z3.m
     public final /* synthetic */ d a(int i10, int i11, byte[] bArr) {
-        return c.a(this, bArr, i11);
+        return o0.a(this, bArr, i11);
     }
 
     @Override // z3.m

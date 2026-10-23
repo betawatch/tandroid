@@ -1,10 +1,11 @@
 package kc;
 
 import com.google.firebase.messaging.q;
+import i2.o1;
 import java.util.Arrays;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public abstract class d {
     public static final int[][] a = {new int[]{1, 1, 1, 1, 1, 1, 1}, new int[]{1, 0, 0, 0, 0, 0, 1}, new int[]{1, 0, 1, 1, 1, 0, 1}, new int[]{1, 0, 1, 1, 1, 0, 1}, new int[]{1, 0, 1, 1, 1, 0, 1}, new int[]{1, 0, 0, 0, 0, 0, 1}, new int[]{1, 1, 1, 1, 1, 1, 1}};
@@ -291,7 +292,7 @@ public abstract class d {
                                     }
                                     break;
                                 default:
-                                    throw new IllegalArgumentException(i2.e.j(i10, "Invalid mask pattern: "));
+                                    throw new IllegalArgumentException(o1.k(i10, "Invalid mask pattern: "));
                             }
                         }
                         bArr4[i53][i57] = (byte) i14;

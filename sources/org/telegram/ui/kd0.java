@@ -1,50 +1,106 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class kd0 extends TextView {
+public final /* synthetic */ class kd0 implements Runnable {
     public final /* synthetic */ int a;
+    public final /* synthetic */ rd0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ kd0(Context context, int i10) {
-        super(context);
+    public /* synthetic */ kd0(rd0 rd0Var, int i10) {
         this.a = i10;
+        this.b = rd0Var;
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public CharSequence getAccessibilityClassName() {
-        switch (this.a) {
-            case 4:
-                return Button.class.getName();
-            default:
-                return super.getAccessibilityClassName();
-        }
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public void onMeasure(int i10, int i11) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(Math.max(View.MeasureSpec.getSize(i11), AndroidUtilities.dp(100.0f)), TLObject.FLAG_31));
+                this.b.o();
                 break;
             case 1:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLObject.FLAG_31));
+                rd0 rd0Var = this.b;
+                rd0Var.postDelayed(new kd0(rd0Var, 2), 150L);
+                kd0 kd0Var = rd0Var.S;
+                rd0Var.removeCallbacks(kd0Var);
+                rd0Var.postDelayed(kd0Var, 3000L);
+                rd0Var.R = true;
                 break;
             case 2:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLObject.FLAG_31));
-                break;
+                od0 od0Var = this.b.a;
+                int i10 = 0;
+                od0Var.e = false;
+                od0Var.f[0].requestFocus();
+                while (true) {
+                    vr[] vrVarArr = od0Var.f;
+                    if (i10 >= vrVarArr.length) {
+                        break;
+                    } else {
+                        vrVarArr[i10].i(0.0f);
+                        i10++;
+                    }
+                }
             case 3:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(AndroidUtilities.dp(26.0f)), TLObject.FLAG_30));
+                rd0 rd0Var2 = this.b;
+                rd0Var2.postDelayed(new kd0(rd0Var2, 5), 150L);
+                break;
+            case 4:
+                rd0 rd0Var3 = this.b;
+                qd0 qd0Var = rd0Var3.Q;
+                boolean z10 = false;
+                rd0Var3.R = false;
+                int i11 = 0;
+                while (true) {
+                    vr[] vrVarArr2 = rd0Var3.a.f;
+                    if (i11 >= vrVarArr2.length) {
+                        if (qd0Var.getCurrentView() != rd0Var3.e) {
+                            qd0Var.showNext();
+                            FrameLayout frameLayout = rd0Var3.h;
+                            if (rd0Var3.f.getVisibility() != 0 && rd0Var3.W.F != 3 && !rd0Var3.P) {
+                                z10 = true;
+                            }
+                            AndroidUtilities.updateViewVisibilityAnimated(frameLayout, z10, 1.0f, true);
+                            break;
+                        }
+                    } else {
+                        vrVarArr2[i11].i(0.0f);
+                        i11++;
+                    }
+                }
+                break;
+            case 5:
+                od0 od0Var2 = this.b.a;
+                int i12 = 0;
+                od0Var2.e = false;
+                od0Var2.f[0].requestFocus();
+                while (true) {
+                    vr[] vrVarArr3 = od0Var2.f;
+                    if (i12 >= vrVarArr3.length) {
+                        break;
+                    } else {
+                        vrVarArr3[i12].i(0.0f);
+                        i12++;
+                    }
+                }
+            case 6:
+                this.b.p(true);
+                break;
+            case 7:
+                this.b.q();
                 break;
             default:
-                super.onMeasure(i10, i11);
+                rd0 rd0Var4 = this.b;
+                org.telegram.ui.Components.bk0 bk0Var = rd0Var4.w;
+                bk0Var.getAnimatedDrawable().N(0, false, false);
+                bk0Var.d();
+                od0 od0Var3 = rd0Var4.a;
+                if (od0Var3 != null && od0Var3.f != null) {
+                    od0Var3.setText("");
+                    od0Var3.f[0].requestFocus();
+                    break;
+                }
                 break;
         }
     }

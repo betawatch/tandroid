@@ -8,8 +8,8 @@ import java.util.Arrays;
 import w7.r;
 import zf.f0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+/* loaded from: classes4.dex */
 public final class c {
     public int d;
     public boolean e;
@@ -45,7 +45,7 @@ public final class c {
         path.addRoundRect(f7, f10, f11, f12, this.b, direction);
         path.close();
         float min = Math.min(rect2.width(), rect2.height()) / 2.0f;
-        float[] fArr2 = d.E;
+        float[] fArr2 = d.V;
         Arrays.fill(fArr2, 0.0f);
         fArr2[0] = fArr[0];
         fArr2[1] = fArr[1];

@@ -1,7 +1,29 @@
 package z7;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+import android.content.Context;
+import java.util.ArrayList;
+
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public interface uf {
-    void a(a5.a aVar);
+public final class uf implements tf {
+    public final ArrayList a;
+
+    public uf(Context context, sf sfVar) {
+        ArrayList arrayList = new ArrayList();
+        this.a = arrayList;
+        sfVar.getClass();
+        arrayList.add(new yf(context, sfVar));
+    }
+
+    @Override // z7.tf
+    public final void a(a5.a aVar) {
+        ArrayList arrayList = this.a;
+        int size = arrayList.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            ((tf) obj).a(aVar);
+        }
+    }
 }

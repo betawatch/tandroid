@@ -2,8 +2,9 @@ package y8;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import com.google.android.gms.internal.play_billing.k3;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class b1 extends o6.a implements x8.n {
     public static final Parcelable.Creator<b1> CREATOR = new n0(9);
@@ -84,7 +85,7 @@ public final class b1 extends o6.a implements x8.n {
         sb2.append("', eventId=");
         sb2.append((int) this.n);
         sb2.append(", eventFlags=");
-        i2.e.w(sb2, this.r, ", categoryId=", this.s, ", categoryCount=");
+        k3.r(sb2, this.r, ", categoryId=", this.s, ", categoryCount=");
         sb2.append((int) this.v);
         sb2.append(", packageName='");
         sb2.append(this.w);

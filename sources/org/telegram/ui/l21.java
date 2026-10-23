@@ -1,34 +1,37 @@
 package org.telegram.ui;
 
+import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class l21 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ n21 b;
+public final class l21 implements o21 {
+    public final /* synthetic */ org.telegram.messenger.video.a a;
+    public final /* synthetic */ org.telegram.ui.Components.xc b;
+    public final /* synthetic */ Context c;
+    public final /* synthetic */ ci.k0 d;
+    public final /* synthetic */ org.telegram.messenger.video.d e;
 
-    public /* synthetic */ l21(n21 n21Var, int i10) {
-        this.a = i10;
-        this.b = n21Var;
+    public l21(org.telegram.messenger.video.a aVar, org.telegram.ui.Components.xc xcVar, Context context, ci.k0 k0Var, org.telegram.messenger.video.d dVar) {
+        this.a = aVar;
+        this.b = xcVar;
+        this.c = context;
+        this.d = k0Var;
+        this.e = dVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                n21 n21Var = this.b;
-                o21 o21Var = n21Var.v;
-                if (n21Var.a != 0) {
-                    o21Var.onBackPressed();
-                    break;
-                } else {
-                    o21Var.dismiss();
-                    break;
-                }
-            default:
-                AndroidUtilities.showKeyboard(this.b.n.b);
-                break;
-        }
+    @Override // org.telegram.ui.o21
+    public final void a() {
+        AndroidUtilities.runOnUIThread(new h21(this.a, this.b, this.c, this.d, 2), 200L);
+    }
+
+    @Override // org.telegram.ui.o21
+    public final void b() {
+        AndroidUtilities.runOnUIThread(new mv0(25, this.a, this.b), 200L);
+    }
+
+    @Override // org.telegram.ui.o21
+    public final void c() {
+        this.e.run();
     }
 }

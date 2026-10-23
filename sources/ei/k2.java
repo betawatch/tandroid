@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class k2 extends i2 {
     public ah.y0 i;
@@ -19,7 +19,7 @@ public final class k2 extends i2 {
     public int k;
     public final org.telegram.ui.Components.f6 l;
     public Timer m;
-    public final ci.g9 n;
+    public final ci.f9 n;
     public final ArrayList o;
     public final /* synthetic */ l2 p;
 
@@ -31,12 +31,12 @@ public final class k2 extends i2 {
         this.i = new ah.y0(l2Var);
         this.j = new ah.y0(l2Var);
         this.l = new org.telegram.ui.Components.f6(l2Var);
-        this.n = new ci.g9(l2Var);
+        this.n = new ci.f9(l2Var);
         this.o = new ArrayList();
         this.a = 3;
         this.b = AndroidUtilities.dp(44.0f);
         this.c = AndroidUtilities.dp(36.0f);
-        i10 = ((org.telegram.ui.ActionBar.f3) l2Var.f).currentAccount;
+        i10 = ((org.telegram.ui.ActionBar.h3) l2Var.f).currentAccount;
         List<TLRPC.TL_availableReaction> reactionsList = MediaDataController.getInstance(i10).getReactionsList();
         for (int i11 = 0; i11 < Math.min(reactionsList.size(), 8); i11++) {
             this.o.add(ah.i1.c(reactionsList.get(i11)));
@@ -65,9 +65,9 @@ public final class k2 extends i2 {
         int i11 = (int) rectF.top;
         int i12 = (int) rectF.right;
         int i13 = (int) rectF.bottom;
-        ci.g9 g9Var = this.n;
-        g9Var.setBounds(i10, i11, i12, i13);
-        g9Var.draw(canvas);
+        ci.f9 f9Var = this.n;
+        f9Var.setBounds(i10, i11, i12, i13);
+        f9Var.draw(canvas);
         float dp2 = AndroidUtilities.dp(30.0f);
         Rect rect = AndroidUtilities.rectTmp2;
         float f16 = dp2 / 2.0f;

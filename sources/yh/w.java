@@ -7,7 +7,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class w extends FrameLayout {
     public final RectF a;
@@ -29,10 +29,10 @@ public final class w extends FrameLayout {
         x xVar = c0Var.a0;
         FrameLayout frameLayout = xVar.b;
         RectF rectF = this.a;
-        if (ih.j.c(frameLayout, this, rectF)) {
+        if (ih.k.c(frameLayout, this, rectF)) {
             TextView textView = c0Var.b0;
             RectF rectF2 = this.b;
-            if (ih.j.c(textView, this, rectF2)) {
+            if (ih.k.c(textView, this, rectF2)) {
                 float dp = rectF2.right - AndroidUtilities.dp(32.0f);
                 float centerY = rectF2.centerY() - AndroidUtilities.dp(16.0f);
                 if (rectF.isEmpty()) {

@@ -3,12 +3,12 @@ package ah;
 import ai.v6;
 import android.graphics.drawable.Drawable;
 import android.view.View;
+import org.telegram.ui.Components.d41;
 import org.telegram.ui.Components.ed;
-import org.telegram.ui.Components.hp0;
+import org.telegram.ui.Components.lp0;
 import org.telegram.ui.Components.oq;
-import org.telegram.ui.Components.z31;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class f1 implements Drawable.Callback {
     public final /* synthetic */ int a;
@@ -40,13 +40,13 @@ public final class f1 implements Drawable.Callback {
                 ((oq) this.b).invalidateSelf();
                 break;
             case 5:
-                ((hp0) this.b).b.run();
+                ((lp0) this.b).b.run();
                 break;
             case 6:
                 ((ed) this.b).invalidateSelf();
                 break;
             case 7:
-                ((z31) this.b).invalidateSelf();
+                ((d41) this.b).invalidateSelf();
                 break;
             case 8:
                 ((x4.d) this.b).invalidateSelf();

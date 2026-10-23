@@ -1,78 +1,74 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.LinearLayout;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class ov0 extends org.telegram.ui.Cells.u1 {
-    public final Path Ge;
-    public final Paint He;
-    public final /* synthetic */ byte[] Ie;
-    public final /* synthetic */ int Je;
-    public final /* synthetic */ int Ke;
-    public final /* synthetic */ qv0 Le;
+public final class ov0 implements View.OnClickListener {
+    public final /* synthetic */ uh0 a;
+    public final /* synthetic */ sn b;
+    public final /* synthetic */ org.telegram.ui.Components.mm0 c;
+    public final /* synthetic */ LinearLayout d;
+    public final /* synthetic */ org.telegram.ui.Components.j80 e;
+    public final /* synthetic */ org.telegram.ui.Components.j80 f;
+    public final /* synthetic */ uv0 h;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ov0(qv0 qv0Var, Context context, int i10, org.telegram.ui.ActionBar.d6 d6Var, byte[] bArr, int i11, int i12) {
-        super(context, i10, false, null, d6Var);
-        this.Le = qv0Var;
-        this.Ie = bArr;
-        this.Je = i11;
-        this.Ke = i12;
-        this.Ge = new Path();
-        this.He = new Paint(1);
+    public ov0(uv0 uv0Var, uh0 uh0Var, sn snVar, org.telegram.ui.Components.mm0 mm0Var, LinearLayout linearLayout, org.telegram.ui.Components.j80 j80Var, org.telegram.ui.Components.j80 j80Var2) {
+        this.h = uv0Var;
+        this.a = uh0Var;
+        this.b = snVar;
+        this.c = mm0Var;
+        this.d = linearLayout;
+        this.e = j80Var;
+        this.f = j80Var2;
     }
 
-    @Override // org.telegram.ui.Cells.u1
-    public final void Y1(Canvas canvas) {
-        this.i6 = 0;
-        this.j6 = this.Y5.size() - 1;
-        this.k6 = (-AndroidUtilities.dp(7.0f)) * this.Le.y;
-        super.Y1(canvas);
-    }
-
-    @Override // org.telegram.ui.Cells.u1, android.view.View
-    public final void onDraw(Canvas canvas) {
-        canvas.save();
-        int I2 = I2(this.Ie);
-        float H2 = H2(I2);
-        float G2 = G2(I2);
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(getPollButtonsLeft(), H2, getPollButtonsRight(), G2);
-        float f7 = rectF.top;
-        float dp = AndroidUtilities.dp(3.0f);
-        qv0 qv0Var = this.Le;
-        rectF.top = AndroidUtilities.lerp(dp, qv0Var.V ? -AndroidUtilities.dp(3.0f) : 0.0f, qv0Var.y) + f7;
-        float f10 = rectF.bottom;
-        boolean z10 = qv0Var.V;
-        float dp2 = AndroidUtilities.dp(3.0f);
-        if (!z10) {
-            dp2 = AndroidUtilities.lerp(dp2, 0.0f, qv0Var.y);
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        uh0 uh0Var = this.a;
+        ArrayList arrayList = uh0Var.b;
+        ArrayList arrayList2 = uh0Var.c;
+        if (arrayList2.isEmpty()) {
+            return;
         }
-        rectF.bottom = f10 + dp2;
-        Path path = this.Ge;
-        path.rewind();
-        path.addRoundRect(rectF, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), Path.Direction.CW);
-        Paint paint = this.He;
-        paint.setColor(0);
-        paint.setShadowLayer(AndroidUtilities.dp(2.0f), 0.0f, AndroidUtilities.dp(0.66f), org.telegram.ui.ActionBar.h6.m1(qv0Var.y * 0.2f, -16777216));
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), paint);
-        canvas.clipPath(path);
-        S1(canvas);
-        canvas.restore();
-    }
-
-    @Override // org.telegram.ui.Cells.u1, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        setMeasuredDimension(this.Je, this.Ke);
-    }
-
-    @Override // org.telegram.ui.Cells.u1, android.view.View
-    public final void setPressed(boolean z10) {
+        int size = arrayList2.size();
+        uv0 uv0Var = this.h;
+        sn snVar = this.b;
+        if (size == 1 && (arrayList.size() <= 0 || ((Integer) arrayList.get(0)).intValue() <= 0)) {
+            TLObject tLObject = (TLObject) arrayList2.get(0);
+            if (tLObject == null) {
+                return;
+            }
+            Bundle bundle = new Bundle();
+            if (tLObject instanceof TLRPC.User) {
+                bundle.putLong("user_id", ((TLRPC.User) tLObject).id);
+            } else if (tLObject instanceof TLRPC.Chat) {
+                bundle.putLong("chat_id", ((TLRPC.Chat) tLObject).id);
+            }
+            snVar.presentFragment(new ProfileActivity(bundle, null));
+            uv0Var.c(false);
+            return;
+        }
+        if (SharedConfig.messageSeenHintCount > 0 && snVar.j1.getKeyboardHeight() < AndroidUtilities.dp(20.0f)) {
+            org.telegram.ui.Components.qc t10 = new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(uv0Var.getContext()), uv0Var.b).t(AndroidUtilities.replaceTags(LocaleController.getString(R.string.MessageSeenTooltipMessage)), null);
+            snVar.z1 = t10;
+            t10.j = 4000;
+            t10.j();
+            SharedConfig.updateMessageSeenHintCount(SharedConfig.messageSeenHintCount - 1);
+        }
+        org.telegram.ui.Components.mm0 mm0Var = this.c;
+        mm0Var.requestLayout();
+        this.d.requestLayout();
+        mm0Var.getAdapter().l();
+        this.e.K(this.f);
     }
 }

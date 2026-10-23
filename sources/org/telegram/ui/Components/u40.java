@@ -13,11 +13,11 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesStorage;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class u40 extends HorizontalScrollView {
     public static final RectF v = new RectF();
-    public final org.telegram.ui.ActionBar.d6 a;
+    public final org.telegram.ui.ActionBar.g6 a;
     public final f6 b;
     public final f6 c;
     public final LinearLayout d;
@@ -28,14 +28,14 @@ public final class u40 extends HorizontalScrollView {
     public final Path r;
     public final Path s;
 
-    public u40(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+    public u40(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
         super(context);
         this.e = new Paint(1);
         TextPaint textPaint = new TextPaint(1);
         this.f = textPaint;
         this.r = new Path();
         this.s = new Path();
-        this.a = d6Var;
+        this.a = g6Var;
         LinearLayout linearLayout = new LinearLayout(context);
         this.d = linearLayout;
         linearLayout.setLayerType(0, null);
@@ -128,16 +128,16 @@ public final class u40 extends HorizontalScrollView {
         linearLayout.removeAllViews();
         for (int i10 = 0; i10 < arrayList.size(); i10++) {
             CharSequence charSequence = (CharSequence) arrayList.get(i10);
-            ai.ic icVar = new ai.ic(getContext());
-            icVar.setDrawingCacheEnabled(false);
-            icVar.setOnClickListener(new ai.ha(this, i10, intCallback, 9));
-            icVar.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(5.0f));
+            ai.jc jcVar = new ai.jc(getContext());
+            jcVar.setDrawingCacheEnabled(false);
+            jcVar.setOnClickListener(new ai.ia(this, i10, intCallback, 9));
+            jcVar.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(5.0f));
             LinearLayout.LayoutParams n10 = w7.z5.n(-2, -2);
             if (i10 < arrayList.size() - 1) {
                 n10.rightMargin = AndroidUtilities.dp(4.0f);
             }
-            icVar.b = new f11(charSequence, this.f);
-            linearLayout.addView(icVar, n10);
+            jcVar.b = new i11(charSequence, this.f);
+            linearLayout.addView(jcVar, n10);
         }
     }
 
@@ -162,19 +162,19 @@ public final class u40 extends HorizontalScrollView {
         path2.addRoundRect(rectF, AndroidUtilities.dp(13.0f), AndroidUtilities.dp(13.0f), Path.Direction.CCW);
         path2.close();
         boolean z10 = this.h;
-        org.telegram.ui.ActionBar.d6 d6Var = this.a;
-        int m12 = z10 ? org.telegram.ui.ActionBar.h6.m1(0.1f, org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Oh, d6Var)) : org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.y6, d6Var) & 520093695;
+        org.telegram.ui.ActionBar.g6 g6Var = this.a;
+        int o12 = z10 ? org.telegram.ui.ActionBar.k6.o1(0.1f, org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Oh, g6Var)) : org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.y6, g6Var) & 520093695;
         Paint paint = this.e;
-        paint.setColor(m12);
+        paint.setColor(o12);
         canvas.drawPath(path, paint);
-        int w02 = org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.y6, d6Var);
+        int w02 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.y6, g6Var);
         TextPaint textPaint = this.f;
         textPaint.setColor(w02);
         canvas.save();
         canvas.clipPath(path2);
         super.dispatchDraw(canvas);
         canvas.restore();
-        textPaint.setColor(this.h ? org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Oh, d6Var) : org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Y8, d6Var));
+        textPaint.setColor(this.h ? org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Oh, g6Var) : org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Y8, g6Var));
         canvas.save();
         canvas.clipPath(path);
         for (int i10 = 0; i10 < linearLayout.getChildCount(); i10++) {

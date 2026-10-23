@@ -1,40 +1,71 @@
 package org.telegram.ui.Wallet;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.text.TextUtils;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class m9 implements Utilities.Callback {
+public final /* synthetic */ class m9 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ r9 b;
+    public final /* synthetic */ s9 b;
 
-    public /* synthetic */ m9(r9 r9Var, int i10) {
+    public /* synthetic */ m9(s9 s9Var, int i10) {
         this.a = i10;
-        this.b = r9Var;
+        this.b = s9Var;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        ei.e2 e2Var;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                r9.Z(this.b, (String) obj);
+                s9 s9Var = this.b;
+                if (s9Var.w != null) {
+                    AndroidUtilities.hideKeyboard(s9Var.M);
+                    s9Var.h0(s9Var.w, null);
+                    break;
+                }
                 break;
-            default:
-                TLRPC.User user = (TLRPC.User) obj;
-                r9 r9Var = this.b;
-                if (!r9Var.isFinished && (e2Var = r9Var.M) != null) {
-                    if (user != null) {
-                        AndroidUtilities.hideKeyboard(e2Var);
-                        r9Var.h0(null, user);
-                        break;
+            case 1:
+                s9 s9Var2 = this.b;
+                if (s9Var2.w != null) {
+                    AndroidUtilities.hideKeyboard(s9Var2.M);
+                    s9Var2.h0(s9Var2.w, null);
+                    break;
+                }
+                break;
+            case 2:
+                s9 s9Var3 = this.b;
+                ClipboardManager clipboardManager = (ClipboardManager) s9Var3.getParentActivity().getSystemService("clipboard");
+                if (clipboardManager != null && clipboardManager.hasPrimaryClip()) {
+                    ClipData primaryClip = clipboardManager.getPrimaryClip();
+                    if (primaryClip != null && primaryClip.getItemCount() != 0) {
+                        CharSequence coerceToText = primaryClip.getItemAt(0).coerceToText(s9Var3.getParentActivity());
+                        if (!TextUtils.isEmpty(coerceToText)) {
+                            s9Var3.M.setText(coerceToText.toString().trim());
+                            ei.e2 e2Var = s9Var3.M;
+                            e2Var.setSelection(e2Var.length());
+                            break;
+                        } else {
+                            s9Var3.R = false;
+                            s9Var3.k0(true);
+                            break;
+                        }
                     } else {
-                        AndroidUtilities.runOnUIThread(new n9(r9Var, 1));
+                        s9Var3.R = false;
+                        s9Var3.k0(true);
                         break;
                     }
+                } else {
+                    s9Var3.R = false;
+                    s9Var3.k0(true);
+                    break;
                 }
+                break;
+            default:
+                this.b.d0();
                 break;
         }
     }

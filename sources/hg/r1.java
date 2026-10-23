@@ -5,20 +5,20 @@ import java.util.TimerTask;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.ho0;
-import org.telegram.ui.Components.im0;
-import org.telegram.ui.mt;
+import org.telegram.ui.Components.ko0;
+import org.telegram.ui.Components.lm0;
+import org.telegram.ui.pt;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class r1 extends TimerTask {
     public final /* synthetic */ int a;
     public final /* synthetic */ String b;
-    public final /* synthetic */ im0 c;
+    public final /* synthetic */ lm0 c;
 
-    public /* synthetic */ r1(im0 im0Var, String str, int i10) {
+    public /* synthetic */ r1(lm0 lm0Var, String str, int i10) {
         this.a = i10;
-        this.c = im0Var;
+        this.c = lm0Var;
         this.b = str;
     }
 
@@ -39,12 +39,12 @@ public final class r1 extends TimerTask {
                 break;
             default:
                 try {
-                    ((mt) this.c).d.cancel();
-                    ((mt) this.c).d = null;
+                    ((pt) this.c).d.cancel();
+                    ((pt) this.c).d = null;
                 } catch (Exception e7) {
                     FileLog.e(e7);
                 }
-                Utilities.searchQueue.postRunnable(new ho0(29, (mt) this.c, this.b));
+                Utilities.searchQueue.postRunnable(new ko0(29, (pt) this.c, this.b));
                 break;
         }
     }

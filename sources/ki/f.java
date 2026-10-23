@@ -4,7 +4,7 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f implements Runnable {
     public final /* synthetic */ int a;
@@ -25,48 +25,48 @@ public final /* synthetic */ class f implements Runnable {
         switch (i10) {
             case 0:
                 w3 w3Var = qVar.r;
-                View A1 = w3Var.A1(aVar);
-                if (!(A1 instanceof o4)) {
-                    w3Var.W2.N(false);
+                View F1 = w3Var.F1(aVar);
+                if (!(F1 instanceof o4)) {
+                    w3Var.Z2.N(false);
                     break;
                 } else {
-                    ((o4) A1).h(aVar, w3Var.getMapDelegate());
+                    ((o4) F1).g(aVar, w3Var.getMapDelegate());
                     break;
                 }
             case 1:
-                qVar.r.X4(aVar, 0);
+                qVar.r.c5(aVar, 0);
                 break;
             case 2:
-                qVar.r.X4(aVar, 1);
+                qVar.r.c5(aVar, 1);
                 break;
             case 3:
-                qVar.r.X4(aVar, 2);
+                qVar.r.c5(aVar, 2);
                 break;
             case 4:
-                qVar.r.X4(aVar, 3);
+                qVar.r.c5(aVar, 3);
                 break;
             case 5:
-                qVar.r.W4(aVar, new TL_iv.pageBlockParagraph());
+                qVar.r.b5(aVar, new TL_iv.pageBlockParagraph());
                 break;
             case 6:
                 w3 w3Var2 = qVar.r;
-                ArrayList arrayList = w3.q4;
+                ArrayList arrayList = w3.t4;
                 TL_iv.pageBlockBlockquote pageblockblockquote = new TL_iv.pageBlockBlockquote();
                 pageblockblockquote.caption = new TL_iv.textEmpty();
-                w3Var2.V4(this.c, pageblockblockquote, 0, 0, false, false);
+                w3Var2.a5(this.c, pageblockblockquote, 0, 0, false, false);
                 break;
             case 7:
                 w3 w3Var3 = qVar.r;
-                ArrayList arrayList2 = w3.q4;
+                ArrayList arrayList2 = w3.t4;
                 TL_iv.pageBlockPullquote pageblockpullquote = new TL_iv.pageBlockPullquote();
                 pageblockpullquote.caption = new TL_iv.textEmpty();
-                w3Var3.V4(this.c, pageblockpullquote, 0, 0, false, false);
+                w3Var3.a5(this.c, pageblockpullquote, 0, 0, false, false);
                 break;
             case 8:
-                qVar.r.W4(aVar, new TL_iv.pageBlockPreformatted());
+                qVar.r.b5(aVar, new TL_iv.pageBlockPreformatted());
                 break;
             default:
-                qVar.r.W4(aVar, new TL_iv.pageBlockFooter());
+                qVar.r.b5(aVar, new TL_iv.pageBlockFooter());
                 break;
         }
     }

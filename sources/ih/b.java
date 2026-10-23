@@ -6,8 +6,8 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.ui.Components.ps;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+/* loaded from: classes4.dex */
 public final /* synthetic */ class b implements Utilities.Callback2 {
     public final /* synthetic */ int a;
 
@@ -22,7 +22,7 @@ public final /* synthetic */ class b implements Utilities.Callback2 {
                 RectF rectF = e.H;
                 break;
             case 1:
-                int i10 = ps.G0;
+                int i10 = ps.H0;
                 break;
             default:
                 Boolean bool = (Boolean) obj;

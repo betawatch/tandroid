@@ -1,231 +1,245 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.provider.Settings;
-import android.view.MotionEvent;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.content.ComponentName;
+import android.content.Intent;
+import android.net.Uri;
+import android.net.http.SslError;
+import android.text.TextUtils;
 import android.view.View;
+import android.webkit.RenderProcessGoneDetail;
+import android.webkit.SslErrorHandler;
+import android.webkit.WebResourceError;
+import android.webkit.WebResourceRequest;
+import android.webkit.WebResourceResponse;
 import android.webkit.WebView;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import java.util.ArrayList;
-import java.util.Locale;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.PhotoViewer;
+import android.webkit.WebViewClient;
+import java.io.ByteArrayInputStream;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.ki1;
+import org.telegram.ui.ve1;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public abstract class lg0 extends FrameLayout {
-    public float E;
-    public boolean F;
-    public boolean G;
-    public int H;
-    public int I;
-    public float J;
-    public boolean K;
-    public rc0 L;
-    public int a;
-    public PhotoViewer b;
-    public LinearLayout c;
-    public TextView d;
-    public TextView e;
-    public wu f;
-    public ai.ic h;
-    public RadialProgressView n;
-    public View r;
-    public String s;
-    public ArrayList v;
-    public String w;
-    public boolean x;
-    public TLRPC.WebPage y;
+public final class lg0 extends WebViewClient {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public static void a(org.telegram.ui.ot0 ot0Var, String str) {
-        int videoDuration = ot0Var.getVideoDuration() / MediaDataController.MAX_STYLE_RUNS_COUNT;
-        ArrayList arrayList = ot0Var.v;
-        arrayList.clear();
-        if (videoDuration <= 15) {
-            return;
-        }
-        String[] split = str.split("\\|");
-        String s10 = a1.g.s(new StringBuilder(), split[0].split("\\$")[0], "2/");
-        String str2 = split[0].split("\\$N")[1];
-        String str3 = split.length == 3 ? split[2].split("M#")[1] : split.length == 2 ? split[1].split("t#")[1] : split[3].split("M#")[1];
-        int ceil = (int) (videoDuration <= 100 ? Math.ceil(videoDuration / 25.0f) : videoDuration <= 250 ? Math.ceil((videoDuration / 2.0f) / 25.0f) : videoDuration <= 500 ? Math.ceil((videoDuration / 4.0f) / 25.0f) : videoDuration <= 1000 ? Math.ceil((videoDuration / 5.0f) / 25.0f) : Math.ceil((videoDuration / 10.0f) / 25.0f));
-        for (int i10 = 0; i10 < ceil; i10++) {
-            Locale locale = Locale.ROOT;
-            arrayList.add(s10 + "M" + i10 + str2 + "&sigh=" + str3);
-        }
+    public /* synthetic */ lg0(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    public final void b(boolean z10) {
-        rc0 rc0Var = this.L;
-        if (!z10 && this.G) {
-            AndroidUtilities.runOnUIThread(rc0Var, 500L);
-        } else {
-            if (!z10 || this.G) {
-                return;
-            }
-            AndroidUtilities.cancelRunOnUIThread(rc0Var);
-        }
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0047 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:7:0x0040  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final String c(int i10) {
-        float f7;
-        int i11;
-        ArrayList arrayList = this.v;
-        int videoDuration = getVideoDuration() / MediaDataController.MAX_STYLE_RUNS_COUNT;
-        if (videoDuration > 100) {
-            if (videoDuration <= 250) {
-                i11 = ((int) (i10 / 2.0f)) / 25;
-            } else if (videoDuration <= 500) {
-                i11 = ((int) (i10 / 4.0f)) / 25;
-            } else if (videoDuration <= 1000) {
-                i11 = ((int) (i10 / 5.0f)) / 25;
-            } else {
-                f7 = i10 / 10.0f;
-            }
-            if (i11 >= arrayList.size()) {
-                return (String) arrayList.get(i11);
-            }
-            return null;
-        }
-        f7 = i10;
-        i11 = (int) (f7 / 25.0f);
-        if (i11 >= arrayList.size()) {
-        }
-    }
-
-    public final boolean d() {
-        return this.x;
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (this.K) {
+    public boolean a(String str) {
+        if (TextUtils.isEmpty(str)) {
             return false;
         }
-        return super.dispatchTouchEvent(motionEvent);
-    }
-
-    public final boolean e() {
-        boolean z10 = this.x && "inapp".equals(MessagesController.getInstance(this.a).youtubePipType);
-        if (!z10 && !Settings.canDrawOverlays(getContext())) {
-            f5.A((Activity) getContext(), null, false);
+        Uri parse = Uri.parse(str);
+        if (!"tg".equals(parse.getScheme())) {
             return false;
         }
-        if (this.n.getVisibility() == 0) {
-            return false;
-        }
-        if (ah0.p0.P) {
-            ah0.j(false);
-            AndroidUtilities.runOnUIThread(new gg0(this, 0), 300L);
+        ((ki1) this.b).getClass();
+        ((ki1) this.b).finishFragment(false);
+        try {
+            Intent intent = new Intent("android.intent.action.VIEW", parse);
+            intent.setComponent(new ComponentName(ApplicationLoader.applicationContext.getPackageName(), LaunchActivity.class.getName()));
+            intent.putExtra("com.android.browser.application_id", ApplicationLoader.applicationContext.getPackageName());
+            ApplicationLoader.applicationContext.startActivity(intent);
+            return true;
+        } catch (Exception e) {
+            FileLog.e(e);
             return true;
         }
-        this.h.setVisibility(0);
-        Activity activity = (Activity) getContext();
-        wu wuVar = this.f;
-        TLRPC.WebPage webPage = this.y;
-        if (ah0.x(z10, activity, this, wuVar, webPage.embed_width, webPage.embed_height, false)) {
-            ah0.w(PhotoViewer.u1());
-        }
-        return true;
     }
 
-    public final void f() {
-        if (this.G && this.x) {
-            h("pauseVideo();");
-            this.G = false;
-            b(true);
-        }
-    }
-
-    public final void g() {
-        if (this.G || !this.x) {
-            return;
-        }
-        h("playVideo();");
-        this.G = true;
-        b(false);
-    }
-
-    public float getBufferedPosition() {
-        return this.J;
-    }
-
-    public int getCurrentPosition() {
-        return this.I;
-    }
-
-    public int getVideoDuration() {
-        return this.H;
-    }
-
-    public WebView getWebView() {
-        return this.f;
-    }
-
-    public final void h(String str) {
-        this.f.evaluateJavascript(str, null);
-    }
-
-    public final void i(long j10) {
-        boolean z10 = this.G;
-        this.I = (int) j10;
-        if (z10) {
-            f();
-        }
-        if (z10) {
-            AndroidUtilities.runOnUIThread(new ai.v3(this, j10, 25), 100L);
-            return;
-        }
-        h("seekTo(" + Math.round(j10 / 1000.0f) + ", true);");
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        wu wuVar = this.f;
-        if (wuVar.getParent() == this) {
-            TLRPC.WebPage webPage = this.y;
-            int i12 = webPage.embed_width;
-            if (i12 == 0) {
-                i12 = 100;
-            }
-            int i13 = webPage.embed_height;
-            int i14 = i13 != 0 ? i13 : 100;
-            int size = View.MeasureSpec.getSize(i10);
-            int size2 = View.MeasureSpec.getSize(i11);
-            float f7 = i12;
-            float f10 = i14;
-            float min = Math.min(size / f7, size2 / f10);
-            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) wuVar.getLayoutParams();
-            int i15 = (int) (f7 * min);
-            layoutParams.width = i15;
-            int i16 = (int) (f10 * min);
-            layoutParams.height = i16;
-            layoutParams.topMargin = (size2 - i16) / 2;
-            layoutParams.leftMargin = (size - i15) / 2;
-        }
-        super.onMeasure(i10, i11);
-    }
-
-    public void setPlaybackSpeed(float f7) {
-        this.E = f7;
-        if (this.n.getVisibility() == 0) {
-            this.F = true;
-        } else if (this.x) {
-            h("setPlaybackSpeed(" + f7 + ");");
+    @Override // android.webkit.WebViewClient
+    public void onLoadResource(WebView webView, String str) {
+        switch (this.a) {
+            case 1:
+                if (!a(str)) {
+                    super.onLoadResource(webView, str);
+                    break;
+                }
+                break;
+            default:
+                super.onLoadResource(webView, str);
+                break;
         }
     }
 
-    public void setTouchDisabled(boolean z10) {
-        this.K = z10;
+    @Override // android.webkit.WebViewClient
+    public void onPageFinished(WebView webView, String str) {
+        int i10 = this.a;
+        Object obj = this.b;
+        switch (i10) {
+            case 0:
+                super.onPageFinished(webView, str);
+                org.telegram.ui.rt0 rt0Var = (org.telegram.ui.rt0) obj;
+                View view = rt0Var.r;
+                if (!rt0Var.x) {
+                    rt0Var.n.setVisibility(4);
+                    rt0Var.h.setVisibility(4);
+                    view.setEnabled(true);
+                    view.setAlpha(1.0f);
+                    break;
+                }
+                break;
+            case 1:
+                super.onPageFinished(webView, str);
+                ki1 ki1Var = (ki1) obj;
+                cr crVar = ki1Var.c;
+                if (crVar != null && crVar.getVisibility() == 0) {
+                    AnimatorSet animatorSet = new AnimatorSet();
+                    ki1Var.b.getContentView().setVisibility(0);
+                    ki1Var.b.setEnabled(true);
+                    animatorSet.playTogether(ObjectAnimator.ofFloat(ki1Var.c, "scaleX", 1.0f, 0.1f), ObjectAnimator.ofFloat(ki1Var.c, "scaleY", 1.0f, 0.1f), ObjectAnimator.ofFloat(ki1Var.c, "alpha", 1.0f, 0.0f), ObjectAnimator.ofFloat(ki1Var.b.getContentView(), "scaleX", 0.0f, 1.0f), ObjectAnimator.ofFloat(ki1Var.b.getContentView(), "scaleY", 0.0f, 1.0f), ObjectAnimator.ofFloat(ki1Var.b.getContentView(), "alpha", 0.0f, 1.0f));
+                    animatorSet.addListener(new ve1(this, 11));
+                    animatorSet.setDuration(150L);
+                    animatorSet.start();
+                    break;
+                }
+                break;
+            default:
+                super.onPageFinished(webView, str);
+                break;
+        }
+    }
+
+    @Override // android.webkit.WebViewClient
+    public void onReceivedError(WebView webView, WebResourceRequest webResourceRequest, WebResourceError webResourceError) {
+        switch (this.a) {
+            case 2:
+                if (webResourceRequest.isForMainFrame()) {
+                    qi.i iVar = (qi.i) this.b;
+                    if (webView == iVar.o) {
+                        iVar.f();
+                        break;
+                    }
+                }
+                break;
+            default:
+                super.onReceivedError(webView, webResourceRequest, webResourceError);
+                break;
+        }
+    }
+
+    @Override // android.webkit.WebViewClient
+    public void onReceivedHttpError(WebView webView, WebResourceRequest webResourceRequest, WebResourceResponse webResourceResponse) {
+        switch (this.a) {
+            case 2:
+                if (webResourceRequest.isForMainFrame()) {
+                    qi.i iVar = (qi.i) this.b;
+                    if (webView == iVar.o) {
+                        iVar.f();
+                        break;
+                    }
+                }
+                break;
+            default:
+                super.onReceivedHttpError(webView, webResourceRequest, webResourceResponse);
+                break;
+        }
+    }
+
+    @Override // android.webkit.WebViewClient
+    public void onReceivedSslError(WebView webView, SslErrorHandler sslErrorHandler, SslError sslError) {
+        switch (this.a) {
+            case 2:
+                sslErrorHandler.cancel();
+                qi.i iVar = (qi.i) this.b;
+                if (webView == iVar.o) {
+                    iVar.f();
+                    break;
+                }
+                break;
+            default:
+                super.onReceivedSslError(webView, sslErrorHandler, sslError);
+                break;
+        }
+    }
+
+    @Override // android.webkit.WebViewClient
+    public boolean onRenderProcessGone(WebView webView, RenderProcessGoneDetail renderProcessGoneDetail) {
+        switch (this.a) {
+            case 2:
+                qi.i iVar = (qi.i) this.b;
+                if (webView != iVar.o) {
+                    return true;
+                }
+                iVar.f();
+                return true;
+            default:
+                return super.onRenderProcessGone(webView, renderProcessGoneDetail);
+        }
+    }
+
+    @Override // android.webkit.WebViewClient
+    public WebResourceResponse shouldInterceptRequest(WebView webView, WebResourceRequest webResourceRequest) {
+        switch (this.a) {
+            case 0:
+                String uri = webResourceRequest.getUrl().toString();
+                if (!((org.telegram.ui.rt0) this.b).x || !uri.startsWith("https://www.youtube.com/youtubei/v1/player?key=")) {
+                    return null;
+                }
+                Utilities.externalNetworkQueue.postRunnable(new lg(this, uri, webResourceRequest, 16));
+                return null;
+            case 1:
+            default:
+                return super.shouldInterceptRequest(webView, webResourceRequest);
+            case 2:
+                Uri url = webResourceRequest.getUrl();
+                if ("http".equalsIgnoreCase(url.getScheme()) || "https".equalsIgnoreCase(url.getScheme())) {
+                    qi.i iVar = (qi.i) this.b;
+                    iVar.getClass();
+                    String path = url.getPath();
+                    if (!"https".equalsIgnoreCase(url.getScheme()) || !iVar.c.equalsIgnoreCase(url.getHost()) || url.getUserInfo() != null || ((url.getPort() != -1 && url.getPort() != 443) || path == null || !path.startsWith(iVar.d))) {
+                        return new WebResourceResponse("text/plain", "UTF-8", new ByteArrayInputStream(new byte[0]));
+                    }
+                }
+                return null;
+        }
+    }
+
+    @Override // android.webkit.WebViewClient
+    public boolean shouldOverrideUrlLoading(WebView webView, String str) {
+        switch (this.a) {
+            case 0:
+                if (!((org.telegram.ui.rt0) this.b).x) {
+                    break;
+                } else {
+                    pf.d.r(webView.getContext(), str);
+                    break;
+                }
+            case 1:
+                if (a(str) || super.shouldOverrideUrlLoading(webView, str)) {
+                }
+                break;
+        }
+        return super.shouldOverrideUrlLoading(webView, str);
+    }
+
+    @Override // android.webkit.WebViewClient
+    public boolean shouldOverrideUrlLoading(WebView webView, WebResourceRequest webResourceRequest) {
+        switch (this.a) {
+            case 2:
+                if (webResourceRequest.isForMainFrame()) {
+                    qi.i iVar = (qi.i) this.b;
+                    Uri url = webResourceRequest.getUrl();
+                    if (url != null) {
+                        if (iVar.g.equals(url.toString())) {
+                            return false;
+                        }
+                    } else {
+                        iVar.getClass();
+                    }
+                }
+                return true;
+            default:
+                return super.shouldOverrideUrlLoading(webView, webResourceRequest);
+        }
     }
 }

@@ -17,7 +17,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class b {
     public static final ReentrantLock c = new ReentrantLock();
@@ -47,7 +47,7 @@ public final class b {
     }
 
     public static final String f(String str, String str2) {
-        return a1.g.C(str, ":", str2);
+        return a1.g.D(str, ":", str2);
     }
 
     public final GoogleSignInAccount b() {

@@ -10,10 +10,10 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.bz;
 import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.qt;
-import org.telegram.ui.to;
+import org.telegram.ui.tt;
+import org.telegram.ui.vo;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i4 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -46,13 +46,13 @@ public final /* synthetic */ class i4 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new ei.s1(this.c, this.d, tLObject, this.e, this.b, 14));
                 break;
             case 4:
-                AndroidUtilities.runOnUIThread(new p4((to) this.c, (TLRPC.TL_channels_toggleUsername) this.d, tLObject, (TLRPC.TL_username) this.e, this.b, tL_error));
+                AndroidUtilities.runOnUIThread(new p4((vo) this.c, (TLRPC.TL_channels_toggleUsername) this.d, tLObject, (TLRPC.TL_username) this.e, this.b, tL_error));
                 break;
             case 5:
                 AndroidUtilities.runOnUIThread(new ei.s1((bz) this.c, (String) this.d, this.b, (String) this.e, tLObject));
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new p4((qt) this.c, tLObject, (ei.d) this.d, this.b, (HashSet) this.e, tL_error));
+                AndroidUtilities.runOnUIThread(new p4((tt) this.c, tLObject, (ei.d) this.d, this.b, (HashSet) this.e, tL_error));
                 break;
         }
     }

@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class zm {
     public long i;
@@ -22,9 +22,9 @@ public final class zm {
     public float q;
     public float r;
     public float s;
-    public f11 u;
+    public i11 u;
     public long v;
-    public final org.telegram.ui.ActionBar.f5 x;
+    public final org.telegram.ui.ActionBar.j5 x;
     public final m.e3 y;
     public final /* synthetic */ an z;
     public float a = 0.0f;
@@ -43,9 +43,9 @@ public final class zm {
 
     public zm(an anVar) {
         this.z = anVar;
-        org.telegram.ui.ActionBar.d6 d6Var = anVar.P.n;
-        Drawable drawable = d6Var != null ? d6Var.getDrawable("drawableMsgOutMedia") : null;
-        this.x = (org.telegram.ui.ActionBar.f5) (drawable == null ? org.telegram.ui.ActionBar.h6.P0("drawableMsgOutMedia") : drawable);
+        org.telegram.ui.ActionBar.g6 g6Var = anVar.P.n;
+        Drawable drawable = g6Var != null ? g6Var.getDrawable("drawableMsgOutMedia") : null;
+        this.x = (org.telegram.ui.ActionBar.j5) (drawable == null ? org.telegram.ui.ActionBar.k6.Q0("drawableMsgOutMedia") : drawable);
         this.y = new m.e3();
     }
 

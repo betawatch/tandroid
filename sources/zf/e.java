@@ -4,6 +4,7 @@ import ai.v8;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
+import i2.o1;
 import j$.util.Comparator$-CC;
 import j$.util.concurrent.ConcurrentHashMap;
 import java.io.File;
@@ -27,10 +28,11 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.rf;
-import org.telegram.ui.Components.vj0;
-import org.telegram.ui.df0;
+import org.telegram.ui.Components.yj0;
+import org.telegram.ui.Wallet.m4;
+import org.telegram.ui.if0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class e {
     public static int A;
@@ -53,7 +55,7 @@ public final class e {
     public final File m;
     public int n;
     public final AtomicBoolean o;
-    public final p8.b p;
+    public final m4 p;
     public volatile boolean q;
     public volatile boolean r;
     public RandomAccessFile s;
@@ -69,7 +71,7 @@ public final class e {
         this.e = arrayList;
         this.h = new Object();
         this.o = new AtomicBoolean(false);
-        this.p = new p8.b(this, 14);
+        this.p = new m4(this, 18);
         this.a = (BitmapDrawable) cVar;
         this.b = i10;
         this.c = i11;
@@ -91,7 +93,7 @@ public final class e {
         sb2.append("_");
         sb2.append(i11);
         sb2.append(z10 ? "_nolimit" : " ");
-        File file3 = new File(file2, a1.g.s(sb2, i12 != 0 ? i2.e.j(i12, "_fitz") : "", ".pcache2"));
+        File file3 = new File(file2, a1.g.s(sb2, i12 != 0 ? o1.k(i12, "_fitz") : "", ".pcache2"));
         this.m = file3;
         this.f = i10 < AndroidUtilities.dp(60.0f) && i11 < AndroidUtilities.dp(60.0f);
         if (SharedConfig.getDevicePerformanceClass() < 2) {
@@ -153,7 +155,7 @@ public final class e {
         A = i10;
         if (i10 <= 0) {
             A = 0;
-            vj0.T0.postRunnable(new df0(24));
+            yj0.T0.postRunnable(new if0(24));
         }
     }
 

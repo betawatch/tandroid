@@ -12,7 +12,7 @@ import java.util.concurrent.locks.LockSupport;
 import java.util.logging.Level;
 import v7.z5;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class w0 extends l0 implements g0 {
     public t0 n;
@@ -165,7 +165,7 @@ public final class w0 extends l0 implements g0 {
         try {
             executor.execute(runnable);
         } catch (Exception e) {
-            l0.e.c().logp(Level.SEVERE, "com.google.common.util.concurrent.AbstractFuture", "executeListener", k3.k("RuntimeException while executing runnable ", String.valueOf(runnable), " with executor ", String.valueOf(executor)), (Throwable) e);
+            l0.e.c().logp(Level.SEVERE, "com.google.common.util.concurrent.AbstractFuture", "executeListener", k3.j("RuntimeException while executing runnable ", String.valueOf(runnable), " with executor ", String.valueOf(executor)), (Throwable) e);
         }
     }
 
@@ -527,7 +527,7 @@ public final class w0 extends l0 implements g0 {
                         if (isDone()) {
                             throw new TimeoutException(str.concat(" but future completed as timeout expired"));
                         }
-                        throw new TimeoutException(a1.g.C(str, " for ", w0Var));
+                        throw new TimeoutException(a1.g.D(str, " for ", w0Var));
                     }
                 }
                 Object obj5 = this.a;

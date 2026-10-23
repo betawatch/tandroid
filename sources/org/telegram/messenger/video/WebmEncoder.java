@@ -16,6 +16,7 @@ import android.text.TextUtils;
 import android.util.Pair;
 import android.view.View;
 import com.google.android.gms.internal.play_billing.k3;
+import i2.o1;
 import java.io.File;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
@@ -33,13 +34,13 @@ import org.telegram.ui.Components.RLottieNative;
 import org.telegram.ui.Components.a6;
 import org.telegram.ui.Components.b6;
 import org.telegram.ui.Components.e6;
-import qg.m0;
+import qg.l0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public class WebmEncoder {
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public static class FrameDrawer {
         private final int H;
         private final int W;
@@ -275,8 +276,8 @@ public class WebmEncoder {
             bVar.drawAnimatedEmojiDrawables = false;
             bVar.setBackgroundColor(0);
             bVar.setPadding(AndroidUtilities.dp(7.0f), AndroidUtilities.dp(7.0f), AndroidUtilities.dp(7.0f), AndroidUtilities.dp(7.0f));
-            m0 m0Var = mediaEntity.textTypeface;
-            if (m0Var != null && (d = m0Var.d()) != null) {
+            l0 l0Var = mediaEntity.textTypeface;
+            if (l0Var != null && (d = l0Var.d()) != null) {
                 bVar.setTypeface(d);
             }
             bVar.setTextSize(0, mediaEntity.fontSize);
@@ -309,7 +310,7 @@ public class WebmEncoder {
                                 double d10 = paddingLeft - f12;
                                 double d11 = (paddingTop - f13) / f14;
                                 paddingLeft = ((float) ((Math.cos(-mediaEntity.rotation) * d10) - (Math.sin(-mediaEntity.rotation) * d11))) + f12;
-                                paddingTop = (((float) i2.e.f(-mediaEntity.rotation, d11, Math.sin(-mediaEntity.rotation) * d10)) * f14) + f13;
+                                paddingTop = (((float) o1.f(-mediaEntity.rotation, d11, Math.sin(-mediaEntity.rotation) * d10)) * f14) + f13;
                             }
                             VideoEditedInfo.MediaEntity mediaEntity5 = emojiEntity.entity;
                             int i17 = this.measuredSize;

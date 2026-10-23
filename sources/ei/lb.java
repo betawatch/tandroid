@@ -6,7 +6,6 @@ import android.graphics.Canvas;
 import android.graphics.Path;
 import android.graphics.RectF;
 import android.text.SpannableStringBuilder;
-import android.text.style.ForegroundColorSpan;
 import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
@@ -14,19 +13,20 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.fl0;
-import org.telegram.ui.Components.lw0;
+import org.telegram.ui.Components.il0;
+import org.telegram.ui.Components.m10;
+import org.telegram.ui.Components.ow0;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class lb extends r {
     public final Path R1;
     public final /* synthetic */ vb S1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public lb(vb vbVar, Activity activity, FrameLayout frameLayout, lw0 lw0Var, FrameLayout frameLayout2, ci.b bVar, org.telegram.ui.Components.ja jaVar) {
-        super(activity, frameLayout, lw0Var, frameLayout2, bVar, jaVar);
+    public lb(vb vbVar, Activity activity, FrameLayout frameLayout, ow0 ow0Var, FrameLayout frameLayout2, ci.b bVar, org.telegram.ui.Components.ja jaVar) {
+        super(activity, frameLayout, ow0Var, frameLayout2, bVar, jaVar);
         this.S1 = vbVar;
         this.R1 = new Path();
     }
@@ -39,14 +39,14 @@ public final class lb extends r {
             return false;
         }
         int i11 = MessagesController.getInstance(this.U).storyCaptionLengthLimitPremium;
-        SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatPluralString("CaptionPremiumSubtitle", Math.round(i11 / MessagesController.getInstance(this.U).storyCaptionLengthLimitDefault), i2.e.j(i11, "")));
+        SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatPluralString("CaptionPremiumSubtitle", Math.round(i11 / MessagesController.getInstance(this.U).storyCaptionLengthLimitDefault), i2.o1.k(i11, "")));
         int indexOf = replaceTags.toString().indexOf("__");
         if (indexOf >= 0) {
             replaceTags.replace(indexOf, indexOf + 2, (CharSequence) "");
             int indexOf2 = replaceTags.toString().indexOf("__");
             if (indexOf2 >= 0) {
                 replaceTags.replace(indexOf2, indexOf2 + 2, (CharSequence) "");
-                replaceTags.setSpan(new ForegroundColorSpan(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.gc, this.a)), indexOf, indexOf2, 33);
+                replaceTags.setSpan(new m10(org.telegram.ui.ActionBar.k6.gc, this.a), indexOf, indexOf2, 33);
                 replaceTags.setSpan(new kb(this, i10), indexOf, indexOf2, 33);
             }
         }
@@ -88,7 +88,7 @@ public final class lb extends r {
 
     @Override // ei.m
     public final void i(Bitmap bitmap) {
-        this.S1.n.Z(bitmap, 12.0f);
+        this.S1.n.Y(bitmap, 12.0f);
         Utilities.stackBlurBitmap(bitmap, (int) 12.0f);
     }
 
@@ -108,7 +108,7 @@ public final class lb extends r {
                 for (int i10 = 0; i10 < vbVar.v1.R0.getChildCount(); i10++) {
                     View childAt = vbVar.v1.R0.getChildAt(i10);
                     if (childAt instanceof rg.j) {
-                        fl0 selectionBounds = ((rg.j) childAt).getSelectionBounds();
+                        il0 selectionBounds = ((rg.j) childAt).getSelectionBounds();
                         RectF rectF = AndroidUtilities.rectTmp;
                         float f11 = selectionBounds.a;
                         float f12 = selectionBounds.b;
@@ -125,9 +125,9 @@ public final class lb extends r {
 
     @Override // ei.m
     public final void n() {
-        ai.ic icVar = this.S1.t0;
-        if (icVar != null) {
-            icVar.invalidate();
+        ai.jc jcVar = this.S1.t0;
+        if (jcVar != null) {
+            jcVar.invalidate();
         }
     }
 
@@ -138,9 +138,9 @@ public final class lb extends r {
         vb vbVar = this.S1;
         k6 k6Var = vbVar.b1;
         if (!vbVar.N1 && !z10) {
-            ci.i7 storiesController = MessagesController.getInstance(this.U).getStoriesController();
+            ci.h7 storiesController = MessagesController.getInstance(this.U).getStoriesController();
             int A = vbVar.A();
-            ci.c7 o10 = storiesController.o();
+            ci.b7 o10 = storiesController.o();
             if (o10 == null || !o10.a(storiesController.a, A) || ((a8Var = vbVar.K1) != null && a8Var.g)) {
                 z11 = true;
                 k6Var.setShareEnabled(z11);

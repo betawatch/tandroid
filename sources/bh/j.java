@@ -7,22 +7,25 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.messenger.FileLog;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.r6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+/* loaded from: classes4.dex */
 public final class j extends Drawable {
     public eh.a a;
     public int b;
     public int c;
     public int f;
-    public boolean j;
-    public float k;
+    public boolean k;
+    public float l;
     public float d = 1.0f;
     public final RectF e = new RectF();
     public final Paint g = new Paint(1);
     public final Paint h = new Paint(1);
     public final Paint i = new Paint(1);
+    public int j = r6.b;
 
     public final void a(eh.a aVar) {
         this.a = aVar;
@@ -33,12 +36,13 @@ public final class j extends Drawable {
     }
 
     public final void b() {
+        this.j = r6.b;
         eh.a aVar = this.a;
         if (aVar == null) {
             return;
         }
-        this.b = h6.m1(this.d, aVar.h());
-        this.c = h6.m1(this.d, this.a.u());
+        this.b = k6.o1(this.d, aVar.h());
+        this.c = k6.o1(this.d, this.a.u());
         int i10 = this.b;
         Paint paint = this.h;
         paint.setColor(i10);
@@ -52,14 +56,21 @@ public final class j extends Drawable {
     @Override // android.graphics.drawable.Drawable
     public final void draw(Canvas canvas) {
         Canvas canvas2;
+        if (this.j != r6.b) {
+            try {
+                b();
+            } catch (Exception e) {
+                FileLog.e(e);
+            }
+        }
         float centerX = getBounds().centerX();
         float centerY = getBounds().centerY();
         float min = (Math.min(getBounds().width(), getBounds().height()) / 2.0f) - this.f;
         RectF rectF = this.e;
         rectF.set(centerX - min, centerY - min, centerX + min, centerY + min);
-        if (this.j) {
+        if (this.k) {
             rectF.set(getBounds());
-            min = this.k;
+            min = this.l;
         }
         float f7 = min;
         Paint paint = this.g;

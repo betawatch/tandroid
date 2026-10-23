@@ -1,9 +1,9 @@
 package ei;
 
 import android.widget.FrameLayout;
-import org.telegram.ui.Components.ib0;
+import org.telegram.ui.Components.jb0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q4 implements o1.f {
     public final /* synthetic */ int a;
@@ -26,7 +26,7 @@ public final /* synthetic */ class q4 implements o1.f {
                     f6Var.C1 = null;
                     if (!this.c) {
                         g5Var.setVisibility(8);
-                        qg.v0.e(f6Var.F1).g();
+                        qg.u0.e(f6Var.F1).g();
                         g5Var.getAdapter().l();
                         break;
                     }
@@ -34,27 +34,27 @@ public final /* synthetic */ class q4 implements o1.f {
                 break;
             case 1:
                 f6 f6Var2 = (f6) this.b;
-                rg.t1 t1Var = f6Var2.m1;
+                rg.u1 u1Var = f6Var2.m1;
                 if (hVar == f6Var2.v1) {
                     f6Var2.v1 = null;
                     if (!this.c) {
-                        t1Var.setVisibility(8);
+                        u1Var.setVisibility(8);
                     }
-                    t1Var.setMaskProvider(null);
+                    u1Var.setMaskProvider(null);
                     break;
                 }
                 break;
             default:
-                ib0 ib0Var = (ib0) this.b;
+                jb0 jb0Var = (jb0) this.b;
                 if (!z10) {
-                    ib0Var.K = null;
+                    jb0Var.K = null;
                     boolean z11 = this.c;
-                    ib0Var.setVisibility(z11 ? 8 : 0);
-                    if (ib0Var.N && z11) {
-                        ib0Var.N = false;
-                        ib0Var.b.setLayoutManager(ib0Var.getNeededLayoutManager());
-                        ib0Var.I = true;
-                        ib0Var.o(true);
+                    jb0Var.setVisibility(z11 ? 8 : 0);
+                    if (jb0Var.N && z11) {
+                        jb0Var.N = false;
+                        jb0Var.b.setLayoutManager(jb0Var.getNeededLayoutManager());
+                        jb0Var.I = true;
+                        jb0Var.o(true);
                         break;
                     }
                 }

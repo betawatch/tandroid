@@ -1,7 +1,7 @@
 package qh;
 
 import android.view.View;
-import ig.l0;
+import ig.k0;
 import ne.m;
 import ne.n;
 import org.telegram.messenger.AndroidUtilities;
@@ -10,8 +10,8 @@ import org.telegram.ui.ActionBar.o1;
 import r0.h1;
 import r0.k1;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+/* loaded from: classes4.dex */
 public class i implements g, f, d {
     public View E;
     public int F;
@@ -27,14 +27,14 @@ public class i implements g, f, d {
     public final n c = new n();
     public final n d = new n();
     public final AnimationNotificationsLocker e = new AnimationNotificationsLocker();
-    public final c f = new c(new l0(this, 13));
+    public final c f = new c(new k0(this, 13));
     public int s = 1;
     public final h x = new h(this, 0);
 
     /* JADX WARN: Multi-variable type inference failed */
     public i(Runnable runnable) {
         this.h = runnable;
-        this.a = new ne.e(0, new n2.e(this, runnable, 0 == true ? 1 : 0, 15), o1.w, 250L);
+        this.a = new ne.e(0, new n2.e(this, runnable, 0 == true ? 1 : 0, 14), o1.w, 250L);
     }
 
     @Override // qh.d

@@ -16,6 +16,7 @@ import android.os.PowerManager;
 import android.os.RemoteException;
 import android.support.v4.media.session.MediaSessionCompat$Token;
 import android.support.v4.media.session.m;
+import android.support.v4.media.session.o;
 import android.text.Editable;
 import android.text.Selection;
 import android.text.TextPaint;
@@ -26,17 +27,16 @@ import android.util.SparseBooleanArray;
 import android.view.KeyEvent;
 import androidx.emoji2.text.v;
 import androidx.fragment.app.j0;
-import androidx.fragment.app.s;
-import androidx.mediarouter.app.q;
 import b2.r0;
 import b2.u;
-import c3.o;
+import c3.q;
 import c5.j;
 import com.google.android.datatransport.cct.CctBackendFactory;
 import com.google.android.datatransport.runtime.backends.TransportBackendDiscovery;
 import com.google.android.gms.cast.CastDevice;
 import com.google.android.gms.internal.cast.d1;
 import com.google.android.gms.internal.cast.d2;
+import com.google.android.gms.internal.cast.r;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -78,7 +78,7 @@ import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.ConcurrentNavigableMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
-import k2.r;
+import k2.s;
 import ki.g1;
 import ki.h0;
 import ki.h1;
@@ -89,15 +89,14 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Cells.n9;
+import org.telegram.ui.Cells.o9;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.fk0;
 import p4.z;
 import v7.i8;
 import v7.r8;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public class b implements h, OnCompleteListener, com.google.android.gms.internal.clearcut.h, ee.b, f6.a, fa.a, g2.g, n, a0, Continuation, g1, e2.d {
     public static volatile b d;
@@ -200,7 +199,7 @@ public class b implements h, OnCompleteListener, com.google.android.gms.internal
         return sb2.toString();
     }
 
-    public static void y(b bVar, boolean z10, boolean z11) {
+    public static void o(b bVar, boolean z10, boolean z11) {
         synchronized (bVar) {
             boolean z12 = false;
             if (z10) {
@@ -235,7 +234,7 @@ public class b implements h, OnCompleteListener, com.google.android.gms.internal
         }
     }
 
-    public static String z(Class cls) {
+    public static String y(Class cls) {
         int modifiers = cls.getModifiers();
         if (Modifier.isInterface(modifiers)) {
             return "Interfaces can't be instantiated! Register an InstanceCreator or a TypeAdapter for this type. Interface name: ".concat(cls.getName());
@@ -255,18 +254,18 @@ public class b implements h, OnCompleteListener, com.google.android.gms.internal
         return ((u) this.b).a.get(i10);
     }
 
-    public void D(i2.f fVar) {
-        synchronized (fVar) {
+    public void D(i2.e eVar) {
+        synchronized (eVar) {
         }
         Handler handler = (Handler) this.b;
         if (handler != null) {
-            handler.post(new r(this, fVar, 0));
+            handler.post(new s(this, eVar, 0));
         }
     }
 
-    public void E(s f7, boolean z10) {
+    public void E(androidx.fragment.app.s f7, boolean z10) {
         i.e(f7, "f");
-        s sVar = ((j0) this.b).y;
+        androidx.fragment.app.s sVar = ((j0) this.b).y;
         if (sVar != null) {
             sVar.p().o.E(f7, true);
         }
@@ -282,11 +281,11 @@ public class b implements h, OnCompleteListener, com.google.android.gms.internal
         }
     }
 
-    public void F(s f7, boolean z10) {
+    public void F(androidx.fragment.app.s f7, boolean z10) {
         i.e(f7, "f");
         j0 j0Var = (j0) this.b;
         androidx.fragment.app.v vVar = j0Var.w.b;
-        s sVar = j0Var.y;
+        androidx.fragment.app.s sVar = j0Var.y;
         if (sVar != null) {
             sVar.p().o.F(f7, true);
         }
@@ -308,9 +307,9 @@ public class b implements h, OnCompleteListener, com.google.android.gms.internal
         ((ki.j0) this.b).N();
     }
 
-    public void H(s f7, boolean z10) {
+    public void H(androidx.fragment.app.s f7, boolean z10) {
         i.e(f7, "f");
-        s sVar = ((j0) this.b).y;
+        androidx.fragment.app.s sVar = ((j0) this.b).y;
         if (sVar != null) {
             sVar.p().o.H(f7, true);
         }
@@ -326,9 +325,9 @@ public class b implements h, OnCompleteListener, com.google.android.gms.internal
         }
     }
 
-    public void I(s f7, boolean z10) {
+    public void I(androidx.fragment.app.s f7, boolean z10) {
         i.e(f7, "f");
-        s sVar = ((j0) this.b).y;
+        androidx.fragment.app.s sVar = ((j0) this.b).y;
         if (sVar != null) {
             sVar.p().o.I(f7, true);
         }
@@ -344,9 +343,9 @@ public class b implements h, OnCompleteListener, com.google.android.gms.internal
         }
     }
 
-    public void J(s f7, boolean z10) {
+    public void J(androidx.fragment.app.s f7, boolean z10) {
         i.e(f7, "f");
-        s sVar = ((j0) this.b).y;
+        androidx.fragment.app.s sVar = ((j0) this.b).y;
         if (sVar != null) {
             sVar.p().o.J(f7, true);
         }
@@ -362,9 +361,9 @@ public class b implements h, OnCompleteListener, com.google.android.gms.internal
         }
     }
 
-    public void K(s f7, boolean z10) {
+    public void K(androidx.fragment.app.s f7, boolean z10) {
         i.e(f7, "f");
-        s sVar = ((j0) this.b).y;
+        androidx.fragment.app.s sVar = ((j0) this.b).y;
         if (sVar != null) {
             sVar.p().o.K(f7, true);
         }
@@ -380,11 +379,11 @@ public class b implements h, OnCompleteListener, com.google.android.gms.internal
         }
     }
 
-    public void L(s f7, boolean z10) {
+    public void L(androidx.fragment.app.s f7, boolean z10) {
         i.e(f7, "f");
         j0 j0Var = (j0) this.b;
         androidx.fragment.app.v vVar = j0Var.w.b;
-        s sVar = j0Var.y;
+        androidx.fragment.app.s sVar = j0Var.y;
         if (sVar != null) {
             sVar.p().o.L(f7, true);
         }
@@ -405,9 +404,9 @@ public class b implements h, OnCompleteListener, com.google.android.gms.internal
         return false;
     }
 
-    public void N(s f7, boolean z10) {
+    public void N(androidx.fragment.app.s f7, boolean z10) {
         i.e(f7, "f");
-        s sVar = ((j0) this.b).y;
+        androidx.fragment.app.s sVar = ((j0) this.b).y;
         if (sVar != null) {
             sVar.p().o.N(f7, true);
         }
@@ -423,9 +422,9 @@ public class b implements h, OnCompleteListener, com.google.android.gms.internal
         }
     }
 
-    public void O(s f7, boolean z10) {
+    public void O(androidx.fragment.app.s f7, boolean z10) {
         i.e(f7, "f");
-        s sVar = ((j0) this.b).y;
+        androidx.fragment.app.s sVar = ((j0) this.b).y;
         if (sVar != null) {
             sVar.p().o.O(f7, true);
         }
@@ -446,9 +445,9 @@ public class b implements h, OnCompleteListener, com.google.android.gms.internal
         return false;
     }
 
-    public void Q(s f7, Bundle bundle, boolean z10) {
+    public void Q(androidx.fragment.app.s f7, Bundle bundle, boolean z10) {
         i.e(f7, "f");
-        s sVar = ((j0) this.b).y;
+        androidx.fragment.app.s sVar = ((j0) this.b).y;
         if (sVar != null) {
             sVar.p().o.Q(f7, bundle, true);
         }
@@ -466,7 +465,7 @@ public class b implements h, OnCompleteListener, com.google.android.gms.internal
 
     @Override // ki.g1
     public void R(h1 h1Var, int i10, int i11) {
-        n9 w9;
+        o9 w9;
         ki.j0 j0Var = (ki.j0) this.b;
         if (((k0) this.c).d || i10 == i11 || (w9 = j0Var.w()) == null) {
             return;
@@ -477,9 +476,9 @@ public class b implements h, OnCompleteListener, com.google.android.gms.internal
         h1Var.post(new h0(this, h1Var, i11, w9, j0Var, i10));
     }
 
-    public void S(s f7, boolean z10) {
+    public void S(androidx.fragment.app.s f7, boolean z10) {
         i.e(f7, "f");
-        s sVar = ((j0) this.b).y;
+        androidx.fragment.app.s sVar = ((j0) this.b).y;
         if (sVar != null) {
             sVar.p().o.S(f7, true);
         }
@@ -495,9 +494,9 @@ public class b implements h, OnCompleteListener, com.google.android.gms.internal
         }
     }
 
-    public void T(s f7, boolean z10) {
+    public void T(androidx.fragment.app.s f7, boolean z10) {
         i.e(f7, "f");
-        s sVar = ((j0) this.b).y;
+        androidx.fragment.app.s sVar = ((j0) this.b).y;
         if (sVar != null) {
             sVar.p().o.T(f7, true);
         }
@@ -513,9 +512,9 @@ public class b implements h, OnCompleteListener, com.google.android.gms.internal
         }
     }
 
-    public void U(s f7, boolean z10) {
+    public void U(androidx.fragment.app.s f7, boolean z10) {
         i.e(f7, "f");
-        s sVar = ((j0) this.b).y;
+        androidx.fragment.app.s sVar = ((j0) this.b).y;
         if (sVar != null) {
             sVar.p().o.U(f7, true);
         }
@@ -625,9 +624,9 @@ public class b implements h, OnCompleteListener, com.google.android.gms.internal
         }
         int i10 = 20;
         gb.n nVar = null;
-        gb.n dVar = EnumSet.class.isAssignableFrom(cls) ? new ya.d(type, i10) : cls == EnumMap.class ? new a6.i(type, 22) : null;
-        if (dVar != null) {
-            return dVar;
+        gb.n cVar2 = EnumSet.class.isAssignableFrom(cls) ? new ya.c(type, i10) : cls == EnumMap.class ? new a6.i(type, 22) : null;
+        if (cVar2 != null) {
+            return cVar2;
         }
         gb.d.f((ArrayList) this.c);
         if (!Modifier.isAbstract(cls.getModifiers())) {
@@ -666,20 +665,20 @@ public class b implements h, OnCompleteListener, com.google.android.gms.internal
             if (nVar != null) {
                 return nVar;
             }
-            String z10 = z(cls);
-            return z10 != null ? new f2.a(z10) : new l(cls, i10);
+            String y3 = y(cls);
+            return y3 != null ? new f2.a(y3) : new l(cls, i10);
         }
         cVar = null;
         if (cVar == null) {
         }
     }
 
-    public o X(Object... objArr) {
+    public q X(Object... objArr) {
         Constructor a2;
         synchronized (((AtomicBoolean) this.c)) {
             if (!((AtomicBoolean) this.c).get()) {
                 try {
-                    a2 = ((aa.a) this.b).a();
+                    a2 = ((c3.n) this.b).a();
                 } catch (ClassNotFoundException unused) {
                     ((AtomicBoolean) this.c).set(true);
                 } catch (Exception e) {
@@ -692,7 +691,7 @@ public class b implements h, OnCompleteListener, com.google.android.gms.internal
             return null;
         }
         try {
-            return (o) a2.newInstance(objArr);
+            return (q) a2.newInstance(objArr);
         } catch (Exception e7) {
             throw new IllegalStateException("Unexpected error creating extractor", e7);
         }
@@ -701,7 +700,7 @@ public class b implements h, OnCompleteListener, com.google.android.gms.internal
     public m Z() {
         MediaController.TransportControls transportControls = ((android.support.v4.media.session.h) this.b).a.getTransportControls();
         int i10 = Build.VERSION.SDK_INT;
-        return i10 >= 29 ? new android.support.v4.media.session.o(transportControls) : i10 >= 24 ? new android.support.v4.media.session.n(transportControls) : new m(transportControls);
+        return i10 >= 29 ? new o(transportControls) : i10 >= 24 ? new android.support.v4.media.session.n(transportControls) : new m(transportControls);
     }
 
     @Override // j4.a0
@@ -770,7 +769,7 @@ public class b implements h, OnCompleteListener, com.google.android.gms.internal
         ((ki.j0) this.b).c(h1Var);
     }
 
-    public void c0(q qVar) {
+    public void c0(androidx.mediarouter.app.q qVar) {
         if (qVar == null) {
             throw new IllegalArgumentException("callback must not be null");
         }
@@ -834,7 +833,7 @@ public class b implements h, OnCompleteListener, com.google.android.gms.internal
             }
         }
         if (((a) g3Var.d) != null && gVar != null) {
-            g3Var.l(gVar);
+            g3Var.n(gVar);
         }
         if (((a) g3Var.d) != null && (gVar2 = (g) g3Var.c) != null) {
             g3Var.S(gVar2);
@@ -888,7 +887,7 @@ public class b implements h, OnCompleteListener, com.google.android.gms.internal
         ((ki.j0) this.b).K(i10, i11);
     }
 
-    public void f0(q qVar) {
+    public void f0(androidx.mediarouter.app.q qVar) {
         if (qVar == null) {
             throw new IllegalArgumentException("callback must not be null");
         }
@@ -944,76 +943,8 @@ public class b implements h, OnCompleteListener, com.google.android.gms.internal
         ((ki.j0) this.b).g();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:20:0x0062, code lost:
-    
-        if (r2.b(r6, r7, r0) == r1) goto L24;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x0053  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x003a  */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x0022  */
-    @Override // ee.b
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public Object l(ee.c cVar, md.c cVar2) {
-        ee.d dVar;
-        int i10;
-        b bVar;
-        Throwable th2;
-        if (cVar2 instanceof ee.d) {
-            dVar = (ee.d) cVar2;
-            int i11 = dVar.b;
-            if ((i11 & TLObject.FLAG_31) != 0) {
-                dVar.b = i11 - TLObject.FLAG_31;
-                Object obj = dVar.a;
-                Object obj2 = ld.a.a;
-                i10 = dVar.b;
-                if (i10 != 0) {
-                    i8.b(obj);
-                    ee.b bVar2 = (ee.b) this.b;
-                    dVar.d = this;
-                    dVar.e = cVar;
-                    dVar.b = 1;
-                    obj = ee.n.a(bVar2, cVar, dVar);
-                    if (obj != obj2) {
-                        bVar = this;
-                    }
-                    return obj2;
-                }
-                if (i10 != 1) {
-                    if (i10 != 2) {
-                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                    }
-                    i8.b(obj);
-                    return id.i.a;
-                }
-                cVar = dVar.e;
-                bVar = dVar.d;
-                i8.b(obj);
-                th2 = (Throwable) obj;
-                if (th2 != null) {
-                    ab.y yVar = (ab.y) bVar.c;
-                    dVar.d = null;
-                    dVar.e = null;
-                    dVar.b = 2;
-                }
-                return id.i.a;
-            }
-        }
-        dVar = new ee.d(this, cVar2);
-        Object obj3 = dVar.a;
-        Object obj22 = ld.a.a;
-        i10 = dVar.b;
-        if (i10 != 0) {
-        }
-        th2 = (Throwable) obj3;
-        if (th2 != null) {
-        }
-        return id.i.a;
-    }
-
     @Override // f6.a
-    public void m(Bitmap bitmap) {
+    public void l(Bitmap bitmap) {
         n4.s sVar = (n4.s) this.b;
         sVar.c = bitmap;
         f6.f fVar = (f6.f) this.c;
@@ -1040,10 +971,10 @@ public class b implements h, OnCompleteListener, com.google.android.gms.internal
                 }
                 return;
             default:
-                com.google.android.gms.internal.cast.r rVar = (com.google.android.gms.internal.cast.r) this.b;
+                r rVar = (r) this.b;
                 d6.b bVar2 = (d6.b) this.c;
                 p4.x xVar = rVar.c;
-                g6.b bVar3 = com.google.android.gms.internal.cast.r.j;
+                g6.b bVar3 = r.j;
                 if (task.isSuccessful()) {
                     Bundle bundle = (Bundle) task.getResult();
                     boolean z11 = bundle != null && bundle.containsKey("com.google.android.gms.cast.FLAG_OUTPUT_SWITCHER_ENABLED");
@@ -1101,14 +1032,77 @@ public class b implements h, OnCompleteListener, com.google.android.gms.internal
         e0(cVar);
     }
 
-    @Override // d6.h
-    public void q(d6.f fVar, int i10) {
-        Log.d("CAST_SESSION", "onSessionResumeFailed " + ((d6.c) fVar).a() + " " + i10);
+    /* JADX WARN: Code restructure failed: missing block: B:20:0x0062, code lost:
+    
+        if (r2.b(r6, r7, r0) == r1) goto L24;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x0053  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x003a  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0022  */
+    @Override // ee.b
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public Object q(ee.c cVar, md.c cVar2) {
+        ee.d dVar;
+        int i10;
+        b bVar;
+        Throwable th2;
+        if (cVar2 instanceof ee.d) {
+            dVar = (ee.d) cVar2;
+            int i11 = dVar.b;
+            if ((i11 & TLObject.FLAG_31) != 0) {
+                dVar.b = i11 - TLObject.FLAG_31;
+                Object obj = dVar.a;
+                Object obj2 = ld.a.a;
+                i10 = dVar.b;
+                if (i10 != 0) {
+                    i8.b(obj);
+                    ee.b bVar2 = (ee.b) this.b;
+                    dVar.d = this;
+                    dVar.e = cVar;
+                    dVar.b = 1;
+                    obj = ee.n.a(bVar2, cVar, dVar);
+                    if (obj != obj2) {
+                        bVar = this;
+                    }
+                    return obj2;
+                }
+                if (i10 != 1) {
+                    if (i10 != 2) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    }
+                    i8.b(obj);
+                    return id.i.a;
+                }
+                cVar = dVar.e;
+                bVar = dVar.d;
+                i8.b(obj);
+                th2 = (Throwable) obj;
+                if (th2 != null) {
+                    ab.y yVar = (ab.y) bVar.c;
+                    dVar.d = null;
+                    dVar.e = null;
+                    dVar.b = 2;
+                }
+                return id.i.a;
+            }
+        }
+        dVar = new ee.d(this, cVar2);
+        Object obj3 = dVar.a;
+        Object obj22 = ld.a.a;
+        i10 = dVar.b;
+        if (i10 != 0) {
+        }
+        th2 = (Throwable) obj3;
+        if (th2 != null) {
+        }
+        return id.i.a;
     }
 
     @Override // d6.h
-    public void r(d6.f fVar) {
-        Log.d("CAST_SESSION", "onSessionEnding " + ((d6.c) fVar).a());
+    public void r(d6.f fVar, int i10) {
+        Log.d("CAST_SESSION", "onSessionResumeFailed " + ((d6.c) fVar).a() + " " + i10);
     }
 
     @Override // ki.g1
@@ -1163,14 +1157,19 @@ public class b implements h, OnCompleteListener, com.google.android.gms.internal
         }
     }
 
+    @Override // d6.h
+    public void u(d6.f fVar) {
+        Log.d("CAST_SESSION", "onSessionEnding " + ((d6.c) fVar).a());
+    }
+
     @Override // e2.d
-    public y u(byte[] bArr) {
+    public y v(byte[] bArr) {
         byte[] bArr2;
         g3 g3Var = (g3) this.c;
         if (g3Var == null || (bArr2 = (byte[]) g3Var.b) == null || !Arrays.equals(bArr2, bArr)) {
-            y u10 = ((e2.d) this.b).u(bArr);
-            this.c = new g3(bArr, u10);
-            return u10;
+            y v = ((e2.d) this.b).v(bArr);
+            this.c = new g3(bArr, v);
+            return v;
         }
         y yVar = (y) ((g3) this.c).d;
         yVar.getClass();
@@ -1178,20 +1177,20 @@ public class b implements h, OnCompleteListener, com.google.android.gms.internal
     }
 
     @Override // d6.h
-    public void v(d6.f fVar, String str) {
+    public void w(d6.f fVar, String str) {
         d6.c cVar = (d6.c) fVar;
         Log.d("CAST_SESSION", "onSessionStarted " + cVar.a() + " " + str);
         e0(cVar);
     }
 
-    @Override // d6.h
-    public void w(d6.f fVar, int i10) {
-        Log.d("CAST_SESSION", "onSessionStartSuspended " + ((d6.c) fVar).a() + " " + i10);
-    }
-
     @Override // ki.g1
     public void x(CharSequence charSequence) {
-        ((ki.j0) this.b).z(charSequence);
+        ((ki.j0) this.b).A(charSequence);
+    }
+
+    @Override // d6.h
+    public void z(d6.f fVar, int i10) {
+        Log.d("CAST_SESSION", "onSessionStartSuspended " + ((d6.c) fVar).a() + " " + i10);
     }
 
     @Override // com.google.android.gms.internal.clearcut.h
@@ -1253,22 +1252,21 @@ public class b implements h, OnCompleteListener, com.google.android.gms.internal
         boolean z10 = false;
         this.a = 0;
         d6.a c10 = d6.a.c(ApplicationLoader.applicationContext);
-        int i10 = 23;
-        fk0 fk0Var = new fk0(i10);
+        org.telegram.ui.web.d0 d0Var = new org.telegram.ui.web.d0(5);
         c10.getClass();
         n6.l.e("Must be called from the main thread.");
         d6.g gVar = c10.c;
         gVar.getClass();
         try {
             d6.y yVar = gVar.a;
-            d6.j jVar = new d6.j(fk0Var);
+            d6.j jVar = new d6.j(d0Var);
             Parcel N0 = yVar.N0();
             com.google.android.gms.internal.cast.v.d(N0, jVar);
             yVar.R0(N0, 4);
         } catch (RemoteException e) {
             d6.g.c.a(e, "Unable to call %s on %s.", "addCastStateListener", d6.y.class.getSimpleName());
         }
-        this.b = new g3(i10, z10);
+        this.b = new g3(23, z10);
         d6.g b10 = c10.b();
         this.c = b10;
         b10.a(this);
@@ -1276,7 +1274,7 @@ public class b implements h, OnCompleteListener, com.google.android.gms.internal
     }
 
     @Override // ki.g1
-    public /* synthetic */ void o() {
+    public /* synthetic */ void m() {
     }
 
     public b(Context context, int i10) {
@@ -1314,15 +1312,15 @@ public class b implements h, OnCompleteListener, com.google.android.gms.internal
         this.c = dVar;
     }
 
-    public b(Handler handler, k2.u uVar) {
+    public b(Handler handler, k2.v vVar) {
         this.a = 26;
-        if (uVar != null) {
+        if (vVar != null) {
             handler.getClass();
         } else {
             handler = null;
         }
         this.b = handler;
-        this.c = uVar;
+        this.c = vVar;
     }
 
     public b(ArrayList arrayList, ArrayList arrayList2) {
@@ -1363,13 +1361,13 @@ public class b implements h, OnCompleteListener, com.google.android.gms.internal
         this.c = new float[]{0.0f, 0.5f, 1.0f};
     }
 
-    @Override // j4.a0
-    public void b(e2.k0 k0Var, c3.q qVar, j4.f0 f0Var) {
-    }
-
     public b(a3.f fVar) {
         this.a = 1;
         this.c = fVar;
+    }
+
+    @Override // j4.a0
+    public void b(e2.k0 k0Var, c3.s sVar, j4.f0 f0Var) {
     }
 
     public b(x1 x1Var, int[] iArr) {
@@ -1384,9 +1382,9 @@ public class b implements h, OnCompleteListener, com.google.android.gms.internal
         this.b = new a4.g(new byte[4], 4);
     }
 
-    public b(aa.a aVar) {
+    public b(c3.n nVar) {
         this.a = 7;
-        this.b = aVar;
+        this.b = nVar;
         this.c = new AtomicBoolean(false);
     }
 }

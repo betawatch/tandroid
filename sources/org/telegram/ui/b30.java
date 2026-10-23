@@ -1,31 +1,43 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class b30 extends TextView {
-    public final RectF a;
-    public final /* synthetic */ q50 b;
+public final class b30 implements Runnable {
+    public final /* synthetic */ u50 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b30(q50 q50Var, Context context) {
-        super(context);
-        this.b = q50Var;
-        this.a = new RectF();
+    public b30(u50 u50Var) {
+        this.a = u50Var;
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        float width = getWidth();
-        float height = getHeight();
-        RectF rectF = this.a;
-        rectF.set(0.0f, 0.0f, width, height);
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), this.b.g1);
-        super.onDraw(canvas);
+    @Override // java.lang.Runnable
+    public final void run() {
+        u50 u50Var = this.a;
+        org.telegram.ui.ActionBar.n5 n5Var = u50Var.U;
+        y40 y40Var = u50Var.V;
+        if (y40Var == null || u50Var.isDismissed()) {
+            return;
+        }
+        ChatObject.Call call = u50Var.a1;
+        int i10 = call != null ? call.call.schedule_date : u50Var.k2;
+        if (i10 == 0) {
+            return;
+        }
+        int currentTime = i10 - u50Var.d.getConnectionsManager().getCurrentTime();
+        if (currentTime >= 86400) {
+            y40Var.l(LocaleController.formatPluralString("Days", Math.round(currentTime / 86400.0f), new Object[0]), false);
+        } else {
+            y40Var.l(AndroidUtilities.formatFullDuration(Math.abs(currentTime)), false);
+            if (currentTime < 0 && n5Var.getTag() == null) {
+                n5Var.setTag(1);
+                n5Var.l(LocaleController.getString(R.string.VoipChatLateBy), false);
+            }
+        }
+        u50Var.W.l(LocaleController.formatStartsTime(i10, 3), false);
+        AndroidUtilities.runOnUIThread(u50Var.w2, 1000L);
     }
 }

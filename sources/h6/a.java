@@ -13,7 +13,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public abstract class a {
     public static final b a = new b("MetadataUtils", null);
@@ -80,7 +80,7 @@ public abstract class a {
                             Log.e(bVar.a, bVar.d("Error extracting the time substring: %s", new Object[0]), e7);
                         }
                         if (TextUtils.isEmpty(substring2)) {
-                            substring = g.C(substring, "T", substring2);
+                            substring = g.D(substring, "T", substring2);
                             str2 = substring2.length() == 6 ? "yyyyMMdd'T'HHmmss" : c;
                         } else {
                             str2 = "yyyyMMdd";

@@ -12,9 +12,9 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class w30 extends im0 {
+public final class w30 extends lm0 {
     public final Context c;
     public final /* synthetic */ a40 d;
 
@@ -31,7 +31,7 @@ public final class w30 extends im0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.im0
+    @Override // org.telegram.ui.Components.lm0
     public final boolean D(s4.b1 b1Var) {
         View view = b1Var.a;
         if ((view instanceof org.telegram.ui.Cells.a5) && this.d.f0.contains(Long.valueOf(((org.telegram.ui.Cells.a5) view).getUserId()))) {
@@ -91,11 +91,11 @@ public final class w30 extends im0 {
                 i11 = a40Var.o0;
             }
             long peerId = tLObject instanceof TLRPC.TL_contact ? ((TLRPC.TL_contact) tLObject).user_id : tLObject instanceof TLRPC.User ? ((TLRPC.User) tLObject).id : tLObject instanceof TLRPC.ChannelParticipant ? MessageObject.getPeerId(((TLRPC.ChannelParticipant) tLObject).peer) : ((TLRPC.ChatParticipant) tLObject).user_id;
-            i12 = ((org.telegram.ui.ActionBar.f3) a40Var).currentAccount;
+            i12 = ((org.telegram.ui.ActionBar.h3) a40Var).currentAccount;
             TLRPC.User user = MessagesController.getInstance(i12).getUser(Long.valueOf(peerId));
             if (user != null) {
                 a5Var.setCustomImageVisible(a40Var.f0.contains(Long.valueOf(user.id)));
-                a5Var.b(user, null, null, i10 != i11 - 1);
+                a5Var.c(user, null, null, i10 != i11 - 1);
                 return;
             }
             return;
@@ -127,11 +127,11 @@ public final class w30 extends im0 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r8v11, types: [android.view.View] */
-    /* JADX WARN: Type inference failed for: r8v13, types: [org.telegram.ui.Components.b10] */
-    /* JADX WARN: Type inference failed for: r8v14, types: [android.view.View] */
-    /* JADX WARN: Type inference failed for: r8v6, types: [org.telegram.ui.Cells.x4] */
-    /* JADX WARN: Type inference failed for: r9v9, types: [android.view.View, org.telegram.ui.Cells.u3] */
+    /* JADX WARN: Type inference failed for: r8v10, types: [android.view.View] */
+    /* JADX WARN: Type inference failed for: r8v5, types: [org.telegram.ui.Cells.x4] */
+    /* JADX WARN: Type inference failed for: r8v6, types: [android.view.View, org.telegram.ui.Cells.u3] */
+    /* JADX WARN: Type inference failed for: r8v7, types: [android.view.View] */
+    /* JADX WARN: Type inference failed for: r9v12, types: [org.telegram.ui.Components.b10] */
     @Override // s4.g0
     public final s4.b1 x(ViewGroup viewGroup, int i10) {
         org.telegram.ui.Cells.a5 a5Var;
@@ -139,14 +139,14 @@ public final class w30 extends im0 {
             Context context = this.c;
             if (i10 == 1) {
                 ?? x4Var = new org.telegram.ui.Cells.x4(context);
-                int i11 = org.telegram.ui.ActionBar.h6.pg;
+                int i11 = org.telegram.ui.ActionBar.k6.pg;
                 x4Var.a(i11, i11);
-                x4Var.setDividerColor(org.telegram.ui.ActionBar.h6.gg);
+                x4Var.setDividerColor(org.telegram.ui.ActionBar.k6.gg);
                 a5Var = x4Var;
             } else if (i10 == 2) {
                 ?? u3Var = new org.telegram.ui.Cells.u3(context, null);
-                u3Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.jg, false));
-                u3Var.setTextColor(org.telegram.ui.ActionBar.h6.Qg);
+                org.telegram.ui.ActionBar.r6.i(org.telegram.ui.ActionBar.k6.jg, u3Var, null);
+                u3Var.setTextColor(org.telegram.ui.ActionBar.k6.Qg);
                 a5Var = u3Var;
             } else if (i10 == 3) {
                 ?? view = new View(context);
@@ -158,20 +158,21 @@ public final class w30 extends im0 {
                 ?? b10Var = new b10(context, null);
                 b10Var.setViewType(6);
                 b10Var.setIsSingleCell(true);
-                b10Var.f(org.telegram.ui.ActionBar.h6.fg, org.telegram.ui.ActionBar.h6.Rg, org.telegram.ui.ActionBar.h6.jg);
+                b10Var.e(org.telegram.ui.ActionBar.k6.fg, org.telegram.ui.ActionBar.k6.Rg, org.telegram.ui.ActionBar.k6.jg);
                 a5Var = b10Var;
             }
         } else {
             org.telegram.ui.Cells.a5 a5Var2 = new org.telegram.ui.Cells.a5(6, 2, this.c, null, false);
             a5Var2.setCustomRightImage(R.drawable.msg_invited);
-            a5Var2.setNameColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.ng, false));
-            int x02 = org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.lg, false);
-            int x03 = org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.pg, false);
+            a5Var2.setNameColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.ng, false));
+            int x02 = org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.lg, false);
+            int x03 = org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.pg, false);
+            a5Var2.O = true;
             a5Var2.H = x02;
             a5Var2.I = x03;
-            a5Var2.setDividerColor(org.telegram.ui.ActionBar.h6.gg);
+            a5Var2.setDividerColor(org.telegram.ui.ActionBar.k6.gg);
             a5Var = a5Var2;
         }
-        return new tl0(a5Var);
+        return new wl0(a5Var);
     }
 }

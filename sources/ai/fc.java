@@ -1,16 +1,33 @@
 package ai;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
-/* loaded from: classes4.dex */
-public final class fc extends pf.c {
-    public final /* synthetic */ ei.d d;
+import android.text.TextPaint;
+import android.text.style.ClickableSpan;
+import android.view.View;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.sn;
 
-    public fc(ei.d dVar) {
-        this.d = dVar;
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+/* loaded from: classes4.dex */
+public final class fc extends ClickableSpan {
+    public final /* synthetic */ org.telegram.ui.ActionBar.h3[] a;
+    public final /* synthetic */ long b;
+
+    public fc(org.telegram.ui.ActionBar.h3[] h3VarArr, long j10) {
+        this.a = h3VarArr;
+        this.b = j10;
     }
 
-    @Override // pf.c
-    public final void b() {
-        this.d.setLoading(false);
+    @Override // android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        this.a[0].dismiss();
+        org.telegram.ui.ActionBar.o2 U = LaunchActivity.U();
+        if (U != null) {
+            U.presentFragment(sn.W9(this.b));
+        }
+    }
+
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        textPaint.setUnderlineText(false);
     }
 }

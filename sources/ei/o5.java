@@ -10,26 +10,26 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class o5 extends n2 {
-    public final /* synthetic */ int H;
-    public final /* synthetic */ f6 I;
+    public final /* synthetic */ int I;
+    public final /* synthetic */ f6 J;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public o5(f6 f6Var, Context context, t5 t5Var, int i10) {
         super(context, t5Var, false, false);
-        this.I = f6Var;
-        this.H = i10;
+        this.J = f6Var;
+        this.I = i10;
     }
 
     @Override // ei.n2
-    public final boolean m0(Integer num) {
-        z5 z5Var = this.I.R0;
+    public final boolean n0(Integer num) {
+        z5 z5Var = this.J.R0;
         if (num.intValue() == 3) {
             int i10 = 0;
             for (int i11 = 0; i11 < z5Var.getChildCount(); i11++) {
-                if (z5Var.getChildAt(i11) instanceof rg.b2) {
+                if (z5Var.getChildAt(i11) instanceof rg.c2) {
                     i10++;
                 }
             }
@@ -39,7 +39,7 @@ public final class o5 extends n2 {
                     this.container.performHapticFeedback(3);
                 } catch (Exception unused) {
                 }
-                new xc(this.container, this.resourcesProvider).M(LocaleController.getString(R.string.IncreaseLimit), AndroidUtilities.replaceSingleTag(formatPluralString, org.telegram.ui.ActionBar.h6.gc, 0, new com.google.firebase.messaging.s(this, 10), this.resourcesProvider), R.raw.star_premium_2).k(true);
+                new xc(this.container, this.resourcesProvider).M(LocaleController.getString(R.string.IncreaseLimit), AndroidUtilities.replaceSingleTag(formatPluralString, org.telegram.ui.ActionBar.k6.gc, 0, new com.google.firebase.messaging.s(this, 10), this.resourcesProvider), R.raw.star_premium_2).k(true);
                 return false;
             }
             if (i10 >= MessagesController.getInstance(this.currentAccount).storiesSuggestedReactionsLimitPremium) {
@@ -55,8 +55,8 @@ public final class o5 extends n2 {
     }
 
     @Override // ei.n2
-    public final boolean n0(Integer num) {
-        f6 f6Var = this.I;
+    public final boolean o0(Integer num) {
+        f6 f6Var = this.J;
         z5 z5Var = f6Var.R0;
         boolean z10 = false;
         if (f6Var.X1) {
@@ -69,7 +69,7 @@ public final class o5 extends n2 {
                 if (i10 >= z5Var.getChildCount()) {
                     break;
                 }
-                if (z5Var.getChildAt(i10) instanceof rg.w2) {
+                if (z5Var.getChildAt(i10) instanceof rg.x2) {
                     z10 = true;
                     break;
                 }
@@ -80,9 +80,15 @@ public final class o5 extends n2 {
         return true;
     }
 
+    @Override // org.telegram.ui.ActionBar.h3
+    public final void onDismissAnimationStart() {
+        super.onDismissAnimationStart();
+        this.J.P0(this.I);
+    }
+
     @Override // ei.n2
-    public final boolean o0(Runnable runnable) {
-        vb vbVar = ((xa) this.I).A2;
+    public final boolean p0(Runnable runnable) {
+        vb vbVar = ((xa) this.J).A2;
         Activity activity = vbVar.b;
         if (activity == null) {
             return true;
@@ -101,11 +107,5 @@ public final class o5 extends n2 {
         activity.requestPermissions(new String[]{"android.permission.READ_EXTERNAL_STORAGE"}, 115);
         vbVar.y2 = (ah.g) runnable;
         return false;
-    }
-
-    @Override // org.telegram.ui.ActionBar.f3
-    public final void onDismissAnimationStart() {
-        super.onDismissAnimationStart();
-        this.I.Q0(this.H);
     }
 }

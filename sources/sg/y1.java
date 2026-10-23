@@ -4,11 +4,11 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Path;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.o4;
+import org.telegram.ui.n4;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class y1 extends o4 {
+public final class y1 extends n4 {
     public final Path h;
     public final /* synthetic */ a2 n;
 
@@ -27,7 +27,7 @@ public final class y1 extends o4 {
         canvas.restore();
     }
 
-    @Override // org.telegram.ui.o4, android.widget.FrameLayout, android.view.View
+    @Override // org.telegram.ui.n4, android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
         super.onMeasure(i10, i11);
         Path path = this.h;

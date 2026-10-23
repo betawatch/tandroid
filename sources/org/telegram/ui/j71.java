@@ -1,38 +1,38 @@
 package org.telegram.ui;
 
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j71 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ x71 b;
+    public final /* synthetic */ k71 b;
 
-    public /* synthetic */ j71(x71 x71Var, int i10) {
+    public /* synthetic */ j71(k71 k71Var, int i10) {
         this.a = i10;
-        this.b = x71Var;
+        this.b = k71Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
+        String sb2;
         switch (this.a) {
             case 0:
-                this.b.c.W2.N(true);
-                break;
-            case 1:
-                pf.d.r(this.b.getParentActivity(), LocaleController.getString(R.string.CheckPhoneNumberLearnMoreUrl));
-                break;
-            case 2:
-                x71 x71Var = this.b;
-                x71Var.c.postOnAnimation(new j71(x71Var, 3));
-                break;
-            case 3:
-                this.b.i0();
+                k71 k71Var = this.b;
+                String str = k71Var.b.text;
+                if (str == null || !str.equals("AUTH_TOKEN_EXCEPTION")) {
+                    StringBuilder sb3 = new StringBuilder();
+                    org.telegram.ui.Cells.b1.o(R.string.ErrorOccurred, "\n", sb3);
+                    sb3.append(k71Var.b.text);
+                    sb2 = sb3.toString();
+                } else {
+                    sb2 = LocaleController.getString(R.string.AccountAlreadyLoggedIn);
+                }
+                org.telegram.ui.Components.f5.u0(k71Var.c, LocaleController.getString(R.string.AuthAnotherClient), sb2, null);
                 break;
             default:
-                MessagesController.getInstance(this.b.currentAccount).deleteUserPhoto(null);
+                org.telegram.ui.Components.f5.u0(this.b.c, LocaleController.getString(R.string.AuthAnotherClient), LocaleController.getString(R.string.ErrorOccurred), null);
                 break;
         }
     }

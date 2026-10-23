@@ -16,6 +16,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import java.util.HashSet;
 import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.DocumentObject;
@@ -29,9 +30,9 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public abstract class to extends LinearLayout {
+public abstract class to extends LinearLayout implements org.telegram.ui.ActionBar.b6 {
     public static final /* synthetic */ int L = 0;
     public boolean E;
     public AnimatorSet F;
@@ -48,18 +49,18 @@ public abstract class to extends LinearLayout {
     public final FrameLayout f;
     public w9 h;
     public w9 n;
-    public final org.telegram.ui.ActionBar.d6 r;
+    public final org.telegram.ui.ActionBar.g6 r;
     public boolean s;
-    public yj0 v;
+    public bk0 v;
     public TextView w;
     public di.n x;
     public boolean y;
 
-    public to(Context context, int i10, TLRPC.Document document, org.telegram.ui.ActionBar.d6 d6Var) {
+    public to(Context context, int i10, TLRPC.Document document, org.telegram.ui.ActionBar.g6 g6Var) {
         super(context);
         setOrientation(1);
         this.e = i10;
-        this.r = d6Var;
+        this.r = g6Var;
         setPadding(0, AndroidUtilities.dp(8.0f), 0, 0);
         TextView textView = new TextView(context);
         this.b = textView;
@@ -88,9 +89,7 @@ public abstract class to extends LinearLayout {
         this.n.setAlpha(0.0f);
         w7.b6.a(this.n);
         e();
-        int i11 = org.telegram.ui.ActionBar.h6.ic;
-        textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(i11, d6Var));
-        textView2.setTextColor(org.telegram.ui.ActionBar.h6.w0(i11, d6Var));
+        updateColors();
         String string = LocaleController.getString(R.string.NoMessages);
         String string2 = LocaleController.getString(R.string.NoMessagesGreetingsDescription);
         textView.setText(string);
@@ -114,7 +113,7 @@ public abstract class to extends LinearLayout {
         toVar.F = animatorSet2;
         animatorSet2.setDuration(420L);
         toVar.F.setInterpolator(bs.h);
-        toVar.F.addListener(new org.telegram.ui.fo(toVar));
+        toVar.F.addListener(new org.telegram.ui.ho(toVar));
         AnimatorSet animatorSet3 = toVar.F;
         Property property = View.ALPHA;
         ObjectAnimator ofFloat = ObjectAnimator.ofFloat(toVar.n, (Property<w9, Float>) property, 0.0f, 1.0f);
@@ -185,11 +184,11 @@ public abstract class to extends LinearLayout {
         this.E = z11;
         if (z10) {
             if (this.v == null) {
-                yj0 yj0Var = new yj0(getContext());
-                this.v = yj0Var;
-                yj0Var.setScaleType(ImageView.ScaleType.CENTER);
+                bk0 bk0Var = new bk0(getContext());
+                this.v = bk0Var;
+                bk0Var.setScaleType(ImageView.ScaleType.CENTER);
                 this.v.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-                this.v.setBackground(org.telegram.ui.ActionBar.h6.K(AndroidUtilities.dp(78.0f), 469762048));
+                this.v.setBackground(org.telegram.ui.ActionBar.k6.K(AndroidUtilities.dp(78.0f), 469762048));
                 if (z11) {
                     this.v.setImageResource(R.drawable.filled_chatlist2);
                 } else {
@@ -209,9 +208,9 @@ public abstract class to extends LinearLayout {
             TextView textView2 = this.w;
             textView2.setMaxWidth(ei.x3.a(textView2.getText(), this.w.getPaint()));
             TextView textView3 = this.w;
-            int i10 = org.telegram.ui.ActionBar.h6.ic;
-            org.telegram.ui.ActionBar.d6 d6Var = this.r;
-            textView3.setTextColor(org.telegram.ui.ActionBar.h6.w0(i10, d6Var));
+            int i10 = org.telegram.ui.ActionBar.k6.ic;
+            org.telegram.ui.ActionBar.g6 g6Var = this.r;
+            org.telegram.ui.ActionBar.r6.W(textView3, i10, g6Var);
             this.w.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
             if (this.x == null) {
                 di.n nVar = new di.n(getContext(), 6);
@@ -223,11 +222,11 @@ public abstract class to extends LinearLayout {
                 this.x.setPadding(AndroidUtilities.dp(13.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(13.0f), AndroidUtilities.dp(8.0f));
                 di.n nVar2 = this.x;
                 int dp = AndroidUtilities.dp(15.0f);
-                nVar2.setBackground(org.telegram.ui.ActionBar.h6.j0(dp, dp, dp, dp, 503316480, 855638016, 855638016));
+                nVar2.setBackground(org.telegram.ui.ActionBar.k6.j0(dp, dp, dp, dp, 503316480, 855638016, 855638016));
                 w7.b6.a(this.x);
             }
             this.x.setText(str);
-            this.x.setTextColor(org.telegram.ui.ActionBar.h6.w0(i10, d6Var));
+            org.telegram.ui.ActionBar.r6.W(this.x, i10, g6Var);
             this.x.setOnClickListener(onClickListener);
         }
         e();
@@ -253,14 +252,14 @@ public abstract class to extends LinearLayout {
         if (this.K) {
             canvas2 = canvas;
         } else {
-            org.telegram.ui.ActionBar.d6 d6Var = this.r;
-            if (d6Var != null) {
-                d6Var.d(0.0f, this.I + AndroidUtilities.dp(4.0f), getMeasuredWidth(), this.J);
+            org.telegram.ui.ActionBar.g6 g6Var = this.r;
+            if (g6Var != null) {
+                g6Var.b(0.0f, this.I + AndroidUtilities.dp(4.0f), getMeasuredWidth(), this.J);
             } else {
-                org.telegram.ui.ActionBar.h6.q(0.0f, this.I + AndroidUtilities.dp(4.0f), getMeasuredWidth(), this.J);
+                org.telegram.ui.ActionBar.k6.q(0.0f, this.I + AndroidUtilities.dp(4.0f), getMeasuredWidth(), this.J);
             }
             canvas2 = canvas;
-            canvas2.drawRoundRect(0.0f, 0.0f, getWidth(), getHeight(), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), org.telegram.ui.ActionBar.h6.U0("paintChatActionBackground", d6Var));
+            canvas2.drawRoundRect(0.0f, 0.0f, getWidth(), getHeight(), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), org.telegram.ui.ActionBar.k6.V0("paintChatActionBackground", g6Var));
         }
         if (!this.s) {
             this.s = true;
@@ -355,7 +354,7 @@ public abstract class to extends LinearLayout {
         }
         this.s = true;
         this.n.b();
-        SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(document, org.telegram.ui.ActionBar.h6.lc, 1.0f);
+        SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(document, org.telegram.ui.ActionBar.k6.lc, 1.0f);
         if (svgThumb != null) {
             this.h.n(ImageLocation.getForDocument(document), b(document), svgThumb, document);
             document2 = document;
@@ -366,6 +365,19 @@ public abstract class to extends LinearLayout {
         this.h.setOnClickListener(new qo(this, document2, 0));
     }
 
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void updateColors() {
+        org.telegram.ui.ActionBar.g6 g6Var = this.r;
+        TextView textView = this.b;
+        if (textView != null) {
+            textView.setTextColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.ic, g6Var));
+        }
+        TextView textView2 = this.c;
+        if (textView2 != null) {
+            textView2.setTextColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.ic, g6Var));
+        }
+    }
+
     public void setSticker(String str) {
         if (str == null) {
             return;
@@ -373,5 +385,9 @@ public abstract class to extends LinearLayout {
         this.s = true;
         this.n.b();
         this.h.j(ImageLocation.getForPath(str), "256_256", null, null, 0, null);
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

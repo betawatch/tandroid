@@ -1,98 +1,54 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class eo implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ ko b;
 
-    public /* synthetic */ eo(Object obj, long j10, long j11, int i10) {
+    public /* synthetic */ eo(ko koVar, int i10) {
         this.a = i10;
-        this.d = obj;
-        this.b = j10;
-        this.c = j11;
+        this.b = koVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        org.telegram.ui.Components.u61 u61Var;
         switch (this.a) {
             case 0:
-                MessagesController.getInstance(r0.currentAccount).unlinkCommunity(this.b, this.c, new g5((io) this.d, 4));
+                ko.V(this.b);
                 break;
             case 1:
-                org.telegram.ui.web.x1 x1Var = (org.telegram.ui.web.x1) this.d;
-                long j10 = this.b;
-                long j11 = this.c;
-                x1Var.f = j10;
-                x1Var.h = j11;
-                org.telegram.ui.Components.w61 w61Var = x1Var.a;
-                if (w61Var != null && (u61Var = w61Var.W2) != null && w61Var.G) {
-                    u61Var.N(true);
-                    break;
-                }
+                ko.a0(this.b);
                 break;
             case 2:
-                ri.o oVar = (ri.o) this.d;
-                long j12 = this.b;
-                long j13 = this.c;
-                if (oVar.n == ri.m.h) {
-                    long j14 = ((j12 - j13) * 48000) / 1000;
-                    oVar.q = j14;
-                    oVar.s = 0L;
-                    oVar.t = ri.o.q(j14);
-                    oVar.i();
-                    break;
-                }
+                ko koVar = this.b;
+                koVar.b.dismiss();
+                koVar.finishFragment();
+                break;
+            case 3:
+                ko koVar2 = this.b;
+                koVar2.M.setChecked(koVar2.w0.autotranslation);
                 break;
             default:
-                cc.e eVar = (cc.e) this.d;
-                long j15 = this.b;
-                long j16 = this.c;
-                ri.o oVar2 = (ri.o) eVar.c;
-                if (j15 == oVar2.p) {
-                    oVar2.o = null;
-                    oVar2.q += j16;
-                    oVar2.r = 0L;
-                    oVar2.i.removeCallbacks(oVar2.E);
-                    ri.m mVar = oVar2.n;
-                    if (mVar != ri.m.s) {
-                        if (mVar != ri.m.r) {
-                            if (!oVar2.w) {
-                                if (mVar == ri.m.d) {
-                                    ri.i iVar = oVar2.A;
-                                    if (iVar != null) {
-                                        long j17 = oVar2.j();
-                                        oVar2.s = 0L;
-                                        oVar2.t = j17;
-                                        oVar2.j.execute(new org.telegram.utils.recorder.audio.c(1, oVar2, iVar));
-                                        break;
-                                    } else {
-                                        oVar2.g(new IllegalStateException("Output generation is missing"));
-                                        break;
-                                    }
-                                }
-                            } else {
-                                oVar2.w = false;
-                                oVar2.i();
-                                break;
-                            }
-                        } else {
-                            oVar2.c();
-                            oVar2.s();
-                            break;
-                        }
-                    } else {
-                        oVar2.c();
-                        oVar2.s();
-                        oVar2.l("cancelled");
-                        break;
-                    }
+                ko koVar3 = this.b;
+                koVar3.e.setImageDrawable(koVar3.r);
+                koVar3.b0.o(R.drawable.msg_addphoto, LocaleController.getString("ChatSetPhotoOrVideo", R.string.ChatSetPhotoOrVideo), true);
+                TLRPC.User user = koVar3.C0;
+                if (user != null) {
+                    user.photo = null;
+                    koVar3.getMessagesController().putUser(koVar3.C0, true);
                 }
+                koVar3.N0 = true;
+                if (koVar3.Q0 == null) {
+                    koVar3.Q0 = new org.telegram.ui.Components.yj0(R.raw.camera_outline, AndroidUtilities.dp(50.0f), AndroidUtilities.dp(50.0f), false, null);
+                }
+                koVar3.b0.e.setTranslationX(-AndroidUtilities.dp(8.0f));
+                koVar3.b0.e.setAnimation(koVar3.Q0);
                 break;
         }
     }

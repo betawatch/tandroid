@@ -3,7 +3,7 @@ package ei;
 import android.text.Editable;
 import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class d8 implements TextWatcher {
     public final /* synthetic */ p6 a;
@@ -18,22 +18,22 @@ public final class d8 implements TextWatcher {
     public final void afterTextChanged(Editable editable) {
         this.a.run();
         j8 j8Var = this.b;
-        org.telegram.ui.Cells.i3 i3Var = j8Var.Y;
+        org.telegram.ui.Cells.h3 h3Var = j8Var.Y;
         if (j8Var.c0) {
             return;
         }
         if (!j8Var.d0 || editable == null) {
-            j8.T(j8Var, editable == null ? null : editable.toString());
+            j8.S(j8Var, editable == null ? null : editable.toString());
             return;
         }
         String substring = editable.toString().substring(8);
         j8Var.c0 = true;
-        i3Var.b.setText(substring);
-        org.telegram.ui.Cells.g3 g3Var = i3Var.b;
-        g3Var.setSelection(0, g3Var.getText().length());
+        h3Var.d.setText(substring);
+        org.telegram.ui.Cells.f3 f3Var = h3Var.d;
+        f3Var.setSelection(0, f3Var.getText().length());
         j8Var.c0 = false;
         j8Var.d0 = false;
-        j8.T(j8Var, substring);
+        j8.S(j8Var, substring);
     }
 
     @Override // android.text.TextWatcher

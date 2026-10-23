@@ -1,32 +1,38 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n71 implements RequestDelegate {
+public final /* synthetic */ class n71 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ x71 b;
+    public final /* synthetic */ c81 b;
 
-    public /* synthetic */ n71(x71 x71Var, int i10) {
+    public /* synthetic */ n71(c81 c81Var, int i10) {
         this.a = i10;
-        this.b = x71Var;
+        this.b = c81Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                TLRPC.TL_help_dismissSuggestion tL_help_dismissSuggestion = new TLRPC.TL_help_dismissSuggestion();
-                tL_help_dismissSuggestion.suggestion = "VALIDATE_PASSWORD";
-                tL_help_dismissSuggestion.peer = new TLRPC.TL_inputPeerEmpty();
-                x71 x71Var = this.b;
-                x71Var.getConnectionsManager().sendRequest(tL_help_dismissSuggestion, new n71(x71Var, 1));
+                MessagesController.getInstance(this.b.currentAccount).deleteUserPhoto(null);
+                break;
+            case 1:
+                this.b.c.Z2.N(true);
+                break;
+            case 2:
+                pf.d.r(this.b.getParentActivity(), LocaleController.getString(R.string.CheckPhoneNumberLearnMoreUrl));
+                break;
+            case 3:
+                c81 c81Var = this.b;
+                c81Var.c.postOnAnimation(new n71(c81Var, 4));
                 break;
             default:
-                this.b.getMessagesController().loadAppConfig();
+                this.b.k0();
                 break;
         }
     }

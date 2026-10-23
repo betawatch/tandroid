@@ -1,6 +1,6 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p9 implements o1.f {
     public final /* synthetic */ int a;
@@ -24,14 +24,14 @@ public final /* synthetic */ class p9 implements o1.f {
                 }
                 break;
             case 1:
-                ao0 ao0Var = (ao0) this.b;
-                if (hVar == ao0Var.c) {
-                    ao0Var.c = null;
+                eo0 eo0Var = (eo0) this.b;
+                if (hVar == eo0Var.c) {
+                    eo0Var.c = null;
                     break;
                 }
                 break;
             default:
-                ((ut0) this.b).D();
+                ((xt0) this.b).E();
                 break;
         }
     }

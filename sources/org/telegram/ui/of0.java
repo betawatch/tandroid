@@ -1,30 +1,46 @@
 package org.telegram.ui;
 
-import android.view.View;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class of0 implements View.OnClickListener {
-    public final /* synthetic */ int a = 0;
+public final /* synthetic */ class of0 implements Runnable {
+    public final /* synthetic */ int a;
     public final /* synthetic */ rf0 b;
 
-    public /* synthetic */ of0(rf0 rf0Var) {
+    public /* synthetic */ of0(rf0 rf0Var, int i10) {
+        this.a = i10;
         this.b = rf0Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10;
         switch (this.a) {
             case 0:
-                this.b.a();
+                ig0 ig0Var = this.b.v;
+                ig0Var.y1(0, true, null, true);
+                ig0Var.p1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.CodeExpired));
+                break;
+            case 1:
+                ig0 ig0Var2 = this.b.v;
+                ig0Var2.y1(0, true, null, true);
+                ig0Var2.p1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.CodeExpired));
+                break;
+            case 2:
+                this.b.o();
+                break;
+            case 3:
+                this.b.b.setLoading(false);
                 break;
             default:
-                this.b.a();
+                PremiumPreviewFragment premiumPreviewFragment = new PremiumPreviewFragment(0, "sms");
+                ig0 ig0Var3 = this.b.v;
+                i10 = ((org.telegram.ui.ActionBar.o2) ig0Var3).currentAccount;
+                premiumPreviewFragment.setCurrentAccount(i10);
+                ig0Var3.presentFragment(premiumPreviewFragment);
                 break;
         }
-    }
-
-    public /* synthetic */ of0(rf0 rf0Var, bg0 bg0Var) {
-        this.b = rf0Var;
     }
 }

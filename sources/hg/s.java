@@ -1,15 +1,15 @@
 package hg;
 
-import ai.ub;
+import ai.vb;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.nx;
+import org.telegram.ui.px;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s implements Runnable {
     public final /* synthetic */ int a;
@@ -67,18 +67,18 @@ public final /* synthetic */ class s implements Runnable {
                             z11 = false;
                         }
                         boolean z14 = i12 == 0 ? true : z11;
-                        nx nxVar = h0Var.U;
-                        if (nxVar != null) {
-                            j10 = nxVar.a();
+                        px pxVar = h0Var.U;
+                        if (pxVar != null) {
+                            j10 = pxVar.a();
                         }
                         yVar.h(this.c, true, z13, true, z10, z12, 0L, z14, 0, i14, j10, null);
                         i14 = i14;
                     }
                     if (i11 != 0 && i12 != 15) {
                         String str2 = this.e;
-                        h0Var.X(str2);
-                        h0Var.W(i14, str2);
+                        h0Var.W(str2);
                         h0Var.V(i14, str2);
+                        h0Var.U(i14, str2);
                         break;
                     } else {
                         h0Var.D0--;
@@ -98,8 +98,8 @@ public final /* synthetic */ class s implements Runnable {
                 ArrayList<Long> arrayList4 = h0Var2.q0;
                 String str3 = this.c;
                 messagesStorage.localSearch(i15, str3, arrayList, arrayList2, arrayList3, arrayList4, -1);
-                AndroidUtilities.runOnUIThread(new ub(h0Var2, this.d, arrayList, arrayList2, arrayList3, 3));
-                q0.z1(str3, h0Var2.y0);
+                AndroidUtilities.runOnUIThread(new vb(h0Var2, this.d, arrayList, arrayList2, arrayList3, 3));
+                q0.E1(str3, h0Var2.y0);
                 h0Var2.z0 = false;
                 if (str3.length() >= 3 && (LocaleController.getString(R.string.ArchiveSearchFilter).toLowerCase().startsWith(str3) || "archive".startsWith(this.e))) {
                     h0Var2.z0 = true;
@@ -133,7 +133,7 @@ public final /* synthetic */ class s implements Runnable {
                         ArrayList arrayList6 = new ArrayList();
                         ArrayList arrayList7 = new ArrayList();
                         new ArrayList();
-                        AndroidUtilities.runOnUIThread(new ub(h0Var3, h0Var3.d0, arrayList5, arrayList6, arrayList7, 3));
+                        AndroidUtilities.runOnUIThread(new vb(h0Var3, h0Var3.d0, arrayList5, arrayList6, arrayList7, 3));
                     }
                 }
                 str = str4;

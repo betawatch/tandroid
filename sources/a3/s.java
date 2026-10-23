@@ -8,7 +8,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class s implements d9.u {
     public final /* synthetic */ int a;
@@ -35,10 +35,10 @@ public final /* synthetic */ class s implements d9.u {
                 }
                 return newSingleThreadExecutor instanceof ScheduledExecutorService ? new j9.d0((ScheduledExecutorService) newSingleThreadExecutor) : new j9.a0(newSingleThreadExecutor);
             case 3:
-                return new i2.j(new y2.d(), MediaDataController.MAX_STYLE_RUNS_COUNT, MediaDataController.MAX_STYLE_RUNS_COUNT, MediaDataController.MAX_STYLE_RUNS_COUNT, 2000, MediaDataController.MAX_STYLE_RUNS_COUNT, true, c2.h);
+                return new i2.i(new y2.d(), MediaDataController.MAX_STYLE_RUNS_COUNT, MediaDataController.MAX_STYLE_RUNS_COUNT, MediaDataController.MAX_STYLE_RUNS_COUNT, 2000, MediaDataController.MAX_STYLE_RUNS_COUNT, true, c2.h);
             case 4:
                 byte[] bArr = new byte[12];
-                j2.h.i.nextBytes(bArr);
+                j2.g.i.nextBytes(bArr);
                 return Base64.encodeToString(bArr, 10);
             default:
                 Resources system = Resources.getSystem();

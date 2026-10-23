@@ -3,7 +3,7 @@ package com.googlecode.mp4parser;
 import com.google.android.gms.internal.play_billing.k3;
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public abstract class c extends a {
     public static final /* synthetic */ te.b c;
@@ -42,7 +42,7 @@ public abstract class c extends a {
     }
 
     public final void g(int i10) {
-        k3.p(te.a.c(d, this, this, new Integer(i10)));
+        k3.o(te.a.c(d, this, this, new Integer(i10)));
         this.b = i10;
     }
 
@@ -52,7 +52,7 @@ public abstract class c extends a {
     }
 
     public final void h() {
-        k3.p(te.a.c(c, this, this, new Integer(1)));
+        k3.o(te.a.c(c, this, this, new Integer(1)));
         this.a = 1;
     }
 

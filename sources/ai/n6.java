@@ -3,11 +3,11 @@ package ai;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import java.util.ArrayList;
-import org.telegram.ui.Components.ap0;
-import org.telegram.ui.Components.br;
-import org.telegram.ui.Components.qm0;
+import org.telegram.ui.Components.ar;
+import org.telegram.ui.Components.ep0;
+import org.telegram.ui.Components.tm0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class n6 implements View.OnAttachStateChangeListener {
     public final /* synthetic */ int a;
@@ -35,23 +35,23 @@ public final class n6 implements View.OnAttachStateChangeListener {
                 }
                 break;
             case 1:
-                ((ci.w1) this.b).f.onAttachedToWindow();
+                ((ci.v1) this.b).f.onAttachedToWindow();
                 break;
             case 2:
                 androidx.biometric.e eVar = (androidx.biometric.e) this.b;
-                ih.j jVar = (ih.j) eVar.c;
+                ih.k kVar = (ih.k) eVar.c;
                 ViewTreeObserver viewTreeObserver = ((View) eVar.b).getViewTreeObserver();
                 ViewTreeObserver viewTreeObserver2 = (ViewTreeObserver) eVar.d;
                 if (viewTreeObserver2 != viewTreeObserver) {
                     if (viewTreeObserver2 != null) {
                         if (viewTreeObserver2.isAlive()) {
-                            ((ViewTreeObserver) eVar.d).removeOnPreDrawListener(jVar);
+                            ((ViewTreeObserver) eVar.d).removeOnPreDrawListener(kVar);
                         }
                         eVar.d = null;
                     }
                     eVar.d = viewTreeObserver;
                     if (viewTreeObserver.isAlive()) {
-                        viewTreeObserver.addOnPreDrawListener(jVar);
+                        viewTreeObserver.addOnPreDrawListener(kVar);
                         break;
                     }
                 }
@@ -76,15 +76,15 @@ public final class n6 implements View.OnAttachStateChangeListener {
             case 7:
                 break;
             case 8:
-                ((br) this.b).a();
+                ((ar) this.b).a();
                 break;
             case 9:
-                qm0 qm0Var = (qm0) this.b;
-                org.telegram.ui.Components.p5 p5Var = qm0Var.t;
+                tm0 tm0Var = (tm0) this.b;
+                org.telegram.ui.Components.p5 p5Var = tm0Var.t;
                 if (p5Var != null) {
                     p5Var.a();
                 }
-                org.telegram.ui.Components.p5 p5Var2 = qm0Var.u;
+                org.telegram.ui.Components.p5 p5Var2 = tm0Var.u;
                 if (p5Var2 != null) {
                     p5Var2.a();
                     break;
@@ -107,7 +107,7 @@ public final class n6 implements View.OnAttachStateChangeListener {
                 break;
             case 14:
                 yh.n3 n3Var = (yh.n3) this.b;
-                yh.l3 l3Var = n3Var.N;
+                yh.l3 l3Var = n3Var.a0;
                 if (l3Var != null) {
                     l3Var.a(n3Var.c);
                     break;
@@ -115,7 +115,7 @@ public final class n6 implements View.OnAttachStateChangeListener {
                 break;
             default:
                 yh.q3 q3Var = (yh.q3) this.b;
-                yh.o3 o3Var = q3Var.N;
+                yh.o3 o3Var = q3Var.a0;
                 if (o3Var != null) {
                     o3Var.a(q3Var.c);
                     break;
@@ -138,14 +138,14 @@ public final class n6 implements View.OnAttachStateChangeListener {
                 }
                 break;
             case 1:
-                ((ci.w1) this.b).f.onDetachedFromWindow();
+                ((ci.v1) this.b).f.onDetachedFromWindow();
                 break;
             case 2:
                 androidx.biometric.e eVar = (androidx.biometric.e) this.b;
                 ViewTreeObserver viewTreeObserver = (ViewTreeObserver) eVar.d;
                 if (viewTreeObserver != null) {
                     if (viewTreeObserver.isAlive()) {
-                        ((ViewTreeObserver) eVar.d).removeOnPreDrawListener((ih.j) eVar.c);
+                        ((ViewTreeObserver) eVar.d).removeOnPreDrawListener((ih.k) eVar.c);
                     }
                     eVar.d = null;
                     break;
@@ -185,22 +185,22 @@ public final class n6 implements View.OnAttachStateChangeListener {
                 qcVar.c(0L, false);
                 break;
             case 8:
-                ((br) this.b).b();
+                ((ar) this.b).b();
                 break;
             case 9:
-                qm0 qm0Var = (qm0) this.b;
-                org.telegram.ui.Components.p5 p5Var = qm0Var.t;
+                tm0 tm0Var = (tm0) this.b;
+                org.telegram.ui.Components.p5 p5Var = tm0Var.t;
                 if (p5Var != null) {
                     p5Var.b();
                 }
-                org.telegram.ui.Components.p5 p5Var2 = qm0Var.u;
+                org.telegram.ui.Components.p5 p5Var2 = tm0Var.u;
                 if (p5Var2 != null) {
                     p5Var2.a();
                     break;
                 }
                 break;
             case 10:
-                view.removeCallbacks((Runnable) ((ap0) this.b).a.remove(view));
+                view.removeCallbacks((Runnable) ((ep0) this.b).a.remove(view));
                 view.removeOnAttachStateChangeListener(this);
                 break;
             case 11:
@@ -218,7 +218,7 @@ public final class n6 implements View.OnAttachStateChangeListener {
                 break;
             case 14:
                 yh.n3 n3Var = (yh.n3) this.b;
-                yh.l3 l3Var = n3Var.N;
+                yh.l3 l3Var = n3Var.a0;
                 if (l3Var != null) {
                     l3Var.o(n3Var.c);
                     break;
@@ -226,7 +226,7 @@ public final class n6 implements View.OnAttachStateChangeListener {
                 break;
             default:
                 yh.q3 q3Var = (yh.q3) this.b;
-                yh.o3 o3Var = q3Var.N;
+                yh.o3 o3Var = q3Var.a0;
                 if (o3Var != null) {
                     o3Var.o(q3Var.c);
                     break;

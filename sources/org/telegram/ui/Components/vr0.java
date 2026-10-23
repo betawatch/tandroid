@@ -1,82 +1,56 @@
 package org.telegram.ui.Components;
 
-import java.util.Collections;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.messenger.BirthdayController;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class vr0 implements Runnable {
+public final /* synthetic */ class vr0 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ uv0 b;
-    public final /* synthetic */ TLRPC.TL_error c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ TLObject f;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ FrameLayout d;
 
-    public /* synthetic */ vr0(uv0 uv0Var, TLRPC.TL_error tL_error, int i10, int i11, TLObject tLObject, int i12) {
-        this.a = i12;
-        this.b = uv0Var;
-        this.c = tL_error;
-        this.d = i10;
-        this.e = i11;
-        this.f = tLObject;
+    public /* synthetic */ vr0(FrameLayout frameLayout, boolean z10, int i10, int i11) {
+        this.a = i11;
+        this.d = frameLayout;
+        this.b = z10;
+        this.c = i10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                uv0 uv0Var = this.b;
-                NotificationCenter.getInstance(uv0Var.v1.getCurrentAccount()).doOnIdle(new vr0(uv0Var, this.c, this.d, this.e, this.f, 1));
-                break;
+                xv0 xv0Var = (xv0) this.d;
+                org.telegram.ui.ActionBar.o2 o2Var = xv0Var.v1;
+                if (!this.b) {
+                    o2Var.getMessagesController().getMainSettings().edit().putBoolean("story_keep", true).apply();
+                    ei.vb.D(o2Var.getParentActivity(), o2Var.getCurrentAccount()).Q(null);
+                    break;
+                } else {
+                    xv0Var.R0(o2Var, xv0Var.j1, this.c);
+                    break;
+                }
             default:
-                uv0 uv0Var2 = this.b;
-                jv0[] jv0VarArr = uv0Var2.t1;
-                if (this.c == null) {
-                    int i10 = this.e;
-                    jv0 jv0Var = jv0VarArr[i10];
-                    if (this.d == jv0Var.p) {
-                        TLRPC.TL_messages_searchResultsPositions tL_messages_searchResultsPositions = (TLRPC.TL_messages_searchResultsPositions) this.f;
-                        jv0Var.e.clear();
-                        int size = tL_messages_searchResultsPositions.positions.size();
-                        int i11 = 0;
-                        for (int i12 = 0; i12 < size; i12++) {
-                            TLRPC.TL_searchResultPosition tL_searchResultPosition = tL_messages_searchResultsPositions.positions.get(i12);
-                            int i13 = tL_searchResultPosition.date;
-                            if (i13 != 0) {
-                                su0 su0Var = new su0();
-                                su0Var.c = i13;
-                                su0Var.d = tL_searchResultPosition.msg_id;
-                                su0Var.b = tL_searchResultPosition.offset;
-                                su0Var.a = LocaleController.formatYearMont(i13, true);
-                                jv0VarArr[i10].e.add(su0Var);
-                            }
-                        }
-                        Collections.sort(jv0VarArr[i10].e, new org.telegram.ui.ActionBar.i4(24));
-                        jv0 jv0Var2 = jv0VarArr[i10];
-                        jv0Var2.f[0] = tL_messages_searchResultsPositions.count;
-                        jv0Var2.h = true;
-                        if (!jv0Var2.e.isEmpty()) {
-                            while (true) {
-                                nu0[] nu0VarArr = uv0Var2.k0;
-                                if (i11 < nu0VarArr.length) {
-                                    nu0 nu0Var = nu0VarArr[i11];
-                                    if (nu0Var.F == i10) {
-                                        nu0Var.b = true;
-                                        uv0Var2.q1(nu0Var, true);
-                                    }
-                                    i11++;
-                                }
-                            }
-                        }
-                        uv0Var2.H.l();
+                ns0 ns0Var = (ns0) this.d;
+                if (ns0Var.e.h() && ns0Var.h.getCurrentPosition() != 0) {
+                    ns0Var.a();
+                    break;
+                } else {
+                    boolean z10 = this.b;
+                    int i10 = this.c;
+                    if (!z10) {
+                        ug.l1.e0(2, BirthdayController.getInstance(i10).getState());
+                        break;
+                    } else {
+                        yh.o1 o1Var = new yh.o1(ns0Var.getContext(), i10, ns0Var.c, null, null);
+                        o1Var.V(BirthdayController.getInstance(i10).isToday(ns0Var.c));
+                        o1Var.show();
                         break;
                     }
                 }
-                break;
         }
     }
 }

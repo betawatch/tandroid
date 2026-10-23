@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class v5 extends org.telegram.ui.Components.q6 {
     public final /* synthetic */ int s;
@@ -31,7 +31,7 @@ public final class v5 extends org.telegram.ui.Components.q6 {
                 float d = (1.0f - x5Var.T) * x5Var.f0.d(x5Var.d0, false);
                 org.telegram.ui.Components.p6 drawable = getDrawable();
                 Objects.requireNonNull(drawable);
-                x5Var.c(d, new o2(drawable, 4), new z3(7, this, canvas));
+                x5Var.c(d, new n2(drawable, 4), new y3(7, this, canvas));
                 canvas.restoreToCount(save);
                 break;
             default:
@@ -39,7 +39,7 @@ public final class v5 extends org.telegram.ui.Components.q6 {
                 float d10 = (1.0f - x5Var2.T) * x5Var2.f0.d(x5Var2.d0, false);
                 org.telegram.ui.Components.p6 drawable2 = getDrawable();
                 Objects.requireNonNull(drawable2);
-                x5Var2.c(d10, new o2(drawable2, 4), new z3(8, this, canvas));
+                x5Var2.c(d10, new n2(drawable2, 4), new y3(8, this, canvas));
                 break;
         }
     }

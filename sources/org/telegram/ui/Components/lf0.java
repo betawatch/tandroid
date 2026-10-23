@@ -1,47 +1,8 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+import android.widget.LinearLayout;
+
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class lf0 extends s6 {
-    public final /* synthetic */ int b;
-    public final /* synthetic */ of0 c;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public lf0(of0 of0Var, int i10) {
-        super("thumbAnimationProgress", 0);
-        this.b = i10;
-        switch (i10) {
-            case 1:
-                this.c = of0Var;
-                super("thumbImageVisibleProgress", 0);
-                break;
-            default:
-                this.c = of0Var;
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.s6
-    public final void c(Object obj, float f7) {
-        switch (this.b) {
-            case 0:
-                this.c.r = f7;
-                ((of0) obj).invalidate();
-                break;
-            default:
-                this.c.n = f7;
-                ((of0) obj).invalidate();
-                break;
-        }
-    }
-
-    @Override // android.util.Property
-    public final Object get(Object obj) {
-        switch (this.b) {
-            case 0:
-                return Float.valueOf(this.c.r);
-            default:
-                return Float.valueOf(this.c.n);
-        }
-    }
+public final class lf0 extends LinearLayout {
 }

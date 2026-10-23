@@ -12,10 +12,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public class p5 extends Drawable implements x5 {
-    public ai.de E;
+    public ai.ee E;
     public Integer F;
     public int G;
     public PorterDuffColorFilter H;
@@ -30,7 +30,7 @@ public class p5 extends Drawable implements x5 {
     public final f6 e;
     public final Drawable[] f;
     public View h;
-    public org.telegram.ui.x51 n;
+    public org.telegram.ui.b61 n;
     public final boolean r;
     public final int s;
     public int v;
@@ -91,13 +91,13 @@ public class p5 extends Drawable implements x5 {
         float e = this.e.e(this.y);
         pg pgVar = this.L;
         if (e > 0.0f) {
-            ai.de deVar = this.E;
-            deVar.c.set(rect);
-            deVar.e();
+            ai.ee eeVar = this.E;
+            eeVar.c.set(rect);
+            eeVar.e();
             this.E.d();
-            ai.de deVar2 = this.E;
+            ai.ee eeVar2 = this.E;
             Integer num = this.F;
-            deVar2.a(canvas, org.telegram.ui.ActionBar.h6.m1(e, num == null ? -1 : num.intValue()));
+            eeVar2.a(canvas, org.telegram.ui.ActionBar.k6.o1(e, num == null ? -1 : num.intValue()));
             zf.h.d().a(15, pgVar);
         } else {
             zf.h.d().f(pgVar);
@@ -134,9 +134,9 @@ public class p5 extends Drawable implements x5 {
             boolean z10 = drawable3 instanceof r5;
             OvershootInterpolator overshootInterpolator = this.c;
             if (z10) {
-                ci.g3 g3Var = ((r5) drawable3).k;
-                if (g3Var != null) {
-                    g3Var.setRoundRadius(AndroidUtilities.dp(4.0f));
+                ci.f3 f3Var = ((r5) drawable3).k;
+                if (f3Var != null) {
+                    f3Var.setRoundRadius(AndroidUtilities.dp(4.0f));
                 }
                 if (d < 1.0f) {
                     float interpolation = overshootInterpolator.getInterpolation(d);
@@ -176,13 +176,13 @@ public class p5 extends Drawable implements x5 {
 
     public final void f() {
         r5 r5Var;
-        ci.g3 g3Var;
+        ci.f3 f3Var;
         Drawable drawable = this.f[0];
-        if (!(drawable instanceof r5) || (g3Var = (r5Var = (r5) drawable).k) == null) {
+        if (!(drawable instanceof r5) || (f3Var = (r5Var = (r5) drawable).k) == null) {
             return;
         }
-        r5Var.w(g3Var);
-        g3Var.startAnimation();
+        r5Var.w(f3Var);
+        f3Var.startAnimation();
     }
 
     public final void g(Drawable drawable, boolean z10) {
@@ -299,9 +299,9 @@ public class p5 extends Drawable implements x5 {
                 this.h.invalidate();
             }
         }
-        org.telegram.ui.x51 x51Var = this.n;
-        if (x51Var != null) {
-            x51Var.invalidate();
+        org.telegram.ui.b61 b61Var = this.n;
+        if (b61Var != null) {
+            b61Var.invalidate();
         }
         invalidateSelf();
     }
@@ -383,7 +383,7 @@ public class p5 extends Drawable implements x5 {
         }
         if (z11) {
             if (this.E == null) {
-                this.E = new ai.de(1, 8);
+                this.E = new ai.ee(1, 8);
             }
             this.y = z10;
             invalidate();
@@ -391,7 +391,7 @@ public class p5 extends Drawable implements x5 {
         }
         this.y = z10;
         if (z10 && this.E == null) {
-            this.E = new ai.de(1, 8);
+            this.E = new ai.ee(1, 8);
         } else if (!z10 && this.E != null) {
             this.E = null;
         }
@@ -419,7 +419,7 @@ public class p5 extends Drawable implements x5 {
         this.f = new Drawable[2];
         this.v = 255;
         this.K = new Rect();
-        this.L = new pg(this, 6);
+        this.L = new pg(this, 7);
         f6Var.a = view;
         this.h = view;
         f6Var2.a = view;

@@ -4,16 +4,16 @@ import android.os.Bundle;
 import android.text.style.ClickableSpan;
 import android.view.View;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class a extends ClickableSpan {
     public final int a;
-    public final c b;
+    public final d b;
     public final int c;
 
-    public a(int i10, c cVar, int i11) {
+    public a(int i10, d dVar, int i11) {
         this.a = i10;
-        this.b = cVar;
+        this.b = dVar;
         this.c = i11;
     }
 

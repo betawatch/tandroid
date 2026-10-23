@@ -1,8 +1,8 @@
 package bc;
 
-import k2.g;
+import k2.h;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class d {
     public boolean a;
@@ -15,9 +15,9 @@ public final class d {
         this.c = false;
     }
 
-    public g a() {
+    public h a() {
         if (this.a || !(this.b || this.c)) {
-            return new g(this);
+            return new h(this);
         }
         throw new IllegalStateException("Secondary offload attribute fields are true but primary isFormatSupported is false");
     }

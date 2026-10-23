@@ -42,7 +42,7 @@ import r0.y0;
 import r0.z0;
 import v7.q7;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public class ActionBarOverlayLayout extends ViewGroup implements k1, l, m {
     public static final int[] R = {R.attr.actionBarSize, android.R.attr.windowContentOverlay};
@@ -269,15 +269,20 @@ public class ActionBarOverlayLayout extends ViewGroup implements k1, l, m {
     }
 
     @Override // r0.m
-    public final void i(ViewGroup viewGroup, int i10, int i11, int i12, int i13, int i14, int[] iArr) {
+    public final void h(ViewGroup viewGroup, int i10, int i11, int i12, int i13, int i14, int[] iArr) {
         b(viewGroup, i10, i11, i12, i13, i14);
     }
 
     @Override // r0.l
-    public final void n(int i10, View view) {
+    public final void m(int i10, View view) {
         if (i10 == 0) {
             onStopNestedScroll(view);
         }
+    }
+
+    @Override // r0.l
+    public final boolean o(View view, View view2, int i10, int i11) {
+        return i11 == 0 && onStartNestedScroll(view, view2, i10);
     }
 
     @Override // android.view.View
@@ -500,12 +505,7 @@ public class ActionBarOverlayLayout extends ViewGroup implements k1, l, m {
     }
 
     @Override // r0.l
-    public final boolean p(View view, View view2, int i10, int i11) {
-        return i11 == 0 && onStartNestedScroll(view, view2, i10);
-    }
-
-    @Override // r0.l
-    public final void s(View view, View view2, int i10, int i11) {
+    public final void r(View view, View view2, int i10, int i11) {
         if (i11 == 0) {
             onNestedScrollAccepted(view, view2, i10);
         }
@@ -636,6 +636,6 @@ public class ActionBarOverlayLayout extends ViewGroup implements k1, l, m {
     }
 
     @Override // r0.l
-    public final void E(ViewGroup viewGroup, int i10, int i11, int[] iArr, int i12) {
+    public final void D(ViewGroup viewGroup, int i10, int i11, int[] iArr, int i12) {
     }
 }

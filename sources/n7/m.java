@@ -1,5 +1,6 @@
 package n7;
 
+import i2.o1;
 import j$.util.List;
 import java.util.Collection;
 import java.util.Comparator;
@@ -9,7 +10,7 @@ import java.util.ListIterator;
 import java.util.RandomAccess;
 import java.util.function.UnaryOperator;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public abstract class m extends h implements List, RandomAccess, j$.util.List {
     public static final i b = new i(x.e, 0);
@@ -26,7 +27,7 @@ public abstract class m extends h implements List, RandomAccess, j$.util.List {
         int length = objArr2.length;
         for (int i10 = 0; i10 < length; i10++) {
             if (objArr2[i10] == null) {
-                throw new NullPointerException(i2.e.j(i10, "at index "));
+                throw new NullPointerException(o1.k(i10, "at index "));
             }
         }
         return s(length, objArr2);

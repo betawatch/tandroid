@@ -7,7 +7,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class sp implements ResultCallback {
     public final /* synthetic */ ChatThemeController a;
@@ -21,12 +21,11 @@ public final class sp implements ResultCallback {
     @Override // org.telegram.tgnet.ResultCallback
     public final void onComplete(Object obj) {
         int i10;
-        ChatThemeController chatThemeController = this.a;
-        List<org.telegram.ui.ActionBar.c4> emojiThemes = chatThemeController.getEmojiThemes((chatThemeController.isGiftThemesFullyLoaded() ? 2 : 0) | 5);
+        List<org.telegram.ui.ActionBar.f4> emojiThemes = this.a.getEmojiThemes(7);
         wp wpVar = this.b;
-        i10 = ((org.telegram.ui.ActionBar.f3) wpVar).currentAccount;
-        NotificationCenter.getInstance(i10).doOnIdle(new ee(22, this, emojiThemes));
-        wpVar.b0 = false;
+        i10 = ((org.telegram.ui.ActionBar.h3) wpVar).currentAccount;
+        NotificationCenter.getInstance(i10).doOnIdle(new ee(21, this, emojiThemes));
+        wpVar.a0 = false;
     }
 
     @Override // org.telegram.tgnet.ResultCallback

@@ -1,10 +1,11 @@
 package s4;
 
+import i2.o1;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public abstract class o {
     public static final gb.i a = new gb.i(4);
@@ -168,7 +169,7 @@ public abstract class o {
         int[] iArr4 = new int[i18];
         ArrayList arrayList3 = new ArrayList();
         while (!arrayList2.isEmpty()) {
-            m mVar2 = (m) i2.e.A(1, arrayList2);
+            m mVar2 = (m) o1.A(1, arrayList2);
             int i19 = mVar2.a;
             int i20 = mVar2.b;
             int i21 = mVar2.c;
@@ -271,7 +272,7 @@ public abstract class o {
                 }
                 nVar.a += mVar2.a;
                 nVar.b += mVar2.c;
-                m mVar3 = arrayList3.isEmpty() ? new m() : (m) i2.e.A(1, arrayList3);
+                m mVar3 = arrayList3.isEmpty() ? new m() : (m) o1.A(1, arrayList3);
                 mVar3.a = mVar2.a;
                 mVar3.c = mVar2.c;
                 if (nVar.e) {

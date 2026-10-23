@@ -6,7 +6,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import com.google.firebase.messaging.FirebaseMessagingService;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public abstract class o6 {
     public static void a(String str, Bundle bundle) {
@@ -55,7 +55,7 @@ public abstract class o6 {
                     Log.w("FirebaseMessaging", "Error while parsing use_device_time in GCM event", e7);
                 }
             }
-            String str2 = ya.d.Z(bundle) ? "display" : "data";
+            String str2 = ya.c.Y(bundle) ? "display" : "data";
             if ("_nr".equals(str) || "_nf".equals(str)) {
                 bundle2.putString("_nmc", str2);
             }

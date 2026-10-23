@@ -1,38 +1,30 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l1 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.b2 b;
-    public final /* synthetic */ Context c;
+    public final /* synthetic */ e5 b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.c2 c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.o2 d;
 
-    public /* synthetic */ l1(int i10, Context context, org.telegram.ui.ActionBar.b2 b2Var) {
+    public /* synthetic */ l1(e5 e5Var, org.telegram.ui.ActionBar.c2 c2Var, org.telegram.ui.ActionBar.o2 o2Var, int i10) {
         this.a = i10;
-        this.b = b2Var;
-        this.c = context;
+        this.b = e5Var;
+        this.c = c2Var;
+        this.d = o2Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                org.telegram.ui.ActionBar.b2 b2Var = this.b;
-                if (b2Var != null) {
-                    b2Var.dismiss();
-                }
-                pf.d.r(this.c, LocaleController.getString(R.string.BotWebViewStartPermissionLink));
+                AndroidUtilities.runOnUIThread(new l1(this.b, this.c, this.d, 1));
                 break;
             default:
-                org.telegram.ui.ActionBar.b2 b2Var2 = this.b;
-                if (b2Var2 != null) {
-                    b2Var2.dismiss();
-                }
-                pf.d.r(this.c, LocaleController.getString(R.string.BotWebViewStartPermissionLink));
+                f5.e0(this.b, this.c, this.d);
                 break;
         }
     }

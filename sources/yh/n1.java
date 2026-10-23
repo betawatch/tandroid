@@ -5,18 +5,22 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 import java.util.ArrayList;
+import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.b6;
+import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.f6;
-import org.telegram.ui.qa1;
+import org.telegram.ui.va1;
 import w7.z5;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final class n1 extends FrameLayout {
-    public final qa1 a;
+public final class n1 extends FrameLayout implements b6 {
+    public final va1 a;
     public int b;
     public final f6 c;
     public final ArrayList d;
@@ -34,21 +38,40 @@ public final class n1 extends FrameLayout {
         this.h = new RectF();
         this.n = new Paint(1);
         this.r = TLObject.FLAG_31;
-        qa1 qa1Var = new qa1(this, context, 21);
-        this.a = qa1Var;
-        qa1Var.setClipToPadding(false);
-        qa1Var.setClipChildren(false);
-        qa1Var.setOrientation(0);
-        qa1Var.setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(10.0f));
-        addView(qa1Var, z5.e(-2, -1, 1));
+        va1 va1Var = new va1(this, context, 21);
+        this.a = va1Var;
+        va1Var.setClipToPadding(false);
+        va1Var.setClipChildren(false);
+        va1Var.setOrientation(0);
+        va1Var.setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(10.0f));
+        addView(va1Var, z5.e(-2, -1, 1));
         setHorizontalScrollBarEnabled(false);
         setClipToPadding(false);
         setClipChildren(false);
-        this.c = new f6(qa1Var, 0L, 320L, bs.h);
+        this.c = new f6(va1Var, 0L, 320L, bs.h);
     }
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void updateColors() {
+        int i10 = 0;
+        while (true) {
+            ArrayList arrayList = this.d;
+            if (i10 >= arrayList.size()) {
+                this.a.invalidate();
+                return;
+            } else {
+                ((TextView) arrayList.get(i10)).setTextColor(k6.v(k6.x0(null, k6.b6, false), k6.x0(null, k6.c6, false)));
+                i10++;
+            }
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

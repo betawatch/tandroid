@@ -8,13 +8,13 @@ import ei.r5;
 import java.util.ArrayList;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.UserConfig;
-import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.ja;
-import org.telegram.ui.Components.tl0;
+import org.telegram.ui.Components.lm0;
+import org.telegram.ui.Components.wl0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class a1 extends im0 {
+public final class a1 extends lm0 {
     public final /* synthetic */ Context c;
     public final /* synthetic */ ja d;
     public final /* synthetic */ q6 e;
@@ -29,7 +29,7 @@ public final class a1 extends im0 {
         this.f = z10;
     }
 
-    @Override // org.telegram.ui.Components.im0
+    @Override // org.telegram.ui.Components.lm0
     public final boolean D(s4.b1 b1Var) {
         return true;
     }
@@ -52,14 +52,14 @@ public final class a1 extends im0 {
         ArrayList arrayList = r5Var.s0;
         MessageObject messageObject = (MessageObject) arrayList.get((arrayList.size() - 1) - i10);
         View view = b1Var.a;
-        if (!(view instanceof org.telegram.ui.Cells.u1)) {
-            if (view instanceof org.telegram.ui.Cells.w0) {
-                ((org.telegram.ui.Cells.w0) view).setMessageObject(messageObject);
+        if (!(view instanceof org.telegram.ui.Cells.t1)) {
+            if (view instanceof org.telegram.ui.Cells.v0) {
+                ((org.telegram.ui.Cells.v0) view).setMessageObject(messageObject);
                 return;
             }
             return;
         }
-        org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) view;
+        org.telegram.ui.Cells.t1 t1Var = (org.telegram.ui.Cells.t1) view;
         MessageObject.GroupedMessages groupedMessages = r5Var.t0;
         if (groupedMessages == null || (position = groupedMessages.getPosition(messageObject)) == null) {
             z10 = false;
@@ -67,18 +67,18 @@ public final class a1 extends im0 {
             z10 = position.minY != 0;
         }
         MessageObject.GroupedMessages groupedMessages2 = r5Var.t0;
-        u1Var.X3(messageObject, groupedMessages2, groupedMessages2 != null, z10, false, false);
+        t1Var.W3(messageObject, groupedMessages2, groupedMessages2 != null, z10, false, false);
     }
 
     @Override // s4.g0
     public final s4.b1 x(ViewGroup viewGroup, int i10) {
-        com.google.firebase.messaging.l lVar = this.h.D0;
+        e1 e1Var = this.h.D0;
         Context context = this.c;
         if (i10 == 1) {
-            return new tl0(new y0(this, context, lVar));
+            return new wl0(new y0(this, context, e1Var));
         }
-        z0 z0Var = new z0(this, context, UserConfig.selectedAccount, lVar);
+        z0 z0Var = new z0(this, context, UserConfig.selectedAccount, e1Var);
         z0Var.N7 = true;
-        return new tl0(z0Var);
+        return new wl0(z0Var);
     }
 }

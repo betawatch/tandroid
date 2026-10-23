@@ -1,85 +1,31 @@
 package org.telegram.ui;
 
-import android.animation.AnimatorSet;
 import android.app.Activity;
-import android.graphics.Canvas;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.FrameLayout;
+import android.text.style.CharacterStyle;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class cl extends FrameLayout {
-    public float a;
-    public float b;
-    public final /* synthetic */ qn c;
+public final class cl extends UndoView {
+    public final /* synthetic */ sn j0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public cl(qn qnVar, Activity activity) {
-        super(activity);
-        this.c = qnVar;
-        setOnLongClickListener(new u(this, 2));
+    public cl(sn snVar, Activity activity, sn snVar2, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(activity, snVar2, true, g6Var);
+        this.j0 = snVar;
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j10) {
-        qn qnVar = this.c;
-        if (view == qnVar.z2) {
-            canvas.save();
-            canvas.clipRect(0, 0, getMeasuredWidth(), AndroidUtilities.dp(48.0f));
-        }
-        org.telegram.ui.ActionBar.j5[] j5VarArr = qnVar.D2;
-        if (view != j5VarArr[0] && view != j5VarArr[1]) {
-            boolean drawChild = super.drawChild(canvas, view, j10);
-            if (view == qnVar.z2) {
-                canvas.restore();
-            }
-            return drawChild;
-        }
-        canvas.save();
-        canvas.clipRect(0, 0, getMeasuredWidth() - AndroidUtilities.dp(38.0f), getMeasuredHeight());
-        boolean drawChild2 = super.drawChild(canvas, view, j10);
-        canvas.restore();
-        return drawChild2;
+    @Override // org.telegram.ui.Components.UndoView
+    public final void b(CharacterStyle characterStyle) {
+        this.j0.X7(characterStyle, false, null, null);
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        qn qnVar = this.c;
-        if (!qnVar.A2) {
-            return;
-        }
-        int i12 = 0;
-        while (true) {
-            AnimatorSet[] animatorSetArr = qnVar.H2;
-            if (i12 >= animatorSetArr.length) {
-                qnVar.A2 = false;
-                return;
-            }
-            AnimatorSet animatorSet = animatorSetArr[i12];
-            if (animatorSet != null) {
-                animatorSet.start();
-            }
-            i12++;
-        }
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        this.a = motionEvent.getY();
-        int action = motionEvent.getAction();
-        qn qnVar = this.c;
-        if (action == 1) {
-            qnVar.finishPreviewFragment();
-        } else if (motionEvent.getAction() == 2) {
-            float f7 = this.b - this.a;
-            qnVar.movePreviewFragment(f7);
-            if (f7 < 0.0f) {
-                this.b = this.a;
-            }
-        }
-        return super.onTouchEvent(motionEvent);
+    @Override // org.telegram.ui.Components.UndoView
+    public final void k(long j10, int i10, Object obj, Object obj2, Runnable runnable, Runnable runnable2) {
+        int i11;
+        ak akVar = this.j0.j2;
+        setAdditionalTranslationY((akVar == null || !(((i11 = akVar.U) == 1 || i11 == 3) && akVar.T)) ? 0.0f : AndroidUtilities.dp(akVar.getStyleHeight()));
+        super.k(j10, i10, obj, obj2, runnable, runnable2);
     }
 }

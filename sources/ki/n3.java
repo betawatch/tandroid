@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class n3 {
     public final /* synthetic */ int a;
@@ -23,33 +23,33 @@ public final class n3 {
 
     public final TL_iv.RichMessage a() {
         w3 w3Var = this.e;
-        ArrayList arrayList = w3Var.j3;
+        ArrayList arrayList = w3Var.m3;
         int i10 = this.a;
         a aVar = (a) arrayList.get(i10);
-        ArrayList arrayList2 = w3Var.j3;
+        ArrayList arrayList2 = w3Var.m3;
         int i11 = this.b;
         a aVar2 = (a) arrayList2.get(i11);
         TL_iv.PageBlock pageBlock = aVar.b;
         TL_iv.PageBlock pageBlock2 = aVar2.b;
         int i12 = this.d;
-        TL_iv.PageBlock M1 = w3.M1(w3Var, aVar, this.c, i10 == i11 ? i12 : -1);
-        TL_iv.PageBlock M12 = i10 == i11 ? null : w3.M1(w3Var, aVar2, 0, i12);
-        if (M1 != null) {
-            aVar.b = M1;
+        TL_iv.PageBlock R1 = w3.R1(w3Var, aVar, this.c, i10 == i11 ? i12 : -1);
+        TL_iv.PageBlock R12 = i10 == i11 ? null : w3.R1(w3Var, aVar2, 0, i12);
+        if (R1 != null) {
+            aVar.b = R1;
         }
-        if (M12 != null) {
-            aVar2.b = M12;
+        if (R12 != null) {
+            aVar2.b = R12;
         }
         try {
-            ArrayList<TL_iv.PageBlock> Z2 = w3Var.Z2(i10, i11 + 1, 0, false);
-            ArrayList<TLRPC.Photo> B2 = w3Var.B2(i10, i11);
-            ArrayList<TLRPC.Document> A2 = w3Var.A2(i10, i11);
+            ArrayList<TL_iv.PageBlock> e32 = w3Var.e3(i10, i11 + 1, 0, false);
+            ArrayList<TLRPC.Photo> G2 = w3Var.G2(i10, i11);
+            ArrayList<TLRPC.Document> F2 = w3Var.F2(i10, i11);
             aVar.b = pageBlock;
             aVar2.b = pageBlock2;
             TL_iv.RichMessage richMessage = new TL_iv.RichMessage();
-            richMessage.blocks = Z2;
-            richMessage.photos = B2;
-            richMessage.documents = A2;
+            richMessage.blocks = e32;
+            richMessage.photos = G2;
+            richMessage.documents = F2;
             return richMessage;
         } catch (Throwable th2) {
             aVar.b = pageBlock;

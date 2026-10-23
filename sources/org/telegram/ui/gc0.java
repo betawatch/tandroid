@@ -1,33 +1,51 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import java.util.ArrayList;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.UserObject;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class gc0 extends hg.t0 {
-    public final /* synthetic */ nc0 N;
+public final class gc0 extends hg.s0 {
+    public boolean m0;
+    public final /* synthetic */ sc0 n0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gc0(nc0 nc0Var, Context context, org.telegram.ui.ActionBar.d6 d6Var, boolean z10) {
-        super(context, d6Var, false, z10);
-        this.N = nc0Var;
+    public gc0(sc0 sc0Var, Context context, int i10, long j10, org.telegram.ui.ActionBar.g6 g6Var, boolean z10, boolean z11) {
+        super(context, i10, j10, false, g6Var, false, z10, z11);
+        this.n0 = sc0Var;
+        this.m0 = true;
     }
 
-    @Override // s4.g0
-    public final void l() {
-        nc0 nc0Var = this.N;
-        org.telegram.ui.ActionBar.u0 u0Var = nc0Var.w;
-        if (u0Var != null) {
-            u0Var.setShowSearchProgress(nc0Var.W.J);
+    @Override // hg.s0
+    public final void K() {
+        this.n0.r0(null);
+    }
+
+    @Override // hg.s0
+    public final void N(ArrayList arrayList) {
+        int i10;
+        sc0 sc0Var = this.n0;
+        MessageObject messageObject = sc0Var.B0;
+        if (messageObject != null && messageObject.isLiveLocation()) {
+            if (arrayList != null) {
+                i10 = 0;
+                for (int i11 = 0; i11 < arrayList.size(); i11++) {
+                    mc0 mc0Var = (mc0) arrayList.get(i11);
+                    if (mc0Var != null && !UserObject.isUserSelf(mc0Var.c)) {
+                        i10++;
+                    }
+                }
+            } else {
+                i10 = 0;
+            }
+            if (this.m0 && i10 == 1) {
+                sc0Var.i0 = ((mc0) arrayList.get(0)).a;
+            }
+            this.m0 = false;
+            sc0Var.Z.setVisibility(i10 != 1 ? 8 : 0);
         }
-        TextView textView = nc0Var.r;
-        if (textView != null) {
-            textView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("NoPlacesFoundInfo", R.string.NoPlacesFoundInfo, nc0Var.W.x)));
-        }
-        super.l();
+        super.N(arrayList);
     }
 }

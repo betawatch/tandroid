@@ -1,44 +1,69 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.hf1;
-import org.telegram.ui.na0;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
+import android.text.TextPaint;
+import android.view.View;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.ui.bg1;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class n2 implements hf1 {
+public final /* synthetic */ class n2 implements org.telegram.ui.ActionBar.z1, r0.n, ImageReceiver.ImageReceiverDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Utilities.CallbackReturn c;
-    public final /* synthetic */ Utilities.Callback2 d;
-    public final /* synthetic */ r2 e;
-    public final /* synthetic */ Utilities.Callback3 f;
-    public final /* synthetic */ boolean h;
-    public final /* synthetic */ boolean n;
-    public final /* synthetic */ na0 r;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ n2(int i10, Utilities.CallbackReturn callbackReturn, Utilities.Callback2 callback2, r2 r2Var, Utilities.Callback3 callback3, boolean z10, boolean z11, na0 na0Var, int i11) {
-        this.a = i11;
-        this.b = i10;
-        this.c = callbackReturn;
-        this.d = callback2;
-        this.e = r2Var;
-        this.f = callback3;
-        this.h = z10;
-        this.n = z11;
-        this.r = na0Var;
+    public /* synthetic */ n2(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // org.telegram.ui.hf1
-    public final void k(TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP) {
+    @Override // r0.n
+    public r0.k1 B0(View view, r0.k1 k1Var) {
+        y2 y2Var = (y2) this.b;
+        y2Var.H = k1Var.a.f(647);
+        y2Var.h.requestLayout();
+        return r0.k1.b;
+    }
+
+    public void a(float f7, float f10, int i10) {
         switch (this.a) {
-            case 0:
-                s2.a(this.b, this.c, this.d, tL_inputCheckPasswordSRP, this.e, this.f, this.h, this.n, this.r);
+            case 2:
+                ((x5) this.b).I.setShadowLayer(f7 * 2.0f, f10, -0.0f, i0.a.o(i10, Math.round(Color.alpha(i10) * 0.5f)));
+                break;
+            case 3:
+                ((TextPaint) this.b).setShadowLayer(f7, 0.0f, f10, i10);
                 break;
             default:
-                s2.a(this.b, this.c, this.d, tL_inputCheckPasswordSRP, this.e, this.f, this.h, this.n, this.r);
+                ((org.telegram.ui.Components.p6) this.b).s(f7, f10, i10);
                 break;
         }
+    }
+
+    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
+    public void didSetImage(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
+        ((s7) this.b).d0.f0();
+    }
+
+    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
+    public /* synthetic */ void didSetImageBitmap(int i10, String str, Drawable drawable) {
+        org.telegram.messenger.m5.a(this, i10, str, drawable);
+    }
+
+    @Override // org.telegram.ui.ActionBar.z1
+    public void g(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
+        switch (this.a) {
+            case 0:
+                ((org.telegram.ui.ActionBar.o2) this.b).presentFragment(new bg1(6, null));
+                break;
+            default:
+                i8.Z((i8) this.b, c2Var, i10);
+                break;
+        }
+    }
+
+    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
+    public /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver) {
+        org.telegram.messenger.m5.b(this, imageReceiver);
     }
 }

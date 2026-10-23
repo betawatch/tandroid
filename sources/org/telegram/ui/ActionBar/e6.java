@@ -1,54 +1,11 @@
 package org.telegram.ui.ActionBar;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Path;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.AndroidUtilities;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class e6 extends Drawable {
-    public float[] b;
-    public Path a = new Path();
-    public boolean c = true;
-
-    public e6(float f7, float f10) {
-        this.b = new float[]{r4, r4, r4, r4, r4, r4, r4, r4};
-        float dp = AndroidUtilities.dp(f7);
-        float dp2 = AndroidUtilities.dp(f10);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Path path = this.a;
-        if (this.c) {
-            this.c = false;
-            path.reset();
-            RectF rectF = AndroidUtilities.rectTmp;
-            rectF.set(getBounds());
-            path.addRoundRect(rectF, this.b, Path.Direction.CW);
-        }
-        canvas.drawPath(path, h6.z);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return 0;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void onBoundsChange(Rect rect) {
-        this.c = true;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-    }
+public final class e6 {
+    public TLRPC.TL_wallPaper a;
+    public ArrayList b;
 }

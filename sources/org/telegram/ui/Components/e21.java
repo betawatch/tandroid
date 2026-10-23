@@ -1,24 +1,22 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class e21 extends AnimatorListenerAdapter {
-    public final /* synthetic */ ThemeEditorView.EditorAlert a;
+public final class e21 extends mm0 {
+    public final /* synthetic */ ThemeEditorView.EditorAlert Y2;
 
-    public e21(ThemeEditorView.EditorAlert editorAlert) {
-        this.a = editorAlert;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public e21(ThemeEditorView.EditorAlert editorAlert, Context context) {
+        super(context, null);
+        this.Y2 = editorAlert;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        ThemeEditorView.EditorAlert editorAlert = this.a;
-        editorAlert.c.setVisibility(4);
-        editorAlert.f.setVisibility(4);
-        editorAlert.s.setVisibility(4);
-        editorAlert.H = false;
+    @Override // org.telegram.ui.Components.mm0
+    public final boolean E0(float f7) {
+        return f7 >= ((float) ((AndroidUtilities.dp(48.0f) + this.Y2.E) + AndroidUtilities.statusBarHeight));
     }
 }

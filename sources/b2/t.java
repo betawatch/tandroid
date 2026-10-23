@@ -12,7 +12,7 @@ import java.util.Collections;
 import java.util.List;
 import v7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class t implements s4.d0, androidx.lifecycle.a0, y9.i {
     public final /* synthetic */ int a;
@@ -45,7 +45,7 @@ public final class t implements s4.d0, androidx.lifecycle.a0, y9.i {
     }
 
     @Override // androidx.lifecycle.a0
-    public void Y(Object obj) {
+    public void Z(Object obj) {
         this.b = true;
         qb.c cVar = (qb.c) this.c;
         cVar.getClass();
@@ -164,7 +164,7 @@ public final class t implements s4.d0, androidx.lifecycle.a0, y9.i {
             return;
         }
         try {
-            ((l5.s) this.c).a(new i5.a(null, y3Var, i5.d.a, null), new k2.f0(4));
+            ((l5.s) this.c).a(new i5.a(null, y3Var, i5.d.a, null), new k2.f(8));
         } catch (Throwable unused) {
             com.google.android.gms.internal.play_billing.u.h("BillingLogger", "logging failed.");
         }

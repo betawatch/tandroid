@@ -1,13 +1,14 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
+import android.content.ClipboardManager;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class p11 extends org.telegram.ui.Components.xo0 {
-    @Override // org.telegram.ui.Components.xo0, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        invalidate();
+public final /* synthetic */ class p11 implements ClipboardManager.OnPrimaryClipChangedListener {
+    public final /* synthetic */ w11 a;
+
+    @Override // android.content.ClipboardManager.OnPrimaryClipChangedListener
+    public final void onPrimaryClipChanged() {
+        this.a.W();
     }
 }

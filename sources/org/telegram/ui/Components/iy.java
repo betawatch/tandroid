@@ -9,7 +9,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class iy implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -33,11 +33,11 @@ public final /* synthetic */ class iy implements View.OnClickListener {
         jy jyVar = this.b;
         switch (i11) {
             case 0:
-                fy fyVar = jyVar.s;
+                fy fyVar = jyVar.w;
                 if (fyVar != null && (stickerSet = fyVar.b) != null) {
-                    tz tzVar = jyVar.E;
-                    if (!tzVar.v2) {
-                        tzVar.v2 = true;
+                    tz tzVar = jyVar.G;
+                    if (!tzVar.w2) {
+                        tzVar.w2 = true;
                         ArrayList arrayList = new ArrayList(1);
                         TLRPC.TL_inputStickerSetID tL_inputStickerSetID = new TLRPC.TL_inputStickerSetID();
                         tL_inputStickerSetID.id = stickerSet.id;
@@ -49,13 +49,13 @@ public final /* synthetic */ class iy implements View.OnClickListener {
                 }
                 break;
             case 1:
-                sg.q0 q0Var = jyVar.h;
-                TextView textView = jyVar.f;
-                TextView textView2 = jyVar.e;
+                sg.p0 p0Var = jyVar.r;
+                TextView textView = jyVar.n;
+                TextView textView2 = jyVar.h;
                 if (textView2 == null || textView2.getVisibility() != 0 || !textView2.isEnabled()) {
                     if (textView == null || textView.getVisibility() != 0 || !textView.isEnabled()) {
-                        if (q0Var != null && q0Var.getVisibility() == 0 && q0Var.r.isEnabled()) {
-                            q0Var.performClick();
+                        if (p0Var != null && p0Var.getVisibility() == 0 && p0Var.v.isEnabled()) {
+                            p0Var.performClick();
                             break;
                         }
                     } else {
@@ -68,9 +68,9 @@ public final /* synthetic */ class iy implements View.OnClickListener {
                 }
                 break;
             case 2:
-                tz tzVar2 = jyVar.E;
+                tz tzVar2 = jyVar.G;
                 ArrayList arrayList2 = tzVar2.p1;
-                fy fyVar2 = jyVar.s;
+                fy fyVar2 = jyVar.w;
                 if (fyVar2 != null && (stickerSet2 = fyVar2.b) != null) {
                     fyVar2.f = true;
                     ay ayVar = tzVar2.R;
@@ -78,7 +78,7 @@ public final /* synthetic */ class iy implements View.OnClickListener {
                     ArrayList arrayList3 = tzVar2.q1;
                     ey eyVar = tzVar2.P;
                     if (!arrayList2.contains(Long.valueOf(stickerSet2.id))) {
-                        arrayList2.add(Long.valueOf(jyVar.s.b.id));
+                        arrayList2.add(Long.valueOf(jyVar.w.b.id));
                     }
                     jyVar.a(true);
                     int i13 = 0;
@@ -86,7 +86,7 @@ public final /* synthetic */ class iy implements View.OnClickListener {
                         if (i13 >= eyVar.getChildCount()) {
                             num = null;
                             view2 = null;
-                        } else if (!(eyVar.getChildAt(i13) instanceof hy) || (R = RecyclerView.R((view2 = eyVar.getChildAt(i13)))) < 0 || (i10 = ayVar.w.get(R)) < 0 || i10 >= arrayList3.size() || arrayList3.get(i10) == null || jyVar.s == null || ((fy) arrayList3.get(i10)).b.id != jyVar.s.b.id) {
+                        } else if (!(eyVar.getChildAt(i13) instanceof hy) || (R = RecyclerView.R((view2 = eyVar.getChildAt(i13)))) < 0 || (i10 = ayVar.w.get(R)) < 0 || i10 >= arrayList3.size() || arrayList3.get(i10) == null || jyVar.w == null || ((fy) arrayList3.get(i10)).b.id != jyVar.w.b.id) {
                             i13++;
                         } else {
                             num = Integer.valueOf(R);
@@ -95,23 +95,23 @@ public final /* synthetic */ class iy implements View.OnClickListener {
                     if (num != null) {
                         ayVar.E(num.intValue(), view2);
                     }
-                    if (jyVar.n == null) {
+                    if (jyVar.s == null) {
                         TLRPC.TL_inputStickerSetID tL_inputStickerSetID2 = new TLRPC.TL_inputStickerSetID();
-                        TLRPC.StickerSet stickerSet4 = jyVar.s.b;
+                        TLRPC.StickerSet stickerSet4 = jyVar.w.b;
                         tL_inputStickerSetID2.id = stickerSet4.id;
                         tL_inputStickerSetID2.access_hash = stickerSet4.access_hash;
                         TLRPC.TL_messages_stickerSet stickerSet5 = MediaDataController.getInstance(i12).getStickerSet((TLRPC.InputStickerSet) tL_inputStickerSetID2, true);
                         if (stickerSet5 != null && stickerSet5.set != null) {
-                            org.telegram.ui.ActionBar.n2 n2Var = tzVar2.Y1;
-                            if (n2Var == null) {
-                                n2Var = new ai.a5(jyVar, 7);
+                            org.telegram.ui.ActionBar.o2 o2Var = tzVar2.Y1;
+                            if (o2Var == null) {
+                                o2Var = new ai.a5(jyVar, 7);
                             }
-                            aw.X(n2Var, stickerSet5, true, null, new hq(jyVar, 14));
+                            aw.g0(o2Var, stickerSet5, true, null, new zp(jyVar, 15));
                             break;
                         } else {
                             NotificationCenter.getInstance(i12).addObserver(jyVar, NotificationCenter.groupStickersDidLoad);
                             MediaDataController mediaDataController = MediaDataController.getInstance(i12);
-                            jyVar.n = tL_inputStickerSetID2;
+                            jyVar.s = tL_inputStickerSetID2;
                             mediaDataController.getStickerSet((TLRPC.InputStickerSet) tL_inputStickerSetID2, false);
                             break;
                         }
@@ -119,8 +119,8 @@ public final /* synthetic */ class iy implements View.OnClickListener {
                 }
                 break;
             case 3:
-                tz tzVar3 = jyVar.E;
-                fy fyVar3 = jyVar.s;
+                tz tzVar3 = jyVar.G;
+                fy fyVar3 = jyVar.w;
                 if (fyVar3 != null && (stickerSet3 = fyVar3.b) != null) {
                     fyVar3.f = false;
                     ArrayList arrayList4 = tzVar3.p1;
@@ -132,28 +132,28 @@ public final /* synthetic */ class iy implements View.OnClickListener {
                         vxVar.p(tzVar3.getEmojipacks());
                     }
                     tzVar3.U(tzVar3.Q.I0());
-                    if (jyVar.r == null) {
+                    if (jyVar.v == null) {
                         TLRPC.TL_inputStickerSetID tL_inputStickerSetID3 = new TLRPC.TL_inputStickerSetID();
-                        TLRPC.StickerSet stickerSet6 = jyVar.s.b;
+                        TLRPC.StickerSet stickerSet6 = jyVar.w.b;
                         tL_inputStickerSetID3.id = stickerSet6.id;
                         tL_inputStickerSetID3.access_hash = stickerSet6.access_hash;
                         TLRPC.TL_messages_stickerSet stickerSet7 = MediaDataController.getInstance(i14).getStickerSet((TLRPC.InputStickerSet) tL_inputStickerSetID3, true);
                         if (stickerSet7 != null && stickerSet7.set != null) {
-                            org.telegram.ui.ActionBar.n2 n2Var2 = tzVar3.Y1;
-                            if (n2Var2 == null) {
-                                n2Var2 = new ai.a5(jyVar, 7);
+                            org.telegram.ui.ActionBar.o2 o2Var2 = tzVar3.Y1;
+                            if (o2Var2 == null) {
+                                o2Var2 = new ai.a5(jyVar, 7);
                             }
-                            org.telegram.ui.ActionBar.n2 n2Var3 = n2Var2;
+                            org.telegram.ui.ActionBar.o2 o2Var3 = o2Var2;
                             yt ytVar = new yt(4, jyVar, stickerSet7);
                             Pattern pattern = aw.V;
-                            if (n2Var3.getFragmentView() != null) {
-                                MediaDataController.getInstance(n2Var3.getCurrentAccount()).toggleStickerSet(n2Var3.getFragmentView().getContext(), stickerSet7, 0, n2Var3, true, true, ytVar, false);
+                            if (o2Var3.getFragmentView() != null) {
+                                MediaDataController.getInstance(o2Var3.getCurrentAccount()).toggleStickerSet(o2Var3.getFragmentView().getContext(), stickerSet7, 0, o2Var3, true, true, ytVar, false);
                                 break;
                             }
                         } else {
                             NotificationCenter.getInstance(i14).addObserver(jyVar, NotificationCenter.groupStickersDidLoad);
                             MediaDataController mediaDataController2 = MediaDataController.getInstance(i14);
-                            jyVar.r = tL_inputStickerSetID3;
+                            jyVar.v = tL_inputStickerSetID3;
                             mediaDataController2.getStickerSet((TLRPC.InputStickerSet) tL_inputStickerSetID3, false);
                             break;
                         }
@@ -161,21 +161,21 @@ public final /* synthetic */ class iy implements View.OnClickListener {
                 }
                 break;
             case 4:
-                uy uyVar = jyVar.E.t1;
+                uy uyVar = jyVar.G.t1;
                 if (uyVar != null) {
                     uyVar.q();
                     break;
                 }
                 break;
             case 5:
-                uy uyVar2 = jyVar.E.t1;
+                uy uyVar2 = jyVar.G.t1;
                 if (uyVar2 != null) {
                     uyVar2.q();
                     break;
                 }
                 break;
             default:
-                uy uyVar3 = jyVar.E.t1;
+                uy uyVar3 = jyVar.G.t1;
                 if (uyVar3 != null) {
                     uyVar3.q();
                     break;

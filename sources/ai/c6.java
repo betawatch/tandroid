@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.bs;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class c6 extends FrameLayout {
     public final yh.d1 a;
@@ -28,7 +28,7 @@ public final class c6 extends FrameLayout {
         super(context);
         FrameLayout frameLayout = new FrameLayout(context);
         addView(frameLayout, w7.z5.d(-1, -1.0f, 119, 6.0f, 6.0f, 6.0f, 6.0f));
-        frameLayout.setBackground(org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(18.0f), org.telegram.ui.ActionBar.h6.m1(0.12f, -4530177)));
+        frameLayout.setBackground(org.telegram.ui.ActionBar.k6.c0(AndroidUtilities.dp(18.0f), org.telegram.ui.ActionBar.k6.o1(0.12f, -4530177)));
         frameLayout.setForeground(new u6(AndroidUtilities.dp(18.0f), 0));
         ImageView imageView = new ImageView(context);
         imageView.setImageResource(R.drawable.filled_add_album);
@@ -41,7 +41,7 @@ public final class c6 extends FrameLayout {
         this.a = d1Var;
         frameLayout2.setBackground(d1Var);
         d1Var.s = AndroidUtilities.dp(18.0f);
-        d1Var.u = false;
+        d1Var.v = false;
         frameLayout.addView(frameLayout2, w7.z5.e(-1, -1, 119));
         frameLayout2.setAlpha(0.0f);
         frameLayout2.setScaleX(0.6f);
@@ -73,14 +73,14 @@ public final class c6 extends FrameLayout {
     public final void a(TL_stars.StarGift starGift, boolean z10) {
         this.h = starGift;
         if (starGift != null) {
-            TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) ga.l(starGift.attributes, TL_stars.starGiftAttributeBackdrop.class);
-            TL_stars.starGiftAttributePattern stargiftattributepattern = (TL_stars.starGiftAttributePattern) ga.l(starGift.attributes, TL_stars.starGiftAttributePattern.class);
-            TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) ga.l(starGift.attributes, TL_stars.starGiftAttributeModel.class);
+            TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) ha.l(starGift.attributes, TL_stars.starGiftAttributeBackdrop.class);
+            TL_stars.starGiftAttributePattern stargiftattributepattern = (TL_stars.starGiftAttributePattern) ha.l(starGift.attributes, TL_stars.starGiftAttributePattern.class);
+            TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) ha.l(starGift.attributes, TL_stars.starGiftAttributeModel.class);
             yh.d1 d1Var = this.a;
             d1Var.d(stargiftattributebackdrop);
             d1Var.e(stargiftattributepattern);
-            md.a1(this.c.getImageReceiver(), stargiftattributemodel.document, 52);
-            int b10 = org.telegram.ui.ActionBar.h6.b(-0.05f, -0.15f, org.telegram.ui.ActionBar.h6.m1(0.88f, stargiftattributebackdrop.edge_color | (-16777216)));
+            nd.a1(this.c.getImageReceiver(), stargiftattributemodel.document, 52);
+            int b10 = org.telegram.ui.ActionBar.k6.b(-0.05f, -0.15f, org.telegram.ui.ActionBar.k6.o1(0.88f, stargiftattributebackdrop.edge_color | (-16777216)));
             String H0 = gi.l.H0(starGift.craft_chance_permille);
             TextView textView = this.d;
             textView.setText(H0);

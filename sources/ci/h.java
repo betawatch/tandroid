@@ -4,33 +4,33 @@ import android.graphics.Canvas;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
-import org.telegram.ui.Components.zq;
-import org.telegram.ui.tw;
+import org.telegram.ui.Components.yq;
+import org.telegram.ui.vw;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final class h extends zq {
+public final class h extends yq {
     public final /* synthetic */ Drawable E;
     public final /* synthetic */ Drawable F;
-    public final /* synthetic */ tw G;
+    public final /* synthetic */ vw G;
     public int y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h(tw twVar, Drawable drawable, Drawable drawable2, Drawable drawable3, Drawable drawable4) {
+    public h(vw vwVar, Drawable drawable, Drawable drawable2, Drawable drawable3, Drawable drawable4) {
         super(drawable, drawable2);
-        this.G = twVar;
+        this.G = vwVar;
         this.E = drawable3;
         this.F = drawable4;
     }
 
-    @Override // org.telegram.ui.Components.zq, android.graphics.drawable.Drawable
+    @Override // org.telegram.ui.Components.yq, android.graphics.drawable.Drawable
     public final void draw(Canvas canvas) {
-        tw twVar = this.G;
-        int i10 = twVar.b;
-        int f7 = twVar.f(i10 == 0 ? org.telegram.ui.ActionBar.h6.s8 : org.telegram.ui.ActionBar.h6.M8);
+        vw vwVar = this.G;
+        int i10 = vwVar.b;
+        int f7 = vwVar.f(i10 == 0 ? org.telegram.ui.ActionBar.k6.s8 : org.telegram.ui.ActionBar.k6.M8);
         if (this.y != f7) {
             this.y = f7;
-            int f10 = i0.a.f(0.1f, twVar.f(i10 == 0 ? org.telegram.ui.ActionBar.h6.A8 : org.telegram.ui.ActionBar.h6.P8), f7);
+            int f10 = i0.a.f(0.1f, vwVar.f(i10 == 0 ? org.telegram.ui.ActionBar.k6.A8 : org.telegram.ui.ActionBar.k6.P8), f7);
             PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
             this.E.setColorFilter(new PorterDuffColorFilter(f10, mode));
             this.F.setColorFilter(new PorterDuffColorFilter(f7, mode));

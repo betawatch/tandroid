@@ -1,25 +1,57 @@
 package org.telegram.ui;
 
-import android.graphics.Bitmap;
-import java.io.File;
+import android.app.Activity;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class nh1 implements org.telegram.ui.Components.k91 {
-    public final /* synthetic */ WallpapersListActivity a;
+public final class nh1 extends View {
+    public final Paint a;
+    public final org.telegram.ui.Components.j9 b;
+    public org.telegram.ui.Components.i11 c;
 
-    public nh1(WallpapersListActivity wallpapersListActivity) {
-        this.a = wallpapersListActivity;
+    public nh1(Activity activity) {
+        super(activity);
+        Paint paint = new Paint(1);
+        this.a = paint;
+        paint.setColor(-14538189);
+        org.telegram.ui.Components.j9 j9Var = new org.telegram.ui.Components.j9(this, false);
+        this.b = j9Var;
+        j9Var.p = AndroidUtilities.dp(100.0f);
+        j9Var.o = AndroidUtilities.dp(30.0f);
+        j9Var.x = false;
+        j9Var.s = AndroidUtilities.dp(24.0f);
+        j9Var.j(AndroidUtilities.dp(18.0f));
+        j9Var.t = 0.58f;
     }
 
-    @Override // org.telegram.ui.Components.k91
-    public final void b(File file, Bitmap bitmap, boolean z10) {
-        kc1 kc1Var = new kc1(new th1(file, file, ""), bitmap, false);
-        kc1Var.c1(0L);
-        this.a.presentFragment(kc1Var, z10);
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.c == null) {
+            return;
+        }
+        float dp = AndroidUtilities.dp(4.0f);
+        org.telegram.ui.Components.j9 j9Var = this.b;
+        float e = j9Var.e() + dp + AndroidUtilities.dp(7.0f) + this.c.c + AndroidUtilities.dp(13.0f);
+        float dp2 = AndroidUtilities.dp(30.0f);
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set((getWidth() - e) / 2.0f, 0.0f, (getWidth() + e) / 2.0f, getHeight());
+        float f7 = dp2 / 2.0f;
+        canvas.drawRoundRect(rectF, f7, f7, this.a);
+        canvas.save();
+        canvas.translate(rectF.left + AndroidUtilities.dp(4.0f), 0.0f);
+        j9Var.i(canvas);
+        canvas.translate(j9Var.A + AndroidUtilities.dp(7.0f), 0.0f);
+        this.c.c(0.0f, f7, 1.0f, -1, canvas);
+        canvas.restore();
     }
 
-    @Override // org.telegram.ui.Components.k91
-    public final void a() {
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(30.0f));
     }
 }

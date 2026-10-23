@@ -1,27 +1,22 @@
 package org.telegram.ui;
 
+import java.util.TimerTask;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class lf0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ v3 b;
+public final class lf0 extends TimerTask {
+    public final /* synthetic */ mf0 a;
 
-    public /* synthetic */ lf0(v3 v3Var, int i10) {
-        this.a = i10;
-        this.b = v3Var;
+    public lf0(mf0 mf0Var) {
+        this.a = mf0Var;
     }
 
-    @Override // java.lang.Runnable
+    @Override // java.util.TimerTask, java.lang.Runnable
     public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.run("CANCELLED");
-                break;
-            default:
-                AndroidUtilities.runOnUIThread(new lf0(this.b, 0));
-                break;
+        if (this.a.T == null) {
+            return;
         }
+        AndroidUtilities.runOnUIThread(new fz(this, 26));
     }
 }

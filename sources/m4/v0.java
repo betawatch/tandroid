@@ -4,30 +4,28 @@ import android.graphics.RectF;
 import android.view.View;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
+import java.util.List;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.a2;
-import org.telegram.ui.ActionBar.b2;
-import org.telegram.ui.Components.cw0;
-import org.telegram.ui.Components.dw0;
-import org.telegram.ui.Components.ow0;
-import org.telegram.ui.Components.wl0;
-import org.telegram.ui.tr;
+import org.telegram.ui.ActionBar.c2;
+import org.telegram.ui.ActionBar.z1;
+import org.telegram.ui.Components.rw0;
+import org.telegram.ui.Components.zl0;
 import org.telegram.utils.code.highlight.PrismaHighlighter;
 import v7.q8;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class v0 implements e2.j, g1, n2.m, d9.k, a2, ow0, Utilities.Callback2Return, ih.h, wl0, cw0, dw0 {
+public final /* synthetic */ class v0 implements e2.j, f1, g1, n2.m, d9.k, z1, rw0, Utilities.Callback2Return, ih.i, zl0 {
     public final /* synthetic */ int a;
 
     public /* synthetic */ v0(int i10) {
         this.a = i10;
     }
 
-    public static mi.b a() {
+    public static mi.b c() {
         InputStream open = ApplicationLoader.applicationContext.getAssets().open("grammars.dat");
         try {
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
@@ -57,24 +55,53 @@ public final /* synthetic */ class v0 implements e2.j, g1, n2.m, d9.k, a2, ow0, 
         }
     }
 
+    @Override // m4.g1
+    public Object a(f0 f0Var, v vVar, int i10) {
+        switch (this.a) {
+            case 3:
+                f0Var.getClass();
+                throw new ClassCastException();
+            case 7:
+                f0Var.getClass();
+                throw new ClassCastException();
+            case 9:
+                f0Var.getClass();
+                throw new ClassCastException();
+            case 11:
+                f0Var.getClass();
+                throw new ClassCastException();
+            default:
+                pb.a aVar = f0Var.e;
+                f0Var.s(vVar);
+                aVar.getClass();
+                return q8.b(new s1(-6));
+        }
+    }
+
     @Override // e2.j
     public void accept(Object obj) {
         m1 m1Var = (m1) obj;
         switch (this.a) {
             case 0:
-                m1Var.stop();
+                m1Var.K();
                 break;
             case 1:
-                m1Var.c0();
-                break;
             case 2:
-                m1Var.G();
-                break;
             case 3:
+            case 7:
             default:
                 m1Var.u();
                 break;
             case 4:
+                m1Var.stop();
+                break;
+            case 5:
+                m1Var.c0();
+                break;
+            case 6:
+                m1Var.G();
+                break;
+            case 8:
                 m1Var.b();
                 break;
         }
@@ -84,80 +111,38 @@ public final /* synthetic */ class v0 implements e2.j, g1, n2.m, d9.k, a2, ow0, 
     public Object apply(Object obj) {
         o2.q qVar = (o2.q) obj;
         qVar.f();
-        return e9.n0.u(e9.s.x(qVar.Y.b, new sg.y(10)));
+        return e9.n0.u(e9.s.x(qVar.Y.b, new s0.b(22)));
     }
 
-    @Override // org.telegram.ui.Components.dw0
-    public void b(Object obj, float f7) {
-        tr trVar = (tr) obj;
+    @Override // m4.f1
+    public void b(m1 m1Var, v vVar, List list) {
         switch (this.a) {
-            case 27:
-                trVar.b = f7;
-                if (trVar.getParent() != null) {
-                    ((View) trVar.getParent()).invalidate();
-                    break;
-                }
+            case 1:
+                m1Var.x0(list);
                 break;
             default:
-                trVar.c = f7;
-                if (trVar.getParent() != null) {
-                    ((View) trVar.getParent()).invalidate();
-                    break;
-                }
+                m1Var.x0(list);
                 break;
         }
     }
 
-    @Override // m4.g1
-    public Object e(f0 f0Var, v vVar, int i10) {
+    @Override // org.telegram.ui.ActionBar.z1
+    public void g(c2 c2Var, int i10) {
         switch (this.a) {
-            case 3:
-                f0Var.getClass();
-                throw new ClassCastException();
-            case 4:
-            case 6:
-            default:
-                pb.a aVar = f0Var.e;
-                f0Var.s(vVar);
-                aVar.getClass();
-                return q8.b(new s1(-6));
-            case 5:
-                f0Var.getClass();
-                throw new ClassCastException();
-            case 7:
-                f0Var.getClass();
-                throw new ClassCastException();
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.a2
-    public void g(b2 b2Var, int i10) {
-        switch (this.a) {
-            case 17:
-                b2Var.dismiss();
-                break;
             case 21:
-                b2Var.dismiss();
+                c2Var.dismiss();
+                break;
+            case 25:
+                c2Var.dismiss();
                 break;
             default:
-                b2Var.dismiss();
+                c2Var.dismiss();
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.cw0
-    public float get(Object obj) {
-        tr trVar = (tr) obj;
-        switch (this.a) {
-            case 26:
-                return trVar.b;
-            default:
-                return trVar.c;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.ow0
-    public void h(int i10) {
+    @Override // org.telegram.ui.Components.rw0
+    public void i(int i10) {
         if (i10 == 0) {
             SharedConfig.setKeepMedia(3);
             return;
@@ -171,8 +156,8 @@ public final /* synthetic */ class v0 implements e2.j, g1, n2.m, d9.k, a2, ow0, 
         }
     }
 
-    @Override // ih.h
-    public void i(RectF rectF, View view) {
+    @Override // ih.i
+    public void j(RectF rectF, View view) {
         view.invalidate();
     }
 
@@ -181,7 +166,7 @@ public final /* synthetic */ class v0 implements e2.j, g1, n2.m, d9.k, a2, ow0, 
         Integer num = (Integer) obj;
         Integer num2 = (Integer) obj2;
         switch (this.a) {
-            case 20:
+            case 24:
                 if (num.intValue() == 0) {
                     return LocaleController.formatPluralString("MaximumReactionsValue", num2.intValue(), new Object[0]);
                 }
@@ -194,7 +179,7 @@ public final /* synthetic */ class v0 implements e2.j, g1, n2.m, d9.k, a2, ow0, 
         }
     }
 
-    @Override // org.telegram.ui.Components.ow0
+    @Override // org.telegram.ui.Components.rw0
     public /* synthetic */ void m() {
     }
 

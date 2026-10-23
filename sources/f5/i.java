@@ -5,7 +5,7 @@ import java.nio.ByteBuffer;
 import java.util.Iterator;
 import java.util.LinkedList;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class i extends com.googlecode.mp4parser.a {
     public static final /* synthetic */ te.b d;
@@ -52,10 +52,10 @@ public final class i extends com.googlecode.mp4parser.a {
 
     public final String toString() {
         StringBuilder sb2 = new StringBuilder("FileTypeBox[majorBrand=");
-        k3.p(te.a.b(d, this, this));
+        k3.o(te.a.b(d, this, this));
         sb2.append(this.a);
         sb2.append(";minorVersion=");
-        k3.p(te.a.b(e, this, this));
+        k3.o(te.a.b(e, this, this));
         sb2.append(this.b);
         for (String str : this.c) {
             sb2.append(";compatibleBrand=");

@@ -5,9 +5,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public class ah extends yj0 {
+public class ah extends bk0 {
     public yg r;
     public zg s;
     public final int v;
@@ -72,21 +72,21 @@ public class ah extends yj0 {
                     return;
                 }
                 this.s = zgVar2;
-                vj0 vj0Var = (vj0) gVar.get(zgVar2);
-                vj0Var.stop();
+                yj0 yj0Var = (yj0) gVar.get(zgVar2);
+                yj0Var.stop();
                 if (zgVar2 == zg.e) {
-                    vj0Var.P(30);
-                    vj0Var.T(0.0f, false);
+                    yj0Var.P(30);
+                    yj0Var.T(0.0f, false);
                 } else if (zgVar2 == zg.d) {
-                    vj0Var.P(60);
-                    vj0Var.T(0.5f, false);
+                    yj0Var.P(60);
+                    yj0Var.T(0.5f, false);
                 } else {
-                    vj0Var.T(0.0f, false);
+                    yj0Var.T(0.0f, false);
                 }
-                vj0Var.K(0);
-                vj0Var.t0 = new pg(this, 20);
-                setAnimation(vj0Var);
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Cells.r0(vj0Var, 1));
+                yj0Var.K(0);
+                yj0Var.t0 = new pg(this, 21);
+                setAnimation(yj0Var);
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Cells.q0(yj0Var, 1));
                 ordinal = ygVar.ordinal();
                 if (ordinal != 0) {
                     setContentDescription(LocaleController.getString(R.string.AccDescrVoiceMessage));
@@ -115,10 +115,10 @@ public class ah extends yj0 {
             }
             i12++;
         }
-        vj0 vj0Var2 = (vj0) gVar.get(zgVar2);
-        vj0Var2.stop();
-        vj0Var2.T(ygVar != yg.a ? 0.0f : 0.5f, false);
-        setAnimation(vj0Var2);
+        yj0 yj0Var2 = (yj0) gVar.get(zgVar2);
+        yj0Var2.stop();
+        yj0Var2.T(ygVar != yg.a ? 0.0f : 0.5f, false);
+        setAnimation(yj0Var2);
         ordinal = ygVar.ordinal();
         if (ordinal != 0) {
         }

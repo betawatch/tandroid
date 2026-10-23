@@ -1,16 +1,55 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
-/* loaded from: classes3.dex */
-public final class mo0 extends s4.k {
-    public final /* synthetic */ org.telegram.ui.lx F;
+import android.content.Context;
 
-    public mo0(org.telegram.ui.lx lxVar) {
-        this.F = lxVar;
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+/* loaded from: classes3.dex */
+public final class mo0 extends wx0 {
+    public final /* synthetic */ int K;
+    public final /* synthetic */ org.telegram.ui.nx L;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ mo0(org.telegram.ui.nx nxVar, Context context, b10 b10Var, int i10) {
+        super(context, b10Var, 1, null);
+        this.K = i10;
+        this.L = nxVar;
     }
 
-    @Override // s4.k
-    public final void P(s4.b1 b1Var) {
-        this.F.invalidate();
+    @Override // org.telegram.ui.Components.wx0, android.view.View
+    public final void setVisibility(int i10) {
+        switch (this.K) {
+            case 0:
+                if (this.L.M0.getTag() == null) {
+                    super.setVisibility(i10);
+                    break;
+                } else {
+                    super.setVisibility(8);
+                    break;
+                }
+            case 1:
+                if (this.L.M0.getTag() == null) {
+                    super.setVisibility(i10);
+                    break;
+                } else {
+                    super.setVisibility(8);
+                    break;
+                }
+            case 2:
+                if (this.L.M0.getTag() == null) {
+                    super.setVisibility(i10);
+                    break;
+                } else {
+                    super.setVisibility(8);
+                    break;
+                }
+            default:
+                if (this.L.M0.getTag() == null) {
+                    super.setVisibility(i10);
+                    break;
+                } else {
+                    super.setVisibility(8);
+                    break;
+                }
+        }
     }
 }

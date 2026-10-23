@@ -23,7 +23,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g0 implements Runnable {
     public final /* synthetic */ int a;
@@ -83,14 +83,14 @@ public final /* synthetic */ class g0 implements Runnable {
                 tL_fulfillStarsSubscription.subscription_id = ((TL_stars.StarsSubscription) obj2).id;
                 tL_fulfillStarsSubscription.peer = new TLRPC.TL_inputPeerSelf();
                 int i14 = this.b;
-                ConnectionsManager.getInstance(i14).sendRequest(tL_fulfillStarsSubscription, new c0(dVar, (org.telegram.ui.ActionBar.f3[]) obj, i14, this.c, 1));
+                ConnectionsManager.getInstance(i14).sendRequest(tL_fulfillStarsSubscription, new c0(dVar, (org.telegram.ui.ActionBar.h3[]) obj, i14, this.c, 1));
                 break;
             case 2:
-                ci.i7 i7Var = (ci.i7) obj3;
+                ci.h7 h7Var = (ci.h7) obj3;
                 TLObject tLObject2 = (TLObject) obj;
                 String str = (String) obj2;
-                int i15 = i7Var.a;
-                HashSet hashSet = i7Var.t;
+                int i15 = h7Var.a;
+                HashSet hashSet = h7Var.t;
                 if (tLObject2 != null) {
                     TL_stories.TL_stories_stories tL_stories_stories = (TL_stories.TL_stories_stories) tLObject2;
                     MessagesController.getInstance(i15).putUsers(tL_stories_stories.users, false);
@@ -105,7 +105,7 @@ public final /* synthetic */ class g0 implements Runnable {
                         }
                     }
                 }
-                i7Var.W.remove(str);
+                h7Var.W.remove(str);
                 if (storyItem == null) {
                     Iterator it = hashSet.iterator();
                     while (true) {
@@ -117,14 +117,14 @@ public final /* synthetic */ class g0 implements Runnable {
                         }
                     }
                     hashSet.add(str);
-                    i7Var.l.edit().putStringSet("unsupported_stories_checked", hashSet).apply();
+                    h7Var.l.edit().putStringSet("unsupported_stories_checked", hashSet).apply();
                     break;
                 } else {
                     storyItem.dialogId = j10;
                     TL_stories.TL_updateStory tL_updateStory = new TL_stories.TL_updateStory();
                     tL_updateStory.peer = MessagesController.getInstance(i15).getPeer(j10);
                     tL_updateStory.story = storyItem;
-                    i7Var.Z(tL_updateStory);
+                    h7Var.Z(tL_updateStory);
                     break;
                 }
             case 3:
@@ -158,22 +158,22 @@ public final /* synthetic */ class g0 implements Runnable {
                 ((TopicsController) obj3).lambda$loadTopics$3((TLRPC.TL_messages_savedDialogsSlice) obj2, this.c, (a0.h) obj, this.b);
                 break;
             case 13:
-                org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) obj3;
+                org.telegram.ui.Cells.t1 t1Var = (org.telegram.ui.Cells.t1) obj3;
                 TLRPC.User user = (TLRPC.User) obj2;
                 TLRPC.Chat chat = (TLRPC.Chat) obj;
-                int i16 = u1Var.I7;
+                int i16 = t1Var.I7;
                 if (user == null) {
                     if (chat == null) {
-                        u1Var.X8[i12].n(j10, "", "");
+                        t1Var.X8[i12].n(j10, "", "");
                         break;
                     } else {
-                        u1Var.X8[i12].k(i16, chat);
-                        u1Var.W8[i12].setForUserOrChat(chat, u1Var.X8[i12]);
+                        t1Var.X8[i12].k(i16, chat);
+                        t1Var.W8[i12].setForUserOrChat(chat, t1Var.X8[i12]);
                         break;
                     }
                 } else {
-                    u1Var.X8[i12].m(i16, user);
-                    u1Var.W8[i12].setForUserOrChat(user, u1Var.X8[i12]);
+                    t1Var.X8[i12].m(i16, user);
+                    t1Var.W8[i12].setForUserOrChat(user, t1Var.X8[i12]);
                     break;
                 }
             default:

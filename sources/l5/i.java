@@ -3,7 +3,7 @@ package l5;
 import android.util.Base64;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class i {
     public final String a;
@@ -24,7 +24,7 @@ public final class i {
 
     public final i b(i5.d dVar) {
         androidx.biometric.e a2 = a();
-        a2.v(this.a);
+        a2.u(this.a);
         if (dVar == null) {
             throw new NullPointerException("Null priority");
         }

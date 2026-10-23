@@ -1,50 +1,34 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.widget.LinearLayout;
+import android.view.View;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class w71 extends LinearLayout implements org.telegram.ui.ActionBar.y5 {
-    public final org.telegram.ui.ActionBar.d6 a;
-    public final org.telegram.ui.Components.x90 b;
-    public final org.telegram.ui.Components.x90 c;
-    public final ei.d d;
-    public final ei.d e;
+public final class w71 extends org.telegram.ui.Components.l61 {
+    public static final /* synthetic */ int a = 0;
 
-    public w71(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context);
-        this.a = d6Var;
-        setOrientation(1);
-        int i10 = org.telegram.ui.ActionBar.h6.G6;
-        org.telegram.ui.Components.x90 a2 = w7.d6.a(context, 15.0f, i10, true, d6Var);
-        this.b = a2;
-        a2.setGravity(17);
-        addView(a2, w7.z5.t(-1, -2, 55, 32, 20, 32, 0));
-        org.telegram.ui.Components.x90 a10 = w7.d6.a(context, 13.0f, i10, false, d6Var);
-        this.c = a10;
-        a10.setGravity(17);
-        addView(a10, w7.z5.r(-1, -2, 55, 32.0f, 9.33f, 32.0f, 0.0f));
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(0);
-        ei.d f7 = org.telegram.messenger.nk.f(24, context, d6Var, true);
-        this.d = f7;
-        ei.d f10 = org.telegram.messenger.nk.f(24, context, d6Var, true);
-        this.e = f10;
-        linearLayout.addView(f7, w7.z5.p(0, 42, 1.0f, 112, 0, 0, 12, 0));
-        linearLayout.addView(f10, w7.z5.p(0, 42, 1.0f, 112, 0, 0, 0, 0));
-        addView(linearLayout, w7.z5.t(-1, -2, 55, 24, 18, 24, 16));
+    static {
+        org.telegram.ui.Components.l61.setup(new w71());
     }
 
-    @Override // org.telegram.ui.ActionBar.y5
-    public final void d() {
-        int i10 = org.telegram.ui.ActionBar.h6.G6;
-        org.telegram.ui.ActionBar.d6 d6Var = this.a;
-        this.b.setTextColor(org.telegram.ui.ActionBar.h6.w0(i10, d6Var));
-        this.c.setTextColor(org.telegram.ui.ActionBar.h6.w0(i10, d6Var));
+    @Override // org.telegram.ui.Components.l61
+    public final void bindView(View view, org.telegram.ui.Components.m61 m61Var, boolean z10, org.telegram.ui.Components.b71 b71Var, org.telegram.ui.Components.j71 j71Var) {
+        ((x71) view).set(m61Var.z);
     }
 
-    public /* bridge */ /* synthetic */ int[] getColorKeys() {
-        return null;
+    @Override // org.telegram.ui.Components.l61
+    public final boolean contentsEquals(org.telegram.ui.Components.m61 m61Var, org.telegram.ui.Components.m61 m61Var2) {
+        return m61Var.z == m61Var2.z;
+    }
+
+    @Override // org.telegram.ui.Components.l61
+    public final View createView(Context context, org.telegram.ui.Components.mm0 mm0Var, int i10, int i11, org.telegram.ui.ActionBar.g6 g6Var) {
+        return new x71(context, g6Var);
+    }
+
+    @Override // org.telegram.ui.Components.l61
+    public final boolean equals(org.telegram.ui.Components.m61 m61Var, org.telegram.ui.Components.m61 m61Var2) {
+        return m61Var.d == m61Var2.d;
     }
 }

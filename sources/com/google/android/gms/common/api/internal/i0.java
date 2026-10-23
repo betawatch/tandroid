@@ -17,7 +17,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.locks.ReentrantLock;
 import m.s3;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class i0 extends com.google.android.gms.common.api.m implements u0 {
     public final a0.f E;
@@ -86,7 +86,7 @@ public final class i0 extends com.google.android.gms.common.api.m implements u0 
                     throw th2;
                 }
             }
-            if (sVar.a.B()) {
+            if (sVar.a.P()) {
                 com.google.android.gms.internal.cast.a0 a0Var = sVar.n;
                 a0Var.sendMessage(a0Var.obtainMessage(1, kVar));
             }
@@ -500,7 +500,7 @@ public final class i0 extends com.google.android.gms.common.api.m implements u0 
                     Object obj = arrayList.get(i11);
                     i11++;
                     com.google.android.gms.common.api.k kVar = (com.google.android.gms.common.api.k) obj;
-                    if (!sVar.e || !sVar.a.B() || sVar.f.get() != i10) {
+                    if (!sVar.e || !sVar.a.P() || sVar.f.get() != i10) {
                         break;
                     } else if (!sVar.c.contains(kVar)) {
                         kVar.onConnected(bundle);

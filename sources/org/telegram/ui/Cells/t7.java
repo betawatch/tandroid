@@ -6,15 +6,17 @@ import android.graphics.Paint;
 import android.util.Property;
 import android.view.View;
 import android.widget.FrameLayout;
+import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.nk;
+import org.telegram.messenger.sl;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.xp;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class t7 extends FrameLayout {
+public final class t7 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public p7[] a;
     public MessageObject[] b;
     public int[] c;
@@ -33,7 +35,7 @@ public final class t7 extends FrameLayout {
         return (AndroidUtilities.displaySize.x - (AndroidUtilities.dp(2.0f) * (i10 - 1))) / i10;
     }
 
-    public final void b(int i10, boolean z10) {
+    public final void b(int i10, boolean z10, boolean z11) {
         p7 p7Var = this.a[i10];
         FrameLayout frameLayout = p7Var.f;
         xp xpVar = p7Var.e;
@@ -94,7 +96,7 @@ public final class t7 extends FrameLayout {
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
         View[] viewArr = this.a;
-        int B = this.r == 1 ? nk.B(2.0f, this.e - 1, View.MeasureSpec.getSize(i10)) / this.e : a(this.e);
+        int B = this.r == 1 ? sl.B(2.0f, this.e - 1, View.MeasureSpec.getSize(i10)) / this.e : a(this.e);
         this.h = true;
         for (int i12 = 0; i12 < this.e; i12++) {
             FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) viewArr[i12].getLayoutParams();
@@ -140,5 +142,19 @@ public final class t7 extends FrameLayout {
             i11++;
         }
         this.e = i10;
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void updateColors() {
+        try {
+            this.n.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Lh, false));
+            invalidate();
+        } catch (Exception e) {
+            FileLog.e(e);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

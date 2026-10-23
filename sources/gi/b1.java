@@ -15,24 +15,25 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.nk;
+import org.telegram.messenger.sl;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.r6;
 import org.telegram.ui.Components.x6;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.cy;
-import org.telegram.ui.lq;
-import org.telegram.ui.o80;
-import org.telegram.ui.qn;
+import org.telegram.ui.ey;
+import org.telegram.ui.hi1;
+import org.telegram.ui.nq;
+import org.telegram.ui.sn;
+import org.telegram.ui.u80;
 import org.telegram.ui.web.HttpGetFileTask;
-import org.telegram.ui.zh1;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b1 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -45,13 +46,13 @@ public final /* synthetic */ class b1 implements Runnable {
     public final /* synthetic */ Object n;
     public final /* synthetic */ Object r;
 
-    public /* synthetic */ b1(TLObject tLObject, int i10, org.telegram.ui.ActionBar.b2 b2Var, Context context, long j10, d6 d6Var, org.telegram.ui.web.t tVar, ai.s0 s0Var) {
+    public /* synthetic */ b1(TLObject tLObject, int i10, org.telegram.ui.ActionBar.c2 c2Var, Context context, long j10, g6 g6Var, org.telegram.ui.web.t tVar, ai.s0 s0Var) {
         this.b = tLObject;
         this.c = i10;
-        this.e = b2Var;
+        this.e = c2Var;
         this.f = context;
         this.d = j10;
-        this.h = d6Var;
+        this.h = g6Var;
         this.n = tVar;
         this.r = s0Var;
     }
@@ -60,12 +61,12 @@ public final /* synthetic */ class b1 implements Runnable {
     public final void run() {
         xc a02;
         int i10;
-        cy cyVar;
+        ey eyVar;
         switch (this.a) {
             case 0:
-                org.telegram.ui.ActionBar.b2 b2Var = (org.telegram.ui.ActionBar.b2) this.e;
+                org.telegram.ui.ActionBar.c2 c2Var = (org.telegram.ui.ActionBar.c2) this.e;
                 Context context = (Context) this.f;
-                d6 d6Var = (d6) this.h;
+                g6 g6Var = (g6) this.h;
                 org.telegram.ui.web.t tVar = (org.telegram.ui.web.t) this.n;
                 ai.s0 s0Var = (ai.s0) this.r;
                 TLObject tLObject = this.b;
@@ -79,18 +80,18 @@ public final /* synthetic */ class b1 implements Runnable {
                         TLRPC.TL_botInlineMessageMediaWebPage tL_botInlineMessageMediaWebPage = (TLRPC.TL_botInlineMessageMediaWebPage) botInlineMessage;
                         if (!TextUtils.isEmpty(tL_botInlineMessageMediaWebPage.url)) {
                             String str = tL_botInlineMessageMediaWebPage.url;
-                            c1 c1Var = new c1(b2Var, context, i11, j10, tL_messages_preparedInlineMessage, d6Var, tVar, s0Var);
+                            c1 c1Var = new c1(c2Var, context, i11, j10, tL_messages_preparedInlineMessage, g6Var, tVar, s0Var);
                             int[] iArr = new int[1];
                             NotificationCenter.NotificationCenterDelegate[] notificationCenterDelegateArr = new NotificationCenter.NotificationCenterDelegate[1];
                             TL_account.getWebPagePreview getwebpagepreview = new TL_account.getWebPagePreview();
                             getwebpagepreview.message = str;
                             iArr[0] = ConnectionsManager.getInstance(i11).sendRequestTyped(getwebpagepreview, new org.telegram.messenger.a(), new ai.u0(iArr, c1Var, notificationCenterDelegateArr, i11, 2));
-                            b2Var.setOnCancelListener(new pc(new ah.o(iArr, i11, notificationCenterDelegateArr, 14), 1));
+                            c2Var.setOnCancelListener(new pc(new ah.o(iArr, i11, notificationCenterDelegateArr, 14), 1));
                             break;
                         }
                     }
                     File[] fileArr = new File[1];
-                    d1 d1Var = new d1(b2Var, context, i11, j10, tL_messages_preparedInlineMessage, fileArr, d6Var, tVar, s0Var);
+                    d1 d1Var = new d1(c2Var, context, i11, j10, tL_messages_preparedInlineMessage, fileArr, g6Var, tVar, s0Var);
                     TLRPC.WebDocument webDocument = tL_messages_preparedInlineMessage.result.content;
                     if (webDocument != null && !TextUtils.isEmpty(webDocument.url)) {
                         TLRPC.BotInlineResult botInlineResult = tL_messages_preparedInlineMessage.result;
@@ -98,7 +99,7 @@ public final /* synthetic */ class b1 implements Runnable {
                         if ((botInlineMessage2 instanceof TLRPC.TL_botInlineMessageMediaAuto) || (botInlineMessage2 instanceof TLRPC.TL_botInlineMessageMediaWebPage)) {
                             String str2 = botInlineResult.content.url;
                             String httpUrlExtension = ImageLoader.getHttpUrlExtension(str2, null);
-                            File file = new File(FileLoader.getDirectory(4), Utilities.MD5(str2) + (TextUtils.isEmpty(httpUrlExtension) ? FileLoader.getExtensionByMimeType(tL_messages_preparedInlineMessage.result.content.mime_type) : r4.c.h(".", httpUrlExtension)));
+                            File file = new File(FileLoader.getDirectory(4), Utilities.MD5(str2) + (TextUtils.isEmpty(httpUrlExtension) ? FileLoader.getExtensionByMimeType(tL_messages_preparedInlineMessage.result.content.mime_type) : si.o0.h(".", httpUrlExtension)));
                             if (file.exists()) {
                                 d1Var.run();
                                 break;
@@ -107,7 +108,7 @@ public final /* synthetic */ class b1 implements Runnable {
                                 httpGetFileTask.setDestFile(file);
                                 httpGetFileTask.setMaxSize(8388608L);
                                 httpGetFileTask.execute(str2);
-                                b2Var.setOnCancelListener(new pc(httpGetFileTask, 2));
+                                c2Var.setOnCancelListener(new pc(httpGetFileTask, 2));
                                 break;
                             }
                         }
@@ -135,12 +136,12 @@ public final /* synthetic */ class b1 implements Runnable {
                     MessagesController.getInstance(i12).putUsers(tL_attachMenuBotsBot.users, false);
                     TLRPC.TL_attachMenuBot tL_attachMenuBot = tL_attachMenuBotsBot.bot;
                     if (str3 != null) {
-                        LaunchActivity.G0(launchActivity, launchActivity.O, tL_attachMenuBot, str3, false);
+                        LaunchActivity.H0(launchActivity, launchActivity.O, tL_attachMenuBot, str3, false);
                         break;
                     } else {
-                        org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) i2.e.h(1, arrayList2);
-                        if (AndroidUtilities.isTablet() && !(n2Var instanceof qn) && !arrayList.isEmpty()) {
-                            n2Var = (org.telegram.ui.ActionBar.n2) i2.e.h(1, arrayList);
+                        org.telegram.ui.ActionBar.o2 o2Var = (org.telegram.ui.ActionBar.o2) i2.o1.i(1, arrayList2);
+                        if (AndroidUtilities.isTablet() && !(o2Var instanceof sn) && !arrayList.isEmpty()) {
+                            o2Var = (org.telegram.ui.ActionBar.o2) i2.o1.i(1, arrayList);
                         }
                         ArrayList arrayList4 = new ArrayList();
                         if (!TextUtils.isEmpty(str4)) {
@@ -151,7 +152,7 @@ public final /* synthetic */ class b1 implements Runnable {
                             }
                         }
                         if (arrayList4.isEmpty()) {
-                            cyVar = null;
+                            eyVar = null;
                         } else {
                             Bundle bundle = new Bundle();
                             bundle.putInt("dialogsType", 14);
@@ -162,19 +163,19 @@ public final /* synthetic */ class b1 implements Runnable {
                             bundle.putBoolean("allowUsers", arrayList4.contains("users"));
                             bundle.putBoolean("allowChannels", arrayList4.contains("channels"));
                             bundle.putBoolean("allowBots", arrayList4.contains("bots"));
-                            cyVar = new cy(bundle);
-                            cyVar.C2 = new o80(launchActivity, user, str5, i12);
+                            eyVar = new ey(bundle);
+                            eyVar.C2 = new u80(launchActivity, user, str5, i12);
                         }
                         if (tL_attachMenuBot.inactive) {
                             x6 x6Var = new x6(launchActivity);
-                            x6Var.setColor(h6.x0(null, h6.ia, false));
-                            x6Var.setBackgroundColor(h6.x0(null, h6.L5, false));
+                            x6Var.setColor(k6.x0(null, k6.ia, false));
+                            r6.i(k6.L5, x6Var, null);
                             x6Var.setAttachBot(tL_attachMenuBot);
-                            zh1.a(launchActivity, new lq(launchActivity, i12, this.d, cyVar, n2Var, user, str5), null);
+                            hi1.a(launchActivity, new nq(launchActivity, i12, this.d, eyVar, o2Var, user, str5), null);
                             break;
-                        } else if (cyVar != null) {
-                            if (n2Var != null) {
-                                n2Var.dismissCurrentDialog();
+                        } else if (eyVar != null) {
+                            if (o2Var != null) {
+                                o2Var.dismissCurrentDialog();
                             }
                             for (int i13 = 0; i13 < arrayList3.size(); i13++) {
                                 if (((Dialog) arrayList3.get(i13)).isShowing()) {
@@ -182,27 +183,27 @@ public final /* synthetic */ class b1 implements Runnable {
                                 }
                             }
                             arrayList3.clear();
-                            launchActivity.t0(cyVar);
+                            launchActivity.u0(eyVar);
                             break;
-                        } else if (n2Var instanceof qn) {
-                            qn qnVar = (qn) n2Var;
-                            if (MediaDataController.canShowAttachMenuBot(tL_attachMenuBot, qnVar.i() != null ? qnVar.i() : qnVar.e)) {
-                                qnVar.ba(user.id, str5, false);
+                        } else if (o2Var instanceof sn) {
+                            sn snVar = (sn) o2Var;
+                            if (MediaDataController.canShowAttachMenuBot(tL_attachMenuBot, snVar.i() != null ? snVar.i() : snVar.e)) {
+                                snVar.ba(user.id, str5, false);
                                 break;
                             } else {
-                                a02 = xc.a0(n2Var);
+                                a02 = xc.a0(o2Var);
                                 i10 = R.string.BotAlreadyAddedToAttachMenu;
                             }
                         } else {
-                            a02 = xc.a0(n2Var);
+                            a02 = xc.a0(o2Var);
                             i10 = R.string.BotAlreadyAddedToAttachMenu;
                         }
                     }
                 } else {
-                    a02 = xc.a0((org.telegram.ui.ActionBar.n2) i2.e.h(1, arrayList2));
+                    a02 = xc.a0((org.telegram.ui.ActionBar.o2) i2.o1.i(1, arrayList2));
                     i10 = R.string.BotCantAddToAttachMenu;
                 }
-                nk.q(i10, a02, null);
+                sl.q(i10, a02, null);
                 break;
         }
     }

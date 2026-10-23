@@ -7,26 +7,26 @@ import android.graphics.Rect;
 import android.os.Build;
 import android.os.Looper;
 import android.view.ViewOutlineProvider;
-import ci.o1;
-import org.telegram.ui.v3;
-import org.telegram.ui.xo0;
+import ci.n1;
+import org.telegram.ui.ap0;
+import org.telegram.ui.u3;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public abstract class j0 {
-    public static final o1 a = new o1(23);
-    public static final o1 b = new o1(24);
+    public static final n1 a = new n1(23);
+    public static final n1 b = new n1(24);
     public static Path c;
     public static Outline d;
     public static Rect e;
 
-    public static void a(Canvas canvas, xo0 xo0Var, v3 v3Var) {
+    public static void a(Canvas canvas, ap0 ap0Var, u3 u3Var) {
         Path path;
         Outline outline;
         Rect rect;
-        ViewOutlineProvider outlineProvider = xo0Var.getOutlineProvider();
-        if (canvas.isHardwareAccelerated() || Build.VERSION.SDK_INT < 24 || !xo0Var.getClipToOutline() || outlineProvider == null) {
-            v3Var.run(canvas);
+        ViewOutlineProvider outlineProvider = ap0Var.getOutlineProvider();
+        if (canvas.isHardwareAccelerated() || Build.VERSION.SDK_INT < 24 || !ap0Var.getClipToOutline() || outlineProvider == null) {
+            u3Var.run(canvas);
             return;
         }
         if (Looper.myLooper() == Looper.getMainLooper()) {
@@ -46,10 +46,10 @@ public abstract class j0 {
             rect = new Rect();
         }
         Path path2 = path;
-        outlineProvider.getOutline(xo0Var, outline);
+        outlineProvider.getOutline(ap0Var, outline);
         path2.rewind();
         if (outline.isEmpty() || !outline.getRect(rect)) {
-            v3Var.run(canvas);
+            u3Var.run(canvas);
             return;
         }
         float radius = outline.getRadius();
@@ -60,7 +60,7 @@ public abstract class j0 {
         }
         int save = canvas.save();
         canvas.clipPath(path2);
-        v3Var.run(canvas);
+        u3Var.run(canvas);
         canvas.restoreToCount(save);
     }
 }

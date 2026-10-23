@@ -2,11 +2,11 @@ package org.telegram.utils.recorder.audio;
 
 import android.os.SystemClock;
 import java.nio.ByteBuffer;
-import org.telegram.ui.Components.cy0;
+import org.telegram.ui.Components.fy0;
 import ri.i;
 import ri.o;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c implements Runnable {
     public final /* synthetic */ int a;
@@ -74,7 +74,7 @@ public final /* synthetic */ class c implements Runnable {
                     oVar.h.a("waveform extraction failed", th3);
                     bArr = null;
                 }
-                oVar.i.post(new cy0(oVar, iVar, bArr, 16));
+                oVar.i.post(new fy0(oVar, iVar, bArr, 16));
                 return;
         }
     }

@@ -1,6 +1,6 @@
 package ei;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class y5 implements rg.c {
     public final /* synthetic */ xa a;
@@ -12,14 +12,14 @@ public final class y5 implements rg.c {
     @Override // rg.c
     public final void a() {
         xa xaVar = this.a;
-        xaVar.C0(null, true);
+        xaVar.B0(null, true);
         if (xaVar.M0) {
             vb vbVar = xaVar.A2;
             vbVar.c1.f.d();
             vbVar.k0(-1, false, true);
             xaVar.M0 = false;
         }
-        xaVar.N0(false);
+        xaVar.M0(false);
     }
 
     @Override // rg.c

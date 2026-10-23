@@ -16,9 +16,9 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class yy extends im0 {
+public final class yy extends lm0 {
     public yt E;
     public boolean F;
     public int G;
@@ -48,12 +48,16 @@ public final class yy extends im0 {
         this.e = z10 ? null : new az(tzVar, context);
     }
 
-    @Override // org.telegram.ui.Components.im0
+    @Override // org.telegram.ui.Components.lm0
     public final boolean D(s4.b1 b1Var) {
         return b1Var.f == 0;
     }
 
     public final void E(String str, String str2, boolean z10, boolean z11, boolean z12, String str3, TLObject tLObject) {
+        tz tzVar = this.L;
+        uw uwVar = tzVar.h0;
+        HashMap hashMap = tzVar.l0;
+        yy yyVar = tzVar.n0;
         if (str == null || !str.equals(this.w)) {
             return;
         }
@@ -62,22 +66,19 @@ public final class yy extends im0 {
             F(str, str2, z10, z11, false);
             return;
         }
-        HashMap hashMap = this.y;
+        HashMap hashMap2 = this.y;
         boolean z13 = this.d;
         ArrayList arrayList = this.x;
-        tz tzVar = this.L;
         if (!z13 && TextUtils.isEmpty(str2)) {
             arrayList.clear();
-            hashMap.clear();
+            hashMap2.clear();
             tzVar.o0.e(false);
         }
         if (tLObject instanceof TLRPC.messages_BotResults) {
             int size = arrayList.size();
             TLRPC.messages_BotResults messages_botresults = (TLRPC.messages_BotResults) tLObject;
-            HashMap hashMap2 = tzVar.l0;
-            yy yyVar = tzVar.n0;
-            if (!hashMap2.containsKey(str3)) {
-                tzVar.l0.put(str3, messages_botresults);
+            if (!hashMap.containsKey(str3)) {
+                hashMap.put(str3, messages_botresults);
             }
             if (!z12 && messages_botresults.cache_time != 0) {
                 MessagesStorage.getInstance(tzVar.c1).saveBotCache(str3, messages_botresults);
@@ -86,10 +87,10 @@ public final class yy extends im0 {
             int i10 = 0;
             for (int i11 = 0; i11 < messages_botresults.results.size(); i11++) {
                 TLRPC.BotInlineResult botInlineResult = messages_botresults.results.get(i11);
-                if (!hashMap.containsKey(botInlineResult.id)) {
+                if (!hashMap2.containsKey(botInlineResult.id)) {
                     botInlineResult.query_id = messages_botresults.query_id;
                     arrayList.add(botInlineResult);
-                    hashMap.put(botInlineResult.id, botInlineResult);
+                    hashMap2.put(botInlineResult.id, botInlineResult);
                     i10++;
                 }
             }
@@ -127,8 +128,8 @@ public final class yy extends im0 {
         if (z13) {
             return;
         }
-        if (tzVar.h0.getAdapter() != this) {
-            tzVar.h0.setAdapter(this);
+        if (uwVar.getAdapter() != this) {
+            uwVar.setAdapter(this);
         }
         if (z11 && !TextUtils.isEmpty(str) && TextUtils.isEmpty(str2)) {
             tzVar.i0.h1(0, 0);
@@ -137,11 +138,15 @@ public final class yy extends im0 {
     }
 
     public final void F(final String str, final String str2, final boolean z10, final boolean z11, final boolean z12) {
-        int i10 = this.h;
         tz tzVar = this.L;
-        if (i10 != 0) {
-            if (i10 >= 0) {
-                ConnectionsManager.getInstance(tzVar.c1).cancelRequest(this.h, true);
+        HashMap hashMap = tzVar.l0;
+        uw uwVar = tzVar.h0;
+        xw xwVar = tzVar.o0;
+        int i10 = tzVar.c1;
+        int i11 = this.h;
+        if (i11 != 0) {
+            if (i11 >= 0) {
+                ConnectionsManager.getInstance(i10).cancelRequest(this.h, true);
             }
             this.h = 0;
         }
@@ -151,12 +156,7 @@ public final class yy extends im0 {
         if (azVar != null) {
             azVar.a(z11);
         }
-        int i11 = tzVar.c1;
-        HashMap hashMap = tzVar.l0;
-        uw uwVar = tzVar.h0;
-        xw xwVar = tzVar.o0;
-        int i12 = tzVar.c1;
-        TLObject userOrChat = MessagesController.getInstance(i11).getUserOrChat(MessagesController.getInstance(i12).gifSearchBot);
+        TLObject userOrChat = MessagesController.getInstance(i10).getUserOrChat(MessagesController.getInstance(i10).gifSearchBot);
         boolean z13 = userOrChat instanceof TLRPC.User;
         boolean z14 = this.d;
         if (!z13) {
@@ -164,8 +164,8 @@ public final class yy extends im0 {
                 if (!this.F) {
                     this.F = true;
                     TLRPC.TL_contacts_resolveUsername tL_contacts_resolveUsername = new TLRPC.TL_contacts_resolveUsername();
-                    tL_contacts_resolveUsername.username = MessagesController.getInstance(i12).gifSearchBot;
-                    ConnectionsManager.getInstance(i12).sendRequest(tL_contacts_resolveUsername, new y1(this, 5));
+                    tL_contacts_resolveUsername.username = MessagesController.getInstance(i10).gifSearchBot;
+                    ConnectionsManager.getInstance(i10).sendRequest(tL_contacts_resolveUsername, new x1(this, 5));
                 }
                 if (z14) {
                     return;
@@ -179,7 +179,7 @@ public final class yy extends im0 {
             xwVar.e(true);
         }
         this.n = (TLRPC.User) userOrChat;
-        final String k10 = com.google.android.gms.internal.play_billing.k3.k("gif_search_", str, "_", str2);
+        final String j10 = com.google.android.gms.internal.play_billing.k3.j("gif_search_", str, "_", str2);
         RequestDelegate requestDelegate = new RequestDelegate() { // from class: org.telegram.ui.Components.wy
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(final TLObject tLObject, TLRPC.TL_error tL_error) {
@@ -189,7 +189,7 @@ public final class yy extends im0 {
                 final boolean z15 = z10;
                 final boolean z16 = z11;
                 final boolean z17 = z12;
-                final String str5 = k10;
+                final String str5 = j10;
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.xy
                     @Override // java.lang.Runnable
                     public final void run() {
@@ -208,16 +208,16 @@ public final class yy extends im0 {
             tzVar.i0.h1(0, 0);
             tzVar.E(2);
         }
-        if (z12 && hashMap.containsKey(k10)) {
-            E(str, str2, z10, z11, true, k10, (TLObject) hashMap.get(k10));
+        if (z12 && hashMap.containsKey(j10)) {
+            E(str, str2, z10, z11, true, j10, (TLObject) hashMap.get(j10));
             return;
         }
-        if (tzVar.k0.a.contains(k10)) {
+        if (tzVar.k0.a.contains(j10)) {
             return;
         }
         if (z12) {
             this.h = -1;
-            MessagesStorage.getInstance(i12).getBotCache(k10, requestDelegate);
+            MessagesStorage.getInstance(i10).getBotCache(j10, requestDelegate);
             return;
         }
         TLRPC.TL_messages_getInlineBotResults tL_messages_getInlineBotResults = new TLRPC.TL_messages_getInlineBotResults();
@@ -225,21 +225,23 @@ public final class yy extends im0 {
             str = "";
         }
         tL_messages_getInlineBotResults.query = str;
-        tL_messages_getInlineBotResults.bot = MessagesController.getInstance(i12).getInputUser(this.n);
+        tL_messages_getInlineBotResults.bot = MessagesController.getInstance(i10).getInputUser(this.n);
         tL_messages_getInlineBotResults.offset = str2;
         tL_messages_getInlineBotResults.peer = new TLRPC.TL_inputPeerEmpty();
-        this.h = ConnectionsManager.getInstance(i12).sendRequest(tL_messages_getInlineBotResults, requestDelegate);
+        this.h = ConnectionsManager.getInstance(i10).sendRequest(tL_messages_getInlineBotResults, requestDelegate);
     }
 
     public final void G(String str, boolean z10) {
+        tz tzVar = this.L;
+        uw uwVar = tzVar.h0;
+        int i10 = tzVar.c1;
         if (this.d) {
             return;
         }
-        int i10 = this.h;
-        tz tzVar = this.L;
-        if (i10 != 0) {
-            if (i10 >= 0) {
-                ConnectionsManager.getInstance(tzVar.c1).cancelRequest(this.h, true);
+        int i11 = this.h;
+        if (i11 != 0) {
+            if (i11 >= 0) {
+                ConnectionsManager.getInstance(i10).cancelRequest(this.h, true);
             }
             this.h = 0;
         }
@@ -268,11 +270,9 @@ public final class yy extends im0 {
             F("", "", true, true, true);
             return;
         }
-        yx yxVar = tzVar.p0;
-        uw uwVar = tzVar.h0;
-        int currentPosition = yxVar.getCurrentPosition();
+        int currentPosition = tzVar.p0.getCurrentPosition();
         if (currentPosition != tzVar.r0 && currentPosition != tzVar.s0) {
-            H(MessagesController.getInstance(tzVar.c1).gifSearchEmojies.get(currentPosition - tzVar.t0));
+            H(MessagesController.getInstance(i10).gifSearchEmojies.get(currentPosition - tzVar.t0));
             return;
         }
         s4.g0 adapter = uwVar.getAdapter();
@@ -333,15 +333,15 @@ public final class yy extends im0 {
     @Override // s4.g0
     public final void l() {
         int i10;
+        tz tzVar = this.L;
+        uw uwVar = tzVar.h0;
         if (this.d && (i10 = this.f) != 0) {
-            tz tzVar = this.L;
             if (i10 == Integer.MAX_VALUE) {
                 this.H = tzVar.i1.size();
             } else {
-                uw uwVar = tzVar.h0;
                 zy zyVar = tzVar.i0;
                 if (uwVar.getMeasuredWidth() != 0) {
-                    int measuredWidth = tzVar.h0.getMeasuredWidth();
+                    int measuredWidth = uwVar.getMeasuredWidth();
                     int i11 = zyVar.J;
                     int dp = AndroidUtilities.dp(100.0f);
                     this.H = 0;
@@ -351,7 +351,7 @@ public final class yy extends im0 {
                     int i14 = 0;
                     for (int i15 = 0; i15 < size; i15++) {
                         TLRPC.Document document = (TLRPC.Document) tzVar.i1.get(i15);
-                        fw0 C1 = wz.C1(zyVar.F1(document, document.attributes));
+                        iw0 C1 = wz.C1(zyVar.F1(document, document.attributes));
                         int min = Math.min(i11, (int) Math.floor((((C1.a / C1.b) * dp) / measuredWidth) * i11));
                         if (i12 < min) {
                             this.H += i13;
@@ -380,15 +380,15 @@ public final class yy extends im0 {
         if (b1Var.f != 0) {
             return;
         }
-        org.telegram.ui.Cells.f2 f2Var = (org.telegram.ui.Cells.f2) b1Var.a;
+        org.telegram.ui.Cells.e2 e2Var = (org.telegram.ui.Cells.e2) b1Var.a;
         int i11 = this.J;
         if (i11 >= 0 && i10 >= i11) {
-            f2Var.e((TLRPC.BotInlineResult) this.x.get(i10 - i11), this.n, true, false, false, true);
+            e2Var.e((TLRPC.BotInlineResult) this.x.get(i10 - i11), this.n, true, false, false, true);
             return;
         }
         TLRPC.Document document = (TLRPC.Document) this.L.i1.get(i10);
-        f2Var.getClass();
-        f2Var.d(0, document, "gif" + document);
+        e2Var.getClass();
+        e2Var.d(0, document, "gif" + document);
     }
 
     @Override // s4.g0
@@ -406,20 +406,20 @@ public final class yy extends im0 {
                 view3.setLayoutParams(o0Var);
                 view = view3;
             } else {
-                org.telegram.ui.Cells.n8 n8Var = new org.telegram.ui.Cells.n8(this.c, false, false, tzVar.Z1, tzVar.i2);
-                n8Var.b(0, LocaleController.getString(R.string.FeaturedGifs));
+                org.telegram.ui.Cells.o8 o8Var = new org.telegram.ui.Cells.o8(this.c, false, false, tzVar.Z1, tzVar.i2);
+                o8Var.a(0, LocaleController.getString(R.string.FeaturedGifs));
                 s4.o0 o0Var2 = new s4.o0(-1, -2);
                 ((ViewGroup.MarginLayoutParams) o0Var2).topMargin = AndroidUtilities.dp(2.5f);
                 ((ViewGroup.MarginLayoutParams) o0Var2).bottomMargin = AndroidUtilities.dp(5.5f);
-                n8Var.setLayoutParams(o0Var2);
-                view = n8Var;
+                o8Var.setLayoutParams(o0Var2);
+                view = o8Var;
             }
         } else {
-            org.telegram.ui.Cells.f2 f2Var = new org.telegram.ui.Cells.f2(this.c);
-            f2Var.setIsKeyboard(true);
-            f2Var.setCanPreviewGif(true);
-            view = f2Var;
+            org.telegram.ui.Cells.e2 e2Var = new org.telegram.ui.Cells.e2(this.c);
+            e2Var.setIsKeyboard(true);
+            e2Var.setCanPreviewGif(true);
+            view = e2Var;
         }
-        return new tl0(view);
+        return new wl0(view);
     }
 }

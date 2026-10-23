@@ -14,10 +14,10 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.lb;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.o21;
-import org.telegram.ui.qn;
+import org.telegram.ui.s21;
+import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class y1 implements Runnable {
     public final /* synthetic */ int a;
@@ -38,27 +38,27 @@ public final /* synthetic */ class y1 implements Runnable {
                 d3.d(d3Var);
                 break;
             case 1:
-                if (!d3Var.c0 && d3Var.J != 0) {
+                if (!d3Var.d0 && d3Var.K != 0) {
                     TLRPC.TL_messages_prolongWebView tL_messages_prolongWebView = new TLRPC.TL_messages_prolongWebView();
-                    tL_messages_prolongWebView.bot = MessagesController.getInstance(d3Var.G).getInputUser(d3Var.H);
-                    tL_messages_prolongWebView.peer = MessagesController.getInstance(d3Var.G).getInputPeer(d3Var.I);
-                    tL_messages_prolongWebView.query_id = d3Var.J;
+                    tL_messages_prolongWebView.bot = MessagesController.getInstance(d3Var.H).getInputUser(d3Var.I);
+                    tL_messages_prolongWebView.peer = MessagesController.getInstance(d3Var.H).getInputPeer(d3Var.J);
+                    tL_messages_prolongWebView.query_id = d3Var.K;
                     tL_messages_prolongWebView.silent = false;
-                    if (d3Var.K != 0) {
-                        TLRPC.InputReplyTo createReplyInput = SendMessagesHelper.getInstance(d3Var.G).createReplyInput(d3Var.K);
+                    if (d3Var.L != 0) {
+                        TLRPC.InputReplyTo createReplyInput = SendMessagesHelper.getInstance(d3Var.H).createReplyInput(d3Var.L);
                         tL_messages_prolongWebView.reply_to = createReplyInput;
-                        if (d3Var.L != 0) {
-                            createReplyInput.monoforum_peer_id = MessagesController.getInstance(d3Var.G).getInputPeer(d3Var.L);
+                        if (d3Var.M != 0) {
+                            createReplyInput.monoforum_peer_id = MessagesController.getInstance(d3Var.H).getInputPeer(d3Var.M);
                             tL_messages_prolongWebView.reply_to.flags |= 32;
                         }
                         tL_messages_prolongWebView.flags = 1 | tL_messages_prolongWebView.flags;
-                    } else if (d3Var.L != 0) {
+                    } else if (d3Var.M != 0) {
                         TLRPC.TL_inputReplyToMonoForum tL_inputReplyToMonoForum = new TLRPC.TL_inputReplyToMonoForum();
                         tL_messages_prolongWebView.reply_to = tL_inputReplyToMonoForum;
-                        tL_inputReplyToMonoForum.monoforum_peer_id = MessagesController.getInstance(d3Var.G).getInputPeer(d3Var.L);
+                        tL_inputReplyToMonoForum.monoforum_peer_id = MessagesController.getInstance(d3Var.H).getInputPeer(d3Var.M);
                         tL_messages_prolongWebView.flags = 1 | tL_messages_prolongWebView.flags;
                     }
-                    ConnectionsManager.getInstance(d3Var.G).sendRequest(tL_messages_prolongWebView, new j2(d3Var, i11));
+                    ConnectionsManager.getInstance(d3Var.H).sendRequest(tL_messages_prolongWebView, new j2(d3Var, i11));
                     break;
                 }
                 break;
@@ -66,79 +66,79 @@ public final /* synthetic */ class y1 implements Runnable {
                 d3Var.E();
                 break;
             case 3:
-                d3Var.v.requestLayout();
+                d3Var.w.requestLayout();
                 break;
             case 4:
-                if (!d3Var.x.C()) {
+                if (!d3Var.y.C()) {
                     d3Var.r();
                     break;
                 }
                 break;
             case 5:
-                d3Var.x0 = true;
+                d3Var.y0 = true;
                 d3Var.k(true);
                 break;
             case 6:
                 d3Var.s();
                 break;
             case 7:
-                Paint paint = d3Var.O;
-                u2 u2Var = d3Var.v;
+                Paint paint = d3Var.P;
+                u2 u2Var = d3Var.w;
                 if (u2Var.getSwipeOffsetY() > 0.0f) {
                     paint.setAlpha((int) ((1.0f - w7.r.a(u2Var.getSwipeOffsetY() / u2Var.getHeight(), 0.0f, 1.0f)) * 64.0f));
                 } else {
                     paint.setAlpha(64);
                 }
-                d3Var.e.invalidate();
-                d3Var.x.n(false, false);
-                if (d3Var.c != null) {
+                d3Var.f.invalidate();
+                d3Var.y.n(false, false);
+                if (d3Var.d != null) {
                     float f7 = (1.0f - (Math.min(u2Var.getTopActionBarOffsetY(), u2Var.getTranslationY() - u2Var.getTopActionBarOffsetY()) / u2Var.getTopActionBarOffsetY()) <= 0.5f ? 0 : 1) * 100.0f;
-                    o1.k kVar = d3Var.c;
+                    o1.k kVar = d3Var.d;
                     o1.l lVar = kVar.u;
                     if (((float) lVar.i) != f7) {
                         lVar.i = f7;
                         kVar.h();
                     }
                 }
-                if (d3Var.d0) {
-                    int i12 = d3Var.h.bottom;
+                if (d3Var.e0) {
+                    int i12 = d3Var.n.bottom;
                 } else {
                     Math.max(0.0f, u2Var.getSwipeOffsetY());
                 }
                 System.currentTimeMillis();
                 break;
             case 8:
-                d3Var.x.n(true, false);
+                d3Var.y.n(true, false);
                 break;
             case 9:
-                Activity activity = d3Var.k0;
+                Activity activity = d3Var.l0;
                 if (activity instanceof LaunchActivity) {
-                    ((LaunchActivity) activity).t0(qn.W9(d3Var.H));
+                    ((LaunchActivity) activity).u0(sn.W9(d3Var.I));
                 }
                 d3Var.k(true);
                 break;
             case 10:
-                v2 v2Var = d3Var.x;
+                v2 v2Var = d3Var.y;
                 v2Var.getClass();
                 v2Var.P = System.currentTimeMillis();
                 v2Var.y("settings_button_pressed", null);
                 break;
             case 11:
-                MediaDataController.getInstance(d3Var.G).installShortcut(d3Var.H, MediaDataController.SHORTCUT_TYPE_ATTACHED_BOT);
+                MediaDataController.getInstance(d3Var.H).installShortcut(d3Var.I, MediaDataController.SHORTCUT_TYPE_ATTACHED_BOT);
                 break;
             case 12:
                 pf.d.r(d3Var.getContext(), LocaleController.getString(R.string.BotWebViewToSLink));
                 break;
             case 13:
-                int i13 = d3Var.G;
+                int i13 = d3Var.H;
                 Context context = d3Var.getContext();
-                xc xcVar = new xc(lb.a(d3Var.getContext()), d3Var.E);
-                long j10 = d3Var.H;
-                int i14 = o21.v;
-                o21.L(i13, context, j10, false, false, new ArrayList(), xcVar, null, new byte[0], null, null);
+                xc xcVar = new xc(lb.a(d3Var.getContext()), d3Var.F);
+                long j10 = d3Var.I;
+                int i14 = s21.w;
+                s21.N(i13, context, j10, false, false, new ArrayList(), xcVar, null, new byte[0], null, null);
                 break;
             case 14:
-                d3.j(d3Var.G, d3Var.H, new y1(d3Var, 15));
+                d3.j(d3Var.H, d3Var.I, new y1(d3Var, 15));
                 break;
             case 15:
                 d3Var.k(false);

@@ -5,11 +5,11 @@ import java.net.Socket;
 import java.util.ArrayDeque;
 import java.util.TimerTask;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.hq;
-import org.telegram.ui.ck0;
-import org.telegram.ui.dz;
+import org.telegram.ui.Components.zp;
+import org.telegram.ui.fz;
+import org.telegram.ui.oj0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class r extends TimerTask {
     public final /* synthetic */ int a;
@@ -49,13 +49,13 @@ public final class r extends TimerTask {
                 AndroidUtilities.runOnUIThread(new com.google.firebase.messaging.s(this, 14));
                 break;
             case 2:
-                AndroidUtilities.runOnUIThread(new hq(this, 24));
+                AndroidUtilities.runOnUIThread(new zp(this, 25));
                 break;
             case 3:
-                AndroidUtilities.runOnUIThread(new dz(this, 24));
+                AndroidUtilities.runOnUIThread(new fz(this, 25));
                 break;
             case 4:
-                AndroidUtilities.runOnUIThread(new ck0(this, 6));
+                AndroidUtilities.runOnUIThread(new oj0(this, 7));
                 break;
             default:
                 try {

@@ -4,7 +4,7 @@ import android.os.Bundle;
 import j$.util.Objects;
 import v7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class e1 {
     public static final String j;
@@ -116,7 +116,7 @@ public final class e1 {
         if (i10 == -1) {
             return str;
         }
-        StringBuilder i11 = r4.c.i(str, ", contentPos=");
+        StringBuilder i11 = si.o0.i(str, ", contentPos=");
         i11.append(this.g);
         i11.append(", adGroup=");
         i11.append(i10);

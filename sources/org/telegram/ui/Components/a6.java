@@ -24,7 +24,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public class a6 extends ReplacementSpan {
     private static boolean lockPositionChanging;
@@ -92,10 +92,10 @@ public class a6 extends ReplacementSpan {
 
     public static boolean c(Layout layout, int i10, int i11) {
         if (layout.getText() instanceof Spanned) {
-            o11[] o11VarArr = (o11[]) ((Spanned) layout.getText()).getSpans(Math.max(0, i10), Math.min(layout.getText().length() - 1, i11), o11.class);
-            for (int i12 = 0; o11VarArr != null && i12 < o11VarArr.length; i12++) {
-                o11 o11Var = o11VarArr[i12];
-                if (o11Var != null && o11Var.c()) {
+            r11[] r11VarArr = (r11[]) ((Spanned) layout.getText()).getSpans(Math.max(0, i10), Math.min(layout.getText().length() - 1, i11), r11.class);
+            for (int i12 = 0; r11VarArr != null && i12 < r11VarArr.length; i12++) {
+                r11 r11Var = r11VarArr[i12];
+                if (r11Var != null && r11Var.c()) {
                     return true;
                 }
             }
@@ -480,7 +480,7 @@ public class a6 extends ReplacementSpan {
                                     }
                                 }
                             } else if (r5Var2.k != null) {
-                                r5Var2.setColorFilter(colorFilter == null ? org.telegram.ui.ActionBar.h6.v3 : colorFilter);
+                                r5Var2.setColorFilter(colorFilter == null ? org.telegram.ui.ActionBar.k6.v3 : colorFilter);
                                 v5Var.f.q(currentTimeMillis);
                                 float extraScale2 = v5Var.d.getExtraScale();
                                 if (extraScale2 != 1.0f || v5Var.d.invert) {
@@ -489,9 +489,9 @@ public class a6 extends ReplacementSpan {
                                     r5 r5Var3 = v5Var.f;
                                     Rect rect2 = v5Var.e;
                                     float f17 = v5Var.s * f13;
-                                    ci.g3 g3Var = r5Var3.k;
-                                    if (g3Var != null) {
-                                        g3Var.setImageCoords(rect2);
+                                    ci.f3 f3Var = r5Var3.k;
+                                    if (f3Var != null) {
+                                        f3Var.setImageCoords(rect2);
                                         r5Var3.k.setAlpha(f17);
                                         r5Var3.k.draw(canvas);
                                     }
@@ -500,9 +500,9 @@ public class a6 extends ReplacementSpan {
                                     r5 r5Var4 = v5Var.f;
                                     Rect rect3 = v5Var.e;
                                     float f18 = v5Var.s * f13;
-                                    ci.g3 g3Var2 = r5Var4.k;
-                                    if (g3Var2 != null) {
-                                        g3Var2.setImageCoords(rect3);
+                                    ci.f3 f3Var2 = r5Var4.k;
+                                    if (f3Var2 != null) {
+                                        f3Var2.setImageCoords(rect3);
                                         r5Var4.k.setAlpha(f18);
                                         r5Var4.k.draw(canvas);
                                     }

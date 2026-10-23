@@ -1,60 +1,29 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import android.text.TextPaint;
+import android.text.style.ClickableSpan;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class pm0 implements TextWatcher {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ rm0 b;
+public final class pm0 extends ClickableSpan {
+    public final /* synthetic */ an0 a;
 
-    public pm0(rm0 rm0Var, int i10) {
-        this.b = rm0Var;
-        this.a = i10;
+    public pm0(an0 an0Var) {
+        this.a = an0Var;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        int length;
-        String code;
-        rm0 rm0Var = this.b;
-        if (!rm0Var.H && (length = editable.length()) >= 1) {
-            int i10 = this.a;
-            if (length > 1) {
-                String obj = editable.toString();
-                rm0Var.H = true;
-                for (int i11 = 0; i11 < Math.min(rm0Var.O - i10, length); i11++) {
-                    if (i11 == 0) {
-                        editable.replace(0, length, obj.substring(i11, i11 + 1));
-                    } else {
-                        rm0Var.d[i10 + i11].setText(obj.substring(i11, i11 + 1));
-                    }
-                }
-                rm0Var.H = false;
-            }
-            if (i10 != rm0Var.O - 1) {
-                int i12 = i10 + 1;
-                EditTextBoldCursor editTextBoldCursor = rm0Var.d[i12];
-                editTextBoldCursor.setSelection(editTextBoldCursor.length());
-                rm0Var.d[i12].requestFocus();
-            }
-            int i13 = rm0Var.O;
-            if (i10 == i13 - 1 || (i10 == i13 - 2 && length >= 2)) {
-                code = rm0Var.getCode();
-                if (code.length() == rm0Var.O) {
-                    rm0Var.h(null);
-                }
-            }
-        }
+    @Override // android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        an0 an0Var = this.a;
+        pf.d.r(an0Var.getParentActivity(), an0Var.y.privacy_policy_url);
     }
 
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        super.updateDrawState(textPaint);
+        textPaint.setUnderlineText(true);
+        textPaint.setTypeface(AndroidUtilities.bold());
     }
 }

@@ -2,7 +2,7 @@ package k;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public abstract class a {
     public Object a;
@@ -24,15 +24,15 @@ public abstract class a {
 
     public abstract boolean h();
 
-    public abstract void i(View view);
+    public abstract void j(View view);
 
-    public abstract void j(int i10);
+    public abstract void k(int i10);
 
-    public abstract void k(CharSequence charSequence);
+    public abstract void l(CharSequence charSequence);
 
-    public abstract void l(int i10);
+    public abstract void m(int i10);
 
-    public abstract void m(CharSequence charSequence);
+    public abstract void n(CharSequence charSequence);
 
     public abstract void o(boolean z10);
 }

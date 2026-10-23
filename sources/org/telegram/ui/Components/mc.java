@@ -5,18 +5,18 @@ import android.graphics.Typeface;
 import android.text.method.LinkMovementMethod;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public class mc extends nb {
     public final w9 a;
     public final TextView b;
     public final TextView c;
 
-    public mc(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, d6Var);
-        int themedColor = getThemedColor(org.telegram.ui.ActionBar.h6.Hi);
+    public mc(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(context, g6Var);
+        int i10 = org.telegram.ui.ActionBar.k6.Hi;
+        getThemedColor(i10);
         w9 w9Var = new w9(context);
         this.a = w9Var;
         addView(w9Var, w7.z5.i(29.0f, 29.0f, 8388627, 12.0f, 12.0f, 12.0f, 12.0f));
@@ -26,15 +26,13 @@ public class mc extends nb {
         TextView textView = new TextView(context);
         this.b = textView;
         textView.setSingleLine();
-        textView.setTextColor(themedColor);
-        textView.setTextSize(1, 14.0f);
-        textView.setTypeface(AndroidUtilities.bold());
+        org.telegram.messenger.v0.q(textView, i10, g6Var, 1, 14.0f);
         linearLayout.addView(textView);
         TextView textView2 = new TextView(context);
         this.c = textView2;
         textView2.setMaxLines(2);
-        textView2.setTextColor(themedColor);
-        textView2.setLinkTextColor(getThemedColor(org.telegram.ui.ActionBar.h6.Gi));
+        org.telegram.ui.ActionBar.r6.W(textView2, i10, g6Var);
+        org.telegram.ui.ActionBar.r6.I(textView2, org.telegram.ui.ActionBar.k6.Gi, g6Var);
         textView2.setMovementMethod(new LinkMovementMethod());
         textView2.setTypeface(Typeface.SANS_SERIF);
         textView2.setTextSize(1, 13.0f);

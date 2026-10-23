@@ -25,7 +25,7 @@ import ki.t1;
 import v7.u6;
 import w7.a0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class b implements h {
     public final List a;
@@ -37,7 +37,7 @@ public final class b implements h {
     public final HashMap g;
     public final e2.k h;
     public final oa.d i;
-    public final j2.k j;
+    public final j2.j j;
     public final c2.b k;
     public final UUID l;
     public final Looper m;
@@ -55,7 +55,7 @@ public final class b implements h {
     public le.b y;
     public q z;
 
-    public b(UUID uuid, r rVar, e eVar, t1 t1Var, List list, boolean z10, boolean z11, byte[] bArr, HashMap hashMap, c2.b bVar, Looper looper, oa.d dVar, j2.k kVar) {
+    public b(UUID uuid, r rVar, e eVar, t1 t1Var, List list, boolean z10, boolean z11, byte[] bArr, HashMap hashMap, c2.b bVar, Looper looper, oa.d dVar, j2.j jVar) {
         this.l = uuid;
         this.c = eVar;
         this.d = t1Var;
@@ -73,7 +73,7 @@ public final class b implements h {
         this.k = bVar;
         this.h = new e2.k();
         this.i = dVar;
-        this.j = kVar;
+        this.j = jVar;
         this.p = 2;
         this.m = looper;
         this.n = new o0(this, looper, 5);
@@ -148,7 +148,7 @@ public final class b implements h {
                     String str2 = m0.a;
                     o10.getClass();
                     fVar2.getClass();
-                    fVar2.obtainMessage(1, new a(u2.u.g.getAndIncrement(), true, SystemClock.elapsedRealtime(), o10)).sendToTarget();
+                    fVar2.obtainMessage(1, new a(u2.v.g.getAndIncrement(), true, SystemClock.elapsedRealtime(), o10)).sendToTarget();
                 }
             }
             if (fVar.v != -9223372036854775807L) {
@@ -405,7 +405,7 @@ public final class b implements h {
 
     public final void m(Throwable th2, boolean z10) {
         if ((th2 instanceof NotProvisionedException) || a0.b(th2)) {
-            this.c.g0(this);
+            this.c.P(this);
         } else {
             l(z10 ? 1 : 2, th2);
         }
@@ -425,7 +425,7 @@ public final class b implements h {
             byte[] H = this.b.H();
             this.v = H;
             this.b.h(H, this.j);
-            this.t = this.b.r(this.v);
+            this.t = this.b.C(this.v);
             this.p = 3;
             e2.k kVar = this.h;
             synchronized (kVar.a) {
@@ -438,7 +438,7 @@ public final class b implements h {
             this.v.getClass();
             return true;
         } catch (NotProvisionedException unused) {
-            this.c.g0(this);
+            this.c.P(this);
             return false;
         } catch (Exception e) {
             e = e;
@@ -446,7 +446,7 @@ public final class b implements h {
                 l(1, e);
                 return false;
             }
-            this.c.g0(this);
+            this.c.P(this);
             return false;
         } catch (NoSuchMethodError e7) {
             e = e7;
@@ -474,7 +474,7 @@ public final class b implements h {
             String str = m0.a;
             k02.getClass();
             fVar.getClass();
-            fVar.obtainMessage(2, new a(u2.u.g.getAndIncrement(), z10, SystemClock.elapsedRealtime(), k02)).sendToTarget();
+            fVar.obtainMessage(2, new a(u2.v.g.getAndIncrement(), z10, SystemClock.elapsedRealtime(), k02)).sendToTarget();
         } catch (Exception | NoSuchMethodError e) {
             m(e, true);
         }

@@ -29,7 +29,7 @@ import org.webrtc.MediaStreamTrack;
 import qb.c;
 import v7.s6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class a {
     public static final o0 f;
@@ -221,7 +221,7 @@ public final class a {
     }
 
     public final m1 c() {
-        return new m1(this.c.b(), new a4.l(new fh.b(15), 14));
+        return new m1(this.c.b(), new a4.l(new fh.b(17), 14));
     }
 
     public final boolean equals(Object obj) {
@@ -257,7 +257,7 @@ public final class a {
         o0 o0Var = this.c;
         if (o0Var.f != 0) {
             sb2.append("; ");
-            Collection a2 = new q1(o0Var, new a4.l(new fh.b(14), 14)).a();
+            Collection a2 = new q1(o0Var, new a4.l(new fh.b(16), 14)).a();
             c cVar = j;
             cVar.getClass();
             try {

@@ -2,29 +2,25 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class cu0 extends rv0 {
-    public final /* synthetic */ uv0 G;
+    public final /* synthetic */ xv0 h;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public cu0(uv0 uv0Var, Context context) {
-        super(uv0Var, context, 0, false);
-        this.G = uv0Var;
+    public cu0(xv0 xv0Var, Context context) {
+        super(xv0Var, context);
+        this.h = xv0Var;
     }
 
-    @Override // org.telegram.ui.Components.rv0, s4.g0
+    @Override // s4.g0
     public final void l() {
         super.l();
-        uv0 uv0Var = this.G;
-        nu0 W = uv0Var.W(8);
-        if (W != null && W.r.getVisibility() == 0) {
-            uv0Var.d0.l();
+        xv0 xv0Var = this.h;
+        qu0 X = xv0Var.X(0);
+        if (X == null || X.r.getVisibility() != 0) {
+            return;
         }
-        if (W != null) {
-            et0 et0Var = W.w;
-            ci.a7 a7Var = this.s;
-            et0Var.e(a7Var != null && (a7Var.k() || (uv0Var.j0() && this.s.g() > 0)), true);
-        }
+        xv0Var.I.l();
     }
 }

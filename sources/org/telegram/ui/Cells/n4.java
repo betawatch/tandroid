@@ -3,14 +3,16 @@ package org.telegram.ui.Cells;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public interface n4 {
-    boolean a();
+    boolean c();
 
-    void e(boolean z10, boolean z11);
+    void d(boolean z10, boolean z11);
 
-    void f(TLRPC.ReactionCount reactionCount, boolean z10, float f7, float f10);
+    void e(TLRPC.ReactionCount reactionCount, boolean z10, float f7, float f10);
+
+    boolean g();
 
     float getAlpha();
 
@@ -39,6 +41,4 @@ public interface n4 {
     boolean h();
 
     boolean i();
-
-    boolean j();
 }

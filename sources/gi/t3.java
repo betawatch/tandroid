@@ -3,24 +3,25 @@ package gi;
 import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.x90;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.Components.y90;
 import w7.z5;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class t3 extends org.telegram.ui.Cells.l4 {
-    public final x90 r;
+    public final y90 r;
 
-    public t3(Context context, d6 d6Var) {
-        super(context, d6Var);
-        x90 x90Var = new x90(context, d6Var);
-        this.r = x90Var;
-        x90Var.setTextSize(1, 14.0f);
-        x90Var.setTextColor(h6.w0(h6.z6, d6Var));
-        x90Var.setLinkTextColor(h6.w0(h6.L6, d6Var));
-        x90Var.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
-        addView(x90Var, z5.d(-2, -2.0f, (LocaleController.isRTL ? 3 : 5) | 48, 10.0f, 14.0f, 10.0f, 0.0f));
+    public t3(Context context, g6 g6Var) {
+        super(context, g6Var);
+        y90 y90Var = new y90(context, g6Var);
+        this.r = y90Var;
+        y90Var.setTextSize(1, 14.0f);
+        r6.W(y90Var, k6.z6, g6Var);
+        r6.I(y90Var, k6.L6, g6Var);
+        y90Var.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
+        addView(y90Var, z5.d(-2, -2.0f, (LocaleController.isRTL ? 3 : 5) | 48, 10.0f, 14.0f, 10.0f, 0.0f));
     }
 }

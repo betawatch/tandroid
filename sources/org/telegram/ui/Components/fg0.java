@@ -1,73 +1,79 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.graphics.Canvas;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextPaint;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class fg0 extends LinearLayout {
-    public final LinearLayout a;
-    public final LinearLayout b;
+public final class fg0 extends View {
+    public long E;
+    public float F;
+    public float G;
+    public float H;
+    public yb0 I;
+    public TextPaint a;
+    public TextPaint b;
+    public StaticLayout c;
+    public float d;
+    public float e;
+    public StaticLayout f;
+    public float h;
+    public float n;
+    public boolean r;
+    public f6 s;
+    public boolean v;
+    public hg0 w;
+    public ei.t9 x;
+    public boolean y;
 
-    public fg0(Context context) {
-        super(context);
-        setOrientation(0);
-        setGravity(17);
-        setPadding(AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f));
-        LinearLayout a2 = a(R.drawable.msg_replace, LocaleController.getString(R.string.ReplaceAttachedPollMedia));
-        this.b = a2;
-        addView(a2, w7.z5.n(-2, -1));
-        LinearLayout a10 = a(R.drawable.media_button_restore, LocaleController.getString(R.string.Edit));
-        this.a = a10;
-        addView(a10, w7.z5.n(-2, -1));
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        float e = this.s.e(this.r);
+        if (e <= 0.0f || this.c == null || this.f == null) {
+            return;
+        }
+        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) (e * 255.0f), 31);
+        canvas.save();
+        canvas.translate(((getWidth() - this.d) / 2.0f) - this.e, getHeight() * 0.22f);
+        this.c.draw(canvas);
+        canvas.restore();
+        canvas.save();
+        canvas.translate(((getWidth() - this.h) / 2.0f) - this.n, (getHeight() * 0.22f) + AndroidUtilities.dp(60.0f));
+        this.f.draw(canvas);
+        canvas.restore();
+        canvas.restore();
     }
 
-    public final LinearLayout a(int i10, String str) {
-        Context context = getContext();
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(0);
-        linearLayout.setGravity(17);
-        linearLayout.setPadding(AndroidUtilities.dp(25.0f), AndroidUtilities.dp(7.0f), AndroidUtilities.dp(25.0f), AndroidUtilities.dp(7.0f));
-        ImageView imageView = new ImageView(context);
-        imageView.setImageResource(i10);
-        linearLayout.addView(imageView, w7.z5.k(0.0f, 0.0f, 8.0f, 0.0f, 24, 24));
-        TextView textView = new TextView(context);
-        textView.setGravity(16);
-        textView.setText(str);
-        textView.setTextSize(2, 14.0f);
-        textView.setSingleLine(true);
-        textView.setTextColor(-1);
-        linearLayout.addView(textView, w7.z5.n(-2, -2));
-        w7.b6.a(linearLayout);
-        return linearLayout;
-    }
-
-    @Override // android.widget.LinearLayout, android.view.View
+    @Override // android.view.View
     public final void onMeasure(int i10, int i11) {
-        LinearLayout linearLayout = this.a;
-        ViewGroup.LayoutParams layoutParams = linearLayout.getLayoutParams();
-        ViewGroup.LayoutParams layoutParams2 = linearLayout.getLayoutParams();
-        int size = View.MeasureSpec.getSize(i10);
-        int size2 = View.MeasureSpec.getSize(i11);
-        int paddingRight = getPaddingRight() + getPaddingLeft();
-        int paddingBottom = getPaddingBottom() + getPaddingTop();
-        int max = Math.max(0, size - paddingRight);
-        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(Math.max(0, size2 - paddingBottom), TLObject.FLAG_30);
-        int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(max, TLObject.FLAG_31);
-        linearLayout.measure(makeMeasureSpec2, makeMeasureSpec);
-        LinearLayout linearLayout2 = this.b;
-        linearLayout2.measure(makeMeasureSpec2, makeMeasureSpec);
-        int min = Math.min(Math.max(linearLayout.getMeasuredWidth(), linearLayout2.getMeasuredWidth()), max / 2);
-        layoutParams2.width = min;
-        layoutParams.width = min;
-        super.onMeasure(i10, i11);
+        setMeasuredDimension(View.MeasureSpec.getSize(i10), View.MeasureSpec.getSize(i11));
+        TextPaint textPaint = this.a;
+        textPaint.setColor(-1);
+        textPaint.setShadowLayer(AndroidUtilities.dp(8.0f), 0.0f, 0.0f, 805306368);
+        textPaint.setTextSize(AndroidUtilities.dp(34.0f));
+        TextPaint textPaint2 = this.b;
+        textPaint2.setColor(-1);
+        textPaint2.setShadowLayer(AndroidUtilities.dp(12.0f), 0.0f, 0.0f, 805306368);
+        textPaint2.setTextSize(AndroidUtilities.dp(58.0f));
+        if (this.c == null) {
+            StaticLayout staticLayout = new StaticLayout(LocaleController.getString(R.string.Enhance), textPaint, getMeasuredWidth(), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+            this.c = staticLayout;
+            this.d = staticLayout.getLineCount() > 0 ? this.c.getLineWidth(0) : 0.0f;
+            this.e = this.c.getLineCount() > 0 ? this.c.getLineLeft(0) : 0.0f;
+        }
+    }
+
+    public void setAllowTouch(boolean z10) {
+        this.v = z10;
+    }
+
+    public void setFilterView(hg0 hg0Var) {
+        this.w = hg0Var;
     }
 }

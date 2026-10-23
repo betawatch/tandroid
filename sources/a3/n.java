@@ -30,10 +30,11 @@ import java.util.List;
 import java.util.PriorityQueue;
 import org.telegram.messenger.MediaController;
 import org.telegram.tgnet.TLObject;
-import u2.e1;
+import org.telegram.ui.Wallet.e8;
+import u2.f1;
 import v7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class n extends r2.r {
     public static final int[] S1 = {1920, 1600, 1440, 1280, 960, 854, 640, 540, 480};
@@ -1458,9 +1459,9 @@ public final class n extends r2.r {
     }
 
     @Override // r2.r
-    public final i2.g H(r2.o oVar, b2.w wVar, b2.w wVar2, boolean z10) {
+    public final i2.f H(r2.o oVar, b2.w wVar, b2.w wVar2, boolean z10) {
         int i10;
-        i2.g b10 = oVar.b(wVar, wVar2);
+        i2.f b10 = oVar.b(wVar, wVar2);
         float f7 = wVar.D;
         float f10 = wVar2.D;
         int i11 = b10.e;
@@ -1478,7 +1479,7 @@ public final class n extends r2.r {
             }
         }
         int i12 = i11;
-        return new i2.g(oVar.a, wVar, wVar2, i12 != 0 ? 0 : b10.d, i12);
+        return new i2.f(oVar.a, wVar, wVar2, i12 != 0 ? 0 : b10.d, i12);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:29:0x0056  */
@@ -1643,7 +1644,7 @@ public final class n extends r2.r {
             if (!z10 || (surface = this.r1) == null) {
                 return;
             }
-            sVar.D(surface);
+            sVar.B(surface);
             this.u1 = true;
         }
     }
@@ -1662,7 +1663,7 @@ public final class n extends r2.r {
                 if (surface3 == null || !this.u1) {
                     return;
                 }
-                sVar.D(surface3);
+                sVar.B(surface3);
                 return;
             }
             return;
@@ -1741,11 +1742,11 @@ public final class n extends r2.r {
         this.C1 = j11;
         PriorityQueue priorityQueue = this.j1;
         if (z11) {
-            i2.f fVar = this.O0;
-            int i10 = fVar.d + B;
-            fVar.d = i10;
-            fVar.f += this.A1;
-            fVar.d = priorityQueue.size() + i10;
+            i2.e eVar = this.O0;
+            int i10 = eVar.d + B;
+            eVar.d = i10;
+            eVar.f += this.A1;
+            eVar.d = priorityQueue.size() + i10;
         } else {
             this.O0.j++;
             R0(priorityQueue.size() + B, this.A1);
@@ -1829,7 +1830,7 @@ public final class n extends r2.r {
         List F0 = F0(context, iVar, wVar, z10, z11);
         HashMap hashMap = r2.w.a;
         ArrayList arrayList = new ArrayList(F0);
-        Collections.sort(arrayList, new u5(new org.telegram.ui.web.m(3, context, wVar), 4));
+        Collections.sort(arrayList, new u5(new e8(5, context, wVar), 4));
         return arrayList;
     }
 
@@ -1841,14 +1842,14 @@ public final class n extends r2.r {
     }
 
     public final void R0(int i10, int i11) {
-        i2.f fVar = this.O0;
-        fVar.h += i10;
+        i2.e eVar = this.O0;
+        eVar.h += i10;
         int i12 = i10 + i11;
-        fVar.g += i12;
+        eVar.g += i12;
         this.y1 += i12;
         int i13 = this.z1 + i12;
         this.z1 = i13;
-        fVar.i = Math.max(i13, fVar.i);
+        eVar.i = Math.max(i13, eVar.i);
         int i14 = this.c1;
         if (i14 <= 0 || this.y1 < i14) {
             return;
@@ -1856,13 +1857,13 @@ public final class n extends r2.r {
         K0();
     }
 
-    public final void S0(u2.g0 g0Var) {
+    public final void S0(u2.h0 h0Var) {
         o1 o1Var = this.F;
         if (o1Var.p()) {
             this.P1 = -9223372036854775807L;
             return;
         }
-        int b10 = o1Var.b(g0Var.a);
+        int b10 = o1Var.b(h0Var.a);
         if (b10 == -1) {
             this.P1 = -9223372036854775807L;
         } else {
@@ -1912,7 +1913,7 @@ public final class n extends r2.r {
                     a2.H = nVar2;
                     wVar2 = new b2.w(a2);
                 }
-                i2.g b11 = oVar.b(wVar, wVar2);
+                i2.f b11 = oVar.b(wVar, wVar2);
                 int i18 = length;
                 int i19 = wVar2.A;
                 if (b11.d != 0) {
@@ -2052,9 +2053,9 @@ public final class n extends r2.r {
     }
 
     public final void T0(long j10) {
-        i2.f fVar = this.O0;
-        fVar.k += j10;
-        fVar.l++;
+        i2.e eVar = this.O0;
+        eVar.k += j10;
+        eVar.l++;
         this.E1 += j10;
         this.F1++;
     }
@@ -2096,7 +2097,7 @@ public final class n extends r2.r {
         try {
             return this.n1.d(wVar);
         } catch (o0 e) {
-            throw d(e, wVar, false, 7000);
+            throw c(e, wVar, false, 7000);
         }
     }
 
@@ -2148,8 +2149,17 @@ public final class n extends r2.r {
         L0();
     }
 
-    @Override // r2.r, i2.b, i2.l1
-    public final void c(int i10, Object obj) {
+    @Override // r2.r
+    public final void c0(i2.d dVar) {
+        n4.s sVar = this.b1;
+        Handler handler = (Handler) sVar.b;
+        if (handler != null) {
+            handler.post(new a1.f(3, sVar, dVar));
+        }
+    }
+
+    @Override // r2.r, i2.b, i2.k1
+    public final void d(int i10, Object obj) {
         if (i10 == 1) {
             N0(obj);
             return;
@@ -2257,7 +2267,7 @@ public final class n extends r2.r {
                 Surface surface2 = this.r1;
                 N0(null);
                 obj.getClass();
-                ((n) obj).c(1, surface2);
+                ((n) obj).d(1, surface2);
                 break;
             case 18:
                 boolean z10 = this.B1 != null;
@@ -2269,17 +2279,8 @@ public final class n extends r2.r {
                 }
                 break;
             default:
-                super.c(i10, obj);
+                super.d(i10, obj);
                 break;
-        }
-    }
-
-    @Override // r2.r
-    public final void c0(i2.d dVar) {
-        n4.s sVar = this.b1;
-        Handler handler = (Handler) sVar.b;
-        if (handler != null) {
-            handler.post(new a1.f(3, sVar, dVar));
         }
     }
 
@@ -2312,8 +2313,8 @@ public final class n extends r2.r {
     }
 
     @Override // r2.r
-    public final i2.g e0(qf.b bVar) {
-        i2.g e02 = super.e0(bVar);
+    public final i2.f e0(qf.b bVar) {
+        i2.f e02 = super.e0(bVar);
         b2.w wVar = (b2.w) bVar.c;
         wVar.getClass();
         n4.s sVar = this.b1;
@@ -2476,7 +2477,7 @@ public final class n extends r2.r {
             long nanoTime = System.nanoTime();
             y yVar = this.N1;
             if (yVar != null) {
-                yVar.b(j13, nanoTime, wVar, this.f0);
+                yVar.c(j13, nanoTime, wVar, this.f0);
             }
             M0(lVar, i10, nanoTime);
             T0(zVar.a);
@@ -2491,7 +2492,7 @@ public final class n extends r2.r {
                 y yVar2 = this.N1;
                 if (yVar2 != null) {
                     i13 = i10;
-                    yVar2.b(j13, j14, wVar, this.f0);
+                    yVar2.c(j13, j14, wVar, this.f0);
                 } else {
                     i13 = i10;
                 }
@@ -2535,9 +2536,9 @@ public final class n extends r2.r {
             if (k()) {
                 f7 = this.y;
             } else {
-                e1 e1Var = this.r;
-                e1Var.getClass();
-                f7 = e1Var.f();
+                f1 f1Var = this.r;
+                f1Var.getClass();
+                f7 = f1Var.f();
             }
             if (!f7) {
                 if (!(this.v0 >= 0)) {
@@ -2570,7 +2571,7 @@ public final class n extends r2.r {
         try {
             super.n();
         } finally {
-            sVar.s(this.O0);
+            sVar.r(this.O0);
             sVar.I(a2.d);
         }
     }
@@ -2578,7 +2579,7 @@ public final class n extends r2.r {
     @Override // i2.b
     public final void o(boolean z10, boolean z11) {
         p0 p0Var;
-        this.O0 = new i2.f();
+        this.O0 = new i2.e();
         p1 p1Var = this.d;
         p1Var.getClass();
         boolean z12 = p1Var.b;
@@ -2587,11 +2588,11 @@ public final class n extends r2.r {
             this.K1 = z12;
             n0();
         }
-        i2.f fVar = this.O0;
+        i2.e eVar = this.O0;
         n4.s sVar = this.b1;
         Handler handler = (Handler) sVar.b;
         if (handler != null) {
-            handler.post(new k0(sVar, fVar, 0));
+            handler.post(new k0(sVar, eVar, 0));
         }
         boolean z13 = this.o1;
         a0 a0Var = this.e1;
@@ -2731,7 +2732,7 @@ public final class n extends r2.r {
                 p0();
                 n0();
             } finally {
-                i2.e.D(this.X, null);
+                i2.o1.D(this.X, null);
                 this.X = null;
             }
         } finally {
@@ -2796,9 +2797,9 @@ public final class n extends r2.r {
     }
 
     @Override // r2.r, i2.b
-    public final void u(b2.w[] wVarArr, long j10, long j11, u2.g0 g0Var) {
-        super.u(wVarArr, j10, j11, g0Var);
-        S0(g0Var);
+    public final void u(b2.w[] wVarArr, long j10, long j11, u2.h0 h0Var) {
+        super.u(wVarArr, j10, j11, h0Var);
+        S0(h0Var);
         b0 b0Var = this.i1;
         if (b0Var != null) {
             b0Var.b();
@@ -2932,9 +2933,9 @@ public final class n extends r2.r {
 
     @Override // i2.b
     public final void v() {
-        u2.g0 g0Var = this.G;
-        if (g0Var != null) {
-            S0(g0Var);
+        u2.h0 h0Var = this.G;
+        if (h0Var != null) {
+            S0(h0Var);
         }
     }
 
@@ -2966,7 +2967,7 @@ public final class n extends r2.r {
             try {
                 p0Var.p(j10, j11);
             } catch (o0 e) {
-                throw d(e, e.a, false, 7001);
+                throw c(e, e.a, false, 7001);
             }
         }
         super.x(j10, j11);
@@ -2989,7 +2990,7 @@ public final class n extends r2.r {
         boolean z10;
         int i10 = 0;
         if (!v0.m(wVar.s)) {
-            return i2.e.c(0, 0, 0, 0);
+            return i2.o1.c(0, 0, 0, 0);
         }
         boolean z11 = wVar.w != null;
         Context context = this.Z0;
@@ -2998,11 +2999,11 @@ public final class n extends r2.r {
             F0 = F0(context, iVar, wVar, false, false);
         }
         if (F0.isEmpty()) {
-            return i2.e.c(1, 0, 0, 0);
+            return i2.o1.c(1, 0, 0, 0);
         }
         int i11 = wVar.T;
         if (i11 != 0 && i11 != 2) {
-            return i2.e.c(2, 0, 0, 0);
+            return i2.o1.c(2, 0, 0, 0);
         }
         r2.o oVar = (r2.o) F0.get(0);
         boolean e = oVar.e(context, wVar);
@@ -3018,27 +3019,26 @@ public final class n extends r2.r {
             }
         }
         z10 = true;
-        int i13 = 3;
-        int i14 = 4;
-        int i15 = e ? 4 : 3;
-        int i16 = oVar.f(wVar) ? 16 : 8;
-        int i17 = oVar.g ? 64 : 0;
-        int i18 = z10 ? 128 : 0;
+        int i13 = 4;
+        int i14 = e ? 4 : 3;
+        int i15 = oVar.f(wVar) ? 16 : 8;
+        int i16 = oVar.g ? 64 : 0;
+        int i17 = z10 ? 128 : 0;
         if (Build.VERSION.SDK_INT >= 26 && "video/dolby-vision".equals(wVar.s) && !c2.i.d(context)) {
-            i18 = 256;
+            i17 = 256;
         }
         if (e) {
             List F02 = F0(context, iVar, wVar, z11, true);
             if (!F02.isEmpty()) {
                 HashMap hashMap = r2.w.a;
                 ArrayList arrayList = new ArrayList(F02);
-                Collections.sort(arrayList, new u5(new org.telegram.ui.web.m(i13, context, wVar), i14));
+                Collections.sort(arrayList, new u5(new e8(5, context, wVar), i13));
                 r2.o oVar3 = (r2.o) arrayList.get(0);
                 if (oVar3.e(context, wVar) && oVar3.f(wVar)) {
                     i10 = 32;
                 }
             }
         }
-        return i15 | i16 | i10 | i17 | i18;
+        return i14 | i15 | i10 | i16 | i17;
     }
 }

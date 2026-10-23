@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.Locale;
 import v7.g6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public class l1 implements Iterable, Serializable {
     public static final l1 c = new l1(a2.b);
@@ -27,7 +27,7 @@ public class l1 implements Iterable, Serializable {
             return i13;
         }
         if (i10 < 0) {
-            throw new IndexOutOfBoundsException(i2.e.k(i10, "Beginning index: ", " < 0"));
+            throw new IndexOutOfBoundsException(i2.o1.l(i10, "Beginning index: ", " < 0"));
         }
         if (i11 < i10) {
             throw new IndexOutOfBoundsException(a1.g.l(i10, i11, "Beginning index larger than ending index: ", ", "));

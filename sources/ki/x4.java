@@ -15,7 +15,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class x4 {
     public static ColorMatrixColorFilter f;
@@ -25,10 +25,10 @@ public final class x4 {
     public final RadialProgress2 d;
     public t e;
 
-    public x4(u4 u4Var, org.telegram.ui.ActionBar.d6 d6Var) {
+    public x4(u4 u4Var, org.telegram.ui.ActionBar.g6 g6Var) {
         this.a = new ImageReceiver(u4Var);
         this.b = new ImageReceiver(u4Var);
-        RadialProgress2 radialProgress2 = new RadialProgress2(u4Var, d6Var);
+        RadialProgress2 radialProgress2 = new RadialProgress2(u4Var, g6Var);
         this.d = radialProgress2;
         radialProgress2.d = -1;
         radialProgress2.setColors(1711276032, 2130706432, -1, -2500135);
@@ -57,7 +57,7 @@ public final class x4 {
         } else {
             String str = tVar2.b ? "v" : tVar2.c ? "a" : "p";
             if (tVar2.e != null) {
-                StringBuilder i11 = r4.c.i(str, ":local:");
+                StringBuilder i11 = si.o0.i(str, ":local:");
                 i11.append(this.e.e);
                 sb2 = i11.toString();
             } else {
@@ -74,7 +74,7 @@ public final class x4 {
                         }
                     }
                 }
-                StringBuilder i12 = r4.c.i(str, ":");
+                StringBuilder i12 = si.o0.i(str, ":");
                 i12.append(this.e.a);
                 i12.append(":");
                 i12.append(j10);

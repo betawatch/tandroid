@@ -1,32 +1,27 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.UndoView;
-
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class c71 extends UndoView {
-    public final /* synthetic */ SessionsActivity f0;
+public final /* synthetic */ class c71 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ SessionsActivity b;
+    public final /* synthetic */ boolean c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c71(SessionsActivity sessionsActivity, Context context) {
-        super(context);
-        this.f0 = sessionsActivity;
+    public /* synthetic */ c71(SessionsActivity sessionsActivity, boolean z10, int i10) {
+        this.a = i10;
+        this.b = sessionsActivity;
+        this.c = z10;
     }
 
-    @Override // org.telegram.ui.Components.UndoView
-    public final void e(int i10, boolean z10) {
-        int i11;
-        if (!z10 && getCurrentInfoObject() != null) {
-            TLRPC.TL_authorization tL_authorization = (TLRPC.TL_authorization) getCurrentInfoObject();
-            TL_account.resetAuthorization resetauthorization = new TL_account.resetAuthorization();
-            resetauthorization.hash = tL_authorization.hash;
-            i11 = ((org.telegram.ui.ActionBar.n2) this.f0).currentAccount;
-            ConnectionsManager.getInstance(i11).sendRequest(resetauthorization, new x40(26, this, tL_authorization));
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.k0(this.c);
+                break;
+            default:
+                this.b.k0(this.c);
+                break;
         }
-        super.e(i10, z10);
     }
 }

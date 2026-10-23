@@ -7,23 +7,24 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.Components.e5;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p implements TextView.OnEditorActionListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.b2[] c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.c2[] c;
     public final /* synthetic */ View d;
     public final /* synthetic */ EditTextBoldCursor e;
     public final /* synthetic */ Object f;
 
-    public /* synthetic */ p(EditTextBoldCursor editTextBoldCursor, int i10, Object obj, org.telegram.ui.ActionBar.b2[] b2VarArr, View view, int i11) {
+    public /* synthetic */ p(EditTextBoldCursor editTextBoldCursor, int i10, Object obj, org.telegram.ui.ActionBar.c2[] c2VarArr, View view, int i11) {
         this.a = i11;
         this.e = editTextBoldCursor;
         this.b = i10;
         this.f = obj;
-        this.c = b2VarArr;
+        this.c = c2VarArr;
         this.d = view;
     }
 
@@ -47,12 +48,12 @@ public final /* synthetic */ class p implements TextView.OnEditorActionListener 
                             tL_inputBusinessChatLink.title = obj;
                             d.b(c10, tL_inputBusinessChatLink, null);
                         }
-                        org.telegram.ui.ActionBar.b2[] b2VarArr = this.c;
-                        org.telegram.ui.ActionBar.b2 b2Var = b2VarArr[0];
-                        if (b2Var != null) {
-                            b2Var.dismiss();
+                        org.telegram.ui.ActionBar.c2[] c2VarArr = this.c;
+                        org.telegram.ui.ActionBar.c2 c2Var = c2VarArr[0];
+                        if (c2Var != null) {
+                            c2Var.dismiss();
                         }
-                        if (b2VarArr[0] == v.d) {
+                        if (c2VarArr[0] == v.d) {
                             v.d = null;
                         }
                         View view = this.d;
@@ -64,17 +65,17 @@ public final /* synthetic */ class p implements TextView.OnEditorActionListener 
                 }
                 break;
             default:
+                e5 e5Var = (e5) this.e;
                 MessagesStorage.StringCallback stringCallback = (MessagesStorage.StringCallback) this.f;
                 if (i10 == 6) {
-                    EditTextBoldCursor editTextBoldCursor = this.e;
-                    String obj2 = editTextBoldCursor.getText().toString();
+                    String obj2 = e5Var.getText().toString();
                     if (obj2.length() > this.b) {
-                        AndroidUtilities.shakeView(editTextBoldCursor);
+                        AndroidUtilities.shakeView(e5Var);
                     } else {
                         stringCallback.run(obj2);
-                        org.telegram.ui.ActionBar.b2 b2Var2 = this.c[0];
-                        if (b2Var2 != null) {
-                            b2Var2.dismiss();
+                        org.telegram.ui.ActionBar.c2 c2Var2 = this.c[0];
+                        if (c2Var2 != null) {
+                            c2Var2.dismiss();
                         }
                         View view2 = this.d;
                         if (view2 != null) {

@@ -1,24 +1,22 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.os.Bundle;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class au0 extends org.telegram.ui.sn {
-    public final /* synthetic */ uv0 f;
+public final class au0 extends ir0 {
+    public final /* synthetic */ org.telegram.ui.ActionBar.o2 e1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public au0(uv0 uv0Var, Context context, org.telegram.ui.ActionBar.d5 d5Var, Bundle bundle) {
-        super(context, d5Var, bundle);
-        this.f = uv0Var;
+    public au0(Context context, String str, String str2, org.telegram.ui.ActionBar.g6 g6Var, org.telegram.ui.ActionBar.o2 o2Var) {
+        super(context, null, str, false, str2, false, g6Var);
+        this.e1 = o2Var;
     }
 
-    @Override // org.telegram.ui.sn
-    public final void b(boolean z10) {
-        org.telegram.ui.ActionBar.u0 u0Var = this.f.n0;
-        if (u0Var != null) {
-            u0Var.setShowSearchProgress(z10);
-        }
+    @Override // org.telegram.ui.Components.ir0
+    public final void W0(a0.h hVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
+        AndroidUtilities.runOnUIThread(new org.telegram.ui.h4(this.e1, hVar, i10, 20), 100L);
     }
 }

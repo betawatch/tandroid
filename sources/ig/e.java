@@ -2,7 +2,6 @@ package ig;
 
 import android.app.Activity;
 import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -11,17 +10,19 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.r6;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.nq;
 import org.telegram.ui.Components.q6;
 import org.telegram.ui.Components.w9;
-import org.telegram.ui.qn;
+import org.telegram.ui.sn;
 import w7.z5;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class e extends FrameLayout {
     public final int a;
@@ -39,14 +40,14 @@ public final class e extends FrameLayout {
     public String x;
     public float y;
 
-    public e(Activity activity, d6 d6Var, qn qnVar) {
+    public e(Activity activity, g6 g6Var, sn snVar) {
         super(activity);
-        this.a = qnVar.getCurrentAccount();
+        this.a = snVar.getCurrentAccount();
         this.r = false;
         w9 w9Var = new w9(activity);
         this.c = w9Var;
-        TLRPC.User user = qnVar.getMessagesController().getUser(Long.valueOf(this.v));
-        h9 h9Var = new h9((d6) null);
+        TLRPC.User user = snVar.getMessagesController().getUser(Long.valueOf(this.v));
+        h9 h9Var = new h9((g6) null);
         this.b = h9Var;
         h9Var.r(user);
         w9Var.setRoundRadius(AndroidUtilities.dp(16.0f));
@@ -62,7 +63,7 @@ public final class e extends FrameLayout {
         q6Var.setTypeface(AndroidUtilities.bold());
         q6Var.setTextSize(AndroidUtilities.dp(14.0f));
         q6Var.setText(UserObject.getUserName(user));
-        q6Var.setTextColor(h6.w0(h6.G6, d6Var));
+        r6.a0(q6Var, k6.G6, g6Var);
         q6Var.setEllipsizeByGradient(true);
         linearLayout.addView(q6Var, z5.k(0.0f, 0.0f, 0.0f, 1.0f, -1, 17));
         q6 q6Var2 = new q6(activity, false, false, false);
@@ -71,7 +72,7 @@ public final class e extends FrameLayout {
         q6Var2.getDrawable().r(true, false);
         q6Var2.setTextSize(AndroidUtilities.dp(13.0f));
         q6Var2.setText(LocaleController.getString(R.string.BizBotStatusManages));
-        q6Var2.setTextColor(h6.w0(h6.ge, d6Var));
+        r6.a0(q6Var2, k6.ge, g6Var);
         q6Var2.setEllipsizeByGradient(true);
         linearLayout.addView(q6Var2, z5.n(-1, 17));
         addView(linearLayout, z5.d(-2, -2.0f, 16, 52.0f, 0.0f, 49.0f, 0.0f));
@@ -82,13 +83,16 @@ public final class e extends FrameLayout {
         nqVar.setScaleProperty(0.6f);
         nqVar.setTypeface(AndroidUtilities.bold());
         int dp = AndroidUtilities.dp(14.0f);
-        int i10 = h6.Oh;
-        int w02 = h6.w0(i10, d6Var);
-        int v = h6.v(h6.w0(i10, d6Var), h6.m1(0.12f, -1));
-        nqVar.setBackgroundDrawable(h6.j0(dp, dp, dp, dp, w02, v, v));
+        int i10 = k6.Oh;
+        int w02 = k6.w0(i10, g6Var);
+        int v = k6.v(k6.w0(i10, g6Var), k6.o1(0.12f, -1));
+        org.telegram.ui.Cells.y j02 = k6.j0(dp, dp, dp, dp, w02, v, v);
+        n6 O = r6.O(i10);
+        nqVar.setBackground(j02);
+        r6.k(nqVar, j02, O, null, g6Var);
         nqVar.setTextSize(AndroidUtilities.dp(14.0f));
         nqVar.setGravity(5);
-        nqVar.setTextColor(h6.w0(h6.Sh, d6Var));
+        r6.a0(nqVar, k6.Sh, g6Var);
         nqVar.setPadding(AndroidUtilities.dp(13.0f), 0, AndroidUtilities.dp(13.0f), 0);
         nqVar.setOnClickListener(new hg.r0(this, 5));
         nqVar.setOnWidthUpdatedListener(new d(this, 0));
@@ -98,9 +102,13 @@ public final class e extends FrameLayout {
         this.n = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setImageResource(R.drawable.msg_mini_customize);
-        imageView.setBackground(h6.N(h6.w0(h6.i6, d6Var), 0, 0));
-        imageView.setColorFilter(new PorterDuffColorFilter(h6.w0(h6.de, d6Var), PorterDuff.Mode.MULTIPLY));
-        imageView.setOnClickListener(new ai.v0(this, qnVar, d6Var, 10));
+        int i11 = k6.i6;
+        org.telegram.ui.Cells.y N = k6.N(k6.w0(i11, g6Var), 0, 0);
+        n6 O2 = r6.O(i11);
+        imageView.setBackground(N);
+        r6.k(imageView, N, null, O2, g6Var);
+        r6.t(imageView, k6.de, g6Var, PorterDuff.Mode.MULTIPLY);
+        imageView.setOnClickListener(new ai.v0(this, snVar, g6Var, 10));
         addView(imageView, z5.d(32, 32.0f, 21, 8.0f, 0.0f, 6.0f, 0.0f));
     }
 

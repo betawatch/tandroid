@@ -7,27 +7,27 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.Components.am0;
 import org.telegram.ui.Components.o20;
 import org.telegram.ui.Components.v30;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.Components.xl0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final class c implements xl0 {
-    public final /* synthetic */ d6 a;
+public final class c implements am0 {
+    public final /* synthetic */ g6 a;
     public final /* synthetic */ Context b;
     public final /* synthetic */ f c;
 
-    public c(Context context, d6 d6Var, f fVar) {
+    public c(Context context, g6 g6Var, f fVar) {
         this.c = fVar;
-        this.a = d6Var;
+        this.a = g6Var;
         this.b = context;
     }
 
-    @Override // org.telegram.ui.Components.xl0
-    public final void a(int i10, View view) {
+    @Override // org.telegram.ui.Components.am0
+    public final void d(int i10, View view) {
         TLRPC.TL_help_country tL_help_country;
         f fVar = this.c;
         o20 o20Var = fVar.h0;

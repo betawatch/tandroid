@@ -1,6 +1,6 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ie implements Runnable {
     public final /* synthetic */ int a;
@@ -35,7 +35,7 @@ public final /* synthetic */ class ie implements Runnable {
                 if (pfVar2 != null) {
                     pfVar2.setText("");
                 }
-                chatActivityEnterView.I(true);
+                chatActivityEnterView.F(true);
                 break;
             case 3:
                 chatActivityEnterView.p0.callOnClick();
@@ -44,8 +44,8 @@ public final /* synthetic */ class ie implements Runnable {
                 chatActivityEnterView.p0.callOnClick();
                 break;
             default:
-                int i11 = ChatActivityEnterView.n5;
-                chatActivityEnterView.A();
+                int i11 = ChatActivityEnterView.r5;
+                chatActivityEnterView.z();
                 break;
         }
     }

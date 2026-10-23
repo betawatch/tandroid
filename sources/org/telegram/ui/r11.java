@@ -1,34 +1,75 @@
 package org.telegram.ui;
 
-import android.transition.Transition;
+import android.content.SharedPreferences;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class r11 implements Transition.TransitionListener {
-    public final /* synthetic */ Runnable a;
+public final class r11 extends org.telegram.ui.ActionBar.j {
+    public final /* synthetic */ w11 a;
 
-    public r11(Runnable runnable) {
-        this.a = runnable;
+    public r11(w11 w11Var) {
+        this.a = w11Var;
     }
 
-    @Override // android.transition.Transition.TransitionListener
-    public final void onTransitionEnd(Transition transition) {
-        this.a.run();
-    }
-
-    @Override // android.transition.Transition.TransitionListener
-    public final void onTransitionCancel(Transition transition) {
-    }
-
-    @Override // android.transition.Transition.TransitionListener
-    public final void onTransitionPause(Transition transition) {
-    }
-
-    @Override // android.transition.Transition.TransitionListener
-    public final void onTransitionResume(Transition transition) {
-    }
-
-    @Override // android.transition.Transition.TransitionListener
-    public final void onTransitionStart(Transition transition) {
+    @Override // org.telegram.ui.ActionBar.j
+    public final void b(int i10) {
+        w11 w11Var = this.a;
+        boolean z10 = w11Var.I;
+        SharedConfig.ProxyInfo proxyInfo = w11Var.J;
+        if (i10 == -1) {
+            w11Var.finishFragment();
+            return;
+        }
+        boolean z11 = true;
+        if (i10 != 1 || w11Var.getParentActivity() == null) {
+            return;
+        }
+        k2.q0 a2 = qi.a.a();
+        int i11 = w11Var.v;
+        if (i11 == 0) {
+            i11 = 1;
+        }
+        a2.a = i11;
+        String obj = w11Var.a[0].getText().toString();
+        if (obj == null) {
+            obj = "";
+        }
+        a2.c = obj;
+        a2.b = w11Var.v == 3 ? 0 : Utilities.parseInt((CharSequence) w11Var.a[1].getText().toString()).intValue();
+        String obj2 = w11Var.v == 1 ? w11Var.a[2].getText().toString() : "";
+        if (obj2 == null) {
+            obj2 = "";
+        }
+        a2.d = obj2;
+        String obj3 = w11Var.v == 1 ? w11Var.a[3].getText().toString() : "";
+        if (obj3 == null) {
+            obj3 = "";
+        }
+        a2.e = obj3;
+        String obj4 = w11Var.v != 1 ? w11Var.a[4].getText().toString() : "";
+        a2.f = obj4 != null ? obj4 : "";
+        proxyInfo.settings = a2.b();
+        SharedPreferences globalMainSettings = MessagesController.getGlobalMainSettings();
+        SharedPreferences.Editor edit = globalMainSettings.edit();
+        if (z10) {
+            SharedConfig.addProxy(proxyInfo);
+            SharedConfig.currentProxy = proxyInfo;
+            edit.putBoolean("proxy_enabled", true);
+        } else {
+            z11 = globalMainSettings.getBoolean("proxy_enabled", false);
+            SharedConfig.saveProxyList();
+        }
+        if (z10 || SharedConfig.currentProxy == proxyInfo) {
+            proxyInfo.settings.h(edit);
+            ConnectionsManager.setProxySettings(z11, proxyInfo.settings);
+        }
+        edit.commit();
+        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.proxySettingsChanged, new Object[0]);
+        w11Var.finishFragment();
     }
 }

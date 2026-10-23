@@ -8,10 +8,11 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.r6;
 import w7.z5;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class t extends LinearLayout {
     public final TextView a;
@@ -25,13 +26,13 @@ public final class t extends LinearLayout {
         TextView textView = new TextView(context);
         this.a = textView;
         textView.setTextSize(1, 16.0f);
-        textView.setTextColor(h6.x0(null, h6.j5, false));
+        r6.W(textView, k6.j5, null);
         textView.setGravity(LocaleController.isRTL ? 5 : 3);
         addView(textView, z5.t(-1, -2, 51, 0, 7, 0, 0));
         TextView textView2 = new TextView(context);
         this.b = textView2;
         textView2.setTextSize(1, 13.0f);
-        textView2.setTextColor(h6.x0(null, h6.q5, false));
+        r6.W(textView2, k6.q5, null);
         textView2.setGravity(LocaleController.isRTL ? 5 : 3);
         addView(textView2, z5.t(-1, -2, 51, 0, 4, 0, 0));
     }
@@ -40,7 +41,7 @@ public final class t extends LinearLayout {
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (this.c) {
-            canvas.drawRect(getPaddingLeft(), getHeight() - 1, getWidth(), getHeight(), h6.k0);
+            canvas.drawRect(getPaddingLeft(), getHeight() - 1, getWidth(), getHeight(), k6.k0);
         }
     }
 

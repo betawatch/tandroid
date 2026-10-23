@@ -1,87 +1,29 @@
 package j2;
 
-import android.content.ClipData;
 import android.media.metrics.LogSessionId;
-import android.net.Uri;
-import android.os.Bundle;
-import android.view.ContentInfo;
-import v7.u6;
+import android.os.Build;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public final class j implements r0.d, r0.f {
-    public final /* synthetic */ int a = 0;
-    public Object b;
+public final class j {
+    public static final j c;
+    public final String a;
+    public final i b;
 
-    public j() {
-        LogSessionId logSessionId;
-        logSessionId = LogSessionId.LOG_SESSION_ID_NONE;
-        this.b = logSessionId;
+    static {
+        new j("");
+        c = new j("preload");
     }
 
-    @Override // r0.f
-    public ClipData a() {
-        return ((ContentInfo) this.b).getClip();
+    public j(String str) {
+        this.a = str;
+        this.b = Build.VERSION.SDK_INT >= 31 ? new i() : null;
     }
 
-    @Override // r0.d
-    public void b(Uri uri) {
-        ((ContentInfo.Builder) this.b).setLinkUri(uri);
-    }
-
-    @Override // r0.d
-    public r0.g build() {
-        return new r0.g(new j(((ContentInfo.Builder) this.b).build()));
-    }
-
-    @Override // r0.d
-    public void c(int i10) {
-        ((ContentInfo.Builder) this.b).setFlags(i10);
-    }
-
-    @Override // r0.f
-    public ContentInfo d() {
-        return (ContentInfo) this.b;
-    }
-
-    @Override // r0.f
-    public int e() {
-        return ((ContentInfo) this.b).getSource();
-    }
-
-    public void f(LogSessionId logSessionId) {
-        LogSessionId logSessionId2;
-        LogSessionId logSessionId3 = (LogSessionId) this.b;
-        logSessionId2 = LogSessionId.LOG_SESSION_ID_NONE;
-        u6.p(logSessionId3.equals(logSessionId2));
-        this.b = logSessionId;
-    }
-
-    @Override // r0.f
-    public int k() {
-        return ((ContentInfo) this.b).getFlags();
-    }
-
-    @Override // r0.d
-    public void setExtras(Bundle bundle) {
-        ((ContentInfo.Builder) this.b).setExtras(bundle);
-    }
-
-    public String toString() {
-        switch (this.a) {
-            case 2:
-                return "ContentInfoCompat{" + ((ContentInfo) this.b) + "}";
-            default:
-                return super.toString();
-        }
-    }
-
-    public j(ContentInfo contentInfo) {
-        contentInfo.getClass();
-        this.b = contentInfo;
-    }
-
-    public j(ClipData clipData, int i10) {
-        this.b = r0.c.a(clipData, i10);
+    public final synchronized LogSessionId a() {
+        i iVar;
+        iVar = this.b;
+        iVar.getClass();
+        return (LogSessionId) iVar.b;
     }
 }

@@ -8,7 +8,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class v6 implements Runnable {
     public final /* synthetic */ int a;
@@ -46,7 +46,7 @@ public final /* synthetic */ class v6 implements Runnable {
                 ((FilesMigrationService) this.c).lambda$updateProgress$1(this.b);
                 break;
             case 7:
-                MediaController.lambda$saveFile$50((org.telegram.ui.ActionBar.b2) this.c, this.b);
+                MediaController.lambda$saveFile$50((org.telegram.ui.ActionBar.c2) this.c, this.b);
                 break;
             case 8:
                 PushListenerController.lambda$sendRegistrationToServer$1((String) this.c, this.b);

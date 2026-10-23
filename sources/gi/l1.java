@@ -20,40 +20,41 @@ import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.nk;
+import org.telegram.messenger.sl;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.Components.b71;
 import org.telegram.ui.Components.bb;
-import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.jm0;
-import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.lm0;
+import org.telegram.ui.Components.mm0;
 import org.webrtc.MediaStreamTrack;
 import w7.z5;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class l1 extends bb {
     public final int X;
     public final String Y;
-    public u61 Z;
+    public b71 Z;
     public final i1 a0;
     public boolean b0;
     public boolean c0;
     public final ai.s0 d0;
+    public int e0;
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r11v1 */
     /* JADX WARN: Type inference failed for: r11v11 */
     /* JADX WARN: Type inference failed for: r11v2, types: [boolean, int] */
-    public l1(Context context, int i10, long j10, TLRPC.TL_messages_preparedInlineMessage tL_messages_preparedInlineMessage, File file, TLRPC.WebPage webPage, d6 d6Var, org.telegram.ui.web.t tVar, ai.s0 s0Var) {
-        super(context, null, false, false, d6Var);
+    public l1(Context context, int i10, long j10, TLRPC.TL_messages_preparedInlineMessage tL_messages_preparedInlineMessage, File file, TLRPC.WebPage webPage, g6 g6Var, org.telegram.ui.web.t tVar, ai.s0 s0Var) {
+        super(context, null, false, false, g6Var);
         ?? r11;
         int i11;
-        k1 Q;
+        k1 P;
         String str;
         String absolutePath;
         boolean z10;
@@ -65,7 +66,7 @@ public final class l1 extends bb {
         this.X = i10;
         this.Y = UserObject.getUserName(MessagesController.getInstance(i10).getUser(Long.valueOf(j10)));
         this.d0 = s0Var;
-        L();
+        K();
         this.I = AndroidUtilities.dp(4.0f);
         this.J = AndroidUtilities.dp(-10.0f);
         TLRPC.BotInlineResult botInlineResult = tL_messages_preparedInlineMessage.result;
@@ -284,41 +285,41 @@ public final class l1 extends bb {
             }
             i11 = i10;
             r11 = z10;
-            Q = Q(i11, j10, botInlineResult, tL_photo, tL_document, null);
+            P = P(i11, j10, botInlineResult, tL_photo, tL_document, null);
         } else {
             r11 = 1;
             i11 = i10;
-            Q = Q(i11, j10, botInlineResult, null, null, webPage);
+            P = P(i11, j10, botInlineResult, null, null, webPage);
         }
-        k1 k1Var = Q;
-        org.telegram.ui.Cells.w0 w0Var = new org.telegram.ui.Cells.w0(context, d6Var, false);
-        w0Var.setDelegate(new f1());
-        w0Var.setCustomText(LocaleController.getString(R.string.BotShareMessagePreview));
+        k1 k1Var = P;
+        org.telegram.ui.Cells.v0 v0Var = new org.telegram.ui.Cells.v0(context, g6Var, false);
+        v0Var.setDelegate(new f1());
+        v0Var.setCustomText(LocaleController.getString(R.string.BotShareMessagePreview));
         g1 g1Var = new g1(context, i11);
         g1Var.setDelegate(new h1());
-        g1Var.X3(k1Var, null, false, false, false, false);
-        LinearLayout e = nk.e(context, r11);
-        e.addView(w0Var, z5.n(-1, -2));
+        g1Var.W3(k1Var, null, false, false, false, false);
+        LinearLayout e = sl.e(context, r11);
+        e.addView(v0Var, z5.n(-1, -2));
         e.addView(g1Var, z5.n(-1, -2));
         i1 i1Var = new i1(context, null);
         this.a0 = i1Var;
-        i1Var.V(r6.e(null, i11, j10, h6.I.q()));
+        i1Var.U(r6.e(null, i11, j10, k6.I.q()));
         i1Var.addView(e, z5.d(-1, -1.0f, 119, 4.0f, 8.0f, 4.0f, 8.0f));
         FrameLayout frameLayout = new FrameLayout(context);
-        ei.d f7 = nk.f(24, context, d6Var, r11);
-        f7.g(LocaleController.getString(R.string.BotShareMessageShare), false, r11);
-        f7.setOnClickListener(new ai.e1(this, tL_messages_preparedInlineMessage, s0Var, i11, j10, tVar));
-        frameLayout.addView(f7, z5.d(-1, 48.0f, 119, 10.0f, 10.0f, 10.0f, 10.0f));
+        ei.d g10 = sl.g(24, context, g6Var, r11);
+        g10.i(LocaleController.getString(R.string.BotShareMessageShare), false, r11);
+        g10.setOnClickListener(new ai.e1(this, tL_messages_preparedInlineMessage, s0Var, i11, j10, tVar));
+        frameLayout.addView(g10, z5.d(-1, 48.0f, 119, 10.0f, 10.0f, 10.0f, 10.0f));
         ViewGroup viewGroup = this.containerView;
         int i13 = this.backgroundPaddingLeft;
         viewGroup.addView(frameLayout, z5.f(-2.0f, 87, i13, 0, i13, 0));
-        jm0 jm0Var = this.d;
+        mm0 mm0Var = this.d;
         int i14 = this.backgroundPaddingLeft;
-        jm0Var.setPadding(i14, 0, i14, AndroidUtilities.dp(68.0f) + r11);
-        this.d.p1();
-        int i15 = h6.a7;
+        mm0Var.setPadding(i14, 0, i14, AndroidUtilities.dp(68.0f) + r11);
+        this.d.t1();
+        int i15 = k6.a7;
         setBackgroundColor(getThemedColor(i15));
-        fixNavigationBar(getThemedColor(i15));
+        fixNavigationBarKey(i15);
         this.Z.N(false);
     }
 
@@ -327,7 +328,7 @@ public final class l1 extends bb {
     /* JADX WARN: Type inference failed for: r9v0, types: [org.telegram.tgnet.TLRPC$TL_document] */
     /* JADX WARN: Type inference failed for: r9v1, types: [org.telegram.tgnet.TLRPC$Document] */
     /* JADX WARN: Type inference failed for: r9v2, types: [org.telegram.tgnet.TLRPC$Document] */
-    public static k1 Q(int i10, long j10, TLRPC.BotInlineResult botInlineResult, TLRPC.TL_photo tL_photo, TLRPC.TL_document tL_document, TLRPC.WebPage webPage) {
+    public static k1 P(int i10, long j10, TLRPC.BotInlineResult botInlineResult, TLRPC.TL_photo tL_photo, TLRPC.TL_document tL_document, TLRPC.WebPage webPage) {
         TLRPC.ReplyMarkup replyMarkup;
         TLRPC.TL_photo tL_photo2 = tL_photo;
         if (tL_photo == null) {
@@ -446,21 +447,16 @@ public final class l1 extends bb {
         return new k1(i10, tL_message, true, true);
     }
 
-    public static void R(Context context, int i10, long j10, String str, d6 d6Var, org.telegram.ui.web.t tVar, ai.s0 s0Var) {
-        org.telegram.ui.ActionBar.b2 b2Var = new org.telegram.ui.ActionBar.b2(context, 3, null);
-        b2Var.r(500L);
+    public static void Q(Context context, int i10, long j10, String str, g6 g6Var, org.telegram.ui.web.t tVar, ai.s0 s0Var) {
+        org.telegram.ui.ActionBar.c2 c2Var = new org.telegram.ui.ActionBar.c2(context, 3, null);
+        c2Var.r(500L);
         TLRPC.TL_messages_getPreparedInlineMessage tL_messages_getPreparedInlineMessage = new TLRPC.TL_messages_getPreparedInlineMessage();
         tL_messages_getPreparedInlineMessage.bot = MessagesController.getInstance(i10).getInputUser(j10);
         tL_messages_getPreparedInlineMessage.id = str;
-        ConnectionsManager.getInstance(i10).sendRequest(tL_messages_getPreparedInlineMessage, new z0(i10, b2Var, context, j10, d6Var, tVar, s0Var));
+        ConnectionsManager.getInstance(i10).sendRequest(tL_messages_getPreparedInlineMessage, new z0(i10, c2Var, context, j10, g6Var, tVar, s0Var));
     }
 
-    @Override // org.telegram.ui.Components.bb
-    public final CharSequence A() {
-        return LocaleController.getString(R.string.BotShareMessage);
-    }
-
-    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
+    @Override // org.telegram.ui.ActionBar.h3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.k2
     public final void dismiss() {
         super.dismiss();
         if (this.b0 || this.c0) {
@@ -473,17 +469,36 @@ public final class l1 extends bb {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog
+    @Override // org.telegram.ui.ActionBar.h3, android.app.Dialog
     public final void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        jm0 jm0Var = this.d;
-        jm0Var.u0(Math.max((jm0Var.getAdapter() == null ? 0 : jm0Var.getAdapter().h()) - 1, 0));
+        mm0 mm0Var = this.d;
+        mm0Var.u0(Math.max((mm0Var.getAdapter() == null ? 0 : mm0Var.getAdapter().h()) - 1, 0));
+    }
+
+    @Override // org.telegram.ui.ActionBar.h3
+    public final void onThemeColorsChanged() {
+        try {
+            super.onThemeColorsChanged();
+            int themedColor = getThemedColor(k6.a7);
+            if (themedColor != this.e0) {
+                this.e0 = themedColor;
+                setBackgroundColor(themedColor);
+            }
+        } catch (Exception e) {
+            FileLog.e(e);
+        }
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final im0 x(jm0 jm0Var) {
-        u61 u61Var = new u61(jm0Var, getContext(), this.X, 0, true, new ai.q(this, 26), this.resourcesProvider);
-        this.Z = u61Var;
-        return u61Var;
+    public final lm0 w(mm0 mm0Var) {
+        b71 b71Var = new b71(mm0Var, getContext(), this.X, 0, true, new ai.q(this, 26), this.resourcesProvider);
+        this.Z = b71Var;
+        return b71Var;
+    }
+
+    @Override // org.telegram.ui.Components.bb
+    public final CharSequence z() {
+        return LocaleController.getString(R.string.BotShareMessage);
     }
 }

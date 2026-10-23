@@ -29,14 +29,15 @@ import kotlin.jvm.internal.p;
 import org.json.JSONException;
 import td.l;
 import v0.j;
-import v0.n;
+import v0.o;
 import v0.q;
 import v0.r;
+import v0.s;
 import w0.a;
 import w0.c;
 import w7.h8;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class CredentialProviderPlayServicesImpl implements j {
     public static final h Companion = new h();
@@ -321,20 +322,20 @@ public final class CredentialProviderPlayServicesImpl implements j {
         }
     }
 
-    public void onGetCredential(Context context, q pendingGetCredentialHandle, CancellationSignal cancellationSignal, Executor executor, v0.i callback) {
+    public void onGetCredential(Context context, r pendingGetCredentialHandle, CancellationSignal cancellationSignal, Executor executor, v0.i callback) {
         i.e(context, "context");
         i.e(pendingGetCredentialHandle, "pendingGetCredentialHandle");
         i.e(executor, "executor");
         i.e(callback, "callback");
     }
 
-    public void onPrepareCredential(n request, CancellationSignal cancellationSignal, Executor executor, v0.i callback) {
+    public void onPrepareCredential(o request, CancellationSignal cancellationSignal, Executor executor, v0.i callback) {
         i.e(request, "request");
         i.e(executor, "executor");
         i.e(callback, "callback");
     }
 
-    public void onSignalCredentialState(r request, Executor executor, v0.i iVar) {
+    public void onSignalCredentialState(s request, Executor executor, v0.i iVar) {
         i.e(request, "request");
         throw null;
     }
@@ -354,24 +355,24 @@ public final class CredentialProviderPlayServicesImpl implements j {
     }
 
     @Override // v0.j
-    public void onGetCredential(Context context, n request, CancellationSignal cancellationSignal, Executor executor, v0.i callback) {
+    public void onGetCredential(Context context, o request, CancellationSignal cancellationSignal, Executor executor, v0.i callback) {
         i.e(context, "context");
         i.e(request, "request");
-        List<v0.p> list = request.a;
+        List<q> list = request.a;
         i.e(executor, "executor");
         i.e(callback, "callback");
         Companion.getClass();
         if (h.a(cancellationSignal)) {
             return;
         }
-        for (v0.p pVar : list) {
+        for (q qVar : list) {
         }
         Companion.getClass();
-        for (v0.p pVar2 : list) {
+        for (q qVar2 : list) {
         }
         if (!isAvailableOnDevice(PRE_U_MIN_GMS_APK_VERSION)) {
             Companion.getClass();
-            for (v0.p pVar3 : list) {
+            for (q qVar3 : list) {
             }
             new c1.e(context).g(request, cancellationSignal, executor, callback);
             return;
@@ -387,11 +388,11 @@ public final class CredentialProviderPlayServicesImpl implements j {
         Bundle h = a1.g.h("androidx.credentials.BUNDLE_KEY_PREFER_IDENTITY_DOC_UI", false);
         h.putBoolean("androidx.credentials.BUNDLE_KEY_PREFER_IMMEDIATELY_AVAILABLE_CREDENTIALS", request.b);
         h.putParcelable("androidx.credentials.BUNDLE_KEY_PREFER_UI_BRANDING_COMPONENT_NAME", null);
-        List<v0.p> list2 = list;
+        List<q> list2 = list;
         ArrayList arrayList = new ArrayList(jd.i.d(list2));
-        for (v0.p pVar4 : list2) {
-            pVar4.getClass();
-            arrayList.add(new g7.h("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL", pVar4.a, pVar4.b, "", "", ""));
+        for (q qVar4 : list2) {
+            qVar4.getClass();
+            arrayList.add(new g7.h("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL", qVar4.a, qVar4.b, "", "", ""));
         }
         GetCredentialRequest getCredentialRequest = new GetCredentialRequest(arrayList, h, null, new ResultReceiver(null));
         Context context2 = aVar.e;

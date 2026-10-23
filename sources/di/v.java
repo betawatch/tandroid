@@ -9,12 +9,14 @@ import android.text.TextUtils;
 import android.util.LongSparseArray;
 import android.view.View;
 import android.widget.FrameLayout;
+import ci.g7;
 import ci.h7;
-import ci.i7;
-import ci.t6;
+import ci.s6;
 import ei.a8;
 import java.util.ArrayList;
+import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
@@ -22,57 +24,58 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.g0;
+import org.telegram.messenger.v0;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.ActionBar.b6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.o2;
 import org.telegram.ui.Cells.s7;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.d91;
-import org.telegram.ui.Components.jm0;
-import org.telegram.ui.Components.js0;
+import org.telegram.ui.Components.k91;
+import org.telegram.ui.Components.mm0;
+import org.telegram.ui.Components.ms0;
 import org.telegram.ui.Components.ti;
-import org.telegram.ui.Components.yq;
+import org.telegram.ui.Components.xq;
 import w7.z5;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public abstract class v extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
+public abstract class v extends FrameLayout implements b6, NotificationCenter.NotificationCenterDelegate {
     public static LongSparseArray E;
     public static LongSparseArray F;
-    public final n2 a;
+    public final o2 a;
     public final int b;
-    public final d6 c;
+    public final g6 c;
     public final long d;
-    public final t6 e;
+    public final s6 e;
     public final ArrayList f;
     public final ArrayList h;
     public final a n;
-    public final d91 r;
+    public final k91 r;
     public Boolean s;
     public int v;
     public float w;
     public ValueAnimator x;
     public int y;
 
-    public v(Context context, n2 n2Var, long j10) {
+    public v(Context context, o2 o2Var, long j10) {
         super(context);
         this.f = new ArrayList();
         this.h = new ArrayList();
         this.s = null;
         this.v = AndroidUtilities.displaySize.y;
         this.y = Utilities.clamp(SharedConfig.storiesColumnsCount, 6, 2);
-        this.a = n2Var;
-        int currentAccount = n2Var.getCurrentAccount();
+        this.a = o2Var;
+        int currentAccount = o2Var.getCurrentAccount();
         this.b = currentAccount;
-        d6 resourceProvider = n2Var.getResourceProvider();
+        g6 resourceProvider = o2Var.getResourceProvider();
         this.c = resourceProvider;
         this.d = j10;
-        setBackgroundColor(h6.v(h6.w0(h6.d6, resourceProvider), h6.m1(0.04f, h6.w0(h6.G6, resourceProvider))));
+        setBackgroundColor(k6.v(k6.w0(k6.d6, resourceProvider), k6.o1(0.04f, k6.w0(k6.G6, resourceProvider))));
         if (F == null) {
             F = new LongSparseArray();
         }
@@ -84,45 +87,45 @@ public abstract class v extends FrameLayout implements NotificationCenter.Notifi
             longSparseArray2.put(j11, longSparseArray3);
             longSparseArray = longSparseArray3;
         }
-        t6 t6Var = (t6) longSparseArray.get(j10);
-        if (t6Var == null) {
-            t6 t6Var2 = new t6(currentAccount, j10, "", null);
-            longSparseArray.put(j10, t6Var2);
-            t6Var = t6Var2;
+        s6 s6Var = (s6) longSparseArray.get(j10);
+        if (s6Var == null) {
+            s6 s6Var2 = new s6(currentAccount, j10, "", null);
+            longSparseArray.put(j10, s6Var2);
+            s6Var = s6Var2;
         }
-        this.e = t6Var;
-        js0 js0Var = (js0) this;
-        a aVar = new a(js0Var, context);
+        this.e = s6Var;
+        ms0 ms0Var = (ms0) this;
+        a aVar = new a(ms0Var, context);
         this.n = aVar;
         aVar.setAllowDisallowInterceptTouch(true);
-        aVar.setAdapter(new b(js0Var, context));
+        aVar.setAdapter(new b(ms0Var, context));
         addView(aVar, z5.e(-1, -1, 119));
-        d91 n10 = aVar.n(9, true);
+        k91 n10 = aVar.n(9, true);
         this.r = n10;
         n10.r = 12;
-        n10.setPreTabClick(new a1.c(js0Var, 28));
+        n10.setPreTabClick(new a1.c(ms0Var, 28));
         addView(n10, z5.e(-1, 42, 48));
         i(false);
     }
 
     public final void a(String str) {
-        n2 n2Var = this.a;
-        if (n2Var == null || n2Var.getParentActivity() == null) {
+        o2 o2Var = this.a;
+        if (o2Var == null || o2Var.getParentActivity() == null) {
             return;
         }
-        ti tiVar = new ti(n2Var.getParentActivity(), this.a, false, false, false, this.c);
-        tiVar.N1(1, false);
+        ti tiVar = new ti(o2Var.getParentActivity(), this.a, false, false, false, this.c);
+        tiVar.R1(1, false);
         tiVar.W0 = true;
         tiVar.V0 = false;
         tiVar.m1.setText(LocaleController.getString(R.string.ChoosePhotoOrVideo));
         tiVar.j0.f0();
         tiVar.c2 = new c(this, tiVar, str);
-        tiVar.t1();
+        tiVar.w1();
         tiVar.show();
     }
 
     public final void b(String str) {
-        t6 t6Var;
+        s6 s6Var;
         TLRPC.MessageMedia messageMedia;
         if (TextUtils.isEmpty(str)) {
             return;
@@ -133,18 +136,18 @@ public abstract class v extends FrameLayout implements NotificationCenter.Notifi
         while (true) {
             ArrayList arrayList = this.f;
             if (i10 >= arrayList.size()) {
-                t6Var = null;
+                s6Var = null;
                 break;
             }
-            t6Var = (t6) arrayList.get(i10);
-            if (t6Var != null && TextUtils.equals(t6Var.E, str)) {
+            s6Var = (s6) arrayList.get(i10);
+            if (s6Var != null && TextUtils.equals(s6Var.E, str)) {
                 break;
             } else {
                 i10++;
             }
         }
-        if (t6Var != null) {
-            ArrayList arrayList2 = t6Var.i;
+        if (s6Var != null) {
+            ArrayList arrayList2 = s6Var.i;
             TL_bots.deletePreviewMedia deletepreviewmedia = new TL_bots.deletePreviewMedia();
             int i11 = this.b;
             deletepreviewmedia.bot = MessagesController.getInstance(i11).getInputUser(this.d);
@@ -164,12 +167,12 @@ public abstract class v extends FrameLayout implements NotificationCenter.Notifi
     public abstract boolean c(MessageObject messageObject);
 
     public final boolean d() {
-        t6 t6Var;
+        s6 s6Var;
         View currentView = this.n.getCurrentView();
-        if (!(currentView instanceof r) || (t6Var = ((r) currentView).a) == null) {
+        if (!(currentView instanceof r) || (s6Var = ((r) currentView).a) == null) {
             return true;
         }
-        ArrayList arrayList = t6Var.i;
+        ArrayList arrayList = s6Var.i;
         for (int i10 = 0; i10 < arrayList.size(); i10++) {
             if (!c((MessageObject) arrayList.get(i10))) {
                 return false;
@@ -200,8 +203,8 @@ public abstract class v extends FrameLayout implements NotificationCenter.Notifi
             return;
         }
         Object obj = objArr[0];
-        t6 t6Var = this.e;
-        if (obj == t6Var) {
+        s6 s6Var = this.e;
+        if (obj == s6Var) {
             i(true);
             View[] viewPages2 = aVar.getViewPages();
             int length2 = viewPages2.length;
@@ -209,7 +212,7 @@ public abstract class v extends FrameLayout implements NotificationCenter.Notifi
                 View view2 = viewPages2[i13];
                 if (view2 instanceof r) {
                     r rVar = (r) view2;
-                    if (rVar.a == t6Var) {
+                    if (rVar.a == s6Var) {
                         rVar.v.l();
                     }
                 }
@@ -233,12 +236,12 @@ public abstract class v extends FrameLayout implements NotificationCenter.Notifi
     public abstract boolean e(MessageObject messageObject);
 
     public final void f() {
-        t6 t6Var;
+        s6 s6Var;
         View currentView = this.n.getCurrentView();
-        if (!(currentView instanceof r) || (t6Var = ((r) currentView).a) == null) {
+        if (!(currentView instanceof r) || (s6Var = ((r) currentView).a) == null) {
             return;
         }
-        ArrayList arrayList = t6Var.i;
+        ArrayList arrayList = s6Var.i;
         for (int i10 = 0; i10 < arrayList.size(); i10++) {
             if (!c((MessageObject) arrayList.get(i10))) {
                 e((MessageObject) arrayList.get(i10));
@@ -255,9 +258,9 @@ public abstract class v extends FrameLayout implements NotificationCenter.Notifi
         StringBuilder sb2 = new StringBuilder();
         View currentView = this.n.getCurrentView();
         if (currentView instanceof r) {
-            t6 t6Var = ((r) currentView).a;
-            if (t6Var != null) {
-                ArrayList arrayList = t6Var.i;
+            s6 s6Var = ((r) currentView).a;
+            if (s6Var != null) {
+                ArrayList arrayList = s6Var.i;
                 i10 = 0;
                 i11 = 0;
                 for (int i12 = 0; i12 < arrayList.size(); i12++) {
@@ -293,28 +296,28 @@ public abstract class v extends FrameLayout implements NotificationCenter.Notifi
 
     public String getCurrentLang() {
         View view;
-        t6 t6Var;
+        s6 s6Var;
         a aVar = this.n;
         View[] viewPages = aVar.getViewPages();
         if (Math.abs(aVar.getCurrentPosition() - aVar.getPositionAnimated()) >= 0.5f || (view = viewPages[1]) == null) {
             view = viewPages[0];
         }
-        if (!(view instanceof r) || (t6Var = ((r) view).a) == null) {
+        if (!(view instanceof r) || (s6Var = ((r) view).a) == null) {
             return null;
         }
-        return t6Var.E;
+        return s6Var.E;
     }
 
-    public t6 getCurrentList() {
-        t6 t6Var;
+    public s6 getCurrentList() {
+        s6 s6Var;
         View currentView = this.n.getCurrentView();
-        if (!(currentView instanceof r) || (t6Var = ((r) currentView).a) == null) {
+        if (!(currentView instanceof r) || (s6Var = ((r) currentView).a) == null) {
             return null;
         }
-        return t6Var;
+        return s6Var;
     }
 
-    public jm0 getCurrentListView() {
+    public mm0 getCurrentListView() {
         View currentView = this.n.getCurrentView();
         if (currentView instanceof r) {
             return ((r) currentView).f;
@@ -323,12 +326,12 @@ public abstract class v extends FrameLayout implements NotificationCenter.Notifi
     }
 
     public int getItemsCount() {
-        t6 t6Var;
+        s6 s6Var;
         View currentView = this.n.getCurrentView();
-        if (!(currentView instanceof r) || (t6Var = ((r) currentView).a) == null) {
+        if (!(currentView instanceof r) || (s6Var = ((r) currentView).a) == null) {
             return 0;
         }
-        return t6Var.i.size();
+        return s6Var.i.size();
     }
 
     public int getStartedTrackingX() {
@@ -336,12 +339,12 @@ public abstract class v extends FrameLayout implements NotificationCenter.Notifi
     }
 
     public final void h() {
-        t6 t6Var;
+        s6 s6Var;
         View currentView = this.n.getCurrentView();
-        if (!(currentView instanceof r) || (t6Var = ((r) currentView).a) == null) {
+        if (!(currentView instanceof r) || (s6Var = ((r) currentView).a) == null) {
             return;
         }
-        ArrayList arrayList = t6Var.i;
+        ArrayList arrayList = s6Var.i;
         for (int i10 = 0; i10 < arrayList.size(); i10++) {
             if (c((MessageObject) arrayList.get(i10))) {
                 g((MessageObject) arrayList.get(i10));
@@ -350,7 +353,7 @@ public abstract class v extends FrameLayout implements NotificationCenter.Notifi
     }
 
     public final void i(boolean z10) {
-        t6 t6Var;
+        s6 s6Var;
         a8 a8Var;
         ArrayList arrayList = new ArrayList(this.e.G);
         ArrayList arrayList2 = this.h;
@@ -364,7 +367,7 @@ public abstract class v extends FrameLayout implements NotificationCenter.Notifi
                 arrayList.add(str);
             }
         }
-        i7 storiesController = MessagesController.getInstance(this.b).getStoriesController();
+        h7 storiesController = MessagesController.getInstance(this.b).getStoriesController();
         long j10 = this.d;
         ArrayList E2 = storiesController.E(j10);
         if (E2 != null) {
@@ -373,8 +376,8 @@ public abstract class v extends FrameLayout implements NotificationCenter.Notifi
             while (i11 < size2) {
                 Object obj2 = E2.get(i11);
                 i11++;
-                h7 h7Var = (h7) obj2;
-                if (h7Var != null && (a8Var = h7Var.c) != null && a8Var.J0 == j10 && !TextUtils.isEmpty(a8Var.K0) && !arrayList.contains(a8Var.K0)) {
+                g7 g7Var = (g7) obj2;
+                if (g7Var != null && (a8Var = g7Var.c) != null && a8Var.J0 == j10 && !TextUtils.isEmpty(a8Var.K0) && !arrayList.contains(a8Var.K0)) {
                     arrayList.add(a8Var.K0);
                 }
             }
@@ -391,33 +394,33 @@ public abstract class v extends FrameLayout implements NotificationCenter.Notifi
             int i13 = 0;
             while (true) {
                 if (i13 >= arrayList4.size()) {
-                    t6Var = null;
+                    s6Var = null;
                     break;
                 } else {
-                    if (TextUtils.equals(((t6) arrayList4.get(i13)).E, str2)) {
-                        t6Var = (t6) arrayList4.get(i13);
+                    if (TextUtils.equals(((s6) arrayList4.get(i13)).E, str2)) {
+                        s6Var = (s6) arrayList4.get(i13);
                         break;
                     }
                     i13++;
                 }
             }
-            if (t6Var == null) {
-                t6 t6Var2 = new t6(this.b, this.d, str2, null);
-                t6Var2.H(null);
-                t6Var = t6Var2;
+            if (s6Var == null) {
+                s6 s6Var2 = new s6(this.b, this.d, str2, null);
+                s6Var2.H(null);
+                s6Var = s6Var2;
             }
-            arrayList3.add(t6Var);
+            arrayList3.add(s6Var);
         }
         a aVar = this.n;
         aVar.o(true);
-        SpannableString spannableString = new SpannableString(g0.g(R.string.ProfileBotLanguageAdd, new StringBuilder("+ ")));
-        yq yqVar = new yq(R.drawable.msg_filled_plus, 0);
-        yqVar.setScale(0.9f, 0.9f);
-        yqVar.spaceScaleX = 0.85f;
-        spannableString.setSpan(yqVar, 0, 1, 33);
-        d91 d91Var = this.r;
-        d91Var.a(-1, spannableString);
-        d91Var.x.l();
+        SpannableString spannableString = new SpannableString(v0.h(R.string.ProfileBotLanguageAdd, new StringBuilder("+ ")));
+        xq xqVar = new xq(R.drawable.msg_filled_plus, 0);
+        xqVar.setScale(0.9f, 0.9f);
+        xqVar.spaceScaleX = 0.85f;
+        spannableString.setSpan(xqVar, 0, 1, 33);
+        k91 k91Var = this.r;
+        k91Var.a(-1, spannableString);
+        k91Var.x.l();
         boolean z11 = arrayList3.size() + 1 > 1;
         Boolean bool = this.s;
         if (bool == null || bool.booleanValue() != z11) {
@@ -428,7 +431,7 @@ public abstract class v extends FrameLayout implements NotificationCenter.Notifi
             this.s = Boolean.valueOf(z11);
             if (!z10) {
                 this.w = z11 ? 1.0f : 0.0f;
-                d91Var.setTranslationY(AndroidUtilities.dp(z11 ? 0.0f : -42.0f));
+                k91Var.setTranslationY(AndroidUtilities.dp(z11 ? 0.0f : -42.0f));
                 aVar.setTranslationY(AndroidUtilities.dp(z11 ? 42.0f : 0.0f));
                 return;
             }
@@ -502,5 +505,20 @@ public abstract class v extends FrameLayout implements NotificationCenter.Notifi
                 }
             }
         }
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void updateColors() {
+        g6 g6Var = this.c;
+        try {
+            setBackgroundColor(k6.v(k6.w0(k6.d6, g6Var), k6.o1(0.04f, k6.w0(k6.G6, g6Var))));
+            invalidate();
+        } catch (Exception e) {
+            FileLog.e(e);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

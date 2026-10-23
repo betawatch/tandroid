@@ -2,7 +2,7 @@ package d6;
 
 import android.os.Parcel;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class z extends b8.b {
     public final h b;
@@ -39,7 +39,7 @@ public final class z extends b8.b {
                 com.google.android.gms.internal.cast.v.b(parcel);
                 f fVar2 = (f) x6.b.L0(K02);
                 if (cls.isInstance(fVar2) && hVar != null) {
-                    hVar.v((f) cls.cast(fVar2), readString);
+                    hVar.w((f) cls.cast(fVar2), readString);
                 }
                 parcel2.writeNoException();
                 return true;
@@ -58,7 +58,7 @@ public final class z extends b8.b {
                 com.google.android.gms.internal.cast.v.b(parcel);
                 f fVar4 = (f) x6.b.L0(K04);
                 if (cls.isInstance(fVar4) && hVar != null) {
-                    hVar.r((f) cls.cast(fVar4));
+                    hVar.u((f) cls.cast(fVar4));
                 }
                 parcel2.writeNoException();
                 return true;
@@ -99,7 +99,7 @@ public final class z extends b8.b {
                 com.google.android.gms.internal.cast.v.b(parcel);
                 f fVar8 = (f) x6.b.L0(K08);
                 if (cls.isInstance(fVar8) && hVar != null) {
-                    hVar.q((f) cls.cast(fVar8), readInt3);
+                    hVar.r((f) cls.cast(fVar8), readInt3);
                 }
                 parcel2.writeNoException();
                 return true;
@@ -109,7 +109,7 @@ public final class z extends b8.b {
                 com.google.android.gms.internal.cast.v.b(parcel);
                 f fVar9 = (f) x6.b.L0(K09);
                 if (cls.isInstance(fVar9) && hVar != null) {
-                    hVar.w((f) cls.cast(fVar9), readInt4);
+                    hVar.z((f) cls.cast(fVar9), readInt4);
                 }
                 parcel2.writeNoException();
                 return true;

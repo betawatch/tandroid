@@ -11,10 +11,10 @@ import android.view.View;
 import java.util.HashMap;
 import java.util.Map;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.nk;
+import org.telegram.messenger.sl;
 import org.telegram.ui.Components.bs;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class u extends View {
     public final Paint a;
@@ -50,7 +50,7 @@ public final class u extends View {
                 if (i11 == 0) {
                     this.n.put(Long.valueOf((i10 << 16) + i11), Integer.valueOf(i0.a.f(i10 / 11.0f, -1, -16777216)));
                 } else {
-                    this.n.put(Long.valueOf((i10 << 16) + i11), Integer.valueOf(i11 < 6 ? i0.a.f(((5 - i11) / 4.0f) * 0.5f, this.b[i10], -16777216) : i0.a.f(nk.x(9 - i11, 5.0f, 0.5f, 0.5f), this.b[i10], -1)));
+                    this.n.put(Long.valueOf((i10 << 16) + i11), Integer.valueOf(i11 < 6 ? i0.a.f(((5 - i11) / 4.0f) * 0.5f, this.b[i10], -16777216) : i0.a.f(sl.x(9 - i11, 5.0f, 0.5f, 0.5f), this.b[i10], -1)));
                 }
             }
         }
@@ -87,7 +87,7 @@ public final class u extends View {
         if (num != null) {
             int intValue = num.intValue();
             int i10 = y.s;
-            this.r.n(intValue, 3);
+            this.r.m(intValue, 3);
             b(x10, y3);
         }
     }

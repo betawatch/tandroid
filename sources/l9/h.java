@@ -22,7 +22,7 @@ import n6.l;
 import r9.n;
 import s9.k;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class h {
     public static final Object k = new Object();
@@ -52,17 +52,16 @@ public final class h {
         a aVar = FirebaseInitProvider.a;
         Trace.beginSection("Firebase");
         Trace.beginSection("ComponentDiscovery");
-        int i10 = 19;
-        ArrayList S = new q(i10, context, new w0(ComponentDiscoveryService.class, i10)).S();
+        ArrayList H = new q(18, context, new w0(ComponentDiscoveryService.class, 19)).H();
         Trace.endSection();
         Trace.beginSection("Runtime");
         k kVar = k.a;
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList();
-        arrayList.addAll(S);
-        int i11 = 1;
-        arrayList.add(new r9.c(new FirebaseCommonRegistrar(), i11));
-        arrayList.add(new r9.c(new ExecutorsRegistrar(), i11));
+        arrayList.addAll(H);
+        int i10 = 1;
+        arrayList.add(new r9.c(new FirebaseCommonRegistrar(), i10));
+        arrayList.add(new r9.c(new ExecutorsRegistrar(), i10));
         arrayList2.add(r9.a.c(context, Context.class, new Class[0]));
         arrayList2.add(r9.a.c(this, h.class, new Class[0]));
         arrayList2.add(r9.a.c(jVar, j.class, new Class[0]));
@@ -227,8 +226,8 @@ public final class h {
 
     public final String toString() {
         q qVar = new q(this);
-        qVar.H(this.b, "name");
-        qVar.H(this.c, "options");
+        qVar.z(this.b, "name");
+        qVar.z(this.c, "options");
         return qVar.toString();
     }
 }

@@ -1,57 +1,29 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import android.view.View;
-import java.util.ArrayList;
-import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class lv implements org.telegram.ui.Components.xl0 {
+public final /* synthetic */ class lv implements Utilities.Callback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ cy b;
+    public final /* synthetic */ ey b;
 
-    public /* synthetic */ lv(cy cyVar, int i10) {
+    public /* synthetic */ lv(ey eyVar, int i10) {
         this.a = i10;
-        this.b = cyVar;
+        this.b = eyVar;
     }
 
-    @Override // org.telegram.ui.Components.xl0
-    public final void a(int i10, View view) {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                cy cyVar = this.b;
-                Object obj = cyVar.C0.v0.G(i10).G;
-                if (!(obj instanceof MessageObject)) {
-                    if (obj instanceof ci.u6) {
-                        ci.u6 u6Var = (ci.u6) obj;
-                        Bundle i11 = org.telegram.ui.Cells.c1.i(3, TeXSymbolParser.TYPE_ATTR);
-                        i11.putString("hashtag", u6Var.C);
-                        i11.putInt("storiesCount", u6Var.J);
-                        cyVar.presentFragment(new org.telegram.ui.Components.wa0(i11, null));
-                        break;
-                    }
-                } else {
-                    MessageObject messageObject = (MessageObject) obj;
-                    Bundle bundle = new Bundle();
-                    if (messageObject.getDialogId() >= 0) {
-                        bundle.putLong("user_id", messageObject.getDialogId());
-                    } else {
-                        bundle.putLong("chat_id", -messageObject.getDialogId());
-                    }
-                    bundle.putInt("message_id", messageObject.getId());
-                    qn qnVar = new qn(bundle);
-                    cy.b4(qnVar, messageObject);
-                    cyVar.presentFragment(qnVar);
-                    break;
-                }
+                ey eyVar = this.b;
+                eyVar.O1 = (Long) obj;
+                eyVar.S4();
                 break;
             default:
-                cy cyVar2 = this.b;
-                cyVar2.b0.I0(true);
-                ArrayList arrayList = cyVar2.b0.V2;
-                cyVar2.g3(arrayList.isEmpty() ? hg.q0.a3[i10] : (hg.o0) arrayList.get(i10));
+                ey.a0(this.b, (TL_account.TL_birthday) obj);
                 break;
         }
     }

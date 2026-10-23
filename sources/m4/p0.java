@@ -1,8 +1,8 @@
 package m4;
 
-import ai.db;
+import ai.eb;
 import ai.u2;
-import ai.ub;
+import ai.vb;
 import android.app.PendingIntent;
 import android.content.ComponentName;
 import android.content.Context;
@@ -27,7 +27,7 @@ import android.view.KeyEvent;
 import android.view.ViewConfiguration;
 import e9.x1;
 import hg.b2;
-import ig.e2;
+import ig.d2;
 import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -35,7 +35,7 @@ import java.util.HashSet;
 import java.util.List;
 import v7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class p0 extends n4.l {
     public static final int y;
@@ -159,7 +159,7 @@ public final class p0 extends n4.l {
                     if (i10 >= 31 && componentName != null) {
                         e0.e0.h(sVar, componentName);
                     }
-                    sVar.E(this, handler);
+                    sVar.D(this, handler);
                     this.l = z11 ? new b(context, new g0(this, 0)) : null;
                 }
             }
@@ -191,7 +191,7 @@ public final class p0 extends n4.l {
         if (i10 >= 31) {
             e0.e0.h(sVar, componentName);
         }
-        sVar.E(this, handler);
+        sVar.D(this, handler);
         this.l = z11 ? new b(context, new g0(this, 0)) : null;
     }
 
@@ -349,7 +349,7 @@ public final class p0 extends n4.l {
                     i10 = 2;
                 } else {
                     if (d != 4) {
-                        throw new IllegalArgumentException(i2.e.j(d, "Unrecognized State: "));
+                        throw new IllegalArgumentException(i2.o1.k(d, "Unrecognized State: "));
                     }
                     i10 = 1;
                 }
@@ -525,7 +525,7 @@ public final class p0 extends n4.l {
             return;
         }
         if (tVar != null) {
-            e2.m0.W(f0Var.l, new db(this, i10, tVar, o0Var, z10));
+            e2.m0.W(f0Var.l, new eb(this, i10, tVar, o0Var, z10));
             return;
         }
         e2.a.b("MediaSessionLegacyStub", "RemoteUserInfo is null, ignoring command=" + i10);
@@ -533,7 +533,7 @@ public final class p0 extends n4.l {
 
     public final void I(o1 o1Var, int i10, o0 o0Var, n4.t tVar) {
         if (tVar != null) {
-            e2.m0.W(this.g.l, new ub(this, o1Var, i10, tVar, o0Var, 6));
+            e2.m0.W(this.g.l, new vb(this, o1Var, i10, tVar, o0Var, 6));
             return;
         }
         StringBuilder sb2 = new StringBuilder("RemoteUserInfo is null, ignoring command=");
@@ -755,7 +755,7 @@ public final class p0 extends n4.l {
         Context context = f0Var.f;
         b0 b0Var = f0Var.d;
         Bundle extras = intent.getExtras();
-        e2 e2Var = null;
+        d2 d2Var = null;
         KeyEvent keyEvent = (extras == null || !extras.containsKey("android.intent.extra.KEY_EVENT")) ? null : (KeyEvent) extras.getParcelable("android.intent.extra.KEY_EVENT");
         ComponentName component = intent.getComponent();
         if (Objects.equals(intent.getAction(), "android.intent.action.MEDIA_BUTTON") && ((component == null || Objects.equals(component.getPackageName(), context.getPackageName())) && keyEvent != null)) {
@@ -773,37 +773,37 @@ public final class p0 extends n4.l {
             int keyCode2 = keyEvent.getKeyCode();
             boolean hasSystemFeature = context.getPackageManager().hasSystemFeature("android.software.leanback");
             if (keyCode2 != 79 && keyCode2 != 85) {
-                e2 e2Var2 = b0Var.a;
-                if (e2Var2 != null) {
-                    b0Var.removeCallbacks(e2Var2);
-                    e2 e2Var3 = b0Var.a;
+                d2 d2Var2 = b0Var.a;
+                if (d2Var2 != null) {
+                    b0Var.removeCallbacks(d2Var2);
+                    d2 d2Var3 = b0Var.a;
                     b0Var.a = null;
-                    e2Var = e2Var3;
+                    d2Var = d2Var3;
                 }
-                if (e2Var != null) {
-                    e2.m0.W(b0Var, e2Var);
+                if (d2Var != null) {
+                    e2.m0.W(b0Var, d2Var);
                 }
             } else if (hasSystemFeature || keyEvent.getRepeatCount() != 0) {
-                e2 e2Var4 = b0Var.a;
-                if (e2Var4 != null) {
-                    b0Var.removeCallbacks(e2Var4);
-                    e2 e2Var5 = b0Var.a;
+                d2 d2Var4 = b0Var.a;
+                if (d2Var4 != null) {
+                    b0Var.removeCallbacks(d2Var4);
+                    d2 d2Var5 = b0Var.a;
                     b0Var.a = null;
-                    e2Var = e2Var5;
+                    d2Var = d2Var5;
                 }
-                if (e2Var != null) {
-                    e2.m0.W(b0Var, e2Var);
+                if (d2Var != null) {
+                    e2.m0.W(b0Var, d2Var);
                 }
             } else {
-                e2 e2Var6 = b0Var.a;
-                if (e2Var6 == null) {
-                    e2 e2Var7 = new e2(b0Var, vVar, keyEvent, 9);
-                    b0Var.a = e2Var7;
-                    b0Var.postDelayed(e2Var7, ViewConfiguration.getDoubleTapTimeout());
+                d2 d2Var6 = b0Var.a;
+                if (d2Var6 == null) {
+                    d2 d2Var7 = new d2(b0Var, vVar, keyEvent, 9);
+                    b0Var.a = d2Var7;
+                    b0Var.postDelayed(d2Var7, ViewConfiguration.getDoubleTapTimeout());
                     return true;
                 }
-                if (e2Var6 != null) {
-                    b0Var.removeCallbacks(e2Var6);
+                if (d2Var6 != null) {
+                    b0Var.removeCallbacks(d2Var6);
                     b0Var.a = null;
                 }
                 z10 = true;

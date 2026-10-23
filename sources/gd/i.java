@@ -14,7 +14,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import v7.p7;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class i implements ef.a {
     public static final Pattern j = Pattern.compile("^[!\"#\\$%&'\\(\\)\\*\\+,\\-\\./:;<=>\\?@\\[\\\\\\]\\^_`\\{\\|\\}~\\p{Pc}\\p{Pd}\\p{Pe}\\p{Pf}\\p{Pi}\\p{Po}\\p{Ps}]");
@@ -299,8 +299,8 @@ public final class i implements ef.a {
                     s sVar2 = fVar4.a;
                     fVar4.g -= i10;
                     fVar2.g -= i10;
-                    sVar2.g = k3.j(i10, 0, sVar2.g);
-                    sVar.g = k3.j(i10, 0, sVar.g);
+                    sVar2.g = k3.i(i10, 0, sVar2.g);
+                    sVar.g = k3.i(i10, 0, sVar.g);
                     af.f fVar5 = fVar2.e;
                     while (fVar5 != null && fVar5 != fVar4) {
                         af.f fVar6 = fVar5.e;

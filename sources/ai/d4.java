@@ -5,7 +5,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d4 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -39,7 +39,7 @@ public final /* synthetic */ class d4 implements Utilities.Callback {
                     l7Var2.o1 = stargiftupgradepreview.sample_attributes;
                     l7Var2.p1 = stargiftupgradepreview.prices;
                     l7Var2.q1 = stargiftupgradepreview.next_prices;
-                    l7Var2.B2();
+                    l7Var2.A2();
                     break;
                 }
                 break;
@@ -68,7 +68,7 @@ public final /* synthetic */ class d4 implements Utilities.Callback {
                                 tL_messageActionStarGift.saved = z13;
                             }
                         }
-                        l7Var3.L2(messageObject, null);
+                        l7Var3.K2(messageObject, null);
                         break;
                     }
                 }

@@ -6,7 +6,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public abstract class xv implements NotificationCenter.NotificationCenterDelegate {
     public final ArrayList a;
@@ -65,7 +65,7 @@ public abstract class xv implements NotificationCenter.NotificationCenterDelegat
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
         TLRPC.StickerSet stickerSet;
-        org.telegram.ui.ActionBar.d6 d6Var;
+        org.telegram.ui.ActionBar.g6 g6Var;
         if (i10 == NotificationCenter.groupStickersDidLoad) {
             for (int i12 = 0; i12 < this.b.size(); i12++) {
                 if (this.b.get(i12) == null) {
@@ -74,12 +74,12 @@ public abstract class xv implements NotificationCenter.NotificationCenterDelegat
                         aw awVar = this.f;
                         awVar.dismiss();
                         Context context = awVar.getContext();
-                        org.telegram.ui.ActionBar.n2 n2Var = awVar.c;
+                        org.telegram.ui.ActionBar.o2 o2Var = awVar.c;
                         TLRPC.InputStickerSet inputStickerSet = (TLRPC.InputStickerSet) this.a.get(i12);
-                        org.telegram.ui.ActionBar.n2 n2Var2 = awVar.c;
-                        org.telegram.ui.fk fkVar = n2Var2 instanceof org.telegram.ui.qn ? ((org.telegram.ui.qn) n2Var2).Y : null;
-                        d6Var = ((org.telegram.ui.ActionBar.f3) awVar).resourcesProvider;
-                        new qy0(context, n2Var, inputStickerSet, null, fkVar, d6Var).show();
+                        org.telegram.ui.ActionBar.o2 o2Var2 = awVar.c;
+                        org.telegram.ui.gk gkVar = o2Var2 instanceof org.telegram.ui.sn ? ((org.telegram.ui.sn) o2Var2).Y : null;
+                        g6Var = ((org.telegram.ui.ActionBar.h3) awVar).resourcesProvider;
+                        new ty0(context, o2Var, inputStickerSet, null, gkVar, g6Var).show();
                         return;
                     }
                     this.b.set(i12, stickerSet2);
@@ -89,7 +89,7 @@ public abstract class xv implements NotificationCenter.NotificationCenterDelegat
                 }
             }
             aw awVar2 = ((jv) this).h;
-            awVar2.b0();
+            awVar2.k0();
             ei.v vVar = awVar2.h;
             if (vVar == null || vVar.getAdapter() == null) {
                 return;

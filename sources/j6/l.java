@@ -32,13 +32,13 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeoutException;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Cells.p2;
+import org.telegram.ui.Cells.o2;
 import org.telegram.ui.Components.p6;
 import org.telegram.ui.kg;
 import v7.u6;
 import w7.j6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class l implements OnSuccessListener, ne.k {
     public static l e;
@@ -75,7 +75,12 @@ public final class l implements OnSuccessListener, ne.k {
         return lVar;
     }
 
-    public l a() {
+    @Override // ne.k
+    public void a() {
+        f();
+    }
+
+    public l b() {
         if (TextUtils.isEmpty((String) this.b)) {
             throw new IllegalArgumentException("Title must be set and non-empty.");
         }
@@ -98,17 +103,12 @@ public final class l implements OnSuccessListener, ne.k {
         throw new IllegalArgumentException("Negative text must not be set if device credential authentication is allowed.");
     }
 
-    public int b() {
+    public int c() {
         int i10 = this.a;
         if (i10 != 2) {
             return i10 != 3 ? 0 : 512;
         }
         return 2048;
-    }
-
-    @Override // ne.k
-    public void c() {
-        f();
     }
 
     public Looper d() {
@@ -289,10 +289,10 @@ public final class l implements OnSuccessListener, ne.k {
                 paint.setColor(i0.a.o(-16777216, 58));
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                 this.b = spannableStringBuilder;
-                spannableStringBuilder.append((CharSequence) " ").setSpan(new p2(AndroidUtilities.dp(1.0f)), 0, 1, 0);
+                spannableStringBuilder.append((CharSequence) " ").setSpan(new o2(AndroidUtilities.dp(1.0f)), 0, 1, 0);
                 SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
                 this.c = spannableStringBuilder2;
-                spannableStringBuilder2.append((CharSequence) " ").setSpan(new p2(AndroidUtilities.dp(1.0f)), 0, 1, 0);
+                spannableStringBuilder2.append((CharSequence) " ").setSpan(new o2(AndroidUtilities.dp(1.0f)), 0, 1, 0);
                 break;
             case 6:
             default:

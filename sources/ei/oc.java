@@ -21,18 +21,18 @@ import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.cm;
 import org.telegram.ui.Components.mz;
 import org.telegram.ui.Components.oz;
-import org.telegram.ui.Components.rx0;
-import org.telegram.ui.Components.t11;
-import org.telegram.ui.Components.u11;
-import org.telegram.ui.Components.v11;
+import org.telegram.ui.Components.ux0;
+import org.telegram.ui.Components.w11;
+import org.telegram.ui.Components.x11;
+import org.telegram.ui.Components.y11;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.br0;
-import org.telegram.ui.df0;
-import org.telegram.ui.g41;
-import org.telegram.ui.qq0;
-import org.telegram.ui.ve0;
+import org.telegram.ui.er0;
+import org.telegram.ui.if0;
+import org.telegram.ui.k41;
+import org.telegram.ui.re0;
+import org.telegram.ui.tq0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class oc implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -56,7 +56,7 @@ public final /* synthetic */ class oc implements Utilities.Callback {
     public final void run(Object obj) {
         int i10;
         int i11;
-        rg.k2[] k2VarArr;
+        rg.l2[] l2VarArr;
         Bitmap bitmap;
         float f7;
         Bitmap bitmap2;
@@ -66,11 +66,11 @@ public final /* synthetic */ class oc implements Utilities.Callback {
         switch (this.a) {
             case 0:
                 boolean z10 = this.b;
-                org.telegram.ui.ActionBar.b2 b2Var = (org.telegram.ui.ActionBar.b2) this.c;
+                org.telegram.ui.ActionBar.c2 c2Var = (org.telegram.ui.ActionBar.c2) this.c;
                 Utilities.Callback callback = (Utilities.Callback) this.d;
                 tc tcVar = (tc) obj;
                 if (z10) {
-                    b2Var.c(350L);
+                    c2Var.c(350L);
                 }
                 callback.run(tcVar);
                 break;
@@ -142,32 +142,32 @@ public final /* synthetic */ class oc implements Utilities.Callback {
                 PhotoViewer photoViewer = (PhotoViewer) this.c;
                 boolean z13 = this.b;
                 MediaController.MediaEditState mediaEditState = (MediaController.MediaEditState) this.d;
-                rg.k2 k2Var = (rg.k2) obj;
-                rg.n2 n2Var = photoViewer.p5;
-                if (!n2Var.y || (k2VarArr = n2Var.H) == null || k2VarArr.length <= 0) {
+                rg.l2 l2Var = (rg.l2) obj;
+                rg.o2 o2Var = photoViewer.p5;
+                if (!o2Var.y || (l2VarArr = o2Var.H) == null || l2VarArr.length <= 0) {
                     photoViewer.t5.setCutOutState(true);
                     photoViewer.Z2(false, true);
                 } else {
-                    v11 thanosEffect = photoViewer.p5.getThanosEffect();
-                    rg.n2 n2Var2 = photoViewer.p5;
-                    n2Var2.L = true;
-                    n2Var2.E = k2Var;
+                    y11 thanosEffect = photoViewer.p5.getThanosEffect();
+                    rg.o2 o2Var2 = photoViewer.p5;
+                    o2Var2.L = true;
+                    o2Var2.E = l2Var;
                     Bitmap bitmap3 = photoViewer.C4.getBitmap();
                     photoViewer.C4.getOrientation();
-                    rg.k2 k2Var2 = n2Var2.E;
-                    Bitmap b10 = k2Var2 == null ? n2Var2.I : (!z13 || bitmap3 == null) ? k2Var2.b() : n2Var2.e(bitmap3);
+                    rg.l2 l2Var2 = o2Var2.E;
+                    Bitmap b10 = l2Var2 == null ? o2Var2.I : (!z13 || bitmap3 == null) ? l2Var2.b() : o2Var2.e(bitmap3);
                     MediaController.PhotoEntry photoEntry3 = (MediaController.PhotoEntry) photoViewer.g7.get(photoViewer.P4);
                     if (thanosEffect == null) {
-                        Utilities.themeQueue.postRunnable(new br0(photoViewer, b10, 0));
+                        Utilities.themeQueue.postRunnable(new er0(photoViewer, b10, 0));
                         photoViewer.p5.f();
                         photoViewer.e0.invalidate();
                         break;
                     } else {
-                        rg.n2 n2Var3 = photoViewer.p5;
+                        rg.o2 o2Var3 = photoViewer.p5;
                         photoViewer.C4.getOrientation();
-                        n2Var3.getClass();
+                        o2Var3.getClass();
                         String str = photoEntry3.filterPath;
-                        Bitmap decodeFile = str != null ? BitmapFactory.decodeFile(str) : n2Var3.getSourceBitmap();
+                        Bitmap decodeFile = str != null ? BitmapFactory.decodeFile(str) : o2Var3.getSourceBitmap();
                         Bitmap decodeFile2 = BitmapFactory.decodeFile(photoEntry3.paintPath);
                         int width = decodeFile.getWidth();
                         int height = decodeFile.getHeight();
@@ -182,41 +182,41 @@ public final /* synthetic */ class oc implements Utilities.Callback {
                         float f13 = 0.0f;
                         Bitmap bitmap4 = decodeFile;
                         rect.set(0, 0, decodeFile.getWidth(), decodeFile.getHeight());
-                        rg.k2 k2Var3 = n2Var3.E;
-                        if (k2Var3 == null) {
-                            rg.k2[] k2VarArr2 = n2Var3.H;
-                            if (k2VarArr2.length > 0) {
-                                k2Var3 = k2VarArr2[0];
+                        rg.l2 l2Var3 = o2Var3.E;
+                        if (l2Var3 == null) {
+                            rg.l2[] l2VarArr2 = o2Var3.H;
+                            if (l2VarArr2.length > 0) {
+                                l2Var3 = l2VarArr2[0];
                             }
                         }
-                        if (k2Var3 == null) {
+                        if (l2Var3 == null) {
                             bitmap2 = null;
                             f7 = 2.0f;
                         } else {
-                            if (k2Var3.c == 0 || !photoEntry3.isFiltered) {
+                            if (l2Var3.c == 0 || !photoEntry3.isFiltered) {
                                 bitmap = createBitmap;
                                 f7 = 2.0f;
-                                canvas.drawBitmap(k2Var3.a(), (Rect) null, rect, paint);
+                                canvas.drawBitmap(l2Var3.a(), (Rect) null, rect, paint);
                             } else {
                                 Matrix matrix = new Matrix();
                                 f7 = 2.0f;
                                 bitmap = createBitmap;
-                                matrix.postRotate(k2Var3.c, k2Var3.a().getWidth() / 2.0f, k2Var3.a().getHeight() / 2.0f);
-                                if ((k2Var3.c / 90) % 2 != 0) {
-                                    float height2 = (k2Var3.a().getHeight() - k2Var3.a().getWidth()) / 2.0f;
+                                matrix.postRotate(l2Var3.c, l2Var3.a().getWidth() / 2.0f, l2Var3.a().getHeight() / 2.0f);
+                                if ((l2Var3.c / 90) % 2 != 0) {
+                                    float height2 = (l2Var3.a().getHeight() - l2Var3.a().getWidth()) / 2.0f;
                                     matrix.postTranslate(height2, -height2);
                                 }
-                                matrix.postScale(bitmap4.getWidth() / k2Var3.a().getHeight(), bitmap4.getHeight() / k2Var3.a().getWidth());
-                                canvas.drawBitmap(k2Var3.a(), matrix, paint);
+                                matrix.postScale(bitmap4.getWidth() / l2Var3.a().getHeight(), bitmap4.getHeight() / l2Var3.a().getWidth());
+                                canvas.drawBitmap(l2Var3.a(), matrix, paint);
                             }
                             if (decodeFile2 != null) {
                                 paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
-                                if (k2Var3.c == 0 || photoEntry3.isFiltered) {
+                                if (l2Var3.c == 0 || photoEntry3.isFiltered) {
                                     canvas.drawBitmap(decodeFile2, (Rect) null, rect, paint);
                                 } else {
                                     Matrix matrix2 = new Matrix();
-                                    matrix2.postRotate(-k2Var3.c, decodeFile2.getWidth() / f7, decodeFile2.getHeight() / f7);
-                                    if ((k2Var3.c / 90) % 2 != 0) {
+                                    matrix2.postRotate(-l2Var3.c, decodeFile2.getWidth() / f7, decodeFile2.getHeight() / f7);
+                                    if ((l2Var3.c / 90) % 2 != 0) {
                                         float height3 = (decodeFile2.getHeight() - decodeFile2.getWidth()) / f7;
                                         matrix2.postTranslate(height3, -height3);
                                     }
@@ -227,7 +227,7 @@ public final /* synthetic */ class oc implements Utilities.Callback {
                             bitmap2 = bitmap;
                         }
                         if (bitmap2 == null) {
-                            Utilities.themeQueue.postRunnable(new br0(photoViewer, b10, 1));
+                            Utilities.themeQueue.postRunnable(new er0(photoViewer, b10, 1));
                             photoViewer.p5.f();
                             photoViewer.e0.invalidate();
                             break;
@@ -237,7 +237,7 @@ public final /* synthetic */ class oc implements Utilities.Callback {
                                 bitmap2 = PhotoViewer.J0(bitmap2, cropState, new int[]{photoViewer.C4.getOrientation(), photoViewer.C4.getInvert()}, true);
                             }
                             if (bitmap2 == null) {
-                                Utilities.themeQueue.postRunnable(new br0(photoViewer, b10, 2));
+                                Utilities.themeQueue.postRunnable(new er0(photoViewer, b10, 2));
                                 photoViewer.p5.f();
                                 photoViewer.e0.invalidate();
                                 break;
@@ -285,18 +285,18 @@ public final /* synthetic */ class oc implements Utilities.Callback {
                                 matrix3.postScale(f23, f23, f10 / f7, f11 / f7);
                                 matrix3.postTranslate(photoViewer.X5 + f13 + Math.max(0, (int) ((photoViewer.l1(photoViewer.u4) - f16) / f7)), photoViewer.Y5 + f12 + Math.max(0, (int) ((photoViewer.j1() - f17) / f7)));
                                 photoViewer.p5.V = true;
-                                Utilities.themeQueue.postRunnable(new br0(photoViewer, b10, 3));
-                                qq0 qq0Var = new qq0(photoViewer, 13);
-                                ve0 ve0Var = new ve0(photoViewer, b10, qq0Var, 19);
-                                df0 df0Var = new df0(3);
-                                t11 t11Var = thanosEffect.a;
-                                if (t11Var != null) {
-                                    t11Var.c(matrix3, bitmap2, ve0Var, df0Var);
+                                Utilities.themeQueue.postRunnable(new er0(photoViewer, b10, 3));
+                                tq0 tq0Var = new tq0(photoViewer, 13);
+                                re0 re0Var = new re0(photoViewer, b10, tq0Var, 20);
+                                if0 if0Var = new if0(3);
+                                w11 w11Var = thanosEffect.a;
+                                if (w11Var != null) {
+                                    w11Var.c(matrix3, bitmap2, re0Var, if0Var);
                                     Choreographer.getInstance().postFrameCallback(thanosEffect.b);
                                 } else {
-                                    thanosEffect.c.add(new u11(matrix3, bitmap2, ve0Var, df0Var));
+                                    thanosEffect.c.add(new x11(matrix3, bitmap2, re0Var, if0Var));
                                 }
-                                AndroidUtilities.runOnUIThread(qq0Var, 1200L);
+                                AndroidUtilities.runOnUIThread(tq0Var, 1200L);
                             }
                         }
                     }
@@ -313,7 +313,7 @@ public final /* synthetic */ class oc implements Utilities.Callback {
                     runnable2.run();
                     break;
                 } else {
-                    rx0.w3.fetch(UserConfig.selectedAccount, str2, new g41(linkedHashSet, runnable2, 1));
+                    ux0.z3.fetch(UserConfig.selectedAccount, str2, new k41(linkedHashSet, runnable2, 1));
                     break;
                 }
         }

@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ho implements Runnable {
     public final /* synthetic */ int a;
@@ -19,9 +19,9 @@ public final /* synthetic */ class ho implements Runnable {
             case 0:
                 oo ooVar = this.b;
                 AtomicReference atomicReference = ooVar.n;
-                org.telegram.ui.ActionBar.j5 j5Var = (org.telegram.ui.ActionBar.j5) atomicReference.get();
-                if (j5Var != null) {
-                    ooVar.removeView(j5Var);
+                org.telegram.ui.ActionBar.n5 n5Var = (org.telegram.ui.ActionBar.n5) atomicReference.get();
+                if (n5Var != null) {
+                    ooVar.removeView(n5Var);
                     atomicReference.set(null);
                     break;
                 }
@@ -29,9 +29,9 @@ public final /* synthetic */ class ho implements Runnable {
             case 1:
                 oo ooVar2 = this.b;
                 AtomicReference atomicReference2 = ooVar2.v;
-                org.telegram.ui.ActionBar.j5 j5Var2 = (org.telegram.ui.ActionBar.j5) atomicReference2.get();
-                if (j5Var2 != null) {
-                    ooVar2.removeView(j5Var2);
+                org.telegram.ui.ActionBar.n5 n5Var2 = (org.telegram.ui.ActionBar.n5) atomicReference2.get();
+                if (n5Var2 != null) {
+                    ooVar2.removeView(n5Var2);
                     atomicReference2.set(null);
                     if (!ooVar2.b) {
                         ooVar2.setClipChildren(true);

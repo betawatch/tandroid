@@ -6,24 +6,24 @@ import android.graphics.PorterDuff;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.k6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class q3 extends org.telegram.ui.ActionBar.e1 {
-    public final int L;
-    public long M;
-    public o3 N;
+    public final int V;
+    public long W;
+    public o3 a0;
 
-    public q3(Context context, int i10, d6 d6Var) {
-        super(0, context, d6Var, false, false);
-        this.L = i10;
+    public q3(Context context, int i10, g6 g6Var) {
+        super(0, context, g6Var, false, false);
+        this.V = i10;
         setPadding(AndroidUtilities.dp(18.0f), 0, AndroidUtilities.dp(18.0f), 0);
-        int w02 = h6.w0(h6.E8, d6Var);
-        int i11 = h6.F8;
-        c(w02, h6.w0(i11, d6Var));
-        e(h6.w0(i11, d6Var), PorterDuff.Mode.SRC_IN);
+        int i11 = k6.E8;
+        int i12 = k6.F8;
+        c(i11, i12);
+        g(k6.w0(i12, g6Var), PorterDuff.Mode.SRC_IN);
         this.c.setTranslationX(AndroidUtilities.dp(2.0f));
         a(2);
         setBackground(null);

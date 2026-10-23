@@ -1,41 +1,9 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class rw0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ tw0 b;
+public interface rw0 {
+    void i(int i10);
 
-    public /* synthetic */ rw0(tw0 tw0Var, int i10) {
-        this.a = i10;
-        this.b = tw0Var;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                tw0 tw0Var = this.b;
-                tw0Var.V0 = false;
-                if (!tw0Var.Y0 && tw0Var.W0) {
-                    tw0Var.C(true);
-                    break;
-                }
-                break;
-            case 1:
-                this.b.V0 = false;
-                break;
-            case 2:
-                tw0 tw0Var2 = this.b;
-                tw0Var2.Y0 = false;
-                if (!tw0Var2.V0 && tw0Var2.W0) {
-                    tw0Var2.C(true);
-                    break;
-                }
-                break;
-            default:
-                this.b.Y0 = false;
-                break;
-        }
-    }
+    void m();
 }

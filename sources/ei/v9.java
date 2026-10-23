@@ -16,10 +16,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.bh0;
 import org.telegram.ui.Components.bs;
+import org.telegram.ui.Components.eh0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v9 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -76,7 +76,7 @@ public final /* synthetic */ class v9 implements View.OnClickListener {
                         float max = Math.max(createBitmap.getHeight(), createBitmap.getWidth()) + AndroidUtilities.navigationBarHeight;
                         Shader.TileMode tileMode = Shader.TileMode.CLAMP;
                         paint2.setShader(new BitmapShader(createBitmap, tileMode, tileMode));
-                        db dbVar = new db(vbVar2, vbVar2.b, z11, canvas, (vbVar2.i1.getMeasuredWidth() / 2.0f) + f7, (vbVar2.i1.getMeasuredHeight() / 2.0f) + f10, max, paint, createBitmap, paint2, f7, f10, 0);
+                        db dbVar = new db(vbVar2, vbVar2.b, z11, canvas, (vbVar2.i1.getMeasuredWidth() / 2.0f) + f7, (vbVar2.i1.getMeasuredHeight() / 2.0f) + f10, max, paint, createBitmap, paint2, f7, f10);
                         vbVar2.C2 = dbVar;
                         dbVar.setOnTouchListener(new di.d(2));
                         vbVar2.D2 = 0.0f;
@@ -144,7 +144,7 @@ public final /* synthetic */ class v9 implements View.OnClickListener {
             case 3:
                 boolean k10 = vbVar.X0.k();
                 vbVar.X0.x(-9982, k10);
-                ((bh0) vbVar.j1.c).a(!k10, true);
+                ((eh0) vbVar.j1.c).a(!k10, true);
                 break;
             case 4:
                 if (vbVar.B0 != null && !vbVar.S1) {

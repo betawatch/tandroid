@@ -11,12 +11,12 @@ import java.io.FileDescriptor;
 import java.io.PrintWriter;
 import java.util.concurrent.CopyOnWriteArraySet;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public abstract class v extends androidx.activity.m implements e0.a {
     public boolean L;
     public boolean M;
-    public final ya.d J = new ya.d(new u(this), 4);
+    public final ya.c J = new ya.c(new u(this), 4);
     public final androidx.lifecycle.v K = new androidx.lifecycle.v(this);
     public boolean N = true;
 
@@ -143,7 +143,7 @@ public abstract class v extends androidx.activity.m implements e0.a {
         printWriter.print(" mStopped=");
         printWriter.print(this.N);
         if (getApplication() != null) {
-            new n2.e(this, f()).u(str3, printWriter);
+            new n2.e(this, f()).r(str3, printWriter);
         }
         ((u) this.J.b).d.w(str, fileDescriptor, printWriter, strArr);
     }
@@ -216,18 +216,18 @@ public abstract class v extends androidx.activity.m implements e0.a {
 
     @Override // android.app.Activity
     public void onResume() {
-        ya.d dVar = this.J;
-        dVar.a0();
+        ya.c cVar = this.J;
+        cVar.a0();
         super.onResume();
         this.M = true;
-        ((u) dVar.b).d.A(true);
+        ((u) cVar.b).d.A(true);
     }
 
     @Override // android.app.Activity
     public void onStart() {
-        ya.d dVar = this.J;
-        dVar.a0();
-        u uVar = (u) dVar.b;
+        ya.c cVar = this.J;
+        cVar.a0();
+        u uVar = (u) cVar.b;
         super.onStart();
         this.N = false;
         if (!this.L) {

@@ -10,14 +10,14 @@ import android.view.KeyEvent;
 import android.view.MotionEvent;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.lw0;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.Components.ow0;
 import org.telegram.ui.Components.tz;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final class v1 extends lw0 {
+public final class v1 extends ow0 {
     public boolean w0;
     public final Paint x0;
     public final RectF y0;
@@ -32,13 +32,13 @@ public final class v1 extends lw0 {
         this.y0 = new RectF();
     }
 
-    @Override // org.telegram.ui.Components.lw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.ow0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         d2 d2Var = this.z0;
         Rect rect = d2Var.w;
-        int m12 = h6.m1(d2Var.I, d2Var.getThemedColor(h6.d6));
+        int o12 = k6.o1(d2Var.I, d2Var.getThemedColor(k6.d6));
         Paint paint = this.x0;
-        paint.setColor(m12);
+        paint.setColor(o12);
         if (!d2Var.E || d2Var.x == null) {
             canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight(), paint);
             super.dispatchDraw(canvas);
@@ -84,10 +84,10 @@ public final class v1 extends lw0 {
         d2 d2Var = this.z0;
         if (action == 0 && keyEvent.getKeyCode() == 47 && keyEvent.isCtrlPressed()) {
             if (d2Var.q0()) {
-                org.telegram.messenger.g0.q(R.string.RichEditorDraftSaved, new xc(d2Var.X, d2Var.getResourceProvider()), R.raw.contact_check, 36);
+                org.telegram.messenger.v0.p(R.string.RichEditorDraftSaved, new xc(d2Var.X, d2Var.getResourceProvider()), R.raw.contact_check, 36);
                 return true;
             }
-        } else if (!d2Var.P.i3(keyEvent)) {
+        } else if (!d2Var.P.n3(keyEvent)) {
             return super.dispatchKeyEvent(keyEvent);
         }
         return true;
@@ -105,7 +105,7 @@ public final class v1 extends lw0 {
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
         tz tzVar;
         d2 d2Var = this.z0;
-        if (!d2Var.P.l3.x() || !d2Var.P.m3.onTouchEvent(motionEvent)) {
+        if (!d2Var.P.o3.x() || !d2Var.P.p3.onTouchEvent(motionEvent)) {
             int height = (!d2Var.C0 || (tzVar = d2Var.A0) == null) ? (getHeight() - AndroidUtilities.dp(60.0f)) - Math.max(Math.max(d2Var.D0, d2Var.T0), d2Var.U0) : (int) tzVar.getY();
             if (motionEvent.getAction() == 0 && d2Var.B0 && motionEvent.getY() < height) {
                 d2Var.k0(true);
@@ -116,11 +116,11 @@ public final class v1 extends lw0 {
                 if (motionEvent.getAction() == 0) {
                     this.w0 = d2Var.a0.getVisibility() == 0 && motionEvent.getY() >= ((float) ((getHeight() - AndroidUtilities.dp(60.0f)) - Math.max(Math.max(d2Var.D0, d2Var.T0), d2Var.U0)));
                 }
-                if (!this.w0 || !d2Var.P.j3(motionEvent)) {
+                if (!this.w0 || !d2Var.P.o3(motionEvent)) {
                     return super.dispatchTouchEvent(motionEvent);
                 }
             }
-            if (d2Var.P.m3.b(motionEvent)) {
+            if (d2Var.P.p3.b(motionEvent)) {
                 motionEvent.setAction(3);
             }
             if (motionEvent.getAction() == 0) {

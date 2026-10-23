@@ -1,8 +1,8 @@
 package u2;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public final class g extends s {
+public final class g extends t {
     public final long f;
     public final long g;
     public final long h;
@@ -39,7 +39,7 @@ public final class g extends s {
         this.i = z11;
     }
 
-    @Override // u2.s, b2.o1
+    @Override // u2.t, b2.o1
     public final b2.l1 f(int i10, b2.l1 l1Var, boolean z10) {
         this.e.f(0, l1Var, z10);
         long j10 = l1Var.e - this.f;
@@ -48,7 +48,7 @@ public final class g extends s {
         return l1Var;
     }
 
-    @Override // u2.s, b2.o1
+    @Override // u2.t, b2.o1
     public final b2.n1 m(int i10, b2.n1 n1Var, long j10) {
         this.e.m(0, n1Var, 0L);
         long j11 = n1Var.p;

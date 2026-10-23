@@ -21,7 +21,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class q00 extends View {
     public float E;
@@ -99,7 +99,7 @@ public final class q00 extends View {
         ofFloat.addUpdateListener(new k00(this, 1));
         animatorSet.playTogether(ofFloat);
         animatorSet.setDuration(50L);
-        animatorSet.addListener(new ai.he(this, i10, f7, 1));
+        animatorSet.addListener(new ai.ie(this, i10, f7, 1));
         animatorSet.start();
     }
 
@@ -189,7 +189,7 @@ public final class q00 extends View {
         float f13;
         float f14;
         TextPaint textPaint2;
-        org.telegram.ui.ActionBar.d6 d6Var;
+        org.telegram.ui.ActionBar.g6 g6Var;
         float f15;
         Paint paint2;
         int i22;
@@ -213,7 +213,7 @@ public final class q00 extends View {
         Paint paint3 = s00Var.e;
         TextPaint textPaint5 = s00Var.c;
         TextPaint textPaint6 = s00Var.b;
-        org.telegram.ui.ActionBar.d6 d6Var2 = s00Var.a;
+        org.telegram.ui.ActionBar.g6 g6Var2 = s00Var.a;
         if (s00Var.v != 0.0f) {
             canvas2.save();
             float f21 = s00Var.v;
@@ -241,8 +241,8 @@ public final class q00 extends View {
             int i27 = s00Var.d0;
             int i28 = s00Var.W;
             int i29 = s00Var.e0;
-            i15 = org.telegram.ui.ActionBar.h6.T9;
-            i16 = org.telegram.ui.ActionBar.h6.U9;
+            i15 = org.telegram.ui.ActionBar.k6.T9;
+            i16 = org.telegram.ui.ActionBar.k6.U9;
             i13 = i29;
             i14 = i28;
             z10 = z11;
@@ -251,25 +251,25 @@ public final class q00 extends View {
             i12 = s00Var.W;
             i13 = s00Var.e0;
             i14 = s00Var.V;
-            i15 = org.telegram.ui.ActionBar.h6.U9;
-            i16 = org.telegram.ui.ActionBar.h6.T9;
+            i15 = org.telegram.ui.ActionBar.k6.U9;
+            i16 = org.telegram.ui.ActionBar.k6.T9;
             z10 = z11;
             i17 = i13;
         }
         if (i17 >= 0) {
-            int w03 = org.telegram.ui.ActionBar.h6.w0(i12, d6Var2);
-            int w04 = org.telegram.ui.ActionBar.h6.w0(i17, d6Var2);
+            int w03 = org.telegram.ui.ActionBar.k6.w0(i12, g6Var2);
+            int w04 = org.telegram.ui.ActionBar.k6.w0(i17, g6Var2);
             if (s00Var.O) {
             }
             int i30 = this.b.a;
             if (i30 == i10 || i30 == i11) {
-                textPaint6.setColor(i0.a.f(s00Var.P, i0.a.f(s00Var.w0, org.telegram.ui.ActionBar.h6.w0(i14, d6Var2), org.telegram.ui.ActionBar.h6.w0(i13, d6Var2)), i0.a.f(s00Var.w0, w03, w04)));
+                textPaint6.setColor(i0.a.f(s00Var.P, i0.a.f(s00Var.w0, org.telegram.ui.ActionBar.k6.w0(i14, g6Var2), org.telegram.ui.ActionBar.k6.w0(i13, g6Var2)), i0.a.f(s00Var.w0, w03, w04)));
             }
             textPaint6.setColor(i0.a.f(s00Var.w0, w03, w04));
         } else if ((s00Var.O || i25 != -1) && (i26 == i10 || i26 == i11)) {
-            textPaint6.setColor(i0.a.f(s00Var.P, org.telegram.ui.ActionBar.h6.w0(i14, d6Var2), org.telegram.ui.ActionBar.h6.w0(i12, d6Var2)));
+            textPaint6.setColor(i0.a.f(s00Var.P, org.telegram.ui.ActionBar.k6.w0(i14, g6Var2), org.telegram.ui.ActionBar.k6.w0(i12, g6Var2)));
         } else {
-            textPaint6.setColor(org.telegram.ui.ActionBar.h6.w0(i12, d6Var2));
+            textPaint6.setColor(org.telegram.ui.ActionBar.k6.w0(i12, g6Var2));
         }
         s00Var.f = new PorterDuffColorFilter(textPaint6.getColor(), PorterDuff.Mode.SRC_IN);
         int i31 = this.J;
@@ -338,7 +338,7 @@ public final class q00 extends View {
                 this.T.draw(canvas2);
                 textPaint3 = textPaint6;
                 f19 = 6.0f;
-                d6Var = d6Var2;
+                g6Var = g6Var2;
                 textPaint = textPaint4;
                 f20 = f17;
                 a6.drawAnimatedEmojis(canvas2, this.T, this.S, 0.0f, null, computeVerticalScrollOffset() - AndroidUtilities.dp(6.0f), computeVerticalScrollOffset() + computeVerticalScrollExtent(), 0.0f, 1.0f, s00Var.f);
@@ -349,7 +349,7 @@ public final class q00 extends View {
                 textPaint = textPaint4;
                 f20 = f17;
                 f13 = f12;
-                d6Var = d6Var2;
+                g6Var = g6Var2;
             }
             if (this.P != null) {
                 canvas2.save();
@@ -391,7 +391,7 @@ public final class q00 extends View {
             f13 = f12;
             f14 = 1.0f;
             textPaint2 = textPaint6;
-            d6Var = d6Var2;
+            g6Var = g6Var2;
             if (this.s != null) {
                 canvas2.save();
                 canvas2.translate(f13 + this.v, ((getMeasuredHeight() - this.c) / 2.0f) + 1.0f);
@@ -404,12 +404,12 @@ public final class q00 extends View {
         String str2 = str;
         if (z12 || str2 != null || (!z10 && (s00Var.n || s00Var.w != f7))) {
             if (s00Var.f0 < 0) {
-                textPaint5.setColor(org.telegram.ui.ActionBar.h6.w0(s00Var.b0, d6Var));
+                textPaint5.setColor(org.telegram.ui.ActionBar.k6.w0(s00Var.b0, g6Var));
             } else {
-                textPaint5.setColor(i0.a.f(s00Var.w0, org.telegram.ui.ActionBar.h6.w0(s00Var.b0, d6Var), org.telegram.ui.ActionBar.h6.w0(s00Var.f0, d6Var)));
+                textPaint5.setColor(i0.a.f(s00Var.w0, org.telegram.ui.ActionBar.k6.w0(s00Var.b0, g6Var), org.telegram.ui.ActionBar.k6.w0(s00Var.f0, g6Var)));
             }
-            if (org.telegram.ui.ActionBar.h6.d1(i15) && org.telegram.ui.ActionBar.h6.d1(i16)) {
-                int w05 = org.telegram.ui.ActionBar.h6.w0(i15, d6Var);
+            if (org.telegram.ui.ActionBar.k6.e1(i15) && org.telegram.ui.ActionBar.k6.e1(i16)) {
+                int w05 = org.telegram.ui.ActionBar.k6.w0(i15, g6Var);
                 if (s00Var.O || s00Var.Q != -1) {
                     int i34 = this.b.a;
                     if (i34 == i19) {
@@ -419,7 +419,7 @@ public final class q00 extends View {
                         i23 = i16;
                         paint2 = paint;
                     }
-                    paint2.setColor(i0.a.f(s00Var.P, org.telegram.ui.ActionBar.h6.w0(i23, d6Var), w05));
+                    paint2.setColor(i0.a.f(s00Var.P, org.telegram.ui.ActionBar.k6.w0(i23, g6Var), w05));
                 }
                 paint2 = paint;
                 paint2.setColor(w05);
@@ -435,7 +435,7 @@ public final class q00 extends View {
                 f26 = (f26 * f28) + ((f14 - f28) * f27);
             }
             float dp3 = (z15 && this.R == null) ? (f13 - this.a0) + f15 + f26 + AndroidUtilities.dp(5.0f) : f13 + f26 + AndroidUtilities.dp(5.0f);
-            int A = org.telegram.messenger.nk.A(17.333f, getMeasuredHeight(), 2);
+            int A = org.telegram.messenger.sl.A(17.333f, getMeasuredHeight(), 2);
             if (z10 || ((!s00Var.n && s00Var.w == f7) || str2 != null)) {
                 paint2.setAlpha(255);
             } else {
@@ -594,10 +594,10 @@ public final class q00 extends View {
             if (f39 != f14) {
                 this.k0 = f39 + 0.10666667f;
                 this.k0 = Utilities.clamp(this.k0, f14, f7);
-                w02 = org.telegram.ui.ActionBar.h6.w0(s00Var.W, d6Var);
+                w02 = org.telegram.ui.ActionBar.k6.w0(s00Var.W, g6Var);
                 i24 = s00Var.e0;
                 if (i24 >= 0) {
-                    w02 = i0.a.f(s00Var.w0, w02, org.telegram.ui.ActionBar.h6.w0(i24, d6Var));
+                    w02 = i0.a.f(s00Var.w0, w02, org.telegram.ui.ActionBar.k6.w0(i24, g6Var));
                 }
                 if (s00Var.u0 != w02) {
                     s00Var.u0 = w02;
@@ -623,7 +623,7 @@ public final class q00 extends View {
             this.k0 -= 0.10666667f;
         }
         this.k0 = Utilities.clamp(this.k0, f14, f7);
-        w02 = org.telegram.ui.ActionBar.h6.w0(s00Var.W, d6Var);
+        w02 = org.telegram.ui.ActionBar.k6.w0(s00Var.W, g6Var);
         i24 = s00Var.e0;
         if (i24 >= 0) {
         }

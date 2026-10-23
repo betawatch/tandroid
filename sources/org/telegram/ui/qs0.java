@@ -1,59 +1,33 @@
 package org.telegram.ui;
 
-import android.view.MotionEvent;
-import org.telegram.messenger.video.VideoFramesRewinder;
-import org.telegram.messenger.video.VideoPlayerRewinder;
+import android.animation.ValueAnimator;
+import android.graphics.Outline;
+import android.view.View;
+import android.view.ViewOutlineProvider;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class qs0 extends VideoPlayerRewinder {
-    public final /* synthetic */ PhotoViewer a;
+public final class qs0 extends ViewOutlineProvider {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ Object c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qs0(PhotoViewer photoViewer, VideoFramesRewinder videoFramesRewinder) {
-        super(videoFramesRewinder);
-        this.a = photoViewer;
+    public /* synthetic */ qs0(Object obj, float f7, int i10) {
+        this.a = i10;
+        this.c = obj;
+        this.b = f7;
     }
 
-    @Override // org.telegram.messenger.video.VideoPlayerRewinder
-    public final void onRewindCanceled() {
-        MotionEvent obtain = MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0);
-        PhotoViewer photoViewer = this.a;
-        PhotoViewer.k(photoViewer, obtain);
-        photoViewer.z1.f(false);
-        org.telegram.ui.Components.ah0.p0.Q.f(false);
-    }
-
-    @Override // org.telegram.messenger.video.VideoPlayerRewinder
-    public final void onRewindStart(boolean z10) {
-        PhotoViewer photoViewer = this.a;
-        photoViewer.z1.e(false);
-        photoViewer.z1.d(!z10);
-        photoViewer.z1.f(true);
-        photoViewer.e0.invalidate();
-        org.telegram.ui.Components.ah0.v(z10);
-    }
-
-    @Override // org.telegram.messenger.video.VideoPlayerRewinder
-    public final void updateRewindProgressUi(long j10, float f7, boolean z10) {
-        PhotoViewer photoViewer = this.a;
-        photoViewer.z1.g(Math.abs(j10));
-        if (z10) {
-            photoViewer.q3.h(f7, false);
-            photoViewer.r3.invalidate();
-        }
-        org.telegram.ui.Components.ah0 ah0Var = org.telegram.ui.Components.ah0.p0;
-        ah0Var.Q.g(0L);
-        if (z10) {
-            ah0Var.Z = f7;
-            ci.i3 i3Var = ah0Var.b0;
-            if (i3Var != null) {
-                i3Var.invalidate();
-            }
-            org.telegram.ui.Components.zg0 zg0Var = ah0Var.h;
-            if (zg0Var != null) {
-                zg0Var.invalidate();
-            }
+    @Override // android.view.ViewOutlineProvider
+    public final void getOutline(View view, Outline outline) {
+        switch (this.a) {
+            case 0:
+                outline.setRoundRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight(), (1.0f / this.b) * ((Float) ((ValueAnimator) this.c).getAnimatedValue()).floatValue() * AndroidUtilities.dp(10.0f));
+                break;
+            default:
+                outline.setRoundRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight(), (1.0f / this.b) * (1.0f - ((PhotoViewer) this.c).W) * AndroidUtilities.dp(10.0f));
+                break;
         }
     }
 }

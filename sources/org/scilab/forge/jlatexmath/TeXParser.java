@@ -2,14 +2,14 @@ package org.scilab.forge.jlatexmath;
 
 import a1.g;
 import com.google.android.gms.internal.play_billing.k3;
-import i2.e;
+import i2.o1;
 import java.lang.Character;
 import java.util.HashSet;
 import java.util.Set;
 import org.scilab.forge.jlatexmath.TeXFormula;
 import ru.noties.jlatexmath.awt.Color;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public class TeXParser {
     private static final char BACKPRIME = 8245;
@@ -758,7 +758,7 @@ public class TeXParser {
         TeXFormula.FontInfos externalFont = (!(equals && TeXFormula.isRegisteredBlock(unicodeBlock)) && equals) ? null : TeXFormula.getExternalFont(of2);
         if (externalFont == null) {
             if (this.isPartial) {
-                return new ColorAtom(new RomanAtom(new TeXFormula(e.k(convertToRomanNumber, "\\text{(Unknown char ", ")}")).root), (Color) null, Color.RED);
+                return new ColorAtom(new RomanAtom(new TeXFormula(o1.l(convertToRomanNumber, "\\text{(Unknown char ", ")}")).root), (Color) null, Color.RED);
             }
             throw new ParseException("Unknown character : '" + Character.toString(convertToRomanNumber) + "' (or " + ((int) convertToRomanNumber) + ")");
         }
@@ -1398,7 +1398,7 @@ public class TeXParser {
             if (this.isPartial) {
                 return stringBuffer.toString();
             }
-            throw new ParseException(k3.k("The token ", str, " must be closed by ", str2));
+            throw new ParseException(k3.j("The token ", str, " must be closed by ", str2));
         }
         return stringBuffer.substring(0, (stringBuffer.length() - this.pos) + i12);
     }

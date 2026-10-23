@@ -4,6 +4,7 @@ import b2.z;
 import be.j2;
 import be.l;
 import ge.t;
+import i2.o1;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -14,7 +15,7 @@ import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import k1.k;
 import v7.i8;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public class b {
     public static final /* synthetic */ AtomicLongFieldUpdater b = AtomicLongFieldUpdater.newUpdater(b.class, "sendersAndCloseStatus$volatile");
@@ -40,7 +41,7 @@ public class b {
     public b(int i10) {
         this.a = i10;
         if (i10 < 0) {
-            throw new IllegalArgumentException(i2.e.k(i10, "Invalid channel capacity: ", ", should be >=0").toString());
+            throw new IllegalArgumentException(o1.l(i10, "Invalid channel capacity: ", ", should be >=0").toString());
         }
         h hVar = d.a;
         this.bufferEnd$volatile = i10 != 0 ? i10 != Integer.MAX_VALUE ? i10 : Long.MAX_VALUE : 0L;
@@ -438,7 +439,7 @@ public class b {
                 }
             } else {
                 if (i10 != 3) {
-                    throw new IllegalStateException(i2.e.j(i10, "unexpected close status: ").toString());
+                    throw new IllegalStateException(o1.k(i10, "unexpected close status: ").toString());
                 }
                 h b10 = b(1152921504606846975L & j10);
                 Object obj = null;

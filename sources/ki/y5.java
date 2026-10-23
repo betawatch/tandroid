@@ -3,12 +3,12 @@ package ki;
 import android.text.TextPaint;
 import android.text.style.CharacterStyle;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.ob0;
-import org.telegram.ui.Components.qj0;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.Components.pb0;
+import org.telegram.ui.Components.tj0;
 import org.telegram.ui.Wallet.h7;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class y5 extends CharacterStyle {
     public final /* synthetic */ int a;
@@ -23,21 +23,21 @@ public final class y5 extends CharacterStyle {
     public final void updateDrawState(TextPaint textPaint) {
         switch (this.a) {
             case 0:
-                textPaint.setColor(h6.v(h6.m1(0.55f, textPaint.getColor()), h6.m1(0.4f, h6.w0(h6.Oh, ((c6) this.b).a))));
+                textPaint.setColor(k6.v(k6.o1(0.55f, textPaint.getColor()), k6.o1(0.4f, k6.w0(k6.Oh, ((c6) this.b).a))));
                 break;
             case 1:
                 textPaint.setTypeface(AndroidUtilities.bold());
                 int alpha = textPaint.getAlpha();
-                int i10 = h6.n6;
-                ((ob0) this.b).getClass();
-                textPaint.setColor(h6.x0(null, i10, false));
+                int i10 = k6.n6;
+                ((pb0) this.b).getClass();
+                textPaint.setColor(k6.x0(null, i10, false));
                 textPaint.setAlpha(alpha);
                 break;
             case 2:
-                textPaint.setColor(h6.v(h6.m1(0.55f, textPaint.getColor()), h6.m1(0.4f, ((qj0) this.b).I)));
+                textPaint.setColor(k6.v(k6.o1(0.55f, textPaint.getColor()), k6.o1(0.4f, ((tj0) this.b).I)));
                 break;
             case 3:
-                textPaint.setColor(((org.telegram.ui.Wallet.n3) this.b).t0);
+                textPaint.setColor(((org.telegram.ui.Wallet.m3) this.b).t0);
                 break;
             default:
                 float[] fArr = ((org.telegram.ui.Wallet.x5) this.b).a0;
@@ -50,8 +50,8 @@ public final class y5 extends CharacterStyle {
         }
     }
 
-    public y5(qj0 qj0Var) {
+    public y5(tj0 tj0Var) {
         this.a = 2;
-        this.b = qj0Var;
+        this.b = tj0Var;
     }
 }

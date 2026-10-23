@@ -1,11 +1,11 @@
 package ei;
 
 import android.animation.ValueAnimator;
-import org.telegram.ui.Components.jm0;
-import org.telegram.ui.Components.mw0;
-import org.telegram.ui.Components.pt0;
+import org.telegram.ui.Components.mm0;
+import org.telegram.ui.Components.pw0;
+import org.telegram.ui.Components.st0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o4 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -13,11 +13,11 @@ public final /* synthetic */ class o4 implements ValueAnimator.AnimatorUpdateLis
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
 
-    public /* synthetic */ o4(pt0 pt0Var, int i10, jm0 jm0Var) {
+    public /* synthetic */ o4(st0 st0Var, int i10, mm0 mm0Var) {
         this.a = 1;
-        this.c = pt0Var;
+        this.c = st0Var;
         this.b = i10;
-        this.d = jm0Var;
+        this.d = mm0Var;
     }
 
     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
@@ -35,28 +35,28 @@ public final /* synthetic */ class o4 implements ValueAnimator.AnimatorUpdateLis
                 }
                 break;
             case 1:
-                pt0 pt0Var = (pt0) this.c;
-                jm0 jm0Var = (jm0) this.d;
-                pt0Var.e.O1.put(this.b, (Float) valueAnimator.getAnimatedValue());
-                jm0Var.invalidate();
+                st0 st0Var = (st0) this.c;
+                mm0 mm0Var = (mm0) this.d;
+                st0Var.e.P1.put(this.b, (Float) valueAnimator.getAnimatedValue());
+                mm0Var.invalidate();
                 break;
             default:
                 rg.m0 m0Var = (rg.m0) this.c;
                 Integer num2 = (Integer) this.d;
                 float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 m0Var.K1.a = i0.a.f(floatValue2, num2.intValue(), this.b);
-                rg.j0 j0Var = m0Var.c1;
-                if (j0Var != null) {
-                    j0Var.invalidate();
+                rg.k0 k0Var = m0Var.c1;
+                if (k0Var != null) {
+                    k0Var.invalidate();
                     break;
                 }
                 break;
         }
     }
 
-    public /* synthetic */ o4(mw0 mw0Var, Integer num, int i10, int i11) {
+    public /* synthetic */ o4(pw0 pw0Var, Integer num, int i10, int i11) {
         this.a = i11;
-        this.c = mw0Var;
+        this.c = pw0Var;
         this.d = num;
         this.b = i10;
     }

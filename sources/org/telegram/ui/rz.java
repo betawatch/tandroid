@@ -1,29 +1,30 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.tl.TL_chatlists;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class rz implements RequestDelegate {
+public final /* synthetic */ class rz implements Utilities.Callback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ n00 b;
+    public final /* synthetic */ q00 b;
 
-    public /* synthetic */ rz(n00 n00Var, int i10) {
+    public /* synthetic */ rz(q00 q00Var, int i10) {
         this.a = i10;
-        this.b = n00Var;
+        this.b = q00Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new lt(15, this.b, tLObject));
+                this.b.finishFragment();
+                break;
+            case 1:
+                this.b.m0((TL_chatlists.TL_exportedChatlistInvite) obj);
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new jq(this.b, tL_error, tLObject, 6));
+                this.b.l0((TL_chatlists.TL_exportedChatlistInvite) obj);
                 break;
         }
     }

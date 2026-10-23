@@ -8,17 +8,19 @@ import android.content.IntentSender;
 import android.os.Build;
 import android.util.Log;
 import android.view.KeyEvent;
-import ci.v7;
+import ci.u7;
 import com.google.firebase.messaging.FirebaseMessaging;
 import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.concurrent.Executor;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.nk;
 import org.telegram.ui.Components.pg;
+import org.telegram.ui.lq;
 import p4.s0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class f extends BroadcastReceiver {
     public final /* synthetic */ int a;
@@ -56,7 +58,7 @@ public final class f extends BroadcastReceiver {
                 }
                 return;
             case 2:
-                ((Executor) ((e2.w) this.b).c).execute(new v7(18, this, context));
+                ((Executor) ((e2.w) this.b).c).execute(new u7(18, this, context));
                 return;
             case 3:
                 ((g.o) this.b).k();
@@ -86,7 +88,7 @@ public final class f extends BroadcastReceiver {
                 }
                 return;
             case 8:
-                pg pgVar = new pg(this, 22);
+                pg pgVar = new pg(this, 23);
                 if ("android.intent.action.MEDIA_UNMOUNTED".equals(intent.getAction())) {
                     ((nk) this.b).r.postDelayed(pgVar, 1000L);
                     return;
@@ -95,6 +97,9 @@ public final class f extends BroadcastReceiver {
                     return;
                 }
             case 9:
+                AndroidUtilities.runOnUIThread(new lq(this, intent.getStringExtra("mode") != null ? intent.getStringExtra("mode") : "toggle", intent.getStringExtra("style") != null ? intent.getStringExtra("style") : "reveal", 20));
+                return;
+            case 10:
                 ((s0) this.b).c();
                 return;
             default:

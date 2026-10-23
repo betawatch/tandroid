@@ -12,10 +12,10 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.d61;
+import org.telegram.ui.Components.i61;
 import org.telegram.ui.Components.uy;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class u5 implements uy {
     public final /* synthetic */ f6 a;
@@ -61,7 +61,7 @@ public final class u5 implements uy {
 
     @Override // org.telegram.ui.Components.uy
     public final boolean k() {
-        rg.b editText = ((rg.v2) this.a.J0).getEditText();
+        rg.b editText = ((rg.w2) this.a.J0).getEditText();
         if (editText == null || editText.length() == 0) {
             return false;
         }
@@ -71,17 +71,17 @@ public final class u5 implements uy {
 
     @Override // org.telegram.ui.Components.uy
     public final void l(String str) {
-        rg.v2 v2Var;
+        rg.w2 w2Var;
         rg.b editText;
         Emoji.EmojiSpan[] emojiSpanArr;
         rg.j jVar = this.a.J0;
-        if ((jVar instanceof rg.v2) && (editText = (v2Var = (rg.v2) jVar).getEditText()) != null) {
+        if ((jVar instanceof rg.w2) && (editText = (w2Var = (rg.w2) jVar).getEditText()) != null) {
             int selectionEnd = editText.getSelectionEnd();
             if (selectionEnd < 0) {
                 selectionEnd = 0;
             }
             try {
-                CharSequence replaceEmoji = Emoji.replaceEmoji(str, v2Var.getFontMetricsInt(), false);
+                CharSequence replaceEmoji = Emoji.replaceEmoji(str, w2Var.getFontMetricsInt(), false);
                 if ((replaceEmoji instanceof Spanned) && (emojiSpanArr = (Emoji.EmojiSpan[]) ((Spanned) replaceEmoji).getSpans(0, replaceEmoji.length(), Emoji.EmojiSpan.class)) != null) {
                     for (Emoji.EmojiSpan emojiSpan : emojiSpanArr) {
                         emojiSpan.scale = 0.85f;
@@ -105,7 +105,7 @@ public final class u5 implements uy {
         alertDialog$Builder.a.R = LocaleController.getString(R.string.ClearRecentEmojiTitle);
         alertDialog$Builder.a.T = LocaleController.getString(R.string.ClearRecentEmojiText);
         alertDialog$Builder.k(LocaleController.getString(R.string.ClearButton), new e1.c(this, 7));
-        i2.e.r(R.string.Cancel, alertDialog$Builder, null);
+        i2.o1.s(R.string.Cancel, alertDialog$Builder, null);
     }
 
     @Override // org.telegram.ui.Components.uy
@@ -116,7 +116,7 @@ public final class u5 implements uy {
     @Override // org.telegram.ui.Components.uy
     public final void x(long j10, TLRPC.Document document, String str, boolean z10) {
         org.telegram.ui.Components.a6 a6Var;
-        rg.b editText = ((rg.v2) this.a.J0).getEditText();
+        rg.b editText = ((rg.w2) this.a.J0).getEditText();
         if (editText == null) {
             return;
         }
@@ -157,11 +157,7 @@ public final class u5 implements uy {
     }
 
     @Override // org.telegram.ui.Components.uy
-    public final /* synthetic */ void o(d61 d61Var) {
-    }
-
-    @Override // org.telegram.ui.Components.uy
-    public final void q() {
+    public final /* synthetic */ void o(i61 i61Var) {
     }
 
     @Override // org.telegram.ui.Components.uy
@@ -177,15 +173,19 @@ public final class u5 implements uy {
     }
 
     @Override // org.telegram.ui.Components.uy
+    public final /* synthetic */ void y(long j10) {
+    }
+
+    @Override // org.telegram.ui.Components.uy
+    public final void q() {
+    }
+
+    @Override // org.telegram.ui.Components.uy
     public final /* synthetic */ void u() {
     }
 
     @Override // org.telegram.ui.Components.uy
     public final /* synthetic */ void w() {
-    }
-
-    @Override // org.telegram.ui.Components.uy
-    public final /* synthetic */ void y(long j10) {
     }
 
     @Override // org.telegram.ui.Components.uy

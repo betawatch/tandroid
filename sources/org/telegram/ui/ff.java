@@ -1,15 +1,15 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ff implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ qn b;
+    public final /* synthetic */ sn b;
     public final /* synthetic */ boolean c;
 
-    public /* synthetic */ ff(qn qnVar, boolean z10, int i10) {
+    public /* synthetic */ ff(sn snVar, boolean z10, int i10) {
         this.a = i10;
-        this.b = qnVar;
+        this.b = snVar;
         this.c = z10;
     }
 
@@ -20,7 +20,7 @@ public final /* synthetic */ class ff implements Runnable {
                 this.b.presentFragment(new PremiumPreviewFragment(0, this.c ? "upload_speed" : "download_speed"));
                 break;
             default:
-                this.b.Dc(0, this.c);
+                this.b.Fc(0, this.c);
                 break;
         }
     }

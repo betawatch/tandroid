@@ -6,33 +6,33 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.yr;
-import org.telegram.ui.h30;
+import org.telegram.ui.k30;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class f0 extends View {
-    public final /* synthetic */ org.telegram.ui.Cells.z a;
-    public final /* synthetic */ h30 b;
+    public final /* synthetic */ org.telegram.ui.Cells.y a;
+    public final /* synthetic */ k30 b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f0(h30 h30Var, Context context, org.telegram.ui.Cells.z zVar) {
+    public f0(k30 k30Var, Context context, org.telegram.ui.Cells.y yVar) {
         super(context);
-        this.b = h30Var;
-        this.a = zVar;
+        this.b = k30Var;
+        this.a = yVar;
     }
 
     @Override // android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        h30 h30Var = this.b;
-        float measuredWidth = h30Var.d0.getMeasuredWidth();
-        yr yrVar = h30Var.c0;
-        float measuredWidth2 = (h30Var.e0.getMeasuredWidth() * yrVar.g) + ((1.0f - yrVar.g) * measuredWidth);
+        k30 k30Var = this.b;
+        float measuredWidth = k30Var.d0.getMeasuredWidth();
+        yr yrVar = k30Var.c0;
+        float measuredWidth2 = (k30Var.e0.getMeasuredWidth() * yrVar.g) + ((1.0f - yrVar.g) * measuredWidth);
         canvas.save();
         int dp = AndroidUtilities.dp(50.0f) + ((int) measuredWidth2);
         int measuredHeight = getMeasuredHeight();
-        org.telegram.ui.Cells.z zVar = this.a;
-        zVar.setBounds(0, 0, dp, measuredHeight);
-        zVar.draw(canvas);
+        org.telegram.ui.Cells.y yVar = this.a;
+        yVar.setBounds(0, 0, dp, measuredHeight);
+        yVar.draw(canvas);
         super.dispatchDraw(canvas);
     }
 

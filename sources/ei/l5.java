@@ -3,7 +3,7 @@ package ei;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class l5 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -31,7 +31,7 @@ public final class l5 extends AnimatorListenerAdapter {
                 f6 f6Var2 = this.b;
                 f6Var2.s2 = false;
                 f6Var2.p2.setTranslationY(0.0f);
-                f6Var2.v0();
+                f6Var2.u0();
                 break;
         }
     }

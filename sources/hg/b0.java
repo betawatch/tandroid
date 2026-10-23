@@ -8,30 +8,30 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.Cells.j2;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.Cells.i2;
 import org.telegram.ui.Cells.m4;
-import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.tl0;
+import org.telegram.ui.Components.lm0;
+import org.telegram.ui.Components.wl0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public class b0 extends im0 {
+public class b0 extends lm0 {
     public final Context c;
     public final int d;
     public final boolean e;
     public final boolean f;
-    public final d6 h;
+    public final g6 h;
 
-    public b0(int i10, Context context, d6 d6Var, boolean z10, boolean z11) {
+    public b0(int i10, Context context, g6 g6Var, boolean z10, boolean z11) {
         this.e = z10;
         this.c = context;
         this.d = i10;
         this.f = z11;
-        this.h = d6Var;
+        this.h = g6Var;
     }
 
-    @Override // org.telegram.ui.Components.im0
+    @Override // org.telegram.ui.Components.lm0
     public final boolean D(s4.b1 b1Var) {
         return true;
     }
@@ -71,7 +71,7 @@ public class b0 extends im0 {
             }
         }
         m4Var.setTag(Long.valueOf(j10));
-        m4Var.a(j10, user != null ? UserObject.getFirstName(user) : chat != null ? chat.monoforum ? og.d.i(chat, i11, false) : chat.title : "");
+        m4Var.a(j10, true, user != null ? UserObject.getFirstName(user) : chat != null ? chat.monoforum ? og.d.i(chat, i11, false) : chat.title : "");
     }
 
     @Override // s4.g0
@@ -80,9 +80,9 @@ public class b0 extends im0 {
         m4 m4Var = new m4(this.c, this.h, z10);
         if (this.f && !m4Var.x) {
             m4Var.x = true;
-            NotificationCenter.getInstance(m4Var.h).listen(m4Var, NotificationCenter.userIsPremiumBlockedUpadted, new j2(m4Var, 1));
+            NotificationCenter.getInstance(m4Var.h).listen(m4Var, NotificationCenter.userIsPremiumBlockedUpadted, new i2(m4Var, 1));
         }
         m4Var.setLayoutParams(new s4.o0(AndroidUtilities.dp(80.0f), AndroidUtilities.dp(86.0f)));
-        return new tl0(m4Var);
+        return new wl0(m4Var);
     }
 }

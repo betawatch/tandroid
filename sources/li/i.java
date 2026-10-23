@@ -4,10 +4,10 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.view.View;
 import org.telegram.messenger.MessageObject;
-import org.telegram.ui.Cells.u1;
+import org.telegram.ui.Cells.t1;
 import s4.b1;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class i extends AnimatorListenerAdapter {
     public final /* synthetic */ b1 a;
@@ -37,13 +37,13 @@ public final class i extends AnimatorListenerAdapter {
         m mVar = this.d;
         mVar.X(view);
         View view2 = b1Var.a;
-        if (view2 instanceof u1) {
-            u1 u1Var = (u1) view2;
-            if (u1Var.fd) {
-                u1Var.fd = false;
-                u1Var.setVisibility(0);
+        if (view2 instanceof t1) {
+            t1 t1Var = (t1) view2;
+            if (t1Var.fd) {
+                t1Var.fd = false;
+                t1Var.setVisibility(0);
             }
-            MessageObject.GroupedMessages currentMessagesGroup = u1Var.getCurrentMessagesGroup();
+            MessageObject.GroupedMessages currentMessagesGroup = t1Var.getCurrentMessagesGroup();
             if (currentMessagesGroup != null) {
                 currentMessagesGroup.transitionParams.reset();
             }

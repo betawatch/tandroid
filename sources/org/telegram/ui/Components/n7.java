@@ -2,21 +2,21 @@ package org.telegram.ui.Components;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n7 implements xl0 {
+public final /* synthetic */ class n7 implements am0 {
     public final /* synthetic */ int a;
 
     public /* synthetic */ n7(int i10) {
         this.a = i10;
     }
 
-    @Override // org.telegram.ui.Components.xl0
-    public final void a(int i10, View view) {
+    @Override // org.telegram.ui.Components.am0
+    public final void d(int i10, View view) {
         switch (this.a) {
             case 0:
-                if (view instanceof org.telegram.ui.Cells.x) {
-                    ((org.telegram.ui.Cells.x) view).a();
+                if (view instanceof org.telegram.ui.Cells.w) {
+                    ((org.telegram.ui.Cells.w) view).a();
                     break;
                 }
                 break;
@@ -24,7 +24,7 @@ public final /* synthetic */ class n7 implements xl0 {
                 boolean z10 = ChatAttachAlertPhotoLayout.q1;
                 if (view instanceof org.telegram.ui.Cells.s5) {
                     org.telegram.ui.Cells.s5 s5Var = (org.telegram.ui.Cells.s5) view;
-                    s5Var.w.c(s5Var);
+                    s5Var.w.b(s5Var);
                     break;
                 }
                 break;
@@ -39,6 +39,6 @@ public final /* synthetic */ class n7 implements xl0 {
         }
     }
 
-    private final void b(int i10, View view) {
+    private final void a(int i10, View view) {
     }
 }

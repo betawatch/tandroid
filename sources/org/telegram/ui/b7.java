@@ -13,11 +13,11 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class b7 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public v6 a;
-    public final org.telegram.ui.ActionBar.d6 b;
+    public final org.telegram.ui.ActionBar.g6 b;
     public final TextView c;
     public final org.telegram.ui.Components.q6 d;
     public final org.telegram.ui.Components.w9 e;
@@ -25,9 +25,9 @@ public final class b7 extends FrameLayout implements NotificationCenter.Notifica
     public boolean h;
     public org.telegram.ui.Components.xp n;
 
-    public b7(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+    public b7(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
         super(context);
-        this.b = d6Var;
+        this.b = g6Var;
         TextView textView = new TextView(context);
         this.c = textView;
         textView.setSingleLine();
@@ -36,7 +36,7 @@ public final class b7 extends FrameLayout implements NotificationCenter.Notifica
         textView.setTextSize(1, 16.0f);
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
-        textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.G6, d6Var));
+        org.telegram.ui.ActionBar.r6.W(textView, org.telegram.ui.ActionBar.k6.G6, g6Var);
         boolean z10 = LocaleController.isRTL;
         addView(textView, w7.z5.d(-1, -1.0f, (z10 ? 5 : 3) | 48, z10 ? 21.0f : 72.0f, 0.0f, z10 ? 72.0f : 21.0f, 0.0f));
         org.telegram.ui.Components.q6 q6Var = new org.telegram.ui.Components.q6(context, true, true, !LocaleController.isRTL);
@@ -44,7 +44,7 @@ public final class b7 extends FrameLayout implements NotificationCenter.Notifica
         q6Var.b(0.55f, 320L, org.telegram.ui.Components.bs.h);
         q6Var.setTextSize(AndroidUtilities.dp(16.0f));
         q6Var.setGravity((LocaleController.isRTL ? 3 : 5) | 16);
-        q6Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.I6, d6Var));
+        org.telegram.ui.ActionBar.r6.a0(q6Var, org.telegram.ui.ActionBar.k6.I6, g6Var);
         boolean z11 = LocaleController.isRTL;
         addView(q6Var, w7.z5.d(-2, -1.0f, (z11 ? 3 : 5) | 48, z11 ? 21.0f : 72.0f, 0.0f, z11 ? 72.0f : 21.0f, 0.0f));
         org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
@@ -66,7 +66,7 @@ public final class b7 extends FrameLayout implements NotificationCenter.Notifica
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
         if (this.f) {
-            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(72.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(72.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.h6.k0);
+            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(72.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(72.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.k6.k0);
         }
     }
 

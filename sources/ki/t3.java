@@ -4,7 +4,7 @@ import android.text.TextUtils;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class t3 {
     public final a a;
@@ -26,7 +26,7 @@ public final class t3 {
         boolean z10 = i10 >= 0 && i10 < d.buttons.size();
         if (z10 || d.buttons.size() < 8) {
             w3 w3Var = this.c;
-            h2 h2Var = w3Var.H3;
+            h2 h2Var = w3Var.K3;
             if (h2Var != null) {
                 h2Var.d();
             }
@@ -39,12 +39,12 @@ public final class t3 {
             if (!z10) {
                 d.buttons.add(pageButton);
             }
-            w3Var.W2.N(false);
-            h2 h2Var2 = w3Var.H3;
+            w3Var.Z2.N(false);
+            h2 h2Var2 = w3Var.K3;
             if (h2Var2 != null) {
                 h2Var2.h();
             }
-            w3Var.f3.onContentChanged();
+            w3Var.i3.onContentChanged();
         }
     }
 
@@ -55,17 +55,17 @@ public final class t3 {
             return;
         }
         w3 w3Var = this.c;
-        h2 h2Var = w3Var.H3;
+        h2 h2Var = w3Var.K3;
         if (h2Var != null) {
             h2Var.d();
         }
         d.buttons.remove(i10);
-        w3Var.W2.N(false);
-        h2 h2Var2 = w3Var.H3;
+        w3Var.Z2.N(false);
+        h2 h2Var2 = w3Var.K3;
         if (h2Var2 != null) {
             h2Var2.h();
         }
-        w3Var.f3.onContentChanged();
+        w3Var.i3.onContentChanged();
     }
 
     public final boolean c() {

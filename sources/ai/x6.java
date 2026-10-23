@@ -5,17 +5,17 @@ import android.text.SpannableStringBuilder;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Emoji;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class x6 extends org.telegram.ui.Components.zc {
-    public final org.telegram.ui.ActionBar.d6 P;
+    public final org.telegram.ui.ActionBar.g6 P;
     public String Q;
     public int R;
 
-    public x6(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+    public x6(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
         super(context);
-        this.P = d6Var;
-        setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.G6, d6Var));
+        this.P = g6Var;
+        org.telegram.ui.ActionBar.r6.W(this, org.telegram.ui.ActionBar.k6.G6, g6Var);
         setTextSize(1, 14.0f);
         setPadding(0, AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f));
     }

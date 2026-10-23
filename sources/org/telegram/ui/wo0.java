@@ -1,40 +1,58 @@
 package org.telegram.ui;
 
-import android.os.Build;
-import androidx.recyclerview.widget.RecyclerView;
+import android.content.Context;
+import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class wo0 extends s4.r0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ cp0 b;
+public final class wo0 extends org.telegram.ui.Components.mm0 {
+    public final /* synthetic */ int Y2;
+    public final /* synthetic */ fp0 Z2;
 
-    public wo0(cp0 cp0Var, int i10) {
-        this.b = cp0Var;
-        this.a = i10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public wo0(fp0 fp0Var, Context context, org.telegram.ui.ActionBar.g6 g6Var, int i10) {
+        super(context, g6Var);
+        this.Z2 = fp0Var;
+        this.Y2 = i10;
     }
 
-    @Override // s4.r0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        bh.f fVar;
-        cp0 cp0Var = this.b;
-        ip0 ip0Var = cp0Var.p0;
-        if (i11 != 0) {
-            ip0Var.D0(1);
+    @Override // org.telegram.ui.Components.mm0
+    public final Integer X0(int i10) {
+        fp0 fp0Var = this.Z2;
+        if ((i10 < fp0Var.b0 || i10 >= fp0Var.c0) && (i10 < fp0Var.d0 || i10 >= fp0Var.e0)) {
+            return super.X0(i10);
         }
-        if (Build.VERSION.SDK_INT >= 31 && (fVar = ip0Var.f0) != null) {
-            fVar.f(i10, i11);
-        }
-        cp0Var.h();
-        if (cp0Var.K != null) {
-            if (cp0Var.J == null || !cp0Var.c()) {
-                return;
-            }
-            cp0Var.J.g(false);
+        return 0;
+    }
+
+    @Override // org.telegram.ui.Components.mm0, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        fp0 fp0Var = this.Z2;
+        if (!fp0Var.G || fp0Var.E == null || fp0Var.F == null) {
             return;
         }
-        ai.y9 y9Var = this.a == 1 ? ip0Var.c : ip0Var.b;
-        if (y9Var == null || !cp0Var.c()) {
+        int save = canvas.save();
+        canvas.translate(fp0Var.E.getLeft() + fp0Var.F.getLeft(), fp0Var.F.getTop());
+        fp0Var.E.draw(canvas);
+        canvas.restoreToCount(save);
+    }
+
+    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        fp0 fp0Var = this.Z2;
+        lp0 lp0Var = fp0Var.p0;
+        fp0Var.h();
+        if (fp0Var.K != null) {
+            if (fp0Var.J == null || !fp0Var.c()) {
+                return;
+            }
+            fp0Var.J.g(false);
+            return;
+        }
+        ai.y9 y9Var = this.Y2 == 1 ? lp0Var.c : lp0Var.b;
+        if (y9Var == null || !fp0Var.c()) {
             return;
         }
         y9Var.a();

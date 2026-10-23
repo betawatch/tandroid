@@ -1,25 +1,64 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
-/* loaded from: classes3.dex */
-public final class a71 extends g.o {
-    public final /* synthetic */ z61 c;
-    public final /* synthetic */ c71 d;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
 
-    public a71(c71 c71Var, z61 z61Var) {
-        this.d = c71Var;
-        this.c = z61Var;
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+/* loaded from: classes3.dex */
+public final class a71 implements org.telegram.ui.ActionBar.g6 {
+    public final /* synthetic */ b71 a;
+
+    public a71(b71 b71Var) {
+        this.a = b71Var;
     }
 
-    @Override // g.o
+    @Override // org.telegram.ui.ActionBar.g6
+    public final boolean a() {
+        return org.telegram.ui.ActionBar.k6.I.q();
+    }
+
+    @Override // org.telegram.ui.ActionBar.g6
+    public final void b(float f7, float f10, int i10, int i11) {
+        org.telegram.ui.ActionBar.k6.q(f7, f10, i10, i11);
+    }
+
+    @Override // org.telegram.ui.ActionBar.g6
+    public final ColorFilter c() {
+        return org.telegram.ui.ActionBar.k6.v3;
+    }
+
+    @Override // org.telegram.ui.ActionBar.g6
+    public final Paint d(String str) {
+        return org.telegram.ui.ActionBar.k6.U0(str);
+    }
+
+    @Override // org.telegram.ui.ActionBar.g6
+    public final int e(int i10) {
+        return g(i10);
+    }
+
+    @Override // org.telegram.ui.ActionBar.g6
+    public final /* synthetic */ boolean f() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ActionBar.g6
+    public final int g(int i10) {
+        return this.a.I(i10);
+    }
+
+    @Override // org.telegram.ui.ActionBar.g6
+    public final /* synthetic */ Drawable getDrawable(String str) {
+        return null;
+    }
+
+    @Override // org.telegram.ui.ActionBar.g6
     public final int i(int i10) {
-        int i11;
-        u61 u61Var = this.d.W2;
-        z61 z61Var = this.c;
-        if (u61Var == null) {
-            return z61Var.J;
-        }
-        h61 G = u61Var.G(i10);
-        return (G == null || (i11 = G.u) == -1) ? z61Var.J : i11;
+        return g(i10);
+    }
+
+    @Override // org.telegram.ui.ActionBar.g6
+    public final /* synthetic */ void h(int i10, int i11) {
     }
 }

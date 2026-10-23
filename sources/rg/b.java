@@ -15,9 +15,9 @@ import android.text.StaticLayout;
 import android.text.TextPaint;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.er;
+import org.telegram.ui.Components.dr;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public class b extends EditTextBoldCursor {
     public final Canvas b;
@@ -28,7 +28,7 @@ public class b extends EditTextBoldCursor {
     public int h;
     public float n;
     public int r;
-    public final er s;
+    public final dr s;
     public RectF[] v;
     public RectF w;
     public boolean x;
@@ -40,7 +40,7 @@ public class b extends EditTextBoldCursor {
         TextPaint textPaint = new TextPaint(1);
         this.c = textPaint;
         this.d = new Paint(1);
-        this.s = new er();
+        this.s = new dr();
         this.h = 0;
         setInputType(getInputType() | 655360);
         this.f = true;
@@ -161,8 +161,8 @@ public class b extends EditTextBoldCursor {
                 rectF9.right = measuredWidth2 - rectF10.right;
                 rectF10.bottom = getMeasuredHeight() - this.w.bottom;
             }
-            er erVar = this.s;
-            erVar.rewind();
+            dr drVar = this.s;
+            drVar.rewind();
             float textSize = getTextSize() / 3.0f;
             float f10 = 1.5f * textSize;
             int i15 = 1;
@@ -216,13 +216,13 @@ public class b extends EditTextBoldCursor {
                     break;
                 }
                 if (rectFArr6[i10].width() != 0.0f) {
-                    erVar.addRect(this.v[i10], Path.Direction.CW);
+                    drVar.addRect(this.v[i10], Path.Direction.CW);
                 }
                 i10++;
             }
-            erVar.a();
+            drVar.a();
             setFrameRoundRadius(textSize);
-            canvas.drawPath(erVar, paint);
+            canvas.drawPath(drVar, paint);
             canvas.restore();
         } else {
             this.w = null;

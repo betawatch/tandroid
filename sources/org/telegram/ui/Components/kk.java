@@ -4,14 +4,14 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.view.View;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class kk extends AnimatorListenerAdapter {
     public final /* synthetic */ int a = 0;
-    public final /* synthetic */ org.telegram.ui.oq b;
+    public final /* synthetic */ org.telegram.ui.qq b;
 
-    public kk(org.telegram.ui.oq oqVar) {
-        this.b = oqVar;
+    public kk(org.telegram.ui.qq qqVar) {
+        this.b = qqVar;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -21,16 +21,16 @@ public final class kk extends AnimatorListenerAdapter {
                 ((mk) this.b.d).U.unlock();
                 break;
             default:
-                org.telegram.ui.oq oqVar = this.b;
-                View view = oqVar.b;
+                org.telegram.ui.qq qqVar = this.b;
+                View view = qqVar.b;
                 view.setAlpha(1.0f);
                 s4.n0.x0(view);
-                ((mk) oqVar.d).X.r.removeView(view);
+                ((mk) qqVar.d).X.r.removeView(view);
                 break;
         }
     }
 
-    public kk(org.telegram.ui.oq oqVar, s4.n0 n0Var) {
-        this.b = oqVar;
+    public kk(org.telegram.ui.qq qqVar, s4.n0 n0Var) {
+        this.b = qqVar;
     }
 }

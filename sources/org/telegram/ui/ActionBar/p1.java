@@ -1,14 +1,14 @@
 package org.telegram.ui.ActionBar;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p1 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ b2 b;
+    public final /* synthetic */ c2 b;
 
-    public /* synthetic */ p1(b2 b2Var, int i10) {
+    public /* synthetic */ p1(c2 c2Var, int i10) {
         this.a = i10;
-        this.b = b2Var;
+        this.b = c2Var;
     }
 
     @Override // java.lang.Runnable
@@ -18,10 +18,10 @@ public final /* synthetic */ class p1 implements Runnable {
                 this.b.dismiss();
                 break;
             default:
-                b2 b2Var = this.b;
-                if (!b2Var.isShowing()) {
+                c2 c2Var = this.b;
+                if (!c2Var.isShowing()) {
                     try {
-                        b2Var.show();
+                        c2Var.show();
                         break;
                     } catch (Exception unused) {
                         return;

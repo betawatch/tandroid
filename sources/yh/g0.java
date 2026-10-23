@@ -7,13 +7,15 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.r6;
 import org.telegram.ui.Components.og;
 import org.telegram.ui.Components.q6;
-import org.telegram.ui.gn;
-import org.telegram.ui.tf1;
+import org.telegram.ui.in;
+import org.telegram.ui.ve1;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class g0 implements og {
     public final /* synthetic */ TL_stars.TL_starGiftUnique a;
@@ -42,16 +44,18 @@ public final class g0 implements og {
     public final void a(CharSequence charSequence) {
         int i10;
         int i11;
+        g6 g6Var;
+        g6 g6Var2;
         i0 i0Var = this.b;
         q6 q6Var = i0Var.w;
         y4 y4Var = i0Var.b;
-        i10 = ((org.telegram.ui.ActionBar.f3) i0Var).currentAccount;
+        i10 = ((org.telegram.ui.ActionBar.h3) i0Var).currentAccount;
         y4Var.a(this.a, UserConfig.getInstance(i10).getClientUserId(), i0Var.n.getTextWithEntities(), LocaleController.getString(R.string.GiftMessageSendNow), true);
         int codePointCount = Character.codePointCount(charSequence, 0, charSequence.length());
         i0Var.F = codePointCount;
         int i12 = i0Var.E;
         if (i12 <= 0 || (i11 = i12 - codePointCount) > 15) {
-            q6Var.animate().alpha(0.0f).scaleX(0.5f).scaleY(0.5f).setDuration(100L).setListener(new tf1(this, 22));
+            q6Var.animate().alpha(0.0f).scaleX(0.5f).scaleY(0.5f).setDuration(100L).setListener(new ve1(this, 23));
             return;
         }
         if (i11 < -9999) {
@@ -67,9 +71,13 @@ public final class g0 implements og {
         q6Var.animate().setListener(null).cancel();
         q6Var.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(100L).start();
         if (i11 < 0) {
-            q6Var.setTextColor(i0Var.getThemedColor(h6.p7));
+            int i13 = k6.p7;
+            g6Var2 = ((org.telegram.ui.ActionBar.h3) i0Var).resourcesProvider;
+            r6.a0(q6Var, i13, g6Var2);
         } else {
-            q6Var.setTextColor(i0Var.getThemedColor(h6.y6));
+            int i14 = k6.y6;
+            g6Var = ((org.telegram.ui.ActionBar.h3) i0Var).resourcesProvider;
+            r6.a0(q6Var, i14, g6Var);
         }
     }
 
@@ -104,7 +112,7 @@ public final class g0 implements og {
     }
 
     @Override // org.telegram.ui.Components.og
-    public final /* synthetic */ gn p0() {
+    public final /* synthetic */ in p0() {
         return null;
     }
 
@@ -133,6 +141,26 @@ public final class g0 implements og {
     }
 
     @Override // org.telegram.ui.Components.og
+    public final void V1(int i10) {
+    }
+
+    @Override // org.telegram.ui.Components.og
+    public final void X0(int i10) {
+    }
+
+    @Override // org.telegram.ui.Components.og
+    public final void Z1(boolean z10) {
+    }
+
+    @Override // org.telegram.ui.Components.og
+    public final void a0(boolean z10) {
+    }
+
+    @Override // org.telegram.ui.Components.og
+    public final void z(float f7) {
+    }
+
+    @Override // org.telegram.ui.Components.og
     public final /* synthetic */ void F0() {
     }
 
@@ -153,27 +181,11 @@ public final class g0 implements og {
     }
 
     @Override // org.telegram.ui.Components.og
-    public final void V1(int i10) {
-    }
-
-    @Override // org.telegram.ui.Components.og
-    public final void X0(int i10) {
-    }
-
-    @Override // org.telegram.ui.Components.og
     public final /* synthetic */ void Y() {
     }
 
     @Override // org.telegram.ui.Components.og
     public final void Y1() {
-    }
-
-    @Override // org.telegram.ui.Components.og
-    public final void Z1(boolean z10) {
-    }
-
-    @Override // org.telegram.ui.Components.og
-    public final void a0(boolean z10) {
     }
 
     @Override // org.telegram.ui.Components.og
@@ -230,10 +242,6 @@ public final class g0 implements og {
 
     @Override // org.telegram.ui.Components.og
     public final void y1() {
-    }
-
-    @Override // org.telegram.ui.Components.og
-    public final void z(float f7) {
     }
 
     @Override // org.telegram.ui.Components.og

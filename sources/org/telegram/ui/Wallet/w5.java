@@ -4,11 +4,11 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import android.widget.FrameLayout;
-import org.telegram.ui.Components.yq;
+import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final class w5 extends yq {
+public final class w5 extends xq {
     public final /* synthetic */ x5 a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -17,7 +17,7 @@ public final class w5 extends yq {
         this.a = x5Var;
     }
 
-    @Override // org.telegram.ui.Components.yq, android.text.style.ReplacementSpan
+    @Override // org.telegram.ui.Components.xq, android.text.style.ReplacementSpan
     public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
         x5 x5Var = this.a;
         FrameLayout.LayoutParams layoutParams = x5Var.P;

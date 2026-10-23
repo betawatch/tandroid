@@ -1,6 +1,35 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+import org.telegram.messenger.AndroidUtilities;
+
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class zm extends nc0 {
+public final class zm extends pf.c {
+    public final /* synthetic */ org.telegram.ui.Cells.t1 d;
+    public final /* synthetic */ dn e;
+
+    public zm(dn dnVar, org.telegram.ui.Cells.t1 t1Var) {
+        this.e = dnVar;
+        this.d = t1Var;
+    }
+
+    @Override // pf.c
+    public final void c(boolean z10) {
+        if (z10) {
+            return;
+        }
+        AndroidUtilities.runOnUIThread(new tj(this.e.a, 9), 250L);
+    }
+
+    @Override // pf.c
+    public final void d() {
+        dn dnVar = this.e;
+        sn snVar = dnVar.a;
+        org.telegram.ui.Cells.t1 t1Var = this.d;
+        snVar.Jb = t1Var.getMessageObject().getId();
+        sn snVar2 = dnVar.a;
+        snVar2.Kb = 2;
+        snVar2.Lb = null;
+        t1Var.invalidate();
+    }
 }

@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import di.n;
 import ei.e2;
 import hg.o;
-import ig.l0;
+import ig.k0;
 import j$.util.Map;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -31,26 +31,27 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.r6;
 import org.telegram.ui.Cells.u3;
+import org.telegram.ui.Components.b71;
 import org.telegram.ui.Components.bb;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.h20;
-import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.jm0;
 import org.telegram.ui.Components.k20;
 import org.telegram.ui.Components.kv;
+import org.telegram.ui.Components.lm0;
+import org.telegram.ui.Components.mm0;
 import org.telegram.ui.Components.o20;
-import org.telegram.ui.Components.u61;
 import org.telegram.ui.Components.v30;
 import r0.a0;
 import s4.k;
-import ug.t0;
+import ug.s0;
 import w7.b6;
 import w7.z5;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class f extends bb implements ne.d {
     public static final /* synthetic */ int r0 = 0;
@@ -60,7 +61,7 @@ public final class f extends bb implements ne.d {
     public final ArrayList a0;
     public final ArrayList b0;
     public String c0;
-    public u61 d0;
+    public b71 d0;
     public final ei.d e0;
     public final n f0;
     public final o5 g0;
@@ -75,8 +76,8 @@ public final class f extends bb implements ne.d {
     public final Rect p0;
     public v30 q0;
 
-    public f(Context context, d6 d6Var) {
-        super(context, d6Var, true);
+    public f(Context context, g6 g6Var) {
+        super(context, g6Var, true);
         bs bsVar = bs.h;
         this.X = new ne.e(3, this, bsVar, 350L);
         this.Y = new ne.b(4, this, bsVar, 320L, false);
@@ -91,21 +92,21 @@ public final class f extends bb implements ne.d {
         this.w = false;
         this.m0 = MessagesController.getInstance(this.currentAccount).config.pollCountriesMax.get();
         AndroidUtilities.enableEdgeToEdge(getWindow());
-        jm0 jm0Var = this.d;
+        mm0 mm0Var = this.d;
         int i10 = this.backgroundPaddingLeft;
-        jm0Var.setPadding(i10, 0, i10, AndroidUtilities.dp(68.0f) + AndroidUtilities.navigationBarHeight);
+        mm0Var.setPadding(i10, 0, i10, AndroidUtilities.dp(68.0f) + AndroidUtilities.navigationBarHeight);
         this.d.setClipToPadding(false);
         this.d.j(new kv(this, 21));
-        this.d.setOnItemClickListener(new c(context, d6Var, this));
-        ei.d dVar = new ei.d(context, d6Var, true);
+        this.d.setOnItemClickListener(new c(context, g6Var, this));
+        ei.d dVar = new ei.d(context, g6Var, true);
         this.e0 = dVar;
-        dVar.e();
+        dVar.f();
         dVar.setCountFilled(true);
         dVar.setText(LocaleController.getString(R.string.Save));
         dVar.setOnClickListener(new a(this, 0));
         n nVar = new n(this, context);
         this.f0 = nVar;
-        nVar.setTextColor(getThemedColor(h6.Sh));
+        r6.W(nVar, k6.Sh, g6Var);
         nVar.setText(LocaleController.getString(R.string.Save));
         nVar.setTypeface(AndroidUtilities.bold());
         nVar.setTextSize(1, 14.0f);
@@ -113,9 +114,9 @@ public final class f extends bb implements ne.d {
         nVar.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
         nVar.setVisibility(8);
         b6.a(nVar);
-        this.e.n().addView(nVar, z5.t(-2, 48, 16, 12, 0, 12, 0));
+        this.e.m().addView(nVar, z5.t(-2, 48, 16, 12, 0, 12, 0));
         nVar.setOnClickListener(new a(this, 1));
-        k20 k20Var = new k20(context, d6Var);
+        k20 k20Var = new k20(context, g6Var);
         String string = LocaleController.getString(R.string.PollV2SearchHint);
         e2 e2Var = k20Var.r;
         e2Var.setHint(string);
@@ -123,16 +124,16 @@ public final class f extends bb implements ne.d {
         o20 o20Var = new o20(context, this.currentAccount);
         this.h0 = o20Var;
         o20Var.setDelegate(new b(this));
-        o5 o5Var = new o5(context, d6Var, this);
+        o5 o5Var = new o5(context, g6Var, this);
         this.g0 = o5Var;
         int i11 = this.backgroundPaddingLeft;
         o5Var.setPadding(i11, 0, i11, 0);
         o5Var.addView(k20Var, z5.d(-1, 40.0f, 48, 10.0f, 0.0f, 10.0f, 0.0f));
         o5Var.addView(o20Var, z5.d(-1, 144.0f, 48, -3.0f, 40.0f, -3.0f, 0.0f));
-        u3 u3Var = new u3(context, 18, d6Var);
+        u3 u3Var = new u3(context, 18, g6Var);
         this.i0 = u3Var;
         u3Var.setTranslationY(AndroidUtilities.dp(48.0f));
-        u3Var.c(LocaleController.getString(R.string.SearchCountriesTitle), LocaleController.getString(R.string.DeselectAll), new a(this, 2));
+        u3Var.b(LocaleController.getString(R.string.SearchCountriesTitle), LocaleController.getString(R.string.DeselectAll), new a(this, 2));
         o5Var.addView(u3Var, z5.e(-1, 32, 48));
         this.containerView.addView(o5Var, z5.e(-1, 216, 48));
         FrameLayout frameLayout = new FrameLayout(context);
@@ -149,22 +150,22 @@ public final class f extends bb implements ne.d {
         kVar.C = false;
         kVar.m = false;
         this.d.setItemAnimator(kVar);
-        this.d.i(new d(this, d6Var));
-        l0 l0Var = new l0(this, 21);
+        this.d.i(new d(this, g6Var));
+        k0 k0Var = new k0(this, 21);
         ConnectionsManager connectionsManager = ConnectionsManager.getInstance(UserConfig.selectedAccount);
         TLRPC.TL_help_getCountriesList tL_help_getCountriesList = new TLRPC.TL_help_getCountriesList();
         tL_help_getCountriesList.lang_code = LocaleController.getInstance().getCurrentLocaleInfo() != null ? LocaleController.getInstance().getCurrentLocaleInfo().getLangCode() : Locale.getDefault().getCountry();
-        connectionsManager.sendRequest(tL_help_getCountriesList, new h(l0Var, 26));
+        connectionsManager.sendRequest(tL_help_getCountriesList, new h(k0Var, 26));
         a0.i(getContainer(), new b(this));
     }
 
-    public static void Q(f fVar, Pair pair) {
+    public static void P(f fVar, Pair pair) {
         HashMap hashMap = fVar.j0;
         HashMap hashMap2 = fVar.Z;
         hashMap2.putAll((Map) pair.first);
         ArrayList arrayList = fVar.a0;
         arrayList.addAll((Collection) pair.second);
-        Map.-EL.forEach(hashMap2, new t0(fVar, 1));
+        Map.-EL.forEach(hashMap2, new s0(fVar, 1));
         HashSet hashSet = fVar.o0;
         if (hashSet != null) {
             Iterator it = hashSet.iterator();
@@ -197,34 +198,29 @@ public final class f extends bb implements ne.d {
         fVar.e0.b(hashMap.size(), true);
     }
 
-    @Override // org.telegram.ui.Components.bb
-    public final CharSequence A() {
-        return LocaleController.getString(R.string.BoostingSelectCountry);
-    }
-
-    public final void R() {
+    public final void Q() {
         int dp = AndroidUtilities.dp(56.0f) + org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight + ((int) this.X.e);
         int measuredHeight = (this.containerView.getMeasuredHeight() - AndroidUtilities.navigationBarHeight) - AndroidUtilities.dp(34.0f);
         Rect rect = this.p0;
         boolean z10 = (rect.top == dp && rect.bottom == measuredHeight) ? false : true;
         rect.set(0, dp, this.containerView.getMeasuredWidth(), measuredHeight);
-        jm0 jm0Var = this.d;
-        jm0Var.setClipBounds(rect);
+        mm0 mm0Var = this.d;
+        mm0Var.setClipBounds(rect);
         if (z10) {
-            jm0Var.invalidate();
+            mm0Var.invalidate();
         }
     }
 
-    public final void S() {
-        jm0 jm0Var;
+    public final void R() {
+        mm0 mm0Var;
         float f7 = AndroidUtilities.displaySize.y;
         int i10 = 0;
         while (true) {
-            jm0Var = this.d;
-            if (i10 >= jm0Var.getChildCount()) {
+            mm0Var = this.d;
+            if (i10 >= mm0Var.getChildCount()) {
                 break;
             }
-            View childAt = jm0Var.getChildAt(i10);
+            View childAt = mm0Var.getChildAt(i10);
             if (RecyclerView.R(childAt) >= 1 && childAt.getY() < f7) {
                 f7 = childAt.getY();
             }
@@ -234,11 +230,11 @@ public final class f extends bb implements ne.d {
         o5 o5Var = this.g0;
         if (o5Var.getTranslationY() != max) {
             o5Var.setTranslationY(max);
-            jm0Var.invalidate();
+            mm0Var.invalidate();
         }
     }
 
-    public final void T(View view) {
+    public final void S(View view) {
         v30 v30Var = (v30) view;
         if (!v30Var.y) {
             v30 v30Var2 = this.q0;
@@ -258,32 +254,37 @@ public final class f extends bb implements ne.d {
         this.d0.N(true);
     }
 
-    @Override // org.telegram.ui.ActionBar.f3
-    public final void onContainerLayout(int i10, int i11, int i12, int i13) {
-        super.onContainerLayout(i10, i11, i12, i13);
-        R();
-        S();
-    }
-
     @Override // ne.d
-    public final void r(int i10, float f7, float f10, ne.e eVar) {
+    public final void o(int i10, float f7, float f10, ne.e eVar) {
         if (i10 != 3) {
             if (i10 == 4) {
                 h20.d(this.f0, f7);
             }
         } else {
-            R();
+            Q();
             this.i0.setTranslationY(AndroidUtilities.dp(48.0f) + f7);
             this.g0.invalidate();
         }
     }
 
+    @Override // org.telegram.ui.ActionBar.h3
+    public final void onContainerLayout(int i10, int i11, int i12, int i13) {
+        super.onContainerLayout(i10, i11, i12, i13);
+        Q();
+        R();
+    }
+
     @Override // org.telegram.ui.Components.bb
-    public final im0 x(jm0 jm0Var) {
-        u61 u61Var = new u61(jm0Var, getContext(), this.currentAccount, 0, true, new o(this, 19), this.resourcesProvider);
-        this.d0 = u61Var;
-        u61Var.r = false;
-        return u61Var;
+    public final lm0 w(mm0 mm0Var) {
+        b71 b71Var = new b71(mm0Var, getContext(), this.currentAccount, 0, true, new o(this, 19), this.resourcesProvider);
+        this.d0 = b71Var;
+        b71Var.r = false;
+        return b71Var;
+    }
+
+    @Override // org.telegram.ui.Components.bb
+    public final CharSequence z() {
+        return LocaleController.getString(R.string.BoostingSelectCountry);
     }
 
     @Override // ne.d

@@ -1,178 +1,456 @@
 package org.telegram.ui.Wallet;
 
-import android.animation.ValueAnimator;
-import android.content.ClipboardManager;
-import android.content.DialogInterface;
-import android.os.Bundle;
+import android.app.Activity;
+import android.graphics.drawable.ShapeDrawable;
+import android.text.TextUtils;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import java.util.ArrayList;
-import java.util.HashSet;
+import java.util.Arrays;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.x90;
-import org.telegram.ui.Components.y31;
-import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.gt0;
-import org.telegram.ui.z70;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.Vector;
+import org.telegram.tgnet.tl.TL_toncenter;
+import org.telegram.tgnet.tl.TL_wallet;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.Components.qy;
+import org.telegram.ui.Components.xc;
+import org.telegram.ui.Wallet.WalletEngine2;
+import org.telegram.ui.ae0;
+import org.telegram.ui.k01;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class j implements Runnable {
+public final /* synthetic */ class j implements Utilities.Callback2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
+    public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ j(int i10, Object obj, int i11) {
-        this.a = i11;
-        this.b = i10;
-        this.c = obj;
+    public /* synthetic */ j(Object obj, Object obj2, Object obj3, int i10) {
+        this.a = i10;
+        this.b = obj;
+        this.d = obj2;
+        this.c = obj3;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        CharSequence text;
+    /* JADX WARN: Removed duplicated region for block: B:65:0x021f  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x0228  */
+    @Override // org.telegram.messenger.Utilities.Callback2
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run(Object obj, Object obj2) {
+        String str;
+        String str2;
+        String str3;
         int i10 = this.a;
-        Object obj = this.c;
-        final int i11 = this.b;
+        int i11 = 8;
+        str = "NULL_ERROR";
+        TL_toncenter.onrampProviderInfo onrampproviderinfo = null;
+        int i12 = 0;
+        Object obj3 = this.b;
+        Object obj4 = this.c;
+        Object obj5 = this.d;
         switch (i10) {
             case 0:
-                m0 m0Var = (m0) obj;
-                HashSet hashSet = m0Var.E;
-                hashSet.remove(Integer.valueOf(i11));
-                if (hashSet.isEmpty()) {
-                    m0Var.Q();
+                l0 l0Var = (l0) obj3;
+                String str4 = (String) obj5;
+                Utilities.Callback2 callback2 = (Utilities.Callback2) obj4;
+                TL_wallet.userAddresses useraddresses = (TL_wallet.userAddresses) obj;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
+                int i13 = l0Var.a;
+                if (useraddresses != null && useraddresses.addresses.size() > 0) {
+                    MessagesController.getInstance(i13).putUsers(useraddresses.users, false);
+                    MessagesStorage.getInstance(i13).putUsersAndChats(useraddresses.users, null, true, true);
+                    TL_wallet.walletUserAddress walletuseraddress = useraddresses.addresses.get(0);
+                    long j10 = walletuseraddress.user_id;
+                    if (j10 != 0) {
+                        l0Var.L.put(Long.valueOf(j10), walletuseraddress);
+                    }
+                    l0Var.M.put(walletuseraddress.address, walletuseraddress);
+                    callback2.run(walletuseraddress, tL_error != null ? tL_error.text : null);
+                    break;
+                } else {
+                    l0Var.Z(str4, new o(l0Var, callback2, str4, i12));
                     break;
                 }
                 break;
             case 1:
-                m0 w9 = m0.w(i11);
-                NotificationCenter notificationCenter = NotificationCenter.getInstance(i11);
-                b0 b0Var = new b0(notificationCenter, (z70) obj, w9);
-                notificationCenter.addObserver(b0Var, NotificationCenter.walletUpdate);
-                AndroidUtilities.runOnUIThread(b0Var, 10000L);
-                if (w9.e == null && w9.A < 0) {
-                    w9.W();
+                l0 l0Var2 = (l0) obj3;
+                Utilities.Callback2 callback22 = (Utilities.Callback2) obj4;
+                TLRPC.User user = (TLRPC.User) obj5;
+                TL_wallet.userAddresses useraddresses2 = (TL_wallet.userAddresses) obj;
+                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
+                l0Var2.getClass();
+                if (useraddresses2 != null && useraddresses2.addresses.size() > 0) {
+                    MessagesController.getInstance(l0Var2.a).putUsers(useraddresses2.users, false);
+                    TL_wallet.walletUserAddress walletuseraddress2 = useraddresses2.addresses.get(0);
+                    long j11 = walletuseraddress2.user_id;
+                    if (j11 != 0) {
+                        long j12 = user.id;
+                        if (j11 == j12) {
+                            l0Var2.L.put(Long.valueOf(j12), walletuseraddress2);
+                            l0Var2.M.put(walletuseraddress2.address, walletuseraddress2);
+                            callback22.run(walletuseraddress2, null);
+                            break;
+                        }
+                    }
+                    callback22.run(null, tL_error2 == null ? null : tL_error2.text);
+                    break;
+                } else {
+                    callback22.run(null, tL_error2 == null ? null : tL_error2.text);
+                    break;
                 }
-                w9.U();
-                b0Var.a();
                 break;
             case 2:
-                p5 p5Var = (p5) obj;
-                AndroidUtilities.runOnUIThread(new y31(p5Var, i11, p5.h(p5Var.R, i11), 19));
-                break;
+                l0 l0Var3 = (l0) obj3;
+                o oVar = (o) obj4;
+                String str5 = (String) obj5;
+                TL_wallet.walletTransactions wallettransactions = (TL_wallet.walletTransactions) obj;
+                if (wallettransactions != null && !wallettransactions.transactions.isEmpty()) {
+                    TL_wallet.walletTransaction wallettransaction = wallettransactions.transactions.get(0);
+                    l0Var3.K.put(str5, wallettransaction);
+                    oVar.run(wallettransaction);
+                    break;
+                } else {
+                    oVar.run(null);
+                    break;
+                }
             case 3:
-                m6 m6Var = (m6) obj;
-                if (m6Var.r && !m6Var.x && i11 == m6Var.k0) {
-                    m6Var.postDelayed(m6Var.l0, 500L);
+                p pVar = (p) obj3;
+                String str6 = (String) obj5;
+                String str7 = (String) obj4;
+                i0 i0Var = (i0) obj;
+                String str8 = (String) obj2;
+                if (i0Var == null) {
+                    l0.i("decrypting transaction comment, failed to get secret phrase");
+                    pVar.run(null, str8 != null ? str8 : "NULL_ERROR");
                     break;
-                }
-                break;
-            case 4:
-                w7 w7Var = (w7) obj;
-                ArrayList arrayList = w7Var.v;
-                try {
-                    ClipboardManager clipboardManager = (ClipboardManager) w7Var.getParentActivity().getSystemService("clipboard");
-                    if (clipboardManager != null && clipboardManager.getPrimaryClip() != null && clipboardManager.getPrimaryClip().getItemCount() != 0 && (text = clipboardManager.getPrimaryClip().getItemAt(0).getText()) != null) {
-                        String[] split = text.toString().trim().toLowerCase().split("\\s+");
-                        for (int i12 = 0; i11 < arrayList.size() && i12 < split.length; i12++) {
-                            ((ha) arrayList.get(i11)).setText(split[i12]);
-                            i11++;
-                        }
-                        w7Var.Y();
-                        break;
-                    }
-                } catch (Exception unused) {
-                    return;
-                }
-                break;
-            case 5:
-                r9 r9Var = (r9) obj;
-                if (!r9Var.n && i11 == r9Var.I) {
-                    r9Var.K = false;
-                    r9Var.a.W2.N(true);
-                    break;
-                }
-                break;
-            case 6:
-                org.telegram.ui.ActionBar.b2[] b2VarArr = (org.telegram.ui.ActionBar.b2[]) obj;
-                org.telegram.ui.ActionBar.b2 b2Var = b2VarArr[0];
-                if (b2Var != null) {
+                } else {
                     try {
-                        b2Var.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: pf.a
-                            @Override // android.content.DialogInterface.OnCancelListener
-                            public final void onCancel(DialogInterface dialogInterface) {
-                                ConnectionsManager.getInstance(UserConfig.selectedAccount).cancelRequest(i11, true);
-                            }
-                        });
-                        b2VarArr[0].show();
+                        pVar.run(WalletEngine2.decryptComment(i0Var, str6, str7), null);
                         break;
-                    } catch (Exception unused2) {
+                    } catch (Exception e) {
+                        l0.j("failed to decrypt comment", e);
+                        pVar.run(null, e.getMessage() != null ? e.getMessage() : "NULL_ERROR");
                         return;
                     }
                 }
-                break;
-            case 7:
-                rg.j jVar = (rg.j) obj;
-                jVar.L = i11;
-                jVar.K = true;
-                int i13 = 2;
-                try {
-                    jVar.performHapticFeedback(3, 2);
-                } catch (Exception unused3) {
-                }
-                ValueAnimator valueAnimator = jVar.P;
-                if (valueAnimator != null) {
-                    valueAnimator.cancel();
-                }
-                ValueAnimator valueAnimator2 = jVar.Q;
-                if (valueAnimator2 != null) {
-                    valueAnimator2.cancel();
-                }
-                ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(150L);
-                jVar.P = duration;
-                duration.setInterpolator(bs.f);
-                jVar.P.addUpdateListener(new rg.f(jVar, 5));
-                jVar.P.addListener(new rg.g(jVar, i13));
-                jVar.P.start();
-                break;
-            case 8:
-                gt0 gt0Var = (gt0) obj;
-                qg.t1 t1Var = gt0Var.K1;
-                gt0Var.t0(t1Var, null);
-                qg.v0.e(i11).j(t1Var.c);
-                break;
-            case 9:
-                rg.n2 n2Var = (rg.n2) obj;
-                n2Var.getClass();
-                NotificationCenter.getInstance(i11).lambda$postNotificationNameOnUIThread$1(NotificationCenter.customStickerCreated, Boolean.FALSE);
-                n2Var.h();
-                break;
-            case 10:
-                x90 x90Var = ((ug.q0) obj).e;
-                try {
-                    if (x90Var.getLayout().getLineForOffset(i11) == 0) {
-                        x90Var.getEditableText().insert(i11, "\n");
+            case 4:
+                l0 l0Var4 = (l0) obj3;
+                Utilities.Callback callback = (Utilities.Callback) obj5;
+                TL_wallet.TL_walletState tL_walletState = (TL_wallet.TL_walletState) obj4;
+                i0 i0Var2 = (i0) obj;
+                String str9 = (String) obj2;
+                if (str9 == null && i0Var2 != null) {
+                    p0 p0Var = l0Var4.c;
+                    if (p0Var != null) {
+                        if (!TextUtils.equals(p0Var.c, tL_walletState.address)) {
+                            callback.run("STORAGE_CHANGED");
+                            break;
+                        } else {
+                            l0Var4.c.p(UserConfig.getInstance(l0Var4.a).getClientUserId(), tL_walletState.public_key, i0Var2, new qy(27, i0Var2.b(), callback));
+                            break;
+                        }
+                    } else {
+                        callback.run("STORAGE_NULL");
                         break;
                     }
-                } catch (Exception e) {
-                    FileLog.e(e);
-                    return;
+                } else {
+                    if (str9 == null) {
+                        str9 = "LOCAL_STORAGE_ERROR";
+                    }
+                    callback.run(str9);
+                    break;
+                }
+            case 5:
+                l0 l0Var5 = (l0) obj3;
+                d8 d8Var = (d8) obj5;
+                g0 g0Var = (g0) obj4;
+                i0 i0Var3 = (i0) obj;
+                String str10 = (String) obj2;
+                int i14 = l0Var5.a;
+                if (i0Var3 == null) {
+                    l0.i("disable backup: no current phrase ".concat(str10 == null ? "NULL_ERROR" : str10));
+                    d8Var.run(str10 != null ? str10 : "NULL_ERROR");
+                    break;
+                } else {
+                    l0.F("disable backup: ready!");
+                    if (l0Var5.b == null) {
+                        l0.i("disable backup: no engine");
+                        d8Var.run("NULL_ENGINE");
+                        break;
+                    } else {
+                        String s10 = l0Var5.s();
+                        byte[] x10 = l0Var5.x();
+                        if (TextUtils.isEmpty(s10)) {
+                            l0.i("disable backup: empty address");
+                            d8Var.run("NULL_ADDRESS");
+                            break;
+                        } else if (x10 == null || x10.length <= 0) {
+                            l0.i("disable backup: no public key");
+                            d8Var.run("NULL_PUBLIC_KEY");
+                            break;
+                        } else {
+                            try {
+                                i0 b10 = g0Var.b.b();
+                                k0 A = l0Var5.A();
+                                TL_wallet.walletTransaction wallettransaction2 = new TL_wallet.walletTransaction();
+                                wallettransaction2.key_change = true;
+                                wallettransaction2.incoming = false;
+                                wallettransaction2.pending = true;
+                                wallettransaction2.comment = null;
+                                wallettransaction2.comment_encrypted = false;
+                                wallettransaction2.date = ConnectionsManager.getInstance(i14).getCurrentTime();
+                                wallettransaction2.amount = 0L;
+                                TL_wallet.walletTransactionPeerAddress wallettransactionpeeraddress = new TL_wallet.walletTransactionPeerAddress();
+                                wallettransactionpeeraddress.address = s10;
+                                wallettransaction2.peer = wallettransactionpeeraddress;
+                                w6 w6Var = new w6(l0Var5, b10, wallettransaction2, A, 5);
+                                TL_wallet.sendTransfer sendtransfer = g0Var.a;
+                                wallettransaction2.gasless = sendtransfer.data_gasless != null;
+                                wallettransaction2.random_id = sendtransfer.random_id;
+                                wallettransaction2.gaslessMessageBodyHash = sendtransfer.gaslessMessageBodyHash;
+                                wallettransaction2.normalMessageBodyHash = sendtransfer.normalMessageBodyHash;
+                                l0Var5.p.add(0, wallettransaction2);
+                                A.k();
+                                A.i();
+                                l0Var5.Q();
+                                d8Var.run(null);
+                                l0.F("disable backup: prepared sendTransfer, sending");
+                                ConnectionsManager.getInstance(i14).sendRequestTyped(g0Var.a, new org.telegram.messenger.a(), new ai.x3(l0Var5, w6Var, g0Var, b10, wallettransaction2, 4));
+                                break;
+                            } catch (IllegalStateException unused) {
+                                d8Var.run("CANCELLED");
+                                return;
+                            }
+                        }
+                    }
+                }
+            case 6:
+                AndroidUtilities.runOnUIThread(new k01(obj3, obj, obj5, obj4, (String) obj2, 3));
+                break;
+            case 7:
+                l0 l0Var6 = (l0) obj3;
+                qy qyVar = (qy) obj5;
+                TL_wallet.enableBackup enablebackup = (TL_wallet.enableBackup) obj4;
+                WalletEngine2.ImportedWalletProof importedWalletProof = (WalletEngine2.ImportedWalletProof) obj;
+                String str11 = (String) obj2;
+                if (importedWalletProof != null) {
+                    TL_wallet.walletOwnershipProof walletownershipproof = new TL_wallet.walletOwnershipProof();
+                    enablebackup.proof = walletownershipproof;
+                    walletownershipproof.timestamp = importedWalletProof.timestamp;
+                    walletownershipproof.signature = importedWalletProof.signature;
+                    ConnectionsManager.getInstance(l0Var6.a).sendRequestTyped(enablebackup, new org.telegram.messenger.a(), new ai.r5(26, l0Var6, qyVar));
+                    break;
+                } else {
+                    qyVar.run(str11 != null ? str11 : "NULL_ERROR");
+                    break;
+                }
+            case 8:
+                e2 e2Var = (e2) obj3;
+                w wVar = (w) obj4;
+                TLRPC.Bool bool = (TLRPC.Bool) obj;
+                TLRPC.TL_error tL_error3 = (TLRPC.TL_error) obj2;
+                e2Var.getClass();
+                Arrays.fill(((b2) obj5).b, (byte) 0);
+                wVar.run((tL_error3 == null && (bool instanceof TLRPC.TL_boolTrue)) ? null : e2.x(tL_error3, "submitConnectResult"));
+                if (e2Var.e < 0) {
+                    e2Var.e = e2Var.f.sendRequestTyped(new TL_wallet.tonConnectGetSessions(), new org.telegram.messenger.a(), new d(e2Var, 4));
+                    break;
+                }
+                break;
+            case 9:
+                e2 e2Var2 = (e2) obj3;
+                a2 a2Var = (a2) obj5;
+                ki.c cVar = (ki.c) obj4;
+                TL_wallet.walletTransaction wallettransaction3 = (TL_wallet.walletTransaction) obj;
+                Object obj6 = (String) obj2;
+                e2Var2.getClass();
+                a2Var.p = (a2Var.n || e2Var2.i(a2Var) || !e2Var2.y(a2Var) || wallettransaction3 == null || !wallettransaction3.traceSucceeded || wallettransaction3.traceIncomplete) ? false : true;
+                cVar.run(wallettransaction3, obj6);
+                break;
+            case 10:
+                Utilities.Callback callback3 = (Utilities.Callback) obj5;
+                l0 l0Var7 = (l0) obj3;
+                ConnectionsManager connectionsManager = (ConnectionsManager) obj4;
+                Vector vector = (Vector) obj;
+                TLRPC.TL_error tL_error4 = (TLRPC.TL_error) obj2;
+                if (vector == null) {
+                    if (tL_error4 == null || (str2 = tL_error4.text) == null) {
+                        str2 = "NULL_ERROR";
+                    }
+                    callback3.run(str2);
+                    if (tL_error4 != null && (str3 = tL_error4.text) != null) {
+                        str = str3;
+                    }
+                    xc.b0(str);
+                    break;
+                } else if (vector.objects.size() <= 0) {
+                    callback3.run("NO_PROVIDERS");
+                    xc.b0("NO_PROVIDERS");
+                    break;
+                } else {
+                    ArrayList<T> arrayList = vector.objects;
+                    int size = arrayList.size();
+                    while (i12 < size) {
+                        Object obj7 = arrayList.get(i12);
+                        i12++;
+                        TL_toncenter.onrampProviderInfo onrampproviderinfo2 = (TL_toncenter.onrampProviderInfo) obj7;
+                        if (onrampproviderinfo2.supports_base_currencies && (onrampproviderinfo2.crypto_currencies.contains("GRAM") || onrampproviderinfo2.crypto_currencies.contains("gram"))) {
+                            onrampproviderinfo = onrampproviderinfo2;
+                            if (onrampproviderinfo == null) {
+                                TL_toncenter.createOnrampSession createonrampsession = new TL_toncenter.createOnrampSession();
+                                createonrampsession.address = l0Var7.s();
+                                createonrampsession.crypto_currency = "gram";
+                                createonrampsession.base_currency = l0Var7.h.g();
+                                createonrampsession.provider = onrampproviderinfo.id;
+                                connectionsManager.sendRequestTyped(createonrampsession, new org.telegram.messenger.a(), new d(callback3, i11));
+                                break;
+                            } else {
+                                callback3.run("NO_SUITABLE_PROVIDER");
+                                xc.b0("NO_SUITABLE_PROVIDER");
+                                break;
+                            }
+                        }
+                    }
+                    if (onrampproviderinfo == null) {
+                    }
                 }
                 break;
             default:
-                Bundle bundle = new Bundle();
-                bundle.putLong("user_id", UserConfig.getInstance(i11).clientUserId);
-                ((org.telegram.ui.ActionBar.d5) obj).getLastFragment().presentFragment(new ProfileActivity(bundle, null));
+                final i8 i8Var = (i8) obj5;
+                final l0 l0Var8 = (l0) obj3;
+                final Long l4 = (Long) obj;
+                String str12 = (String) obj2;
+                ((org.telegram.ui.ActionBar.c2) obj4).dismiss();
+                if (l4 != null) {
+                    Activity parentActivity = i8Var.getParentActivity();
+                    if (parentActivity != null) {
+                        final org.telegram.ui.Cells.z1 z1Var = new org.telegram.ui.Cells.z1(parentActivity, 1, i8Var.getResourceProvider());
+                        int i15 = org.telegram.ui.ActionBar.k6.i6;
+                        org.telegram.ui.Cells.y g02 = org.telegram.ui.ActionBar.k6.g0(i8Var.getThemedColor(i15), 7, AndroidUtilities.dp(12.0f));
+                        org.telegram.ui.ActionBar.n6 O = org.telegram.ui.ActionBar.r6.O(i15);
+                        org.telegram.ui.ActionBar.g6 resourceProvider = i8Var.getResourceProvider();
+                        z1Var.setBackground(g02);
+                        org.telegram.ui.ActionBar.r6.k(z1Var, g02, null, O, resourceProvider);
+                        z1Var.e(LocaleController.getString(R.string.WalletUpdateSecretPhrase), "", false, false, false);
+                        z1Var.setMultiline(true);
+                        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) z1Var.getCheckBoxView().getLayoutParams();
+                        layoutParams.topMargin = 0;
+                        layoutParams.gravity = (LocaleController.isRTL ? 5 : 3) | 16;
+                        z1Var.getCheckBoxView().setLayoutParams(layoutParams);
+                        z1Var.setPadding(LocaleController.isRTL ? AndroidUtilities.dp(4.0f) : 0, AndroidUtilities.dp(12.0f), LocaleController.isRTL ? 0 : AndroidUtilities.dp(4.0f), AndroidUtilities.dp(12.0f));
+                        TextView textView = new TextView(parentActivity);
+                        textView.setTextSize(1, 14.0f);
+                        org.telegram.ui.ActionBar.r6.W(textView, org.telegram.ui.ActionBar.k6.j5, i8Var.getResourceProvider());
+                        textView.setGravity(17);
+                        int dp = AndroidUtilities.dp(10.0f);
+                        int i16 = org.telegram.ui.ActionBar.k6.a7;
+                        ShapeDrawable c02 = org.telegram.ui.ActionBar.k6.c0(dp, i8Var.getThemedColor(i16));
+                        org.telegram.ui.ActionBar.n6 O2 = org.telegram.ui.ActionBar.r6.O(i16);
+                        org.telegram.ui.ActionBar.g6 resourceProvider2 = i8Var.getResourceProvider();
+                        textView.setBackground(c02);
+                        org.telegram.ui.ActionBar.r6.k(textView, c02, O2, null, resourceProvider2);
+                        textView.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(12.0f));
+                        textView.setText(l4.longValue() > 0 ? LocaleController.formatSpannable(R.string.WalletUpdateSecretPhraseInfoWithFee, l0.m(l4.longValue(), false), l0Var8.l(l4.longValue(), true)) : LocaleController.getString(R.string.WalletUpdateSecretPhraseInfo));
+                        textView.setVisibility(8);
+                        z1Var.setOnClickListener(new ae0(28, z1Var, textView));
+                        LinearLayout f7 = org.telegram.messenger.v0.f(parentActivity, 1);
+                        f7.addView(z1Var, w7.z5.t(-1, -2, 83, 8, 0, 8, 0));
+                        f7.addView(textView, w7.z5.k(16.0f, 8.0f, 16.0f, 16.0f, -1, -2));
+                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(parentActivity, 0, i8Var.getResourceProvider());
+                        String string = LocaleController.getString(R.string.WalletDisableBackupTitle);
+                        org.telegram.ui.ActionBar.c2 c2Var = alertDialog$Builder.a;
+                        c2Var.R = string;
+                        c2Var.T = LocaleController.getString(R.string.WalletDisableBackupInfo);
+                        c2Var.G = 6;
+                        alertDialog$Builder.o(f7);
+                        c2Var.a = AndroidUtilities.dp(312.0f);
+                        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
+                        alertDialog$Builder.k(LocaleController.getString(R.string.WalletDisable), new org.telegram.ui.ActionBar.z1() { // from class: org.telegram.ui.Wallet.f8
+                            @Override // org.telegram.ui.ActionBar.z1
+                            public final void g(org.telegram.ui.ActionBar.c2 c2Var2, int i17) {
+                                org.telegram.ui.Cells.z1 z1Var2 = z1Var;
+                                if (z1Var2.isEnabled()) {
+                                    boolean b11 = z1Var2.b();
+                                    z1Var2.setEnabled(false);
+                                    pf.c h = c2Var2.h(i17, true, true);
+                                    h.d();
+                                    i8 i8Var2 = i8.this;
+                                    l0 l0Var9 = l0Var8;
+                                    if (!b11) {
+                                        l0Var9.y(new z7(i8Var2, h, l0Var9, 0), false, true);
+                                        return;
+                                    }
+                                    long u10 = l0Var9.u();
+                                    Long l10 = l4;
+                                    if (u10 >= l10.longValue()) {
+                                        z7 z7Var = new z7(i8Var2, h, l0Var9, 1);
+                                        l0.F("prepare disable backup");
+                                        l0Var9.y(new ai.r5(25, l0Var9, z7Var), true, false);
+                                        return;
+                                    }
+                                    AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(i8Var2.getParentActivity(), 0, i8Var2.getResourceProvider());
+                                    String string2 = LocaleController.getString(R.string.WalletNotEnoughGram);
+                                    org.telegram.ui.ActionBar.c2 c2Var3 = alertDialog$Builder2.a;
+                                    c2Var3.R = string2;
+                                    c2Var3.T = LocaleController.formatSpannable(R.string.WalletUpdateSecretPhraseInsufficientFunds, l0.m(l10.longValue(), false), l0Var9.l(l10.longValue(), true));
+                                    alertDialog$Builder2.h(LocaleController.getString(R.string.WalletNotNow), new s0.b(24));
+                                    alertDialog$Builder2.k(LocaleController.getString(R.string.WalletTopUp), new n2(i8Var2, 6));
+                                    alertDialog$Builder2.p();
+                                }
+                            }
+                        });
+                        i8Var.showDialog(c2Var);
+                        TextView textView2 = (TextView) c2Var.d(-1);
+                        if (textView2 != null) {
+                            org.telegram.ui.ActionBar.r6.W(textView2, org.telegram.ui.ActionBar.k6.q7, c2Var.k1);
+                            break;
+                        }
+                    }
+                } else {
+                    xc.a0(i8Var).e0(str12 != null ? str12 : "NULL_ERROR", false);
+                    break;
+                }
                 break;
         }
     }
 
-    public /* synthetic */ j(Object obj, int i10, int i11) {
-        this.a = i11;
+    public /* synthetic */ j(Utilities.Callback callback, l0 l0Var, ConnectionsManager connectionsManager) {
+        this.a = 10;
+        this.d = callback;
+        this.b = l0Var;
+        this.c = connectionsManager;
+    }
+
+    public /* synthetic */ j(l0 l0Var, Object obj, Object obj2, int i10) {
+        this.a = i10;
+        this.b = l0Var;
         this.c = obj;
-        this.b = i10;
+        this.d = obj2;
+    }
+
+    public /* synthetic */ j(l0 l0Var, p pVar, String str, String str2) {
+        this.a = 3;
+        this.b = pVar;
+        this.d = str;
+        this.c = str2;
+    }
+
+    public /* synthetic */ j(i8 i8Var, org.telegram.ui.ActionBar.c2 c2Var, l0 l0Var) {
+        this.a = 11;
+        this.d = i8Var;
+        this.c = c2Var;
+        this.b = l0Var;
     }
 }

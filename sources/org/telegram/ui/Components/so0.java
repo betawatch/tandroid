@@ -1,11 +1,35 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+import android.content.Context;
+
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public interface so0 {
-    void e(float f7);
+public final class so0 extends hg.h0 {
+    public final /* synthetic */ org.telegram.ui.ey I0;
+    public final /* synthetic */ Context J0;
+    public final /* synthetic */ org.telegram.ui.nx K0;
 
-    void f(org.telegram.ui.Cells.r2 r2Var);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public so0(org.telegram.ui.nx nxVar, Context context, org.telegram.ui.ey eyVar, int i10, int i11, s4.k kVar, boolean z10, org.telegram.ui.ey eyVar2, Context context2) {
+        super(context, eyVar, i10, i11, kVar, z10);
+        this.K0 = nxVar;
+        this.I0 = eyVar2;
+        this.J0 = context2;
+    }
 
-    void finish();
+    @Override // s4.g0
+    public final void l() {
+        ai.u1 u1Var;
+        int i10 = this.B0;
+        super.l();
+        org.telegram.ui.nx nxVar = this.K0;
+        if (!nxVar.I0 && (u1Var = nxVar.V) != null) {
+            u1Var.u0(0);
+            nxVar.I0 = true;
+        }
+        if (h() != 0 || i10 == 0 || this.D0 > 0) {
+            return;
+        }
+        nxVar.W.e(false, false);
+    }
 }

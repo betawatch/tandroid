@@ -14,18 +14,18 @@ import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.cn0;
 import org.telegram.ui.Components.d50;
-import org.telegram.ui.Components.zm0;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.cy;
-import org.telegram.ui.ju0;
-import org.telegram.ui.jz0;
-import org.telegram.ui.q50;
-import org.telegram.ui.qn;
+import org.telegram.ui.ey;
+import org.telegram.ui.mu0;
+import org.telegram.ui.nz0;
+import org.telegram.ui.sn;
+import org.telegram.ui.u50;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class y3 implements org.telegram.ui.ActionBar.a2, ei.y7, org.telegram.ui.Components.e5, t5.b, s9.g, d50 {
+public final /* synthetic */ class y3 implements org.telegram.ui.ActionBar.z1, ei.y7, org.telegram.ui.Components.d5, t5.b, s9.g, d50 {
     public final /* synthetic */ int a;
     public final /* synthetic */ long b;
     public final /* synthetic */ Object c;
@@ -40,14 +40,14 @@ public final /* synthetic */ class y3 implements org.telegram.ui.ActionBar.a2, e
         this.e = obj3;
     }
 
-    @Override // org.telegram.ui.Components.e5
+    @Override // org.telegram.ui.Components.d5
     public void C(int i10, int i11, boolean z10) {
-        qn.h0((qn) this.c, (ArrayList) this.d, this.b, (zm0) this.e, z10, i10);
+        sn.Z0((sn) this.c, (ArrayList) this.d, this.b, (cn0) this.e, z10, i10);
     }
 
     @Override // org.telegram.ui.Components.d50
     public void Q(TLRPC.InputFile inputFile, TLRPC.InputFile inputFile2, double d, String str, TLRPC.PhotoSize photoSize, TLRPC.PhotoSize photoSize2, boolean z10, TLRPC.VideoSize videoSize) {
-        qn qnVar = (qn) this.c;
+        sn snVar = (sn) this.c;
         TLRPC.FileLocation[] fileLocationArr = (TLRPC.FileLocation[]) this.d;
         TLRPC.FileLocation[] fileLocationArr2 = (TLRPC.FileLocation[]) this.e;
         if (inputFile == null && inputFile2 == null && videoSize == null) {
@@ -70,7 +70,7 @@ public final /* synthetic */ class y3 implements org.telegram.ui.ActionBar.a2, e
             tL_photos_uploadProfilePhoto.video_emoji_markup = videoSize;
             tL_photos_uploadProfilePhoto.flags |= 16;
         }
-        qnVar.getConnectionsManager().sendRequest(tL_photos_uploadProfilePhoto, new ci.b8(qnVar, fileLocationArr, str, fileLocationArr2, this.b));
+        snVar.getConnectionsManager().sendRequest(tL_photos_uploadProfilePhoto, new ci.a8(snVar, fileLocationArr, str, fileLocationArr2, this.b));
     }
 
     @Override // s9.g
@@ -97,44 +97,44 @@ public final /* synthetic */ class y3 implements org.telegram.ui.ActionBar.a2, e
         return true;
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    @Override // org.telegram.ui.ActionBar.z1
+    public void g(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
         switch (this.a) {
             case 0:
                 l7 l7Var = (l7) this.c;
                 TL_stars.starGiftDepositPayload[] stargiftdepositpayloadArr = (TL_stars.starGiftDepositPayload[]) this.d;
-                ug.m1 m1Var = (ug.m1) this.e;
+                ug.l1 l1Var = (ug.l1) this.e;
                 l7Var.getClass();
-                l7Var.P1(this.b, stargiftdepositpayloadArr[0], b2Var.h(i10, true, true), m1Var);
+                l7Var.O1(this.b, stargiftdepositpayloadArr[0], c2Var.h(i10, true, true), l1Var);
                 break;
             case 3:
                 ChatObject.Call call = (ChatObject.Call) this.c;
-                org.telegram.ui.Cells.a2[] a2VarArr = (org.telegram.ui.Cells.a2[]) this.d;
+                org.telegram.ui.Cells.z1[] z1VarArr = (org.telegram.ui.Cells.z1[]) this.d;
                 Runnable runnable = (Runnable) this.e;
                 boolean z10 = false;
-                org.telegram.ui.Cells.a2 a2Var = a2VarArr[0];
-                if (a2Var != null && a2Var.b()) {
+                org.telegram.ui.Cells.z1 z1Var = z1VarArr[0];
+                if (z1Var != null && z1Var.b()) {
                     z10 = true;
                 }
-                q50.x1(call, z10, this.b, runnable);
+                u50.w1(call, z10, this.b, runnable);
                 break;
             default:
-                jz0 jz0Var = (jz0) this.c;
-                cy cyVar = (cy) this.d;
+                nz0 nz0Var = (nz0) this.c;
+                ey eyVar = (ey) this.d;
                 TLRPC.User user = (TLRPC.User) this.e;
-                ProfileActivity profileActivity = jz0Var.b;
+                ProfileActivity profileActivity = nz0Var.b;
                 profileActivity.O1 = true;
                 Bundle h = a1.g.h("scrollToTopOnResume", true);
                 long j10 = -this.b;
                 h.putLong("chat_id", j10);
-                if (profileActivity.getMessagesController().checkCanOpenChat(h, cyVar)) {
-                    qn qnVar = new qn(h);
+                if (profileActivity.getMessagesController().checkCanOpenChat(h, eyVar)) {
+                    sn snVar = new sn(h);
                     NotificationCenter notificationCenter = profileActivity.getNotificationCenter();
                     int i11 = NotificationCenter.closeChats;
                     notificationCenter.removeObserver(profileActivity, i11);
                     profileActivity.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(i11, new Object[0]);
-                    profileActivity.getMessagesController().addUserToChat(j10, user, 0, null, qnVar, true, null, null);
-                    profileActivity.presentFragment(qnVar, true);
+                    profileActivity.getMessagesController().addUserToChat(j10, user, 0, null, snVar, true, null, null);
+                    profileActivity.presentFragment(snVar, true);
                     break;
                 }
                 break;
@@ -142,7 +142,7 @@ public final /* synthetic */ class y3 implements org.telegram.ui.ActionBar.a2, e
     }
 
     @Override // org.telegram.ui.Components.d50
-    public /* synthetic */ ju0 getCloseIntoObject() {
+    public /* synthetic */ mu0 getCloseIntoObject() {
         return null;
     }
 

@@ -48,22 +48,22 @@ import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.al;
 import org.telegram.ui.Components.fo;
-import org.telegram.ui.Components.md0;
 import org.telegram.ui.Components.ml;
 import org.telegram.ui.Components.od0;
-import org.telegram.ui.Components.ql0;
+import org.telegram.ui.Components.qd0;
 import org.telegram.ui.Components.rl;
-import org.telegram.ui.Components.td0;
 import org.telegram.ui.Components.ti;
-import org.telegram.ui.cy;
-import org.telegram.ui.do0;
-import org.telegram.ui.qn;
-import org.telegram.ui.re1;
-import org.telegram.ui.vx;
+import org.telegram.ui.Components.tl0;
+import org.telegram.ui.Components.wd0;
+import org.telegram.ui.ey;
+import org.telegram.ui.ho0;
+import org.telegram.ui.sn;
+import org.telegram.ui.xx;
+import org.telegram.ui.ye1;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class u2 implements vx, androidx.car.app.utils.b, MessagesStorage.StringCallback, ci.v9, SuccessContinuation, MediaDataController.KeywordResultCallback, org.telegram.ui.ActionBar.a2, do0, ml, m4.o0, j9.q, md0, org.telegram.ui.ActionBar.q0, org.telegram.ui.Components.e5 {
+public final /* synthetic */ class u2 implements xx, androidx.car.app.utils.b, MessagesStorage.StringCallback, ci.u9, SuccessContinuation, MediaDataController.KeywordResultCallback, org.telegram.ui.ActionBar.z1, ho0, ml, m4.o0, j9.q, od0, org.telegram.ui.ActionBar.q0, org.telegram.ui.Components.d5 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -76,34 +76,58 @@ public final /* synthetic */ class u2 implements vx, androidx.car.app.utils.b, M
         this.d = obj3;
     }
 
-    @Override // org.telegram.ui.Components.e5
+    @Override // org.telegram.ui.Components.d5
     public void C(int i10, int i11, boolean z10) {
         switch (this.a) {
             case 27:
                 rl rlVar = (rl) this.b;
-                rlVar.x0.b((TLRPC.TL_messageMediaGeo) this.c, rlVar.y0, z10, i10, ((Long) this.d).longValue());
+                rlVar.v0.b((TLRPC.TL_messageMediaGeo) this.c, rlVar.w0, z10, i10, ((Long) this.d).longValue());
                 rlVar.b.dismiss(true);
                 break;
             default:
                 fo foVar = (fo) this.b;
-                foVar.j0.d((TLRPC.TL_messageMediaToDo) this.c, null, null, null, z10, i10, ((Long) this.d).longValue());
+                foVar.j0.c((TLRPC.TL_messageMediaToDo) this.c, null, null, null, z10, i10, ((Long) this.d).longValue());
                 foVar.b.dismiss(true);
                 break;
         }
     }
 
-    @Override // org.telegram.ui.vx
+    @Override // org.telegram.ui.xx
     public /* synthetic */ boolean D() {
         switch (this.a) {
         }
         return false;
     }
 
-    @Override // org.telegram.ui.vx
-    public /* synthetic */ boolean J(cy cyVar) {
+    @Override // org.telegram.ui.xx
+    public /* synthetic */ boolean J(ey eyVar) {
         switch (this.a) {
         }
         return false;
+    }
+
+    @Override // org.telegram.ui.ho0
+    public void a(int i10) {
+        switch (this.a) {
+            case 9:
+                gi.y2 y2Var = (gi.y2) this.b;
+                wd0 wd0Var = (wd0) this.c;
+                String str = (String) this.d;
+                if (i10 != 3) {
+                    wd0Var.dismiss();
+                }
+                y2Var.d.y.F(str, org.telegram.ui.Cells.b1.z(i10).toLowerCase(Locale.ROOT), false);
+                break;
+            default:
+                wd0 wd0Var2 = (wd0) this.b;
+                gi.f4 f4Var = (gi.f4) this.c;
+                String str2 = (String) this.d;
+                if (i10 != 3) {
+                    wd0Var2.dismiss();
+                }
+                f4Var.getWebViewContainer().F(str2, org.telegram.ui.Cells.b1.z(i10).toLowerCase(Locale.ROOT), false);
+                break;
+        }
     }
 
     @Override // j9.q
@@ -117,7 +141,7 @@ public final /* synthetic */ class u2 implements vx, androidx.car.app.utils.b, M
             case 15:
                 m4.f0 f0Var = (m4.f0) obj4;
                 Handler handler = f0Var.l;
-                hi.t tVar = new hi.t(f0Var, (m4.v) obj3, new ig.e2(f0Var, (m4.v0) obj2, (m4.w) obj, 10));
+                hi.t tVar = new hi.t(f0Var, (m4.v) obj3, new ig.d2(f0Var, (m4.v0) obj2, (m4.w) obj, 10));
                 m4.s1 s1Var = new m4.s1(0);
                 String str = e2.m0.a;
                 j9.e0 e0Var = new j9.e0();
@@ -146,7 +170,7 @@ public final /* synthetic */ class u2 implements vx, androidx.car.app.utils.b, M
                 ti tiVar = (ti) this.d;
                 ki.w3 w3Var = qVar.r;
                 if (messageMedia != null && messageMedia.geo != null) {
-                    ki.h2 h2Var = w3Var.H3;
+                    ki.h2 h2Var = w3Var.K3;
                     if (h2Var != null) {
                         h2Var.d();
                     }
@@ -157,7 +181,7 @@ public final /* synthetic */ class u2 implements vx, androidx.car.app.utils.b, M
                         pageblockmap.w = 600;
                         pageblockmap.h = 400;
                     }
-                    ki.h2 h2Var2 = w3Var.H3;
+                    ki.h2 h2Var2 = w3Var.K3;
                     if (h2Var2 != null) {
                         h2Var2.h();
                     }
@@ -172,7 +196,7 @@ public final /* synthetic */ class u2 implements vx, androidx.car.app.utils.b, M
                 ki.a aVar2 = (ki.a) this.c;
                 ti tiVar2 = (ti) this.d;
                 if (messageMedia != null && messageMedia.geo != null) {
-                    ki.h2 h2Var3 = d2Var.P.H3;
+                    ki.h2 h2Var3 = d2Var.P.K3;
                     if (h2Var3 != null) {
                         h2Var3.d();
                     }
@@ -183,7 +207,7 @@ public final /* synthetic */ class u2 implements vx, androidx.car.app.utils.b, M
                         pageblockmap2.w = 600;
                         pageblockmap2.h = 400;
                     }
-                    ki.h2 h2Var4 = d2Var.P.H3;
+                    ki.h2 h2Var4 = d2Var.P.K3;
                     if (h2Var4 != null) {
                         h2Var4.h();
                     }
@@ -191,30 +215,6 @@ public final /* synthetic */ class u2 implements vx, androidx.car.app.utils.b, M
                     d2Var.P.post(new ki.m1(d2Var, aVar2, 9));
                     break;
                 }
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.do0
-    public void c(int i10) {
-        switch (this.a) {
-            case 9:
-                gi.y2 y2Var = (gi.y2) this.b;
-                td0 td0Var = (td0) this.c;
-                String str = (String) this.d;
-                if (i10 != 3) {
-                    td0Var.dismiss();
-                }
-                y2Var.d.x.F(str, org.telegram.ui.Cells.c1.C(i10).toLowerCase(Locale.ROOT), false);
-                break;
-            default:
-                td0 td0Var2 = (td0) this.b;
-                gi.f4 f4Var = (gi.f4) this.c;
-                String str2 = (String) this.d;
-                if (i10 != 3) {
-                    td0Var2.dismiss();
-                }
-                f4Var.getWebViewContainer().F(str2, org.telegram.ui.Cells.c1.C(i10).toLowerCase(Locale.ROOT), false);
                 break;
         }
     }
@@ -267,8 +267,8 @@ public final /* synthetic */ class u2 implements vx, androidx.car.app.utils.b, M
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    @Override // org.telegram.ui.ActionBar.z1
+    public void g(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
         switch (this.a) {
             case 7:
                 ((ei.r9) this.b).h1((ei.p9) this.c, (Runnable) this.d, true);
@@ -326,10 +326,10 @@ public final /* synthetic */ class u2 implements vx, androidx.car.app.utils.b, M
             case 17:
                 boolean[] zArr3 = (boolean[]) this.b;
                 Utilities.Callback callback = (Utilities.Callback) this.c;
-                org.telegram.ui.ActionBar.b2[] b2VarArr = (org.telegram.ui.ActionBar.b2[]) this.d;
+                org.telegram.ui.ActionBar.c2[] c2VarArr = (org.telegram.ui.ActionBar.c2[]) this.d;
                 zArr3[0] = true;
                 callback.run(Boolean.FALSE);
-                b2VarArr[0].dismiss();
+                c2VarArr[0].dismiss();
                 break;
             case 21:
                 ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.b;
@@ -362,47 +362,60 @@ public final /* synthetic */ class u2 implements vx, androidx.car.app.utils.b, M
                 }
             case 26:
                 al alVar = (al) this.b;
-                ig.a1 a1Var = (ig.a1) this.c;
-                org.telegram.ui.Cells.a2 a2Var = (org.telegram.ui.Cells.a2) this.d;
-                TextView textView = alVar.R;
-                if (a1Var.getText().toString().getBytes(StandardCharsets.UTF_8).length <= 960) {
-                    String trim3 = a1Var.getText().toString().trim();
+                ig.z0 z0Var = (ig.z0) this.c;
+                org.telegram.ui.Cells.z1 z1Var = (org.telegram.ui.Cells.z1) this.d;
+                TextView textView = alVar.U;
+                if (z0Var.getText().toString().getBytes(StandardCharsets.UTF_8).length <= 960) {
+                    String trim3 = z0Var.getText().toString().trim();
                     if (TextUtils.isEmpty(trim3)) {
                         trim3 = null;
                     }
-                    alVar.p0 = trim3;
-                    alVar.q0 = !a2Var.b();
-                    if (TextUtils.isEmpty(alVar.p0)) {
+                    alVar.s0 = trim3;
+                    alVar.t0 = !z1Var.b();
+                    if (TextUtils.isEmpty(alVar.s0)) {
                         textView.setVisibility(8);
                     } else {
-                        textView.setText(alVar.p0);
+                        textView.setText(alVar.s0);
                         textView.setVisibility(0);
                     }
                     alVar.i0();
-                    b2Var.dismiss();
+                    c2Var.dismiss();
                     alVar.Y();
                     break;
                 } else {
-                    int i13 = -alVar.s0;
-                    alVar.s0 = i13;
-                    AndroidUtilities.shakeViewSpring(a1Var, i13);
+                    int i13 = -alVar.v0;
+                    alVar.v0 = i13;
+                    AndroidUtilities.shakeViewSpring(z0Var, i13);
                     break;
                 }
             default:
                 fo foVar = (fo) this.b;
                 View view = (View) this.c;
-                org.telegram.ui.Cells.c6 c6Var = (org.telegram.ui.Cells.c6) this.d;
+                org.telegram.ui.Cells.d6 d6Var = (org.telegram.ui.Cells.d6) this.d;
                 foVar.getClass();
                 view.setTag(null);
-                foVar.a0(view, c6Var, false);
+                foVar.a0(view, d6Var, false);
                 break;
         }
     }
 
-    @Override // ci.v9
-    public void i(Canvas canvas, RectF rectF, float f7) {
+    @Override // org.telegram.ui.ActionBar.q0
+    public void h(int i10) {
+        Runnable runnable;
+        org.telegram.ui.Components.d5 d5Var = (org.telegram.ui.Components.d5) this.b;
+        boolean[] zArr = (boolean[]) this.c;
+        org.telegram.ui.ActionBar.b3 b3Var = (org.telegram.ui.ActionBar.b3) this.d;
+        if (i10 == 1) {
+            d5Var.C(2147483646, 0, zArr[0]);
+            runnable = b3Var.a.dismissRunnable;
+            runnable.run();
+        }
+    }
+
+    @Override // ci.u9
+    public void j(Canvas canvas, RectF rectF, float f7) {
         org.telegram.ui.Cells.s7 s7Var = (org.telegram.ui.Cells.s7) this.b;
-        ql0 ql0Var = (ql0) this.c;
+        tl0 tl0Var = (tl0) this.c;
         int[] iArr = (int[]) this.d;
         s7Var.c(canvas, rectF, f7);
         s7Var.f(canvas, rectF, f7);
@@ -411,35 +424,22 @@ public final /* synthetic */ class u2 implements vx, androidx.car.app.utils.b, M
         } else {
             s7Var.e(canvas, rectF, f7);
         }
-        if (ql0Var != null && ql0Var.a0 && ql0Var.getVisibility() == 0) {
+        if (tl0Var != null && tl0Var.a0 && tl0Var.getVisibility() == 0) {
             canvas.saveLayerAlpha(0.0f, 0.0f, canvas.getWidth(), canvas.getHeight(), (int) (f7 * 255.0f), 31);
             canvas.translate(iArr[0], iArr[1]);
-            ql0Var.draw(canvas);
+            tl0Var.draw(canvas);
             canvas.restore();
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.q0
-    public void j(int i10) {
-        Runnable runnable;
-        org.telegram.ui.Components.e5 e5Var = (org.telegram.ui.Components.e5) this.b;
-        boolean[] zArr = (boolean[]) this.c;
-        org.telegram.ui.ActionBar.a3 a3Var = (org.telegram.ui.ActionBar.a3) this.d;
-        if (i10 == 1) {
-            e5Var.C(2147483646, 0, zArr[0]);
-            runnable = a3Var.a.dismissRunnable;
-            runnable.run();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.md0
-    public void q(od0 od0Var, int i10) {
+    @Override // org.telegram.ui.Components.od0
+    public void n(qd0 qd0Var, int i10) {
         switch (this.a) {
             case 18:
-                org.telegram.ui.Components.f5.f(null, null, 0L, 0L, 0, (od0) this.b, (org.telegram.ui.Components.h4) this.c, (org.telegram.ui.Components.i4) this.d);
+                org.telegram.ui.Components.f5.g(null, null, 0L, 0L, 0, (qd0) this.b, (org.telegram.ui.Components.g4) this.c, (org.telegram.ui.Components.h4) this.d);
                 break;
             default:
-                org.telegram.ui.Components.f5.f(null, null, 0L, 0L, 0, (od0) this.b, (org.telegram.ui.Components.y3) this.c, (org.telegram.ui.Components.a4) this.d);
+                org.telegram.ui.Components.f5.g(null, null, 0L, 0L, 0, (qd0) this.b, (org.telegram.ui.Components.x3) this.c, (org.telegram.ui.Components.z3) this.d);
                 break;
         }
     }
@@ -551,7 +551,7 @@ public final /* synthetic */ class u2 implements vx, androidx.car.app.utils.b, M
                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) arrayList6.get(i21);
                 if (tL_messages_stickerSet != null && tL_messages_stickerSet.set != null) {
                     String translitSafe2 = AndroidUtilities.translitSafe((tL_messages_stickerSet.set.title + "").toLowerCase());
-                    if (translitSafe2.startsWith(translitSafe) || org.telegram.messenger.g0.w(" ", translitSafe, translitSafe2)) {
+                    if (translitSafe2.startsWith(translitSafe) || org.telegram.messenger.v0.w(" ", translitSafe, translitSafe2)) {
                         int size = arrayList7.size();
                         arrayList7.add(tL_messages_stickerSet);
                         sparseIntArray.put(a2Var.x, size);
@@ -573,7 +573,7 @@ public final /* synthetic */ class u2 implements vx, androidx.car.app.utils.b, M
             }
             a2Var.I = a2Var.H;
             a2Var.l();
-            ei.o1.x1(b2Var.b, 0, 0);
+            ei.o1.C1(b2Var.b, 0, 0);
             b2Var.f.c(false);
             b2Var.e.n(false);
         }
@@ -616,16 +616,16 @@ public final /* synthetic */ class u2 implements vx, androidx.car.app.utils.b, M
         return Tasks.forResult(str2);
     }
 
-    @Override // org.telegram.ui.vx
-    public boolean w(cy cyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, re1 re1Var) {
+    @Override // org.telegram.ui.xx
+    public boolean w(ey eyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, ye1 ye1Var) {
         switch (this.a) {
             case 0:
-                return l7.S0((l7) this.b, (TL_stars.TL_starGiftUnique) this.c, (cy) this.d, arrayList);
+                return l7.R0((l7) this.b, (TL_stars.TL_starGiftUnique) this.c, (ey) this.d, arrayList);
             default:
                 ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.b;
                 MessageObject messageObject = (MessageObject) this.c;
                 TL_keyboard.TL_inlineButtonTypeSwitchInline tL_inlineButtonTypeSwitchInline = (TL_keyboard.TL_inlineButtonTypeSwitchInline) this.d;
-                qn qnVar = chatActivityEnterView.P2;
+                sn snVar = chatActivityEnterView.P2;
                 TLRPC.Message message = messageObject.messageOwner;
                 long j10 = message.from_id.user_id;
                 long j11 = message.via_bot_id;
@@ -634,14 +634,14 @@ public final /* synthetic */ class u2 implements vx, androidx.car.app.utils.b, M
                 }
                 TLRPC.User user = chatActivityEnterView.R.getMessagesController().getUser(Long.valueOf(j10));
                 if (user == null) {
-                    cyVar.finishFragment();
+                    eyVar.finishFragment();
                 } else {
                     long j12 = ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId;
                     MediaDataController.getInstance(chatActivityEnterView.Q).saveDraft(j12, 0, "@" + UserObject.getPublicUsername(user) + " " + tL_inlineButtonTypeSwitchInline.query, null, null, true, 0L);
                     if (j12 == chatActivityEnterView.Q2) {
-                        cyVar.finishFragment();
+                        eyVar.finishFragment();
                     } else if (DialogObject.isEncryptedDialog(j12)) {
-                        cyVar.finishFragment();
+                        eyVar.finishFragment();
                     } else {
                         Bundle bundle = new Bundle();
                         if (DialogObject.isUserDialog(j12)) {
@@ -649,11 +649,11 @@ public final /* synthetic */ class u2 implements vx, androidx.car.app.utils.b, M
                         } else {
                             bundle.putLong("chat_id", -j12);
                         }
-                        if (chatActivityEnterView.R.getMessagesController().checkCanOpenChat(bundle, cyVar)) {
-                            if (!qnVar.presentFragment(new qn(bundle), true)) {
-                                cyVar.finishFragment();
+                        if (chatActivityEnterView.R.getMessagesController().checkCanOpenChat(bundle, eyVar)) {
+                            if (!snVar.presentFragment(new sn(bundle), true)) {
+                                eyVar.finishFragment();
                             } else if (!AndroidUtilities.isTablet()) {
-                                qnVar.removeSelfFromStack();
+                                snVar.removeSelfFromStack();
                             }
                         }
                     }
@@ -671,10 +671,10 @@ public final /* synthetic */ class u2 implements vx, androidx.car.app.utils.b, M
 
     @Override // org.telegram.messenger.MessagesStorage.StringCallback
     public void run(String str) {
-        ci.h4 h4Var = (ci.h4) this.b;
+        ci.g4 g4Var = (ci.g4) this.b;
         TL_stories.StoryItem storyItem = (TL_stories.StoryItem) this.c;
-        org.telegram.ui.ActionBar.d6 d6Var = (org.telegram.ui.ActionBar.d6) this.d;
-        ci.q4 q4Var = h4Var.l;
-        q4Var.getStoriesController().r(q4Var.B1, str, new a4(h4Var, storyItem, d6Var, 3));
+        org.telegram.ui.ActionBar.g6 g6Var = (org.telegram.ui.ActionBar.g6) this.d;
+        ci.p4 p4Var = g4Var.l;
+        p4Var.getStoriesController().r(p4Var.B1, str, new a4(g4Var, storyItem, g6Var, 3));
     }
 }

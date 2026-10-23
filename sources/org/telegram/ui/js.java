@@ -1,0 +1,26 @@
+package org.telegram.ui;
+
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class js implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ContactsActivity b;
+
+    public /* synthetic */ js(ContactsActivity contactsActivity, int i10) {
+        this.a = i10;
+        this.b = contactsActivity;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.f0();
+                break;
+            default:
+                ContactsActivity contactsActivity = this.b;
+                contactsActivity.f.postOnAnimation(new js(contactsActivity, 0));
+                break;
+        }
+    }
+}

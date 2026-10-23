@@ -1,43 +1,53 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class bj extends eh.b {
-    public final /* synthetic */ int n;
-    public final /* synthetic */ qn r;
+    public final /* synthetic */ int r;
+    public final /* synthetic */ sn s;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ bj(qn qnVar, org.telegram.ui.ActionBar.d6 d6Var, int i10, int i11) {
-        super(i10, d6Var);
-        this.n = i11;
-        this.r = qnVar;
+    public /* synthetic */ bj(sn snVar, org.telegram.ui.ActionBar.g6 g6Var, int i10, int i11) {
+        super(i10, g6Var);
+        this.r = i11;
+        this.s = snVar;
     }
 
     @Override // eh.b, eh.a
     public final int a0() {
         int i10;
         int i11;
-        switch (this.n) {
+        switch (this.r) {
             case 0:
-                qn qnVar = this.r;
-                i10 = ((org.telegram.ui.ActionBar.n2) qnVar).currentAccount;
-                if (!fh.c.c(i10, qnVar.ea)) {
-                    break;
-                } else if (qnVar.ea != null && !org.telegram.ui.ActionBar.h6.I.q()) {
+                sn snVar = this.s;
+                i10 = ((org.telegram.ui.ActionBar.o2) snVar).currentAccount;
+                if (!fh.c.c(i10, snVar.qa)) {
                     break;
                 } else {
-                    break;
+                    qn qnVar = snVar.qa;
+                    if (qnVar != null && !qnVar.a()) {
+                        a();
+                        break;
+                    } else {
+                        a();
+                        break;
+                    }
                 }
                 break;
             default:
-                qn qnVar2 = this.r;
-                i11 = ((org.telegram.ui.ActionBar.n2) qnVar2).currentAccount;
-                if (!fh.c.c(i11, qnVar2.ea)) {
-                    break;
-                } else if (qnVar2.ea != null && !org.telegram.ui.ActionBar.h6.I.q()) {
+                sn snVar2 = this.s;
+                i11 = ((org.telegram.ui.ActionBar.o2) snVar2).currentAccount;
+                if (!fh.c.c(i11, snVar2.qa)) {
                     break;
                 } else {
-                    break;
+                    qn qnVar2 = snVar2.qa;
+                    if (qnVar2 != null && !qnVar2.a()) {
+                        a();
+                        break;
+                    } else {
+                        a();
+                        break;
+                    }
                 }
                 break;
         }

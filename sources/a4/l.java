@@ -1,5 +1,6 @@
 package a4;
 
+import ah.t;
 import ai.t7;
 import ai.u2;
 import android.content.Context;
@@ -19,17 +20,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import androidx.appcompat.widget.ActionBarContextView;
+import androidx.biometric.q;
 import androidx.fragment.app.f0;
 import androidx.lifecycle.a0;
 import androidx.media3.decoder.ffmpeg.FfmpegAudioRenderer;
 import c6.d0;
 import c6.e0;
-import c6.y;
 import c7.v;
-import ci.s4;
-import ci.t3;
+import ci.r4;
+import ci.v9;
 import ci.w9;
-import ci.x9;
 import com.android.billingclient.api.ProxyBillingActivityV2;
 import com.google.android.gms.common.api.internal.r;
 import com.google.android.gms.internal.cast.d1;
@@ -57,10 +57,9 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
 import java.util.WeakHashMap;
-import k2.q;
-import k2.t;
+import k2.u;
 import k2.u0;
-import k2.x;
+import k2.y;
 import ki.c6;
 import ki.d2;
 import ki.h1;
@@ -70,6 +69,7 @@ import ki.j3;
 import ki.j4;
 import ki.p3;
 import ki.q3;
+import ki.t3;
 import ki.u3;
 import ki.u4;
 import ki.w3;
@@ -83,28 +83,27 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Cells.m9;
 import org.telegram.ui.Cells.n9;
-import org.telegram.ui.Components.c81;
-import org.telegram.ui.Components.i80;
-import org.telegram.ui.Components.po0;
+import org.telegram.ui.Cells.o9;
+import org.telegram.ui.Components.g81;
+import org.telegram.ui.Components.j80;
+import org.telegram.ui.Components.j81;
+import org.telegram.ui.Components.so0;
 import org.telegram.ui.Components.ti;
-import org.telegram.ui.Components.z71;
 import org.telegram.ui.Stories.ProfileStoriesView;
-import org.telegram.ui.nx;
-import org.telegram.ui.oz0;
-import org.telegram.ui.uy0;
+import org.telegram.ui.px;
+import org.telegram.ui.sz0;
+import org.telegram.ui.yy0;
 import r0.b0;
 import r0.i0;
 import r0.k1;
 import r0.n;
-import rg.c2;
-import t7.u;
+import si.o0;
 import v7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public final class l implements z3.d, a0, androidx.activity.result.b, r, w9, OnSuccessListener, l1, o, z71, n, gb.n, z1, x, j0, u3 {
+public final class l implements z3.d, a0, androidx.activity.result.b, r, v9, OnSuccessListener, l1, o, g81, n, gb.n, z1, y, j0, u3 {
     public final /* synthetic */ int a;
     public final Object b;
 
@@ -340,7 +339,33 @@ public final class l implements z3.d, a0, androidx.activity.result.b, r, w9, OnS
         return (i10 & (-268435456)) == 0 ? 4 : 5;
     }
 
-    @Override // k2.x
+    @Override // ki.j0
+    public void A(CharSequence charSequence) {
+        switch (this.a) {
+            case 25:
+                q3 q3Var = ((z) this.b).O;
+                if (q3Var != null) {
+                    q3Var.getClass();
+                    if (charSequence != null && charSequence.length() > 0) {
+                        q3Var.a.z4(charSequence.toString());
+                        break;
+                    }
+                }
+                break;
+            default:
+                p3 p3Var = ((u4) this.b).N;
+                if (p3Var != null) {
+                    p3Var.getClass();
+                    if (charSequence != null && charSequence.length() > 0) {
+                        p3Var.a.z4(charSequence.toString());
+                        break;
+                    }
+                }
+                break;
+        }
+    }
+
+    @Override // k2.y
     public void B() {
         x2.n nVar;
         FfmpegAudioRenderer ffmpegAudioRenderer = (FfmpegAudioRenderer) this.b;
@@ -459,7 +484,7 @@ public final class l implements z3.d, a0, androidx.activity.result.b, r, w9, OnS
     }
 
     @Override // ki.j0
-    public m9 D() {
+    public n9 D() {
         switch (this.a) {
             case 25:
                 return (z) this.b;
@@ -491,7 +516,7 @@ public final class l implements z3.d, a0, androidx.activity.result.b, r, w9, OnS
                 q3 q3Var = zVar.O;
                 if (q3Var != null) {
                     ki.a aVar = zVar.a;
-                    if (q3Var.a.T4()) {
+                    if (q3Var.a.Y4()) {
                     }
                 }
                 break;
@@ -500,7 +525,7 @@ public final class l implements z3.d, a0, androidx.activity.result.b, r, w9, OnS
                 p3 p3Var = u4Var.N;
                 if (p3Var != null) {
                     ki.a aVar2 = u4Var.a;
-                    if (p3Var.a.T4()) {
+                    if (p3Var.a.Y4()) {
                     }
                 }
                 break;
@@ -508,13 +533,13 @@ public final class l implements z3.d, a0, androidx.activity.result.b, r, w9, OnS
         return false;
     }
 
-    @Override // k2.x
+    @Override // k2.y
     public void I(Exception exc) {
         e2.a.d("DecoderAudioRenderer", "Audio sink error", exc);
         qf.b bVar = ((FfmpegAudioRenderer) this.b).I;
         Handler handler = (Handler) bVar.b;
         if (handler != null) {
-            handler.post(new q(bVar, exc, 1));
+            handler.post(new k2.r(bVar, exc, 1));
         }
     }
 
@@ -534,7 +559,7 @@ public final class l implements z3.d, a0, androidx.activity.result.b, r, w9, OnS
                 q3 q3Var = zVar.O;
                 if (q3Var != null) {
                     ki.a aVar = zVar.a;
-                    h2 h2Var = q3Var.a.H3;
+                    h2 h2Var = q3Var.a.K3;
                     if (h2Var != null) {
                         h2Var.f(i10, i11);
                         break;
@@ -546,7 +571,7 @@ public final class l implements z3.d, a0, androidx.activity.result.b, r, w9, OnS
                 p3 p3Var = u4Var.N;
                 if (p3Var != null) {
                     ki.a aVar2 = u4Var.a;
-                    h2 h2Var2 = p3Var.a.H3;
+                    h2 h2Var2 = p3Var.a.K3;
                     if (h2Var2 != null) {
                         h2Var2.f(i10, i11);
                         break;
@@ -556,14 +581,14 @@ public final class l implements z3.d, a0, androidx.activity.result.b, r, w9, OnS
         }
     }
 
-    @Override // k2.x
+    @Override // k2.y
     public void L() {
         ((FfmpegAudioRenderer) this.b).Z = true;
     }
 
     @Override // ki.u3
-    public i80 M(View view) {
-        return i80.H((d2) this.b, view);
+    public j80 M(View view) {
+        return j80.H((d2) this.b, view);
     }
 
     @Override // ki.j0
@@ -575,11 +600,11 @@ public final class l implements z3.d, a0, androidx.activity.result.b, r, w9, OnS
                 if (q3Var != null) {
                     ki.a aVar = zVar.a;
                     w3 w3Var = q3Var.a;
-                    h2 h2Var = w3Var.H3;
+                    h2 h2Var = w3Var.K3;
                     if (h2Var != null) {
                         h2Var.g();
                     }
-                    w3Var.f3.onContentChanged();
+                    w3Var.i3.onContentChanged();
                     break;
                 }
                 break;
@@ -589,11 +614,11 @@ public final class l implements z3.d, a0, androidx.activity.result.b, r, w9, OnS
                 if (p3Var != null) {
                     ki.a aVar2 = u4Var.a;
                     w3 w3Var2 = p3Var.a;
-                    h2 h2Var2 = w3Var2.H3;
+                    h2 h2Var2 = w3Var2.K3;
                     if (h2Var2 != null) {
                         h2Var2.g();
                     }
-                    w3Var2.f3.onContentChanged();
+                    w3Var2.i3.onContentChanged();
                     break;
                 }
                 break;
@@ -602,7 +627,7 @@ public final class l implements z3.d, a0, androidx.activity.result.b, r, w9, OnS
 
     @Override // hg.z1
     public boolean O(int i10) {
-        return i10 == ((po0) this.b).d0;
+        return i10 == ((so0) this.b).d0;
     }
 
     @Override // ki.u3
@@ -612,99 +637,99 @@ public final class l implements z3.d, a0, androidx.activity.result.b, r, w9, OnS
         d2Var.C0();
     }
 
-    @Override // k2.x
+    @Override // k2.y
     public void Q(u0 u0Var) {
         qf.b bVar = ((FfmpegAudioRenderer) this.b).I;
         Handler handler = (Handler) bVar.b;
         if (handler != null) {
-            handler.post(new t(bVar, u0Var, 1));
+            handler.post(new u(bVar, u0Var, 1));
         }
     }
 
-    @Override // ci.w9
-    public boolean Q0(long j10, int i10, int i11, int i12, x9 x9Var) {
+    @Override // ci.v9
+    public boolean Q0(long j10, int i10, int i11, int i12, w9 w9Var) {
         ImageReceiver imageReceiver;
-        s4 s4Var;
-        s4 s4Var2;
-        x9Var.b = null;
-        x9Var.c = null;
-        uy0 uy0Var = (uy0) this.b;
-        oz0 oz0Var = uy0Var.h;
-        ArrayList arrayList = uy0Var.w;
-        if (uy0Var.N < 0.2f) {
-            x9Var.b = oz0Var.getImageReceiver();
-            x9Var.c = null;
-            x9Var.a = oz0Var;
-            x9Var.h = 0.0f;
-            x9Var.i = AndroidUtilities.displaySize.y;
-            x9Var.g = (View) uy0Var.getParent();
-            x9Var.d = uy0Var.y;
-            x9Var.n = true;
+        r4 r4Var;
+        r4 r4Var2;
+        w9Var.b = null;
+        w9Var.c = null;
+        yy0 yy0Var = (yy0) this.b;
+        sz0 sz0Var = yy0Var.h;
+        ArrayList arrayList = yy0Var.w;
+        if (yy0Var.N < 0.2f) {
+            w9Var.b = sz0Var.getImageReceiver();
+            w9Var.c = null;
+            w9Var.a = sz0Var;
+            w9Var.h = 0.0f;
+            w9Var.i = AndroidUtilities.displaySize.y;
+            w9Var.g = (View) yy0Var.getParent();
+            w9Var.d = yy0Var.y;
+            w9Var.n = true;
             return true;
         }
         int i13 = 0;
         while (true) {
             if (i13 >= arrayList.size()) {
                 imageReceiver = null;
-                s4Var = null;
-                s4Var2 = null;
+                r4Var = null;
+                r4Var2 = null;
                 break;
             }
-            s4 s4Var3 = (s4) arrayList.get(i13);
-            if (s4Var3.e < 1.0f || s4Var3.a != i11) {
+            r4 r4Var3 = (r4) arrayList.get(i13);
+            if (r4Var3.e < 1.0f || r4Var3.a != i11) {
                 i13++;
             } else {
                 int i14 = i13 - 1;
                 int i15 = i13 - 2;
-                s4 d = ProfileStoriesView.d(i14 >= 0 ? (s4) arrayList.get(i14) : null, i15 >= 0 ? (s4) arrayList.get(i15) : null, s4Var3);
-                imageReceiver = s4Var3.b;
-                s4Var2 = d;
-                s4Var = s4Var3;
+                r4 d = ProfileStoriesView.d(i14 >= 0 ? (r4) arrayList.get(i14) : null, i15 >= 0 ? (r4) arrayList.get(i15) : null, r4Var3);
+                imageReceiver = r4Var3.b;
+                r4Var2 = d;
+                r4Var = r4Var3;
             }
         }
         if (imageReceiver == null) {
             return false;
         }
-        x9Var.c = imageReceiver;
-        x9Var.b = null;
-        x9Var.a = uy0Var;
-        x9Var.h = 0.0f;
-        x9Var.i = AndroidUtilities.displaySize.y;
-        x9Var.g = (View) uy0Var.getParent();
-        if (s4Var == null || s4Var2 == null) {
-            x9Var.f = null;
+        w9Var.c = imageReceiver;
+        w9Var.b = null;
+        w9Var.a = yy0Var;
+        w9Var.h = 0.0f;
+        w9Var.i = AndroidUtilities.displaySize.y;
+        w9Var.g = (View) yy0Var.getParent();
+        if (r4Var == null || r4Var2 == null) {
+            w9Var.f = null;
             return true;
         }
-        x9Var.f = new t7(this, new RectF(s4Var.m), s4Var, new RectF(s4Var2.m), s4Var2);
+        w9Var.f = new t7(this, new RectF(r4Var.m), r4Var, new RectF(r4Var2.m), r4Var2);
         return true;
     }
 
     @Override // hg.z1
     public void S(ArrayList arrayList) {
-        po0 po0Var = (po0) this.b;
+        so0 so0Var = (so0) this.b;
         for (int i10 = 0; i10 < arrayList.size(); i10++) {
-            po0Var.J.add(((y1) arrayList.get(i10)).a);
+            so0Var.J.add(((y1) arrayList.get(i10)).a);
         }
-        nx nxVar = po0Var.U;
-        if (nxVar != null) {
-            nxVar.d(po0Var.D0 > 0, false);
+        px pxVar = so0Var.U;
+        if (pxVar != null) {
+            pxVar.d(so0Var.D0 > 0, false);
         }
-        po0Var.l();
+        so0Var.l();
     }
 
-    @Override // k2.x
+    @Override // k2.y
     public void T(u0 u0Var) {
         qf.b bVar = ((FfmpegAudioRenderer) this.b).I;
         Handler handler = (Handler) bVar.b;
         if (handler != null) {
-            handler.post(new t(bVar, u0Var, 0));
+            handler.post(new u(bVar, u0Var, 0));
         }
     }
 
     @Override // ki.u3
     public void V(ki.v3 v3Var, View view) {
         d2 d2Var = (d2) this.b;
-        i80 H = i80.H(d2Var, view);
+        j80 H = j80.H(d2Var, view);
         H.Q = true;
         d2Var.getParentActivity();
         d2Var.getResourceProvider();
@@ -719,7 +744,7 @@ public final class l implements z3.d, a0, androidx.activity.result.b, r, w9, OnS
                 q3 q3Var = zVar.O;
                 if (q3Var != null) {
                     ki.a aVar = zVar.a;
-                    w3.P1(q3Var.a);
+                    w3.U1(q3Var.a);
                     break;
                 }
                 break;
@@ -728,25 +753,37 @@ public final class l implements z3.d, a0, androidx.activity.result.b, r, w9, OnS
                 p3 p3Var = u4Var.N;
                 if (p3Var != null) {
                     ki.a aVar2 = u4Var.a;
-                    w3.P1(p3Var.a);
+                    w3.U1(p3Var.a);
                     break;
                 }
                 break;
         }
     }
 
-    @Override // ci.w9
-    public void X0(long j10, int i10, t3 t3Var) {
-        uy0 uy0Var = (uy0) this.b;
+    @Override // ci.v9
+    public void X0(long j10, int i10, ci.s3 s3Var) {
+        yy0 yy0Var = (yy0) this.b;
         int i11 = ProfileStoriesView.s0;
-        uy0Var.f(true, false);
-        t3Var.run();
+        yy0Var.f(true, false);
+        s3Var.run();
+    }
+
+    public ea.a Y(JSONObject jSONObject) {
+        ea.c dVar;
+        int i10 = jSONObject.getInt("settings_version");
+        if (i10 != 3) {
+            Log.e("FirebaseCrashlytics", "Could not determine SettingsJsonTransform for settings version " + i10 + ". Using default settings values.", null);
+            dVar = new t7.u(7);
+        } else {
+            dVar = new oa.d(8);
+        }
+        return dVar.s0((t7.u) this.b, jSONObject);
     }
 
     @Override // androidx.lifecycle.a0
-    public void Y(Object obj) {
+    public void Z(Object obj) {
         CharSequence charSequence = (CharSequence) obj;
-        androidx.biometric.q qVar = (androidx.biometric.q) this.b;
+        q qVar = (q) this.b;
         if (charSequence != null) {
             if (qVar.R()) {
                 qVar.W(charSequence);
@@ -755,19 +792,7 @@ public final class l implements z3.d, a0, androidx.activity.result.b, r, w9, OnS
         }
     }
 
-    public ea.a Z(JSONObject jSONObject) {
-        ea.c dVar;
-        int i10 = jSONObject.getInt("settings_version");
-        if (i10 != 3) {
-            Log.e("FirebaseCrashlytics", "Could not determine SettingsJsonTransform for settings version " + i10 + ". Using default settings values.", null);
-            dVar = new u(7);
-        } else {
-            dVar = new oa.d(8);
-        }
-        return dVar.s0((u) this.b, jSONObject);
-    }
-
-    @Override // k2.x
+    @Override // k2.y
     public void a(long j10) {
         FfmpegAudioRenderer ffmpegAudioRenderer = (FfmpegAudioRenderer) this.b;
         ffmpegAudioRenderer.g0 = true;
@@ -859,8 +884,8 @@ public final class l implements z3.d, a0, androidx.activity.result.b, r, w9, OnS
                 q3 q3Var = ((z) this.b).O;
                 if (q3Var != null) {
                     w3 w3Var = q3Var.a;
-                    w3.N1(w3Var, h1Var);
-                    w3Var.f3.o(h1Var, true);
+                    w3.S1(w3Var, h1Var);
+                    w3Var.i3.o(h1Var, true);
                     break;
                 }
                 break;
@@ -868,8 +893,8 @@ public final class l implements z3.d, a0, androidx.activity.result.b, r, w9, OnS
                 p3 p3Var = ((u4) this.b).N;
                 if (p3Var != null) {
                     w3 w3Var2 = p3Var.a;
-                    w3.N1(w3Var2, h1Var);
-                    w3Var2.f3.o(h1Var, true);
+                    w3.S1(w3Var2, h1Var);
+                    w3Var2.i3.o(h1Var, true);
                     break;
                 }
                 break;
@@ -936,24 +961,24 @@ public final class l implements z3.d, a0, androidx.activity.result.b, r, w9, OnS
 
     @Override // hg.z1
     public void f(int i10) {
-        po0 po0Var = (po0) this.b;
-        po0Var.D0--;
-        po0Var.e0 = i10;
-        if (po0Var.f0 != i10) {
-            po0Var.s.clear();
+        so0 so0Var = (so0) this.b;
+        so0Var.D0--;
+        so0Var.e0 = i10;
+        if (so0Var.f0 != i10) {
+            so0Var.s.clear();
         }
-        if (po0Var.g0 != i10) {
-            po0Var.I.clear();
+        if (so0Var.g0 != i10) {
+            so0Var.I.clear();
         }
-        po0Var.N = true;
-        nx nxVar = po0Var.U;
-        if (nxVar != null) {
-            nxVar.d(po0Var.D0 > 0, true);
+        so0Var.N = true;
+        px pxVar = so0Var.U;
+        if (pxVar != null) {
+            pxVar.d(so0Var.D0 > 0, true);
         }
-        po0Var.l();
-        nx nxVar2 = po0Var.U;
-        if (nxVar2 != null) {
-            nxVar2.c();
+        so0Var.l();
+        px pxVar2 = so0Var.U;
+        if (pxVar2 != null) {
+            pxVar2.c();
         }
     }
 
@@ -985,7 +1010,7 @@ public final class l implements z3.d, a0, androidx.activity.result.b, r, w9, OnS
                 z zVar = (z) this.b;
                 q3 q3Var = zVar.O;
                 if (q3Var != null) {
-                    w3.Q1(q3Var.a, zVar.a);
+                    w3.V1(q3Var.a, zVar.a);
                     break;
                 }
                 break;
@@ -993,7 +1018,7 @@ public final class l implements z3.d, a0, androidx.activity.result.b, r, w9, OnS
                 u4 u4Var = (u4) this.b;
                 p3 p3Var = u4Var.N;
                 if (p3Var != null) {
-                    w3.Q1(p3Var.a, u4Var.a);
+                    w3.V1(p3Var.a, u4Var.a);
                     break;
                 }
                 break;
@@ -1066,13 +1091,13 @@ public final class l implements z3.d, a0, androidx.activity.result.b, r, w9, OnS
             tiVar.c2 = new oa.d(12);
             tiVar.P = true;
             tiVar.A1.setVisibility(8);
-            tiVar.w2 = new u2(d2Var, aVar, tiVar, 12);
-            tiVar.t1();
+            tiVar.z2 = new u2(d2Var, aVar, tiVar, 12);
+            tiVar.w1();
             tiVar.show();
         }
     }
 
-    @Override // k2.x
+    @Override // k2.y
     public void j() {
         ((FfmpegAudioRenderer) this.b).f0 = true;
     }
@@ -1101,14 +1126,14 @@ public final class l implements z3.d, a0, androidx.activity.result.b, r, w9, OnS
     }
 
     @Override // ki.u3
-    public void n(ki.t3 t3Var, View view) {
+    public void n(t3 t3Var, View view) {
         d2 d2Var = (d2) this.b;
-        i80 H = i80.H(d2Var, view);
+        j80 H = j80.H(d2Var, view);
         H.Q = true;
         d2Var.x0 = j4.c(H, d2Var, d2Var.getParentActivity(), d2Var.getResourceProvider(), t3Var, false);
     }
 
-    @Override // k2.x
+    @Override // k2.y
     public void onAudioSessionIdChanged(int i10) {
         qf.b bVar = ((FfmpegAudioRenderer) this.b).I;
         Handler handler = (Handler) bVar.b;
@@ -1121,9 +1146,9 @@ public final class l implements z3.d, a0, androidx.activity.result.b, r, w9, OnS
     public void onContentChanged() {
         d2 d2Var = (d2) this.b;
         if (d2Var.y0 != null) {
-            boolean n32 = d2Var.P.n3();
-            d2Var.L0 = n32;
-            d2Var.y0.h(n32);
+            boolean s32 = d2Var.P.s3();
+            d2Var.L0 = s32;
+            d2Var.y0.h(s32);
             d2Var.y0.invalidate();
         }
         d2Var.C0();
@@ -1132,28 +1157,28 @@ public final class l implements z3.d, a0, androidx.activity.result.b, r, w9, OnS
         AndroidUtilities.runOnUIThread(runnable, 1000L);
     }
 
-    @Override // org.telegram.ui.Components.z71
+    @Override // org.telegram.ui.Components.g81
     public /* synthetic */ void onRenderedFirstFrame(j2.a aVar) {
     }
 
-    @Override // k2.x
+    @Override // k2.y
     public void onSkipSilenceEnabledChanged(boolean z10) {
         qf.b bVar = ((FfmpegAudioRenderer) this.b).I;
         Handler handler = (Handler) bVar.b;
         if (handler != null) {
-            handler.post(new ah.t(12, bVar, z10));
+            handler.post(new t(12, bVar, z10));
         }
     }
 
-    @Override // org.telegram.ui.Components.z71
+    @Override // org.telegram.ui.Components.g81
     public void onStateChanged(boolean z10, int i10) {
         r6 r6Var = (r6) this.b;
         o6 o6Var = r6Var.M;
-        c81 c81Var = r6Var.x;
-        if (c81Var == null) {
+        j81 j81Var = r6Var.x;
+        if (j81Var == null) {
             return;
         }
-        if (c81Var.y()) {
+        if (j81Var.y()) {
             AndroidUtilities.runOnUIThread(o6Var);
         } else {
             AndroidUtilities.cancelRunOnUIThread(o6Var);
@@ -1181,7 +1206,7 @@ public final class l implements z3.d, a0, androidx.activity.result.b, r, w9, OnS
             }
             String packageName = context.getPackageName();
             Locale locale = Locale.ROOT;
-            String u10 = r4.c.u(packageName, ".client_cast_analytics_data");
+            String u10 = o0.u(packageName, ".client_cast_analytics_data");
             p0Var.h = bundle.getLong("com.google.android.gms.cast.FLAG_FIRELOG_UPLOAD_MODE") == 0 ? 1 : 2;
             l5.t.b(context);
             p0Var.g = l5.t.a().c(j5.a.e).a("CAST_SENDER_SDK", new i5.c("proto"), com.google.android.gms.internal.cast.z.a);
@@ -1192,7 +1217,7 @@ public final class l implements z3.d, a0, androidx.activity.result.b, r, w9, OnS
             if (i10 != 0) {
                 com.google.android.gms.common.api.internal.u b11 = com.google.android.gms.common.api.internal.v.b();
                 b11.c = new qb.c(rVar, new String[]{"com.google.android.gms.cast.DICTIONARY_CAST_STATUS_CODES_TO_APP_SESSION_ERROR", "com.google.android.gms.cast.DICTIONARY_CAST_STATUS_CODES_TO_APP_SESSION_CHANGE_REASON"});
-                b11.d = new k6.c[]{y.c};
+                b11.d = new k6.c[]{c6.y.c};
                 b11.b = false;
                 b11.a = 8426;
                 Task e = rVar.e(0, b11.a());
@@ -1266,19 +1291,19 @@ public final class l implements z3.d, a0, androidx.activity.result.b, r, w9, OnS
         }
     }
 
-    @Override // org.telegram.ui.Components.z71
+    @Override // org.telegram.ui.Components.g81
     public /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.z71
+    @Override // org.telegram.ui.Components.g81
     public void onVideoSizeChanged(int i10, int i11, int i12, float f7) {
-        c2 c2Var = ((r6) this.b).w;
-        if (c2Var != null) {
+        rg.d2 d2Var = ((r6) this.b).w;
+        if (d2Var != null) {
             float f10 = i10 / i11;
-            if (Math.abs(c2Var.y0 - f10) >= 1.0E-4f) {
-                c2Var.y0 = f10;
-                c2Var.requestLayout();
+            if (Math.abs(d2Var.y0 - f10) >= 1.0E-4f) {
+                d2Var.y0 = f10;
+                d2Var.requestLayout();
             }
         }
     }
@@ -1286,8 +1311,8 @@ public final class l implements z3.d, a0, androidx.activity.result.b, r, w9, OnS
     @Override // ki.u3
     public void p() {
         d2 d2Var = (d2) this.b;
-        j3 j3Var = d2Var.P.l3;
-        d2Var.x0((j3Var != null && j3Var.x() && d2Var.P.D4()) ? 1 : 0, true);
+        j3 j3Var = d2Var.P.o3;
+        d2Var.x0((j3Var != null && j3Var.x() && d2Var.P.I4()) ? 1 : 0, true);
         d2Var.y0();
         d2Var.w0();
     }
@@ -1297,40 +1322,40 @@ public final class l implements z3.d, a0, androidx.activity.result.b, r, w9, OnS
         return ((d9.k) this.b).apply(obj2);
     }
 
+    @Override // z3.d
+    public List r(long j10) {
+        return j10 >= 0 ? (List) this.b : Collections.EMPTY_LIST;
+    }
+
     @Override // ki.u3
-    public void r() {
+    public void s() {
         d2 d2Var = (d2) this.b;
         d2Var.I0 = d2Var.K0;
         d2.Z(d2Var, false, false);
         d2Var.x0(2, true);
     }
 
-    @Override // z3.d
-    public List s(long j10) {
-        return j10 >= 0 ? (List) this.b : Collections.EMPTY_LIST;
-    }
-
-    @Override // k2.x
+    @Override // k2.y
     public void t(int i10, long j10, long j11) {
         qf.b bVar = ((FfmpegAudioRenderer) this.b).I;
         Handler handler = (Handler) bVar.b;
         if (handler != null) {
-            handler.post(new k2.s(bVar, i10, j10, j11, 0));
+            handler.post(new k2.t(bVar, i10, j10, j11, 0));
         }
     }
 
-    @Override // z3.d
-    public int u() {
-        return 1;
-    }
-
     @Override // mg.o
-    public void v() {
+    public void u() {
         ((m0) this.b).e.invalidate();
     }
 
+    @Override // z3.d
+    public int v() {
+        return 1;
+    }
+
     @Override // ki.j0
-    public n9 w() {
+    public o9 w() {
         switch (this.a) {
             case 25:
                 q3 q3Var = ((z) this.b).O;
@@ -1348,34 +1373,8 @@ public final class l implements z3.d, a0, androidx.activity.result.b, r, w9, OnS
     }
 
     @Override // hg.z1
-    public /* synthetic */ a0.h y() {
+    public /* synthetic */ a0.h x() {
         return null;
-    }
-
-    @Override // ki.j0
-    public void z(CharSequence charSequence) {
-        switch (this.a) {
-            case 25:
-                q3 q3Var = ((z) this.b).O;
-                if (q3Var != null) {
-                    q3Var.getClass();
-                    if (charSequence != null && charSequence.length() > 0) {
-                        q3Var.a.u4(charSequence.toString());
-                        break;
-                    }
-                }
-                break;
-            default:
-                p3 p3Var = ((u4) this.b).N;
-                if (p3Var != null) {
-                    p3Var.getClass();
-                    if (charSequence != null && charSequence.length() > 0) {
-                        p3Var.a.u4(charSequence.toString());
-                        break;
-                    }
-                }
-                break;
-        }
     }
 
     public /* synthetic */ l(Object obj, int i10) {
@@ -1383,7 +1382,7 @@ public final class l implements z3.d, a0, androidx.activity.result.b, r, w9, OnS
         this.b = obj;
     }
 
-    @Override // org.telegram.ui.Components.z71
+    @Override // org.telegram.ui.Components.g81
     public void onRenderedFirstFrame() {
     }
 
@@ -1418,7 +1417,7 @@ public final class l implements z3.d, a0, androidx.activity.result.b, r, w9, OnS
         android.support.v4.media.session.b0.a(bundle);
     }
 
-    @Override // k2.x
+    @Override // k2.y
     public /* synthetic */ void U() {
     }
 
@@ -1426,16 +1425,12 @@ public final class l implements z3.d, a0, androidx.activity.result.b, r, w9, OnS
     public void W() {
     }
 
-    @Override // k2.x
+    @Override // k2.y
     public /* synthetic */ void l() {
     }
 
     @Override // ki.u3
-    public void x() {
-    }
-
-    @Override // ki.u3
-    public void A(int i10) {
+    public void y() {
     }
 
     @Override // mg.o
@@ -1446,27 +1441,31 @@ public final class l implements z3.d, a0, androidx.activity.result.b, r, w9, OnS
     public void R(boolean z10) {
     }
 
-    @Override // ci.w9
+    @Override // ci.v9
     public /* synthetic */ void b(boolean z10) {
     }
 
-    @Override // org.telegram.ui.Components.z71
+    @Override // org.telegram.ui.Components.g81
     public /* synthetic */ void onSeekFinished(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.z71
+    @Override // org.telegram.ui.Components.g81
     public /* synthetic */ void onSeekStarted(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.z71
+    @Override // org.telegram.ui.Components.g81
     public /* synthetic */ void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
+    }
+
+    @Override // ki.u3
+    public void z(int i10) {
     }
 
     @Override // ki.u3
     public void o(h1 h1Var, boolean z10) {
     }
 
-    @Override // org.telegram.ui.Components.z71
-    public void onError(c81 c81Var, Exception exc) {
+    @Override // org.telegram.ui.Components.g81
+    public void onError(j81 j81Var, Exception exc) {
     }
 }

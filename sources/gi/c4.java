@@ -6,9 +6,9 @@ import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.cs;
 import org.telegram.ui.Components.fs;
-import org.telegram.ui.Components.qh0;
+import org.telegram.ui.Components.th0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class c4 extends GestureDetector.SimpleOnGestureListener {
     public final /* synthetic */ int a;
@@ -43,7 +43,7 @@ public final class c4 extends GestureDetector.SimpleOnGestureListener {
 
     @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
     public boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent2, float f7, float f10) {
-        org.telegram.ui.web.x0 x0Var;
+        org.telegram.ui.web.y0 y0Var;
         switch (this.a) {
             case 0:
                 e4 e4Var = (e4) this.c;
@@ -58,7 +58,7 @@ public final class c4 extends GestureDetector.SimpleOnGestureListener {
                 }
                 float distance = AndroidUtilities.distance(motionEvent.getX(), motionEvent.getY(), motionEvent2.getX(), motionEvent2.getY());
                 float eventTime = motionEvent2.getEventTime() - motionEvent.getEventTime();
-                if (f10 >= AndroidUtilities.dp(650.0f) && ((distance > AndroidUtilities.dp(200.0f) || eventTime > 250.0f) && ((x0Var = e4Var.x) == null || x0Var.getScrollY() == 0))) {
+                if (f10 >= AndroidUtilities.dp(650.0f) && ((distance > AndroidUtilities.dp(200.0f) || eventTime > 250.0f) && ((y0Var = e4Var.x) == null || y0Var.getScrollY() == 0))) {
                     e4Var.w = true;
                     float f11 = e4Var.r;
                     if (f11 < e4Var.H && !e4Var.J) {
@@ -88,11 +88,11 @@ public final class c4 extends GestureDetector.SimpleOnGestureListener {
             default:
                 return super.onFling(motionEvent, motionEvent2, f7, f10);
             case 2:
-                qh0 qh0Var = (qh0) this.c;
-                if (!qh0Var.f && !qh0Var.h && f7 >= 600.0f) {
-                    qh0Var.e = false;
-                    qh0Var.h = false;
-                    qh0Var.a(0.0f, f7 / 6000.0f);
+                th0 th0Var = (th0) this.c;
+                if (!th0Var.f && !th0Var.h && f7 >= 600.0f) {
+                    th0Var.e = false;
+                    th0Var.h = false;
+                    th0Var.a(0.0f, f7 / 6000.0f);
                 }
                 return false;
         }
@@ -116,7 +116,7 @@ public final class c4 extends GestureDetector.SimpleOnGestureListener {
     */
     public final boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f7, float f10) {
         float f11;
-        org.telegram.ui.web.x0 x0Var;
+        org.telegram.ui.web.y0 y0Var;
         MotionEvent motionEvent3;
         switch (this.a) {
             case 0:
@@ -141,7 +141,7 @@ public final class c4 extends GestureDetector.SimpleOnGestureListener {
                         if (!((Boolean) e4Var.I.provide(null)).booleanValue() || e4Var.r != (-e4Var.f) + e4Var.e) {
                             float abs2 = Math.abs(f11);
                             float f15 = this.b;
-                            if (abs2 >= f15 && Math.abs(f11) * 1.5f >= Math.abs(f7) && (e4Var.r != (-e4Var.f) + e4Var.e || (x0Var = e4Var.x) == null || (f11 < 0.0f && x0Var.getScrollY() == 0))) {
+                            if (abs2 >= f15 && Math.abs(f11) * 1.5f >= Math.abs(f7) && (e4Var.r != (-e4Var.f) + e4Var.e || (y0Var = e4Var.x) == null || (f11 < 0.0f && y0Var.getScrollY() == 0))) {
                                 e4Var.c = true;
                                 MotionEvent obtain = MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0);
                                 for (int i10 = 0; i10 < e4Var.getChildCount(); i10++) {
@@ -150,8 +150,8 @@ public final class c4 extends GestureDetector.SimpleOnGestureListener {
                                 obtain.recycle();
                                 return true;
                             }
-                            org.telegram.ui.web.x0 x0Var2 = e4Var.x;
-                            if (x0Var2 != null) {
+                            org.telegram.ui.web.y0 y0Var2 = e4Var.x;
+                            if (y0Var2 != null) {
                                 break;
                             }
                             if (Math.abs(f7) >= f15) {
@@ -208,31 +208,31 @@ public final class c4 extends GestureDetector.SimpleOnGestureListener {
                 }
                 return false;
             default:
-                qh0 qh0Var = (qh0) this.c;
-                if (qh0Var.e || qh0Var.h) {
+                th0 th0Var = (th0) this.c;
+                if (th0Var.e || th0Var.h) {
                     motionEvent3 = motionEvent2;
                 } else {
-                    if (qh0Var.y || qh0Var.b != 1.0f || f7 > (-this.b) || Math.abs(f7) < Math.abs(1.5f * f10)) {
+                    if (th0Var.y || th0Var.b != 1.0f || f7 > (-this.b) || Math.abs(f7) < Math.abs(1.5f * f10)) {
                         motionEvent3 = motionEvent2;
                     } else {
                         motionEvent3 = motionEvent2;
-                        if (!qh0Var.d(motionEvent3, qh0Var.getChildAt(qh0Var.b > 0.5f ? 1 : 0))) {
-                            qh0Var.e = true;
+                        if (!th0Var.d(motionEvent3, th0Var.getChildAt(th0Var.b > 0.5f ? 1 : 0))) {
+                            th0Var.e = true;
                             MotionEvent obtain2 = MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0);
-                            for (int i11 = 0; i11 < qh0Var.getChildCount(); i11++) {
-                                qh0Var.getChildAt(i11).dispatchTouchEvent(obtain2);
+                            for (int i11 = 0; i11 < th0Var.getChildCount(); i11++) {
+                                th0Var.getChildAt(i11).dispatchTouchEvent(obtain2);
                             }
                             obtain2.recycle();
                         }
                     }
-                    qh0Var.h = true;
+                    th0Var.h = true;
                 }
-                if (qh0Var.e) {
-                    qh0Var.c = -1.0f;
-                    qh0Var.b = 1.0f - Math.max(0.0f, Math.min(1.0f, (motionEvent3.getX() - motionEvent.getX()) / qh0Var.getWidth()));
-                    qh0Var.c(true);
+                if (th0Var.e) {
+                    th0Var.c = -1.0f;
+                    th0Var.b = 1.0f - Math.max(0.0f, Math.min(1.0f, (motionEvent3.getX() - motionEvent.getX()) / th0Var.getWidth()));
+                    th0Var.c(true);
                 }
-                return qh0Var.e;
+                return th0Var.e;
         }
     }
 }

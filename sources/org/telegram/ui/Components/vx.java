@@ -10,14 +10,14 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class vx extends kw {
     public final /* synthetic */ tz g0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public vx(tz tzVar, Context context, org.telegram.ui.ActionBar.d6 d6Var, boolean z10, lw lwVar, boolean z11) {
-        super(context, d6Var, true, false, true, z10, 0, lwVar, org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.v6, d6Var), z11);
+    public vx(tz tzVar, Context context, org.telegram.ui.ActionBar.g6 g6Var, boolean z10, lw lwVar, boolean z11) {
+        super(context, g6Var, true, false, true, z10, 0, lwVar, org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.v6, g6Var), z11);
         this.g0 = tzVar;
     }
 
@@ -67,7 +67,7 @@ public final class vx extends kw {
         }
         rw rwVar = tzVar.V;
         if (rwVar != null && (fzVar = rwVar.r) != null) {
-            fzVar.G1(null);
+            fzVar.L1(null);
         }
         if (i10 == 0) {
             num = Integer.valueOf(tzVar.d0 ? 1 : 0);

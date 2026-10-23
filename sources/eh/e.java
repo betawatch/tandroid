@@ -1,13 +1,13 @@
 package eh;
 
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.k6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+/* loaded from: classes4.dex */
 public final class e implements a {
-    public final d6 a;
+    public final g6 a;
     public d b;
     public d c;
     public d d;
@@ -17,8 +17,8 @@ public final class e implements a {
     public float n;
     public float r;
 
-    public e(d6 d6Var) {
-        this.a = d6Var;
+    public e(g6 g6Var) {
+        this.a = g6Var;
         float dpf2 = AndroidUtilities.dpf2(1.0f);
         float dpf22 = AndroidUtilities.dpf2(0.33333334f);
         this.n = dpf2;
@@ -30,7 +30,7 @@ public final class e implements a {
     }
 
     @Override // eh.a
-    public final int E() {
+    public final int H() {
         return a(this.b);
     }
 
@@ -39,11 +39,11 @@ public final class e implements a {
         if (dVar == null) {
             return 0;
         }
-        d6 d6Var = this.a;
-        if ((d6Var instanceof ci.b) || (d6Var == null ? h6.I.q() : d6Var.a())) {
+        g6 g6Var = this.a;
+        if ((g6Var instanceof ci.b) || (g6Var == null ? k6.I.q() : g6Var.a())) {
             z10 = true;
         }
-        return dVar.f(d6Var, z10);
+        return dVar.i(g6Var, z10);
     }
 
     @Override // eh.a

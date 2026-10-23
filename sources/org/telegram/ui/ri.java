@@ -2,19 +2,19 @@ package org.telegram.ui;
 
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class ri extends pf.c {
     public final /* synthetic */ int d;
     public final /* synthetic */ int e;
-    public final /* synthetic */ org.telegram.ui.Cells.u1 f;
-    public final /* synthetic */ qn g;
+    public final /* synthetic */ org.telegram.ui.Cells.t1 f;
+    public final /* synthetic */ sn g;
 
-    public /* synthetic */ ri(qn qnVar, int i10, org.telegram.ui.Cells.u1 u1Var, int i11) {
+    public /* synthetic */ ri(sn snVar, int i10, org.telegram.ui.Cells.t1 t1Var, int i11) {
         this.d = i11;
-        this.g = qnVar;
+        this.g = snVar;
         this.e = i10;
-        this.f = u1Var;
+        this.f = t1Var;
     }
 
     @Override // pf.c
@@ -46,24 +46,24 @@ public final class ri extends pf.c {
         switch (this.d) {
             case 0:
                 int i10 = this.e;
-                qn qnVar = this.g;
-                qnVar.wb = i10;
-                qnVar.xb = 6;
+                sn snVar = this.g;
+                snVar.Jb = i10;
+                snVar.Kb = 6;
                 this.f.invalidate();
                 break;
             case 1:
                 int i11 = this.e;
-                qn qnVar2 = this.g;
-                qnVar2.wb = i11;
-                qnVar2.xb = 5;
-                qnVar2.zb = null;
+                sn snVar2 = this.g;
+                snVar2.Jb = i11;
+                snVar2.Kb = 5;
+                snVar2.Mb = null;
                 this.f.invalidate();
                 break;
             default:
                 int i12 = this.e;
-                qn qnVar3 = this.g;
-                qnVar3.wb = i12;
-                qnVar3.xb = 7;
+                sn snVar3 = this.g;
+                snVar3.Jb = i12;
+                snVar3.Kb = 7;
                 this.f.invalidate();
                 break;
         }

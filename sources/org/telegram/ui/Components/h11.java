@@ -1,36 +1,42 @@
 package org.telegram.ui.Components;
 
-import android.text.TextPaint;
-import android.text.style.MetricAffectingSpan;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class h11 extends MetricAffectingSpan {
-    public TextPaint a;
+public final class h11 extends FrameLayout {
+    public static final /* synthetic */ int e = 0;
+    public TextView a;
+    public g11 b;
+    public TLRPC.TL_help_termsOfService c;
+    public int d;
 
-    @Override // android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        TextPaint textPaint2 = this.a;
-        if (textPaint2 != null) {
-            textPaint.setColor(textPaint2.getColor());
-            textPaint.setTypeface(textPaint2.getTypeface());
-            textPaint.setFlags(textPaint2.getFlags());
-            textPaint.setTextSize(textPaint2.getTextSize());
-            textPaint.baselineShift = textPaint2.baselineShift;
-            textPaint.bgColor = textPaint2.bgColor;
+    public final void a() {
+        g11 g11Var = this.b;
+        int i10 = this.d;
+        org.telegram.ui.ha0 ha0Var = (org.telegram.ui.ha0) g11Var;
+        ha0Var.getClass();
+        UserConfig.getInstance(i10).unacceptedTermsOfService = null;
+        UserConfig.getInstance(i10).saveConfig(false);
+        LaunchActivity launchActivity = ha0Var.a;
+        ArrayList arrayList = launchActivity.d0;
+        if (!arrayList.isEmpty()) {
+            ((org.telegram.ui.ActionBar.o2) i2.o1.i(1, arrayList)).onResume();
         }
+        launchActivity.C0.animate().alpha(0.0f).setDuration(150L).setInterpolator(AndroidUtilities.accelerateInterpolator).withEndAction(new org.telegram.ui.fz(ha0Var, 17)).start();
+        TLRPC.TL_help_acceptTermsOfService tL_help_acceptTermsOfService = new TLRPC.TL_help_acceptTermsOfService();
+        tL_help_acceptTermsOfService.id = this.c.id;
+        ConnectionsManager.getInstance(this.d).sendRequest(tL_help_acceptTermsOfService, new ci.d6(16));
     }
 
-    @Override // android.text.style.MetricAffectingSpan
-    public final void updateMeasureState(TextPaint textPaint) {
-        TextPaint textPaint2 = this.a;
-        if (textPaint2 != null) {
-            textPaint.setColor(textPaint2.getColor());
-            textPaint.setTypeface(textPaint2.getTypeface());
-            textPaint.setFlags(textPaint2.getFlags());
-            textPaint.setTextSize(textPaint2.getTextSize());
-            textPaint.baselineShift = textPaint2.baselineShift;
-            textPaint.bgColor = textPaint2.bgColor;
-        }
+    public void setDelegate(g11 g11Var) {
+        this.b = g11Var;
     }
 }

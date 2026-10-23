@@ -2,16 +2,16 @@ package ig;
 
 import android.content.DialogInterface;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Cells.b6;
+import org.telegram.ui.Cells.c6;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r implements DialogInterface.OnShowListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ EditTextBoldCursor b;
 
-    public /* synthetic */ r(int i10, EditTextBoldCursor editTextBoldCursor) {
+    public /* synthetic */ r(EditTextBoldCursor editTextBoldCursor, int i10) {
         this.a = i10;
         this.b = editTextBoldCursor;
     }
@@ -31,9 +31,9 @@ public final /* synthetic */ class r implements DialogInterface.OnShowListener {
                 editTextBoldCursor.setSelection(0, editTextBoldCursor.length());
                 break;
             case 2:
-                b6 b6Var = (b6) this.b;
-                b6Var.requestFocus();
-                AndroidUtilities.showKeyboard(b6Var);
+                c6 c6Var = (c6) this.b;
+                c6Var.requestFocus();
+                AndroidUtilities.showKeyboard(c6Var);
                 break;
             default:
                 yh.x1 x1Var = (yh.x1) this.b;

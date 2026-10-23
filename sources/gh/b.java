@@ -8,8 +8,8 @@ import android.graphics.Paint;
 import android.graphics.Shader;
 import dh.f;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+/* loaded from: classes4.dex */
 public final class b implements a {
     public final Paint a;
     public final Matrix b;
@@ -41,7 +41,7 @@ public final class b implements a {
             BitmapShader bitmapShader = new BitmapShader(bitmap, tileMode, tileMode);
             this.c = bitmapShader;
             paint.setShader(bitmapShader);
-            d();
+            e();
         }
     }
 
@@ -51,10 +51,15 @@ public final class b implements a {
         }
         this.h = i10;
         this.n = i11;
-        d();
+        e();
     }
 
-    public final void d() {
+    @Override // gh.a
+    public final dh.d d() {
+        return new f(this);
+    }
+
+    public final void e() {
         Bitmap bitmap = this.d;
         Matrix matrix = this.b;
         if (bitmap == null) {
@@ -76,11 +81,6 @@ public final class b implements a {
         float max = Math.max(f7 / f10, f11 / f12);
         matrix.setScale(max, max);
         matrix.postTranslate((f7 - (f10 * max)) * 0.5f, ((f11 - (f12 * max)) * 0.5f) + 0);
-    }
-
-    @Override // gh.a
-    public final dh.d f() {
-        return new f(this);
     }
 
     @Override // gh.a

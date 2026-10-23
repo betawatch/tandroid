@@ -19,7 +19,8 @@ import android.view.WindowManager;
 import b2.f1;
 import b2.v0;
 import b2.w0;
-import ci.v7;
+import ci.u7;
+import i2.o1;
 import j$.util.DesugarTimeZone;
 import j$.util.Objects;
 import java.io.IOException;
@@ -58,7 +59,7 @@ import v7.s6;
 import v7.u6;
 import v7.v6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public abstract class m0 {
     public static final String a;
@@ -191,7 +192,7 @@ public abstract class m0 {
             case 6:
                 return "camera motion";
             default:
-                return i10 >= 10000 ? i2.e.k(i10, "custom (", ")") : "?";
+                return i10 >= 10000 ? o1.l(i10, "custom (", ")") : "?";
         }
     }
 
@@ -878,9 +879,9 @@ public abstract class m0 {
 
     public static j9.e0 g0(j9.y yVar, j9.q qVar) {
         j9.e0 e0Var = new j9.e0();
-        v7 v7Var = new v7(19, e0Var, yVar);
+        u7 u7Var = new u7(19, e0Var, yVar);
         j9.r rVar = j9.r.a;
-        e0Var.a(v7Var, rVar);
+        e0Var.a(u7Var, rVar);
         yVar.a(new a3.l0(yVar, e0Var, qVar, 28), rVar);
         return e0Var;
     }

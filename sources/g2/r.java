@@ -6,6 +6,7 @@ import android.os.Build;
 import android.text.TextUtils;
 import e2.m0;
 import e9.c2;
+import i2.o1;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InterruptedIOException;
@@ -20,8 +21,9 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.zip.GZIPInputStream;
+import si.o0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class r extends c {
     public final boolean a;
@@ -48,7 +50,7 @@ public final class r extends c {
         this.f = new n4.s(19);
     }
 
-    public final void a() {
+    public final void b() {
         HttpURLConnection httpURLConnection = this.n;
         if (httpURLConnection != null) {
             try {
@@ -56,6 +58,25 @@ public final class r extends c {
             } catch (Exception e) {
                 e2.a.d("DefaultHttpDataSource", "Unexpected error while disconnecting", e);
             }
+        }
+    }
+
+    public final URL c(URL url, String str) {
+        if (str == null) {
+            throw new v("Null location redirect", 2001);
+        }
+        try {
+            URL url2 = new URL(url, str);
+            String protocol = url2.getProtocol();
+            if (!"https".equals(protocol) && !"http".equals(protocol)) {
+                throw new v(o0.h("Unsupported protocol redirect: ", protocol), 2001);
+            }
+            if (this.a || protocol.equals(url.getProtocol())) {
+                return url2;
+            }
+            throw new v("Disallowed cross-protocol redirect (" + url.getProtocol() + " to " + protocol + ")", 2001);
+        } catch (MalformedURLException e) {
+            throw new v(e, 2001, 1);
         }
     }
 
@@ -74,7 +95,7 @@ public final class r extends c {
             }
         } finally {
             this.r = null;
-            a();
+            b();
             if (this.s) {
                 this.s = false;
                 transferEnded();
@@ -82,25 +103,6 @@ public final class r extends c {
             this.n = null;
             this.h = null;
             TrafficStats.clearThreadStatsTag();
-        }
-    }
-
-    public final URL d(URL url, String str) {
-        if (str == null) {
-            throw new v("Null location redirect", 2001);
-        }
-        try {
-            URL url2 = new URL(url, str);
-            String protocol = url2.getProtocol();
-            if (!"https".equals(protocol) && !"http".equals(protocol)) {
-                throw new v(r4.c.h("Unsupported protocol redirect: ", protocol), 2001);
-            }
-            if (this.a || protocol.equals(url.getProtocol())) {
-                return url2;
-            }
-            throw new v("Disallowed cross-protocol redirect (" + url.getProtocol() + " to " + protocol + ")", 2001);
-        } catch (MalformedURLException e) {
-            throw new v(e, 2001, 1);
         }
     }
 
@@ -120,20 +122,20 @@ public final class r extends c {
         while (true) {
             int i13 = i12 + 1;
             if (i12 > 20) {
-                throw new v(new NoRouteToHostException(i2.e.j(i13, "Too many redirects: ")), 2001, 1);
+                throw new v(new NoRouteToHostException(o1.k(i13, "Too many redirects: ")), 2001, 1);
             }
             f7 = f(url, i10, bArr, j10, j11, z10, false, mVar.d);
             int responseCode = f7.getResponseCode();
             String headerField = f7.getHeaderField("Location");
             if ((i10 == i11 || i10 == 3) && (responseCode == 300 || responseCode == 301 || responseCode == 302 || responseCode == 303 || responseCode == 307 || responseCode == 308)) {
                 f7.disconnect();
-                url = d(url, headerField);
+                url = c(url, headerField);
             } else {
                 if (i10 != 2 || (responseCode != 300 && responseCode != 301 && responseCode != 302 && responseCode != 303)) {
                     break;
                 }
                 f7.disconnect();
-                url = d(url, headerField);
+                url = c(url, headerField);
                 bArr = null;
                 i10 = 1;
             }
@@ -152,9 +154,9 @@ public final class r extends c {
         HashMap hashMap = new HashMap();
         n4.s sVar = this.e;
         if (sVar != null) {
-            hashMap.putAll(sVar.v());
+            hashMap.putAll(sVar.u());
         }
-        hashMap.putAll(this.f.v());
+        hashMap.putAll(this.f.u());
         hashMap.putAll(map);
         for (Map.Entry entry : hashMap.entrySet()) {
             httpURLConnection.setRequestProperty((String) entry.getKey(), (String) entry.getValue());
@@ -309,7 +311,7 @@ public final class r extends c {
                 } catch (IOException unused) {
                     String str2 = m0.a;
                 }
-                a();
+                b();
                 throw new x(this.v, this.v == 416 ? new j(2008) : null, headerFields);
             }
             e.getContentType();
@@ -389,18 +391,18 @@ public final class r extends c {
                     g(j12);
                     return this.w;
                 } catch (IOException e7) {
-                    a();
+                    b();
                     if (e7 instanceof v) {
                         throw ((v) e7);
                     }
                     throw new v(e7, 2000, 1);
                 }
             } catch (IOException e10) {
-                a();
+                b();
                 throw new v(e10, 2000, 1);
             }
         } catch (IOException e11) {
-            a();
+            b();
             throw v.a(e11, 1);
         }
     }

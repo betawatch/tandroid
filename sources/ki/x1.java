@@ -7,12 +7,12 @@ import android.view.View;
 import android.widget.HorizontalScrollView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.s10;
+import org.telegram.ui.w10;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class x1 extends HorizontalScrollView {
-    public final s10 a;
+    public final w10 a;
     public final org.telegram.ui.Components.f6 b;
     public final org.telegram.ui.Components.f6 c;
     public final /* synthetic */ d2 d;
@@ -21,7 +21,7 @@ public final class x1 extends HorizontalScrollView {
     public x1(d2 d2Var, Context context) {
         super(context);
         this.d = d2Var;
-        this.a = new s10();
+        this.a = new w10();
         bs bsVar = bs.h;
         this.b = new org.telegram.ui.Components.f6(this, 300L, bsVar);
         this.c = new org.telegram.ui.Components.f6(this, 300L, bsVar);
@@ -41,16 +41,16 @@ public final class x1 extends HorizontalScrollView {
         super.dispatchDraw(canvas2);
         if (e > 0.0f || e7 > 0.0f) {
             canvas2.save();
-            s10 s10Var = this.a;
+            w10 w10Var = this.a;
             if (e > 0.0f) {
                 RectF rectF = AndroidUtilities.rectTmp;
                 rectF.set(getScrollX(), 0.0f, AndroidUtilities.dp(48.0f) + getScrollX(), getHeight());
-                s10Var.b(canvas2, rectF, 0, e);
+                w10Var.b(canvas2, rectF, 0, e);
             }
             if (e7 > 0.0f) {
                 RectF rectF2 = AndroidUtilities.rectTmp;
                 rectF2.set((getWidth() + getScrollX()) - AndroidUtilities.dp(48.0f), 0.0f, getWidth() + getScrollX(), getHeight());
-                s10Var.b(canvas2, rectF2, 2, e7);
+                w10Var.b(canvas2, rectF2, 2, e7);
             }
             canvas2.restore();
         }

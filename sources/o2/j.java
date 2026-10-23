@@ -30,7 +30,7 @@ import v7.s6;
 import v7.u6;
 import v7.v6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class j extends v2.l {
     public static final AtomicInteger c0 = new AtomicInteger();
@@ -63,7 +63,7 @@ public final class j extends v2.l {
     public final Uri x;
     public final boolean y;
 
-    public j(c cVar, g2.h hVar, g2.m mVar, w wVar, boolean z10, g2.h hVar2, g2.m mVar2, boolean z11, Uri uri, List list, int i10, Object obj, long j10, long j11, long j12, int i11, boolean z12, int i12, boolean z13, boolean z14, k0 k0Var, b2.s sVar, b bVar, q3.h hVar3, x xVar, boolean z15, boolean z16, j2.k kVar) {
+    public j(c cVar, g2.h hVar, g2.m mVar, w wVar, boolean z10, g2.h hVar2, g2.m mVar2, boolean z11, Uri uri, List list, int i10, Object obj, long j10, long j11, long j12, int i11, boolean z12, int i12, boolean z13, boolean z14, k0 k0Var, b2.s sVar, b bVar, q3.h hVar3, x xVar, boolean z15, boolean z16, j2.j jVar) {
         super(hVar, mVar, wVar, i10, obj, j10, j11, j12);
         this.Q = z10;
         this.E = i11;
@@ -111,7 +111,7 @@ public final class j extends v2.l {
         b bVar;
         this.T.getClass();
         if (this.S == null && (bVar = this.H) != null) {
-            c3.o b10 = bVar.a.b();
+            c3.q b10 = bVar.a.b();
             if ((b10 instanceof d0) || (b10 instanceof w3.h)) {
                 this.S = this.H;
                 this.V = false;
@@ -219,13 +219,13 @@ public final class j extends v2.l {
         int i11;
         k0 k0Var;
         ArrayList arrayList;
-        c3.o aVar;
+        c3.q aVar;
         boolean z10;
         oa.d dVar;
         int i12;
         List singletonList;
         int i13;
-        c3.o dVar2;
+        c3.q dVar2;
         s0 s0Var;
         long j13 = this.h;
         k0 k0Var2 = this.K;
@@ -289,25 +289,25 @@ public final class j extends v2.l {
                 lVar.f = 0;
                 b bVar3 = this.H;
                 if (bVar3 != null) {
-                    c3.o oVar = bVar3.a;
-                    c3.o b10 = oVar.b();
+                    c3.q qVar = bVar3.a;
+                    c3.q b10 = qVar.b();
                     u6.p(!((b10 instanceof d0) || (b10 instanceof w3.h)));
-                    ?? r11 = oVar.b() == oVar;
-                    Class<?> cls = oVar.getClass();
+                    ?? r11 = qVar.b() == qVar;
+                    Class<?> cls = qVar.getClass();
                     if (r11 != true) {
                         throw new IllegalStateException(v6.a("Can't recreate wrapped extractors. Outer type: %s", cls));
                     }
-                    if (oVar instanceof t) {
+                    if (qVar instanceof t) {
                         dVar2 = new t(bVar3.b.d, bVar3.c, bVar3.d, bVar3.e);
-                    } else if (oVar instanceof j4.d) {
+                    } else if (qVar instanceof j4.d) {
                         dVar2 = new j4.d(0);
-                    } else if (oVar instanceof j4.a) {
+                    } else if (qVar instanceof j4.a) {
                         dVar2 = new j4.a();
-                    } else if (oVar instanceof j4.c) {
+                    } else if (qVar instanceof j4.c) {
                         dVar2 = new j4.c();
                     } else {
-                        if (!(oVar instanceof v3.d)) {
-                            throw new IllegalStateException("Unexpected extractor type for recreation: ".concat(oVar.getClass().getSimpleName()));
+                        if (!(qVar instanceof v3.d)) {
+                            throw new IllegalStateException("Unexpected extractor type for recreation: ".concat(qVar.getClass().getSimpleName()));
                         }
                         dVar2 = new v3.d(0);
                     }
@@ -335,15 +335,15 @@ public final class j extends v2.l {
                     }
                     lVar.f = 0;
                     int i18 = 0;
-                    c3.o oVar2 = null;
+                    c3.q qVar2 = null;
                     while (true) {
                         int size = arrayList2.size();
                         k0 k0Var3 = this.K;
                         if (i18 >= size) {
                             j12 = j13;
                             i10 = 0;
-                            oVar2.getClass();
-                            bVar = new b(oVar2, wVar, k0Var3, cVar.a, cVar.b);
+                            qVar2.getClass();
+                            bVar = new b(qVar2, wVar, k0Var3, cVar.a, cVar.b);
                             break;
                         }
                         int intValue = ((Integer) arrayList2.get(i18)).intValue();
@@ -441,8 +441,8 @@ public final class j extends v2.l {
                             break;
                         }
                         w wVar2 = wVar;
-                        if (oVar2 == null && (intValue == a2 || intValue == a10 || intValue == b11 || intValue == 11)) {
-                            oVar2 = aVar;
+                        if (qVar2 == null && (intValue == a2 || intValue == a10 || intValue == b11 || intValue == 11)) {
+                            qVar2 = aVar;
                         }
                         wVar = wVar2;
                         arrayList2 = arrayList;
@@ -452,13 +452,13 @@ public final class j extends v2.l {
                     bVar2 = bVar;
                 }
                 this.S = bVar2;
-                c3.o b12 = bVar2.a.b();
+                c3.q b12 = bVar2.a.b();
                 if ((((b12 instanceof j4.d) || (b12 instanceof j4.a) || (b12 instanceof j4.c) || (b12 instanceof v3.d)) ? 1 : i10) != 0) {
-                    q qVar = this.T;
+                    q qVar3 = this.T;
                     long b13 = j11 != j10 ? k0Var2.b(j11) : j12;
-                    if (qVar.m0 != b13) {
-                        qVar.m0 = b13;
-                        p[] pVarArr = qVar.L;
+                    if (qVar3.m0 != b13) {
+                        qVar3.m0 = b13;
+                        p[] pVarArr = qVar3.L;
                         int length2 = pVarArr.length;
                         for (int i20 = i10; i20 < length2; i20++) {
                             p pVar = pVarArr[i20];
@@ -469,10 +469,10 @@ public final class j extends v2.l {
                         }
                     }
                 } else {
-                    q qVar2 = this.T;
-                    if (qVar2.m0 != 0) {
-                        qVar2.m0 = 0L;
-                        p[] pVarArr2 = qVar2.L;
+                    q qVar4 = this.T;
+                    if (qVar4.m0 != 0) {
+                        qVar4.m0 = 0L;
+                        p[] pVarArr2 = qVar4.L;
                         int length3 = pVarArr2.length;
                         for (int i21 = i10; i21 < length3; i21++) {
                             p pVar2 = pVarArr2[i21];
@@ -488,18 +488,18 @@ public final class j extends v2.l {
             } else {
                 i10 = 0;
             }
-            q qVar3 = this.T;
-            b2.s sVar = qVar3.n0;
+            q qVar5 = this.T;
+            b2.s sVar = qVar5.n0;
             b2.s sVar2 = this.N;
             if (!Objects.equals(sVar, sVar2)) {
-                qVar3.n0 = sVar2;
+                qVar5.n0 = sVar2;
                 int i22 = i10;
                 while (true) {
-                    p[] pVarArr3 = qVar3.L;
+                    p[] pVarArr3 = qVar5.L;
                     if (i22 >= pVarArr3.length) {
                         break;
                     }
-                    if (qVar3.e0[i22]) {
+                    if (qVar5.e0[i22]) {
                         p pVar3 = pVarArr3[i22];
                         pVar3.K = sVar2;
                         pVar3.B = true;

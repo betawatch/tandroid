@@ -8,7 +8,7 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class n7 extends FrameLayout {
     public final org.telegram.ui.Components.xp a;
@@ -27,7 +27,7 @@ public final class n7 extends FrameLayout {
         org.telegram.ui.Components.xp xpVar = new org.telegram.ui.Components.xp(context, 21, null);
         this.a = xpVar;
         xpVar.setDrawBackgroundAsArc(14);
-        xpVar.b(org.telegram.ui.ActionBar.h6.i7, org.telegram.ui.ActionBar.h6.g7, org.telegram.ui.ActionBar.h6.k7);
+        xpVar.b(org.telegram.ui.ActionBar.k6.i7, org.telegram.ui.ActionBar.k6.g7, org.telegram.ui.ActionBar.k6.k7);
         View view = new View(getContext());
         view.setOnClickListener(new a(this, 8));
         FrameLayout frameLayout = new FrameLayout(context);
@@ -36,7 +36,7 @@ public final class n7 extends FrameLayout {
         this.c = textView;
         textView.setTextSize(1, 16.0f);
         textView.setGravity(5);
-        textView.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.n6, false));
+        org.telegram.ui.ActionBar.r6.W(textView, org.telegram.ui.ActionBar.k6.n6, null);
         if (LocaleController.isRTL) {
             addView(xpVar, w7.z5.d(24, 24.0f, 21, 0.0f, 0.0f, 18.0f, 0.0f));
             addView(view, w7.z5.d(40, 40.0f, 21, 0.0f, 0.0f, 0.0f, 0.0f));
@@ -55,9 +55,9 @@ public final class n7 extends FrameLayout {
         super.dispatchDraw(canvas);
         if (this.d) {
             if (LocaleController.isRTL) {
-                canvas.drawLine(0.0f, getMeasuredHeight() - 1, getMeasuredWidth() - AndroidUtilities.dp(48.0f), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.h6.k0);
+                canvas.drawLine(0.0f, getMeasuredHeight() - 1, getMeasuredWidth() - AndroidUtilities.dp(48.0f), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.k6.k0);
             } else {
-                canvas.drawLine(getMeasuredWidth() - AndroidUtilities.dp(90.0f), getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.h6.k0);
+                canvas.drawLine(getMeasuredWidth() - AndroidUtilities.dp(90.0f), getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.k6.k0);
             }
         }
     }

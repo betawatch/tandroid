@@ -1,10 +1,10 @@
 package oi;
 
 import android.graphics.RectF;
-import i2.e;
+import i2.o1;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class a {
     public final ArrayList a = new ArrayList();
@@ -29,17 +29,17 @@ public final class a {
         if (i10 >= 0 && i10 < this.b) {
             return (RectF) this.a.get(i10);
         }
-        StringBuilder l4 = e.l(i10, "index=", ", size=");
-        l4.append(this.b);
-        throw new IndexOutOfBoundsException(l4.toString());
+        StringBuilder n10 = o1.n(i10, "index=", ", size=");
+        n10.append(this.b);
+        throw new IndexOutOfBoundsException(n10.toString());
     }
 
     public final void c(int i10) {
         int i11;
         if (i10 < 0 || i10 >= (i11 = this.b)) {
-            StringBuilder l4 = e.l(i10, "index=", ", size=");
-            l4.append(this.b);
-            throw new IndexOutOfBoundsException(l4.toString());
+            StringBuilder n10 = o1.n(i10, "index=", ", size=");
+            n10.append(this.b);
+            throw new IndexOutOfBoundsException(n10.toString());
         }
         int i12 = i11 - 1;
         ArrayList arrayList = this.a;

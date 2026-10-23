@@ -1,75 +1,38 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.widget.ImageView;
-import org.telegram.messenger.AndroidUtilities;
+import java.util.Comparator;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class fw0 extends yv0 {
-    public final /* synthetic */ int r = 0;
-    public final /* synthetic */ org.telegram.ui.Components.im0 s;
+public final /* synthetic */ class fw0 implements Comparator {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ MessagesController b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fw0(sg.l1 l1Var, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, d6Var);
-        this.s = l1Var;
+    public /* synthetic */ fw0(MessagesController messagesController, int i10) {
+        this.a = i10;
+        this.b = messagesController;
     }
 
-    @Override // org.telegram.ui.yv0, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        org.telegram.ui.ActionBar.d6 d6Var;
-        boolean q6;
-        org.telegram.ui.ActionBar.d6 d6Var2;
-        switch (this.r) {
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        int i10;
+        int i11;
+        sw0 sw0Var = (sw0) obj;
+        sw0 sw0Var2 = (sw0) obj2;
+        switch (this.a) {
             case 0:
-                float dp = AndroidUtilities.dp(10.0f);
-                RectF rectF = AndroidUtilities.rectTmp;
-                ImageView imageView = this.c;
-                rectF.set(imageView.getLeft(), imageView.getTop(), imageView.getRight(), imageView.getBottom());
-                PremiumPreviewFragment premiumPreviewFragment = ((gw0) this.s).c;
-                premiumPreviewFragment.S.reset();
-                premiumPreviewFragment.S.postScale(1.0f, premiumPreviewFragment.N / 100.0f, 0.0f, 0.0f);
-                premiumPreviewFragment.S.postTranslate(0.0f, -this.f.e);
-                premiumPreviewFragment.R.setLocalMatrix(premiumPreviewFragment.S);
-                canvas.drawRoundRect(rectF, dp, dp, premiumPreviewFragment.T);
-                d6Var = ((org.telegram.ui.ActionBar.n2) premiumPreviewFragment).resourceProvider;
-                if (d6Var != null) {
-                    d6Var2 = ((org.telegram.ui.ActionBar.n2) premiumPreviewFragment).resourceProvider;
-                    q6 = d6Var2.a();
-                } else {
-                    q6 = org.telegram.ui.ActionBar.h6.I.q();
-                }
-                if (q6) {
-                    float dp2 = AndroidUtilities.dp(1.0f);
-                    premiumPreviewFragment.Q.setStrokeWidth(dp2);
-                    canvas.save();
-                    canvas.translate(rectF.left, rectF.top);
-                    rectF.offset(-rectF.left, -rectF.top);
-                    float f7 = dp2 / 2.0f;
-                    rectF.inset(f7, f7);
-                    canvas.drawRoundRect(rectF, dp, dp, premiumPreviewFragment.Q);
-                    canvas.restore();
-                }
-                super.dispatchDraw(canvas);
+                MessagesController messagesController = this.b;
+                i10 = messagesController.businessFeaturesTypesToPosition.get(sw0Var.a, ConnectionsManager.DEFAULT_DATACENTER_ID);
+                i11 = messagesController.businessFeaturesTypesToPosition.get(sw0Var2.a, ConnectionsManager.DEFAULT_DATACENTER_ID);
                 break;
             default:
-                RectF rectF2 = AndroidUtilities.rectTmp;
-                ImageView imageView2 = this.c;
-                rectF2.set(imageView2.getLeft(), imageView2.getTop(), imageView2.getRight(), imageView2.getBottom());
-                sg.l1 l1Var = (sg.l1) this.s;
-                l1Var.c.p0.d(0, 0.0f, 0, getMeasuredWidth(), -this.f.e, l1Var.c.e0);
-                canvas.drawRoundRect(rectF2, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), l1Var.c.p0.f);
-                super.dispatchDraw(canvas);
+                MessagesController messagesController2 = this.b;
+                i10 = messagesController2.premiumFeaturesTypesToPosition.get(sw0Var.a, ConnectionsManager.DEFAULT_DATACENTER_ID);
+                i11 = messagesController2.premiumFeaturesTypesToPosition.get(sw0Var2.a, ConnectionsManager.DEFAULT_DATACENTER_ID);
                 break;
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fw0(gw0 gw0Var, Context context) {
-        super(context, null);
-        this.s = gw0Var;
+        return i10 - i11;
     }
 }

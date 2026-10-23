@@ -1,31 +1,41 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.FileLog;
+import android.animation.ValueAnimator;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class de0 extends v7.l {
-    public final /* synthetic */ me0 a;
+public final /* synthetic */ class de0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ pe0 b;
 
-    public de0(me0 me0Var) {
-        this.a = me0Var;
+    public /* synthetic */ de0(pe0 pe0Var, int i10) {
+        this.a = i10;
+        this.b = pe0Var;
     }
 
-    @Override // v7.l
-    public final void a(int i10, CharSequence charSequence) {
-        FileLog.d("PasscodeView onAuthenticationError " + i10 + " \"" + ((Object) charSequence) + "\"");
-        this.a.o(true);
-    }
-
-    @Override // v7.l
-    public final void b() {
-        FileLog.d("PasscodeView onAuthenticationFailed");
-        this.a.o(true);
-    }
-
-    @Override // v7.l
-    public final void c(androidx.biometric.t tVar) {
-        FileLog.d("PasscodeView onAuthenticationSucceeded");
-        this.a.n(true);
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        pe0 pe0Var = this.b;
+        switch (i10) {
+            case 0:
+                EditTextBoldCursor editTextBoldCursor = pe0Var.r;
+                if (!pe0Var.P && pe0Var.isAttachedToWindow() && pe0Var.x.getVisibility() != 0 && editTextBoldCursor != null) {
+                    editTextBoldCursor.requestFocus();
+                    AndroidUtilities.showKeyboard(editTextBoldCursor);
+                    break;
+                }
+                break;
+            default:
+                ValueAnimator ofFloat = ValueAnimator.ofFloat(pe0Var.a0, 0.0f);
+                pe0Var.S = ofFloat;
+                ofFloat.addUpdateListener(new ee0(pe0Var, 1));
+                ofFloat.addListener(new i60(pe0Var, 7));
+                ofFloat.setDuration(420L);
+                ofFloat.setInterpolator(bs.h);
+                ofFloat.start();
+                break;
+        }
     }
 }

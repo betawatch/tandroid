@@ -1,27 +1,26 @@
 package c3;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public final class h0 extends v {
-    public final /* synthetic */ c0 b;
-    public final /* synthetic */ ad.d c;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h0(ad.d dVar, c0 c0Var, c0 c0Var2) {
-        super(c0Var);
-        this.c = dVar;
-        this.b = c0Var2;
+public final class h0 implements e0 {
+    @Override // c3.e0
+    public final boolean d() {
+        return true;
     }
 
-    @Override // c3.v, c3.c0
-    public final b0 f(long j10) {
-        b0 f7 = this.b.f(j10);
-        d0 d0Var = f7.a;
-        long j11 = d0Var.a;
-        long j12 = d0Var.b;
-        long j13 = this.c.b;
-        d0 d0Var2 = new d0(j11, j12 + j13);
-        d0 d0Var3 = f7.b;
-        return new b0(d0Var2, new d0(d0Var3.a, d0Var3.b + j13));
+    @Override // c3.e0
+    public final /* synthetic */ boolean e() {
+        return false;
+    }
+
+    @Override // c3.e0
+    public final d0 f(long j10) {
+        f0 f0Var = new f0(j10, 0L);
+        return new d0(f0Var, f0Var);
+    }
+
+    @Override // c3.e0
+    public final long h() {
+        return -9223372036854775807L;
     }
 }

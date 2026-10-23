@@ -5,10 +5,10 @@ import c3.f;
 import c3.g;
 import c3.h;
 import c3.i;
-import c3.p;
-import c3.s;
+import c3.r;
+import c3.u;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class a {
     public final e a;
@@ -26,11 +26,11 @@ public final class a {
         return (bArr[i10 + 3] & 255) | ((bArr[i10] & 255) << 24) | ((bArr[i10 + 1] & 255) << 16) | ((bArr[i10 + 2] & 255) << 8);
     }
 
-    public static int c(p pVar, long j10, s sVar) {
-        if (j10 == pVar.getPosition()) {
+    public static int c(r rVar, long j10, u uVar) {
+        if (j10 == rVar.getPosition()) {
             return 0;
         }
-        sVar.a = j10;
+        uVar.a = j10;
         return 1;
     }
 
@@ -41,7 +41,7 @@ public final class a {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final int b(p pVar, s sVar) {
+    public final int b(r rVar, u uVar) {
         while (true) {
             f fVar = this.c;
             fVar.getClass();
@@ -54,22 +54,22 @@ public final class a {
             if (j13 <= j14) {
                 this.c = null;
                 iVar.d();
-                return c(pVar, j10, sVar);
+                return c(rVar, j10, uVar);
             }
-            long position = j12 - pVar.getPosition();
+            long position = j12 - rVar.getPosition();
             if (position < 0 || position > 262144) {
                 break;
             }
-            pVar.r((int) position);
-            pVar.q();
-            h b10 = iVar.b(pVar, fVar.b);
+            rVar.r((int) position);
+            rVar.q();
+            h b10 = iVar.b(rVar, fVar.b);
             int i10 = b10.a;
             long j15 = b10.b;
             long j16 = b10.c;
             if (i10 == -3) {
                 this.c = null;
                 iVar.d();
-                return c(pVar, j12, sVar);
+                return c(rVar, j12, uVar);
             }
             if (i10 == -2) {
                 fVar.d = j15;
@@ -80,13 +80,13 @@ public final class a {
                     if (i10 != 0) {
                         throw new IllegalStateException("Invalid case");
                     }
-                    long position2 = j16 - pVar.getPosition();
+                    long position2 = j16 - rVar.getPosition();
                     if (position2 >= 0 && position2 <= 262144) {
-                        pVar.r((int) position2);
+                        rVar.r((int) position2);
                     }
                     this.c = null;
                     iVar.d();
-                    return c(pVar, j16, sVar);
+                    return c(rVar, j16, uVar);
                 }
                 fVar.e = j15;
                 fVar.g = j16;

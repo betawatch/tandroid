@@ -1,53 +1,53 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
-/* loaded from: classes3.dex */
-public final class ss0 extends g.o {
-    public final /* synthetic */ qs0 c;
-    public final /* synthetic */ uv0 d;
+import android.content.Context;
+import android.graphics.Rect;
+import org.telegram.messenger.AndroidUtilities;
 
-    public ss0(uv0 uv0Var, qs0 qs0Var) {
-        this.d = uv0Var;
-        this.c = qs0Var;
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+/* loaded from: classes3.dex */
+public final class ss0 extends org.telegram.ui.i11 {
+    public final /* synthetic */ xv0 H;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ss0(xv0 xv0Var, Context context, ow0 ow0Var, ci.v6 v6Var, rs0 rs0Var) {
+        super(context, ow0Var, v6Var, rs0Var);
+        this.H = xv0Var;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:12:0x003c, code lost:
-    
-        if (r3.h.getAdapter().j(r9) == 2) goto L22;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:4:0x0020, code lost:
-    
-        if (r5.j(r9) == 2) goto L22;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:5:0x0023, code lost:
-    
-        r1 = 1;
-     */
-    @Override // g.o
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final int i(int i10) {
-        uv0 uv0Var = this.d;
-        int[] iArr = uv0Var.m1;
-        iu0 iu0Var = uv0Var.O;
-        qs0 qs0Var = this.c;
-        int i11 = iArr[uv0.q0(qs0Var.F) ? 1 : 0];
-        s4.g0 adapter = qs0Var.h.getAdapter();
-        zt0 zt0Var = uv0Var.H;
-        if (adapter != zt0Var) {
-            if (uv0.v(uv0Var, qs0Var.h.getAdapter()) == -1) {
-                if (qs0Var.h.getAdapter() != iu0Var) {
-                    i11 = qs0Var.x.J;
-                } else if (qs0Var.h.getAdapter() == iu0Var && uv0Var.t1[5].a.isEmpty()) {
-                    i11 = qs0Var.x.J;
-                } else {
-                    rs0 rs0Var = qs0Var.x;
-                    rs0Var.B1();
-                    i11 = rs0Var.R.get(i10);
+    @Override // org.telegram.ui.i11
+    public final void b() {
+        ws0 ws0Var;
+        int measuredWidth = getMeasuredWidth();
+        int visualHeight = (int) getVisualHeight();
+        Rect rect = this.F;
+        rect.set(0, 0, measuredWidth, visualHeight);
+        setClipBounds(rect);
+        invalidate();
+        xv0 xv0Var = this.H;
+        qu0[] qu0VarArr = xv0Var.k0;
+        if (qu0VarArr != null) {
+            for (qu0 qu0Var : qu0VarArr) {
+                if (qu0Var != null && (ws0Var = qu0Var.h) != null) {
+                    int paddingTop = ws0Var.getPaddingTop();
+                    ws0 ws0Var2 = qu0Var.h;
+                    int paddingLeft = ws0Var2.getPaddingLeft();
+                    int a02 = xv0Var.a0(qu0Var.F);
+                    int paddingRight = qu0Var.h.getPaddingRight();
+                    ws0 ws0Var3 = qu0Var.h;
+                    int Z = xv0Var.Z(xv0Var.y0());
+                    ws0Var3.f3 = Z;
+                    ws0Var2.setPadding(paddingLeft, a02, paddingRight, Z);
+                    int paddingTop2 = paddingTop - qu0Var.h.getPaddingTop();
+                    if (paddingTop2 != 0) {
+                        AndroidUtilities.doOnLayout(qu0Var.h, new zr0(qu0Var, paddingTop2, 1));
+                    }
+                }
+                if (qu0Var != null && qu0Var.v != null) {
+                    xv0Var.v1(qu0Var);
                 }
             }
         }
-        return Math.min(i11, qs0Var.x.J);
+        xv0Var.L();
     }
 }

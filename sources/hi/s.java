@@ -7,9 +7,9 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.h61;
+import org.telegram.ui.Components.m61;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -26,34 +26,34 @@ public final /* synthetic */ class s implements Utilities.Callback2 {
         k0 k0Var = this.b;
         switch (i10) {
             case 0:
-                k0Var.V((ArrayList) obj, true);
+                k0Var.e0((ArrayList) obj, true);
                 break;
             case 1:
                 k0.p(k0Var, (TLRPC.TL_error) obj2);
                 break;
             case 2:
-                k0.o(k0Var, (ArrayList) obj, (TLRPC.TL_error) obj2);
+                k0.n(k0Var, (ArrayList) obj, (TLRPC.TL_error) obj2);
                 break;
             case 3:
                 int i11 = k0.V;
-                k0Var.V((ArrayList) obj, false);
+                k0Var.e0((ArrayList) obj, false);
                 break;
             case 4:
-                k0.B(k0Var, (ArrayList) obj);
+                k0.D(k0Var, (ArrayList) obj);
                 break;
             default:
                 ArrayList arrayList = (ArrayList) obj;
                 s0 s0Var = k0Var.M;
-                arrayList.add(h61.D(99, (int) (AndroidUtilities.displaySize.y * 0.35f)));
-                arrayList.add(h61.D(0, AndroidUtilities.dp(48.0f)));
+                arrayList.add(m61.D(99, (int) (AndroidUtilities.displaySize.y * 0.35f)));
+                arrayList.add(m61.D(0, AndroidUtilities.dp(48.0f)));
                 int i12 = 2;
                 if (ChatObject.canBlockUsers(k0Var.f)) {
-                    arrayList.add(h61.A(1, AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.CommunityPendingRequestsInfo), new v(k0Var, i12)), true)));
+                    arrayList.add(m61.A(1, AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.CommunityPendingRequestsInfo), new v(k0Var, i12)), true)));
                 } else {
-                    arrayList.add(h61.A(1, LocaleController.getString(R.string.CommunityPendingRequestsInfoNoChange)));
+                    arrayList.add(m61.A(1, LocaleController.getString(R.string.CommunityPendingRequestsInfoNoChange)));
                 }
-                arrayList.add(h61.j(2, k0Var.L));
-                arrayList.add(h61.s(3, LocaleController.formatPluralString("CommunityPendingRequestsSuggestedHeader", s0Var.l, new Object[0])));
+                arrayList.add(m61.j(2, k0Var.L));
+                arrayList.add(m61.s(3, LocaleController.formatPluralString("CommunityPendingRequestsSuggestedHeader", s0Var.l, new Object[0])));
                 s0Var.c(arrayList);
                 break;
         }

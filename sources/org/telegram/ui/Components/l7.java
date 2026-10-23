@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l7 implements o1.g {
     public final /* synthetic */ int a;
@@ -18,7 +18,7 @@ public final /* synthetic */ class l7 implements o1.g {
         ViewGroup viewGroup;
         switch (this.a) {
             case 0:
-                ((k8) this.b).T.setBufferedProgress(f7 / 1000.0f);
+                ((k8) this.b).S.setBufferedProgress(f7 / 1000.0f);
                 break;
             case 1:
                 qc qcVar = (qc) this.b;
@@ -35,19 +35,19 @@ public final /* synthetic */ class l7 implements o1.g {
                 ti tiVar = (ti) ((ai.c5) this.b).d;
                 li liVar = tiVar.C0;
                 if (liVar == tiVar.m0 || liVar == tiVar.n0 || (tiVar.F && tiVar.w1 != null)) {
-                    tiVar.e2(1);
+                    tiVar.i2(1);
                 }
                 tiVar.C0.l(tiVar.o2);
-                viewGroup = ((org.telegram.ui.ActionBar.f3) tiVar).containerView;
+                viewGroup = ((org.telegram.ui.ActionBar.h3) tiVar).containerView;
                 viewGroup.invalidate();
                 break;
             case 4:
                 al alVar = (al) this.b;
-                alVar.j0 = f7;
+                alVar.m0 = f7;
                 alVar.k0();
                 break;
             default:
-                ((wc0) this.b).y();
+                ((yc0) this.b).y();
                 break;
         }
     }

@@ -1,14 +1,14 @@
 package w3;
 
-import c3.i0;
+import c3.k0;
 import v7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class r {
     public final boolean a;
     public final String b;
-    public final i0 c;
+    public final k0 c;
     public final int d;
     public final byte[] e;
 
@@ -70,6 +70,6 @@ public final class r {
                     break;
             }
         }
-        this.c = new i0(i13, i11, i12, bArr);
+        this.c = new k0(i13, i11, i12, bArr);
     }
 }

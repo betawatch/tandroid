@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import w7.z5;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class p1 extends FrameLayout {
     public float a;
@@ -23,12 +23,12 @@ public final class p1 extends FrameLayout {
     public float n;
     public TLRPC.Document r;
     public boolean s;
-    public final /* synthetic */ t0 v;
+    public final /* synthetic */ s0 v;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p1(t0 t0Var, Context context) {
+    public p1(s0 s0Var, Context context) {
         super(context);
-        this.v = t0Var;
+        this.v = s0Var;
         this.f = true;
         o1 o1Var = new o1(this, context);
         this.b = o1Var;
@@ -77,7 +77,7 @@ public final class p1 extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        int i12 = (int) (this.v.i3 * 0.6f);
+        int i12 = (int) (this.v.l3 * 0.6f);
         o1 o1Var = this.b;
         ViewGroup.LayoutParams layoutParams = o1Var.getLayoutParams();
         ViewGroup.LayoutParams layoutParams2 = o1Var.getLayoutParams();

@@ -1,6 +1,8 @@
 package n7;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+import i2.o1;
+
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class r0 extends s0 {
     public final int d;
@@ -20,7 +22,7 @@ public final class r0 extends s0 {
             return this.b[this.d + i10];
         }
         if (i10 < 0) {
-            throw new ArrayIndexOutOfBoundsException(i2.e.j(i10, "Index < 0: "));
+            throw new ArrayIndexOutOfBoundsException(o1.k(i10, "Index < 0: "));
         }
         throw new ArrayIndexOutOfBoundsException(a1.g.l(i10, i11, "Index > length: ", ", "));
     }

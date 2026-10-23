@@ -1,11 +1,11 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class hc1 {
-    public final /* synthetic */ ic1 a;
+public interface hc1 {
+    boolean I0();
 
-    public hc1(ic1 ic1Var) {
-        this.a = ic1Var;
-    }
+    boolean a();
+
+    void c1(boolean z10);
 }

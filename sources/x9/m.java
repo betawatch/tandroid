@@ -14,6 +14,7 @@ import c5.c0;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.gms.tasks.Tasks;
+import i2.o1;
 import j$.util.DesugarCollections;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -37,6 +38,7 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicMarkableReference;
 import m.s3;
+import si.o0;
 import v7.d8;
 import z9.a0;
 import z9.a1;
@@ -56,7 +58,7 @@ import z9.n0;
 import z9.q0;
 import z9.t0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class m {
     public static final ca.a r = new ca.a(3);
@@ -101,14 +103,14 @@ public final class m {
         Integer num;
         mVar.getClass();
         long currentTimeMillis = System.currentTimeMillis() / 1000;
-        String h = r4.c.h("Opening a new session with ID ", str);
+        String h = o0.h("Opening a new session with ID ", str);
         if (Log.isLoggable("FirebaseCrashlytics", 3)) {
             Log.d("FirebaseCrashlytics", h, null);
         }
         Locale locale = Locale.US;
         u uVar = mVar.f;
         a aVar = mVar.h;
-        c1 c1Var = new c1(uVar.c, aVar.f, aVar.g, uVar.b().a, r4.c.b(aVar.d != null ? 4 : 1), aVar.h);
+        c1 c1Var = new c1(uVar.c, aVar.f, aVar.g, uVar.b().a, o0.b(aVar.d != null ? 4 : 1), aVar.h);
         String str2 = Build.VERSION.RELEASE;
         String str3 = Build.VERSION.CODENAME;
         e1 e1Var = new e1(h.h());
@@ -295,7 +297,7 @@ public final class m {
             } finally {
             }
         } catch (IOException e) {
-            String h10 = r4.c.h("Could not persist report for session ", str16);
+            String h10 = o0.h("Could not persist report for session ", str16);
             if (Log.isLoggable("FirebaseCrashlytics", 3)) {
                 Log.d("FirebaseCrashlytics", h10, e);
             }
@@ -484,7 +486,7 @@ public final class m {
                     }
                     applicationExitInfo = null;
                     if (applicationExitInfo == null) {
-                        String h = r4.c.h("No relevant ApplicationExitInfo occurred during session: ", str4);
+                        String h = o0.h("No relevant ApplicationExitInfo occurred during session: ", str4);
                         if (Log.isLoggable("FirebaseCrashlytics", 2)) {
                             Log.v("FirebaseCrashlytics", h, null);
                         }
@@ -600,12 +602,12 @@ public final class m {
                             }
                             lVar2.c = new m0(new n0(null, null, a10, q0Var, a11), null, null, valueOf, c10, null, i11);
                             lVar2.d = pVar.b(i11);
-                            l0 k10 = lVar2.k();
-                            String h10 = r4.c.h("Persisting anr for session ", str4);
+                            l0 h10 = lVar2.h();
+                            String h11 = o0.h("Persisting anr for session ", str4);
                             if (Log.isLoggable("FirebaseCrashlytics", 3)) {
-                                Log.d("FirebaseCrashlytics", h10, null);
+                                Log.d("FirebaseCrashlytics", h11, null);
                             }
-                            bVar2.d(com.google.firebase.messaging.l.e(com.google.firebase.messaging.l.b(k10, eVar, s3Var), s3Var), str4, true);
+                            bVar2.d(com.google.firebase.messaging.l.c(com.google.firebase.messaging.l.a(h10, eVar, s3Var), s3Var), str4, true);
                         }
                         str3 = null;
                         ea.b bVar32 = new ea.b();
@@ -616,16 +618,16 @@ public final class m {
                     }
                 } else {
                     i10 = 4;
-                    String h11 = r4.c.h("No ApplicationExitInfo available. Session: ", str4);
+                    String h12 = o0.h("No ApplicationExitInfo available. Session: ", str4);
                     if (Log.isLoggable("FirebaseCrashlytics", 2)) {
-                        Log.v("FirebaseCrashlytics", h11, null);
+                        Log.v("FirebaseCrashlytics", h12, null);
                     }
                 }
             } else {
                 i10 = 4;
-                String j12 = i2.e.j(i12, "ANR feature enabled, but device is API ");
+                String k10 = o1.k(i12, "ANR feature enabled, but device is API ");
                 if (Log.isLoggable("FirebaseCrashlytics", 2)) {
-                    Log.v("FirebaseCrashlytics", j12, null);
+                    Log.v("FirebaseCrashlytics", k10, null);
                 }
             }
         } else {
@@ -635,10 +637,10 @@ public final class m {
             }
         }
         if (this.j.c(str4)) {
-            String h12 = r4.c.h("Finalizing native report for session ", str4);
+            String h13 = o0.h("Finalizing native report for session ", str4);
             if (Log.isLoggable("FirebaseCrashlytics", 2)) {
                 r52 = 0;
-                Log.v("FirebaseCrashlytics", h12, null);
+                Log.v("FirebaseCrashlytics", h13, null);
             } else {
                 r52 = 0;
             }
@@ -676,18 +678,18 @@ public final class m {
         if (c11.size() > 8) {
             while (c11.size() > 8) {
                 String str10 = (String) c11.last();
-                String h13 = r4.c.h("Removing session over cap: ", str10);
+                String h14 = o0.h("Removing session over cap: ", str10);
                 if (Log.isLoggable("FirebaseCrashlytics", 3)) {
-                    Log.d("FirebaseCrashlytics", h13, null);
+                    Log.d("FirebaseCrashlytics", h14, null);
                 }
                 ca.c.d(new File(cVar3.c, str10));
                 c11.remove(str10);
             }
         }
         for (String str11 : c11) {
-            String h14 = r4.c.h("Finalizing report for session ", str11);
+            String h15 = o0.h("Finalizing report for session ", str11);
             if (Log.isLoggable("FirebaseCrashlytics", 2)) {
-                Log.v("FirebaseCrashlytics", h14, null);
+                Log.v("FirebaseCrashlytics", h15, null);
             }
             aa.b bVar6 = ca.b.g;
             ca.a aVar2 = ca.b.i;
@@ -884,6 +886,7 @@ public final class m {
         u9.b bVar = u9.b.a;
         bVar.c("Crash reports are available to be sent.");
         r rVar = this.b;
+        int i10 = 26;
         if (rVar.a()) {
             if (Log.isLoggable("FirebaseCrashlytics", 3)) {
                 Log.d("FirebaseCrashlytics", "Automatic data collection is enabled. Allowing upload.", null);
@@ -897,7 +900,7 @@ public final class m {
             synchronized (rVar.c) {
                 task2 = rVar.d.getTask();
             }
-            Task onSuccessTask = task2.onSuccessTask(new sb.a(26));
+            Task onSuccessTask = task2.onSuccessTask(new sb.a(i10));
             bVar.b("Waiting for send/deleteUnsentReports to be called.");
             Task task4 = this.p.getTask();
             ExecutorService executorService = w.a;
@@ -907,6 +910,6 @@ public final class m {
             task4.continueWith(vVar);
             task3 = taskCompletionSource2.getTask();
         }
-        return task3.onSuccessTask(new n2.e(this, task, false, 27));
+        return task3.onSuccessTask(new n2.e(this, task, false, i10));
     }
 }

@@ -13,9 +13,9 @@ import org.telegram.messenger.SvgHelper;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class rz extends im0 {
+public final class rz extends lm0 {
     public final boolean c;
     public final /* synthetic */ tz d;
 
@@ -24,7 +24,7 @@ public final class rz extends im0 {
         this.c = z10;
     }
 
-    @Override // org.telegram.ui.Components.im0
+    @Override // org.telegram.ui.Components.lm0
     public final boolean D(s4.b1 b1Var) {
         return true;
     }
@@ -81,10 +81,10 @@ public final class rz extends im0 {
             return;
         }
         if (z10) {
-            w9Var.setColorFilter(MessageObject.isTextColorEmoji(document) ? org.telegram.ui.ActionBar.h6.o0(tzVar.Z1) : null);
+            w9Var.setColorFilter(MessageObject.isTextColorEmoji(document) ? org.telegram.ui.ActionBar.k6.o0(tzVar.Z1) : null);
         }
         TLObject closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(stickerSetCovered.set.thumbs, 90);
-        SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(stickerSetCovered.set.thumbs, org.telegram.ui.ActionBar.h6.c7, 0.2f);
+        SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(stickerSetCovered.set.thumbs, org.telegram.ui.ActionBar.k6.c7, 0.2f);
         if (svgThumb != null) {
             svgThumb.overrideWidthAndHeight(512, 512);
         }
@@ -128,6 +128,6 @@ public final class rz extends im0 {
         qzVar.setLayerNum(1);
         qzVar.setAspectFit(true);
         qzVar.setLayoutParams(new s4.o0(AndroidUtilities.dp(34.0f), AndroidUtilities.dp(34.0f)));
-        return new tl0(qzVar);
+        return new wl0(qzVar);
     }
 }

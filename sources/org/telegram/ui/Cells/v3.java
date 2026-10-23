@@ -7,30 +7,33 @@ import android.graphics.PorterDuffColorFilter;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public abstract class v3 extends FrameLayout {
+public abstract class v3 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public org.telegram.ui.Components.w9 a;
-    public org.telegram.ui.ActionBar.j5 b;
-    public org.telegram.ui.ActionBar.j5 c;
+    public org.telegram.ui.ActionBar.n5 b;
+    public org.telegram.ui.ActionBar.n5 c;
     public ImageView d;
     public org.telegram.ui.Components.h9 e;
     public TLRPC.User f;
     public Paint h;
     public int n;
     public boolean r;
+    public int s;
 
     public final void a(int i10, int i11) {
         this.n = i10;
         ImageView imageView = this.d;
         imageView.setColorFilter(new PorterDuffColorFilter(i11, PorterDuff.Mode.MULTIPLY));
         this.c.setTextColor(i11);
-        org.telegram.ui.ActionBar.h6.C1(imageView.getDrawable(), i11 & 620756991, true);
+        org.telegram.ui.ActionBar.k6.E1(imageView.getDrawable(), i11 & 620756991, true);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -66,5 +69,24 @@ public abstract class v3 extends FrameLayout {
     public void setDrawDivider(boolean z10) {
         this.r = z10;
         invalidate();
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void updateColors() {
+        int x02;
+        try {
+            this.h.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.gg, false));
+            if (this.d != null && this.c != null && (x02 = org.telegram.ui.ActionBar.k6.x0(null, this.n, false)) != this.s) {
+                this.s = x02;
+                a(this.n, x02);
+            }
+            invalidate();
+        } catch (Exception e) {
+            FileLog.e(e);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

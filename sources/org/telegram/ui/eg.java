@@ -1,59 +1,48 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class eg implements q0.a {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ qn b;
+import org.telegram.messenger.Utilities;
 
-    public /* synthetic */ eg(qn qnVar, int i10) {
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class eg implements Utilities.Callback2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ sn b;
+    public final /* synthetic */ String c;
+
+    public /* synthetic */ eg(sn snVar, String str, int i10) {
         this.a = i10;
-        this.b = qnVar;
+        this.b = snVar;
+        this.c = str;
     }
 
-    @Override // q0.a
-    public final void accept(Object obj) {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
+        Boolean bool = (Boolean) obj;
+        Boolean bool2 = (Boolean) obj2;
         switch (this.a) {
             case 0:
-                Integer num = (Integer) obj;
-                qn qnVar = this.b;
-                qnVar.getClass();
-                if (num.intValue() != 0) {
-                    qnVar.Gc(true);
-                    qnVar.j(num.intValue(), 0, false, 0, true, 0);
-                    break;
-                } else {
-                    qnVar.l1 = 0;
-                    qnVar.Gc(true);
-                    qnVar.getMessagesController().markReactionsAsRead(qnVar.T5, qnVar.d());
-                    break;
-                }
-            case 1:
-                Integer num2 = (Integer) obj;
-                qn qnVar2 = this.b;
-                qnVar2.getClass();
-                if (num2.intValue() != 0) {
-                    int i10 = qnVar2.m1 - 1;
-                    qnVar2.m1 = i10;
-                    if (i10 <= 0) {
-                        qnVar2.getMessagesController().markPollVotesAsRead(qnVar2.T5, qnVar2.d());
+                sn snVar = this.b;
+                snVar.getClass();
+                if (bool.booleanValue()) {
+                    boolean booleanValue = bool2.booleanValue();
+                    String str = this.c;
+                    if (booleanValue) {
+                        snVar.getMessagesController().addWebBrowserException(str, true);
                     }
-                    qnVar2.Fc(true);
-                    qnVar2.j(num2.intValue(), 0, false, 0, true, 0);
-                    break;
-                } else {
-                    qnVar2.m1 = 0;
-                    qnVar2.Fc(true);
-                    qnVar2.getMessagesController().markPollVotesAsRead(qnVar2.T5, qnVar2.d());
+                    pf.d.l(snVar.getParentActivity(), str, false, null);
                     break;
                 }
+                break;
             default:
-                qn qnVar3 = this.b;
-                qnVar3.getClass();
-                boolean booleanValue = ((Boolean) obj).booleanValue();
-                qnVar3.f7 = booleanValue;
-                if (!booleanValue) {
-                    qnVar3.v8();
+                if (bool.booleanValue()) {
+                    boolean booleanValue2 = bool2.booleanValue();
+                    sn snVar2 = this.b;
+                    String str2 = this.c;
+                    if (booleanValue2) {
+                        snVar2.getMessagesController().addWebBrowserException(str2, false);
+                    }
+                    snVar2.getParentActivity();
+                    pf.d.m(str2);
                     break;
                 }
                 break;

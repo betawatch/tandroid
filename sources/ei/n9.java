@@ -12,11 +12,11 @@ import android.view.animation.LinearInterpolator;
 import android.widget.ScrollView;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.nk;
+import org.telegram.messenger.sl;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.v30;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class n9 extends ViewGroup {
     public final /* synthetic */ int a = 0;
@@ -41,8 +41,8 @@ public final class n9 extends ViewGroup {
     public void a() {
         o9 o9Var = (o9) this.n;
         int i10 = 1;
-        o9Var.G = true;
-        ArrayList arrayList = o9Var.d;
+        o9Var.H = true;
+        ArrayList arrayList = o9Var.e;
         ArrayList arrayList2 = new ArrayList(arrayList);
         ArrayList arrayList3 = this.h;
         arrayList3.clear();
@@ -74,7 +74,7 @@ public final class n9 extends ViewGroup {
     public void b(boolean z10) {
         yg.h hVar = (yg.h) this.n;
         int i10 = 1;
-        hVar.G = true;
+        hVar.H = true;
         ArrayList arrayList = hVar.e;
         ArrayList arrayList2 = new ArrayList(arrayList);
         ArrayList arrayList3 = this.h;
@@ -239,8 +239,8 @@ public final class n9 extends ViewGroup {
         switch (i24) {
             case 0:
                 o9 o9Var = (o9) scrollView;
-                a9 a9Var = o9Var.f;
-                e2 e2Var = o9Var.a;
+                a9 a9Var = o9Var.h;
+                e2 e2Var = o9Var.b;
                 int childCount = getChildCount();
                 int size = View.MeasureSpec.getSize(i10);
                 int dp = size - AndroidUtilities.dp(14.0f);
@@ -261,11 +261,11 @@ public final class n9 extends ViewGroup {
                         if (contains || childAt.getMeasuredWidth() + i30 <= dp) {
                             i15 = i30;
                         } else {
-                            dp2 = org.telegram.messenger.g0.C(4.0f, childAt.getMeasuredHeight(), dp2);
+                            dp2 = org.telegram.messenger.v0.C(4.0f, childAt.getMeasuredHeight(), dp2);
                             i15 = 0;
                         }
                         if (childAt.getMeasuredWidth() + i28 > dp) {
-                            dp3 = org.telegram.messenger.g0.C(4.0f, childAt.getMeasuredHeight(), dp3);
+                            dp3 = org.telegram.messenger.v0.C(4.0f, childAt.getMeasuredHeight(), dp3);
                             i28 = 0;
                         }
                         int dp4 = AndroidUtilities.dp(7.0f) + i15;
@@ -298,17 +298,17 @@ public final class n9 extends ViewGroup {
                                 }
                                 if (contains) {
                                     f7 = 4.0f;
-                                    i15 = org.telegram.messenger.g0.C(4.0f, childAt.getMeasuredWidth(), i15);
+                                    i15 = org.telegram.messenger.v0.C(4.0f, childAt.getMeasuredWidth(), i15);
                                 } else {
                                     f7 = 4.0f;
                                 }
-                                i28 = org.telegram.messenger.g0.C(f7, childAt.getMeasuredWidth(), i28);
+                                i28 = org.telegram.messenger.v0.C(f7, childAt.getMeasuredWidth(), i28);
                             }
                         }
                         i16 = dp;
                         if (contains) {
                         }
-                        i28 = org.telegram.messenger.g0.C(f7, childAt.getMeasuredWidth(), i28);
+                        i28 = org.telegram.messenger.v0.C(f7, childAt.getMeasuredWidth(), i28);
                     } else {
                         i16 = dp;
                         i14 = i26;
@@ -327,7 +327,7 @@ public final class n9 extends ViewGroup {
                     A = AndroidUtilities.dp(394.0f) / 3;
                 } else {
                     Point point = AndroidUtilities.displaySize;
-                    A = nk.A(136.0f, Math.min(point.x, point.y), 3);
+                    A = sl.A(136.0f, Math.min(point.x, point.y), 3);
                 }
                 if (i31 - i32 < A) {
                     dp2 += AndroidUtilities.dp(36.0f);
@@ -339,15 +339,15 @@ public final class n9 extends ViewGroup {
                     dp3 += AndroidUtilities.dp(36.0f);
                 }
                 e2Var.measure(View.MeasureSpec.makeMeasureSpec(i31 - i12, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(28.0f), TLObject.FLAG_30));
-                e2Var.setHintVisible(e2Var.getMeasuredWidth() > o9Var.b, true);
+                e2Var.setHintVisible(e2Var.getMeasuredWidth() > o9Var.c, true);
                 if (!this.c) {
                     int dp5 = AndroidUtilities.dp(38.0f) + dp3;
                     int dp6 = AndroidUtilities.dp(16.0f) + i12;
-                    o9Var.H = dp2;
+                    o9Var.I = dp2;
                     if (this.b != null) {
                         int dp7 = AndroidUtilities.dp(38.0f) + dp2;
-                        o9Var.J = dp7;
-                        float f12 = o9Var.I;
+                        o9Var.K = dp7;
+                        float f12 = o9Var.J;
                         float f13 = dp7;
                         if (f12 != f13) {
                             ValueAnimator ofFloat = ValueAnimator.ofFloat(f12, f13);
@@ -364,7 +364,7 @@ public final class n9 extends ViewGroup {
                             i13 = 1;
                         }
                         float translationY = e2Var.getTranslationY();
-                        float f15 = o9Var.H;
+                        float f15 = o9Var.I;
                         if (translationY != f15) {
                             float[] fArr2 = new float[i13];
                             fArr2[r62] = f15;
@@ -380,28 +380,28 @@ public final class n9 extends ViewGroup {
                             a9Var3.run();
                         }
                     } else {
+                        o9Var.K = dp5;
                         o9Var.J = dp5;
-                        o9Var.I = dp5;
                         e2Var.setTranslationX(dp6);
-                        e2Var.setTranslationY(o9Var.H);
+                        e2Var.setTranslationY(o9Var.I);
                         if (a9Var3 != null) {
                             a9Var3.run();
                         }
-                        if (o9Var.K) {
+                        if (o9Var.L) {
                             post(new com.google.firebase.messaging.s(this, 22));
-                            o9Var.K = false;
+                            o9Var.L = false;
                         }
                     }
                 } else if (this.b != null) {
-                    if (!o9Var.G && arrayList2.isEmpty()) {
+                    if (!o9Var.H && arrayList2.isEmpty()) {
                         e2Var.bringPointIntoView(e2Var.getSelectionStart());
                     }
-                    if (o9Var.K) {
+                    if (o9Var.L) {
                         o9Var.fullScroll(130);
-                        o9Var.K = false;
+                        o9Var.L = false;
                     }
                 }
-                setMeasuredDimension(size, (int) o9Var.I);
+                setMeasuredDimension(size, (int) o9Var.J);
                 break;
             default:
                 yg.h hVar = (yg.h) scrollView;
@@ -424,12 +424,12 @@ public final class n9 extends ViewGroup {
                         if (contains2 || childAt2.getMeasuredWidth() + i35 <= dp8) {
                             i19 = i35;
                         } else {
-                            i33 = org.telegram.messenger.g0.C(4.0f, childAt2.getMeasuredHeight(), i33);
+                            i33 = org.telegram.messenger.v0.C(4.0f, childAt2.getMeasuredHeight(), i33);
                             i19 = 0;
                         }
                         if (childAt2.getMeasuredWidth() + i36 > dp8) {
                             z10 = contains2;
-                            dp10 = org.telegram.messenger.g0.C(4.0f, childAt2.getMeasuredHeight(), dp10);
+                            dp10 = org.telegram.messenger.v0.C(4.0f, childAt2.getMeasuredHeight(), dp10);
                             i20 = 0;
                         } else {
                             z10 = contains2;
@@ -463,9 +463,9 @@ public final class n9 extends ViewGroup {
                                     }
                                 }
                                 if (!z10) {
-                                    i19 = org.telegram.messenger.g0.C(6.0f, childAt2.getMeasuredWidth(), i19);
+                                    i19 = org.telegram.messenger.v0.C(6.0f, childAt2.getMeasuredWidth(), i19);
                                 }
-                                i36 = org.telegram.messenger.g0.C(6.0f, childAt2.getMeasuredWidth(), i20);
+                                i36 = org.telegram.messenger.v0.C(6.0f, childAt2.getMeasuredWidth(), i20);
                                 dp10 = i22;
                                 i35 = i19;
                             }
@@ -473,7 +473,7 @@ public final class n9 extends ViewGroup {
                         i22 = dp10;
                         if (!z10) {
                         }
-                        i36 = org.telegram.messenger.g0.C(6.0f, childAt2.getMeasuredWidth(), i20);
+                        i36 = org.telegram.messenger.v0.C(6.0f, childAt2.getMeasuredWidth(), i20);
                         dp10 = i22;
                         i35 = i19;
                     } else {
@@ -490,7 +490,7 @@ public final class n9 extends ViewGroup {
                     A2 = AndroidUtilities.dp(376.0f) / 3;
                 } else {
                     Point point2 = AndroidUtilities.displaySize;
-                    A2 = nk.A(154.0f, Math.min(point2.x, point2.y), 3);
+                    A2 = sl.A(154.0f, Math.min(point2.x, point2.y), 3);
                 }
                 if (i37 - i35 < A2) {
                     i33 += AndroidUtilities.dp(36.0f);
@@ -504,10 +504,10 @@ public final class n9 extends ViewGroup {
                 if (!this.c) {
                     int dp12 = AndroidUtilities.dp(38.0f) + dp10;
                     int dp13 = AndroidUtilities.dp(16.0f) + i35;
-                    hVar.H = i33;
+                    hVar.I = i33;
                     if (this.b != null) {
                         int dp14 = AndroidUtilities.dp(38.0f) + i33;
-                        float f18 = hVar.I;
+                        float f18 = hVar.J;
                         float f19 = dp14;
                         if (f18 != f19) {
                             ValueAnimator ofFloat2 = ValueAnimator.ofFloat(f18, f19);
@@ -519,7 +519,7 @@ public final class n9 extends ViewGroup {
                             arrayList.add(ObjectAnimator.ofFloat(e2Var2, (Property<e2, Float>) property, f20));
                         }
                         float translationY2 = e2Var2.getTranslationY();
-                        float f21 = hVar.H;
+                        float f21 = hVar.I;
                         if (translationY2 != f21) {
                             arrayList.add(ObjectAnimator.ofFloat(e2Var2, (Property<e2, Float>) property2, f21));
                         }
@@ -530,14 +530,14 @@ public final class n9 extends ViewGroup {
                         this.b.start();
                         this.c = true;
                     } else {
-                        hVar.I = dp12;
+                        hVar.J = dp12;
                         e2Var2.setTranslationX(dp13);
-                        e2Var2.setTranslationY(hVar.H);
+                        e2Var2.setTranslationY(hVar.I);
                     }
-                } else if (this.b != null && !hVar.G && arrayList2.isEmpty()) {
+                } else if (this.b != null && !hVar.H && arrayList2.isEmpty()) {
                     e2Var2.bringPointIntoView(e2Var2.getSelectionStart());
                 }
-                setMeasuredDimension(size2, (int) hVar.I);
+                setMeasuredDimension(size2, (int) hVar.J);
                 break;
         }
     }

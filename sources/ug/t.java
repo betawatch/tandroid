@@ -1,71 +1,63 @@
 package ug;
 
-import android.view.View;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.e5;
-import org.telegram.ui.Components.ow0;
-import org.telegram.ui.Components.q6;
+import java.util.ArrayList;
+import java.util.List;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class t implements e5, ow0, wg.f, wg.k {
-    public final /* synthetic */ z a;
+public final /* synthetic */ class t implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ y b;
 
-    public /* synthetic */ t(z zVar) {
-        this.a = zVar;
+    public /* synthetic */ t(y yVar, int i10) {
+        this.a = i10;
+        this.b = yVar;
     }
 
-    @Override // org.telegram.ui.Components.e5
-    public void C(int i10, int i11, boolean z10) {
-        z zVar = this.a;
-        zVar.m0 = i10 * 1000;
-        zVar.b0(false, true);
-    }
-
-    @Override // org.telegram.ui.Components.ow0
-    public void h(int i10) {
-        z zVar = this.a;
-        int i11 = zVar.h0;
-        int i12 = wg.d.v;
-        if (i11 == 2) {
-            zVar.n0 = i10;
-        } else {
-            zVar.o0 = i10;
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        switch (this.a) {
+            case 0:
+                y yVar = this.b;
+                yVar.dismiss();
+                AndroidUtilities.runOnUIThread(new r(yVar, 2), 220L);
+                break;
+            case 1:
+                y yVar2 = this.b;
+                yVar2.q0.b(false);
+                h.j(yVar2.getContext(), (TLRPC.TL_error) obj);
+                break;
+            case 2:
+                y yVar3 = this.b;
+                yVar3.n0 = yVar3.Y.indexOf(Integer.valueOf(((TLRPC.TL_premiumGiftCodeOption) obj).users));
+                yVar3.a0(true, true);
+                yVar3.Z(true);
+                break;
+            case 3:
+                y yVar4 = this.b;
+                yVar4.dismiss();
+                AndroidUtilities.runOnUIThread(new r(yVar4, 1), 220L);
+                break;
+            case 4:
+                y yVar5 = this.b;
+                yVar5.q0.b(false);
+                h.j(yVar5.getContext(), (TLRPC.TL_error) obj);
+                break;
+            case 5:
+                y yVar6 = this.b;
+                ArrayList arrayList = yVar6.f0;
+                arrayList.clear();
+                arrayList.addAll((List) obj);
+                yVar6.a0(true, true);
+                break;
+            default:
+                y yVar7 = this.b;
+                yVar7.q0.b(false);
+                h.j(yVar7.getContext(), (TLRPC.TL_error) obj);
+                break;
         }
-        zVar.q0.a.b(zVar.W(), true);
-        if (zVar.h0 == 3) {
-            zVar.b0(true, true);
-        } else {
-            zVar.b0(false, false);
-        }
-        vg.b bVar = zVar.g0;
-        int W = zVar.W();
-        for (int i13 = 0; i13 < bVar.f.getChildCount(); i13++) {
-            View childAt = bVar.f.getChildAt(i13);
-            if (childAt instanceof wg.x) {
-                q6 q6Var = ((wg.x) childAt).r;
-                String formatPluralString = W <= 0 ? "" : LocaleController.formatPluralString("BoostingBoostsCountTitle", W, Integer.valueOf(W));
-                q6Var.a();
-                q6Var.c(formatPluralString, true, true);
-            }
-            if (childAt instanceof wg.g) {
-                wg.g gVar = (wg.g) childAt;
-                int F = bVar.F(gVar.getChat());
-                boolean isChannelAndNotMegaGroup = ChatObject.isChannelAndNotMegaGroup(gVar.w);
-                if (gVar.x) {
-                    gVar.setSubtitle(F >= 1 ? LocaleController.formatPluralString(isChannelAndNotMegaGroup ? "Subscribers" : "Members", F, new Object[0]) : LocaleController.getString(isChannelAndNotMegaGroup ? R.string.DiscussChannel : R.string.AccDescrGroup));
-                } else {
-                    gVar.setSubtitle(LocaleController.formatPluralString(isChannelAndNotMegaGroup ? "BoostingChannelWillReceiveBoost" : "BoostingGroupWillReceiveBoost", W, new Object[0]));
-                }
-            }
-        }
-        bVar.m(8);
-        bVar.q(bVar.e.size() - 12, 12);
-    }
-
-    @Override // org.telegram.ui.Components.ow0
-    public /* synthetic */ void m() {
     }
 }

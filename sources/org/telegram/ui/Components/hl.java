@@ -1,32 +1,27 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
+import android.location.Location;
+import org.telegram.messenger.IMapsProvider;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class hl implements e5 {
+public final /* synthetic */ class hl implements q0.a {
     public final /* synthetic */ int a;
     public final /* synthetic */ rl b;
-    public final /* synthetic */ TLRPC.TL_messageMediaVenue c;
 
-    public /* synthetic */ hl(rl rlVar, TLRPC.TL_messageMediaVenue tL_messageMediaVenue, int i10) {
+    public /* synthetic */ hl(rl rlVar, int i10) {
         this.a = i10;
         this.b = rlVar;
-        this.c = tL_messageMediaVenue;
     }
 
-    @Override // org.telegram.ui.Components.e5
-    public final void C(int i10, int i11, boolean z10) {
+    @Override // q0.a
+    public final void accept(Object obj) {
         switch (this.a) {
             case 0:
-                rl rlVar = this.b;
-                rlVar.x0.b(this.c, rlVar.y0, z10, i10, 0L);
-                rlVar.b.dismiss(true);
+                rl.N(this.b, (IMapsProvider.IMap) obj);
                 break;
             default:
-                rl rlVar2 = this.b;
-                rlVar2.x0.b(this.c, rlVar2.y0, z10, i10, 0L);
-                rlVar2.b.dismiss(true);
+                rl.T(this.b, (Location) obj);
                 break;
         }
     }

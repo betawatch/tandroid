@@ -9,8 +9,8 @@ import java.util.concurrent.ExecutorService;
 import l9.h;
 import n9.a;
 import oa.e;
-import qg.f0;
-import qg.h0;
+import org.telegram.ui.web.d0;
+import qg.g0;
 import r9.b;
 import r9.r;
 import ra.c;
@@ -18,7 +18,7 @@ import ra.d;
 import s9.j;
 import w7.w8;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public class FirebaseInstallationsRegistrar implements ComponentRegistrar {
     private static final String LIBRARY_NAME = "fire-installations";
@@ -36,12 +36,12 @@ public class FirebaseInstallationsRegistrar implements ComponentRegistrar {
         a2.a(new r9.j(0, 1, e.class));
         a2.a(new r9.j(new r(a.class, ExecutorService.class), 1, 0));
         a2.a(new r9.j(new r(n9.b.class, Executor.class), 1, 0));
-        a2.f = new f0(8);
+        a2.f = new d0(20);
         r9.a b10 = a2.b();
         oa.d dVar = new oa.d(0);
         m0 a10 = r9.a.a(oa.d.class);
         a10.b = 1;
-        a10.f = new h0(dVar, 6);
+        a10.f = new g0(dVar, 6);
         return Arrays.asList(b10, a10.b(), w8.a(LIBRARY_NAME, "17.2.0"));
     }
 }

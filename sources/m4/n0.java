@@ -13,7 +13,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.atomic.AtomicInteger;
 import v7.q8;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class n0 implements j9.t, u {
     public b2.r0 a;
@@ -254,7 +254,7 @@ public final class n0 implements j9.t, u {
                 p0Var.r = n0Var;
                 Handler handler = f0Var.l;
                 Objects.requireNonNull(handler);
-                g10.a(new j9.u(0, g10, n0Var), new i2.g0(handler, 1));
+                g10.a(new j9.u(0, g10, n0Var), new i2.f0(handler, 1));
                 p0.E(p0Var.m, n.b(r0Var, str, uri, j10, bitmap));
             }
             try {
@@ -291,11 +291,11 @@ public final class n0 implements j9.t, u {
                 arrayList2.add(null);
                 y0Var.run();
             } else {
-                j9.y u10 = f0Var.m.u(bArr);
-                arrayList2.add(u10);
+                j9.y v = f0Var.m.v(bArr);
+                arrayList2.add(v);
                 Handler handler = f0Var.l;
                 Objects.requireNonNull(handler);
-                u10.a(y0Var, new i2.g0(handler, 1));
+                v.a(y0Var, new i2.f0(handler, 1));
             }
         }
     }

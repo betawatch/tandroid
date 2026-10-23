@@ -8,16 +8,16 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class pc extends nb {
     public final k9 a;
-    public final x90 b;
-    public final x90 c;
+    public final y90 b;
+    public final y90 c;
     public final LinearLayout d;
 
-    public pc(Context context, org.telegram.ui.ActionBar.d6 d6Var, boolean z10) {
-        super(context, d6Var);
+    public pc(Context context, org.telegram.ui.ActionBar.g6 g6Var, boolean z10) {
+        super(context, g6Var);
         k9 k9Var = new k9(context, false);
         this.a = k9Var;
         k9Var.setStyle(11);
@@ -39,15 +39,15 @@ public final class pc extends nb {
             xbVar.setEllipsize(truncateAt);
             xbVar.setMaxLines(1);
             linearLayout.addView(xbVar);
-            x90 x90Var = new x90(context, null);
-            this.c = x90Var;
-            x90Var.setTypeface(typeface);
-            x90Var.setTextSize(1, 12.0f);
-            x90Var.setEllipsize(truncateAt);
-            x90Var.setSingleLine(false);
-            x90Var.setMaxLines(3);
-            x90Var.setLinkTextColor(getThemedColor(org.telegram.ui.ActionBar.h6.Gi));
-            linearLayout.addView(x90Var, w7.z5.t(-2, -2, 0, 0, 0, 0, 0));
+            y90 y90Var = new y90(context, null);
+            this.c = y90Var;
+            y90Var.setTypeface(typeface);
+            y90Var.setTextSize(1, 12.0f);
+            y90Var.setEllipsize(truncateAt);
+            y90Var.setSingleLine(false);
+            y90Var.setMaxLines(3);
+            org.telegram.ui.ActionBar.r6.I(y90Var, org.telegram.ui.ActionBar.k6.Gi, g6Var);
+            linearLayout.addView(y90Var, w7.z5.t(-2, -2, 0, 0, 0, 0, 0));
         } else {
             xb xbVar2 = new xb(context, 1, null);
             this.b = xbVar2;
@@ -59,9 +59,9 @@ public final class pc extends nb {
             xbVar2.setGravity(LocaleController.isRTL ? 5 : 3);
             addView(xbVar2, w7.z5.i(-2.0f, -2.0f, 8388627, 70.0f, 0.0f, 12.0f, 0.0f));
         }
-        this.b.setLinkTextColor(getThemedColor(org.telegram.ui.ActionBar.h6.Gi));
-        setTextColor(getThemedColor(org.telegram.ui.ActionBar.h6.Hi));
-        setBackground(getThemedColor(org.telegram.ui.ActionBar.h6.Fi));
+        org.telegram.ui.ActionBar.r6.I(this.b, org.telegram.ui.ActionBar.k6.Gi, g6Var);
+        setTextColor(getThemedColor(org.telegram.ui.ActionBar.k6.Hi));
+        setBackground(getThemedColor(org.telegram.ui.ActionBar.k6.Fi));
     }
 
     @Override // org.telegram.ui.Components.ub
@@ -71,9 +71,9 @@ public final class pc extends nb {
 
     public void setTextColor(int i10) {
         this.b.setTextColor(i10);
-        x90 x90Var = this.c;
-        if (x90Var != null) {
-            x90Var.setTextColor(i10);
+        y90 y90Var = this.c;
+        if (y90Var != null) {
+            y90Var.setTextColor(i10);
         }
     }
 }

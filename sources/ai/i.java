@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i implements RequestDelegate {
     public final /* synthetic */ int a = 0;
@@ -33,16 +33,16 @@ public final /* synthetic */ class i implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new j((x) this.d, tL_error, (TwoStepVerificationActivity) this.e, (Activity) this.f, this.b, this.c, tLObject));
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new m((ci.i7) this.d, tL_error, this.b, this.c, (Utilities.Callback) this.e, (org.telegram.ui.ActionBar.d6) this.f));
+                AndroidUtilities.runOnUIThread(new m((ci.h7) this.d, tL_error, this.b, this.c, (Utilities.Callback) this.e, (org.telegram.ui.ActionBar.g6) this.f));
                 break;
         }
     }
 
-    public /* synthetic */ i(ci.i7 i7Var, boolean z10, long j10, Utilities.Callback callback, org.telegram.ui.ActionBar.d6 d6Var) {
-        this.d = i7Var;
+    public /* synthetic */ i(ci.h7 h7Var, boolean z10, long j10, Utilities.Callback callback, org.telegram.ui.ActionBar.g6 g6Var) {
+        this.d = h7Var;
         this.b = z10;
         this.c = j10;
         this.e = callback;
-        this.f = d6Var;
+        this.f = g6Var;
     }
 }

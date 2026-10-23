@@ -7,25 +7,25 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import m1.j;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.x1;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.w1;
 import org.telegram.ui.Cells.l4;
-import org.telegram.ui.Components.a91;
-import org.telegram.ui.Components.b91;
-import org.telegram.ui.Components.c91;
-import org.telegram.ui.Components.d91;
-import org.telegram.ui.Components.dp0;
-import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.h91;
+import org.telegram.ui.Components.hp0;
+import org.telegram.ui.Components.i91;
+import org.telegram.ui.Components.j91;
+import org.telegram.ui.Components.k91;
+import org.telegram.ui.Components.lm0;
 import org.telegram.ui.Components.s6;
-import org.telegram.ui.Components.tl0;
+import org.telegram.ui.Components.wl0;
 import org.telegram.ui.LaunchActivity;
 import s4.b1;
 import s4.o0;
 import w7.z5;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class g extends im0 {
+public final class g extends lm0 {
     public final /* synthetic */ int c = 0;
     public final Context d;
     public final /* synthetic */ FrameLayout e;
@@ -35,7 +35,7 @@ public final class g extends im0 {
         this.d = launchActivity;
     }
 
-    @Override // org.telegram.ui.Components.im0
+    @Override // org.telegram.ui.Components.lm0
     public final boolean D(b1 b1Var) {
         switch (this.c) {
             case 0:
@@ -52,7 +52,7 @@ public final class g extends im0 {
             case 0:
                 return ((i) this.e).E.size();
             default:
-                return ((d91) this.e).h.size();
+                return ((k91) this.e).h.size();
         }
     }
 
@@ -60,7 +60,7 @@ public final class g extends im0 {
     public long i(int i10) {
         switch (this.c) {
             case 1:
-                return ((a91) ((d91) this.e).h.get(i10)).a;
+                return ((h91) ((k91) this.e).h.get(i10)).a;
             default:
                 return super.i(i10);
         }
@@ -78,7 +78,7 @@ public final class g extends im0 {
 
     @Override // s4.g0
     public final void v(b1 b1Var, int i10) {
-        c91 c91Var;
+        j91 j91Var;
         switch (this.c) {
             case 0:
                 View view = b1Var.a;
@@ -88,13 +88,13 @@ public final class g extends im0 {
                 CharSequence charSequence = aVar.a;
                 int c10 = j.c(i11);
                 if (c10 == 0) {
-                    x1 x1Var = (x1) view;
-                    x1Var.setTextColor(h6.x0(null, h6.j5, false));
-                    x1Var.a(0, charSequence);
+                    w1 w1Var = (w1) view;
+                    w1Var.setTextColor(k6.x0(null, k6.j5, false));
+                    w1Var.a(0, charSequence);
                     break;
                 } else if (c10 == 1) {
                     l4 l4Var = (l4) view;
-                    l4Var.setTextColor(h6.x0(null, h6.L6, false));
+                    l4Var.setTextColor(k6.x0(null, k6.L6, false));
                     l4Var.setText(charSequence);
                     break;
                 } else if (c10 == 2) {
@@ -109,14 +109,14 @@ public final class g extends im0 {
                 }
                 break;
             default:
-                b91 b91Var = (b91) b1Var.a;
-                d91 d91Var = (d91) this.e;
-                a91 a91Var = (a91) d91Var.h.get(i10);
-                b91Var.a = a91Var;
-                b91Var.setContentDescription(a91Var.b);
-                b91Var.setAlpha(1.0f);
-                b91Var.requestLayout();
-                b91Var.setReordering(d91Var.m0 && (c91Var = d91Var.y) != null && ((l2.f) c91Var).z(i10));
+                i91 i91Var = (i91) b1Var.a;
+                k91 k91Var = (k91) this.e;
+                h91 h91Var = (h91) k91Var.h.get(i10);
+                i91Var.a = h91Var;
+                i91Var.setContentDescription(h91Var.b);
+                i91Var.setAlpha(1.0f);
+                i91Var.requestLayout();
+                i91Var.setReordering(k91Var.m0 && (j91Var = k91Var.y) != null && ((l2.f) j91Var).l(i10));
                 break;
         }
     }
@@ -131,30 +131,30 @@ public final class g extends im0 {
                 if (c10 == 1) {
                     frameLayout = new l4(context);
                 } else if (c10 != 2) {
-                    frameLayout = new x1(context, null);
+                    frameLayout = new w1(context, null);
                 } else {
                     h hVar = new h(context);
                     hVar.setWillNotDraw(false);
                     TextPaint textPaint = new TextPaint(1);
                     hVar.h = textPaint;
                     textPaint.setTextSize(AndroidUtilities.dp(16.0f));
-                    dp0 dp0Var = new dp0(context);
-                    hVar.a = dp0Var;
-                    dp0Var.setReportChanges(true);
-                    dp0Var.setDelegate(new l2.f(hVar, 5));
-                    dp0Var.setImportantForAccessibility(2);
-                    hVar.addView(dp0Var, z5.d(-1, 38.0f, 83, 5.0f, 29.0f, 47.0f, 0.0f));
+                    hp0 hp0Var = new hp0(context);
+                    hVar.a = hp0Var;
+                    hp0Var.setReportChanges(true);
+                    hp0Var.setDelegate(new l2.f(hVar, 5));
+                    hp0Var.setImportantForAccessibility(2);
+                    hVar.addView(hp0Var, z5.d(-1, 38.0f, 83, 5.0f, 29.0f, 47.0f, 0.0f));
                     frameLayout = hVar;
                 }
                 frameLayout.setLayoutParams(new o0(-1, -2));
-                return new tl0(frameLayout);
+                return new wl0(frameLayout);
             default:
-                return new tl0(new b91((d91) this.e, this.d));
+                return new wl0(new i91((k91) this.e, this.d));
         }
     }
 
-    public g(d91 d91Var, Context context) {
-        this.e = d91Var;
+    public g(k91 k91Var, Context context) {
+        this.e = k91Var;
         this.d = context;
     }
 }

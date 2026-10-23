@@ -2,10 +2,11 @@ package y8;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import com.google.android.gms.internal.play_billing.k3;
 import java.util.Arrays;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class a1 extends o6.a {
     public static final Parcelable.Creator<a1> CREATOR = new c(26);
@@ -40,7 +41,7 @@ public final class a1 extends o6.a {
 
     public final String toString() {
         Locale locale = Locale.US;
-        return a1.g.s(i2.e.m("WebIconParcelable{", this.b, "x", this.c, " - "), this.a, "}");
+        return a1.g.s(k3.k("WebIconParcelable{", this.b, "x", this.c, " - "), this.a, "}");
     }
 
     @Override // android.os.Parcelable

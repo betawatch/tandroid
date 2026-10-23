@@ -1,14 +1,15 @@
 package j4;
 
 import b2.v0;
-import c3.j0;
+import c3.l0;
 import e2.m0;
+import i2.o1;
 import java.util.Arrays;
 import java.util.Collections;
 import org.telegram.messenger.MediaController;
 import v7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class e implements i {
     public static final byte[] x = {73, 68, 51};
@@ -17,14 +18,14 @@ public final class e implements i {
     public final int e;
     public final String f;
     public String g;
-    public j0 h;
-    public j0 i;
+    public l0 h;
+    public l0 i;
     public boolean m;
     public boolean n;
     public int q;
     public boolean r;
     public int t;
-    public j0 v;
+    public l0 v;
     public long w;
     public final a4.g b = new a4.g(new byte[7], 7);
     public final e2.x c = new e2.x(Arrays.copyOf(x, 10));
@@ -253,11 +254,11 @@ public final class e implements i {
                     if (i32 == 10) {
                         this.i.d(10, xVar2);
                         xVar2.N(6);
-                        j0 j0Var = this.i;
+                        l0 l0Var = this.i;
                         int z10 = xVar2.z() + 10;
                         this.j = 4;
                         this.k = 10;
-                        this.v = j0Var;
+                        this.v = l0Var;
                         this.w = 0L;
                         this.t = z10;
                     }
@@ -304,11 +305,11 @@ public final class e implements i {
                         if (this.m) {
                             i36 = g14 - 9;
                         }
-                        j0 j0Var2 = this.h;
+                        l0 l0Var2 = this.h;
                         long j10 = this.s;
                         this.j = 4;
                         this.k = 0;
-                        this.v = j0Var2;
+                        this.v = l0Var2;
                         this.w = j10;
                         this.t = i36;
                     }
@@ -362,28 +363,28 @@ public final class e implements i {
     }
 
     @Override // j4.i
-    public final void d(c3.q qVar, f0 f0Var) {
+    public final void d(c3.s sVar, f0 f0Var) {
         f0Var.b();
         f0Var.c();
         this.g = (String) f0Var.e;
         f0Var.c();
-        j0 j02 = qVar.j0(f0Var.c, 1);
+        l0 j02 = sVar.j0(f0Var.c, 1);
         this.h = j02;
         this.v = j02;
         if (!this.a) {
-            this.i = new c3.n();
+            this.i = new c3.p();
             return;
         }
         f0Var.b();
         f0Var.c();
-        j0 j03 = qVar.j0(f0Var.c, 5);
+        l0 j03 = sVar.j0(f0Var.c, 5);
         this.i = j03;
         b2.v vVar = new b2.v();
         f0Var.c();
         vVar.a = (String) f0Var.e;
         vVar.q = v0.n(this.f);
         vVar.r = v0.n("application/id3");
-        i2.e.u(vVar, j03);
+        o1.v(vVar, j03);
     }
 
     @Override // j4.i

@@ -1,15 +1,15 @@
 package w3;
 
 import b2.w;
-import c3.j0;
+import c3.l0;
 import e2.m0;
 import e2.x;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class g {
-    public final j0 a;
+    public final l0 a;
     public t d;
     public d e;
     public int f;
@@ -23,14 +23,14 @@ public final class g {
     public final x k = new x(1);
     public final x l = new x();
 
-    public g(j0 j0Var, t tVar, d dVar, w wVar) {
-        this.a = j0Var;
+    public g(l0 l0Var, t tVar, d dVar, w wVar) {
+        this.a = l0Var;
         this.d = tVar;
         this.e = dVar;
         this.j = wVar;
         this.d = tVar;
         this.e = dVar;
-        j0Var.b(wVar);
+        l0Var.b(wVar);
         e();
     }
 
@@ -98,9 +98,9 @@ public final class g {
         x xVar3 = this.k;
         xVar3.a[0] = (byte) ((z11 ? 128 : 0) | i12);
         xVar3.N(0);
-        j0 j0Var = this.a;
-        j0Var.g(xVar3, 1, 1);
-        j0Var.g(xVar, i12, 1);
+        l0 l0Var = this.a;
+        l0Var.g(xVar3, 1, 1);
+        l0Var.g(xVar, i12, 1);
         if (!z11) {
             return i12 + 1;
         }
@@ -116,7 +116,7 @@ public final class g {
             bArr2[5] = (byte) ((i10 >> 16) & 255);
             bArr2[6] = (byte) ((i10 >> 8) & 255);
             bArr2[7] = (byte) (i10 & 255);
-            j0Var.g(xVar4, 8, 1);
+            l0Var.g(xVar4, 8, 1);
             return i12 + 9;
         }
         x xVar5 = sVar.n;
@@ -133,7 +133,7 @@ public final class g {
         } else {
             xVar4 = xVar5;
         }
-        j0Var.g(xVar4, i13, 1);
+        l0Var.g(xVar4, i13, 1);
         return i12 + 1 + i13;
     }
 

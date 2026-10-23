@@ -1,41 +1,92 @@
 package org.telegram.ui;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import java.util.ArrayList;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import org.telegram.messenger.AccountInstance;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class q40 extends org.telegram.ui.ActionBar.m1 {
-    public final /* synthetic */ q50 o;
+public final /* synthetic */ class q40 implements org.telegram.ui.ActionBar.z1, org.telegram.ui.Components.q80 {
+    public final /* synthetic */ w40 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public q40(q50 q50Var, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
-        super(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
-        this.o = q50Var;
+    public /* synthetic */ q40(w40 w40Var) {
+        this.a = w40Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.m1, android.widget.PopupWindow
-    public final void dismiss() {
-        d(true);
-        q50 q50Var = this.o;
-        if (q50Var.f3 != this) {
+    @Override // org.telegram.ui.Components.q80
+    public void a(TLRPC.InputPeer inputPeer, boolean z10, boolean z11, boolean z12) {
+        u50 u50Var = this.a.b;
+        ChatObject.Call call = u50Var.a1;
+        AccountInstance accountInstance = u50Var.d;
+        if (call == null) {
             return;
         }
-        q50Var.f3 = null;
-        AnimatorSet animatorSet = q50Var.e3;
-        if (animatorSet != null) {
-            animatorSet.cancel();
-            q50Var.e3 = null;
+        boolean z13 = inputPeer instanceof TLRPC.TL_inputPeerUser;
+        TLObject user = z13 ? accountInstance.getMessagesController().getUser(Long.valueOf(inputPeer.user_id)) : inputPeer instanceof TLRPC.TL_inputPeerChat ? accountInstance.getMessagesController().getChat(Long.valueOf(inputPeer.chat_id)) : accountInstance.getMessagesController().getChat(Long.valueOf(inputPeer.channel_id));
+        if (!u50Var.a1.isScheduled()) {
+            if (VoIPService.getSharedInstance() == null || !z10) {
+                return;
+            }
+            VoIPService.getSharedInstance().setGroupCallPeer(inputPeer);
+            u50Var.B0 = user;
+            return;
         }
-        q50Var.Y.X = true;
-        q50Var.e3 = new AnimatorSet();
-        ArrayList arrayList = new ArrayList();
-        arrayList.add(ObjectAnimator.ofInt(q50Var.W2, org.telegram.ui.Components.t6.b, 0));
-        q50Var.e3.playTogether(arrayList);
-        q50Var.e3.setDuration(220L);
-        q50Var.e3.addListener(new org.telegram.ui.Components.p31(this, 27));
-        q50Var.e3.start();
+        u50Var.k1().k(0L, 37, user, u50Var.Z0, null, null);
+        if (inputPeer instanceof TLRPC.TL_inputPeerChannel) {
+            TLRPC.TL_peerChannel tL_peerChannel = new TLRPC.TL_peerChannel();
+            u50Var.A0 = tL_peerChannel;
+            tL_peerChannel.channel_id = inputPeer.channel_id;
+        } else if (z13) {
+            TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
+            u50Var.A0 = tL_peerUser;
+            tL_peerUser.user_id = inputPeer.user_id;
+        } else if (inputPeer instanceof TLRPC.TL_inputPeerChat) {
+            TLRPC.TL_peerChat tL_peerChat = new TLRPC.TL_peerChat();
+            u50Var.A0 = tL_peerChat;
+            tL_peerChat.chat_id = inputPeer.chat_id;
+        }
+        u50Var.Y0 = inputPeer;
+        TLRPC.ChatFull chatFull = accountInstance.getMessagesController().getChatFull(u50Var.i1());
+        if (chatFull != null) {
+            chatFull.groupcall_default_join_as = u50Var.A0;
+            if (chatFull instanceof TLRPC.TL_chatFull) {
+                chatFull.flags |= 32768;
+            } else {
+                chatFull.flags |= 67108864;
+            }
+        }
+        TL_phone.saveDefaultGroupCallJoinAs savedefaultgroupcalljoinas = new TL_phone.saveDefaultGroupCallJoinAs();
+        savedefaultgroupcalljoinas.peer = MessagesController.getInputPeer(u50Var.Z0);
+        savedefaultgroupcalljoinas.join_as = inputPeer;
+        accountInstance.getConnectionsManager().sendRequest(savedefaultgroupcalljoinas, new ci.d6(8));
+        u50Var.J1();
+    }
+
+    @Override // org.telegram.ui.ActionBar.z1
+    public void g(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
+        w40 w40Var = this.a;
+        u50 u50Var = w40Var.b;
+        ChatObject.Call call = u50Var.a1;
+        AccountInstance accountInstance = u50Var.d;
+        if (call.isScheduled()) {
+            TLRPC.ChatFull chatFull = accountInstance.getMessagesController().getChatFull(u50Var.i1());
+            if (chatFull != null) {
+                chatFull.flags &= -2097153;
+                chatFull.call = null;
+                accountInstance.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.groupCallUpdated, Long.valueOf(u50Var.i1()), Long.valueOf(u50Var.a1.call.id), Boolean.FALSE);
+            }
+            TL_phone.discardGroupCall discardgroupcall = new TL_phone.discardGroupCall();
+            discardgroupcall.call = u50Var.a1.getInputGroupCall();
+            accountInstance.getConnectionsManager().sendRequest(discardgroupcall, new l(w40Var, 9));
+        } else if (VoIPService.getSharedInstance() != null) {
+            VoIPService.getSharedInstance().hangUp(1);
+        }
+        u50Var.dismiss();
+        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didStartedCall, new Object[0]);
     }
 }

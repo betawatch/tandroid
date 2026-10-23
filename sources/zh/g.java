@@ -5,11 +5,11 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.ActionBar.o2;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.df0;
+import org.telegram.ui.if0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -37,14 +37,14 @@ public final /* synthetic */ class g implements Utilities.Callback {
                 }
                 break;
             case 1:
-                n2 n2Var = (n2) this.b;
+                o2 o2Var = (o2) this.b;
                 Long l4 = (Long) obj;
-                if (!n2Var.isFinished) {
+                if (!o2Var.isFinished) {
                     if (l4 != null && l4.longValue() != Long.MAX_VALUE) {
-                        n2Var.presentFragment(ProfileActivity.m4(l4.longValue()), true);
+                        o2Var.presentFragment(ProfileActivity.o4(l4.longValue()), true);
                         break;
                     } else {
-                        AndroidUtilities.runOnUIThread(new df0(25));
+                        AndroidUtilities.runOnUIThread(new if0(25));
                         break;
                     }
                 }

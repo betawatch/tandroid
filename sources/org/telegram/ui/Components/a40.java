@@ -18,9 +18,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class a40 extends l71 {
+public final class a40 extends s71 {
     public final z30 T;
     public int U;
     public final TLRPC.Chat V;
@@ -34,7 +34,7 @@ public final class a40 extends l71 {
     public boolean d0;
     public final a0.h e0;
     public final HashSet f0;
-    public org.telegram.ui.q20 g0;
+    public org.telegram.ui.t20 g0;
     public boolean h0;
     public int i0;
     public int j0;
@@ -68,13 +68,13 @@ public final class a40 extends l71 {
         u1Var.setAdapter(w30Var);
         if (!this.c0) {
             this.Z = false;
-            U();
+            T();
         }
-        V();
-        I(0.0f);
+        U();
+        G(0.0f);
     }
 
-    public static /* synthetic */ int N(a40 a40Var, int i10, TLObject tLObject, TLObject tLObject2) {
+    public static /* synthetic */ int M(a40 a40Var, int i10, TLObject tLObject, TLObject tLObject2) {
         TLRPC.UserStatus userStatus;
         TLRPC.UserStatus userStatus2;
         TLRPC.User user = MessagesController.getInstance(a40Var.currentAccount).getUser(Long.valueOf(MessageObject.getPeerId(((TLRPC.ChannelParticipant) tLObject).peer)));
@@ -114,12 +114,12 @@ public final class a40 extends l71 {
         return 0;
     }
 
-    public static /* synthetic */ void O(a40 a40Var, TLRPC.TL_error tL_error, TLObject tLObject, TLRPC.TL_channels_getParticipants tL_channels_getParticipants) {
+    public static /* synthetic */ void N(a40 a40Var, TLRPC.TL_error tL_error, TLObject tLObject, TLRPC.TL_channels_getParticipants tL_channels_getParticipants) {
         int h;
         a0.h hVar;
         ArrayList arrayList;
         a0.h hVar2;
-        tx0 tx0Var = a40Var.s;
+        wx0 wx0Var = a40Var.s;
         a0.h hVar3 = a40Var.a0;
         a0.h hVar4 = a40Var.b0;
         ArrayList arrayList2 = a40Var.X;
@@ -173,7 +173,7 @@ public final class a40 extends l71 {
             }
             try {
                 if (a40Var.W.participants_count <= 200) {
-                    Collections.sort(arrayList, new org.telegram.ui.kq(a40Var, ConnectionsManager.getInstance(a40Var.currentAccount).getCurrentTime(), 1));
+                    Collections.sort(arrayList, new org.telegram.ui.mq(a40Var, ConnectionsManager.getInstance(a40Var.currentAccount).getCurrentTime(), 1));
                 }
             } catch (Exception e) {
                 FileLog.e(e);
@@ -185,40 +185,40 @@ public final class a40 extends l71 {
             if (a40Var.q0 == 1) {
                 h = 1;
             } else {
-                im0 im0Var = a40Var.f;
-                h = im0Var != null ? im0Var.h() - 1 : 0;
+                lm0 lm0Var = a40Var.f;
+                h = lm0Var != null ? lm0Var.h() - 1 : 0;
             }
-            a40Var.K(h);
+            a40Var.J(h);
             if (arrayList2.isEmpty()) {
                 a40Var.h0 = true;
-                a40Var.T();
+                a40Var.S();
             }
         }
-        a40Var.V();
-        im0 im0Var2 = a40Var.f;
-        if (im0Var2 != null) {
-            im0Var2.l();
-            if (tx0Var != null && a40Var.f.h() == 0 && a40Var.d0) {
-                tx0Var.e(false, true);
+        a40Var.U();
+        lm0 lm0Var2 = a40Var.f;
+        if (lm0Var2 != null) {
+            lm0Var2.l();
+            if (wx0Var != null && a40Var.f.h() == 0 && a40Var.d0) {
+                wx0Var.e(false, true);
             }
         }
     }
 
-    @Override // org.telegram.ui.Components.l71
-    public final void E(MotionEvent motionEvent, ei.e2 e2Var) {
-        org.telegram.ui.q50 q50Var = this.g0.a;
-        if (q50Var.w0) {
+    @Override // org.telegram.ui.Components.s71
+    public final void D(MotionEvent motionEvent, ei.e2 e2Var) {
+        org.telegram.ui.u50 u50Var = this.g0.a;
+        if (u50Var.w0) {
             return;
         }
         if (motionEvent.getX() <= e2Var.getLeft() || motionEvent.getX() >= e2Var.getRight() || motionEvent.getY() <= e2Var.getTop() || motionEvent.getY() >= e2Var.getBottom()) {
-            q50Var.t1(q50Var.E1, null, e2Var, false);
+            u50Var.s1(u50Var.E1, null, e2Var, false);
         } else {
-            q50Var.t1(q50Var.E1, null, e2Var, true);
+            u50Var.s1(u50Var.E1, null, e2Var, true);
         }
     }
 
-    @Override // org.telegram.ui.Components.l71
-    public final void G(String str) {
+    @Override // org.telegram.ui.Components.s71
+    public final void F(String str) {
         z30 z30Var = this.T;
         hg.a2 a2Var = z30Var.d;
         a40 a40Var = z30Var.w;
@@ -248,27 +248,27 @@ public final class a40 extends l71 {
         z30Var.e = x30Var2;
         AndroidUtilities.runOnUIThread(x30Var2, 300L);
         s4.g0 adapter = u1Var.getAdapter();
-        im0 im0Var = a40Var.e;
-        if (adapter != im0Var) {
-            u1Var.setAdapter(im0Var);
+        lm0 lm0Var = a40Var.e;
+        if (adapter != lm0Var) {
+            u1Var.setAdapter(lm0Var);
         }
     }
 
-    @Override // org.telegram.ui.Components.l71
-    public final void L() {
-        this.I = org.telegram.ui.ActionBar.h6.Pg;
-        this.J = org.telegram.ui.ActionBar.h6.eg;
-        int i10 = org.telegram.ui.ActionBar.h6.a;
-        this.K = org.telegram.ui.ActionBar.h6.fg;
-        this.L = org.telegram.ui.ActionBar.h6.tg;
-        this.M = org.telegram.ui.ActionBar.h6.ng;
-        this.N = org.telegram.ui.ActionBar.h6.og;
-        this.O = org.telegram.ui.ActionBar.h6.lg;
-        this.P = org.telegram.ui.ActionBar.h6.rg;
-        this.Q = org.telegram.ui.ActionBar.h6.mg;
+    @Override // org.telegram.ui.Components.s71
+    public final void K() {
+        this.I = org.telegram.ui.ActionBar.k6.Pg;
+        this.J = org.telegram.ui.ActionBar.k6.eg;
+        int i10 = org.telegram.ui.ActionBar.k6.a;
+        this.K = org.telegram.ui.ActionBar.k6.fg;
+        this.L = org.telegram.ui.ActionBar.k6.tg;
+        this.M = org.telegram.ui.ActionBar.k6.ng;
+        this.N = org.telegram.ui.ActionBar.k6.og;
+        this.O = org.telegram.ui.ActionBar.k6.lg;
+        this.P = org.telegram.ui.ActionBar.k6.rg;
+        this.Q = org.telegram.ui.ActionBar.k6.mg;
     }
 
-    public final void T() {
+    public final void S() {
         if (this.h0) {
             ArrayList<TLRPC.TL_contact> arrayList = ContactsController.getInstance(this.currentAccount).contacts;
             ArrayList arrayList2 = this.Y;
@@ -292,20 +292,20 @@ public final class a40 extends l71 {
         }
     }
 
-    public final void U() {
+    public final void T() {
         a0.h hVar;
         TLRPC.Chat chat = this.V;
         boolean isChannel = ChatObject.isChannel(chat);
         TLRPC.ChatFull chatFull = this.W;
         if (isChannel) {
             this.c0 = true;
-            tx0 tx0Var = this.s;
-            if (tx0Var != null) {
-                tx0Var.e(true, false);
+            wx0 wx0Var = this.s;
+            if (wx0Var != null) {
+                wx0Var.e(true, false);
             }
-            im0 im0Var = this.f;
-            if (im0Var != null) {
-                im0Var.l();
+            lm0 lm0Var = this.f;
+            if (lm0Var != null) {
+                lm0Var.l();
             }
             TLRPC.TL_channels_getParticipants tL_channels_getParticipants = new TLRPC.TL_channels_getParticipants();
             tL_channels_getParticipants.channel = MessagesController.getInputChannel(chat);
@@ -317,7 +317,7 @@ public final class a40 extends l71 {
                 this.U = 2;
                 tL_channels_getParticipants.filter = new TLRPC.TL_channelParticipantsContacts();
                 this.Z = true;
-                U();
+                T();
             }
             tL_channels_getParticipants.filter.q = "";
             tL_channels_getParticipants.offset = 0;
@@ -348,17 +348,17 @@ public final class a40 extends l71 {
             }
             if (arrayList.isEmpty()) {
                 this.h0 = true;
-                T();
+                S();
             }
         }
-        V();
-        im0 im0Var2 = this.f;
-        if (im0Var2 != null) {
-            im0Var2.l();
+        U();
+        lm0 lm0Var2 = this.f;
+        if (lm0Var2 != null) {
+            lm0Var2.l();
         }
     }
 
-    public final void V() {
+    public final void U() {
         this.i0 = -1;
         this.k0 = -1;
         this.l0 = -1;

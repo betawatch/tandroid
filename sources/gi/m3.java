@@ -2,35 +2,35 @@ package gi;
 
 import android.app.Activity;
 import android.view.ViewGroup;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.jm0;
-import org.telegram.ui.Components.tl0;
-import org.telegram.ui.Components.u61;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.Components.b71;
+import org.telegram.ui.Components.mm0;
+import org.telegram.ui.Components.wl0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final class m3 extends u61 {
-    public final /* synthetic */ u3 N;
+public final class m3 extends b71 {
+    public final /* synthetic */ u3 P;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m3(u3 u3Var, jm0 jm0Var, Activity activity, int i10, int i11, ai.q qVar, d6 d6Var) {
-        super(jm0Var, activity, i10, i11, true, qVar, d6Var);
-        this.N = u3Var;
+    public m3(u3 u3Var, mm0 mm0Var, Activity activity, int i10, int i11, ai.q qVar, g6 g6Var) {
+        super(mm0Var, activity, i10, i11, true, qVar, g6Var);
+        this.P = u3Var;
     }
 
-    @Override // org.telegram.ui.Components.u61, s4.g0
+    @Override // org.telegram.ui.Components.b71, s4.g0
     public final s4.b1 x(ViewGroup viewGroup, int i10) {
-        d6 d6Var;
+        g6 g6Var;
         if (i10 != 42) {
             return super.x(viewGroup, i10);
         }
-        u3 u3Var = this.N;
+        u3 u3Var = this.P;
         Activity parentActivity = u3Var.getParentActivity();
-        int i11 = h6.L6;
-        d6Var = ((org.telegram.ui.ActionBar.n2) u3Var).resourceProvider;
-        org.telegram.ui.Cells.l4 l4Var = new org.telegram.ui.Cells.l4(parentActivity, i11, 21, 0, false, d6Var);
+        int i11 = k6.L6;
+        g6Var = ((org.telegram.ui.ActionBar.o2) u3Var).resourceProvider;
+        org.telegram.ui.Cells.l4 l4Var = new org.telegram.ui.Cells.l4(parentActivity, i11, 21, 0, false, g6Var);
         l4Var.setHeight(25);
-        return new tl0(l4Var);
+        return new wl0(l4Var);
     }
 }

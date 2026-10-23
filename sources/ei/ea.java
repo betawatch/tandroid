@@ -1,10 +1,10 @@
 package ei;
 
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.ah0;
-import org.telegram.ui.Components.yg0;
+import org.telegram.ui.Components.bh0;
+import org.telegram.ui.Components.dh0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class ea implements o1.f {
     public final /* synthetic */ int a;
@@ -43,10 +43,10 @@ public final /* synthetic */ class ea implements o1.f {
                     break;
                 }
             default:
-                yg0 yg0Var = (yg0) this.c;
+                bh0 bh0Var = (bh0) this.c;
                 if (!z10) {
-                    ah0 ah0Var = yg0Var.d;
-                    ah0Var.M.u.i = (ah0Var.H / 2.0f) + this.b >= ((float) AndroidUtilities.displaySize.x) / 2.0f ? (r0 - r3) - AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(16.0f);
+                    dh0 dh0Var = bh0Var.d;
+                    dh0Var.M.u.i = (dh0Var.H / 2.0f) + this.b >= ((float) AndroidUtilities.displaySize.x) / 2.0f ? (r0 - r3) - AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(16.0f);
                     break;
                 }
                 break;

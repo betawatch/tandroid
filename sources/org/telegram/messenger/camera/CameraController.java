@@ -45,8 +45,9 @@ import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.SerializedData;
+import zf.e0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public class CameraController implements MediaRecorder.OnInfoListener {
     private static final int CORE_POOL_SIZE = 1;
@@ -65,7 +66,7 @@ public class CameraController implements MediaRecorder.OnInfoListener {
     private ArrayList<Runnable> onFinishCameraInitRunnables = new ArrayList<>();
     protected ThreadPoolExecutor threadPool = new ThreadPoolExecutor(1, 1, 60, TimeUnit.SECONDS, new LinkedBlockingQueue());
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public static class CompareSizesByArea implements Comparator<Size> {
         @Override // java.util.Comparator
         public int compare(Size size, Size size2) {
@@ -73,19 +74,19 @@ public class CameraController implements MediaRecorder.OnInfoListener {
         }
     }
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public interface ErrorCallback {
         void onError(int i10, Camera camera, CameraSessionWrapper cameraSessionWrapper);
     }
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public interface ICameraView {
         boolean startRecording(File file, Runnable runnable);
 
         void stopRecording();
     }
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public interface VideoTakeCallback {
         void onFinishVideoRecording(String str, long j10);
     }
@@ -513,7 +514,7 @@ public class CameraController implements MediaRecorder.OnInfoListener {
             if (this.cameraInfos == null) {
                 SharedPreferences globalMainSettings = MessagesController.getGlobalMainSettings();
                 String string = globalMainSettings.getString("cameraCache", null);
-                a4.d dVar = new a4.d(29);
+                e0 e0Var = new e0(1);
                 ArrayList<CameraInfo> arrayList = new ArrayList<>();
                 int i10 = 0;
                 if (string != null) {
@@ -530,8 +531,8 @@ public class CameraController implements MediaRecorder.OnInfoListener {
                             cameraInfo.pictureSizes.add(new Size(serializedData.readInt32(false), serializedData.readInt32(false)));
                         }
                         arrayList.add(cameraInfo);
-                        Collections.sort(cameraInfo.previewSizes, dVar);
-                        Collections.sort(cameraInfo.pictureSizes, dVar);
+                        Collections.sort(cameraInfo.previewSizes, e0Var);
+                        Collections.sort(cameraInfo.pictureSizes, e0Var);
                     }
                     serializedData.cleanup();
                 } else {
@@ -600,8 +601,8 @@ public class CameraController implements MediaRecorder.OnInfoListener {
                         }
                         camera2.release();
                         arrayList.add(cameraInfo3);
-                        Collections.sort(cameraInfo3.previewSizes, dVar);
-                        Collections.sort(cameraInfo3.pictureSizes, dVar);
+                        Collections.sort(cameraInfo3.previewSizes, e0Var);
+                        Collections.sort(cameraInfo3.pictureSizes, e0Var);
                         i14 += ((cameraInfo3.previewSizes.size() + cameraInfo3.pictureSizes.size()) * 8) + 8;
                         i15 = i20 + 1;
                         globalMainSettings = sharedPreferences;

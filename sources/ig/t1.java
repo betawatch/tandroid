@@ -1,71 +1,126 @@
 package ig;
 
-import android.view.KeyEvent;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.text.TextUtils;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.TextView;
-import ci.z2;
+import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.b6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.Components.h9;
+import org.telegram.ui.Components.xp;
+import w7.z5;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class t1 implements TextView.OnEditorActionListener {
-    public final /* synthetic */ q1 a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ z1 c;
-    public final /* synthetic */ TextView d;
-    public final /* synthetic */ z2 e;
-    public final /* synthetic */ Utilities.Callback f;
-    public final /* synthetic */ org.telegram.ui.ActionBar.b2[] g;
-    public final /* synthetic */ View h;
+public final class t1 extends FrameLayout implements b6 {
+    public final h9 a;
+    public final ImageReceiver b;
+    public final TextView c;
+    public final TextView d;
+    public final xp e;
+    public final Path f;
+    public final Paint h;
+    public final g6 n;
+    public final int[] r;
+    public boolean s;
 
-    public t1(q1 q1Var, int i10, z1 z1Var, TextView textView, z2 z2Var, Utilities.Callback callback, org.telegram.ui.ActionBar.b2[] b2VarArr, View view) {
-        this.a = q1Var;
-        this.b = i10;
-        this.c = z1Var;
-        this.d = textView;
-        this.e = z2Var;
-        this.f = callback;
-        this.g = b2VarArr;
-        this.h = view;
+    public t1(Context context, g6 g6Var) {
+        super(context);
+        this.a = new h9((g6) null);
+        this.b = new ImageReceiver(this);
+        this.f = new Path();
+        this.h = new Paint(1);
+        this.r = new int[1];
+        this.n = g6Var;
+        setWillNotDraw(false);
+        TextView textView = new TextView(context);
+        this.c = textView;
+        textView.setSingleLine();
+        TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
+        textView.setEllipsize(truncateAt);
+        r6.W(textView, k6.G6, g6Var);
+        textView.setTypeface(AndroidUtilities.bold());
+        textView.setTextSize(1, 16.0f);
+        boolean z10 = LocaleController.isRTL;
+        addView(textView, z5.d(-1, -2.0f, 7, z10 ? 40.0f : 78.0f, 10.33f, z10 ? 78.0f : 40.0f, 0.0f));
+        TextView textView2 = new TextView(context);
+        this.d = textView2;
+        textView2.setLines(2);
+        textView2.setEllipsize(truncateAt);
+        r6.W(textView2, k6.z6, g6Var);
+        textView2.setTextSize(1, 15.0f);
+        boolean z11 = LocaleController.isRTL;
+        addView(textView2, z5.d(-1, -2.0f, 7, z11 ? 40.0f : 78.0f, 32.0f, z11 ? 78.0f : 40.0f, 0.0f));
+        xp xpVar = new xp(getContext(), 21, g6Var);
+        this.e = xpVar;
+        xpVar.b(-1, k6.d6, k6.k7);
+        xpVar.setDrawUnchecked(false);
+        xpVar.setDrawBackgroundAsArc(3);
+        addView(xpVar, z5.i(24.0f, 24.0f, 8388659, 33.0f, 25.0f, 0.0f, 0.0f));
     }
 
-    @Override // android.widget.TextView.OnEditorActionListener
-    public final boolean onEditorAction(TextView textView, int i10, KeyEvent keyEvent) {
-        if (i10 != 6) {
-            return false;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        float measuredWidth = LocaleController.isRTL ? getMeasuredWidth() - AndroidUtilities.dp(65.0f) : AndroidUtilities.dp(9.0f);
+        float dp = AndroidUtilities.dp(11.33f);
+        float dp2 = AndroidUtilities.dp(56.0f);
+        float dp3 = AndroidUtilities.dp(56.0f);
+        ImageReceiver imageReceiver = this.b;
+        imageReceiver.setImageCoords(measuredWidth, dp, dp2, dp3);
+        imageReceiver.draw(canvas);
+        super.onDraw(canvas);
+        canvas.drawPath(this.f, this.h);
+        if (this.s) {
+            Paint V0 = k6.V0("paintDivider", this.n);
+            if (V0 == null) {
+                V0 = k6.k0;
+            }
+            canvas.drawRect(AndroidUtilities.dp(LocaleController.isRTL ? 0.0f : 78.0f), getMeasuredHeight() - 1, getWidth() - AndroidUtilities.dp(LocaleController.isRTL ? 78.0f : 0.0f), getMeasuredHeight(), V0);
         }
-        q1 q1Var = this.a;
-        String obj = q1Var.getText().toString();
-        if (obj.length() <= 0 || obj.length() > 32) {
-            AndroidUtilities.shakeView(q1Var);
-            return true;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(78.0f) + (this.s ? 1 : 0), TLObject.FLAG_30));
+        Paint.Style style = Paint.Style.STROKE;
+        Paint paint = this.h;
+        paint.setStyle(style);
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        paint.setStrokeJoin(Paint.Join.ROUND);
+        paint.setStrokeWidth(AndroidUtilities.dpf2(1.66f));
+        paint.setColor(k6.o1(0.85f, k6.w0(k6.z6, this.n)));
+        Path path = this.f;
+        path.rewind();
+        float measuredHeight = getMeasuredHeight() / 2.0f;
+        float dpf2 = LocaleController.isRTL ? AndroidUtilities.dpf2(29.66f) : getMeasuredWidth() - AndroidUtilities.dpf2(24.33f);
+        path.moveTo(dpf2, measuredHeight - AndroidUtilities.dpf2(5.66f));
+        path.lineTo((AndroidUtilities.dpf2(5.33f) * (LocaleController.isRTL ? -1 : 1)) + dpf2, measuredHeight);
+        path.lineTo(dpf2, AndroidUtilities.dpf2(5.66f) + measuredHeight);
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void updateColors() {
+        try {
+            this.h.setColor(k6.o1(0.85f, k6.w0(k6.z6, this.n)));
+            invalidate();
+        } catch (Exception e) {
+            FileLog.e(e);
         }
-        a2 f7 = a2.f(this.b);
-        z1 z1Var = this.c;
-        int i11 = z1Var == null ? -1 : z1Var.a;
-        z1 d = f7.d(obj);
-        if (d != null && d.a != i11) {
-            AndroidUtilities.shakeView(q1Var);
-            this.d.setText(LocaleController.getString(R.string.BusinessRepliesNameBusy));
-            this.e.run(Boolean.TRUE);
-            return true;
-        }
-        this.f.run(obj);
-        org.telegram.ui.ActionBar.b2[] b2VarArr = this.g;
-        org.telegram.ui.ActionBar.b2 b2Var = b2VarArr[0];
-        if (b2Var != null) {
-            b2Var.dismiss();
-        }
-        if (b2VarArr[0] == x1.h) {
-            x1.h = null;
-        }
-        View view = this.h;
-        if (view != null) {
-            view.requestFocus();
-        }
-        return true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

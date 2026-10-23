@@ -13,9 +13,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.f6;
 import org.telegram.ui.Components.ti;
-import org.telegram.ui.s10;
+import org.telegram.ui.w10;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class j extends FrameLayout {
     public final /* synthetic */ int a = 0;
@@ -37,7 +37,7 @@ public final class j extends FrameLayout {
     public void dispatchDraw(Canvas canvas) {
         switch (this.a) {
             case 1:
-                s10 s10Var = (s10) this.d;
+                w10 w10Var = (w10) this.d;
                 Path path = (Path) this.c;
                 ti tiVar = (ti) this.e;
                 dh.d dVar = tiVar.E0;
@@ -58,9 +58,9 @@ public final class j extends FrameLayout {
                 canvas.saveLayerAlpha(rectF, 255, 31);
                 super.dispatchDraw(canvas);
                 rectF.set(getPaddingLeft(), f7, getWidth() - getPaddingRight(), AndroidUtilities.dp(6.0f) + dp2);
-                s10Var.b(canvas, rectF, 1, 1.0f);
+                w10Var.b(canvas, rectF, 1, 1.0f);
                 rectF.set(getPaddingLeft(), (getHeight() - dp3) - AndroidUtilities.dp(6.0f), getWidth() - getPaddingRight(), getHeight() - dp3);
-                s10Var.b(canvas, rectF, 3, 1.0f);
+                w10Var.b(canvas, rectF, 3, 1.0f);
                 canvas.restore();
                 canvas.restore();
                 break;
@@ -77,12 +77,12 @@ public final class j extends FrameLayout {
                 float width = getWidth() / 2.0f;
                 f6 f6Var = (f6) this.d;
                 m mVar = (m) this.e;
-                float d = f6Var.d(mVar.n.getWidth(), false);
+                float d = f6Var.d(mVar.v.getWidth(), false);
                 Rect rect = (Rect) this.c;
                 float f7 = d / 2.0f;
-                rect.set((int) (width - (mVar.n.getScaleX() * f7)), (int) (((1.0f - mVar.n.getScaleY()) * mVar.n.getHeight()) + mVar.n.getY()), (int) ((mVar.n.getScaleX() * f7) + width), (int) (mVar.n.getY() + mVar.n.getHeight()));
-                mVar.r.setBounds(rect);
-                mVar.r.draw(canvas);
+                rect.set((int) (width - (mVar.v.getScaleX() * f7)), (int) (((1.0f - mVar.v.getScaleY()) * mVar.v.getHeight()) + mVar.v.getY()), (int) ((mVar.v.getScaleX() * f7) + width), (int) (mVar.v.getY() + mVar.v.getHeight()));
+                mVar.w.setBounds(rect);
+                mVar.w.draw(canvas);
                 return super.drawChild(canvas, view, j10);
             default:
                 return super.drawChild(canvas, view, j10);
@@ -115,9 +115,9 @@ public final class j extends FrameLayout {
         switch (this.a) {
             case 0:
                 m mVar = (m) this.e;
-                mVar.n.measure(i10, i11);
+                mVar.v.measure(i10, i11);
                 invalidate();
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(Math.max(this.b, AndroidUtilities.dp(36.0f) + mVar.n.getMeasuredHeight()), TLObject.FLAG_30));
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(Math.max(this.b, AndroidUtilities.dp(36.0f) + mVar.v.getMeasuredHeight()), TLObject.FLAG_30));
                 if (this.b < 0) {
                     this.b = getMeasuredHeight();
                     break;
@@ -134,6 +134,6 @@ public final class j extends FrameLayout {
         super(context);
         this.e = tiVar;
         this.c = new Path();
-        this.d = new s10();
+        this.d = new w10();
     }
 }

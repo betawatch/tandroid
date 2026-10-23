@@ -1,13 +1,8 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class cd implements RequestDelegate {
+public final /* synthetic */ class cd implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ md b;
 
@@ -16,23 +11,38 @@ public final /* synthetic */ class cd implements RequestDelegate {
         this.b = mdVar;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new i0(19, this.b, tLObject));
+                this.b.h0(true);
                 break;
             case 1:
-                if (tLObject instanceof TLRPC.TL_boolTrue) {
-                    AndroidUtilities.runOnUIThread(new dd(this.b, 3));
-                    break;
-                }
+                md mdVar = this.b;
+                mdVar.k0 = true;
+                mdVar.i0();
                 break;
             case 2:
-                AndroidUtilities.runOnUIThread(new i0(17, this.b, tL_error));
+                md mdVar2 = this.b;
+                mdVar2.y = null;
+                mdVar2.E = null;
+                mdVar2.m0 = null;
+                mdVar2.n0 = null;
+                mdVar2.p0 = null;
+                mdVar2.o0 = null;
+                mdVar2.q0 = 0.0d;
+                mdVar2.f0(false, true);
+                mdVar2.f.h(null, null, mdVar2.v, null);
+                mdVar2.n.setAnimation(mdVar2.K);
+                mdVar2.K.M(0);
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new t1(this.b, tL_error, tLObject, 11));
+                md mdVar3 = this.b;
+                mdVar3.k0 = true;
+                if (mdVar3.x.length() > 0) {
+                    mdVar3.e0(mdVar3.x.getText().toString());
+                }
+                mdVar3.i0();
                 break;
         }
     }

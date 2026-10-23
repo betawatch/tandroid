@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public class UserConfig extends BaseController {
     private static volatile UserConfig[] Instance = new UserConfig[4];
@@ -101,7 +101,7 @@ public class UserConfig extends BaseController {
     private void checkPremiumSelf(TLRPC.User user, final TLRPC.User user2) {
         if (user != null && user2 != null && user.premium != user2.premium) {
             final int i10 = 0;
-            AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.messenger.sl
+            AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.messenger.rl
                 public final /* synthetic */ UserConfig b;
 
                 {
@@ -122,7 +122,7 @@ public class UserConfig extends BaseController {
             });
         } else if (user == null) {
             final int i11 = 1;
-            AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.messenger.sl
+            AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.messenger.rl
                 public final /* synthetic */ UserConfig b;
 
                 {
@@ -212,7 +212,7 @@ public class UserConfig extends BaseController {
         NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.premiumStatusChangedGlobal, new Object[0]);
         getMediaDataController().loadPremiumPromo(false);
         getMediaDataController().loadReactions(false, null);
-        ci.i7 storiesController = getMessagesController().getStoriesController();
+        ci.h7 storiesController = getMessagesController().getStoriesController();
         storiesController.R = false;
         storiesController.S = null;
     }
@@ -675,7 +675,7 @@ public class UserConfig extends BaseController {
             return;
         }
         this.ttlIsLoading = true;
-        getConnectionsManager().sendRequest(new TLRPC.TL_messages_getDefaultHistoryTTL(), new i0(this, 8));
+        getConnectionsManager().sendRequest(new TLRPC.TL_messages_getDefaultHistoryTTL(), new h0(this, 8));
     }
 
     public void resetSavedPassword() {

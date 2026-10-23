@@ -18,9 +18,9 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.camera.CameraController;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class s implements org.telegram.ui.ActionBar.a2, yl0, kd0, ld0, md0, ne.f, ImageReceiver.ImageReceiverDelegate, e5, r0.n, vh.a, t0.e, zl0, CameraController.VideoTakeCallback, org.telegram.ui.Cells.q5, ci.w9, org.telegram.ui.ActionBar.q0, org.telegram.ui.ActionBar.k1, wh.k {
+public final /* synthetic */ class s implements org.telegram.ui.ActionBar.z1, bm0, md0, nd0, od0, ne.f, ImageReceiver.ImageReceiverDelegate, d5, r0.n, vh.a, t0.e, cm0, CameraController.VideoTakeCallback, org.telegram.ui.Cells.q5, ci.v9, org.telegram.ui.ActionBar.q0, org.telegram.ui.ActionBar.k1, wh.k {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -41,48 +41,53 @@ public final /* synthetic */ class s implements org.telegram.ui.ActionBar.a2, yl
         return r0.k1.b;
     }
 
-    @Override // org.telegram.ui.Components.e5
+    @Override // org.telegram.ui.Components.d5
     public void C(int i10, int i11, boolean z10) {
         ((o8) this.b).H0(i10 * 60, i10 == 0 ? 71 : 70);
     }
 
     @Override // ne.f
-    public void F() {
+    public void E() {
         h6 h6Var = (h6) this.b;
         h6Var.b();
         h6Var.e();
     }
 
-    @Override // org.telegram.ui.Components.yl0
+    @Override // org.telegram.ui.Components.bm0
     public /* synthetic */ boolean P0(View view) {
         return false;
     }
 
-    @Override // ci.w9
-    public boolean Q0(long j10, int i10, int i11, int i12, ci.x9 x9Var) {
-        ko koVar = (ko) ((org.telegram.ui.Cells.l6) this.b).T;
+    @Override // ci.v9
+    public boolean Q0(long j10, int i10, int i11, int i12, ci.w9 w9Var) {
+        ko koVar = (ko) ((org.telegram.ui.Cells.m6) this.b).T;
         ImageReceiver imageReceiver = koVar.a;
-        x9Var.c = imageReceiver;
-        x9Var.l = imageReceiver;
-        org.telegram.ui.Cells.l6 l6Var = koVar.G;
-        x9Var.m = l6Var;
-        boolean z10 = l6Var.w;
+        w9Var.c = imageReceiver;
+        w9Var.l = imageReceiver;
+        org.telegram.ui.Cells.m6 m6Var = koVar.G;
+        w9Var.m = m6Var;
+        boolean z10 = m6Var.w;
         ko koVar2 = koVar.K.e;
-        x9Var.a = koVar2;
-        x9Var.k = koVar2.getAlpha();
-        x9Var.h = 0.0f;
-        x9Var.i = AndroidUtilities.displaySize.y;
-        x9Var.g = (View) koVar.getParent();
+        w9Var.a = koVar2;
+        w9Var.k = koVar2.getAlpha();
+        w9Var.h = 0.0f;
+        w9Var.i = AndroidUtilities.displaySize.y;
+        w9Var.g = (View) koVar.getParent();
         return true;
     }
 
-    @Override // ci.w9
-    public void X0(long j10, int i10, ci.t3 t3Var) {
-        t3Var.run();
+    @Override // ci.v9
+    public void X0(long j10, int i10, ci.s3 s3Var) {
+        s3Var.run();
     }
 
-    @Override // org.telegram.ui.Components.zl0
-    public boolean a(int i10, View view) {
+    @Override // org.telegram.ui.Components.bm0
+    public void c(float f7, float f10, int i10, View view) {
+        g0.P((g0) this.b, view, i10, f7);
+    }
+
+    @Override // org.telegram.ui.Components.cm0
+    public boolean d(int i10, View view) {
         Object O;
         nk nkVar = (nk) this.b;
         s4.g0 adapter = nkVar.r.getAdapter();
@@ -94,11 +99,6 @@ public final /* synthetic */ class s implements org.telegram.ui.ActionBar.a2, yl
             O = mkVar.O(mkVar.S(i10), mkVar.Q(i10));
         }
         return nkVar.S(view, O);
-    }
-
-    @Override // org.telegram.ui.Components.yl0
-    public void d(float f7, float f10, int i10, View view) {
-        g0.Q((g0) this.b, view, i10, f7);
     }
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
@@ -128,7 +128,7 @@ public final /* synthetic */ class s implements org.telegram.ui.ActionBar.a2, yl
         org.telegram.messenger.m5.a(this, i10, str, drawable);
     }
 
-    @Override // org.telegram.ui.Components.kd0
+    @Override // org.telegram.ui.Components.md0
     public String e(int i10) {
         return ((String[]) this.b)[i10];
     }
@@ -137,7 +137,7 @@ public final /* synthetic */ class s implements org.telegram.ui.ActionBar.a2, yl
     public boolean f(t0.i iVar, int i10, Bundle bundle) {
         ng ngVar = (ng) this.b;
         ChatActivityEnterView chatActivityEnterView = ngVar.d;
-        if (chatActivityEnterView.l5) {
+        if (chatActivityEnterView.p5) {
             return true;
         }
         int i11 = n0.a.a;
@@ -154,18 +154,18 @@ public final /* synthetic */ class s implements org.telegram.ui.ActionBar.a2, yl
             return true;
         }
         if (chatActivityEnterView.c()) {
-            f5.L(chatActivityEnterView.O2, chatActivityEnterView.P2.a(), new q2(7, ngVar, iVar), chatActivityEnterView.W3);
+            f5.M(chatActivityEnterView.O2, chatActivityEnterView.P2.a(), new p2(7, ngVar, iVar), chatActivityEnterView.W3);
             return true;
         }
         ngVar.o(iVar, true, 0, 0);
         return true;
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    @Override // org.telegram.ui.ActionBar.z1
+    public void g(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
         switch (this.a) {
             case 0:
-                y.T((y) this.b, b2Var);
+                y.S((y) this.b, c2Var);
                 break;
             case 2:
                 ((org.telegram.messenger.camera.i) this.b).run();
@@ -174,16 +174,16 @@ public final /* synthetic */ class s implements org.telegram.ui.ActionBar.a2, yl
                 ((ai.v3) this.b).run();
                 break;
             case 4:
-                ((ai.vb) this.b).run();
+                ((ai.wb) this.b).run();
                 break;
             case 5:
-                ((u1) this.b).run();
+                ((t1) this.b).run();
                 break;
             case 6:
                 ((js) this.b).run();
                 break;
             case 8:
-                ((r2) this.b).run();
+                ((q2) this.b).run();
                 break;
             case 17:
                 ((gg) this.b).a.U0.s();
@@ -204,13 +204,8 @@ public final /* synthetic */ class s implements org.telegram.ui.ActionBar.a2, yl
         }
     }
 
-    @Override // ne.f
-    public /* synthetic */ boolean i() {
-        return false;
-    }
-
     @Override // org.telegram.ui.ActionBar.q0
-    public void j(int i10) {
+    public void h(int i10) {
         vq vqVar = ((wq) this.b).a;
         if (i10 == 1 || i10 == 2) {
             vqVar.k(i10 == 2);
@@ -219,21 +214,16 @@ public final /* synthetic */ class s implements org.telegram.ui.ActionBar.a2, yl
         }
     }
 
-    @Override // ne.f
-    public /* synthetic */ boolean k(float f7) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.ld0
-    public void l(int i10) {
-        y2 y2Var = (y2) this.b;
+    @Override // org.telegram.ui.Components.nd0
+    public void i(int i10) {
+        x2 x2Var = (x2) this.b;
         if (i10 == 0) {
-            y2Var.run();
+            x2Var.run();
         }
     }
 
     @Override // org.telegram.ui.ActionBar.k1
-    public void n(KeyEvent keyEvent) {
+    public void j(KeyEvent keyEvent) {
         org.telegram.ui.ActionBar.m1 m1Var = ((hs) this.b).a;
         if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && m1Var != null && m1Var.isShowing()) {
             m1Var.d(true);
@@ -241,8 +231,26 @@ public final /* synthetic */ class s implements org.telegram.ui.ActionBar.a2, yl
     }
 
     @Override // wh.k
-    public void o(wh.g gVar, float f7, float f10) {
+    public void l(wh.g gVar, float f7, float f10) {
         ((ku) this.b).c(gVar, f7, f10);
+    }
+
+    @Override // vh.a
+    public void m(Canvas canvas, int i10) {
+        ((ub) this.b).dispatchDrawImplBlur(canvas, i10);
+    }
+
+    @Override // org.telegram.ui.Components.od0
+    public void n(qd0 qd0Var, int i10) {
+        org.telegram.ui.Cells.t3 t3Var = (org.telegram.ui.Cells.t3) this.b;
+        try {
+            if (i10 == 0) {
+                t3Var.setText(LocaleController.getString(R.string.DisableAutoDeleteTimer));
+            } else {
+                t3Var.setText(LocaleController.getString(R.string.SetAutoDeleteTimer));
+            }
+        } catch (Exception unused) {
+        }
     }
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
@@ -306,41 +314,33 @@ public final /* synthetic */ class s implements org.telegram.ui.ActionBar.a2, yl
         chatAttachAlertPhotoLayout.j0(photoEntry, false, false);
     }
 
-    @Override // vh.a
-    public void p(Canvas canvas, int i10) {
-        ((ub) this.b).dispatchDrawImplBlur(canvas, i10);
+    @Override // ne.f
+    public /* synthetic */ boolean r() {
+        return false;
     }
 
-    @Override // org.telegram.ui.Components.md0
-    public void q(od0 od0Var, int i10) {
-        org.telegram.ui.Cells.t3 t3Var = (org.telegram.ui.Cells.t3) this.b;
-        try {
-            if (i10 == 0) {
-                t3Var.setText(LocaleController.getString(R.string.DisableAutoDeleteTimer));
-            } else {
-                t3Var.setText(LocaleController.getString(R.string.SetAutoDeleteTimer));
-            }
-        } catch (Exception unused) {
-        }
+    @Override // ne.f
+    public /* synthetic */ boolean u(float f7) {
+        return false;
     }
 
-    @Override // ci.w9
+    @Override // ne.f
+    public /* synthetic */ void a() {
+    }
+
+    @Override // ci.v9
     public /* synthetic */ void b(boolean z10) {
     }
 
     @Override // ne.f
-    public /* synthetic */ void c() {
+    public /* synthetic */ void k(boolean z10) {
     }
 
     @Override // ne.f
-    public /* synthetic */ void h(boolean z10) {
+    public /* synthetic */ void x() {
     }
 
-    @Override // ne.f
-    public /* synthetic */ void m() {
-    }
-
-    @Override // org.telegram.ui.Components.yl0
+    @Override // org.telegram.ui.Components.bm0
     public /* synthetic */ void a0(View view, float f7, float f10) {
     }
 }

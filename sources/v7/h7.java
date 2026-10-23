@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public abstract class h7 {
     public static String a(BufferedInputStream bufferedInputStream, ArrayList arrayList) {
@@ -84,7 +84,7 @@ public abstract class h7 {
             }
             throw new IOException("Invalid " + str2 + ": " + parseInt);
         } catch (NumberFormatException e) {
-            throw new IOException(com.google.android.gms.internal.play_billing.k3.k("Invalid ", str2, ": ", str), e);
+            throw new IOException(com.google.android.gms.internal.play_billing.k3.j("Invalid ", str2, ": ", str), e);
         }
     }
 
@@ -92,13 +92,13 @@ public abstract class h7 {
         BufferedInputStream bufferedInputStream = new BufferedInputStream(gZIPInputStream);
         String b10 = b(bufferedInputStream, arrayList);
         if (!"P5".equals(b10)) {
-            throw new IOException(r4.c.h("Not a binary PGM (P5), got: ", b10));
+            throw new IOException(si.o0.h("Not a binary PGM (P5), got: ", b10));
         }
         int c10 = c(a(bufferedInputStream, arrayList), "width");
         int c11 = c(a(bufferedInputStream, arrayList), "height");
         int c12 = c(a(bufferedInputStream, arrayList), "maxval");
         if (c12 != 255) {
-            throw new IOException(i2.e.j(c12, "Only 8-bit PGM supported (maxval=255), got: "));
+            throw new IOException(i2.o1.k(c12, "Only 8-bit PGM supported (maxval=255), got: "));
         }
         Bitmap createBitmap = Bitmap.createBitmap(c10, c11, Bitmap.Config.ALPHA_8);
         int rowBytes = createBitmap.getRowBytes();

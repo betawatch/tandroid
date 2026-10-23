@@ -14,11 +14,12 @@ import java.util.Date;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.r6;
 import w7.z5;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public class c extends FrameLayout {
     public final TextView a;
@@ -29,13 +30,13 @@ public class c extends FrameLayout {
     public boolean f;
     public final Drawable h;
     public final int n;
-    public final d6 r;
+    public final g6 r;
 
-    public c(Context context, d6 d6Var) {
+    public c(Context context, g6 g6Var) {
         super(context);
         this.e = true;
         new SimpleDateFormat("d MMM yyyy");
-        this.r = d6Var;
+        this.r = g6Var;
         TextPaint textPaint = new TextPaint();
         textPaint.setTextSize(14.0f);
         textPaint.setTypeface(AndroidUtilities.bold());
@@ -71,20 +72,21 @@ public class c extends FrameLayout {
         textView2.setCompoundDrawablesWithIntrinsicBounds(drawable, (Drawable) null, (Drawable) null, (Drawable) null);
         textView2.setCompoundDrawablePadding(AndroidUtilities.dp(4.0f));
         textView2.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(4.0f));
-        textView2.setBackground(h6.H0(AndroidUtilities.dp(3.0f), h6.w0(h6.Rh, d6Var)));
+        textView2.setBackground(k6.I0(AndroidUtilities.dp(3.0f), k6.w0(k6.Rh, g6Var)));
         textView4.addOnLayoutChangeListener(new y3(this, 1));
         a();
     }
 
     public final void a() {
-        int i10 = h6.j5;
-        d6 d6Var = this.r;
-        this.a.setTextColor(h6.w0(i10, d6Var));
-        this.b.setTextColor(h6.w0(i10, d6Var));
-        this.c.setTextColor(h6.w0(i10, d6Var));
-        int i11 = h6.fj;
-        this.d.setTextColor(h6.w0(i11, d6Var));
-        this.h.setColorFilter(h6.w0(i11, d6Var), PorterDuff.Mode.SRC_IN);
+        int i10 = k6.j5;
+        TextView textView = this.a;
+        g6 g6Var = this.r;
+        r6.W(textView, i10, g6Var);
+        r6.W(this.b, i10, g6Var);
+        r6.W(this.c, i10, g6Var);
+        int i11 = k6.fj;
+        r6.W(this.d, i11, g6Var);
+        r6.z(this, this.h, i11, g6Var, PorterDuff.Mode.SRC_IN);
     }
 
     public final void b(long j10, long j11) {

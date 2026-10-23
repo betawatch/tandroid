@@ -1,83 +1,126 @@
 package ig;
 
-import android.graphics.Rect;
+import android.content.Context;
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.ui.Components.dk;
-import org.telegram.ui.Components.jl;
-import org.telegram.ui.Components.jm0;
-import org.telegram.ui.Components.li;
-import org.telegram.ui.Components.mj;
-import org.telegram.ui.Components.rl;
-import org.telegram.ui.Components.sn;
-import org.telegram.ui.Components.yz;
+import android.view.ViewGroup;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.UserConfig;
+import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.mm0;
+import org.telegram.ui.Components.wl0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class e0 extends yz {
-    public final /* synthetic */ int U;
-    public final /* synthetic */ li V;
+public final class e0 extends im0 {
+    public final ArrayList r;
+    public final int s;
+    public final Context v;
+    public final /* synthetic */ h0 w;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ e0(li liVar, int i10, jm0 jm0Var, int i11) {
-        super(i10, 0, jm0Var);
-        this.U = i11;
-        this.V = liVar;
+    public e0(h0 h0Var, Context context) {
+        this.w = h0Var;
+        ArrayList arrayList = new ArrayList();
+        this.r = arrayList;
+        int i10 = UserConfig.selectedAccount;
+        this.s = i10;
+        this.v = context;
+        arrayList.addAll(z1.f(i10).e());
     }
 
-    @Override // s4.n0
-    public int[] t(View view, Rect rect) {
-        switch (this.U) {
-            case 4:
-                int C = this.n - C();
-                int top = (view.getTop() + rect.top) - view.getScrollY();
-                int height = rect.height() + top;
-                int min = Math.min(0, top);
-                int max = Math.max(0, height - C);
-                if (min == 0) {
-                    min = Math.min(top, max);
-                }
-                return new int[]{0, min};
-            default:
-                return super.t(view, rect);
+    @Override // org.telegram.ui.Components.ul0
+    public final String F(int i10) {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.ul0
+    public final void G(mm0 mm0Var, float f7, int[] iArr) {
+        iArr[0] = 0;
+        iArr[1] = 0;
+    }
+
+    @Override // org.telegram.ui.Components.im0
+    public final int M(int i10) {
+        if (i10 == 0 || i10 == 2) {
+            return 1;
+        }
+        return this.r.size();
+    }
+
+    @Override // org.telegram.ui.Components.im0
+    public final Object O(int i10, int i11) {
+        if (i10 != 0 && i11 >= 0) {
+            ArrayList arrayList = this.r;
+            if (i11 < arrayList.size()) {
+                return arrayList.get(i11);
+            }
+        }
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.im0
+    public final int P(int i10, int i11) {
+        if (i10 == 0) {
+            return 1;
+        }
+        return i10 == 2 ? 2 : 0;
+    }
+
+    @Override // org.telegram.ui.Components.im0
+    public final int R() {
+        return 3;
+    }
+
+    @Override // org.telegram.ui.Components.im0
+    public final View T(int i10, View view) {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.im0
+    public final boolean V(int i10, int i11, s4.b1 b1Var) {
+        return (i10 == 0 || i10 == 2 || i11 >= this.r.size()) ? false : true;
+    }
+
+    @Override // org.telegram.ui.Components.im0
+    public final void W(int i10, int i11, s4.b1 b1Var) {
+        if (b1Var.f == 0) {
+            v1 v1Var = (v1) b1Var.a;
+            Object O = O(i10, i11);
+            boolean z10 = true;
+            if (i10 == 1 && i11 == M(i10) - 1) {
+                z10 = false;
+            }
+            if (O instanceof y1) {
+                y1 y1Var = (y1) O;
+                v1Var.a(y1Var, null, z10);
+                v1Var.d.a(this.w.w.contains(Integer.valueOf(y1Var.a)), false);
+            }
         }
     }
 
-    @Override // s4.b0, s4.n0
-    public final void v0(RecyclerView recyclerView, s4.y0 y0Var, int i10) {
-        switch (this.U) {
-            case 0:
-                d0 d0Var = new d0(this, recyclerView.getContext());
-                d0Var.a = i10;
-                w0(d0Var);
-                break;
-            case 1:
-                mj mjVar = new mj(this, recyclerView.getContext());
-                mjVar.a = i10;
-                w0(mjVar);
-                break;
-            case 2:
-                dk dkVar = new dk(this, recyclerView.getContext());
-                dkVar.a = i10;
-                w0(dkVar);
-                break;
-            case 3:
-                jl jlVar = new jl(this, recyclerView.getContext());
-                jlVar.a = i10;
-                w0(jlVar);
-                break;
-            default:
-                sn snVar = new sn(this, recyclerView.getContext());
-                snVar.a = i10;
-                w0(snVar);
-                break;
-        }
+    @Override // org.telegram.ui.Components.im0, s4.g0
+    public final void l() {
+        ArrayList arrayList = this.r;
+        arrayList.clear();
+        arrayList.addAll(z1.f(this.s).e());
+        X(false);
+        this.w.O();
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e0(rl rlVar, ai.u1 u1Var) {
-        super(0, 0, u1Var);
-        this.U = 3;
-        this.V = rlVar;
+    @Override // s4.g0
+    public final s4.b1 x(ViewGroup viewGroup, int i10) {
+        View v1Var;
+        Context context = this.v;
+        if (i10 == 0) {
+            v1Var = new v1(context, this.w.a, false);
+        } else if (i10 != 1) {
+            v1Var = new View(context);
+            v1Var.setTag(-33024);
+        } else {
+            v1Var = new View(context);
+            v1Var.setLayoutParams(new s4.o0(-1, AndroidUtilities.dp(56.0f)));
+            v1Var.setTag(-33024);
+        }
+        return new wl0(v1Var);
     }
 }

@@ -5,7 +5,7 @@ import df.p;
 import java.util.regex.Pattern;
 import v7.f5;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class c extends h {
     public static final Pattern e = Pattern.compile("`+");
@@ -31,7 +31,7 @@ public final class c extends h {
         if (replace.length() >= 3 && replace.charAt(0) == ' ' && replace.charAt(replace.length() - 1) == ' ') {
             int length = replace.length();
             if (f5.b(' ', replace, 0, length) != length) {
-                replace = k3.j(1, 1, replace);
+                replace = k3.i(1, 1, replace);
             }
         }
         dVar.h = replace;

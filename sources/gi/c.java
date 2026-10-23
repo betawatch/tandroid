@@ -10,15 +10,15 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Cells.d9;
-import org.telegram.ui.Cells.z6;
+import org.telegram.ui.Cells.b7;
+import org.telegram.ui.Cells.e9;
+import org.telegram.ui.Components.b71;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.u61;
 import org.telegram.ui.Wallet.o5;
-import org.telegram.ui.Wallet.r9;
-import org.telegram.ui.i10;
+import org.telegram.ui.Wallet.s9;
+import org.telegram.ui.m10;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c implements Utilities.CallbackReturn {
     public final /* synthetic */ int a;
@@ -44,9 +44,9 @@ public final /* synthetic */ class c implements Utilities.CallbackReturn {
                 return LocaleController.formatPluralString("Minutes", ((Integer) obj).intValue(), new Object[0]);
             case 5:
                 View view = (View) obj;
-                return Boolean.valueOf(((view instanceof d9) || (view instanceof z6) || (view instanceof i10) || (view instanceof org.telegram.ui.Cells.u3) || (view instanceof org.telegram.ui.Cells.b2) || Objects.equals(view.getTag(), -33024)) ? false : true);
+                return Boolean.valueOf(((view instanceof e9) || (view instanceof b7) || (view instanceof m10) || (view instanceof org.telegram.ui.Cells.u3) || (view instanceof org.telegram.ui.Cells.a2) || Objects.equals(view.getTag(), -33024)) ? false : true);
             case 6:
-                return Boolean.valueOf(u61.K(((Integer) obj).intValue()));
+                return Boolean.valueOf(b71.K(((Integer) obj).intValue()));
             case 7:
                 TL_wallet.disableBackup disablebackup = new TL_wallet.disableBackup();
                 disablebackup.password = (TLRPC.InputCheckPasswordSRP) obj;
@@ -61,9 +61,9 @@ public final /* synthetic */ class c implements Utilities.CallbackReturn {
                 replacewallet.password = (TLRPC.InputCheckPasswordSRP) obj;
                 return replacewallet;
             case 10:
-                return Boolean.valueOf(o5.x0(o5.V0((String) obj)));
+                return Boolean.valueOf(o5.x0(o5.W0((String) obj)));
             case 11:
-                return Boolean.valueOf(r9.g0((String) obj) != null);
+                return Boolean.valueOf(s9.g0((String) obj) != null);
             case 12:
                 String str = (String) obj;
                 if (TextUtils.isEmpty(str) || (!str.startsWith("tg:") && !pf.d.e(Uri.parse(str), false, null))) {

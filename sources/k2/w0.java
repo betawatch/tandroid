@@ -27,6 +27,7 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 import ki.b3;
+import ki.e5;
 import ki.g1;
 import ki.g5;
 import ki.h1;
@@ -40,22 +41,22 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Cells.m9;
+import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Cells.n9;
-import org.telegram.ui.Components.c81;
-import org.telegram.ui.Components.e5;
-import org.telegram.ui.Components.e71;
+import org.telegram.ui.Cells.o9;
+import org.telegram.ui.Components.d5;
 import org.telegram.ui.Components.f60;
-import org.telegram.ui.Components.fr0;
-import org.telegram.ui.Components.m60;
+import org.telegram.ui.Components.g81;
+import org.telegram.ui.Components.ir0;
+import org.telegram.ui.Components.j81;
+import org.telegram.ui.Components.l71;
+import org.telegram.ui.Components.n60;
 import org.telegram.ui.Components.ti;
-import org.telegram.ui.Components.z71;
 import v7.i8;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public final class w0 implements x, ki.j0, g1, l.w, l.i, k1.f, e5, bh.h, z71, oe.a, com.google.android.gms.common.api.internal.r, n5.b, v0.i {
+public final class w0 implements y, ki.j0, g1, l.w, l.i, k1.f, d5, bh.h, g81, oe.a, com.google.android.gms.common.api.internal.r, n5.b, v0.i {
     public final /* synthetic */ int a;
     public Object b;
 
@@ -64,7 +65,19 @@ public final class w0 implements x, ki.j0, g1, l.w, l.i, k1.f, e5, bh.h, z71, oe
         this.b = obj;
     }
 
-    @Override // k2.x
+    @Override // ki.j0
+    public void A(CharSequence charSequence) {
+        r3 r3Var = ((ki.z0) this.b).S;
+        if (r3Var != null) {
+            r3Var.getClass();
+            if (charSequence == null || charSequence.length() <= 0) {
+                return;
+            }
+            r3Var.a.z4(charSequence.toString());
+        }
+    }
+
+    @Override // k2.y
     public void B() {
         x2.n nVar;
         x0 x0Var = (x0) this.b;
@@ -76,15 +89,15 @@ public final class w0 implements x, ki.j0, g1, l.w, l.i, k1.f, e5, bh.h, z71, oe
         }
     }
 
-    @Override // org.telegram.ui.Components.e5
+    @Override // org.telegram.ui.Components.d5
     public void C(int i10, int i11, boolean z10) {
         org.telegram.ui.Components.e0 e0Var = (org.telegram.ui.Components.e0) this.b;
-        e0Var.m0(i10, i11, z10);
+        e0Var.l0(i10, i11, z10);
         e0Var.dismiss();
     }
 
     @Override // ki.j0
-    public m9 D() {
+    public n9 D() {
         return (ki.z0) this.b;
     }
 
@@ -95,7 +108,7 @@ public final class w0 implements x, ki.j0, g1, l.w, l.i, k1.f, e5, bh.h, z71, oe
 
     @Override // ki.g1
     public void G(Editable editable) {
-        ((g5) this.b).h();
+        ((g5) this.b).g();
     }
 
     @Override // ki.j0
@@ -106,16 +119,16 @@ public final class w0 implements x, ki.j0, g1, l.w, l.i, k1.f, e5, bh.h, z71, oe
             return false;
         }
         ki.a aVar = z0Var.a;
-        return r3Var.a.T4();
+        return r3Var.a.Y4();
     }
 
-    @Override // k2.x
+    @Override // k2.y
     public void I(Exception exc) {
         e2.a.d("MediaCodecAudioRenderer", "Audio sink error", exc);
         qf.b bVar = ((x0) this.b).a1;
         Handler handler = (Handler) bVar.b;
         if (handler != null) {
-            handler.post(new q(bVar, exc, 1));
+            handler.post(new r(bVar, exc, 1));
         }
     }
 
@@ -123,11 +136,11 @@ public final class w0 implements x, ki.j0, g1, l.w, l.i, k1.f, e5, bh.h, z71, oe
     public void J(bh.a aVar) {
         switch (this.a) {
             case 11:
-                aVar.a(((ti) this.b).getThemedColor(h6.d6));
+                aVar.a(((ti) this.b).getThemedColor(k6.d6));
                 aVar.b(SharedConfig.chatBlurEnabled());
                 break;
             default:
-                aVar.a(((fr0) this.b).getThemedColor(h6.d6));
+                aVar.a(((ir0) this.b).getThemedColor(k6.d6));
                 aVar.b(SharedConfig.chatBlurEnabled());
                 break;
         }
@@ -139,14 +152,14 @@ public final class w0 implements x, ki.j0, g1, l.w, l.i, k1.f, e5, bh.h, z71, oe
         r3 r3Var = z0Var.S;
         if (r3Var != null) {
             ki.a aVar = z0Var.a;
-            h2 h2Var = r3Var.a.H3;
+            h2 h2Var = r3Var.a.K3;
             if (h2Var != null) {
                 h2Var.f(i10, i11);
             }
         }
     }
 
-    @Override // k2.x
+    @Override // k2.y
     public void L() {
         ((x0) this.b).j1 = true;
     }
@@ -163,11 +176,11 @@ public final class w0 implements x, ki.j0, g1, l.w, l.i, k1.f, e5, bh.h, z71, oe
         if (r3Var != null) {
             ki.a aVar = z0Var.a;
             w3 w3Var = r3Var.a;
-            h2 h2Var = w3Var.H3;
+            h2 h2Var = w3Var.K3;
             if (h2Var != null) {
                 h2Var.g();
             }
-            w3Var.f3.onContentChanged();
+            w3Var.i3.onContentChanged();
         }
     }
 
@@ -176,19 +189,19 @@ public final class w0 implements x, ki.j0, g1, l.w, l.i, k1.f, e5, bh.h, z71, oe
         return false;
     }
 
-    @Override // k2.x
+    @Override // k2.y
     public void Q(u0 u0Var) {
         qf.b bVar = ((x0) this.b).a1;
         Handler handler = (Handler) bVar.b;
         if (handler != null) {
-            handler.post(new t(bVar, u0Var, 1));
+            handler.post(new u(bVar, u0Var, 1));
         }
     }
 
     @Override // ki.g1
     public void R(h1 h1Var, int i10, int i11) {
-        ki.e5 e5Var;
-        n9 textSelectionHelper;
+        e5 e5Var;
+        o9 textSelectionHelper;
         g5 g5Var = (g5) this.b;
         if (g5Var.w || i10 == i11 || (e5Var = g5Var.s) == null || (textSelectionHelper = ((b3) e5Var).a.getTextSelectionHelper()) == null) {
             return;
@@ -196,20 +209,20 @@ public final class w0 implements x, ki.j0, g1, l.w, l.i, k1.f, e5, bh.h, z71, oe
         h1Var.post(new m4(this, h1Var, i11, textSelectionHelper, i10, 3));
     }
 
-    @Override // k2.x
+    @Override // k2.y
     public void T(u0 u0Var) {
         qf.b bVar = ((x0) this.b).a1;
         Handler handler = (Handler) bVar.b;
         if (handler != null) {
-            handler.post(new t(bVar, u0Var, 0));
+            handler.post(new u(bVar, u0Var, 0));
         }
     }
 
-    @Override // k2.x
+    @Override // k2.y
     public void U() {
-        i2.l0 l0Var = ((x0) this.b).Y;
-        if (l0Var != null) {
-            l0Var.a();
+        i2.k0 k0Var = ((x0) this.b).Y;
+        if (k0Var != null) {
+            k0Var.a();
         }
     }
 
@@ -219,11 +232,11 @@ public final class w0 implements x, ki.j0, g1, l.w, l.i, k1.f, e5, bh.h, z71, oe
         r3 r3Var = z0Var.S;
         if (r3Var != null) {
             ki.a aVar = z0Var.a;
-            w3.P1(r3Var.a);
+            w3.U1(r3Var.a);
         }
     }
 
-    @Override // k2.x
+    @Override // k2.y
     public void a(long j10) {
         x0 x0Var = (x0) this.b;
         x0Var.m1 = true;
@@ -280,26 +293,9 @@ public final class w0 implements x, ki.j0, g1, l.w, l.i, k1.f, e5, bh.h, z71, oe
         }
     }
 
-    @Override // bh.h
-    public void b(Canvas canvas) {
-        switch (this.a) {
-            case 11:
-                ti tiVar = (ti) this.b;
-                canvas.drawColor(tiVar.getThemedColor(h6.d6));
-                if (SharedConfig.chatBlurEnabled()) {
-                    tiVar.F2.b(canvas, -3);
-                    break;
-                }
-                break;
-            default:
-                fr0 fr0Var = (fr0) this.b;
-                canvas.drawColor(fr0Var.getThemedColor(h6.d6));
-                if (SharedConfig.chatBlurEnabled()) {
-                    fr0Var.P0.b(canvas, -2);
-                    break;
-                }
-                break;
-        }
+    @Override // k1.f
+    public Object b(td.p pVar, md.c cVar) {
+        return ((k1.z) this.b).b(new n1.c(pVar, null, 0), cVar);
     }
 
     @Override // ki.j0
@@ -309,17 +305,17 @@ public final class w0 implements x, ki.j0, g1, l.w, l.i, k1.f, e5, bh.h, z71, oe
                 r3 r3Var = ((ki.z0) this.b).S;
                 if (r3Var != null) {
                     w3 w3Var = r3Var.a;
-                    w3.N1(w3Var, h1Var);
-                    w3Var.f3.o(h1Var, true);
+                    w3.S1(w3Var, h1Var);
+                    w3Var.i3.o(h1Var, true);
                     break;
                 }
                 break;
             default:
-                ki.e5 e5Var = ((g5) this.b).s;
+                e5 e5Var = ((g5) this.b).s;
                 if (e5Var != null) {
                     w3 w3Var2 = ((b3) e5Var).a;
-                    w3.N1(w3Var2, h1Var);
-                    w3Var2.f3.o(h1Var, true);
+                    w3.S1(w3Var2, h1Var);
+                    w3Var2.i3.o(h1Var, true);
                     break;
                 }
                 break;
@@ -352,7 +348,7 @@ public final class w0 implements x, ki.j0, g1, l.w, l.i, k1.f, e5, bh.h, z71, oe
         ki.z0 z0Var = (ki.z0) this.b;
         r3 r3Var = z0Var.S;
         if (r3Var != null) {
-            w3.Q1(r3Var.a, z0Var.a);
+            w3.V1(r3Var.a, z0Var.a);
         }
     }
 
@@ -371,12 +367,7 @@ public final class w0 implements x, ki.j0, g1, l.w, l.i, k1.f, e5, bh.h, z71, oe
         return ViewConfiguration.getLongPressTimeout();
     }
 
-    @Override // k1.f
-    public Object h(td.p pVar, md.c cVar) {
-        return ((k1.z) this.b).h(new n1.c(pVar, null, 0), cVar);
-    }
-
-    public void i(p4.p pVar, p4.m mVar, Collection collection) {
+    public void h(p4.p pVar, p4.m mVar, Collection collection) {
         p4.e eVar = (p4.e) this.b;
         if (pVar != eVar.y || mVar == null) {
             if (pVar == eVar.e) {
@@ -400,12 +391,24 @@ public final class w0 implements x, ki.j0, g1, l.w, l.i, k1.f, e5, bh.h, z71, oe
         eVar.y = null;
     }
 
+    @Override // l.i
+    public void i(l.k kVar) {
+        Toolbar toolbar = (Toolbar) this.b;
+        m.i iVar = toolbar.a.J;
+        if (iVar == null || !iVar.g()) {
+            Iterator it = ((CopyOnWriteArrayList) toolbar.W.c).iterator();
+            while (it.hasNext()) {
+                ((androidx.fragment.app.b0) it.next()).a.t();
+            }
+        }
+    }
+
     @Override // oe.a
     public /* synthetic */ boolean ignoreHapticFeedbackSettings(float f7, float f10) {
         return false;
     }
 
-    @Override // k2.x
+    @Override // k2.y
     public void j() {
         ((x0) this.b).l1 = true;
     }
@@ -414,12 +417,12 @@ public final class w0 implements x, ki.j0, g1, l.w, l.i, k1.f, e5, bh.h, z71, oe
     public void k(h1 h1Var) {
         ki.a aVar;
         g5 g5Var = (g5) this.b;
-        ki.e5 e5Var = g5Var.s;
+        e5 e5Var = g5Var.s;
         if (e5Var == null || (aVar = g5Var.a) == null) {
             return;
         }
         w3 w3Var = ((b3) e5Var).a;
-        ArrayList arrayList = w3Var.j3;
+        ArrayList arrayList = w3Var.m3;
         long j10 = aVar.t;
         if (j10 == 0) {
             return;
@@ -433,7 +436,7 @@ public final class w0 implements x, ki.j0, g1, l.w, l.i, k1.f, e5, bh.h, z71, oe
         if (i10 < 0) {
             return;
         }
-        h2 h2Var = w3Var.H3;
+        h2 h2Var = w3Var.K3;
         if (h2Var != null) {
             h2Var.d();
         }
@@ -445,41 +448,29 @@ public final class w0 implements x, ki.j0, g1, l.w, l.i, k1.f, e5, bh.h, z71, oe
             a1.g.y(1, arrayList3);
         }
         arrayList.add(i10 + 1, aVar2);
-        w3Var.t4();
-        w3Var.W2.N(false);
-        h2 h2Var2 = w3Var.H3;
+        w3Var.y4();
+        w3Var.Z2.N(false);
+        h2 h2Var2 = w3Var.K3;
         if (h2Var2 != null) {
             h2Var2.h();
         }
         w3Var.post(new o2(w3Var, aVar2, 26));
     }
 
-    @Override // k2.x
+    @Override // k2.y
     public void l() {
-        i2.l0 l0Var = ((x0) this.b).Y;
-        if (l0Var != null) {
-            l0Var.a.i0 = true;
+        i2.k0 k0Var = ((x0) this.b).Y;
+        if (k0Var != null) {
+            k0Var.a.i0 = true;
         }
     }
 
-    public byte m() {
+    public byte n() {
         int read = ((com.google.firebase.messaging.d) this.b).read();
         if (read >= 0) {
             return (byte) read;
         }
         throw new EOFException();
-    }
-
-    @Override // l.i
-    public void n(l.k kVar) {
-        Toolbar toolbar = (Toolbar) this.b;
-        m.i iVar = toolbar.a.J;
-        if (iVar == null || !iVar.g()) {
-            Iterator it = ((CopyOnWriteArrayList) toolbar.W.c).iterator();
-            while (it.hasNext()) {
-                ((androidx.fragment.app.b0) it.next()).a.t();
-            }
-        }
     }
 
     @Override // oe.a
@@ -490,12 +481,12 @@ public final class w0 implements x, ki.j0, g1, l.w, l.i, k1.f, e5, bh.h, z71, oe
     @Override // oe.a
     public boolean needClickAt(View view, float f7, float f10) {
         int dp = AndroidUtilities.dp(9.0f);
-        e71 e71Var = (e71) this.b;
+        l71 l71Var = (l71) this.b;
         float f11 = -dp;
-        e71Var.g.inset(f11, f11);
-        boolean contains = e71Var.g.contains(f7, f10);
+        l71Var.g.inset(f11, f11);
+        boolean contains = l71Var.g.contains(f7, f10);
         float f12 = dp;
-        e71Var.g.inset(f12, f12);
+        l71Var.g.inset(f12, f12);
         return contains;
     }
 
@@ -504,7 +495,22 @@ public final class w0 implements x, ki.j0, g1, l.w, l.i, k1.f, e5, bh.h, z71, oe
         return false;
     }
 
-    @Override // k2.x
+    @Override // l.w
+    public boolean o(l.k kVar) {
+        m.i iVar = (m.i) this.b;
+        if (kVar == iVar.c) {
+            return false;
+        }
+        ((l.d0) kVar).A.getClass();
+        iVar.getClass();
+        l.w wVar = iVar.e;
+        if (wVar != null) {
+            return wVar.o(kVar);
+        }
+        return false;
+    }
+
+    @Override // k2.y
     public void onAudioSessionIdChanged(int i10) {
         r2.j jVar;
         x0 x0Var = (x0) this.b;
@@ -520,7 +526,7 @@ public final class w0 implements x, ki.j0, g1, l.w, l.i, k1.f, e5, bh.h, z71, oe
 
     @Override // oe.a
     public void onClickAt(View view, float f7, float f10) {
-        Runnable runnable = ((e71) this.b).j;
+        Runnable runnable = ((l71) this.b).j;
         if (runnable != null) {
             runnable.run();
         }
@@ -528,12 +534,12 @@ public final class w0 implements x, ki.j0, g1, l.w, l.i, k1.f, e5, bh.h, z71, oe
 
     @Override // oe.a
     public void onClickTouchDown(View view, float f7, float f10) {
-        ((e71) this.b).h.c(true);
+        ((l71) this.b).h.c(true);
     }
 
     @Override // oe.a
     public void onClickTouchUp(View view, float f7, float f10) {
-        ((e71) this.b).h.c(false);
+        ((l71) this.b).h.c(false);
     }
 
     @Override // v0.i
@@ -551,7 +557,7 @@ public final class w0 implements x, ki.j0, g1, l.w, l.i, k1.f, e5, bh.h, z71, oe
         return false;
     }
 
-    @Override // org.telegram.ui.Components.z71
+    @Override // org.telegram.ui.Components.g81
     public /* synthetic */ void onRenderedFirstFrame(j2.a aVar) {
     }
 
@@ -565,7 +571,7 @@ public final class w0 implements x, ki.j0, g1, l.w, l.i, k1.f, e5, bh.h, z71, oe
         }
     }
 
-    @Override // k2.x
+    @Override // k2.y
     public void onSkipSilenceEnabledChanged(boolean z10) {
         qf.b bVar = ((x0) this.b).a1;
         Handler handler = (Handler) bVar.b;
@@ -574,50 +580,39 @@ public final class w0 implements x, ki.j0, g1, l.w, l.i, k1.f, e5, bh.h, z71, oe
         }
     }
 
-    @Override // org.telegram.ui.Components.z71
+    @Override // org.telegram.ui.Components.g81
     public void onStateChanged(boolean z10, int i10) {
-        m60 m60Var;
+        n60 n60Var;
         VideoEditedInfo videoEditedInfo;
         f60 f60Var = (f60) this.b;
-        c81 c81Var = f60Var.H0.T;
-        if (c81Var != null && c81Var.y() && i10 == 4 && (videoEditedInfo = (m60Var = f60Var.H0).S) != null) {
-            c81 c81Var2 = m60Var.T;
+        j81 j81Var = f60Var.H0.T;
+        if (j81Var != null && j81Var.y() && i10 == 4 && (videoEditedInfo = (n60Var = f60Var.H0).S) != null) {
+            j81 j81Var2 = n60Var.T;
             long j10 = videoEditedInfo.startTime;
             if (j10 <= 0) {
                 j10 = 0;
             }
-            c81Var2.K(j10);
+            j81Var2.K(j10);
         }
     }
 
-    @Override // org.telegram.ui.Components.z71
+    @Override // org.telegram.ui.Components.g81
     public /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
         return false;
     }
 
-    public int p() {
-        return ((m() & 255) << 24) | ((m() & 255) << 16) | ((m() & 255) << 8) | (m() & 255);
-    }
-
     @Override // l.i
-    public boolean q(l.k kVar, MenuItem menuItem) {
+    public boolean p(l.k kVar, MenuItem menuItem) {
         ((Toolbar) this.b).getClass();
         return false;
     }
 
-    @Override // l.w
-    public boolean r(l.k kVar) {
-        m.i iVar = (m.i) this.b;
-        if (kVar == iVar.c) {
-            return false;
-        }
-        ((l.d0) kVar).A.getClass();
-        iVar.getClass();
-        l.w wVar = iVar.e;
-        if (wVar != null) {
-            return wVar.r(kVar);
-        }
-        return false;
+    public int q() {
+        return ((n() & 255) << 24) | ((n() & 255) << 16) | ((n() & 255) << 8) | (n() & 255);
+    }
+
+    public int r() {
+        return ((n() & Byte.MAX_VALUE) << 21) | ((n() & Byte.MAX_VALUE) << 14) | ((n() & Byte.MAX_VALUE) << 7) | (n() & Byte.MAX_VALUE);
     }
 
     @Override // ki.g1
@@ -625,20 +620,16 @@ public final class w0 implements x, ki.j0, g1, l.w, l.i, k1.f, e5, bh.h, z71, oe
         return false;
     }
 
-    @Override // k2.x
+    @Override // k2.y
     public void t(int i10, long j10, long j11) {
         qf.b bVar = ((x0) this.b).a1;
         Handler handler = (Handler) bVar.b;
         if (handler != null) {
-            handler.post(new s(bVar, i10, j10, j11, 0));
+            handler.post(new t(bVar, i10, j10, j11, 0));
         }
     }
 
-    public int u() {
-        return ((m() & Byte.MAX_VALUE) << 21) | ((m() & Byte.MAX_VALUE) << 14) | ((m() & Byte.MAX_VALUE) << 7) | (m() & Byte.MAX_VALUE);
-    }
-
-    public void v(long j10) {
+    public void u(long j10) {
         long j11 = 0;
         while (j11 < j10) {
             long skip = ((com.google.firebase.messaging.d) this.b).skip(j10 - j11);
@@ -650,7 +641,7 @@ public final class w0 implements x, ki.j0, g1, l.w, l.i, k1.f, e5, bh.h, z71, oe
     }
 
     @Override // ki.j0
-    public n9 w() {
+    public o9 w() {
         r3 r3Var = ((ki.z0) this.b).S;
         if (r3Var == null) {
             return null;
@@ -658,15 +649,25 @@ public final class w0 implements x, ki.j0, g1, l.w, l.i, k1.f, e5, bh.h, z71, oe
         return r3Var.a.getTextSelectionHelper();
     }
 
-    @Override // ki.j0
-    public void z(CharSequence charSequence) {
-        r3 r3Var = ((ki.z0) this.b).S;
-        if (r3Var != null) {
-            r3Var.getClass();
-            if (charSequence == null || charSequence.length() <= 0) {
-                return;
-            }
-            r3Var.a.u4(charSequence.toString());
+    @Override // bh.h
+    public void z(Canvas canvas) {
+        switch (this.a) {
+            case 11:
+                ti tiVar = (ti) this.b;
+                canvas.drawColor(tiVar.getThemedColor(k6.d6));
+                if (SharedConfig.chatBlurEnabled()) {
+                    tiVar.I2.b(canvas, -3);
+                    break;
+                }
+                break;
+            default:
+                ir0 ir0Var = (ir0) this.b;
+                canvas.drawColor(ir0Var.getThemedColor(k6.d6));
+                if (SharedConfig.chatBlurEnabled()) {
+                    ir0Var.P0.b(canvas, -2);
+                    break;
+                }
+                break;
         }
     }
 
@@ -681,7 +682,7 @@ public final class w0 implements x, ki.j0, g1, l.w, l.i, k1.f, e5, bh.h, z71, oe
         }
     }
 
-    @Override // org.telegram.ui.Components.z71
+    @Override // org.telegram.ui.Components.g81
     public void onRenderedFirstFrame() {
     }
 
@@ -690,8 +691,8 @@ public final class w0 implements x, ki.j0, g1, l.w, l.i, k1.f, e5, bh.h, z71, oe
         this.b = new q1.g(textView);
     }
 
-    @Override // org.telegram.ui.Components.z71
-    public void onError(c81 c81Var, Exception exc) {
+    @Override // org.telegram.ui.Components.g81
+    public void onError(j81 j81Var, Exception exc) {
         FileLog.e(exc);
     }
 
@@ -701,18 +702,18 @@ public final class w0 implements x, ki.j0, g1, l.w, l.i, k1.f, e5, bh.h, z71, oe
     }
 
     @Override // ki.g1
-    public /* synthetic */ void o() {
+    public /* synthetic */ void m() {
     }
 
-    @Override // org.telegram.ui.Components.z71
+    @Override // org.telegram.ui.Components.g81
     public /* synthetic */ void onSeekFinished(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.z71
+    @Override // org.telegram.ui.Components.g81
     public /* synthetic */ void onSeekStarted(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.z71
+    @Override // org.telegram.ui.Components.g81
     public /* synthetic */ void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
     }
 
@@ -736,7 +737,7 @@ public final class w0 implements x, ki.j0, g1, l.w, l.i, k1.f, e5, bh.h, z71, oe
     public /* synthetic */ void onLongPressFinish(View view, float f7, float f10) {
     }
 
-    @Override // org.telegram.ui.Components.z71
+    @Override // org.telegram.ui.Components.g81
     public void onVideoSizeChanged(int i10, int i11, int i12, float f7) {
     }
 

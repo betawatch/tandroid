@@ -1,49 +1,68 @@
 package org.telegram.ui.Components;
 
-import android.net.Uri;
-import java.util.Map;
-import org.telegram.messenger.secretmedia.ExtendedDefaultDataSource;
+import android.view.TextureView;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class x71 implements g2.h {
-    public final g2.h a;
-    public final long b;
+public final /* synthetic */ class x71 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public x71(ExtendedDefaultDataSource extendedDefaultDataSource, long j10) {
-        this.a = extendedDefaultDataSource;
-        this.b = j10;
+    public /* synthetic */ x71(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // g2.h
-    public final void addTransferListener(g2.c0 c0Var) {
-        this.a.addTransferListener(c0Var);
-    }
-
-    @Override // g2.h
-    public final void close() {
-        this.a.close();
-    }
-
-    @Override // g2.h
-    public final Map getResponseHeaders() {
-        return this.a.getResponseHeaders();
-    }
-
-    @Override // g2.h
-    public final Uri getUri() {
-        return this.a.getUri();
-    }
-
-    @Override // g2.h
-    public final long open(g2.m mVar) {
-        g2.l a2 = mVar.a();
-        a2.b = mVar.e + this.b;
-        return this.a.open(a2.d());
-    }
-
-    @Override // b2.o
-    public final int read(byte[] bArr, int i10, int i11) {
-        return this.a.read(bArr, i10, i11);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                e00 e00Var = ((z71) this.b).b;
+                if (e00Var != null) {
+                    e00Var.d(false, true, false);
+                    break;
+                }
+                break;
+            case 1:
+                j81 j81Var = (j81) this.b;
+                i2.h0 h0Var = j81Var.d;
+                if (h0Var != null) {
+                    TextureView textureView = j81Var.n;
+                    h0Var.F1();
+                    if (textureView != null && textureView == h0Var.X) {
+                        h0Var.F1();
+                        h0Var.s1();
+                        h0Var.x1(null);
+                        h0Var.q1(0, 0);
+                    }
+                    j81Var.d.z1(j81Var.n);
+                    ArrayList arrayList = j81Var.N;
+                    if (arrayList != null) {
+                        j81Var.F(arrayList, j81Var.O);
+                    } else if (j81Var.U) {
+                        j81Var.G(j81Var.Q, j81Var.S, j81Var.R, j81Var.T);
+                    } else {
+                        j81Var.D(j81Var.Q, j81Var.S);
+                    }
+                    j81Var.C();
+                    break;
+                }
+                break;
+            case 2:
+                j81 j81Var2 = ((i81) this.b).f;
+                j81Var2.a0.removeCallbacksAndMessages(null);
+                j81Var2.K.onVisualizerUpdate(false, true, null);
+                break;
+            case 3:
+                ((l81) this.b).g = false;
+                break;
+            case 4:
+                ((da1) ((t50) ((org.telegram.ui.Cells.da) this.b).b).b).v.b();
+                break;
+            default:
+                ((z91) this.b).d(false, true);
+                break;
+        }
     }
 }

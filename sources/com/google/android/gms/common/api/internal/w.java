@@ -20,7 +20,7 @@ import java.util.concurrent.locks.ReentrantLock;
 import m.s3;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class w implements w0 {
     public final Context a;
@@ -45,7 +45,7 @@ public final class w implements w0 {
         this.c = looper;
         this.j = cVar;
         this.d = new l0(context, i0Var, reentrantLock, looper, eVar, fVar2, null, fVar4, null, arrayList2, new qb.c(this, 14));
-        this.e = new l0(context, i0Var, reentrantLock, looper, eVar, fVar, s3Var, fVar3, dVar, arrayList, new ya.d(this, 11));
+        this.e = new l0(context, i0Var, reentrantLock, looper, eVar, fVar, s3Var, fVar3, dVar, arrayList, new ya.c(this, 11));
         a0.f fVar5 = new a0.f(0);
         Iterator it = ((a0.c) fVar2.keySet()).iterator();
         while (it.hasNext()) {

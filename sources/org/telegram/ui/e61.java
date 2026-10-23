@@ -1,23 +1,79 @@
 package org.telegram.ui;
 
-import androidx.recyclerview.widget.RecyclerView;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class e61 extends s4.r0 {
-    public final /* synthetic */ h61 a;
+public final class e61 implements TextWatcher {
+    public final my0 a = new my0(this, 18);
+    public final /* synthetic */ l61 b;
 
-    public e61(h61 h61Var) {
-        this.a = h61Var;
+    public e61(l61 l61Var) {
+        this.b = l61Var;
     }
 
-    @Override // s4.r0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        h61 h61Var = this.a;
-        if (h61Var.d.I1) {
-            AndroidUtilities.hideKeyboard(h61Var.c0);
+    public final void a() {
+        boolean z10;
+        boolean z11;
+        TLRPC.TL_channelParticipantsSearch tL_channelParticipantsSearch = new TLRPC.TL_channelParticipantsSearch();
+        l61 l61Var = this.b;
+        String obj = l61Var.c0.getText().toString();
+        tL_channelParticipantsSearch.q = obj;
+        k61 k61Var = l61Var.g0;
+        TLRPC.ChannelParticipantsFilter channelParticipantsFilter = k61Var.c;
+        if (channelParticipantsFilter instanceof TLRPC.TL_channelParticipantsSearch) {
+            z10 = !TextUtils.equals(channelParticipantsFilter.q, obj);
+            z11 = false;
+        } else {
+            z10 = true;
+            z11 = true;
         }
-        h61.T(h61Var);
+        k61Var.c = tL_channelParticipantsSearch;
+        if (z10) {
+            if (z11) {
+                k61Var.r = false;
+                if (k61Var.n >= 0) {
+                    ConnectionsManager.getInstance(k61Var.a).cancelRequest(k61Var.n, true);
+                    k61Var.n = -1;
+                }
+                k61Var.f = false;
+                k61Var.d.clear();
+                k61Var.h = false;
+            } else {
+                k61Var.r = true;
+                k61Var.h = false;
+            }
+            k61Var.b();
+        }
+        org.telegram.ui.Components.b71 b71Var = l61Var.i0;
+        if (b71Var != null) {
+            b71Var.N(true);
+        }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        int length = editable.length();
+        my0 my0Var = this.a;
+        if (length <= 0) {
+            AndroidUtilities.cancelRunOnUIThread(my0Var);
+            a();
+        } else {
+            AndroidUtilities.cancelRunOnUIThread(my0Var);
+            AndroidUtilities.runOnUIThread(my0Var, 300L);
+        }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

@@ -23,10 +23,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import v7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class u implements r {
-    public static final v0 d = new v0(14);
+    public static final v0 d = new v0(18);
     public final UUID a;
     public final MediaDrm b;
     public int c;
@@ -94,6 +94,16 @@ public final class u implements r {
     }
 
     @Override // n2.r
+    public final h2.b C(byte[] bArr) {
+        int i10 = Build.VERSION.SDK_INT;
+        UUID uuid = this.a;
+        if (i10 < 27 && Objects.equals(uuid, b2.m.d)) {
+            uuid = b2.m.c;
+        }
+        return new s(uuid, bArr);
+    }
+
+    @Override // n2.r
     public final byte[] H() {
         return this.b.openSession();
     }
@@ -143,10 +153,10 @@ public final class u implements r {
     }
 
     @Override // n2.r
-    public final void h(byte[] bArr, j2.k kVar) {
+    public final void h(byte[] bArr, j2.j jVar) {
         if (Build.VERSION.SDK_INT >= 31) {
             try {
-                e0.f(this.b, bArr, kVar);
+                e0.f(this.b, bArr, jVar);
             } catch (UnsupportedOperationException unused) {
                 e2.a.l("FrameworkMediaDrm", "setLogSessionId failed.");
             }
@@ -331,16 +341,6 @@ public final class u implements r {
     public final q o() {
         MediaDrm.ProvisionRequest provisionRequest = this.b.getProvisionRequest();
         return new q(provisionRequest.getDefaultUrl(), provisionRequest.getData());
-    }
-
-    @Override // n2.r
-    public final h2.b r(byte[] bArr) {
-        int i10 = Build.VERSION.SDK_INT;
-        UUID uuid = this.a;
-        if (i10 < 27 && Objects.equals(uuid, b2.m.d)) {
-            uuid = b2.m.c;
-        }
-        return new s(uuid, bArr);
     }
 
     @Override // n2.r

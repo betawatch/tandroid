@@ -14,14 +14,14 @@ import java.util.List;
 import java.util.TreeSet;
 import v7.c9;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public abstract class a1 {
     public static final x1 a = e9.n0.y(12);
 
     public static e9.n0 a(AudioDeviceInfo audioDeviceInfo) {
         List<AudioProfile> audioProfiles = audioDeviceInfo.getAudioProfiles();
-        TreeSet treeSet = new TreeSet(Comparator$-EL.reversed(Comparator$-CC.comparing(new f(0))));
+        TreeSet treeSet = new TreeSet(Comparator$-EL.reversed(Comparator$-CC.comparing(new g(0))));
         for (AudioProfile audioProfile : audioProfiles) {
             if (audioProfile.getEncapsulationType() != 1 && e2.m0.M(audioProfile.getFormat())) {
                 for (int i10 : audioProfile.getChannelMasks()) {
@@ -67,7 +67,7 @@ public abstract class a1 {
                                 ArrayList arrayList = new ArrayList();
                                 Iterator<AudioDescriptor> it = audioDescriptors.iterator();
                                 while (it.hasNext()) {
-                                    AudioDescriptor b10 = j2.e.b(it.next());
+                                    AudioDescriptor b10 = f.b(it.next());
                                     if (b10.getStandard() == 2) {
                                         byte[] descriptor = b10.getDescriptor();
                                         if (descriptor.length != 3) {

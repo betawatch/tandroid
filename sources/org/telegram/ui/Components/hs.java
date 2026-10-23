@@ -6,14 +6,14 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public abstract class hs {
     public final org.telegram.ui.ActionBar.m1 a;
     public boolean b;
 
-    public hs(Context context, org.telegram.ui.ActionBar.d6 d6Var, boolean z10) {
-        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(R.drawable.popup_fixed_alert2, z10 ? 1 : 0, context, d6Var);
+    public hs(Context context, org.telegram.ui.ActionBar.g6 g6Var, boolean z10) {
+        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(R.drawable.popup_fixed_alert2, z10 ? 1 : 0, context, g6Var);
         actionBarPopupWindow$ActionBarPopupWindowLayout.setAnimationEnabled(false);
         actionBarPopupWindow$ActionBarPopupWindowLayout.setOnTouchListener(new rk(this, 1));
         actionBarPopupWindow$ActionBarPopupWindowLayout.setDispatchKeyEventListener(new s(this, 27));
@@ -44,7 +44,7 @@ public abstract class hs {
     public final void a() {
         org.telegram.ui.ActionBar.m1 m1Var = this.a;
         if (m1Var != null) {
-            m1Var.d(true);
+            m1Var.dismiss();
         }
     }
 

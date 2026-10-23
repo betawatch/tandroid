@@ -1,32 +1,56 @@
 package org.telegram.ui.Components;
 
-import android.net.Uri;
+import android.graphics.Typeface;
 import android.text.TextPaint;
-import android.text.style.URLSpan;
-import android.view.View;
+import android.text.style.MetricAffectingSpan;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class j61 extends URLSpan {
-    public final n11 a;
+public final class j61 extends MetricAffectingSpan {
+    public Typeface a;
+    public int b;
+    public int c;
 
-    public j61(String str, n11 n11Var) {
-        super(str != null ? str.replace((char) 8238, ' ') : str);
-        this.a = n11Var;
+    public j61(Typeface typeface) {
+        this.c = -1;
+        this.a = typeface;
     }
 
-    @Override // android.text.style.URLSpan, android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        pf.d.o(view.getContext(), Uri.parse(getURL()), true, true);
-    }
-
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    @Override // android.text.style.CharacterStyle
     public final void updateDrawState(TextPaint textPaint) {
-        super.updateDrawState(textPaint);
-        n11 n11Var = this.a;
-        if (n11Var != null) {
-            n11Var.a(textPaint);
+        int i10 = this.c;
+        if (i10 >= 0) {
+            this.b = org.telegram.ui.ActionBar.k6.x0(null, i10, false);
         }
-        textPaint.setUnderlineText(true);
+        Typeface typeface = this.a;
+        if (typeface != null) {
+            textPaint.setTypeface(typeface);
+        }
+        int i11 = this.b;
+        if (i11 != 0) {
+            textPaint.setColor(i11);
+        }
+        textPaint.setFlags(textPaint.getFlags() | 128);
+    }
+
+    @Override // android.text.style.MetricAffectingSpan
+    public final void updateMeasureState(TextPaint textPaint) {
+        Typeface typeface = this.a;
+        if (typeface != null) {
+            textPaint.setTypeface(typeface);
+        }
+        textPaint.setFlags(textPaint.getFlags() | 128);
+    }
+
+    public j61() {
+        Typeface typeface = Typeface.DEFAULT;
+        this.c = -1;
+        this.a = typeface;
+    }
+
+    public j61(Typeface typeface, int i10) {
+        this.c = -1;
+        this.a = typeface;
+        this.b = i10;
     }
 }

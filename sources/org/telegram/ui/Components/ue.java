@@ -19,19 +19,19 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class ue extends FrameLayout {
     public final Paint a;
     public final RectF b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.d6 c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.g6 c;
     public final /* synthetic */ ChatActivityEnterView d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ue(ChatActivityEnterView chatActivityEnterView, Activity activity, org.telegram.ui.ActionBar.d6 d6Var) {
+    public ue(ChatActivityEnterView chatActivityEnterView, Activity activity, org.telegram.ui.ActionBar.g6 g6Var) {
         super(activity);
         this.d = chatActivityEnterView;
-        this.c = d6Var;
+        this.c = g6Var;
         this.a = new Paint(1);
         this.b = new RectF();
     }
@@ -46,9 +46,9 @@ public final class ue extends FrameLayout {
                 f7 = 1.0f - chatActivityEnterView.S0.getAlpha();
             }
             float dpf2 = AndroidUtilities.dpf2(19.0f);
-            int g02 = chatActivityEnterView.g0(org.telegram.ui.ActionBar.h6.Yd);
+            int f02 = chatActivityEnterView.f0(org.telegram.ui.ActionBar.k6.Yd);
             Paint paint = this.a;
-            paint.setColor(g02);
+            paint.setColor(f02);
             float dpf22 = AndroidUtilities.dpf2(3.0f);
             float dpf23 = AndroidUtilities.dpf2(38.0f);
             float measuredWidth = (getMeasuredWidth() - AndroidUtilities.dpf2(38.0f)) - dpf22;
@@ -67,7 +67,7 @@ public final class ue extends FrameLayout {
 
     @Override // android.view.ViewGroup
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        return !this.d.l5;
+        return !this.d.p5;
     }
 
     @Override // android.view.View
@@ -79,19 +79,19 @@ public final class ue extends FrameLayout {
         float f7;
         ChatActivityEnterView chatActivityEnterView = this.d;
         ue ueVar = chatActivityEnterView.Z0;
-        org.telegram.ui.qn qnVar = chatActivityEnterView.P2;
+        org.telegram.ui.sn snVar = chatActivityEnterView.P2;
         af afVar = chatActivityEnterView.H3;
         ig igVar = chatActivityEnterView.K3;
         xe xeVar = chatActivityEnterView.J0;
         final int i10 = 0;
-        if (!chatActivityEnterView.l5) {
-            chatActivityEnterView.W();
+        if (!chatActivityEnterView.p5) {
+            chatActivityEnterView.V();
             final int i11 = 3;
             final int i12 = 1;
             if (motionEvent.getAction() == 0) {
                 if (!ChatActivityEnterView.this.s4) {
-                    TLRPC.Chat chat = qnVar == null ? null : qnVar.e;
-                    TLRPC.UserFull userFull = qnVar == null ? chatActivityEnterView.K : qnVar.a8;
+                    TLRPC.Chat chat = snVar == null ? null : snVar.e;
+                    TLRPC.UserFull userFull = snVar == null ? chatActivityEnterView.K : snVar.m8;
                     if ((chat != null && !ChatObject.canSendVoice(chat) && (!ChatObject.canSendRoundVideo(chat) || !chatActivityEnterView.e2)) || (userFull != null && userFull.voice_messages_forbidden)) {
                         chatActivityEnterView.Z2.Y1();
                         return true;
@@ -111,14 +111,14 @@ public final class ue extends FrameLayout {
                     if (!z10 || !chatActivityEnterView.c1) {
                         if (chatActivityEnterView.F2 && chatActivityEnterView.c()) {
                             Activity activity = chatActivityEnterView.O2;
-                            long a2 = qnVar.a();
-                            k2 k2Var = new k2(10);
+                            long a2 = snVar.a();
+                            e2 e2Var = new e2(16);
                             rc rcVar = new rc(i11);
                             Pattern pattern = f5.a;
-                            org.telegram.ui.ActionBar.d6 d6Var = this.c;
-                            f5.J(activity, a2, -1L, 0, false, k2Var, rcVar, new d5(d6Var), d6Var);
+                            org.telegram.ui.ActionBar.g6 g6Var = this.c;
+                            f5.K(activity, a2, -1L, 0, false, e2Var, rcVar, new c5(g6Var), g6Var);
                         }
-                        if (f5.c0(chatActivityEnterView.Q, chatActivityEnterView.Q2)) {
+                        if (f5.d0(chatActivityEnterView.Q, chatActivityEnterView.Q2)) {
                             if (chatActivityEnterView.c1) {
                                 ChatActivityEnterView.SlideTextView slideTextView = chatActivityEnterView.k1;
                                 if (slideTextView != null) {
@@ -136,7 +136,7 @@ public final class ue extends FrameLayout {
                                     slideTextView2.setEnabled(false);
                                 }
                             }
-                            f5.Z(chatActivityEnterView.Q, 1, chatActivityEnterView.Q2, new Utilities.Callback(this) { // from class: org.telegram.ui.Components.se
+                            f5.a0(chatActivityEnterView.Q, 1, chatActivityEnterView.Q2, new Utilities.Callback(this) { // from class: org.telegram.ui.Components.se
                                 public final /* synthetic */ ue b;
 
                                 {
@@ -167,13 +167,13 @@ public final class ue extends FrameLayout {
                         MediaController.getInstance().stopRecording(chatActivityEnterView.c() ? 3 : 1, true, 0, chatActivityEnterView.O, 0L);
                         chatActivityEnterView.Z2.X0(0);
                     } else {
-                        if (f5.c0(chatActivityEnterView.Q, chatActivityEnterView.Q2)) {
+                        if (f5.d0(chatActivityEnterView.Q, chatActivityEnterView.Q2)) {
                             ChatActivityEnterView.SlideTextView slideTextView3 = chatActivityEnterView.k1;
                             if (slideTextView3 != null) {
                                 slideTextView3.setEnabled(false);
                             }
                             chatActivityEnterView.Z2.i1();
-                            f5.Z(chatActivityEnterView.Q, 1, chatActivityEnterView.Q2, new Utilities.Callback(this) { // from class: org.telegram.ui.Components.se
+                            f5.a0(chatActivityEnterView.Q, 1, chatActivityEnterView.Q2, new Utilities.Callback(this) { // from class: org.telegram.ui.Components.se
                                 public final /* synthetic */ ue b;
 
                                 {
@@ -317,7 +317,7 @@ public final class ue extends FrameLayout {
                                 }
                             }
                         }
-                        ChatActivityEnterView.k(chatActivityEnterView);
+                        ChatActivityEnterView.j(chatActivityEnterView);
                         return false;
                     }
                 }
@@ -326,7 +326,7 @@ public final class ue extends FrameLayout {
             if (motionEvent.getAction() == 3 && chatActivityEnterView.F2) {
                 if (chatActivityEnterView.j4 >= 0.7f) {
                     chatActivityEnterView.s4 = true;
-                    ChatActivityEnterView.k(chatActivityEnterView);
+                    ChatActivityEnterView.j(chatActivityEnterView);
                     return false;
                 }
                 if (chatActivityEnterView.e2 && chatActivityEnterView.c1) {
@@ -384,7 +384,7 @@ public final class ue extends FrameLayout {
                         if (!chatActivityEnterView.y0) {
                             chatActivityEnterView.Z2.Y1();
                         } else {
-                            if (f5.c0(chatActivityEnterView.Q, chatActivityEnterView.Q2)) {
+                            if (f5.d0(chatActivityEnterView.Q, chatActivityEnterView.Q2)) {
                                 if (chatActivityEnterView.s4) {
                                     chatActivityEnterView.J3 = true;
                                 }
@@ -394,7 +394,7 @@ public final class ue extends FrameLayout {
                                 if (slideTextView5 != null) {
                                     slideTextView5.setEnabled(false);
                                 }
-                                f5.Z(chatActivityEnterView.Q, 1, chatActivityEnterView.Q2, new Utilities.Callback(this) { // from class: org.telegram.ui.Components.se
+                                f5.a0(chatActivityEnterView.Q, 1, chatActivityEnterView.Q2, new Utilities.Callback(this) { // from class: org.telegram.ui.Components.se
                                     public final /* synthetic */ ue b;
 
                                     {
@@ -424,23 +424,23 @@ public final class ue extends FrameLayout {
                             }
                             if (chatActivityEnterView.F2 && chatActivityEnterView.c()) {
                                 Activity activity2 = chatActivityEnterView.O2;
-                                long a10 = qnVar.a();
-                                k2 k2Var2 = new k2(11);
+                                long a10 = snVar.a();
+                                e2 e2Var2 = new e2(17);
                                 rc rcVar2 = new rc(4);
-                                org.telegram.ui.ActionBar.d6 d6Var2 = this.c;
-                                f5.J(activity2, a10, -1L, 0, false, k2Var2, rcVar2, new d5(d6Var2), d6Var2);
+                                org.telegram.ui.ActionBar.g6 g6Var2 = this.c;
+                                f5.K(activity2, a10, -1L, 0, false, e2Var2, rcVar2, new c5(g6Var2), g6Var2);
                             }
                             chatActivityEnterView.Z2.X0(0);
                             MediaController.getInstance().stopRecording(chatActivityEnterView.c() ? 3 : 1, true, 0, chatActivityEnterView.O, 0L);
                         }
                     } else {
-                        if (f5.c0(chatActivityEnterView.Q, chatActivityEnterView.Q2)) {
+                        if (f5.d0(chatActivityEnterView.Q, chatActivityEnterView.Q2)) {
                             ChatActivityEnterView.SlideTextView slideTextView6 = chatActivityEnterView.k1;
                             if (slideTextView6 != null) {
                                 slideTextView6.setEnabled(false);
                             }
                             chatActivityEnterView.Z2.i1();
-                            f5.Z(chatActivityEnterView.Q, 1, chatActivityEnterView.Q2, new Utilities.Callback(this) { // from class: org.telegram.ui.Components.se
+                            f5.a0(chatActivityEnterView.Q, 1, chatActivityEnterView.Q2, new Utilities.Callback(this) { // from class: org.telegram.ui.Components.se
                                 public final /* synthetic */ ue b;
 
                                 {

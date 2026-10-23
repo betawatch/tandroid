@@ -3,7 +3,7 @@ package ig;
 import android.content.DialogInterface;
 import android.view.View;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -26,7 +26,7 @@ public final /* synthetic */ class q implements DialogInterface.OnDismissListene
                 }
                 break;
             default:
-                x1.h = null;
+                w1.h = null;
                 View view2 = this.b;
                 if (view2 != null) {
                     view2.requestFocus();

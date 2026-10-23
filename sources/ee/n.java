@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLObject;
 import v7.g8;
 import v7.i8;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public abstract class n {
     public static final com.google.android.gms.internal.clearcut.e a = new com.google.android.gms.internal.clearcut.e("NONE", 1);
@@ -46,7 +46,7 @@ public abstract class n {
                         c gVar = new g(cVar, pVar2);
                         eVar.a = pVar2;
                         eVar.c = 1;
-                        if (bVar.l(gVar, eVar) == aVar) {
+                        if (bVar.q(gVar, eVar) == aVar) {
                             return aVar;
                         }
                         return null;
@@ -128,7 +128,7 @@ public abstract class n {
                         jVar.a = pVar2;
                         jVar.b = uVar2;
                         jVar.d = 1;
-                        if (bVar.l(uVar2, jVar) == obj3) {
+                        if (bVar.q(uVar2, jVar) == obj3) {
                             return obj3;
                         }
                         pVar = pVar2;

@@ -4,9 +4,9 @@ import android.content.DialogInterface;
 import java.util.Arrays;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.uk0;
+import org.telegram.ui.xk0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class w7 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -15,7 +15,7 @@ public final /* synthetic */ class w7 implements DialogInterface.OnDismissListen
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ w7(ga gaVar, Utilities.Callback callback, boolean[] zArr, boolean[] zArr2, Object obj, int i10) {
+    public /* synthetic */ w7(ha haVar, Utilities.Callback callback, boolean[] zArr, boolean[] zArr2, Object obj, int i10) {
         this.a = i10;
         this.b = callback;
         this.c = zArr;
@@ -54,55 +54,55 @@ public final /* synthetic */ class w7 implements DialogInterface.OnDismissListen
                 break;
             case 2:
                 TL_wallet.inputTonConnectOauthSession[] inputtonconnectoauthsessionArr = (TL_wallet.inputTonConnectOauthSession[]) this.b;
-                org.telegram.ui.ActionBar.f3[] f3VarArr = (org.telegram.ui.ActionBar.f3[]) this.d;
-                org.telegram.ui.ActionBar.f3[] f3VarArr2 = (org.telegram.ui.ActionBar.f3[]) this.e;
+                org.telegram.ui.ActionBar.h3[] h3VarArr = (org.telegram.ui.ActionBar.h3[]) this.d;
+                org.telegram.ui.ActionBar.h3[] h3VarArr2 = (org.telegram.ui.ActionBar.h3[]) this.e;
                 this.c[0] = true;
                 TL_wallet.inputTonConnectOauthSession inputtonconnectoauthsession = inputtonconnectoauthsessionArr[0];
                 if (inputtonconnectoauthsession != null) {
                     Arrays.fill(inputtonconnectoauthsession.challenge_answer, (byte) 0);
                     inputtonconnectoauthsessionArr[0] = null;
                 }
-                org.telegram.ui.ActionBar.f3 f3Var = f3VarArr[0];
-                if (f3Var != null) {
-                    f3Var.dismiss();
-                    f3VarArr[0] = null;
+                org.telegram.ui.ActionBar.h3 h3Var = h3VarArr[0];
+                if (h3Var != null) {
+                    h3Var.dismiss();
+                    h3VarArr[0] = null;
                 }
-                uk0.a = null;
-                org.telegram.ui.ActionBar.f3 f3Var2 = f3VarArr2[0];
-                if (f3Var2 != null) {
-                    f3Var2.dismiss();
-                    f3VarArr2[0] = null;
+                xk0.a = null;
+                org.telegram.ui.ActionBar.h3 h3Var2 = h3VarArr2[0];
+                if (h3Var2 != null) {
+                    h3Var2.dismiss();
+                    h3VarArr2[0] = null;
                     break;
                 }
                 break;
             default:
-                org.telegram.ui.web.a1 a1Var = (org.telegram.ui.web.a1) this.b;
-                ci.z7 z7Var = (ci.z7) this.d;
+                org.telegram.ui.web.b1 b1Var = (org.telegram.ui.web.b1) this.b;
+                ci.y7 y7Var = (ci.y7) this.d;
                 String str = (String) this.e;
-                a1Var.getClass();
+                b1Var.getClass();
                 boolean[] zArr3 = this.c;
                 if (!zArr3[0]) {
                     zArr3[0] = true;
-                    a1Var.x(z7Var, "requested_chat_failed", org.telegram.ui.web.a1.A(str, "req_id"));
+                    b1Var.x(y7Var, "requested_chat_failed", org.telegram.ui.web.b1.A(str, "req_id"));
                     break;
                 }
                 break;
         }
     }
 
-    public /* synthetic */ w7(org.telegram.ui.web.a1 a1Var, boolean[] zArr, ci.z7 z7Var, String str) {
+    public /* synthetic */ w7(org.telegram.ui.web.b1 b1Var, boolean[] zArr, ci.y7 y7Var, String str) {
         this.a = 3;
-        this.b = a1Var;
+        this.b = b1Var;
         this.c = zArr;
-        this.d = z7Var;
+        this.d = y7Var;
         this.e = str;
     }
 
-    public /* synthetic */ w7(boolean[] zArr, TL_wallet.inputTonConnectOauthSession[] inputtonconnectoauthsessionArr, org.telegram.ui.ActionBar.f3[] f3VarArr, org.telegram.ui.ActionBar.f3[] f3VarArr2) {
+    public /* synthetic */ w7(boolean[] zArr, TL_wallet.inputTonConnectOauthSession[] inputtonconnectoauthsessionArr, org.telegram.ui.ActionBar.h3[] h3VarArr, org.telegram.ui.ActionBar.h3[] h3VarArr2) {
         this.a = 2;
         this.c = zArr;
         this.b = inputtonconnectoauthsessionArr;
-        this.d = f3VarArr;
-        this.e = f3VarArr2;
+        this.d = h3VarArr;
+        this.e = h3VarArr2;
     }
 }

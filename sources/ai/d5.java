@@ -7,11 +7,11 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.nk;
+import org.telegram.messenger.sl;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d5 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -39,11 +39,11 @@ public final /* synthetic */ class d5 implements Utilities.Callback {
         switch (i10) {
             case 0:
                 Context context = (Context) obj3;
-                org.telegram.ui.ActionBar.d6 d6Var = (org.telegram.ui.ActionBar.d6) obj2;
+                org.telegram.ui.ActionBar.g6 g6Var = (org.telegram.ui.ActionBar.g6) obj2;
                 ArrayList arrayList = (ArrayList) obj;
                 ((boolean[]) obj4)[0] = false;
                 if (arrayList != null) {
-                    new a2(context, d6Var, this.b, this.c, arrayList, false).show();
+                    new a2(context, g6Var, this.b, this.c, arrayList, false).show();
                     break;
                 }
                 break;
@@ -52,7 +52,7 @@ public final /* synthetic */ class d5 implements Utilities.Callback {
                 MessagesController messagesController = (MessagesController) obj3;
                 pf.c cVar = (pf.c) obj2;
                 Long l4 = (Long) obj;
-                Pattern pattern = LaunchActivity.C1;
+                Pattern pattern = LaunchActivity.E1;
                 TLRPC.User user = (l4 == null || l4.longValue() <= 0 || l4.longValue() == Long.MAX_VALUE) ? null : messagesController.getUser(l4);
                 int i11 = this.b;
                 if (user != null && !UserObject.isUserSelf(user)) {
@@ -63,13 +63,13 @@ public final /* synthetic */ class d5 implements Utilities.Callback {
                         cVar.b();
                     }
                     if (user == null) {
-                        org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
+                        org.telegram.ui.ActionBar.o2 R = LaunchActivity.R();
                         if (R != null) {
-                            nk.q(R.string.NoUsernameFound, org.telegram.ui.Components.xc.a0(R), null);
+                            sl.q(R.string.NoUsernameFound, org.telegram.ui.Components.xc.a0(R), null);
                             break;
                         }
                     } else {
-                        launchActivity.m0(i11, user.id, null);
+                        launchActivity.n0(i11, user.id, null);
                         break;
                     }
                 }

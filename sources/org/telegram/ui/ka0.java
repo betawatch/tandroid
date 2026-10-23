@@ -1,25 +1,81 @@
 package org.telegram.ui;
 
-import android.view.View;
+import android.os.Bundle;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BotWebViewVibrationEffect;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class ka0 implements View.OnAttachStateChangeListener {
-    public final /* synthetic */ LaunchActivity a;
+public final class ka0 implements MessagesController.MessagesLoadedCallback {
+    public final /* synthetic */ f80 a;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.o2 c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ Integer e;
+    public final /* synthetic */ Bundle f;
+    public final /* synthetic */ LaunchActivity g;
 
-    public ka0(LaunchActivity launchActivity) {
-        this.a = launchActivity;
+    public ka0(LaunchActivity launchActivity, f80 f80Var, String str, org.telegram.ui.ActionBar.o2 o2Var, long j10, Integer num, Bundle bundle) {
+        this.g = launchActivity;
+        this.a = f80Var;
+        this.b = str;
+        this.c = o2Var;
+        this.d = j10;
+        this.e = num;
+        this.f = bundle;
     }
 
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewAttachedToWindow(View view) {
-        LaunchActivity launchActivity = this.a;
-        launchActivity.getWindowManager().addCrossWindowBlurEnabledListener(launchActivity.d1);
+    @Override // org.telegram.messenger.MessagesController.MessagesLoadedCallback
+    public final void onError() {
+        LaunchActivity launchActivity = this.g;
+        if (!launchActivity.isFinishing()) {
+            org.telegram.ui.Components.f5.u0((org.telegram.ui.ActionBar.o2) i2.o1.i(1, launchActivity.d0), null, LocaleController.getString(R.string.JoinToGroupErrorNotExist), null);
+        }
+        try {
+            this.a.run();
+        } catch (Exception e) {
+            FileLog.e(e);
+        }
     }
 
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewDetachedFromWindow(View view) {
-        LaunchActivity launchActivity = this.a;
-        launchActivity.getWindowManager().removeCrossWindowBlurEnabledListener(launchActivity.d1);
+    @Override // org.telegram.messenger.MessagesController.MessagesLoadedCallback
+    public final void onMessagesLoaded(boolean z10) {
+        try {
+            this.a.run();
+        } catch (Exception e) {
+            FileLog.e(e);
+        }
+        LaunchActivity launchActivity = this.g;
+        if (launchActivity.isFinishing()) {
+            return;
+        }
+        String str = this.b;
+        long j10 = this.d;
+        org.telegram.ui.ActionBar.o2 o2Var = this.c;
+        if (str == null || !(o2Var instanceof sn) || ((sn) o2Var).a() != j10) {
+            if (o2Var instanceof sn) {
+                sn snVar = (sn) o2Var;
+                if (snVar.a() == j10 && this.e == null) {
+                    AndroidUtilities.shakeViewSpring(snVar.x0, 5.0f);
+                    BotWebViewVibrationEffect.APP_ERROR.vibrate();
+                    gk gkVar = snVar.Y;
+                    for (int i10 = 0; i10 < gkVar.getChildCount(); i10++) {
+                        AndroidUtilities.shakeViewSpring(gkVar.getChildAt(i10), 5.0f);
+                    }
+                    org.telegram.ui.ActionBar.k actionBar = snVar.getActionBar();
+                    for (int i11 = 0; i11 < actionBar.getChildCount(); i11++) {
+                        AndroidUtilities.shakeViewSpring(actionBar.getChildAt(i11), 5.0f);
+                    }
+                }
+            }
+            o2Var = new sn(this.f);
+            ((ActionBarLayout) launchActivity.O()).Q(o2Var);
+        }
+        AndroidUtilities.runOnUIThread(new ai.c3(this, this.b, this.d, o2Var, 22), 150L);
     }
 }

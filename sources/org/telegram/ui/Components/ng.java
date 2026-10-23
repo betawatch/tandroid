@@ -25,15 +25,15 @@ import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public abstract class ng extends iu {
     public fd c;
     public final /* synthetic */ ChatActivityEnterView d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ng(ChatActivityEnterView chatActivityEnterView, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, d6Var);
+    public ng(ChatActivityEnterView chatActivityEnterView, Context context, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(context, g6Var);
         this.d = chatActivityEnterView;
     }
 
@@ -108,33 +108,33 @@ public abstract class ng extends iu {
     @Override // org.telegram.ui.Components.EditTextBoldCursor
     public final void extendActionMode(ActionMode actionMode, Menu menu) {
         ChatActivityEnterView chatActivityEnterView = this.d;
-        org.telegram.ui.qn qnVar = chatActivityEnterView.P2;
-        if (qnVar != null) {
-            qnVar.extendActionMode(menu);
+        org.telegram.ui.sn snVar = chatActivityEnterView.P2;
+        if (snVar != null) {
+            snVar.extendActionMode(menu);
         } else {
-            chatActivityEnterView.f0(menu);
+            chatActivityEnterView.e0(menu);
         }
     }
 
     @Override // org.telegram.ui.Components.EditTextBoldCursor
-    public final org.telegram.ui.ActionBar.d6 getResourcesProvider() {
+    public final org.telegram.ui.ActionBar.g6 getResourcesProvider() {
         return this.d.W3;
     }
 
     public final void m(Uri uri, String str) {
-        org.telegram.ui.qn qnVar = this.d.P2;
-        Utilities.globalQueue.postRunnable(new ig.e2(this, uri, AndroidUtilities.generatePicturePath(qnVar != null && qnVar.x(), MimeTypeMap.getSingleton().getExtensionFromMimeType(str)), 29));
+        org.telegram.ui.sn snVar = this.d.P2;
+        Utilities.globalQueue.postRunnable(new ig.d2(this, uri, AndroidUtilities.generatePicturePath(snVar != null && snVar.x(), MimeTypeMap.getSingleton().getExtensionFromMimeType(str)), 29));
     }
 
     public final void n(File file, ArrayList arrayList) {
         ChatActivityEnterView chatActivityEnterView = this.d;
-        org.telegram.ui.qn qnVar = chatActivityEnterView.P2;
-        if (qnVar == null || qnVar.getParentActivity() == null) {
+        org.telegram.ui.sn snVar = chatActivityEnterView.P2;
+        if (snVar == null || snVar.getParentActivity() == null) {
             return;
         }
         MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) arrayList.get(0);
         if (!chatActivityEnterView.z2) {
-            PhotoViewer.u1().M2(null, qnVar, chatActivityEnterView.W3);
+            PhotoViewer.u1().M2(null, snVar, chatActivityEnterView.W3);
             PhotoViewer.u1().i2(arrayList, 0, 2, false, new mg(this, photoEntry, file), chatActivityEnterView.P2);
         } else {
             AndroidUtilities.hideKeyboard(this);
@@ -146,15 +146,15 @@ public abstract class ng extends iu {
         MessageObject threadMessage;
         MessageObject threadMessage2;
         ChatActivityEnterView chatActivityEnterView = this.d;
-        org.telegram.ui.qn qnVar = chatActivityEnterView.P2;
+        org.telegram.ui.sn snVar = chatActivityEnterView.P2;
         mf mfVar = chatActivityEnterView.L0;
         if (mfVar != null) {
             mfVar.g(true);
             chatActivityEnterView.L0 = null;
         }
-        org.telegram.ui.gn gnVar = chatActivityEnterView.V2;
-        if (gnVar != null && qnVar != null && gnVar.f) {
-            qnVar.Wb();
+        org.telegram.ui.in inVar = chatActivityEnterView.V2;
+        if (inVar != null && snVar != null && inVar.f) {
+            snVar.Xb();
             return;
         }
         t0.h hVar = iVar.a;
@@ -164,14 +164,14 @@ public abstract class ng extends iu {
             long j10 = chatActivityEnterView.Q2;
             MessageObject messageObject = chatActivityEnterView.T2;
             threadMessage2 = chatActivityEnterView.getThreadMessage();
-            SendMessagesHelper.prepareSendingDocument(accountInstance, null, null, c10, null, "image/gif", j10, messageObject, threadMessage2, null, chatActivityEnterView.V2, null, z10, 0, iVar, qnVar != null ? qnVar.H8() : null, false);
+            SendMessagesHelper.prepareSendingDocument(accountInstance, null, null, c10, null, "image/gif", j10, messageObject, threadMessage2, null, chatActivityEnterView.V2, null, z10, 0, iVar, snVar != null ? snVar.H8() : null, false);
         } else {
             AccountInstance accountInstance2 = chatActivityEnterView.R;
             Uri c11 = hVar.c();
             long j11 = chatActivityEnterView.Q2;
             MessageObject messageObject2 = chatActivityEnterView.T2;
             threadMessage = chatActivityEnterView.getThreadMessage();
-            SendMessagesHelper.prepareSendingPhoto(accountInstance2, null, c11, j11, messageObject2, threadMessage, chatActivityEnterView.V2, null, null, null, iVar, 0, null, z10, 0, qnVar == null ? 0 : qnVar.R3, qnVar != null ? qnVar.H8() : null);
+            SendMessagesHelper.prepareSendingPhoto(accountInstance2, null, c11, j11, messageObject2, threadMessage, chatActivityEnterView.V2, null, null, null, iVar, 0, null, z10, 0, snVar == null ? 0 : snVar.d4, snVar != null ? snVar.H8() : null);
         }
         og ogVar = chatActivityEnterView.Z2;
         if (ogVar != null) {
@@ -203,8 +203,8 @@ public abstract class ng extends iu {
             return null;
         }
         try {
-            int i10 = ChatActivityEnterView.n5;
-            if (!(chatActivityEnterView.b2 != null) && !chatActivityEnterView.l5) {
+            int i10 = ChatActivityEnterView.r5;
+            if (!(chatActivityEnterView.b2 != null) && !chatActivityEnterView.p5) {
                 t0.b.b(editorInfo, new String[]{"image/gif", "image/*", "image/jpg", "image/png", "image/webp"});
                 return t0.f.a(onCreateInputConnection, editorInfo, new s(this, 18));
             }
@@ -265,7 +265,7 @@ public abstract class ng extends iu {
     public boolean onTouchEvent(MotionEvent motionEvent) {
         ChatActivityEnterView chatActivityEnterView = this.d;
         if (!chatActivityEnterView.E3 && chatActivityEnterView.B3 == null) {
-            if (!chatActivityEnterView.z0 && !chatActivityEnterView.p0()) {
+            if (!chatActivityEnterView.z0 && !chatActivityEnterView.o0()) {
                 if (this.c == null) {
                     fd fdVar = new fd(this);
                     this.c = fdVar;
@@ -284,7 +284,7 @@ public abstract class ng extends iu {
                             switch (i11) {
                                 case 0:
                                     ChatActivityEnterView chatActivityEnterView2 = ngVar.d;
-                                    int i12 = ChatActivityEnterView.n5;
+                                    int i12 = ChatActivityEnterView.r5;
                                     chatActivityEnterView2.r1();
                                     break;
                                 default:
@@ -308,7 +308,7 @@ public abstract class ng extends iu {
                 fdVar2.a(rectF);
                 return this.c.b(motionEvent);
             }
-            if (chatActivityEnterView.r0() && motionEvent.getAction() == 0) {
+            if (chatActivityEnterView.q0() && motionEvent.getAction() == 0) {
                 if (chatActivityEnterView.R1 != 0) {
                     chatActivityEnterView.j1(0, false);
                     chatActivityEnterView.U0.u(false);
@@ -336,7 +336,7 @@ public abstract class ng extends iu {
                         switch (i112) {
                             case 0:
                                 ChatActivityEnterView chatActivityEnterView2 = ngVar.d;
-                                int i12 = ChatActivityEnterView.n5;
+                                int i12 = ChatActivityEnterView.r5;
                                 chatActivityEnterView2.r1();
                                 break;
                             default:
@@ -361,7 +361,7 @@ public abstract class ng extends iu {
     @Override // android.view.View
     public final boolean requestFocus(int i10, Rect rect) {
         ChatActivityEnterView chatActivityEnterView = this.d;
-        if (!chatActivityEnterView.z0 && !chatActivityEnterView.p0()) {
+        if (!chatActivityEnterView.z0 && !chatActivityEnterView.o0()) {
             return false;
         }
         chatActivityEnterView.getClass();
@@ -379,8 +379,8 @@ public abstract class ng extends iu {
         super.setOffsetY(f7);
         ChatActivityEnterView chatActivityEnterView = this.d;
         if (chatActivityEnterView.m1.getForeground() != null) {
-            lw0 lw0Var = chatActivityEnterView.m1;
-            lw0Var.invalidateDrawable(lw0Var.getForeground());
+            ow0 ow0Var = chatActivityEnterView.m1;
+            ow0Var.invalidateDrawable(ow0Var.getForeground());
         }
     }
 }

@@ -1,66 +1,47 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class y31 implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class y31 implements r0.n, org.telegram.ui.ActionBar.z1 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ x51 b;
+    public final /* synthetic */ b41 b;
 
-    public /* synthetic */ y31(x51 x51Var, int i10) {
+    public /* synthetic */ y31(b41 b41Var, int i10) {
         this.a = i10;
-        this.b = x51Var;
+        this.b = b41Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // r0.n
+    public r0.k1 B0(View view, r0.k1 k1Var) {
+        i0.b defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(k1Var, false);
+        b41 b41Var = this.b;
+        b41Var.e = defaultWindowInsets;
+        b41Var.c.setPadding(defaultWindowInsets.a, defaultWindowInsets.b, defaultWindowInsets.c, defaultWindowInsets.d);
+        b41Var.b.requestLayout();
+        return r0.k1.b;
+    }
+
+    @Override // org.telegram.ui.ActionBar.z1
+    public void g(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
         switch (this.a) {
-            case 0:
-                x51 x51Var = this.b;
-                x51Var.getClass();
-                x51Var.E(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
             case 1:
-                this.b.m();
-                break;
-            case 2:
-                x51 x51Var2 = this.b;
-                View view = x51Var2.t0;
-                if (view != null) {
-                    view.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                }
-                int v = org.telegram.ui.ActionBar.h6.v(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.G8, x51Var2.Z0), i0.a.o(-16777216, (int) (((Float) valueAnimator.getAnimatedValue()).floatValue() * 255.0f)));
-                View view2 = x51Var2.m0;
-                if (view2 != null) {
-                    view2.getBackground().setColorFilter(new PorterDuffColorFilter(v, PorterDuff.Mode.MULTIPLY));
-                }
-                org.telegram.ui.Components.un unVar = x51Var2.n0;
-                if (unVar != null) {
-                    unVar.getBackground().setColorFilter(new PorterDuffColorFilter(v, PorterDuff.Mode.MULTIPLY));
+                org.telegram.ui.ActionBar.c2 c2Var2 = this.b.c0;
+                if (c2Var2 != null) {
+                    c2Var2.dismiss();
                     break;
                 }
                 break;
             default:
-                x51 x51Var3 = this.b;
-                r41 r41Var = x51Var3.a0;
-                float floatValue = 1.0f - ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                x51Var3.setTranslationY((1.0f - floatValue) * AndroidUtilities.dp(8.0f));
-                View view3 = x51Var3.m0;
-                if (view3 != null) {
-                    view3.setAlpha(floatValue);
+                b41 b41Var = this.b;
+                org.telegram.ui.ActionBar.c2 c2Var3 = b41Var.c0;
+                if (c2Var3 != null) {
+                    c2Var3.dismiss();
+                    b41Var.c0 = null;
                 }
-                org.telegram.ui.Components.un unVar2 = x51Var3.n0;
-                if (unVar2 != null) {
-                    unVar2.setAlpha(floatValue * floatValue);
-                }
-                r41Var.setAlpha(floatValue);
-                r41Var.invalidate();
-                x51Var3.invalidate();
+                b41Var.dismiss();
                 break;
         }
     }

@@ -10,16 +10,16 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.Components.na;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class y0 extends org.telegram.ui.Cells.w0 {
+public final class y0 extends org.telegram.ui.Cells.v0 {
     public final na t2;
     public final TextPaint u2;
     public final /* synthetic */ a1 v2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y0(a1 a1Var, Context context, com.google.firebase.messaging.l lVar) {
-        super(context, lVar, false);
+    public y0(a1 a1Var, Context context, e1 e1Var) {
+        super(context, e1Var, false);
         this.v2 = a1Var;
         this.t2 = new na(a1Var.d, this, 10, false);
         TextPaint textPaint = new TextPaint(1);
@@ -29,8 +29,8 @@ public final class y0 extends org.telegram.ui.Cells.w0 {
         textPaint.setColor(-1);
     }
 
-    @Override // org.telegram.ui.Cells.w0
-    public final Paint I(String str) {
+    @Override // org.telegram.ui.Cells.v0
+    public final Paint G(String str) {
         if ("paintChatActionText".equals(str) || "paintChatActionText2".equals(str)) {
             return this.u2;
         }
@@ -55,6 +55,6 @@ public final class y0 extends org.telegram.ui.Cells.w0 {
                 return c10;
             }
         }
-        return super.I(str);
+        return super.G(str);
     }
 }

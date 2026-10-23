@@ -1,6 +1,6 @@
 package gi;
 
-import ai.cb;
+import ai.db;
 import ai.r5;
 import android.app.Activity;
 import android.content.Context;
@@ -34,7 +34,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class r {
     public static final WeakHashMap k = new WeakHashMap();
@@ -109,7 +109,7 @@ public final class r {
         if (arrayList.isEmpty()) {
             callback.run(new ArrayList());
         } else {
-            MessagesStorage.getInstance(i10).getStorageQueue().postRunnable(new cb(i10, arrayList, hashMap, callback, 2));
+            MessagesStorage.getInstance(i10).getStorageQueue().postRunnable(new db(i10, arrayList, hashMap, callback, 2));
         }
     }
 
@@ -247,7 +247,7 @@ public final class r {
         this.j = null;
         try {
             if (this.i == null) {
-                this.i = new qb.c(LaunchActivity.H1, f0.c.d(this.a), new p(this));
+                this.i = new qb.c(LaunchActivity.J1, f0.c.d(this.a), new p(this));
             }
             androidx.biometric.u i11 = i(z10);
             TLRPC.User user = MessagesController.getInstance(this.b).getUser(Long.valueOf(this.c));
@@ -258,7 +258,7 @@ public final class r {
             if (!TextUtils.isEmpty(str)) {
                 lVar.c = str;
             }
-            j6.l a2 = lVar.a();
+            j6.l b10 = lVar.b();
             if (i11 != null) {
                 Cipher cipher = i11.b;
                 if (!z10 && Build.VERSION.SDK_INT >= 30) {
@@ -280,12 +280,12 @@ public final class r {
             }
             this.j = new r5(7, callback3, (i11 == null || Build.VERSION.SDK_INT >= 30) ? null : i11);
             if (i11 == null || (i10 = Build.VERSION.SDK_INT) >= 30) {
-                this.i.c(a2, null);
+                this.i.c(b10, null);
                 return;
             }
             qb.c cVar = this.i;
             cVar.getClass();
-            int i12 = a2.a;
+            int i12 = b10.a;
             int i13 = i12 != 0 ? i12 : 15;
             if ((i13 & 255) == 255) {
                 throw new IllegalArgumentException("Crypto-based authentication is not supported for Class 2 (Weak) biometrics.");
@@ -293,7 +293,7 @@ public final class r {
             if (i10 < 30 && v7.k.a(i13)) {
                 throw new IllegalArgumentException("Crypto-based authentication is not supported for device credential prior to API 30.");
             }
-            cVar.c(a2, i11);
+            cVar.c(b10, i11);
         } catch (Exception e7) {
             FileLog.e(e7);
             callback3.run(Boolean.FALSE, null, null);

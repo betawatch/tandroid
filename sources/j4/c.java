@@ -5,9 +5,9 @@ import e9.n0;
 import e9.x1;
 import java.util.List;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public final class c implements c3.o {
+public final class c implements c3.q {
     public final b a = new b(0, 1, null, "audio/ac4");
     public final e2.x b = new e2.x(16384);
     public boolean c;
@@ -16,17 +16,17 @@ public final class c implements c3.o {
     
         return false;
      */
-    @Override // c3.o
+    @Override // c3.q
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final boolean a(c3.p pVar) {
+    public final boolean a(c3.r rVar) {
         c3.l lVar;
         int i10;
         e2.x xVar = new e2.x(10);
         int i11 = 0;
         while (true) {
-            lVar = (c3.l) pVar;
+            lVar = (c3.l) rVar;
             lVar.j(xVar.a, 0, 10, false);
             xVar.N(0);
             if (xVar.D() != 4801587) {
@@ -35,10 +35,10 @@ public final class c implements c3.o {
             xVar.O(3);
             int z10 = xVar.z();
             i11 += z10 + 10;
-            lVar.v(z10, false);
+            lVar.u(z10, false);
         }
         lVar.f = 0;
-        lVar.v(i11, false);
+        lVar.u(i11, false);
         int i12 = 0;
         int i13 = i11;
         while (true) {
@@ -69,42 +69,42 @@ public final class c implements c3.o {
                 if (i10 == -1) {
                     break;
                 }
-                lVar.v(i10 - 7, false);
+                lVar.u(i10 - 7, false);
             } else {
                 lVar.f = 0;
                 i13++;
                 if (i13 - i11 >= 8192) {
                     break;
                 }
-                lVar.v(i13, false);
+                lVar.u(i13, false);
                 i12 = 0;
             }
         }
     }
 
-    @Override // c3.o
-    public final void c(c3.q qVar) {
-        this.a.d(qVar, new f0(0, 1));
-        qVar.H();
-        qVar.g0(new c3.t(-9223372036854775807L));
+    @Override // c3.q
+    public final void c(c3.s sVar) {
+        this.a.d(sVar, new f0(0, 1));
+        sVar.C();
+        sVar.g0(new c3.v(-9223372036854775807L));
     }
 
-    @Override // c3.o
+    @Override // c3.q
     public final void d(long j10, long j11) {
         this.c = false;
         this.a.c();
     }
 
-    @Override // c3.o
+    @Override // c3.q
     public final List e() {
         l0 l0Var = n0.b;
         return x1.e;
     }
 
-    @Override // c3.o
-    public final int f(c3.p pVar, c3.s sVar) {
+    @Override // c3.q
+    public final int f(c3.r rVar, c3.u uVar) {
         e2.x xVar = this.b;
-        int read = pVar.read(xVar.a, 0, 16384);
+        int read = rVar.read(xVar.a, 0, 16384);
         if (read == -1) {
             return -1;
         }
@@ -120,12 +120,12 @@ public final class c implements c3.o {
         return 0;
     }
 
-    @Override // c3.o
-    public final c3.o b() {
+    @Override // c3.q
+    public final c3.q b() {
         return this;
     }
 
-    @Override // c3.o
+    @Override // c3.q
     public final void release() {
     }
 }

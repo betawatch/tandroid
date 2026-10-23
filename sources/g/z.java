@@ -6,7 +6,7 @@ import android.view.View;
 import androidx.appcompat.widget.ActionBarContextView;
 import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class z extends k.a implements l.i {
     public final Context c;
@@ -84,7 +84,7 @@ public final class z extends k.a implements l.i {
         l.k kVar = this.d;
         kVar.w();
         try {
-            this.e.z(this, kVar);
+            this.e.x(this, kVar);
         } finally {
             kVar.v();
         }
@@ -95,34 +95,8 @@ public final class z extends k.a implements l.i {
         return this.h.f.I;
     }
 
-    @Override // k.a
-    public final void i(View view) {
-        this.h.f.setCustomView(view);
-        this.f = new WeakReference(view);
-    }
-
-    @Override // k.a
-    public final void j(int i10) {
-        k(this.h.a.getResources().getString(i10));
-    }
-
-    @Override // k.a
-    public final void k(CharSequence charSequence) {
-        this.h.f.setSubtitle(charSequence);
-    }
-
-    @Override // k.a
-    public final void l(int i10) {
-        m(this.h.a.getResources().getString(i10));
-    }
-
-    @Override // k.a
-    public final void m(CharSequence charSequence) {
-        this.h.f.setTitle(charSequence);
-    }
-
     @Override // l.i
-    public final void n(l.k kVar) {
+    public final void i(l.k kVar) {
         if (this.e == null) {
             return;
         }
@@ -134,13 +108,39 @@ public final class z extends k.a implements l.i {
     }
 
     @Override // k.a
+    public final void j(View view) {
+        this.h.f.setCustomView(view);
+        this.f = new WeakReference(view);
+    }
+
+    @Override // k.a
+    public final void k(int i10) {
+        l(this.h.a.getResources().getString(i10));
+    }
+
+    @Override // k.a
+    public final void l(CharSequence charSequence) {
+        this.h.f.setSubtitle(charSequence);
+    }
+
+    @Override // k.a
+    public final void m(int i10) {
+        n(this.h.a.getResources().getString(i10));
+    }
+
+    @Override // k.a
+    public final void n(CharSequence charSequence) {
+        this.h.f.setTitle(charSequence);
+    }
+
+    @Override // k.a
     public final void o(boolean z10) {
         this.b = z10;
         this.h.f.setTitleOptional(z10);
     }
 
     @Override // l.i
-    public final boolean q(l.k kVar, MenuItem menuItem) {
+    public final boolean p(l.k kVar, MenuItem menuItem) {
         n4.s sVar = this.e;
         if (sVar != null) {
             return ((qi.e) sVar.b).A(this, menuItem);

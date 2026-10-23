@@ -6,8 +6,10 @@ import b2.s0;
 import b2.t0;
 import b2.v;
 import b2.v0;
+import b2.w;
 import b2.w0;
-import c3.w;
+import c3.y;
+import com.google.android.gms.internal.play_billing.k3;
 import e2.j0;
 import e2.m0;
 import e2.x;
@@ -23,11 +25,11 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 import org.telegram.messenger.MediaController;
-import u2.a1;
+import u2.b1;
 import v7.b8;
 import v7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public abstract class c {
     public static final byte[] a;
@@ -61,7 +63,7 @@ public abstract class c {
         throw new UnsupportedOperationException("Method not decompiled: w3.c.b(e2.x, int, int, int, int, java.lang.String, boolean, b2.s, e2.j0, int):void");
     }
 
-    public static a1 c(int i10, x xVar) {
+    public static b1 c(int i10, x xVar) {
         xVar.N(i10 + 12);
         xVar.O(1);
         d(xVar);
@@ -80,7 +82,7 @@ public abstract class c {
         d(xVar);
         String e = v0.e(xVar.A());
         if ("audio/mpeg".equals(e) || "audio/vnd.dts".equals(e) || "audio/vnd.dts.hd".equals(e)) {
-            return new a1(e, null, -1L, -1L);
+            return new b1(e, null, -1L, -1L);
         }
         xVar.O(4);
         long C = xVar.C();
@@ -93,7 +95,7 @@ public abstract class c {
         if (j10 <= 0) {
             j10 = -1;
         }
-        return new a1(e, bArr, j10, C > 0 ? C : -1L);
+        return new b1(e, bArr, j10, C > 0 ? C : -1L);
     }
 
     public static int d(x xVar) {
@@ -124,7 +126,7 @@ public abstract class c {
      */
     /* JADX WARN: Code restructure failed: missing block: B:34:0x009f, code lost:
     
-        com.google.android.gms.internal.play_billing.k3.r("Failed to parse metadata entry with key: ", r8, "MetadataUtil");
+        com.google.android.gms.internal.play_billing.k3.q("Failed to parse metadata entry with key: ", r8, "MetadataUtil");
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -324,7 +326,7 @@ public abstract class c {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static ArrayList i(f2.d dVar, w wVar, long j10, b2.s sVar, boolean z10, boolean z11, d9.k kVar, boolean z12) {
+    public static ArrayList i(f2.d dVar, y yVar, long j10, b2.s sVar, boolean z10, boolean z11, d9.k kVar, boolean z12) {
         int i10;
         long j11;
         long j12;
@@ -345,8 +347,8 @@ public abstract class c {
         f2.e e7;
         long[] jArr;
         long[] jArr2;
-        b2.w wVar2;
-        b2.w wVar3;
+        w wVar;
+        w wVar2;
         d9.k kVar2;
         q qVar;
         f2.d d;
@@ -602,7 +604,7 @@ public abstract class c {
                                                             vVar.d = str;
                                                             vVar.w = j17;
                                                             vVar.u = x1Var;
-                                                            j0Var3.d = new b2.w(vVar);
+                                                            j0Var3.d = new w(vVar);
                                                         }
                                                         str2 = str;
                                                         j0Var2 = j0Var3;
@@ -661,10 +663,10 @@ public abstract class c {
                                                                     j24 = j26;
                                                                 }
                                                                 j16 = j24;
-                                                                StringBuilder m19 = i2.e.m("size: ", x10, "x", x11, "\npalette: ");
-                                                                m19.append(new d9.l(", ", 0).e(arrayList6));
-                                                                m19.append("\n");
-                                                                String sb2 = m19.toString();
+                                                                StringBuilder k10 = k3.k("size: ", x10, "x", x11, "\npalette: ");
+                                                                k10.append(new d9.l(", ", 0).e(arrayList6));
+                                                                k10.append("\n");
+                                                                String sb2 = k10.toString();
                                                                 String str6 = m0.a;
                                                                 str5 = "application/vobsub";
                                                                 x1Var = n0.y(sb2.getBytes(StandardCharsets.UTF_8));
@@ -706,14 +708,14 @@ public abstract class c {
                                                             v vVar2 = new v();
                                                             vVar2.a = Integer.toString(m11);
                                                             vVar2.r = v0.n(v);
-                                                            j0Var3.d = new b2.w(vVar2);
+                                                            j0Var3.d = new w(vVar2);
                                                         }
                                                     }
                                                 } else if (m18 == 1667329389) {
                                                     v vVar3 = new v();
                                                     vVar3.a = Integer.toString(m11);
                                                     vVar3.r = v0.n("application/x-camera-motion");
-                                                    j0Var3.d = new b2.w(vVar3);
+                                                    j0Var3.d = new w(vVar3);
                                                 }
                                                 str2 = str;
                                                 j0Var2 = j0Var3;
@@ -786,26 +788,26 @@ public abstract class c {
                                         long[] jArr9 = (long[]) create.first;
                                         jArr2 = (long[]) create.second;
                                         jArr = jArr9;
-                                        wVar2 = (b2.w) j0Var4.d;
-                                        if (wVar2 != null) {
+                                        wVar = (w) j0Var4.d;
+                                        if (wVar != null) {
                                             if (H != 0) {
                                                 f2.c cVar = new f2.c(H);
-                                                v a2 = wVar2.a();
-                                                t0 t0Var = ((b2.w) j0Var4.d).l;
+                                                v a2 = wVar.a();
+                                                t0 t0Var = ((w) j0Var4.d).l;
                                                 a2.k = t0Var != null ? t0Var.a(cVar) : new t0(cVar);
-                                                wVar3 = new b2.w(a2);
+                                                wVar2 = new w(a2);
                                             } else {
-                                                wVar3 = wVar2;
+                                                wVar2 = wVar;
                                             }
                                             kVar2 = kVar;
-                                            qVar = new q(m11, i11, C, j15, j27, j28, wVar3, j0Var4.b, (r[]) j0Var4.c, j0Var4.a, jArr, jArr2);
+                                            qVar = new q(m11, i11, C, j15, j27, j28, wVar2, j0Var4.b, (r[]) j0Var4.c, j0Var4.a, jArr, jArr2);
                                         }
                                     }
                                 }
                                 jArr = null;
                                 jArr2 = null;
-                                wVar2 = (b2.w) j0Var4.d;
-                                if (wVar2 != null) {
+                                wVar = (w) j0Var4.d;
+                                if (wVar != null) {
                                 }
                             }
                             kVar2 = kVar;
@@ -863,7 +865,7 @@ public abstract class c {
                 if (qVar6 == null) {
                     arrayList3 = arrayList4;
                 } else {
-                    b2.w wVar4 = qVar6.g;
+                    w wVar3 = qVar6.g;
                     f2.d d13 = dVar3.d(1835297121);
                     d13.getClass();
                     f2.d d14 = d13.d(1835626086);
@@ -872,7 +874,7 @@ public abstract class c {
                     d15.getClass();
                     f2.e e17 = d15.e(1937011578);
                     if (e17 != null) {
-                        bVar = new b4.d(e17, wVar4);
+                        bVar = new b4.d(e17, wVar3);
                     } else {
                         f2.e e18 = d15.e(1937013298);
                         if (e18 == null) {
@@ -894,12 +896,12 @@ public abstract class c {
                         if (qVar6.b == 2) {
                             long j29 = qVar6.f;
                             if (j29 > j11) {
-                                v a10 = wVar4.a();
+                                v a10 = wVar3.a();
                                 a10.C = b10 / (j29 / 1000000.0f);
-                                qVar6 = qVar6.a(new b2.w(a10));
+                                qVar6 = qVar6.a(new w(a10));
                             }
                         }
-                        b2.w wVar5 = qVar6.g;
+                        w wVar4 = qVar6.g;
                         f2.e e19 = d15.e(1937007471);
                         if (e19 == null) {
                             e19 = d15.e(1668232756);
@@ -947,7 +949,7 @@ public abstract class c {
                         }
                         int a11 = bVar.a();
                         x xVar14 = xVar13;
-                        String str7 = wVar5.s;
+                        String str7 = wVar4.s;
                         boolean z18 = a11 != -1 && ("audio/raw".equals(str7) || "audio/g711-mlaw".equals(str7) || "audio/g711-alaw".equals(str7)) && E2 == 0 && i23 == 0 && i25 == 0;
                         ArrayList arrayList7 = new ArrayList();
                         boolean z19 = xVar12 == null;
@@ -1152,8 +1154,8 @@ public abstract class c {
                                 j18 = j38;
                                 qVar3 = qVar2;
                                 boolean z21 = z15;
-                                i2.e.w(sb3, qVar3.a, ": remainingSynchronizationSamples ", i74, ", remainingSamplesAtTimestampDelta ");
-                                i2.e.w(sb3, i77, ", remainingSamplesInChunk ", i26, ", remainingTimestampDeltaChanges ");
+                                k3.r(sb3, qVar3.a, ": remainingSynchronizationSamples ", i74, ", remainingSamplesAtTimestampDelta ");
+                                k3.r(sb3, i77, ", remainingSamplesInChunk ", i26, ", remainingTimestampDeltaChanges ");
                                 sb3.append(i69);
                                 sb3.append(", remainingSamplesAtTimestampOffset ");
                                 sb3.append(i73);
@@ -1172,12 +1174,12 @@ public abstract class c {
                         if (j39 > j11) {
                             long a04 = m0.a0(j20 * 8, 1000000L, j39, RoundingMode.HALF_DOWN);
                             if (a04 > j11 && a04 < 2147483647L) {
-                                v a12 = wVar5.a();
+                                v a12 = wVar4.a();
                                 a12.h = (int) a04;
-                                qVar4 = qVar3.a(new b2.w(a12));
+                                qVar4 = qVar3.a(new w(a12));
                                 int i81 = qVar4.b;
                                 long j40 = qVar4.c;
-                                b2.w wVar6 = qVar4.g;
+                                w wVar5 = qVar4.g;
                                 long[] jArr13 = qVar4.j;
                                 jArr5 = qVar4.i;
                                 RoundingMode roundingMode = RoundingMode.DOWN;
@@ -1218,11 +1220,11 @@ public abstract class c {
                                             int length = jArr15.length - 1;
                                             if (jArr15[0] <= j42 && j42 < jArr15[m0.i(4, 0, length)] && jArr15[m0.i(jArr15.length - 4, 0, length)] < a06 && a06 <= j19 + 2) {
                                                 long max = Math.max(j11, j19 - a06);
-                                                long a07 = m0.a0(j42 - jArr15[0], wVar6.L, qVar7.c, roundingMode);
-                                                long a08 = m0.a0(max, wVar6.L, qVar7.c, roundingMode);
+                                                long a07 = m0.a0(j42 - jArr15[0], wVar5.L, qVar7.c, roundingMode);
+                                                long a08 = m0.a0(max, wVar5.L, qVar7.c, roundingMode);
                                                 if ((a07 != j11 || a08 != j11) && a07 <= 2147483647L && a08 <= 2147483647L) {
-                                                    wVar.a = (int) a07;
-                                                    wVar.b = (int) a08;
+                                                    yVar.a = (int) a07;
+                                                    yVar.b = (int) a08;
                                                     m0.Z(jArr15, j40);
                                                     tVar2 = new t(qVar7, jArr14, iArr7, i82, jArr15, iArr8, f7, z19, m0.a0(jArr5[0], 1000000L, qVar7.d, roundingMode), i27);
                                                 }
@@ -1268,7 +1270,7 @@ public abstract class c {
                                                 while (b11 < jArr15.length) {
                                                     if (jArr15[b11] >= a09) {
                                                         i91++;
-                                                        if (i91 > wVar6.u) {
+                                                        if (i91 > wVar5.u) {
                                                             break;
                                                         }
                                                     } else {
@@ -1332,7 +1334,7 @@ public abstract class c {
                                             int i99 = iArr9[i97];
                                             long[] jArr19 = jArr18;
                                             int i100 = iArr10[i97];
-                                            b2.w wVar7 = wVar6;
+                                            w wVar6 = wVar5;
                                             if (z26) {
                                                 int i101 = i100 - i99;
                                                 System.arraycopy(jArr14, i99, jArr17, i98, i101);
@@ -1364,16 +1366,16 @@ public abstract class c {
                                             j45 += jArr5[i97];
                                             i97++;
                                             i82 = i102;
-                                            wVar6 = wVar7;
+                                            wVar5 = wVar6;
                                             jArr18 = jArr19;
                                         }
                                         long[] jArr20 = jArr18;
-                                        b2.w wVar8 = wVar6;
+                                        w wVar7 = wVar5;
                                         long a012 = m0.a0(j45, 1000000L, qVar7.d, RoundingMode.DOWN);
                                         if (z27) {
-                                            v a13 = wVar8.a();
+                                            v a13 = wVar7.a();
                                             a13.x = true;
-                                            qVar5 = qVar7.a(new b2.w(a13));
+                                            qVar5 = qVar7.a(new w(a13));
                                         } else {
                                             qVar5 = qVar7;
                                         }
@@ -1392,7 +1394,7 @@ public abstract class c {
                         qVar4 = qVar3;
                         int i812 = qVar4.b;
                         long j402 = qVar4.c;
-                        b2.w wVar62 = qVar4.g;
+                        w wVar52 = qVar4.g;
                         long[] jArr132 = qVar4.j;
                         jArr5 = qVar4.i;
                         RoundingMode roundingMode3 = RoundingMode.DOWN;
@@ -2150,7 +2152,7 @@ public abstract class c {
         int i59 = 8;
         int i60 = 8;
         z zVar = null;
-        a1 a1Var = null;
+        b1 b1Var = null;
         qi.e eVar2 = null;
         while (true) {
             if (i48 - i46 >= i47) {
@@ -2224,7 +2226,7 @@ public abstract class c {
                 if (m11 == 1752589123) {
                     c3.b.b(null, str8 == null);
                     xVar.N(i61 + 8);
-                    c3.x a10 = c3.x.a(xVar, false, null);
+                    c3.z a10 = c3.z.a(xVar, false, null);
                     List list2 = a10.a;
                     j0Var.a = a10.b;
                     if (!z10) {
@@ -2272,7 +2274,7 @@ public abstract class c {
                         c3.b.b("must have at least two layers", eVar3 != null && ((n0) eVar3.a).size() >= 2);
                         xVar.N(i61 + 8);
                         eVar3.getClass();
-                        c3.x a11 = c3.x.a(xVar, true, eVar3);
+                        c3.z a11 = c3.z.a(xVar, true, eVar3);
                         c3.b.b("nalUnitLengthFieldLength must be same for both hvcC and lhvC atoms", j0Var.a == a11.b);
                         int i76 = a11.h;
                         int i77 = i56;
@@ -2747,13 +2749,13 @@ public abstract class c {
                                                 str8 = str3;
                                             } else if (m11 == 1702061171) {
                                                 c3.b.b(null, str4 == null);
-                                                a1 c10 = c(i61, xVar);
+                                                b1 c10 = c(i61, xVar);
                                                 String str15 = (String) c10.c;
                                                 byte[] bArr6 = (byte[]) c10.d;
                                                 if (bArr6 != null) {
                                                     list = n0.y(bArr6);
                                                 }
-                                                a1Var = c10;
+                                                b1Var = c10;
                                                 str8 = str15;
                                                 eVar2 = eVar;
                                             } else if (m11 == 1651798644) {
@@ -2833,9 +2835,9 @@ public abstract class c {
                                                 int i130 = bArr7[7] & 255;
                                                 String str16 = m0.a;
                                                 Locale locale2 = Locale.US;
-                                                StringBuilder m15 = i2.e.m("apv1.apvf", i128, ".apvl", i129, ".apvb");
-                                                m15.append(i130);
-                                                str9 = m15.toString();
+                                                StringBuilder k10 = k3.k("apv1.apvf", i128, ".apvl", i129, ".apvb");
+                                                k10.append(i130);
+                                                str9 = k10.toString();
                                                 x1 y10 = n0.y(bArr7);
                                                 x xVar2 = new x(bArr7);
                                                 a4.g gVar2 = new a4.g(bArr7, i126);
@@ -2897,8 +2899,8 @@ public abstract class c {
                                                 if (m11 == 1668246642) {
                                                     i29 = i25;
                                                     if (i84 == -1 && i29 == -1) {
-                                                        int m16 = xVar.m();
-                                                        if (m16 == 1852009592 || m16 == 1852009571) {
+                                                        int m15 = xVar.m();
+                                                        if (m15 == 1852009592 || m15 == 1852009571) {
                                                             int H7 = xVar.H();
                                                             int H8 = xVar.H();
                                                             xVar.O(2);
@@ -2913,7 +2915,7 @@ public abstract class c {
                                                             i51 = i112;
                                                             i59 = i86;
                                                         } else {
-                                                            e2.a.l("BoxParsers", "Unsupported color type: " + f2.f.a(m16));
+                                                            e2.a.l("BoxParsers", "Unsupported color type: " + f2.f.a(m15));
                                                         }
                                                     }
                                                 } else {

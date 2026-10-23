@@ -1,38 +1,26 @@
 package org.telegram.ui.Components;
 
-import android.os.Bundle;
-
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class ys0 extends org.telegram.ui.qn {
-    public boolean Rc;
-    public final /* synthetic */ int Sc;
-    public final /* synthetic */ uv0 Tc;
+public final class ys0 extends s4.s {
+    public final /* synthetic */ xv0 Q;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ys0(uv0 uv0Var, Bundle bundle, int i10) {
-        super(bundle);
-        this.Tc = uv0Var;
-        this.Sc = i10;
-        this.Rc = true;
+    public ys0(xv0 xv0Var) {
+        super(3);
+        this.Q = xv0Var;
     }
 
-    @Override // org.telegram.ui.qn, org.telegram.ui.ActionBar.n2
-    public final void onTransitionAnimationStart(boolean z10, boolean z11) {
-        uv0 uv0Var = this.Tc;
-        fv0 fv0Var = uv0Var.S;
-        if (this.Rc) {
-            if (this.j0 != null) {
-                qa("");
-                this.j0.H(fv0Var.w, false);
-            }
-            org.telegram.ui.qk qkVar = this.o1;
-            if (qkVar != null) {
-                qkVar.e(fv0Var.x, false);
-            }
-            uv0Var.v1.getMediaDataController().portSavedSearchResults(getClassGuid(), fv0Var.x, fv0Var.w, fv0Var.n, fv0Var.h, this.Sc, fv0Var.v, fv0Var.s);
-            this.Rc = false;
+    @Override // s4.s, s4.b0, s4.n0
+    public final int o0(int i10, qf.e eVar, s4.y0 y0Var) {
+        if (this.Q.o1) {
+            i10 = 0;
         }
-        super.onTransitionAnimationStart(z10, z11);
+        return super.o0(i10, eVar, y0Var);
+    }
+
+    @Override // s4.s, s4.b0, s4.n0
+    public final boolean y0() {
+        return false;
     }
 }

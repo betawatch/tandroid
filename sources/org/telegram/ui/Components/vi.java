@@ -12,7 +12,7 @@ import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.WebFile;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class vi implements Utilities.CallbackReturn {
     public final /* synthetic */ int a;
@@ -32,11 +32,11 @@ public final /* synthetic */ class vi implements Utilities.CallbackReturn {
                 sh.f fVar = (sh.f) this.b;
                 View view = (View) obj;
                 ImageReceiver imageReceiver = new ImageReceiver(view);
-                SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(R.raw.map_placeholder, org.telegram.ui.ActionBar.h6.Pb, (org.telegram.ui.ActionBar.h6.I.q() ? 3 : 6) * 0.12f);
+                SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(R.raw.map_placeholder, org.telegram.ui.ActionBar.k6.Pb, (org.telegram.ui.ActionBar.k6.I.q() ? 3 : 6) * 0.12f);
                 svgThumb.setAspectCenter(true);
-                svgThumb.setColorKey(org.telegram.ui.ActionBar.h6.qe);
+                svgThumb.setColorKey(org.telegram.ui.ActionBar.k6.qe);
                 imageReceiver.setImage(ImageLocation.getForWebFile(WebFile.createWithGeoPoint(fVar.b.geo, 300, 168, 15, Math.min(2, (int) Math.ceil(AndroidUtilities.density)))), (String) null, (ImageLocation) null, (String) null, new oq(svgThumb), (Object) null, 0);
-                view.addOnAttachStateChangeListener(new org.telegram.ui.Cells.p8(imageReceiver, 1));
+                view.addOnAttachStateChangeListener(new org.telegram.ui.Cells.q8(imageReceiver, 1));
                 imageReceiver.setRoundRadius(AndroidUtilities.dp(14.0f));
                 return new ed(imageReceiver, view.getContext().getResources().getDrawable(R.drawable.map_pin).mutate());
             case 2:
@@ -46,10 +46,10 @@ public final /* synthetic */ class vi implements Utilities.CallbackReturn {
                 }
                 return Boolean.valueOf(i10 == 1);
             default:
-                c71 c71Var = (c71) this.b;
+                j71 j71Var = (j71) this.b;
                 View view2 = (View) obj;
-                c71Var.getClass();
-                return view2.getParent() != c71Var ? Boolean.FALSE : Boolean.valueOf(!u61.K(c71Var.T(view2).f));
+                j71Var.getClass();
+                return view2.getParent() != j71Var ? Boolean.FALSE : Boolean.valueOf(!b71.K(j71Var.T(view2).f));
         }
     }
 }

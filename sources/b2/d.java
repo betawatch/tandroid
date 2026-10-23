@@ -20,7 +20,7 @@ import java.util.List;
 import org.telegram.messenger.MediaController;
 import w7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public abstract class d {
     public static void a(Context context, boolean z10, TaskCompletionSource taskCompletionSource) {
@@ -67,7 +67,7 @@ public abstract class d {
                     i12 = 1;
                     break;
                 }
-                if (r2.i.c(supportedPerformancePoints.get(i13)).covers(performancePoint)) {
+                if (r2.i.b(supportedPerformancePoints.get(i13)).covers(performancePoint)) {
                     i12 = 2;
                     break;
                 }
@@ -117,7 +117,7 @@ public abstract class d {
                     if (((r2.o) f7.get(i10)).d != null && (videoCapabilities = ((r2.o) f7.get(i10)).d.getVideoCapabilities()) != null && (supportedPerformancePoints = videoCapabilities.getSupportedPerformancePoints()) != null && !supportedPerformancePoints.isEmpty()) {
                         MediaCodecInfo.VideoCapabilities.PerformancePoint performancePoint = new MediaCodecInfo.VideoCapabilities.PerformancePoint(1280, 720, 60);
                         for (int i11 = 0; i11 < supportedPerformancePoints.size(); i11++) {
-                            if (r2.i.c(supportedPerformancePoints.get(i11)).covers(performancePoint)) {
+                            if (r2.i.b(supportedPerformancePoints.get(i11)).covers(performancePoint)) {
                                 return 2;
                             }
                         }

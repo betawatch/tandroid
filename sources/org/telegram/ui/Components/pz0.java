@@ -1,28 +1,26 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class pz0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Switch b;
+public final /* synthetic */ class pz0 implements md0, od0 {
+    public final /* synthetic */ rz0 a;
 
-    public /* synthetic */ pz0(Switch r12, int i10) {
-        this.a = i10;
-        this.b = r12;
+    @Override // org.telegram.ui.Components.md0
+    public String e(int i10) {
+        return this.a.n[i10];
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.b.d = null;
-                break;
-            default:
-                this.b.e = null;
-                break;
+    @Override // org.telegram.ui.Components.od0
+    public void n(qd0 qd0Var, int i10) {
+        rz0 rz0Var = this.a;
+        rz0Var.b();
+        SharedConfig.updateChatListSwipeSetting(i10);
+        rz0Var.invalidate();
+        try {
+            qd0Var.performHapticFeedback(3, 2);
+        } catch (Exception unused) {
         }
     }
 }

@@ -9,7 +9,7 @@ import android.media.AudioManager;
 import android.os.Build;
 import android.util.Rational;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class n0 {
     public final Object a;
@@ -47,14 +47,14 @@ public final class n0 {
         return builder;
     }
 
-    public g b(b2.f fVar, b2.w wVar) {
+    public h b(b2.f fVar, b2.w wVar) {
         boolean booleanValue;
         wVar.getClass();
         int i10 = wVar.L;
         fVar.getClass();
         int i11 = Build.VERSION.SDK_INT;
         if (i11 < 29 || i10 == -1) {
-            return g.d;
+            return h.d;
         }
         Context context = (Context) this.a;
         Boolean bool = (Boolean) this.b;
@@ -73,18 +73,18 @@ public final class n0 {
         str.getClass();
         int c10 = b2.v0.c(str, wVar.k);
         if (c10 == 0 || i11 < e2.m0.s(c10)) {
-            return g.d;
+            return h.d;
         }
         int t10 = e2.m0.t(wVar.K);
         if (t10 == 0) {
-            return g.d;
+            return h.d;
         }
         try {
             AudioFormat build = new AudioFormat.Builder().setSampleRate(i10).setChannelMask(t10).setEncoding(c10).build();
             if (i11 >= 33) {
                 int directPlaybackSupport = AudioManager.getDirectPlaybackSupport(build, fVar.b());
                 if ((directPlaybackSupport & 1) == 0) {
-                    return g.d;
+                    return h.d;
                 }
                 r4 = (directPlaybackSupport & 3) == 3;
                 bc.d dVar = new bc.d();
@@ -95,7 +95,7 @@ public final class n0 {
             }
             if (i11 < 31) {
                 if (!AudioManager.isOffloadedPlaybackSupported(build, fVar.b())) {
-                    return g.d;
+                    return h.d;
                 }
                 bc.d dVar2 = new bc.d();
                 dVar2.a = true;
@@ -104,7 +104,7 @@ public final class n0 {
             }
             int playbackOffloadSupport = AudioManager.getPlaybackOffloadSupport(build, fVar.b());
             if (playbackOffloadSupport == 0) {
-                return g.d;
+                return h.d;
             }
             bc.d dVar3 = new bc.d();
             if (i11 > 32 && playbackOffloadSupport == 2) {
@@ -115,7 +115,7 @@ public final class n0 {
             dVar3.c = booleanValue;
             return dVar3.a();
         } catch (IllegalArgumentException unused) {
-            return g.d;
+            return h.d;
         }
     }
 

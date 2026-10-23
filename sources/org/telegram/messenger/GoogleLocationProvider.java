@@ -20,13 +20,13 @@ import org.telegram.messenger.ILocationServiceProvider;
 import org.telegram.messenger.PushListenerController;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public class GoogleLocationProvider implements ILocationServiceProvider {
     private g8.a locationProviderClient;
     private g8.i settingsClient;
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public static final class GoogleApiClientImpl implements ILocationServiceProvider.IMapApiClient {
         private com.google.android.gms.common.api.m apiClient;
 
@@ -45,7 +45,7 @@ public class GoogleLocationProvider implements ILocationServiceProvider {
         }
     }
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public static final class GoogleLocationRequest implements ILocationServiceProvider.ILocationRequest {
         private LocationRequest request;
 
@@ -276,7 +276,7 @@ public class GoogleLocationProvider implements ILocationServiceProvider {
                 fVar4 = fVar7;
             } else {
                 if (eVar3 != null) {
-                    throw new IllegalStateException(a1.g.C(eVar4.c, " cannot be used with ", eVar3.c));
+                    throw new IllegalStateException(a1.g.D(eVar4.c, " cannot be used with ", eVar3.c));
                 }
                 mainLooper = looper2;
                 s3Var = s3Var3;
@@ -334,7 +334,7 @@ public class GoogleLocationProvider implements ILocationServiceProvider {
         oVar.c = cVar2;
         oVar.a = true;
         oVar.b = d;
-        n2.e eVar = new n2.e(16, oVar, locationRequest);
+        n2.e eVar = new n2.e(15, oVar, locationRequest);
         ai.a aVar2 = new ai.a();
         aVar2.a = true;
         aVar2.c = eVar;

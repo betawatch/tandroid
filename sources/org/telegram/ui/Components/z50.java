@@ -4,18 +4,18 @@ import android.content.Context;
 import android.graphics.Canvas;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public abstract class z50 extends o60 {
+public abstract class z50 extends p60 {
     public ImageReceiver a;
     public float b;
-    public final /* synthetic */ m60 c;
+    public final /* synthetic */ n60 c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z50(m60 m60Var, Context context) {
+    public z50(n60 n60Var, Context context) {
         super(context);
-        this.c = m60Var;
-        m60Var.setWillNotDraw(false);
+        this.c = n60Var;
+        n60Var.setWillNotDraw(false);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -47,7 +47,7 @@ public abstract class z50 extends o60 {
         }
     }
 
-    @Override // org.telegram.ui.Components.o60
+    @Override // org.telegram.ui.Components.p60
     public void setImageReceiver(ImageReceiver imageReceiver) {
         if (this.a == null) {
             this.b = 0.0f;

@@ -8,7 +8,7 @@ import android.view.MotionEvent;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class f5 extends FrameLayout {
     public final /* synthetic */ xa a;
@@ -25,14 +25,14 @@ public final class f5 extends FrameLayout {
         super.onDraw(canvas);
         xa xaVar = this.a;
         Paint paint = xaVar.r1;
-        rg.o1 o1Var = xaVar.l1;
-        paint.setAlpha((int) ((1.0f - xaVar.t1) * o1Var.getAlpha() * 20.0f));
+        rg.p1 p1Var = xaVar.l1;
+        paint.setAlpha((int) ((1.0f - xaVar.t1) * p1Var.getAlpha() * 20.0f));
         RectF rectF = AndroidUtilities.rectTmp;
-        o1Var.b(rectF);
-        float translationY = o1Var.getTranslationY() + xaVar.T0.getTranslationY() + o1Var.getTop() + r4.getTop();
+        p1Var.b(rectF);
+        float translationY = p1Var.getTranslationY() + xaVar.T0.getTranslationY() + p1Var.getTop() + r4.getTop();
         float f7 = rectF.left;
-        rg.t1 t1Var = xaVar.m1;
-        rectF.set(AndroidUtilities.lerp(f7, t1Var.getLeft(), xaVar.t1), AndroidUtilities.lerp(rectF.top + translationY, t1Var.getTop() - t1Var.getTranslationY(), xaVar.t1), AndroidUtilities.lerp(rectF.right, t1Var.getRight(), xaVar.t1), AndroidUtilities.lerp(translationY + rectF.bottom, t1Var.getBottom() - t1Var.getTranslationY(), xaVar.t1));
+        rg.u1 u1Var = xaVar.m1;
+        rectF.set(AndroidUtilities.lerp(f7, u1Var.getLeft(), xaVar.t1), AndroidUtilities.lerp(rectF.top + translationY, u1Var.getTop() - u1Var.getTranslationY(), xaVar.t1), AndroidUtilities.lerp(rectF.right, u1Var.getRight(), xaVar.t1), AndroidUtilities.lerp(translationY + rectF.bottom, u1Var.getBottom() - u1Var.getTranslationY(), xaVar.t1));
         float dp = AndroidUtilities.dp(AndroidUtilities.lerp(32, 16, xaVar.t1));
         Paint paint2 = xaVar.s1;
         int alpha = paint2.getAlpha();
@@ -47,7 +47,7 @@ public final class f5 extends FrameLayout {
         if (motionEvent.getActionMasked() == 0) {
             xa xaVar = this.a;
             if (xaVar.u1) {
-                xaVar.O0(false);
+                xaVar.N0(false);
                 return true;
             }
         }

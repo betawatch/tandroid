@@ -2,36 +2,41 @@ package org.telegram.ui;
 
 import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class h21 implements k21 {
-    public final /* synthetic */ org.telegram.messenger.video.a a;
-    public final /* synthetic */ org.telegram.ui.Components.xc b;
-    public final /* synthetic */ Context c;
-    public final /* synthetic */ ci.k0 d;
-    public final /* synthetic */ org.telegram.messenger.video.d e;
+public final /* synthetic */ class h21 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.messenger.video.a b;
+    public final /* synthetic */ org.telegram.ui.Components.xc c;
+    public final /* synthetic */ Context d;
+    public final /* synthetic */ ci.k0 e;
 
-    public h21(org.telegram.messenger.video.a aVar, org.telegram.ui.Components.xc xcVar, Context context, ci.k0 k0Var, org.telegram.messenger.video.d dVar) {
-        this.a = aVar;
-        this.b = xcVar;
-        this.c = context;
-        this.d = k0Var;
-        this.e = dVar;
+    public /* synthetic */ h21(org.telegram.messenger.video.a aVar, org.telegram.ui.Components.xc xcVar, Context context, ci.k0 k0Var, int i10) {
+        this.a = i10;
+        this.b = aVar;
+        this.c = xcVar;
+        this.d = context;
+        this.e = k0Var;
     }
 
-    @Override // org.telegram.ui.k21
-    public final void a() {
-        AndroidUtilities.runOnUIThread(new d21(this.a, this.b, this.c, this.d, 2), 200L);
-    }
-
-    @Override // org.telegram.ui.k21
-    public final void b() {
-        AndroidUtilities.runOnUIThread(new jv0(25, this.a, this.b), 200L);
-    }
-
-    @Override // org.telegram.ui.k21
-    public final void c() {
-        this.e.run();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.run();
+                this.c.c(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.AdReported), -1, 2, new dv(this.d, 2), this.e)).j();
+                break;
+            case 1:
+                this.b.run();
+                this.c.c(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.AdReported), -1, 2, new dv(this.d, 5), this.e)).j();
+                break;
+            default:
+                this.b.run();
+                this.c.c(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.AdReported), -1, 2, new dv(this.d, 6), this.e)).j();
+                break;
+        }
     }
 }

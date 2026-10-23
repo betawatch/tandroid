@@ -1,13 +1,70 @@
 package r4;
 
-import android.content.Context;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
+import j$.util.Objects;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public abstract class i {
-    public static PackageInfo a(PackageManager packageManager, Context context) {
-        return packageManager.getPackageInfo(context.getPackageName(), PackageManager.PackageInfoFlags.of(0L));
+public final class i {
+    public final int a;
+    public final int b;
+    public final long c;
+    public final long d;
+
+    public i(long j10, int i10, int i11, long j11) {
+        this.a = i10;
+        this.b = i11;
+        this.c = j10;
+        this.d = j11;
+    }
+
+    public static i a(File file) {
+        DataInputStream dataInputStream = new DataInputStream(new FileInputStream(file));
+        try {
+            i iVar = new i(dataInputStream.readLong(), dataInputStream.readInt(), dataInputStream.readInt(), dataInputStream.readLong());
+            dataInputStream.close();
+            return iVar;
+        } finally {
+        }
+    }
+
+    public final void b(File file) {
+        file.delete();
+        DataOutputStream dataOutputStream = new DataOutputStream(new FileOutputStream(file));
+        try {
+            dataOutputStream.writeInt(this.a);
+            dataOutputStream.writeInt(this.b);
+            dataOutputStream.writeLong(this.c);
+            dataOutputStream.writeLong(this.d);
+            dataOutputStream.close();
+        } catch (Throwable th2) {
+            try {
+                dataOutputStream.close();
+            } catch (Throwable th3) {
+                th2.addSuppressed(th3);
+            }
+            throw th2;
+        }
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && (obj instanceof i)) {
+            i iVar = (i) obj;
+            if (this.b == iVar.b && this.c == iVar.c && this.a == iVar.a && this.d == iVar.d) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return Objects.hash(Integer.valueOf(this.b), Long.valueOf(this.c), Integer.valueOf(this.a), Long.valueOf(this.d));
     }
 }

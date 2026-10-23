@@ -1,75 +1,52 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.util.SparseIntArray;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class u41 extends z41 {
-    public final /* synthetic */ int d3;
-    public final /* synthetic */ x51 e3;
+public final class u41 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ b61 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u41(x51 x51Var, Context context, int i10) {
-        super(x51Var, context);
-        this.e3 = x51Var;
-        this.d3 = i10;
+    public /* synthetic */ u41(b61 b61Var, boolean z10, int i10) {
+        this.a = i10;
+        this.c = b61Var;
+        this.b = z10;
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView
-    public final void j0(int i10) {
-        x51 x51Var = this.e3;
-        o41 o41Var = x51Var.f0;
-        if (i10 == 0) {
-            x51Var.w1 = false;
-            if (x51Var.a == -1 || o41Var.getVisibility() != 0 || o41Var.getTranslationY() <= (-AndroidUtilities.dp(51.0f))) {
-                return;
-            }
-            x51.a(x51Var, o41Var.getTranslationY() > ((float) (-AndroidUtilities.dp(16.0f))) ? 0 : 1, 0);
-        }
-    }
-
-    @Override // androidx.recyclerview.widget.RecyclerView
-    public final void k0(int i10, int i11) {
-        int i12;
-        x51 x51Var = this.e3;
-        x51Var.h();
-        if (!x51Var.w1) {
-            int I0 = x51Var.r0.I0();
-            ArrayList arrayList = x51Var.D0;
-            SparseIntArray sparseIntArray = x51Var.w0;
-            if (I0 != -1) {
-                if (I0 > ((arrayList.size() <= 40 || x51Var.C0) ? arrayList.size() + (x51Var.N0 ? 1 : 0) : 40) && I0 > x51Var.I0.size()) {
-                    int i13 = 0;
-                    while (true) {
-                        if (i13 >= sparseIntArray.size()) {
-                            break;
-                        }
-                        int keyAt = sparseIntArray.keyAt(i13);
-                        int valueAt = sparseIntArray.valueAt(i13);
-                        org.telegram.ui.Components.fy fyVar = valueAt >= 0 ? (org.telegram.ui.Components.fy) x51Var.M0.get(valueAt) : null;
-                        if (fyVar != null) {
-                            boolean z10 = fyVar.h;
-                            int size = fyVar.c.size();
-                            if (!z10) {
-                                size = Math.min(24, size);
-                            }
-                            if (I0 > keyAt && I0 <= keyAt + 1 + size) {
-                                org.telegram.ui.Components.kw kwVar = x51Var.d0;
-                                kwVar.j(((kwVar.E == null || !kwVar.b0) ? 0 : 1) + (kwVar.y != null ? 1 : 0) + valueAt, true);
-                            }
-                        }
-                        i13++;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        ArrayList arrayList;
+        ArrayList arrayList2;
+        switch (this.a) {
+            case 0:
+                b61 b61Var = this.c;
+                o41 o41Var = b61Var.i0;
+                boolean z10 = this.b;
+                o41Var.setVisibility(z10 ? 0 : 8);
+                b61Var.h0.setVisibility(z10 ? 8 : 0);
+                b61Var.F1 = null;
+                if (!z10 && (arrayList2 = b61Var.B1) != null) {
+                    arrayList2.clear();
+                    ArrayList arrayList3 = b61Var.E1;
+                    if (arrayList3 != null) {
+                        arrayList3.clear();
                     }
-                } else {
-                    x51Var.d0.j(0, true);
+                    b61Var.q0.E(false);
                 }
-            }
+                if (!z10 && (arrayList = b61Var.C1) != null) {
+                    arrayList.clear();
+                    break;
+                }
+                break;
+            default:
+                b61 b61Var2 = this.c;
+                b61Var2.j0.setVisibility((this.b && b61Var2.i0.getVisibility() == 0) ? 0 : 8);
+                b61Var2.I1 = null;
+                break;
         }
-        x51Var.C();
-        AndroidUtilities.updateViewVisibilityAnimated(x51Var.e0, x51Var.h0.computeVerticalScrollOffset() != 0 || (i12 = this.d3) == 0 || i12 == 12 || i12 == 10 || i12 == 1 || i12 == 11 || i12 == 6, 1.0f, true);
-        x51Var.m();
     }
 }

@@ -23,12 +23,12 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.i51;
+import org.telegram.ui.Components.d51;
 import org.telegram.ui.Components.rc;
 import org.webrtc.RendererCommon;
 import w7.z5;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class k2 implements VoIPService.StateListener, tf.a, NotificationCenter.NotificationCenterDelegate {
     public static boolean U = false;
@@ -75,7 +75,7 @@ public final class k2 implements VoIPService.StateListener, tf.a, NotificationCe
         float f10 = i10 * 0.4f;
         int i13 = ((int) ((1.05f * f10) - f10)) / 2;
         this.E = i13;
-        ah.v vVar = new ah.v(this, context, context.getDrawable(R.drawable.calls_pip_outershadow), 18);
+        ah.v vVar = new ah.v(this, context, context.getDrawable(R.drawable.calls_pip_outershadow), 17);
         this.a = vVar;
         vVar.setWillNotDraw(false);
         vVar.setPadding(i13, i12, i13, i12);
@@ -109,7 +109,7 @@ public final class k2 implements VoIPService.StateListener, tf.a, NotificationCe
             imageView2.setContentDescription(LocaleController.getString(R.string.Open));
             j2Var.addView(imageView2, z5.d(40, 40.0f, 51, 4.0f, 4.0f, 4.0f, 0.0f));
             imageView.setOnClickListener(new ah.f(17));
-            imageView2.setOnClickListener(new i51(6, this, context));
+            imageView2.setOnClickListener(new d51(7, this, context));
         }
         VoIPService sharedInstance = VoIPService.getSharedInstance();
         if (sharedInstance != null) {
@@ -455,14 +455,14 @@ public final class k2 implements VoIPService.StateListener, tf.a, NotificationCe
     }
 
     @Override // org.telegram.messenger.voip.VoIPService.StateListener
-    public final void onAudioSettingsChanged() {
-    }
-
-    @Override // org.telegram.messenger.voip.VoIPService.StateListener
     public final void onSignalBarsCountChanged(int i10) {
     }
 
     @Override // org.telegram.messenger.voip.VoIPService.StateListener
     public final void onVideoAvailableChange(boolean z10) {
+    }
+
+    @Override // org.telegram.messenger.voip.VoIPService.StateListener
+    public final void onAudioSettingsChanged() {
     }
 }

@@ -1,26 +1,57 @@
 package org.telegram.ui;
 
 import android.view.View;
-import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class wd1 implements View.OnClickListener {
-    public final /* synthetic */ re1 a;
+public final /* synthetic */ class wd1 implements xh.c, MessagesController.ErrorDelegate, r0.n, org.telegram.ui.Components.dm0 {
+    public final /* synthetic */ ye1 a;
 
-    public wd1(re1 re1Var) {
-        this.a = re1Var;
+    public /* synthetic */ wd1(ye1 ye1Var) {
+        this.a = ye1Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        re1 re1Var = this.a;
-        if (re1Var.M == 1) {
-            org.telegram.ui.Components.f5.i0(re1Var, -re1Var.a, null, re1Var.g(), null, false, re1Var.J, new va(this, 5), re1Var.getResourceProvider());
-            return;
+    @Override // r0.n
+    public r0.k1 B0(View view, r0.k1 k1Var) {
+        int i10 = k1Var.a.f(519).d;
+        ye1 ye1Var = this.a;
+        ye1Var.f1 = i10;
+        te1 te1Var = ye1Var.r0;
+        if (te1Var != null) {
+            te1Var.setPadding(0, 0, 0, i10);
         }
-        re1Var.getMessagesController().addUserToChat(re1Var.a, re1Var.getUserConfig().getCurrentUser(), 0, null, re1Var, false, new pd1(re1Var, 2), new qd1(re1Var));
-        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeSearchByActiveAction, new Object[0]);
-        re1Var.O0(false);
+        ne1 ne1Var = ye1Var.n;
+        if (ne1Var != null) {
+            ne1Var.a.setTranslationY((-ye1Var.f1) - ye1Var.e1);
+        }
+        ye1Var.h.setTranslationY(((-ye1Var.X0) - ye1Var.f1) - ye1Var.e1);
+        ye1Var.A0();
+        return r0.k1.b;
+    }
+
+    @Override // org.telegram.ui.Components.dm0
+    public boolean c(float f7, float f10, int i10, View view) {
+        return ye1.W(this.a, view, f7);
+    }
+
+    @Override // xh.c
+    public void f(boolean z10, boolean z11) {
+        ye1 ye1Var = this.a;
+        ye1Var.U0.i(ye1Var.R0.b(), z10, z11);
+    }
+
+    @Override // org.telegram.messenger.MessagesController.ErrorDelegate
+    public boolean run(TLRPC.TL_error tL_error) {
+        return ye1.U(this.a, tL_error);
+    }
+
+    @Override // org.telegram.ui.Components.dm0
+    public /* synthetic */ void h() {
+    }
+
+    @Override // org.telegram.ui.Components.dm0
+    public /* synthetic */ void o(float f7) {
     }
 }

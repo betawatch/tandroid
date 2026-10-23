@@ -3,21 +3,21 @@ package org.telegram.ui.Wallet;
 import android.view.View;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class y7 implements View.OnClickListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ ei.d b;
     public final /* synthetic */ Utilities.Callback c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f3 d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.d6 e;
+    public final /* synthetic */ org.telegram.ui.ActionBar.h3 d;
+    public final /* synthetic */ org.telegram.ui.ActionBar.g6 e;
 
-    public /* synthetic */ y7(ei.d dVar, Utilities.Callback callback, org.telegram.ui.ActionBar.f3 f3Var, org.telegram.ui.ActionBar.d6 d6Var, int i10) {
+    public /* synthetic */ y7(ei.d dVar, Utilities.Callback callback, org.telegram.ui.ActionBar.h3 h3Var, org.telegram.ui.ActionBar.g6 g6Var, int i10) {
         this.a = i10;
         this.b = dVar;
         this.c = callback;
-        this.d = f3Var;
-        this.e = d6Var;
+        this.d = h3Var;
+        this.e = g6Var;
     }
 
     @Override // android.view.View.OnClickListener
@@ -26,13 +26,13 @@ public final /* synthetic */ class y7 implements View.OnClickListener {
             case 0:
                 ei.d dVar = this.b;
                 dVar.setLoading(true);
-                this.c.run(new u3(dVar, this.d, this.e, 1));
+                this.c.run(new t3(dVar, this.d, this.e, 1));
                 break;
             default:
                 ei.d dVar2 = this.b;
-                if (!dVar2.N) {
+                if (!dVar2.Q) {
                     dVar2.setLoading(true);
-                    this.c.run(new u3(this.d, this.e, dVar2));
+                    this.c.run(new t3(this.d, this.e, dVar2));
                     break;
                 }
                 break;

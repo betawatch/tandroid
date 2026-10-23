@@ -8,11 +8,11 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class rv extends View {
     public ImageReceiver.BackgroundThreadDrawHolder[] a;
-    public ci.g3 b;
+    public ci.f3 b;
     public a6 c;
     public ValueAnimator d;
     public float e;
@@ -53,8 +53,8 @@ public final class rv extends View {
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(f7, 0.0f);
                 this.d = ofFloat;
                 ofFloat.addUpdateListener(new l6(this, 18));
-                this.d.addListener(new org.telegram.ui.nq(this, 23));
-                org.telegram.messenger.nk.l(5.0f, this.d);
+                this.d.addListener(new org.telegram.ui.pq(this, 24));
+                org.telegram.messenger.sl.l(5.0f, this.d);
                 this.d.setDuration(350L);
                 this.d.start();
             }

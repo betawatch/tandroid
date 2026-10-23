@@ -10,7 +10,7 @@ import org.telegram.messenger.RichMessageLayout;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class d0 extends View {
     public final RichMessageLayout.RichButton a;
@@ -25,7 +25,7 @@ public final class d0 extends View {
         super(context);
         this.f = g0Var;
         this.b = i10;
-        RichMessageLayout.RichButton createEditorPageButton = RichMessageLayout.createEditorPageButton(g0Var.n, org.telegram.messenger.g0.b(32.0f, AndroidUtilities.displaySize.x, AndroidUtilities.dp(240.0f)), g0Var.r, pageButton, new u(this, 1));
+        RichMessageLayout.RichButton createEditorPageButton = RichMessageLayout.createEditorPageButton(g0Var.n, i2.o1.g(32.0f, AndroidUtilities.displaySize.x, AndroidUtilities.dp(240.0f)), g0Var.r, pageButton, new u(this, 1));
         this.a = createEditorPageButton;
         this.e = new ah.g(this, i10, 15);
         createEditorPageButton.width = createEditorPageButton.getPreferredWidth();
@@ -91,7 +91,7 @@ public final class d0 extends View {
                     TL_iv.pageBlockButtonRow pageblockbuttonrow = (TL_iv.pageBlockButtonRow) pageBlock;
                     int i10 = this.b;
                     if (i10 >= 0 && i10 < pageblockbuttonrow.buttons.size()) {
-                        h2 h2Var = w3Var.H3;
+                        h2 h2Var = w3Var.K3;
                         if (h2Var != null) {
                             h2Var.d();
                         }
@@ -109,12 +109,12 @@ public final class d0 extends View {
                             richButtonStyle.link = false;
                             pageButton.style = richButtonStyle;
                         }
-                        w3Var.W2.N(false);
-                        h2 h2Var2 = w3Var.H3;
+                        w3Var.Z2.N(false);
+                        h2 h2Var2 = w3Var.K3;
                         if (h2Var2 != null) {
                             h2Var2.h();
                         }
-                        w3Var.f3.onContentChanged();
+                        w3Var.i3.onContentChanged();
                     }
                 }
             }

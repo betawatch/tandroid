@@ -13,7 +13,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class pm extends s4.m0 implements ch.a {
     public Drawable a;
@@ -103,7 +103,7 @@ public final class pm extends s4.m0 implements ch.a {
             }
             if (drawable != null) {
                 int dp3 = AndroidUtilities.dp(24.0f);
-                int B = org.telegram.messenger.g0.B(7.0f, i11, dp3);
+                int B = org.telegram.messenger.v0.B(7.0f, i11, dp3);
                 int dp4 = AndroidUtilities.dp(7.0f) + top;
                 drawable.setBounds(B, dp4, B + dp3, dp3 + dp4);
                 drawable.draw(canvas);

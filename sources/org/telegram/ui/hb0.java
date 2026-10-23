@@ -1,35 +1,57 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class hb0 extends qn {
-    public boolean Rc;
-    public final /* synthetic */ TLRPC.User Sc;
-    public final /* synthetic */ TLRPC.User[] Tc;
-    public final /* synthetic */ long Uc;
+public final /* synthetic */ class hb0 implements Utilities.Callback2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ob0 b;
+    public final /* synthetic */ String c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public hb0(Bundle bundle, TLRPC.User user, TLRPC.User[] userArr, long j10) {
-        super(bundle);
-        this.Sc = user;
-        this.Tc = userArr;
-        this.Uc = j10;
+    public /* synthetic */ hb0(ob0 ob0Var, String str, int i10) {
+        this.a = i10;
+        this.b = ob0Var;
+        this.c = str;
     }
 
-    @Override // org.telegram.ui.qn, org.telegram.ui.ActionBar.n2
-    public final void onBecomeFullyVisible() {
-        super.onBecomeFullyVisible();
-        if (this.Rc) {
-            return;
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
+        switch (this.a) {
+            case 0:
+                TL_account.Passkeys passkeys = (TL_account.Passkeys) obj;
+                ob0 ob0Var = this.b;
+                ob0Var.c();
+                if (passkeys != null) {
+                    ob0Var.u(new PasskeysActivity(passkeys.passkeys), false);
+                    if ("create".equalsIgnoreCase(this.c)) {
+                        ob0Var.x("addPasskeyRow");
+                        break;
+                    }
+                }
+                break;
+            default:
+                org.telegram.ui.Wallet.z1 z1Var = (org.telegram.ui.Wallet.z1) obj;
+                String str = (String) obj2;
+                ob0 ob0Var2 = this.b;
+                ob0Var2.c();
+                if (z1Var != null) {
+                    org.telegram.ui.ActionBar.o2 U = LaunchActivity.U();
+                    if (U != null && U.getContext() != null) {
+                        org.telegram.ui.Wallet.e2.B(U.getContext(), ob0Var2.b, z1Var, null, U.getResourceProvider(), null, new kb0(ob0Var2, this.c, 1));
+                        break;
+                    }
+                } else {
+                    if (str == null) {
+                        str = LocaleController.getString(R.string.WalletTonConnectSessionResponseEmpty);
+                    }
+                    org.telegram.ui.Components.xc.b0(str);
+                    break;
+                }
+                break;
         }
-        this.Rc = true;
-        org.telegram.ui.Components.xc.a0(this).M(LocaleController.formatString(R.string.CreateManagedBotCreatedTitle, UserObject.getUserName(this.Sc)), AndroidUtilities.replaceSingleTag(LocaleController.formatString(R.string.CreateManagedBotCreatedText, UserObject.getUserName(this.Tc[0])), new ai.v3(this, this.Uc, 29)), R.raw.contact_check).j();
     }
 }

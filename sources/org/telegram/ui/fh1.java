@@ -1,54 +1,23 @@
 package org.telegram.ui;
 
-import android.content.Intent;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.voip.VoIPService;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class fh1 implements org.telegram.ui.Components.voip.d {
-    public final /* synthetic */ hh1 a;
+public final class fh1 extends AnimatorListenerAdapter {
+    public final /* synthetic */ oh1 a;
 
-    public fh1(hh1 hh1Var) {
-        this.a = hh1Var;
+    public fh1(oh1 oh1Var) {
+        this.a = oh1Var;
     }
 
-    public final void a() {
-        hh1 hh1Var = this.a;
-        if (hh1Var.p0 != 17) {
-            if (hh1Var.b.checkSelfPermission("android.permission.RECORD_AUDIO") != 0) {
-                hh1Var.b.requestPermissions(new String[]{"android.permission.RECORD_AUDIO"}, 101);
-                return;
-            } else {
-                if (VoIPService.getSharedState() != null) {
-                    hh1Var.q(new qy0(this, 25));
-                    return;
-                }
-                return;
-            }
-        }
-        Intent intent = new Intent(hh1Var.b, (Class<?>) VoIPService.class);
-        intent.putExtra("user_id", hh1Var.d.id);
-        intent.putExtra("is_outgoing", true);
-        intent.putExtra("start_incall_activity", false);
-        intent.putExtra("video_call", hh1Var.U0);
-        intent.putExtra("can_video_call", hh1Var.U0);
-        intent.putExtra("account", hh1Var.a);
-        try {
-            hh1Var.b.startService(intent);
-        } catch (Throwable th2) {
-            FileLog.e(th2);
-        }
-    }
-
-    public final void b() {
-        hh1 hh1Var = this.a;
-        if (hh1Var.p0 == 17) {
-            hh1Var.u0.b();
-        } else if (VoIPService.getSharedState() != null) {
-            VoIPService.getSharedState().declineIncomingCall();
-        } else {
-            hh1Var.u0.b();
-        }
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        oh1 oh1Var = this.a;
+        oh1Var.E.setText(LocaleController.getString(R.string.VoipCallEnded));
+        oh1Var.E.animate().alpha(1.0f).setDuration(70L).setListener(null).start();
     }
 }

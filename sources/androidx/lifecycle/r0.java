@@ -4,7 +4,7 @@ import android.app.Application;
 import java.lang.reflect.InvocationTargetException;
 import java.util.LinkedHashMap;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class r0 extends q0 {
     public static r0 e;
@@ -17,7 +17,7 @@ public final class r0 extends q0 {
     @Override // androidx.lifecycle.q0, androidx.lifecycle.s0
     public final p0 W0(Class cls, v1.b bVar) {
         if (this.d != null) {
-            return f(cls);
+            return c(cls);
         }
         Application application = (Application) ((LinkedHashMap) bVar.a).get(q0.a);
         if (application != null) {
@@ -26,12 +26,12 @@ public final class r0 extends q0 {
         if (a.class.isAssignableFrom(cls)) {
             throw new IllegalArgumentException("CreationExtras must have an application by `APPLICATION_KEY`");
         }
-        return super.f(cls);
+        return super.c(cls);
     }
 
     public final p0 a(Class cls, Application application) {
         if (!a.class.isAssignableFrom(cls)) {
-            return super.f(cls);
+            return super.c(cls);
         }
         try {
             p0 p0Var = (p0) cls.getConstructor(Application.class).newInstance(application);
@@ -49,7 +49,7 @@ public final class r0 extends q0 {
     }
 
     @Override // androidx.lifecycle.q0, androidx.lifecycle.s0
-    public final p0 f(Class cls) {
+    public final p0 c(Class cls) {
         Application application = this.d;
         if (application != null) {
             return a(cls, application);

@@ -1,36 +1,36 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class yi extends org.telegram.ui.ActionBar.m1 {
-    public final /* synthetic */ qn o;
+    public final /* synthetic */ sn o;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public yi(qn qnVar, wi wiVar) {
+    public yi(sn snVar, wi wiVar) {
         super(wiVar, -2, -2);
-        this.o = qnVar;
+        this.o = snVar;
     }
 
     @Override // org.telegram.ui.ActionBar.m1, android.widget.PopupWindow
     public final void dismiss() {
         d(true);
-        qn qnVar = this.o;
-        if (qnVar.Q8 != this) {
+        sn snVar = this.o;
+        if (snVar.c9 != this) {
             return;
         }
-        qnVar.Q8 = null;
-        qnVar.T8 = null;
-        qnVar.S8 = null;
-        qnVar.z0.R = true;
-        if (qnVar.R8) {
-            qnVar.j8(false, true, 0.0f);
+        snVar.c9 = null;
+        snVar.f9 = null;
+        snVar.e9 = null;
+        snVar.z0.R = true;
+        if (snVar.d9) {
+            snVar.j8(false, true, 0.0f);
         } else {
-            qnVar.R8 = true;
+            snVar.d9 = true;
         }
-        fk fkVar = qnVar.Y;
-        if (fkVar == null || fkVar.getEditField() == null) {
+        gk gkVar = snVar.Y;
+        if (gkVar == null || gkVar.getEditField() == null) {
             return;
         }
-        qnVar.Y.getEditField().setAllowDrawCursor(true);
+        snVar.Y.getEditField().setAllowDrawCursor(true);
     }
 }

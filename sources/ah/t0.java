@@ -20,24 +20,24 @@ import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.nk;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.n2;
+import org.telegram.messenger.sl;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.o2;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.dl0;
+import org.telegram.ui.Components.cx0;
+import org.telegram.ui.Components.gl0;
 import org.telegram.ui.Components.gw;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.rc0;
-import org.telegram.ui.Components.zw0;
-import org.telegram.ui.g51;
-import org.telegram.ui.k41;
-import org.telegram.ui.qn;
-import org.telegram.ui.r41;
-import org.telegram.ui.u41;
+import org.telegram.ui.Components.yb0;
+import org.telegram.ui.c51;
+import org.telegram.ui.k51;
+import org.telegram.ui.o41;
+import org.telegram.ui.sn;
+import org.telegram.ui.v41;
 import org.telegram.ui.y41;
 import w7.z5;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class t0 {
     public final int[] A;
@@ -57,12 +57,12 @@ public final class t0 {
     public boolean k;
     public boolean l;
     public final n0 m;
-    public final dl0 n;
+    public final gl0 n;
     public final List o;
-    public rc0 p;
+    public yb0 p;
     public boolean q;
-    public final n2 r;
-    public final d6 s;
+    public final o2 r;
+    public final g6 s;
     public float t;
     public float u;
     public boolean v;
@@ -73,7 +73,7 @@ public final class t0 {
     public final RectF f = new RectF();
     public final RectF i = new RectF();
 
-    public t0(int i10, n2 n2Var, ArrayList arrayList, HashSet hashSet, dl0 dl0Var, d6 d6Var, boolean z10) {
+    public t0(int i10, o2 o2Var, ArrayList arrayList, HashSet hashSet, gl0 gl0Var, g6 g6Var, boolean z10) {
         new Path();
         this.A = new int[2];
         this.B = new AnimationNotificationsLocker();
@@ -83,9 +83,9 @@ public final class t0 {
         this.F = 0;
         this.y = i10;
         this.o = arrayList;
-        this.r = n2Var;
-        this.s = d6Var;
-        Context context = n2Var != null ? n2Var.getContext() : dl0Var.getContext();
+        this.r = o2Var;
+        this.s = g6Var;
+        Context context = o2Var != null ? o2Var.getContext() : gl0Var.getContext();
         v vVar = new v(this, context);
         this.c = vVar;
         vVar.setOnClickListener(new g0(this, i11));
@@ -95,25 +95,25 @@ public final class t0 {
         s0 s0Var = new s0(this, context);
         this.a = s0Var;
         boolean z12 = z11;
-        n0 n0Var = new n0(this, n2Var, context, dl0Var.getWindowType(), i10 != 1, d6Var, dl0Var, n2Var);
+        n0 n0Var = new n0(this, o2Var, context, gl0Var.getWindowType(), i10 != 1, g6Var, gl0Var, o2Var);
         this.m = n0Var;
         n0Var.setOutlineProvider(new o0(this));
         n0Var.setClipToOutline(true);
-        boolean z13 = dl0Var.f1;
-        boolean z14 = dl0Var.g1;
-        if (n0Var.K1 != z13) {
-            n0Var.K1 = z13;
-            n0Var.L1 = z14;
-            u41 u41Var = n0Var.h0;
-            if (u41Var != null) {
-                u41Var.invalidate();
+        boolean z13 = gl0Var.g1;
+        boolean z14 = gl0Var.h1;
+        if (n0Var.L1 != z13) {
+            n0Var.L1 = z13;
+            n0Var.M1 = z14;
+            y41 y41Var = n0Var.h0;
+            if (y41Var != null) {
+                y41Var.invalidate();
             }
-            k41 k41Var = n0Var.i0;
-            if (k41Var != null) {
-                k41Var.invalidate();
+            o41 o41Var = n0Var.i0;
+            if (o41Var != null) {
+                o41Var.invalidate();
             }
         }
-        n0Var.setOnLongPressedListener(new ya.d(dl0Var, r11));
+        n0Var.setOnLongPressedListener(new ya.c(gl0Var, r11));
         n0Var.setOnRecentClearedListener(new sb.a(i12));
         n0Var.setRecentReactions(arrayList);
         n0Var.setSelectedReactions((HashSet<i1>) hashSet);
@@ -130,11 +130,11 @@ public final class t0 {
         float f7 = r11;
         vVar.addView(s0Var, z5.d(-1, -1.0f, i10 == 5 ? 85 : 48, f7, f7, f7, 16.0f));
         vVar.setClipChildren(false);
-        if (i10 == 1 || (dl0Var.getDelegate() != null && dl0Var.getDelegate().w())) {
-            n0Var.setBackgroundDelegate(new h0(i11, this, dl0Var));
+        if (i10 == 1 || (gl0Var.getDelegate() != null && gl0Var.getDelegate().w())) {
+            n0Var.setBackgroundDelegate(new h0(i11, this, gl0Var));
         }
         if (z12) {
-            ((ViewGroup) dl0Var.getParent()).addView(vVar);
+            ((ViewGroup) gl0Var.getParent()).addView(vVar);
         } else {
             WindowManager.LayoutParams b10 = b(false);
             WindowManager windowManager = AndroidUtilities.findActivity(context).getWindowManager();
@@ -142,11 +142,11 @@ public final class t0 {
             AndroidUtilities.setPreferredMaxRefreshRate(windowManager, vVar, b10);
             windowManager.addView(vVar, b10);
         }
-        this.n = dl0Var;
-        dl0Var.setOnSwitchedToLoopView(new i0(this, i11));
-        dl0Var.b1 = true;
-        dl0Var.invalidate();
-        AndroidUtilities.runOnUIThread(new a1.f(10, this, dl0Var), 50L);
+        this.n = gl0Var;
+        gl0Var.setOnSwitchedToLoopView(new i0(this, i11));
+        gl0Var.c1 = true;
+        gl0Var.invalidate();
+        AndroidUtilities.runOnUIThread(new a1.f(10, this, gl0Var), 50L);
         if (i10 != 5) {
             NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 7);
         }
@@ -154,30 +154,30 @@ public final class t0 {
 
     public static void a(t0 t0Var, boolean z10) {
         View view;
-        dl0 dl0Var = t0Var.n;
+        gl0 gl0Var = t0Var.n;
         n0 n0Var = t0Var.m;
         if (t0Var.E.isEmpty()) {
             t0Var.h(false);
             x0.a();
             t0Var.B.unlock();
             n0Var.setEnterAnimationInProgress(false);
-            u41 u41Var = n0Var.h0;
+            y41 y41Var = n0Var.h0;
             if (z10) {
                 n0Var.d0.m(false);
-                u41Var.invalidate();
-                ArrayList arrayList = u41Var.Y2;
-                u41Var.f1();
+                y41Var.invalidate();
+                ArrayList arrayList = y41Var.b3;
+                y41Var.g1();
                 n0Var.f0.b();
                 n0Var.sendAccessibilityEvent(32);
-                dl0Var.setImportantForAccessibility(4);
+                gl0Var.setImportantForAccessibility(4);
                 int i10 = 0;
                 while (true) {
-                    if (i10 >= u41Var.getChildCount()) {
+                    if (i10 >= y41Var.getChildCount()) {
                         view = null;
                         break;
                     } else {
-                        if (u41Var.getChildAt(i10) instanceof g51) {
-                            view = u41Var.getChildAt(i10);
+                        if (y41Var.getChildAt(i10) instanceof k51) {
+                            view = y41Var.getChildAt(i10);
                             break;
                         }
                         i10++;
@@ -188,54 +188,54 @@ public final class t0 {
                 } else {
                     n0Var.performAccessibilityAction(64, null);
                 }
-                if (dl0Var.getPullingLeftProgress() > 0.0f) {
-                    dl0Var.O0 = false;
-                    ValueAnimator valueAnimator = dl0Var.y0;
+                if (gl0Var.getPullingLeftProgress() > 0.0f) {
+                    gl0Var.O0 = false;
+                    ValueAnimator valueAnimator = gl0Var.y0;
                     if (valueAnimator != null) {
                         valueAnimator.cancel();
                     }
-                    dl0Var.B0 = 0.0f;
-                    v vVar = dl0Var.S;
+                    gl0Var.B0 = 0.0f;
+                    v vVar = gl0Var.S;
                     if (vVar != null) {
                         vVar.invalidate();
                     }
-                    dl0Var.invalidate();
+                    gl0Var.invalidate();
                 } else {
-                    dl0Var.O0 = true;
-                    ValueAnimator valueAnimator2 = dl0Var.y0;
+                    gl0Var.O0 = true;
+                    ValueAnimator valueAnimator2 = gl0Var.y0;
                     if (valueAnimator2 != null) {
                         valueAnimator2.cancel();
                     }
-                    dl0Var.B0 = 0.0f;
-                    v vVar2 = dl0Var.S;
+                    gl0Var.B0 = 0.0f;
+                    v vVar2 = gl0Var.S;
                     if (vVar2 != null) {
                         vVar2.invalidate();
                     }
-                    dl0Var.invalidate();
+                    gl0Var.invalidate();
                 }
-                k41 k41Var = n0Var.i0;
+                o41 o41Var = n0Var.i0;
                 for (int i11 = 0; i11 < arrayList.size(); i11++) {
-                    y41 y41Var = (y41) arrayList.get(i11);
-                    for (int i12 = 0; i12 < y41Var.O.size(); i12++) {
-                        if (((g51) y41Var.O.get(i12)).b) {
-                            ((g51) y41Var.O.get(i12)).b = false;
-                            ((g51) y41Var.O.get(i12)).invalidate();
-                            y41Var.k();
+                    c51 c51Var = (c51) arrayList.get(i11);
+                    for (int i12 = 0; i12 < c51Var.O.size(); i12++) {
+                        if (((k51) c51Var.O.get(i12)).b) {
+                            ((k51) c51Var.O.get(i12)).b = false;
+                            ((k51) c51Var.O.get(i12)).invalidate();
+                            c51Var.k();
                         }
                     }
                 }
-                u41Var.invalidate();
-                for (int i13 = 0; i13 < k41Var.Y2.size(); i13++) {
-                    y41 y41Var2 = (y41) k41Var.Y2.get(i13);
-                    for (int i14 = 0; i14 < y41Var2.O.size(); i14++) {
-                        if (((g51) y41Var2.O.get(i14)).b) {
-                            ((g51) y41Var2.O.get(i14)).b = false;
-                            ((g51) y41Var2.O.get(i14)).invalidate();
-                            y41Var2.k();
+                y41Var.invalidate();
+                for (int i13 = 0; i13 < o41Var.b3.size(); i13++) {
+                    c51 c51Var2 = (c51) o41Var.b3.get(i13);
+                    for (int i14 = 0; i14 < c51Var2.O.size(); i14++) {
+                        if (((k51) c51Var2.O.get(i14)).b) {
+                            ((k51) c51Var2.O.get(i14)).b = false;
+                            ((k51) c51Var2.O.get(i14)).invalidate();
+                            c51Var2.k();
                         }
                     }
                 }
-                k41Var.invalidate();
+                o41Var.invalidate();
                 t0Var.i();
                 t0Var.a.invalidate();
             }
@@ -243,8 +243,8 @@ public final class t0 {
     }
 
     public static void g(View view, float f7) {
-        if (view instanceof g51) {
-            ((g51) view).setAnimatedScale(f7);
+        if (view instanceof k51) {
+            ((k51) view).setAnimatedScale(f7);
         } else if (view instanceof gw) {
             view.setScaleX(f7);
             view.setScaleY(f7);
@@ -283,17 +283,17 @@ public final class t0 {
         int[] iArr = this.A;
         s0 s0Var = this.a;
         RectF rectF = this.f;
-        dl0 dl0Var = this.n;
-        rectF.set(dl0Var.w);
-        this.e = dl0Var.y;
+        gl0 gl0Var = this.n;
+        rectF.set(gl0Var.w);
+        this.e = gl0Var.y;
         int[] iArr2 = new int[2];
         if (z10) {
-            dl0Var.getLocationOnScreen(iArr);
+            gl0Var.getLocationOnScreen(iArr);
         }
         vVar.getLocationOnScreen(iArr2);
         int i11 = 0;
-        float topOffset = dl0Var.getTopOffset() + ((((iArr[1] - iArr2[1]) - AndroidUtilities.dp(44.0f)) - AndroidUtilities.dp(52.0f)) - (n0Var.O0 ? AndroidUtilities.dp(26.0f) : 0));
-        if (dl0Var.F0) {
+        float topOffset = gl0Var.getTopOffset() + ((((iArr[1] - iArr2[1]) - AndroidUtilities.dp(44.0f)) - AndroidUtilities.dp(52.0f)) - (n0Var.O0 ? AndroidUtilities.dp(26.0f) : 0));
+        if (gl0Var.F0) {
             topOffset = (iArr[1] - iArr2[1]) - AndroidUtilities.dp(12.0f);
         }
         if (s0Var.getMeasuredHeight() + topOffset > vVar.getMeasuredHeight() - AndroidUtilities.dp(32.0f)) {
@@ -330,7 +330,7 @@ public final class t0 {
         float y3 = (iArr[r18] - iArr2[r18]) - s0Var.getY();
         this.h = y3;
         rectF.offset(x10, y3);
-        dl0Var.setCustomEmojiEnterProgress(this.j);
+        gl0Var.setCustomEmojiEnterProgress(this.j);
         if (z10) {
             this.w = (SharedConfig.getDevicePerformanceClass() < 2 || !LiteMode.isEnabled(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS)) ? false : r18;
             this.k = false;
@@ -357,11 +357,11 @@ public final class t0 {
             valueAnimator = ValueAnimator.ofFloat(f7, z10 ? 1.0f : 0.0f);
         } else {
             float f10 = z10 ? 1.0f : 0.0f;
-            zw0 zw0Var = new zw0();
-            zw0Var.a = 0;
-            zw0Var.b = 0;
-            zw0Var.setFloatValues(new float[]{f7, f10});
-            valueAnimator = zw0Var;
+            cx0 cx0Var = new cx0();
+            cx0Var.a = 0;
+            cx0Var.b = 0;
+            cx0Var.setFloatValues(new float[]{f7, f10});
+            valueAnimator = cx0Var;
         }
         this.x = valueAnimator;
         valueAnimator.addUpdateListener(new k0(i11, this, z10));
@@ -374,7 +374,7 @@ public final class t0 {
             this.x.setInterpolator(bs.h);
         } else if (this.w) {
             this.x.setDuration(450L);
-            nk.l(0.5f, this.x);
+            sl.l(0.5f, this.x);
         } else {
             this.x.setDuration(350L);
             this.x.setInterpolator(bs.f);
@@ -382,7 +382,7 @@ public final class t0 {
         s0Var.invalidate();
         h(true);
         if (z10) {
-            dl0Var.setCustomEmojiReactionsBackground(false);
+            gl0Var.setCustomEmojiReactionsBackground(false);
             ValueAnimator valueAnimator3 = this.x;
             Objects.requireNonNull(valueAnimator3);
             a3.d dVar = new a3.d(valueAnimator3, i12);
@@ -394,8 +394,8 @@ public final class t0 {
             }
             x0.c = dVar;
         } else {
-            dl0Var.O0 = true;
-            dl0Var.invalidate();
+            gl0Var.O0 = true;
+            gl0Var.invalidate();
             this.x.setStartDelay(30L);
             this.x.start();
         }
@@ -416,27 +416,27 @@ public final class t0 {
         if (this.q) {
             return;
         }
-        dl0 dl0Var = this.n;
-        if (dl0Var != null) {
-            ValueAnimator valueAnimator = dl0Var.y0;
+        gl0 gl0Var = this.n;
+        if (gl0Var != null) {
+            ValueAnimator valueAnimator = gl0Var.y0;
             if (valueAnimator != null) {
                 valueAnimator.cancel();
             }
-            dl0Var.B0 = 0.0f;
-            v vVar = dl0Var.S;
+            gl0Var.B0 = 0.0f;
+            v vVar = gl0Var.S;
             if (vVar != null) {
                 vVar.invalidate();
             }
-            dl0Var.invalidate();
+            gl0Var.invalidate();
         }
         qc.e();
         this.q = true;
         AndroidUtilities.hideKeyboard(this.c);
         c(false);
         if (this.v) {
-            n2 n2Var = this.r;
-            if (n2Var instanceof qn) {
-                ((qn) n2Var).Y9(true, true);
+            o2 o2Var = this.r;
+            if (o2Var instanceof sn) {
+                ((sn) o2Var).Y9(true, true);
             }
         }
     }
@@ -451,9 +451,9 @@ public final class t0 {
         AndroidUtilities.hideKeyboard(vVar);
         vVar.animate().alpha(0.0f).setDuration(150L).setListener(new r0(this, 1));
         if (this.v) {
-            n2 n2Var = this.r;
-            if (n2Var instanceof qn) {
-                ((qn) n2Var).Y9(true, true);
+            o2 o2Var = this.r;
+            if (o2Var instanceof sn) {
+                ((sn) o2Var).Y9(true, true);
             }
         }
     }
@@ -485,16 +485,16 @@ public final class t0 {
         int i10 = 0;
         while (true) {
             n0 n0Var = this.m;
-            u41 u41Var = n0Var.h0;
-            u41 u41Var2 = n0Var.h0;
-            if (i10 >= u41Var.getChildCount()) {
+            y41 y41Var = n0Var.h0;
+            y41 y41Var2 = n0Var.h0;
+            if (i10 >= y41Var.getChildCount()) {
                 return;
             }
-            if (u41Var2.getChildAt(i10) instanceof g51) {
-                g51 g51Var = (g51) u41Var2.getChildAt(i10);
-                if (g51Var.x != null) {
-                    g51Var.b = false;
-                    g51Var.invalidate();
+            if (y41Var2.getChildAt(i10) instanceof k51) {
+                k51 k51Var = (k51) y41Var2.getChildAt(i10);
+                if (k51Var.x != null) {
+                    k51Var.b = false;
+                    k51Var.invalidate();
                 }
             }
             i10++;
@@ -506,22 +506,22 @@ public final class t0 {
         HashSet hashSet;
         n0 n0Var = this.m;
         float y3 = n0Var.getY();
-        r41 r41Var = n0Var.a0;
-        float y10 = r41Var.getY() + y3;
-        u41 u41Var = n0Var.h0;
-        int y11 = (int) (u41Var.getY() + y10);
+        v41 v41Var = n0Var.a0;
+        float y10 = v41Var.getY() + y3;
+        y41 y41Var = n0Var.h0;
+        int y11 = (int) (y41Var.getY() + y10);
         ArrayList arrayList = null;
         int i10 = 0;
         int i11 = 0;
         boolean z11 = false;
         while (true) {
-            int childCount = u41Var.getChildCount();
+            int childCount = y41Var.getChildCount();
             rectF = this.i;
             hashSet = this.D;
             if (i11 >= childCount) {
                 break;
             }
-            View childAt = u41Var.getChildAt(i11);
+            View childAt = y41Var.getChildAt(i11);
             if (!hashSet.contains(childAt)) {
                 float measuredHeight = (childAt.getMeasuredHeight() / 2.0f) + childAt.getTop() + y11;
                 if (measuredHeight >= rectF.bottom || measuredHeight <= rectF.top || f7 == 0.0f) {
@@ -537,7 +537,7 @@ public final class t0 {
             }
             i11++;
         }
-        int y12 = (int) (n0Var.d0.getY() + r41Var.getY() + n0Var.getY());
+        int y12 = (int) (n0Var.d0.getY() + v41Var.getY() + n0Var.getY());
         for (int i12 = 0; i12 < n0Var.d0.b.getChildCount(); i12++) {
             View childAt2 = n0Var.d0.b.getChildAt(i12);
             if (!hashSet.contains(childAt2)) {
@@ -587,15 +587,15 @@ public final class t0 {
 
     public final void l() {
         n0 n0Var = this.m;
-        r41 r41Var = n0Var.a0;
-        r41 r41Var2 = n0Var.a0;
+        v41 v41Var = n0Var.a0;
+        v41 v41Var2 = n0Var.a0;
         boolean z10 = this.w;
         s0 s0Var = this.a;
-        r41Var.setTranslationX(z10 ? 0.0f : s0Var.f);
-        r41Var2.setTranslationY(s0Var.h);
-        r41Var2.setPivotX(s0Var.r);
-        r41Var2.setPivotY(s0Var.s);
-        r41Var2.setScaleX(s0Var.n);
-        r41Var2.setScaleY(s0Var.n);
+        v41Var.setTranslationX(z10 ? 0.0f : s0Var.f);
+        v41Var2.setTranslationY(s0Var.h);
+        v41Var2.setPivotX(s0Var.r);
+        v41Var2.setPivotY(s0Var.s);
+        v41Var2.setScaleX(s0Var.n);
+        v41Var2.setScaleY(s0Var.n);
     }
 }

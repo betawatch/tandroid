@@ -8,10 +8,10 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.nk;
+import org.telegram.messenger.sl;
 import org.telegram.ui.Components.bs;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class n2 extends FrameLayout {
     public TextView[] a;
@@ -44,7 +44,7 @@ public final class n2 extends FrameLayout {
         if (z10) {
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str);
             SpannableString spannableString = new SpannableString(".");
-            spannableString.setSpan(new ig.v1(textViewArr), 0, 1, 33);
+            spannableString.setSpan(new ig.u1(textViewArr), 0, 1, 33);
             spannableStringBuilder.append((CharSequence) spannableString);
             str = spannableStringBuilder;
         }
@@ -95,7 +95,7 @@ public final class n2 extends FrameLayout {
             frameLayout.setScaleY(0.6f);
             frameLayout.setScaleX(0.6f);
             frameLayout.animate().setListener(null).cancel();
-            nk.t(frameLayout.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f), bs.k, 300L);
+            sl.t(frameLayout.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f), bs.k, 300L);
         }
     }
 

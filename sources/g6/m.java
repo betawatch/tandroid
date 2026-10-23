@@ -12,14 +12,14 @@ import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import v7.r7;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class m extends p {
     public static final String v;
     public long e;
     public c6.q f;
     public Long g;
-    public ya.d h;
+    public ya.c h;
     public int i;
     public final o j;
     public final o k;
@@ -176,9 +176,9 @@ public final class m extends p {
     }
 
     public final void i() {
-        ya.d dVar = this.h;
-        if (dVar != null) {
-            e6.h hVar = (e6.h) dVar.b;
+        ya.c cVar = this.h;
+        if (cVar != null) {
+            e6.h hVar = (e6.h) cVar.b;
             Iterator it = hVar.h.iterator();
             if (it.hasNext()) {
                 throw a1.g.j(it);
@@ -191,9 +191,9 @@ public final class m extends p {
     }
 
     public final void j() {
-        ya.d dVar = this.h;
-        if (dVar != null) {
-            e6.h hVar = (e6.h) dVar.b;
+        ya.c cVar = this.h;
+        if (cVar != null) {
+            e6.h hVar = (e6.h) cVar.b;
             Iterator it = hVar.h.iterator();
             if (it.hasNext()) {
                 throw a1.g.j(it);
@@ -206,9 +206,9 @@ public final class m extends p {
     }
 
     public final void k() {
-        ya.d dVar = this.h;
-        if (dVar != null) {
-            e6.h hVar = (e6.h) dVar.b;
+        ya.c cVar = this.h;
+        if (cVar != null) {
+            e6.h hVar = (e6.h) cVar.b;
             Iterator it = hVar.h.iterator();
             if (it.hasNext()) {
                 throw a1.g.j(it);
@@ -221,9 +221,9 @@ public final class m extends p {
     }
 
     public final void l() {
-        ya.d dVar = this.h;
-        if (dVar != null) {
-            e6.h hVar = (e6.h) dVar.b;
+        ya.c cVar = this.h;
+        if (cVar != null) {
+            e6.h hVar = (e6.h) cVar.b;
             Iterator it = hVar.j.values().iterator();
             if (it.hasNext()) {
                 if (it.next() != null) {

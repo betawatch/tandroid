@@ -9,7 +9,7 @@ import java.io.IOException;
 import org.telegram.messenger.MediaDataController;
 import v7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class h extends Handler implements Runnable {
     public final int a;
@@ -61,7 +61,7 @@ public final class h extends Handler implements Runnable {
             long elapsedRealtime = SystemClock.elapsedRealtime();
             g gVar = this.d;
             gVar.getClass();
-            gVar.J(this.b, elapsedRealtime, elapsedRealtime - this.c, true);
+            gVar.z(this.b, elapsedRealtime, elapsedRealtime - this.c, true);
             this.d = null;
         }
     }
@@ -71,7 +71,7 @@ public final class h extends Handler implements Runnable {
         long j10 = elapsedRealtime - this.c;
         g gVar = this.d;
         gVar.getClass();
-        gVar.h(this.b, elapsedRealtime, j10, this.f);
+        gVar.j(this.b, elapsedRealtime, j10, this.f);
         this.e = null;
         l lVar = this.s;
         z2.a aVar = lVar.a;
@@ -99,7 +99,7 @@ public final class h extends Handler implements Runnable {
         g gVar = this.d;
         gVar.getClass();
         if (this.n) {
-            gVar.J(this.b, elapsedRealtime, j10, false);
+            gVar.z(this.b, elapsedRealtime, j10, false);
             return;
         }
         int i11 = message.what;

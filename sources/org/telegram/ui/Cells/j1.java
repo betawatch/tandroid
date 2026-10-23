@@ -1,16 +1,30 @@
 package org.telegram.ui.Cells;
 
-import org.telegram.ui.Components.a41;
-import org.telegram.ui.Components.gp0;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class j1 extends a41 {
-    public final /* synthetic */ u1 R;
+public final class j1 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ t1 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j1(u1 u1Var, u1 u1Var2, gp0 gp0Var) {
-        super(u1Var2, gp0Var);
-        this.R = u1Var;
+    public /* synthetic */ j1(int i10, t1 t1Var) {
+        this.a = i10;
+        this.b = t1Var;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                t1 t1Var = this.b;
+                t1Var.y7.isMediaSpoilersRevealed = true;
+                t1Var.invalidate();
+                break;
+            default:
+                this.b.setSelectedBackgroundProgress(0.0f);
+                break;
+        }
     }
 }

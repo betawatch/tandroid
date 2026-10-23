@@ -3,7 +3,6 @@ package wg;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
 import android.text.SpannableString;
 import android.view.View;
@@ -12,19 +11,19 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.nk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.r6;
 import org.telegram.ui.Components.RadioButton;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.ca0;
+import org.telegram.ui.Components.da0;
 import org.telegram.ui.Components.f6;
 import org.telegram.ui.Components.q6;
 import w7.z5;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class w extends FrameLayout {
     public final RadioButton a;
@@ -39,41 +38,42 @@ public final class w extends FrameLayout {
     public int s;
     public final f6 v;
 
-    public w(Context context, d6 d6Var) {
+    public w(Context context, g6 g6Var) {
         super(context);
         this.v = new f6(this, 0L, 500L, bs.h);
         Drawable mutate = context.getResources().getDrawable(R.drawable.star_small_outline).mutate();
         this.b = mutate;
-        mutate.setColorFilter(new PorterDuffColorFilter(h6.w0(h6.h5, d6Var), PorterDuff.Mode.SRC_IN));
+        r6.z(this, mutate, k6.h5, g6Var, PorterDuff.Mode.SRC_IN);
         this.c = context.getResources().getDrawable(R.drawable.star_small_inner).mutate();
         setWillNotDraw(false);
         q6 q6Var = new q6(context, false, false, false);
         this.d = q6Var;
-        q6Var.setTextColor(h6.w0(h6.G6, d6Var));
+        r6.a0(q6Var, k6.G6, g6Var);
         q6Var.setTypeface(AndroidUtilities.bold());
         q6Var.setTextSize(AndroidUtilities.dp(16.0f));
         addView(q6Var, z5.d(-1, 20.0f, 51, 64.0f, 8.0f, 80.0f, 0.0f));
         SpannableString spannableString = new SpannableString("x");
         this.h = spannableString;
-        spannableString.setSpan(new ca0(AndroidUtilities.dp(90.0f), q6Var), 0, 1, 33);
+        spannableString.setSpan(new da0(AndroidUtilities.dp(90.0f), q6Var), 0, 1, 33);
         q6 q6Var2 = new q6(context, false, true, true);
         this.e = q6Var2;
-        int i10 = h6.z6;
-        q6Var2.setTextColor(h6.w0(i10, d6Var));
+        int i10 = k6.z6;
+        r6.a0(q6Var2, i10, g6Var);
         q6Var2.setTextSize(AndroidUtilities.dp(13.0f));
         addView(q6Var2, z5.d(-1, 14.0f, 51, 64.0f, 31.0f, 80.0f, 0.0f));
         SpannableString spannableString2 = new SpannableString("x");
         this.n = spannableString2;
-        spannableString2.setSpan(new ca0(AndroidUtilities.dp(70.0f), q6Var2), 0, 1, 33);
+        spannableString2.setSpan(new da0(AndroidUtilities.dp(70.0f), q6Var2), 0, 1, 33);
         TextView textView = new TextView(context);
         this.f = textView;
-        nk.o(i10, d6Var, textView, 1, 16.0f);
+        r6.W(textView, i10, g6Var);
+        textView.setTextSize(1, 16.0f);
         textView.setGravity(5);
         addView(textView, z5.d(-2, -2.0f, 21, 0.0f, 0.0f, 19.0f, 0.0f));
         RadioButton radioButton = new RadioButton(context);
         this.a = radioButton;
         radioButton.setSize(AndroidUtilities.dp(20.0f));
-        radioButton.b(h6.w0(h6.j7, d6Var), h6.w0(h6.E5, d6Var));
+        r6.Q(radioButton, k6.j7, k6.E5, g6Var);
         addView(radioButton, z5.d(20, 20.0f, 19, 22.0f, 0.0f, 0.0f, 0.0f));
     }
 

@@ -9,13 +9,13 @@ import android.graphics.RectF;
 import android.view.View;
 import ei.i6;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.nk;
+import org.telegram.messenger.sl;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.p6;
-import org.telegram.ui.tf1;
+import org.telegram.ui.ve1;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class b extends View {
     public final p6 a;
@@ -43,7 +43,7 @@ public final class b extends View {
     }
 
     public final void a(int i10, boolean z10) {
-        if (!r.i()) {
+        if (!q.i()) {
             i10 = 0;
         }
         if (i10 > 0) {
@@ -62,8 +62,8 @@ public final class b extends View {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
             this.c = ofFloat;
             ofFloat.addUpdateListener(new i6(this, 26));
-            this.c.addListener(new tf1(this, 20));
-            nk.l(2.0f, this.c);
+            this.c.addListener(new ve1(this, 21));
+            sl.l(2.0f, this.c);
             this.c.setDuration(200L);
             this.c.start();
         }

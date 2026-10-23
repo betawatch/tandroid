@@ -1,105 +1,184 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
-import java.util.ArrayList;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.widget.ImageView;
+import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class ve1 extends pg.b {
-    public final /* synthetic */ xe1 d;
+public final class ve1 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public ve1(xe1 xe1Var) {
-        this.d = xe1Var;
+    public /* synthetic */ ve1(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // org.telegram.ui.Components.im0
-    public final boolean D(s4.b1 b1Var) {
-        int i10 = b1Var.f;
-        return i10 == 1 || i10 == 2 || i10 == 4;
-    }
-
-    @Override // s4.g0
-    public final int h() {
-        return this.d.d.size();
-    }
-
-    @Override // s4.g0
-    public final int j(int i10) {
-        return ((we1) this.d.d.get(i10)).a;
-    }
-
-    @Override // s4.g0
-    public final void v(s4.b1 b1Var, int i10) {
-        xe1 xe1Var = this.d;
-        ArrayList arrayList = xe1Var.d;
-        if (((we1) arrayList.get(i10)).a == 2) {
-            org.telegram.ui.Cells.oa oaVar = (org.telegram.ui.Cells.oa) b1Var.a;
-            long j10 = xe1Var.c;
-            TLRPC.TL_forumTopic tL_forumTopic = ((we1) arrayList.get(i10)).c;
-            org.telegram.ui.Components.w9 w9Var = oaVar.b;
-            og.d.p(w9Var, tL_forumTopic, false, false, null);
-            if (w9Var != null && w9Var.getImageReceiver() != null && (w9Var.getImageReceiver().getDrawable() instanceof og.c)) {
-                ((og.c) w9Var.getImageReceiver().getDrawable()).a(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.c9, false));
-            }
-            oaVar.c.setText(tL_forumTopic.title);
-            oaVar.d.setText(MessagesController.getInstance(UserConfig.selectedAccount).getMutedString(j10, tL_forumTopic.id));
-            oaVar.a = i10 == arrayList.size() - 1 || ((we1) arrayList.get(i10 + 1)).a == 2;
-        }
-    }
-
-    @Override // s4.g0
-    public final s4.b1 x(ViewGroup viewGroup, int i10) {
-        View view;
-        View view2 = null;
-        if (i10 == 1) {
-            org.telegram.ui.Cells.q8 q8Var = new org.telegram.ui.Cells.q8(viewGroup.getContext());
-            q8Var.m(R.drawable.msg_contact_add, LocaleController.getString(R.string.NotificationsAddAnException), true);
-            q8Var.e(org.telegram.ui.ActionBar.h6.v6, org.telegram.ui.ActionBar.h6.u6);
-            q8Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false));
-            view = q8Var;
-        } else if (i10 == 2) {
-            Context context = viewGroup.getContext();
-            org.telegram.ui.Cells.oa oaVar = new org.telegram.ui.Cells.oa(context);
-            org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
-            oaVar.b = w9Var;
-            oaVar.addView(w9Var, w7.z5.d(30, 30.0f, 16, 20.0f, 0.0f, 0.0f, 0.0f));
-            TextView textView = new TextView(context);
-            oaVar.c = textView;
-            textView.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false));
-            textView.setTextSize(1, 16.0f);
-            textView.setTypeface(AndroidUtilities.bold());
-            textView.setMaxLines(1);
-            oaVar.addView(textView, w7.z5.d(-1, -2.0f, 0, 72.0f, 8.0f, 12.0f, 0.0f));
-            TextView textView2 = new TextView(context);
-            oaVar.d = textView2;
-            textView2.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.y6, false));
-            textView2.setTextSize(1, 14.0f);
-            oaVar.addView(textView2, w7.z5.d(-1, -2.0f, 0, 72.0f, 32.0f, 12.0f, 0.0f));
-            oaVar.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false));
-            view = oaVar;
-        } else {
-            if (i10 != 3) {
-                if (i10 == 4) {
-                    org.telegram.ui.Cells.q8 q8Var2 = new org.telegram.ui.Cells.q8(viewGroup.getContext());
-                    q8Var2.i(LocaleController.getString(R.string.NotificationsDeleteAllException), false);
-                    q8Var2.e(-1, org.telegram.ui.ActionBar.h6.p7);
-                    q8Var2.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false));
-                    view = q8Var2;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        int i10 = this.a;
+        Object obj = this.b;
+        switch (i10) {
+            case 0:
+                super.onAnimationEnd(animator);
+                ((we1) obj).setScrollEnabled(true);
+                break;
+            case 1:
+                ag1 ag1Var = (ag1) obj;
+                if (animator.equals(ag1Var.d.K)) {
+                    ag1Var.d.K = null;
+                    break;
                 }
-                return com.google.android.gms.internal.play_billing.k3.l(view2, view2, -1, -2);
-            }
-            view = new org.telegram.ui.Cells.z6(viewGroup.getContext(), (org.telegram.ui.Cells.c1) null);
+                break;
+            case 2:
+                rg1 rg1Var = (rg1) obj;
+                rg1Var.d = null;
+                rg1Var.a = null;
+                rg1Var.b = false;
+                rg1Var.f.c.setAllowDrawCursor(true);
+                break;
+            case 3:
+                ((org.telegram.ui.Wallet.f3) obj).K = null;
+                break;
+            case 4:
+                ((org.telegram.ui.Wallet.m3) obj).f();
+                break;
+            case 5:
+                org.telegram.ui.Wallet.o5 o5Var = (org.telegram.ui.Wallet.o5) obj;
+                if (o5Var.I0 == animator) {
+                    o5Var.I0 = null;
+                    break;
+                }
+                break;
+            case 6:
+                org.telegram.ui.Wallet.m5 m5Var = (org.telegram.ui.Wallet.m5) obj;
+                m5Var.h = false;
+                m5Var.n = null;
+                m5Var.b.setLayerType(0, null);
+                break;
+            case 7:
+                org.telegram.ui.Wallet.s5 s5Var = (org.telegram.ui.Wallet.s5) obj;
+                s5Var.N = 0.0f;
+                s5Var.O = 0.0f;
+                s5Var.b0 = null;
+                break;
+            case 8:
+                org.telegram.ui.Wallet.m6 m6Var = (org.telegram.ui.Wallet.m6) obj;
+                m6Var.I = null;
+                m6Var.i0 = 1.0f;
+                m6Var.h0 = 0.0f;
+                m6Var.g0 = 0.0f;
+                m6Var.e();
+                break;
+            case 9:
+                org.telegram.ui.Wallet.o8 o8Var = (org.telegram.ui.Wallet.o8) obj;
+                EditTextBoldCursor editTextBoldCursor = o8Var.b;
+                if (o8Var.s == animator) {
+                    o8Var.s = null;
+                    o8Var.a.setVisibility(o8Var.x ? 4 : 0);
+                    editTextBoldCursor.setVisibility(o8Var.x ? 0 : 4);
+                    if (o8Var.x && !o8Var.y) {
+                        editTextBoldCursor.requestFocus();
+                        AndroidUtilities.showKeyboard(editTextBoldCursor);
+                        break;
+                    }
+                }
+                break;
+            case 10:
+                org.telegram.ui.Wallet.i9 i9Var = (org.telegram.ui.Wallet.i9) obj;
+                i9Var.n = null;
+                i9Var.d.setVisibility(i9Var.w ? 4 : 0);
+                i9Var.f.setVisibility(i9Var.x ? 0 : 4);
+                break;
+            case 11:
+                org.telegram.ui.Components.lg0 lg0Var = (org.telegram.ui.Components.lg0) obj;
+                ((ki1) lg0Var.b).getClass();
+                ((ki1) lg0Var.b).c.setVisibility(4);
+                break;
+            case 12:
+                ((org.telegram.ui.web.b1) obj).s.setVisibility(8);
+                break;
+            case 13:
+                qg.e0 e0Var = (qg.e0) obj;
+                e0Var.a.getPainting().c(null, e0Var.a.getCurrentColor(), true, null);
+                e0Var.r = null;
+                break;
+            case 14:
+                super.onAnimationEnd(animator);
+                rg.l0 l0Var = (rg.l0) obj;
+                ImageView imageView = l0Var.c;
+                l0Var.c = l0Var.d;
+                l0Var.d = imageView;
+                imageView.bringToFront();
+                l0Var.d.setVisibility(8);
+                l0Var.h = null;
+                break;
+            case 15:
+                rg.s1 s1Var = (rg.s1) obj;
+                if (animator == s1Var.r) {
+                    s1Var.f = s1Var.h;
+                    s1Var.h = -1;
+                    s1Var.r = null;
+                    break;
+                }
+                break;
+            case 16:
+                sg.p0 p0Var = (sg.p0) obj;
+                p0Var.s = p0Var.r ? 1.0f : 0.0f;
+                p0Var.e();
+                break;
+            case 17:
+                sg.a2 a2Var = (sg.a2) ((ei.c0) obj).b;
+                a2Var.F = true;
+                a2Var.invalidate();
+                break;
+            case 18:
+                tg.f fVar = (tg.f) ((tg.e) obj).b;
+                int i11 = tg.f.K;
+                fVar.d();
+                break;
+            case 19:
+                tg.f fVar2 = (tg.f) obj;
+                fVar2.d = null;
+                fVar2.e();
+                break;
+            case 20:
+                super.onAnimationEnd(animator);
+                tg.n nVar = ((tg.i) obj).b;
+                nVar.b.d = 0.0f;
+                nVar.d0 = null;
+                nVar.j(nVar.L);
+                break;
+            case 21:
+                ug.b bVar = (ug.b) obj;
+                bVar.b = 1.0f;
+                bVar.invalidate();
+                break;
+            case 22:
+                wh.g gVar = (wh.g) obj;
+                Iterator it = gVar.h.iterator();
+                while (it.hasNext()) {
+                    wh.c cVar = (wh.c) it.next();
+                    if (gVar.c.size() < gVar.d) {
+                        gVar.c.push(cVar);
+                    }
+                    it.remove();
+                }
+                Runnable runnable = gVar.q;
+                if (runnable != null) {
+                    runnable.run();
+                    gVar.q = null;
+                }
+                gVar.r = null;
+                gVar.invalidateSelf();
+                break;
+            default:
+                ((yh.g0) obj).b.w.setVisibility(8);
+                break;
         }
-        view2 = view;
-        return com.google.android.gms.internal.play_billing.k3.l(view2, view2, -1, -2);
     }
 }

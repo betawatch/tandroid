@@ -4,17 +4,17 @@ import android.content.Context;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Cells.e8;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class d2 extends e8 {
     public final /* synthetic */ int O;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ d2(int i10, Context context, d6 d6Var, boolean z10) {
-        super(context, d6Var, z10);
+    public /* synthetic */ d2(int i10, Context context, g6 g6Var, boolean z10) {
+        super(context, g6Var, z10);
         this.O = i10;
     }
 

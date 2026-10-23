@@ -7,10 +7,11 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.r6;
 import w7.z5;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s implements Runnable {
     public final /* synthetic */ int a;
@@ -27,17 +28,17 @@ public final /* synthetic */ class s implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.r0(this.c);
+                this.b.q0(this.c);
                 break;
             default:
                 final m0 m0Var = this.b;
                 LinearLayout linearLayout = new LinearLayout(m0Var.getContext());
                 linearLayout.setOrientation(0);
                 TextView textView = new TextView(m0Var.getContext());
-                int i10 = h6.E8;
-                fh.a aVar = m0Var.Q1;
-                textView.setTextColor(h6.w0(i10, aVar));
-                textView.setBackground(h6.L0(false));
+                int i10 = k6.E8;
+                u uVar = m0Var.Q1;
+                r6.W(textView, i10, uVar);
+                textView.setBackground(k6.M0(false));
                 textView.setGravity(16);
                 textView.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(14.0f), 0);
                 textView.setTextSize(1, 14.0f);
@@ -54,7 +55,7 @@ public final /* synthetic */ class s implements Runnable {
                             case 0:
                                 j jVar2 = jVar;
                                 m0 m0Var2 = m0Var;
-                                m0Var2.r0(jVar2);
+                                m0Var2.q0(jVar2);
                                 org.telegram.ui.ActionBar.m1 m1Var = m0Var2.R1;
                                 if (m1Var != null && m1Var.isShowing()) {
                                     m0Var2.R1.d(true);
@@ -64,7 +65,7 @@ public final /* synthetic */ class s implements Runnable {
                             default:
                                 m0 m0Var3 = m0Var;
                                 m0Var3.getClass();
-                                ((o2) jVar).r(true);
+                                ((p2) jVar).r(true);
                                 org.telegram.ui.ActionBar.m1 m1Var2 = m0Var3.R1;
                                 if (m1Var2 != null && m1Var2.isShowing()) {
                                     m0Var3.R1.d(true);
@@ -75,10 +76,10 @@ public final /* synthetic */ class s implements Runnable {
                     }
                 });
                 linearLayout.addView(textView, z5.n(-2, 48));
-                if (jVar instanceof v2) {
+                if (jVar instanceof w2) {
                     TextView textView2 = new TextView(m0Var.getContext());
-                    textView2.setTextColor(h6.w0(i10, aVar));
-                    textView2.setBackground(h6.L0(false));
+                    r6.W(textView2, i10, uVar);
+                    textView2.setBackground(k6.M0(false));
                     textView2.setGravity(16);
                     textView2.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
                     textView2.setTextSize(1, 14.0f);
@@ -88,10 +89,10 @@ public final /* synthetic */ class s implements Runnable {
                     textView2.setOnClickListener(new k(m0Var, 2));
                     linearLayout.addView(textView2, z5.n(-2, 48));
                 }
-                if (jVar instanceof o2) {
+                if (jVar instanceof p2) {
                     TextView textView3 = new TextView(m0Var.getContext());
-                    textView3.setTextColor(h6.w0(i10, aVar));
-                    textView3.setBackgroundDrawable(h6.L0(false));
+                    r6.W(textView3, i10, uVar);
+                    textView3.setBackgroundDrawable(k6.M0(false));
                     textView3.setGravity(16);
                     textView3.setEllipsize(truncateAt);
                     textView3.setPadding(AndroidUtilities.dp(14.0f), 0, AndroidUtilities.dp(16.0f), 0);
@@ -106,7 +107,7 @@ public final /* synthetic */ class s implements Runnable {
                                 case 0:
                                     j jVar2 = jVar;
                                     m0 m0Var2 = m0Var;
-                                    m0Var2.r0(jVar2);
+                                    m0Var2.q0(jVar2);
                                     org.telegram.ui.ActionBar.m1 m1Var = m0Var2.R1;
                                     if (m1Var != null && m1Var.isShowing()) {
                                         m0Var2.R1.d(true);
@@ -116,7 +117,7 @@ public final /* synthetic */ class s implements Runnable {
                                 default:
                                     m0 m0Var3 = m0Var;
                                     m0Var3.getClass();
-                                    ((o2) jVar).r(true);
+                                    ((p2) jVar).r(true);
                                     org.telegram.ui.ActionBar.m1 m1Var2 = m0Var3.R1;
                                     if (m1Var2 != null && m1Var2.isShowing()) {
                                         m0Var3.R1.d(true);
@@ -128,10 +129,10 @@ public final /* synthetic */ class s implements Runnable {
                     });
                     linearLayout.addView(textView3, z5.n(-2, 48));
                 }
-                if (!(jVar instanceof y1)) {
+                if (!(jVar instanceof z1)) {
                     TextView textView4 = new TextView(m0Var.getContext());
-                    textView4.setTextColor(h6.w0(i10, aVar));
-                    textView4.setBackgroundDrawable(h6.L0(false));
+                    r6.W(textView4, i10, uVar);
+                    textView4.setBackgroundDrawable(k6.M0(false));
                     textView4.setGravity(16);
                     textView4.setEllipsize(truncateAt);
                     textView4.setPadding(AndroidUtilities.dp(14.0f), 0, AndroidUtilities.dp(16.0f), 0);

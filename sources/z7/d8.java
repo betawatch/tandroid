@@ -1,19 +1,19 @@
 package z7;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class d8 implements ja.d {
     public static final d8 a = new d8();
-    public static final ja.c b = new ja.c("errorCode", i2.e.o(r4.c.n(w.class, new s(1))));
-    public static final ja.c c = new ja.c("durationMs", i2.e.o(r4.c.n(w.class, new s(2))));
-    public static final ja.c d = new ja.c("subjectSegmenterOptions", i2.e.o(r4.c.n(w.class, new s(3))));
+    public static final ja.c b = new ja.c("errorCode", i2.o1.p(si.o0.n(w.class, new s(1))));
+    public static final ja.c c = new ja.c("durationMs", i2.o1.p(si.o0.n(w.class, new s(2))));
+    public static final ja.c d = new ja.c("subjectSegmenterOptions", i2.o1.p(si.o0.n(w.class, new s(3))));
 
     @Override // ja.a
     public final void a(Object obj, Object obj2) {
-        ge geVar = (ge) obj;
+        fe feVar = (fe) obj;
         ja.e eVar = (ja.e) obj2;
-        eVar.d(b, geVar.a);
-        eVar.d(c, geVar.b);
-        eVar.d(d, geVar.c);
+        eVar.d(b, feVar.a);
+        eVar.d(c, feVar.b);
+        eVar.d(d, feVar.c);
     }
 }

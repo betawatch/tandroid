@@ -1,8 +1,8 @@
 package ki;
 
-import org.telegram.ui.mi0;
+import org.telegram.ui.qi0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i1 implements Runnable {
     public final /* synthetic */ int a;
@@ -46,9 +46,9 @@ public final /* synthetic */ class i1 implements Runnable {
             case 5:
                 d2 d2Var4 = this.b;
                 d2Var4.s0(2147483646, 0, true);
-                mi0 mi0Var = d2Var4.O0;
-                if (mi0Var != null) {
-                    mi0Var.g(false);
+                qi0 qi0Var = d2Var4.O0;
+                if (qi0Var != null) {
+                    qi0Var.g(false);
                     d2Var4.O0 = null;
                     break;
                 }
@@ -56,9 +56,9 @@ public final /* synthetic */ class i1 implements Runnable {
             default:
                 d2 d2Var5 = this.b;
                 d2Var5.s0(0, 0, false);
-                mi0 mi0Var2 = d2Var5.O0;
-                if (mi0Var2 != null) {
-                    mi0Var2.g(true);
+                qi0 qi0Var2 = d2Var5.O0;
+                if (qi0Var2 != null) {
+                    qi0Var2.g(true);
                     d2Var5.O0 = null;
                     break;
                 }

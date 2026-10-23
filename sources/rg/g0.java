@@ -1,13 +1,123 @@
 package rg;
 
-import android.view.MotionEvent;
-import android.widget.FrameLayout;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.jt0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class g0 extends FrameLayout {
+public final class g0 extends d {
+    public final Paint h;
+    public long n;
+    public float r;
+    public float s;
+    public final /* synthetic */ jt0 v;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public g0(jt0 jt0Var, Context context, f0 f0Var) {
+        super(context, f0Var);
+        this.v = jt0Var;
+        Paint paint = new Paint();
+        this.h = paint;
+        setWillNotDraw(false);
+        paint.setStrokeWidth(AndroidUtilities.dp(2.0f));
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setColor(-1);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:14:0x005d  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x008c  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x00ab  */
+    /* JADX WARN: Removed duplicated region for block: B:25:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x00a4  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x0070  */
     @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        return false;
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void onDraw(Canvas canvas) {
+        int i10;
+        int i11;
+        float f7;
+        Canvas canvas2;
+        float f10;
+        super.onDraw(canvas);
+        long min = Math.min(16L, System.currentTimeMillis() - this.n);
+        this.n = System.currentTimeMillis();
+        jt0 jt0Var = this.v;
+        j jVar = jt0Var.S0;
+        if (jVar == null || jVar.r || !jVar.n) {
+            i10 = 0;
+            i11 = 0;
+        } else {
+            i10 = jVar.getStickyX();
+            i11 = jt0Var.S0.getStickyY();
+        }
+        if (i10 != 0) {
+            float f11 = this.r;
+            if (f11 != 1.0f) {
+                this.r = org.telegram.ui.Cells.b1.c(min, 150.0f, f11, 1.0f);
+                invalidate();
+                if (i11 != 0) {
+                    float f12 = this.s;
+                    if (f12 != 1.0f) {
+                        this.s = org.telegram.ui.Cells.b1.c(min, 150.0f, f12, 1.0f);
+                        invalidate();
+                        f7 = this.s;
+                        Paint paint = this.h;
+                        if (f7 != 0.0f) {
+                            paint.setAlpha((int) (f7 * 255.0f));
+                            float measuredHeight = getMeasuredHeight() / 2.0f;
+                            canvas2 = canvas;
+                            canvas2.drawLine(0.0f, measuredHeight, getMeasuredWidth(), measuredHeight, paint);
+                        } else {
+                            canvas2 = canvas;
+                        }
+                        f10 = this.r;
+                        if (f10 != 0.0f) {
+                            paint.setAlpha((int) (f10 * 255.0f));
+                            float measuredWidth = getMeasuredWidth() / 2.0f;
+                            canvas2.drawLine(measuredWidth, 0.0f, measuredWidth, getMeasuredHeight(), paint);
+                            return;
+                        }
+                        return;
+                    }
+                }
+                if (i11 == 0) {
+                    float f13 = this.s;
+                    if (f13 != 0.0f) {
+                        this.s = org.telegram.ui.Cells.b1.t(min, 150.0f, f13, 0.0f);
+                        invalidate();
+                    }
+                }
+                f7 = this.s;
+                Paint paint2 = this.h;
+                if (f7 != 0.0f) {
+                }
+                f10 = this.r;
+                if (f10 != 0.0f) {
+                }
+            }
+        }
+        if (i10 == 0) {
+            float f14 = this.r;
+            if (f14 != 0.0f) {
+                this.r = org.telegram.ui.Cells.b1.t(min, 150.0f, f14, 0.0f);
+                invalidate();
+            }
+        }
+        if (i11 != 0) {
+        }
+        if (i11 == 0) {
+        }
+        f7 = this.s;
+        Paint paint22 = this.h;
+        if (f7 != 0.0f) {
+        }
+        f10 = this.r;
+        if (f10 != 0.0f) {
+        }
     }
 }

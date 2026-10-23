@@ -3,13 +3,13 @@ package g2;
 import android.net.Uri;
 import b2.v0;
 import b2.w0;
-import c3.j0;
+import c3.l0;
 import e2.m0;
 import java.math.RoundingMode;
 import java.util.Map;
 import v7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class l implements k4.b {
     public int a;
@@ -21,9 +21,9 @@ public final class l implements k4.b {
     public Object g;
     public Object h;
 
-    public l(c3.q qVar, j0 j0Var, f2.u uVar, String str, int i10) {
-        this.e = qVar;
-        this.f = j0Var;
+    public l(c3.s sVar, l0 l0Var, f2.u uVar, String str, int i10) {
+        this.e = sVar;
+        this.f = l0Var;
         this.g = uVar;
         int i11 = uVar.a;
         int i12 = uVar.b;
@@ -56,12 +56,12 @@ public final class l implements k4.b {
     }
 
     @Override // k4.b
-    public boolean b(c3.p pVar, long j10) {
+    public boolean b(c3.r rVar, long j10) {
         int i10;
         int i11;
         long j11 = j10;
         while (j11 > 0 && (i10 = this.c) < (i11 = this.a)) {
-            int a2 = ((j0) this.f).a(pVar, (int) Math.min(i11 - i10, j11), true);
+            int a2 = ((l0) this.f).a(rVar, (int) Math.min(i11 - i10, j11), true);
             if (a2 == -1) {
                 j11 = 0;
             } else {
@@ -80,7 +80,7 @@ public final class l implements k4.b {
             long a02 = j12 + m0.a0(j13, 1000000L, j14, RoundingMode.DOWN);
             int i14 = i13 * i12;
             int i15 = this.c - i14;
-            ((j0) this.f).c(a02, 1, i14, i15, null);
+            ((l0) this.f).c(a02, 1, i14, i15, null);
             this.d += i13;
             this.c = i15;
         }
@@ -90,10 +90,10 @@ public final class l implements k4.b {
     @Override // k4.b
     public void c(int i10, long j10) {
         k4.f fVar = new k4.f((f2.u) this.g, 1, i10, j10);
-        ((c3.q) this.e).g0(fVar);
-        j0 j0Var = (j0) this.f;
-        j0Var.b((b2.w) this.h);
-        j0Var.e(fVar.e);
+        ((c3.s) this.e).g0(fVar);
+        l0 l0Var = (l0) this.f;
+        l0Var.b((b2.w) this.h);
+        l0Var.e(fVar.e);
     }
 
     public m d() {

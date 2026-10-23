@@ -1,43 +1,29 @@
 package ci;
 
-import ai.pa;
-import android.content.Context;
 import android.text.TextUtils;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.vn0;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final class e5 extends vn0 {
-    public pa h;
-    public final /* synthetic */ u5 n;
+public final class e5 {
+    public boolean a = true;
+    public boolean b;
+    public String c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e5(u5 u5Var, Context context, b bVar) {
-        super(context, 13.0f, bVar);
-        this.n = u5Var;
+    public final boolean equals(Object obj) {
+        if (this != obj) {
+            if (obj != null && e5.class == obj.getClass()) {
+                e5 e5Var = (e5) obj;
+                boolean z10 = (TextUtils.isEmpty(this.c) && TextUtils.isEmpty(e5Var.c)) || Objects.equals(this.c, e5Var.c);
+                if (this.a != e5Var.a || this.b != e5Var.b || !z10) {
+                }
+            }
+            return false;
+        }
+        return true;
     }
 
-    @Override // org.telegram.ui.Components.vn0
-    public final void a(String str) {
-        pa paVar = this.h;
-        if (paVar != null) {
-            AndroidUtilities.cancelRunOnUIThread(paVar);
-        }
-        this.h = new pa(17, this, str);
-        if (TextUtils.isEmpty(str)) {
-            this.h.run();
-        } else {
-            AndroidUtilities.runOnUIThread(this.h, 300L);
-        }
-        if (this.h != null) {
-            u5 u5Var = this.n;
-            if (u5Var.Q) {
-                return;
-            }
-            u5Var.Q = true;
-            u5Var.w.E();
-            u5Var.x.h1(0, -u5Var.r.getPaddingTop());
-        }
+    public final int hashCode() {
+        return Objects.hash(Boolean.valueOf(this.a), Boolean.valueOf(this.b), this.c);
     }
 }

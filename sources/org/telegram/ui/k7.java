@@ -6,20 +6,20 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class k7 extends zt0 {
-    public org.telegram.ui.Components.jm0 a;
+public final class k7 extends cu0 {
+    public org.telegram.ui.Components.mm0 a;
     public final /* synthetic */ v7 b;
 
     public k7(v7 v7Var) {
         this.b = v7Var;
     }
 
-    @Override // org.telegram.ui.zt0, org.telegram.ui.hu0
-    public final ju0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
+    @Override // org.telegram.ui.cu0, org.telegram.ui.ku0
+    public final mu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
         org.telegram.ui.Cells.s7 s7Var;
-        org.telegram.ui.Components.jm0 listView = this.b.getListView();
+        org.telegram.ui.Components.mm0 listView = this.b.getListView();
         int i11 = 0;
         while (true) {
             if (i11 >= listView.getChildCount()) {
@@ -38,14 +38,14 @@ public final class k7 extends zt0 {
         }
         int[] iArr = new int[2];
         s7Var.getLocationInWindow(iArr);
-        ju0 ju0Var = new ju0();
-        ju0Var.b = iArr[0];
-        ju0Var.c = iArr[1];
-        ju0Var.d = this.a;
+        mu0 mu0Var = new mu0();
+        mu0Var.b = iArr[0];
+        mu0Var.c = iArr[1];
+        mu0Var.d = this.a;
         ImageReceiver imageReceiver = s7Var.c;
-        ju0Var.a = imageReceiver;
-        ju0Var.e = imageReceiver.getBitmapSafe();
-        ju0Var.k = s7Var.getScaleX();
-        return ju0Var;
+        mu0Var.a = imageReceiver;
+        mu0Var.e = imageReceiver.getBitmapSafe();
+        mu0Var.k = s7Var.getScaleX();
+        return mu0Var;
     }
 }

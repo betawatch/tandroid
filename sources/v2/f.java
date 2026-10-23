@@ -2,12 +2,12 @@ package v2;
 
 import b2.w;
 import g2.b0;
-import u2.u;
+import u2.v;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public abstract class f implements y2.i {
-    public final long a = u.g.getAndIncrement();
+    public final long a = v.g.getAndIncrement();
     public final g2.m b;
     public final int c;
     public final w d;

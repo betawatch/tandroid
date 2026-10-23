@@ -1,8 +1,31 @@
 package z7;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public final class qa {
-    public Object a;
-    public Number b;
+public enum qa implements u {
+    b(0),
+    c(1),
+    d(2),
+    e(3),
+    f(7),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF9(8),
+    h(4),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF79(5),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF88(6),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF101(9);
+
+    public final int a;
+
+    qa(int i10) {
+        this.a = i10;
+    }
+
+    @Override // z7.u
+    public final int zza() {
+        return this.a;
+    }
 }

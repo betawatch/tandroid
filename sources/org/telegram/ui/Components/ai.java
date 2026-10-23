@@ -14,9 +14,9 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class ai implements org.telegram.ui.web.g0 {
+public final class ai implements org.telegram.ui.web.h0 {
     public ValueAnimator a;
     public final /* synthetic */ gi.f4 b;
     public final /* synthetic */ String c;
@@ -30,17 +30,22 @@ public final class ai implements org.telegram.ui.web.g0 {
         this.d = j10;
     }
 
-    @Override // org.telegram.ui.web.g0
-    public final void b() {
-        y();
+    @Override // org.telegram.ui.web.h0
+    public final /* synthetic */ gi.y0 A() {
+        return null;
     }
 
-    @Override // org.telegram.ui.web.g0
+    @Override // org.telegram.ui.web.h0
+    public final void b() {
+        z();
+    }
+
+    @Override // org.telegram.ui.web.h0
     public final /* synthetic */ String g(boolean z10, boolean z11) {
         return "UNSUPPORTED";
     }
 
-    @Override // org.telegram.ui.web.g0
+    @Override // org.telegram.ui.web.h0
     public final boolean h() {
         ti tiVar = this.e;
         MediaDataController mediaDataController = MediaDataController.getInstance(tiVar.M1);
@@ -48,64 +53,64 @@ public final class ai implements org.telegram.ui.web.g0 {
         return mediaDataController.botInAttachMenu(j10) || MessagesController.getInstance(tiVar.M1).whitelistedBots.contains(Long.valueOf(j10));
     }
 
-    @Override // org.telegram.ui.web.g0
+    @Override // org.telegram.ui.web.h0
     public final void i(boolean z10) {
         AndroidUtilities.updateImageViewImageAnimated(this.e.a1.getBackButton(), z10 ? R.drawable.ic_ab_back : R.drawable.ic_close_white);
     }
 
-    @Override // org.telegram.ui.web.g0
+    @Override // org.telegram.ui.web.h0
     public final void j() {
-        y();
+        z();
     }
 
-    @Override // org.telegram.ui.web.g0
+    @Override // org.telegram.ui.web.h0
     public final void k(boolean z10) {
         this.b.setNeedCloseConfirmation(z10);
     }
 
-    @Override // org.telegram.ui.web.g0
+    @Override // org.telegram.ui.web.h0
     public final void m(int i10) {
         this.b.setCustomBackground(i10);
     }
 
-    @Override // org.telegram.ui.web.g0
+    @Override // org.telegram.ui.web.h0
     public final void n(TLRPC.InputInvoice inputInvoice, String str, TLObject tLObject) {
-        org.telegram.ui.ActionBar.d6 d6Var;
+        org.telegram.ui.ActionBar.g6 g6Var;
         ti tiVar = this.e;
         int i10 = tiVar.M1;
-        org.telegram.ui.ActionBar.n2 n2Var = tiVar.f0;
+        org.telegram.ui.ActionBar.o2 o2Var = tiVar.f0;
         boolean z10 = tLObject instanceof TLRPC.TL_payments_paymentFormStars;
         gi.f4 f4Var = this.b;
-        org.telegram.ui.eo0 eo0Var = null;
+        org.telegram.ui.io0 io0Var = null;
         if (z10) {
-            org.telegram.ui.ActionBar.b2 b2Var = new org.telegram.ui.ActionBar.b2(tiVar.getContext(), 3, null);
-            b2Var.r(150L);
-            ai.ga.y(i10, false).Y(null, inputInvoice, (TLRPC.TL_payments_paymentFormStars) tLObject, new c2(b2Var, 1), new org.telegram.ui.ActionBar.j3(24, f4Var, str));
+            org.telegram.ui.ActionBar.c2 c2Var = new org.telegram.ui.ActionBar.c2(tiVar.getContext(), 3, null);
+            c2Var.r(150L);
+            ai.ha.y(i10, false).Y(null, inputInvoice, (TLRPC.TL_payments_paymentFormStars) tLObject, new b2(c2Var, 1), new org.telegram.ui.ActionBar.m3(24, f4Var, str));
             AndroidUtilities.hideKeyboard(f4Var);
             return;
         }
         if (tLObject instanceof TLRPC.PaymentForm) {
             TLRPC.PaymentForm paymentForm = (TLRPC.PaymentForm) tLObject;
             MessagesController.getInstance(i10).putUsers(paymentForm.users, false);
-            eo0Var = new org.telegram.ui.eo0(paymentForm, null, str, n2Var);
+            io0Var = new org.telegram.ui.io0(paymentForm, null, str, o2Var);
         } else if (tLObject instanceof TLRPC.PaymentReceipt) {
-            eo0Var = new org.telegram.ui.eo0((TLRPC.PaymentReceipt) tLObject);
+            io0Var = new org.telegram.ui.io0((TLRPC.PaymentReceipt) tLObject);
         }
-        if (eo0Var != null) {
+        if (io0Var != null) {
             f4Var.J();
             AndroidUtilities.hideKeyboard(f4Var);
-            Activity parentActivity = n2Var.getParentActivity();
-            int i11 = ti.R2;
-            td0 td0Var = new td0(parentActivity);
-            td0Var.show();
-            eo0Var.Z0 = new ai.u2(td0Var, f4Var, str, 25);
-            d6Var = ((org.telegram.ui.ActionBar.f3) tiVar).resourcesProvider;
-            eo0Var.Y0 = d6Var;
-            td0Var.c(eo0Var);
+            Activity parentActivity = o2Var.getParentActivity();
+            int i11 = ti.U2;
+            wd0 wd0Var = new wd0(parentActivity);
+            wd0Var.show();
+            io0Var.Z0 = new ai.u2(wd0Var, f4Var, str, 25);
+            g6Var = ((org.telegram.ui.ActionBar.h3) tiVar).resourcesProvider;
+            io0Var.Y0 = g6Var;
+            wd0Var.c(io0Var);
         }
     }
 
-    @Override // org.telegram.ui.web.g0
+    @Override // org.telegram.ui.web.h0
     public final void q(boolean z10, boolean z11, String str, long j10, int i10, int i11, boolean z12, boolean z13) {
         ti tiVar = this.e;
         RadialProgressView radialProgressView = tiVar.F1;
@@ -126,8 +131,8 @@ public final class ai implements org.telegram.ui.web.g0 {
                 }
                 q6Var.setTextColor(i11);
                 q6Var.setEmojiColor(i11);
-                boolean z14 = org.telegram.ui.web.a1.P0;
-                q6Var.setBackground(org.telegram.ui.ActionBar.h6.h0(i10, i0.a.h(i10) >= 0.30000001192092896d ? 301989888 : 385875967));
+                boolean z14 = org.telegram.ui.web.b1.Q0;
+                q6Var.setBackground(org.telegram.ui.ActionBar.k6.h0(i10, i0.a.h(i10) >= 0.30000001192092896d ? 301989888 : 385875967));
                 if (tiVar.G1 != z10) {
                     tiVar.G1 = z10;
                     ValueAnimator valueAnimator = this.a;
@@ -153,7 +158,7 @@ public final class ai implements org.telegram.ui.web.g0 {
         }
     }
 
-    @Override // org.telegram.ui.web.g0
+    @Override // org.telegram.ui.web.h0
     public final void s() {
         li liVar = this.e.B0;
         gi.f4 f4Var = this.b;
@@ -162,7 +167,7 @@ public final class ai implements org.telegram.ui.web.g0 {
         }
     }
 
-    @Override // org.telegram.ui.web.g0
+    @Override // org.telegram.ui.web.h0
     public final void t(boolean z10) {
         org.telegram.ui.ActionBar.e1 e1Var = this.b.L;
         if (e1Var != null) {
@@ -170,20 +175,20 @@ public final class ai implements org.telegram.ui.web.g0 {
         }
     }
 
-    @Override // org.telegram.ui.web.g0
+    @Override // org.telegram.ui.web.h0
     public final void u(int i10, final int i11, boolean z10) {
-        org.telegram.ui.ActionBar.d6 d6Var;
-        org.telegram.ui.ActionBar.d6 d6Var2;
+        org.telegram.ui.ActionBar.g6 g6Var;
+        org.telegram.ui.ActionBar.g6 g6Var2;
         ti tiVar = this.e;
-        final int color = tiVar.I2.a.getColor();
+        final int color = tiVar.L2.a.getColor();
         final gi.w1 w1Var = new gi.w1();
         int i12 = tiVar.a0 ? color : 0;
-        d6Var = ((org.telegram.ui.ActionBar.f3) tiVar).resourcesProvider;
-        w1Var.c(w1Var.a, i12, d6Var);
+        g6Var = ((org.telegram.ui.ActionBar.h3) tiVar).resourcesProvider;
+        w1Var.c(w1Var.a, i12, g6Var);
         tiVar.a0 = z10;
         int i13 = z10 ? i11 : 0;
-        d6Var2 = ((org.telegram.ui.ActionBar.f3) tiVar).resourcesProvider;
-        w1Var.c(w1Var.b, i13, d6Var2);
+        g6Var2 = ((org.telegram.ui.ActionBar.h3) tiVar).resourcesProvider;
+        w1Var.c(w1Var.b, i13, g6Var2);
         ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(200L);
         duration.setInterpolator(bs.f);
         final gi.f4 f4Var = this.b;
@@ -197,10 +202,10 @@ public final class ai implements org.telegram.ui.web.g0 {
                 tiVar2.p2 = true;
                 z7 z7Var = tiVar2.a1;
                 if (z7Var != null) {
-                    z7Var.d();
+                    z7Var.updateColors();
                     z7Var.invalidate();
                 }
-                tiVar2.I2.a(f7);
+                tiVar2.L2.a(f7);
                 kh.f fVar = tiVar2.y1;
                 if (fVar != null) {
                     fVar.invalidate();
@@ -214,14 +219,14 @@ public final class ai implements org.telegram.ui.web.g0 {
         duration.start();
     }
 
-    @Override // org.telegram.ui.web.g0
+    @Override // org.telegram.ui.web.h0
     public final void v(TLRPC.User user, String str, ArrayList arrayList) {
         boolean isEmpty = arrayList.isEmpty();
         ti tiVar = this.e;
         if (isEmpty) {
-            org.telegram.ui.ActionBar.n2 n2Var = tiVar.f0;
-            if (n2Var instanceof org.telegram.ui.qn) {
-                ((org.telegram.ui.qn) n2Var).Y.setFieldText("@" + UserObject.getPublicUsername(user) + " " + str);
+            org.telegram.ui.ActionBar.o2 o2Var = tiVar.f0;
+            if (o2Var instanceof org.telegram.ui.sn) {
+                ((org.telegram.ui.sn) o2Var).Y.setFieldText("@" + UserObject.getPublicUsername(user) + " " + str);
             }
             tiVar.dismiss(true);
             return;
@@ -235,22 +240,22 @@ public final class ai implements org.telegram.ui.web.g0 {
         bundle.putBoolean("allowUsers", arrayList.contains("users"));
         bundle.putBoolean("allowChannels", arrayList.contains("channels"));
         bundle.putBoolean("allowBots", arrayList.contains("bots"));
-        org.telegram.ui.cy cyVar = new org.telegram.ui.cy(bundle);
+        org.telegram.ui.ey eyVar = new org.telegram.ui.ey(bundle);
         Context context = tiVar.getContext();
-        int i10 = ti.R2;
-        td0 td0Var = new td0(context);
-        cyVar.C2 = new a1.d(this, user, str, td0Var, 9);
-        td0Var.show();
-        td0Var.c(cyVar);
+        int i10 = ti.U2;
+        wd0 wd0Var = new wd0(context);
+        eyVar.C2 = new a1.d(this, user, str, wd0Var, 9);
+        wd0Var.show();
+        wd0Var.c(eyVar);
     }
 
-    @Override // org.telegram.ui.web.g0
-    public final void x(boolean z10) {
+    @Override // org.telegram.ui.web.h0
+    public final void y(boolean z10) {
         this.b.setAllowSwipes(z10);
     }
 
-    @Override // org.telegram.ui.web.g0
-    public final void y() {
+    @Override // org.telegram.ui.web.h0
+    public final void z() {
         ti tiVar = this.e;
         if (tiVar.B0 != this.b) {
             return;
@@ -261,48 +266,47 @@ public final class ai implements org.telegram.ui.web.g0 {
         AndroidUtilities.runOnUIThread(new rc(5), 150L);
     }
 
-    @Override // org.telegram.ui.web.g0
-    public final /* synthetic */ gi.y0 z() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.web.g0
+    @Override // org.telegram.ui.web.h0
     public final /* synthetic */ void a() {
     }
 
-    @Override // org.telegram.ui.web.g0
+    @Override // org.telegram.ui.web.h0
     public final /* synthetic */ void c() {
     }
 
-    @Override // org.telegram.ui.web.g0
+    @Override // org.telegram.ui.web.h0
     public final /* synthetic */ void d(TLRPC.Document document) {
     }
 
-    @Override // org.telegram.ui.web.g0
+    @Override // org.telegram.ui.web.h0
     public final /* synthetic */ void e(String str) {
     }
 
-    @Override // org.telegram.ui.web.g0
+    @Override // org.telegram.ui.web.h0
     public final /* synthetic */ void f(ArrayList arrayList) {
     }
 
-    @Override // org.telegram.ui.web.g0
+    @Override // org.telegram.ui.web.h0
     public final /* synthetic */ void p(boolean z10) {
     }
 
-    @Override // org.telegram.ui.web.g0
+    @Override // org.telegram.ui.web.h0
     public final /* synthetic */ void r(int i10) {
     }
 
-    @Override // org.telegram.ui.web.g0
+    @Override // org.telegram.ui.web.h0
     public final /* synthetic */ void w(boolean z10) {
     }
 
-    @Override // org.telegram.ui.web.g0
+    @Override // org.telegram.ui.web.h0
+    public final void x(int i10) {
+    }
+
+    @Override // org.telegram.ui.web.h0
     public final /* synthetic */ void o(int i10, boolean z10) {
     }
 
-    @Override // org.telegram.ui.web.g0
+    @Override // org.telegram.ui.web.h0
     public final void l(boolean z10, boolean z11, String str, long j10, int i10, int i11, boolean z12, boolean z13, String str2) {
     }
 }

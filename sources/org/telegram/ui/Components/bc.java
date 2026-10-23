@@ -7,22 +7,22 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.support.SparseLongArray;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class bc extends yb implements NotificationCenter.NotificationCenterDelegate {
     public final zb d;
     public SparseLongArray e;
-    public final org.telegram.ui.ActionBar.n2 f;
+    public final org.telegram.ui.ActionBar.o2 f;
     public final int h;
     public qc n;
 
-    public bc(int i10, org.telegram.ui.ActionBar.n2 n2Var) {
-        super(n2Var.getContext(), n2Var.getResourceProvider());
-        this.f = n2Var;
+    public bc(int i10, org.telegram.ui.ActionBar.o2 o2Var) {
+        super(o2Var.getContext(), o2Var.getResourceProvider());
+        this.f = o2Var;
         this.h = i10;
         this.b.setLayoutParams(w7.z5.i(-2.0f, -2.0f, 8388659, 56.0f, 6.0f, 8.0f, 0.0f));
         this.a.setLayoutParams(w7.z5.h(56.0f, 48.0f, 8388659));
-        zb zbVar = new zb(this, n2Var, getContext(), n2Var.getCurrentAccount(), n2Var.getResourceProvider());
+        zb zbVar = new zb(this, o2Var, getContext(), o2Var.getCurrentAccount(), o2Var.getResourceProvider());
         this.d = zbVar;
         zbVar.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(24.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(0.0f));
         this.d.setDelegate(new ac(this));

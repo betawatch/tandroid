@@ -1,168 +1,181 @@
 package c3;
 
-import android.net.Uri;
-import e9.n0;
-import e9.x1;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import android.view.WindowManager;
+import ci.o1;
+import com.google.android.gms.internal.cast.z5;
+import com.google.android.gms.tasks.Continuation;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.messaging.FirebaseMessaging;
+import com.google.firebase.messaging.FirebaseMessagingRegistrar;
+import ei.q3;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.lang.reflect.Constructor;
+import java.nio.charset.Charset;
+import m.g3;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.GenericProvider;
+import org.telegram.messenger.LiteMode;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.voip.NativeInstance;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.c2;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.z1;
+import org.telegram.ui.Components.fw0;
+import org.telegram.ui.Components.gw0;
+import z9.e2;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public final class m implements r {
-    public static final int[] h = {5, 4, 12, 8, 3, 10, 9, 11, 6, 2, 0, 1, 7, 16, 15, 14, 17, 18, 19, 20, 21};
-    public static final qf.b n = new qf.b(new aa.a(27));
-    public static final qf.b r = new qf.b(new aa.a(28));
-    public x1 a;
-    public int e;
-    public int f;
-    public t7.u c = new t7.u(28);
-    public boolean b = true;
-    public int d = 3;
+public final /* synthetic */ class m implements n, NativeInstance.AudioLevelsCallback, fw0, gw0, z1, Continuation, r9.d, i5.e, d9.k, GenericProvider, Utilities.Callback2Return, eh.d {
+    public final /* synthetic */ int a;
 
-    public final void a(int i10, ArrayList arrayList) {
-        switch (i10) {
-            case 0:
-                arrayList.add(new j4.a());
-                break;
-            case 1:
-                arrayList.add(new j4.c());
-                break;
-            case 2:
-                arrayList.add(new j4.d(1));
-                break;
-            case 3:
-                arrayList.add(new d3.a(1));
-                break;
-            case 4:
-                o X = n.X(0);
-                if (X == null) {
-                    arrayList.add(new h3.b());
-                    break;
-                } else {
-                    arrayList.add(X);
-                    break;
+    public /* synthetic */ m(int i10) {
+        this.a = i10;
+    }
+
+    @Override // c3.n
+    public Constructor a() {
+        return Class.forName("androidx.media3.decoder.midi.MidiExtractor").asSubclass(q.class).getConstructor(null);
+    }
+
+    @Override // i5.e
+    public Object apply(Object obj) {
+        switch (this.a) {
+            case 13:
+                xa.e eVar = (xa.e) obj;
+                eVar.getClass();
+                g3 g3Var = com.google.firebase.messaging.o.a;
+                g3Var.getClass();
+                ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+                try {
+                    g3Var.z(eVar, byteArrayOutputStream);
+                } catch (IOException unused) {
                 }
-            case 5:
-                arrayList.add(new i3.b());
-                break;
-            case 6:
-                arrayList.add(new u3.f(this.c, this.b ? 0 : 2));
-                break;
-            case 7:
-                arrayList.add(new v3.d(1));
-                break;
-            case 8:
-                t7.u uVar = this.c;
-                int g10 = w3.h.g(this.d) | (this.b ? 0 : 32);
-                e9.l0 l0Var = n0.b;
-                arrayList.add(new w3.h(uVar, g10, null, x1.e, null));
-                t7.u uVar2 = this.c;
-                int i11 = this.d;
-                int i12 = (i11 & 1) == 0 ? 0 : 32;
-                if ((2 & i11) != 0) {
-                    i12 |= 128;
-                }
-                arrayList.add(new w3.l(uVar2, i12 | (this.b ? 0 : 16)));
-                break;
-            case 9:
-                arrayList.add(new x3.d());
-                break;
-            case 10:
-                arrayList.add(new j4.z());
-                break;
-            case 11:
-                if (this.a == null) {
-                    e9.l0 l0Var2 = n0.b;
-                    this.a = x1.e;
-                }
-                arrayList.add(new j4.d0(1, !this.b ? 1 : 0, this.c, new e2.k0(0L), new j4.f(0, this.a)));
-                break;
-            case 12:
-                k4.c cVar = new k4.c();
-                cVar.c = 0;
-                cVar.d = -1L;
-                cVar.f = -1;
-                cVar.g = -1L;
-                arrayList.add(cVar);
-                break;
+                return byteArrayOutputStream.toByteArray();
             case 14:
-                arrayList.add(new k3.a(this.e));
+                return Integer.valueOf(((d2.b) obj).r);
+            default:
+                da.a.b.getClass();
+                return aa.b.a.M((e2) obj).getBytes(Charset.forName("UTF-8"));
+        }
+    }
+
+    @Override // org.telegram.ui.Components.gw0
+    public void b(Object obj, float f7) {
+        o1 o1Var = (o1) obj;
+        switch (this.a) {
+            case 3:
+                WindowManager.LayoutParams layoutParams = o1Var.c;
+                o1Var.N = f7;
+                layoutParams.x = (int) f7;
+                AndroidUtilities.updateViewLayout(o1Var.b, o1Var.d, layoutParams);
                 break;
-            case 15:
-                o X2 = r.X(new Object[0]);
-                if (X2 != null) {
-                    arrayList.add(X2);
-                    break;
-                }
-                break;
-            case 16:
-                arrayList.add(new e3.b(!this.b ? 1 : 0, this.c));
-                break;
-            case 17:
-                arrayList.add(new g3.a(1));
-                break;
-            case 18:
-                arrayList.add(new f3.a(1));
-                break;
-            case 19:
-                arrayList.add(new g3.a(0));
-                break;
-            case 20:
-                arrayList.add(new j3.b(this.f));
-                break;
-            case 21:
-                arrayList.add(new f3.a(0));
+            default:
+                WindowManager.LayoutParams layoutParams2 = o1Var.c;
+                o1Var.O = f7;
+                layoutParams2.y = (int) f7;
+                AndroidUtilities.updateViewLayout(o1Var.b, o1Var.d, layoutParams2);
                 break;
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:11:0x002b A[Catch: all -> 0x002f, TryCatch #0 {all -> 0x002f, blocks: (B:3:0x0001, B:5:0x0015, B:8:0x001c, B:9:0x0024, B:11:0x002b, B:12:0x0031, B:15:0x0039, B:18:0x003f, B:21:0x0045, B:23:0x0048, B:27:0x004b), top: B:2:0x0001 }] */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x003f A[Catch: all -> 0x002f, TryCatch #0 {all -> 0x002f, blocks: (B:3:0x0001, B:5:0x0015, B:8:0x001c, B:9:0x0024, B:11:0x002b, B:12:0x0031, B:15:0x0039, B:18:0x003f, B:21:0x0045, B:23:0x0048, B:27:0x004b), top: B:2:0x0001 }] */
-    @Override // c3.r
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final synchronized o[] e(Uri uri, Map map) {
-        ArrayList arrayList;
-        String str;
-        int a2;
-        int b10;
-        int i10;
-        try {
-            int[] iArr = h;
-            arrayList = new ArrayList(21);
-            List list = (List) map.get("Content-Type");
-            if (list != null && !list.isEmpty()) {
-                str = (String) list.get(0);
-                a2 = v7.d0.a(str);
-                if (a2 != -1) {
-                    a(a2, arrayList);
-                }
-                b10 = v7.d0.b(uri);
-                if (b10 != -1 && b10 != a2) {
-                    a(b10, arrayList);
-                }
-                for (i10 = 0; i10 < 21; i10++) {
-                    int i11 = iArr[i10];
-                    if (i11 != a2 && i11 != b10) {
-                        a(i11, arrayList);
-                    }
-                }
-            }
-            str = null;
-            a2 = v7.d0.a(str);
-            if (a2 != -1) {
-            }
-            b10 = v7.d0.b(uri);
-            if (b10 != -1) {
-                a(b10, arrayList);
-            }
-            while (i10 < 21) {
-            }
-        } catch (Throwable th2) {
-            throw th2;
+    @Override // org.telegram.ui.ActionBar.z1
+    public void g(c2 c2Var, int i10) {
+        switch (this.a) {
+            case 6:
+                c2Var.dismiss();
+                break;
+            default:
+                c2Var.dismiss();
+                break;
         }
-        return (o[]) arrayList.toArray(new o[0]);
+    }
+
+    @Override // org.telegram.ui.Components.fw0
+    public float get(Object obj) {
+        o1 o1Var = (o1) obj;
+        switch (this.a) {
+            case 2:
+                return o1Var.N;
+            default:
+                return o1Var.O;
+        }
+    }
+
+    @Override // eh.d
+    public int i(g6 g6Var, boolean z10) {
+        switch (this.a) {
+            case 19:
+                return fh.c.m(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, k6.w0(k6.d6, g6Var), k6.w0(k6.Sd, g6Var));
+            case 20:
+                if (!LiteMode.isEnabled(256)) {
+                    return k6.x0(null, k6.G8, false);
+                }
+                return k6.o1(z10 ? 0.85f : 0.825f, k6.x0(null, k6.G8, false));
+            case 21:
+                return fh.c.m(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, k6.w0(k6.d6, g6Var), k6.w0(k6.Zk, g6Var));
+            case 22:
+                return k6.o1(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, k6.w0(k6.Fi, g6Var));
+            case 23:
+                return 855638016;
+            case 24:
+                return TLObject.FLAG_30;
+            case 25:
+                return k6.o1(0.075f, -16777216);
+            case 26:
+                return k6.o1(0.88f, k6.w0(k6.d6, g6Var));
+            case 27:
+                return k6.o1(z10 ? 0.85f : 0.825f, k6.x0(null, k6.G8, false));
+            case 28:
+                return fh.c.m(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, k6.w0(k6.d6, g6Var), k6.w0(k6.Yk, g6Var));
+            default:
+                return k6.o1(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, k6.w0(k6.d6, g6Var));
+        }
+    }
+
+    @Override // r9.d
+    public Object j2(z5 z5Var) {
+        FirebaseMessaging lambda$getComponents$0;
+        lambda$getComponents$0 = FirebaseMessagingRegistrar.lambda$getComponents$0(z5Var);
+        return lambda$getComponents$0;
+    }
+
+    @Override // org.telegram.messenger.GenericProvider
+    public Object provide(Object obj) {
+        MediaController.AlbumEntry albumEntry = q3.j0;
+        return 0;
+    }
+
+    @Override // org.telegram.messenger.voip.NativeInstance.AudioLevelsCallback
+    public void run(int[] iArr, float[] fArr, boolean[] zArr) {
+    }
+
+    @Override // com.google.android.gms.tasks.Continuation
+    public Object then(Task task) {
+        int i10;
+        switch (this.a) {
+            case 9:
+                i10 = 403;
+                break;
+            default:
+                i10 = -1;
+                break;
+        }
+        return Integer.valueOf(i10);
+    }
+
+    @Override // org.telegram.messenger.Utilities.Callback2Return
+    public Object run(Object obj, Object obj2) {
+        Integer num = (Integer) obj2;
+        if (((Integer) obj).intValue() == 0) {
+            return num.intValue() == 0 ? LocaleController.getString(R.string.LiveStoryPricePerCommentFree) : LocaleController.formatPluralStringComma("Stars", num.intValue());
+        }
+        return "" + num;
     }
 }

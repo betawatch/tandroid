@@ -1,94 +1,58 @@
 package ai;
 
-import android.content.Context;
 import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.KeyEvent;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.ti;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final class kc extends sg.x1 {
-    public Paint[] n;
-    public final /* synthetic */ int r;
-    public final /* synthetic */ int s;
+public final /* synthetic */ class kc implements Utilities.CallbackReturn {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ KeyEvent.Callback b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public kc(Context context, int i10, int i11) {
-        super(context);
-        this.r = i10;
-        this.s = i11;
-        c();
+    public /* synthetic */ kc(KeyEvent.Callback callback, int i10) {
+        this.a = i10;
+        this.b = callback;
     }
 
-    @Override // sg.x1
-    public final void a() {
-        int f7;
-        float f10;
-        int i10;
-        int i11;
-        sg.w1 w1Var = new sg.w1(this.r);
-        this.a = w1Var;
-        w1Var.O = 105;
-        int i12 = 0;
-        w1Var.M = false;
-        w1Var.G = false;
-        w1Var.K = true;
-        w1Var.H = true;
-        w1Var.J = false;
-        w1Var.m = true;
-        w1Var.h = true;
-        int i13 = this.s;
-        if (i13 == 1) {
-            w1Var.k = AndroidUtilities.dp(24.0f);
-        }
-        this.n = new Paint[i13 == 2 ? 40 : 20];
-        while (true) {
-            Paint[] paintArr = this.n;
-            if (i12 >= paintArr.length) {
-                break;
-            }
-            paintArr[i12] = new Paint(1);
-            if (i13 == 2) {
-                if (i12 >= 20) {
-                    f10 = (i12 - 20) / 19.0f;
-                    i10 = -1005568;
-                    i11 = -2062336;
-                } else if (i12 % 5 == 0) {
-                    f7 = -2340;
-                } else {
-                    f10 = i12 / 19.0f;
-                    i10 = -10645;
-                    i11 = -20165;
+    @Override // org.telegram.messenger.Utilities.CallbackReturn
+    public final Object run(Object obj) {
+        switch (this.a) {
+            case 0:
+                lc lcVar = (lc) this.b;
+                return lcVar.r[((Integer) obj).intValue() % lcVar.r.length];
+            case 1:
+                MessageObject messageObject = (MessageObject) obj;
+                ((ei.s7) this.b).s0 = messageObject;
+                return Boolean.valueOf(MediaController.getInstance().setPlaylist(org.telegram.messenger.v0.k(messageObject), messageObject, 0L));
+            case 2:
+                fi.c cVar = (fi.c) this.b;
+                return cVar.r[((Integer) obj).intValue() % cVar.r.length];
+            case 3:
+                return new org.telegram.ui.Wallet.y3(26, (org.telegram.ui.m0) this.b, (Integer) obj);
+            case 4:
+                rg.m0 m0Var = (rg.m0) this.b;
+                if (((Integer) obj).intValue() == 2) {
+                    ti tiVar = new ti(m0Var.getContext(), new rg.x(m0Var), false, false, false, m0Var.Q1);
+                    tiVar.drawNavigationBar = true;
+                    tiVar.T1(LocaleController.getString(R.string.AddImage));
+                    tiVar.c2 = new rg.y(m0Var, tiVar);
+                    tiVar.setOnDismissListener(new ei.e1(7));
+                    tiVar.R1(1, false);
+                    tiVar.w1();
+                    MediaController.forceBroadcastNewPhotos = true;
+                    tiVar.j0.f0();
+                    tiVar.show();
                 }
-                f7 = i0.a.f(f10, i10, i11);
-            } else {
-                f7 = i0.a.f(i12 / (this.n.length - 1), -371690, -14281);
-            }
-            this.n[i12].setColorFilter(new PorterDuffColorFilter(f7, PorterDuff.Mode.SRC_IN));
-            i12++;
+                return Boolean.TRUE;
+            default:
+                Paint[] paintArr = ((wg.r) this.b).h;
+                return paintArr[((Integer) obj).intValue() % paintArr.length];
         }
-        sg.w1 w1Var2 = this.a;
-        w1Var2.l = new jc(this, 0);
-        w1Var2.r = 17;
-        w1Var2.s = 18;
-        w1Var2.t = 19;
-        if (i13 == 2) {
-            w1Var2.N = true;
-            w1Var2.r = 9;
-            w1Var2.s = 11;
-            w1Var2.t = 13;
-            w1Var2.o = 1.6f;
-            w1Var2.x = 1400L;
-            w1Var2.y = 1600;
-            w1Var2.L = true;
-        }
-        w1Var2.Q = org.telegram.ui.ActionBar.h6.G6;
-        w1Var2.c();
-    }
-
-    @Override // sg.x1
-    public final int getStarsRectWidth() {
-        return getMeasuredWidth();
     }
 }

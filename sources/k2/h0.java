@@ -2,7 +2,7 @@ package k2;
 
 import android.os.Handler;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class h0 {
     public final Handler a;
@@ -15,7 +15,7 @@ public final class h0 {
         this.a = q6;
         g0 g0Var = new g0(this);
         this.b = g0Var;
-        i0Var.a.registerStreamEventCallback(new i2.g0(q6, 1), g0Var);
+        i0Var.a.registerStreamEventCallback(new i2.f0(q6, 1), g0Var);
     }
 
     public static void a(h0 h0Var) {

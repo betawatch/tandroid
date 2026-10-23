@@ -1,27 +1,87 @@
 package org.telegram.ui;
 
-import android.text.TextPaint;
-import android.text.style.ClickableSpan;
-import android.view.View;
+import android.content.ActivityNotFoundException;
+import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
+import android.webkit.RenderProcessGoneDetail;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class bo0 extends ClickableSpan {
-    public final /* synthetic */ eo0 a;
+public final class bo0 extends WebViewClient {
+    public final /* synthetic */ Context a;
+    public final /* synthetic */ io0 b;
 
-    public bo0(eo0 eo0Var) {
-        this.a = eo0Var;
+    public bo0(io0 io0Var, Context context) {
+        this.b = io0Var;
+        this.a = context;
     }
 
-    @Override // android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        eo0 eo0Var = this.a;
-        eo0Var.presentFragment(new vf1(6, eo0Var.a0));
+    @Override // android.webkit.WebViewClient
+    public final void onPageFinished(WebView webView, String str) {
+        super.onPageFinished(webView, str);
+        io0 io0Var = this.b;
+        io0Var.z0 = false;
+        io0Var.H0(true, false);
+        io0Var.K0();
     }
 
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        super.updateDrawState(textPaint);
-        textPaint.setUnderlineText(false);
+    @Override // android.webkit.WebViewClient
+    public final boolean onRenderProcessGone(WebView webView, RenderProcessGoneDetail renderProcessGoneDetail) {
+        io0 io0Var = this.b;
+        try {
+            if (!AndroidUtilities.isSafeToShow(io0Var.getParentActivity())) {
+                return true;
+            }
+            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(io0Var.getParentActivity(), 0, io0Var.Y0);
+            alertDialog$Builder.a.R = LocaleController.getString(R.string.ChromeCrashTitle);
+            alertDialog$Builder.a.T = AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.ChromeCrashMessage), new oj0(this, 11));
+            alertDialog$Builder.k(LocaleController.getString(R.string.OK), null);
+            alertDialog$Builder.p();
+            return true;
+        } catch (Exception e) {
+            FileLog.e(e);
+            return false;
+        }
+    }
+
+    @Override // android.webkit.WebViewClient
+    public final boolean shouldOverrideUrlLoading(WebView webView, String str) {
+        Uri parse;
+        io0 io0Var = this.b;
+        io0Var.y = !str.equals(io0Var.x);
+        try {
+            parse = Uri.parse(str);
+        } catch (Exception unused) {
+        }
+        if ("t.me".equals(parse.getHost())) {
+            io0Var.t0();
+            return true;
+        }
+        if (!io0.h1.contains(parse.getScheme())) {
+            if (!io0.g1.contains(parse.getScheme())) {
+                try {
+                    if (io0Var.getParentActivity() != null) {
+                        io0Var.getParentActivity().startActivityForResult(new Intent("android.intent.action.VIEW", parse), 210);
+                        return true;
+                    }
+                } catch (ActivityNotFoundException unused2) {
+                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(this.a);
+                    alertDialog$Builder.a.R = io0Var.p0;
+                    alertDialog$Builder.a.T = LocaleController.getString(R.string.PaymentAppNotFoundForDeeplink);
+                    alertDialog$Builder.k(LocaleController.getString(R.string.OK), null);
+                    alertDialog$Builder.p();
+                }
+            }
+            return super.shouldOverrideUrlLoading(webView, str);
+        }
+        return true;
     }
 }

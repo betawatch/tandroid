@@ -1,27 +1,38 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.view.TextureView;
 import android.view.ViewGroup;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class d40 extends AnimatorListenerAdapter {
-    public final /* synthetic */ org.telegram.ui.Components.voip.t a;
-    public final /* synthetic */ q50 b;
+public final class d40 implements uu0 {
+    public final /* synthetic */ u50 a;
 
-    public d40(q50 q50Var, org.telegram.ui.Components.voip.t tVar) {
-        this.b = q50Var;
-        this.a = tVar;
+    public d40(u50 u50Var) {
+        this.a = u50Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // org.telegram.ui.uu0
+    public final /* synthetic */ TextureView U() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.uu0
+    public final void m0(MessageObject messageObject) {
         ViewGroup viewGroup;
-        org.telegram.ui.Components.voip.t tVar = this.a;
-        if (tVar.getParent() != null) {
-            viewGroup = ((org.telegram.ui.ActionBar.f3) this.b).containerView;
-            viewGroup.removeView(tVar);
-        }
+        u50 u50Var = this.a;
+        u50Var.Q.I0(true);
+        u50Var.c2.f.setRoundRadius(AndroidUtilities.dp(13.0f), AndroidUtilities.dp(13.0f), 0, 0);
+        viewGroup = ((org.telegram.ui.ActionBar.h3) u50Var).containerView;
+        viewGroup.invalidate();
+    }
+
+    @Override // org.telegram.ui.uu0
+    public final void z(MessageObject messageObject) {
+        ViewGroup viewGroup;
+        viewGroup = ((org.telegram.ui.ActionBar.h3) this.a).containerView;
+        viewGroup.invalidate();
     }
 }

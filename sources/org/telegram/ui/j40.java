@@ -1,37 +1,31 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class j40 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ q50 b;
+public final class j40 implements ViewTreeObserver.OnPreDrawListener {
+    public final /* synthetic */ ChatObject.VideoParticipant a;
+    public final /* synthetic */ u50 b;
 
-    public /* synthetic */ j40(q50 q50Var, int i10) {
-        this.a = i10;
-        this.b = q50Var;
+    public j40(u50 u50Var, ChatObject.VideoParticipant videoParticipant) {
+        this.b = u50Var;
+        this.a = videoParticipant;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                q50 q50Var = this.b;
-                q50Var.V.setVisibility(4);
-                q50Var.W.setVisibility(4);
-                q50Var.U.setVisibility(4);
-                break;
-            case 1:
-                this.b.h0 = null;
-                break;
-            default:
-                q50 q50Var2 = this.b;
-                q50Var2.h1 = null;
-                q50Var2.g1.setColor(q50Var2.T1 == 3 ? -1163700 : -12761513);
-                q50Var2.f1.invalidate();
-                break;
-        }
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
+        ViewGroup viewGroup;
+        u50 u50Var = this.b;
+        u50Var.Q.getViewTreeObserver().removeOnPreDrawListener(this);
+        u50Var.q2 = null;
+        u50Var.a2.j(this.a);
+        AndroidUtilities.updateVisibleRows(u50Var.m2);
+        viewGroup = ((org.telegram.ui.ActionBar.h3) u50Var).containerView;
+        viewGroup.requestLayout();
+        return false;
     }
 }

@@ -12,7 +12,7 @@ import android.text.TextUtils;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class ed extends Drawable {
     public final /* synthetic */ int a;
@@ -63,7 +63,7 @@ public final class ed extends Drawable {
                 if (chatActivityEnterView.U0 != null) {
                     paint.setAlpha(Math.round(chatActivityEnterView.C3 * 102.0f));
                     float width = chatActivityEnterView.getWidth();
-                    float y3 = (chatActivityEnterView.U0.getY() - chatActivityEnterView.getHeight()) + org.telegram.ui.ActionBar.h6.i3.getIntrinsicHeight();
+                    float y3 = (chatActivityEnterView.U0.getY() - chatActivityEnterView.getHeight()) + org.telegram.ui.ActionBar.k6.i3.getIntrinsicHeight();
                     pf pfVar = chatActivityEnterView.E0;
                     canvas.drawRect(0.0f, 0.0f, width, y3 + (pfVar == null ? 0.0f : pfVar.getOffsetY()), paint);
                     break;
@@ -193,7 +193,7 @@ public final class ed extends Drawable {
     public void onBoundsChange(Rect rect) {
         switch (this.a) {
             case 4:
-                ((ImageReceiver) this.b).setImageCoords(AndroidUtilities.dp(2.0f) + rect.left, AndroidUtilities.dp(2.0f) + rect.top, org.telegram.messenger.nk.y(2.0f, rect.left, rect.right - AndroidUtilities.dp(2.0f)), org.telegram.messenger.nk.y(2.0f, rect.top, rect.bottom - AndroidUtilities.dp(2.0f)));
+                ((ImageReceiver) this.b).setImageCoords(AndroidUtilities.dp(2.0f) + rect.left, AndroidUtilities.dp(2.0f) + rect.top, org.telegram.messenger.sl.y(2.0f, rect.left, rect.right - AndroidUtilities.dp(2.0f)), org.telegram.messenger.sl.y(2.0f, rect.top, rect.bottom - AndroidUtilities.dp(2.0f)));
                 break;
             default:
                 super.onBoundsChange(rect);

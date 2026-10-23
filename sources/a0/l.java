@@ -1,10 +1,11 @@
 package a0;
 
+import i2.o1;
 import java.util.Arrays;
 import java.util.ConcurrentModificationException;
 import java.util.Map;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public class l {
     public int[] a;
@@ -108,7 +109,7 @@ public class l {
 
     public final Object e(int i10) {
         if (i10 < 0 || i10 >= this.c) {
-            throw new IllegalArgumentException(i2.e.j(i10, "Expected index to be within 0..size()-1, but was ").toString());
+            throw new IllegalArgumentException(o1.k(i10, "Expected index to be within 0..size()-1, but was ").toString());
         }
         return this.b[i10 << 1];
     }
@@ -163,7 +164,7 @@ public class l {
     public final Object f(int i10) {
         int i11;
         if (i10 < 0 || i10 >= (i11 = this.c)) {
-            throw new IllegalArgumentException(i2.e.j(i10, "Expected index to be within 0..size()-1, but was ").toString());
+            throw new IllegalArgumentException(o1.k(i10, "Expected index to be within 0..size()-1, but was ").toString());
         }
         Object[] objArr = this.b;
         int i12 = i10 << 1;
@@ -215,7 +216,7 @@ public class l {
 
     public final Object g(int i10, Object obj) {
         if (i10 < 0 || i10 >= this.c) {
-            throw new IllegalArgumentException(i2.e.j(i10, "Expected index to be within 0..size()-1, but was ").toString());
+            throw new IllegalArgumentException(o1.k(i10, "Expected index to be within 0..size()-1, but was ").toString());
         }
         int i11 = (i10 << 1) + 1;
         Object[] objArr = this.b;
@@ -239,7 +240,7 @@ public class l {
 
     public final Object h(int i10) {
         if (i10 < 0 || i10 >= this.c) {
-            throw new IllegalArgumentException(i2.e.j(i10, "Expected index to be within 0..size()-1, but was ").toString());
+            throw new IllegalArgumentException(o1.k(i10, "Expected index to be within 0..size()-1, but was ").toString());
         }
         return this.b[(i10 << 1) + 1];
     }

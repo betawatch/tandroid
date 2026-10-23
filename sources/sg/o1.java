@@ -9,9 +9,9 @@ import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.k6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class o1 extends View {
     public final /* synthetic */ p1 a;
@@ -42,11 +42,11 @@ public final class o1 extends View {
         boolean z11;
         super.draw(canvas);
         p1 p1Var = this.a;
-        t0 t0Var = p1Var.v;
+        s0 s0Var = p1Var.v;
         ImageReceiver imageReceiver2 = p1Var.c;
         ImageReceiver imageReceiver3 = p1Var.d;
         if (p1Var.s) {
-            imageReceiver2.setImage(ImageLocation.getForDocument(p1Var.r), null, DocumentObject.getSvgThumb(p1Var.r, h6.a7, 0.5f), "webp", null, 1);
+            imageReceiver2.setImage(ImageLocation.getForDocument(p1Var.r), null, DocumentObject.getSvgThumb(p1Var.r, k6.a7, 0.5f), "webp", null, 1);
             if (MessageObject.isPremiumSticker(p1Var.r)) {
                 imageReceiver = imageReceiver3;
                 imageReceiver.setImage(ImageLocation.getForDocument(MessageObject.getPremiumStickerAnimation(p1Var.r), p1Var.r), "140_140", (ImageLocation) null, (String) null, "tgs", (Object) null, 1);
@@ -60,9 +60,9 @@ public final class o1 extends View {
                     if (imageReceiver.getLottieAnimation() != null) {
                         imageReceiver.getLottieAnimation().start();
                     }
-                    if (imageReceiver.getLottieAnimation() != null && imageReceiver.getLottieAnimation().A() && t0Var.l3) {
-                        AndroidUtilities.cancelRunOnUIThread(t0Var.c3);
-                        AndroidUtilities.runOnUIThread(t0Var.c3, 0L);
+                    if (imageReceiver.getLottieAnimation() != null && imageReceiver.getLottieAnimation().A() && s0Var.o3) {
+                        AndroidUtilities.cancelRunOnUIThread(s0Var.f3);
+                        AndroidUtilities.runOnUIThread(s0Var.f3, 0L);
                     }
                 } else if (imageReceiver.getLottieAnimation() != null) {
                     imageReceiver.getLottieAnimation().stop();
@@ -88,7 +88,7 @@ public final class o1 extends View {
                                 p1Var.h = f10 + 0.10666667f;
                                 invalidate();
                                 p1Var.h = Utilities.clamp(p1Var.h, 1.0f, 0.0f);
-                                float f11 = t0Var.i3 * 0.45f;
+                                float f11 = s0Var.l3 * 0.45f;
                                 float f12 = 1.499267f * f11;
                                 float measuredWidth = getMeasuredWidth() - f12;
                                 float measuredHeight = (getMeasuredHeight() - f12) / 2.0f;
@@ -113,7 +113,7 @@ public final class o1 extends View {
                             }
                         }
                         p1Var.h = Utilities.clamp(p1Var.h, 1.0f, 0.0f);
-                        float f112 = t0Var.i3 * 0.45f;
+                        float f112 = s0Var.l3 * 0.45f;
                         float f122 = 1.499267f * f112;
                         float measuredWidth2 = getMeasuredWidth() - f122;
                         float measuredHeight2 = (getMeasuredHeight() - f122) / 2.0f;
@@ -139,7 +139,7 @@ public final class o1 extends View {
                 if (!z11) {
                 }
                 p1Var.h = Utilities.clamp(p1Var.h, 1.0f, 0.0f);
-                float f1122 = t0Var.i3 * 0.45f;
+                float f1122 = s0Var.l3 * 0.45f;
                 float f1222 = 1.499267f * f1122;
                 float measuredWidth22 = getMeasuredWidth() - f1222;
                 float measuredHeight22 = (getMeasuredHeight() - f1222) / 2.0f;
@@ -168,7 +168,7 @@ public final class o1 extends View {
         if (!z11) {
         }
         p1Var.h = Utilities.clamp(p1Var.h, 1.0f, 0.0f);
-        float f11222 = t0Var.i3 * 0.45f;
+        float f11222 = s0Var.l3 * 0.45f;
         float f12222 = 1.499267f * f11222;
         float measuredWidth222 = getMeasuredWidth() - f12222;
         float measuredHeight222 = (getMeasuredHeight() - f12222) / 2.0f;

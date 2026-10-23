@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class xa implements Runnable {
     public final /* synthetic */ int a;
@@ -34,7 +34,7 @@ public final /* synthetic */ class xa implements Runnable {
                 ((MessagesController) notificationCenterDelegate).lambda$markDialogAsRead$241(this.c, this.d, this.e, this.f);
                 break;
             default:
-                int i11 = ChatActivityEnterView.n5;
+                int i11 = ChatActivityEnterView.r5;
                 ((ChatActivityEnterView) notificationCenterDelegate).R0(this.d, this.f, this.e, false, this.c);
                 break;
         }

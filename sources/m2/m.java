@@ -9,7 +9,7 @@ import java.util.Collections;
 import java.util.List;
 import v7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public abstract class m {
     public final w a;
@@ -34,9 +34,9 @@ public abstract class m {
         this.c = m0.a0(j10, 1000000L, j11, RoundingMode.DOWN);
     }
 
-    public abstract String b();
+    public abstract String a();
 
-    public abstract l2.i c();
+    public abstract l2.i d();
 
     public abstract j h();
 }

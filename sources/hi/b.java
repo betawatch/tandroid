@@ -7,10 +7,10 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_communities;
-import org.telegram.ui.Components.h61;
+import org.telegram.ui.Components.m61;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -28,20 +28,20 @@ public final /* synthetic */ class b implements Utilities.Callback2 {
             case 0:
                 ArrayList arrayList = (ArrayList) obj;
                 f fVar = this.b;
-                e eVar = fVar.f;
-                h61 h61Var = new h61(-4);
-                h61Var.d = 0;
-                h61Var.c = eVar;
-                h61Var.z = -1;
-                arrayList.add(h61Var);
-                h61 c10 = h61.c(1, R.drawable.msg_groups_create, LocaleController.getString(R.string.CommunityCreateCommunity));
+                e eVar = fVar.h;
+                m61 m61Var = new m61(-4);
+                m61Var.d = 0;
+                m61Var.c = eVar;
+                m61Var.z = -1;
+                arrayList.add(m61Var);
+                m61 c10 = m61.c(1, R.drawable.msg_groups_create, LocaleController.getString(R.string.CommunityCreateCommunity));
                 c10.q = true;
                 arrayList.add(c10);
-                arrayList.add(h61.D(2, AndroidUtilities.dp(14.0f)));
-                ArrayList arrayList2 = fVar.h;
+                arrayList.add(m61.D(2, AndroidUtilities.dp(14.0f)));
+                ArrayList arrayList2 = fVar.n;
                 if (arrayList2 != null && !arrayList2.isEmpty()) {
-                    arrayList.add(h61.s(3, LocaleController.getString(R.string.CommunityAddToExistingCommunity)));
-                    ArrayList arrayList3 = fVar.h;
+                    arrayList.add(m61.s(3, LocaleController.getString(R.string.CommunityAddToExistingCommunity)));
+                    ArrayList arrayList3 = fVar.n;
                     int size = arrayList3.size();
                     int i10 = 0;
                     while (i10 < size) {
@@ -49,7 +49,7 @@ public final /* synthetic */ class b implements Utilities.Callback2 {
                         i10++;
                         TLRPC.Chat chat = (TLRPC.Chat) obj3;
                         TLRPC.ChatFull chatFull = fVar.getMessagesController().getChatFull(chat.id);
-                        h61 v = h61.v(chat);
+                        m61 v = m61.v(chat);
                         long j10 = chat.id;
                         v.d = (int) (j10 ^ (j10 >>> 32));
                         if (chatFull != null) {
@@ -68,7 +68,7 @@ public final /* synthetic */ class b implements Utilities.Callback2 {
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
                 f fVar2 = this.b;
                 if (tL_error == null) {
-                    t0.d(fVar2, fVar2.a, 0);
+                    t0.d(fVar2, fVar2.b, 0);
                     break;
                 } else {
                     fVar2.getClass();

@@ -3,7 +3,7 @@ package ah;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class d {
     public float a;
@@ -64,18 +64,18 @@ public final class d {
                 this.c = width - 0.1f;
             }
         }
-        this.b = a1.g.d(org.telegram.ui.Cells.c1.g(Utilities.fastRandom, 100), 100.0f, eVar.b.height() * 0.1f, eVar.b.height() * 0.45f);
+        this.b = a1.g.d(org.telegram.ui.Cells.b1.g(Utilities.fastRandom, 100), 100.0f, eVar.b.height() * 0.1f, eVar.b.height() * 0.45f);
         if (eVar.f) {
-            float d = a1.g.d(org.telegram.ui.Cells.c1.g(Utilities.fastRandom, 100), 100.0f, eVar.b.width() * 0.1f, eVar.b.width() * 0.05f);
+            float d = a1.g.d(org.telegram.ui.Cells.b1.g(Utilities.fastRandom, 100), 100.0f, eVar.b.width() * 0.1f, eVar.b.width() * 0.05f);
             this.f = d;
-            this.g = (((org.telegram.ui.Cells.c1.g(Utilities.fastRandom, 100) / 100.0f) * 1.5f) + 1.5f) * d;
-            this.d = a1.g.d(org.telegram.ui.Cells.c1.g(Utilities.fastRandom, 100), 100.0f, eVar.b.height() * 0.1f, this.f / 2.0f);
+            this.g = (((org.telegram.ui.Cells.b1.g(Utilities.fastRandom, 100) / 100.0f) * 1.5f) + 1.5f) * d;
+            this.d = a1.g.d(org.telegram.ui.Cells.b1.g(Utilities.fastRandom, 100), 100.0f, eVar.b.height() * 0.1f, this.f / 2.0f);
             this.e = eVar.b.height() + this.f;
             this.i = Math.abs(Utilities.fastRandom.nextInt() % 600) + MediaDataController.MAX_STYLE_RUNS_COUNT;
         } else {
-            float d10 = a1.g.d(org.telegram.ui.Cells.c1.g(Utilities.fastRandom, 100), 100.0f, eVar.b.width() * 0.1f, eVar.b.width() * 0.05f);
+            float d10 = a1.g.d(org.telegram.ui.Cells.b1.g(Utilities.fastRandom, 100), 100.0f, eVar.b.width() * 0.1f, eVar.b.width() * 0.05f);
             this.f = d10;
-            this.g = (((org.telegram.ui.Cells.c1.g(Utilities.fastRandom, 100) / 100.0f) * 0.5f) + 1.5f) * d10;
+            this.g = (((org.telegram.ui.Cells.b1.g(Utilities.fastRandom, 100) / 100.0f) * 0.5f) + 1.5f) * d10;
             this.d = c10;
             this.e = c10 + eVar.b.height();
             this.i = 1800L;
@@ -87,12 +87,12 @@ public final class d {
 
     public final float b() {
         if (!this.l.f) {
-            return (org.telegram.ui.Cells.c1.g(Utilities.fastRandom, 100) / 100.0f) * r0.b.width();
+            return (org.telegram.ui.Cells.b1.g(Utilities.fastRandom, 100) / 100.0f) * r0.b.width();
         }
-        return a1.g.d(org.telegram.ui.Cells.c1.g(Utilities.fastRandom, 100), 100.0f, r0.b.width() * 1.5f, r0.b.width() * (-0.25f));
+        return a1.g.d(org.telegram.ui.Cells.b1.g(Utilities.fastRandom, 100), 100.0f, r0.b.width() * 1.5f, r0.b.width() * (-0.25f));
     }
 
     public final float c() {
-        return (org.telegram.ui.Cells.c1.g(Utilities.fastRandom, 100) / 100.0f) * this.l.b.height() * 0.5f;
+        return (org.telegram.ui.Cells.b1.g(Utilities.fastRandom, 100) / 100.0f) * this.l.b.height() * 0.5f;
     }
 }

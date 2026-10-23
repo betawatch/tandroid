@@ -1,35 +1,11 @@
 package z4;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public final class f extends i1.c {
-    public static final Parcelable.Creator<f> CREATOR = new i1.b(4);
-    public int c;
-    public Parcelable d;
-    public final ClassLoader e;
+public interface f {
+    void a(int i10);
 
-    public f(Parcel parcel, ClassLoader classLoader) {
-        super(parcel, classLoader);
-        classLoader = classLoader == null ? f.class.getClassLoader() : classLoader;
-        this.c = parcel.readInt();
-        this.d = parcel.readParcelable(classLoader);
-        this.e = classLoader;
-    }
+    void b(float f7, int i10, int i11);
 
-    public final String toString() {
-        StringBuilder sb2 = new StringBuilder("FragmentPager.SavedState{");
-        sb2.append(Integer.toHexString(System.identityHashCode(this)));
-        sb2.append(" position=");
-        return a1.g.n(this.c, "}", sb2);
-    }
-
-    @Override // i1.c, android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        super.writeToParcel(parcel, i10);
-        parcel.writeInt(this.c);
-        parcel.writeParcelable(this.d, i10);
-    }
+    void c(int i10);
 }

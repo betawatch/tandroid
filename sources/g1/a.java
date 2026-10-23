@@ -13,13 +13,13 @@ import android.view.ViewConfiguration;
 import android.view.accessibility.AccessibilityNodeInfo;
 import kotlin.jvm.internal.i;
 import v0.c;
-import v0.o;
+import v0.p;
 import w0.d;
 import w7.a8;
 import w7.z7;
 import w7.z8;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public abstract class a {
     public static d a(Intent intent) {
@@ -53,7 +53,7 @@ public abstract class a {
         return z8.b(getCredentialException.getMessage(), type);
     }
 
-    public static o d(Intent intent) {
+    public static p d(Intent intent) {
         i.e(intent, "intent");
         GetCredentialResponse getCredentialResponse = (GetCredentialResponse) intent.getParcelableExtra("android.service.credentials.extra.GET_CREDENTIAL_RESPONSE", GetCredentialResponse.class);
         if (getCredentialResponse == null) {
@@ -65,7 +65,7 @@ public abstract class a {
         i.d(type, "getType(...)");
         Bundle data = credential.getData();
         i.d(data, "getData(...)");
-        return new o(a8.a(type, data));
+        return new p(a8.a(type, data));
     }
 
     public static AccessibilityNodeInfo.AccessibilityAction e() {

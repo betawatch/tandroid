@@ -1,6 +1,7 @@
 package n7;
 
 import com.google.android.gms.internal.play_billing.k3;
+import i2.o1;
 import j$.util.Map;
 import j$.util.Objects;
 import java.util.ArrayList;
@@ -16,7 +17,7 @@ import java.util.Set;
 import java.util.SortedMap;
 import java.util.TreeMap;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class r extends n implements NavigableMap, Map {
     public static final r f;
@@ -66,14 +67,14 @@ public final class r extends n implements NavigableMap, Map {
             Object[] objArr = {key};
             for (int i12 = 0; i12 < 1; i12++) {
                 if (objArr[i12] == null) {
-                    throw new NullPointerException(i2.e.j(i12, "at index "));
+                    throw new NullPointerException(o1.k(i12, "at index "));
                 }
             }
             z zVar = new z(m.s(1, objArr), vVar);
             Object[] objArr2 = {value};
             while (i11 < 1) {
                 if (objArr2[i11] == null) {
-                    throw new NullPointerException(i2.e.j(i11, "at index "));
+                    throw new NullPointerException(o1.k(i11, "at index "));
                 }
                 i11++;
             }
@@ -112,7 +113,7 @@ public final class r extends n implements NavigableMap, Map {
                 objArr3[i10] = key4;
                 objArr4[i10] = value4;
                 if (vVar.compare(key3, key4) == 0) {
-                    throw new IllegalArgumentException(k3.k("Multiple entries with same key: ", String.valueOf(entry4), " and ", String.valueOf(entry5)));
+                    throw new IllegalArgumentException(k3.j("Multiple entries with same key: ", String.valueOf(entry4), " and ", String.valueOf(entry5)));
                 }
                 i10++;
                 key3 = key4;

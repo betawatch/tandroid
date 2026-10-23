@@ -1,28 +1,26 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import java.util.ArrayList;
+import android.view.View;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class ce1 extends pe1 {
-    public final /* synthetic */ re1 g3;
+public final class ce1 implements View.OnClickListener {
+    public final /* synthetic */ ye1 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ce1(re1 re1Var, Context context) {
-        super(re1Var, context);
-        this.g3 = re1Var;
+    public ce1(ye1 ye1Var) {
+        this.a = ye1Var;
     }
 
-    @Override // org.telegram.ui.Components.jm0
-    public final boolean S0() {
-        ArrayList arrayList = this.g3.b;
-        return (getAdapter() == null || this.V1 || (arrayList == null || arrayList.size() != 1 || arrayList.get(0) == null || ((ie1) arrayList.get(0)).c == null || ((ie1) arrayList.get(0)).c.id != 1 ? getAdapter().h() > 1 : getAdapter().h() > 2)) ? false : true;
-    }
-
-    @Override // org.telegram.ui.pe1, org.telegram.ui.Components.jm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        this.g3.y0();
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        ye1 ye1Var = this.a;
+        if (ye1Var.M == 1) {
+            org.telegram.ui.Components.f5.j0(ye1Var, -ye1Var.a, null, ye1Var.g(), null, false, ye1Var.J, new va(this, 5), ye1Var.getResourceProvider());
+            return;
+        }
+        ye1Var.getMessagesController().addUserToChat(ye1Var.a, ye1Var.getUserConfig().getCurrentUser(), 0, null, ye1Var, false, new vd1(ye1Var, 2), new wd1(ye1Var));
+        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeSearchByActiveAction, new Object[0]);
+        ye1Var.N0(false);
     }
 }

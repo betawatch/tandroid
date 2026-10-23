@@ -6,19 +6,19 @@ import android.os.SystemClock;
 import java.lang.reflect.Method;
 import java.math.RoundingMode;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class l0 {
     public boolean A;
     public long B;
-    public final ya.d a;
+    public final ya.c a;
     public final e2.g0 b;
     public final long[] c;
     public final AudioTrack d;
     public final int e;
     public final long f;
     public final boolean g;
-    public final b0 h;
+    public final c0 h;
     public float i;
     public long j;
     public long k;
@@ -38,8 +38,8 @@ public final class l0 {
     public long y;
     public long z;
 
-    public l0(ya.d dVar, e2.g0 g0Var, AudioTrack audioTrack, int i10, int i11, int i12) {
-        this.a = dVar;
+    public l0(ya.c cVar, e2.g0 g0Var, AudioTrack audioTrack, int i10, int i11, int i12) {
+        this.a = cVar;
         this.b = g0Var;
         this.d = audioTrack;
         try {
@@ -49,7 +49,7 @@ public final class l0 {
         this.c = new long[10];
         this.z = -9223372036854775807L;
         this.y = -9223372036854775807L;
-        this.h = new b0(audioTrack, dVar);
+        this.h = new c0(audioTrack, cVar);
         int sampleRate = audioTrack.getSampleRate();
         this.e = sampleRate;
         boolean M = e2.m0.M(i10);
@@ -127,7 +127,7 @@ public final class l0 {
         e2.r rVar = ((i0) this.a.b).j;
         rVar.getClass();
         if (Thread.currentThread() == rVar.a) {
-            rVar.e(-1, new e0(currentTimeMillis));
+            rVar.e(-1, new f0(currentTimeMillis));
         }
     }
 }

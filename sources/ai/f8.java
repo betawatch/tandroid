@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.UserInfoActivity;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f8 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -36,30 +36,30 @@ public final /* synthetic */ class f8 implements RequestDelegate {
     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new m8(tLObject, (c5.p) this.b, (c5.i) this.c, (org.telegram.ui.Wallet.s1) this.f, (Activity) this.d, (TLRPC.TL_inputStorePaymentStarsGiveaway) this.g, this.e, tL_error, 0));
+                AndroidUtilities.runOnUIThread(new m8(tLObject, (c5.p) this.b, (c5.i) this.c, (org.telegram.ui.Wallet.r1) this.f, (Activity) this.d, (TLRPC.TL_inputStorePaymentStarsGiveaway) this.g, this.e, tL_error, 0));
                 break;
             case 1:
-                AndroidUtilities.runOnUIThread(new m8(tLObject, (c5.p) this.b, (c5.i) this.c, (tc) this.f, (Activity) this.d, (TLRPC.TL_inputStorePaymentStarsGift) this.g, this.e, tL_error, 1));
+                AndroidUtilities.runOnUIThread(new m8(tLObject, (c5.p) this.b, (c5.i) this.c, (uc) this.f, (Activity) this.d, (TLRPC.TL_inputStorePaymentStarsGift) this.g, this.e, tL_error, 1));
                 break;
             case 2:
                 AndroidUtilities.runOnUIThread(new m8((UserInfoActivity) this.b, tL_error, (TLObject) this.c, (TL_account.TL_birthday) this.f, (TLRPC.UserFull) this.d, tLObject, (int[]) this.g, (ArrayList) this.e));
                 break;
             case 3:
-                AndroidUtilities.runOnUIThread(new m8(tL_error, (Utilities.Callback) this.b, tLObject, this.e, (c5.i) this.c, (Utilities.Callback) this.f, (org.telegram.ui.ActionBar.n2) this.d, (TLRPC.InputStorePaymentPurpose) this.g, 9));
+                AndroidUtilities.runOnUIThread(new m8(tL_error, (Utilities.Callback) this.b, tLObject, this.e, (c5.i) this.c, (Utilities.Callback) this.f, (org.telegram.ui.ActionBar.o2) this.d, (TLRPC.InputStorePaymentPurpose) this.g, 9));
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new m8(tL_error, (Utilities.Callback) this.b, tLObject, this.e, (c5.i) this.c, (Utilities.Callback) this.f, (org.telegram.ui.ActionBar.n2) this.d, (TLRPC.InputStorePaymentPurpose) this.g, 10));
+                AndroidUtilities.runOnUIThread(new m8(tL_error, (Utilities.Callback) this.b, tLObject, this.e, (c5.i) this.c, (Utilities.Callback) this.f, (org.telegram.ui.ActionBar.o2) this.d, (TLRPC.InputStorePaymentPurpose) this.g, 10));
                 break;
         }
     }
 
-    public /* synthetic */ f8(Utilities.Callback callback, List list, c5.i iVar, Utilities.Callback callback2, org.telegram.ui.ActionBar.n2 n2Var, TLRPC.InputStorePaymentPurpose inputStorePaymentPurpose, int i10) {
+    public /* synthetic */ f8(Utilities.Callback callback, List list, c5.i iVar, Utilities.Callback callback2, org.telegram.ui.ActionBar.o2 o2Var, TLRPC.InputStorePaymentPurpose inputStorePaymentPurpose, int i10) {
         this.a = i10;
         this.b = callback;
         this.e = list;
         this.c = iVar;
         this.f = callback2;
-        this.d = n2Var;
+        this.d = o2Var;
         this.g = inputStorePaymentPurpose;
     }
 }

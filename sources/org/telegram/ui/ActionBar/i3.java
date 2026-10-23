@@ -1,107 +1,27 @@
 package org.telegram.ui.ActionBar;
 
-import ai.ic;
-import android.app.Dialog;
-import android.graphics.Paint;
-import android.os.Build;
-import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.Window;
 import android.view.WindowInsets;
-import android.view.WindowManager;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.R;
-import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class i3 extends Dialog {
-    public final t3 a;
-    public final h3 b;
-    public final ic c;
-    public final Paint d;
-    public boolean e;
+public final /* synthetic */ class i3 implements View.OnApplyWindowInsetsListener {
+    public final /* synthetic */ int a;
 
-    public i3(t3 t3Var) {
-        super(t3Var.getWindowView().getContext(), R.style.TransparentDialog);
-        Paint paint = new Paint(1);
-        this.d = paint;
-        this.a = t3Var;
-        u3 windowView = t3Var.getWindowView();
-        ic icVar = new ic(this, getContext(), 9);
-        this.c = icVar;
-        paint.setColor(h6.x0(null, h6.a7, false));
-        h3 h3Var = new h3(windowView);
-        this.b = h3Var;
-        setContentView(h3Var, new ViewGroup.LayoutParams(-1, -1));
-        h3Var.addView(icVar, w7.z5.e(-1, -2, 80));
-        h3Var.setClipToPadding(false);
+    public /* synthetic */ i3(int i10) {
+        this.a = i10;
     }
 
-    public static /* synthetic */ WindowInsets a(View view, WindowInsets windowInsets) {
-        view.setPadding(0, 0, 0, windowInsets.getSystemWindowInsetBottom());
-        return Build.VERSION.SDK_INT >= 30 ? WindowInsets.CONSUMED : windowInsets.consumeSystemWindowInsets();
-    }
-
-    public static void b(t3 t3Var) {
-        n2 U = LaunchActivity.U();
-        if (U == null) {
-            return;
+    @Override // android.view.View.OnApplyWindowInsetsListener
+    public final WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
+        switch (this.a) {
+            case 0:
+                return l3.a(view, windowInsets);
+            case 1:
+                return org.telegram.ui.k4.e(windowInsets);
+            default:
+                view.setPadding(0, 0, 0, windowInsets.getSystemWindowInsetBottom());
+                return windowInsets;
         }
-        if (AndroidUtilities.isTablet() || t3Var.b() || AndroidUtilities.hasDialogOnTop(U)) {
-            i3 i3Var = new i3(t3Var);
-            if (t3Var.c(i3Var)) {
-                h3 h3Var = i3Var.b;
-                View view = (View) h3Var.a;
-                AndroidUtilities.removeFromParent(view);
-                h3Var.addView(view, w7.z5.e(-1, -1, 119));
-            }
-        }
-    }
-
-    public final void c() {
-        this.a.c(null);
-        if (this.e) {
-            this.e = false;
-            try {
-                super.dismiss();
-            } catch (Exception e) {
-                FileLog.e(e);
-            }
-        }
-    }
-
-    @Override // android.app.Dialog, android.content.DialogInterface
-    public final void dismiss() {
-        this.a.dismiss(false);
-    }
-
-    @Override // android.app.Dialog
-    public final void onCreate(Bundle bundle) {
-        super.onCreate(bundle);
-        Window window = getWindow();
-        if (Build.VERSION.SDK_INT >= 30) {
-            window.addFlags(-2147483392);
-        } else {
-            window.addFlags(-2147417856);
-        }
-        window.setWindowAnimations(R.style.DialogNoAnimation);
-        WindowManager.LayoutParams attributes = window.getAttributes();
-        attributes.width = -1;
-        attributes.gravity = 51;
-        attributes.dimAmount = 0.0f;
-        attributes.flags &= -3;
-        attributes.softInputMode = 16;
-        attributes.height = -1;
-        AndroidUtilities.applyEdgeToEdgeLayoutParams(attributes);
-        window.setAttributes(attributes);
-        window.setStatusBarColor(0);
-        h3 h3Var = this.b;
-        h3Var.setFitsSystemWindows(true);
-        h3Var.setSystemUiVisibility(1792);
-        h3Var.setPadding(0, 0, 0, 0);
-        h3Var.setOnApplyWindowInsetsListener(new g3(0));
     }
 }

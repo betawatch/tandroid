@@ -1,28 +1,65 @@
 package sg;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+import ai.o5;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.h3;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.n5;
+import org.telegram.ui.ActionBar.r6;
+import w7.z5;
+
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public class f0 {
-    public final int a;
-    public final int b;
-    public final String c;
-    public final String d;
-    public final int e;
-    public boolean f;
+public final class f0 extends FrameLayout {
+    public final ImageView a;
+    public final n5 b;
+    public final o5 c;
+    public final n5 d;
+    public e0 e;
+    public d0 f;
 
-    public f0(int i10, int i11, int i12, String str, String str2) {
-        this.a = i10;
-        this.b = i11;
-        this.c = str;
-        this.d = str2;
-        this.e = i12;
+    public f0(j0 j0Var, Context context, g6 g6Var) {
+        super(context);
+        int i10;
+        int i11;
+        i10 = ((h3) j0Var).backgroundPaddingLeft;
+        i11 = ((h3) j0Var).backgroundPaddingLeft;
+        setPadding(i10, 0, i11, 0);
+        ImageView imageView = new ImageView(context);
+        this.a = imageView;
+        imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
+        r6.t(imageView, k6.Lj, g6Var, PorterDuff.Mode.SRC_IN);
+        addView(imageView, z5.d(24, 24.0f, (LocaleController.isRTL ? 5 : 3) | 16, 24.0f, 0.0f, 24.0f, 0.0f));
+        n5 n5Var = new n5(context);
+        this.b = n5Var;
+        n5Var.setWidthWrapContent(true);
+        r6.Z(n5Var, k6.j5, g6Var);
+        n5Var.setTextSize(14);
+        boolean z10 = LocaleController.isRTL;
+        addView(n5Var, z5.d(-2, -2.0f, (z10 ? 5 : 3) | 16, z10 ? 30.0f : 60.0f, 0.0f, z10 ? 60.0f : 30.0f, 0.0f));
+        n5 n5Var2 = new n5(context);
+        this.d = n5Var2;
+        n5Var2.setTextColor(-1);
+        n5Var2.setWidthWrapContent(true);
+        n5Var2.setTypeface(AndroidUtilities.bold());
+        n5Var2.setTextSize(14);
+        o5 o5Var = new o5(this, context, g6Var);
+        this.c = o5Var;
+        o5Var.setWillNotDraw(false);
+        o5Var.addView(n5Var2, z5.e(-2, -2, 17));
+        addView(o5Var, z5.c(-1.0f, -1));
     }
 
-    public static f0 a(int i10, int i11) {
-        return new f0(i10, i11, -1, null, null);
-    }
-
-    public static f0 b(int i10, int i11, String str) {
-        return new f0(i10, -1, i11, null, str);
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.f != null ? 49.0f : 36.0f), TLObject.FLAG_30));
     }
 }

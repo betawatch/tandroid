@@ -15,11 +15,11 @@ import b2.v1;
 import b2.y0;
 import b2.z0;
 import java.util.List;
-import org.telegram.ui.Components.c81;
-import org.telegram.ui.Components.l60;
-import si.s0;
+import org.telegram.ui.Components.j81;
+import org.telegram.ui.Components.m60;
+import si.u0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class z implements d1 {
     public final /* synthetic */ int a;
@@ -91,9 +91,9 @@ public final class z implements d1 {
                 }
                 break;
             default:
-                s0 s0Var = (s0) this.b;
-                if (s0Var.W == 5) {
-                    s0Var.x(z10);
+                u0 u0Var = (u0) this.b;
+                if (u0Var.W == 5) {
+                    u0Var.x(z10);
                     break;
                 }
                 break;
@@ -132,26 +132,26 @@ public final class z implements d1 {
 
     @Override // b2.d1
     public final void onPlaybackStateChanged(int i10) {
-        i2.i0 i0Var;
-        i2.i0 i0Var2;
+        i2.h0 h0Var;
+        i2.h0 h0Var2;
         switch (this.a) {
             case 0:
             case 1:
                 break;
             case 2:
                 ri.o oVar = (ri.o) this.b;
-                if (i10 == 4 && oVar.n == ri.m.e && (i0Var = oVar.B) != null) {
-                    i0Var.Z0(5, oVar.s);
+                if (i10 == 4 && oVar.n == ri.m.e && (h0Var = oVar.B) != null) {
+                    h0Var.Z0(5, oVar.s);
                     oVar.B.e();
                     break;
                 }
                 break;
             default:
-                s0 s0Var = (s0) this.b;
-                s0Var.m.b("preview playback state=" + i10);
-                if (s0Var.W == 5 && i10 == 4 && (i0Var2 = s0Var.S) != null) {
-                    i0Var2.Z0(5, s0Var.G);
-                    s0Var.S.i();
+                u0 u0Var = (u0) this.b;
+                u0Var.m.b("preview playback state=" + i10);
+                if (u0Var.W == 5 && i10 == 4 && (h0Var2 = u0Var.S) != null) {
+                    h0Var2.Z0(5, u0Var.G);
+                    u0Var.S.i();
                     break;
                 }
                 break;
@@ -173,9 +173,9 @@ public final class z implements d1 {
                 ((ri.o) this.b).g(y0Var);
                 break;
             default:
-                s0 s0Var = (s0) this.b;
-                s0Var.m.b("preview player error: code=" + y0Var.a);
-                s0Var.h(y0Var);
+                u0 u0Var = (u0) this.b;
+                u0Var.m.b("preview player error: code=" + y0Var.a);
+                u0Var.h(y0Var);
                 break;
         }
     }
@@ -189,11 +189,11 @@ public final class z implements d1 {
     public final void onPlayerStateChanged(boolean z10, int i10) {
         switch (this.a) {
             case 1:
-                c81 c81Var = (c81) this.b;
-                if (!c81Var.H && i10 == 3) {
-                    c81Var.H = true;
-                    if (c81Var.G && c81Var.I) {
-                        c81Var.C();
+                j81 j81Var = (j81) this.b;
+                if (!j81Var.H && i10 == 3) {
+                    j81Var.H = true;
+                    if (j81Var.G && j81Var.I) {
+                        j81Var.C();
                         break;
                     }
                 }
@@ -219,9 +219,9 @@ public final class z implements d1 {
             case 2:
                 break;
             default:
-                s0 s0Var = (s0) this.b;
-                if (s0Var.W == 5) {
-                    l60.m((l60) s0Var.d.b);
+                u0 u0Var = (u0) this.b;
+                if (u0Var.W == 5) {
+                    m60.m((m60) u0Var.d.b);
                     break;
                 }
                 break;

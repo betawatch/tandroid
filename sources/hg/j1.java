@@ -1,11 +1,10 @@
 package hg;
 
 import ai.u2;
-import ai.vd;
+import ai.wd;
 import ai.z3;
 import android.content.Context;
 import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.location.Location;
@@ -48,26 +47,26 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.r6;
 import org.telegram.ui.Cells.c8;
-import org.telegram.ui.Cells.f2;
 import org.telegram.ui.Cells.g5;
 import org.telegram.ui.Components.a6;
-import org.telegram.ui.Components.db0;
+import org.telegram.ui.Components.eb0;
 import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.tl0;
+import org.telegram.ui.Components.lm0;
 import org.telegram.ui.Components.un;
 import org.telegram.ui.Components.w9;
+import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.xq;
 import org.telegram.ui.Components.yq;
-import org.telegram.ui.Components.zq;
-import org.telegram.ui.qn;
+import org.telegram.ui.sn;
 import w7.z5;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class j1 extends im0 implements NotificationCenter.NotificationCenterDelegate {
+public final class j1 extends lm0 implements NotificationCenter.NotificationCenterDelegate {
     public ArrayList A0;
     public HashMap B0;
     public String D0;
@@ -76,9 +75,9 @@ public final class j1 extends im0 implements NotificationCenter.NotificationCent
     public String F;
     public u0 F0;
     public h1 G;
-    public qn G0;
+    public sn G0;
     public h1 H;
-    public final d6 H0;
+    public final g6 H0;
     public ArrayList I;
     public ArrayList J;
     public final NotificationCenter.ObserversGroup J0;
@@ -94,7 +93,7 @@ public final class j1 extends im0 implements NotificationCenter.NotificationCent
     public long S;
     public TLRPC.TL_inlineBotSwitchPM T;
     public TLRPC.TL_inlineBotWebView U;
-    public final db0 V;
+    public final eb0 V;
     public a0.h W;
     public int X;
     public int Y;
@@ -142,10 +141,10 @@ public final class j1 extends im0 implements NotificationCenter.NotificationCent
     public boolean L0 = false;
     public int M0 = -1;
 
-    public j1(Context context, long j10, long j11, db0 db0Var, d6 d6Var, boolean z10) {
-        this.H0 = d6Var;
+    public j1(Context context, long j10, long j11, eb0 eb0Var, g6 g6Var, boolean z10) {
+        this.H0 = g6Var;
         this.h = context;
-        this.V = db0Var;
+        this.V = eb0Var;
         this.n = j10;
         this.s = z10;
         this.r = j11;
@@ -177,7 +176,7 @@ public final class j1 extends im0 implements NotificationCenter.NotificationCent
         return false;
     }
 
-    @Override // org.telegram.ui.Components.im0
+    @Override // org.telegram.ui.Components.lm0
     public final boolean D(s4.b1 b1Var) {
         return (this.w0 == null || this.h0) && this.A0 == null;
     }
@@ -239,8 +238,8 @@ public final class j1 extends im0 implements NotificationCenter.NotificationCent
     }
 
     public final void G() {
-        qn qnVar = this.G0;
-        if (qnVar == null || qnVar.getParentActivity() == null) {
+        sn snVar = this.G0;
+        if (snVar == null || snVar.getParentActivity() == null) {
             return;
         }
         if (this.G0.getParentActivity().checkSelfPermission("android.permission.ACCESS_COARSE_LOCATION") != 0) {
@@ -474,11 +473,11 @@ public final class j1 extends im0 implements NotificationCenter.NotificationCent
     }
 
     public final void R(TLRPC.User user) {
-        qn qnVar;
+        sn snVar;
         TLRPC.Chat chat;
         this.t0 = 0;
         this.I0.stop();
-        db0 db0Var = this.V;
+        eb0 eb0Var = this.V;
         if (user == null || !user.bot || user.bot_inline_placeholder == null) {
             this.w0 = null;
             this.T = null;
@@ -490,18 +489,18 @@ public final class j1 extends im0 implements NotificationCenter.NotificationCent
                 this.T = null;
                 this.S = j10;
             }
-            qn qnVar2 = this.G0;
-            if (qnVar2 != null && (chat = qnVar2.e) != null) {
+            sn snVar2 = this.G0;
+            if (snVar2 != null && (chat = snVar2.e) != null) {
                 boolean canSendStickers = ChatObject.canSendStickers(chat);
                 this.h0 = canSendStickers;
                 if (!canSendStickers) {
                     l();
-                    db0Var.a(true);
+                    eb0Var.a(true);
                     return;
                 }
             }
             if (this.w0.bot_inline_geo) {
-                if (MessagesController.getNotificationsSettings(this.f).getBoolean("inlinegeo_" + this.w0.id, false) || (qnVar = this.G0) == null || qnVar.getParentActivity() == null) {
+                if (MessagesController.getNotificationsSettings(this.f).getBoolean("inlinegeo_" + this.w0.id, false) || (snVar = this.G0) == null || snVar.getParentActivity() == null) {
                     G();
                 } else {
                     TLRPC.User user2 = this.w0;
@@ -519,8 +518,8 @@ public final class j1 extends im0 implements NotificationCenter.NotificationCent
             this.v0 = true;
             this.T = null;
         } else {
-            if (db0Var != null) {
-                db0Var.b(true);
+            if (eb0Var != null) {
+                eb0Var.b(true);
             }
             T(true, this.w0, this.r0, "");
         }
@@ -540,12 +539,12 @@ public final class j1 extends im0 implements NotificationCenter.NotificationCent
         TLRPC.User user = this.w0;
         if (user == null || (str4 = user.username) == null || !str4.equals(str) || (str5 = this.r0) == null || !str5.equals(str2)) {
             TLRPC.User user2 = this.w0;
-            db0 db0Var = this.V;
+            eb0 eb0Var = this.V;
             if (user2 != null) {
                 if (!this.h0 && str != null && str2 != null) {
                     return;
                 } else {
-                    db0Var.a(false);
+                    eb0Var.a(false);
                 }
             }
             a1 a1Var = this.y0;
@@ -569,19 +568,19 @@ public final class j1 extends im0 implements NotificationCenter.NotificationCent
                 this.r0 = null;
                 this.I0.stop();
                 this.v0 = false;
-                if (db0Var != null) {
-                    db0Var.b(false);
+                if (eb0Var != null) {
+                    eb0Var.b(false);
                 }
                 if (str != null) {
                 }
             }
             if (str2 != null) {
-                if (db0Var != null) {
+                if (eb0Var != null) {
                     if (this.w0 != null) {
-                        db0Var.b(true);
+                        eb0Var.b(true);
                     } else if (str.equals("gif")) {
                         this.q0 = "gif";
-                        db0Var.b(false);
+                        eb0Var.b(false);
                     }
                 }
                 MessagesController messagesController = MessagesController.getInstance(this.f);
@@ -597,8 +596,8 @@ public final class j1 extends im0 implements NotificationCenter.NotificationCent
                 this.u0 = 0;
             }
             this.r0 = null;
-            if (db0Var != null) {
-                db0Var.b(false);
+            if (eb0Var != null) {
+                eb0Var.b(false);
             }
         }
     }
@@ -610,9 +609,9 @@ public final class j1 extends im0 implements NotificationCenter.NotificationCent
             this.u0 = 0;
         }
         if (!this.h0 || !this.d) {
-            db0 db0Var = this.V;
-            if (db0Var != null) {
-                db0Var.b(false);
+            eb0 eb0Var = this.V;
+            if (eb0Var != null) {
+                eb0Var.b(false);
                 return;
             }
             return;
@@ -732,7 +731,7 @@ public final class j1 extends im0 implements NotificationCenter.NotificationCent
     /* JADX WARN: Type inference failed for: r11v45 */
     /* JADX WARN: Type inference failed for: r11v68 */
     /* JADX WARN: Type inference failed for: r11v69 */
-    /* JADX WARN: Type inference failed for: r12v0, types: [org.telegram.ui.Components.db0] */
+    /* JADX WARN: Type inference failed for: r12v0, types: [org.telegram.ui.Components.eb0] */
     /* JADX WARN: Type inference failed for: r27v0, types: [hg.j1, java.lang.Object, s4.g0] */
     /* JADX WARN: Type inference failed for: r3v25, types: [hg.h1] */
     /* JADX WARN: Type inference failed for: r6v18 */
@@ -750,7 +749,7 @@ public final class j1 extends im0 implements NotificationCenter.NotificationCent
         ArrayList arrayList2;
         char c10;
         String str3;
-        qn qnVar;
+        sn snVar;
         char c11;
         int i12;
         String str4;
@@ -782,10 +781,10 @@ public final class j1 extends im0 implements NotificationCenter.NotificationCent
         String str11 = "";
         String charSequence2 = charSequence == null ? "" : charSequence.toString();
         TLRPC.Chat chat4 = this.l0;
-        qn qnVar2 = this.G0;
-        if (qnVar2 != null) {
-            chat4 = qnVar2.e;
-            qnVar2.i();
+        sn snVar2 = this.G0;
+        if (snVar2 != null) {
+            chat4 = snVar2.e;
+            snVar2.i();
         }
         TLRPC.Chat chat5 = chat4;
         ei.z1 z1Var = this.p0;
@@ -1003,7 +1002,7 @@ public final class j1 extends im0 implements NotificationCenter.NotificationCent
                 str3 = null;
             } else {
                 c10 = ' ';
-                if (!this.c || (qnVar = this.G0) == null || qnVar.h != null || (!(chat5 == null || ChatObject.canSendStickers(chat5)) || charSequence2.trim().length() < 2 || charSequence2.trim().indexOf(32) >= 0)) {
+                if (!this.c || (snVar = this.G0) == null || snVar.h != null || (!(chat5 == null || ChatObject.canSendStickers(chat5)) || charSequence2.trim().length() < 2 || charSequence2.trim().indexOf(32) >= 0)) {
                     str3 = null;
                     S(null, null);
                 } else {
@@ -1186,19 +1185,19 @@ public final class j1 extends im0 implements NotificationCenter.NotificationCent
                 }
             }
             if (this.G0 != null && !DialogObject.isEncryptedDialog(this.n)) {
-                qn qnVar3 = this.G0;
-                if (qnVar3.R3 == 0 && qnVar3.i() != null && !this.G0.i().bot && !UserObject.isReplyUser(this.G0.i()) && !UserObject.isService(this.G0.i().id)) {
-                    ig.a2 f7 = ig.a2.f(this.f);
+                sn snVar3 = this.G0;
+                if (snVar3.d4 == 0 && snVar3.i() != null && !this.G0.i().bot && !UserObject.isReplyUser(this.G0.i()) && !UserObject.isService(this.G0.i().id)) {
+                    ig.z1 f7 = ig.z1.f(this.f);
                     ArrayList arrayList15 = f7.b;
                     f7.h();
                     this.L = lowerCase2;
                     this.M = new ArrayList();
                     for (int i28 = 0; i28 < arrayList15.size(); i28++) {
-                        ig.z1 z1Var2 = (ig.z1) arrayList15.get(i28);
-                        if (!ig.a2.g(z1Var2.b)) {
-                            String lowerCase3 = z1Var2.b.toLowerCase();
+                        ig.y1 y1Var2 = (ig.y1) arrayList15.get(i28);
+                        if (!ig.z1.g(y1Var2.b)) {
+                            String lowerCase3 = y1Var2.b.toLowerCase();
                             if (lowerCase3.startsWith(lowerCase2) || AndroidUtilities.translitSafe(lowerCase3).startsWith(lowerCase2)) {
-                                this.M.add(z1Var2);
+                                this.M.add(y1Var2);
                             }
                         }
                     }
@@ -1287,10 +1286,10 @@ public final class j1 extends im0 implements NotificationCenter.NotificationCent
                 }
             }
         }
-        qn qnVar4 = this.G0;
-        if (qnVar4 != null) {
-            chat5 = qnVar4.e;
-            j10 = qnVar4.d4;
+        sn snVar4 = this.G0;
+        if (snVar4 != null) {
+            chat5 = snVar4.e;
+            j10 = snVar4.p4;
         } else {
             TLRPC.ChatFull chatFull2 = this.v;
             if (chatFull2 != null) {
@@ -1452,9 +1451,9 @@ public final class j1 extends im0 implements NotificationCenter.NotificationCent
             return;
         }
         if (arrayList17.size() < 5) {
-            ei.z1 z1Var3 = new ei.z1(this, arrayList17, hVar2, 17);
-            this.p0 = z1Var3;
-            AndroidUtilities.runOnUIThread(z1Var3, 1000L);
+            ei.z1 z1Var2 = new ei.z1(this, arrayList17, hVar2, 17);
+            this.p0 = z1Var2;
+            AndroidUtilities.runOnUIThread(z1Var2, 1000L);
         } else {
             Y(hVar2, arrayList17, true);
         }
@@ -1468,11 +1467,11 @@ public final class j1 extends im0 implements NotificationCenter.NotificationCent
     }
 
     public final void W(TLRPC.ChatFull chatFull) {
-        qn qnVar;
+        sn snVar;
         TLRPC.Chat chat;
         this.f = UserConfig.selectedAccount;
         this.v = chatFull;
-        if (!this.h0 && this.w0 != null && (qnVar = this.G0) != null && (chat = qnVar.e) != null) {
+        if (!this.h0 && this.w0 != null && (snVar = this.G0) != null && (chat = snVar.e) != null) {
             boolean canSendStickers = ChatObject.canSendStickers(chat);
             this.h0 = canSendStickers;
             if (canSendStickers) {
@@ -1488,8 +1487,8 @@ public final class j1 extends im0 implements NotificationCenter.NotificationCent
         }
     }
 
-    public final void X(qn qnVar) {
-        this.G0 = qnVar;
+    public final void X(sn snVar) {
+        this.G0 = snVar;
     }
 
     public final void Y(a0.h hVar, ArrayList arrayList, boolean z10) {
@@ -1593,7 +1592,7 @@ public final class j1 extends im0 implements NotificationCenter.NotificationCent
         String str;
         String str2;
         int i10 = this.M0;
-        db0 db0Var = this.V;
+        eb0 eb0Var = this.V;
         int i11 = 0;
         if (i10 != -1 && this.K0 != null) {
             int K = K();
@@ -1610,7 +1609,7 @@ public final class j1 extends im0 implements NotificationCenter.NotificationCent
                     if (i11 < objArr2.length && i11 < K) {
                         Object obj = objArr2[i11];
                         Object obj2 = objArr[i11];
-                        if (!(obj instanceof ig.z1)) {
+                        if (!(obj instanceof ig.y1)) {
                             if (obj != obj2 && ((!(obj instanceof i1) || !(obj2 instanceof i1) || ((i1) obj).a != ((i1) obj2).a) && ((!(obj instanceof TLRPC.User) || !(obj2 instanceof TLRPC.User) || ((TLRPC.User) obj).id != ((TLRPC.User) obj2).id) && ((!(obj instanceof TLRPC.Chat) || !(obj2 instanceof TLRPC.Chat) || ((TLRPC.Chat) obj).id != ((TLRPC.Chat) obj2).id) && (!(obj instanceof String) || !(obj2 instanceof String) || !obj.equals(obj2)))))) {
                                 if ((obj instanceof MediaDataController.KeywordResult) && (obj2 instanceof MediaDataController.KeywordResult) && (str = (keywordResult = (MediaDataController.KeywordResult) obj).keyword) != null) {
                                     MediaDataController.KeywordResult keywordResult2 = (MediaDataController.KeywordResult) obj2;
@@ -1628,15 +1627,15 @@ public final class j1 extends im0 implements NotificationCenter.NotificationCent
             }
             t(min, i10 - min);
             s(min, K - min);
-            if (z10 && db0Var != null) {
-                db0Var.c();
+            if (z10 && eb0Var != null) {
+                eb0Var.c();
             }
             this.K0 = objArr;
             return;
         }
-        if (db0Var != null) {
+        if (eb0Var != null) {
             this.M0 = K();
-            db0Var.c();
+            eb0Var.c();
         }
         super.l();
         int K2 = K();
@@ -1654,7 +1653,7 @@ public final class j1 extends im0 implements NotificationCenter.NotificationCent
 
     @Override // s4.g0
     public final void v(s4.b1 b1Var, int i10) {
-        qn qnVar;
+        sn snVar;
         TLRPC.TL_chatBannedRights tL_chatBannedRights;
         float f7;
         String str = this.F;
@@ -1676,13 +1675,13 @@ public final class j1 extends im0 implements NotificationCenter.NotificationCent
             boolean isPremiumSticker = MessageObject.isPremiumSticker(document);
             c8Var.s = isPremiumSticker;
             if (isPremiumSticker) {
-                c1Var.setColor(h6.x0(null, h6.d6, false));
+                c1Var.setColor(k6.x0(null, k6.d6, false));
                 c1Var.H = true;
                 c1Var.I = false;
                 c1Var.invalidate();
             }
             TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 90);
-            SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(document, h6.a7, 1.0f, 1.0f, c8Var.v);
+            SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(document, k6.a7, 1.0f, 1.0f, c8Var.v);
             if (!MessageObject.canAutoplayAnimatedSticker(document)) {
                 f7 = 1.0f;
                 if (svgThumb == null) {
@@ -1706,7 +1705,7 @@ public final class j1 extends im0 implements NotificationCenter.NotificationCent
             Drawable background = c8Var.getBackground();
             if (background != null) {
                 background.setAlpha(230);
-                background.setColorFilter(new PorterDuffColorFilter(h6.x0(null, h6.Be, false), PorterDuff.Mode.MULTIPLY));
+                r6.z(c8Var, background, k6.Be, null, PorterDuff.Mode.MULTIPLY);
             }
             if (c8Var.s) {
                 c8Var.r = true;
@@ -1755,12 +1754,12 @@ public final class j1 extends im0 implements NotificationCenter.NotificationCent
             return;
         }
         if (i12 == 5) {
-            ig.w1 w1Var = (ig.w1) view;
+            ig.v1 v1Var = (ig.v1) view;
             ArrayList arrayList = this.M;
             if (arrayList == null || i11 < 0 || i11 >= arrayList.size()) {
                 return;
             }
-            w1Var.a((ig.z1) this.M.get(i11), this.L, false);
+            v1Var.a((ig.y1) this.M.get(i11), this.L, false);
             return;
         }
         ArrayList arrayList2 = this.R;
@@ -1769,7 +1768,7 @@ public final class j1 extends im0 implements NotificationCenter.NotificationCent
             boolean z10 = (tL_inlineBotSwitchPM == null && this.U == null) ? false : true;
             if (i12 == 2) {
                 if (z10) {
-                    ((org.telegram.ui.Cells.i0) view).setText(tL_inlineBotSwitchPM != null ? tL_inlineBotSwitchPM.text : this.U.text);
+                    ((org.telegram.ui.Cells.h0) view).setText(tL_inlineBotSwitchPM != null ? tL_inlineBotSwitchPM.text : this.U.text);
                     return;
                 }
                 return;
@@ -1780,7 +1779,7 @@ public final class j1 extends im0 implements NotificationCenter.NotificationCent
                 if (i11 < 0 || i11 >= arrayList2.size()) {
                     return;
                 }
-                ((f2) view).e((TLRPC.BotInlineResult) this.R.get(i11), this.w0, this.x0, i11 != this.R.size() - 1, z10 && i11 == 0, "gif".equals(this.q0));
+                ((org.telegram.ui.Cells.e2) view).e((TLRPC.BotInlineResult) this.R.get(i11), this.w0, this.x0, i11 != this.R.size() - 1, z10 && i11 == 0, "gif".equals(this.q0));
                 return;
             }
         }
@@ -1793,8 +1792,8 @@ public final class j1 extends im0 implements NotificationCenter.NotificationCent
                 this.H = h1Var;
             }
             TLRPC.Chat chat2 = this.l0;
-            if (chat2 == null && (qnVar = this.G0) != null) {
-                chat2 = qnVar.e;
+            if (chat2 == null && (snVar = this.G0) != null) {
+                chat2 = snVar.e;
             }
             h1Var.a(i13, str, chat2);
             return;
@@ -1828,7 +1827,7 @@ public final class j1 extends im0 implements NotificationCenter.NotificationCent
                         }
                         boolean booleanValue = bool.booleanValue();
                         String str3 = (String) this.J.get(i11);
-                        vd vdVar = g5Var.b;
+                        wd wdVar = g5Var.b;
                         TextView textView2 = g5Var.c;
                         h9 h9Var = g5Var.d;
                         w9 w9Var2 = g5Var.a;
@@ -1847,15 +1846,15 @@ public final class j1 extends im0 implements NotificationCenter.NotificationCent
                         }
                         textView2.setVisibility(0);
                         if (booleanValue) {
-                            yq yqVar = new yq(R.drawable.mini_ephemeral_hidden_14, 0);
-                            yqVar.setColorKey(h6.A6);
-                            yqVar.setTopOffset(1);
+                            xq xqVar = new xq(R.drawable.mini_ephemeral_hidden_14, 0);
+                            xqVar.setColorKey(k6.A6);
+                            xqVar.setTopOffset(1);
                             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str3);
                             spannableStringBuilder.append((CharSequence) " *");
-                            spannableStringBuilder.setSpan(yqVar, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
-                            vdVar.setText(spannableStringBuilder);
+                            spannableStringBuilder.setSpan(xqVar, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
+                            wdVar.setText(spannableStringBuilder);
                         } else {
-                            vdVar.setText(str3);
+                            wdVar.setText(str3);
                         }
                         textView2.setText(Emoji.replaceEmoji(str2, textView2.getPaint().getFontMetricsInt(), false));
                     }
@@ -1873,36 +1872,36 @@ public final class j1 extends im0 implements NotificationCenter.NotificationCent
     public final s4.b1 x(ViewGroup viewGroup, int i10) {
         View view;
         View view2;
-        d6 d6Var = this.H0;
+        g6 g6Var = this.H0;
         Context context = this.h;
         if (i10 != 0) {
             if (i10 != 1) {
                 if (i10 == 2) {
-                    org.telegram.ui.Cells.i0 i0Var = new org.telegram.ui.Cells.i0(context);
+                    org.telegram.ui.Cells.h0 h0Var = new org.telegram.ui.Cells.h0(context);
                     TextView textView = new TextView(context);
-                    i0Var.a = textView;
+                    h0Var.a = textView;
                     textView.setTextSize(1, 15.0f);
-                    textView.setTextColor(h6.x0(null, h6.Ce, false));
+                    r6.W(textView, k6.Ce, null);
                     textView.setTypeface(AndroidUtilities.bold());
                     textView.setSingleLine(true);
                     textView.setEllipsize(TextUtils.TruncateAt.END);
                     textView.setMaxLines(1);
                     textView.setGravity(LocaleController.isRTL ? 5 : 3);
-                    i0Var.addView(textView, z5.d(-2, -2.0f, (LocaleController.isRTL ? 5 : 3) | 16, 14.0f, 0.0f, 14.0f, 0.0f));
-                    view = i0Var;
+                    h0Var.addView(textView, z5.d(-2, -2.0f, (LocaleController.isRTL ? 5 : 3) | 16, 14.0f, 0.0f, 14.0f, 0.0f));
+                    view2 = h0Var;
                 } else if (i10 == 3) {
                     TextView textView2 = new TextView(context);
                     textView2.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
                     textView2.setTextSize(1, 14.0f);
-                    textView2.setTextColor(h6.w0(h6.z6, d6Var));
+                    r6.W(textView2, k6.z6, g6Var);
                     view2 = textView2;
                 } else if (i10 != 5) {
                     boolean z10 = this.s;
                     if (i10 == 6) {
-                        view2 = new h1(context, d6Var, z10);
+                        view2 = new h1(context, g6Var, z10);
                     } else if (i10 != 7) {
                         c8 c8Var = new c8(context);
-                        c8Var.v = d6Var;
+                        c8Var.v = g6Var;
                         w9 w9Var = new w9(context);
                         c8Var.a = w9Var;
                         w9Var.setAspectFit(true);
@@ -1917,25 +1916,29 @@ public final class j1 extends im0 implements NotificationCenter.NotificationCent
                         view2 = c8Var;
                     } else {
                         View unVar = new un(context, 6);
-                        zq zqVar = new zq(new ColorDrawable(z10 ? h6.m1(0.15f, -1) : h6.w0(h6.a7, d6Var)), h6.V0(context, R.drawable.greydivider, h6.w0(h6.b7, d6Var)), 0, 0);
-                        zqVar.w = true;
-                        unVar.setBackground(zqVar);
+                        ColorDrawable colorDrawable = new ColorDrawable(z10 ? k6.o1(0.15f, -1) : k6.w0(k6.a7, g6Var));
+                        if (!z10) {
+                            r6.z(unVar, colorDrawable, k6.a7, g6Var, PorterDuff.Mode.SRC_IN);
+                        }
+                        yq yqVar = new yq(colorDrawable, k6.W0(context, R.drawable.greydivider, k6.w0(k6.b7, g6Var)), 0, 0);
+                        yqVar.w = true;
+                        unVar.setBackground(yqVar);
                         view = unVar;
                     }
                 } else {
-                    view = new ig.w1(context, d6Var, false);
+                    view = new ig.v1(context, g6Var, false);
                 }
             } else {
-                f2 f2Var = new f2(context);
-                f2Var.setDelegate(new v0(this));
-                view2 = f2Var;
+                org.telegram.ui.Cells.e2 e2Var = new org.telegram.ui.Cells.e2(context);
+                e2Var.setDelegate(new v0(this));
+                view2 = e2Var;
             }
-            return new tl0(view2);
+            return new wl0(view2);
         }
-        g5 g5Var = new g5(context, d6Var);
+        g5 g5Var = new g5(context, g6Var);
         g5Var.setIsDarkTheme(false);
         view = g5Var;
         view2 = view;
-        return new tl0(view2);
+        return new wl0(view2);
     }
 }

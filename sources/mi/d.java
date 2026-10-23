@@ -3,9 +3,9 @@ package mi;
 import android.text.TextPaint;
 import android.text.style.CharacterStyle;
 import java.util.HashMap;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.k6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class d extends CharacterStyle {
     public final int a;
@@ -49,32 +49,32 @@ public final class d extends CharacterStyle {
         }
         switch (i11) {
             case 1:
-                i10 = h6.Ik;
+                i10 = k6.Ik;
                 break;
             case 2:
-                i10 = h6.Jk;
+                i10 = k6.Jk;
                 break;
             case 3:
-                i10 = h6.Kk;
+                i10 = k6.Kk;
                 break;
             case 4:
-                i10 = h6.Lk;
+                i10 = k6.Lk;
                 break;
             case 5:
-                i10 = h6.Mk;
+                i10 = k6.Mk;
                 break;
             case 6:
-                i10 = h6.Nk;
+                i10 = k6.Nk;
                 break;
             case 7:
-                i10 = h6.Ok;
+                i10 = k6.Ok;
                 break;
             default:
                 i10 = -1;
                 break;
         }
         if (i10 >= 0) {
-            textPaint.setColor(h6.x0(null, i10, false));
+            textPaint.setColor(k6.x0(null, i10, false));
         }
     }
 }

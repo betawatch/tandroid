@@ -1,31 +1,30 @@
 package z7;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+import java.util.Arrays;
+
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public enum ra implements u {
-    b(0),
-    c(1),
-    d(2),
-    e(3),
-    f(7),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF9(8),
-    h(4),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF79(5),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF88(6),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF101(9);
+public final class ra {
+    public final qa a;
+    public final Integer b;
 
-    public final int a;
-
-    ra(int i10) {
-        this.a = i10;
+    public /* synthetic */ ra(n2.e eVar) {
+        this.a = (qa) eVar.b;
+        this.b = (Integer) eVar.c;
     }
 
-    @Override // z7.u
-    public final int zza() {
-        return this.a;
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (!(obj instanceof ra)) {
+            return false;
+        }
+        ra raVar = (ra) obj;
+        return n6.l.l(this.a, raVar.a) && n6.l.l(this.b, raVar.b) && n6.l.l(null, null) && n6.l.l(null, null);
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{this.a, this.b, null, null});
     }
 }

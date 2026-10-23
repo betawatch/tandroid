@@ -15,7 +15,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class lz implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -50,7 +50,7 @@ public final /* synthetic */ class lz implements Utilities.Callback {
         int i12 = 1;
         switch (i10) {
             case 0:
-                mzVar.b((Runnable) obj, true);
+                mzVar.a((Runnable) obj, true);
                 break;
             case 1:
                 Runnable runnable = (Runnable) obj;
@@ -117,7 +117,7 @@ public final /* synthetic */ class lz implements Utilities.Callback {
                 runnable.run();
                 break;
             case 2:
-                mzVar.b((Runnable) obj, false);
+                mzVar.a((Runnable) obj, false);
                 break;
             case 3:
                 MediaDataController.getInstance(mzVar.w.Q.c1).searchStickerSets(false, mzVar.a, new qy(1, mzVar, (Runnable) obj));

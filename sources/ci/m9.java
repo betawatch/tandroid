@@ -1,33 +1,62 @@
 package ci;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.ob;
+import org.telegram.ui.Components.qc;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final class m9 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ o9 b;
+public final class m9 implements ob {
+    public final float[] a = new float[2];
+    public final /* synthetic */ n9 b;
 
-    public /* synthetic */ m9(o9 o9Var, int i10) {
-        this.a = i10;
-        this.b = o9Var;
+    public m9(n9 n9Var) {
+        this.b = n9Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                aa aaVar = this.b.I0;
-                aaVar.X = 0.0f;
-                aa.k(aaVar);
-                break;
-            default:
-                aa aaVar2 = this.b.I0;
-                aaVar2.W = 0.0f;
-                aaVar2.Z = 0.0f;
-                aa.k(aaVar2);
-                break;
+    @Override // org.telegram.ui.Components.ob
+    public final /* synthetic */ boolean a() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.ob
+    public final /* synthetic */ boolean e() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.ob
+    public final int f(int i10) {
+        z9 z9Var = this.b.I0;
+        p4 t10 = z9Var.t();
+        if (t10 == null) {
+            return 0;
         }
+        q3 q3Var = t10.c1;
+        n9 n9Var = z9Var.s;
+        float[] fArr = this.a;
+        AndroidUtilities.getViewPositionInParent(q3Var, n9Var, fArr);
+        return (int) (r4.getMeasuredHeight() - (fArr[1] + q3Var.getMeasuredHeight()));
+    }
+
+    @Override // org.telegram.ui.Components.ob
+    public final /* synthetic */ boolean g(int i10) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.ob
+    public final /* synthetic */ int h(int i10) {
+        return 0;
+    }
+
+    @Override // org.telegram.ui.Components.ob
+    public final /* synthetic */ void b(qc qcVar) {
+    }
+
+    @Override // org.telegram.ui.Components.ob
+    public final /* synthetic */ void c(float f7) {
+    }
+
+    @Override // org.telegram.ui.Components.ob
+    public final /* synthetic */ void d(qc qcVar) {
     }
 }

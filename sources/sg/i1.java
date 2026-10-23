@@ -3,9 +3,9 @@ package sg;
 import android.animation.ValueAnimator;
 import android.graphics.drawable.Drawable;
 import android.view.View;
-import org.telegram.ui.Components.nl0;
+import org.telegram.ui.Components.ql0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i1 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -22,16 +22,16 @@ public final /* synthetic */ class i1 implements ValueAnimator.AnimatorUpdateLis
     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                nl0 nl0Var = (nl0) this.b;
+                ql0 ql0Var = (ql0) this.b;
                 Drawable drawable = (Drawable) this.c;
-                nl0Var.getClass();
+                ql0Var.getClass();
                 drawable.setAlpha(((Integer) valueAnimator.getAnimatedValue()).intValue());
-                View view = ((m1) nl0Var.c).A0;
-                if (!(view instanceof org.telegram.ui.Cells.u1)) {
+                View view = ((m1) ql0Var.c).A0;
+                if (!(view instanceof org.telegram.ui.Cells.t1)) {
                     view.invalidate();
                     break;
                 } else {
-                    ((org.telegram.ui.Cells.u1) view).a3();
+                    ((org.telegram.ui.Cells.t1) view).Z2();
                     break;
                 }
             default:

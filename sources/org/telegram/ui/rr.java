@@ -1,192 +1,393 @@
 package org.telegram.ui;
 
-import android.view.View;
-import java.util.Calendar;
-import java.util.Locale;
-import java.util.regex.Pattern;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LanguageDetector;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.text.Editable;
+import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class rr implements org.telegram.ui.Components.cw0, org.telegram.ui.Components.dw0, LanguageDetector.ExceptionCallback, org.telegram.ui.Components.kd0, org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.md0 {
+public final class rr implements TextWatcher {
     public final /* synthetic */ int a;
+    public int b;
+    public int c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ rr(int i10) {
+    public /* synthetic */ rr(Object obj, int i10) {
         this.a = i10;
+        this.d = obj;
+        this.b = -1;
     }
 
-    @Override // org.telegram.ui.Components.dw0
-    public void b(Object obj, float f7) {
-        tr trVar = (tr) obj;
-        switch (this.a) {
-            case 1:
-                trVar.d = f7;
-                if (trVar.getParent() != null) {
-                    ((View) trVar.getParent()).invalidate();
-                    break;
-                }
-                break;
-            default:
-                trVar.e = f7;
-                if (trVar.getParent() != null) {
-                    ((View) trVar.getParent()).invalidate();
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.kd0
-    public String e(int i10) {
-        switch (this.a) {
-            case 6:
-                return i2.e.j(i10, "");
-            case 7:
-                switch (i10) {
-                    case 0:
-                        return LocaleController.getString(R.string.January);
-                    case 1:
-                        return LocaleController.getString(R.string.February);
-                    case 2:
-                        return LocaleController.getString(R.string.March);
-                    case 3:
-                        return LocaleController.getString(R.string.April);
-                    case 4:
-                        return LocaleController.getString(R.string.May);
-                    case 5:
-                        return LocaleController.getString(R.string.June);
-                    case 6:
-                        return LocaleController.getString(R.string.July);
-                    case 7:
-                        return LocaleController.getString(R.string.August);
-                    case 8:
-                        return LocaleController.getString(R.string.September);
-                    case 9:
-                        return LocaleController.getString(R.string.October);
-                    case 10:
-                        return LocaleController.getString(R.string.November);
-                    default:
-                        return LocaleController.getString(R.string.December);
-                }
-            case 8:
-                return String.format("%02d", Integer.valueOf(i10));
-            case 9:
-            case 10:
-            case 20:
-            case 27:
-            default:
-                return String.format("%02d", Integer.valueOf(i10));
-            case 11:
-                if (i10 == 0) {
-                    return LocaleController.getString(R.string.MessageScheduleToday);
-                }
-                Calendar calendar = Calendar.getInstance();
-                int i11 = calendar.get(1);
-                calendar.add(6, i10);
-                long timeInMillis = calendar.getTimeInMillis();
-                int i12 = calendar.get(1);
-                if (i12 != i11 || i10 >= 7) {
-                    return i12 == i11 ? LocaleController.getInstance().getFormatterScheduleDay().format(timeInMillis) : LocaleController.getInstance().getFormatterScheduleYear().format(timeInMillis);
-                }
-                return LocaleController.getInstance().getFormatterWeek().format(timeInMillis) + ", " + LocaleController.getInstance().getFormatterScheduleDay().format(timeInMillis);
-            case 12:
-                return String.format("%02d", Integer.valueOf(i10));
-            case 13:
-                return String.format("%02d", Integer.valueOf(i10));
-            case 14:
-                Calendar calendar2 = Calendar.getInstance();
-                calendar2.set(5, 1);
-                calendar2.set(2, i10);
-                return calendar2.getDisplayName(2, 1, Locale.getDefault());
-            case 15:
-                return String.format("%02d", Integer.valueOf(i10));
-            case 16:
-                return String.format("%02d", Integer.valueOf(i10));
-            case 17:
-                if (i10 == 0) {
-                    return LocaleController.getString(R.string.MessageScheduleToday);
-                }
-                Calendar calendar3 = Calendar.getInstance();
-                int i13 = calendar3.get(1);
-                calendar3.add(6, i10);
-                long timeInMillis2 = calendar3.getTimeInMillis();
-                return calendar3.get(1) == i13 ? LocaleController.getInstance().getFormatterScheduleDay().format(timeInMillis2) : LocaleController.getInstance().getFormatterScheduleYear().format(timeInMillis2);
-            case 18:
-                return String.format("%02d", Integer.valueOf(i10));
-            case 19:
-                return String.format("%02d", Integer.valueOf(i10));
-            case 21:
-                return LocaleController.formatPluralString("Times", i10 + 1, new Object[0]);
-            case 22:
-                return LocaleController.formatPluralString("Minutes", i10 + 1, new Object[0]);
-            case 23:
-                return LocaleController.getString(R.string.NotificationsFrequencyDivider);
-            case 24:
-                if (i10 == 0) {
-                    return LocaleController.getString(R.string.MessageScheduleToday);
-                }
-                Calendar calendar4 = Calendar.getInstance();
-                int i14 = calendar4.get(1);
-                calendar4.add(6, i10);
-                long timeInMillis3 = calendar4.getTimeInMillis();
-                if (calendar4.get(1) != i14) {
-                    return LocaleController.getInstance().getFormatterScheduleYear().format(timeInMillis3);
-                }
-                return LocaleController.getInstance().getFormatterWeek().format(timeInMillis3) + ", " + LocaleController.getInstance().getFormatterScheduleDay().format(timeInMillis3);
-            case 25:
-                return String.format("%02d", Integer.valueOf(i10));
-            case 26:
-                return String.format("%02d", Integer.valueOf(i10));
-            case 28:
-                boolean z10 = LocaleController.is24HourFormat;
-                String format = String.format("%02d", Integer.valueOf((i10 % 12 != 0 || z10) ? i10 % (z10 ? 24 : 12) : 12));
-                return i10 >= 24 ? LocaleController.formatString(R.string.BusinessHoursNextDayPicker, format) : format;
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.a2
-    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        switch (this.a) {
-            case 9:
-                b2Var.dismiss();
-                break;
-            case 20:
-                b2Var.dismiss();
-                break;
-            default:
-                b2Var.dismiss();
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.cw0
-    public float get(Object obj) {
-        tr trVar = (tr) obj;
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        int length;
+        int i10;
+        int i11;
+        int i12;
+        int i13;
+        int i14;
+        int i15;
+        int i16;
+        int i17;
         switch (this.a) {
             case 0:
-                return trVar.d;
+                int i18 = this.c;
+                int i19 = this.b;
+                sr srVar = (sr) this.d;
+                if (!srVar.d && (length = editable.length()) >= 1) {
+                    if (length > 1) {
+                        String obj = editable.toString();
+                        srVar.d = true;
+                        int i20 = i19;
+                        for (int i21 = 0; i21 < Math.min(i18 - i19, length); i21++) {
+                            if (i21 == 0) {
+                                editable.replace(0, length, obj.substring(i21, i21 + 1));
+                            } else {
+                                i20++;
+                                int i22 = i19 + i21;
+                                vr[] vrVarArr = srVar.f;
+                                if (i22 < vrVarArr.length) {
+                                    vrVarArr[i22].setText(obj.substring(i21, i21 + 1));
+                                }
+                            }
+                        }
+                        srVar.d = false;
+                        i19 = i20;
+                    }
+                    int i23 = i19 + 1;
+                    if (i23 >= 0) {
+                        vr[] vrVarArr2 = srVar.f;
+                        if (i23 < vrVarArr2.length) {
+                            vr vrVar = vrVarArr2[i23];
+                            vrVar.setSelection(vrVar.length());
+                            srVar.f[i23].requestFocus();
+                        }
+                    }
+                    if ((i19 == i18 - 1 || (i19 == i18 - 2 && length >= 2)) && srVar.getCode().length() == i18) {
+                        srVar.a();
+                        break;
+                    }
+                }
+                break;
+            case 1:
+                hg0 hg0Var = (hg0) this.d;
+                eg0 eg0Var = hg0Var.b;
+                if (!hg0Var.L) {
+                    int selectionStart = eg0Var.getSelectionStart();
+                    String obj2 = eg0Var.getText().toString();
+                    if (this.b == 3) {
+                        obj2 = obj2.substring(0, this.c) + obj2.substring(this.c + 1);
+                        selectionStart--;
+                    }
+                    StringBuilder sb2 = new StringBuilder(obj2.length());
+                    int i24 = 0;
+                    while (i24 < obj2.length()) {
+                        int i25 = i24 + 1;
+                        String substring = obj2.substring(i24, i25);
+                        if ("0123456789".contains(substring)) {
+                            sb2.append(substring);
+                        }
+                        i24 = i25;
+                    }
+                    hg0Var.L = true;
+                    String hintText = eg0Var.getHintText();
+                    if (hintText != null) {
+                        int i26 = 0;
+                        while (true) {
+                            if (i26 < sb2.length()) {
+                                if (i26 < hintText.length()) {
+                                    if (hintText.charAt(i26) == ' ') {
+                                        sb2.insert(i26, ' ');
+                                        i26++;
+                                        if (selectionStart == i26 && (i11 = this.b) != 2 && i11 != 3) {
+                                            selectionStart++;
+                                        }
+                                    }
+                                    i26++;
+                                } else {
+                                    sb2.insert(i26, ' ');
+                                    if (selectionStart == i26 + 1 && (i10 = this.b) != 2 && i10 != 3) {
+                                        selectionStart++;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    editable.replace(0, editable.length(), sb2);
+                    if (selectionStart >= 0) {
+                        eg0Var.setSelection(Math.min(selectionStart, eg0Var.length()));
+                    }
+                    eg0Var.invalidate();
+                    hg0Var.p();
+                    hg0Var.L = false;
+                    break;
+                }
+                break;
+            case 2:
+                rj0 rj0Var = (rj0) this.d;
+                if (!rj0Var.E) {
+                    int selectionStart2 = rj0Var.P.getSelectionStart();
+                    String obj3 = rj0Var.P.getText().toString();
+                    if (this.b == 3) {
+                        obj3 = obj3.substring(0, this.c) + obj3.substring(this.c + 1);
+                        selectionStart2--;
+                    }
+                    StringBuilder sb3 = new StringBuilder(obj3.length());
+                    int i27 = 0;
+                    while (i27 < obj3.length()) {
+                        int i28 = i27 + 1;
+                        String substring2 = obj3.substring(i27, i28);
+                        if ("0123456789".contains(substring2)) {
+                            sb3.append(substring2);
+                        }
+                        i27 = i28;
+                    }
+                    rj0Var.E = true;
+                    String hintText2 = rj0Var.P.getHintText();
+                    if (hintText2 != null) {
+                        int i29 = 0;
+                        while (true) {
+                            if (i29 < sb3.length()) {
+                                if (i29 < hintText2.length()) {
+                                    if (hintText2.charAt(i29) == ' ') {
+                                        sb3.insert(i29, ' ');
+                                        i29++;
+                                        if (selectionStart2 == i29 && (i13 = this.b) != 2 && i13 != 3) {
+                                            selectionStart2++;
+                                        }
+                                    }
+                                    i29++;
+                                } else {
+                                    sb3.insert(i29, ' ');
+                                    if (selectionStart2 == i29 + 1 && (i12 = this.b) != 2 && i12 != 3) {
+                                        selectionStart2++;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    editable.replace(0, editable.length(), sb3);
+                    if (selectionStart2 >= 0) {
+                        pj0 pj0Var = rj0Var.P;
+                        pj0Var.setSelection(Math.min(selectionStart2, pj0Var.length()));
+                    }
+                    rj0Var.P.invalidate();
+                    rj0Var.E = false;
+                    rj0.s(rj0Var);
+                    break;
+                }
+                break;
+            case 3:
+                an0 an0Var = (an0) this.d;
+                if (!an0Var.a1) {
+                    org.telegram.ui.Components.o40 o40Var = (org.telegram.ui.Components.o40) an0Var.Y[2];
+                    int selectionStart3 = o40Var.getSelectionStart();
+                    String obj4 = o40Var.getText().toString();
+                    if (this.b == 3) {
+                        obj4 = obj4.substring(0, this.c) + obj4.substring(this.c + 1);
+                        selectionStart3--;
+                    }
+                    StringBuilder sb4 = new StringBuilder(obj4.length());
+                    int i30 = 0;
+                    while (i30 < obj4.length()) {
+                        int i31 = i30 + 1;
+                        String substring3 = obj4.substring(i30, i31);
+                        if ("0123456789".contains(substring3)) {
+                            sb4.append(substring3);
+                        }
+                        i30 = i31;
+                    }
+                    an0Var.a1 = true;
+                    String hintText3 = o40Var.getHintText();
+                    if (hintText3 != null) {
+                        int i32 = 0;
+                        while (true) {
+                            if (i32 < sb4.length()) {
+                                if (i32 < hintText3.length()) {
+                                    if (hintText3.charAt(i32) == ' ') {
+                                        sb4.insert(i32, ' ');
+                                        i32++;
+                                        if (selectionStart3 == i32 && (i15 = this.b) != 2 && i15 != 3) {
+                                            selectionStart3++;
+                                        }
+                                    }
+                                    i32++;
+                                } else {
+                                    sb4.insert(i32, ' ');
+                                    if (selectionStart3 == i32 + 1 && (i14 = this.b) != 2 && i14 != 3) {
+                                        selectionStart3++;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    o40Var.setText(sb4);
+                    if (selectionStart3 >= 0) {
+                        o40Var.setSelection(Math.min(selectionStart3, o40Var.length()));
+                    }
+                    o40Var.invalidate();
+                    an0Var.a1 = false;
+                    break;
+                }
+                break;
             default:
-                return trVar.e;
+                io0 io0Var = (io0) this.d;
+                if (!io0Var.n0) {
+                    org.telegram.ui.Components.o40 o40Var2 = (org.telegram.ui.Components.o40) io0Var.f[9];
+                    int selectionStart4 = o40Var2.getSelectionStart();
+                    String obj5 = o40Var2.getText().toString();
+                    if (this.b == 3) {
+                        obj5 = obj5.substring(0, this.c) + obj5.substring(this.c + 1);
+                        selectionStart4--;
+                    }
+                    StringBuilder sb5 = new StringBuilder(obj5.length());
+                    int i33 = 0;
+                    while (i33 < obj5.length()) {
+                        int i34 = i33 + 1;
+                        String substring4 = obj5.substring(i33, i34);
+                        if ("0123456789".contains(substring4)) {
+                            sb5.append(substring4);
+                        }
+                        i33 = i34;
+                    }
+                    io0Var.n0 = true;
+                    String hintText4 = o40Var2.getHintText();
+                    if (hintText4 != null) {
+                        int i35 = 0;
+                        while (true) {
+                            if (i35 < sb5.length()) {
+                                if (i35 < hintText4.length()) {
+                                    if (hintText4.charAt(i35) == ' ') {
+                                        sb5.insert(i35, ' ');
+                                        i35++;
+                                        if (selectionStart4 == i35 && (i17 = this.b) != 2 && i17 != 3) {
+                                            selectionStart4++;
+                                        }
+                                    }
+                                    i35++;
+                                } else {
+                                    sb5.insert(i35, ' ');
+                                    if (selectionStart4 == i35 + 1 && (i16 = this.b) != 2 && i16 != 3) {
+                                        selectionStart4++;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    o40Var2.setText(sb5);
+                    if (selectionStart4 >= 0) {
+                        o40Var2.setSelection(Math.min(selectionStart4, o40Var2.length()));
+                    }
+                    o40Var2.invalidate();
+                    io0Var.n0 = false;
+                    break;
+                }
+                break;
         }
     }
 
-    @Override // org.telegram.ui.Components.md0
-    public void q(org.telegram.ui.Components.od0 od0Var, int i10) {
-        Pattern pattern = org.telegram.ui.Components.f5.a;
-    }
-
-    @Override // org.telegram.messenger.LanguageDetector.ExceptionCallback
-    public void run(Exception exc) {
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
         switch (this.a) {
-            case 4:
-                FileLog.e(exc);
+            case 0:
                 break;
+            case 1:
+                if (i11 != 0 || i12 != 1) {
+                    if (i11 != 1 || i12 != 0) {
+                        this.b = -1;
+                        break;
+                    } else if (charSequence.charAt(i10) == ' ' && i10 > 0) {
+                        this.b = 3;
+                        this.c = i10 - 1;
+                        break;
+                    } else {
+                        this.b = 2;
+                        break;
+                    }
+                } else {
+                    this.b = 1;
+                    break;
+                }
+            case 2:
+                if (i11 != 0 || i12 != 1) {
+                    if (i11 != 1 || i12 != 0) {
+                        this.b = -1;
+                        break;
+                    } else if (charSequence.charAt(i10) == ' ' && i10 > 0) {
+                        this.b = 3;
+                        this.c = i10 - 1;
+                        break;
+                    } else {
+                        this.b = 2;
+                        break;
+                    }
+                } else {
+                    this.b = 1;
+                    break;
+                }
+            case 3:
+                if (i11 != 0 || i12 != 1) {
+                    if (i11 != 1 || i12 != 0) {
+                        this.b = -1;
+                        break;
+                    } else if (charSequence.charAt(i10) == ' ' && i10 > 0) {
+                        this.b = 3;
+                        this.c = i10 - 1;
+                        break;
+                    } else {
+                        this.b = 2;
+                        break;
+                    }
+                } else {
+                    this.b = 1;
+                    break;
+                }
             default:
-                FileLog.e(exc);
-                break;
+                if (i11 != 0 || i12 != 1) {
+                    if (i11 != 1 || i12 != 0) {
+                        this.b = -1;
+                        break;
+                    } else if (charSequence.charAt(i10) == ' ' && i10 > 0) {
+                        this.b = 3;
+                        this.c = i10 - 1;
+                        break;
+                    } else {
+                        this.b = 2;
+                        break;
+                    }
+                } else {
+                    this.b = 1;
+                    break;
+                }
         }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        int i13 = this.a;
+    }
+
+    public rr(sr srVar, int i10, int i11) {
+        this.a = 0;
+        this.d = srVar;
+        this.b = i10;
+        this.c = i11;
+    }
+
+    private final void a(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void b(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void c(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void d(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void e(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void f(int i10, int i11, int i12, CharSequence charSequence) {
     }
 }

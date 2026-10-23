@@ -1,26 +1,26 @@
 package ei;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m4 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ f6 b;
-    public final /* synthetic */ rg.c2 c;
+    public final /* synthetic */ rg.d2 c;
 
-    public /* synthetic */ m4(f6 f6Var, rg.c2 c2Var, int i10) {
+    public /* synthetic */ m4(f6 f6Var, rg.d2 d2Var, int i10) {
         this.a = i10;
         this.b = f6Var;
-        this.c = c2Var;
+        this.c = d2Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.C0(this.c, true);
+                this.b.B0(this.c, true);
                 break;
             default:
-                this.b.B0(this.c);
+                this.b.A0(this.c);
                 break;
         }
     }

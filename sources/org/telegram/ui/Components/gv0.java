@@ -1,60 +1,39 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import org.telegram.messenger.SharedConfig;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
+import org.telegram.messenger.SavedMessagesController;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public abstract class gv0 extends ScrollSlidingTextTabStrip {
-    public Paint p0;
-    public int q0;
-    public final Rect r0;
-    public final /* synthetic */ uv0 s0;
+public final class gv0 extends org.telegram.ui.Cells.q2 {
+    public final /* synthetic */ hv0 a5;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gv0(uv0 uv0Var, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, d6Var);
-        this.s0 = uv0Var;
-        this.q0 = 0;
-        this.r0 = new Rect();
+    public gv0(hv0 hv0Var, Context context) {
+        super(context, true);
+        this.a5 = hv0Var;
     }
 
-    @Override // org.telegram.ui.Components.ScrollSlidingTextTabStrip, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        if (this.q0 != 0) {
-            if (this.p0 == null) {
-                this.p0 = new Paint();
-            }
-            this.p0.setColor(this.q0);
-            int measuredWidth = getMeasuredWidth();
-            int measuredHeight = getMeasuredHeight();
-            Rect rect = this.r0;
-            rect.set(0, 0, measuredWidth, measuredHeight);
-            canvas.save();
-            canvas.translate(getScrollX(), 0.0f);
-            canvas.clipPath(this.f0);
-            if (SharedConfig.chatBlurEnabled()) {
-                this.s0.P(canvas, getY(), rect, this.p0);
-            } else {
-                canvas.drawPaint(this.p0);
-            }
-            canvas.translate(-getScrollX(), 0.0f);
-            canvas.restore();
+    @Override // org.telegram.ui.Cells.q2
+    public final boolean P() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Cells.q2
+    public final boolean getIsPinned() {
+        hv0 hv0Var = this.a5;
+        ArrayList arrayList = hv0Var.f;
+        pu0 pu0Var = hv0Var.s;
+        if (pu0Var == null || pu0Var.getAdapter() != hv0Var) {
+            return false;
         }
-        super.dispatchDraw(canvas);
-    }
-
-    @Override // org.telegram.ui.Components.ScrollSlidingTextTabStrip
-    public /* bridge */ /* synthetic */ int[] getColorKeys() {
-        return null;
-    }
-
-    @Override // android.view.View
-    public void setBackgroundColor(int i10) {
-        this.q0 = i10;
-        invalidate();
+        hv0Var.s.getClass();
+        int R = RecyclerView.R(this);
+        if (R < 0 || R >= arrayList.size()) {
+            return false;
+        }
+        return ((SavedMessagesController.SavedDialog) arrayList.get(R)).pinned;
     }
 }

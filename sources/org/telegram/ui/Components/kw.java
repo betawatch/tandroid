@@ -14,9 +14,9 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public abstract class kw extends ln0 {
+public abstract class kw extends on0 {
     public static final int[] e0 = {R.drawable.msg_emoji_smiles, R.drawable.msg_emoji_cat, R.drawable.msg_emoji_food, R.drawable.msg_emoji_activities, R.drawable.msg_emoji_travel, R.drawable.msg_emoji_objects, R.drawable.msg_emoji_other, R.drawable.msg_emoji_flags};
     public static final int[] f0 = {R.raw.msg_emoji_smiles, R.raw.msg_emoji_cat, R.raw.msg_emoji_food, R.raw.msg_emoji_activities, R.raw.msg_emoji_travel, R.raw.msg_emoji_objects, R.raw.msg_emoji_other, R.raw.msg_emoji_flags};
     public final gw E;
@@ -46,12 +46,12 @@ public abstract class kw extends ln0 {
     public final boolean n;
     public boolean r;
     public f6 s;
-    public final org.telegram.ui.ActionBar.d6 v;
+    public final org.telegram.ui.ActionBar.g6 v;
     public final boolean w;
     public final gw x;
     public final gw y;
 
-    public kw(Context context, org.telegram.ui.ActionBar.d6 d6Var, boolean z10, boolean z11, boolean z12, boolean z13, int i10, Runnable runnable, int i11, boolean z14) {
+    public kw(Context context, org.telegram.ui.ActionBar.g6 g6Var, boolean z10, boolean z11, boolean z12, boolean z13, int i10, Runnable runnable, int i11, boolean z14) {
         super(context);
         this.h = R.drawable.msg_emoji_recent;
         int i12 = R.drawable.msg_emoji_gem;
@@ -73,7 +73,7 @@ public abstract class kw extends ln0 {
         this.c0 = true;
         this.d0 = 11.0f;
         this.w = z13;
-        this.v = d6Var;
+        this.v = g6Var;
         this.R = runnable;
         this.T = i10;
         this.Q = i11;
@@ -178,7 +178,7 @@ public abstract class kw extends ln0 {
     }
 
     public ColorFilter getEmojiColorFilter() {
-        return org.telegram.ui.ActionBar.h6.o0(this.v);
+        return org.telegram.ui.ActionBar.k6.o0(this.v);
     }
 
     public abstract boolean h(int i10);
@@ -290,12 +290,12 @@ public abstract class kw extends ln0 {
 
     public final int k() {
         boolean z10 = this.P;
-        org.telegram.ui.ActionBar.d6 d6Var = this.v;
+        org.telegram.ui.ActionBar.g6 g6Var = this.v;
         if (z10) {
-            return i0.a.o(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Wk, d6Var), (int) 12.75f);
+            return i0.a.o(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Wk, g6Var), (int) 12.75f);
         }
         int i10 = this.T;
-        return (i10 == 5 || i10 == 7) ? org.telegram.ui.ActionBar.h6.m1(0.09f, this.Q) : org.telegram.ui.ActionBar.h6.m1(0.18f, org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Me, d6Var));
+        return (i10 == 5 || i10 == 7) ? org.telegram.ui.ActionBar.k6.o1(0.09f, this.Q) : org.telegram.ui.ActionBar.k6.o1(0.18f, org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Me, g6Var));
     }
 
     public final void l(boolean z10) {

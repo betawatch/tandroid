@@ -3,6 +3,7 @@ package com.google.mlkit.nl.languageid.internal;
 import android.content.Context;
 import b2.m0;
 import com.google.firebase.components.ComponentRegistrar;
+import i2.o1;
 import java.util.List;
 import r9.a;
 import r9.j;
@@ -13,7 +14,7 @@ import v7.j9;
 import vb.b;
 import vb.e;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public class LanguageIdRegistrar implements ComponentRegistrar {
     @Override // com.google.firebase.components.ComponentRegistrar
@@ -31,7 +32,7 @@ public class LanguageIdRegistrar implements ComponentRegistrar {
         for (int i10 = 0; i10 < 2; i10++) {
             f9 f9Var = h9.b;
             if (objArr[i10] == null) {
-                throw new NullPointerException(i2.e.j(i10, "at index "));
+                throw new NullPointerException(o1.k(i10, "at index "));
             }
         }
         f9 f9Var2 = h9.b;

@@ -1,55 +1,38 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.tl.TL_stats;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class m91 {
-    public TL_stats.PostInteractionCounters a;
-    public MessageObject b;
+public final class m91 implements aq {
+    public final /* synthetic */ TLRPC.TL_chatChannelParticipant a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ boolean[] c;
 
-    public final int a() {
-        TL_stats.PostInteractionCounters postInteractionCounters = this.a;
-        if (postInteractionCounters instanceof TL_stats.TL_postInteractionCountersMessage) {
-            return ((TL_stats.TL_postInteractionCountersMessage) postInteractionCounters).forwards;
-        }
-        if (postInteractionCounters instanceof TL_stats.TL_postInteractionCountersStory) {
-            return ((TL_stats.TL_postInteractionCountersStory) postInteractionCounters).forwards;
-        }
-        return 0;
+    public m91(TLRPC.TL_chatChannelParticipant tL_chatChannelParticipant, boolean z10, boolean[] zArr) {
+        this.a = tL_chatChannelParticipant;
+        this.b = z10;
+        this.c = zArr;
     }
 
-    public final int b() {
-        TL_stats.PostInteractionCounters postInteractionCounters = this.a;
-        if (postInteractionCounters instanceof TL_stats.TL_postInteractionCountersMessage) {
-            return ((TL_stats.TL_postInteractionCountersMessage) postInteractionCounters).msg_id;
+    @Override // org.telegram.ui.aq
+    public final void b(int i10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
+        TLRPC.TL_chatChannelParticipant tL_chatChannelParticipant = this.a;
+        if (i10 == 0) {
+            TLRPC.ChannelParticipant channelParticipant = tL_chatChannelParticipant.channelParticipant;
+            channelParticipant.admin_rights = null;
+            channelParticipant.rank = "";
+        } else {
+            TLRPC.ChannelParticipant channelParticipant2 = tL_chatChannelParticipant.channelParticipant;
+            channelParticipant2.admin_rights = tL_chatAdminRights;
+            channelParticipant2.rank = str;
+            if (this.b) {
+                this.c[0] = true;
+            }
         }
-        if (postInteractionCounters instanceof TL_stats.TL_postInteractionCountersStory) {
-            return ((TL_stats.TL_postInteractionCountersStory) postInteractionCounters).story_id;
-        }
-        return 0;
     }
 
-    public final int c() {
-        TL_stats.PostInteractionCounters postInteractionCounters = this.a;
-        if (postInteractionCounters instanceof TL_stats.TL_postInteractionCountersMessage) {
-            return ((TL_stats.TL_postInteractionCountersMessage) postInteractionCounters).reactions;
-        }
-        if (postInteractionCounters instanceof TL_stats.TL_postInteractionCountersStory) {
-            return ((TL_stats.TL_postInteractionCountersStory) postInteractionCounters).reactions;
-        }
-        return 0;
-    }
-
-    public final int d() {
-        TL_stats.PostInteractionCounters postInteractionCounters = this.a;
-        if (postInteractionCounters instanceof TL_stats.TL_postInteractionCountersMessage) {
-            return ((TL_stats.TL_postInteractionCountersMessage) postInteractionCounters).views;
-        }
-        if (postInteractionCounters instanceof TL_stats.TL_postInteractionCountersStory) {
-            return ((TL_stats.TL_postInteractionCountersStory) postInteractionCounters).views;
-        }
-        return 0;
+    @Override // org.telegram.ui.aq
+    public final void a(TLRPC.User user) {
     }
 }

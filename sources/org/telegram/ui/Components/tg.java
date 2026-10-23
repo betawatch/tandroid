@@ -8,7 +8,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class tg extends j1.b {
     public final int[] o;
@@ -63,20 +63,20 @@ public final class tg extends j1.b {
     }
 
     @Override // j1.b
-    public final void l(int i10, s0.c cVar) {
+    public final void l(int i10, s0.d dVar) {
         Rect rect;
         ChatActivityEnterView chatActivityEnterView = ChatActivityEnterView.this;
         if (i10 == 1) {
-            cVar.h(chatActivityEnterView.T3);
-            cVar.o(LocaleController.getString("Send", R.string.Send));
+            dVar.h(chatActivityEnterView.T3);
+            dVar.o(LocaleController.getString("Send", R.string.Send));
             return;
         }
         if (i10 == 2) {
             Rect rect2 = chatActivityEnterView.U3;
             RectF rectF = chatActivityEnterView.S3;
             rect2.set((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
-            cVar.h(chatActivityEnterView.U3);
-            cVar.o(LocaleController.getString(R.string.Stop));
+            dVar.h(chatActivityEnterView.U3);
+            dVar.o(LocaleController.getString(R.string.Stop));
             return;
         }
         if (i10 != 3 || chatActivityEnterView.N1 == null) {
@@ -92,8 +92,8 @@ public final class tg extends j1.b {
             rect3.offset(iArr[0], iArr[1]);
             chatActivityEnterView.N1.getLocationOnScreen(iArr);
             rect3.offset(-iArr[0], -iArr[1]);
-            cVar.h(rect3);
+            dVar.h(rect3);
         }
-        cVar.o(LocaleController.getString("Cancel", R.string.Cancel));
+        dVar.o(LocaleController.getString("Cancel", R.string.Cancel));
     }
 }

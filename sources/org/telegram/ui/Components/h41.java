@@ -1,36 +1,14 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.Utilities;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class h41 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Utilities.Callback2 b;
-    public final /* synthetic */ String c;
-
-    public /* synthetic */ h41(String str, int i10, Utilities.Callback2 callback2) {
-        this.a = i10;
-        this.b = callback2;
-        this.c = str;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                Utilities.Callback2 callback2 = this.b;
-                if (callback2 != null) {
-                    callback2.run(this.c, Boolean.FALSE);
-                    break;
-                }
-                break;
-            case 1:
-                this.b.run(null, this.c);
-                break;
-            default:
-                this.b.run(null, this.c);
-                break;
-        }
+public final class h41 extends FrameLayout {
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
     }
 }

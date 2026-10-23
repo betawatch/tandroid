@@ -1,79 +1,27 @@
 package ig;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import java.util.ArrayList;
+import android.content.Context;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.ui.Components.vz;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class c0 implements TextWatcher {
-    public final /* synthetic */ i0 a;
+public final class c0 extends s4.c0 {
+    public final /* synthetic */ d0 r;
 
-    public c0(i0 i0Var) {
-        this.a = i0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c0(d0 d0Var, Context context) {
+        super(context);
+        this.r = d0Var;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        int currentTop;
-        i0 i0Var = this.a;
-        ai.u1 u1Var = i0Var.s;
-        vz vzVar = i0Var.E;
-        f0 f0Var = i0Var.x;
-        String obj = editable.toString();
-        if (obj.isEmpty()) {
-            if (u1Var.getAdapter() != f0Var) {
-                currentTop = i0Var.getCurrentTop();
-                vzVar.c();
-                u1Var.setAdapter(f0Var);
-                f0Var.l();
-                if (currentTop > 0) {
-                    i0Var.v.h1(0, -currentTop);
-                }
-            }
-        } else if (vzVar != null) {
-            vzVar.setText(LocaleController.getString(R.string.NoResult));
-        }
-        g0 g0Var = i0Var.y;
-        if (g0Var != null) {
-            i0 i0Var2 = g0Var.f;
-            ai.u1 u1Var2 = i0Var2.s;
-            ArrayList arrayList = g0Var.d;
-            arrayList.clear();
-            g0Var.e = obj;
-            String translitSafe = AndroidUtilities.translitSafe(obj);
-            if (translitSafe.startsWith("/")) {
-                translitSafe = translitSafe.substring(1);
-            }
-            ArrayList arrayList2 = a2.f(UserConfig.selectedAccount).b;
-            for (int i10 = 0; i10 < arrayList2.size(); i10++) {
-                z1 z1Var = (z1) arrayList2.get(i10);
-                if (!a2.g(z1Var.b)) {
-                    String translitSafe2 = AndroidUtilities.translitSafe(z1Var.b);
-                    if (translitSafe2.startsWith(translitSafe) || org.telegram.messenger.g0.w(" ", translitSafe, translitSafe2)) {
-                        arrayList.add(z1Var);
-                    }
-                }
-            }
-            s4.g0 adapter = u1Var2.getAdapter();
-            g0 g0Var2 = i0Var2.y;
-            if (adapter != g0Var2) {
-                u1Var2.setAdapter(g0Var2);
-            }
-            g0Var.l();
-        }
+    @Override // s4.c0
+    public final int k(int i10, View view) {
+        return org.telegram.messenger.v0.z(8.0f, ((h0) this.r.V).s.getPaddingTop() - AndroidUtilities.statusBarHeight, super.k(i10, view));
     }
 
-    @Override // android.text.TextWatcher
-    public final /* synthetic */ void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final /* synthetic */ void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    @Override // s4.c0
+    public final int m(int i10) {
+        return super.m(i10) * 2;
     }
 }

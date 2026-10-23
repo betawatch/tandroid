@@ -8,7 +8,7 @@ import java.net.InetAddress;
 import java.util.Comparator;
 import java.util.Map;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class i implements Comparator {
     public final /* synthetic */ int a;
@@ -88,12 +88,12 @@ public final class i implements Comparator {
                 }
                 return inetAddress instanceof Inet6Address ? -1 : 1;
             case 7:
-                return ((z4.c) obj).b - ((z4.c) obj2).b;
+                return ((z4.d) obj).b - ((z4.d) obj2).b;
             default:
-                z4.d dVar = (z4.d) ((View) obj).getLayoutParams();
-                z4.d dVar2 = (z4.d) ((View) obj2).getLayoutParams();
-                boolean z11 = dVar.a;
-                return z11 != dVar2.a ? z11 ? 1 : -1 : dVar.e - dVar2.e;
+                z4.e eVar = (z4.e) ((View) obj).getLayoutParams();
+                z4.e eVar2 = (z4.e) ((View) obj2).getLayoutParams();
+                boolean z11 = eVar.a;
+                return z11 != eVar2.a ? z11 ? 1 : -1 : eVar.e - eVar2.e;
         }
     }
 }

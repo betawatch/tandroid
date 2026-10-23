@@ -4,15 +4,16 @@ import android.graphics.Bitmap;
 import android.os.Trace;
 import b2.w;
 import h2.h;
-import i2.k0;
-import i2.r0;
+import i2.j0;
+import i2.o1;
+import i2.q0;
 import java.nio.ByteBuffer;
 import java.util.ArrayDeque;
 import l5.j;
-import u2.g0;
+import u2.h0;
 import v7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class f extends i2.b {
     public final j I;
@@ -29,7 +30,7 @@ public final class f extends i2.b {
     public b T;
     public h U;
     public d V;
-    public k0 W;
+    public j0 W;
     public Bitmap X;
     public boolean Y;
     public j5.c Z;
@@ -134,13 +135,13 @@ public final class f extends i2.b {
                     }
                 }
                 if (z12 || j11 < 30000) {
-                    k0 k0Var = this.W;
-                    if (k0Var != null) {
+                    j0 j0Var = this.W;
+                    if (j0Var != null) {
                         long j12 = this.N.b;
                         this.S.getClass();
-                        r0 r0Var = k0Var.a;
-                        if (r0Var.U) {
-                            r0Var.n.a(37).b();
+                        q0 q0Var = j0Var.a;
+                        if (q0Var.U) {
+                            q0Var.n.a(37).b();
                         }
                     }
                     d dVar = this.V;
@@ -320,8 +321,8 @@ public final class f extends i2.b {
             j jVar = this.I;
             jVar.getClass();
             int d = j.d(wVar);
-            if (d != i2.e.c(4, 0, 0, 0) && d != i2.e.c(3, 0, 0, 0)) {
-                throw d(new c("Provided decoder factory can't create decoder for format."), this.S, false, 4005);
+            if (d != o1.c(4, 0, 0, 0) && d != o1.c(3, 0, 0, 0)) {
+                throw c(new c("Provided decoder factory can't create decoder for format."), this.S, false, 4005);
             }
             b bVar = this.T;
             if (bVar != null) {
@@ -343,13 +344,13 @@ public final class f extends i2.b {
         }
     }
 
-    @Override // i2.b, i2.l1
-    public final void c(int i10, Object obj) {
+    @Override // i2.b, i2.k1
+    public final void d(int i10, Object obj) {
         if (i10 != 15) {
             if (i10 != 23) {
                 return;
             }
-            this.W = (k0) obj;
+            this.W = (j0) obj;
         } else {
             d dVar = obj instanceof d ? (d) obj : null;
             if (dVar == null) {
@@ -428,7 +429,7 @@ public final class f extends i2.b {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void u(w[] wVarArr, long j10, long j11, g0 g0Var) {
+    public final void u(w[] wVarArr, long j10, long j11, h0 h0Var) {
         if (this.N.b != -9223372036854775807L) {
             ArrayDeque arrayDeque = this.K;
             if (arrayDeque.isEmpty()) {
@@ -481,7 +482,7 @@ public final class f extends i2.b {
             }
             Trace.endSection();
         } catch (c e) {
-            throw d(e, null, false, 4003);
+            throw c(e, null, false, 4003);
         }
     }
 }

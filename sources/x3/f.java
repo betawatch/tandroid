@@ -1,12 +1,12 @@
 package x3;
 
 import b2.w0;
-import c3.p;
+import c3.r;
 import e2.x;
 import java.io.EOFException;
 import v7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class f {
     public int a;
@@ -17,7 +17,7 @@ public final class f {
     public final int[] f = new int[255];
     public final x g = new x(255);
 
-    public final boolean a(p pVar, boolean z10) {
+    public final boolean a(r rVar, boolean z10) {
         boolean z11;
         boolean z12;
         this.a = 0;
@@ -28,7 +28,7 @@ public final class f {
         x xVar = this.g;
         xVar.K(27);
         try {
-            z11 = pVar.j(xVar.a, 0, 27, z10);
+            z11 = rVar.j(xVar.a, 0, 27, z10);
         } catch (EOFException e) {
             if (!z10) {
                 throw e;
@@ -47,7 +47,7 @@ public final class f {
                 this.d = A + 27;
                 xVar.K(A);
                 try {
-                    z12 = pVar.j(xVar.a, 0, this.c, z10);
+                    z12 = rVar.j(xVar.a, 0, this.c, z10);
                 } catch (EOFException e7) {
                     if (!z10) {
                         throw e7;
@@ -69,17 +69,17 @@ public final class f {
         return false;
     }
 
-    public final boolean b(p pVar, long j10) {
+    public final boolean b(r rVar, long j10) {
         boolean z10;
-        u6.g(pVar.getPosition() == pVar.k());
+        u6.g(rVar.getPosition() == rVar.k());
         x xVar = this.g;
         xVar.K(4);
         while (true) {
-            if (j10 != -1 && pVar.getPosition() + 4 >= j10) {
+            if (j10 != -1 && rVar.getPosition() + 4 >= j10) {
                 break;
             }
             try {
-                z10 = pVar.j(xVar.a, 0, 4, true);
+                z10 = rVar.j(xVar.a, 0, 4, true);
             } catch (EOFException unused) {
                 z10 = false;
             }
@@ -88,16 +88,16 @@ public final class f {
             }
             xVar.N(0);
             if (xVar.C() == 1332176723) {
-                pVar.q();
+                rVar.q();
                 return true;
             }
-            pVar.r(1);
+            rVar.r(1);
         }
         do {
-            if (j10 != -1 && pVar.getPosition() >= j10) {
+            if (j10 != -1 && rVar.getPosition() >= j10) {
                 break;
             }
-        } while (pVar.skip(1) != -1);
+        } while (rVar.skip(1) != -1);
         return false;
     }
 }

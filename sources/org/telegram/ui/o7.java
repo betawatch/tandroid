@@ -10,7 +10,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class o7 extends j7 {
     public final ArrayList n;
@@ -43,28 +43,28 @@ public final class o7 extends j7 {
     public final void v(s4.b1 b1Var, int i10) {
         View view = b1Var.a;
         n7 n7Var = (n7) view;
-        org.telegram.ui.Cells.i7 i7Var = (org.telegram.ui.Cells.i7) n7Var.b.getChildAt(0);
+        org.telegram.ui.Cells.k7 k7Var = (org.telegram.ui.Cells.k7) n7Var.b.getChildAt(0);
         ArrayList arrayList = this.e;
         bi.b bVar = ((p7) arrayList.get(i10)).d;
         boolean z10 = bVar == view.getTag();
         boolean z11 = i10 != arrayList.size() - 1;
         view.setTag(bVar);
         File file = bVar.a;
-        i7Var.d(bVar.h == 5 ? LocaleController.getString(R.string.AttachRound) : file.getName(), LocaleController.formatDateAudio(file.lastModified() / 1000, true), Utilities.getExtension(file.getName()), null, 0, z11);
+        k7Var.d(bVar.h == 5 ? LocaleController.getString(R.string.AttachRound) : file.getName(), LocaleController.formatDateAudio(file.lastModified() / 1000, true), Utilities.getExtension(file.getName()), null, 0, z11);
         if (!z10) {
-            i7Var.setPhoto(file.getPath());
+            k7Var.setPhoto(file.getPath());
         }
-        i7Var.getImageView().setRoundRadius(AndroidUtilities.dp(bVar.h == 5 ? 20.0f : 4.0f));
+        k7Var.getImageView().setRoundRadius(AndroidUtilities.dp(bVar.h == 5 ? 20.0f : 4.0f));
         n7Var.d = z11;
         n7Var.c.setText(AndroidUtilities.formatFileSize(bVar.c));
-        n7Var.a.a(this.r.f.j.contains(bVar), z10);
+        n7Var.a.a(this.r.h.j.contains(bVar), z10);
     }
 
     @Override // s4.g0
     public final s4.b1 x(ViewGroup viewGroup, int i10) {
         n7 n7Var = new n7(this, viewGroup.getContext(), 0);
         n7Var.e = 2;
-        n7Var.b.addView(new org.telegram.ui.Cells.i7(viewGroup.getContext(), 3, null));
-        return new org.telegram.ui.Components.tl0(n7Var);
+        n7Var.b.addView(new org.telegram.ui.Cells.k7(viewGroup.getContext(), 3, null));
+        return new org.telegram.ui.Components.wl0(n7Var);
     }
 }

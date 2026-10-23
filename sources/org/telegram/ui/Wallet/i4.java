@@ -1,42 +1,78 @@
 package org.telegram.ui.Wallet;
 
-import android.content.DialogInterface;
+import android.content.Context;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.LaunchActivity;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.d91;
+import org.telegram.ui.Components.j71;
+import org.telegram.ui.Components.q51;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class i4 implements DialogInterface.OnDismissListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class i4 extends d91 {
+    public final /* synthetic */ Context a;
+    public final /* synthetic */ o5 b;
 
-    public /* synthetic */ i4(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public i4(o5 o5Var, Context context) {
+        this.b = o5Var;
+        this.a = context;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
-        switch (this.a) {
-            case 0:
-                TLRPC.User user = (TLRPC.User) this.b;
-                org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
-                if (U != null) {
-                    U.presentFragment(new i9(user));
-                    break;
-                }
-                break;
-            default:
-                i9 i9Var = (i9) this.b;
-                EditTextBoldCursor editTextBoldCursor = i9Var.E;
-                if (editTextBoldCursor != null) {
-                    editTextBoldCursor.requestFocus();
-                    AndroidUtilities.showKeyboard(i9Var.E);
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.Components.d91
+    public final void b(View view, int i10, int i11) {
+        o5.T0((j71) view, false);
+    }
+
+    @Override // org.telegram.ui.Components.d91
+    public final View d(int i10) {
+        int i11;
+        int i12;
+        org.telegram.ui.ActionBar.g6 g6Var;
+        o5 o5Var = this.b;
+        j71[] j71VarArr = o5Var.q0;
+        j71 j71Var = j71VarArr[i10];
+        if (j71Var != null) {
+            return j71Var;
         }
+        i11 = ((org.telegram.ui.ActionBar.o2) o5Var).currentAccount;
+        i12 = ((org.telegram.ui.ActionBar.o2) o5Var).classGuid;
+        org.telegram.ui.Components.o oVar = new org.telegram.ui.Components.o(this, i10, 2);
+        r3 r3Var = new r3(o5Var);
+        r3 r3Var2 = new r3(o5Var);
+        g6Var = ((org.telegram.ui.ActionBar.o2) o5Var).resourceProvider;
+        h4 h4Var = new h4(this.a, i11, i12, false, oVar, r3Var, r3Var2, g6Var, i10 == 1 ? 3 : -1, 1);
+        if (i10 == 1) {
+            h4Var.setPadding(AndroidUtilities.dp(9.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(12.0f));
+        }
+        h4Var.setFocusableInTouchMode(false);
+        h4Var.setClipChildren(false);
+        h4Var.setClipToPadding(false);
+        if (i10 == 0) {
+            h4Var.t1();
+        } else {
+            h4Var.setSelectorType(9);
+            h4Var.setSelectorDrawableColor(0);
+        }
+        h4Var.Z2.r = false;
+        h4Var.j(new q51(this, i10));
+        j71VarArr[i10] = h4Var;
+        return h4Var;
+    }
+
+    @Override // org.telegram.ui.Components.d91
+    public final int e() {
+        return this.b.e0 ? 2 : 1;
+    }
+
+    @Override // org.telegram.ui.Components.d91
+    public final CharSequence g(int i10) {
+        return LocaleController.getString(i10 == 0 ? R.string.WalletTransactions : R.string.WalletCollectibles);
+    }
+
+    @Override // org.telegram.ui.Components.d91
+    public final int h(int i10) {
+        return i10;
     }
 }

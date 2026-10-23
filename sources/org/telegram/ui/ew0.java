@@ -1,19 +1,29 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class ew0 extends o51 {
-    public final /* synthetic */ PremiumPreviewFragment e;
+public final /* synthetic */ class ew0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ PremiumPreviewFragment b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ew0(PremiumPreviewFragment premiumPreviewFragment, dw0 dw0Var) {
-        super(dw0Var);
-        this.e = premiumPreviewFragment;
+    public /* synthetic */ ew0(PremiumPreviewFragment premiumPreviewFragment, int i10) {
+        this.a = i10;
+        this.b = premiumPreviewFragment;
     }
 
-    @Override // org.telegram.ui.o51, android.widget.PopupWindow
-    public final void dismiss() {
-        super.dismiss();
-        this.e.s0 = null;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.j0();
+                break;
+            case 1:
+                PremiumPreviewFragment premiumPreviewFragment = this.b;
+                premiumPreviewFragment.a.postOnAnimation(new ew0(premiumPreviewFragment, 0));
+                break;
+            default:
+                this.b.getMediaDataController().loadPremiumPromo(false);
+                break;
+        }
     }
 }

@@ -24,9 +24,9 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ry implements MediaDataController.KeywordResultCallback, e5, org.telegram.ui.ActionBar.a2, ImageReceiver.ImageReceiverDelegate, MessagesStorage.BooleanCallback, t5.b, s5.e, e2.j, x2.k {
+public final /* synthetic */ class ry implements MediaDataController.KeywordResultCallback, d5, org.telegram.ui.ActionBar.z1, ImageReceiver.ImageReceiverDelegate, MessagesStorage.BooleanCallback, t5.b, s5.e, e2.j, x2.k {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -39,25 +39,25 @@ public final /* synthetic */ class ry implements MediaDataController.KeywordResu
         this.b = obj3;
     }
 
-    @Override // org.telegram.ui.Components.e5
+    @Override // org.telegram.ui.Components.d5
     public void C(int i10, int i11, boolean z10) {
         f60 f60Var = (f60) this.c;
         a60 a60Var = (a60) this.d;
         VideoEditedInfo videoEditedInfo = (VideoEditedInfo) this.b;
-        m60 m60Var = f60Var.H0;
+        n60 n60Var = f60Var.H0;
         MediaController.PhotoEntry photoEntry = new MediaController.PhotoEntry(0, 0, 0L, f60Var.a.getAbsolutePath(), 0, true, 0, 0, 0L);
         if (a60Var != null) {
             photoEntry.ttl = a60Var.c;
             photoEntry.effectId = a60Var.d;
         }
-        m60Var.n.s(photoEntry, videoEditedInfo, z10 || a60Var == null || a60Var.a, i10 != 0 ? i10 : a60Var != null ? a60Var.b : 0, i11 != 0 ? i11 : 0, false, a60Var != null ? a60Var.e : 0L);
-        m60Var.r(false, false);
+        n60Var.n.s(photoEntry, videoEditedInfo, z10 || a60Var == null || a60Var.a, i10 != 0 ? i10 : a60Var != null ? a60Var.b : 0, i11 != 0 ? i11 : 0, false, a60Var != null ? a60Var.e : 0L);
+        n60Var.r(false, false);
     }
 
     @Override // e2.j
     public void accept(Object obj) {
         a5.a aVar = (a5.a) this.c;
-        ((u2.l0) obj).d(aVar.b, (u2.g0) this.d, (u2.c0) this.b);
+        ((u2.m0) obj).d(aVar.b, (u2.h0) this.d, (u2.d0) this.b);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:11:0x0077  */
@@ -201,7 +201,7 @@ public final /* synthetic */ class ry implements MediaDataController.KeywordResu
                     if (!cursor2.isNull(6)) {
                         lVar.b = Integer.valueOf(cursor2.getInt(6));
                     }
-                    arrayList.add(new s5.b(j10, iVar2, lVar.h()));
+                    arrayList.add(new s5.b(j10, iVar2, lVar.f()));
                     i14 = 2;
                     i15 = 1;
                 }
@@ -298,7 +298,7 @@ public final /* synthetic */ class ry implements MediaDataController.KeywordResu
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public void didSetImage(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
         Bitmap bitmap;
-        r21 r21Var = (r21) this.c;
+        v21 v21Var = (v21) this.c;
         vp vpVar = (vp) this.d;
         TLRPC.WallPaper wallPaper = (TLRPC.WallPaper) this.b;
         ImageReceiver.BitmapHolder bitmapSafe = imageReceiver.getBitmapSafe();
@@ -306,12 +306,12 @@ public final /* synthetic */ class ry implements MediaDataController.KeywordResu
             return;
         }
         Drawable drawable = vpVar.b;
-        if (drawable instanceof wc0) {
-            wc0 wc0Var = (wc0) drawable;
+        if (drawable instanceof yc0) {
+            yc0 yc0Var = (yc0) drawable;
             TLRPC.WallPaperSettings wallPaperSettings = wallPaper.settings;
-            wc0Var.s(r21.e(bitmap), (wallPaperSettings == null || wallPaperSettings.intensity >= 0) ? 100 : -100);
-            wc0Var.t(r21Var.L);
-            r21Var.invalidate();
+            yc0Var.s(v21.e(bitmap), (wallPaperSettings == null || wallPaperSettings.intensity >= 0) ? 100 : -100);
+            yc0Var.t(v21Var.L);
+            v21Var.invalidate();
         }
     }
 
@@ -320,16 +320,16 @@ public final /* synthetic */ class ry implements MediaDataController.KeywordResu
         org.telegram.messenger.m5.a(this, i10, str, drawable);
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    @Override // org.telegram.ui.ActionBar.z1
+    public void g(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
         switch (this.a) {
             case 3:
-                uv0 uv0Var = (uv0) this.c;
-                ci.t6 t6Var = (ci.t6) this.d;
+                xv0 xv0Var = (xv0) this.c;
+                ci.s6 s6Var = (ci.s6) this.d;
                 ArrayList arrayList = (ArrayList) this.b;
-                t6Var.F(arrayList);
-                xc.a0(uv0Var.v1).Q(R.raw.ic_delete, 36, LocaleController.formatPluralString("BotPreviewsDeleted", arrayList.size(), new Object[0])).j();
-                uv0Var.L(false);
+                s6Var.F(arrayList);
+                xc.a0(xv0Var.v1).Q(R.raw.ic_delete, 36, LocaleController.formatPluralString("BotPreviewsDeleted", arrayList.size(), new Object[0])).j();
+                xv0Var.M(false);
                 break;
             case 6:
                 boolean[] zArr = (boolean[]) this.c;
@@ -342,7 +342,7 @@ public final /* synthetic */ class ry implements MediaDataController.KeywordResu
                 }
                 break;
             default:
-                sg.k0.Q((sg.k0) this.c, (ArrayList) this.d, (TLRPC.User) this.b);
+                sg.j0.P((sg.j0) this.c, (ArrayList) this.d, (TLRPC.User) this.b);
                 break;
         }
     }
@@ -374,8 +374,8 @@ public final /* synthetic */ class ry implements MediaDataController.KeywordResu
     @Override // org.telegram.messenger.MessagesStorage.BooleanCallback
     public void run(boolean z10) {
         TLRPC.Chat chat = (TLRPC.Chat) this.c;
-        org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) this.d;
-        org.telegram.ui.Components.voip.d2.l(chat, null, true, null, n2Var.getParentActivity(), n2Var, (AccountInstance) this.b);
+        org.telegram.ui.ActionBar.o2 o2Var = (org.telegram.ui.ActionBar.o2) this.d;
+        org.telegram.ui.Components.voip.d2.l(chat, null, true, null, o2Var.getParentActivity(), o2Var, (AccountInstance) this.b);
     }
 
     @Override // org.telegram.messenger.MediaDataController.KeywordResultCallback

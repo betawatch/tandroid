@@ -1,8 +1,9 @@
 package hb;
 
+import i2.o1;
 import java.util.BitSet;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public class w0 extends eb.u {
     @Override // eb.u
@@ -20,15 +21,15 @@ public class w0 extends eb.u {
                     z10 = false;
                 } else {
                     if (p5 != 1) {
-                        StringBuilder l4 = i2.e.l(p5, "Invalid bitset value ", ", expected 0 or 1; at path ");
-                        l4.append(aVar.j());
-                        throw new eb.j(l4.toString());
+                        StringBuilder n10 = o1.n(p5, "Invalid bitset value ", ", expected 0 or 1; at path ");
+                        n10.append(aVar.j());
+                        throw new eb.j(n10.toString());
                     }
                     z10 = true;
                 }
             } else {
                 if (c10 != 7) {
-                    throw new eb.j("Invalid bitset value type: " + i2.e.E(x10) + "; at path " + aVar.h());
+                    throw new eb.j("Invalid bitset value type: " + o1.E(x10) + "; at path " + aVar.h());
                 }
                 z10 = aVar.n();
             }

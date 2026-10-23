@@ -4,7 +4,7 @@ import android.text.style.URLSpan;
 import android.view.View;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class of implements Utilities.CallbackReturn {
     public final /* synthetic */ int a;
@@ -21,9 +21,9 @@ public final /* synthetic */ class of implements Utilities.CallbackReturn {
     public final Object run(Object obj) {
         switch (this.a) {
             case 0:
-                qn qnVar = (qn) this.b;
+                sn snVar = (sn) this.b;
                 View view = (View) this.c;
-                qnVar.X7((URLSpan) obj, false, qnVar.d5, view instanceof org.telegram.ui.Cells.u1 ? (org.telegram.ui.Cells.u1) view : null);
+                snVar.X7((URLSpan) obj, false, snVar.p5, view instanceof org.telegram.ui.Cells.t1 ? (org.telegram.ui.Cells.t1) view : null);
                 return Boolean.TRUE;
             default:
                 return sh.c.d((View) obj, (String) this.b, (String) this.c, null, null);

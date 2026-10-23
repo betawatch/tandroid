@@ -2,7 +2,7 @@ package m4;
 
 import m.e3;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a0 implements e0, o0 {
     public final /* synthetic */ boolean a;
@@ -18,7 +18,7 @@ public final /* synthetic */ class a0 implements e0, o0 {
     }
 
     @Override // m4.e0
-    public void b(u uVar, int i10) {
+    public void e(u uVar, int i10) {
         uVar.f(i10, (r1) this.c, this.a, this.b, ((v) this.d).c);
     }
 

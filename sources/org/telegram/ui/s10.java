@@ -1,79 +1,96 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.LinearGradient;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.RectF;
-import android.graphics.Shader;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class s10 {
-    public LinearGradient b;
-    public final Paint[] a = new Paint[4];
-    public final Matrix c = new Matrix();
+public final class s10 extends s4.v {
+    public final fz d = new fz(this, 5);
+    public final /* synthetic */ FiltersSetupActivity e;
 
-    public final void a(Canvas canvas, RectF rectF, float f7) {
-        Paint[] paintArr = this.a;
-        if (paintArr[0] == null) {
-            Paint paint = new Paint(1);
-            paintArr[0] = paint;
-            paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
-        }
-        paintArr[0].setShader(this.b);
-        paintArr[0].setAlpha((int) (f7 * 255.0f));
-        canvas.drawRect(rectF, paintArr[0]);
+    public s10(FiltersSetupActivity filtersSetupActivity) {
+        this.e = filtersSetupActivity;
     }
 
-    public final void b(Canvas canvas, RectF rectF, int i10, float f7) {
-        if (f7 <= 0.0f) {
-            return;
+    @Override // s4.v
+    public final void a(RecyclerView recyclerView, s4.b1 b1Var) {
+        super.a(recyclerView, b1Var);
+        View view = b1Var.a;
+        view.setPressed(false);
+        view.setTag(R.id.dragging, null);
+        if (view instanceof l10) {
+            ((l10) view).setDragging(false);
         }
-        if (this.b == null) {
-            this.b = new LinearGradient(0.0f, 0.0f, 0.0f, 16.0f, new int[]{-65536, 16711680}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
-        }
-        Paint[] paintArr = this.a;
-        if (paintArr[i10] == null) {
-            paintArr[i10] = new Paint(1);
-            paintArr[i10].setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
-        }
-        paintArr[i10].setShader(this.b);
-        Matrix matrix = this.c;
-        matrix.reset();
-        if (i10 == 0) {
-            matrix.postScale(1.0f, rectF.width() / 16.0f);
-            matrix.postRotate(-90.0f);
-            matrix.postTranslate(rectF.left, rectF.top);
-        } else if (i10 == 1) {
-            matrix.postScale(1.0f, rectF.height() / 16.0f);
-            matrix.postTranslate(rectF.left, rectF.top);
-        } else if (i10 == 2) {
-            matrix.postScale(1.0f, rectF.width() / 16.0f);
-            matrix.postRotate(90.0f);
-            matrix.postTranslate(rectF.right, rectF.top);
-        } else if (i10 == 3) {
-            matrix.postScale(1.0f, rectF.height() / 16.0f);
-            matrix.postScale(1.0f, -1.0f);
-            matrix.postTranslate(rectF.left, rectF.bottom);
-        }
-        this.b.setLocalMatrix(matrix);
-        paintArr[i10].setAlpha((int) (f7 * 255.0f));
-        canvas.drawRect(rectF, paintArr[i10]);
     }
 
-    public final Paint c(float f7, int i10) {
-        Paint[] paintArr = this.a;
-        if (paintArr[i10] == null) {
-            Paint paint = new Paint(1);
-            paintArr[i10] = paint;
-            paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
+    @Override // s4.v
+    public final int e(RecyclerView recyclerView, s4.b1 b1Var) {
+        return b1Var.f != 2 ? s4.v.l(0, 0) : s4.v.l(3, 0);
+    }
+
+    @Override // s4.v
+    public final boolean k() {
+        return true;
+    }
+
+    @Override // s4.v
+    public final boolean n(RecyclerView recyclerView, s4.b1 b1Var, s4.b1 b1Var2) {
+        MessagesController.DialogFilter dialogFilter;
+        MessagesController.DialogFilter dialogFilter2;
+        if (b1Var.f != b1Var2.f) {
+            return false;
         }
-        paintArr[i10].setShader(null);
-        paintArr[i10].setColor(-65536);
-        paintArr[i10].setAlpha((int) (f7 * 255.0f));
-        return paintArr[i10];
+        p10 p10Var = this.e.b;
+        int b10 = b1Var.b();
+        int b11 = b1Var2.b();
+        FiltersSetupActivity filtersSetupActivity = p10Var.e;
+        int i10 = filtersSetupActivity.r;
+        ArrayList arrayList = filtersSetupActivity.n;
+        if (b10 >= i10 && b11 >= i10) {
+            n10 n10Var = (n10) arrayList.get(b10);
+            n10 n10Var2 = (n10) arrayList.get(b11);
+            if (n10Var != null && n10Var2 != null && (dialogFilter = n10Var.d) != null && (dialogFilter2 = n10Var2.d) != null) {
+                int i11 = dialogFilter.order;
+                dialogFilter.order = dialogFilter2.order;
+                dialogFilter2.order = i11;
+                ArrayList<MessagesController.DialogFilter> arrayList2 = filtersSetupActivity.getMessagesController().dialogFilters;
+                try {
+                    arrayList2.set(b10 - filtersSetupActivity.r, n10Var2.d);
+                    arrayList2.set(b11 - filtersSetupActivity.r, n10Var.d);
+                } catch (Exception unused) {
+                }
+                filtersSetupActivity.e = true;
+                filtersSetupActivity.b0(true);
+            }
+        }
+        return true;
+    }
+
+    @Override // s4.v
+    public final void p(s4.b1 b1Var, int i10) {
+        if (i10 != 0) {
+            this.e.a.I0(false);
+            b1Var.a.setPressed(true);
+        } else {
+            fz fzVar = this.d;
+            AndroidUtilities.cancelRunOnUIThread(fzVar);
+            AndroidUtilities.runOnUIThread(fzVar, 320L);
+        }
+        if (b1Var != null) {
+            View view = b1Var.a;
+            view.setTag(R.id.dragging, i10 == 2 ? Boolean.TRUE : null);
+            if (view instanceof l10) {
+                ((l10) view).setDragging(i10 == 2);
+            }
+        }
+    }
+
+    @Override // s4.v
+    public final void q(s4.b1 b1Var) {
     }
 }

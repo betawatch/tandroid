@@ -8,16 +8,17 @@ import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import org.telegram.messenger.video.MP4Builder;
 import org.telegram.messenger.video.Mp4Movie;
+import org.telegram.ui.Wallet.e8;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class w {
     public final File a;
     public final int b;
     public final boolean c;
     public final n d;
-    public final org.telegram.ui.web.m e;
+    public final e8 e;
     public MP4Builder i;
     public MediaFormat j;
     public MediaFormat k;
@@ -37,12 +38,12 @@ public final class w {
     public long q = Long.MIN_VALUE;
     public final MediaCodec.BufferInfo t = new MediaCodec.BufferInfo();
 
-    public w(File file, int i10, boolean z10, n nVar, org.telegram.ui.web.m mVar) {
+    public w(File file, int i10, boolean z10, n nVar, e8 e8Var) {
         this.a = file;
         this.b = i10;
         this.c = z10;
         this.d = nVar;
-        this.e = mVar;
+        this.e = e8Var;
     }
 
     public static int a(ByteBuffer byteBuffer) {
@@ -336,16 +337,16 @@ public final class w {
         if (this.v) {
             return;
         }
-        org.telegram.ui.web.m mVar = this.e;
-        s0 s0Var = (s0) mVar.b;
-        o0 o0Var = (o0) mVar.c;
-        synchronized (s0Var.g) {
+        e8 e8Var = this.e;
+        u0 u0Var = (u0) e8Var.b;
+        q0 q0Var = (q0) e8Var.c;
+        synchronized (u0Var.g) {
             try {
-                long j11 = o0Var.c;
+                long j11 = q0Var.c;
                 long j12 = j10 - j11;
-                if (j12 > 0 && !o0Var.d) {
-                    o0Var.c = j10;
-                    s0Var.k.execute(new a3.h0(s0Var, o0Var, j11, j12, 16));
+                if (j12 > 0 && !q0Var.d) {
+                    q0Var.c = j10;
+                    u0Var.k.execute(new a3.h0(u0Var, q0Var, j11, j12, 16));
                 }
             } finally {
             }

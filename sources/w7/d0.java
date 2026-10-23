@@ -1,7 +1,6 @@
 package w7;
 
 import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
 import android.view.GestureDetector;
 import android.view.ViewConfiguration;
 import android.widget.FrameLayout;
@@ -13,10 +12,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
-import org.telegram.ui.Components.jm0;
+import org.telegram.ui.Components.mm0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public abstract class d0 {
     public static ng.i a;
@@ -39,7 +38,7 @@ public abstract class d0 {
             iVar2.a = vVar;
             ImageView imageView = new ImageView(launchActivity);
             imageView.setImageResource(R.drawable.device_phone_android);
-            imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.O9, false), PorterDuff.Mode.SRC_IN));
+            org.telegram.ui.ActionBar.r6.t(imageView, org.telegram.ui.ActionBar.k6.O9, null, PorterDuff.Mode.SRC_IN);
             vVar.addView(imageView);
             vVar.setVisibility(8);
             iVar2.addView(vVar, z5.c(56.0f, 56));
@@ -54,12 +53,12 @@ public abstract class d0 {
             textView.setTypeface(AndroidUtilities.bold());
             textView.setPadding(AndroidUtilities.dp(24.0f), AndroidUtilities.dp(19.0f), AndroidUtilities.dp(24.0f), AndroidUtilities.dp(19.0f));
             linearLayout.addView(textView, z5.n(-1, -2));
-            jm0 jm0Var = new jm0(launchActivity, null);
-            iVar2.y = jm0Var;
-            jm0Var.setLayoutManager(new s4.b0());
-            jm0Var.setAdapter(new ng.g(iVar2, launchActivity));
-            jm0Var.setOnItemClickListener(new ai.wa(iVar2, 17));
-            linearLayout.addView(jm0Var, z5.l(1.0f, -1, 0));
+            mm0 mm0Var = new mm0(launchActivity, null);
+            iVar2.y = mm0Var;
+            mm0Var.setLayoutManager(new s4.b0());
+            mm0Var.setAdapter(new ng.g(iVar2, launchActivity));
+            mm0Var.setOnItemClickListener(new ai.xa(iVar2, 17));
+            linearLayout.addView(mm0Var, z5.l(1.0f, -1, 0));
             iVar2.addView(linearLayout, z5.d(-1, -1.0f, 0, 8.0f, 8.0f, 8.0f, 8.0f));
             iVar2.d();
             iVar2.setFitsSystemWindows(true);
@@ -69,8 +68,8 @@ public abstract class d0 {
             ng.i iVar3 = a;
             iVar3.a.setVisibility(0);
             o1.k kVar = new o1.k(new o1.j(0.0f));
-            kVar.u = org.telegram.ui.Cells.c1.l(1000.0f, 750.0f, 0.75f);
-            kVar.b(new ci.l8(2, iVar3));
+            kVar.u = org.telegram.ui.Cells.b1.m(1000.0f, 750.0f, 0.75f);
+            kVar.b(new ci.k8(2, iVar3));
             kVar.h();
         } else {
             iVar.getClass();

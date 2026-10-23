@@ -14,21 +14,23 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
-import org.telegram.messenger.nk;
+import org.telegram.messenger.sl;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Cells.h6;
-import org.telegram.ui.Cells.q8;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.Cells.i6;
+import org.telegram.ui.Cells.r8;
 import org.telegram.ui.Cells.u3;
 import org.telegram.ui.Components.b10;
-import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.lm0;
 import org.telegram.ui.Components.m10;
-import org.telegram.ui.Components.tl0;
 import org.telegram.ui.Components.un;
+import org.telegram.ui.Components.wl0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public abstract class t1 extends im0 {
+public abstract class t1 extends lm0 {
     public int E;
     public int F;
     public ArrayList G;
@@ -48,7 +50,7 @@ public abstract class t1 extends im0 {
     public long x;
     public boolean y;
 
-    @Override // org.telegram.ui.Components.im0
+    @Override // org.telegram.ui.Components.lm0
     public final boolean D(s4.b1 b1Var) {
         int i10 = b1Var.f;
         return i10 == 0 || i10 == 2 || i10 == 3;
@@ -170,13 +172,13 @@ public abstract class t1 extends im0 {
                     return;
                 }
                 ContactsController.Contact contact = (ContactsController.Contact) E(i10);
-                ((h6) view).u(contact, null, ContactsController.formatName(contact.first_name, contact.last_name), nk.g(new StringBuilder("+"), contact.shortPhones.get(0), jf.b.c()), false, false);
+                ((i6) view).t(contact, null, ContactsController.formatName(contact.first_name, contact.last_name), sl.h(new StringBuilder("+"), contact.shortPhones.get(0), jf.b.c()), false, false);
                 return;
             }
             String str2 = (String) E(i10);
-            q8 q8Var = (q8) view;
-            q8Var.e(-1, org.telegram.ui.ActionBar.h6.o6);
-            q8Var.i(LocaleController.formatString(R.string.AddContactByPhone, jf.b.c().b("+" + str2)), false);
+            r8 r8Var = (r8) view;
+            r8Var.g(-1, k6.o6);
+            r8Var.k(LocaleController.formatString(R.string.AddContactByPhone, jf.b.c().b("+" + str2)), false);
             return;
         }
         TLObject tLObject = (TLObject) E(i10);
@@ -217,12 +219,12 @@ public abstract class t1 extends im0 {
                         charSequence = charSequence4;
                         if (startsWith) {
                             charSequence2 = charSequence4;
-                            h6 h6Var = (h6) view;
+                            i6 i6Var = (i6) view;
                             if (z10) {
                                 charSequence3 = LocaleController.getString(R.string.SavedMessages);
                             }
-                            h6Var.u(tLObject, null, charSequence3, charSequence2, false, z10);
-                            h6Var.t(this.h.h(j11) >= 0, false);
+                            i6Var.t(tLObject, null, charSequence3, charSequence2, false, z10);
+                            i6Var.s(this.h.h(j11) >= 0, false);
                         }
                     }
                 }
@@ -244,7 +246,7 @@ public abstract class t1 extends im0 {
                         } else {
                             indexOfIgnoreCase++;
                         }
-                        spannableStringBuilder.setSpan(new m10(org.telegram.ui.ActionBar.h6.q6, null), indexOfIgnoreCase, length + indexOfIgnoreCase, 33);
+                        spannableStringBuilder.setSpan(new m10(k6.q6, null), indexOfIgnoreCase, length + indexOfIgnoreCase, 33);
                     }
                     charSequence = null;
                     charSequence3 = spannableStringBuilder;
@@ -255,11 +257,11 @@ public abstract class t1 extends im0 {
             }
             charSequence2 = charSequence3;
             charSequence3 = charSequence;
-            h6 h6Var2 = (h6) view;
+            i6 i6Var2 = (i6) view;
             if (z10) {
             }
-            h6Var2.u(tLObject, null, charSequence3, charSequence2, false, z10);
-            h6Var2.t(this.h.h(j11) >= 0, false);
+            i6Var2.t(tLObject, null, charSequence3, charSequence2, false, z10);
+            i6Var2.s(this.h.h(j11) >= 0, false);
         }
     }
 
@@ -268,33 +270,33 @@ public abstract class t1 extends im0 {
         View view;
         Context context = this.c;
         if (i10 == 0) {
-            h6 h6Var = new h6(context, null);
-            h6Var.M0 = true;
-            h6Var.E0 = true;
-            view = h6Var;
+            i6 i6Var = new i6(context, null);
+            i6Var.M0 = true;
+            i6Var.E0 = true;
+            view = i6Var;
         } else if (i10 == 1) {
             u3 u3Var = new u3(context, 26, null);
             u3Var.setNoBackground(true);
             view = u3Var;
         } else if (i10 == 3) {
-            h6 h6Var2 = new h6(context, null);
-            h6Var2.M0 = true;
-            h6Var2.E0 = true;
-            view = h6Var2;
+            i6 i6Var2 = new i6(context, null);
+            i6Var2.M0 = true;
+            i6Var2.E0 = true;
+            view = i6Var2;
         } else if (i10 == 4) {
             View unVar = new un(context, 7);
             unVar.setId(9);
             unVar.setTag(-33024);
             view = unVar;
         } else if (i10 != 5) {
-            view = new q8(16, context, false);
+            view = new r8(16, context, false);
         } else {
             b10 b10Var = new b10(context, null);
             b10Var.setIsSingleCell(true);
             b10Var.setViewType(29);
-            b10Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false));
+            r6.i(k6.d6, b10Var, null);
             view = b10Var;
         }
-        return new tl0(view);
+        return new wl0(view);
     }
 }

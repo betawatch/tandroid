@@ -4,6 +4,7 @@ import android.media.MediaCodec;
 import android.media.MediaFormat;
 import android.os.SystemClock;
 import android.view.Surface;
+import i2.o1;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.concurrent.BlockingDeque;
@@ -17,7 +18,7 @@ import org.webrtc.VideoDecoder;
 import org.webrtc.VideoFrame;
 import ru.noties.jlatexmath.android.BuildConfig;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 class AndroidVideoDecoder implements VideoDecoder, VideoSink {
     private static final int DEQUEUE_INPUT_TIMEOUT_US = 500000;
@@ -49,7 +50,7 @@ class AndroidVideoDecoder implements VideoDecoder, VideoSink {
     private final Object dimensionLock = new Object();
     private final Object renderedTextureMetadataLock = new Object();
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public static class DecodedTextureMetadata {
         final Integer decodeTimeMs;
         final long presentationTimestampUs;
@@ -60,7 +61,7 @@ class AndroidVideoDecoder implements VideoDecoder, VideoSink {
         }
     }
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public static class FrameInfo {
         final long decodeStartTimeMs;
         final int rotation;
@@ -73,7 +74,7 @@ class AndroidVideoDecoder implements VideoDecoder, VideoSink {
 
     public AndroidVideoDecoder(MediaCodecWrapperFactory mediaCodecWrapperFactory, String str, VideoCodecMimeType videoCodecMimeType, int i10, EglBase.Context context) {
         if (!isSupportedColorFormat(i10)) {
-            throw new IllegalArgumentException(i2.e.j(i10, "Unsupported color format: "));
+            throw new IllegalArgumentException(o1.k(i10, "Unsupported color format: "));
         }
         Logging.d(TAG, "ctor name: " + str + " type: " + videoCodecMimeType + " color format: " + i10 + " context: " + context);
         this.mediaCodecWrapperFactory = mediaCodecWrapperFactory;
@@ -86,7 +87,7 @@ class AndroidVideoDecoder implements VideoDecoder, VideoSink {
 
     private VideoFrame.Buffer copyI420Buffer(ByteBuffer byteBuffer, int i10, int i11, int i12, int i13) {
         if (i10 % 2 != 0) {
-            throw new AssertionError(i2.e.j(i10, "Stride is not divisible by two: "));
+            throw new AssertionError(o1.k(i10, "Stride is not divisible by two: "));
         }
         int i14 = (i12 + 1) / 2;
         int i15 = i11 % 2 == 0 ? (i13 + 1) / 2 : i13 / 2;

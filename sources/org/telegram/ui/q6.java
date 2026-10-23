@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q6 implements Runnable {
     public final /* synthetic */ int a;
@@ -35,7 +35,7 @@ public final /* synthetic */ class q6 implements Runnable {
                     r6Var.dismiss();
                     break;
                 } else {
-                    AndroidUtilities.runOnUIThread(new st0(r6Var, 16), Math.max(0L, 1000 - (System.currentTimeMillis() - jArr[0])));
+                    AndroidUtilities.runOnUIThread(new vt0(r6Var, 16), Math.max(0L, 1000 - (System.currentTimeMillis() - jArr[0])));
                     break;
                 }
         }

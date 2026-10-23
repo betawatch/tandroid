@@ -2,25 +2,43 @@ package org.telegram.ui.Components;
 
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import org.telegram.tgnet.TLRPC;
+import android.text.style.ReplacementSpan;
+import android.view.KeyEvent;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class nb0 extends a6 {
-    public final /* synthetic */ ob0 a;
+public final class nb0 extends ReplacementSpan {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ KeyEvent.Callback b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public nb0(ob0 ob0Var, TLRPC.Document document, Paint.FontMetricsInt fontMetricsInt) {
-        super(document, fontMetricsInt);
-        this.a = ob0Var;
+    public /* synthetic */ nb0(KeyEvent.Callback callback, int i10) {
+        this.a = i10;
+        this.b = callback;
     }
 
-    @Override // org.telegram.ui.Components.a6, android.text.style.ReplacementSpan
+    @Override // android.text.style.ReplacementSpan
     public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
-        ob0 ob0Var = this.a;
-        int i15 = ob0Var.y;
-        int i16 = i14 + i12;
-        int i17 = this.measuredSize;
-        ob0Var.c.set((int) f7, i2.e.C(i16, i17, 2, i15), (int) (f7 + i17), ((i16 + i17) / 2) + i15);
+        int i15 = this.a;
+    }
+
+    @Override // android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
+        switch (this.a) {
+            case 0:
+                return ((pb0) this.b).x;
+            case 1:
+                return (int) ((org.telegram.ui.fj0) this.b).n0;
+            default:
+                return (int) ((ug.l1) this.b).t0;
+        }
+    }
+
+    private final void a(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+    }
+
+    private final void b(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+    }
+
+    private final void c(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
     }
 }

@@ -7,7 +7,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class q7 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -25,13 +25,13 @@ public final class q7 extends FrameLayout {
         TextView textView;
         switch (this.a) {
             case 0:
-                int A = org.telegram.messenger.nk.A(248.0f, i12 - i10, 4);
+                int A = org.telegram.messenger.sl.A(248.0f, i12 - i10, 4);
                 for (int i14 = 0; i14 < 5; i14++) {
                     int dp = (A * i14) + AndroidUtilities.dp((i14 * 48) + 4);
                     int dp2 = AndroidUtilities.dp(9.0f);
                     k8 k8Var = this.b;
-                    View view = k8Var.n0[i14];
-                    view.layout(dp, dp2, view.getMeasuredWidth() + dp, k8Var.n0[i14].getMeasuredHeight() + dp2);
+                    View view = k8Var.m0[i14];
+                    view.layout(dp, dp2, view.getMeasuredWidth() + dp, k8Var.m0[i14].getMeasuredHeight() + dp2);
                 }
                 break;
             case 1:
@@ -41,10 +41,10 @@ public final class q7 extends FrameLayout {
             case 2:
                 super.onLayout(z10, i10, i11, i12, i13);
                 k8 k8Var2 = this.b;
-                if (k8Var2.V != null && (textView = k8Var2.a0) != null) {
-                    int left = (textView.getLeft() - AndroidUtilities.dp(4.0f)) - k8Var2.V.getMeasuredWidth();
-                    org.telegram.ui.ActionBar.u0 u0Var = k8Var2.V;
-                    u0Var.layout(left, u0Var.getTop(), k8Var2.V.getMeasuredWidth() + left, k8Var2.V.getBottom());
+                if (k8Var2.U != null && (textView = k8Var2.Z) != null) {
+                    int left = (textView.getLeft() - AndroidUtilities.dp(4.0f)) - k8Var2.U.getMeasuredWidth();
+                    org.telegram.ui.ActionBar.u0 u0Var = k8Var2.U;
+                    u0Var.layout(left, u0Var.getTop(), k8Var2.U.getMeasuredWidth() + left, k8Var2.U.getBottom());
                     break;
                 }
                 break;
@@ -56,8 +56,8 @@ public final class q7 extends FrameLayout {
         switch (this.a) {
             case 1:
                 k8 k8Var = this.b;
-                if (k8Var.i0.getTag() != null) {
-                    k8Var.B0(false, true);
+                if (k8Var.h0.getTag() != null) {
+                    k8Var.H0(false, true);
                 }
                 return true;
             default:

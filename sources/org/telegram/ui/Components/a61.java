@@ -1,41 +1,33 @@
 package org.telegram.ui.Components;
 
-import android.view.MotionEvent;
+import android.util.SparseArray;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public abstract class a61 {
-    public String[] a = new String[0];
+public final class a61 extends g.o {
+    public final /* synthetic */ i61 c;
 
-    public boolean a() {
-        return false;
+    public a61(i61 i61Var) {
+        this.c = i61Var;
     }
 
-    public String[] b() {
-        return this.a;
-    }
-
-    public boolean c() {
-        return false;
-    }
-
-    public boolean d(t51 t51Var, MotionEvent motionEvent) {
-        return false;
-    }
-
-    public boolean e(t51 t51Var, j jVar, MotionEvent motionEvent) {
-        return false;
-    }
-
-    public abstract void g(TLRPC.StickerSetCovered stickerSetCovered, boolean z10);
-
-    public abstract void h(TLRPC.StickerSetCovered stickerSetCovered);
-
-    public void i(String[] strArr) {
-        this.a = strArr;
-    }
-
-    public void f(TLRPC.Document document, Object obj, boolean z10, int i10) {
+    @Override // g.o
+    public final int i(int i10) {
+        i61 i61Var = this.c;
+        s4.g0 adapter = i61Var.n.getAdapter();
+        h61 h61Var = i61Var.s;
+        if (adapter == h61Var) {
+            if ((h61Var.d.get(i10) instanceof Integer) || i10 >= h61Var.w) {
+                return h61Var.v;
+            }
+            return 1;
+        }
+        hg.e2 e2Var = i61Var.v;
+        SparseArray sparseArray = e2Var.s;
+        if (i10 == e2Var.y || !(sparseArray.get(i10) == null || (sparseArray.get(i10) instanceof TLRPC.Document))) {
+            return e2Var.e.a();
+        }
+        return 1;
     }
 }

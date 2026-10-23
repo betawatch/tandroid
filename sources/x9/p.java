@@ -20,7 +20,7 @@ import z9.o0;
 import z9.p0;
 import z9.u0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class p {
     public static final HashMap f;
@@ -163,7 +163,7 @@ public final class p {
                 lVar.d = Integer.valueOf(i10);
                 lVar.e = Long.valueOf(j10);
                 lVar.f = Long.valueOf((r3.getBlockCount() * blockSize) - (blockSize * r3.getAvailableBlocks()));
-                return lVar.l();
+                return lVar.i();
             }
             if (intExtra != -1 && intExtra2 != -1) {
                 f7 = Float.valueOf(intExtra / intExtra2);
@@ -189,7 +189,7 @@ public final class p {
                 lVar2.d = Integer.valueOf(i10);
                 lVar2.e = Long.valueOf(j10);
                 lVar2.f = Long.valueOf((r3.getBlockCount() * blockSize2) - (blockSize2 * r3.getAvailableBlocks()));
-                return lVar2.l();
+                return lVar2.i();
             }
         } else {
             z10 = false;
@@ -216,6 +216,6 @@ public final class p {
         lVar22.d = Integer.valueOf(i10);
         lVar22.e = Long.valueOf(j10);
         lVar22.f = Long.valueOf((r3.getBlockCount() * blockSize22) - (blockSize22 * r3.getAvailableBlocks()));
-        return lVar22.l();
+        return lVar22.i();
     }
 }

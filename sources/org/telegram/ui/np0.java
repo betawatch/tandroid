@@ -1,53 +1,50 @@
 package org.telegram.ui;
 
 import android.text.Editable;
+import java.util.ArrayList;
+import java.util.HashMap;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class np0 implements iq0 {
-    public final /* synthetic */ sp0 a;
+public final class np0 implements lq0 {
+    public final /* synthetic */ HashMap a;
+    public final /* synthetic */ ArrayList b;
+    public final /* synthetic */ vp0 c;
 
-    public np0(sp0 sp0Var) {
-        this.a = sp0Var;
+    public np0(vp0 vp0Var, HashMap hashMap, ArrayList arrayList) {
+        this.c = vp0Var;
+        this.a = hashMap;
+        this.b = arrayList;
     }
 
-    @Override // org.telegram.ui.iq0
-    public final void a() {
-        sp0 sp0Var = this.a;
-        if (sp0Var.b.size() != 0) {
-            sp0Var.Q.invalidate();
-            sp0Var.W(true);
-        } else {
-            sp0Var.Q.setPivotX(0.0f);
-            sp0Var.Q.setPivotY(0.0f);
-            sp0Var.W(false);
-        }
-    }
-
-    @Override // org.telegram.ui.iq0
+    @Override // org.telegram.ui.lq0
     public final void b(Editable editable) {
-        sp0 sp0Var = this.a;
-        org.telegram.ui.Components.qu quVar = sp0Var.M;
-        sp0Var.a = editable;
+        vp0 vp0Var = this.c;
+        org.telegram.ui.Components.qu quVar = vp0Var.M;
+        vp0Var.a = editable;
         quVar.setText(editable);
     }
 
-    @Override // org.telegram.ui.iq0
+    @Override // org.telegram.ui.lq0
     public final /* synthetic */ boolean e() {
         return true;
     }
 
-    @Override // org.telegram.ui.iq0
+    @Override // org.telegram.ui.lq0
     public final void h(int i10, boolean z10, boolean z11) {
-        sp0 sp0Var = this.a;
-        sp0Var.removeSelfFromStack();
+        vp0 vp0Var = this.c;
+        vp0Var.removeSelfFromStack();
         if (z10) {
             return;
         }
-        sp0Var.V(sp0Var.b, sp0Var.c, z11, i10);
+        vp0Var.V(this.a, this.b, z11, i10);
     }
 
-    @Override // org.telegram.ui.iq0
+    @Override // org.telegram.ui.lq0
+    public final void a() {
+    }
+
+    @Override // org.telegram.ui.lq0
     public final /* synthetic */ void g() {
     }
 }

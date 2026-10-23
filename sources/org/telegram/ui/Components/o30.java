@@ -22,12 +22,12 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class o30 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, VoIPService.StateListener {
     public final int E;
-    public final yj0 F;
-    public final vj0 G;
+    public final bk0 F;
+    public final yj0 G;
     public long H;
     public final boolean I;
     public final Random J;
@@ -75,14 +75,14 @@ public final class o30 extends FrameLayout implements NotificationCenter.Notific
         this.c.a = AndroidUtilities.dp(32.0f);
         this.b.b();
         this.c.b();
-        vj0 vj0Var = new vj0(R.raw.voice_outlined, AndroidUtilities.dp(22.0f), AndroidUtilities.dp(30.0f), true, null);
-        this.G = vj0Var;
+        yj0 yj0Var = new yj0(R.raw.voice_outlined, AndroidUtilities.dp(22.0f), AndroidUtilities.dp(30.0f), true, null);
+        this.G = yj0Var;
         setWillNotDraw(false);
-        yj0 yj0Var = new yj0(context);
-        this.F = yj0Var;
-        yj0Var.setAnimation(vj0Var);
-        yj0Var.setScaleType(ImageView.ScaleType.CENTER);
-        addView(yj0Var);
+        bk0 bk0Var = new bk0(context);
+        this.F = bk0Var;
+        bk0Var.setAnimation(yj0Var);
+        bk0Var.setScaleType(ImageView.ScaleType.CENTER);
+        addView(bk0Var);
         this.w = new LinearGradient(0.0f, 0.0f, AndroidUtilities.dp(350.0f), 0.0f, new int[]{-2801343, -561538, 0}, new float[]{0.0f, 0.4f, 1.0f}, Shader.TileMode.CLAMP);
         if (z10) {
             setState(0);
@@ -145,9 +145,9 @@ public final class o30 extends FrameLayout implements NotificationCenter.Notific
             VoIPService.getSharedInstance().registerStateListener(this);
         }
         int i10 = z10 ? 13 : 24;
-        vj0 vj0Var = this.G;
-        vj0Var.P(i10);
-        vj0Var.N(vj0Var.f - 1, false, true);
+        yj0 yj0Var = this.G;
+        yj0Var.P(i10);
+        yj0Var.N(yj0Var.f - 1, false, true);
         a();
     }
 
@@ -155,12 +155,12 @@ public final class o30 extends FrameLayout implements NotificationCenter.Notific
     public final void onAudioSettingsChanged() {
         boolean z10 = VoIPService.getSharedInstance() != null && VoIPService.getSharedInstance().isMicMute();
         int i10 = z10 ? 13 : 24;
-        vj0 vj0Var = this.G;
-        if (vj0Var.P(i10)) {
+        yj0 yj0Var = this.G;
+        if (yj0Var.P(i10)) {
             if (z10) {
-                vj0Var.M(0);
+                yj0Var.M(0);
             } else {
-                vj0Var.M(12);
+                yj0Var.M(12);
             }
         }
         this.F.d();
@@ -243,15 +243,15 @@ public final class o30 extends FrameLayout implements NotificationCenter.Notific
                 }
                 float interpolation = bs.f.getInterpolation(this.N) * 0.1f;
                 float f16 = interpolation + 1.0f;
-                yj0 yj0Var = this.F;
-                yj0Var.setScaleY(f16);
-                yj0Var.setScaleX(f16);
+                bk0 bk0Var = this.F;
+                bk0Var.setScaleY(f16);
+                bk0Var.setScaleX(f16);
                 z10 = this.I;
                 if (z10) {
                     long currentTimeMillis = System.currentTimeMillis();
                     if (currentTimeMillis - this.H > 1000) {
                         this.H = currentTimeMillis;
-                        float B = a1.g.B(org.telegram.ui.Cells.c1.g(this.J, 100), 0.5f, 100.0f, 0.5f);
+                        float B = a1.g.B(org.telegram.ui.Cells.b1.g(this.J, 100), 0.5f, 100.0f, 0.5f);
                         this.e = B;
                         this.f = (B - this.d) / 595.0f;
                     }
@@ -330,7 +330,7 @@ public final class o30 extends FrameLayout implements NotificationCenter.Notific
                                                     n30 n30Var2 = this.h;
                                                     if (n30Var2.i == i15) {
                                                         paint.setShader(r12);
-                                                        paint.setColor(org.telegram.ui.ActionBar.h6.x0(r12, org.telegram.ui.ActionBar.h6.bh, false));
+                                                        paint.setColor(org.telegram.ui.ActionBar.k6.x0(r12, org.telegram.ui.ActionBar.k6.bh, false));
                                                     } else {
                                                         paint.setShader(n30Var2.g);
                                                     }
@@ -364,7 +364,7 @@ public final class o30 extends FrameLayout implements NotificationCenter.Notific
                                             n30 n30Var3 = this.n;
                                             if (n30Var3.i == i15) {
                                                 paint.setShader(r12);
-                                                paint.setColor(org.telegram.ui.ActionBar.h6.x0(r12, org.telegram.ui.ActionBar.h6.bh, false));
+                                                paint.setColor(org.telegram.ui.ActionBar.k6.x0(r12, org.telegram.ui.ActionBar.k6.bh, false));
                                             } else {
                                                 paint.setShader(n30Var3.g);
                                             }
@@ -382,12 +382,12 @@ public final class o30 extends FrameLayout implements NotificationCenter.Notific
                                         }
                                         if (this.y != 0.0f) {
                                             f12 = f25;
-                                            float min = Math.min((f12 - this.O) * r4.c.c(this.d, 0.3f, f12, interpolation), 1.3f) * interpolation2;
+                                            float min = Math.min((f12 - this.O) * si.o0.c(this.d, 0.3f, f12, interpolation), 1.3f) * interpolation2;
                                             canvas.save();
                                             canvas.scale(min, min, measuredWidth, measuredHeight);
                                             baVar.a(measuredWidth, measuredHeight, canvas, paint);
                                             canvas.restore();
-                                            float min2 = Math.min((f12 - this.O) * r4.c.c(this.d, 0.26f, f12, interpolation), 1.3f) * interpolation2;
+                                            float min2 = Math.min((f12 - this.O) * si.o0.c(this.d, 0.26f, f12, interpolation), 1.3f) * interpolation2;
                                             canvas.save();
                                             canvas.scale(min2, min2, measuredWidth, measuredHeight);
                                             baVar2.a(measuredWidth, measuredHeight, canvas, paint);
@@ -518,9 +518,9 @@ public final class o30 extends FrameLayout implements NotificationCenter.Notific
         }
         float interpolation3 = bs.f.getInterpolation(this.N) * 0.1f;
         float f162 = interpolation3 + 1.0f;
-        yj0 yj0Var2 = this.F;
-        yj0Var2.setScaleY(f162);
-        yj0Var2.setScaleX(f162);
+        bk0 bk0Var2 = this.F;
+        bk0Var2.setScaleY(f162);
+        bk0Var2.setScaleX(f162);
         z10 = this.I;
         if (z10) {
         }
@@ -631,11 +631,11 @@ public final class o30 extends FrameLayout implements NotificationCenter.Notific
             VoIPService sharedInstance = VoIPService.getSharedInstance();
             String string = (sharedInstance == null || !ChatObject.isChannelOrGiga(sharedInstance.getChat())) ? LocaleController.getString(R.string.VoipGroupVoiceChat) : LocaleController.getString(R.string.VoipChannelVoiceChat);
             if (i10 == 0) {
-                string = org.telegram.messenger.g0.g(R.string.VoipTapToMute, r4.c.i(string, ", "));
+                string = org.telegram.messenger.v0.h(R.string.VoipTapToMute, si.o0.i(string, ", "));
             } else if (i10 == 2) {
-                string = org.telegram.messenger.g0.g(R.string.Connecting, r4.c.i(string, ", "));
+                string = org.telegram.messenger.v0.h(R.string.Connecting, si.o0.i(string, ", "));
             } else if (i10 == 3) {
-                string = org.telegram.messenger.g0.g(R.string.VoipMutedByAdmin, r4.c.i(string, ", "));
+                string = org.telegram.messenger.v0.h(R.string.VoipMutedByAdmin, si.o0.i(string, ", "));
             }
             setContentDescription(string);
             invalidate();

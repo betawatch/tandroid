@@ -1,151 +1,68 @@
 package u2;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+import android.util.Pair;
+import java.util.HashMap;
+import org.telegram.tgnet.ConnectionsManager;
+
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public final class y implements e0, d0 {
-    public final g0 a;
-    public final long b;
-    public final androidx.biometric.e c;
-    public a d;
-    public e0 e;
-    public d0 f;
-    public long h = -9223372036854775807L;
+public final class y extends v1 {
+    public final int l;
+    public final HashMap m;
+    public final HashMap n;
 
-    public y(g0 g0Var, androidx.biometric.e eVar, long j10) {
-        this.a = g0Var;
-        this.c = eVar;
-        this.b = j10;
+    public y(a aVar) {
+        super(new c0(aVar, false));
+        this.l = ConnectionsManager.DEFAULT_DATACENTER_ID;
+        this.m = new HashMap();
+        this.n = new HashMap();
     }
 
-    @Override // u2.d0
-    public final void a(e0 e0Var) {
-        d0 d0Var = this.f;
-        String str = e2.m0.a;
-        d0Var.a(this);
+    @Override // u2.v1
+    public final void A(b2.o1 o1Var) {
+        int i10 = this.l;
+        n(i10 != Integer.MAX_VALUE ? new x(o1Var, i10) : new w(o1Var, 0));
     }
 
-    public final void b(g0 g0Var) {
-        long j10 = this.h;
-        if (j10 == -9223372036854775807L) {
-            j10 = this.b;
+    @Override // u2.a
+    public final f0 c(h0 h0Var, androidx.biometric.e eVar, long j10) {
+        int i10 = this.l;
+        a aVar = this.k;
+        if (i10 == Integer.MAX_VALUE) {
+            return aVar.c(h0Var, eVar, j10);
         }
-        a aVar = this.d;
-        aVar.getClass();
-        e0 c10 = aVar.c(g0Var, this.c, j10);
-        this.e = c10;
-        if (this.f != null) {
-            c10.n(this, j10);
-        }
+        Object obj = h0Var.a;
+        int i11 = i2.a.g;
+        h0 a2 = h0Var.a(((Pair) obj).second);
+        this.m.put(a2, h0Var);
+        f0 c10 = aVar.c(a2, eVar, j10);
+        this.n.put(c10, a2);
+        return c10;
     }
 
-    @Override // u2.g1
-    public final boolean c() {
-        e0 e0Var = this.e;
-        return e0Var != null && e0Var.c();
+    @Override // u2.v1, u2.a
+    public final b2.o1 h() {
+        c0 c0Var = (c0) this.k;
+        int i10 = this.l;
+        return i10 != Integer.MAX_VALUE ? new x(c0Var.o, i10) : new w(c0Var.o, 0);
     }
 
-    @Override // u2.g1
-    public final long d() {
-        e0 e0Var = this.e;
-        String str = e2.m0.a;
-        return e0Var.d();
+    @Override // u2.v1, u2.a
+    public final boolean j() {
+        return false;
     }
 
-    @Override // u2.f1
-    public final void h(g1 g1Var) {
-        d0 d0Var = this.f;
-        String str = e2.m0.a;
-        d0Var.h(this);
-    }
-
-    @Override // u2.e0
-    public final void i() {
-        e0 e0Var = this.e;
-        if (e0Var != null) {
-            e0Var.i();
-            return;
-        }
-        a aVar = this.d;
-        if (aVar != null) {
-            aVar.k();
+    @Override // u2.a
+    public final void o(f0 f0Var) {
+        this.k.o(f0Var);
+        h0 h0Var = (h0) this.n.remove(f0Var);
+        if (h0Var != null) {
+            this.m.remove(h0Var);
         }
     }
 
-    @Override // u2.e0
-    public final long j(long j10) {
-        e0 e0Var = this.e;
-        String str = e2.m0.a;
-        return e0Var.j(j10);
-    }
-
-    @Override // u2.e0
-    public final void l(long j10) {
-        e0 e0Var = this.e;
-        String str = e2.m0.a;
-        e0Var.l(j10);
-    }
-
-    @Override // u2.e0
-    public final void n(d0 d0Var, long j10) {
-        this.f = d0Var;
-        e0 e0Var = this.e;
-        if (e0Var != null) {
-            long j11 = this.h;
-            if (j11 == -9223372036854775807L) {
-                j11 = this.b;
-            }
-            e0Var.n(this, j11);
-        }
-    }
-
-    @Override // u2.e0
-    public final long o() {
-        e0 e0Var = this.e;
-        String str = e2.m0.a;
-        return e0Var.o();
-    }
-
-    @Override // u2.g1
-    public final boolean p(i2.v0 v0Var) {
-        e0 e0Var = this.e;
-        return e0Var != null && e0Var.p(v0Var);
-    }
-
-    @Override // u2.e0
-    public final long q(x2.p[] pVarArr, boolean[] zArr, e1[] e1VarArr, boolean[] zArr2, long j10) {
-        long j11 = this.h;
-        long j12 = (j11 == -9223372036854775807L || j10 != this.b) ? j10 : j11;
-        this.h = -9223372036854775807L;
-        e0 e0Var = this.e;
-        String str = e2.m0.a;
-        return e0Var.q(pVarArr, zArr, e1VarArr, zArr2, j12);
-    }
-
-    @Override // u2.e0
-    public final s1 r() {
-        e0 e0Var = this.e;
-        String str = e2.m0.a;
-        return e0Var.r();
-    }
-
-    @Override // u2.g1
-    public final long s() {
-        e0 e0Var = this.e;
-        String str = e2.m0.a;
-        return e0Var.s();
-    }
-
-    @Override // u2.e0
-    public final long t(long j10, i2.s1 s1Var) {
-        e0 e0Var = this.e;
-        String str = e2.m0.a;
-        return e0Var.t(j10, s1Var);
-    }
-
-    @Override // u2.g1
-    public final void u(long j10) {
-        e0 e0Var = this.e;
-        String str = e2.m0.a;
-        e0Var.u(j10);
+    @Override // u2.v1
+    public final h0 z(h0 h0Var) {
+        return this.l != Integer.MAX_VALUE ? (h0) this.m.get(h0Var) : h0Var;
     }
 }

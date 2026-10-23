@@ -1,11 +1,12 @@
 package fh;
 
 import android.content.pm.ShortcutManager;
-import android.graphics.Bitmap;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
+import android.view.View;
 import android.window.OnBackInvokedDispatcher;
 import androidx.car.app.j;
 import b2.d1;
-import b2.z0;
 import com.google.android.gms.internal.cast.z5;
 import com.google.firebase.datatransport.TransportRegistrar;
 import d9.k;
@@ -23,33 +24,36 @@ import eh.d;
 import gi.d3;
 import gi.e4;
 import gi.z3;
-import i2.n;
+import i2.m;
+import i5.f;
 import j$.util.Objects;
-import j2.f;
+import j2.e;
 import java.util.Collection;
 import java.util.Iterator;
 import org.telegram.messenger.GenericProvider;
 import org.telegram.messenger.LiteMode;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.a2;
-import org.telegram.ui.ActionBar.b2;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.cw0;
-import org.telegram.ui.Components.dw0;
-import org.telegram.ui.Components.ew0;
+import org.telegram.ui.ActionBar.c2;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.o6;
+import org.telegram.ui.ActionBar.p6;
+import org.telegram.ui.ActionBar.z1;
+import org.telegram.ui.Components.fw0;
+import org.telegram.ui.Components.gw0;
+import org.telegram.ui.Components.hw0;
+import org.telegram.ui.Components.yq;
 import v7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class b implements d, cw0, dw0, GenericProvider, k, r9.d, o, a2, hh.b {
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class b implements d, fw0, gw0, GenericProvider, k, r9.d, p6, o6, o, z1 {
     public final /* synthetic */ int a;
 
     public /* synthetic */ b(int i10) {
         this.a = i10;
     }
 
-    public static /* bridge */ /* synthetic */ ShortcutManager d(Object obj) {
+    public static /* bridge */ /* synthetic */ ShortcutManager c(Object obj) {
         return (ShortcutManager) obj;
     }
 
@@ -61,37 +65,11 @@ public final /* synthetic */ class b implements d, cw0, dw0, GenericProvider, k,
         return ShortcutManager.class;
     }
 
-    @Override // hh.b
-    public Object a(Bitmap bitmap) {
-        switch (this.a) {
-            case 26:
-                if (bitmap == null || bitmap.isRecycled()) {
-                    return null;
-                }
-                Bitmap stackBlurBitmapWithScaleFactor = Utilities.stackBlurBitmapWithScaleFactor(bitmap, Math.max(bitmap.getWidth() / 90.0f, bitmap.getHeight() / 120.0f));
-                stackBlurBitmapWithScaleFactor.setHasAlpha(false);
-                return stackBlurBitmapWithScaleFactor;
-            case 27:
-                int i10 = 0;
-                if (bitmap != null && !bitmap.isRecycled()) {
-                    int height = bitmap.getHeight();
-                    i10 = Utilities.averageBitmapColor(bitmap, 0, (height * 9) / 10, bitmap.getWidth(), height);
-                }
-                return Integer.valueOf(i10);
-            default:
-                int i11 = 0;
-                if (bitmap != null && !bitmap.isRecycled()) {
-                    i11 = Utilities.averageBitmapColor(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight() / 10);
-                }
-                return Integer.valueOf(i11);
-        }
-    }
-
     @Override // d9.k
     public Object apply(Object obj) {
         boolean z10 = true;
         switch (this.a) {
-            case 14:
+            case 16:
                 String str = (String) obj;
                 d9.a aVar = h9.a.g;
                 aVar.getClass();
@@ -120,7 +98,7 @@ public final /* synthetic */ class b implements d, cw0, dw0, GenericProvider, k,
                 }
                 sb2.append('\"');
                 return sb2.toString();
-            case 15:
+            case 17:
                 Collection collection = (Collection) obj;
                 int i10 = w0.d;
                 if (collection instanceof w0) {
@@ -171,96 +149,119 @@ public final /* synthetic */ class b implements d, cw0, dw0, GenericProvider, k,
                 u0Var.b = true;
                 return new d2(u0Var.a);
             default:
-                return new f((g0) obj);
+                return new e((g0) obj);
         }
     }
 
-    @Override // org.telegram.ui.Components.dw0
+    @Override // org.telegram.ui.Components.gw0
     public void b(Object obj, float f7) {
         switch (this.a) {
-            case 8:
+            case 10:
                 d3 d3Var = (d3) obj;
-                d3Var.b = f7;
-                d3Var.e.invalidate();
-                d3Var.W.setAlpha(f7);
+                d3Var.c = f7;
+                d3Var.f.invalidate();
+                d3Var.X.setAlpha(f7);
                 d3Var.F();
                 d3Var.D();
                 break;
-            case 9:
+            case 11:
             default:
                 ((e4) obj).setSwipeOffsetY(f7);
                 break;
-            case 10:
+            case 12:
                 ((z3) obj).setLoadProgress(f7);
                 break;
         }
     }
 
+    @Override // org.telegram.ui.ActionBar.p6
+    public void d(int i10, View view) {
+        Drawable background = view.getBackground();
+        if (background instanceof yq) {
+            Drawable drawable = ((yq) background).a;
+            if (drawable instanceof ColorDrawable) {
+                ((ColorDrawable) drawable).setColor(i10);
+                view.invalidate();
+            }
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.o6
+    public int f(View view) {
+        Drawable background = view.getBackground();
+        if (!(background instanceof yq)) {
+            return 0;
+        }
+        Drawable drawable = ((yq) background).a;
+        if (drawable instanceof ColorDrawable) {
+            return ((ColorDrawable) drawable).getColor();
+        }
+        return 0;
+    }
+
+    @Override // org.telegram.ui.ActionBar.z1
+    public void g(c2 c2Var, int i10) {
+        switch (this.a) {
+            case 28:
+                c2Var.dismiss();
+                break;
+            default:
+                c2Var.dismiss();
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.fw0
+    public float get(Object obj) {
+        switch (this.a) {
+            case 9:
+                return ((d3) obj).c;
+            case 10:
+            default:
+                return ((e4) obj).getSwipeOffsetY();
+            case 11:
+                return ((z3) obj).c;
+        }
+    }
+
     @Override // eh.d
-    public int f(d6 d6Var, boolean z10) {
+    public int i(g6 g6Var, boolean z10) {
         switch (this.a) {
             case 0:
+                return k6.o1(0.78f, k6.w0(k6.h5, g6Var));
+            case 1:
+                return k6.o1(0.7f, k6.w0(k6.d6, g6Var));
+            case 2:
                 LiteMode.isEnabled(262144);
                 return 0;
             default:
-                return h6.m1(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, h6.w0(h6.d6, d6Var));
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.a2
-    public void g(b2 b2Var, int i10) {
-        switch (this.a) {
-            case 24:
-                b2Var.dismiss();
-                break;
-            default:
-                b2Var.dismiss();
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.cw0
-    public float get(Object obj) {
-        switch (this.a) {
-            case 7:
-                return ((d3) obj).b;
-            case 8:
-            default:
-                return ((e4) obj).getSwipeOffsetY();
-            case 9:
-                return ((z3) obj).c;
+                return k6.o1(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, k6.w0(k6.d6, g6Var));
         }
     }
 
     @Override // e2.o
     public void invoke(Object obj) {
+        d1 d1Var = (d1) obj;
         switch (this.a) {
-            case 22:
-                ((d1) obj).onPlayerError(new n(2, new j("Player release timed out."), 1003));
-                break;
-            case 23:
-                ((d1) obj).onRenderedFirstFrame();
+            case 26:
+                d1Var.onPlayerError(new m(2, new j("Player release timed out."), 1003));
                 break;
             default:
-                ((j2.b) obj).getClass();
+                d1Var.onRenderedFirstFrame();
                 break;
         }
     }
 
     @Override // r9.d
     public Object j2(z5 z5Var) {
-        i5.f lambda$getComponents$0;
+        f lambda$getComponents$0;
         lambda$getComponents$0 = TransportRegistrar.lambda$getComponents$0(z5Var);
         return lambda$getComponents$0;
     }
 
     @Override // org.telegram.messenger.GenericProvider
     public Object provide(Object obj) {
-        ew0 ew0Var = e4.b0;
+        hw0 hw0Var = e4.b0;
         return Boolean.FALSE;
-    }
-
-    public /* synthetic */ b(j2.a aVar, z0 z0Var) {
-        this.a = 29;
     }
 }

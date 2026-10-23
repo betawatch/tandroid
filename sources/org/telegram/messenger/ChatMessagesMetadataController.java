@@ -5,21 +5,21 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
-import org.telegram.ui.dm;
-import org.telegram.ui.qn;
+import org.telegram.ui.em;
+import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public class ChatMessagesMetadataController {
-    final qn chatActivity;
+    final sn chatActivity;
     private final ArrayList<MessageObject> reactionsToCheck = new ArrayList<>(10);
     private final ArrayList<MessageObject> extendedMediaToCheck = new ArrayList<>(10);
     private final ArrayList<MessageObject> storiesToCheck = new ArrayList<>(10);
     ArrayList<Integer> reactionsRequests = new ArrayList<>();
     ArrayList<Integer> extendedMediaRequests = new ArrayList<>();
 
-    public ChatMessagesMetadataController(qn qnVar) {
-        this.chatActivity = qnVar;
+    public ChatMessagesMetadataController(sn snVar) {
+        this.chatActivity = snVar;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -50,15 +50,15 @@ public class ChatMessagesMetadataController {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$loadStoriesForMessages$1(MessageObject messageObject, long j10, TL_stories.StoryItem storyItem) {
         boolean isExpiredStory = messageObject.isExpiredStory();
-        ci.w7.b(this.chatActivity.getCurrentAccount(), j10, messageObject, storyItem);
+        ci.v7.b(this.chatActivity.getCurrentAccount(), j10, messageObject, storyItem);
         ArrayList arrayList = new ArrayList();
         messageObject.forceUpdate = true;
         arrayList.add(messageObject);
         this.chatActivity.getMessagesStorage().getStorageQueue().postRunnable(new i3(13, this, arrayList));
         if (!isExpiredStory && messageObject.isExpiredStory() && messageObject.type == 24) {
-            this.chatActivity.yc(arrayList, true);
+            this.chatActivity.Ac(arrayList, true);
         } else {
-            this.chatActivity.yc(arrayList, false);
+            this.chatActivity.Ac(arrayList, false);
         }
     }
 
@@ -110,12 +110,12 @@ public class ChatMessagesMetadataController {
         }
     }
 
-    public void checkMessages(dm dmVar, int i10, int i11, long j10) {
-        ArrayList L = dmVar.L();
+    public void checkMessages(em emVar, int i10, int i11, long j10) {
+        ArrayList L = emVar.L();
         if (this.chatActivity.c() || i10 < 0 || i11 < 0) {
             return;
         }
-        int i12 = dmVar.J;
+        int i12 = emVar.J;
         int i13 = (i11 - i12) - 10;
         int i14 = (i10 - i12) + 10;
         if (i13 < 0) {
@@ -129,11 +129,11 @@ public class ChatMessagesMetadataController {
         this.storiesToCheck.clear();
         while (i13 < i14) {
             MessageObject messageObject = (MessageObject) L.get(i13);
-            if (this.chatActivity.X3 != messageObject && messageObject.getId() > 0 && ((messageObject.messageOwner.action == null || messageObject.canSetReaction()) && j10 - messageObject.reactionsLastCheckTime > 15000)) {
+            if (this.chatActivity.j4 != messageObject && messageObject.getId() > 0 && ((messageObject.messageOwner.action == null || messageObject.canSetReaction()) && j10 - messageObject.reactionsLastCheckTime > 15000)) {
                 messageObject.reactionsLastCheckTime = j10;
                 this.reactionsToCheck.add(messageObject);
             }
-            if (this.chatActivity.X3 != messageObject && messageObject.getId() > 0 && ((messageObject.hasExtendedMediaPreview() || messageObject.hasPaidMediaPreview()) && j10 - messageObject.extendedMediaLastCheckTime > 30000)) {
+            if (this.chatActivity.j4 != messageObject && messageObject.getId() > 0 && ((messageObject.hasExtendedMediaPreview() || messageObject.hasPaidMediaPreview()) && j10 - messageObject.extendedMediaLastCheckTime > 30000)) {
                 messageObject.extendedMediaLastCheckTime = j10;
                 this.extendedMediaToCheck.add(messageObject);
             }

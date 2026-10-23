@@ -1,85 +1,25 @@
 package org.telegram.ui.Components;
 
+import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagePreviewParams;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.RichQuote;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class ac0 extends org.telegram.ui.Cells.o9 {
-    public final /* synthetic */ ic0 w0;
+public final class ac0 extends g.o {
+    public final /* synthetic */ lc0 c;
 
-    public ac0(ic0 ic0Var) {
-        this.w0 = ic0Var;
-        this.g0 = ic0Var.c0.F;
+    public ac0(lc0 lc0Var) {
+        this.c = lc0Var;
     }
 
-    @Override // org.telegram.ui.Cells.aa
-    public final void I(MessageObject messageObject, int i10, int i11) {
-        org.telegram.ui.gn gnVar;
-        MessageObject messageObject2;
-        ic0 ic0Var = this.w0;
-        ac0 ac0Var = ic0Var.e;
-        int i12 = ac0Var.v - ac0Var.u;
-        oc0 oc0Var = ic0Var.c0;
-        if (i12 > MessagesController.getInstance(oc0Var.w).quoteLengthMax) {
-            ic0Var.g();
-            return;
+    @Override // g.o
+    public final int i(int i10) {
+        MessageObject messageObject;
+        MessageObject.GroupedMessages a2;
+        if (i10 < 0) {
+            return MediaDataController.MAX_STYLE_RUNS_COUNT;
         }
-        MessagePreviewParams messagePreviewParams = oc0Var.d;
-        messagePreviewParams.quoteStart = ac0Var.u;
-        messagePreviewParams.quoteEnd = ac0Var.v;
-        MessageObject c10 = ic0Var.c(messageObject);
-        if (c10 != null && ((gnVar = oc0Var.d.quote) == null || gnVar.m || (messageObject2 = gnVar.a) == null || messageObject2.getId() != c10.getId())) {
-            oc0Var.d.quote = org.telegram.ui.gn.c(c10, i10, i11);
-        }
-        oc0Var.b();
-        oc0Var.a(true);
-    }
-
-    @Override // org.telegram.ui.Cells.aa
-    public final boolean b() {
-        MessageObject c10;
-        TLRPC.Message message;
-        ic0 ic0Var = this.w0;
-        if (ic0Var.a == 0 && (c10 = ic0Var.c(null)) != null && (message = c10.messageOwner) != null && message.rich_message != null) {
-            return false;
-        }
-        MessagePreviewParams messagePreviewParams = ic0Var.c0.d;
-        return messagePreviewParams == null || !messagePreviewParams.noforwards;
-    }
-
-    @Override // org.telegram.ui.Cells.aa
-    public final boolean e() {
-        MessageObject c10;
-        TLRPC.Message message;
-        ic0 ic0Var = this.w0;
-        int i10 = ic0Var.a;
-        if (i10 != 0 || ic0Var.c0.d.isSecret) {
-            return false;
-        }
-        return i10 != 0 || (c10 = ic0Var.c(null)) == null || (message = c10.messageOwner) == null || message.rich_message == null || RichQuote.canQuote(ic0Var.c(null));
-    }
-
-    @Override // org.telegram.ui.Cells.aa
-    public final org.telegram.ui.ActionBar.d6 q() {
-        return this.g0;
-    }
-
-    @Override // org.telegram.ui.Cells.o9, org.telegram.ui.Cells.aa
-    public final void w() {
-        super.w();
-        bc0 bc0Var = this.w0.f;
-        if (bc0Var != null) {
-            bc0Var.invalidate();
-        }
-    }
-
-    @Override // org.telegram.ui.Cells.aa
-    public final boolean z(MessageObject messageObject) {
-        ic0 ic0Var = this.w0;
-        return ic0Var.a == 0 && !ic0Var.c0.d.isSecret && x();
+        lc0 lc0Var = this.c;
+        return (i10 >= lc0Var.r.previewMessages.size() || (a2 = lc0.a(lc0Var, (messageObject = lc0Var.r.previewMessages.get(i10)))) == null) ? MediaDataController.MAX_STYLE_RUNS_COUNT : a2.getPosition(messageObject).spanSize;
     }
 }

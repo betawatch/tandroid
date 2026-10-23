@@ -3,7 +3,7 @@ package b2;
 import android.os.Bundle;
 import v7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public abstract class g1 {
     public static final String a;
@@ -29,7 +29,7 @@ public abstract class g1 {
         }
         if (i10 != 2) {
             if (i10 != 3) {
-                throw new IllegalArgumentException(i2.e.j(i10, "Unknown RatingType: "));
+                throw new IllegalArgumentException(i2.o1.k(i10, "Unknown RatingType: "));
             }
             String str4 = j1.d;
             u6.g(bundle.getInt(str, -1) == 3);

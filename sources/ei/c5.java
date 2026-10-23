@@ -12,13 +12,13 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.i80;
+import org.telegram.ui.Components.j80;
 import org.telegram.ui.Components.ti;
 import org.telegram.ui.Components.vg;
-import org.telegram.ui.mi0;
-import org.telegram.ui.qn;
+import org.telegram.ui.qi0;
+import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c5 implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -37,10 +37,10 @@ public final /* synthetic */ class c5 implements View.OnLongClickListener {
                 f6 f6Var = (f6) this.b;
                 int i10 = f6Var.F1;
                 if (f6Var.I1 != null) {
-                    qg.v0 e = qg.v0.e(i10);
+                    qg.u0 e = qg.u0.e(i10);
                     e.k = !e.k;
                     e.a.edit().putBoolean("fill_shapes", e.k).apply();
-                    boolean z11 = qg.v0.e(i10).k;
+                    boolean z11 = qg.u0.e(i10).k;
                     for (int i11 = 0; i11 < f6Var.I1.getItemsCount(); i11++) {
                         View childAt = f6Var.I1.L.getChildAt(i11);
                         if (childAt instanceof c6) {
@@ -59,7 +59,7 @@ public final /* synthetic */ class c5 implements View.OnLongClickListener {
                     vbVar.o();
                     vbVar.E0.setSelected(true);
                     vbVar.s.e(0.85f, 240L, null);
-                    i80 F = i80.F(vbVar.r, vbVar.a, vbVar.E0);
+                    j80 F = j80.F(vbVar.r, vbVar.a, vbVar.E0);
                     u7 u7Var = new u7(activity, 1);
                     u7Var.d(vbVar.s.o);
                     u7Var.h = new u9(vbVar, 21);
@@ -89,38 +89,38 @@ public final /* synthetic */ class c5 implements View.OnLongClickListener {
             case 4:
                 ki.q qVar = ((ki.l) this.b).a;
                 ki.b4 b4Var = qVar.s;
-                org.telegram.ui.ActionBar.d6 d6Var = qVar.a;
+                org.telegram.ui.ActionBar.g6 g6Var = qVar.a;
                 ti tiVar = qVar.b;
                 ki.w3 w3Var = qVar.r;
                 int i12 = qVar.n;
                 if (UserConfig.getInstance(i12).isPremium()) {
-                    if (w3Var.l3() && !w3Var.n3()) {
-                        if (w3Var.N3()) {
-                            ArrayList<TL_iv.PageBlock> a32 = w3Var.a3();
-                            if (!a32.isEmpty()) {
-                                org.telegram.ui.ActionBar.n2 n2Var = tiVar.f0;
-                                qn qnVar = n2Var instanceof qn ? (qn) n2Var : null;
-                                mi0 mi0Var = qVar.O;
-                                if (mi0Var != null) {
-                                    mi0Var.g(false);
+                    if (w3Var.q3() && !w3Var.s3()) {
+                        if (w3Var.S3()) {
+                            ArrayList<TL_iv.PageBlock> f32 = w3Var.f3();
+                            if (!f32.isEmpty()) {
+                                org.telegram.ui.ActionBar.o2 o2Var = tiVar.f0;
+                                sn snVar = o2Var instanceof sn ? (sn) o2Var : null;
+                                qi0 qi0Var = qVar.O;
+                                if (qi0Var != null) {
+                                    qi0Var.g(false);
                                     qVar.O = null;
                                 }
-                                mi0 mi0Var2 = new mi0(qVar.getContext(), d6Var);
-                                qVar.O = mi0Var2;
-                                mi0Var2.setOnDismissListener(new ai.bb(qVar, 7));
-                                long p12 = tiVar.p1();
-                                MessageObject messageObject = qnVar != null ? qnVar.n5 : null;
+                                qi0 qi0Var2 = new qi0(qVar.getContext(), g6Var);
+                                qVar.O = qi0Var2;
+                                qi0Var2.setOnDismissListener(new ai.cb(qVar, 7));
+                                long s12 = tiVar.s1();
+                                MessageObject messageObject = snVar != null ? snVar.z5 : null;
                                 TLRPC.TL_message tL_message = new TLRPC.TL_message();
                                 tL_message.id = 0;
                                 tL_message.out = true;
-                                tL_message.peer_id = MessagesController.getInstance(i12).getPeer(p12);
+                                tL_message.peer_id = MessagesController.getInstance(i12).getPeer(s12);
                                 tL_message.from_id = MessagesController.getInstance(i12).getPeer(UserConfig.getInstance(i12).getClientUserId());
                                 tL_message.flags2 |= 8192;
                                 TL_iv.RichMessage richMessage = new TL_iv.RichMessage();
                                 tL_message.rich_message = richMessage;
-                                richMessage.blocks = a32;
-                                richMessage.photos = w3Var.C2();
-                                tL_message.rich_message.documents = w3Var.z2();
+                                richMessage.blocks = f32;
+                                richMessage.photos = w3Var.H2();
+                                tL_message.rich_message.documents = w3Var.E2();
                                 if (messageObject != null && !messageObject.isTopicMainMessage) {
                                     TLRPC.TL_messageReplyHeader tL_messageReplyHeader = new TLRPC.TL_messageReplyHeader();
                                     tL_messageReplyHeader.flags |= 16;
@@ -135,26 +135,26 @@ public final /* synthetic */ class c5 implements View.OnLongClickListener {
                                 messageObject2.isOutOwnerCached = Boolean.TRUE;
                                 messageObject2.generateLayout(null);
                                 messageObject2.notime = true;
-                                qVar.O.p(org.telegram.messenger.g0.k(messageObject2));
+                                qVar.O.p(org.telegram.messenger.v0.k(messageObject2));
                                 vg sendButton = b4Var.getSendButton();
                                 sendButton.setScaleX(1.0f);
                                 sendButton.setScaleY(1.0f);
                                 vg q6 = qVar.O.q(sendButton, true, new hg.r0(qVar, 8));
                                 if (q6 != null) {
-                                    q6.setBackground(new ki.c2(org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(22.0f), org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Oh, d6Var))));
-                                    mi0 mi0Var3 = qVar.O;
+                                    q6.setBackground(new ki.c2(org.telegram.ui.ActionBar.k6.c0(AndroidUtilities.dp(22.0f), org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Oh, g6Var))));
+                                    qi0 qi0Var3 = qVar.O;
                                     int dp = AndroidUtilities.dp(44.0f);
                                     z10 = true;
-                                    mi0Var3.l0 = true;
-                                    mi0Var3.X = dp;
+                                    qi0Var3.l0 = true;
+                                    qi0Var3.X = dp;
                                 } else {
                                     z10 = true;
                                 }
-                                i80 F2 = i80.F(qVar, d6Var, sendButton);
-                                boolean z12 = (qnVar == null || !UserObject.isUserSelf(qnVar.i())) ? false : z10;
-                                if (qnVar != null && qnVar.G6()) {
-                                    F2.c(R.drawable.msg_calendar2, LocaleController.getString(z12 ? R.string.SetReminder : R.string.ScheduleMessage), new ai.v3(qVar, p12, 14), false);
-                                    if (!z12 && p12 > 0) {
+                                j80 F2 = j80.F(qVar, g6Var, sendButton);
+                                boolean z12 = (snVar == null || !UserObject.isUserSelf(snVar.i())) ? false : z10;
+                                if (snVar != null && snVar.G6()) {
+                                    F2.c(R.drawable.msg_calendar2, LocaleController.getString(z12 ? R.string.SetReminder : R.string.ScheduleMessage), new ai.v3(qVar, s12, 14), false);
+                                    if (!z12 && s12 > 0) {
                                         F2.c(R.drawable.msg_online, LocaleController.getString(R.string.SendWhenOnline), new ki.d(qVar, 0), false);
                                     }
                                 }
@@ -171,7 +171,7 @@ public final /* synthetic */ class c5 implements View.OnLongClickListener {
                                 break;
                             }
                         } else if (b4Var != null) {
-                            b4Var.setSendEnabled(w3Var.N3());
+                            b4Var.setSendEnabled(w3Var.S3());
                         }
                     }
                     break;
@@ -187,10 +187,10 @@ public final /* synthetic */ class c5 implements View.OnLongClickListener {
                 rg.m0 m0Var = (rg.m0) this.b;
                 int i13 = m0Var.P1;
                 if (m0Var.S1 != null) {
-                    qg.v0 e7 = qg.v0.e(i13);
+                    qg.u0 e7 = qg.u0.e(i13);
                     e7.k = !e7.k;
                     e7.a.edit().putBoolean("fill_shapes", e7.k).apply();
-                    boolean z13 = qg.v0.e(i13).k;
+                    boolean z13 = qg.u0.e(i13).k;
                     for (int i14 = 0; i14 < m0Var.S1.getItemsCount(); i14++) {
                         View childAt2 = m0Var.S1.L.getChildAt(i14);
                         if (childAt2 instanceof rg.l0) {

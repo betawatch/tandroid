@@ -1,40 +1,16 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class go0 implements Utilities.Callback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ip0 b;
+public interface go0 {
+    void a(TL_account.Password password);
 
-    public /* synthetic */ go0(ip0 ip0Var, int i10) {
-        this.a = i10;
-        this.b = ip0Var;
-    }
+    void b();
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        switch (this.a) {
-            case 0:
-                ip0 ip0Var = this.b;
-                ip0Var.r = false;
-                ip0Var.Q.setLoading(false);
-                if (((Boolean) obj).booleanValue()) {
-                    ip0Var.x0();
-                    ip0Var.finishFragment();
-                    ip0Var.E0();
-                    break;
-                }
-                break;
-            default:
-                Integer num = (Integer) obj;
-                ei.h1 h1Var = this.b.I;
-                if (h1Var != null) {
-                    h1Var.D(num.intValue());
-                    break;
-                }
-                break;
-        }
-    }
+    boolean c(String str, String str2, boolean z10, TLRPC.TL_inputPaymentCredentialsGooglePay tL_inputPaymentCredentialsGooglePay, TLRPC.TL_paymentSavedCredentialsCard tL_paymentSavedCredentialsCard);
+
+    void d(TLRPC.TL_payments_validateRequestedInfo tL_payments_validateRequestedInfo);
 }

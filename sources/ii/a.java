@@ -3,116 +3,56 @@ package ii;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import android.graphics.RectF;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.y5;
-import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.w9;
-import w7.z5;
-import zf.p;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.k6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final class a extends FrameLayout implements y5 {
-    public final d6 a;
-    public final w9 b;
-    public final TextView c;
-    public final TextView d;
-    public final ImageView e;
+public final class a extends View {
+    public final Paint a;
+    public final Paint b;
+    public final Paint c;
+    public final RectF d;
+    public final /* synthetic */ g6 e;
 
-    public a(Context context, d6 d6Var) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public a(Context context, g6 g6Var) {
         super(context);
-        this.a = d6Var;
-        w9 w9Var = new w9(context);
-        this.b = w9Var;
-        w9Var.setRoundRadius(AndroidUtilities.dp(7.3125f));
-        addView(w9Var, z5.d(26, 26.0f, 19, 16.0f, 0.0f, 0.0f, 0.0f));
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(1);
-        linearLayout.setGravity(16);
-        TextView textView = new TextView(context);
-        this.c = textView;
-        textView.setTextSize(1, 16.0f);
-        textView.setSingleLine(true);
-        TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
-        textView.setEllipsize(truncateAt);
-        linearLayout.addView(textView, z5.n(-1, -2));
-        TextView textView2 = new TextView(context);
-        this.d = textView2;
-        textView2.setTextSize(1, 13.0f);
-        textView2.setSingleLine(true);
-        textView2.setEllipsize(truncateAt);
-        linearLayout.addView(textView2, z5.k(0.0f, 2.0f, 0.0f, 0.0f, -1, -2));
-        addView(linearLayout, z5.d(-1, -2.0f, 19, 58.0f, 0.0f, 48.0f, 1.0f));
-        ImageView imageView = new ImageView(context);
-        this.e = imageView;
-        imageView.setImageResource(R.drawable.msg_inputarrow);
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        addView(imageView, z5.d(24, 24.0f, 21, 0.0f, 0.0f, 11.0f, 0.0f));
-        d();
+        this.e = g6Var;
+        Paint paint = new Paint(1);
+        this.a = paint;
+        Paint paint2 = new Paint(1);
+        this.b = paint2;
+        Paint paint3 = new Paint(1);
+        this.c = paint3;
+        this.d = new RectF();
+        paint2.setColor(-1);
+        paint.setColor(k6.w0(k6.d6, g6Var));
+        paint3.setColor(k6.w0(k6.wj, g6Var));
     }
 
-    public final void a(int i10, TLRPC.Chat chat) {
-        if (chat == null) {
-            return;
-        }
-        TLRPC.ChatFull chatFull = MessagesController.getInstance(i10).getChatFull(chat.id);
-        setTitle(DialogObject.getShortName(chat));
-        setSubtitle(LocaleController.formatPluralString("CommunityWithChats", chatFull != null ? chatFull.linked_peers.size() : 0, new Object[0]));
-        this.b.e(chat, new h9(chat));
-    }
-
-    @Override // org.telegram.ui.ActionBar.y5
-    public final void d() {
-        int i10 = h6.z6;
-        d6 d6Var = this.a;
-        this.e.setColorFilter(h6.w0(i10, d6Var));
-        this.c.setTextColor(h6.w0(h6.G6, d6Var));
-        this.d.setTextColor(h6.w0(i10, d6Var));
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        Drawable drawable = h6.S0;
-        w9 w9Var = this.b;
-        p.a(canvas, drawable, (w9Var.getWidth() / 2.0f) + w9Var.getLeft(), (w9Var.getHeight() / 2.0f) + w9Var.getTop(), w9Var.getHeight());
-        super.dispatchDraw(canvas);
-        d6 d6Var = this.a;
-        Paint n10 = d6Var != null ? d6Var.n("paintDivider") : null;
-        if (n10 == null) {
-            n10 = h6.k0;
-        }
-        canvas.drawLine(AndroidUtilities.dp(58.0f), getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, n10);
-    }
-
-    public /* bridge */ /* synthetic */ int[] getColorKeys() {
-        return null;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(56.0f), TLObject.FLAG_30));
-    }
-
-    public void setSubtitle(CharSequence charSequence) {
-        this.d.setText(charSequence);
-    }
-
-    public void setTitle(CharSequence charSequence) {
-        this.c.setText(charSequence);
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        int i10 = k6.d6;
+        g6 g6Var = this.e;
+        int w02 = k6.w0(i10, g6Var);
+        Paint paint = this.a;
+        paint.setColor(w02);
+        int w03 = k6.w0(k6.wj, g6Var);
+        Paint paint2 = this.c;
+        paint2.setColor(w03);
+        float width = getWidth();
+        float height = getHeight();
+        RectF rectF = this.d;
+        rectF.set(0.0f, 0.0f, width, height);
+        canvas.drawRoundRect(rectF, rectF.width() / 2.0f, rectF.height() / 2.0f, paint);
+        rectF.inset(AndroidUtilities.dp(1.33f), AndroidUtilities.dp(1.33f));
+        canvas.drawRoundRect(rectF, rectF.width() / 2.0f, rectF.height() / 2.0f, paint2);
+        rectF.inset(AndroidUtilities.dpf2(4.67f), AndroidUtilities.dpf2(9.066f));
+        canvas.drawRoundRect(rectF, rectF.height() / 2.0f, rectF.height() / 2.0f, this.b);
     }
 }

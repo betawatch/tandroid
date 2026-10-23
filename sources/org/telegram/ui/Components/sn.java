@@ -4,15 +4,15 @@ import android.content.Context;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class sn extends s4.c0 {
-    public final /* synthetic */ ig.e0 r;
+    public final /* synthetic */ ig.d0 r;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public sn(ig.e0 e0Var, Context context) {
+    public sn(ig.d0 d0Var, Context context) {
         super(context);
-        this.r = e0Var;
+        this.r = d0Var;
     }
 
     @Override // s4.c0
@@ -27,7 +27,7 @@ public final class sn extends s4.c0 {
             k10 += AndroidUtilities.dp(160.0f);
         }
         if (!foVar.V0) {
-            k10 = org.telegram.messenger.g0.A(7.0f, foVar.R0 - AndroidUtilities.statusBarHeight, k10);
+            k10 = org.telegram.messenger.v0.z(7.0f, foVar.R0 - AndroidUtilities.statusBarHeight, k10);
         }
         if (foVar.V0 && k10 == 0 && (i11 = foVar.W0) >= 0) {
             fo.N(foVar, i11);

@@ -1,43 +1,33 @@
 package org.telegram.ui.Wallet;
 
-import android.view.View;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.ui.Components.d71;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class h3 implements o1.g {
+public final /* synthetic */ class h3 implements NotificationCenter.NotificationCenterDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ n3 b;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ h3(n3 n3Var, int i10) {
+    public /* synthetic */ h3(Object obj, int i10) {
         this.a = i10;
-        this.b = n3Var;
+        this.b = obj;
     }
 
-    @Override // o1.g
-    public final void a(o1.h hVar, float f7, float f10) {
-        switch (this.a) {
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object[] objArr) {
+        d71 d71Var;
+        int i12 = this.a;
+        Object obj = this.b;
+        switch (i12) {
             case 0:
-                n3 n3Var = this.b;
-                n3Var.C = f7;
-                n3Var.a.invalidate();
-                break;
-            case 1:
-                n3 n3Var2 = this.b;
-                n3Var2.c0 = f7;
-                org.telegram.ui.Cells.w0 w0Var = n3Var2.a;
-                w0Var.invalidate();
-                if (w0Var.getParent() instanceof View) {
-                    ((View) w0Var.getParent()).invalidate();
-                    break;
-                }
+                ((m3) obj).getClass();
+                int i13 = NotificationCenter.didReceiveNewMessages;
                 break;
             default:
-                n3 n3Var3 = this.b;
-                n3Var3.a0 = f7;
-                org.telegram.ui.Cells.w0 w0Var2 = n3Var3.a;
-                w0Var2.invalidate();
-                if (w0Var2.getParent() instanceof View) {
-                    ((View) w0Var2.getParent()).invalidate();
+                s9 s9Var = (s9) obj;
+                if (!s9Var.n && (d71Var = s9Var.a) != null) {
+                    d71Var.Z2.N(true);
                     break;
                 }
                 break;

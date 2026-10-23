@@ -1,124 +1,111 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.Color;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.ScrollView;
-import android.widget.TextView;
-import java.util.HashMap;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.TelegramQRCodeWriter;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public class gj0 extends org.telegram.ui.ActionBar.f3 {
-    public final Bitmap b;
-    public final TextView c;
-    public final TextView d;
-    public final TextView e;
-    public final int f;
-    public final yj0 h;
+public final /* synthetic */ class gj0 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ij0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gj0(Context context, String str, String str2, String str3, boolean z10) {
-        super(1, context, (org.telegram.ui.ActionBar.d6) null, false);
-        Bitmap bitmap = null;
-        fixNavigationBar();
-        setTitle(str, true);
-        ig.k kVar = new ig.k(context, 3);
-        kVar.setScaleType(ImageView.ScaleType.FIT_XY);
-        kVar.setOutlineProvider(new ci.o1(15));
-        kVar.setClipToOutline(true);
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(1);
-        linearLayout.setPadding(0, AndroidUtilities.dp(16.0f), 0, 0);
-        Bitmap bitmap2 = this.b;
-        try {
-            HashMap hashMap = new HashMap();
-            hashMap.put(dc.b.a, ic.c.c);
-            hashMap.put(dc.b.c, 0);
-            TelegramQRCodeWriter telegramQRCodeWriter = new TelegramQRCodeWriter();
-            Bitmap encode = telegramQRCodeWriter.encode(str2, 768, 768, hashMap, bitmap2);
-            this.f = telegramQRCodeWriter.getImageSize();
-            bitmap = encode;
-        } catch (Exception e) {
-            FileLog.e(e);
-        }
-        this.b = bitmap;
-        kVar.setImageBitmap(bitmap);
-        yj0 yj0Var = new yj0(context);
-        this.h = yj0Var;
-        yj0Var.setScaleType(ImageView.ScaleType.FIT_CENTER);
-        yj0Var.setBackgroundColor(-1);
-        org.telegram.ui.ql0 ql0Var = new org.telegram.ui.ql0(this, context, kVar);
-        ql0Var.addView(kVar, w7.z5.c(-1.0f, -1));
-        ql0Var.addView(yj0Var, w7.z5.e(60, 60, 17));
-        linearLayout.addView(ql0Var, w7.z5.t(220, 220, 1, 30, 0, 30, 0));
-        TextView textView = new TextView(context);
-        this.c = textView;
-        textView.setTextSize(1, 14.0f);
-        textView.setText(str3);
-        textView.setGravity(1);
-        linearLayout.addView(textView, w7.z5.d(-1, -2.0f, 0, 40.0f, 8.0f, 40.0f, 8.0f));
-        TextView textView2 = new TextView(context);
-        this.d = textView2;
-        textView2.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
-        textView2.setGravity(17);
-        textView2.setTextSize(1, 14.0f);
-        textView2.setTypeface(AndroidUtilities.bold());
-        textView2.setText(LocaleController.getString(R.string.ShareQrCode));
-        textView2.setOnClickListener(new ca(22, this, context));
-        linearLayout.addView(textView2, w7.z5.t(-1, 48, 80, 16, 15, 16, 3));
-        if (z10) {
-            TextView textView3 = new TextView(context);
-            this.e = textView3;
-            textView3.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
-            textView3.setGravity(17);
-            textView3.setTextSize(1, 14.0f);
-            textView3.setText(LocaleController.getString(R.string.ShareLink));
-            textView3.setOnClickListener(new ca(23, str2, context));
-            linearLayout.addView(textView3, w7.z5.t(-1, 48, 80, 16, 3, 16, 16));
-        }
-        d();
-        ScrollView scrollView = new ScrollView(context);
-        scrollView.addView(linearLayout);
-        setCustomView(scrollView);
+    public /* synthetic */ gj0(ij0 ij0Var, int i10) {
+        this.a = i10;
+        this.b = ij0Var;
     }
 
-    public final void d() {
-        int themedColor = getThemedColor(org.telegram.ui.ActionBar.h6.Sh);
-        TextView textView = this.d;
-        textView.setTextColor(themedColor);
-        int dp = AndroidUtilities.dp(24.0f);
-        int i10 = org.telegram.ui.ActionBar.h6.Oh;
-        int themedColor2 = getThemedColor(i10);
-        int themedColor3 = getThemedColor(org.telegram.ui.ActionBar.h6.Qh);
-        textView.setBackground(org.telegram.ui.ActionBar.h6.j0(dp, dp, dp, dp, themedColor2, themedColor3, themedColor3));
-        TextView textView2 = this.e;
-        if (textView2 != null) {
-            textView2.setTextColor(getThemedColor(i10));
-            textView2.setBackground(org.telegram.ui.ActionBar.h6.g0(i0.a.o(getThemedColor(i10), Math.min(255, Color.alpha(getThemedColor(org.telegram.ui.ActionBar.h6.i6)) * 2)), 7, -1));
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                ij0 ij0Var = this.b;
+                ij0Var.v = floatValue;
+                org.telegram.ui.Cells.q2 q2Var = ij0Var.H;
+                if (q2Var != null) {
+                    q2Var.invalidate();
+                }
+                mm0 mm0Var = ij0Var.I;
+                if (mm0Var != null) {
+                    mm0Var.invalidate();
+                    break;
+                }
+                break;
+            case 1:
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                ij0 ij0Var2 = this.b;
+                ij0Var2.w = floatValue2;
+                org.telegram.ui.Cells.q2 q2Var2 = ij0Var2.H;
+                if (q2Var2 != null) {
+                    q2Var2.invalidate();
+                }
+                mm0 mm0Var2 = ij0Var2.I;
+                if (mm0Var2 != null) {
+                    mm0Var2.invalidate();
+                    break;
+                }
+                break;
+            case 2:
+                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                ij0 ij0Var3 = this.b;
+                ij0Var3.p = floatValue3;
+                org.telegram.ui.Cells.q2 q2Var3 = ij0Var3.H;
+                if (q2Var3 != null) {
+                    q2Var3.invalidate();
+                    break;
+                }
+                break;
+            case 3:
+                float floatValue4 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                ij0 ij0Var4 = this.b;
+                ij0Var4.o = floatValue4;
+                org.telegram.ui.Cells.q2 q2Var4 = ij0Var4.H;
+                if (q2Var4 != null) {
+                    q2Var4.invalidate();
+                    break;
+                }
+                break;
+            case 4:
+                float floatValue5 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                ij0 ij0Var5 = this.b;
+                ij0Var5.x = floatValue5;
+                org.telegram.ui.Cells.q2 q2Var5 = ij0Var5.H;
+                if (q2Var5 != null) {
+                    q2Var5.invalidate();
+                    break;
+                }
+                break;
+            case 5:
+                ij0 ij0Var6 = this.b;
+                ij0Var6.getClass();
+                ij0Var6.e(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                org.telegram.ui.Cells.q2 q2Var6 = ij0Var6.H;
+                if (q2Var6 != null) {
+                    q2Var6.invalidate();
+                    break;
+                }
+                break;
+            case 6:
+                ij0 ij0Var7 = this.b;
+                ij0Var7.getClass();
+                ij0Var7.D = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                ij0Var7.F = true;
+                org.telegram.ui.Cells.q2 q2Var7 = ij0Var7.H;
+                if (q2Var7 != null) {
+                    q2Var7.invalidate();
+                    break;
+                }
+                break;
+            default:
+                ij0 ij0Var8 = this.b;
+                ij0Var8.getClass();
+                ij0Var8.D = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                ij0Var8.F = false;
+                org.telegram.ui.Cells.q2 q2Var8 = ij0Var8.H;
+                if (q2Var8 != null) {
+                    q2Var8.invalidate();
+                    break;
+                }
+                break;
         }
-        int i11 = org.telegram.ui.ActionBar.h6.y6;
-        int themedColor4 = getThemedColor(i11);
-        TextView textView3 = this.c;
-        textView3.setTextColor(themedColor4);
-        textView3.setTextColor(getThemedColor(i11));
-        if (getTitleView() != null) {
-            getTitleView().setTextColor(getThemedColor(org.telegram.ui.ActionBar.h6.G6));
-        }
-        setBackgroundColor(getThemedColor(org.telegram.ui.ActionBar.h6.h5));
-    }
-
-    public final void n(int i10) {
-        yj0 yj0Var = this.h;
-        yj0Var.setAutoRepeat(true);
-        yj0Var.f(i10, 60, 60, null);
-        yj0Var.d();
     }
 }

@@ -1,313 +1,480 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.text.Layout;
+import android.util.Pair;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.tl.TL_iv;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class yz0 {
-    public a01 a;
-    public xz0 b;
-    public TL_iv.pageTableCell c;
-    public final int d;
-    public int e;
-    public int f;
-    public int g;
-    public int h;
-    public int i;
-    public int j;
-    public int k;
-    public int l;
-    public int m;
-    public int n;
-    public int o;
-    public int p;
-    public int q;
-    public int r = -1;
-    public final /* synthetic */ f01 s;
+    public final boolean a;
+    public m.g3 d;
+    public m.g3 f;
+    public m.g3 h;
+    public int[] j;
+    public int[] l;
+    public wz0[] n;
+    public int[] p;
+    public boolean r;
+    public int[] t;
+    public final /* synthetic */ i01 x;
+    public int b = TLObject.FLAG_31;
+    public int c = TLObject.FLAG_31;
+    public boolean e = false;
+    public boolean g = false;
+    public boolean i = false;
+    public boolean k = false;
+    public boolean m = false;
+    public boolean o = false;
+    public boolean q = false;
+    public boolean s = false;
+    public boolean u = true;
+    public final e01 v = new e01(0);
+    public final e01 w = new e01(-100000);
 
-    public yz0(f01 f01Var, int i10) {
-        this.s = f01Var;
-        this.d = i10;
+    public yz0(i01 i01Var, boolean z10) {
+        this.x = i01Var;
+        this.a = z10;
     }
 
-    public final void a(Canvas canvas, View view, boolean z10) {
-        boolean z11;
-        boolean z12;
-        Paint paint;
-        Paint paint2;
-        RectF rectF;
-        int i10;
-        int i11;
-        int i12;
-        org.telegram.ui.Cells.n9 n9Var;
-        Canvas canvas2 = canvas;
-        if (this.c == null) {
+    public static void j(ArrayList arrayList, c01 c01Var, e01 e01Var, boolean z10) {
+        if (c01Var.a() == 0) {
             return;
         }
-        int i13 = this.p + this.k;
-        f01 f01Var = this.s;
-        int i14 = f01Var.y;
-        Path path = f01Var.L;
-        e01 e01Var = f01Var.O;
-        float[] fArr = f01Var.N;
-        RectF rectF2 = f01Var.M;
-        boolean z13 = i13 == i14;
-        boolean z14 = this.q + this.l == f01Var.E;
-        int dp = AndroidUtilities.dp(8.0f);
-        boolean z15 = this.c.header;
-        if (z15 || (f01Var.H && this.a.a.b.a % 2 == 0)) {
-            int i15 = this.p;
-            if (i15 == 0 && this.q == 0) {
-                float f7 = dp;
-                fArr[1] = f7;
-                fArr[0] = f7;
-                z11 = true;
-            } else {
-                fArr[1] = 0.0f;
-                fArr[0] = 0.0f;
-                z11 = false;
-            }
-            if (z13 && this.q == 0) {
-                float f10 = dp;
-                fArr[3] = f10;
-                fArr[2] = f10;
-                z11 = true;
-            } else {
-                fArr[3] = 0.0f;
-                fArr[2] = 0.0f;
-            }
-            if (z13 && z14) {
-                float f11 = dp;
-                fArr[5] = f11;
-                fArr[4] = f11;
-                z11 = true;
-            } else {
-                fArr[5] = 0.0f;
-                fArr[4] = 0.0f;
-            }
-            if (i15 == 0 && z14) {
-                float f12 = dp;
-                fArr[7] = f12;
-                fArr[6] = f12;
-                z12 = true;
-            } else {
-                fArr[7] = 0.0f;
-                fArr[6] = 0.0f;
-                z12 = z11;
-            }
-            if (z12) {
-                rectF2.set(i15, this.q, i15 + this.k, r6 + this.l);
-                path.reset();
-                path.addRoundRect(rectF2, fArr, Path.Direction.CW);
-                if (this.c.header) {
-                    canvas2.drawPath(path, e01Var.getHeaderPaint());
-                } else {
-                    canvas2.drawPath(path, e01Var.getStripPaint());
-                }
-            } else if (z15) {
-                canvas2.drawRect(i15, this.q, i15 + this.k, r4 + this.l, e01Var.getHeaderPaint());
-                canvas2 = canvas;
-            } else {
-                canvas2 = canvas;
-                canvas2.drawRect(i15, this.q, this.k + i15, r1 + this.l, e01Var.getStripPaint());
-            }
-        }
-        if (z10 && this.b != null) {
-            canvas2.save();
-            canvas2.translate(b(), c());
-            if (this.r >= 0 && (n9Var = f01Var.a) != null) {
-                n9Var.Z(canvas2, (org.telegram.ui.Cells.m9) f01Var.getParent().getParent(), this.r);
-            }
-            this.b.draw(canvas2, view);
-            canvas2.restore();
-        }
-        if (f01Var.G) {
-            Paint linePaint = e01Var.getLinePaint();
-            Paint linePaint2 = e01Var.getLinePaint();
-            float strokeWidth = linePaint.getStrokeWidth() / 2.0f;
-            float strokeWidth2 = linePaint2.getStrokeWidth() / 2.0f;
-            int i16 = this.p;
-            if (i16 == 0) {
-                int i17 = this.q;
-                float f13 = i17;
-                float f14 = this.l + i17;
-                if (i17 == 0) {
-                    f13 += dp;
-                }
-                float f15 = f13;
-                if (f14 == f01Var.E) {
-                    f14 -= dp;
-                }
-                float f16 = i16 + strokeWidth;
-                canvas2.drawLine(f16, f15, f16, f14, linePaint);
-                paint = linePaint;
-                paint2 = linePaint2;
-            } else {
-                paint = linePaint;
-                float f17 = i16 - strokeWidth2;
-                paint2 = linePaint2;
-                canvas.drawLine(f17, this.q, f17, r1 + this.l, paint2);
-            }
-            int i18 = this.q;
-            if (i18 == 0) {
-                int i19 = this.p;
-                float f18 = i19;
-                float f19 = this.k + i19;
-                if (i19 == 0) {
-                    f18 += dp;
-                }
-                float f20 = f18;
-                if (f19 == f01Var.y) {
-                    f19 -= dp;
-                }
-                float f21 = i18 + strokeWidth;
-                canvas.drawLine(f20, f21, f19, f21, paint);
-            } else {
-                float f22 = i18 - strokeWidth2;
-                canvas.drawLine(this.p, f22, r2 + this.k, f22, paint2);
-            }
-            float f23 = (this.p + this.k) - strokeWidth;
-            Paint paint3 = paint;
-            canvas.drawLine(f23, (z13 && (i12 = this.q) == 0) ? i12 + dp : this.q - strokeWidth, f23, (z13 && z14) ? (this.q + this.l) - dp : (this.q + this.l) - strokeWidth, paint3);
-            int i20 = this.p;
-            float f24 = (this.q + this.l) - strokeWidth;
-            canvas.drawLine((i20 == 0 && z14) ? i20 + dp : i20 - strokeWidth, f24, (z13 && z14) ? (i20 + this.k) - dp : (i20 + this.k) - strokeWidth, f24, paint3);
-            int i21 = this.p;
-            if (i21 == 0 && (i11 = this.q) == 0) {
-                float f25 = i21 + strokeWidth;
-                float f26 = i11 + strokeWidth;
-                float f27 = dp * 2;
-                rectF2.set(f25, f26, f25 + f27, f27 + f26);
-                rectF = rectF2;
-                canvas.drawArc(rectF, -180.0f, 90.0f, false, paint3);
-            } else {
-                rectF = rectF2;
-            }
-            if (z13 && (i10 = this.q) == 0) {
-                float f28 = (this.p + this.k) - strokeWidth;
-                float f29 = dp * 2;
-                float f30 = i10 + strokeWidth;
-                rectF.set(f28 - f29, f30, f28, f29 + f30);
-                canvas.drawArc(rectF, 0.0f, -90.0f, false, paint3);
-            }
-            int i22 = this.p;
-            if (i22 == 0 && z14) {
-                float f31 = i22 + strokeWidth;
-                float f32 = (this.q + this.l) - strokeWidth;
-                float f33 = dp * 2;
-                rectF.set(f31, f32 - f33, f33 + f31, f32);
-                canvas.drawArc(rectF, 180.0f, -90.0f, false, paint3);
-            }
-            if (z13 && z14) {
-                float f34 = (this.p + this.k) - strokeWidth;
-                float f35 = dp * 2;
-                float f36 = (this.q + this.l) - strokeWidth;
-                rectF.set(f34 - f35, f36 - f35, f34, f36);
-                canvas.drawArc(rectF, 0.0f, 90.0f, false, paint3);
-            }
-        }
-    }
-
-    public final int b() {
-        return this.p + this.g;
-    }
-
-    public final int c() {
-        return this.q + this.h;
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:18:0x002b, code lost:
-    
-        if (r3.align_right == false) goto L22;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void d(int i10, int i11, boolean z10) {
-        this.k = i10;
-        this.l = i11;
         if (z10) {
-            this.m = i11;
+            int size = arrayList.size();
+            int i10 = 0;
+            while (i10 < size) {
+                Object obj = arrayList.get(i10);
+                i10++;
+                if (((wz0) obj).a.equals(c01Var)) {
+                    return;
+                }
+            }
         }
-        if (this.c != null) {
-            xz0 xz0Var = this.b;
-            if (xz0Var != null) {
-                Layout layout = xz0Var.getLayout();
-                int lineCount = layout != null ? layout.getLineCount() : 0;
-                if (!z10) {
-                    if (lineCount <= 1) {
-                        if (lineCount > 0) {
-                            TL_iv.pageTableCell pagetablecell = this.c;
-                            if (!pagetablecell.align_center) {
-                            }
-                        }
+        arrayList.add(new wz0(c01Var, e01Var));
+    }
+
+    public static boolean m(int[] iArr, wz0 wz0Var) {
+        if (!wz0Var.c) {
+            return false;
+        }
+        c01 c01Var = wz0Var.a;
+        int i10 = c01Var.a;
+        int i11 = c01Var.b;
+        int i12 = iArr[i10] + wz0Var.b.a;
+        if (i12 <= iArr[i11]) {
+            return false;
+        }
+        iArr[i11] = i12;
+        return true;
+    }
+
+    public final void a(m.g3 g3Var, boolean z10) {
+        for (e01 e01Var : (e01[]) ((Object[]) g3Var.d)) {
+            e01Var.a = TLObject.FLAG_31;
+        }
+        zz0[] zz0VarArr = (zz0[]) ((Object[]) f().d);
+        for (int i10 = 0; i10 < zz0VarArr.length; i10++) {
+            int d = zz0VarArr[i10].d(z10);
+            e01 e01Var2 = (e01) ((Object[]) g3Var.d)[((int[]) g3Var.b)[i10]];
+            int i11 = e01Var2.a;
+            if (!z10) {
+                d = -d;
+            }
+            e01Var2.a = Math.max(i11, d);
+        }
+    }
+
+    public final void b(boolean z10) {
+        int[] iArr = z10 ? this.j : this.l;
+        i01 i01Var = this.x;
+        int childCount = i01Var.getChildCount();
+        for (int i10 = 0; i10 < childCount; i10++) {
+            b01 d = i01Var.d(i10);
+            d01 d01Var = d.a;
+            boolean z11 = this.a;
+            c01 c01Var = (z11 ? d01Var.b : d01Var.a).b;
+            int i11 = z10 ? c01Var.a : c01Var.b;
+            iArr[i11] = Math.max(iArr[i11], i01Var.f(d, z11, z10));
+        }
+    }
+
+    public final m.g3 c(boolean z10) {
+        c01 c01Var;
+        xz0 xz0Var = new xz0(c01.class, e01.class);
+        f01[] f01VarArr = (f01[]) ((Object[]) f().c);
+        int length = f01VarArr.length;
+        for (int i10 = 0; i10 < length; i10++) {
+            if (z10) {
+                c01Var = f01VarArr[i10].b;
+            } else {
+                c01 c01Var2 = f01VarArr[i10].b;
+                c01Var = new c01(c01Var2.b, c01Var2.a);
+            }
+            e01 e01Var = new e01();
+            e01Var.a = TLObject.FLAG_31;
+            xz0Var.add(Pair.create(c01Var, e01Var));
+        }
+        return xz0Var.h();
+    }
+
+    public final wz0[] d() {
+        if (this.n == null) {
+            ArrayList arrayList = new ArrayList();
+            ArrayList arrayList2 = new ArrayList();
+            if (this.f == null) {
+                this.f = c(true);
+            }
+            if (!this.g) {
+                a(this.f, true);
+                this.g = true;
+            }
+            m.g3 g3Var = this.f;
+            int i10 = 0;
+            while (true) {
+                c01[] c01VarArr = (c01[]) ((Object[]) g3Var.c);
+                if (i10 >= c01VarArr.length) {
+                    break;
+                }
+                j(arrayList, c01VarArr[i10], ((e01[]) ((Object[]) g3Var.d))[i10], false);
+                i10++;
+            }
+            if (this.h == null) {
+                this.h = c(false);
+            }
+            if (!this.i) {
+                a(this.h, false);
+                this.i = true;
+            }
+            m.g3 g3Var2 = this.h;
+            int i11 = 0;
+            while (true) {
+                c01[] c01VarArr2 = (c01[]) ((Object[]) g3Var2.c);
+                if (i11 >= c01VarArr2.length) {
+                    break;
+                }
+                j(arrayList2, c01VarArr2[i11], ((e01[]) ((Object[]) g3Var2.d))[i11], false);
+                i11++;
+            }
+            if (this.u) {
+                int i12 = 0;
+                while (i12 < e()) {
+                    int i13 = i12 + 1;
+                    j(arrayList, new c01(i12, i13), new e01(0), true);
+                    i12 = i13;
+                }
+            }
+            int e = e();
+            j(arrayList, new c01(0, e), this.v, false);
+            j(arrayList2, new c01(e, 0), this.w, false);
+            wz0[] q6 = q(arrayList);
+            wz0[] q10 = q(arrayList2);
+            Object[] objArr = (Object[]) Array.newInstance(wz0[].class.getComponentType(), q6.length + q10.length);
+            System.arraycopy(q6, 0, objArr, 0, q6.length);
+            System.arraycopy(q10, 0, objArr, q6.length, q10.length);
+            this.n = (wz0[]) objArr;
+        }
+        if (!this.o) {
+            if (this.f == null) {
+                this.f = c(true);
+            }
+            if (!this.g) {
+                a(this.f, true);
+                this.g = true;
+            }
+            if (this.h == null) {
+                this.h = c(false);
+            }
+            if (!this.i) {
+                a(this.h, false);
+                this.i = true;
+            }
+            this.o = true;
+        }
+        return this.n;
+    }
+
+    public final int e() {
+        int max = Math.max(this.b, h());
+        if (max <= 1024) {
+            return max;
+        }
+        i01.g("Table grid count out of bounds");
+        throw null;
+    }
+
+    public final m.g3 f() {
+        Object vz0Var;
+        m.g3 g3Var = this.d;
+        boolean z10 = this.a;
+        i01 i01Var = this.x;
+        if (g3Var == null) {
+            xz0 xz0Var = new xz0(f01.class, zz0.class);
+            int childCount = i01Var.getChildCount();
+            for (int i10 = 0; i10 < childCount; i10++) {
+                d01 d01Var = i01Var.d(i10).a;
+                f01 f01Var = z10 ? d01Var.b : d01Var.a;
+                switch (f01.a(f01Var, z10).a) {
+                    case 3:
+                        vz0Var = new vz0();
+                        break;
+                    default:
+                        vz0Var = new zz0();
+                        break;
+                }
+                xz0Var.add(Pair.create(f01Var, vz0Var));
+            }
+            this.d = xz0Var.h();
+        }
+        if (!this.e) {
+            for (zz0 zz0Var : (zz0[]) ((Object[]) this.d.d)) {
+                zz0Var.c();
+            }
+            int childCount2 = i01Var.getChildCount();
+            for (int i11 = 0; i11 < childCount2; i11++) {
+                b01 d = i01Var.d(i11);
+                d01 d01Var2 = d.a;
+                f01 f01Var2 = z10 ? d01Var2.b : d01Var2.a;
+                int e = i01Var.e(d, z10, false) + i01Var.e(d, z10, true) + (z10 ? d.k : d.l);
+                float f7 = f01Var2.d;
+                int i12 = e + (f7 == 0.0f ? 0 : this.t[i11]);
+                m.g3 g3Var2 = this.d;
+                zz0 zz0Var2 = (zz0) ((Object[]) g3Var2.d)[((int[]) g3Var2.b)[i11]];
+                zz0Var2.c = ((f01Var2.c == i01.R && f7 == 0.0f) ? 0 : 2) & zz0Var2.c;
+                int a2 = f01.a(f01Var2, z10).a(d, i12);
+                zz0Var2.b(a2, i12 - a2);
+            }
+            this.e = true;
+        }
+        return this.d;
+    }
+
+    public final int[] g() {
+        boolean z10;
+        if (this.p == null) {
+            this.p = new int[e() + 1];
+        }
+        if (!this.q) {
+            int[] iArr = this.p;
+            boolean z11 = this.s;
+            float f7 = 0.0f;
+            boolean z12 = this.a;
+            i01 i01Var = this.x;
+            if (!z11) {
+                int childCount = i01Var.getChildCount();
+                int i10 = 0;
+                while (true) {
+                    if (i10 >= childCount) {
+                        z10 = false;
+                        break;
                     }
-                    f01 f01Var = this.s;
-                    e(f01Var.O.createTextLayout(this.c, this.k - (f01Var.v * 2)));
-                    this.m = this.f + f01Var.r + f01Var.s;
+                    d01 d01Var = i01Var.d(i10).a;
+                    if ((z12 ? d01Var.b : d01Var.a).d != 0.0f) {
+                        z10 = true;
+                        break;
+                    }
+                    i10++;
                 }
-                f();
+                this.r = z10;
+                this.s = true;
             }
-            g();
+            if (this.r) {
+                if (this.t == null) {
+                    this.t = new int[i01Var.getChildCount()];
+                }
+                Arrays.fill(this.t, 0);
+                p(d(), iArr, true);
+                int childCount2 = (i01Var.getChildCount() * this.v.a) + 1;
+                if (childCount2 >= 2) {
+                    int childCount3 = i01Var.getChildCount();
+                    for (int i11 = 0; i11 < childCount3; i11++) {
+                        d01 d01Var2 = i01Var.d(i11).a;
+                        f7 += (z12 ? d01Var2.b : d01Var2.a).d;
+                    }
+                    int i12 = -1;
+                    boolean z13 = true;
+                    int i13 = 0;
+                    while (i13 < childCount2) {
+                        int i14 = (int) ((i13 + childCount2) / 2);
+                        l();
+                        o(f7, i14);
+                        boolean p5 = p(d(), iArr, false);
+                        if (p5) {
+                            i13 = i14 + 1;
+                            i12 = i14;
+                        } else {
+                            childCount2 = i14;
+                        }
+                        z13 = p5;
+                    }
+                    if (i12 > 0 && !z13) {
+                        l();
+                        o(f7, i12);
+                        p(d(), iArr, true);
+                    }
+                }
+            } else {
+                p(d(), iArr, true);
+            }
+            if (!this.u) {
+                int i15 = iArr[0];
+                int length = iArr.length;
+                for (int i16 = 0; i16 < length; i16++) {
+                    iArr[i16] = iArr[i16] - i15;
+                }
+            }
+            this.q = true;
         }
+        return this.p;
     }
 
-    public final void e(xz0 xz0Var) {
-        this.b = xz0Var;
-        Layout layout = xz0Var != null ? xz0Var.getLayout() : null;
-        int i10 = 0;
-        if (layout == null) {
-            this.i = 0;
-            this.e = 0;
-            this.f = 0;
-            return;
+    public final int h() {
+        int i10 = this.c;
+        int i11 = TLObject.FLAG_31;
+        if (i10 == Integer.MIN_VALUE) {
+            i01 i01Var = this.x;
+            int childCount = i01Var.getChildCount();
+            int i12 = -1;
+            for (int i13 = 0; i13 < childCount; i13++) {
+                d01 d01Var = i01Var.d(i13).a;
+                c01 c01Var = (this.a ? d01Var.b : d01Var.a).b;
+                i12 = Math.max(Math.max(Math.max(i12, c01Var.a), c01Var.b), c01Var.a());
+            }
+            if (i12 != -1) {
+                i11 = i12;
+            }
+            this.c = Math.max(0, i11);
         }
-        this.e = 0;
-        this.i = 0;
-        int lineCount = layout.getLineCount();
-        while (i10 < lineCount) {
-            float lineLeft = layout.getLineLeft(i10);
-            this.i = i10 == 0 ? (int) Math.ceil(lineLeft) : Math.min(this.i, (int) Math.ceil(lineLeft));
-            this.e = (int) Math.ceil(Math.max(layout.getLineWidth(i10), this.e));
-            i10++;
-        }
-        this.f = layout.getHeight();
+        return this.c;
     }
 
-    public final void f() {
-        int i10 = -this.i;
-        this.g = i10;
-        TL_iv.pageTableCell pagetablecell = this.c;
-        boolean z10 = pagetablecell.align_right;
-        f01 f01Var = this.s;
-        if (z10) {
-            this.g = ((this.k - this.e) - f01Var.v) + i10;
-        } else if (pagetablecell.align_center) {
-            this.g = Math.round((this.k - this.e) / 2.0f) + i10;
+    public final int i(int i10) {
+        int mode = View.MeasureSpec.getMode(i10);
+        int size = View.MeasureSpec.getSize(i10);
+        e01 e01Var = this.w;
+        e01 e01Var2 = this.v;
+        if (mode == Integer.MIN_VALUE) {
+            e01Var2.a = 0;
+            e01Var.a = -size;
+            this.q = false;
+            return g()[e()];
+        }
+        if (mode == 0) {
+            e01Var2.a = 0;
+            e01Var.a = -100000;
+            this.q = false;
+            return g()[e()];
+        }
+        if (mode != 1073741824) {
+            return 0;
+        }
+        e01Var2.a = size;
+        e01Var.a = -size;
+        this.q = false;
+        return g()[e()];
+    }
+
+    public final void k() {
+        this.c = TLObject.FLAG_31;
+        this.d = null;
+        this.f = null;
+        this.h = null;
+        this.j = null;
+        this.l = null;
+        this.n = null;
+        this.p = null;
+        this.t = null;
+        this.s = false;
+        l();
+    }
+
+    public final void l() {
+        this.e = false;
+        this.g = false;
+        this.i = false;
+        this.k = false;
+        this.m = false;
+        this.o = false;
+        this.q = false;
+    }
+
+    public final void n(int i10) {
+        if (i10 == Integer.MIN_VALUE || i10 >= h()) {
+            this.b = i10;
         } else {
-            this.g = i10 + f01Var.v;
+            i01.g((this.a ? "column" : "row").concat("Count must be greater than or equal to the maximum of all grid indices (and spans) defined in the LayoutParams of each child"));
+            throw null;
         }
     }
 
-    public final void g() {
-        TL_iv.pageTableCell pagetablecell = this.c;
-        if (pagetablecell.valign_middle) {
-            this.h = (this.l - this.f) / 2;
-            return;
+    public final void o(float f7, int i10) {
+        Arrays.fill(this.t, 0);
+        i01 i01Var = this.x;
+        int childCount = i01Var.getChildCount();
+        for (int i11 = 0; i11 < childCount; i11++) {
+            d01 d01Var = i01Var.d(i11).a;
+            float f10 = (this.a ? d01Var.b : d01Var.a).d;
+            if (f10 != 0.0f) {
+                int round = Math.round((i10 * f10) / f7);
+                this.t[i11] = round;
+                i10 -= round;
+                f7 -= f10;
+            }
         }
-        boolean z10 = pagetablecell.valign_bottom;
-        f01 f01Var = this.s;
-        if (z10) {
-            this.h = (this.l - this.f) - f01Var.s;
-        } else {
-            this.h = f01Var.r;
+    }
+
+    public final boolean p(wz0[] wz0VarArr, int[] iArr, boolean z10) {
+        int e = e() + 1;
+        loop0: for (int i10 = 0; i10 < wz0VarArr.length; i10++) {
+            Arrays.fill(iArr, 0);
+            for (int i11 = 0; i11 < e; i11++) {
+                boolean z11 = false;
+                for (wz0 wz0Var : wz0VarArr) {
+                    z11 |= m(iArr, wz0Var);
+                }
+                if (!z11) {
+                    break loop0;
+                }
+            }
+            if (!z10) {
+                return false;
+            }
+            boolean[] zArr = new boolean[wz0VarArr.length];
+            for (int i12 = 0; i12 < e; i12++) {
+                int length = wz0VarArr.length;
+                for (int i13 = 0; i13 < length; i13++) {
+                    zArr[i13] = zArr[i13] | m(iArr, wz0VarArr[i13]);
+                }
+            }
+            int i14 = 0;
+            while (true) {
+                if (i14 >= wz0VarArr.length) {
+                    break;
+                }
+                if (zArr[i14]) {
+                    wz0 wz0Var2 = wz0VarArr[i14];
+                    c01 c01Var = wz0Var2.a;
+                    if (c01Var.a >= c01Var.b) {
+                        wz0Var2.c = false;
+                        break;
+                    }
+                }
+                i14++;
+            }
         }
+        return true;
+    }
+
+    public final wz0[] q(ArrayList arrayList) {
+        e0.f0 f0Var = new e0.f0(this, (wz0[]) arrayList.toArray(new wz0[0]));
+        int length = ((wz0[][]) f0Var.d).length;
+        for (int i10 = 0; i10 < length; i10++) {
+            f0Var.f(i10);
+        }
+        return (wz0[]) f0Var.c;
     }
 }

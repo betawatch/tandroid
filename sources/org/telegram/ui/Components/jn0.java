@@ -1,44 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.accessibility.AccessibilityNodeInfo;
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class jn0 extends z5 {
-    public final f6 d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ ScrollSlidingTextTabStrip f;
+public final class jn0 {
+    public static final jn0 a;
+    public static final jn0 b;
+    public static final /* synthetic */ jn0[] c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public jn0(ScrollSlidingTextTabStrip scrollSlidingTextTabStrip, Context context, int i10) {
-        super(context);
-        this.f = scrollSlidingTextTabStrip;
-        this.e = i10;
-        this.d = new f6(this, 360L, bs.h);
+    static {
+        jn0 jn0Var = new jn0("LINE", 0);
+        a = jn0Var;
+        jn0 jn0Var2 = new jn0("TAB", 1);
+        b = jn0Var2;
+        c = new jn0[]{jn0Var, jn0Var2};
     }
 
-    @Override // org.telegram.ui.Components.z5, android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        Canvas canvas2;
-        float e = this.d.e(this.f.n0);
-        if (e > 0.0f) {
-            canvas2 = canvas;
-            canvas2.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) (AndroidUtilities.lerp(1.0f, 0.5f, e) * 255.0f));
-        } else {
-            canvas2 = canvas;
-        }
-        super.onDraw(canvas2);
-        if (e > 0.0f) {
-            canvas2.restore();
-        }
+    public static jn0 valueOf(String str) {
+        return (jn0) Enum.valueOf(jn0.class, str);
     }
 
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setSelected(this.f.r == this.e);
+    public static jn0[] values() {
+        return (jn0[]) c.clone();
     }
 }

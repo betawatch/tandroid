@@ -11,9 +11,9 @@ import java.util.Iterator;
 import java.util.Map;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.UserConfig;
-import org.telegram.ui.Cells.u1;
+import org.telegram.ui.Cells.t1;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class i extends View {
     public final HashMap a;
@@ -29,8 +29,8 @@ public final class i extends View {
         this.d = UserConfig.selectedAccount;
     }
 
-    public static String b(u1 u1Var) {
-        MessageObject messageObject = u1Var.getMessageObject();
+    public static String b(t1 t1Var) {
+        MessageObject messageObject = t1Var.getMessageObject();
         if (messageObject == null) {
             return null;
         }

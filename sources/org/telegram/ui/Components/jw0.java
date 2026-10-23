@@ -1,57 +1,70 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
+import android.animation.ValueAnimator;
+import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
 import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.Region;
-import android.graphics.text.MeasuredText;
+import android.graphics.Shader;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class jw0 extends Canvas {
-    @Override // android.graphics.Canvas
-    public final boolean clipPath(Path path) {
-        return false;
+public final /* synthetic */ class jw0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ androidx.activity.g b;
+
+    public /* synthetic */ jw0(androidx.activity.g gVar, int i10) {
+        this.a = i10;
+        this.b = gVar;
     }
 
-    @Override // android.graphics.Canvas
-    public final void drawText(CharSequence charSequence, int i10, int i11, float f7, float f10, Paint paint) {
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawTextOnPath(String str, Path path, float f7, float f10, Paint paint) {
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawTextRun(MeasuredText measuredText, int i10, int i11, int i12, int i13, float f7, float f10, boolean z10, Paint paint) {
-    }
-
-    @Override // android.graphics.Canvas
-    public final boolean clipPath(Path path, Region.Op op) {
-        return false;
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawText(String str, float f7, float f10, Paint paint) {
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawTextOnPath(char[] cArr, int i10, int i11, Path path, float f7, float f10, Paint paint) {
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawTextRun(CharSequence charSequence, int i10, int i11, int i12, int i13, float f7, float f10, boolean z10, Paint paint) {
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawText(String str, int i10, int i11, float f7, float f10, Paint paint) {
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawTextRun(char[] cArr, int i10, int i11, int i12, int i13, float f7, float f10, boolean z10, Paint paint) {
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawText(char[] cArr, int i10, int i11, float f7, float f10, Paint paint) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        androidx.activity.g gVar = this.b;
+        switch (i10) {
+            case 0:
+                ow0 ow0Var = (ow0) gVar.c;
+                boolean z10 = ow0Var.O;
+                Paint paint = ow0Var.b0;
+                Paint paint2 = ow0Var.W;
+                if (!z10) {
+                    kw0 kw0Var = (kw0) gVar.d;
+                    if (kw0Var != null) {
+                        kw0Var.c.recycle();
+                    }
+                    ow0Var.P = false;
+                    break;
+                } else {
+                    kw0 kw0Var2 = ow0Var.Q;
+                    ow0Var.R = kw0Var2;
+                    ow0Var.a0.setShader(paint2.getShader());
+                    ow0Var.c0.setShader(paint.getShader());
+                    Bitmap bitmap = ((kw0) gVar.d).c;
+                    Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+                    paint2.setShader(new BitmapShader(bitmap, tileMode, tileMode));
+                    ((kw0) gVar.d).getClass();
+                    ValueAnimator valueAnimator = ow0Var.g0;
+                    if (valueAnimator != null) {
+                        valueAnimator.cancel();
+                    }
+                    ow0Var.f0 = 0.0f;
+                    ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+                    ow0Var.g0 = ofFloat;
+                    ofFloat.addUpdateListener(new d80(gVar, 23));
+                    ow0Var.g0.addListener(new ql0(3, gVar, kw0Var2));
+                    ow0Var.g0.setDuration(50L);
+                    ow0Var.g0.start();
+                    ow0Var.M();
+                    ow0Var.Q = (kw0) gVar.d;
+                    AndroidUtilities.runOnUIThread(new jw0(gVar, 1), 16L);
+                    break;
+                }
+            default:
+                ow0 ow0Var2 = (ow0) gVar.c;
+                ow0Var2.P = false;
+                ow0Var2.V();
+                break;
+        }
     }
 }

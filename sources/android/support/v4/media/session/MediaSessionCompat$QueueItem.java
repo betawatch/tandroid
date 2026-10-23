@@ -5,7 +5,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.v4.media.MediaDescriptionCompat;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class MediaSessionCompat$QueueItem implements Parcelable {
     public static final Parcelable.Creator<MediaSessionCompat$QueueItem> CREATOR = new a0(1);

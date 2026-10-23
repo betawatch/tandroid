@@ -13,7 +13,7 @@ import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.p5;
 import org.telegram.ui.Components.r5;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class m3 {
     public final p5 a;
@@ -79,7 +79,7 @@ public final class m3 {
     }
 
     public final void b(int i10, int i11) {
-        ci.g3 g3Var;
+        ci.f3 f3Var;
         p5 p5Var = this.a;
         if (p5Var == null) {
             return;
@@ -92,7 +92,7 @@ public final class m3 {
         }
         int i12 = 0;
         Drawable drawable = p5Var.f[0];
-        if (!(drawable instanceof r5) || ((g3Var = ((r5) drawable).k) != null && g3Var.hasImageLoaded())) {
+        if (!(drawable instanceof r5) || ((f3Var = ((r5) drawable).k) != null && f3Var.hasImageLoaded())) {
             int i13 = 1;
             this.q = true;
             this.p = this.i > this.o / 2 ? AndroidUtilities.dp(12) : -AndroidUtilities.dp(12);

@@ -1,46 +1,54 @@
 package org.telegram.ui;
 
 import android.view.View;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.TLRPC;
+import android.view.ViewGroup;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qz0 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ b01 b;
+public final class qz0 implements ei.mb {
+    public final /* synthetic */ ProfileActivity a;
 
-    public /* synthetic */ qz0(b01 b01Var, int i10) {
-        this.a = i10;
-        this.b = b01Var;
+    public qz0(ProfileActivity profileActivity) {
+        this.a = profileActivity;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                b01 b01Var = this.b;
-                ProfileActivity profileActivity = b01Var.e;
-                TLRPC.User user = profileActivity.getMessagesController().getUser(Long.valueOf(profileActivity.f1));
-                MessagesController messagesController = profileActivity.getMessagesController();
-                ProfileActivity profileActivity2 = b01Var.e;
-                messagesController.openApp(profileActivity2, user, null, profileActivity2.getClassGuid(), null);
-                break;
-            default:
-                ProfileActivity profileActivity3 = this.b.e;
-                profileActivity3.Q4 = !profileActivity3.Q4;
-                if (!profileActivity3.P4) {
-                    profileActivity3.P4 = true;
-                }
-                profileActivity3.F4();
-                view.requestLayout();
-                profileActivity3.d.m(profileActivity3.P3);
-                int i10 = profileActivity3.W5;
-                if (i10 >= 0) {
-                    profileActivity3.c.h1(i10, profileActivity3.X5 - profileActivity3.a.getPaddingTop());
-                    break;
-                }
-                break;
+    @Override // ei.mb
+    public final ei.qb a(long j10) {
+        ProfileActivity profileActivity = this.a;
+        if (j10 != profileActivity.a()) {
+            return null;
         }
+        profileActivity.f0.setRoundRadiusForExpand((int) AndroidUtilities.lerp(profileActivity.e4(), 0.0f, profileActivity.l2));
+        vy0 vy0Var = profileActivity.f0;
+        boolean isForum = ChatObject.isForum(profileActivity.F2);
+        if (vy0Var == null || vy0Var.getRootView() == null) {
+            return null;
+        }
+        float scaleX = ((View) vy0Var.getParent()).getScaleX();
+        float imageWidth = vy0Var.getImageReceiver().getImageWidth() * scaleX;
+        float f7 = isForum ? 0.32f * imageWidth : imageWidth;
+        ei.ob obVar = new ei.ob(vy0Var, 0);
+        float[] fArr = new float[2];
+        vy0Var.getRootView().getLocationOnScreen(new int[2]);
+        AndroidUtilities.getViewPositionInParent(vy0Var, (ViewGroup) vy0Var.getRootView(), fArr);
+        float imageX = (vy0Var.getImageReceiver().getImageX() * scaleX) + r4[0] + fArr[0];
+        float imageY = (vy0Var.getImageReceiver().getImageY() * scaleX) + r4[1] + fArr[1];
+        obVar.c.set(imageX, imageY, imageX + imageWidth, imageWidth + imageY);
+        obVar.e = vy0Var.getImageReceiver();
+        obVar.b = f7;
+        return obVar;
+    }
+
+    @Override // ei.mb
+    public final void b(long j10, ai.v3 v3Var) {
+        ProfileActivity profileActivity = this.a;
+        profileActivity.f0.setHasStories(profileActivity.l4());
+        if (j10 == profileActivity.a() && profileActivity.p2 && profileActivity.l2 > 0.0f) {
+            profileActivity.c.h1(0, profileActivity.V3() - profileActivity.a.getPaddingTop());
+            profileActivity.a.post(new ib0(profileActivity, 14));
+        }
+        AndroidUtilities.runOnUIThread(v3Var, 30L);
     }
 }

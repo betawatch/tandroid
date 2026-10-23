@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import v7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class k1 {
     public static final k1 H;
@@ -696,7 +696,7 @@ public final class k1 {
         v1 v1Var2 = this.F;
         if (!v1Var2.equals(v1Var)) {
             Bundle bundle17 = new Bundle();
-            bundle17.putParcelableArrayList(v1.c, e2.e.h(v1Var2.a, new aa.a(25)));
+            bundle17.putParcelableArrayList(v1.c, e2.e.h(v1Var2.a, new aa.a(27)));
             bundle.putBundle(m0, bundle17);
         }
         b2.t1 t1Var = b2.t1.J;

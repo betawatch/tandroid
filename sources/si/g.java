@@ -6,7 +6,7 @@ import android.hardware.camera2.CaptureResult;
 import android.hardware.camera2.TotalCaptureResult;
 import android.os.SystemClock;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class g extends CameraCaptureSession.CaptureCallback {
     public final /* synthetic */ j a;
@@ -89,8 +89,8 @@ public final class g extends CameraCaptureSession.CaptureCallback {
             return;
         }
         float f7 = ((jVar.Z0 - 1) * 1.0E9f) / longValue2;
-        n0 n0Var = jVar.J;
-        int i12 = n0Var == null ? 0 : n0Var.a;
+        p0 p0Var = jVar.J;
+        int i12 = p0Var == null ? 0 : p0Var.a;
         StringBuilder sb2 = new StringBuilder("camera capture rate: measuredFps=");
         sb2.append(f7);
         sb2.append(", requestedFps=");

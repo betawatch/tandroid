@@ -1,41 +1,41 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class vs implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.b2[] b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.c2[] b;
 
-    public /* synthetic */ vs(org.telegram.ui.ActionBar.b2[] b2VarArr, int i10) {
+    public /* synthetic */ vs(org.telegram.ui.ActionBar.c2[] c2VarArr, int i10) {
         this.a = i10;
-        this.b = b2VarArr;
+        this.b = c2VarArr;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                org.telegram.ui.ActionBar.b2 b2Var = this.b[0];
-                if (b2Var != null) {
-                    b2Var.dismiss();
+                org.telegram.ui.ActionBar.c2 c2Var = this.b[0];
+                if (c2Var != null) {
+                    c2Var.dismiss();
                     break;
                 }
                 break;
             case 1:
-                org.telegram.ui.ActionBar.b2[] b2VarArr = this.b;
+                org.telegram.ui.ActionBar.c2[] c2VarArr = this.b;
                 try {
-                    b2VarArr[0].dismiss();
+                    c2VarArr[0].dismiss();
                 } catch (Throwable unused) {
                 }
-                b2VarArr[0] = null;
+                c2VarArr[0] = null;
                 break;
             default:
-                org.telegram.ui.ActionBar.b2[] b2VarArr2 = this.b;
+                org.telegram.ui.ActionBar.c2[] c2VarArr2 = this.b;
                 try {
-                    b2VarArr2[0].dismiss();
+                    c2VarArr2[0].dismiss();
                 } catch (Throwable unused2) {
                 }
-                b2VarArr2[0] = null;
+                c2VarArr2[0] = null;
                 break;
         }
     }

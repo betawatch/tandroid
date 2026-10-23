@@ -5,11 +5,11 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.br;
+import org.telegram.ui.Components.ar;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final class g7 extends br {
+public final class g7 extends ar {
     public final View c;
     public final Paint d;
     public final Path e;
@@ -47,7 +47,7 @@ public final class g7 extends br {
         paint2.setAlpha((int) (alpha * this.h));
         paint2.setStrokeWidth(AndroidUtilities.dpf2(1.33f));
         canvas.save();
-        canvas.translate(getBounds().centerX(), getBounds().centerY() - (org.telegram.ui.Cells.c1.b(1.166f, 2.0f, AndroidUtilities.dpf2(2.16f) * 3.0f) / 2.0f));
+        canvas.translate(getBounds().centerX(), getBounds().centerY() - (org.telegram.ui.Cells.b1.b(1.166f, 2.0f, AndroidUtilities.dpf2(2.16f) * 3.0f) / 2.0f));
         int i10 = 0;
         while (i10 < 4) {
             float f7 = i10 == 0 ? 1.0f - currentTimeMillis : i10 == 3 ? currentTimeMillis : 1.0f;
@@ -78,7 +78,7 @@ public final class g7 extends br {
         return AndroidUtilities.dp(18.0f);
     }
 
-    @Override // org.telegram.ui.Components.br, android.graphics.drawable.Drawable
+    @Override // org.telegram.ui.Components.ar, android.graphics.drawable.Drawable
     public final void setAlpha(int i10) {
         this.h = i10 / 255.0f;
     }

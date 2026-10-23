@@ -1,45 +1,59 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.widget.RelativeLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import android.content.Context;
+import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class tv0 extends RelativeLayout {
-    public final /* synthetic */ PopupNotificationActivity a;
+public final class tv0 extends org.telegram.ui.Cells.t1 {
+    public final /* synthetic */ int Ge;
+    public final /* synthetic */ int He;
+    public final /* synthetic */ int Ie;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public tv0(PopupNotificationActivity popupNotificationActivity, PopupNotificationActivity popupNotificationActivity2) {
-        super(popupNotificationActivity2);
-        this.a = popupNotificationActivity;
+    public /* synthetic */ tv0(Context context, int i10, org.telegram.ui.ActionBar.g6 g6Var, int i11, int i12, int i13) {
+        super(context, i10, false, null, g6Var);
+        this.Ge = i13;
+        this.He = i11;
+        this.Ie = i12;
     }
 
-    @Override // android.widget.RelativeLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        for (int i14 = 0; i14 < getChildCount(); i14++) {
-            View childAt = getChildAt(i14);
-            if (childAt.getTag() instanceof String) {
-                int left = childAt.getLeft();
-                PopupNotificationActivity popupNotificationActivity = this.a;
-                childAt.layout(left, AndroidUtilities.dp(3.0f) + popupNotificationActivity.b.getTop(), childAt.getRight(), popupNotificationActivity.b.getBottom());
-            }
+    @Override // org.telegram.ui.Cells.t1
+    public final void X1(Canvas canvas) {
+        switch (this.Ge) {
+            case 0:
+                this.i6 = 0;
+                this.j6 = this.Y5.size() - 1;
+                super.X1(canvas);
+                break;
+            default:
+                this.i6 = 0;
+                this.j6 = this.Y5.size() - 1;
+                super.X1(canvas);
+                break;
         }
     }
 
-    @Override // android.widget.RelativeLayout, android.view.View
+    @Override // org.telegram.ui.Cells.t1, android.view.View
     public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        PopupNotificationActivity popupNotificationActivity = this.a;
-        int measuredWidth = popupNotificationActivity.b.getMeasuredWidth();
-        int measuredHeight = popupNotificationActivity.b.getMeasuredHeight();
-        for (int i12 = 0; i12 < getChildCount(); i12++) {
-            View childAt = getChildAt(i12);
-            if (childAt.getTag() instanceof String) {
-                childAt.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(measuredHeight - AndroidUtilities.dp(3.0f), TLObject.FLAG_30));
-            }
+        switch (this.Ge) {
+            case 0:
+                setMeasuredDimension(this.He, this.Ie);
+                break;
+            default:
+                setMeasuredDimension(this.He, this.Ie);
+                break;
         }
+    }
+
+    @Override // org.telegram.ui.Cells.t1, android.view.View
+    public final void setPressed(boolean z10) {
+        int i10 = this.Ge;
+    }
+
+    private final void A4(boolean z10) {
+    }
+
+    private final void z4(boolean z10) {
     }
 }

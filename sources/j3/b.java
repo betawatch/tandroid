@@ -1,66 +1,66 @@
 package j3;
 
-import c3.e0;
+import c3.g0;
 import c3.l;
-import c3.o;
-import c3.p;
 import c3.q;
+import c3.r;
 import c3.s;
+import c3.u;
 import e9.l0;
 import e9.n0;
 import e9.x1;
 import java.util.List;
 import v7.k8;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public final class b implements o {
-    public final o a;
+public final class b implements q {
+    public final q a;
     public final boolean b;
 
     public b(int i10) {
         boolean z10 = (i10 & 1) != 0;
         this.b = z10;
         if (z10) {
-            this.a = new e0(-1, -1, "image/heif");
+            this.a = new g0(-1, -1, "image/heif");
         } else {
             this.a = new a();
         }
     }
 
-    @Override // c3.o
-    public final boolean a(p pVar) {
-        return this.b ? k8.a((l) pVar, false) : this.a.a(pVar);
+    @Override // c3.q
+    public final boolean a(r rVar) {
+        return this.b ? k8.a((l) rVar, false) : this.a.a(rVar);
     }
 
-    @Override // c3.o
-    public final void c(q qVar) {
-        this.a.c(qVar);
+    @Override // c3.q
+    public final void c(s sVar) {
+        this.a.c(sVar);
     }
 
-    @Override // c3.o
+    @Override // c3.q
     public final void d(long j10, long j11) {
         this.a.d(j10, j11);
     }
 
-    @Override // c3.o
+    @Override // c3.q
     public final List e() {
         l0 l0Var = n0.b;
         return x1.e;
     }
 
-    @Override // c3.o
-    public final int f(p pVar, s sVar) {
-        return this.a.f(pVar, sVar);
+    @Override // c3.q
+    public final int f(r rVar, u uVar) {
+        return this.a.f(rVar, uVar);
     }
 
-    @Override // c3.o
+    @Override // c3.q
     public final void release() {
         this.a.release();
     }
 
-    @Override // c3.o
-    public final o b() {
+    @Override // c3.q
+    public final q b() {
         return this;
     }
 }

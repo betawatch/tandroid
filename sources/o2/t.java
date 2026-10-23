@@ -1,16 +1,17 @@
 package o2;
 
 import android.text.TextUtils;
-import b2.v;
 import b2.v0;
 import b2.w0;
-import c3.j0;
+import c3.u;
+import c3.v;
 import e2.k0;
 import e2.m0;
 import e2.x;
 import e9.l0;
 import e9.n0;
 import e9.x1;
+import i2.o1;
 import java.math.RoundingMode;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
@@ -18,16 +19,16 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public final class t implements c3.o {
+public final class t implements c3.q {
     public static final Pattern i = Pattern.compile("LOCAL:([^,]+)");
     public static final Pattern j = Pattern.compile("MPEGTS:(-?\\d+)");
     public final String a;
     public final k0 b;
     public final z3.k d;
     public final boolean e;
-    public c3.q f;
+    public c3.s f;
     public int h;
     public final x c = new x();
     public byte[] g = new byte[1024];
@@ -39,9 +40,9 @@ public final class t implements c3.o {
         this.e = z10;
     }
 
-    @Override // c3.o
-    public final boolean a(c3.p pVar) {
-        c3.l lVar = (c3.l) pVar;
+    @Override // c3.q
+    public final boolean a(c3.r rVar) {
+        c3.l lVar = (c3.l) rVar;
         lVar.j(this.g, 0, 6, false);
         byte[] bArr = this.g;
         x xVar = this.c;
@@ -54,31 +55,31 @@ public final class t implements c3.o {
         return i4.i.a(xVar);
     }
 
-    @Override // c3.o
-    public final void c(c3.q qVar) {
+    @Override // c3.q
+    public final void c(c3.s sVar) {
         if (this.e) {
-            qVar = new c2.b(qVar, this.d);
+            sVar = new c2.b(sVar, this.d);
         }
-        this.f = qVar;
-        qVar.g0(new c3.t(-9223372036854775807L));
+        this.f = sVar;
+        sVar.g0(new v(-9223372036854775807L));
     }
 
-    @Override // c3.o
+    @Override // c3.q
     public final void d(long j10, long j11) {
         throw new IllegalStateException();
     }
 
-    @Override // c3.o
+    @Override // c3.q
     public final List e() {
         l0 l0Var = n0.b;
         return x1.e;
     }
 
-    @Override // c3.o
-    public final int f(c3.p pVar, c3.s sVar) {
+    @Override // c3.q
+    public final int f(c3.r rVar, u uVar) {
         String n10;
         this.f.getClass();
-        int length = (int) pVar.getLength();
+        int length = (int) rVar.getLength();
         int i10 = this.h;
         byte[] bArr = this.g;
         if (i10 == bArr.length) {
@@ -86,7 +87,7 @@ public final class t implements c3.o {
         }
         byte[] bArr2 = this.g;
         int i11 = this.h;
-        int read = pVar.read(bArr2, i11, bArr2.length - i11);
+        int read = rVar.read(bArr2, i11, bArr2.length - i11);
         if (read != -1) {
             int i12 = this.h + read;
             this.h = i12;
@@ -130,7 +131,7 @@ public final class t implements c3.o {
                 long c10 = i4.i.c(group);
                 String str = m0.a;
                 long b10 = this.b.b(m0.a0((j10 + c10) - j11, 90000L, 1000000L, RoundingMode.DOWN) % 8589934592L);
-                j0 g10 = g(b10 - c10);
+                c3.l0 g10 = g(b10 - c10);
                 byte[] bArr3 = this.g;
                 int i13 = this.h;
                 x xVar2 = this.c;
@@ -161,23 +162,23 @@ public final class t implements c3.o {
         }
     }
 
-    public final j0 g(long j10) {
-        j0 j02 = this.f.j0(0, 3);
-        v vVar = new v();
+    public final c3.l0 g(long j10) {
+        c3.l0 j02 = this.f.j0(0, 3);
+        b2.v vVar = new b2.v();
         vVar.r = v0.n("text/vtt");
         vVar.d = this.a;
         vVar.w = j10;
-        i2.e.u(vVar, j02);
-        this.f.H();
+        o1.v(vVar, j02);
+        this.f.C();
         return j02;
     }
 
-    @Override // c3.o
-    public final c3.o b() {
+    @Override // c3.q
+    public final c3.q b() {
         return this;
     }
 
-    @Override // c3.o
+    @Override // c3.q
     public final void release() {
     }
 }

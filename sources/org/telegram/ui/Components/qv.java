@@ -19,7 +19,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class qv extends FrameLayout {
     public final Paint a;
@@ -83,45 +83,44 @@ public final class qv extends FrameLayout {
         ArrayList arrayList2;
         pv pvVar;
         float f11;
+        float f12;
         a6 a6Var;
         Canvas canvas2 = canvas;
         aw awVar = this.y;
-        dq dqVar = awVar.F;
+        eq eqVar = awVar.F;
         ei.v vVar = awVar.h;
         if (this.d) {
-            int i10 = org.telegram.ui.ActionBar.h6.h5;
-            int themedColor = awVar.getThemedColor(i10);
+            int themedColor = awVar.getThemedColor(org.telegram.ui.ActionBar.k6.h5);
             Paint paint = this.a;
             paint.setColor(themedColor);
-            org.telegram.ui.ActionBar.h6.m(paint);
+            org.telegram.ui.ActionBar.k6.m(paint);
             Path path = this.b;
             path.reset();
-            float W = awVar.W();
-            viewGroup = ((org.telegram.ui.ActionBar.f3) awVar).containerView;
-            float e = this.s.e(W <= ((float) viewGroup.getPaddingTop()));
-            float lerp = AndroidUtilities.lerp(W, 0.0f, e);
+            float f02 = awVar.f0();
+            viewGroup = ((org.telegram.ui.ActionBar.h3) awVar).containerView;
+            float e = this.s.e(f02 <= ((float) viewGroup.getPaddingTop()));
+            float lerp = AndroidUtilities.lerp(f02, 0.0f, e);
             if (this.v != null) {
                 float dp = AndroidUtilities.dp(140.0f);
-                f10 = 20.0f;
+                f7 = 20.0f;
                 float dp2 = AndroidUtilities.dp(20.0f);
                 if (lerp < dp + dp2) {
                     this.w = false;
                 }
-                f7 = 0.0f;
+                f10 = 2.0f;
                 this.v.setAlpha(this.x.e(this.w));
                 if (this.v.getAlpha() > 0.0f) {
                     float alpha = ((this.v.getAlpha() * 0.4f) + 0.6f) * dp;
-                    float f12 = (lerp - dp2) - (dp / 2.0f);
                     float f13 = alpha / 2.0f;
-                    this.v.setImageCoords((getWidth() / 2.0f) - f13, f12 - f13, alpha, alpha);
+                    this.v.setImageCoords((getWidth() / 2.0f) - f13, ((lerp - dp2) - (dp / 2.0f)) - f13, alpha, alpha);
                     this.v.draw(canvas2);
                 } else {
                     this.v.onDetachedFromWindow();
                     this.v = null;
                 }
             } else {
-                f7 = 0.0f;
-                f10 = 20.0f;
+                f7 = 20.0f;
+                f10 = 2.0f;
             }
             float f14 = 1.0f;
             float dp3 = AndroidUtilities.dp((1.0f - e) * 14.0f);
@@ -133,19 +132,14 @@ public final class qv extends FrameLayout {
             Boolean bool = this.c;
             if (bool == null || z10 != bool.booleanValue()) {
                 this.c = Boolean.valueOf(z10);
-                boolean z11 = AndroidUtilities.computePerceivedBrightness(awVar.getThemedColor(i10)) > 0.721f;
-                boolean z12 = AndroidUtilities.computePerceivedBrightness(org.telegram.ui.ActionBar.h6.v(awVar.getThemedColor(org.telegram.ui.ActionBar.h6.s8), 855638016)) > 0.721f;
-                if (!z10) {
-                    z11 = z12;
-                }
-                AndroidUtilities.setLightStatusBar(awVar, z11);
+                awVar.l0(z10);
             }
-            org.telegram.ui.ActionBar.h6.t0.setColor(awVar.getThemedColor(org.telegram.ui.ActionBar.h6.Ii));
-            org.telegram.ui.ActionBar.h6.t0.setAlpha((int) (w7.r.a(lerp / AndroidUtilities.dp(f10), f7, 1.0f) * org.telegram.ui.ActionBar.h6.t0.getAlpha()));
+            org.telegram.ui.ActionBar.k6.t0.setColor(awVar.getThemedColor(org.telegram.ui.ActionBar.k6.Ii));
+            org.telegram.ui.ActionBar.k6.t0.setAlpha((int) (w7.r.a(lerp / AndroidUtilities.dp(f7), 0.0f, 1.0f) * org.telegram.ui.ActionBar.k6.t0.getAlpha()));
             int dp4 = AndroidUtilities.dp(36.0f);
             float dp5 = lerp + AndroidUtilities.dp(10.0f);
             rectF.set((getMeasuredWidth() - dp4) / 2, dp5, (getMeasuredWidth() + dp4) / 2, AndroidUtilities.dp(4.0f) + dp5);
-            canvas2.drawRoundRect(rectF, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), org.telegram.ui.ActionBar.h6.t0);
+            canvas2.drawRoundRect(rectF, AndroidUtilities.dp(f10), AndroidUtilities.dp(f10), org.telegram.ui.ActionBar.k6.t0);
             awVar.r.setVisibility((vVar.canScrollVertically(1) || awVar.w.getVisibility() == 0) ? 0 : 4);
             if (vVar != null) {
                 canvas2.save();
@@ -153,23 +147,23 @@ public final class qv extends FrameLayout {
                 canvas2.clipRect(0, 0, vVar.getWidth(), vVar.getHeight());
                 float f15 = 255.0f;
                 canvas2.saveLayerAlpha(0.0f, 0.0f, vVar.getWidth(), vVar.getHeight(), (int) (vVar.getAlpha() * 255.0f), 31);
-                int i11 = 0;
+                int i10 = 0;
                 while (true) {
                     sparseArray = this.e;
                     int size = sparseArray.size();
                     arrayList = this.n;
-                    if (i11 >= size) {
+                    if (i10 >= size) {
                         break;
                     }
-                    ArrayList arrayList3 = (ArrayList) sparseArray.valueAt(i11);
+                    ArrayList arrayList3 = (ArrayList) sparseArray.valueAt(i10);
                     arrayList3.clear();
                     arrayList.add(arrayList3);
-                    i11++;
+                    i10++;
                 }
                 sparseArray.clear();
-                int i12 = 0;
-                while (i12 < vVar.getChildCount()) {
-                    View childAt = vVar.getChildAt(i12);
+                int i11 = 0;
+                while (i11 < vVar.getChildCount()) {
+                    View childAt = vVar.getChildAt(i11);
                     if (childAt instanceof rv) {
                         rv rvVar = (rv) childAt;
                         if (rvVar.isPressed()) {
@@ -179,69 +173,74 @@ public final class qv extends FrameLayout {
                                 rvVar.invalidate();
                             }
                         }
-                        if (awVar.b != null && (a6Var = rvVar.c) != null) {
+                        if (awVar.b == null || (a6Var = rvVar.c) == null) {
+                            f11 = f14;
+                        } else {
+                            f11 = f14;
                             r5 r5Var = (r5) awVar.b.get(a6Var.getDocumentId());
                             if (r5Var != null) {
-                                int themedColor2 = awVar.getThemedColor(org.telegram.ui.ActionBar.h6.G6);
+                                int themedColor2 = awVar.getThemedColor(org.telegram.ui.ActionBar.k6.G6);
                                 if (themedColor2 != awVar.U || awVar.T == null) {
                                     awVar.U = themedColor2;
-                                    f11 = f14;
+                                    f12 = f15;
                                     awVar.T = new PorterDuffColorFilter(themedColor2, PorterDuff.Mode.SRC_IN);
                                 } else {
-                                    f11 = f14;
+                                    f12 = f15;
                                 }
                                 r5Var.setColorFilter(awVar.T);
                                 ArrayList arrayList4 = (ArrayList) sparseArray.get(childAt.getTop());
                                 if (arrayList4 == null) {
-                                    arrayList4 = !arrayList.isEmpty() ? (ArrayList) i2.e.A(1, arrayList) : new ArrayList();
+                                    arrayList4 = !arrayList.isEmpty() ? (ArrayList) i2.o1.A(1, arrayList) : new ArrayList();
                                     sparseArray.put(childAt.getTop(), arrayList4);
                                 }
                                 arrayList4.add(rvVar);
                             }
                         }
-                        f11 = f14;
+                        f12 = f15;
                     } else {
                         f11 = f14;
+                        f12 = f15;
                         canvas2.save();
                         canvas2.translate(childAt.getLeft(), childAt.getTop());
                         childAt.draw(canvas2);
                         canvas2.restore();
                     }
-                    i12++;
+                    i11++;
                     f14 = f11;
+                    f15 = f12;
                 }
                 float f17 = f14;
+                float f18 = f15;
                 ArrayList arrayList5 = this.h;
                 arrayList5.clear();
                 ArrayList arrayList6 = this.f;
                 arrayList5.addAll(arrayList6);
                 arrayList6.clear();
                 long currentTimeMillis = System.currentTimeMillis();
-                int i13 = 0;
+                int i12 = 0;
                 while (true) {
                     int size2 = sparseArray.size();
                     arrayList2 = this.r;
-                    if (i13 >= size2) {
+                    if (i12 >= size2) {
                         break;
                     }
-                    ArrayList arrayList7 = (ArrayList) sparseArray.valueAt(i13);
+                    ArrayList arrayList7 = (ArrayList) sparseArray.valueAt(i12);
                     View view = (View) arrayList7.get(0);
                     vVar.getClass();
                     int R = RecyclerView.R(view);
                     long j10 = currentTimeMillis;
-                    float f18 = f15;
-                    int i14 = 0;
+                    int i13 = 0;
                     while (true) {
-                        if (i14 >= arrayList5.size()) {
+                        if (i13 >= arrayList5.size()) {
                             pvVar = null;
                             break;
                         } else {
-                            if (((pv) arrayList5.get(i14)).M == R) {
-                                pvVar = (pv) arrayList5.get(i14);
-                                arrayList5.remove(i14);
+                            if (((pv) arrayList5.get(i13)).M == R) {
+                                pvVar = (pv) arrayList5.get(i13);
+                                arrayList5.remove(i13);
                                 break;
                             }
-                            i14++;
+                            i13++;
                         }
                     }
                     if (pvVar == null) {
@@ -249,7 +248,7 @@ public final class qv extends FrameLayout {
                             pvVar = new pv(this);
                             pvVar.l(7);
                         } else {
-                            pvVar = (pv) i2.e.A(1, arrayList2);
+                            pvVar = (pv) i2.o1.A(1, arrayList2);
                         }
                         pvVar.M = R;
                         pvVar.e();
@@ -264,17 +263,15 @@ public final class qv extends FrameLayout {
                     pvVar2.a(canvas3, currentTimeMillis, getMeasuredWidth(), view.getMeasuredHeight() - view.getPaddingBottom(), 1.0f);
                     canvas2 = canvas3;
                     canvas2.restore();
-                    i13++;
-                    f15 = f18;
+                    i12++;
                 }
-                float f19 = f15;
-                for (int i15 = 0; i15 < arrayList5.size(); i15++) {
+                for (int i14 = 0; i14 < arrayList5.size(); i14++) {
                     if (arrayList2.size() < 3) {
-                        arrayList2.add((pv) arrayList5.get(i15));
-                        ((pv) arrayList5.get(i15)).N = null;
-                        ((pv) arrayList5.get(i15)).k();
+                        arrayList2.add((pv) arrayList5.get(i14));
+                        ((pv) arrayList5.get(i14)).N = null;
+                        ((pv) arrayList5.get(i14)).k();
                     } else {
-                        ((pv) arrayList5.get(i15)).f();
+                        ((pv) arrayList5.get(i14)).f();
                     }
                 }
                 arrayList5.clear();
@@ -284,9 +281,9 @@ public final class qv extends FrameLayout {
                     int width = getWidth() / 2;
                     int height = (getHeight() + ((int) dp5)) / 2;
                     int dp6 = AndroidUtilities.dp(16.0f);
-                    dqVar.setAlpha((int) ((f17 - vVar.getAlpha()) * f19));
-                    dqVar.setBounds(width - dp6, height - dp6, width + dp6, height + dp6);
-                    dqVar.draw(canvas2);
+                    eqVar.setAlpha((int) ((f17 - vVar.getAlpha()) * f18));
+                    eqVar.setBounds(width - dp6, height - dp6, width + dp6, height + dp6);
+                    eqVar.draw(canvas2);
                     invalidate();
                 }
             }
@@ -299,7 +296,7 @@ public final class qv extends FrameLayout {
         if (motionEvent.getAction() == 0) {
             float y3 = motionEvent.getY();
             aw awVar = this.y;
-            if (y3 < awVar.W() - AndroidUtilities.dp(6.0f)) {
+            if (y3 < awVar.f0() - AndroidUtilities.dp(6.0f)) {
                 awVar.dismiss();
             }
         }

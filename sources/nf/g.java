@@ -2,13 +2,14 @@ package nf;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import i2.o1;
 import java.io.EOFException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import k2.w0;
 import m2.t;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class g extends lf.a {
     public static final Logger s = Logger.getLogger(g.class.getName());
@@ -80,7 +81,7 @@ public final class g extends lf.a {
                     } else {
                         eVar.d(20, b.c);
                     }
-                    byte m10 = w0Var.m();
+                    byte n10 = w0Var.n();
                     eVar.d(200, b10);
                     int e = (int) eVar.a.e();
                     byte[] bArr = new byte[e];
@@ -92,7 +93,7 @@ public final class g extends lf.a {
                         }
                         i13 += read;
                     }
-                    if (this.o == null || m10 == 3 || m10 == 0) {
+                    if (this.o == null || n10 == 3 || n10 == 0) {
                         try {
                             options = new BitmapFactory.Options();
                             options.inJustDecodeBounds = true;
@@ -119,7 +120,7 @@ public final class g extends lf.a {
                                     this.p = this.o;
                                 }
                             }
-                            this.r = m10;
+                            this.r = n10;
                             return;
                         }
                         for (int max2 = Math.max(i11, options.outHeight); max2 > 800; max2 /= 2) {
@@ -130,7 +131,7 @@ public final class g extends lf.a {
                         this.o = decodeByteArray;
                         if (decodeByteArray != null) {
                         }
-                        this.r = m10;
+                        this.r = n10;
                         return;
                     }
                     return;
@@ -152,14 +153,14 @@ public final class g extends lf.a {
                     try {
                         if (e7.charAt(0) == '(') {
                             int indexOf = e7.indexOf(41);
-                            if (indexOf > 1 && (i10 = i2.e.b(Integer.parseInt(e7.substring(1, indexOf)))) == 0 && e7.length() > (i12 = indexOf + 1)) {
+                            if (indexOf > 1 && (i10 = o1.b(Integer.parseInt(e7.substring(1, indexOf)))) == 0 && e7.length() > (i12 = indexOf + 1)) {
                                 this.h = e7.substring(i12);
                             }
                         } else {
-                            i10 = i2.e.b(Integer.parseInt(e7));
+                            i10 = o1.b(Integer.parseInt(e7));
                         }
                         if (i10 != 0) {
-                            this.h = i2.e.d(i10);
+                            this.h = o1.d(i10);
                             return;
                         }
                         return;

@@ -17,11 +17,11 @@ import ei.x3;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
-import org.telegram.ui.z5;
+import org.telegram.ui.y5;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class s extends View {
     public final Path a;
@@ -115,7 +115,7 @@ public final class s extends View {
             if (d10.c == null) {
                 d10.c = new Paint(1);
             }
-            d10.c.setColor(h6.x0(null, h6.Oh, false));
+            d10.c.setColor(k6.x0(null, k6.Oh, false));
             canvas.drawRoundRect(rectF, f7, f7, d10.c);
         } else {
             if (this.v) {
@@ -209,7 +209,7 @@ public final class s extends View {
         if (limitPreviewView.e0 != null) {
             canvas.restore();
             canvas.saveLayer(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), this.x, 31);
-            canvas.drawRect(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(10.0f), getMeasuredWidth() - AndroidUtilities.dp(12.0f), getMeasuredHeight() - AndroidUtilities.dp(10.0f), ((z5) ((org.telegram.ui.b1) limitPreviewView.e0).b).u0(getX(), getY()));
+            canvas.drawRect(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(10.0f), getMeasuredWidth() - AndroidUtilities.dp(12.0f), getMeasuredHeight() - AndroidUtilities.dp(10.0f), ((y5) ((org.telegram.ui.a1) limitPreviewView.e0).b).u0(getX(), getY()));
             canvas.restore();
         }
     }

@@ -7,10 +7,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class g extends rh.e {
     public final MessageObject b;
@@ -32,14 +32,14 @@ public final class g extends rh.e {
                 radialProgress2.h(artworkUrl);
             }
         }
-        radialProgress2.g(h6.ie, h6.je, h6.uc, h6.vc);
+        radialProgress2.g(k6.ie, k6.je, k6.uc, k6.vc);
     }
 
     @Override // rh.e
     public final void a(View view) {
         super.a(view);
         RadialProgress2 radialProgress2 = this.c;
-        radialProgress2.m(view);
+        radialProgress2.n(view);
         radialProgress2.e();
         radialProgress2.setIcon(0, false, false);
     }
@@ -54,7 +54,7 @@ public final class g extends rh.e {
     public final void c(Canvas canvas, int i10, int i11) {
         RadialProgress2 radialProgress2 = this.c;
         radialProgress2.setCircleRadius(i10 / 2);
-        radialProgress2.q(0, 0, i10, i11);
+        radialProgress2.r(0, 0, i10, i11);
         radialProgress2.draw(canvas);
     }
 }

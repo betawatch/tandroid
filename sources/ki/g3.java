@@ -4,7 +4,7 @@ import android.view.View;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class g3 implements z4 {
     public final /* synthetic */ t a;
@@ -28,9 +28,9 @@ public final class g3 implements z4 {
             ((TL_iv.pageBlockAudio) pageBlock).audio_id = document.id;
         }
         w3 w3Var = this.c;
-        w3Var.X3.remove(tVar);
-        w3Var.W2.N(false);
-        w3Var.f3.onContentChanged();
+        w3Var.a4.remove(tVar);
+        w3Var.Z2.N(false);
+        w3Var.i3.onContentChanged();
     }
 
     @Override // ki.z4
@@ -38,12 +38,12 @@ public final class g3 implements z4 {
         this.a.f = f7;
         a aVar = this.b;
         w3 w3Var = this.c;
-        View A1 = w3Var.A1(aVar);
-        if (A1 instanceof z) {
-            ((z) A1).m(false);
-            A1.invalidate();
+        View F1 = w3Var.F1(aVar);
+        if (F1 instanceof z) {
+            ((z) F1).l(false);
+            F1.invalidate();
         }
-        w3Var.f3.onContentChanged();
+        w3Var.i3.onContentChanged();
     }
 
     @Override // ki.z4
@@ -51,13 +51,13 @@ public final class g3 implements z4 {
         t tVar = this.a;
         tVar.a = 3;
         w3 w3Var = this.c;
-        w3Var.X3.remove(tVar);
-        int indexOf = w3Var.j3.indexOf(this.b);
+        w3Var.a4.remove(tVar);
+        int indexOf = w3Var.m3.indexOf(this.b);
         if (indexOf >= 0) {
-            w3Var.j3.remove(indexOf);
-            w3Var.W2.N(true);
+            w3Var.m3.remove(indexOf);
+            w3Var.Z2.N(true);
         }
-        w3Var.f3.onContentChanged();
+        w3Var.i3.onContentChanged();
     }
 
     @Override // ki.z4

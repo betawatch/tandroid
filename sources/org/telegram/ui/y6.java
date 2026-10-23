@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class y6 extends org.telegram.ui.Components.dd {
     public final /* synthetic */ a7 e0;
@@ -17,7 +17,7 @@ public final class y6 extends org.telegram.ui.Components.dd {
     public final void d(int i10, boolean z10) {
         c7 c7Var = this.e0.e;
         if (!z10) {
-            c7Var.b.j1();
+            c7Var.b.l1();
             return;
         }
         int i11 = -1;
@@ -38,9 +38,9 @@ public final class y6 extends org.telegram.ui.Components.dd {
             }
         }
         if (i11 >= 0) {
-            c7Var.b.e1(new i2.w(i11, 7), 0, true);
+            c7Var.b.f1(new i2.v(i11, 7), 0, true);
         } else {
-            c7Var.b.j1();
+            c7Var.b.l1();
         }
     }
 }

@@ -1,26 +1,27 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class ik0 extends b10 {
-    public final /* synthetic */ nk0 U;
+public final class ik0 extends mm0 {
+    public final /* synthetic */ qk0 Y2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ik0(nk0 nk0Var, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, d6Var);
-        this.U = nk0Var;
+    public ik0(qk0 qk0Var, Context context, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(context, g6Var);
+        this.Y2 = qk0Var;
     }
 
-    @Override // org.telegram.ui.Components.b10
-    public final int getAdditionalHeight() {
-        ob0 ob0Var;
-        nk0 nk0Var = this.U;
-        if (nk0Var.H.isEmpty() || (ob0Var = nk0Var.J) == null) {
-            return 0;
+    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        qk0 qk0Var = this.Y2;
+        pb0 pb0Var = qk0Var.J;
+        if (pb0Var != null) {
+            pb0Var.measure(i10, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i11), 0));
         }
-        return AndroidUtilities.dp(8.0f) + ob0Var.getMeasuredHeight();
+        super.onMeasure(i10, i11);
+        qk0Var.j();
     }
 }

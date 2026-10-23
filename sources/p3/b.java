@@ -10,7 +10,7 @@ import java.util.Map;
 import org.telegram.messenger.MediaDataController;
 import v7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class b implements s0 {
     public final int a;
@@ -72,7 +72,7 @@ public final class b implements s0 {
                         z10 = false;
                         i11 = -1;
                     } catch (NumberFormatException unused) {
-                        k3.r("Invalid bitrate header: ", str4, "IcyHeaders");
+                        k3.q("Invalid bitrate header: ", str4, "IcyHeaders");
                         z10 = false;
                         i10 = i11;
                         list = (List) map.get("icy-genre");
@@ -144,7 +144,7 @@ public final class b implements s0 {
                         z12 = z10;
                     } catch (NumberFormatException unused3) {
                         i12 = parseInt;
-                        k3.r("Invalid metadata interval: ", str5, "IcyHeaders");
+                        k3.q("Invalid metadata interval: ", str5, "IcyHeaders");
                         int i132 = i12;
                         if (z10) {
                         }

@@ -1,33 +1,43 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+import android.view.View;
+
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class co0 extends s4.o {
-    public final /* synthetic */ go0 b;
-
-    public co0(go0 go0Var) {
-        this.b = go0Var;
+public final class co0 extends s4.k {
+    @Override // s4.k, s4.e1
+    public final boolean r(s4.b1 b1Var, b2.u0 u0Var, int i10, int i11, int i12, int i13) {
+        io0 io0Var;
+        ho0 ho0Var;
+        View view = b1Var.a;
+        if ((view instanceof io0) && (ho0Var = (io0Var = (io0) view).a) != null) {
+            ho0Var.i = ho0Var.N;
+            ho0Var.g = ho0Var.O;
+            ho0Var.h = ho0Var.P;
+            io0Var.b.d(0.0f, true);
+            io0Var.invalidate();
+        }
+        int translationX = i10 + ((int) view.getTranslationX());
+        int translationY = i11 + ((int) view.getTranslationY());
+        R(b1Var);
+        int i14 = i12 - translationX;
+        int i15 = i13 - translationY;
+        if (i14 == 0 && i15 == 0) {
+            v(b1Var);
+            return false;
+        }
+        if (i14 != 0) {
+            view.setTranslationX(-i14);
+        }
+        if (i15 != 0) {
+            view.setTranslationY(-i15);
+        }
+        this.r.add(new s4.j(b1Var, translationX, translationY, i12, i13));
+        return true;
     }
 
-    @Override // s4.o
-    public final boolean a(int i10, int i11) {
-        go0 go0Var = this.b;
-        return ((do0) go0Var.n.get(i10)).equals(go0Var.r.get(i11));
-    }
-
-    @Override // s4.o
-    public final boolean b(int i10, int i11) {
-        go0 go0Var = this.b;
-        return ((do0) go0Var.n.get(i10)).a.h == ((do0) go0Var.r.get(i11)).a.h;
-    }
-
-    @Override // s4.o
-    public final int d() {
-        return this.b.r.size();
-    }
-
-    @Override // s4.o
-    public final int e() {
-        return this.b.n.size();
+    @Override // s4.e1
+    public final boolean t(s4.b1 b1Var) {
+        return true;
     }
 }

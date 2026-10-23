@@ -4,20 +4,20 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import gi.d3;
 import gi.s4;
-import ig.d2;
+import ig.c2;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.ActionBar.o2;
 import org.telegram.ui.ba;
 import org.telegram.ui.c7;
-import org.telegram.ui.e6;
+import org.telegram.ui.d6;
 import org.telegram.ui.k8;
 import org.telegram.ui.m9;
-import org.telegram.ui.r4;
-import org.telegram.ui.v4;
+import org.telegram.ui.q4;
+import org.telegram.ui.u4;
 import org.telegram.ui.w9;
 import org.telegram.ui.z6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class s extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ int a;
@@ -89,14 +89,14 @@ public final class s extends org.telegram.ui.ActionBar.j {
                         k0Var.c.a(true, true);
                         k0Var.setAllowNestedScroll(false);
                         k0Var.S = null;
-                        k0Var.G.W2.N(true);
+                        k0Var.G.Z2.N(true);
                         k0Var.E.r.getText().clear();
                         k0Var.E.r.requestFocus();
                         AndroidUtilities.showKeyboard(k0Var.E.r);
                         break;
                     }
                 } else if (!k0Var.N) {
-                    k0Var.v.d.W2.N(false);
+                    k0Var.v.d.Z2.N(false);
                     k0Var.d.D(0);
                     break;
                 } else {
@@ -129,7 +129,7 @@ public final class s extends org.telegram.ui.ActionBar.j {
             case 10:
                 hi.k0 k0Var3 = ((hi.j0) this.b).h;
                 if (i10 == -1) {
-                    k0Var3.v.d.W2.N(false);
+                    k0Var3.v.d.Z2.N(false);
                     k0Var3.d.D(0);
                     break;
                 }
@@ -159,98 +159,98 @@ public final class s extends org.telegram.ui.ActionBar.j {
                 }
                 break;
             case 13:
-                ig.t0 t0Var = (ig.t0) this.b;
+                ig.s0 s0Var = (ig.s0) this.b;
                 if (i10 != -1) {
                     if (i10 == 1) {
-                        t0Var.a0();
+                        s0Var.a0();
                         break;
                     }
-                } else if (t0Var.onBackPressed(true)) {
-                    t0Var.finishFragment();
+                } else if (s0Var.onBackPressed(true)) {
+                    s0Var.finishFragment();
                     break;
                 }
                 break;
             case 14:
-                ig.v0 v0Var = (ig.v0) this.b;
+                ig.u0 u0Var = (ig.u0) this.b;
                 if (i10 != -1) {
                     if (i10 == 1) {
-                        v0Var.X();
+                        u0Var.X();
                         break;
                     }
-                } else if (v0Var.onBackPressed(true)) {
-                    v0Var.finishFragment();
+                } else if (u0Var.onBackPressed(true)) {
+                    u0Var.finishFragment();
                     break;
                 }
                 break;
             case 15:
-                ig.d1 d1Var = (ig.d1) this.b;
+                ig.c1 c1Var = (ig.c1) this.b;
                 if (i10 != -1) {
                     if (i10 == 1) {
-                        d1Var.W();
+                        c1Var.W();
                         break;
                     }
-                } else if (d1Var.onBackPressed(true)) {
-                    d1Var.finishFragment();
+                } else if (c1Var.onBackPressed(true)) {
+                    c1Var.finishFragment();
                     break;
                 }
                 break;
             case 16:
-                ig.f1 f1Var = (ig.f1) this.b;
+                ig.e1 e1Var = (ig.e1) this.b;
                 if (i10 != -1) {
                     if (i10 == 1) {
-                        f1Var.d0();
+                        e1Var.d0();
                         break;
                     }
-                } else if (f1Var.onBackPressed(true)) {
-                    f1Var.finishFragment();
+                } else if (e1Var.onBackPressed(true)) {
+                    e1Var.finishFragment();
                     break;
                 }
                 break;
             case 17:
                 if (i10 == -1) {
-                    ((ig.h1) this.b).finishFragment();
+                    ((ig.g1) this.b).finishFragment();
                     break;
                 }
                 break;
             case 18:
                 if (i10 == -1) {
-                    ((d2) this.b).finishFragment();
+                    ((c2) this.b).finishFragment();
                     break;
                 }
                 break;
             case 19:
                 if (i10 == -1) {
-                    ((org.telegram.ui.h) this.b).finishFragment();
+                    ((org.telegram.ui.g) this.b).finishFragment();
                     break;
                 }
                 break;
             case 20:
                 if (i10 == -1) {
-                    ((org.telegram.ui.l) this.b).finishFragment();
+                    ((org.telegram.ui.k) this.b).finishFragment();
                     break;
                 }
                 break;
             case 21:
                 if (i10 == -1) {
-                    ((org.telegram.ui.p) this.b).finishFragment();
+                    ((org.telegram.ui.o) this.b).finishFragment();
                     break;
                 }
                 break;
             case 22:
                 if (i10 == -1) {
-                    ((r4) this.b).finishFragment();
+                    ((q4) this.b).finishFragment();
                     break;
                 }
                 break;
             case 23:
                 if (i10 == -1) {
-                    ((v4) this.b).finishFragment();
+                    ((u4) this.b).finishFragment();
                     break;
                 }
                 break;
             case 24:
                 if (i10 == -1) {
-                    ((e6) this.b).finishFragment();
+                    ((d6) this.b).finishFragment();
                     break;
                 }
                 break;
@@ -268,12 +268,12 @@ public final class s extends org.telegram.ui.ActionBar.j {
                             break;
                         }
                     } else {
-                        c7Var.m0();
+                        c7Var.n0();
                         break;
                     }
                 } else {
-                    kVar = ((n2) c7Var).actionBar;
-                    if (!kVar.t()) {
+                    kVar = ((o2) c7Var).actionBar;
+                    if (!kVar.s()) {
                         c7Var.finishFragment();
                         break;
                     } else {
@@ -297,7 +297,7 @@ public final class s extends org.telegram.ui.ActionBar.j {
                         k8Var.G = false;
                         k8Var.P = 0;
                         k8Var.Q = 0;
-                        k8Var.t0();
+                        k8Var.u0();
                         k8Var.o0();
                         break;
                     } else {
@@ -310,16 +310,16 @@ public final class s extends org.telegram.ui.ActionBar.j {
                 m9 m9Var = (m9) this.b;
                 if (i10 != -1) {
                     if (i10 == 2) {
-                        m9Var.p0(false);
+                        m9Var.o0(false);
                         break;
                     }
                 } else {
-                    kVar2 = ((n2) m9Var).actionBar;
-                    if (!kVar2.t()) {
+                    kVar2 = ((o2) m9Var).actionBar;
+                    if (!kVar2.s()) {
                         m9Var.finishFragment();
                         break;
                     } else {
-                        m9Var.k0(true);
+                        m9Var.j0(true);
                         break;
                     }
                 }

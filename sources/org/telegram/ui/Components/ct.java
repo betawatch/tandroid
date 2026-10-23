@@ -9,38 +9,38 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public abstract class ct extends u61 {
-    public final int N;
-    public final int O;
-    public final ArrayList P;
-    public final ArrayList Q;
+public abstract class ct extends b71 {
+    public final int P;
+    public final int Q;
     public final ArrayList R;
     public final ArrayList S;
-    public boolean T;
-    public boolean U;
-    public final ArrayList V;
+    public final ArrayList T;
+    public final ArrayList U;
+    public boolean V;
     public boolean W;
-    public boolean X;
+    public final ArrayList X;
     public boolean Y;
-    public int Z;
-    public int a0;
-    public String b0;
-    public final hq c0;
+    public boolean Z;
+    public boolean a0;
+    public int b0;
+    public int c0;
+    public String d0;
+    public final zp e0;
 
-    public ct(jm0 jm0Var, Context context, int i10, int i11) {
-        super(jm0Var, context, i10, 0, false, null, null);
-        this.P = new ArrayList();
-        this.Q = new ArrayList();
+    public ct(mm0 mm0Var, Context context, int i10, int i11) {
+        super(mm0Var, context, i10, 0, false, null, null);
         this.R = new ArrayList();
         this.S = new ArrayList();
-        this.V = new ArrayList();
-        ro0 ro0Var = (ro0) this;
-        this.c0 = new hq(ro0Var, 6);
-        this.s = new d(ro0Var, 9);
-        this.N = i10;
-        this.O = i11;
+        this.T = new ArrayList();
+        this.U = new ArrayList();
+        this.X = new ArrayList();
+        uo0 uo0Var = (uo0) this;
+        this.e0 = new zp(uo0Var, 7);
+        this.v = new d(uo0Var, 9);
+        this.P = i10;
+        this.Q = i11;
         N(false);
     }
 
@@ -52,25 +52,25 @@ public abstract class ct extends u61 {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void V(boolean z10) {
-        this.W = true;
-        int i10 = this.a0 + 1;
-        this.a0 = i10;
+        this.Y = true;
+        int i10 = this.c0 + 1;
+        this.c0 = i10;
         TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal = new TLRPC.TL_messages_searchGlobal();
         tL_messages_searchGlobal.broadcasts_only = true;
-        int i11 = this.O;
+        int i11 = this.Q;
         if (i11 != 0) {
             tL_messages_searchGlobal.flags |= 1;
             tL_messages_searchGlobal.folder_id = i11;
         }
-        tL_messages_searchGlobal.q = this.b0;
+        tL_messages_searchGlobal.q = this.d0;
         tL_messages_searchGlobal.limit = 25;
         tL_messages_searchGlobal.filter = new TLRPC.TL_inputMessagesFilterEmpty();
-        int i12 = this.N;
+        int i12 = this.P;
         if (z10) {
-            ArrayList arrayList = this.P;
+            ArrayList arrayList = this.R;
             if (!arrayList.isEmpty()) {
-                MessageObject messageObject = (MessageObject) i2.e.h(1, arrayList);
-                tL_messages_searchGlobal.offset_rate = this.Z;
+                MessageObject messageObject = (MessageObject) i2.o1.i(1, arrayList);
+                tL_messages_searchGlobal.offset_rate = this.b0;
                 tL_messages_searchGlobal.offset_id = messageObject.getId();
                 if (messageObject.messageOwner.peer_id == null) {
                     tL_messages_searchGlobal.offset_peer = new TLRPC.TL_inputPeerEmpty();
@@ -79,11 +79,11 @@ public abstract class ct extends u61 {
                 }
                 AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.k0(this, i10, tL_messages_searchGlobal, z10, 4), !z10 ? 800L : 0L);
                 if (z10) {
-                    this.X = true;
+                    this.Z = true;
                     TLRPC.TL_contacts_search tL_contacts_search = new TLRPC.TL_contacts_search();
                     tL_contacts_search.limit = 20;
                     tL_contacts_search.broadcasts = true;
-                    tL_contacts_search.q = this.b0;
+                    tL_contacts_search.q = this.d0;
                     ConnectionsManager.getInstance(i12).sendRequestTyped(tL_contacts_search, new org.telegram.messenger.a(), new ai.r5(16, this, tL_contacts_search));
                     return;
                 }
@@ -100,7 +100,7 @@ public abstract class ct extends u61 {
 
     public final void W() {
         ArrayList arrayList = new ArrayList();
-        int i10 = this.N;
+        int i10 = this.P;
         ArrayList<TLRPC.Dialog> allDialogs = MessagesController.getInstance(i10).getAllDialogs();
         int size = allDialogs.size();
         int i11 = 0;
@@ -115,7 +115,7 @@ public abstract class ct extends u61 {
                 }
             }
         }
-        ArrayList arrayList2 = this.V;
+        ArrayList arrayList2 = this.X;
         arrayList2.clear();
         arrayList2.addAll(arrayList);
     }

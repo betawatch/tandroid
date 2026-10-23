@@ -15,6 +15,7 @@ import android.view.animation.OvershootInterpolator;
 import com.google.android.gms.internal.play_billing.k3;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
 import javax.microedition.khronos.egl.EGL10;
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.egl.EGLContext;
@@ -25,13 +26,14 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
+import org.telegram.ui.ActionBar.b6;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.voip.w;
 import sg.x1;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public class n extends TextureView implements TextureView.SurfaceTextureListener {
+public class n extends TextureView implements TextureView.SurfaceTextureListener, b6 {
     public int E;
     public int F;
     public volatile boolean G;
@@ -678,6 +680,22 @@ public class n extends TextureView implements TextureView.SurfaceTextureListener
 
     public void setStarParticlesView(x1 x1Var) {
         this.R = x1Var;
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void updateColors() {
+        try {
+            g gVar = this.b;
+            if (gVar != null) {
+                gVar.b();
+            }
+        } catch (Exception e) {
+            FileLog.e(e);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 
     public void h() {

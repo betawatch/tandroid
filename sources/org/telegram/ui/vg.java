@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.content.DialogInterface;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class vg implements DialogInterface.OnCancelListener {
     public final /* synthetic */ int a;
@@ -23,7 +23,7 @@ public final /* synthetic */ class vg implements DialogInterface.OnCancelListene
                 zArr[0] = true;
                 break;
             default:
-                Pattern pattern = LaunchActivity.C1;
+                Pattern pattern = LaunchActivity.E1;
                 zArr[0] = true;
                 break;
         }

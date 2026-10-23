@@ -1,75 +1,45 @@
 package ci;
 
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.fd;
+import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class o6 implements Runnable {
+public final /* synthetic */ class o6 implements RequestDelegate {
     public final /* synthetic */ int a = 0;
     public final /* synthetic */ boolean b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ long d;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object h;
 
-    public /* synthetic */ o6(i7 i7Var, long j10, boolean z10, TL_stories.PeerStories peerStories, long j11, TLObject tLObject) {
-        this.e = i7Var;
-        this.c = j10;
+    public /* synthetic */ o6(h7 h7Var, boolean z10, TL_stories.TL_stories_getAllStories tL_stories_getAllStories, boolean z11) {
+        this.d = h7Var;
         this.b = z10;
-        this.f = peerStories;
-        this.d = j11;
-        this.h = tLObject;
+        this.e = tL_stories_getAllStories;
+        this.c = z11;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                i7 i7Var = (i7) this.e;
-                TL_stories.PeerStories peerStories = (TL_stories.PeerStories) this.f;
-                TLObject tLObject = (TLObject) this.h;
-                i7Var.D.remove(Long.valueOf(this.c));
-                boolean z10 = this.b;
-                long j10 = this.d;
-                if (!z10) {
-                    peerStories = i7Var.y(j10);
-                }
-                if (peerStories != null) {
-                    if (tLObject instanceof TL_stories.TL_stories_stories) {
-                        TL_stories.TL_stories_stories tL_stories_stories = (TL_stories.TL_stories_stories) tLObject;
-                        for (int i10 = 0; i10 < tL_stories_stories.stories.size(); i10++) {
-                            for (int i11 = 0; i11 < peerStories.stories.size(); i11++) {
-                                if (peerStories.stories.get(i11).id == tL_stories_stories.stories.get(i10).id) {
-                                    peerStories.stories.set(i11, tL_stories_stories.stories.get(i10));
-                                    i7Var.W(j10, tL_stories_stories.stories.get(i10));
-                                }
-                            }
-                        }
-                        if (!z10) {
-                            w7 w7Var = i7Var.k;
-                            w7Var.b.getStorageQueue().postRunnable(new t7(w7Var, peerStories, 1));
-                        }
-                    }
-                    NotificationCenter.getInstance(i7Var.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesUpdated, new Object[0]);
-                    break;
-                }
+                AndroidUtilities.runOnUIThread(new i6((h7) this.d, this.b, (TL_stories.TL_stories_getAllStories) this.e, tLObject, this.c));
                 break;
             default:
-                ((FileLoader) this.e).lambda$checkUploadNewDataAvailable$3(this.b, (String) this.f, this.c, this.d, (Float) this.h);
+                AndroidUtilities.runOnUIThread(new fd((TwoStepVerificationActivity) this.d, tL_error, tLObject, this.b, this.c, (Runnable) this.e, 3));
                 break;
         }
     }
 
-    public /* synthetic */ o6(FileLoader fileLoader, boolean z10, String str, long j10, long j11, Float f7) {
-        this.e = fileLoader;
+    public /* synthetic */ o6(TwoStepVerificationActivity twoStepVerificationActivity, boolean z10, boolean z11, Runnable runnable) {
+        this.d = twoStepVerificationActivity;
         this.b = z10;
-        this.f = str;
-        this.c = j10;
-        this.d = j11;
-        this.h = f7;
+        this.c = z11;
+        this.e = runnable;
     }
 }

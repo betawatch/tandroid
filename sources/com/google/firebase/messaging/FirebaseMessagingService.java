@@ -8,7 +8,6 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
-import ci.i1;
 import com.google.android.gms.tasks.Tasks;
 import java.io.IOException;
 import java.util.ArrayDeque;
@@ -17,10 +16,9 @@ import java.util.Queue;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import k2.f0;
 import v7.o6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public class FirebaseMessagingService extends g {
     public static final String ACTION_DIRECT_BOOT_REMOTE_INTENT = "com.google.firebase.messaging.RECEIVE_DIRECT_BOOT";
@@ -59,11 +57,11 @@ public class FirebaseMessagingService extends g {
     /* JADX WARN: Removed duplicated region for block: B:166:0x020c  */
     /* JADX WARN: Removed duplicated region for block: B:167:0x01fa  */
     /* JADX WARN: Removed duplicated region for block: B:168:0x01c9 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:184:0x031a  */
-    /* JADX WARN: Removed duplicated region for block: B:187:0x032a  */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x0371  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x0389  */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x03cc  */
+    /* JADX WARN: Removed duplicated region for block: B:184:0x031b  */
+    /* JADX WARN: Removed duplicated region for block: B:187:0x032b  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0372  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x038a  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x03cd  */
     /* JADX WARN: Removed duplicated region for block: B:83:0x016c  */
     /* JADX WARN: Removed duplicated region for block: B:98:0x01f5  */
     @Override // com.google.firebase.messaging.g
@@ -206,7 +204,7 @@ public class FirebaseMessagingService extends g {
                                     l9.h c13 = l9.h.c();
                                     c13.a();
                                     String packageName = c13.a.getPackageName();
-                                    xa.b bVar = !ya.d.Z(extras2) ? xa.b.c : xa.b.b;
+                                    xa.b bVar = !ya.c.Y(extras2) ? xa.b.c : xa.b.b;
                                     string2 = extras2.getString("google.message_id");
                                     if (string2 == null) {
                                         string2 = extras2.getString("message_id");
@@ -229,7 +227,7 @@ public class FirebaseMessagingService extends g {
                                         } catch (NumberFormatException e7) {
                                             Log.w("FirebaseMessaging", "error parsing project number", e7);
                                         }
-                                        ((l5.r) fVar).a("FCM_CLIENT_EVENT_LOGGING", new i5.c("proto"), new i1(11)).a(new i5.a(null, new xa.e(new xa.d(parseLong <= 0 ? parseLong : 0L, str4, str3, bVar, packageName, str6, i10, str5, str7, str8)), i5.d.a, new i5.b(Integer.valueOf(intent.getIntExtra("google.product_id", 111881503)))), new f0(4));
+                                        ((l5.r) fVar).a("FCM_CLIENT_EVENT_LOGGING", new i5.c("proto"), new c3.m(13)).a(new i5.a(null, new xa.e(new xa.d(parseLong <= 0 ? parseLong : 0L, str4, str3, bVar, packageName, str6, i10, str5, str7, str8)), i5.d.a, new i5.b(Integer.valueOf(intent.getIntExtra("google.product_id", 111881503)))), new k2.f(8));
                                     }
                                     l9.h c14 = l9.h.c();
                                     l9.j jVar = c14.c;
@@ -241,7 +239,7 @@ public class FirebaseMessagingService extends g {
                                         } catch (NumberFormatException e10) {
                                             Log.w("FirebaseMessaging", "error parsing sender ID", e10);
                                         }
-                                        ((l5.r) fVar).a("FCM_CLIENT_EVENT_LOGGING", new i5.c("proto"), new i1(11)).a(new i5.a(null, new xa.e(new xa.d(parseLong <= 0 ? parseLong : 0L, str4, str3, bVar, packageName, str6, i10, str5, str7, str8)), i5.d.a, new i5.b(Integer.valueOf(intent.getIntExtra("google.product_id", 111881503)))), new f0(4));
+                                        ((l5.r) fVar).a("FCM_CLIENT_EVENT_LOGGING", new i5.c("proto"), new c3.m(13)).a(new i5.a(null, new xa.e(new xa.d(parseLong <= 0 ? parseLong : 0L, str4, str3, bVar, packageName, str6, i10, str5, str7, str8)), i5.d.a, new i5.b(Integer.valueOf(intent.getIntExtra("google.product_id", 111881503)))), new k2.f(8));
                                     }
                                     c14.a();
                                     str2 = jVar.b;
@@ -265,9 +263,9 @@ public class FirebaseMessagingService extends g {
                                         }
                                         parseLong = 0;
                                     }
-                                    ((l5.r) fVar).a("FCM_CLIENT_EVENT_LOGGING", new i5.c("proto"), new i1(11)).a(new i5.a(null, new xa.e(new xa.d(parseLong <= 0 ? parseLong : 0L, str4, str3, bVar, packageName, str6, i10, str5, str7, str8)), i5.d.a, new i5.b(Integer.valueOf(intent.getIntExtra("google.product_id", 111881503)))), new f0(4));
+                                    ((l5.r) fVar).a("FCM_CLIENT_EVENT_LOGGING", new i5.c("proto"), new c3.m(13)).a(new i5.a(null, new xa.e(new xa.d(parseLong <= 0 ? parseLong : 0L, str4, str3, bVar, packageName, str6, i10, str5, str7, str8)), i5.d.a, new i5.b(Integer.valueOf(intent.getIntExtra("google.product_id", 111881503)))), new k2.f(8));
                                 }
-                                ((l5.r) fVar).a("FCM_CLIENT_EVENT_LOGGING", new i5.c("proto"), new i1(11)).a(new i5.a(null, new xa.e(new xa.d(parseLong <= 0 ? parseLong : 0L, str4, str3, bVar, packageName, str6, i10, str5, str7, str8)), i5.d.a, new i5.b(Integer.valueOf(intent.getIntExtra("google.product_id", 111881503)))), new f0(4));
+                                ((l5.r) fVar).a("FCM_CLIENT_EVENT_LOGGING", new i5.c("proto"), new c3.m(13)).a(new i5.a(null, new xa.e(new xa.d(parseLong <= 0 ? parseLong : 0L, str4, str3, bVar, packageName, str6, i10, str5, str7, str8)), i5.d.a, new i5.b(Integer.valueOf(intent.getIntExtra("google.product_id", 111881503)))), new k2.f(8));
                             } catch (RuntimeException e13) {
                                 Log.w("FirebaseMessaging", "Failed to send big query analytics payload.", e13);
                             }
@@ -280,7 +278,7 @@ public class FirebaseMessagingService extends g {
                             l9.h c132 = l9.h.c();
                             c132.a();
                             String packageName2 = c132.a.getPackageName();
-                            xa.b bVar2 = !ya.d.Z(extras2) ? xa.b.c : xa.b.b;
+                            xa.b bVar2 = !ya.c.Y(extras2) ? xa.b.c : xa.b.b;
                             string2 = extras2.getString("google.message_id");
                             if (string2 == null) {
                             }
@@ -320,11 +318,11 @@ public class FirebaseMessagingService extends g {
                         extras = new Bundle();
                     }
                     extras.remove("androidx.content.wakelockid");
-                    if (ya.d.Z(extras)) {
-                        ya.d dVar = new ya.d(extras);
+                    if (ya.c.Y(extras)) {
+                        ya.c cVar = new ya.c(extras);
                         ExecutorService newSingleThreadExecutor = Executors.newSingleThreadExecutor(new c5.x("Firebase-Messaging-Network-Io"));
                         try {
-                            if (new androidx.biometric.e(this, dVar, newSingleThreadExecutor).p()) {
+                            if (new androidx.biometric.e(this, cVar, newSingleThreadExecutor).p()) {
                                 break;
                             } else {
                                 newSingleThreadExecutor.shutdown();
@@ -346,7 +344,7 @@ public class FirebaseMessagingService extends g {
                 if (extras == null) {
                 }
                 extras.remove("androidx.content.wakelockid");
-                if (ya.d.Z(extras)) {
+                if (ya.c.Y(extras)) {
                 }
                 onMessageReceived(new p(extras));
                 break;

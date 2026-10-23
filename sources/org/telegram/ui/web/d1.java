@@ -1,35 +1,62 @@
 package org.telegram.ui.web;
 
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
+import android.util.LongSparseArray;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.if0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final class d1 extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ f1 a;
+public abstract class d1 {
+    public static boolean a;
+    public static boolean b;
+    public static ArrayList c;
+    public static LongSparseArray d;
+    public static ArrayList e;
 
-    public d1(f1 f1Var) {
-        this.a = f1Var;
+    public static ArrayList a(Utilities.Callback callback) {
+        boolean z10;
+        if (callback == null || b) {
+            z10 = false;
+        } else {
+            if (e == null) {
+                e = new ArrayList();
+            }
+            e.add(callback);
+            z10 = true;
+        }
+        b();
+        if (z10) {
+            return null;
+        }
+        return c;
     }
 
-    @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i10) {
-        org.telegram.ui.ActionBar.k kVar;
-        org.telegram.ui.ActionBar.k kVar2;
-        if (i10 == -1) {
-            f1 f1Var = this.a;
-            kVar = ((n2) f1Var).actionBar;
-            if (!kVar.t()) {
-                f1Var.finishFragment();
-                return;
-            }
-            kVar2 = ((n2) f1Var).actionBar;
-            kVar2.s();
-            f1Var.s.clear();
-            AndroidUtilities.forEachViews((RecyclerView) f1Var.a, (Utilities.Callback<View>) new ci.e(23));
+    public static void b() {
+        if (a || b) {
+            return;
         }
+        a = true;
+        c = new ArrayList();
+        d = new LongSparseArray();
+        Utilities.globalQueue.postRunnable(new if0(13));
+    }
+
+    public static void c(c1 c1Var) {
+        if (c1Var == null || c1Var.d == null) {
+            return;
+        }
+        b();
+        c1 c1Var2 = (c1) d.get(c1Var.a);
+        if (c1Var2 != null) {
+            c1Var2.d = c1Var.d;
+        } else {
+            c.add(c1Var);
+            d.put(c1Var.a, c1Var);
+        }
+        int i10 = 12;
+        AndroidUtilities.cancelRunOnUIThread(new if0(i10));
+        AndroidUtilities.runOnUIThread(new if0(i10), 1000L);
     }
 }

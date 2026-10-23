@@ -6,7 +6,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class e7 extends AnimatorListenerAdapter {
     public final /* synthetic */ f7 a;
@@ -24,7 +24,7 @@ public final class e7 extends AnimatorListenerAdapter {
         TL_stars.starGiftAttributeModel[] stargiftattributemodelArr = f7Var.e;
         int i10 = 2 - f7Var.u0;
         stargiftattributemodelArr[i10] = (TL_stars.starGiftAttributeModel) f7Var.c0.f;
-        md.a1(f7Var.d[i10].getImageReceiver(), stargiftattributemodelArr[2 - f7Var.u0].document, 160);
+        nd.a1(f7Var.d[i10].getImageReceiver(), stargiftattributemodelArr[2 - f7Var.u0].document, 160);
         TL_stars.starGiftAttributePattern stargiftattributepattern = (TL_stars.starGiftAttributePattern) f7Var.d0.f;
         if (stargiftattributepattern != null) {
             org.telegram.ui.Components.r5 m10 = org.telegram.ui.Components.r5.m(UserConfig.selectedAccount, 7, stargiftattributepattern.document);

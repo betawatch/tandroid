@@ -1,152 +1,173 @@
 package ci;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.SurfaceView;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.ui.Components.zj0;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.qc;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final class j9 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ aa b;
+public final class j9 implements GestureDetector.OnGestureListener {
+    public final /* synthetic */ z9 a;
 
-    public /* synthetic */ j9(aa aaVar, int i10) {
-        this.a = i10;
-        this.b = aaVar;
+    public j9(z9 z9Var) {
+        this.a = z9Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        q4 t10;
-        zj0 zj0Var;
-        switch (this.a) {
-            case 0:
-                super.onAnimationEnd(animator);
-                aa aaVar = this.b;
-                x9 x9Var = aaVar.s0;
-                p9 p9Var = aaVar.v;
-                if (p9Var != null) {
-                    p9Var.a(true);
-                }
-                aaVar.o();
-                aaVar.J0.unlock();
-                m7 m7Var = aaVar.u1;
-                if (m7Var != null) {
-                    m7Var.b();
-                    AndroidUtilities.removeFromParent(aaVar.u1);
-                    aaVar.u1 = null;
-                }
-                ImageReceiver imageReceiver = x9Var.b;
-                if (imageReceiver != null) {
-                    imageReceiver.setVisible(true, true);
-                    x9Var.b = null;
-                }
-                ImageReceiver imageReceiver2 = x9Var.c;
-                if (imageReceiver2 != null) {
-                    imageReceiver2.setAlpha(1.0f);
-                    x9Var.c.setVisible(true, true);
-                }
-                if (x9Var.d != null && (t10 = aaVar.t()) != null && (zj0Var = t10.o1.d) != null) {
-                    zj0 zj0Var2 = x9Var.d;
-                    zj0Var2.getClass();
-                    zj0Var2.c = zj0Var.c;
-                    zj0Var2.f = zj0Var.f;
-                    zj0Var2.b = zj0Var.b;
-                    zj0Var2.a = System.currentTimeMillis();
-                    zj0Var2.c();
-                }
-                p4 p4Var = aaVar.G0;
-                if (p4Var != null) {
-                    p4Var.b();
-                }
-                SurfaceView surfaceView = aaVar.C0;
-                if (surfaceView != null) {
-                    surfaceView.setVisibility(4);
-                }
-                aaVar.I();
+    @Override // android.view.GestureDetector.OnGestureListener
+    public final boolean onDown(MotionEvent motionEvent) {
+        z9 z9Var = this.a;
+        z9Var.g1 = false;
+        return !z9.i(z9Var, z9Var.s, motionEvent.getX(), motionEvent.getY(), false);
+    }
+
+    @Override // android.view.GestureDetector.OnGestureListener
+    public final boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent2, float f7, float f10) {
+        z9 z9Var = this.a;
+        if (z9Var.Z != 0.0f && z9Var.u1 == null && f10 < -1000.0f && !z9Var.a0) {
+            z9Var.a0 = true;
+            try {
+                z9Var.s.performHapticFeedback(3);
+            } catch (Exception unused) {
+            }
+            z9.j(z9Var);
+        }
+        if (z9Var.e0 != 0.0f) {
+            if (f10 < -1000.0f) {
+                z9Var.n(true);
+            } else if (f10 > 1000.0f) {
+                z9Var.n(false);
+            } else {
+                z9Var.n(z9Var.w.f > 0.5f);
+            }
+        }
+        z9Var.g1 = true;
+        return false;
+    }
+
+    @Override // android.view.GestureDetector.OnGestureListener
+    public final boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f7, float f10) {
+        float f11;
+        qc qcVar;
+        z9 z9Var = this.a;
+        if (!z9Var.j0) {
+            return false;
+        }
+        if (z9Var.l0) {
+            z9Var.Z += f10;
+            float dp = AndroidUtilities.dp(200.0f);
+            if (z9Var.Z > dp && !z9Var.a0) {
+                z9Var.a0 = true;
+                z9.j(z9Var);
                 try {
-                    AndroidUtilities.runOnUIThread(new androidx.fragment.app.d(this, 26));
+                    z9Var.s.performHapticFeedback(3);
                 } catch (Exception unused) {
                 }
-                aaVar.m0 = false;
-                aaVar.d = false;
-                t3 t3Var = aaVar.o1;
-                if (t3Var != null) {
-                    t3Var.run();
-                    aaVar.o1 = null;
-                    break;
-                }
-                break;
-            case 1:
-                aa aaVar2 = this.b;
-                aaVar2.H = null;
-                aaVar2.Z = 0.0f;
-                aaVar2.d0 = 0.0f;
-                q9 q9Var = aaVar2.n0;
-                q4 currentPeerView = q9Var != null ? q9Var.getCurrentPeerView() : null;
-                if (currentPeerView != null) {
-                    currentPeerView.invalidate();
-                    break;
-                }
-                break;
-            default:
-                aa aaVar3 = this.b;
-                x9 x9Var2 = aaVar3.s0;
-                aaVar3.U = 1.0f;
-                aaVar3.o();
-                aa.x1 = false;
-                p9 p9Var2 = aaVar3.v;
-                if (p9Var2 != null) {
-                    p9Var2.a(true);
-                }
-                o9 o9Var = aaVar3.s;
-                if (o9Var != null) {
-                    o9Var.invalidate();
-                }
-                ImageReceiver imageReceiver3 = x9Var2.b;
-                if (imageReceiver3 != null && !aaVar3.d) {
-                    imageReceiver3.setVisible(true, true);
-                    x9Var2.b = null;
-                }
-                ImageReceiver imageReceiver4 = x9Var2.c;
-                if (imageReceiver4 != null && !aaVar3.d) {
-                    imageReceiver4.setAlpha(1.0f);
-                    x9Var2.c.setVisible(true, true);
-                    x9Var2.c = null;
-                }
-                q4 t11 = aaVar3.t();
-                if (t11 != null) {
-                    t11.f1(false);
-                }
-                h1 h1Var = aaVar3.A0;
-                if (h1Var != null) {
-                    h1Var.v((1.0f - aaVar3.V) * aaVar3.U);
-                }
-                if (aaVar3.w1) {
-                    aaVar3.w1 = false;
-                    aaVar3.p();
-                    AndroidUtilities.runOnUIThread(new t3(aaVar3, 1), 30L);
-                } else if (!SharedConfig.storiesIntroShown) {
-                    if (aaVar3.u1 == null && aaVar3.v != null) {
-                        m7 m7Var2 = new m7(aaVar3.v.getContext(), aaVar3.s);
-                        aaVar3.u1 = m7Var2;
-                        m7Var2.setAlpha(0.0f);
-                        aaVar3.v.addView(aaVar3.u1);
-                    }
-                    m7 m7Var3 = aaVar3.u1;
-                    if (m7Var3 != null) {
-                        m7Var3.setOnClickListener(new ah.g0(this, 16));
-                        aaVar3.u1.animate().alpha(1.0f).setDuration(150L).setListener(new t9(this, 1)).start();
-                    }
-                    SharedConfig.setStoriesIntroShown(true);
-                }
-                aaVar3.P();
-                aaVar3.J0.unlock();
-                break;
+            }
+            z9Var.d0 = Utilities.clamp(z9Var.Z / dp, 1.0f, 0.0f);
+            if (z9Var.n0.getCurrentPeerView() != null) {
+                z9Var.n0.getCurrentPeerView().invalidate();
+            }
+            if (z9Var.Z < 0.0f) {
+                z9Var.Z = 0.0f;
+                z9Var.l0 = false;
+            }
+            return true;
         }
+        if (z9Var.c0) {
+            float f12 = z9Var.e0;
+            if (f12 <= z9Var.w.c || f10 <= 0.0f) {
+                z9Var.e0 = f12 + f10;
+            } else {
+                z9Var.e0 = (0.05f * f10) + f12;
+            }
+            n9 n9Var = z9Var.s;
+            qc qcVar2 = qc.w;
+            if (qcVar2 != null && qcVar2.h == n9Var) {
+                qcVar2.b();
+            }
+            if (z9Var.n0.getCurrentPeerView() != null) {
+                z9Var.n0.getCurrentPeerView().invalidate();
+            }
+            z9Var.v.invalidate();
+            if (z9Var.e0 < 0.0f) {
+                z9Var.e0 = 0.0f;
+                z9Var.c0 = false;
+            }
+            return true;
+        }
+        if (z9Var.V > 0.8f) {
+            float f13 = -f10;
+            if ((f13 > 0.0f && z9Var.W > 0.0f) || (f13 < 0.0f && z9Var.W < 0.0f)) {
+                f11 = 0.3f;
+                z9Var.W -= f10 * f11;
+                n9 n9Var2 = z9Var.s;
+                qcVar = qc.w;
+                if (qcVar != null && qcVar.h == n9Var2) {
+                    qcVar.b();
+                }
+                z9.k(z9Var);
+                return true;
+            }
+        }
+        f11 = 0.6f;
+        z9Var.W -= f10 * f11;
+        n9 n9Var22 = z9Var.s;
+        qcVar = qc.w;
+        if (qcVar != null) {
+            qcVar.b();
+        }
+        z9.k(z9Var);
+        return true;
+    }
+
+    @Override // android.view.GestureDetector.OnGestureListener
+    public final boolean onSingleTapUp(MotionEvent motionEvent) {
+        p4 currentPeerView;
+        z9 z9Var = this.a;
+        if (z9Var.e0 == 0.0f && z9Var.f0) {
+            if (z9Var.x || z9Var.L0 || z9Var.m1 || z9Var.i1 || z9Var.j1) {
+                p9 p9Var = z9Var.n0;
+                if (p9Var != null && (currentPeerView = p9Var.getCurrentPeerView()) != null) {
+                    currentPeerView.r0();
+                }
+            } else {
+                p4 t10 = z9Var.t();
+                if (t10 == null || !t10.O1.f) {
+                    boolean z10 = motionEvent.getX() > ((float) z9Var.v.getMeasuredWidth()) * 0.33f;
+                    p4 currentPeerView2 = z9Var.n0.getCurrentPeerView();
+                    if (currentPeerView2 != null && !currentPeerView2.c1(z10)) {
+                        if (z9Var.n0.E(z10)) {
+                            p9 p9Var2 = z9Var.n0;
+                            p9Var2.L0 = true;
+                            p9Var2.onTouchEvent(MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0));
+                            androidx.activity.i iVar = p9Var2.M0;
+                            AndroidUtilities.cancelRunOnUIThread(iVar);
+                            AndroidUtilities.runOnUIThread(iVar, 150L);
+                            return false;
+                        }
+                        if (z10) {
+                            z9Var.q(true);
+                            return false;
+                        }
+                        y9 y9Var = z9Var.z0;
+                        if (y9Var != null) {
+                            y9Var.loopBack();
+                            return false;
+                        }
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    @Override // android.view.GestureDetector.OnGestureListener
+    public final void onLongPress(MotionEvent motionEvent) {
+    }
+
+    @Override // android.view.GestureDetector.OnGestureListener
+    public final void onShowPress(MotionEvent motionEvent) {
     }
 }

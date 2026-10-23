@@ -1,45 +1,21 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class c11 implements org.telegram.ui.ActionBar.a2 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ e11 b;
+public final class c11 {
+    public final long a;
+    public final TLRPC.InputFile b;
+    public final TLRPC.InputEncryptedFile c;
+    public final byte[] d;
+    public final byte[] e;
 
-    public /* synthetic */ c11(e11 e11Var, int i10) {
-        this.a = i10;
-        this.b = e11Var;
-    }
-
-    @Override // org.telegram.ui.ActionBar.a2
-    public final void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        switch (this.a) {
-            case 0:
-                this.b.a();
-                break;
-            case 1:
-                e11 e11Var = this.b;
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(e11Var.getContext());
-                alertDialog$Builder.a.T = LocaleController.getString(R.string.TosDeclineDeleteAccount);
-                alertDialog$Builder.a.R = LocaleController.getString(R.string.AppName);
-                alertDialog$Builder.k(LocaleController.getString(R.string.Deactivate), new c11(e11Var, 2));
-                i2.e.r(R.string.Cancel, alertDialog$Builder, null);
-                break;
-            default:
-                e11 e11Var2 = this.b;
-                org.telegram.ui.ActionBar.b2 b2Var2 = new org.telegram.ui.ActionBar.b2(e11Var2.getContext(), 3, null);
-                b2Var2.g0 = false;
-                TL_account.deleteAccount deleteaccount = new TL_account.deleteAccount();
-                deleteaccount.reason = "Decline ToS update";
-                ConnectionsManager.getInstance(e11Var2.d).sendRequest(deleteaccount, new org.telegram.ui.vc(23, e11Var2, b2Var2));
-                b2Var2.show();
-                break;
-        }
+    public c11(long j10, TLRPC.InputFile inputFile, TLRPC.InputEncryptedFile inputEncryptedFile, byte[] bArr, byte[] bArr2) {
+        this.a = j10;
+        this.b = inputFile;
+        this.c = inputEncryptedFile;
+        this.d = bArr;
+        this.e = bArr2;
     }
 }

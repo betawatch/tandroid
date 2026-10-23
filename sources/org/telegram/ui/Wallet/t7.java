@@ -45,11 +45,11 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.i80;
-import org.telegram.ui.Components.vj0;
-import org.telegram.ui.cg;
+import org.telegram.ui.Components.j80;
+import org.telegram.ui.Components.yj0;
+import org.telegram.ui.dg;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class t7 extends View {
     public static final /* synthetic */ int G1 = 0;
@@ -104,7 +104,7 @@ public final class t7 extends View {
     public boolean X0;
     public float Y0;
     public float Z0;
-    public final org.telegram.ui.ActionBar.n2 a;
+    public final org.telegram.ui.ActionBar.o2 a;
     public float a0;
     public boolean a1;
     public final boolean b;
@@ -113,11 +113,11 @@ public final class t7 extends View {
     public final x5 c;
     public final r7 c0;
     public String c1;
-    public final n2.e d;
+    public final mi.q d;
     public final Paint d0;
     public boolean d1;
     public final SharedPreferences e;
-    public final vj0 e0;
+    public final yj0 e0;
     public boolean e1;
     public final LinkedHashMap f;
     public boolean f0;
@@ -167,12 +167,12 @@ public final class t7 extends View {
     public ei.x3 x1;
     public final Paint y;
     public float y0;
-    public final o1 y1;
+    public final n1 y1;
     public float z0;
-    public final a5 z1;
+    public final z4 z1;
 
-    public t7(org.telegram.ui.ActionBar.n2 n2Var, x5 x5Var, n2.e eVar, TL_wallet.card cardVar) {
-        super(n2Var.getContext());
+    public t7(org.telegram.ui.ActionBar.o2 o2Var, x5 x5Var, mi.q qVar, TL_wallet.card cardVar) {
+        super(o2Var.getContext());
         SharedPreferences sharedPreferences;
         this.f = new LinkedHashMap();
         this.h = new ArrayList();
@@ -224,9 +224,9 @@ public final class t7 extends View {
         this.t1 = new Matrix();
         this.u1 = new Path();
         this.v1 = new RectF();
-        this.y1 = new o1(this, i10);
+        this.y1 = new n1(this, i10);
         int i11 = 2;
-        this.z1 = new a5(i11, this);
+        this.z1 = new z4(i11, this);
         this.A1 = new l7(this, i11);
         this.B1 = new l7(this, 3);
         this.C1 = new o7(this);
@@ -236,21 +236,21 @@ public final class t7 extends View {
         paint6.setColor(-16777216);
         paint6.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
         this.F1 = new Rect();
-        this.a = n2Var;
+        this.a = o2Var;
         int i12 = 0;
         boolean z10 = cardVar != null;
         this.b = z10;
-        vj0 vj0Var = new vj0(R.raw.wallet_gift_trash, AndroidUtilities.dp(42.0f), AndroidUtilities.dp(42.0f), true, null);
-        this.e0 = vj0Var;
-        vj0Var.R(this);
+        yj0 yj0Var = new yj0(R.raw.wallet_gift_trash, AndroidUtilities.dp(42.0f), AndroidUtilities.dp(42.0f), true, null);
+        this.e0 = yj0Var;
+        yj0Var.R(this);
         this.c = x5Var;
-        this.d = eVar;
+        this.d = qVar;
         paint3.setShader(linearGradient);
         paint3.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_ATOP));
         if (z10) {
             sharedPreferences = null;
         } else {
-            sharedPreferences = getContext().getSharedPreferences("wallet_card_stickers_" + n2Var.getCurrentAccount() + "_" + m0.w(n2Var.getCurrentAccount()).s(), 0);
+            sharedPreferences = getContext().getSharedPreferences("wallet_card_stickers_" + o2Var.getCurrentAccount() + "_" + l0.w(o2Var.getCurrentAccount()).s(), 0);
         }
         this.e = sharedPreferences;
         this.P0 = z10 ? null : sharedPreferences.getString("style", null);
@@ -278,12 +278,12 @@ public final class t7 extends View {
             d(cardVar);
             return;
         }
-        int currentAccount = n2Var.getCurrentAccount();
+        int currentAccount = o2Var.getCurrentAccount();
         MessagesController messagesController = MessagesController.getInstance(currentAccount);
         long clientUserId = UserConfig.getInstance(currentAccount).getClientUserId();
         TLRPC.UserFull userFull = messagesController.getUserFull(clientUserId);
         if (userFull == null) {
-            messagesController.loadFullUser(messagesController.getUser(Long.valueOf(clientUserId)), 0, true, new l(this, 4));
+            messagesController.loadFullUser(messagesController.getUser(Long.valueOf(clientUserId)), 0, true, new k(this, 4));
         } else {
             TL_wallet.card cardVar2 = userFull.wallet_card;
             d(cardVar2 == null ? new TL_wallet.card() : cardVar2);
@@ -597,7 +597,7 @@ public final class t7 extends View {
         g7 j10 = j(s7Var);
         if (j10 != null) {
             j10.animate().cancel();
-            j10.n();
+            j10.o();
         }
         s7Var.c0 = j10 != null ? j10.getScaleX() : 1.0f;
         RectF Z = Z(s7Var);
@@ -619,7 +619,7 @@ public final class t7 extends View {
 
     public final ArrayList G() {
         ArrayList arrayList = new ArrayList(this.f.values());
-        List.-EL.sort(arrayList, Comparator$-CC.comparingLong(new org.telegram.ui.Components.x0(2)));
+        List.-EL.sort(arrayList, Comparator$-CC.comparingLong(new org.telegram.ui.Components.w0(2)));
         return arrayList;
     }
 
@@ -638,7 +638,7 @@ public final class t7 extends View {
                 }
             }
             if (arrayList.size() >= 10) {
-                List.-EL.sort(arrayList, Comparator$-CC.comparingLong(new org.telegram.ui.Components.x0(3)));
+                List.-EL.sort(arrayList, Comparator$-CC.comparingLong(new org.telegram.ui.Components.w0(3)));
                 for (int i10 = 0; i10 <= arrayList.size() - 10; i10++) {
                     s7 s7Var3 = (s7) arrayList.get(i10);
                     if (this.d.O()) {
@@ -902,7 +902,7 @@ public final class t7 extends View {
                 }
             }
             e0(currentAccount, cardVar2);
-            this.f1 = ConnectionsManager.getInstance(currentAccount).sendRequestTyped(setcardstickers, new org.telegram.messenger.a(), new cg(this, currentAccount, cardVar, 3));
+            this.f1 = ConnectionsManager.getInstance(currentAccount).sendRequestTyped(setcardstickers, new org.telegram.messenger.a(), new dg(this, currentAccount, cardVar, 3));
         }
     }
 
@@ -936,17 +936,17 @@ public final class t7 extends View {
             this.O0 = null;
         }
         g7Var.animate().cancel();
-        g7Var.m(g7Var.getScaleX() * g7Var.q0);
+        g7Var.n(g7Var.getScaleX() * g7Var.y0);
         g7Var.setScaleX(1.0f);
         g7Var.setScaleY(1.0f);
-        g7Var.l(1.0f, 150L, null);
-        final s7 v = v(g7Var.o0);
+        g7Var.m(1.0f, 150L, null);
+        final s7 v = v(g7Var.w0);
         String str = v.a;
         if (!b(v) && !v.b()) {
             this.s0 = false;
             return;
         }
-        i80 I = i80.I(this.a, g7Var);
+        j80 I = j80.I(this.a, g7Var);
         I.s = 51;
         if (m(v) || str.equals(this.P0)) {
             final int i10 = 0;
@@ -1098,9 +1098,9 @@ public final class t7 extends View {
         f0();
     }
 
-    public final void Y(e0 e0Var) {
+    public final void Y(d0 d0Var) {
         TL_wallet.nftItem nftitem;
-        ArrayList arrayList = e0Var.a;
+        ArrayList arrayList = d0Var.a;
         int size = arrayList.size();
         int i10 = 0;
         while (i10 < size) {
@@ -1118,7 +1118,7 @@ public final class t7 extends View {
             int i11 = s7Var.H;
             String str = s7Var.a;
             if (i11 != 3) {
-                ArrayList arrayList2 = e0Var.c;
+                ArrayList arrayList2 = d0Var.c;
                 int size2 = arrayList2.size();
                 int i12 = 0;
                 while (true) {
@@ -1126,7 +1126,7 @@ public final class t7 extends View {
                         Object obj2 = arrayList2.get(i12);
                         i12++;
                         TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) obj2;
-                        if (!wallettransaction.failed && (nftitem = wallettransaction.nft) != null && m0.a(nftitem.address, str)) {
+                        if (!wallettransaction.failed && (nftitem = wallettransaction.nft) != null && l0.a(nftitem.address, str)) {
                             if (str.equals(this.P0) || str.equals(this.Q0)) {
                                 this.Q0 = null;
                                 this.P0 = null;
@@ -1425,8 +1425,8 @@ public final class t7 extends View {
         if (!arrayList.contains(g7Var)) {
             arrayList.add(g7Var);
         }
-        s7 v = v(g7Var.o0);
-        g7Var.j(v.R, false, v.H == 0 ? 0.0f : 1.0f);
+        s7 v = v(g7Var.w0);
+        g7Var.k(v.R, false, v.H == 0 ? 0.0f : 1.0f);
         f0();
     }
 
@@ -1438,7 +1438,7 @@ public final class t7 extends View {
             Object obj = arrayList.get(i10);
             i10++;
             g7 g7Var = (g7) obj;
-            if (g7Var.isAttachedToWindow() && g7Var.o0.address.equals(s7Var.a)) {
+            if (g7Var.isAttachedToWindow() && g7Var.w0.address.equals(s7Var.a)) {
                 return g7Var;
             }
         }
@@ -1535,9 +1535,9 @@ public final class t7 extends View {
                 canvas2.translate(t7Var.getWidth() / 2.0f, ((1.0f - f16) * AndroidUtilities.dp(90.0f)) + t7Var.h());
                 float f17 = (f16 * 0.4f) + 0.6f;
                 canvas2.scale(f17, f17);
-                int i12 = org.telegram.ui.ActionBar.h6.d6;
-                org.telegram.ui.ActionBar.n2 n2Var = t7Var.a;
-                paint.setColor(i0.a.f(clamp01, org.telegram.ui.ActionBar.h6.w0(i12, n2Var.getResourceProvider()), -1750963));
+                int i12 = org.telegram.ui.ActionBar.k6.d6;
+                org.telegram.ui.ActionBar.o2 o2Var = t7Var.a;
+                paint.setColor(i0.a.f(clamp01, org.telegram.ui.ActionBar.k6.w0(i12, o2Var.getResourceProvider()), -1750963));
                 paint.setAlpha((int) (Utilities.clamp01(f16) * 255.0f));
                 float f18 = (-measureText) / 2.0f;
                 float f19 = measureText / 2.0f;
@@ -1547,21 +1547,21 @@ public final class t7 extends View {
                 float dp4 = AndroidUtilities.dp(21.0f);
                 int round = Math.round(t7Var.c0.a);
                 f11 = 2.0f;
-                vj0 vj0Var = t7Var.e0;
-                vj0Var.N(round, false, false);
+                yj0 yj0Var = t7Var.e0;
+                yj0Var.N(round, false, false);
                 float f20 = dp3 - dp4;
                 i10 = 0;
                 f12 = 0.6f;
                 float f21 = -dp4;
                 float f22 = dp3 + dp4;
-                vj0Var.setBounds((int) f20, (int) f21, (int) f22, (int) dp4);
-                PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(i0.a.f(clamp01, org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.G6, n2Var.getResourceProvider()), -1), PorterDuff.Mode.SRC_IN);
+                yj0Var.setBounds((int) f20, (int) f21, (int) f22, (int) dp4);
+                PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(i0.a.f(clamp01, org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.G6, o2Var.getResourceProvider()), -1), PorterDuff.Mode.SRC_IN);
                 Paint paint3 = t7Var.d0;
                 paint3.setColorFilter(porterDuffColorFilter);
                 paint3.setAlpha((int) (Utilities.clamp01(f16) * 255.0f));
                 canvas2 = canvas;
                 int saveLayer = canvas2.saveLayer(f20, f21, f22, dp4, paint3);
-                vj0Var.draw(canvas2);
+                yj0Var.draw(canvas2);
                 canvas2.restoreToCount(saveLayer);
                 if (clamp01 > 0.02f) {
                     paint2.setColor(-1);
@@ -2016,15 +2016,15 @@ public final class t7 extends View {
         if (this.m0) {
             o5 o5Var = (o5) this.d.c;
             float f11 = o5Var.H0;
-            p3 p3Var = o5Var.J0;
+            o3 o3Var = o5Var.J0;
             if (f11 > 0.0f) {
-                AndroidUtilities.cancelRunOnUIThread(p3Var);
-                AndroidUtilities.runOnUIThread(p3Var, 1650L);
+                AndroidUtilities.cancelRunOnUIThread(o3Var);
+                AndroidUtilities.runOnUIThread(o3Var, 1650L);
             }
         }
         s7 s7Var = this.g0;
         if (s7Var != null) {
-            ci.g3 g3Var = s7Var.c;
+            ci.f3 f3Var = s7Var.c;
             r7 r7Var = s7Var.g;
             r7 r7Var2 = s7Var.i;
             r7 r7Var3 = s7Var.f;
@@ -2146,8 +2146,8 @@ public final class t7 extends View {
                     s7Var.I = j12;
                     s7Var.S = true;
                     s7Var.T = false;
-                    g3Var.setAllowStartLottieAnimation(true);
-                    g3Var.startAnimation();
+                    f3Var.setAllowStartLottieAnimation(true);
+                    f3Var.startAnimation();
                     performHapticFeedback(3);
                 } else {
                     ((o5) this.a).C0(s7Var.b);
@@ -2219,7 +2219,7 @@ public final class t7 extends View {
             f12 = this.Z0 * 0.68f;
         }
         Random random = new Random((System.nanoTime() / 400000000) + (arrayList2.size() * 31) + (s7Var.a.hashCode() * 7919));
-        float d = org.telegram.ui.Cells.c1.d(random, 0.04f, 0.05f);
+        float d = org.telegram.ui.Cells.b1.d(random, 0.04f, 0.05f);
         float f17 = 0.5f;
         float nextFloat2 = (((random.nextFloat() - 0.5f) * 0.08f) + 0.5f) * this.Y0;
         float nextFloat3 = this.Z0 * (((random.nextFloat() - 0.5f) * 0.08f) + 0.55f);

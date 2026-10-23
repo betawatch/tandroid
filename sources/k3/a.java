@@ -1,104 +1,102 @@
 package k3;
 
-import b2.v;
 import b2.v0;
 import b2.w;
-import c3.e0;
-import c3.j0;
-import c3.o;
-import c3.p;
+import c3.g0;
+import c3.l0;
 import c3.q;
+import c3.r;
 import c3.s;
-import c3.t;
-import e9.l0;
+import c3.u;
+import c3.v;
 import e9.n0;
 import e9.x1;
-import i2.e;
+import i2.o1;
 import java.util.List;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public final class a implements o {
+public final class a implements q {
     public final /* synthetic */ int a = 0;
     public final Object b;
 
     public a(int i10) {
         if ((i10 & 1) != 0) {
-            this.b = new e0(65496, 2, "image/jpeg");
+            this.b = new g0(65496, 2, "image/jpeg");
         } else {
             this.b = new b();
         }
     }
 
-    @Override // c3.o
-    public final boolean a(p pVar) {
+    @Override // c3.q
+    public final boolean a(r rVar) {
         switch (this.a) {
             case 0:
-                return ((o) this.b).a(pVar);
+                return ((q) this.b).a(rVar);
             default:
                 return true;
         }
     }
 
-    @Override // c3.o
-    public final o b() {
+    @Override // c3.q
+    public final q b() {
         int i10 = this.a;
         return this;
     }
 
-    @Override // c3.o
-    public final void c(q qVar) {
+    @Override // c3.q
+    public final void c(s sVar) {
         switch (this.a) {
             case 0:
-                ((o) this.b).c(qVar);
+                ((q) this.b).c(sVar);
                 break;
             default:
-                j0 j02 = qVar.j0(0, 3);
-                qVar.g0(new t(-9223372036854775807L));
-                qVar.H();
+                l0 j02 = sVar.j0(0, 3);
+                sVar.g0(new v(-9223372036854775807L));
+                sVar.C();
                 w wVar = (w) this.b;
-                v a2 = wVar.a();
+                b2.v a2 = wVar.a();
                 a2.r = v0.n("text/x-unknown");
                 a2.j = wVar.s;
-                e.u(a2, j02);
+                o1.v(a2, j02);
                 break;
         }
     }
 
-    @Override // c3.o
+    @Override // c3.q
     public final void d(long j10, long j11) {
         switch (this.a) {
             case 0:
-                ((o) this.b).d(j10, j11);
+                ((q) this.b).d(j10, j11);
                 break;
         }
     }
 
     /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
-    @Override // c3.o
+    @Override // c3.q
     public final List e() {
         switch (this.a) {
         }
-        l0 l0Var = n0.b;
+        e9.l0 l0Var = n0.b;
         return x1.e;
     }
 
-    @Override // c3.o
-    public final int f(p pVar, s sVar) {
+    @Override // c3.q
+    public final int f(r rVar, u uVar) {
         switch (this.a) {
             case 0:
-                return ((o) this.b).f(pVar, sVar);
+                return ((q) this.b).f(rVar, uVar);
             default:
-                return pVar.skip(ConnectionsManager.DEFAULT_DATACENTER_ID) == -1 ? -1 : 0;
+                return rVar.skip(ConnectionsManager.DEFAULT_DATACENTER_ID) == -1 ? -1 : 0;
         }
     }
 
-    @Override // c3.o
+    @Override // c3.q
     public final void release() {
         switch (this.a) {
             case 0:
-                ((o) this.b).release();
+                ((q) this.b).release();
                 break;
         }
     }

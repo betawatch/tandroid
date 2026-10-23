@@ -1,24 +1,23 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
-/* loaded from: classes3.dex */
-public final class i61 extends g.o {
-    public final /* synthetic */ k61 c;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
 
-    public i61(k61 k61Var) {
-        this.c = k61Var;
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+/* loaded from: classes3.dex */
+public final class i61 extends s4.r0 {
+    public final /* synthetic */ l61 a;
+
+    public i61(l61 l61Var) {
+        this.a = l61Var;
     }
 
-    @Override // g.o
-    public final int i(int i10) {
-        int i11;
-        k61 k61Var = this.c;
-        org.telegram.ui.Components.wz wzVar = k61Var.X;
-        org.telegram.ui.Components.u61 u61Var = k61Var.d0;
-        if (u61Var == null) {
-            return wzVar.J;
+    @Override // s4.r0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        l61 l61Var = this.a;
+        if (l61Var.d.I1) {
+            AndroidUtilities.hideKeyboard(l61Var.c0);
         }
-        org.telegram.ui.Components.h61 G = u61Var.G(i10 - 1);
-        return (G == null || (i11 = G.u) == -1) ? wzVar.J : i11;
+        l61.S(l61Var);
     }
 }

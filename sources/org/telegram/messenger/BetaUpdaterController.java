@@ -9,7 +9,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.web.HttpGetFileTask;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public class BetaUpdaterController {
     private static final long CHECK_INTERVAL = 1200000;
@@ -125,7 +125,7 @@ public class BetaUpdaterController {
                 if (this.versionCode == i11 || ApplicationLoader.mainInterfacePaused) {
                     return;
                 }
-                Context context = LaunchActivity.H1;
+                Context context = LaunchActivity.J1;
                 if (context == null) {
                     context = ApplicationLoader.applicationContext;
                 }
@@ -185,7 +185,7 @@ public class BetaUpdaterController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$checkForUpdate$2(Runnable runnable, String str) {
-        AndroidUtilities.runOnUIThread(new h0(this, str, runnable, 8));
+        AndroidUtilities.runOnUIThread(new g0(this, str, runnable, 8));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -308,7 +308,7 @@ public class BetaUpdaterController {
         }
         this.checkingForUpdate = true;
         this.firstCheck = false;
-        new org.telegram.ui.web.h1(new w(0, this, runnable)).execute(BuildConfig.BETA_URL);
+        new org.telegram.ui.web.i1(new w(0, this, runnable)).execute(BuildConfig.BETA_URL);
     }
 
     public void downloadUpdate() {

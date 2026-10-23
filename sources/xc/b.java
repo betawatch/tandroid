@@ -19,14 +19,15 @@ import javax.net.ssl.HttpsURLConnection;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import org.telegram.ui.Cells.c1;
+import org.telegram.ui.Cells.b1;
+import si.o0;
 import vc.d;
 import vc.e;
 import vc.f;
 import w7.m9;
 import w7.q8;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final c a = new c();
@@ -189,7 +190,7 @@ public abstract class b {
         }
         if (!(obj instanceof List)) {
             if ("".equals(obj)) {
-                throw new d(c1.k("You cannot set '", str, "' to an empty string. We interpret empty strings as null in requests. You may set '", str, "' to null to delete the property."), null, null);
+                throw new d(b1.l("You cannot set '", str, "' to an empty string. We interpret empty strings as null in requests. You may set '", str, "' to null to delete the property."), null, null);
             }
             if (obj == null) {
                 LinkedList linkedList = new LinkedList();
@@ -203,7 +204,7 @@ public abstract class b {
         List list = (List) obj;
         LinkedList linkedList3 = new LinkedList();
         Iterator it = list.iterator();
-        String u10 = r4.c.u(str, "[]");
+        String u10 = o0.u(str, "[]");
         if (list.isEmpty()) {
             linkedList3.add(new a(str, ""));
             return linkedList3;

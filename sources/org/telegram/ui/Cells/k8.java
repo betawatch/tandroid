@@ -7,27 +7,27 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.c71;
-import org.telegram.ui.Components.g61;
-import org.telegram.ui.Components.h61;
-import org.telegram.ui.Components.jm0;
-import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.b71;
+import org.telegram.ui.Components.j71;
+import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.m61;
+import org.telegram.ui.Components.mm0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class k8 extends g61 {
+public final class k8 extends l61 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        g61.setup(new k8());
+        l61.setup(new k8());
     }
 
-    @Override // org.telegram.ui.Components.g61
-    public final void attachedView(jm0 jm0Var, View view, h61 h61Var) {
+    @Override // org.telegram.ui.Components.l61
+    public final void attachedView(mm0 mm0Var, View view, m61 m61Var) {
         l8 l8Var = (l8) view;
         boolean z10 = false;
-        l8Var.b(h61Var != null && h61Var.e, true);
-        if ((jm0Var instanceof c71) && ((c71) jm0Var).a3) {
+        l8Var.b(m61Var != null && m61Var.e, true);
+        if ((mm0Var instanceof j71) && ((j71) mm0Var).d3) {
             z10 = true;
         }
         l8Var.c(z10);
@@ -35,22 +35,22 @@ public final class k8 extends g61 {
 
     /* JADX WARN: Removed duplicated region for block: B:16:0x006e  */
     /* JADX WARN: Removed duplicated region for block: B:24:0x007a  */
-    @Override // org.telegram.ui.Components.g61
+    @Override // org.telegram.ui.Components.l61
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void bindView(View view, h61 h61Var, boolean z10, u61 u61Var, c71 c71Var) {
-        int i10 = u61Var.f;
+    public final void bindView(View view, m61 m61Var, boolean z10, b71 b71Var, j71 j71Var) {
+        int i10 = b71Var.f;
         l8 l8Var = (l8) view;
-        TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) h61Var.G;
+        TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) m61Var.G;
         boolean z11 = false;
         l8Var.d(tL_messages_stickerSet, z10, false);
-        l8Var.b(h61Var.e, false);
-        l8Var.c(c71Var.a3);
-        l8Var.setOnOptionsClick(h61Var.D);
-        l8Var.y.setOnClickListener(h61Var.E);
-        l8Var.E.setOnClickListener(h61Var.E);
-        l8Var.F.setOnClickListener(h61Var.E);
+        l8Var.b(m61Var.e, false);
+        l8Var.c(j71Var.d3);
+        l8Var.setOnOptionsClick(m61Var.D);
+        l8Var.y.setOnClickListener(m61Var.E);
+        l8Var.E.setOnClickListener(m61Var.E);
+        l8Var.F.setOnClickListener(m61Var.E);
         TLRPC.StickerSet stickerSet = tL_messages_stickerSet.set;
         if (stickerSet == null || !stickerSet.emojis) {
             return;
@@ -69,20 +69,20 @@ public final class k8 extends g61 {
         l8Var.e(!z11 ? (!isStickerPackInstalled || tL_messages_stickerSet.set.official) ? 1 : 2 : isStickerPackInstalled ? 4 : 3);
     }
 
-    @Override // org.telegram.ui.Components.g61
-    public final View createView(Context context, jm0 jm0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
+    @Override // org.telegram.ui.Components.l61
+    public final View createView(Context context, mm0 mm0Var, int i10, int i11, org.telegram.ui.ActionBar.g6 g6Var) {
         final l8 l8Var = new l8(context, 1);
-        if (jm0Var instanceof c71) {
-            final c71 c71Var = (c71) jm0Var;
+        if (mm0Var instanceof j71) {
+            final j71 j71Var = (j71) mm0Var;
             l8Var.setOnReorderButtonTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.Cells.j8
                 @Override // android.view.View.OnTouchListener
                 public final boolean onTouch(View view, MotionEvent motionEvent) {
-                    c71 c71Var2;
+                    j71 j71Var2;
                     s4.y yVar;
-                    if (motionEvent.getAction() != 0 || (yVar = (c71Var2 = c71.this).X2) == null) {
+                    if (motionEvent.getAction() != 0 || (yVar = (j71Var2 = j71.this).a3) == null) {
                         return false;
                     }
-                    yVar.r(c71Var2.T(l8Var));
+                    yVar.r(j71Var2.T(l8Var));
                     return false;
                 }
             });

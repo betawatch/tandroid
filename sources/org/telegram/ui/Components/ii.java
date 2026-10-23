@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class ii extends org.telegram.ui.ActionBar.o1 {
     public final /* synthetic */ ji x;
@@ -19,7 +19,7 @@ public final class ii extends org.telegram.ui.ActionBar.o1 {
         ti tiVar = this.x.B0;
         if ((!tiVar.isDismissed() || tiVar.x0) && tiVar.v1) {
             li liVar = tiVar.B0;
-            if (liVar != tiVar.m0 && liVar != tiVar.n0 && !tiVar.o1().m()) {
+            if (liVar != tiVar.m0 && liVar != tiVar.n0 && !tiVar.r1().m()) {
                 return true;
             }
             li liVar2 = tiVar.B0;
@@ -61,11 +61,11 @@ public final class ii extends org.telegram.ui.ActionBar.o1 {
             x3Var.setTranslationY(tiVar.d1.getTranslationY());
         }
         tiVar.i1.setTranslationY(tiVar.o2);
-        tiVar.e2(0);
+        tiVar.i2(0);
         tiVar.setCurrentPanTranslationY(tiVar.B0 != tiVar.w0 ? tiVar.o2 : 0.0f);
         jiVar.invalidate();
         tiVar.G0.invalidate();
-        tiVar.Y1();
+        tiVar.c2();
         li liVar = tiVar.B0;
         if (liVar != null) {
             liVar.m(tiVar.o2, f10);
@@ -76,13 +76,13 @@ public final class ii extends org.telegram.ui.ActionBar.o1 {
     public final void f() {
         boolean z10;
         ti tiVar = this.x.B0;
-        tiVar.b2(tiVar.B0, 0);
+        tiVar.f2(tiVar.B0, 0);
         tiVar.f2 = tiVar.e2[0];
         tiVar.B0.y();
         if (!(tiVar.B0 instanceof gi.f4) || tiVar.G1) {
             return;
         }
-        z10 = ((org.telegram.ui.ActionBar.f3) tiVar).keyboardVisible;
+        z10 = ((org.telegram.ui.ActionBar.h3) tiVar).keyboardVisible;
         int dp = z10 ? AndroidUtilities.dp(84.0f) : 0;
         for (int i10 = 0; i10 < tiVar.A0.size(); i10++) {
             ((gi.f4) tiVar.A0.valueAt(i10)).setMeasureOffsetY(dp);

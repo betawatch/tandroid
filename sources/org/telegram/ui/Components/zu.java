@@ -6,9 +6,9 @@ import java.util.Locale;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class zu extends org.telegram.ui.ActionBar.g5 {
+public final class zu extends org.telegram.ui.ActionBar.k5 {
     public final /* synthetic */ boolean r;
     public final /* synthetic */ cv s;
 
@@ -17,16 +17,16 @@ public final class zu extends org.telegram.ui.ActionBar.g5 {
         this.r = z10;
     }
 
-    @Override // org.telegram.ui.ActionBar.g5, org.telegram.ui.ActionBar.z2
-    public final boolean h() {
+    @Override // org.telegram.ui.ActionBar.k5, org.telegram.ui.ActionBar.a3
+    public final boolean g() {
         cv cvVar = this.s;
-        w91 w91Var = cvVar.c;
-        boolean z10 = w91Var.T;
+        da1 da1Var = cvVar.c;
+        boolean z10 = da1Var.T;
         if (z10) {
             if (z10) {
-                w91Var.T = false;
-                w91Var.m();
-                w91Var.l(false);
+                da1Var.T = false;
+                da1Var.m();
+                da1Var.l(false);
             }
             return false;
         }
@@ -39,7 +39,7 @@ public final class zu extends org.telegram.ui.ActionBar.g5 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.g5, org.telegram.ui.ActionBar.z2
+    @Override // org.telegram.ui.ActionBar.k5, org.telegram.ui.ActionBar.a3
     public final void onOpenAnimationEnd() {
         String str;
         int intValue;
@@ -47,11 +47,11 @@ public final class zu extends org.telegram.ui.ActionBar.g5 {
         int i10 = cvVar.Q;
         RadialProgressView radialProgressView = cvVar.n;
         wu wuVar = cvVar.b;
-        w91 w91Var = cvVar.c;
+        da1 da1Var = cvVar.c;
         if (this.r && cvVar.c.g(cvVar.K, null, null, cvVar.I, true)) {
             radialProgressView.setVisibility(4);
             wuVar.setVisibility(4);
-            w91Var.setVisibility(0);
+            da1Var.setVisibility(0);
             return;
         }
         radialProgressView.setVisibility(0);
@@ -59,17 +59,17 @@ public final class zu extends org.telegram.ui.ActionBar.g5 {
         cvVar.s.setVisibility(0);
         cvVar.v.setVisibility(4);
         wuVar.setKeepScreenOn(true);
-        w91Var.setVisibility(4);
-        w91Var.getControlsView().setVisibility(4);
-        w91Var.getTextureView().setVisibility(4);
-        if (w91Var.getTextureImageView() != null) {
-            w91Var.getTextureImageView().setVisibility(4);
+        da1Var.setVisibility(4);
+        da1Var.getControlsView().setVisibility(4);
+        da1Var.getTextureView().setVisibility(4);
+        if (da1Var.getTextureImageView() != null) {
+            da1Var.getTextureImageView().setVisibility(4);
         }
         cvVar.c.g(null, null, null, null, false);
         HashMap hashMap = new HashMap();
         hashMap.put("Referer", "messenger.telegram.org");
         try {
-            String youtubeId = w91Var.getYoutubeId();
+            String youtubeId = da1Var.getYoutubeId();
             if (youtubeId == null) {
                 wuVar.loadUrl(cvVar.K, hashMap);
                 return;

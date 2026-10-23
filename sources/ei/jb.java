@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.graphics.Matrix;
 import android.view.View;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class jb extends r6 {
     public final /* synthetic */ vb C0;
@@ -57,8 +57,8 @@ public final class jb extends r6 {
         }
         for (int i10 = 0; i10 < vbVar.v1.R0.getChildCount(); i10++) {
             View childAt = vbVar.v1.R0.getChildAt(i10);
-            if (childAt instanceof rg.e1) {
-                ((rg.e1) childAt).s();
+            if (childAt instanceof rg.f1) {
+                ((rg.f1) childAt).s();
             }
         }
     }

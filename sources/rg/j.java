@@ -16,13 +16,14 @@ import java.util.List;
 import java.util.UUID;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.nk;
+import org.telegram.messenger.sl;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.fl0;
+import org.telegram.ui.Components.il0;
 import org.telegram.ui.Components.yc;
+import org.telegram.ui.wg1;
 import v7.f7;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public abstract class j extends FrameLayout {
     public static final List p0 = Arrays.asList(-90, 0, 90, 180);
@@ -35,7 +36,7 @@ public abstract class j extends FrameLayout {
     public boolean K;
     public int L;
     public int M;
-    public org.telegram.ui.Wallet.j N;
+    public wg1 N;
     public float O;
     public ValueAnimator P;
     public ValueAnimator Q;
@@ -108,7 +109,7 @@ public abstract class j extends FrameLayout {
                                 jVar.performHapticFeedback(0);
                             } catch (Exception unused) {
                             }
-                            jVar.F.h(jVar);
+                            jVar.F.g(jVar);
                             break;
                         }
                         break;
@@ -145,7 +146,7 @@ public abstract class j extends FrameLayout {
                                 jVar.performHapticFeedback(0);
                             } catch (Exception unused) {
                             }
-                            jVar.F.h(jVar);
+                            jVar.F.g(jVar);
                             break;
                         }
                         break;
@@ -177,7 +178,7 @@ public abstract class j extends FrameLayout {
                                 jVar.performHapticFeedback(0);
                             } catch (Exception unused) {
                             }
-                            jVar.F.h(jVar);
+                            jVar.F.g(jVar);
                             break;
                         }
                         break;
@@ -243,27 +244,27 @@ public abstract class j extends FrameLayout {
                 }
                 if (!this.v && (hVar4 = this.F) != null) {
                     this.v = true;
-                    hVar4.C();
+                    hVar4.B();
                 }
                 if (!this.w && z10 && (hVar3 = this.F) != null) {
                     this.w = true;
-                    hVar3.k();
+                    hVar3.j();
                 }
                 if (this.w && !z10 && (hVar2 = this.F) != null) {
                     this.w = false;
-                    hVar2.j();
+                    hVar2.i();
                 }
                 if (!this.l0 && !this.x && (hVar = this.F) != null) {
-                    hVar.v(this);
+                    hVar.u(this);
                     this.x = true;
                 }
                 h hVar5 = this.F;
                 if (hVar5 != null) {
-                    hVar5.B(nk.x((float) getHeight(), 2.0f, scaleX, this.G.y) < ((float) AndroidUtilities.dp(66.0f)));
-                    this.F.f(a1.g.d((float) getHeight(), 2.0f, scaleX, this.G.y) > ((float) (((View) getParent()).getHeight() - AndroidUtilities.dp(114.0f))));
+                    hVar5.A(sl.x((float) getHeight(), 2.0f, scaleX, this.G.y) < ((float) AndroidUtilities.dp(66.0f)));
+                    this.F.e(a1.g.d((float) getHeight(), 2.0f, scaleX, this.G.y) > ((float) (((View) getParent()).getHeight() - AndroidUtilities.dp(114.0f))));
                 }
                 h hVar6 = this.F;
-                boolean z11 = (hVar6 == null || hVar6.q()) && !z10 && f7.a(f13, f14, ((float) ((View) getParent()).getWidth()) / 2.0f, (float) (((View) getParent()).getHeight() - AndroidUtilities.dp(76.0f))) < ((float) AndroidUtilities.dp(32.0f));
+                boolean z11 = (hVar6 == null || hVar6.p()) && !z10 && f7.a(f13, f14, ((float) ((View) getParent()).getWidth()) / 2.0f, (float) (((View) getParent()).getHeight() - AndroidUtilities.dp(76.0f))) < ((float) AndroidUtilities.dp(32.0f));
                 if (this.y != z11) {
                     ValueAnimator valueAnimator = this.o0;
                     if (valueAnimator != null) {
@@ -279,7 +280,7 @@ public abstract class j extends FrameLayout {
                     this.y = z11;
                     h hVar7 = this.F;
                     if (hVar7 != null) {
-                        hVar7.m(z11);
+                        hVar7.l(z11);
                     }
                 }
                 this.a.c(false);
@@ -293,16 +294,16 @@ public abstract class j extends FrameLayout {
         h hVar;
         h hVar2;
         if (this.v) {
-            this.F.g(this.y);
+            this.F.f(this.y);
             this.v = false;
         }
         this.w = false;
         if (!z10 && !this.E && !this.n && !this.s && !this.x && (hVar2 = this.F) != null) {
-            hVar2.v(this);
+            hVar2.u(this);
         }
         if (this.n && (hVar = this.F) != null) {
-            hVar.B(false);
-            this.F.f(false);
+            hVar.A(false);
+            this.F.e(false);
         }
         AndroidUtilities.cancelRunOnUIThread(this.I);
         this.E = false;
@@ -311,9 +312,9 @@ public abstract class j extends FrameLayout {
         this.r = true;
         this.x = false;
         this.M = this.L;
-        org.telegram.ui.Wallet.j jVar = this.N;
-        if (jVar != null) {
-            AndroidUtilities.cancelRunOnUIThread(jVar);
+        wg1 wg1Var = this.N;
+        if (wg1Var != null) {
+            AndroidUtilities.cancelRunOnUIThread(wg1Var);
             this.N = null;
         }
         this.V = this.R;
@@ -332,7 +333,7 @@ public abstract class j extends FrameLayout {
         canvas.scale(a2, a2, getWidth() / 2.0f, getHeight() / 2.0f);
         if (getParent() instanceof View) {
             View view = (View) getParent();
-            if (this instanceof c2) {
+            if (this instanceof d2) {
                 float f7 = this.n0;
                 canvas.scale(f7, f7, getWidth() / 2.0f, getHeight() / 2.0f);
             } else {
@@ -438,22 +439,22 @@ public abstract class j extends FrameLayout {
                 if (Math.abs(intValue - f7) < 4.0f) {
                     if (this.M != intValue) {
                         this.M = intValue;
-                        org.telegram.ui.Wallet.j jVar = this.N;
-                        if (jVar != null) {
-                            AndroidUtilities.cancelRunOnUIThread(jVar);
+                        wg1 wg1Var = this.N;
+                        if (wg1Var != null) {
+                            AndroidUtilities.cancelRunOnUIThread(wg1Var);
                         }
-                        org.telegram.ui.Wallet.j jVar2 = new org.telegram.ui.Wallet.j(this, intValue, 7);
-                        this.N = jVar2;
-                        AndroidUtilities.runOnUIThread(jVar2, 250L);
+                        wg1 wg1Var2 = new wg1(this, intValue, 8);
+                        this.N = wg1Var2;
+                        AndroidUtilities.runOnUIThread(wg1Var2, 250L);
                     }
                 }
             }
         } else if (z10) {
             if (Math.abs(this.L - f7) >= 12.0f || this.c0) {
                 this.M = -1;
-                org.telegram.ui.Wallet.j jVar3 = this.N;
-                if (jVar3 != null) {
-                    AndroidUtilities.cancelRunOnUIThread(jVar3);
+                wg1 wg1Var3 = this.N;
+                if (wg1Var3 != null) {
+                    AndroidUtilities.cancelRunOnUIThread(wg1Var3);
                     this.N = null;
                 }
                 ValueAnimator valueAnimator = this.P;
@@ -562,8 +563,8 @@ public abstract class j extends FrameLayout {
         return getScaleX();
     }
 
-    public fl0 getSelectionBounds() {
-        return new fl0(0.0f, 0.0f, 0.0f, 0.0f);
+    public il0 getSelectionBounds() {
+        return new il0(0.0f, 0.0f, 0.0f, 0.0f);
     }
 
     public float getStickyPaddingBottom() {
@@ -630,7 +631,7 @@ public abstract class j extends FrameLayout {
         float f11 = f7 * f10;
         this.h0 = f11;
         float clamp = Utilities.clamp(Math.max(f11, 0.1f), getMaxScale(), getMinScale());
-        if (!(this instanceof b2)) {
+        if (!(this instanceof c2)) {
             if ((clamp >= getMaxScale() || clamp <= getMinScale()) != (f10 >= getMaxScale() || f10 <= getMinScale())) {
                 try {
                     performHapticFeedback(3, 1);
@@ -739,7 +740,7 @@ public abstract class j extends FrameLayout {
 
     @Override // android.view.ViewGroup
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        return this.F.r();
+        return this.F.q();
     }
 
     /* JADX WARN: Removed duplicated region for block: B:17:0x0044  */
@@ -757,12 +758,12 @@ public abstract class j extends FrameLayout {
         int actionMasked;
         j jVar;
         boolean z11;
-        if (this.F.r()) {
+        if (this.F.q()) {
             h hVar = this.F;
             float rawX = motionEvent.getRawX();
             float rawY = motionEvent.getRawY();
             float[] fArr = this.e0;
-            hVar.u(rawX, rawY, fArr);
+            hVar.t(rawX, rawY, fArr);
             boolean z12 = motionEvent.getPointerCount() > 1;
             float[] fArr2 = this.f0;
             if (z12) {
@@ -840,7 +841,7 @@ public abstract class j extends FrameLayout {
                     }
                     return true;
                 }
-                this.F.u(motionEvent.getRawX(1), motionEvent.getRawY(1), fArr2);
+                this.F.t(motionEvent.getRawX(1), motionEvent.getRawY(1), fArr2);
             }
             z10 = z12;
             float[] fArr32 = this.g0;

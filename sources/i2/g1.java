@@ -1,15 +1,27 @@
 package i2;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
-/* loaded from: classes.dex */
-public final class g1 {
-    public final u2.a a;
-    public final b1 b;
-    public final f1 c;
+import java.util.ArrayList;
 
-    public g1(u2.a aVar, b1 b1Var, f1 f1Var) {
-        this.a = aVar;
-        this.b = b1Var;
-        this.c = f1Var;
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+/* loaded from: classes.dex */
+public final class g1 implements z0 {
+    public final u2.c0 a;
+    public int d;
+    public boolean e;
+    public final ArrayList c = new ArrayList();
+    public final Object b = new Object();
+
+    public g1(u2.a aVar, boolean z10) {
+        this.a = new u2.c0(aVar, z10);
+    }
+
+    @Override // i2.z0
+    public final Object a() {
+        return this.b;
+    }
+
+    @Override // i2.z0
+    public final b2.o1 b() {
+        return this.a.o;
     }
 }

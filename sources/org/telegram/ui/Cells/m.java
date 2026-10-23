@@ -1,11 +1,13 @@
 package org.telegram.ui.Cells;
 
 import android.app.Activity;
+import android.graphics.drawable.Drawable;
 import android.text.SpannableStringBuilder;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.GiftAuctionController;
@@ -15,9 +17,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class m extends FrameLayout implements GiftAuctionController.OnActiveAuctionsUpdateListeners {
+public final class m extends FrameLayout implements GiftAuctionController.OnActiveAuctionsUpdateListeners, org.telegram.ui.ActionBar.b6 {
     public final int a;
     public final org.telegram.ui.Components.q6 b;
     public final org.telegram.ui.Components.q6 c;
@@ -29,31 +31,28 @@ public final class m extends FrameLayout implements GiftAuctionController.OnActi
         super(activity);
         this.e = new ArrayList();
         this.a = i10;
-        LinearLayout e = org.telegram.messenger.g0.e(activity, 1);
+        LinearLayout f7 = org.telegram.messenger.v0.f(activity, 1);
         org.telegram.ui.Components.q6 q6Var = new org.telegram.ui.Components.q6(activity, false, false, false);
         this.b = q6Var;
         q6Var.setTextSize(AndroidUtilities.dp(14.0f));
         q6Var.setTypeface(AndroidUtilities.bold());
         q6Var.setTranslationY(-AndroidUtilities.dp(1.0f));
-        e.addView(q6Var, w7.z5.n(-1, 18));
+        f7.addView(q6Var, w7.z5.n(-1, 18));
         org.telegram.ui.Components.q6 q6Var2 = new org.telegram.ui.Components.q6(activity, false, false, false);
         this.c = q6Var2;
         q6Var2.setTextSize(AndroidUtilities.dp(13.0f));
-        e.addView(q6Var2, w7.z5.k(2.0f, 0.0f, 2.0f, 0.0f, -1, 17));
+        f7.addView(q6Var2, w7.z5.k(2.0f, 0.0f, 2.0f, 0.0f, -1, 17));
         l lVar = new l(activity, i10);
         this.d = lVar;
         lVar.b(299L);
-        addView(e, w7.z5.d(-1, -2.0f, 16, 14.0f, 0.0f, 90.0f, 0.0f));
+        addView(f7, w7.z5.d(-1, -2.0f, 16, 14.0f, 0.0f, 90.0f, 0.0f));
         addView(lVar, w7.z5.d(-2, -2.0f, 21, 0.0f, 0.0f, 11.0f, 0.0f));
-        a();
+        Drawable M0 = org.telegram.ui.ActionBar.k6.M0(false);
+        org.telegram.ui.ActionBar.n6 O = org.telegram.ui.ActionBar.r6.O(org.telegram.ui.ActionBar.k6.i6);
+        setBackground(M0);
+        org.telegram.ui.ActionBar.r6.k(this, M0, null, O, null);
+        updateColors();
         setOnClickListener(new a(this, 1));
-    }
-
-    public final void a() {
-        setBackground(org.telegram.ui.ActionBar.h6.L0(false));
-        this.b.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false));
-        this.c.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, this.f ? org.telegram.ui.ActionBar.h6.q7 : org.telegram.ui.ActionBar.h6.y6, false));
-        invalidate();
     }
 
     @Override // org.telegram.messenger.GiftAuctionController.OnActiveAuctionsUpdateListeners
@@ -136,7 +135,7 @@ public final class m extends FrameLayout implements GiftAuctionController.OnActi
             }
             q6Var2.setText(LocaleController.formatString(R.string.Gift2ActiveAuctionsActiveStatusWinningOne, formatString));
         }
-        a();
+        updateColors();
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -156,5 +155,16 @@ public final class m extends FrameLayout implements GiftAuctionController.OnActi
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
         super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30));
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void updateColors() {
+        this.b.setTextColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.G6, false));
+        this.c.setTextColor(org.telegram.ui.ActionBar.k6.x0(null, this.f ? org.telegram.ui.ActionBar.k6.q7 : org.telegram.ui.ActionBar.k6.y6, false));
+        invalidate();
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

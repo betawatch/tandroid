@@ -3,7 +3,7 @@ package ei;
 import android.animation.ValueAnimator;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d1 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -21,7 +21,7 @@ public final /* synthetic */ class d1 implements Utilities.Callback {
         Integer num = (Integer) obj;
         switch (i10) {
             case 0:
-                n2.n(n2Var);
+                n2.m(n2Var);
                 break;
             case 1:
                 h1 h1Var = n2Var.f;
@@ -36,8 +36,8 @@ public final /* synthetic */ class d1 implements Utilities.Callback {
                 break;
             default:
                 int intValue = num.intValue();
-                int i11 = n2.G;
-                n2Var.q0(intValue);
+                int i11 = n2.H;
+                n2Var.r0(intValue);
                 break;
         }
     }

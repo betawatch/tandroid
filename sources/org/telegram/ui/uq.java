@@ -1,41 +1,33 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AnimationNotificationsLocker;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class uq extends s4.k {
-    public final AnimationNotificationsLocker F = new AnimationNotificationsLocker();
-    public final /* synthetic */ hr G;
+public final class uq implements aq {
+    public final /* synthetic */ TLObject a;
+    public final /* synthetic */ jr b;
 
-    public uq(hr hrVar) {
-        this.G = hrVar;
+    public uq(jr jrVar, TLObject tLObject) {
+        this.b = jrVar;
+        this.a = tLObject;
     }
 
-    @Override // s4.k
-    public final void N() {
-        this.F.unlock();
+    @Override // org.telegram.ui.aq
+    public final void a(TLRPC.User user) {
+        jr.c0(this.b, user);
     }
 
-    @Override // s4.k
-    public final void O() {
-        this.G.c.invalidate();
-    }
-
-    @Override // s4.k
-    public final void P(s4.b1 b1Var) {
-        this.G.c.invalidate();
-    }
-
-    @Override // s4.k, s4.l0
-    public final void m() {
-        boolean isEmpty = this.p.isEmpty();
-        boolean isEmpty2 = this.r.isEmpty();
-        boolean isEmpty3 = this.s.isEmpty();
-        boolean isEmpty4 = this.q.isEmpty();
-        if (!isEmpty || !isEmpty2 || !isEmpty4 || !isEmpty3) {
-            this.F.lock();
+    @Override // org.telegram.ui.aq
+    public final void b(int i10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
+        TLObject tLObject = this.a;
+        if (tLObject instanceof TLRPC.ChannelParticipant) {
+            TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) tLObject;
+            channelParticipant.admin_rights = tL_chatAdminRights;
+            channelParticipant.banned_rights = tL_chatBannedRights;
+            channelParticipant.rank = str;
+            jr.W(this.b, channelParticipant, tL_chatAdminRights, tL_chatBannedRights);
         }
-        super.m();
     }
 }

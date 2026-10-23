@@ -5,7 +5,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_bots;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class zs {
     public final int a;
@@ -43,6 +43,6 @@ public final class zs {
             str = "";
         }
         getpopularappbots.offset = str;
-        ConnectionsManager.getInstance(i10).sendRequest(getpopularappbots, new y1(this, 3));
+        ConnectionsManager.getInstance(i10).sendRequest(getpopularappbots, new x1(this, 3));
     }
 }

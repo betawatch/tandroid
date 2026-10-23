@@ -3,7 +3,7 @@ package zh;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public abstract class a {
     public static String[] a = {"Rosewood", "Carmine", "Fire Engine", "Seal Brown", "Chestnut", "Coral Red", "Strawberry", "Chocolate", "Mystic Pearl", "Burnt Sienna", "Tomato", "Cappuccino", "Copper", "Carrot Juice", "Persimmon", "Desert Sand", "Orange", "Caramel", "Old Gold", "Mustard", "Satin Gold", "Amber", "Pure Gold", "Light Olive", "Khaki Green", "Lemongrass", "Malachite", "Camo Green", "Pistachio", "Shamrock Green", "Dark Green", "Ranger Green", "Hunter Green", "Mint Green", "Emerald", "Pine Green", "Gunship Green", "Pacific Green", "Tactical Pine", "Jade Green", "Aquamarine", "Pacific Cyan", "Deep Cyan", "Turquoise", "Moonstone", "Sky Blue", "Azure Blue", "Gunmetal", "Celtic Blue", "Sapphire", "Silver Blue", "Indigo Dye", "French Blue", "Navy Blue", "Cobalt Blue", "Marine Blue", "Midnight Blue", "Neon Blue", "Cyberpunk", "Electric Indigo", "Lavender", "Grape", "French Violet", "English Violet", "Purple", "Electric Purple", "Dark Lilac", "Fandango", "Mexican Pink", "Burgundy", "Raspberry", "Black", "Onyx Black", "Rifle Green", "Battleship Grey", "Feldgrau", "Steel Grey", "Roman Silver", "Platinum", "Ivory White"};

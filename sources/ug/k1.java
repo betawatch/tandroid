@@ -1,26 +1,60 @@
 package ug;
 
-import android.graphics.Rect;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
+import android.graphics.Canvas;
+import android.graphics.LinearGradient;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.Shader;
+import android.text.TextPaint;
+import android.text.style.ReplacementSpan;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ActionBar.k6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class k1 extends s4.m0 {
-    public final /* synthetic */ m1 a;
+public final class k1 extends ReplacementSpan {
+    public final TextPaint a;
+    public final Paint b;
+    public final RectF c;
+    public final boolean d;
 
-    public k1(m1 m1Var) {
-        this.a = m1Var;
+    public k1(int i10, boolean z10) {
+        TextPaint textPaint = new TextPaint(1);
+        this.a = textPaint;
+        Paint paint = new Paint(1);
+        this.b = paint;
+        this.c = new RectF();
+        this.d = z10;
+        textPaint.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MONO));
+        textPaint.setTextSize(AndroidUtilities.dp(13.0f));
+        textPaint.setColor(i10);
+        paint.setColor(k6.o1(0.08f, i10));
     }
 
-    @Override // s4.m0
-    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.y0 y0Var) {
-        super.a(rect, view, recyclerView, y0Var);
-        recyclerView.getClass();
-        int R = RecyclerView.R(view);
-        m1 m1Var = this.a;
-        if (R == m1Var.g0.size()) {
-            rect.bottom = m1Var.q0;
+    @Override // android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+        TextPaint textPaint = this.a;
+        float measureText = textPaint.measureText(charSequence, i10, i11);
+        float f10 = (i12 + i14) / 2.0f;
+        RectF rectF = this.c;
+        rectF.set(f7, f10 - AndroidUtilities.dp(9.5f), f7 + measureText + AndroidUtilities.dp(8.0f), AndroidUtilities.dp(9.5f) + f10);
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), this.b);
+        if (this.d) {
+            int color = textPaint.getColor();
+            int o12 = k6.o1(0.0f, color);
+            float dp = f7 + AndroidUtilities.dp(4.0f);
+            textPaint.setShader(new LinearGradient(dp, 0.0f, dp + measureText, 0.0f, new int[]{color, o12, o12, color}, new float[]{0.17f, 0.41f, 0.59f, 0.87f}, Shader.TileMode.CLAMP));
         }
+        Paint.FontMetrics fontMetrics = textPaint.getFontMetrics();
+        canvas.drawText(charSequence, i10, i11, f7 + AndroidUtilities.dp(4.0f), f10 - ((fontMetrics.ascent + fontMetrics.descent) / 2.0f), textPaint);
+        textPaint.setShader(null);
+    }
+
+    @Override // android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
+        if (fontMetricsInt != null) {
+            paint.getFontMetricsInt(fontMetricsInt);
+        }
+        return AndroidUtilities.dp(11.0f) + ((int) Math.ceil(this.a.measureText(charSequence, i10, i11)));
     }
 }

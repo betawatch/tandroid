@@ -1,39 +1,23 @@
 package ug;
 
 import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.Components.jm0;
+import android.graphics.Canvas;
+import android.view.View;
+import org.telegram.ui.ActionBar.k6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class g1 extends yg.h {
-    public boolean J;
-    public final /* synthetic */ m1 K;
+public final class g1 extends View {
+    public final /* synthetic */ l1 a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g1(m1 m1Var, Context context, d6 d6Var) {
-        super(context, d6Var);
-        this.K = m1Var;
+    public g1(l1 l1Var, Context context) {
+        super(context);
+        this.a = l1Var;
     }
 
-    @Override // android.widget.ScrollView, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        int dp = AndroidUtilities.dp(64.0f) + getMeasuredHeight();
-        m1 m1Var = this.K;
-        m1Var.q0 = dp;
-        m1Var.p0.G();
-        if (this.J != m1Var.isKeyboardVisible()) {
-            boolean isKeyboardVisible = m1Var.isKeyboardVisible();
-            this.J = isKeyboardVisible;
-            if (isKeyboardVisible) {
-                jm0 jm0Var = m1Var.d;
-                li.n nVar = new li.n(m1Var.getContext(), 2, 0.6f);
-                nVar.a = 1;
-                nVar.p = AndroidUtilities.dp(36.0f);
-                jm0Var.getLayoutManager().w0(nVar);
-            }
-        }
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        canvas.drawColor(this.a.getThemedColor(k6.e7));
     }
 }

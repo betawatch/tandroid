@@ -1,20 +1,40 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import java.util.ArrayList;
+import java.util.LinkedHashSet;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class k41 extends z41 {
-    public final /* synthetic */ x51 d3;
+public final /* synthetic */ class k41 implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ LinkedHashSet b;
+    public final /* synthetic */ Runnable c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k41(x51 x51Var, Context context) {
-        super(x51Var, context);
-        this.d3 = x51Var;
+    public /* synthetic */ k41(LinkedHashSet linkedHashSet, Runnable runnable, int i10) {
+        this.a = i10;
+        this.b = linkedHashSet;
+        this.c = runnable;
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView
-    public final void k0(int i10, int i11) {
-        this.d3.h();
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        switch (this.a) {
+            case 0:
+                ArrayList arrayList = (ArrayList) obj;
+                if (arrayList != null) {
+                    this.b.addAll(arrayList);
+                }
+                this.c.run();
+                break;
+            default:
+                TLRPC.TL_emojiList tL_emojiList = (TLRPC.TL_emojiList) obj;
+                if (tL_emojiList != null) {
+                    this.b.addAll(tL_emojiList.document_id);
+                }
+                this.c.run();
+                break;
+        }
     }
 }

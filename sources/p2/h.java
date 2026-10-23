@@ -6,10 +6,10 @@ import e9.x1;
 import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.List;
-import org.telegram.ui.jg0;
+import org.telegram.ui.o70;
 import v7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class h {
     public final String a;
@@ -48,7 +48,7 @@ public final class h {
         this.k = j15;
         this.l = n0.u(arrayList2);
         this.m = n0.u(arrayList3);
-        this.n = n0.A(new jg0(14), arrayList4);
+        this.n = n0.A(new o70(15), arrayList4);
         this.o = z11;
         this.p = str2;
         this.q = str3;

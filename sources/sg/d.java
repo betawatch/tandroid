@@ -11,19 +11,20 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.nk;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.messenger.sl;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.r6;
 import org.telegram.ui.Cells.s3;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
-import org.telegram.ui.Components.im0;
-import org.telegram.ui.j41;
+import org.telegram.ui.Components.lm0;
+import org.telegram.ui.n41;
 import w7.z5;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class d extends im0 {
-    public final d6 c;
+public final class d extends lm0 {
+    public final g6 c;
     public final int d;
     public final int e;
     public final ArrayList f;
@@ -32,12 +33,12 @@ public final class d extends im0 {
     public c r;
     public final boolean s;
 
-    public d(int i10, d6 d6Var) {
+    public d(int i10, g6 g6Var) {
         ArrayList arrayList = new ArrayList();
         this.f = arrayList;
         this.s = true;
-        this.c = d6Var;
-        a1 a1Var = new a1(h6.Lj, h6.Mj, h6.Nj, h6.Oj, d6Var);
+        this.c = g6Var;
+        a1 a1Var = new a1(k6.Lj, k6.Mj, k6.Nj, k6.Oj, g6Var);
         this.h = a1Var;
         a1Var.o = 0.0f;
         a1Var.p = 0.0f;
@@ -59,7 +60,7 @@ public final class d extends im0 {
         this.d = arrayList.size() + 1;
     }
 
-    @Override // org.telegram.ui.Components.im0
+    @Override // org.telegram.ui.Components.lm0
     public final boolean D(s4.b1 b1Var) {
         return false;
     }
@@ -91,16 +92,16 @@ public final class d extends im0 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r1v3, types: [android.view.ViewGroup, org.telegram.ui.j41] */
+    /* JADX WARN: Type inference failed for: r1v3, types: [android.view.ViewGroup, org.telegram.ui.n41] */
     /* JADX WARN: Type inference failed for: r1v7, types: [sg.f] */
     @Override // s4.g0
     public final s4.b1 x(ViewGroup viewGroup, int i10) {
         s3 s3Var;
         Context context = viewGroup.getContext();
-        d6 d6Var = this.c;
+        g6 g6Var = this.c;
         if (i10 != 1) {
             if (i10 != 2) {
-                ?? fVar = new f(context, d6Var);
+                ?? fVar = new f(context, g6Var);
                 fVar.c.setParentViewForGradien(this.r);
                 fVar.c.setStaticGradinet(this.h);
                 s3Var = fVar;
@@ -108,8 +109,8 @@ public final class d extends im0 {
                 s3Var = new s3(context, 16);
             }
         } else if (this.s) {
-            ?? j41Var = new j41(context, 10);
-            LinearLayout e = nk.e(context, 0);
+            ?? n41Var = new n41(context, 10);
+            LinearLayout e = sl.e(context, 0);
             ImageView imageView = new ImageView(context);
             imageView.setImageDrawable(b1.c(context.getDrawable(R.drawable.other_2x_large), b1.d().a));
             e.addView(imageView, z5.d(40, 28.0f, 16, 0.0f, 0.0f, 8.0f, 0.0f));
@@ -117,11 +118,11 @@ public final class d extends im0 {
             textView.setText(LocaleController.getString(R.string.DoubledLimits));
             textView.setGravity(17);
             textView.setTextSize(1, 20.0f);
-            textView.setTextColor(h6.w0(h6.G6, d6Var));
+            r6.W(textView, k6.G6, g6Var);
             textView.setTypeface(AndroidUtilities.bold());
             e.addView(textView, z5.e(-2, -2, 16));
-            j41Var.addView(e, z5.e(-2, -2, 17));
-            s3Var = j41Var;
+            n41Var.addView(e, z5.e(-2, -2, 17));
+            s3Var = n41Var;
         } else {
             s3Var = new s3(context, 64);
         }

@@ -1,26 +1,74 @@
 package org.telegram.ui;
 
-import android.view.ViewGroup;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class vs extends org.telegram.ui.ActionBar.m1 {
-    public final /* synthetic */ at o;
+public final /* synthetic */ class vs implements r0.n, org.telegram.ui.Components.fl0 {
+    public final /* synthetic */ ht a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public vs(at atVar, ViewGroup viewGroup) {
-        super(viewGroup, -2, -2);
-        this.o = atVar;
+    public /* synthetic */ vs(ht htVar) {
+        this.a = htVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.m1, android.widget.PopupWindow
-    public final void dismiss() {
-        d(true);
-        et etVar = this.o.a;
-        etVar.k = null;
-        etVar.K = false;
-        if (etVar.R) {
-            etVar.n();
+    @Override // r0.n
+    public r0.k1 B0(View view, r0.k1 k1Var) {
+        this.a.q = AndroidUtilities.getDefaultWindowInsets(k1Var, false);
+        return k1Var;
+    }
+
+    @Override // org.telegram.ui.Components.fl0
+    public /* synthetic */ boolean i() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.fl0
+    public /* synthetic */ boolean l() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.fl0
+    public void m(View view, ah.i1 i1Var, boolean z10, boolean z11) {
+        if (i1Var == null) {
+            return;
         }
+        ht htVar = this.a;
+        ah.t0 reactionsWindow = htVar.P.getReactionsWindow();
+        if (!htVar.o.contains(i1Var.f)) {
+            htVar.o.add(i1Var.f);
+            if (htVar.o.size() > 7) {
+                htVar.o.remove(0);
+            }
+        } else if (htVar.o.size() <= 1) {
+            return;
+        } else {
+            htVar.o.remove(i1Var.f);
+        }
+        htVar.P.setSelectedEmojis(htVar.o);
+        if (reactionsWindow != null) {
+            ah.n0 n0Var = reactionsWindow.m;
+            htVar.P.p(null, null, false);
+            if (n0Var != null) {
+                n0Var.setSelectedReactions(htVar.o);
+                n0Var.setRecentReactions(htVar.P.V);
+            }
+            reactionsWindow.d();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.fl0
+    public /* synthetic */ boolean w() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.fl0
+    public /* synthetic */ void u() {
+    }
+
+    @Override // org.telegram.ui.Components.fl0
+    public /* synthetic */ void s(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
     }
 }

@@ -1,56 +1,8 @@
 package org.telegram.ui.Components;
 
-import java.util.Locale;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.R;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class wi0 implements kd0, md0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ bj0 b;
-
-    public /* synthetic */ wi0(bj0 bj0Var, int i10) {
-        this.a = i10;
-        this.b = bj0Var;
-    }
-
-    @Override // org.telegram.ui.Components.kd0
-    public String e(int i10) {
-        int i11 = this.a;
-        bj0 bj0Var = this.b;
-        switch (i11) {
-            case 0:
-                return bj0Var.O ? LocaleController.formatString("MilesShort", R.string.MilesShort, Integer.valueOf(i10)) : LocaleController.formatString("KMetersShort", R.string.KMetersShort, Integer.valueOf(i10));
-            default:
-                if (!bj0Var.O) {
-                    if (i10 == 1) {
-                        return LocaleController.formatString("MetersShort", R.string.MetersShort, 50);
-                    }
-                    if (i10 > 1) {
-                        i10--;
-                    }
-                    return LocaleController.formatString("MetersShort", R.string.MetersShort, Integer.valueOf(i10 * 100));
-                }
-                if (i10 == 1) {
-                    return LocaleController.formatString("FootsShort", R.string.FootsShort, Integer.valueOf(MediaDataController.MAX_LINKS_COUNT));
-                }
-                if (i10 > 1) {
-                    i10--;
-                }
-                Locale locale = Locale.US;
-                return i2.e.j(i10, ".");
-        }
-    }
-
-    @Override // org.telegram.ui.Components.md0
-    public void q(od0 od0Var, int i10) {
-        bj0 bj0Var = this.b;
-        try {
-            bj0Var.performHapticFeedback(3, 2);
-        } catch (Exception unused) {
-        }
-        bj0Var.c(true);
-    }
+public abstract class wi0 extends FrameLayout {
 }

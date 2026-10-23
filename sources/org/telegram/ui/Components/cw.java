@@ -14,7 +14,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class cw extends LinearLayout {
     public final a0.h a;
@@ -139,7 +139,7 @@ public final class cw extends LinearLayout {
         int i14 = (i13 - i11) / 2;
         if (!this.h) {
             int childCount = (getChildCount() - (!kwVar.W ? 1 : 0)) - (!kwVar.b0 ? 1 : 0);
-            int B = (int) (org.telegram.messenger.nk.B(30.0f, childCount, ((i12 - i10) - getPaddingLeft()) - getPaddingRight()) / Math.max(1, childCount - 1));
+            int B = (int) (org.telegram.messenger.sl.B(30.0f, childCount, ((i12 - i10) - getPaddingLeft()) - getPaddingRight()) / Math.max(1, childCount - 1));
             int paddingLeft = getPaddingLeft();
             for (int i15 = 0; i15 < childCount; i15++) {
                 View childAt = getChildAt((!kwVar.W ? 1 : 0) + (!kwVar.b0 ? 1 : 0) + i15);
@@ -203,7 +203,7 @@ public final class cw extends LinearLayout {
                     hVar.k(Integer.valueOf(paddingLeft2), l4.longValue());
                 }
                 if ((childAt2 != kwVar.y || kwVar.W) && (childAt2 != kwVar.E || kwVar.b0)) {
-                    paddingLeft2 = org.telegram.messenger.g0.C(3.0f, childAt2.getMeasuredWidth(), paddingLeft2);
+                    paddingLeft2 = org.telegram.messenger.v0.C(3.0f, childAt2.getMeasuredWidth(), paddingLeft2);
                 }
             }
             i16++;

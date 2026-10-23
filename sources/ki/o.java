@@ -7,10 +7,10 @@ import java.util.ArrayList;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.d61;
+import org.telegram.ui.Components.i61;
 import org.telegram.ui.Components.uy;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class o implements uy {
     public final /* synthetic */ q a;
@@ -137,15 +137,7 @@ public final class o implements uy {
     }
 
     @Override // org.telegram.ui.Components.uy
-    public final /* synthetic */ void n() {
-    }
-
-    @Override // org.telegram.ui.Components.uy
-    public final /* synthetic */ void o(d61 d61Var) {
-    }
-
-    @Override // org.telegram.ui.Components.uy
-    public final /* synthetic */ void q() {
+    public final /* synthetic */ void o(i61 i61Var) {
     }
 
     @Override // org.telegram.ui.Components.uy
@@ -161,15 +153,23 @@ public final class o implements uy {
     }
 
     @Override // org.telegram.ui.Components.uy
+    public final /* synthetic */ void y(long j10) {
+    }
+
+    @Override // org.telegram.ui.Components.uy
+    public final /* synthetic */ void n() {
+    }
+
+    @Override // org.telegram.ui.Components.uy
+    public final /* synthetic */ void q() {
+    }
+
+    @Override // org.telegram.ui.Components.uy
     public final /* synthetic */ void u() {
     }
 
     @Override // org.telegram.ui.Components.uy
     public final /* synthetic */ void w() {
-    }
-
-    @Override // org.telegram.ui.Components.uy
-    public final /* synthetic */ void y(long j10) {
     }
 
     @Override // org.telegram.ui.Components.uy

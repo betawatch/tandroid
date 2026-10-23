@@ -1,56 +1,160 @@
 package ug;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.text.TextPaint;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import ci.n1;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.UserObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.o2;
+import org.telegram.ui.ActionBar.r6;
 import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.w9;
+import org.telegram.ui.Components.mm0;
+import org.telegram.ui.Components.y90;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.va1;
+import sg.m1;
 import w7.z5;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class h0 extends FrameLayout {
-    public static final /* synthetic */ int f = 0;
-    public final w9 a;
-    public final g0 b;
-    public final Paint c;
-    public boolean d;
-    public final h9 e;
+public final class h0 extends m1 {
+    public final ArrayList Q0;
 
-    public h0(Context context, float f7) {
-        super(context);
-        Paint paint = new Paint(1);
-        this.c = paint;
-        this.d = true;
-        this.e = new h9((d6) null);
-        w9 w9Var = new w9(getContext());
-        this.a = w9Var;
-        w9Var.setRoundRadius(AndroidUtilities.dp(f7));
-        g0 g0Var = new g0(context);
-        TextPaint textPaint = new TextPaint(1);
-        g0Var.a = textPaint;
-        textPaint.setTextAlign(Paint.Align.CENTER);
-        int i10 = h6.a7;
-        textPaint.setColor(h6.x0(null, i10, false));
-        textPaint.setTextSize(AndroidUtilities.dp(11.5f));
-        textPaint.setTypeface(AndroidUtilities.bold());
-        this.b = g0Var;
-        g0Var.setAlpha(0.0f);
-        addView(w9Var, z5.d(-1, -1.0f, 0, 5.0f, 5.0f, 5.0f, 5.0f));
-        addView(g0Var, z5.d(26, 26.0f, 85, 0.0f, 0.0f, 1.0f, 3.0f));
-        paint.setColor(h6.x0(null, i10, false));
+    public h0(o2 o2Var, int i10, ArrayList arrayList, g6 g6Var) {
+        super(o2Var, i10, null, null, null, g6Var);
+        ArrayList arrayList2 = new ArrayList();
+        this.Q0 = arrayList2;
+        arrayList2.addAll(arrayList);
+        h0();
+        this.useBackgroundTopPadding = false;
+        setApplyTopPadding(false);
+        this.backgroundPaddingTop = 0;
+        wg.a aVar = new wg.a(getContext(), this.resourcesProvider);
+        aVar.setOnClickListener(new hg.r0(this, 23));
+        aVar.setCloseStyle(true);
+        this.containerView.addView(aVar, z5.d(-1, 64.0f, 80, 0.0f, 0.0f, 0.0f, 0.0f));
+        mm0 mm0Var = this.d;
+        int i11 = this.backgroundPaddingLeft;
+        mm0Var.setPadding(i11, 0, i11, AndroidUtilities.dp(64.0f));
+        Context context = getContext();
+        int i12 = g0.f;
+        FrameLayout frameLayout = new FrameLayout(context);
+        frameLayout.setClipChildren(false);
+        FrameLayout frameLayout2 = new FrameLayout(context);
+        frameLayout2.setClipChildren(false);
+        if (arrayList2.size() == 1) {
+            frameLayout.addView(frameLayout2, z5.d(-1, 94.0f, 0, 0.0f, 0.0f, 0.0f, 0.0f));
+            g0 g0Var = new g0(context, 47.0f);
+            g0Var.d = false;
+            TLRPC.User user = (TLRPC.User) arrayList2.get(0);
+            h9 h9Var = g0Var.e;
+            h9Var.r(user);
+            g0Var.a.e(user, h9Var);
+            frameLayout2.addView(g0Var, 0, z5.e(94, 94, 17));
+        } else {
+            frameLayout.addView(frameLayout2, z5.d(-1, 83.0f, 0, 0.0f, 0.0f, 0.0f, 0.0f));
+            int i13 = 0;
+            for (int i14 = 0; i14 < arrayList2.size(); i14++) {
+                TLRPC.User user2 = (TLRPC.User) arrayList2.get(i14);
+                g0 g0Var2 = new g0(context, 41.5f);
+                h9 h9Var2 = g0Var2.e;
+                h9Var2.r(user2);
+                g0Var2.a.e(user2, h9Var2);
+                frameLayout2.addView(g0Var2, 0, z5.e(83, 83, 17));
+                g0Var2.setTranslationX(AndroidUtilities.dp(29.0f) * (-i14));
+                if (i14 == 0 && arrayList2.size() > 3) {
+                    f0 f0Var = g0Var2.b;
+                    f0Var.setAlpha(1.0f);
+                    f0Var.b = arrayList2.size() - 3;
+                }
+                i13++;
+                if (i14 == 2) {
+                    break;
+                }
+            }
+            frameLayout.setTranslationX((i13 - 1) * AndroidUtilities.dp(14.5f));
+        }
+        this.B0 = frameLayout;
+        fixNavigationBar();
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        if (this.d) {
-            canvas.drawCircle(getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f, (getMeasuredHeight() / 2.0f) - AndroidUtilities.dp(2.0f), this.c);
+    public static void i0(ArrayList arrayList) {
+        o2 R = LaunchActivity.R();
+        if (R == null) {
+            return;
         }
-        super.dispatchDraw(canvas);
+        h0 h0Var = new h0(R, UserConfig.selectedAccount, arrayList, R.getResourceProvider());
+        h0Var.J0 = true;
+        h0Var.K0 = true;
+        h0Var.show();
+    }
+
+    @Override // sg.m1
+    public final void a0(int i10, View view) {
+        if (i10 == 0) {
+            view.setOutlineProvider(new n1(21));
+            view.setClipToOutline(true);
+            r6.i(k6.a7, view, this.resourcesProvider);
+            ((ViewGroup.MarginLayoutParams) view.getLayoutParams()).topMargin = -AndroidUtilities.dp(6.0f);
+        }
+    }
+
+    @Override // sg.m1
+    public final void b0(va1 va1Var) {
+        View view = this.B0;
+        ArrayList arrayList = this.Q0;
+        va1Var.addView(view, z5.k(0.0f, arrayList.size() == 1 ? 28.0f : 34.0f, 0.0f, arrayList.size() == 1 ? 9.0f : 14.0f, -1, arrayList.size() == 1 ? 94 : 83));
+    }
+
+    @Override // sg.m1
+    public final void g0(boolean z10) {
+        String formatString;
+        this.O0[0].setTextSize(1, 20.0f);
+        this.P0.setPadding(AndroidUtilities.dp(30.0f), 0, AndroidUtilities.dp(30.0f), 0);
+        this.P0.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
+        y90 y90Var = this.O0[0];
+        ArrayList arrayList = this.Q0;
+        y90Var.setText(LocaleController.getPluralString("GiftPremiumGiftsSent", arrayList.size()));
+        ((ViewGroup.MarginLayoutParams) this.P0.getLayoutParams()).bottomMargin = AndroidUtilities.dp(16.0f);
+        ((ViewGroup.MarginLayoutParams) this.P0.getLayoutParams()).topMargin = AndroidUtilities.dp(4.0f);
+        int size = arrayList.size();
+        if (size == 1) {
+            formatString = LocaleController.formatString(R.string.GiftPremiumUsersPurchasedManyZero, LocaleController.formatString(R.string.GiftPremiumUsersOne, UserObject.getFirstName((TLRPC.User) arrayList.get(0))));
+        } else if (size == 2) {
+            formatString = LocaleController.formatString("GiftPremiumUsersPurchasedManyZero", R.string.GiftPremiumUsersPurchasedManyZero, LocaleController.formatString("GiftPremiumUsersTwo", R.string.GiftPremiumUsersTwo, UserObject.getFirstName((TLRPC.User) arrayList.get(0)), UserObject.getFirstName((TLRPC.User) arrayList.get(1))));
+        } else if (size != 3) {
+            formatString = LocaleController.formatPluralString("GiftPremiumUsersPurchasedMany", arrayList.size() - 3, LocaleController.formatString("GiftPremiumUsersThree", R.string.GiftPremiumUsersThree, UserObject.getFirstName((TLRPC.User) arrayList.get(0)), UserObject.getFirstName((TLRPC.User) arrayList.get(1)), UserObject.getFirstName((TLRPC.User) arrayList.get(2))));
+        } else {
+            formatString = LocaleController.formatString("GiftPremiumUsersPurchasedManyZero", R.string.GiftPremiumUsersPurchasedManyZero, LocaleController.formatString("GiftPremiumUsersThree", R.string.GiftPremiumUsersThree, UserObject.getFirstName((TLRPC.User) arrayList.get(0)), UserObject.getFirstName((TLRPC.User) arrayList.get(1)), UserObject.getFirstName((TLRPC.User) arrayList.get(2))));
+        }
+        this.P0.setText(AndroidUtilities.replaceTags(formatString));
+        this.P0.append("\n");
+        this.P0.append("\n");
+        if (arrayList.size() == 1) {
+            this.P0.append(AndroidUtilities.replaceTags(LocaleController.formatString("GiftPremiumGiftsSentStatusForUser", R.string.GiftPremiumGiftsSentStatusForUser, UserObject.getFirstName((TLRPC.User) arrayList.get(0)))));
+        } else {
+            this.P0.append(AndroidUtilities.replaceTags(LocaleController.getString("GiftPremiumGiftsSentStatus", R.string.GiftPremiumGiftsSentStatus)));
+        }
+    }
+
+    @Override // sg.m1
+    public final void h0() {
+        this.f0 = 1;
+        this.g0 = 0;
+        this.j0 = 1;
+        int size = this.X.size();
+        int i10 = 1 + size;
+        this.k0 = i10;
+        this.f0 = size + 2;
+        this.n0 = i10;
     }
 }

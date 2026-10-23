@@ -16,7 +16,7 @@ import java.util.LinkedList;
 import java.util.Map;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public class Track {
     private static Map<Integer, Integer> samplingFrequencyIndexMap;
@@ -38,7 +38,7 @@ public class Track {
     private ArrayList<SamplePresentationTime> samplePresentationTimes = new ArrayList<>();
     private boolean first = true;
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public static class SamplePresentationTime {
         private long dt;
         private int index;
@@ -190,7 +190,7 @@ public class Track {
             allocate4.put((byte) (mVar2.d & 255));
             allocate.put(allocate2.array());
             allocate.put(allocate4.array());
-            k3.p(te.a.c(mc.a.h, bVar2, bVar2, allocate));
+            k3.o(te.a.c(mc.a.h, bVar2, bVar2, allocate));
             bVar2.e = allocate;
             bVar.a(bVar2);
             this.sampleDescriptionBox.a(bVar);
@@ -309,9 +309,9 @@ public class Track {
             byte[] bArr5 = new byte[byteBuffer2.remaining()];
             byteBuffer2.get(bArr5);
             arrayList2.add(bArr5);
-            k3.p(te.a.c(sc.a.h, aVar5, aVar5, arrayList));
+            k3.o(te.a.c(sc.a.h, aVar5, aVar5, arrayList));
             aVar5.a.f = arrayList;
-            k3.p(te.a.c(sc.a.n, aVar5, aVar5, arrayList2));
+            k3.o(te.a.c(sc.a.n, aVar5, aVar5, arrayList2));
             aVar5.a.g = arrayList2;
         }
         if (mediaFormat.containsKey("level")) {
@@ -374,17 +374,17 @@ public class Track {
         } else {
             aVar5.e(100);
         }
-        k3.p(te.a.c(sc.a.s, aVar5, aVar5, new Integer(-1)));
+        k3.o(te.a.c(sc.a.s, aVar5, aVar5, new Integer(-1)));
         aVar5.a.j = -1;
-        k3.p(te.a.c(sc.a.v, aVar5, aVar5, new Integer(-1)));
+        k3.o(te.a.c(sc.a.v, aVar5, aVar5, new Integer(-1)));
         aVar5.a.k = -1;
-        k3.p(te.a.c(sc.a.r, aVar5, aVar5, new Integer(-1)));
+        k3.o(te.a.c(sc.a.r, aVar5, aVar5, new Integer(-1)));
         aVar5.a.i = -1;
-        k3.p(te.a.c(sc.a.b, aVar5, aVar5, new Integer(1)));
+        k3.o(te.a.c(sc.a.b, aVar5, aVar5, new Integer(1)));
         aVar5.a.a = 1;
-        k3.p(te.a.c(sc.a.f, aVar5, aVar5, new Integer(3)));
+        k3.o(te.a.c(sc.a.f, aVar5, aVar5, new Integer(3)));
         aVar5.a.e = 3;
-        k3.p(te.a.c(sc.a.d, aVar5, aVar5, new Integer(0)));
+        k3.o(te.a.c(sc.a.d, aVar5, aVar5, new Integer(0)));
         aVar5.a.c = 0;
         cVar3.a(aVar5);
         this.sampleDescriptionBox.a(cVar3);

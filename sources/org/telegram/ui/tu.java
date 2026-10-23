@@ -1,62 +1,24 @@
 package org.telegram.ui;
 
-import android.graphics.drawable.ColorDrawable;
-import android.view.View;
-import android.view.ViewGroup;
-import org.telegram.messenger.R;
-
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class tu extends org.telegram.ui.Components.im0 {
-    public final /* synthetic */ vu c;
+public final class tu extends g.o {
+    public final /* synthetic */ int c;
 
-    public tu(vu vuVar) {
-        this.c = vuVar;
-    }
-
-    @Override // org.telegram.ui.Components.im0
-    public final boolean D(s4.b1 b1Var) {
-        return false;
-    }
-
-    @Override // s4.g0
-    public final int h() {
-        return this.c.g0.h() ? 1 : 3;
-    }
-
-    @Override // s4.g0
-    public final s4.b1 x(ViewGroup viewGroup, int i10) {
-        View view;
-        int i11;
-        int i12;
-        vu vuVar = this.c;
-        if (i10 == 0) {
-            view = vuVar.d0;
-        } else if (i10 == 2) {
-            view = vuVar.e0;
-            s4.o0 o0Var = new s4.o0(-1, -2);
-            i11 = ((org.telegram.ui.ActionBar.f3) vuVar).backgroundPaddingLeft;
-            ((ViewGroup.MarginLayoutParams) o0Var).leftMargin = i11;
-            i12 = ((org.telegram.ui.ActionBar.f3) vuVar).backgroundPaddingLeft;
-            ((ViewGroup.MarginLayoutParams) o0Var).rightMargin = i12;
-            view.setLayoutParams(o0Var);
-        } else {
-            org.telegram.ui.Cells.d9 d9Var = new org.telegram.ui.Cells.d9(viewGroup.getContext());
-            d9Var.setFixedSize(12);
-            org.telegram.ui.Components.zq zqVar = new org.telegram.ui.Components.zq(new ColorDrawable(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.a7, false)), org.telegram.ui.ActionBar.h6.W0(viewGroup.getContext(), R.drawable.greydivider_bottom, org.telegram.ui.ActionBar.h6.b7));
-            zqVar.w = true;
-            d9Var.setBackgroundDrawable(zqVar);
-            view = d9Var;
+    @Override // g.o
+    public int h(int i10, int i11) {
+        switch (this.c) {
+            case 1:
+                return i10 % i11;
+            default:
+                return super.h(i10, i11);
         }
-        return new org.telegram.ui.Components.tl0(view);
     }
 
-    @Override // s4.g0
-    public final int j(int i10) {
-        return i10;
-    }
-
-    @Override // s4.g0
-    public final void v(s4.b1 b1Var, int i10) {
+    @Override // g.o
+    public final int i(int i10) {
+        switch (this.c) {
+        }
+        return 1;
     }
 }

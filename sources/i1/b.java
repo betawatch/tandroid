@@ -5,9 +5,9 @@ import android.os.Parcelable;
 import m.m3;
 import m.y2;
 import s4.v0;
-import z4.f;
+import z4.g;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class b implements Parcelable.ClassLoaderCreator {
     public final /* synthetic */ int a;
@@ -31,7 +31,7 @@ public final class b implements Parcelable.ClassLoaderCreator {
             case 3:
                 return new v0(parcel, classLoader);
             default:
-                return new f(parcel, classLoader);
+                return new g(parcel, classLoader);
         }
     }
 
@@ -47,7 +47,7 @@ public final class b implements Parcelable.ClassLoaderCreator {
             case 3:
                 return new v0[i10];
             default:
-                return new f[i10];
+                return new g[i10];
         }
     }
 
@@ -66,7 +66,7 @@ public final class b implements Parcelable.ClassLoaderCreator {
             case 3:
                 return new v0(parcel, null);
             default:
-                return new f(parcel, null);
+                return new g(parcel, null);
         }
     }
 }

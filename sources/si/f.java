@@ -7,9 +7,9 @@ import android.os.Handler;
 import android.util.Size;
 import android.view.Surface;
 import k2.w0;
-import org.telegram.ui.x70;
+import org.telegram.ui.v90;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class f extends CameraCaptureSession.StateCallback {
     public final /* synthetic */ int a;
@@ -80,7 +80,7 @@ public final class f extends CameraCaptureSession.StateCallback {
                                             jVar4.L("session configuration failed", null);
                                             break;
                                         }
-                                    } else if (jVar4.J != n0.c) {
+                                    } else if (jVar4.J != p0.c) {
                                         jVar4.N(new IllegalStateException("Camera capture session configuration failed"));
                                         break;
                                     } else {
@@ -200,20 +200,20 @@ public final class f extends CameraCaptureSession.StateCallback {
                             jVar8.c.post(new a(jVar8, 8));
                             j jVar9 = this.b;
                             w0 w0Var = jVar9.k;
-                            l0 l0Var = jVar9.G;
-                            m0 m0Var = jVar9.I;
-                            n0 n0Var = jVar9.J;
+                            m0 m0Var = jVar9.G;
+                            n0 n0Var = jVar9.I;
+                            p0 p0Var = jVar9.J;
                             Size size = jVar9.q;
                             Size size2 = jVar9.r;
                             j jVar10 = this.b;
-                            ((s0) w0Var.b).i.post(new x70(w0Var, new h(l0Var, m0Var, n0Var, size, size2, jVar10.O, jVar10.F()), z11, 18));
+                            ((u0) w0Var.b).i.post(new v90(w0Var, new h(m0Var, n0Var, p0Var, size, size2, jVar10.O, jVar10.F()), z11, 17));
                             if (z10) {
                                 j.f(this.b);
                                 return;
                             }
-                            l0 l0Var2 = this.b.F;
+                            m0 m0Var2 = this.b.F;
                             j jVar11 = this.b;
-                            if (l0Var2 != jVar11.G) {
+                            if (m0Var2 != jVar11.G) {
                                 jVar11.a0(jVar11.F);
                                 return;
                             }
@@ -227,7 +227,7 @@ public final class f extends CameraCaptureSession.StateCallback {
                             if (jVar12.X && jVar12.D0) {
                                 jVar12.L("request submission failed", e7);
                                 return;
-                            } else if (jVar12.J == n0.c) {
+                            } else if (jVar12.J == p0.c) {
                                 jVar12.B("60 fps request submission rejected", e7);
                                 return;
                             } else {

@@ -1,38 +1,6 @@
 package k2;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class q implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ qf.b b;
-    public final /* synthetic */ Exception c;
-
-    public /* synthetic */ q(qf.b bVar, Exception exc, int i10) {
-        this.a = i10;
-        this.b = bVar;
-        this.c = exc;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        Exception exc = this.c;
-        qf.b bVar = this.b;
-        switch (i10) {
-            case 0:
-                u uVar = (u) bVar.c;
-                String str = e2.m0.a;
-                j2.f fVar = ((i2.c0) uVar).a.s;
-                j2.a p5 = fVar.p();
-                fVar.q(p5, 1029, new j2.c(p5, exc, 16));
-                break;
-            default:
-                u uVar2 = (u) bVar.c;
-                String str2 = e2.m0.a;
-                j2.f fVar2 = ((i2.c0) uVar2).a.s;
-                j2.a p9 = fVar2.p();
-                fVar2.q(p9, 1014, new j2.e(p9, exc, 8));
-                break;
-        }
-    }
+public interface q {
 }

@@ -1,18 +1,18 @@
 package j4;
 
 import b2.v0;
-import c3.j0;
+import c3.l0;
 import v7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class u implements i {
     public final e2.x a;
-    public final c3.a0 b;
+    public final c3.c0 b;
     public final String c;
     public final int d;
     public final String e;
-    public j0 f;
+    public l0 f;
     public String g;
     public int h = 0;
     public int i;
@@ -26,7 +26,7 @@ public final class u implements i {
         e2.x xVar = new e2.x(4);
         this.a = xVar;
         xVar.a[0] = -1;
-        this.b = new c3.a0();
+        this.b = new c3.c0();
         this.n = -9223372036854775807L;
         this.c = str;
         this.d = i10;
@@ -70,18 +70,18 @@ public final class u implements i {
                 if (i13 >= 4) {
                     xVar2.N(0);
                     int m10 = xVar2.m();
-                    c3.a0 a0Var = this.b;
-                    if (a0Var.a(m10)) {
-                        this.m = a0Var.b;
+                    c3.c0 c0Var = this.b;
+                    if (c0Var.a(m10)) {
+                        this.m = c0Var.b;
                         if (!this.j) {
-                            this.l = (a0Var.f * 1000000) / a0Var.c;
+                            this.l = (c0Var.f * 1000000) / c0Var.c;
                             b2.v vVar = new b2.v();
                             vVar.a = this.g;
                             vVar.q = v0.n(this.e);
-                            vVar.r = v0.n((String) a0Var.g);
+                            vVar.r = v0.n((String) c0Var.g);
                             vVar.s = 4096;
-                            vVar.J = a0Var.d;
-                            vVar.K = a0Var.c;
+                            vVar.J = c0Var.d;
+                            vVar.K = c0Var.c;
                             vVar.d = this.c;
                             vVar.f = this.d;
                             this.f.b(new b2.w(vVar));
@@ -123,12 +123,12 @@ public final class u implements i {
     }
 
     @Override // j4.i
-    public final void d(c3.q qVar, f0 f0Var) {
+    public final void d(c3.s sVar, f0 f0Var) {
         f0Var.b();
         f0Var.c();
         this.g = (String) f0Var.e;
         f0Var.c();
-        this.f = qVar.j0(f0Var.c, 1);
+        this.f = sVar.j0(f0Var.c, 1);
     }
 
     @Override // j4.i

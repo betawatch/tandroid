@@ -8,7 +8,7 @@ import java.util.Arrays;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public abstract class t extends s {
     public final ArrayList Q;
@@ -40,7 +40,7 @@ public abstract class t extends s {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void Z0(qf.e eVar, y0 y0Var, z zVar, k2.k kVar) {
+    public final void Z0(qf.e eVar, y0 y0Var, z zVar, k2.l lVar) {
         boolean z10;
         int i10;
         int i11;
@@ -61,7 +61,7 @@ public abstract class t extends s {
         int i20 = 0;
         boolean z14 = true;
         boolean z15 = zVar.e == 1;
-        kVar.a = 0;
+        lVar.a = 0;
         int i21 = zVar.d;
         boolean z16 = this.v;
         Rect rect = this.P;
@@ -184,13 +184,13 @@ public abstract class t extends s {
             }
             if (C1 || zVar.f != 1) {
                 if (zVar.f == -1) {
-                    int i32 = zVar.b - kVar.a;
+                    int i32 = zVar.b - lVar.a;
                     int i33 = i32 - i28;
                     i12 = i32;
                     i13 = this.m;
                     i11 = i33;
                 } else {
-                    int i34 = kVar.a + zVar.b;
+                    int i34 = lVar.a + zVar.b;
                     i11 = i34;
                     i12 = i34 + i28;
                     i13 = 0;
@@ -212,14 +212,14 @@ public abstract class t extends s {
                         i35 = i38;
                     }
                     if (rVar2.a.j() || rVar2.a.m()) {
-                        kVar.c = true;
+                        lVar.c = true;
                     }
-                    kVar.d |= view3.hasFocusable();
+                    lVar.d |= view3.hasFocusable();
                     i36 = i37 + 1;
                     z15 = z19;
                 }
                 boolean z20 = z15;
-                kVar.a += i28;
+                lVar.a += i28;
                 Arrays.fill(this.L, (Object) null);
                 y0Var2 = y0Var;
                 z10 = true;
@@ -231,12 +231,12 @@ public abstract class t extends s {
                 eVar2 = eVar;
             }
             if (zVar.f == i10) {
-                int i39 = zVar.b - kVar.a;
+                int i39 = zVar.b - lVar.a;
                 i16 = i39 - i28;
                 i14 = i39;
                 i15 = 0;
             } else {
-                int i40 = kVar.a + zVar.b;
+                int i40 = lVar.a + zVar.b;
                 i14 = i40 + i28;
                 i15 = this.m;
                 i16 = i40;
@@ -251,12 +251,12 @@ public abstract class t extends s {
                 n0.O(view4, i43, i16, i44, i14);
                 i15 = zVar.f == -1 ? i44 : i43;
                 if (rVar3.a.j() || rVar3.a.m()) {
-                    kVar.c = true;
+                    lVar.c = true;
                 }
-                kVar.d |= view4.hasFocusable();
+                lVar.d |= view4.hasFocusable();
             }
             boolean z202 = z15;
-            kVar.a += i28;
+            lVar.a += i28;
             Arrays.fill(this.L, (Object) null);
             y0Var2 = y0Var;
             z10 = true;

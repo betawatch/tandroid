@@ -17,9 +17,10 @@ import java.util.Map;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.telegram.ui.rn0;
+import org.telegram.ui.vn0;
+import si.o0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class f {
     public static final Charset b = Charset.forName("UTF-8");
@@ -163,7 +164,7 @@ public final class f {
                 closeable = r32;
             }
         }
-        String h = r4.c.h("No userId set for session ", str);
+        String h = o0.h("No userId set for session ", str);
         if (Log.isLoggable("FirebaseCrashlytics", 3)) {
             Log.d("FirebaseCrashlytics", h, null);
         }
@@ -249,9 +250,9 @@ public final class f {
         BufferedWriter bufferedWriter2 = null;
         try {
             try {
-                rn0 rn0Var = new rn0();
-                rn0Var.put("userId", str2);
-                obj = rn0Var.toString();
+                vn0 vn0Var = new vn0();
+                vn0Var.put("userId", str2);
+                obj = vn0Var.toString();
                 bufferedWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(b10), b));
             } catch (Exception e) {
                 e = e;

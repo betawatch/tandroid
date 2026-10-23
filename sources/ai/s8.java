@@ -13,7 +13,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s8 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -26,8 +26,8 @@ public final /* synthetic */ class s8 implements Runnable {
     public final /* synthetic */ TLObject n;
     public final /* synthetic */ Object r;
 
-    public /* synthetic */ s8(ga gaVar, boolean[] zArr, TL_stars.StarGift starGift, boolean z10, boolean z11, long j10, TLRPC.TL_textWithEntities tL_textWithEntities, yh.l4 l4Var) {
-        this.e = gaVar;
+    public /* synthetic */ s8(ha haVar, boolean[] zArr, TL_stars.StarGift starGift, boolean z10, boolean z11, long j10, TLRPC.TL_textWithEntities tL_textWithEntities, yh.l4 l4Var) {
+        this.e = haVar;
         this.f = zArr;
         this.h = starGift;
         this.b = z10;
@@ -58,7 +58,7 @@ public final /* synthetic */ class s8 implements Runnable {
         switch (i12) {
             case 0:
                 ((boolean[]) obj2)[0] = true;
-                ((ga) obj3).i((TL_stars.StarGift) tLObject2, this.b, this.d, this.c, (TLRPC.TL_textWithEntities) tLObject, (yh.l4) obj);
+                ((ha) obj3).i((TL_stars.StarGift) tLObject2, this.b, this.d, this.c, (TLRPC.TL_textWithEntities) tLObject, (yh.l4) obj);
                 break;
             default:
                 ei.vb vbVar = (ei.vb) obj3;
@@ -80,10 +80,10 @@ public final /* synthetic */ class s8 implements Runnable {
                         } else {
                             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(vbVar.b, 0, bVar);
                             String string = LocaleController.getString(R.string.LiveStoryAlreadyStreamingTitle);
-                            org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-                            b2Var.R = string;
-                            b2Var.T = LocaleController.getString(R.string.LiveStoryAlreadyStreaming);
-                            org.telegram.messenger.g0.p(R.string.OK, alertDialog$Builder, null);
+                            org.telegram.ui.ActionBar.c2 c2Var = alertDialog$Builder.a;
+                            c2Var.R = string;
+                            c2Var.T = LocaleController.getString(R.string.LiveStoryAlreadyStreaming);
+                            org.telegram.messenger.v0.o(R.string.OK, alertDialog$Builder, null);
                             break;
                         }
                     }

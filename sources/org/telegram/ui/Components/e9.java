@@ -32,18 +32,18 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.qa1;
+import org.telegram.ui.va1;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class e9 extends org.telegram.ui.ActionBar.n2 {
+public final class e9 extends org.telegram.ui.ActionBar.o2 {
     public static final int[][] c0 = {new int[]{-11302949, -11562789, -10430789, -11480359}, new int[]{-11229725, -12014137, -10234219, -10819908}, new int[]{-12927610, -11158198, -3355566, -5191850}, new int[]{-8164117, -5281560, -2200166, -2525971}, new int[]{-1287263, -1350281, -1337532, -885148}, new int[]{-1419145, -1936819, -742839, -1014448}, new int[]{-1017772, -1212871, -998847, -1003446}};
     public static final int[][] d0 = {new int[]{-7035984, -9667705}, new int[]{-1334949, -6199504}, new int[]{-1525432, -4686800}, new int[]{-11117215, -12893369}, new int[]{-15000805, -16777216}, new int[]{-10588271, -12496267}, new int[]{-5344541, -7842635}, new int[]{-5278276, -7777898}, new int[]{-4036162, -7650428}, new int[]{-2459992, -5351279}, new int[]{-1678221, -5814951}, new int[]{-9659148, -10720532}, new int[]{-12149549, -13731672}, new int[]{-12350279, -13802877}, new int[]{-10046854, -13404051}, new int[]{-8276302, -11822442}, new int[]{-10760507, -13200754}, new int[]{-10496401, -13525130}, new int[]{-1668548, -2862189}, new int[]{-9706766, -10062345}, new int[]{-3838476, -10456076}, new int[]{-1324753, -11225016}, new int[]{-10046854, -13404051}, new int[]{-3492512, -7569348}, new int[]{-5394320, -9732780}, new int[]{-7039865, -9408414}, new int[]{-5202023, -7373198}, new int[]{-3701922, -6397115}, new int[]{-4427695, -6859449}, new int[]{-7379371, -9944001}};
     public float E;
     public boolean F;
     public ValueAnimator G;
     public org.telegram.ui.ActionBar.k H;
-    public q2 I;
+    public p2 I;
     public b9 J;
     public fd K;
     public boolean L;
@@ -71,7 +71,7 @@ public final class e9 extends org.telegram.ui.ActionBar.n2 {
     public boolean f;
     public boolean h;
     public boolean n;
-    public qa1 r;
+    public va1 r;
     public CharSequence s;
     public SpannableStringBuilder v;
     public boolean w;
@@ -101,12 +101,12 @@ public final class e9 extends org.telegram.ui.ActionBar.n2 {
         alertDialog$Builder.a.R = LocaleController.getString(R.string.DiscardChanges);
         alertDialog$Builder.k(LocaleController.getString(R.string.PassportDiscard), new r8(e9Var, 1));
         alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-        org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-        e9Var.showDialog(b2Var);
-        b2Var.i();
+        org.telegram.ui.ActionBar.c2 c2Var = alertDialog$Builder.a;
+        e9Var.showDialog(c2Var);
+        c2Var.i();
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.o2
     public final View createView(Context context) {
         this.hasOwnBackground = true;
         this.actionBar.setBackgroundDrawable(null);
@@ -114,11 +114,11 @@ public final class e9 extends org.telegram.ui.ActionBar.n2 {
         this.actionBar.setAddToContainer(false);
         this.actionBar.setOccupyStatusBar(true);
         org.telegram.ui.ActionBar.k kVar = this.actionBar;
-        int i10 = org.telegram.ui.ActionBar.h6.G6;
-        kVar.setTitleColor(org.telegram.ui.ActionBar.h6.x0(null, i10, false));
-        this.actionBar.C(org.telegram.ui.ActionBar.h6.x0(null, i10, false), false);
-        this.actionBar.B(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.i6, false), false);
-        i2.e.y(false, this.actionBar);
+        int i10 = org.telegram.ui.ActionBar.k6.G6;
+        org.telegram.ui.ActionBar.r6.m(kVar, 5, i10, null);
+        org.telegram.ui.ActionBar.r6.m(this.actionBar, 1, i10, null);
+        org.telegram.ui.ActionBar.r6.m(this.actionBar, 3, org.telegram.ui.ActionBar.k6.i6, null);
+        i2.o1.y(false, this.actionBar);
         this.actionBar.setAllowOverlayTitle(false);
         this.actionBar.setTitle(LocaleController.getString(R.string.PhotoEditor));
         this.actionBar.setActionBarMenuOnItemClick(new v8(this, 0));
@@ -130,35 +130,35 @@ public final class e9 extends org.telegram.ui.ActionBar.n2 {
         this.H.setOccupyStatusBar(true);
         this.H.setClipChildren(false);
         int o10 = i0.a.o(-1, 60);
-        this.H.C(-1, false);
-        i2.e.y(false, this.H);
+        this.H.B(-1, false);
+        i2.o1.y(false, this.H);
         this.H.setAllowOverlayTitle(false);
-        this.H.B(o10, false);
-        org.telegram.ui.ActionBar.y n10 = this.H.n();
-        n10.setClipChildren(false);
+        this.H.A(o10, false);
+        org.telegram.ui.ActionBar.y m10 = this.H.m();
+        m10.setClipChildren(false);
         c50 c50Var = this.T;
-        org.telegram.ui.ActionBar.u0 e = n10.e(1, (c50Var == null || c50Var.c != 2) ? LocaleController.getString(R.string.SetPhoto) : LocaleController.getString(R.string.SuggestPhoto));
+        org.telegram.ui.ActionBar.u0 e = m10.e(1, (c50Var == null || c50Var.c != 2) ? LocaleController.getString(R.string.SetPhoto) : LocaleController.getString(R.string.SuggestPhoto));
         this.R = e;
-        e.setBackground(org.telegram.ui.ActionBar.h6.g0(o10, 3, -1));
+        e.setBackground(org.telegram.ui.ActionBar.k6.g0(o10, 3, -1));
         this.H.setActionBarMenuOnItemClick(new v8(this, 1));
-        this.r = new qa1(this, getParentActivity(), 7);
+        this.r = new va1(this, getParentActivity(), 7);
         w8 w8Var = new w8(this, context);
         w8Var.setFitsSystemWindows(true);
-        w8Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.a7, false));
+        org.telegram.ui.ActionBar.r6.i(org.telegram.ui.ActionBar.k6.a7, w8Var, null);
         this.r.setClipChildren(false);
         this.r.setClipToPadding(false);
         this.r.setPadding(0, AndroidUtilities.statusBarHeight, 0, 0);
         this.r.setOrientation(1);
-        qa1 qa1Var = this.r;
+        va1 va1Var = this.r;
         x8 x8Var = new x8(this, getParentActivity(), w8Var);
         this.a = x8Var;
-        qa1Var.addView(x8Var);
+        va1Var.addView(x8Var);
         TextView textView = new TextView(getParentActivity());
         this.W = textView;
         textView.setText(LocaleController.getString(R.string.ChooseBackground));
         TextView textView2 = this.W;
-        int i11 = org.telegram.ui.ActionBar.h6.y6;
-        textView2.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i11, false));
+        int i11 = org.telegram.ui.ActionBar.k6.y6;
+        org.telegram.ui.ActionBar.r6.W(textView2, i11, null);
         this.W.setTextSize(1, 14.0f);
         this.W.setGravity(17);
         this.r.addView(this.W, w7.z5.t(-1, -2, 0, 21, 10, 21, 10));
@@ -170,7 +170,7 @@ public final class e9 extends org.telegram.ui.ActionBar.n2 {
         TextView textView3 = new TextView(getParentActivity());
         this.V = textView3;
         textView3.setText(LocaleController.getString(R.string.ChooseEmojiOrSticker));
-        this.V.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i11, false));
+        org.telegram.ui.ActionBar.r6.W(this.V, i11, null);
         this.V.setTextSize(1, 14.0f);
         this.V.setGravity(17);
         this.r.addView(this.V, w7.z5.t(-1, -2, 0, 21, 18, 21, 10));
@@ -187,7 +187,7 @@ public final class e9 extends org.telegram.ui.ActionBar.n2 {
         view.setVisibility(8);
         ei.d dVar = new ei.d(context, this.resourceProvider, true);
         this.x = dVar;
-        dVar.e();
+        dVar.f();
         this.x.d.r(false, false);
         int i12 = this.X.V;
         if (i12 == 1) {
@@ -204,10 +204,10 @@ public final class e9 extends org.telegram.ui.ActionBar.n2 {
         this.s = new SpannableStringBuilder(this.s);
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(this.s);
         spannableStringBuilder.append((CharSequence) " l");
-        spannableStringBuilder.setSpan(new yq(R.drawable.msg_mini_lock2, 0), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
+        spannableStringBuilder.setSpan(new xq(R.drawable.msg_mini_lock2, 0), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
         this.v = spannableStringBuilder;
         this.w = false;
-        this.x.g(this.s, false, true);
+        this.x.i(this.s, false, true);
         this.x.setOnClickListener(new f0(this, 2));
         this.y = new FrameLayout(context);
         w8Var.addView(this.x, w7.z5.d(-1, 48.0f, 80, 16.0f, 16.0f, 16.0f, 16.0f));
@@ -271,14 +271,14 @@ public final class e9 extends org.telegram.ui.ActionBar.n2 {
             new xc(this.y, this.resourceProvider).Q(R.raw.star_premium_2, 36, AndroidUtilities.premiumText(LocaleController.getString(R.string.PremiumAvatarToast), new q8(this, i11))).j();
             return;
         }
-        q2 q2Var = this.I;
-        if (q2Var != null) {
+        p2 p2Var = this.I;
+        if (p2Var != null) {
             x8 x8Var = this.a;
             a9 a9Var = x8Var.h;
             long j10 = x8Var.a;
             TLRPC.Document document2 = x8Var.b;
-            ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = (ChatAttachAlertPhotoLayout) q2Var.b;
-            e9 e9Var = (e9) q2Var.c;
+            ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = (ChatAttachAlertPhotoLayout) p2Var.b;
+            e9 e9Var = (e9) p2Var.c;
             boolean z11 = ChatAttachAlertPhotoLayout.q1;
             ti tiVar = chatAttachAlertPhotoLayout.b;
             HashMap hashMap = ChatAttachAlertPhotoLayout.s1;
@@ -496,11 +496,11 @@ public final class e9 extends org.telegram.ui.ActionBar.n2 {
             }
             hashMap.put(-1, photoEntry);
             ChatAttachAlertPhotoLayout.t1.add(-1);
-            tiVar.c2.b0(7, true, false, 0, 0, 0L, tiVar.u1(), false, 0L);
+            tiVar.c2.b0(7, true, false, 0, 0, 0L, tiVar.x1(), false, 0L);
             if (!e9Var.Q) {
-                org.telegram.ui.ActionBar.n2 n2Var = tiVar.f0;
-                if (n2Var != null) {
-                    n2Var.removeSelfFromStack();
+                org.telegram.ui.ActionBar.o2 o2Var = tiVar.f0;
+                if (o2Var != null) {
+                    o2Var.removeSelfFromStack();
                 }
                 e9Var.finishFragment();
             }
@@ -538,13 +538,13 @@ public final class e9 extends org.telegram.ui.ActionBar.n2 {
     public final void h0(boolean z10, long j10, TLRPC.Document document) {
         x8 x8Var = this.a;
         x8Var.a = j10;
-        ci.k4 k4Var = x8Var.c;
+        ci.j4 j4Var = x8Var.c;
         x8Var.b = document;
         if (j10 == 0) {
-            k4Var.setAnimatedEmojiDrawable(null);
-            this.a.c.getImageReceiver().setImage(ImageLocation.getForDocument(document), "100_100", null, null, DocumentObject.getSvgThumb(document, org.telegram.ui.ActionBar.h6.m6, 0.2f), 0L, "tgs", document, 0);
+            j4Var.setAnimatedEmojiDrawable(null);
+            this.a.c.getImageReceiver().setImage(ImageLocation.getForDocument(document), "100_100", null, null, DocumentObject.getSvgThumb(document, org.telegram.ui.ActionBar.k6.m6, 0.2f), 0L, "tgs", document, 0);
         } else {
-            k4Var.setAnimatedEmojiDrawable(new r5(14, this.currentAccount, j10));
+            j4Var.setAnimatedEmojiDrawable(new r5(14, this.currentAccount, j10));
             this.a.c.getImageReceiver().clearImage();
         }
         if (this.a.getImageReceiver() != null && this.a.getImageReceiver().getAnimation() != null) {
@@ -585,9 +585,9 @@ public final class e9 extends org.telegram.ui.ActionBar.n2 {
      */
     /* JADX WARN: Code restructure failed: missing block: B:42:0x004f, code lost:
     
-        if (org.telegram.messenger.AndroidUtilities.computePerceivedBrightness(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.a7, false)) > 0.721f) goto L21;
+        if (org.telegram.messenger.AndroidUtilities.computePerceivedBrightness(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.a7, false)) > 0.721f) goto L21;
      */
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.o2
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -633,7 +633,7 @@ public final class e9 extends org.telegram.ui.ActionBar.n2 {
         return z10;
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.o2
     public final boolean isSwipeBackEnabled(MotionEvent motionEvent) {
         return false;
     }
@@ -643,8 +643,8 @@ public final class e9 extends org.telegram.ui.ActionBar.n2 {
             this.a0 = f7;
             int f10 = i0.a.f(f7, -16777216, -1);
             int o10 = i0.a.o(f10, 60);
-            this.H.C(f10, false);
-            this.R.setBackground(org.telegram.ui.ActionBar.h6.g0(o10, 3, -1));
+            this.H.B(f10, false);
+            this.R.setBackground(org.telegram.ui.ActionBar.k6.g0(o10, 3, -1));
         }
     }
 
@@ -664,7 +664,7 @@ public final class e9 extends org.telegram.ui.ActionBar.n2 {
         x8 x8Var2 = this.a;
         x8Var2.a = j10;
         x8Var2.c.setAnimatedEmojiDrawable(new r5(14, this.currentAccount, j10));
-        this.J.x1(a9Var);
+        this.J.C1(a9Var);
         this.b.setForUser(false);
     }
 
@@ -691,7 +691,7 @@ public final class e9 extends org.telegram.ui.ActionBar.n2 {
             }
             h0(false, 0L, document);
         }
-        this.J.x1(a9Var);
+        this.J.C1(a9Var);
         this.b.setForUser(true);
     }
 
@@ -709,7 +709,7 @@ public final class e9 extends org.telegram.ui.ActionBar.n2 {
             x8Var2.a = i10;
             x8Var2.c.setAnimatedEmojiDrawable(new r5(14, this.currentAccount, i10));
         }
-        this.J.x1(backgroundGradient);
+        this.J.C1(backgroundGradient);
         this.b.setForUser(false);
     }
 
@@ -718,11 +718,11 @@ public final class e9 extends org.telegram.ui.ActionBar.n2 {
         if (this.w != e02) {
             ei.d dVar = this.x;
             this.w = e02;
-            dVar.g(e02 ? this.v : this.s, true, true);
+            dVar.i(e02 ? this.v : this.s, true, true);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.o2
     public final boolean onBackPressed(boolean z10) {
         if (!this.n) {
             return super.onBackPressed(z10);
@@ -735,13 +735,13 @@ public final class e9 extends org.telegram.ui.ActionBar.n2 {
         alertDialog$Builder.a.R = LocaleController.getString(R.string.DiscardChanges);
         alertDialog$Builder.k(LocaleController.getString(R.string.PassportDiscard), new r8(this, 0));
         alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-        org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-        showDialog(b2Var);
-        b2Var.i();
+        org.telegram.ui.ActionBar.c2 c2Var = alertDialog$Builder.a;
+        showDialog(c2Var);
+        c2Var.i();
         return false;
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.o2
     public final void onResume() {
         super.onResume();
         AndroidUtilities.requestAdjustResize(getParentActivity(), getClassGuid());

@@ -1,23 +1,37 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
-/* loaded from: classes3.dex */
-public final class pm0 {
-    public final float a;
-    public final float b;
-    public final float c;
-    public final float d;
-    public final boolean e;
+import android.app.Activity;
+import android.widget.ImageView;
 
-    public pm0(float f7, float f10, float f11, float f12, int i10) {
-        this(f7, f10, f11, f12);
-        this.e = true;
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+/* loaded from: classes3.dex */
+public final class pm0 extends ic {
+    public final qm0 c;
+
+    public pm0(Activity activity, String str) {
+        super(activity, null);
+        this.b.setText(str);
+        this.b.setTranslationY(-1.0f);
+        ImageView imageView = this.a;
+        qm0 qm0Var = new qm0();
+        this.c = qm0Var;
+        imageView.setImageDrawable(qm0Var);
     }
 
-    public pm0(float f7, float f10, float f11, float f12) {
-        this.a = f7;
-        this.b = f10;
-        this.c = f11;
-        this.d = f12;
+    @Override // org.telegram.ui.Components.ub
+    public final void onEnterTransitionEnd() {
+        super.onEnterTransitionEnd();
+        qm0 qm0Var = this.c;
+        qm0Var.getClass();
+        qm0Var.g = System.currentTimeMillis();
+        qm0Var.invalidateSelf();
+    }
+
+    @Override // org.telegram.ui.Components.ub
+    public final void onExitTransitionEnd() {
+        super.onExitTransitionEnd();
+        qm0 qm0Var = this.c;
+        qm0Var.g = -1L;
+        qm0Var.invalidateSelf();
     }
 }

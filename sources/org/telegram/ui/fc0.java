@@ -1,21 +1,45 @@
 package org.telegram.ui;
 
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import android.content.Intent;
+import android.net.Uri;
+import org.telegram.messenger.FileLog;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class fc0 extends org.telegram.ui.ActionBar.m1 {
-    public final /* synthetic */ nc0 o;
+public final class fc0 extends org.telegram.ui.ActionBar.j {
+    public final /* synthetic */ sc0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fc0(nc0 nc0Var, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
-        super(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
-        this.o = nc0Var;
+    public fc0(sc0 sc0Var) {
+        this.a = sc0Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.m1, android.widget.PopupWindow
-    public final void dismiss() {
-        d(true);
-        this.o.I0 = null;
+    @Override // org.telegram.ui.ActionBar.j
+    public final void b(int i10) {
+        sc0 sc0Var = this.a;
+        if (i10 == -1) {
+            sc0Var.finishFragment();
+            return;
+        }
+        if (i10 != 1) {
+            if (i10 == 5) {
+                sc0Var.s0(false);
+                return;
+            } else {
+                if (i10 == 6) {
+                    sc0Var.r0(null);
+                    return;
+                }
+                return;
+            }
+        }
+        try {
+            TLRPC.GeoPoint geoPoint = sc0Var.B0.messageOwner.media.geo;
+            double d = geoPoint.lat;
+            double d10 = geoPoint._long;
+            sc0Var.getParentActivity().startActivity(new Intent("android.intent.action.VIEW", Uri.parse("geo:" + d + "," + d10 + "?q=" + d + "," + d10)));
+        } catch (Exception e) {
+            FileLog.e(e);
+        }
     }
 }

@@ -1,148 +1,112 @@
 package org.telegram.ui.Wallet;
 
 import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.ih;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.h61;
-import org.telegram.ui.Components.xc;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ja0;
-import org.telegram.ui.l80;
-import org.telegram.ui.po0;
-import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s1 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ e2 b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ Object e;
 
-    public /* synthetic */ s1(int i10, Object obj, Object obj2) {
-        this.a = i10;
-        this.b = obj;
-        this.c = obj2;
+    public /* synthetic */ s1(e2 e2Var, Object obj, long j10, int i10, int i11) {
+        this.a = i11;
+        this.b = e2Var;
+        this.e = obj;
+        this.c = j10;
+        this.d = i10;
     }
 
     @Override // org.telegram.messenger.Utilities.Callback2
     public final void run(Object obj, Object obj2) {
-        int i10 = this.a;
-        int i11 = 0;
-        Object obj3 = this.c;
-        Object obj4 = this.b;
-        switch (i10) {
+        final long j10;
+        final int i10;
+        final TL_wallet.tonConnectRequest tonconnectrequest;
+        TL_wallet.tonConnectSession tonconnectsession;
+        switch (this.a) {
             case 0:
-                TL_wallet.inputTonConnectOauthSession[] inputtonconnectoauthsessionArr = (TL_wallet.inputTonConnectOauthSession[]) obj4;
-                l80 l80Var = (l80) obj3;
-                TL_wallet.inputTonConnectOauthSession inputtonconnectoauthsession = (TL_wallet.inputTonConnectOauthSession) obj;
-                String str = (String) obj2;
-                if (str == null) {
-                    inputtonconnectoauthsessionArr[0] = inputtonconnectoauthsession;
-                }
-                l80Var.run(str);
-                break;
-            case 1:
-                ((j0) obj4).close();
-                AndroidUtilities.runOnUIThread(new h((s1) obj3, (TL_wallet.inputTonConnectOauthSession) obj, (String) obj2, 5));
-                break;
-            case 2:
-                ((j0) obj4).close();
-                ((ih) obj3).run((b2) obj, (String) obj2);
-                break;
-            case 3:
-                h8.b0((h8) obj4, (Utilities.Callback) obj3, (j0) obj, (String) obj2);
-                break;
-            case 4:
-                r9 r9Var = (r9) obj4;
-                p pVar = (p) obj3;
-                TL_wallet.walletUserAddress walletuseraddress = (TL_wallet.walletUserAddress) obj;
-                if (((String) obj2) == null) {
-                    pVar.run(walletuseraddress != null ? walletuseraddress.address : null);
-                    break;
-                } else {
-                    r9Var.V.setLoading(false);
-                    break;
-                }
-            case 5:
-                rh.r rVar = (rh.r) obj4;
-                String str2 = (String) obj3;
-                TL_account.webPagePreview webpagepreview = (TL_account.webPagePreview) obj;
+                final ih ihVar = (ih) this.e;
+                final TL_wallet.tonConnectPending tonconnectpending = (TL_wallet.tonConnectPending) obj;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
-                int i12 = rVar.a;
-                if (webpagepreview != null) {
-                    MessagesController.getInstance(i12).putUsers(webpagepreview.users, false);
-                    MessagesController.getInstance(i12).putChats(webpagepreview.chats, false);
-                    TLRPC.MessageMedia messageMedia = webpagepreview.media;
-                    if (messageMedia != null) {
-                        r1 = messageMedia.webpage;
-                    }
-                }
-                rVar.b.put(str2, r1);
-                ArrayList arrayList = (ArrayList) rVar.c.remove(str2);
-                if (arrayList != null) {
+                final e2 e2Var = this.b;
+                l0 l0Var = e2Var.b;
+                if (tL_error == null && tonconnectpending != null) {
+                    ArrayList<TL_wallet.tonConnectRequest> arrayList = tonconnectpending.requests;
                     int size = arrayList.size();
-                    while (i11 < size) {
-                        Object obj5 = arrayList.get(i11);
-                        i11++;
-                        ((Utilities.Callback2) obj5).run(r1, tL_error);
-                    }
-                    break;
-                }
-                break;
-            case 6:
-                ug.z zVar = (ug.z) obj4;
-                TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption = (TL_stars.TL_starsGiveawayOption) obj3;
-                Boolean bool = (Boolean) obj;
-                String str3 = (String) obj2;
-                zVar.q0.a.setLoading(false);
-                if (zVar.getContext() != null) {
-                    org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
-                    ja0 ja0Var = LaunchActivity.H1.x0;
-                    if (U != null) {
-                        if (!bool.booleanValue()) {
-                            if (str3 != null) {
-                                zVar.dismiss();
-                                i2.e.s(R.string.UnknownErrorCode, new Object[]{str3}, xc.a0(U), R.raw.error, 36);
-                                break;
+                    int i11 = 0;
+                    while (true) {
+                        j10 = this.c;
+                        i10 = this.d;
+                        if (i11 < size) {
+                            TL_wallet.tonConnectRequest tonconnectrequest2 = arrayList.get(i11);
+                            i11++;
+                            TL_wallet.tonConnectRequest tonconnectrequest3 = tonconnectrequest2;
+                            if (tonconnectrequest3.session_id == j10 && tonconnectrequest3.msg_id == i10) {
+                                tonconnectrequest = tonconnectrequest3;
                             }
                         } else {
-                            zVar.dismiss();
-                            qn W9 = qn.W9(-zVar.b0.id);
-                            U.presentFragment(W9);
-                            U.whenFullyVisible(new u2.j0(7, W9, tL_starsGiveawayOption));
-                            if (ja0Var != null) {
-                                ja0Var.c(true);
-                                break;
-                            }
+                            tonconnectrequest = null;
                         }
                     }
+                    if (tonconnectrequest != null && (tonconnectsession = tonconnectpending.session) != null && tonconnectsession.id == j10 && tonconnectrequest.expires > e2Var.f.getCurrentTime()) {
+                        final String s10 = l0Var.s();
+                        final byte[] bArr = l0Var.x() != null ? (byte[]) l0Var.x().clone() : null;
+                        l0Var.y(new Utilities.Callback2() { // from class: org.telegram.ui.Wallet.t1
+                            @Override // org.telegram.messenger.Utilities.Callback2
+                            public final void run(Object obj3, Object obj4) {
+                                e2 e2Var2 = e2.this;
+                                ih ihVar2 = ihVar;
+                                TL_wallet.tonConnectPending tonconnectpending2 = tonconnectpending;
+                                TL_wallet.tonConnectRequest tonconnectrequest4 = tonconnectrequest;
+                                String str = s10;
+                                byte[] bArr2 = bArr;
+                                long j11 = j10;
+                                int i12 = i10;
+                                i0 i0Var = (i0) obj3;
+                                String str2 = (String) obj4;
+                                e2Var2.getClass();
+                                if (i0Var != null && str2 == null) {
+                                    i0 b10 = i0Var.b();
+                                    Utilities.globalQueue.postRunnable(new gi.d1(e2Var2, tonconnectpending2, tonconnectrequest4, b10, str, bArr2, new r1(2, b10, ihVar2), j11, i12));
+                                } else {
+                                    e2Var2.h = false;
+                                    if (str2 == null) {
+                                        str2 = "Recovery phrase is unavailable";
+                                    }
+                                    ihVar2.run(null, str2);
+                                }
+                            }
+                        }, true, false);
+                        break;
+                    } else {
+                        e2Var.h = false;
+                        ihVar.run(null, "This request has expired or has already been answered");
+                        break;
+                    }
+                } else {
+                    e2Var.h = false;
+                    ihVar.run(null, e2.x(tL_error, "getPending"));
+                    break;
                 }
                 break;
             default:
-                yh.o2 o2Var = (yh.o2) obj4;
-                ArrayList arrayList2 = (ArrayList) obj;
-                ArrayList arrayList3 = ((ai.y9) obj3).l;
-                int size2 = arrayList3.size();
-                int i13 = 0;
-                while (i13 < size2) {
-                    Object obj6 = arrayList3.get(i13);
-                    i13++;
-                    TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj6;
-                    if (savedStarGift.pinned_to_top) {
-                        int i14 = po0.a;
-                        h61 J = h61.J(po0.class);
-                        J.G = savedStarGift;
-                        J.K(o2Var.b == savedStarGift.gift.id);
-                        J.u = 1;
-                        arrayList2.add(J);
-                    }
+                Utilities.Callback callback = (Utilities.Callback) this.e;
+                TLRPC.Bool bool = (TLRPC.Bool) obj;
+                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
+                e2 e2Var2 = this.b;
+                e2Var2.getClass();
+                if (tL_error2 != null || !(bool instanceof TLRPC.TL_boolTrue)) {
+                    callback.run(e2.x(tL_error2, "closeSession"));
+                    break;
+                } else {
+                    e2Var2.d(this.c, this.d, callback);
+                    break;
                 }
                 break;
         }

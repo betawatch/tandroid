@@ -22,9 +22,9 @@ import v7.m7;
 import v7.u6;
 import v7.v6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public final class k0 implements p {
+public final class k0 implements q {
     public final Context a;
     public final u0 b;
     public final n0 c;
@@ -50,12 +50,12 @@ public final class k0 implements p {
         this.g = e2.g0.a;
     }
 
-    public final i0 a(o oVar) {
+    public final i0 a(p pVar) {
         Context context;
         Context context2;
         try {
-            int i10 = oVar.h;
-            int i11 = oVar.i;
+            int i10 = pVar.h;
+            int i11 = pVar.i;
             if (i11 == -1 || (context2 = this.a) == null || Build.VERSION.SDK_INT < 34) {
                 context = null;
             } else {
@@ -66,49 +66,49 @@ public final class k0 implements p {
                 context = this.k;
                 i10 = 0;
             }
-            AudioTrack.Builder sessionId = new AudioTrack.Builder().setAudioAttributes(oVar.d ? new AudioAttributes.Builder().setContentType(3).setFlags(16).setUsage(1).build() : oVar.g.b()).setAudioFormat(new AudioFormat.Builder().setSampleRate(oVar.b).setChannelMask(oVar.c).setEncoding(oVar.a).build()).setTransferMode(1).setBufferSizeInBytes(oVar.f).setSessionId(i10);
+            AudioTrack.Builder sessionId = new AudioTrack.Builder().setAudioAttributes(pVar.d ? new AudioAttributes.Builder().setContentType(3).setFlags(16).setUsage(1).build() : pVar.g.b()).setAudioFormat(new AudioFormat.Builder().setSampleRate(pVar.b).setChannelMask(pVar.c).setEncoding(pVar.a).build()).setTransferMode(1).setBufferSizeInBytes(pVar.f).setSessionId(i10);
             int i12 = Build.VERSION.SDK_INT;
             if (i12 >= 29) {
-                sessionId.setOffloadedPlayback(oVar.e);
+                sessionId.setOffloadedPlayback(pVar.e);
             }
             if (i12 >= 34 && context != null) {
                 sessionId.setContext(context);
             }
             AudioTrack build = sessionId.build();
             if (build.getState() == 1) {
-                return new i0(build, oVar, this.d, this.e, this.g);
+                return new i0(build, pVar, this.d, this.e, this.g);
             }
             try {
                 build.release();
             } catch (Exception unused) {
             }
-            throw new m();
+            throw new n();
         } catch (IllegalArgumentException e) {
             e = e;
-            throw new m(e);
+            throw new n(e);
         } catch (UnsupportedOperationException e7) {
             e = e7;
-            throw new m(e);
+            throw new n(e);
         }
     }
 
-    public final l b(j jVar) {
-        e(jVar);
-        b2.w wVar = jVar.a;
-        b2.f fVar = jVar.b;
-        g b10 = this.c.b(fVar, wVar);
-        k kVar = new k();
+    public final m b(k kVar) {
+        e(kVar);
+        b2.w wVar = kVar.a;
+        b2.f fVar = kVar.b;
+        h b10 = this.c.b(fVar, wVar);
+        l lVar = new l();
         String str = wVar.s;
         int i10 = wVar.M;
         int i11 = 0;
         if (!Objects.equals(str, "audio/raw") ? this.h.c(fVar, wVar) != null : i10 == 2) {
             i11 = 2;
         }
-        kVar.a = i11;
-        kVar.b = b10.a;
-        kVar.c = b10.b;
-        kVar.d = b10.c;
-        return kVar.a();
+        lVar.a = i11;
+        lVar.b = b10.a;
+        lVar.c = b10.b;
+        lVar.d = b10.c;
+        return lVar.a();
     }
 
     /* JADX WARN: Removed duplicated region for block: B:11:0x008a  */
@@ -118,7 +118,7 @@ public final class k0 implements p {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final o c(j jVar) {
+    public final p c(k kVar) {
         int intValue;
         int i10;
         boolean z10;
@@ -131,10 +131,10 @@ public final class k0 implements p {
         int i13;
         int i14;
         int j10;
-        b2.w wVar = jVar.a;
-        boolean z13 = jVar.d;
-        b2.f fVar = jVar.b;
-        e(jVar);
+        b2.w wVar = kVar.a;
+        boolean z13 = kVar.d;
+        b2.f fVar = kVar.b;
+        e(kVar);
         String str = wVar.s;
         int i15 = wVar.L;
         int i16 = wVar.M;
@@ -146,7 +146,7 @@ public final class k0 implements p {
             z10 = false;
             c10 = 0;
         } else {
-            g b10 = z13 ? this.c.b(fVar, wVar) : g.d;
+            h b10 = z13 ? this.c.b(fVar, wVar) : h.d;
             if (z13 && b10.a) {
                 str.getClass();
                 int c11 = b2.v0.c(str, wVar.k);
@@ -162,7 +162,7 @@ public final class k0 implements p {
                 if (Objects.equals(str, "audio/vnd.dts.hd;profile=lbr") && i11 == -1) {
                     i11 = 768000;
                 }
-                i12 = jVar.h;
+                i12 = kVar.h;
                 if (i12 == -1) {
                     z12 = true;
                 } else {
@@ -207,28 +207,28 @@ public final class k0 implements p {
                     }
                     i12 = (((Math.max(minBufferSize, (int) (i14 * d)) + i13) - 1) / i13) * i13;
                 }
-                n nVar = new n();
+                o oVar = new o();
                 b2.f fVar2 = b2.f.i;
-                nVar.i = -1;
-                nVar.b = i15;
-                nVar.c = intValue;
-                nVar.a = i16;
-                nVar.f = i12;
-                nVar.h = jVar.e;
-                nVar.g = fVar;
+                oVar.i = -1;
+                oVar.b = i15;
+                oVar.c = intValue;
+                oVar.a = i16;
+                oVar.f = i12;
+                oVar.h = kVar.e;
+                oVar.g = fVar;
                 boolean z15 = z12;
-                nVar.e = c10 != z15 ? z15 : false;
-                nVar.d = jVar.g;
-                nVar.j = z11;
-                nVar.k = z10;
-                nVar.i = jVar.f;
-                return new o(nVar);
+                oVar.e = c10 != z15 ? z15 : false;
+                oVar.d = kVar.g;
+                oVar.j = z11;
+                oVar.k = z10;
+                oVar.i = kVar.f;
+                return new p(oVar);
             }
             Pair c12 = this.h.c(fVar, wVar);
             if (c12 == null) {
                 String str2 = "Unable to configure passthrough for: " + wVar;
                 str2.getClass();
-                throw new i(str2);
+                throw new j(str2);
             }
             i16 = ((Integer) c12.first).intValue();
             intValue = ((Integer) c12.second).intValue();
@@ -241,25 +241,25 @@ public final class k0 implements p {
         if (Objects.equals(str, "audio/vnd.dts.hd;profile=lbr")) {
             i11 = 768000;
         }
-        i12 = jVar.h;
+        i12 = kVar.h;
         if (i12 == -1) {
         }
-        n nVar2 = new n();
+        o oVar2 = new o();
         b2.f fVar22 = b2.f.i;
-        nVar2.i = -1;
-        nVar2.b = i15;
-        nVar2.c = intValue;
-        nVar2.a = i16;
-        nVar2.f = i12;
-        nVar2.h = jVar.e;
-        nVar2.g = fVar;
+        oVar2.i = -1;
+        oVar2.b = i15;
+        oVar2.c = intValue;
+        oVar2.a = i16;
+        oVar2.f = i12;
+        oVar2.h = kVar.e;
+        oVar2.g = fVar;
         boolean z152 = z12;
-        nVar2.e = c10 != z152 ? z152 : false;
-        nVar2.d = jVar.g;
-        nVar2.j = z11;
-        nVar2.k = z10;
-        nVar2.i = jVar.f;
-        return new o(nVar2);
+        oVar2.e = c10 != z152 ? z152 : false;
+        oVar2.d = kVar.g;
+        oVar2.j = z11;
+        oVar2.k = z10;
+        oVar2.i = kVar.f;
+        return new p(oVar2);
     }
 
     public final void d() {
@@ -288,11 +288,11 @@ public final class k0 implements p {
         }
     }
 
-    public final void e(j jVar) {
+    public final void e(k kVar) {
         Context context;
         b b10;
-        AudioDeviceInfo audioDeviceInfo = jVar.c;
-        b2.f fVar = jVar.b;
+        AudioDeviceInfo audioDeviceInfo = kVar.c;
+        b2.f fVar = kVar.b;
         f();
         e eVar = this.i;
         if (eVar == null && (context = this.a) != null) {

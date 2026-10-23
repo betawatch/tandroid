@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final Map a;
@@ -45,7 +45,7 @@ public abstract class b {
     public static String a(String str) {
         Matcher matcher = b.matcher(str);
         if (!matcher.find()) {
-            String str2 = (String) a.get(k3.j(1, 1, str));
+            String str2 = (String) a.get(k3.i(1, 1, str));
             return str2 != null ? str2 : str;
         }
         try {

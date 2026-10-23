@@ -7,27 +7,28 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.c71;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.o2;
+import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.Components.j71;
 import org.telegram.ui.Components.m9;
-import org.telegram.ui.web.z1;
+import org.telegram.ui.web.a2;
 import w7.z5;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class q extends FrameLayout {
     public final m9 a;
     public final TextView b;
     public k c;
 
-    public q(Context context, int i10, d6 d6Var) {
+    public q(Context context, int i10, g6 g6Var) {
         super(context);
         this.a = new m9(i10, this, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dpf2(1.0f));
         TextView textView = new TextView(context);
         this.b = textView;
-        textView.setTextColor(h6.w0(h6.E8, d6Var));
+        r6.W(textView, k6.E8, g6Var);
         textView.setLines(1);
         textView.setSingleLine(true);
         textView.setGravity(19);
@@ -37,16 +38,16 @@ public final class q extends FrameLayout {
         addView(textView, z5.g());
     }
 
-    public final c71 a(n2 n2Var, long j10, int i10, byte[] bArr, int i11, Utilities.Callback callback) {
+    public final j71 a(o2 o2Var, long j10, int i10, byte[] bArr, int i11, Utilities.Callback callback) {
         k kVar = this.c;
         if (kVar != null) {
             return kVar;
         }
-        p pVar = new p(n2Var.getCurrentAccount(), n2Var.getMessagesController().getInputPeer(j10), i10, bArr, new z1(this, 18), callback);
-        AndroidUtilities.runOnUIThread(new z1(pVar, 19), 1000L);
-        k kVar2 = new k(n2Var, new j(pVar, 0), i11);
+        p pVar = new p(o2Var.getCurrentAccount(), o2Var.getMessagesController().getInputPeer(j10), i10, bArr, new a2(this, 18), callback);
+        AndroidUtilities.runOnUIThread(new a2(pVar, 19), 1000L);
+        k kVar2 = new k(o2Var, new j(pVar, 0), i11);
         this.c = kVar2;
-        kVar2.W2.r = false;
+        kVar2.Z2.r = false;
         kVar2.j(new l(this, pVar));
         return this.c;
     }

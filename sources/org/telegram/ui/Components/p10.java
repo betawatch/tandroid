@@ -8,20 +8,20 @@ import android.view.View;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class p10 extends URLSpan {
     public static final /* synthetic */ int e = 0;
     public final String a;
     public final TLRPC.TL_messageEntityFormattedDate b;
-    public final n11 c;
+    public final q11 c;
     public final boolean d;
 
-    public p10(String str, n11 n11Var, TLRPC.TL_messageEntityFormattedDate tL_messageEntityFormattedDate) {
+    public p10(String str, q11 q11Var, TLRPC.TL_messageEntityFormattedDate tL_messageEntityFormattedDate) {
         super(str);
         this.a = str;
         this.b = tL_messageEntityFormattedDate;
-        this.c = n11Var;
+        this.c = q11Var;
         this.d = false;
     }
 
@@ -70,9 +70,9 @@ public final class p10 extends URLSpan {
         int i10 = textPaint.linkColor;
         int color = textPaint.getColor();
         super.updateDrawState(textPaint);
-        n11 n11Var = this.c;
-        if (n11Var != null) {
-            n11Var.a(textPaint);
+        q11 q11Var = this.c;
+        if (q11Var != null) {
+            q11Var.a(textPaint);
         }
         textPaint.setUnderlineText(i10 == color);
     }

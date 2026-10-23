@@ -39,11 +39,11 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
-import org.telegram.ui.Components.e61;
-import org.telegram.ui.r21;
+import org.telegram.ui.Components.j61;
+import org.telegram.ui.v21;
 import org.xmlpull.v1.XmlPullParser;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public class LocaleController {
     private static volatile LocaleController Instance = null;
@@ -110,7 +110,7 @@ public class LocaleController {
     private ArrayList<LocaleInfo> otherLanguages = new ArrayList<>();
     private boolean patching = false;
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public static class LocaleInfo {
         public String baseLangCode;
         public int baseVersion;
@@ -227,12 +227,12 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public static abstract class PluralRules {
         public abstract int quantityForNumber(int i10);
     }
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public static class PluralRules_Arabic extends PluralRules {
         @Override // org.telegram.messenger.LocaleController.PluralRules
         public int quantityForNumber(int i10) {
@@ -253,7 +253,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public static class PluralRules_Balkan extends PluralRules {
         @Override // org.telegram.messenger.LocaleController.PluralRules
         public int quantityForNumber(int i10) {
@@ -275,7 +275,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public static class PluralRules_Breton extends PluralRules {
         @Override // org.telegram.messenger.LocaleController.PluralRules
         public int quantityForNumber(int i10) {
@@ -295,7 +295,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public static class PluralRules_Czech extends PluralRules {
         @Override // org.telegram.messenger.LocaleController.PluralRules
         public int quantityForNumber(int i10) {
@@ -306,7 +306,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public static class PluralRules_French extends PluralRules {
         @Override // org.telegram.messenger.LocaleController.PluralRules
         public int quantityForNumber(int i10) {
@@ -314,7 +314,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public static class PluralRules_Langi extends PluralRules {
         @Override // org.telegram.messenger.LocaleController.PluralRules
         public int quantityForNumber(int i10) {
@@ -325,7 +325,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public static class PluralRules_Latvian extends PluralRules {
         @Override // org.telegram.messenger.LocaleController.PluralRules
         public int quantityForNumber(int i10) {
@@ -336,7 +336,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public static class PluralRules_Lithuanian extends PluralRules {
         @Override // org.telegram.messenger.LocaleController.PluralRules
         public int quantityForNumber(int i10) {
@@ -352,7 +352,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public static class PluralRules_Macedonian extends PluralRules {
         @Override // org.telegram.messenger.LocaleController.PluralRules
         public int quantityForNumber(int i10) {
@@ -360,7 +360,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public static class PluralRules_Maltese extends PluralRules {
         @Override // org.telegram.messenger.LocaleController.PluralRules
         public int quantityForNumber(int i10) {
@@ -378,7 +378,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public static class PluralRules_None extends PluralRules {
         @Override // org.telegram.messenger.LocaleController.PluralRules
         public int quantityForNumber(int i10) {
@@ -386,7 +386,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public static class PluralRules_One extends PluralRules {
         @Override // org.telegram.messenger.LocaleController.PluralRules
         public int quantityForNumber(int i10) {
@@ -394,7 +394,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public static class PluralRules_Polish extends PluralRules {
         @Override // org.telegram.messenger.LocaleController.PluralRules
         public int quantityForNumber(int i10) {
@@ -416,7 +416,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public static class PluralRules_Romanian extends PluralRules {
         @Override // org.telegram.messenger.LocaleController.PluralRules
         public int quantityForNumber(int i10) {
@@ -431,7 +431,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public static class PluralRules_Serbian extends PluralRules {
         @Override // org.telegram.messenger.LocaleController.PluralRules
         public int quantityForNumber(int i10) {
@@ -447,7 +447,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public static class PluralRules_Slovenian extends PluralRules {
         @Override // org.telegram.messenger.LocaleController.PluralRules
         public int quantityForNumber(int i10) {
@@ -462,7 +462,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public static class PluralRules_Tachelhit extends PluralRules {
         @Override // org.telegram.messenger.LocaleController.PluralRules
         public int quantityForNumber(int i10) {
@@ -473,7 +473,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public static class PluralRules_Two extends PluralRules {
         @Override // org.telegram.messenger.LocaleController.PluralRules
         public int quantityForNumber(int i10) {
@@ -484,7 +484,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public static class PluralRules_Welsh extends PluralRules {
         @Override // org.telegram.messenger.LocaleController.PluralRules
         public int quantityForNumber(int i10) {
@@ -504,7 +504,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public static class PluralRules_Zero extends PluralRules {
         @Override // org.telegram.messenger.LocaleController.PluralRules
         public int quantityForNumber(int i10) {
@@ -512,7 +512,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public static final class RelativeIcu {
         private RelativeIcu() {
         }
@@ -544,7 +544,7 @@ public class LocaleController {
         }
     }
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public class TimeZoneChangedReceiver extends BroadcastReceiver {
         private TimeZoneChangedReceiver() {
         }
@@ -806,9 +806,9 @@ public class LocaleController {
             sb2.append(" force=");
             sb2.append(z10);
             sb2.append(" currentAccount=");
-            g0.o(i10, sb2);
+            v0.n(i10, sb2);
             int[] iArr = {0};
-            final h0 h0Var = new h0(new int[]{0}, iArr, runnable, 26);
+            final g0 g0Var = new g0(new int[]{0}, iArr, runnable, 26);
             if (z10) {
                 patched(localeInfo2.shortName);
             }
@@ -831,16 +831,16 @@ public class LocaleController {
                         public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                             switch (i11) {
                                 case 0:
-                                    this.b.lambda$applyRemoteLanguage$15(localeInfo2, i10, h0Var, tLObject, tL_error);
+                                    this.b.lambda$applyRemoteLanguage$15(localeInfo2, i10, g0Var, tLObject, tL_error);
                                     break;
                                 case 1:
-                                    this.b.lambda$applyRemoteLanguage$17(localeInfo2, i10, h0Var, tLObject, tL_error);
+                                    this.b.lambda$applyRemoteLanguage$17(localeInfo2, i10, g0Var, tLObject, tL_error);
                                     break;
                                 case 2:
-                                    this.b.lambda$applyRemoteLanguage$19(localeInfo2, i10, h0Var, tLObject, tL_error);
+                                    this.b.lambda$applyRemoteLanguage$19(localeInfo2, i10, g0Var, tLObject, tL_error);
                                     break;
                                 default:
-                                    this.b.lambda$applyRemoteLanguage$21(localeInfo2, i10, h0Var, tLObject, tL_error);
+                                    this.b.lambda$applyRemoteLanguage$21(localeInfo2, i10, g0Var, tLObject, tL_error);
                                     break;
                             }
                         }
@@ -865,16 +865,16 @@ public class LocaleController {
                             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                                 switch (i12) {
                                     case 0:
-                                        this.b.lambda$applyRemoteLanguage$15(localeInfo2, i10, h0Var, tLObject, tL_error);
+                                        this.b.lambda$applyRemoteLanguage$15(localeInfo2, i10, g0Var, tLObject, tL_error);
                                         break;
                                     case 1:
-                                        this.b.lambda$applyRemoteLanguage$17(localeInfo2, i10, h0Var, tLObject, tL_error);
+                                        this.b.lambda$applyRemoteLanguage$17(localeInfo2, i10, g0Var, tLObject, tL_error);
                                         break;
                                     case 2:
-                                        this.b.lambda$applyRemoteLanguage$19(localeInfo2, i10, h0Var, tLObject, tL_error);
+                                        this.b.lambda$applyRemoteLanguage$19(localeInfo2, i10, g0Var, tLObject, tL_error);
                                         break;
                                     default:
-                                        this.b.lambda$applyRemoteLanguage$21(localeInfo2, i10, h0Var, tLObject, tL_error);
+                                        this.b.lambda$applyRemoteLanguage$21(localeInfo2, i10, g0Var, tLObject, tL_error);
                                         break;
                                 }
                             }
@@ -903,16 +903,16 @@ public class LocaleController {
                         public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                             switch (i13) {
                                 case 0:
-                                    this.b.lambda$applyRemoteLanguage$15(localeInfo2, i10, h0Var, tLObject, tL_error);
+                                    this.b.lambda$applyRemoteLanguage$15(localeInfo2, i10, g0Var, tLObject, tL_error);
                                     break;
                                 case 1:
-                                    this.b.lambda$applyRemoteLanguage$17(localeInfo2, i10, h0Var, tLObject, tL_error);
+                                    this.b.lambda$applyRemoteLanguage$17(localeInfo2, i10, g0Var, tLObject, tL_error);
                                     break;
                                 case 2:
-                                    this.b.lambda$applyRemoteLanguage$19(localeInfo2, i10, h0Var, tLObject, tL_error);
+                                    this.b.lambda$applyRemoteLanguage$19(localeInfo2, i10, g0Var, tLObject, tL_error);
                                     break;
                                 default:
-                                    this.b.lambda$applyRemoteLanguage$21(localeInfo2, i10, h0Var, tLObject, tL_error);
+                                    this.b.lambda$applyRemoteLanguage$21(localeInfo2, i10, g0Var, tLObject, tL_error);
                                     break;
                             }
                         }
@@ -937,16 +937,16 @@ public class LocaleController {
                     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                         switch (i15) {
                             case 0:
-                                this.b.lambda$applyRemoteLanguage$15(localeInfo, i10, h0Var, tLObject, tL_error);
+                                this.b.lambda$applyRemoteLanguage$15(localeInfo, i10, g0Var, tLObject, tL_error);
                                 break;
                             case 1:
-                                this.b.lambda$applyRemoteLanguage$17(localeInfo, i10, h0Var, tLObject, tL_error);
+                                this.b.lambda$applyRemoteLanguage$17(localeInfo, i10, g0Var, tLObject, tL_error);
                                 break;
                             case 2:
-                                this.b.lambda$applyRemoteLanguage$19(localeInfo, i10, h0Var, tLObject, tL_error);
+                                this.b.lambda$applyRemoteLanguage$19(localeInfo, i10, g0Var, tLObject, tL_error);
                                 break;
                             default:
-                                this.b.lambda$applyRemoteLanguage$21(localeInfo, i10, h0Var, tLObject, tL_error);
+                                this.b.lambda$applyRemoteLanguage$21(localeInfo, i10, g0Var, tLObject, tL_error);
                                 break;
                         }
                     }
@@ -958,11 +958,11 @@ public class LocaleController {
 
     public static CharSequence bold(CharSequence charSequence) {
         if (charSequence instanceof Spannable) {
-            ((Spannable) charSequence).setSpan(new e61(AndroidUtilities.bold()), 0, charSequence.length(), 33);
+            ((Spannable) charSequence).setSpan(new j61(AndroidUtilities.bold()), 0, charSequence.length(), 33);
             return charSequence;
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(charSequence);
-        spannableStringBuilder.setSpan(new e61(AndroidUtilities.bold()), 0, charSequence.length(), 33);
+        spannableStringBuilder.setSpan(new j61(AndroidUtilities.bold()), 0, charSequence.length(), 33);
         return spannableStringBuilder;
     }
 
@@ -1301,7 +1301,7 @@ public class LocaleController {
         if (i11 <= 0) {
             return formatPluralString;
         }
-        StringBuilder i12 = r4.c.i(formatPluralString, ", ");
+        StringBuilder i12 = si.o0.i(formatPluralString, ", ");
         i12.append(formatPluralString("Minutes", i11, new Object[0]));
         return i12.toString();
     }
@@ -1506,7 +1506,7 @@ public class LocaleController {
 
     public static String formatNumber(long j10, char c10) {
         if (j10 < 0) {
-            return g0.h(-j10, c10, new StringBuilder("-"));
+            return i2.o1.m(-j10, c10, new StringBuilder("-"));
         }
         StringBuilder sb2 = new StringBuilder(String.format("%d", Long.valueOf(j10)));
         for (int length = sb2.length() - 3; length > 0; length -= 3) {
@@ -1521,24 +1521,24 @@ public class LocaleController {
 
     public static CharSequence formatPluralSpannable(String str, int i10, CharSequence... charSequenceArr) {
         if (str == null || str.length() == 0 || getInstance().currentPluralRules == null) {
-            return r4.c.h("LOC_ERR:", str);
+            return si.o0.h("LOC_ERR:", str);
         }
-        String C = a1.g.C(str, "_", getInstance().stringForQuantity(getInstance().currentPluralRules.quantityForNumber(i10)));
+        String D = a1.g.D(str, "_", getInstance().stringForQuantity(getInstance().currentPluralRules.quantityForNumber(i10)));
         Object[] objArr = new Object[charSequenceArr.length + 1];
         objArr[0] = Integer.valueOf(i10);
         System.arraycopy(charSequenceArr, 0, objArr, 1, charSequenceArr.length);
-        return formatSpannable(C, str.concat("_other"), 0, objArr);
+        return formatSpannable(D, str.concat("_other"), 0, objArr);
     }
 
     public static String formatPluralString(String str, int i10, Object... objArr) {
         if (str == null || str.length() == 0 || getInstance().currentPluralRules == null) {
-            return r4.c.h("LOC_ERR:", str);
+            return si.o0.h("LOC_ERR:", str);
         }
-        String C = a1.g.C(str, "_", getInstance().stringForQuantity(getInstance().currentPluralRules.quantityForNumber(i10)));
+        String D = a1.g.D(str, "_", getInstance().stringForQuantity(getInstance().currentPluralRules.quantityForNumber(i10)));
         Object[] objArr2 = new Object[objArr.length + 1];
         objArr2[0] = Integer.valueOf(i10);
         System.arraycopy(objArr, 0, objArr2, 1, objArr.length);
-        return formatString(C, str.concat("_other"), 0, objArr2);
+        return formatString(D, str.concat("_other"), 0, objArr2);
     }
 
     public static String formatPluralStringComma(String str, int i10) {
@@ -1832,7 +1832,7 @@ public class LocaleController {
             return formatPluralString("Months", (((i10 / 60) / 60) / 24) / 30, new Object[0]);
         }
         int i11 = ((i10 / 60) / 60) / 24;
-        return i10 % 7 == 0 ? formatPluralString("Weeks", i11 / 7, new Object[0]) : a1.g.C(formatPluralString("Weeks", i11 / 7, new Object[0]), " ", formatPluralString("Days", i11 % 7, new Object[0]));
+        return i10 % 7 == 0 ? formatPluralString("Weeks", i11 / 7, new Object[0]) : a1.g.D(formatPluralString("Weeks", i11 / 7, new Object[0]), " ", formatPluralString("Days", i11 % 7, new Object[0]));
     }
 
     public static String formatTodoCompletedDate(long j10) {
@@ -2056,9 +2056,9 @@ public class LocaleController {
 
     public static String getPluralString(String str, int i10) {
         if (str == null || str.length() == 0 || getInstance().currentPluralRules == null) {
-            return r4.c.h("LOC_ERR:", str);
+            return si.o0.h("LOC_ERR:", str);
         }
-        return getInstance().getStringInternal(a1.g.C(str, "_", getInstance().stringForQuantity(getInstance().currentPluralRules.quantityForNumber(i10))), str.concat("_other"), 0);
+        return getInstance().getStringInternal(a1.g.D(str, "_", getInstance().stringForQuantity(getInstance().currentPluralRules.quantityForNumber(i10))), str.concat("_other"), 0);
     }
 
     public static String getServerString(String str) {
@@ -2128,7 +2128,7 @@ public class LocaleController {
         if (z10) {
             String displayName2 = timeZone.getDisplayName(true, 1, getInstance().getCurrentLocale());
             if (!TextUtils.equals(displayName2, displayName)) {
-                return a1.g.C(displayName2, ", ", displayName);
+                return a1.g.D(displayName2, ", ", displayName);
             }
         }
         return displayName;
@@ -2239,7 +2239,7 @@ public class LocaleController {
         for (int i12 = 0; i12 < size2; i12++) {
             TLRPC.TL_langPackLanguage tL_langPackLanguage = (TLRPC.TL_langPackLanguage) vector.objects.get(i12);
             if (BuildVars.LOGS_ENABLED) {
-                i2.e.v(tL_langPackLanguage.name, new StringBuilder("loaded lang "));
+                i2.o1.w(tL_langPackLanguage.name, new StringBuilder("loaded lang "));
             }
             LocaleInfo localeInfo = new LocaleInfo();
             localeInfo.nameEnglish = tL_langPackLanguage.name;
@@ -2350,7 +2350,7 @@ public class LocaleController {
                 configuration.locale = this.currentLocale;
                 ApplicationLoader.applicationContext.getResources().updateConfiguration(configuration, ApplicationLoader.applicationContext.getResources().getDisplayMetrics());
                 this.changingConfiguration = false;
-                r21.s = false;
+                v21.s = false;
             } else {
                 FileLog.d("saveRemoteLocaleStrings: currentLocaleInfo != localeInfo, do nothing");
             }
@@ -2542,10 +2542,10 @@ public class LocaleController {
         int i10 = 0;
         for (String str : hashMap.keySet()) {
             if (str != null) {
-                String j10 = str.endsWith("_other") ? com.google.android.gms.internal.play_billing.k3.j(6, 0, str) : (str.endsWith("_zero") || str.endsWith("_many")) ? com.google.android.gms.internal.play_billing.k3.j(5, 0, str) : (str.endsWith("_one") || str.endsWith("_two") || str.endsWith("_few")) ? com.google.android.gms.internal.play_billing.k3.j(4, 0, str) : null;
-                if (j10 != null) {
-                    if (!hashSet.contains(j10)) {
-                        hashSet.add(j10);
+                String i11 = str.endsWith("_other") ? com.google.android.gms.internal.play_billing.k3.i(6, 0, str) : (str.endsWith("_zero") || str.endsWith("_many")) ? com.google.android.gms.internal.play_billing.k3.i(5, 0, str) : (str.endsWith("_one") || str.endsWith("_two") || str.endsWith("_few")) ? com.google.android.gms.internal.play_billing.k3.i(4, 0, str) : null;
+                if (i11 != null) {
+                    if (!hashSet.contains(i11)) {
+                        hashSet.add(i11);
                     }
                 }
                 i10++;
@@ -3649,7 +3649,7 @@ public class LocaleController {
                 localeFileStrings2.putAll(getLocaleFileStrings(localeInfo.getPathToFile()));
             }
             FileLog.d("saved locale file to " + pathToFile);
-            AndroidUtilities.runOnUIThread(new ai.vb(this, i11, localeInfo, tL_langPackDifference, localeFileStrings2, runnable, 4));
+            AndroidUtilities.runOnUIThread(new ai.wb(this, i11, localeInfo, tL_langPackDifference, localeFileStrings2, runnable, 4));
         } catch (Exception e) {
             FileLog.e(e);
         }
@@ -3905,7 +3905,7 @@ public class LocaleController {
 
     private String getStringInternal(String str, String str2, int i10) {
         String stringV2 = getStringV2(str, i10, str2);
-        return stringV2 == null ? r4.c.h("LOC_ERR:", str) : stringV2;
+        return stringV2 == null ? si.o0.h("LOC_ERR:", str) : stringV2;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:64:0x02ae  */
@@ -3955,7 +3955,7 @@ public class LocaleController {
             }
             if (z11) {
                 i11 = 0;
-                AndroidUtilities.runOnUIThread(new j0(localeController, localeInfo2, i10, runnable, 5));
+                AndroidUtilities.runOnUIThread(new i0(localeController, localeInfo2, i10, runnable, 5));
                 localeController = this;
                 localeInfo2 = localeInfo;
                 i12 = i10;
@@ -4057,7 +4057,7 @@ public class LocaleController {
                     z17 = false;
                     NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.reloadInterface, new Object[0]);
                 }
-                r21.s = z17;
+                v21.s = z17;
                 if (runnable != null) {
                     runnable.run();
                 }
@@ -4543,7 +4543,7 @@ public class LocaleController {
     @Deprecated
     public static String getString(String str) {
         if (TextUtils.isEmpty(str)) {
-            return r4.c.h("LOC_ERR:", str);
+            return si.o0.h("LOC_ERR:", str);
         }
         return getString(str, 0);
     }

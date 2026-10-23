@@ -15,14 +15,15 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.voip.GroupCallMessage;
 import org.telegram.tgnet.TLParseException;
-import org.telegram.ui.Components.cy0;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.Components.fy0;
 import org.telegram.ui.Components.iu;
-import org.telegram.ui.eo;
-import org.telegram.ui.qn;
-import org.telegram.ui.re1;
+import org.telegram.ui.go;
+import org.telegram.ui.sn;
 import org.telegram.ui.web.HttpGetFileTask;
+import org.telegram.ui.ye1;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u implements Runnable {
     public final /* synthetic */ int a;
@@ -37,7 +38,7 @@ public final /* synthetic */ class u implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                AndroidUtilities.showKeyboard(((x) this.b).e0.b);
+                AndroidUtilities.showKeyboard(((x) this.b).e0.d);
                 break;
             case 1:
                 ((d0) this.b).invalidate();
@@ -84,20 +85,20 @@ public final /* synthetic */ class u implements Runnable {
                 ((n2.b) this.b).a(null);
                 break;
             case 9:
-                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needSetDayNightTheme, (org.telegram.ui.ActionBar.g6) this.b, Boolean.TRUE, null, -1);
+                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needSetDayNightTheme, (j6) this.b, Boolean.TRUE, null, -1);
                 break;
             case 10:
                 ((le.b) this.b).d();
                 break;
             case 11:
-                re1 re1Var = (re1) this.b;
-                if (re1Var.getParentLayout() != null) {
-                    re1Var.H = true;
+                ye1 ye1Var = (ye1) this.b;
+                if (ye1Var.getParentLayout() != null) {
+                    ye1Var.H = true;
                     Bundle bundle = new Bundle();
-                    bundle.putLong("chat_id", re1Var.a);
-                    qn qnVar = new qn(bundle);
-                    qnVar.ja = true;
-                    re1Var.presentFragment(qnVar);
+                    bundle.putLong("chat_id", ye1Var.a);
+                    sn snVar = new sn(bundle);
+                    snVar.va = true;
+                    ye1Var.presentFragment(snVar);
                     break;
                 }
                 break;
@@ -204,12 +205,12 @@ public final /* synthetic */ class u implements Runnable {
                 v2Var.postInvalidate();
                 break;
             case 22:
-                ((org.telegram.ui.web.k) this.b).w.W2.N(true);
+                ((org.telegram.ui.web.l) this.b).w.Z2.N(true);
                 break;
             case 23:
-                org.telegram.ui.web.i iVar = ((org.telegram.ui.web.o) this.b).s.e;
-                if (iVar != null) {
-                    iVar.d();
+                org.telegram.ui.web.j jVar = ((org.telegram.ui.web.o) this.b).s.e;
+                if (jVar != null) {
+                    jVar.d();
                     break;
                 }
                 break;
@@ -217,20 +218,20 @@ public final /* synthetic */ class u implements Runnable {
                 ((iu) this.b).requestFocus();
                 break;
             case 25:
-                pf.d.r(((org.telegram.ui.web.t0) this.b).b.e.getContext(), "https://play.google.com/store/apps/details?id=com.google.android.webview");
+                pf.d.r(((org.telegram.ui.web.u0) this.b).b.e.getContext(), "https://play.google.com/store/apps/details?id=com.google.android.webview");
                 break;
             case 26:
-                org.telegram.ui.web.e1 e1Var = (org.telegram.ui.web.e1) this.b;
-                Utilities.searchQueue.postRunnable(new cy0(e1Var, new ArrayList(e1Var.s.e), e1Var.s.n));
+                org.telegram.ui.web.f1 f1Var = (org.telegram.ui.web.f1) this.b;
+                Utilities.searchQueue.postRunnable(new fy0(f1Var, new ArrayList(f1Var.s.e), f1Var.s.n));
                 break;
             case 27:
                 ((HttpGetFileTask) this.b).lambda$doInBackground$1();
                 break;
             case 28:
-                ((org.telegram.ui.Cells.o1) this.b).invalidateSelf();
+                ((org.telegram.ui.Cells.n1) this.b).invalidateSelf();
                 break;
             default:
-                org.telegram.ui.web.x1 x1Var = (org.telegram.ui.web.x1) this.b;
+                org.telegram.ui.web.y1 y1Var = (org.telegram.ui.web.y1) this.b;
                 File databasePath = ApplicationLoader.applicationContext.getDatabasePath("webview.db");
                 long length = (databasePath == null || !databasePath.exists()) ? 0L : databasePath.length();
                 File databasePath2 = ApplicationLoader.applicationContext.getDatabasePath("webviewCache.db");
@@ -239,14 +240,14 @@ public final /* synthetic */ class u implements Runnable {
                 }
                 File file = new File(ApplicationLoader.applicationContext.getApplicationInfo().dataDir, "app_webview");
                 if (file.exists()) {
-                    length += org.telegram.ui.web.x1.Z(file, Boolean.FALSE);
+                    length += org.telegram.ui.web.y1.Z(file, Boolean.FALSE);
                 }
                 File file2 = new File(ApplicationLoader.applicationContext.getApplicationInfo().dataDir, "cache/WebView");
                 if (file2.exists()) {
-                    length += org.telegram.ui.web.x1.Z(file2, null);
+                    length += org.telegram.ui.web.y1.Z(file2, null);
                 }
                 File file3 = new File(ApplicationLoader.applicationContext.getApplicationInfo().dataDir, "app_webview");
-                AndroidUtilities.runOnUIThread(new eo(x1Var, length, file3.exists() ? org.telegram.ui.web.x1.Z(file3, Boolean.TRUE) : 0L, 1));
+                AndroidUtilities.runOnUIThread(new go(y1Var, length, file3.exists() ? org.telegram.ui.web.y1.Z(file3, Boolean.TRUE) : 0L, 1));
                 break;
         }
     }

@@ -9,10 +9,10 @@ import java.io.File;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaController;
-import org.telegram.ui.Components.bh0;
 import org.telegram.ui.Components.bs;
+import org.telegram.ui.Components.eh0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class xa extends f6 {
     public final /* synthetic */ vb A2;
@@ -25,15 +25,15 @@ public final class xa extends f6 {
     }
 
     @Override // rg.h
-    public final void B(boolean z10) {
+    public final void A(boolean z10) {
         vb vbVar = this.A2;
         vbVar.o1.a(true, z10, vbVar.i0);
     }
 
     @Override // rg.h
-    public final void C() {
+    public final void B() {
         vb vbVar = this.A2;
-        vbVar.v1.N0(false);
+        vbVar.v1.M0(false);
         vbVar.c1.clearAnimation();
         ViewPropertyAnimator duration = vbVar.c1.animate().alpha(0.0f).setDuration(180L);
         bs bsVar = bs.g;
@@ -42,10 +42,10 @@ public final class xa extends f6 {
             vbVar.Y0.clearAnimation();
             vbVar.Y0.animate().alpha(0.0f).setDuration(180L).setInterpolator(bsVar).start();
         }
-        U0(q(), false);
+        T0(p(), false);
     }
 
-    public final void U0(boolean z10, boolean z11) {
+    public final void T0(boolean z10, boolean z11) {
         vb vbVar = this.A2;
         if (!z10) {
             vbVar.p1.a(false, z11);
@@ -60,16 +60,16 @@ public final class xa extends f6 {
     }
 
     @Override // rg.h
-    public final void f(boolean z10) {
+    public final void e(boolean z10) {
         vb vbVar = this.A2;
         vbVar.o1.b(vbVar.c1.getText());
         vbVar.o1.a(false, z10 && this.z2, null);
     }
 
     @Override // rg.h
-    public final void g(boolean z10) {
+    public final void f(boolean z10) {
         rg.j jVar;
-        if (!q()) {
+        if (!p()) {
             z10 = false;
         }
         vb vbVar = this.A2;
@@ -81,65 +81,65 @@ public final class xa extends f6 {
         ViewPropertyAnimator animate = vbVar.Y0.animate();
         int i10 = vbVar.g0;
         animate.alpha((i10 == -1 || i10 == 2) ? 1.0f : 0.0f).setDuration(180L).setInterpolator(bsVar).start();
-        U0(false, z10);
+        T0(false, z10);
         if (z10 && (jVar = this.J0) != null) {
-            B0(jVar);
+            A0(jVar);
         }
-        S0();
+        R0();
         this.l2 = true;
         this.z2 = false;
     }
 
     @Override // rg.h
-    public final void j() {
+    public final void i() {
         this.z2 = false;
-        U0(q(), false);
+        T0(p(), false);
         this.A2.o1.a(false, false, null);
     }
 
     @Override // rg.h
-    public final void k() {
+    public final void j() {
         this.z2 = true;
-        this.A2.v1.N0(false);
-        U0(false, false);
+        this.A2.v1.M0(false);
+        T0(false, false);
     }
 
     @Override // rg.h
-    public final void m(boolean z10) {
+    public final void l(boolean z10) {
         this.A2.p1.a(z10, false);
     }
 
     @Override // ei.f6
-    public final void q0() {
+    public final void p0() {
         vb vbVar = this.A2;
         vbVar.c1.f.d();
         vbVar.k0(0, false, true);
         rg.j jVar = this.J0;
-        if (!(jVar instanceof rg.v2) || this.K0) {
+        if (!(jVar instanceof rg.w2) || this.K0) {
             return;
         }
-        rg.v2 v2Var = (rg.v2) jVar;
+        rg.w2 w2Var = (rg.w2) jVar;
         this.K0 = true;
-        v2Var.q();
-        View focusedView = v2Var.getFocusedView();
+        w2Var.q();
+        View focusedView = w2Var.getFocusedView();
         focusedView.requestFocus();
         AndroidUtilities.showKeyboard(focusedView);
     }
 
     @Override // rg.h
-    public final void y() {
-        this.A2.v1.N0(false);
+    public final void x() {
+        this.A2.v1.M0(false);
     }
 
     @Override // ei.f6
-    public final void y0(boolean z10) {
+    public final void x0(boolean z10) {
         vb vbVar = this.A2;
         jb jbVar = vbVar.X0;
         if (jbVar != null) {
             jbVar.x(6, z10);
             g6 g6Var = vbVar.j1;
             if (g6Var != null) {
-                ((bh0) g6Var.c).a(vbVar.X0.k(), true);
+                ((eh0) g6Var.c).a(vbVar.X0.k(), true);
             }
         }
         lb lbVar = vbVar.c1;

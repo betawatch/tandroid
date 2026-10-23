@@ -7,29 +7,29 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class cg extends org.telegram.ui.qn {
-    public boolean Rc;
-    public final /* synthetic */ TLRPC.User Sc;
-    public final /* synthetic */ TLRPC.User Tc;
-    public final /* synthetic */ long Uc;
+public final class cg extends org.telegram.ui.sn {
+    public boolean ed;
+    public final /* synthetic */ TLRPC.User fd;
+    public final /* synthetic */ TLRPC.User gd;
+    public final /* synthetic */ long hd;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public cg(Bundle bundle, TLRPC.User user, TLRPC.User user2, long j10) {
         super(bundle);
-        this.Sc = user;
-        this.Tc = user2;
-        this.Uc = j10;
+        this.fd = user;
+        this.gd = user2;
+        this.hd = j10;
     }
 
-    @Override // org.telegram.ui.qn, org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.sn, org.telegram.ui.ActionBar.o2
     public final void onBecomeFullyVisible() {
         super.onBecomeFullyVisible();
-        if (this.Rc) {
+        if (this.ed) {
             return;
         }
-        this.Rc = true;
-        xc.a0(this).M(LocaleController.formatString(R.string.CreateManagedBotCreatedTitle, UserObject.getUserName(this.Sc)), AndroidUtilities.replaceSingleTag(LocaleController.formatString(R.string.CreateManagedBotCreatedText, UserObject.getUserName(this.Tc)), new ai.v3(this, this.Uc, 23)), R.raw.contact_check).j();
+        this.ed = true;
+        xc.a0(this).M(LocaleController.formatString(R.string.CreateManagedBotCreatedTitle, UserObject.getUserName(this.fd)), AndroidUtilities.replaceSingleTag(LocaleController.formatString(R.string.CreateManagedBotCreatedText, UserObject.getUserName(this.gd)), new ai.v3(this, this.hd, 23)), R.raw.contact_check).j();
     }
 }

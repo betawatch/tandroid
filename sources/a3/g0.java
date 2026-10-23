@@ -6,7 +6,7 @@ import b2.a2;
 import b2.v0;
 import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class g0 {
     public final qf.b a;
@@ -95,14 +95,14 @@ public final class g0 {
                                     ((f) bVar.c).h.onFirstFrameRendered();
                                     break;
                                 default:
-                                    ((f) bVar.c).h.k();
+                                    ((f) bVar.c).h.U();
                                     break;
                             }
                         }
                     });
                 }
                 b2.w wVar = (b2.w) bVar.b;
-                fVar.j.b(d, nanoTime, wVar == null ? new b2.w(new b2.v()) : wVar, null);
+                fVar.j.c(d, nanoTime, wVar == null ? new b2.w(new b2.v()) : wVar, null);
                 j jVar = (j) fVar.d.remove();
                 jVar.c.M0(jVar.a, jVar.b, nanoTime);
             } else if (a2 == 2 || a2 == 3) {
@@ -117,7 +117,7 @@ public final class g0 {
                                 ((f) bVar.c).h.onFirstFrameRendered();
                                 break;
                             default:
-                                ((f) bVar.c).h.k();
+                                ((f) bVar.c).h.U();
                                 break;
                         }
                     }

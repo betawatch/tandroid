@@ -5,16 +5,16 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class qh implements Runnable {
     public final /* synthetic */ int a = 1;
-    public final /* synthetic */ qn b;
+    public final /* synthetic */ sn b;
     public final /* synthetic */ int c;
     public final /* synthetic */ MessageObject d;
 
-    public /* synthetic */ qh(qn qnVar, int i10, MessageObject messageObject) {
-        this.b = qnVar;
+    public /* synthetic */ qh(sn snVar, int i10, MessageObject messageObject) {
+        this.b = snVar;
         this.c = i10;
         this.d = messageObject;
     }
@@ -23,22 +23,22 @@ public final /* synthetic */ class qh implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.n4 = null;
+                this.b.z4 = null;
                 this.d.messageOwner.replies.read_max_id = this.c;
                 break;
             default:
-                qn qnVar = this.b;
-                org.telegram.ui.Components.xc.a0(qnVar).c(LocaleController.getString(R.string.AdHidden)).j();
+                sn snVar = this.b;
+                org.telegram.ui.Components.xc.a0(snVar).c(LocaleController.getString(R.string.AdHidden)).j();
                 MessagesController.getInstance(this.c).disableAds(false);
                 MessageObject messageObject = this.d;
-                qnVar.Ja(messageObject);
-                qnVar.La(messageObject);
+                snVar.Ja(messageObject);
+                snVar.La(messageObject);
                 break;
         }
     }
 
-    public /* synthetic */ qh(qn qnVar, MessageObject messageObject, int i10) {
-        this.b = qnVar;
+    public /* synthetic */ qh(sn snVar, MessageObject messageObject, int i10) {
+        this.b = snVar;
         this.d = messageObject;
         this.c = i10;
     }

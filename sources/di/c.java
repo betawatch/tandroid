@@ -18,7 +18,7 @@ import org.telegram.ui.Components.gh;
 import org.telegram.ui.Components.ri;
 import org.telegram.ui.Components.ti;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class c implements ri {
     public final /* synthetic */ ti a;
@@ -113,21 +113,13 @@ public final class c implements ri {
     }
 
     @Override // org.telegram.ui.Components.ri
-    public final void u(gh ghVar) {
+    public final void r(gh ghVar) {
         ghVar.run();
     }
 
     @Override // org.telegram.ui.Components.ri
-    public final /* synthetic */ boolean v() {
+    public final /* synthetic */ boolean u() {
         return false;
-    }
-
-    @Override // org.telegram.ui.Components.ri
-    public final /* synthetic */ void E() {
-    }
-
-    @Override // org.telegram.ui.Components.ri
-    public final /* synthetic */ void J() {
     }
 
     @Override // org.telegram.ui.Components.ri
@@ -136,6 +128,14 @@ public final class c implements ri {
 
     @Override // org.telegram.ui.Components.ri
     public final /* synthetic */ void X(TLRPC.User user) {
+    }
+
+    @Override // org.telegram.ui.Components.ri
+    public final /* synthetic */ void E() {
+    }
+
+    @Override // org.telegram.ui.Components.ri
+    public final /* synthetic */ void J() {
     }
 
     @Override // org.telegram.ui.Components.ri

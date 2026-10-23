@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public abstract class j7 extends i7 {
     public final ArrayList f;
@@ -15,7 +15,7 @@ public abstract class j7 extends i7 {
         this.f = new ArrayList();
     }
 
-    @Override // org.telegram.ui.Components.im0
+    @Override // org.telegram.ui.Components.lm0
     public boolean D(s4.b1 b1Var) {
         return !(this instanceof r7);
     }
@@ -27,7 +27,7 @@ public abstract class j7 extends i7 {
         ArrayList arrayList2 = this.e;
         arrayList.addAll(arrayList2);
         arrayList2.clear();
-        bi.c cVar = this.h.f;
+        bi.c cVar = this.h.h;
         if (cVar != null) {
             int i10 = this.d;
             ArrayList arrayList3 = i10 == 1 ? cVar.d : i10 == 2 ? cVar.e : i10 == 3 ? cVar.f : i10 == 5 ? cVar.g : i10 == 4 ? cVar.h : null;

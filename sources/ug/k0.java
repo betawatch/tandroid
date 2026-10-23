@@ -1,80 +1,123 @@
 package ug;
 
-import android.os.CountDownTimer;
+import android.content.Context;
+import android.text.SpannableStringBuilder;
+import android.text.TextUtils;
 import android.view.View;
-import ci.l4;
-import java.util.ArrayList;
-import java.util.Date;
+import android.view.ViewGroup;
+import android.widget.TextView;
+import com.google.android.gms.internal.play_billing.k3;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.j5;
-import org.telegram.ui.Components.jm0;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.h3;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.Cells.b7;
+import org.telegram.ui.Cells.l4;
+import org.telegram.ui.Components.lm0;
+import org.telegram.ui.Components.y90;
+import org.telegram.ui.wg1;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class k0 extends CountDownTimer {
-    public final /* synthetic */ r0 a;
+public final class k0 extends lm0 {
+    public final /* synthetic */ q0 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k0(r0 r0Var) {
-        super(Long.MAX_VALUE, 1000L);
-        this.a = r0Var;
+    public k0(q0 q0Var) {
+        this.c = q0Var;
     }
 
-    @Override // android.os.CountDownTimer
-    public final void onTick(long j10) {
-        r0 r0Var = this.a;
-        jm0 jm0Var = r0Var.d;
-        ArrayList arrayList = r0Var.Y;
-        ArrayList arrayList2 = new ArrayList(arrayList.size());
-        int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            TL_stories.TL_myBoost tL_myBoost = (TL_stories.TL_myBoost) obj;
-            if (tL_myBoost.cooldown_until_date > 0) {
-                arrayList2.add(tL_myBoost);
-            }
-            if (tL_myBoost.cooldown_until_date * 1000 < System.currentTimeMillis()) {
-                tL_myBoost.cooldown_until_date = 0;
+    @Override // org.telegram.ui.Components.lm0
+    public final boolean D(s4.b1 b1Var) {
+        return b1Var.f == 3;
+    }
+
+    @Override // s4.g0
+    public final int h() {
+        return this.c.Y.size() + 3;
+    }
+
+    @Override // s4.g0
+    public final int j(int i10) {
+        if (i10 == 0) {
+            return 0;
+        }
+        int i11 = 1;
+        if (i10 != 1) {
+            i11 = 2;
+            if (i10 != 2) {
+                return 3;
             }
         }
-        if (arrayList2.isEmpty()) {
+        return i11;
+    }
+
+    @Override // s4.g0
+    public final void v(s4.b1 b1Var, int i10) {
+        int i11 = b1Var.f;
+        View view = b1Var.a;
+        q0 q0Var = this.c;
+        if (i11 == 3) {
+            TL_stories.TL_myBoost tL_myBoost = (TL_stories.TL_myBoost) q0Var.Y.get(i10 - 3);
+            yg.k kVar = (yg.k) view;
+            kVar.setBoost(tL_myBoost);
+            kVar.c(q0Var.X.contains(tL_myBoost), false);
             return;
         }
-        for (int i11 = 0; i11 < jm0Var.getChildCount(); i11++) {
-            View childAt = jm0Var.getChildAt(i11);
-            if (childAt instanceof yg.k) {
-                yg.k kVar = (yg.k) childAt;
-                if (arrayList2.contains(kVar.getBoost())) {
-                    j5 j5Var = kVar.e;
-                    l4 l4Var = kVar.d;
-                    int i12 = kVar.J.cooldown_until_date;
-                    if (i12 > 0) {
-                        kVar.setSubtitle(LocaleController.formatString(R.string.BoostingAvailableIn, yg.k.f((i12 * 1000) - System.currentTimeMillis())));
-                        l4Var.setAlpha(0.65f);
-                        j5Var.setAlpha(0.65f);
-                        kVar.i(0.3f, false);
-                    } else {
-                        kVar.setSubtitle(LocaleController.formatString(R.string.BoostExpireOn, LocaleController.getInstance().getFormatterBoostExpired().format(new Date(kVar.J.expires * 1000))));
-                        if (l4Var.getAlpha() < 1.0f) {
-                            l4Var.animate().alpha(1.0f).start();
-                            j5Var.animate().alpha(1.0f).start();
-                            kVar.i(1.0f, true);
-                        } else {
-                            l4Var.setAlpha(1.0f);
-                            j5Var.setAlpha(1.0f);
-                            kVar.i(1.0f, false);
-                        }
-                    }
-                }
+        if (i11 == 2) {
+            l4 l4Var = (l4) view;
+            l4Var.setTextSize(15.0f);
+            l4Var.setPadding(0, 0, 0, AndroidUtilities.dp(2.0f));
+            l4Var.setText(LocaleController.getString(R.string.BoostingRemoveBoostFrom));
+            return;
+        }
+        if (i11 == 0) {
+            p0 p0Var = (p0) view;
+            q0Var.b0 = p0Var;
+            TLRPC.Chat chat = q0Var.Z;
+            y90 y90Var = p0Var.e;
+            try {
+                SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatPluralString("BoostingReassignBoostTextPluralWithLink", (int) MessagesController.getInstance(UserConfig.selectedAccount).boostsPerSentGift, chat == null ? "" : chat.title, "%3$s"));
+                SpannableStringBuilder replaceSingleTag = AndroidUtilities.replaceSingleTag(LocaleController.getString("BoostingReassignBoostTextLink", R.string.BoostingReassignBoostTextLink), k6.gc, 2, new tg.p(q0Var, 8));
+                int indexOf = TextUtils.indexOf(replaceTags, "%3$s");
+                replaceTags.replace(indexOf, indexOf + 4, (CharSequence) replaceSingleTag);
+                y90Var.setText(replaceTags, TextView.BufferType.EDITABLE);
+                y90Var.post(new wg1(p0Var, indexOf, 11));
+            } catch (Exception e) {
+                FileLog.e(e);
             }
         }
     }
 
-    @Override // android.os.CountDownTimer
-    public final void onFinish() {
+    @Override // s4.g0
+    public final s4.b1 x(ViewGroup viewGroup, int i10) {
+        View view;
+        g6 g6Var;
+        Context context = viewGroup.getContext();
+        q0 q0Var = this.c;
+        if (i10 == 0) {
+            p0 p0Var = new p0(context);
+            p0Var.a(q0Var.X, q0Var.Z);
+            view = p0Var;
+        } else if (i10 == 1) {
+            int i11 = k6.a7;
+            view = new b7(context, k6.x0(null, i11, false), 0);
+            r6.i(i11, view, null);
+        } else if (i10 == 2) {
+            view = new l4(context, 22);
+        } else if (i10 != 3) {
+            view = new View(context);
+        } else {
+            g6Var = ((h3) q0Var).resourcesProvider;
+            view = new yg.k(context, true, false, g6Var, true);
+        }
+        return k3.l(view, view, -1, -2);
     }
 }

@@ -1,19 +1,26 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class ia0 implements View.OnLayoutChangeListener {
-    public boolean a;
+public final class ia0 implements aq {
+    public final /* synthetic */ ey a;
+    public final /* synthetic */ int b;
 
-    @Override // android.view.View.OnLayoutChangeListener
-    public final void onLayoutChange(View view, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17) {
-        boolean z10 = i13 - i11 > i12 - i10;
-        if (z10 != this.a) {
-            AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.rc(this, 28));
-            this.a = z10;
-        }
+    public ia0(ey eyVar, int i10) {
+        this.a = eyVar;
+        this.b = i10;
+    }
+
+    @Override // org.telegram.ui.aq
+    public final void b(int i10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
+        this.a.removeSelfFromStack();
+        NotificationCenter.getInstance(this.b).lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeChats, new Object[0]);
+    }
+
+    @Override // org.telegram.ui.aq
+    public final void a(TLRPC.User user) {
     }
 }

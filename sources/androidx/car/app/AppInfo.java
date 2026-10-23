@@ -3,10 +3,11 @@ package androidx.car.app;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import i2.o1;
 import j$.util.Objects;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class AppInfo {
     public static final String MIN_API_LEVEL_METADATA_KEY = "androidx.car.app.minCarApiLevel";
@@ -25,10 +26,10 @@ public final class AppInfo {
         if (retrieveMinCarAppApiLevel >= 1 && retrieveMinCarAppApiLevel <= z.a.a()) {
             return new AppInfo(retrieveMinCarAppApiLevel, z.a.a(), context.getResources().getString(R.string.car_app_library_version));
         }
-        StringBuilder l4 = i2.e.l(retrieveMinCarAppApiLevel, "Min API level (androidx.car.app.minCarApiLevel=", ") is out of range (1-");
-        l4.append(z.a.a());
-        l4.append(")");
-        throw new IllegalArgumentException(l4.toString());
+        StringBuilder n10 = o1.n(retrieveMinCarAppApiLevel, "Min API level (androidx.car.app.minCarApiLevel=", ") is out of range (1-");
+        n10.append(z.a.a());
+        n10.append(")");
+        throw new IllegalArgumentException(n10.toString());
     }
 
     public static int retrieveMinCarAppApiLevel(Context context) {

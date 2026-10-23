@@ -1,78 +1,68 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+import android.graphics.Canvas;
+import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import java.util.HashSet;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class q10 implements org.telegram.ui.Components.cp0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ tg.g b;
+public final class q10 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
+    public TextView a;
+    public TextView b;
+    public org.telegram.ui.Components.xi0 c;
+    public boolean d;
+    public TLRPC.TL_dialogFilterSuggested e;
 
-    public /* synthetic */ q10(tg.g gVar, int i10) {
-        this.a = i10;
-        this.b = gVar;
+    public TLRPC.TL_dialogFilterSuggested getSuggestedFilter() {
+        return this.e;
     }
 
-    @Override // org.telegram.ui.Components.cp0
-    public final void L(float f7, boolean z10) {
-        switch (this.a) {
-            case 0:
-                tg.o oVar = this.b.c;
-                if (oVar != null) {
-                    oVar.B = f7 * 2.0f;
-                    break;
-                }
-                break;
-            case 1:
-                tg.o oVar2 = this.b.c;
-                if (oVar2 != null) {
-                    oVar2.C = f7 * 2.0f;
-                    break;
-                }
-                break;
-            case 2:
-                tg.o oVar3 = this.b.c;
-                if (oVar3 != null) {
-                    oVar3.D = f7;
-                    break;
-                }
-                break;
-            default:
-                tg.o oVar4 = this.b.c;
-                if (oVar4 != null) {
-                    oVar4.G = f7 * 2.0f;
-                    break;
-                }
-                break;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.d) {
+            canvas.drawLine(0.0f, getHeight() - 1, getWidth() - getPaddingRight(), getHeight() - 1, org.telegram.ui.ActionBar.k6.k0);
         }
     }
 
-    @Override // org.telegram.ui.Components.cp0
-    public final /* synthetic */ int Y() {
-        switch (this.a) {
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setEnabled(true);
+        accessibilityNodeInfo.setText(this.c.getText());
+        accessibilityNodeInfo.setClassName("android.widget.Button");
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(64.0f));
+        measureChildWithMargins(this.c, i10, 0, i11, 0);
+        TextView textView = this.a;
+        org.telegram.ui.Components.xi0 xi0Var = this.c;
+        measureChildWithMargins(textView, i10, xi0Var.getMeasuredWidth(), i11, 0);
+        measureChildWithMargins(this.b, i10, xi0Var.getMeasuredWidth(), i11, 0);
+    }
+
+    public void setAddOnClickListener(View.OnClickListener onClickListener) {
+        this.c.setOnClickListener(onClickListener);
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void updateColors() {
+        try {
+            this.c.setProgressColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Nh, false));
+            invalidate();
+        } catch (Exception e) {
+            FileLog.e(e);
         }
-        return 0;
     }
 
-    @Override // org.telegram.ui.Components.cp0
-    public final /* synthetic */ CharSequence getContentDescription() {
-        switch (this.a) {
-        }
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.cp0
-    public final void v() {
-        int i10 = this.a;
-    }
-
-    private final void a() {
-    }
-
-    private final void b() {
-    }
-
-    private final void c() {
-    }
-
-    private final void d() {
+    @Override // org.telegram.ui.ActionBar.b6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

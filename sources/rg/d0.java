@@ -1,27 +1,66 @@
 package rg;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.View;
-import org.telegram.ui.gt0;
+import org.telegram.ui.jt0;
+import org.telegram.ui.tq0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class d0 extends View {
-    public final /* synthetic */ gt0 a;
+public final class d0 implements qg.d1 {
+    public final /* synthetic */ tq0 a;
+    public final /* synthetic */ jt0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d0(gt0 gt0Var, Context context) {
-        super(context);
-        this.a = gt0Var;
+    public d0(jt0 jt0Var, tq0 tq0Var) {
+        this.b = jt0Var;
+        this.a = tq0Var;
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        b0 b0Var = this.a.W0;
-        if (b0Var != null) {
-            b0Var.d(canvas);
+    @Override // qg.d1
+    public final void a() {
+        this.a.run();
+    }
+
+    @Override // qg.d1
+    public final void b() {
+        e0 e0Var = this.b.X0;
+        if (e0Var != null) {
+            e0Var.invalidate();
         }
+    }
+
+    @Override // qg.d1
+    public final void c() {
+        jt0 jt0Var = this.b;
+        if (jt0Var.k1) {
+            jt0Var.k1 = false;
+        } else {
+            jt0Var.t1.b(1);
+            jt0Var.n((qg.m) qg.m.a.get(0));
+        }
+    }
+
+    @Override // qg.d1
+    public final boolean d() {
+        jt0 jt0Var = this.b;
+        boolean z10 = jt0Var.S0 == null;
+        if (!z10) {
+            jt0Var.r0(null, true);
+        }
+        return z10;
+    }
+
+    @Override // qg.d1
+    public final void e() {
+        jt0 jt0Var = this.b;
+        jt0Var.F0.a.e();
+        jt0Var.l1.setViewHidden(false);
+    }
+
+    @Override // qg.d1
+    public final void f() {
+        jt0 jt0Var = this.b;
+        if (jt0Var.S0 != null) {
+            jt0Var.r0(null, true);
+        }
+        jt0Var.l1.setViewHidden(true);
     }
 }

@@ -1,11 +1,26 @@
 package ci;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+import android.graphics.Paint;
+import android.view.View;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.ui.Components.ck0;
+
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public interface w9 {
-    boolean Q0(long j10, int i10, int i11, int i12, x9 x9Var);
-
-    void X0(long j10, int i10, t3 t3Var);
-
-    void b(boolean z10);
+public final class w9 {
+    public View a;
+    public ImageReceiver b;
+    public ImageReceiver c;
+    public ck0 d;
+    public u9 e;
+    public t9 f;
+    public View g;
+    public float h;
+    public float i;
+    public Paint j;
+    public float k;
+    public ImageReceiver l;
+    public x7 m;
+    public boolean n;
+    public int o;
 }

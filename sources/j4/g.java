@@ -2,7 +2,7 @@ package j4;
 
 import b2.v0;
 import b2.w0;
-import c3.j0;
+import c3.l0;
 import e2.m0;
 import java.math.RoundingMode;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -10,14 +10,14 @@ import org.telegram.messenger.MediaDataController;
 import v7.b8;
 import v7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class g implements i {
     public final e2.x a;
     public final String c;
     public final int d;
     public String f;
-    public j0 g;
+    public l0 g;
     public int i;
     public int j;
     public long k;
@@ -395,12 +395,12 @@ public final class g implements i {
     }
 
     @Override // j4.i
-    public final void d(c3.q qVar, f0 f0Var) {
+    public final void d(c3.s sVar, f0 f0Var) {
         f0Var.b();
         f0Var.c();
         this.f = (String) f0Var.e;
         f0Var.c();
-        this.g = qVar.j0(f0Var.c, 1);
+        this.g = sVar.j0(f0Var.c, 1);
     }
 
     @Override // j4.i

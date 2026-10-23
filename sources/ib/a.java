@@ -8,7 +8,7 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.TimeZone;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public abstract class a {
     public static final TimeZone a = DesugarTimeZone.getTimeZone("UTC");
@@ -152,7 +152,7 @@ public abstract class a {
             if (message != null || message.isEmpty()) {
                 message = "(" + e.getClass().getName() + ")";
             }
-            ParseException parseException = new ParseException(k3.k("Failed to parse date [", str3, "]: ", message), parsePosition.getIndex());
+            ParseException parseException = new ParseException(k3.j("Failed to parse date [", str3, "]: ", message), parsePosition.getIndex());
             parseException.initCause(e);
             throw parseException;
         } catch (IndexOutOfBoundsException e7) {
@@ -163,7 +163,7 @@ public abstract class a {
             if (message != null) {
             }
             message = "(" + e.getClass().getName() + ")";
-            ParseException parseException2 = new ParseException(k3.k("Failed to parse date [", str3, "]: ", message), parsePosition.getIndex());
+            ParseException parseException2 = new ParseException(k3.j("Failed to parse date [", str3, "]: ", message), parsePosition.getIndex());
             parseException2.initCause(e);
             throw parseException2;
         }

@@ -1,6 +1,6 @@
 package gi;
 
-import ai.vd;
+import ai.wd;
 import android.content.Context;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
@@ -12,20 +12,21 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.tl0;
-import org.telegram.ui.Components.yq;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.Components.lm0;
+import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.xq;
 import w7.z5;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final class a0 extends im0 {
+public final class a0 extends lm0 {
     public ArrayList c;
     public ArrayList d;
     public ArrayList e;
 
-    @Override // org.telegram.ui.Components.im0
+    @Override // org.telegram.ui.Components.lm0
     public final boolean D(s4.b1 b1Var) {
         return true;
     }
@@ -61,12 +62,12 @@ public final class a0 extends im0 {
         z zVar = (z) b1Var.a;
         String str = (String) this.c.get(i10);
         if (((Boolean) this.e.get(i10)).booleanValue()) {
-            yq yqVar = new yq(R.drawable.mini_ephemeral_hidden_14, 0);
-            yqVar.setColorKey(h6.A6);
-            yqVar.setTopOffset(1);
+            xq xqVar = new xq(R.drawable.mini_ephemeral_hidden_14, 0);
+            xqVar.setColorKey(k6.A6);
+            xqVar.setTopOffset(1);
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str);
             spannableStringBuilder.append((CharSequence) " *");
-            spannableStringBuilder.setSpan(yqVar, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
+            spannableStringBuilder.setSpan(xqVar, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
             zVar.a.setText(spannableStringBuilder);
         } else {
             zVar.a.setText(str);
@@ -81,24 +82,24 @@ public final class a0 extends im0 {
         z zVar = new z(context);
         zVar.setOrientation(0);
         zVar.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(8.0f));
-        vd vdVar = new vd(context, 3);
-        zVar.b = vdVar;
-        NotificationCenter.listenEmojiLoading(vdVar);
-        vdVar.setTextSize(1, 16.0f);
-        int i11 = h6.G6;
-        vdVar.setTextColor(h6.x0(null, i11, false));
-        vdVar.setTag(Integer.valueOf(i11));
-        vdVar.setMaxLines(2);
-        vdVar.setEllipsize(TextUtils.TruncateAt.END);
-        zVar.addView(vdVar, z5.p(-1, -2, 1.0f, 16, 0, 0, AndroidUtilities.dp(8.0f), 0));
+        wd wdVar = new wd(context, 3);
+        zVar.b = wdVar;
+        NotificationCenter.listenEmojiLoading(wdVar);
+        wdVar.setTextSize(1, 16.0f);
+        int i11 = k6.G6;
+        r6.W(wdVar, i11, null);
+        wdVar.setTag(Integer.valueOf(i11));
+        wdVar.setMaxLines(2);
+        wdVar.setEllipsize(TextUtils.TruncateAt.END);
+        zVar.addView(wdVar, z5.p(-1, -2, 1.0f, 16, 0, 0, AndroidUtilities.dp(8.0f), 0));
         TextView textView = new TextView(context);
         zVar.a = textView;
         textView.setTextSize(1, 14.0f);
-        int i12 = h6.y6;
-        textView.setTextColor(h6.x0(null, i12, false));
+        int i12 = k6.y6;
+        r6.W(textView, i12, null);
         textView.setTag(Integer.valueOf(i12));
         zVar.addView(textView, z5.o(-2, -2, 0.0f, 16));
         zVar.setLayoutParams(new s4.o0(-1, -2));
-        return new tl0(zVar);
+        return new wl0(zVar);
     }
 }

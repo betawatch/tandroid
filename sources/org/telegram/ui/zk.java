@@ -1,37 +1,18 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class zk implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ al b;
+import org.telegram.messenger.MessagesStorage;
 
-    public /* synthetic */ zk(al alVar, int i10) {
-        this.a = i10;
-        this.b = alVar;
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+/* loaded from: classes3.dex */
+public final class zk implements MessagesStorage.IntCallback {
+    public final /* synthetic */ sn a;
+
+    public zk(sn snVar) {
+        this.a = snVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                fk fkVar = this.b.H.Y;
-                if (fkVar != null) {
-                    fkVar.T0 = false;
-                    org.telegram.ui.Components.dg dgVar = fkVar.U0;
-                    if (dgVar != null) {
-                        dgVar.v(false);
-                        break;
-                    }
-                }
-                break;
-            default:
-                fk fkVar2 = this.b.H.Y;
-                if (fkVar2 != null) {
-                    fkVar2.F0();
-                    break;
-                }
-                break;
-        }
+    @Override // org.telegram.messenger.MessagesStorage.IntCallback
+    public final void run(int i10) {
+        this.a.L9(i10);
     }
 }

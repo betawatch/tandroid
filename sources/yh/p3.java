@@ -2,71 +2,71 @@ package yh;
 
 import android.content.Context;
 import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.c71;
-import org.telegram.ui.Components.e61;
-import org.telegram.ui.Components.g61;
-import org.telegram.ui.Components.h61;
-import org.telegram.ui.Components.jm0;
-import org.telegram.ui.Components.u61;
-import org.telegram.ui.Components.yj0;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.Components.b71;
+import org.telegram.ui.Components.bk0;
+import org.telegram.ui.Components.j61;
+import org.telegram.ui.Components.j71;
+import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.m61;
+import org.telegram.ui.Components.mm0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final class p3 extends g61 {
+public final class p3 extends l61 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        g61.setup(new p3());
+        l61.setup(new p3());
     }
 
-    @Override // org.telegram.ui.Components.g61
-    public final void bindView(View view, h61 h61Var, boolean z10, u61 u61Var, c71 c71Var) {
+    @Override // org.telegram.ui.Components.l61
+    public final void bindView(View view, m61 m61Var, boolean z10, b71 b71Var, j71 j71Var) {
         q3 q3Var = (q3) view;
-        TL_stars.starGiftAttributePattern stargiftattributepattern = (TL_stars.starGiftAttributePattern) h61Var.G;
-        int i10 = h61Var.z;
-        String str = (String) h61Var.l;
-        boolean z11 = h61Var.e;
-        d6 d6Var = q3Var.F;
-        yj0 yj0Var = q3Var.c;
-        o3 o3Var = q3Var.N;
-        if (o3Var == null || q3Var.M != stargiftattributepattern.document.id) {
-            q3Var.M = stargiftattributepattern.document.id;
+        TL_stars.starGiftAttributePattern stargiftattributepattern = (TL_stars.starGiftAttributePattern) m61Var.G;
+        int i10 = m61Var.z;
+        String str = (String) m61Var.l;
+        boolean z11 = m61Var.e;
+        g6 g6Var = q3Var.O;
+        bk0 bk0Var = q3Var.c;
+        o3 o3Var = q3Var.a0;
+        if (o3Var == null || q3Var.W != stargiftattributepattern.document.id) {
+            q3Var.W = stargiftattributepattern.document.id;
             if (o3Var != null) {
-                o3Var.o(yj0Var);
+                o3Var.o(bk0Var);
             }
-            o3 o3Var2 = new o3(3, q3Var.L, stargiftattributepattern.document);
-            q3Var.N = o3Var2;
-            o3Var2.setColorFilter(new PorterDuffColorFilter(h6.w0(h6.E8, d6Var), PorterDuff.Mode.SRC_IN));
+            o3 o3Var2 = new o3(3, q3Var.V, stargiftattributepattern.document);
+            q3Var.a0 = o3Var2;
+            r6.z(q3Var, o3Var2, k6.E8, g6Var, PorterDuff.Mode.SRC_IN);
         }
-        if (yj0Var.isAttachedToWindow()) {
-            q3Var.N.a(yj0Var);
+        if (bk0Var.isAttachedToWindow()) {
+            q3Var.a0.a(bk0Var);
         }
         CharSequence charSequence = stargiftattributepattern.name;
         if (!TextUtils.isEmpty(str)) {
-            charSequence = AndroidUtilities.highlightText(charSequence, str, d6Var);
+            charSequence = AndroidUtilities.highlightText(charSequence, str, g6Var);
         }
         if (i10 > 0) {
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(charSequence);
             spannableStringBuilder.append((CharSequence) "  ");
             int length = spannableStringBuilder.length();
             spannableStringBuilder.append((CharSequence) Integer.toString(i10));
-            spannableStringBuilder.setSpan(new e61(AndroidUtilities.bold()), length, spannableStringBuilder.length(), 33);
+            spannableStringBuilder.setSpan(new j61(AndroidUtilities.bold()), length, spannableStringBuilder.length(), 33);
             charSequence = spannableStringBuilder;
         }
-        q3Var.g(charSequence, 0, q3Var.N);
+        q3Var.j(charSequence, 0, q3Var.a0);
         q3Var.setChecked(z11);
     }
 
-    @Override // org.telegram.ui.Components.g61
-    public final View createView(Context context, jm0 jm0Var, int i10, int i11, d6 d6Var) {
-        return new q3(context, i10, d6Var);
+    @Override // org.telegram.ui.Components.l61
+    public final View createView(Context context, mm0 mm0Var, int i10, int i11, g6 g6Var) {
+        return new q3(context, i10, g6Var);
     }
 }

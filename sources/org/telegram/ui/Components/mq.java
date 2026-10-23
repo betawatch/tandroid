@@ -9,51 +9,59 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class mq extends org.telegram.ui.ActionBar.f3 {
+public final class mq extends org.telegram.ui.ActionBar.h3 {
+    public int E;
     public final Drawable b;
-    public final jq c;
-    public final lq d;
-    public final boolean e;
-    public int f;
-    public final int[] h;
-    public final int n;
-    public int r;
-    public boolean s;
-    public org.telegram.ui.db v;
+    public final ArrayList c;
+    public final jq d;
+    public final lq e;
+    public final boolean f;
+    public int h;
+    public final int[] n;
+    public final int r;
+    public int s;
+    public boolean v;
+    public org.telegram.ui.db w;
+    public int x;
+    public int y;
 
     public mq(Activity activity, TLRPC.Chat chat) {
-        super(1, (Context) activity, (org.telegram.ui.ActionBar.d6) null, false);
-        this.h = new int[2];
-        this.e = true;
+        super(1, (Context) activity, (org.telegram.ui.ActionBar.g6) null, false);
+        ArrayList arrayList = new ArrayList();
+        this.c = arrayList;
+        this.n = new int[2];
+        this.f = true;
         setApplyBottomPadding(false);
         TLRPC.ChatFull chatFull = MessagesController.getInstance(this.currentAccount).getChatFull(chat.id);
         int i10 = chatFull != null ? chatFull.ttl_period : 0;
         if (i10 == 0) {
-            this.n = 0;
             this.r = 0;
+            this.s = 0;
         } else if (i10 == 86400) {
-            this.n = 1;
             this.r = 1;
+            this.s = 1;
         } else if (i10 == 604800) {
-            this.n = 2;
             this.r = 2;
+            this.s = 2;
         } else {
-            this.n = 3;
             this.r = 3;
+            this.s = 3;
         }
         Drawable mutate = activity.getResources().getDrawable(R.drawable.sheet_shadow_round).mutate();
         this.b = mutate;
-        int i11 = org.telegram.ui.ActionBar.h6.h5;
+        int i11 = org.telegram.ui.ActionBar.k6.h5;
         mutate.setColorFilter(new PorterDuffColorFilter(getThemedColor(i11), PorterDuff.Mode.MULTIPLY));
         iq iqVar = new iq(this, activity);
         iqVar.setFillViewport(true);
@@ -63,26 +71,26 @@ public final class mq extends org.telegram.ui.ActionBar.f3 {
         iqVar.setPadding(i12, 0, i12, 0);
         this.containerView = iqVar;
         jq jqVar = new jq(this, activity);
-        this.c = jqVar;
+        this.d = jqVar;
         jqVar.setOrientation(1);
         iqVar.addView(jqVar, w7.z5.x(-1, -2, 80));
         setCustomView(jqVar);
         UserConfig.getInstance(this.currentAccount).getClientUserId();
         int i13 = MessagesController.getInstance(this.currentAccount).revokeTimeLimit;
-        yj0 yj0Var = new yj0(activity);
-        yj0Var.setAutoRepeat(false);
-        yj0Var.f(R.raw.utyan_private, 120, 120, null);
-        yj0Var.setPadding(0, AndroidUtilities.dp(20.0f), 0, 0);
-        yj0Var.d();
-        jqVar.addView(yj0Var, w7.z5.t(160, 160, 49, 17, 0, 17, 0));
+        bk0 bk0Var = new bk0(activity);
+        bk0Var.setAutoRepeat(false);
+        bk0Var.f(R.raw.utyan_private, 120, 120, null);
+        bk0Var.setPadding(0, AndroidUtilities.dp(20.0f), 0, 0);
+        bk0Var.d();
+        jqVar.addView(bk0Var, w7.z5.t(160, 160, 49, 17, 0, 17, 0));
         TextView textView = new TextView(activity);
-        org.telegram.messenger.nk.k(24.0f, 1, textView);
-        textView.setTextColor(getThemedColor(org.telegram.ui.ActionBar.h6.j5));
+        org.telegram.messenger.sl.k(24.0f, 1, textView);
+        org.telegram.ui.ActionBar.r6.W(textView, org.telegram.ui.ActionBar.k6.j5, null);
         textView.setText(LocaleController.getString(R.string.AutoDeleteAlertTitle));
         jqVar.addView(textView, w7.z5.t(-2, -2, 49, 17, 18, 17, 0));
         TextView textView2 = new TextView(activity);
         textView2.setTextSize(1, 14.0f);
-        textView2.setTextColor(getThemedColor(org.telegram.ui.ActionBar.h6.r5));
+        org.telegram.ui.ActionBar.r6.W(textView2, org.telegram.ui.ActionBar.k6.r5, null);
         textView2.setGravity(1);
         if (!ChatObject.isChannel(chat) || chat.megagroup) {
             textView2.setText(LocaleController.getString(R.string.AutoDeleteAlertGroupInfo));
@@ -90,48 +98,87 @@ public final class mq extends org.telegram.ui.ActionBar.f3 {
             textView2.setText(LocaleController.getString(R.string.AutoDeleteAlertChannelInfo));
         }
         jqVar.addView(textView2, w7.z5.t(-2, -2, 49, 30, 22, 30, 20));
-        pw0 pw0Var = new pw0(activity, null);
-        pw0Var.setCallback(new kq(this, iqVar));
-        pw0Var.b(this.n, null, LocaleController.getString(R.string.AutoDeleteNever), LocaleController.getString(R.string.AutoDelete24Hours), LocaleController.getString(R.string.AutoDelete7Days), LocaleController.getString(R.string.AutoDelete1Month));
-        jqVar.addView(pw0Var, w7.z5.k(0.0f, 8.0f, 0.0f, 0.0f, -1, -2));
+        sw0 sw0Var = new sw0(activity, null);
+        sw0Var.setCallback(new kq(this, iqVar));
+        sw0Var.b(this.r, null, LocaleController.getString(R.string.AutoDeleteNever), LocaleController.getString(R.string.AutoDelete24Hours), LocaleController.getString(R.string.AutoDelete7Days), LocaleController.getString(R.string.AutoDelete1Month));
+        jqVar.addView(sw0Var, w7.z5.k(0.0f, 8.0f, 0.0f, 0.0f, -1, -2));
         FrameLayout frameLayout = new FrameLayout(activity);
-        zq zqVar = new zq(new ColorDrawable(getThemedColor(org.telegram.ui.ActionBar.h6.a7)), org.telegram.ui.ActionBar.h6.W0(activity, R.drawable.greydivider_bottom, org.telegram.ui.ActionBar.h6.b7));
-        zqVar.w = true;
-        frameLayout.setBackgroundDrawable(zqVar);
+        yq yqVar = new yq(new ColorDrawable(getThemedColor(org.telegram.ui.ActionBar.k6.a7)), org.telegram.ui.ActionBar.k6.X0(activity, R.drawable.greydivider_bottom, org.telegram.ui.ActionBar.k6.b7));
+        yqVar.w = true;
+        frameLayout.setBackgroundDrawable(yqVar);
+        arrayList.add(yqVar);
         jqVar.addView(frameLayout, w7.z5.n(-1, -2));
-        org.telegram.ui.Cells.d9 d9Var = new org.telegram.ui.Cells.d9(activity, null);
-        d9Var.setText(LocaleController.getString(R.string.AutoDeleteInfo));
-        frameLayout.addView(d9Var);
+        org.telegram.ui.Cells.e9 e9Var = new org.telegram.ui.Cells.e9(activity, null);
+        e9Var.setText(LocaleController.getString(R.string.AutoDeleteInfo));
+        frameLayout.addView(e9Var);
         lq lqVar = new lq(activity);
-        this.d = lqVar;
-        lqVar.setBackgroundColor(getThemedColor(i11));
+        this.e = lqVar;
+        org.telegram.ui.ActionBar.r6.i(i11, lqVar, null);
         lqVar.setText(LocaleController.getString(R.string.AutoDeleteSet));
         lqVar.a.setOnClickListener(new f0(this, 8));
         frameLayout.addView(lqVar);
         q(false);
     }
 
-    public static void n(mq mqVar) {
-        View childAt = mqVar.c.getChildAt(0);
-        int[] iArr = mqVar.h;
+    public static void m(mq mqVar) {
+        View childAt = mqVar.d.getChildAt(0);
+        int[] iArr = mqVar.n;
         childAt.getLocationInWindow(iArr);
-        int max = Math.max(iArr[1] - AndroidUtilities.dp(mqVar.e ? 6.0f : 19.0f), 0);
-        if (mqVar.f != max) {
-            mqVar.f = max;
+        int max = Math.max(iArr[1] - AndroidUtilities.dp(mqVar.f ? 6.0f : 19.0f), 0);
+        if (mqVar.h != max) {
+            mqVar.h = max;
             mqVar.containerView.invalidate();
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.f3
+    @Override // org.telegram.ui.ActionBar.h3
     public final boolean canDismissWithSwipe() {
         return false;
     }
 
+    @Override // org.telegram.ui.ActionBar.h3
+    public final void onThemeColorsChanged() {
+        Drawable drawable;
+        ArrayList arrayList = this.c;
+        try {
+            super.onThemeColorsChanged();
+            int themedColor = getThemedColor(org.telegram.ui.ActionBar.k6.a7);
+            int themedColor2 = getThemedColor(org.telegram.ui.ActionBar.k6.b7);
+            if (themedColor == this.y) {
+                if (themedColor2 != this.E) {
+                }
+                int themedColor3 = getThemedColor(org.telegram.ui.ActionBar.k6.h5);
+                drawable = this.b;
+                if (drawable != null || themedColor3 == this.x) {
+                }
+                this.x = themedColor3;
+                drawable.setColorFilter(new PorterDuffColorFilter(themedColor3, PorterDuff.Mode.MULTIPLY));
+                return;
+            }
+            this.y = themedColor;
+            this.E = themedColor2;
+            for (int i10 = 0; i10 < arrayList.size(); i10++) {
+                yq yqVar = (yq) arrayList.get(i10);
+                org.telegram.ui.ActionBar.k6.y1(yqVar, themedColor, false);
+                if (yqVar.b != null) {
+                    org.telegram.ui.ActionBar.k6.y1(yqVar, themedColor2, true);
+                }
+                yqVar.invalidateSelf();
+            }
+            int themedColor32 = getThemedColor(org.telegram.ui.ActionBar.k6.h5);
+            drawable = this.b;
+            if (drawable != null) {
+            }
+        } catch (Exception e) {
+            FileLog.e(e);
+        }
+    }
+
     public final void q(boolean z10) {
-        int i10 = this.n;
-        int i11 = this.r;
-        lq lqVar = this.d;
-        if (i10 != i11 || this.e) {
+        int i10 = this.r;
+        int i11 = this.s;
+        lq lqVar = this.e;
+        if (i10 != i11 || this.f) {
             lqVar.setVisibility(0);
             if (z10) {
                 lqVar.animate().alpha(1.0f).setDuration(180L).start();

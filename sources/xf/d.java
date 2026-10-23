@@ -1,45 +1,9 @@
 package xf;
 
-import android.os.IBinder;
-import android.os.Parcel;
+import android.os.Binder;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public final class d implements f {
-    public IBinder a;
-
-    public final boolean F0(b bVar) {
-        Parcel obtain = Parcel.obtain();
-        Parcel obtain2 = Parcel.obtain();
-        try {
-            obtain.writeInterfaceToken("android.support.customtabs.ICustomTabsService");
-            obtain.writeStrongBinder(bVar);
-            this.a.transact(3, obtain, obtain2, 0);
-            obtain2.readException();
-            return obtain2.readInt() != 0;
-        } finally {
-            obtain2.recycle();
-            obtain.recycle();
-        }
-    }
-
-    public final boolean G0() {
-        Parcel obtain = Parcel.obtain();
-        Parcel obtain2 = Parcel.obtain();
-        try {
-            obtain.writeInterfaceToken("android.support.customtabs.ICustomTabsService");
-            obtain.writeLong(0L);
-            this.a.transact(2, obtain, obtain2, 0);
-            obtain2.readException();
-            return obtain2.readInt() != 0;
-        } finally {
-            obtain2.recycle();
-            obtain.recycle();
-        }
-    }
-
-    @Override // android.os.IInterface
-    public final IBinder asBinder() {
-        return this.a;
-    }
+public abstract class d extends Binder implements e {
+    public static final /* synthetic */ int a = 0;
 }

@@ -5,7 +5,7 @@ import android.content.Context;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public abstract class f8 extends FrameLayout {
     public final w9[] a;
@@ -17,7 +17,7 @@ public abstract class f8 extends FrameLayout {
         this.a = new w9[2];
         for (int i10 = 0; i10 < 2; i10++) {
             this.a[i10] = new w9(context);
-            this.a[i10].getImageReceiver().setDelegate(new i2.s(this, i10, 6));
+            this.a[i10].getImageReceiver().setDelegate(new i2.r(this, i10, 6));
             this.a[i10].setRoundRadius(AndroidUtilities.dp(4.0f));
             if (i10 == 1) {
                 this.a[i10].setVisibility(8);

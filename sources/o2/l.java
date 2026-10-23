@@ -2,7 +2,6 @@ package o2;
 
 import android.net.Uri;
 import android.os.Looper;
-import b2.h0;
 import b2.i0;
 import b2.j0;
 import b2.o0;
@@ -11,6 +10,7 @@ import b2.w0;
 import e2.m0;
 import e9.n0;
 import g2.c0;
+import i2.o1;
 import j$.util.Objects;
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,12 +18,12 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import t7.u;
-import u2.e0;
-import u2.g0;
-import u2.k1;
+import u2.f0;
+import u2.h0;
+import u2.l1;
 import v7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class l extends u2.a {
     public final c h;
@@ -83,13 +83,13 @@ public final class l extends u2.a {
     }
 
     @Override // u2.a
-    public final e0 c(g0 g0Var, androidx.biometric.e eVar, long j10) {
-        a5.a b10 = b(g0Var);
-        n2.k kVar = new n2.k(this.d.c, 0, g0Var);
+    public final f0 c(h0 h0Var, androidx.biometric.e eVar, long j10) {
+        a5.a b10 = b(h0Var);
+        n2.k kVar = new n2.k(this.d.c, 0, h0Var);
         c0 c0Var = this.r;
-        j2.k kVar2 = this.g;
-        kVar2.getClass();
-        return new k(this.h, this.o, this.i, c0Var, this.k, kVar, this.l, b10, eVar, this.j, this.m, this.n, kVar2);
+        j2.j jVar = this.g;
+        jVar.getClass();
+        return new k(this.h, this.o, this.i, c0Var, this.k, kVar, this.l, b10, eVar, this.j, this.m, this.n, jVar);
     }
 
     @Override // u2.a
@@ -110,7 +110,7 @@ public final class l extends u2.a {
         }
         Uri uri = eVar.F;
         if (uri != null) {
-            eVar.j(uri);
+            eVar.i(uri);
         }
     }
 
@@ -119,10 +119,10 @@ public final class l extends u2.a {
         this.r = c0Var;
         Looper myLooper = Looper.myLooper();
         myLooper.getClass();
-        j2.k kVar = this.g;
-        kVar.getClass();
+        j2.j jVar = this.g;
+        jVar.getClass();
         n2.n nVar = this.k;
-        nVar.E(myLooper, kVar);
+        nVar.E(myLooper, jVar);
         nVar.b();
         a5.a b10 = b(null);
         j0 j0Var = i().b;
@@ -143,8 +143,8 @@ public final class l extends u2.a {
     }
 
     @Override // u2.a
-    public final void o(e0 e0Var) {
-        k kVar = (k) e0Var;
+    public final void o(f0 f0Var) {
+        k kVar = (k) f0Var;
         kVar.b.e.remove(kVar);
         for (q qVar : kVar.J) {
             if (qVar.T) {
@@ -164,7 +164,7 @@ public final class l extends u2.a {
             Uri c10 = iVar.e[l4].c();
             p2.d dVar = (p2.d) eVar.d.get(c10);
             if (dVar != null) {
-                p2.c cVar = (p2.c) i2.e.i(dVar.b, c10, c10);
+                p2.c cVar = (p2.c) o1.j(dVar.b, c10, c10);
                 cVar.getClass();
                 cVar.w = false;
             }
@@ -212,7 +212,7 @@ public final class l extends u2.a {
 
     public final void v(p2.n nVar) {
         long j10;
-        k1 k1Var;
+        l1 l1Var;
         long j11;
         long j12;
         long j13;
@@ -256,7 +256,7 @@ public final class l extends u2.a {
             long j23 = m0.j(j12, S, j22);
             i0 i0Var = i().c;
             boolean z13 = i0Var.d == -3.4028235E38f && i0Var.e == -3.4028235E38f && mVar.c == -9223372036854775807L && mVar.d == -9223372036854775807L;
-            h0 a2 = this.q.a();
+            b2.h0 a2 = this.q.a();
             a2.a = m0.h0(j23);
             a2.d = z13 ? 1.0f : this.q.d;
             a2.e = z13 ? 1.0f : this.q.e;
@@ -278,7 +278,7 @@ public final class l extends u2.a {
                 }
                 j18 = j13;
             }
-            k1Var = new k1(j17, h02, j20, nVar.u, j19, j18, true, !z12, i10 == 2 && nVar.f, uVar, i(), this.q);
+            l1Var = new l1(j17, h02, j20, nVar.u, j19, j18, true, !z12, i10 == 2 && nVar.f, uVar, i(), this.q);
         } else {
             if (j15 == -9223372036854775807L || n0Var.isEmpty()) {
                 j10 = 0;
@@ -289,8 +289,8 @@ public final class l extends u2.a {
                 j10 = j15;
             }
             long j24 = nVar.u;
-            k1Var = new k1(j17, h02, j24, j24, 0L, j10, true, false, true, uVar, i(), null);
+            l1Var = new l1(j17, h02, j24, j24, 0L, j10, true, false, true, uVar, i(), null);
         }
-        n(k1Var);
+        n(l1Var);
     }
 }

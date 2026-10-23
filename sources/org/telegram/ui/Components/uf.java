@@ -4,7 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class uf extends AnimatorListenerAdapter {
     public final /* synthetic */ boolean a;
@@ -21,12 +21,12 @@ public final class uf extends AnimatorListenerAdapter {
         if (animator.equals(chatActivityEnterView.t2)) {
             chatActivityEnterView.t2 = null;
         }
-        chatActivityEnterView.v0();
+        chatActivityEnterView.u0();
         chatActivityEnterView.k1.setAlpha(1.0f);
         chatActivityEnterView.k1.setTranslationX(0.0f);
         sg sgVar = chatActivityEnterView.O1;
         if (sgVar != null && SharedConfig.lockRecordAudioVideoHint < 3) {
-            ChatActivityEnterView chatActivityEnterView2 = sgVar.V;
+            ChatActivityEnterView chatActivityEnterView2 = sgVar.b0;
             chatActivityEnterView2.e4 = true;
             chatActivityEnterView2.f4 = System.currentTimeMillis();
         }
@@ -35,15 +35,15 @@ public final class uf extends AnimatorListenerAdapter {
             pfVar.setAlpha(0.0f);
         }
         if (this.a) {
-            el0 el0Var = chatActivityEnterView.h1;
-            if (el0Var != null) {
-                el0Var.setVisibility(8);
+            hl0 hl0Var = chatActivityEnterView.h1;
+            if (hl0Var != null) {
+                hl0Var.setVisibility(8);
             }
             ke keVar = chatActivityEnterView.e1;
             if (keVar != null) {
                 keVar.setVisibility(8);
             }
-            chatActivityEnterView.v0();
+            chatActivityEnterView.u0();
         }
     }
 }

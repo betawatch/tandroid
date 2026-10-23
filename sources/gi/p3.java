@@ -1,24 +1,24 @@
 package gi;
 
 import android.os.Bundle;
-import org.telegram.ui.qn;
+import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final class p3 extends qn {
-    public final /* synthetic */ org.telegram.ui.ActionBar.f3 Rc;
+public final class p3 extends sn {
+    public final /* synthetic */ org.telegram.ui.ActionBar.h3 ed;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p3(Bundle bundle, org.telegram.ui.ActionBar.f3 f3Var) {
+    public p3(Bundle bundle, org.telegram.ui.ActionBar.h3 h3Var) {
         super(bundle);
-        this.Rc = f3Var;
+        this.ed = h3Var;
     }
 
-    @Override // org.telegram.ui.qn, org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.sn, org.telegram.ui.ActionBar.o2
     public final void onFragmentDestroy() {
         super.onFragmentDestroy();
-        org.telegram.ui.ActionBar.f3 f3Var = this.Rc;
-        f3Var.makeAttached(null);
-        f3Var.show();
+        org.telegram.ui.ActionBar.h3 h3Var = this.ed;
+        h3Var.makeAttached(null);
+        h3Var.show();
     }
 }

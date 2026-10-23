@@ -13,6 +13,9 @@ import e9.n0;
 import e9.s;
 import e9.x1;
 import g2.c0;
+import i2.o1;
+import i2.s1;
+import i2.u0;
 import j$.util.Objects;
 import java.util.AbstractList;
 import java.util.ArrayList;
@@ -23,27 +26,26 @@ import java.util.IdentityHashMap;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import k2.f0;
+import si.o0;
 import t7.u;
-import u2.d0;
-import u2.d1;
 import u2.e0;
 import u2.e1;
+import u2.f0;
 import u2.f1;
 import u2.g1;
-import u2.r;
-import u2.s1;
+import u2.h1;
+import u2.t1;
 import v7.b8;
 import v7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public final class b implements e0, f1, v2.h {
+public final class b implements f0, g1, v2.h {
     public static final Pattern R = Pattern.compile("CC([1-4])=(.+)");
     public static final Pattern S = Pattern.compile("([1-4])=lang:(\\w+)(,.+)?");
     public final a5.a E;
     public final n2.k F;
-    public d0 G;
+    public e0 G;
     public u2.o J;
     public m2.c K;
     public int L;
@@ -60,7 +62,7 @@ public final class b implements e0, f1, v2.h {
     public final long h;
     public final y2.m n;
     public final androidx.biometric.e r;
-    public final s1 s;
+    public final t1 s;
     public final a[] v;
     public final oa.d w;
     public final p x;
@@ -70,14 +72,14 @@ public final class b implements e0, f1, v2.h {
     public final IdentityHashMap y = new IdentityHashMap();
 
     /* JADX WARN: Multi-variable type inference failed */
-    public b(int i10, m2.c cVar, qi.e eVar, int i11, a5.a aVar, c0 c0Var, n2.n nVar, n2.k kVar, oa.d dVar, a5.a aVar2, long j10, y2.m mVar, androidx.biometric.e eVar2, oa.d dVar2, f fVar, j2.k kVar2) {
+    public b(int i10, m2.c cVar, qi.e eVar, int i11, a5.a aVar, c0 c0Var, n2.n nVar, n2.k kVar, oa.d dVar, a5.a aVar2, long j10, y2.m mVar, androidx.biometric.e eVar2, oa.d dVar2, f fVar, j2.j jVar) {
         int i12;
         int i13;
         int[][] iArr;
         boolean[] zArr;
         w[][] wVarArr;
         w[] wVarArr2;
-        m2.f e;
+        m2.f f7;
         Integer num;
         n2.n nVar2 = nVar;
         this.a = i10;
@@ -122,17 +124,17 @@ public final class b implements e0, f1, v2.h {
             List list3 = aVar3.e;
             List list4 = aVar3.f;
             boolean z11 = z10;
-            m2.f e7 = e("http://dashif.org/guidelines/trickmode", list3);
-            e7 = e7 == null ? e("http://dashif.org/guidelines/trickmode", list4) : e7;
-            int intValue = (e7 == null || (num = (Integer) hashMap.get(Long.valueOf(Long.parseLong(e7.b)))) == null || !b(aVar3, (m2.a) list2.get(num.intValue()))) ? i16 : num.intValue();
-            if (intValue == i16 && (e = e("urn:mpeg:dash:adaptation-set-switching:2016", list4)) != null) {
-                String str = e.b;
+            m2.f f10 = f("http://dashif.org/guidelines/trickmode", list3);
+            f10 = f10 == null ? f("http://dashif.org/guidelines/trickmode", list4) : f10;
+            int intValue = (f10 == null || (num = (Integer) hashMap.get(Long.valueOf(Long.parseLong(f10.b)))) == null || !e(aVar3, (m2.a) list2.get(num.intValue()))) ? i16 : num.intValue();
+            if (intValue == i16 && (f7 = f("urn:mpeg:dash:adaptation-set-switching:2016", list4)) != null) {
+                String str = f7.b;
                 String str2 = m0.a;
                 String[] split = str.split(",", -1);
                 int length = split.length;
                 for (int i17 = i14; i17 < length; i17++) {
                     Integer num2 = (Integer) hashMap.get(Long.valueOf(Long.parseLong(split[i17])));
-                    if (num2 != null && b(aVar3, (m2.a) list2.get(num2.intValue()))) {
+                    if (num2 != null && e(aVar3, (m2.a) list2.get(num2.intValue()))) {
                         intValue = Math.min(intValue, num2.intValue());
                     }
                 }
@@ -152,9 +154,9 @@ public final class b implements e0, f1, v2.h {
         int size2 = arrayList.size();
         int[][] iArr2 = new int[size2][];
         for (int i18 = 0; i18 < size2; i18++) {
-            int[] f7 = b8.f((Collection) arrayList.get(i18));
-            iArr2[i18] = f7;
-            Arrays.sort(f7);
+            int[] f11 = b8.f((Collection) arrayList.get(i18));
+            iArr2[i18] = f11;
+            Arrays.sort(f11);
         }
         boolean[] zArr2 = new boolean[size2];
         w[][] wVarArr3 = new w[size2][];
@@ -262,7 +264,7 @@ public final class b implements e0, f1, v2.h {
             int i33 = i26;
             m2.a aVar5 = (m2.a) list2.get(iArr7[0]);
             long j11 = aVar5.a;
-            String l4 = j11 != -1 ? Long.toString(j11) : i2.e.j(i27, "unset:");
+            String l4 = j11 != -1 ? Long.toString(j11) : o1.k(i27, "unset:");
             int i34 = i33 + 1;
             if (zArr3[i27]) {
                 i12 = i33 + 2;
@@ -276,7 +278,7 @@ public final class b implements e0, f1, v2.h {
                 i13 = i12;
                 i12 = -1;
             }
-            g(aVar, wVarArr5);
+            j(aVar, wVarArr5);
             List list9 = list2;
             p1VarArr[i33] = new p1(l4, wVarArr5);
             int i35 = aVar5.b;
@@ -288,7 +290,7 @@ public final class b implements e0, f1, v2.h {
             aVarArr[i36] = aVar6;
             int i37 = -1;
             if (i34 != -1) {
-                String u10 = r4.c.u(l4, ":emsg");
+                String u10 = o0.u(l4, ":emsg");
                 v vVar3 = new v();
                 vVar3.a = u10;
                 vVar3.r = v0.n("application/x-emsg");
@@ -303,9 +305,9 @@ public final class b implements e0, f1, v2.h {
                 i37 = -1;
             }
             if (i12 != i37) {
-                String u11 = r4.c.u(l4, ":cc");
+                String u11 = o0.u(l4, ":cc");
                 aVarArr[i12] = new a(3, 1, iArr8, i36, -1, -1, -1, n0.v(wVarArr4[i27]));
-                g(aVar, wVarArr4[i27]);
+                j(aVar, wVarArr4[i27]);
                 int i38 = 0;
                 while (true) {
                     w[] wVarArr7 = wVarArr4[i27];
@@ -338,13 +340,13 @@ public final class b implements e0, f1, v2.h {
             i39++;
             i26++;
         }
-        Pair create = Pair.create(new s1(p1VarArr), aVarArr);
-        this.s = (s1) create.first;
+        Pair create = Pair.create(new t1(p1VarArr), aVarArr);
+        this.s = (t1) create.first;
         this.v = (a[]) create.second;
         this.P = Long.MIN_VALUE;
     }
 
-    public static boolean b(m2.a aVar, m2.a aVar2) {
+    public static boolean e(m2.a aVar, m2.a aVar2) {
         int i10 = aVar.b;
         List list = aVar.c;
         int i11 = aVar2.b;
@@ -364,7 +366,7 @@ public final class b implements e0, f1, v2.h {
         return false;
     }
 
-    public static m2.f e(String str, List list) {
+    public static m2.f f(String str, List list) {
         for (int i10 = 0; i10 < list.size(); i10++) {
             m2.f fVar = (m2.f) list.get(i10);
             if (str.equals(fVar.a)) {
@@ -374,7 +376,7 @@ public final class b implements e0, f1, v2.h {
         return null;
     }
 
-    public static void g(a5.a aVar, w[] wVarArr) {
+    public static void j(a5.a aVar, w[] wVarArr) {
         for (int i10 = 0; i10 < wVarArr.length; i10++) {
             w wVar = wVarArr[i10];
             c5.f fVar = (c5.f) aVar.d;
@@ -418,16 +420,21 @@ public final class b implements e0, f1, v2.h {
     }
 
     @Override // u2.g1
+    public final void b(h1 h1Var) {
+        this.G.b(this);
+    }
+
+    @Override // u2.h1
     public final boolean c() {
         return this.J.c();
     }
 
-    @Override // u2.g1
+    @Override // u2.h1
     public final long d() {
         return this.J.d();
     }
 
-    public final int f(int i10, int[] iArr) {
+    public final int g(int i10, int[] iArr) {
         int i11 = iArr[i10];
         if (i11 != -1) {
             a[] aVarArr = this.v;
@@ -442,13 +449,8 @@ public final class b implements e0, f1, v2.h {
         return -1;
     }
 
-    @Override // u2.f1
-    public final void h(g1 g1Var) {
-        this.G.h(this);
-    }
-
-    @Override // u2.e0
-    public final void i() {
+    @Override // u2.f0
+    public final void h() {
         this.n.a();
     }
 
@@ -460,8 +462,8 @@ public final class b implements e0, f1, v2.h {
     /* JADX WARN: Type inference failed for: r5v2, types: [int] */
     /* JADX WARN: Type inference failed for: r5v26 */
     /* JADX WARN: Type inference failed for: r5v27 */
-    @Override // u2.e0
-    public final long j(long j10) {
+    @Override // u2.f0
+    public final long i(long j10) {
         int i10;
         v2.a aVar;
         boolean J;
@@ -474,8 +476,8 @@ public final class b implements e0, f1, v2.h {
         int i12 = 0;
         while (i12 < length) {
             v2.i iVar = iVarArr[i12];
-            d1[] d1VarArr = iVar.y;
-            d1 d1Var = iVar.x;
+            e1[] e1VarArr = iVar.y;
+            e1 e1Var = iVar.x;
             y2.l lVar = iVar.r;
             ?? r14 = iVar.v;
             iVar.J = j10;
@@ -506,23 +508,23 @@ public final class b implements e0, f1, v2.h {
                 }
                 aVar = null;
                 if (aVar != null) {
-                    J = d1Var.I(aVar.d(0));
+                    J = e1Var.I(aVar.d(0));
                 } else {
                     long d = iVar.d();
-                    J = d1Var.J(j10, d == Long.MIN_VALUE || j10 < d);
+                    J = e1Var.J(j10, d == Long.MIN_VALUE || j10 < d);
                 }
                 if (!J || (aVar2 = iVar.L) == null) {
                     i11 = 0;
                 } else {
                     i11 = 0;
-                    if (aVar2.d(0) <= d1Var.v()) {
+                    if (aVar2.d(0) <= e1Var.v()) {
                         J = false;
                     }
                 }
                 if (J) {
-                    iVar.K = iVar.B(d1Var.v(), i11);
-                    for (d1 d1Var2 : d1VarArr) {
-                        d1Var2.J(j10, true);
+                    iVar.K = iVar.C(e1Var.v(), i11);
+                    for (e1 e1Var2 : e1VarArr) {
+                        e1Var2.J(j10, true);
                     }
                 } else {
                     iVar.I = j10;
@@ -530,17 +532,17 @@ public final class b implements e0, f1, v2.h {
                     r14.clear();
                     iVar.K = 0;
                     if (lVar.d()) {
-                        d1Var.l();
-                        for (d1 d1Var3 : d1VarArr) {
-                            d1Var3.l();
+                        e1Var.l();
+                        for (e1 e1Var3 : e1VarArr) {
+                            e1Var3.l();
                         }
                         lVar.b();
                     } else {
                         lVar.c = null;
                         z10 = false;
-                        d1Var.G(false);
-                        for (d1 d1Var4 : iVar.y) {
-                            d1Var4.G(false);
+                        e1Var.G(false);
+                        for (e1 e1Var4 : iVar.y) {
+                            e1Var4.G(false);
                         }
                     }
                 }
@@ -560,31 +562,31 @@ public final class b implements e0, f1, v2.h {
         return j10;
     }
 
-    @Override // u2.e0
+    @Override // u2.f0
     public final void l(long j10) {
         long j11;
         for (v2.i iVar : this.H) {
             if (!iVar.y()) {
-                d1 d1Var = iVar.x;
-                int i10 = d1Var.q;
-                d1Var.k(j10, true);
-                d1 d1Var2 = iVar.x;
-                int i11 = d1Var2.q;
+                e1 e1Var = iVar.x;
+                int i10 = e1Var.q;
+                e1Var.k(j10, true);
+                e1 e1Var2 = iVar.x;
+                int i11 = e1Var2.q;
                 if (i11 > i10) {
-                    synchronized (d1Var2) {
-                        j11 = d1Var2.p == 0 ? Long.MIN_VALUE : d1Var2.n[d1Var2.r];
+                    synchronized (e1Var2) {
+                        j11 = e1Var2.p == 0 ? Long.MIN_VALUE : e1Var2.n[e1Var2.r];
                     }
                     int i12 = 0;
                     while (true) {
-                        d1[] d1VarArr = iVar.y;
-                        if (i12 >= d1VarArr.length) {
+                        e1[] e1VarArr = iVar.y;
+                        if (i12 >= e1VarArr.length) {
                             break;
                         }
-                        d1VarArr[i12].k(j11, iVar.d[i12]);
+                        e1VarArr[i12].k(j11, iVar.d[i12]);
                         i12++;
                     }
                 }
-                int min = Math.min(iVar.B(i11, 0), iVar.K);
+                int min = Math.min(iVar.C(i11, 0), iVar.K);
                 if (min > 0) {
                     m0.X(0, min, iVar.v);
                     iVar.K -= min;
@@ -593,13 +595,13 @@ public final class b implements e0, f1, v2.h {
         }
     }
 
-    @Override // u2.e0
-    public final void n(d0 d0Var, long j10) {
-        this.G = d0Var;
-        d0Var.a(this);
+    @Override // u2.f0
+    public final void n(e0 e0Var, long j10) {
+        this.G = e0Var;
+        e0Var.a(this);
     }
 
-    @Override // u2.e0
+    @Override // u2.f0
     public final long o() {
         if (!this.Q) {
             return -9223372036854775807L;
@@ -626,7 +628,7 @@ public final class b implements e0, f1, v2.h {
                     iVar2.O = false;
                 }
             } else {
-                if (iVarArr[i10].z()) {
+                if (iVarArr[i10].A()) {
                     break;
                 }
                 i10++;
@@ -638,29 +640,29 @@ public final class b implements e0, f1, v2.h {
         return -9223372036854775807L;
     }
 
-    @Override // u2.g1
-    public final boolean p(i2.v0 v0Var) {
-        return this.J.p(v0Var);
+    @Override // u2.h1
+    public final boolean p(u0 u0Var) {
+        return this.J.p(u0Var);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r10v11 */
-    /* JADX WARN: Type inference failed for: r11v4 */
-    /* JADX WARN: Type inference failed for: r14v14, types: [e9.n0] */
+    /* JADX WARN: Type inference failed for: r10v10 */
+    /* JADX WARN: Type inference failed for: r10v4 */
+    /* JADX WARN: Type inference failed for: r13v0, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r13v15, types: [e9.n0] */
     /* JADX WARN: Type inference failed for: r30v0 */
     /* JADX WARN: Type inference failed for: r30v1, types: [boolean] */
     /* JADX WARN: Type inference failed for: r30v2 */
-    /* JADX WARN: Type inference failed for: r3v8, types: [boolean] */
-    /* JADX WARN: Type inference failed for: r4v19 */
-    /* JADX WARN: Type inference failed for: r4v22 */
-    /* JADX WARN: Type inference failed for: r4v24 */
-    /* JADX WARN: Type inference failed for: r4v27 */
-    /* JADX WARN: Type inference failed for: r4v31 */
-    /* JADX WARN: Type inference failed for: r4v9 */
-    /* JADX WARN: Type inference failed for: r9v2 */
-    /* JADX WARN: Type inference failed for: r9v8 */
-    @Override // u2.e0
-    public final long q(x2.p[] pVarArr, boolean[] zArr, e1[] e1VarArr, boolean[] zArr2, long j10) {
+    /* JADX WARN: Type inference failed for: r3v14 */
+    /* JADX WARN: Type inference failed for: r4v20 */
+    /* JADX WARN: Type inference failed for: r4v23 */
+    /* JADX WARN: Type inference failed for: r4v25 */
+    /* JADX WARN: Type inference failed for: r4v28 */
+    /* JADX WARN: Type inference failed for: r4v32 */
+    /* JADX WARN: Type inference failed for: r6v2 */
+    /* JADX WARN: Type inference failed for: r6v8 */
+    @Override // u2.f0
+    public final long q(x2.p[] pVarArr, boolean[] zArr, f1[] f1VarArr, boolean[] zArr2, long j10) {
         int i10;
         boolean z10;
         boolean z11;
@@ -673,120 +675,120 @@ public final class b implements e0, f1, v2.h {
         x1 x1Var;
         int i14;
         o oVar;
-        int[] iArr3;
-        int i15;
+        w[] wVarArr;
+        long b10;
         boolean z12;
         boolean z13;
         x2.p[] pVarArr2 = pVarArr;
-        int[] iArr4 = new int[pVarArr2.length];
+        int[] iArr3 = new int[pVarArr2.length];
+        int i15 = 0;
         int i16 = 0;
-        int i17 = 0;
         while (true) {
             i10 = -1;
-            if (i17 >= pVarArr2.length) {
+            if (i16 >= pVarArr2.length) {
                 break;
             }
-            x2.p pVar = pVarArr2[i17];
+            x2.p pVar = pVarArr2[i16];
             if (pVar != null) {
-                iArr4[i17] = this.s.b(pVar.b());
+                iArr3[i16] = this.s.b(pVar.b());
             } else {
-                iArr4[i17] = -1;
+                iArr3[i16] = -1;
             }
-            i17++;
+            i16++;
         }
-        for (int i18 = 0; i18 < pVarArr2.length; i18++) {
-            if (pVarArr2[i18] == null || !zArr[i18]) {
-                ?? r42 = e1VarArr[i18];
+        for (int i17 = 0; i17 < pVarArr2.length; i17++) {
+            if (pVarArr2[i17] == null || !zArr[i17]) {
+                ?? r42 = f1VarArr[i17];
                 if (r42 instanceof v2.i) {
-                    ((v2.i) r42).C(this);
+                    ((v2.i) r42).D(this);
                 } else if (r42 instanceof v2.g) {
                     v2.g gVar = (v2.g) r42;
                     v2.i iVar = gVar.e;
                     boolean[] zArr3 = iVar.d;
-                    int i19 = gVar.c;
-                    u6.p(zArr3[i19]);
-                    iVar.d[i19] = false;
+                    int i18 = gVar.c;
+                    u6.p(zArr3[i18]);
+                    iVar.d[i18] = false;
                 }
-                e1VarArr[i18] = null;
+                f1VarArr[i17] = null;
             }
         }
-        int i20 = 0;
+        int i19 = 0;
         while (true) {
             z10 = true;
-            if (i20 >= pVarArr2.length) {
+            if (i19 >= pVarArr2.length) {
                 break;
             }
-            ?? r43 = e1VarArr[i20];
-            if ((r43 instanceof r) || (r43 instanceof v2.g)) {
-                int f7 = f(i20, iArr4);
-                if (f7 == -1) {
-                    z13 = e1VarArr[i20] instanceof r;
+            ?? r43 = f1VarArr[i19];
+            if ((r43 instanceof u2.s) || (r43 instanceof v2.g)) {
+                int g10 = g(i19, iArr3);
+                if (g10 == -1) {
+                    z13 = f1VarArr[i19] instanceof u2.s;
                 } else {
-                    ?? r10 = e1VarArr[i20];
-                    z13 = (r10 instanceof v2.g) && ((v2.g) r10).a == e1VarArr[f7];
+                    ?? r10 = f1VarArr[i19];
+                    z13 = (r10 instanceof v2.g) && ((v2.g) r10).a == f1VarArr[g10];
                 }
                 if (!z13) {
-                    ?? r44 = e1VarArr[i20];
+                    ?? r44 = f1VarArr[i19];
                     if (r44 instanceof v2.g) {
                         v2.g gVar2 = (v2.g) r44;
                         v2.i iVar2 = gVar2.e;
                         boolean[] zArr4 = iVar2.d;
-                        int i21 = gVar2.c;
-                        u6.p(zArr4[i21]);
-                        iVar2.d[i21] = false;
+                        int i20 = gVar2.c;
+                        u6.p(zArr4[i20]);
+                        iVar2.d[i20] = false;
                     }
-                    e1VarArr[i20] = null;
+                    f1VarArr[i19] = null;
                 }
             }
-            i20++;
+            i19++;
         }
-        int i22 = 0;
-        while (i22 < pVarArr2.length) {
-            x2.p pVar2 = pVarArr2[i22];
+        int i21 = 0;
+        while (i21 < pVarArr2.length) {
+            x2.p pVar2 = pVarArr2[i21];
             if (pVar2 == null) {
-                iArr2 = iArr4;
-                i11 = i22;
-                i12 = i16;
+                iArr2 = iArr3;
+                i11 = i15;
+                i12 = i21;
             } else {
-                ?? r11 = e1VarArr[i22];
-                if (r11 == null) {
-                    zArr2[i22] = z10;
-                    a aVar = this.v[iArr4[i22]];
-                    int i23 = aVar.c;
-                    if (i23 == 0) {
-                        int i24 = aVar.f;
-                        ?? r30 = i24 != i10 ? z10 ? 1 : 0 : i16;
+                ?? r102 = f1VarArr[i21];
+                if (r102 == null) {
+                    zArr2[i21] = z10;
+                    a aVar = this.v[iArr3[i21]];
+                    int i22 = aVar.c;
+                    if (i22 == 0) {
+                        int i23 = aVar.f;
+                        ?? r30 = i23 != i10 ? z10 ? 1 : 0 : i15;
                         if (r30 != 0) {
-                            p1Var = this.s.a(i24);
+                            p1Var = this.s.a(i23);
                             i13 = z10 ? 1 : 0;
                         } else {
-                            i13 = i16;
+                            i13 = i15;
                             p1Var = null;
                         }
-                        int i25 = aVar.g;
-                        if (i25 != i10) {
-                            x1Var = this.v[i25].h;
+                        int i24 = aVar.g;
+                        if (i24 != i10) {
+                            x1Var = this.v[i24].h;
                         } else {
                             l0 l0Var = n0.b;
                             x1Var = x1.e;
                         }
                         int size = x1Var.size() + i13;
-                        int i26 = i22;
-                        w[] wVarArr = new w[size];
-                        int[] iArr5 = new int[size];
+                        int i25 = i21;
+                        w[] wVarArr2 = new w[size];
+                        int[] iArr4 = new int[size];
                         if (r30 != 0) {
-                            wVarArr[i16] = p1Var.d[i16];
-                            iArr5[i16] = 5;
+                            wVarArr2[i15] = p1Var.d[i15];
+                            iArr4[i15] = 5;
                             i14 = z10 ? 1 : 0;
                         } else {
-                            i14 = i16;
+                            i14 = i15;
                         }
                         ArrayList arrayList = new ArrayList();
                         boolean z14 = z10 ? 1 : 0;
-                        for (int i27 = i16; i27 < x1Var.size(); i27++) {
-                            w wVar = (w) x1Var.get(i27);
-                            wVarArr[i14] = wVar;
-                            iArr5[i14] = 3;
+                        for (int i26 = i15; i26 < x1Var.size(); i26++) {
+                            w wVar = (w) x1Var.get(i26);
+                            wVarArr2[i14] = wVar;
+                            iArr4[i14] = 3;
                             arrayList.add(wVar);
                             i14++;
                         }
@@ -797,128 +799,133 @@ public final class b implements e0, f1, v2.h {
                             oVar = new o(pVar3, pVar3.a);
                         }
                         m2.c cVar = this.K;
-                        int i28 = this.L;
-                        i c10 = ((m2.m) ((m2.a) cVar.b(i28).c.get(aVar.a[i16])).c.get(i16)).c();
-                        long a2 = c10 == null ? -9223372036854775807L : c10.a(c10.p(j10, cVar.d(i28)));
+                        int i27 = this.L;
+                        i d = ((m2.m) ((m2.a) cVar.b(i27).c.get(aVar.a[i15])).c.get(i15)).d();
+                        if (d == null) {
+                            b10 = -9223372036854775807L;
+                            wVarArr = wVarArr2;
+                        } else {
+                            wVarArr = wVarArr2;
+                            b10 = d.b(d.n(j10, cVar.d(i27)));
+                        }
+                        long j11 = b10;
                         if (this.N) {
                             m2.c cVar2 = this.K;
-                            int i29 = this.L;
-                            int[] iArr6 = aVar.a;
-                            List list = cVar2.b(i29).c;
+                            int i28 = this.L;
+                            int[] iArr5 = aVar.a;
+                            List list = cVar2.b(i28).c;
                             k0 t10 = n0.t();
-                            iArr3 = iArr4;
-                            int i30 = 0;
-                            for (int length = iArr6.length; i30 < length; length = length) {
-                                t10.d(((m2.a) list.get(iArr6[i30])).c);
-                                i30++;
+                            int length = iArr5.length;
+                            int i29 = 0;
+                            while (i29 < length) {
+                                int i30 = i29;
+                                t10.d(((m2.a) list.get(iArr5[i30])).c);
+                                i29 = i30 + 1;
                             }
-                            x1 f10 = t10.f();
+                            x1 f7 = t10.f();
                             for (int i31 = 0; i31 < pVar2.length(); i31++) {
-                                w wVar2 = ((m2.m) f10.get(pVar2.h(i31))).a;
+                                w wVar2 = ((m2.m) f7.get(pVar2.h(i31))).a;
                                 if (!v0.a(wVar2.s, wVar2.k)) {
-                                    i15 = i26;
                                     z12 = z14;
                                     break;
                                 }
                             }
-                        } else {
-                            iArr3 = iArr4;
                         }
-                        i15 = i26;
                         z12 = false;
                         a5.a aVar2 = this.b;
                         y2.m mVar = this.n;
                         m2.c cVar3 = this.K;
                         qi.e eVar = this.f;
+                        int[] iArr6 = iArr3;
                         int i32 = this.L;
                         int[] iArr7 = aVar.a;
                         int i33 = aVar.b;
-                        i11 = i15;
-                        long j11 = this.h;
+                        long j12 = this.h;
                         c0 c0Var = this.c;
                         g2.h createDataSource = ((g2.g) aVar2.c).createDataSource();
                         if (c0Var != null) {
                             createDataSource.addTransferListener(c0Var);
                         }
                         o oVar2 = oVar;
-                        iArr2 = iArr3;
-                        v2.i iVar3 = new v2.i(aVar.b, iArr5, wVarArr, new l((c5.f) aVar2.d, mVar, cVar3, eVar, i32, iArr7, pVar2, i33, createDataSource, j11, aVar2.b, r30, arrayList, oVar), this, this.r, j10, this.d, this.F, this.e, this.E, z12, a2, null);
-                        long j12 = this.P;
-                        iVar3.x.K(j12);
-                        for (d1 d1Var : iVar3.y) {
-                            d1Var.K(j12);
+                        iArr2 = iArr6;
+                        i12 = i25;
+                        v2.i iVar3 = new v2.i(aVar.b, iArr4, wVarArr, new l((c5.f) aVar2.d, mVar, cVar3, eVar, i32, iArr7, pVar2, i33, createDataSource, j12, aVar2.b, r30, arrayList, oVar), this, this.r, j10, this.d, this.F, this.e, this.E, z12, j11, null);
+                        long j13 = this.P;
+                        iVar3.x.K(j13);
+                        for (e1 e1Var : iVar3.y) {
+                            e1Var.K(j13);
                         }
                         synchronized (this) {
                             this.y.put(iVar3, oVar2);
                         }
-                        e1VarArr[i11] = iVar3;
+                        f1VarArr[i12] = iVar3;
                     } else {
-                        iArr2 = iArr4;
-                        i11 = i22;
-                        if (i23 == 2) {
-                            i12 = 0;
-                            e1VarArr[i11] = new m((m2.g) this.M.get(aVar.d), pVar2.b().d[0], this.K.d);
+                        iArr2 = iArr3;
+                        i12 = i21;
+                        if (i22 == 2) {
+                            i11 = 0;
+                            f1VarArr[i12] = new m((m2.g) this.M.get(aVar.d), pVar2.b().d[0], this.K.d);
                         }
                     }
-                    i12 = 0;
+                    i11 = 0;
                 } else {
-                    iArr2 = iArr4;
-                    i11 = i22;
-                    i12 = i16;
-                    if (r11 instanceof v2.i) {
-                        ((v2.i) r11).e.j = pVar2;
+                    iArr2 = iArr3;
+                    i11 = i15;
+                    i12 = i21;
+                    if (r102 instanceof v2.i) {
+                        ((v2.i) r102).e.j = pVar2;
                     }
                 }
             }
-            i16 = i12;
-            iArr4 = iArr2;
+            i21 = i12 + 1;
+            pVarArr2 = pVarArr;
+            i15 = i11;
+            iArr3 = iArr2;
             i10 = -1;
             z10 = true;
-            i22 = i11 + 1;
-            pVarArr2 = pVarArr;
         }
-        int[] iArr8 = iArr4;
-        ?? r32 = i16;
-        while (i16 < pVarArr.length) {
-            if (e1VarArr[i16] != null || pVarArr[i16] == null) {
+        int[] iArr8 = iArr3;
+        ?? r13 = i15;
+        while (i15 < pVarArr.length) {
+            if (f1VarArr[i15] != null || pVarArr[i15] == null) {
                 iArr = iArr8;
             } else {
                 iArr = iArr8;
-                a aVar3 = this.v[iArr[i16]];
+                a aVar3 = this.v[iArr[i15]];
                 if (aVar3.c == 1) {
-                    int f11 = f(i16, iArr);
-                    if (f11 != -1) {
-                        v2.i iVar4 = (v2.i) e1VarArr[f11];
+                    int g11 = g(i15, iArr);
+                    if (g11 != -1) {
+                        v2.i iVar4 = (v2.i) f1VarArr[g11];
                         int i34 = aVar3.b;
                         boolean[] zArr5 = iVar4.d;
-                        d1[] d1VarArr = iVar4.y;
-                        for (int i35 = r32 == true ? 1 : 0; i35 < d1VarArr.length; i35++) {
+                        e1[] e1VarArr = iVar4.y;
+                        for (int i35 = r13 == true ? 1 : 0; i35 < e1VarArr.length; i35++) {
                             if (iVar4.b[i35] == i34) {
                                 u6.p(!zArr5[i35]);
                                 zArr5[i35] = true;
-                                d1VarArr[i35].J(j10, true);
-                                e1VarArr[i16] = new v2.g(iVar4, iVar4, d1VarArr[i35], i35);
+                                e1VarArr[i35].J(j10, true);
+                                f1VarArr[i15] = new v2.g(iVar4, iVar4, e1VarArr[i35], i35);
                             }
                         }
                         throw new IllegalStateException();
                     }
-                    e1VarArr[i16] = new r();
-                    i16++;
+                    f1VarArr[i15] = new u2.s();
+                    i15++;
                     iArr8 = iArr;
                 }
             }
-            i16++;
+            i15++;
             iArr8 = iArr;
         }
         ArrayList arrayList2 = new ArrayList();
         ArrayList arrayList3 = new ArrayList();
-        int length2 = e1VarArr.length;
-        for (int i36 = r32 == true ? 1 : 0; i36 < length2; i36++) {
-            ?? r92 = e1VarArr[i36];
-            if (r92 instanceof v2.i) {
-                arrayList2.add((v2.i) r92);
-            } else if (r92 instanceof m) {
-                arrayList3.add((m) r92);
+        int length2 = f1VarArr.length;
+        for (int i36 = r13 == true ? 1 : 0; i36 < length2; i36++) {
+            ?? r62 = f1VarArr[i36];
+            if (r62 instanceof v2.i) {
+                arrayList2.add((v2.i) r62);
+            } else if (r62 instanceof m) {
+                arrayList3.add((m) r62);
             }
         }
         v2.i[] iVarArr = new v2.i[arrayList2.size()];
@@ -928,21 +935,21 @@ public final class b implements e0, f1, v2.h {
         this.I = mVarArr;
         arrayList3.toArray(mVarArr);
         oa.d dVar = this.w;
-        AbstractList x10 = s.x(arrayList2, new f0(3));
+        AbstractList x10 = s.x(arrayList2, new k2.f(7));
         dVar.getClass();
         this.J = new u2.o(arrayList2, x10);
         if (this.N) {
-            this.N = r32;
+            this.N = r13;
             this.O = j10;
             v2.i[] iVarArr2 = this.H;
             int length3 = iVarArr2.length;
-            int i37 = r32 == true ? 1 : 0;
+            int i37 = r13 == true ? 1 : 0;
             while (true) {
                 if (i37 >= length3) {
-                    z11 = r32 == true ? 1 : 0;
+                    z11 = r13 == true ? 1 : 0;
                     break;
                 }
-                if (iVarArr2[i37].z()) {
+                if (iVarArr2[i37].A()) {
                     z11 = true;
                     break;
                 }
@@ -952,7 +959,7 @@ public final class b implements e0, f1, v2.h {
                 this.Q = true;
                 v2.i[] iVarArr3 = this.H;
                 int length4 = iVarArr3.length;
-                for (int i38 = r32 == true ? 1 : 0; i38 < length4; i38++) {
+                for (int i38 = r13 == true ? 1 : 0; i38 < length4; i38++) {
                     iVarArr3[i38].O = true;
                 }
             }
@@ -960,25 +967,25 @@ public final class b implements e0, f1, v2.h {
         return j10;
     }
 
-    @Override // u2.e0
-    public final s1 r() {
+    @Override // u2.f0
+    public final t1 r() {
         return this.s;
     }
 
-    @Override // u2.g1
+    @Override // u2.h1
     public final long s() {
         return this.J.s();
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:19:0x0058, code lost:
     
-        if (r3 < (((r10.u() + r8) + r11) - 1)) goto L19;
+        if (r3 < (((r10.w() + r8) + r11) - 1)) goto L19;
      */
-    @Override // u2.e0
+    @Override // u2.f0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final long t(long j10, i2.s1 s1Var) {
+    public final long t(long j10, s1 s1Var) {
         long j11;
         long j12 = j10;
         v2.i[] iVarArr = this.H;
@@ -1002,13 +1009,13 @@ public final class b implements e0, f1, v2.h {
                         long c10 = jVar.c();
                         if (c10 != 0) {
                             iVar3.getClass();
-                            long p5 = iVar3.p(j12, jVar.e) + j13;
-                            long e = jVar.e(p5);
+                            long n10 = iVar3.n(j12, jVar.e) + j13;
+                            long e = jVar.e(n10);
                             if (e < j12) {
                                 if (c10 != -1) {
                                     iVar3.getClass();
                                 }
-                                j11 = jVar.e(p5 + 1);
+                                j11 = jVar.e(n10 + 1);
                                 return s1Var.a(j12, e, j11);
                             }
                             j11 = e;
@@ -1026,7 +1033,7 @@ public final class b implements e0, f1, v2.h {
         return j10;
     }
 
-    @Override // u2.g1
+    @Override // u2.h1
     public final void u(long j10) {
         int i10;
         v2.i[] iVarArr = this.H;
@@ -1036,7 +1043,7 @@ public final class b implements e0, f1, v2.h {
             v2.i iVar = iVarArr[i11];
             if (!iVar.r.d()) {
                 long d = this.K.d(this.L);
-                d1 d1Var = iVar.x;
+                e1 e1Var = iVar.x;
                 u6.p(!iVar.r.d());
                 if (!iVar.y() && d != -9223372036854775807L && !iVar.v.isEmpty()) {
                     v2.a w9 = iVar.w();
@@ -1045,15 +1052,15 @@ public final class b implements e0, f1, v2.h {
                         j11 = w9.n;
                     }
                     if (j11 > d) {
-                        long s10 = d1Var.s();
+                        long s10 = e1Var.s();
                         if (s10 > d) {
-                            d1Var.m(Math.max(d, d1Var.t() + 1));
-                            d1[] d1VarArr = iVar.y;
-                            int length2 = d1VarArr.length;
+                            e1Var.m(Math.max(d, e1Var.t() + 1));
+                            e1[] e1VarArr = iVar.y;
+                            int length2 = e1VarArr.length;
                             int i12 = 0;
                             while (i12 < length2) {
-                                d1 d1Var2 = d1VarArr[i12];
-                                d1Var2.m(Math.max(d, d1Var2.t() + 1));
+                                e1 e1Var2 = e1VarArr[i12];
+                                e1Var2.m(Math.max(d, e1Var2.t() + 1));
                                 i12++;
                                 i11 = i11;
                             }

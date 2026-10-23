@@ -16,7 +16,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class f30 extends FrameLayout {
     public float a;
@@ -174,7 +174,7 @@ public final class f30 extends FrameLayout {
                                 ValueAnimator ofFloat = ValueAnimator.ofFloat(i30Var.b0, !z10 ? 1.0f : f7);
                                 i30Var.c0 = ofFloat;
                                 ofFloat.addUpdateListener(new l6(i30Var, 26));
-                                i30Var.c0.addListener(new org.telegram.ui.fo(11, i30Var, z10));
+                                i30Var.c0.addListener(new org.telegram.ui.ho(11, i30Var, z10));
                                 i30Var.c0.setDuration(250L);
                                 i30Var.c0.setInterpolator(bs.f);
                                 i30Var.c0.start();
@@ -214,7 +214,7 @@ public final class f30 extends FrameLayout {
                         ValueAnimator ofFloat2 = ValueAnimator.ofFloat(i30Var.b0, !z10 ? 1.0f : f7);
                         i30Var.c0 = ofFloat2;
                         ofFloat2.addUpdateListener(new l6(i30Var, 26));
-                        i30Var.c0.addListener(new org.telegram.ui.fo(11, i30Var, z10));
+                        i30Var.c0.addListener(new org.telegram.ui.ho(11, i30Var, z10));
                         i30Var.c0.setDuration(250L);
                         i30Var.c0.setInterpolator(bs.f);
                         i30Var.c0.start();
@@ -326,8 +326,8 @@ public final class f30 extends FrameLayout {
         }
         this.c = false;
         i30 i30Var12 = this.n;
-        yj0 yj0Var = i30Var12.V;
-        vj0 vj0Var = i30Var12.v;
+        bk0 bk0Var = i30Var12.V;
+        yj0 yj0Var = i30Var12.v;
         ah.x xVar = i30Var12.b;
         f30 f30Var2 = i30Var12.a;
         ei.g6 g6Var = i30Var12.c;
@@ -351,10 +351,10 @@ public final class f30 extends FrameLayout {
         i30Var12.d();
         i30.d0 = null;
         AnimatorSet animatorSet = new AnimatorSet();
-        int i13 = vj0Var.a0;
+        int i13 = yj0Var.a0;
         if (i13 < 33) {
             f30Var = f30Var3;
-            j10 = (long) (((1.0f - (i13 / 33.0f)) * vj0Var.r()) / 2.0f);
+            j10 = (long) (((1.0f - (i13 / 33.0f)) * yj0Var.r()) / 2.0f);
         } else {
             f30Var = f30Var3;
             j10 = 0;
@@ -418,9 +418,9 @@ public final class f30 extends FrameLayout {
         animatorSet.playTogether(ofFloat15);
         animatorSet.addListener(new h30(i30Var12, f30Var4, xVar2, windowManager, frameLayout, x7Var));
         animatorSet.start();
-        vj0Var.P(66);
-        yj0Var.i();
-        yj0Var.d();
+        yj0Var.P(66);
+        bk0Var.i();
+        bk0Var.d();
         return false;
     }
 }

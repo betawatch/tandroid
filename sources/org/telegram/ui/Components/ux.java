@@ -5,7 +5,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import j$.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class ux extends sz {
     public final /* synthetic */ tz d;
@@ -35,7 +35,11 @@ public final class ux extends sz {
             fVar.f(i10, i11);
         }
         super.b(recyclerView, i10, i11);
-        if (tyVar == null || tzVar.P.getAdapter() != tyVar || tyVar.x.a() || tyVar.x.a.E) {
+        if (tyVar == null || tzVar.P.getAdapter() != tyVar) {
+            return;
+        }
+        ty tyVar2 = tyVar.x.a;
+        if (tyVar2.F.V.F || tyVar2.E) {
             return;
         }
         if (rxVar.N0() + 20 > tyVar.h()) {

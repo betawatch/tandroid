@@ -25,10 +25,11 @@ import java.util.zip.GZIPOutputStream;
 import n6.l;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.telegram.ui.Cells.c1;
+import org.telegram.ui.Cells.b1;
 import ra.e;
+import si.o0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class c {
     public static final Pattern d = Pattern.compile("[0-9]+s");
@@ -83,7 +84,7 @@ public final class c {
             return;
         }
         Log.w("Firebase-Installations", str4);
-        Log.w("Firebase-Installations", c1.k("Firebase options used while communicating with Firebase server APIs: ", str2, ", ", str3, TextUtils.isEmpty(str) ? "" : r4.c.h(", ", str)));
+        Log.w("Firebase-Installations", b1.l("Firebase options used while communicating with Firebase server APIs: ", str2, ", ", str3, TextUtils.isEmpty(str) ? "" : o0.h(", ", str)));
     }
 
     public static long d(String str) {

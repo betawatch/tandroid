@@ -24,7 +24,7 @@ import org.telegram.ui.Components.t20;
 import org.telegram.ui.Components.u20;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class o0 extends Handler {
     public final /* synthetic */ int a;
@@ -48,7 +48,7 @@ public final class o0 extends Handler {
                 if (bVar.p == 2 || bVar.k()) {
                     bVar.z = null;
                     if (obj2 instanceof Exception) {
-                        eVar.X((Exception) obj2, false);
+                        eVar.M((Exception) obj2, false);
                         return;
                     }
                     try {
@@ -66,7 +66,7 @@ public final class o0 extends Handler {
                         }
                         return;
                     } catch (Exception e) {
-                        eVar.X(e, true);
+                        eVar.M(e, true);
                         return;
                     }
                 }

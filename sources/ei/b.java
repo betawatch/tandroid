@@ -2,7 +2,7 @@ package ei;
 
 import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -19,31 +19,31 @@ public final /* synthetic */ class b implements ValueAnimator.AnimatorUpdateList
             case 0:
                 d dVar = this.b;
                 dVar.getClass();
-                dVar.P = Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue());
+                dVar.S = Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue());
                 dVar.invalidate();
                 break;
             case 1:
                 d dVar2 = this.b;
                 dVar2.getClass();
-                dVar2.V = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                dVar2.b0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 dVar2.invalidate();
                 break;
             case 2:
                 d dVar3 = this.b;
                 dVar3.getClass();
-                dVar3.M = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                dVar3.P = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 dVar3.invalidate();
                 break;
             case 3:
                 d dVar4 = this.b;
                 dVar4.getClass();
-                dVar4.H = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                dVar4.K = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 dVar4.invalidate();
                 break;
             default:
                 d dVar5 = this.b;
                 dVar5.getClass();
-                dVar5.H = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                dVar5.K = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 dVar5.invalidate();
                 break;
         }

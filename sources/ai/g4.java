@@ -3,7 +3,7 @@ package ai;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g4 implements Runnable {
     public final /* synthetic */ int a;
@@ -20,7 +20,7 @@ public final /* synthetic */ class g4 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                l7.c0(this.b, this.c);
+                l7.b0(this.b, this.c);
                 break;
             case 1:
                 pf.d.t(r0.getContext(), MessagesController.getInstance(this.b.currentAccount).tonBlockchainExplorerUrl + this.c);
@@ -47,7 +47,7 @@ public final /* synthetic */ class g4 implements Runnable {
                 k10.j();
                 break;
             default:
-                l7.k0(this.b, this.c);
+                l7.j0(this.b, this.c);
                 break;
         }
     }

@@ -2,7 +2,7 @@ package com.google.android.gms.internal.cast;
 
 import android.text.TextUtils;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class o4 implements d6.h {
     public final /* synthetic */ z5 a;
@@ -76,7 +76,7 @@ public final class o4 implements d6.h {
     }
 
     @Override // d6.h
-    public void q(d6.f fVar, int i10) {
+    public void r(d6.f fVar, int i10) {
         a5.a aVar = new a5.a(8, 2);
         aVar.c = Integer.valueOf(i10);
         x6 x6Var = new x6(aVar);
@@ -86,11 +86,11 @@ public final class o4 implements d6.h {
     }
 
     @Override // d6.h
-    public /* bridge */ /* synthetic */ void r(d6.f fVar) {
+    public /* bridge */ /* synthetic */ void u(d6.f fVar) {
     }
 
     @Override // d6.h
-    public void v(d6.f fVar, String str) {
+    public void w(d6.f fVar, String str) {
         x6 x6Var = new x6(new a5.a(4, 2));
         z5 z5Var = this.a;
         z5.D(z5Var, x6Var);
@@ -111,7 +111,7 @@ public final class o4 implements d6.h {
     }
 
     @Override // d6.h
-    public void w(d6.f fVar, int i10) {
+    public void z(d6.f fVar, int i10) {
         a5.a aVar = new a5.a(6, 2);
         aVar.c = Integer.valueOf(i10);
         x6 x6Var = new x6(aVar);

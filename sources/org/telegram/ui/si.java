@@ -5,27 +5,27 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class si {
     public boolean a;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ SparseArray c;
-    public final /* synthetic */ qn d;
+    public final /* synthetic */ sn d;
 
-    public si(qn qnVar, boolean z10, SparseArray sparseArray) {
-        this.d = qnVar;
+    public si(sn snVar, boolean z10, SparseArray sparseArray) {
+        this.d = snVar;
         this.b = z10;
         this.c = sparseArray;
     }
 
     public final boolean a(int i10) {
-        qn qnVar = this.d;
-        int i11 = i10 - qnVar.A0.J;
-        if (i11 < 0 || i11 >= qnVar.u6.size()) {
+        sn snVar = this.d;
+        int i11 = i10 - snVar.A0.J;
+        if (i11 < 0 || i11 >= snVar.G6.size()) {
             return false;
         }
-        MessageObject messageObject = (MessageObject) qnVar.u6.get(i11);
+        MessageObject messageObject = (MessageObject) snVar.G6.get(i11);
         if (messageObject.contentType != 0) {
             return false;
         }
@@ -43,10 +43,10 @@ public final class si {
     */
     public final void b(int i10, boolean z10, float f7, float f10) {
         s4.b1 K;
-        qn qnVar = this.d;
-        ArrayList arrayList = qnVar.u6;
-        SparseArray[] sparseArrayArr = qnVar.W5;
-        int i11 = i10 - qnVar.A0.J;
+        sn snVar = this.d;
+        ArrayList arrayList = snVar.G6;
+        SparseArray[] sparseArrayArr = snVar.i6;
+        int i11 = i10 - snVar.A0.J;
         if (this.b) {
             z10 = !z10;
         }
@@ -59,26 +59,26 @@ public final class si {
                 if (z10) {
                     if (sparseArrayArr[1].size() + sparseArrayArr[0].size() >= 100) {
                         this.a = true;
-                        K = qnVar.x0.K(i10);
+                        K = snVar.x0.K(i10);
                         if (K != null) {
                             View view = K.a;
-                            if (view instanceof org.telegram.ui.Cells.u1) {
-                                qn.c2(qnVar, view, false, f7, f10);
+                            if (view instanceof org.telegram.ui.Cells.t1) {
+                                sn.c2(snVar, view, false, f7, f10);
                                 return;
                             }
                         }
-                        qnVar.A6(messageObject, false, true);
-                        qnVar.ic();
-                        qnVar.bd(false);
+                        snVar.A6(messageObject, false, true);
+                        snVar.kc();
+                        snVar.dd(false);
                     }
                 }
                 this.a = false;
-                K = qnVar.x0.K(i10);
+                K = snVar.x0.K(i10);
                 if (K != null) {
                 }
-                qnVar.A6(messageObject, false, true);
-                qnVar.ic();
-                qnVar.bd(false);
+                snVar.A6(messageObject, false, true);
+                snVar.kc();
+                snVar.dd(false);
             }
         }
     }

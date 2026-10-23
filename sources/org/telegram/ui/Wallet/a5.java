@@ -1,95 +1,38 @@
 package org.telegram.ui.Wallet;
 
+import android.content.Context;
 import android.view.View;
-import android.view.ViewTreeObserver;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.w61;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class a5 implements ViewTreeObserver.OnPreDrawListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ View b;
+public final class a5 extends x5 {
+    public final /* synthetic */ o5 l0;
 
-    public /* synthetic */ a5(int i10, View view) {
-        this.a = i10;
-        this.b = view;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public a5(o5 o5Var, Context context) {
+        super(context);
+        this.l0 = o5Var;
     }
 
-    @Override // android.view.ViewTreeObserver.OnPreDrawListener
-    public final boolean onPreDraw() {
-        w61 w61Var;
-        switch (this.a) {
-            case 0:
-                o5 o5Var = (o5) ((ah.v) this.b).c;
-                if (o5Var.E) {
-                    o5Var.M0();
-                    break;
-                }
-                break;
-            case 1:
-                c5 c5Var = (c5) this.b;
-                o5 o5Var2 = c5Var.e;
-                if (o5Var2.Y != null && (w61Var = o5Var2.a) != null) {
-                    boolean z10 = o5Var2.n0 && !w61Var.canScrollVertically(1);
-                    if (o5Var2.a0 != z10) {
-                        o5Var2.a0 = z10;
-                        o5Var2.Y.animate().cancel();
-                        if (z10) {
-                            o5Var2.Y.setVisibility(0);
-                            o5Var2.Y.animate().alpha(1.0f).setDuration(180L).setInterpolator(bs.g).start();
-                        } else {
-                            o5Var2.Y.setAlpha(0.0f);
-                            o5Var2.Y.setVisibility(4);
-                        }
-                    }
-                }
-                View m10 = o5Var2.a.V2.m(o5Var2.f);
-                float y3 = m10 != null ? m10.getY() : 0.0f;
-                int height = m10 != null ? m10.getHeight() : 0;
-                if (m10 != c5Var.a || y3 != c5Var.b || height != c5Var.c) {
-                    c5Var.a = m10;
-                    c5Var.b = y3;
-                    c5Var.c = height;
-                    o5Var2.N0();
-                    break;
-                }
-                break;
-            case 2:
-                t7 t7Var = (t7) this.b;
-                x5 x5Var = t7Var.c;
-                float cardRotationX = x5Var.getCardRotationX();
-                float cardRotationY = x5Var.getCardRotationY();
-                if (cardRotationX != t7Var.a0 || cardRotationY != t7Var.b0) {
-                    t7Var.a0 = cardRotationX;
-                    t7Var.b0 = cardRotationY;
-                    t7Var.L.invalidate();
-                    break;
-                }
-                break;
-            default:
-                i9 i9Var = (i9) ((ei.m5) this.b).c;
-                ei.m5 m5Var = i9Var.v;
-                if (m5Var != null && i9Var.W != null && m5Var.getHeight() > 0 && i9Var.W.getHeight() > 0) {
-                    float paddingTop = i9Var.fragmentView.getPaddingTop();
-                    if (i9Var.s.getVisibility() == 0) {
-                        paddingTop = Math.max(paddingTop, (i9Var.s.getScaleY() * (i9Var.s.getContentBottom() - i9Var.s.getPivotY())) + i9Var.s.getPivotY() + i9Var.s.getY());
-                    }
-                    float max = Math.max(0.0f, Math.min(i9Var.fragmentView.getHeight() - i9Var.fragmentView.getPaddingBottom(), i9Var.W.getY()) - paddingTop);
-                    float min = Math.min(1.0f, Math.max(0.0f, max - (Math.min(AndroidUtilities.dp(12.0f), max / 4.0f) * 2.0f)) / i9Var.v.getHeight());
-                    i9Var.v.setPivotX(r5.getWidth() / 2.0f);
-                    i9Var.v.setPivotY(r5.getHeight() / 2.0f);
-                    i9Var.v.setScaleX(min);
-                    i9Var.v.setScaleY(min);
-                    i9Var.v.setTranslationY((((max / 2.0f) + paddingTop) - r4.getTop()) - (i9Var.v.getHeight() / 2.0f));
-                }
-                if (i9Var.X != null || i9Var.Y < 1.0f) {
-                    i9Var.A0();
-                    break;
-                }
-                break;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(0, 0);
+        super.onMeasure(i10, makeMeasureSpec);
+        o5 o5Var = this.l0;
+        if (o5Var.n <= 0 || getMeasuredHeight() <= o5Var.n) {
+            return;
         }
-        return true;
+        int paddingRight = getPaddingRight() + getPaddingLeft();
+        int paddingBottom = getPaddingBottom() + getPaddingTop();
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(paddingRight + ((int) ((getMeasuredWidth() - paddingRight) * (Math.max(0, o5Var.n - paddingBottom) / Math.max(1, getMeasuredHeight() - paddingBottom)))), TLObject.FLAG_30), makeMeasureSpec);
+    }
+
+    @Override // org.telegram.ui.Wallet.x5
+    public final void setStickerStyle(float[] fArr) {
+        super.setStickerStyle(fArr);
+        o5 o5Var = this.l0;
+        o5Var.P0(o5Var.w0);
+        o5Var.Q0(fArr);
     }
 }

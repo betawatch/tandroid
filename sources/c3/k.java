@@ -1,8 +1,8 @@
 package c3;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public class k implements c0 {
+public class k implements e0 {
     public final long a;
     public final long b;
     public final int c;
@@ -29,23 +29,23 @@ public class k implements c0 {
         }
     }
 
-    @Override // c3.c0
+    @Override // c3.e0
     public final boolean d() {
         return this.d != -1 || this.g;
     }
 
-    @Override // c3.c0
+    @Override // c3.e0
     public final boolean e() {
         return this.h;
     }
 
-    @Override // c3.c0
-    public final b0 f(long j10) {
+    @Override // c3.e0
+    public final d0 f(long j10) {
         long j11 = this.d;
         long j12 = this.b;
         if (j11 == -1 && !this.g) {
-            d0 d0Var = new d0(0L, j12);
-            return new b0(d0Var, d0Var);
+            f0 f0Var = new f0(0L, j12);
+            return new d0(f0Var, f0Var);
         }
         int i10 = this.e;
         long j13 = this.c;
@@ -55,17 +55,17 @@ public class k implements c0 {
         }
         long max = Math.max(j14, 0L) + j12;
         long max2 = (Math.max(0L, max - j12) * 8000000) / i10;
-        d0 d0Var2 = new d0(max2, max);
+        f0 f0Var2 = new f0(max2, max);
         if (j11 != -1 && max2 < j10) {
             long j15 = max + j13;
             if (j15 < this.a) {
-                return new b0(d0Var2, new d0((Math.max(0L, j15 - j12) * 8000000) / i10, j15));
+                return new d0(f0Var2, new f0((Math.max(0L, j15 - j12) * 8000000) / i10, j15));
             }
         }
-        return new b0(d0Var2, d0Var2);
+        return new d0(f0Var2, f0Var2);
     }
 
-    @Override // c3.c0
+    @Override // c3.e0
     public final long h() {
         return this.f;
     }

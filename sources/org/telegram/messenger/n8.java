@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class n8 implements Runnable {
     public final /* synthetic */ int a;
@@ -60,7 +60,7 @@ public final /* synthetic */ class n8 implements Runnable {
                 ((MessagesController) this.b).lambda$setUserAdminRole$108((TLRPC.TL_messages_editChatAdmin) this.d, (nb) this.c);
                 break;
             case 10:
-                MessagesController.lambda$openByUserName$461((org.telegram.ui.ActionBar.b2[]) this.b, (boolean[]) this.d, (org.telegram.ui.ActionBar.n2) this.c);
+                MessagesController.lambda$openByUserName$461((org.telegram.ui.ActionBar.c2[]) this.b, (boolean[]) this.d, (org.telegram.ui.ActionBar.o2) this.c);
                 break;
             case 11:
                 ((MessagesController) this.b).lambda$updateChatAbout$288((TLRPC.ChatFull) this.d, (String) this.c);
@@ -75,7 +75,7 @@ public final /* synthetic */ class n8 implements Runnable {
                 ((MessagesController) this.b).lambda$getDifference$352((ArrayList) this.d, (TLRPC.updates_Difference) this.c);
                 break;
             case 15:
-                ((MessagesController) this.b).lambda$didReceivedNotification$49((org.telegram.ui.ActionBar.g6) this.d, (org.telegram.ui.ActionBar.f6) this.c);
+                ((MessagesController) this.b).lambda$didReceivedNotification$49((org.telegram.ui.ActionBar.j6) this.d, (org.telegram.ui.ActionBar.i6) this.c);
                 break;
             case 16:
                 ((MessagesController) this.b).lambda$getChannelDifference$341((ArrayList) this.d, (TLRPC.updates_ChannelDifference) this.c);

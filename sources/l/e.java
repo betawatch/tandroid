@@ -18,6 +18,7 @@ import android.widget.HeaderViewListAdapter;
 import android.widget.ListAdapter;
 import android.widget.PopupWindow;
 import android.widget.TextView;
+import i2.o1;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.WeakHashMap;
@@ -29,7 +30,7 @@ import m.s1;
 import org.telegram.messenger.beta.R;
 import r0.i0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class e extends s implements View.OnKeyListener, PopupWindow.OnDismissListener {
     public View E;
@@ -181,7 +182,7 @@ public final class e extends s implements View.OnKeyListener, PopupWindow.OnDism
         if (arrayList.isEmpty()) {
             return null;
         }
-        return ((d) i2.e.h(1, arrayList)).a.c;
+        return ((d) o1.i(1, arrayList)).a.c;
     }
 
     @Override // l.b0
@@ -236,7 +237,7 @@ public final class e extends s implements View.OnKeyListener, PopupWindow.OnDism
         l(d0Var);
         w wVar = this.M;
         if (wVar != null) {
-            wVar.r(d0Var);
+            wVar.o(d0Var);
         }
         return true;
     }
@@ -397,7 +398,7 @@ public final class e extends s implements View.OnKeyListener, PopupWindow.OnDism
         k2Var.w = this.x;
         ArrayList arrayList = this.n;
         if (arrayList.size() > 0) {
-            dVar = (d) i2.e.h(1, arrayList);
+            dVar = (d) o1.i(1, arrayList);
             k kVar2 = dVar.b;
             int size2 = kVar2.f.size();
             int i15 = 0;
@@ -497,26 +498,26 @@ public final class e extends s implements View.OnKeyListener, PopupWindow.OnDism
                             k2Var.f = width;
                             k2Var.v = true;
                             k2Var.s = true;
-                            k2Var.k(i11);
+                            k2Var.j(i11);
                         }
                         width = i12 - m10;
                         k2Var.f = width;
                         k2Var.v = true;
                         k2Var.s = true;
-                        k2Var.k(i11);
+                        k2Var.j(i11);
                     } else if (z12) {
                         width = i12 + m10;
                         k2Var.f = width;
                         k2Var.v = true;
                         k2Var.s = true;
-                        k2Var.k(i11);
+                        k2Var.j(i11);
                     } else {
                         m10 = view.getWidth();
                         width = i12 - m10;
                         k2Var.f = width;
                         k2Var.v = true;
                         k2Var.s = true;
-                        k2Var.k(i11);
+                        k2Var.j(i11);
                     }
                 }
                 i10 = 1;
@@ -552,7 +553,7 @@ public final class e extends s implements View.OnKeyListener, PopupWindow.OnDism
                 k2Var.f = this.I;
             }
             if (this.H) {
-                k2Var.k(this.J);
+                k2Var.j(this.J);
             }
             Rect rect2 = this.a;
             k2Var.M = rect2 != null ? new Rect(rect2) : null;

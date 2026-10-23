@@ -1,175 +1,104 @@
 package ci;
 
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.view.KeyEvent;
-import android.view.View;
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.concurrent.atomic.AtomicReference;
+import android.graphics.Paint;
+import java.util.Comparator;
+import java.util.List;
+import java.util.regex.Pattern;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.PasskeysController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.xc;
-import org.telegram.ui.Components.y31;
-import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.q40;
-import org.telegram.ui.q50;
-import org.telegram.ui.re1;
-import org.telegram.ui.sj0;
-import org.telegram.ui.vb;
+import org.telegram.ui.Components.ex;
+import org.telegram.ui.Components.h11;
+import org.telegram.ui.Components.s00;
+import org.telegram.ui.io0;
+import org.telegram.ui.mf0;
+import org.telegram.ui.oj0;
+import org.telegram.ui.sa;
+import org.telegram.ui.wm0;
+import org.telegram.ui.xo;
+import org.telegram.ui.y61;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class d6 implements View.OnClickListener {
+public final /* synthetic */ class d6 implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
 
-    public /* synthetic */ d6(int i10, int i11, KeyEvent.Callback callback, Object obj, Object obj2) {
-        this.a = i11;
-        this.c = callback;
-        this.d = obj;
-        this.b = i10;
-        this.e = obj2;
+    public /* synthetic */ d6(int i10) {
+        this.a = i10;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                g6.n((g6) this.c, (TLRPC.User) this.d, this.b, (org.telegram.ui.ActionBar.d6) this.e);
+                AndroidUtilities.runOnUIThread(new ah.j(9));
                 break;
             case 1:
-                vb.W((vb) this.c, this.b, (ArrayList) this.d, (Integer) this.e);
+                Comparator comparator = h7.X;
                 break;
             case 2:
-                int[] iArr = (int[]) this.c;
-                AlertDialog$Builder alertDialog$Builder = (AlertDialog$Builder) this.d;
-                sj0 sj0Var = (sj0) this.e;
-                iArr[0] = ((Integer) view.getTag()).intValue();
-                SharedPreferences.Editor edit = MessagesController.getNotificationsSettings(UserConfig.selectedAccount).edit();
-                int i10 = this.b;
-                if (i10 == 1) {
-                    edit.putInt("popupAll", iArr[0]);
-                } else if (i10 == 0) {
-                    edit.putInt("popupGroup", iArr[0]);
-                } else {
-                    edit.putInt("popupChannel", iArr[0]);
-                }
-                edit.commit();
-                alertDialog$Builder.a.L0.run();
-                sj0Var.run();
+                AndroidUtilities.runOnUIThread(new ah.j(23));
                 break;
             case 3:
-                q50 q50Var = (q50) this.c;
-                ArrayList arrayList = (ArrayList) this.d;
-                TLRPC.GroupCallParticipant groupCallParticipant = (TLRPC.GroupCallParticipant) this.e;
-                int size = arrayList.size();
-                int i11 = this.b;
-                if (i11 < size) {
-                    TLRPC.GroupCallParticipant groupCallParticipant2 = (TLRPC.GroupCallParticipant) q50Var.a1.participants.f(MessageObject.getPeerId(groupCallParticipant.peer));
-                    if (groupCallParticipant2 != null) {
-                        groupCallParticipant = groupCallParticipant2;
-                    }
-                    q50Var.y1(groupCallParticipant, MessageObject.getPeerId(groupCallParticipant.peer), ((Integer) arrayList.get(i11)).intValue());
-                    q40 q40Var = q50Var.f3;
-                    if (q40Var == null) {
-                        if (((Integer) arrayList.get(i11)).intValue() != 9 && ((Integer) arrayList.get(i11)).intValue() != 10 && ((Integer) arrayList.get(i11)).intValue() != 11) {
-                            q50Var.e1(true);
-                            break;
-                        }
-                    } else {
-                        q40Var.dismiss();
-                        break;
-                    }
-                }
+                AndroidUtilities.runOnUIThread(new ah.j(23));
                 break;
             case 4:
-                ei.d dVar = (ei.d) this.c;
-                Context context = (Context) this.d;
-                org.telegram.ui.ActionBar.f3 f3Var = (org.telegram.ui.ActionBar.f3) this.e;
-                if (!dVar.N) {
-                    dVar.setLoading(true);
-                    int i12 = this.b;
-                    PasskeysController.create(context, i12, new ai.u0(dVar, context, f3Var, i12, 8));
-                    break;
-                }
+                int[] iArr = ei.c1.a0;
                 break;
             case 5:
-                ProfileActivity profileActivity = (ProfileActivity) this.c;
-                AtomicReference atomicReference = (AtomicReference) this.d;
-                String str = (String) this.e;
-                ((org.telegram.ui.ActionBar.m1) atomicReference.get()).dismiss();
-                try {
-                    AndroidUtilities.addToClipboard(str);
-                    if (this.b == profileActivity.P3) {
-                        xc.a0(profileActivity).i(LocaleController.getString(R.string.BusinessHoursCopied)).j();
-                    } else {
-                        xc.a0(profileActivity).i(LocaleController.getString(R.string.BusinessLocationCopied)).j();
-                    }
-                    break;
-                } catch (Exception e) {
-                    FileLog.e(e);
-                    return;
-                }
+                AndroidUtilities.runOnUIThread(new ah.j(17));
+                break;
             case 6:
-                re1 re1Var = (re1) this.c;
-                TLRPC.TL_forumTopic tL_forumTopic = (TLRPC.TL_forumTopic) this.d;
-                ActionBarPopupWindow$ActionBarPopupWindowLayout[] actionBarPopupWindow$ActionBarPopupWindowLayoutArr = (ActionBarPopupWindow$ActionBarPopupWindowLayout[]) this.e;
-                MessagesController messagesController = re1Var.getMessagesController();
-                long j10 = -re1Var.a;
-                if (!messagesController.isDialogMuted(j10, tL_forumTopic.id)) {
-                    actionBarPopupWindow$ActionBarPopupWindowLayoutArr[0].getSwipeBack().e(this.b);
-                    break;
-                } else {
-                    re1Var.getNotificationsController().muteDialog(j10, tL_forumTopic.id, false);
-                    re1Var.finishPreviewFragment();
-                    if (xc.a(re1Var)) {
-                        xc.z(re1Var, 4, 0, re1Var.getResourceProvider()).j();
-                        break;
-                    }
-                }
+                AndroidUtilities.runOnUIThread(new ah.j(17));
+                break;
+            case 7:
+                AndroidUtilities.runOnUIThread(new ah.j(17));
+                break;
+            case 8:
+                break;
+            case 9:
+                Paint paint = sa.H;
+                break;
+            case 10:
+                int i10 = xo.c3;
+                break;
+            case 11:
+                AndroidUtilities.runOnUIThread(new ah.j(23));
+                break;
+            case 12:
+                Pattern pattern = org.telegram.ui.Components.f5.a;
+                break;
+            case 13:
+                int i11 = ex.H0;
+                break;
+            case 14:
+                int i12 = s00.A0;
+                break;
+            case 15:
+                AndroidUtilities.runOnUIThread(new ah.j(23));
+                break;
+            case 16:
+                int i13 = h11.e;
+                break;
+            case 17:
+                int i14 = mf0.v0;
+                break;
+            case 18:
+                AndroidUtilities.runOnUIThread(new oj0(tLObject, 4));
+                break;
+            case 19:
+                int i15 = wm0.R;
+                break;
+            case 20:
+                List list = io0.g1;
                 break;
             default:
-                ei.d dVar2 = (ei.d) this.c;
-                org.telegram.ui.ActionBar.f3 f3Var2 = (org.telegram.ui.ActionBar.f3) this.d;
-                org.telegram.ui.ActionBar.d6 d6Var = (org.telegram.ui.ActionBar.d6) this.e;
-                if (!dVar2.N) {
-                    dVar2.setLoading(true);
-                    org.telegram.ui.Wallet.u3 u3Var = new org.telegram.ui.Wallet.u3(dVar2, f3Var2, d6Var, 0);
-                    int i13 = this.b;
-                    org.telegram.ui.Wallet.m0 w9 = org.telegram.ui.Wallet.m0.w(i13);
-                    w9.j0(new y31(i13, u3Var, w9));
-                    break;
-                }
+                int i16 = y61.e;
                 break;
         }
     }
 
-    public /* synthetic */ d6(Object obj, int i10, Object obj2, Object obj3, int i11) {
-        this.a = i11;
-        this.c = obj;
-        this.b = i10;
-        this.d = obj2;
-        this.e = obj3;
-    }
-
-    public /* synthetic */ d6(org.telegram.ui.ActionBar.n2 n2Var, Object obj, Serializable serializable, int i10, int i11) {
-        this.a = i11;
-        this.c = n2Var;
-        this.d = obj;
-        this.e = serializable;
-        this.b = i10;
+    private final void a(TLObject tLObject, TLRPC.TL_error tL_error) {
     }
 }

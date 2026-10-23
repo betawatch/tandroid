@@ -1,62 +1,25 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.view.View;
-import java.util.HashMap;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.tgnet.TLObject;
+import android.content.Context;
+import org.telegram.messenger.ChatObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class fe1 extends View {
-    public final HashMap a;
-    public final /* synthetic */ ge1 b;
+public final class fe1 extends org.telegram.ui.Components.x70 {
+    public final /* synthetic */ long A0;
+    public final /* synthetic */ he1 B0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fe1(ge1 ge1Var, Activity activity) {
-        super(activity);
-        this.b = ge1Var;
-        this.a = new HashMap();
+    public fe1(he1 he1Var, Context context, int i10, a0.h hVar, long j10, org.telegram.ui.ActionBar.o2 o2Var, long j11) {
+        super(context, i10, hVar, j10, o2Var, null);
+        this.B0 = he1Var;
+        this.A0 = j11;
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int i12;
-        int dp;
-        ge1 ge1Var = this.b;
-        re1 re1Var = ge1Var.d;
-        int size = View.MeasureSpec.getSize(i10);
-        int dp2 = AndroidUtilities.dp(64.0f);
-        int i13 = 0;
-        int i14 = 0;
-        for (int i15 = 0; i15 < ge1Var.F().size(); i15++) {
-            if (ge1Var.F().get(i15) != null && ((ie1) ge1Var.F().get(i15)).c != null) {
-                String str = ((ie1) ge1Var.F().get(i15)).c.title;
-                HashMap hashMap = this.a;
-                Boolean bool = (Boolean) hashMap.get(str);
-                if (bool == null) {
-                    int dp3 = AndroidUtilities.dp(LocaleController.isRTL ? 18.0f : (re1Var.isInPreviewMode() ? 11 : 50) + 4);
-                    if (LocaleController.isRTL) {
-                        i12 = size - dp3;
-                        dp = AndroidUtilities.dp((re1Var.isInPreviewMode() ? 11 : 50) + 13);
-                    } else {
-                        i12 = size - dp3;
-                        dp = AndroidUtilities.dp(22.0f);
-                    }
-                    bool = Boolean.valueOf(org.telegram.ui.ActionBar.h6.B0[0].measureText(str) <= ((float) ((i12 - dp) - ((int) Math.ceil((double) org.telegram.ui.ActionBar.h6.I0.measureText("00:00"))))));
-                    hashMap.put(str, bool);
-                }
-                int dp4 = AndroidUtilities.dp((!bool.booleanValue() ? 20 : 0) + 64);
-                if (((ie1) ge1Var.F().get(i15)).c.id == 1) {
-                    dp2 = dp4;
-                }
-                if (((ie1) ge1Var.F().get(i15)).c.hidden) {
-                    i13++;
-                }
-                i14 += dp4;
-            }
-        }
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(Math.max(0, i13 > 0 ? (((re1Var.N.getMeasuredHeight() - re1Var.N.getPaddingTop()) - re1Var.N.getPaddingBottom()) - i14) + dp2 : 0), TLObject.FLAG_30));
+    @Override // org.telegram.ui.Components.x70
+    public final boolean X() {
+        TLRPC.Chat chat = this.B0.b.getMessagesController().getChat(Long.valueOf(this.A0));
+        return chat != null && ChatObject.canUserDoAdminAction(chat, 3);
     }
 }

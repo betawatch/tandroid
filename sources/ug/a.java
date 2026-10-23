@@ -12,11 +12,11 @@ import android.text.style.ReplacementSpan;
 import android.util.Pair;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
-import org.telegram.ui.Cells.u1;
+import org.telegram.ui.Cells.t1;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.p6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class a extends ReplacementSpan {
     public final Drawable a;
@@ -27,19 +27,19 @@ public final class a extends ReplacementSpan {
     public final TextPaint f;
     public final int h;
 
-    public a(u1 u1Var, TextPaint textPaint, int i10) {
+    public a(t1 t1Var, TextPaint textPaint, int i10) {
         this.f = textPaint;
         p6 p6Var = new p6(false, false, true);
         this.e = p6Var;
         p6Var.n(0.3f, 250L, bs.h);
-        p6Var.setCallback(u1Var);
+        p6Var.setCallback(t1Var);
         p6Var.w(AndroidUtilities.dp(11.5f));
         p6Var.x(AndroidUtilities.bold());
         p6Var.t("", true, true);
         p6Var.b = 17;
-        Drawable mutate = u1Var.getContext().getDrawable(R.drawable.mini_boost_profile_badge).mutate();
+        Drawable mutate = t1Var.getContext().getDrawable(R.drawable.mini_boost_profile_badge).mutate();
         this.a = mutate;
-        Drawable mutate2 = u1Var.getContext().getDrawable(R.drawable.mini_boost_profile_badge2).mutate();
+        Drawable mutate2 = t1Var.getContext().getDrawable(R.drawable.mini_boost_profile_badge2).mutate();
         this.b = mutate2;
         mutate.setBounds(0, 0, mutate.getIntrinsicWidth(), mutate.getIntrinsicHeight());
         mutate2.setBounds(0, 0, mutate2.getIntrinsicWidth(), mutate2.getIntrinsicHeight());
@@ -47,9 +47,9 @@ public final class a extends ReplacementSpan {
         p6Var.t(i10 > 1 ? String.valueOf(i10) : "", false, true);
     }
 
-    public static Pair a(u1 u1Var, TextPaint textPaint, int i10) {
+    public static Pair a(t1 t1Var, TextPaint textPaint, int i10) {
         SpannableString spannableString = new SpannableString("d");
-        a aVar = new a(u1Var, textPaint, i10);
+        a aVar = new a(t1Var, textPaint, i10);
         spannableString.setSpan(aVar, 0, 1, 33);
         return new Pair(spannableString, aVar);
     }

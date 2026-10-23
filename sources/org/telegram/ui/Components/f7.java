@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f7 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -21,7 +21,7 @@ public final /* synthetic */ class f7 implements Utilities.Callback {
                 k8.w(this.b, (MessageObject) obj);
                 break;
             default:
-                k8.z(this.b);
+                k8.J(this.b);
                 break;
         }
     }

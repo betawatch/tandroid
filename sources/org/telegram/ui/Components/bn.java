@@ -18,7 +18,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class bn extends li {
     public static final HashMap U = new HashMap();
@@ -38,7 +38,7 @@ public final class bn extends li {
     public int R;
     public boolean S;
     public boolean T;
-    public org.telegram.ui.ActionBar.d6 n;
+    public org.telegram.ui.ActionBar.g6 n;
     public ai.u1 r;
     public s4.b0 s;
     public an v;
@@ -68,7 +68,7 @@ public final class bn extends li {
                     this.R = 0;
                 }
                 if (u1Var.getPaddingTop() == this.R || u1Var.getPaddingBottom() != this.e) {
-                    u1Var.o1(u1Var.getPaddingLeft(), this.R, u1Var.getPaddingRight(), this.e);
+                    u1Var.s1(u1Var.getPaddingLeft(), this.R, u1Var.getPaddingRight(), this.e);
                     invalidate();
                 }
                 TextView textView = this.x;
@@ -92,7 +92,7 @@ public final class bn extends li {
         }
         if (u1Var.getPaddingTop() == this.R) {
         }
-        u1Var.o1(u1Var.getPaddingLeft(), this.R, u1Var.getPaddingRight(), this.e);
+        u1Var.s1(u1Var.getPaddingLeft(), this.R, u1Var.getPaddingRight(), this.e);
         invalidate();
         TextView textView2 = this.x;
         if (!AndroidUtilities.isTablet()) {
@@ -126,7 +126,7 @@ public final class bn extends li {
             anVar.requestLayout();
             this.s.h1(0, 0);
             this.r.post(new ee(19, this, liVar));
-            postDelayed(new pg(this, 25), 250L);
+            postDelayed(new pg(this, 26), 250L);
             anVar.i(this.P, false);
         } else {
             J();
@@ -187,11 +187,11 @@ public final class bn extends li {
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        Drawable e;
+        Drawable l4;
         int i10;
-        org.telegram.ui.on onVar = this.b.r;
+        org.telegram.ui.qn qnVar = this.b.r;
         boolean z10 = false;
-        if (onVar != null && (e = onVar.e()) != null) {
+        if (qnVar != null && (l4 = qnVar.l()) != null) {
             int currentItemTop = getCurrentItemTop();
             if (AndroidUtilities.isTablet()) {
                 i10 = 16;
@@ -205,8 +205,8 @@ public final class bn extends li {
             int max = Math.max(0, currentItemTop);
             canvas.save();
             canvas.clipRect(0, max, getWidth(), getHeight());
-            e.setBounds(0, max, getWidth(), AndroidUtilities.displaySize.y + max);
-            e.draw(canvas);
+            l4.setBounds(0, max, getWidth(), AndroidUtilities.displaySize.y + max);
+            l4.draw(canvas);
             z10 = true;
         }
         super.dispatchDraw(canvas);
@@ -223,10 +223,10 @@ public final class bn extends li {
             return ConnectionsManager.DEFAULT_DATACENTER_ID;
         }
         View childAt = u1Var.getChildAt(0);
-        tl0 tl0Var = (tl0) u1Var.G(childAt);
+        wl0 wl0Var = (wl0) u1Var.G(childAt);
         int top = childAt.getTop();
         int dp = AndroidUtilities.dp(8.0f);
-        if (top < AndroidUtilities.dp(8.0f) || tl0Var == null || tl0Var.b() != 0) {
+        if (top < AndroidUtilities.dp(8.0f) || wl0Var == null || wl0Var.b() != 0) {
             top = dp;
         }
         u1Var.setTopGlowOffset(top);
@@ -271,7 +271,7 @@ public final class bn extends li {
 
     @Override // org.telegram.ui.Components.li
     public final boolean j() {
-        this.b.d2(false);
+        this.b.h2(false);
         return true;
     }
 
@@ -307,7 +307,7 @@ public final class bn extends li {
         this.J = null;
         UndoView undoView = this.w;
         if (undoView != null) {
-            undoView.e(0, false);
+            undoView.d(0, false);
         }
         ArrayList arrayList = this.v.b;
         int size = arrayList.size();

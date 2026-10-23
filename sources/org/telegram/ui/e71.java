@@ -1,38 +1,37 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class e71 implements Runnable {
+public final /* synthetic */ class e71 implements Utilities.Callback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ g71 b;
+    public final /* synthetic */ SessionsActivity b;
 
-    public /* synthetic */ e71(g71 g71Var, int i10) {
+    public /* synthetic */ e71(SessionsActivity sessionsActivity, int i10) {
         this.a = i10;
-        this.b = g71Var;
+        this.b = sessionsActivity;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        String sb2;
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                g71 g71Var = this.b;
-                String str = g71Var.b.text;
-                if (str == null || !str.equals("AUTH_TOKEN_EXCEPTION")) {
-                    StringBuilder sb3 = new StringBuilder();
-                    org.telegram.ui.Cells.c1.n(R.string.ErrorOccurred, "\n", sb3);
-                    sb3.append(g71Var.b.text);
-                    sb2 = sb3.toString();
-                } else {
-                    sb2 = LocaleController.getString(R.string.AccountAlreadyLoggedIn);
+                TL_account.connectedBots connectedbots = (TL_account.connectedBots) obj;
+                SessionsActivity sessionsActivity = this.b;
+                sessionsActivity.getClass();
+                if (connectedbots != null) {
+                    sessionsActivity.f = connectedbots.connected_bots;
+                    if (sessionsActivity.a != null) {
+                        sessionsActivity.m0();
+                        sessionsActivity.a.l();
+                        break;
+                    }
                 }
-                org.telegram.ui.Components.f5.t0(g71Var.c, LocaleController.getString(R.string.AuthAnotherClient), sb2, null);
                 break;
             default:
-                org.telegram.ui.Components.f5.t0(this.b.c, LocaleController.getString(R.string.AuthAnotherClient), LocaleController.getString(R.string.ErrorOccurred), null);
+                SessionsActivity.V(this.b, (Boolean) obj);
                 break;
         }
     }

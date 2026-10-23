@@ -12,7 +12,7 @@ import java.util.concurrent.locks.LockSupport;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public abstract class f4 extends v7.s5 implements j9.y {
     public static final boolean d;
@@ -115,7 +115,7 @@ public abstract class f4 extends v7.s5 implements j9.y {
         try {
             executor.execute(runnable);
         } catch (RuntimeException e7) {
-            e.logp(Level.SEVERE, "com.google.common.util.concurrent.AbstractFuture", "executeListener", com.google.android.gms.internal.play_billing.k3.k("RuntimeException while executing runnable ", String.valueOf(runnable), " with executor ", String.valueOf(executor)), (Throwable) e7);
+            e.logp(Level.SEVERE, "com.google.common.util.concurrent.AbstractFuture", "executeListener", com.google.android.gms.internal.play_billing.k3.j("RuntimeException while executing runnable ", String.valueOf(runnable), " with executor ", String.valueOf(executor)), (Throwable) e7);
         }
     }
 
@@ -156,7 +156,7 @@ public abstract class f4 extends v7.s5 implements j9.y {
     /* JADX WARN: Multi-variable type inference failed */
     public String c() {
         if (this instanceof ScheduledFuture) {
-            return r4.c.g(((ScheduledFuture) this).getDelay(TimeUnit.MILLISECONDS), "remaining delay=[", " ms]");
+            return org.telegram.ui.Cells.b1.k(((ScheduledFuture) this).getDelay(TimeUnit.MILLISECONDS), "remaining delay=[", " ms]");
         }
         return null;
     }
@@ -432,7 +432,7 @@ public abstract class f4 extends v7.s5 implements j9.y {
                 if (isDone()) {
                     throw new TimeoutException(str.concat(" but future completed as timeout expired"));
                 }
-                throw new TimeoutException(a1.g.C(str, " for ", f4Var));
+                throw new TimeoutException(a1.g.D(str, " for ", f4Var));
             }
         } else {
             throw new InterruptedException();

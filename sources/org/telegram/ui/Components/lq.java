@@ -1,6 +1,7 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -8,7 +9,7 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class lq extends FrameLayout {
     public final View a;
@@ -19,9 +20,15 @@ public final class lq extends FrameLayout {
         View view = new View(context);
         this.a = view;
         int dp = AndroidUtilities.dp(4.0f);
-        int x02 = org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Oh, false);
-        int x03 = org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Qh, false);
-        view.setBackground(org.telegram.ui.ActionBar.h6.j0(dp, dp, dp, dp, x02, x03, x03));
+        int i10 = org.telegram.ui.ActionBar.k6.Oh;
+        int x02 = org.telegram.ui.ActionBar.k6.x0(null, i10, false);
+        int i11 = org.telegram.ui.ActionBar.k6.Qh;
+        int x03 = org.telegram.ui.ActionBar.k6.x0(null, i11, false);
+        Drawable j02 = org.telegram.ui.ActionBar.k6.j0(dp, dp, dp, dp, x02, x03, x03);
+        org.telegram.ui.ActionBar.n6 O = org.telegram.ui.ActionBar.r6.O(i10);
+        org.telegram.ui.ActionBar.n6 O2 = org.telegram.ui.ActionBar.r6.O(i11);
+        view.setBackground(j02);
+        org.telegram.ui.ActionBar.r6.k(view, j02, O, O2, null);
         addView(view, w7.z5.d(-1, -1.0f, 0, 16.0f, 16.0f, 16.0f, 16.0f));
         TextView textView = new TextView(context);
         this.b = textView;
@@ -30,7 +37,7 @@ public final class lq extends FrameLayout {
         textView.setGravity(1);
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setGravity(17);
-        org.telegram.messenger.g0.m(14.0f, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Sh, false), 1, textView);
+        org.telegram.messenger.v0.q(textView, org.telegram.ui.ActionBar.k6.Sh, null, 1, 14.0f);
         addView(textView, w7.z5.e(-2, -2, 17));
     }
 

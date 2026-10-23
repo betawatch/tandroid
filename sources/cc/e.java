@@ -4,35 +4,35 @@ import android.os.SystemClock;
 import m.s3;
 import ri.i;
 import ri.o;
+import z7.fb;
+import z7.fe;
 import z7.gb;
-import z7.ge;
-import z7.hb;
-import z7.wf;
+import z7.vf;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class e implements wf {
+public final /* synthetic */ class e implements vf {
     public final /* synthetic */ long a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
 
-    public /* synthetic */ e(f fVar, hb hbVar, long j10) {
+    public /* synthetic */ e(f fVar, gb gbVar, long j10) {
         this.b = fVar;
-        this.c = hbVar;
+        this.c = gbVar;
         this.a = j10;
     }
 
-    @Override // z7.wf
+    @Override // z7.vf
     public a5.a zza() {
         f fVar = (f) this.b;
-        hb hbVar = (hb) this.c;
+        gb gbVar = (gb) this.c;
         s3 s3Var = new s3();
-        s3Var.c = gb.b;
+        s3Var.c = fb.b;
         u2.c cVar = new u2.c(19, false);
         cVar.d = fVar.e.a();
-        cVar.b = hbVar;
+        cVar.b = gbVar;
         cVar.c = Long.valueOf((SystemClock.elapsedRealtime() - this.a) & Long.MAX_VALUE);
-        s3Var.e = new ge(cVar);
+        s3Var.e = new fe(cVar);
         return new a5.a(s3Var, 0);
     }
 

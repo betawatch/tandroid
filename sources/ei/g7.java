@@ -9,7 +9,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class g7 extends i7 {
     public final /* synthetic */ TLRPC.User b;
@@ -31,21 +31,21 @@ public final class g7 extends i7 {
     }
 
     @Override // ei.i7
-    public final void c(org.telegram.ui.ActionBar.n2 n2Var) {
+    public final void c(org.telegram.ui.ActionBar.o2 o2Var) {
         TLRPC.User user = this.b;
         if (user.id != UserConfig.getInstance(UserConfig.selectedAccount).getClientUserId()) {
-            n2Var.presentFragment(ProfileActivity.m4(user.id));
+            o2Var.presentFragment(ProfileActivity.o4(user.id));
             return;
         }
         Bundle bundle = new Bundle();
         bundle.putLong("user_id", user.id);
         bundle.putBoolean("my_profile", true);
-        n2Var.presentFragment(new ProfileActivity(bundle, null));
+        o2Var.presentFragment(new ProfileActivity(bundle, null));
     }
 
     @Override // ei.i7
     public final void d(ImageReceiver imageReceiver) {
-        org.telegram.ui.Components.h9 h9Var = new org.telegram.ui.Components.h9((org.telegram.ui.ActionBar.d6) null);
+        org.telegram.ui.Components.h9 h9Var = new org.telegram.ui.Components.h9((org.telegram.ui.ActionBar.g6) null);
         TLRPC.User user = this.b;
         h9Var.r(user);
         imageReceiver.setForUserOrChat(user, h9Var);

@@ -20,18 +20,18 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.bm0;
 import org.telegram.ui.Components.xr;
-import org.telegram.ui.Components.yl0;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.cy;
-import org.telegram.ui.hf1;
-import org.telegram.ui.jz0;
-import org.telegram.ui.q50;
+import org.telegram.ui.ey;
+import org.telegram.ui.nz0;
+import org.telegram.ui.of1;
+import org.telegram.ui.u50;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class f implements hf1, org.telegram.ui.ActionBar.a2, ChatObject.Call.OnParticipantsLoad, ImageReceiver.ImageReceiverDelegate, yl0, MessagesController.IsInChatCheckedCallback, t5.b, s5.e, qa.a {
+public final /* synthetic */ class f implements of1, org.telegram.ui.ActionBar.z1, ChatObject.Call.OnParticipantsLoad, ImageReceiver.ImageReceiverDelegate, bm0, MessagesController.IsInChatCheckedCallback, t5.b, s5.e, qa.a {
     public final /* synthetic */ int a;
     public final /* synthetic */ long b;
     public final /* synthetic */ Object c;
@@ -44,7 +44,7 @@ public final /* synthetic */ class f implements hf1, org.telegram.ui.ActionBar.a
         this.d = obj2;
     }
 
-    @Override // org.telegram.ui.Components.yl0
+    @Override // org.telegram.ui.Components.bm0
     public /* synthetic */ boolean P0(View view) {
         return false;
     }
@@ -60,7 +60,7 @@ public final /* synthetic */ class f implements hf1, org.telegram.ui.ActionBar.a
             rawQuery.close();
             long j10 = this.b;
             if (z10) {
-                sQLiteDatabase.execSQL(r4.c.g(j10, "UPDATE log_event_dropped SET events_dropped_count = events_dropped_count + ", " WHERE log_source = ? AND reason = ?"), new String[]{str, Integer.toString(i10)});
+                sQLiteDatabase.execSQL(org.telegram.ui.Cells.b1.k(j10, "UPDATE log_event_dropped SET events_dropped_count = events_dropped_count + ", " WHERE log_source = ? AND reason = ?"), new String[]{str, Integer.toString(i10)});
                 return null;
             }
             ContentValues contentValues = new ContentValues();
@@ -75,8 +75,8 @@ public final /* synthetic */ class f implements hf1, org.telegram.ui.ActionBar.a
         }
     }
 
-    @Override // org.telegram.ui.Components.yl0
-    public void d(float f7, float f10, int i10, View view) {
+    @Override // org.telegram.ui.Components.bm0
+    public void c(float f7, float f10, int i10, View view) {
         ProfileActivity.a0((ProfileActivity) this.c, (Context) this.d, this.b, view, i10, f7, f10);
     }
 
@@ -111,11 +111,11 @@ public final /* synthetic */ class f implements hf1, org.telegram.ui.ActionBar.a
         org.telegram.messenger.m5.a(this, i10, str, drawable);
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    @Override // org.telegram.ui.ActionBar.z1
+    public void g(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
         switch (this.a) {
             case 1:
-                l7.r1((l7) this.c, (TL_stars.InputSavedStarGift) this.d, this.b, b2Var);
+                l7.q1((l7) this.c, (TL_stars.InputSavedStarGift) this.d, this.b, c2Var);
                 break;
             case 2:
                 ei.k9 k9Var = (ei.k9) this.c;
@@ -131,17 +131,17 @@ public final /* synthetic */ class f implements hf1, org.telegram.ui.ActionBar.a
                 k9Var.i(true);
                 k9Var.e(true);
                 k9Var.f(true);
-                b2Var.dismiss();
-                k9Var.x.K = true;
+                c2Var.dismiss();
+                k9Var.x.L = true;
                 break;
             case 3:
             case 4:
             default:
-                q50 q50Var = (q50) this.c;
-                q50Var.d.getMessagesController().addUserToChat(q50Var.j1(), (TLRPC.User) this.d, 0, null, (org.telegram.ui.ActionBar.n2) q50Var.i0.O().getFragmentStack().get(q50Var.i0.O().getFragmentStack().size() - 1), new v3(q50Var, this.b, 28));
+                u50 u50Var = (u50) this.c;
+                u50Var.d.getMessagesController().addUserToChat(u50Var.i1(), (TLRPC.User) this.d, 0, null, (org.telegram.ui.ActionBar.o2) u50Var.i0.O().getFragmentStack().get(u50Var.i0.O().getFragmentStack().size() - 1), new v3(u50Var, this.b, 28));
                 break;
             case 5:
-                xr.R((xr) this.c, (ei.d) this.d, this.b);
+                xr.Q((xr) this.c, (ei.d) this.d, this.b);
                 break;
         }
     }
@@ -163,7 +163,7 @@ public final /* synthetic */ class f implements hf1, org.telegram.ui.ActionBar.a
         return null;
     }
 
-    @Override // org.telegram.ui.hf1
+    @Override // org.telegram.ui.of1
     public void k(TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP) {
         ((x) this.c).h0(true, this.b, tL_inputCheckPasswordSRP, (TwoStepVerificationActivity) this.d);
     }
@@ -180,7 +180,7 @@ public final /* synthetic */ class f implements hf1, org.telegram.ui.ActionBar.a
 
     @Override // org.telegram.messenger.MessagesController.IsInChatCheckedCallback
     public void run(boolean z10, TLRPC.TL_chatAdminRights tL_chatAdminRights, String str) {
-        AndroidUtilities.runOnUIThread(new m((jz0) this.c, this.b, tL_chatAdminRights, str, z10, (cy) this.d));
+        AndroidUtilities.runOnUIThread(new m((nz0) this.c, this.b, tL_chatAdminRights, str, z10, (ey) this.d));
     }
 
     public /* synthetic */ f(Object obj, Object obj2, long j10, int i10) {
@@ -190,7 +190,7 @@ public final /* synthetic */ class f implements hf1, org.telegram.ui.ActionBar.a
         this.b = j10;
     }
 
-    @Override // org.telegram.ui.Components.yl0
+    @Override // org.telegram.ui.Components.bm0
     public /* synthetic */ void a0(View view, float f7, float f10) {
     }
 }

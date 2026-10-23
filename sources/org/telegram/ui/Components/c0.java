@@ -6,15 +6,16 @@ import android.graphics.PorterDuffColorFilter;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class c0 extends FrameLayout implements org.telegram.ui.ActionBar.y5 {
+public final class c0 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public final int a;
-    public final org.telegram.ui.ActionBar.d6 b;
+    public final org.telegram.ui.ActionBar.g6 b;
     public int c;
     public boolean d;
     public TL_aicompose.AiComposeTone e;
@@ -23,11 +24,11 @@ public final class c0 extends FrameLayout implements org.telegram.ui.ActionBar.y
     public final TextView n;
     public float r;
 
-    public c0(Context context, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
+    public c0(Context context, int i10, org.telegram.ui.ActionBar.g6 g6Var) {
         super(context);
         this.d = true;
         this.a = i10;
-        this.b = d6Var;
+        this.b = g6Var;
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setClipToPadding(false);
         linearLayout.setOrientation(1);
@@ -50,12 +51,12 @@ public final class c0 extends FrameLayout implements org.telegram.ui.ActionBar.y
     public final void a(float f7, boolean z10) {
         if (z10 || Math.abs(f7 - this.r) >= 0.01f) {
             this.r = f7;
-            int i10 = org.telegram.ui.ActionBar.h6.G6;
-            org.telegram.ui.ActionBar.d6 d6Var = this.b;
-            int w02 = org.telegram.ui.ActionBar.h6.w0(i10, d6Var);
-            int i11 = org.telegram.ui.ActionBar.h6.Oh;
-            int f10 = i0.a.f(f7, w02, org.telegram.ui.ActionBar.h6.w0(i11, d6Var));
-            int f11 = i0.a.f(f7, org.telegram.ui.ActionBar.h6.w0(i10, d6Var), org.telegram.ui.ActionBar.h6.w0(i11, d6Var));
+            int i10 = org.telegram.ui.ActionBar.k6.G6;
+            org.telegram.ui.ActionBar.g6 g6Var = this.b;
+            int w02 = org.telegram.ui.ActionBar.k6.w0(i10, g6Var);
+            int i11 = org.telegram.ui.ActionBar.k6.Oh;
+            int f10 = i0.a.f(f7, w02, org.telegram.ui.ActionBar.k6.w0(i11, g6Var));
+            int f11 = i0.a.f(f7, org.telegram.ui.ActionBar.k6.w0(i10, g6Var), org.telegram.ui.ActionBar.k6.w0(i11, g6Var));
             PorterDuffColorFilter porterDuffColorFilter = !this.f ? new PorterDuffColorFilter(f10, PorterDuff.Mode.SRC_IN) : null;
             w9 w9Var = this.h;
             w9Var.setColorFilter(porterDuffColorFilter);
@@ -65,17 +66,20 @@ public final class c0 extends FrameLayout implements org.telegram.ui.ActionBar.y
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.y5
-    public final void d() {
-        a(this.r, true);
-        boolean z10 = this.d;
-        org.telegram.ui.ActionBar.d6 d6Var = this.b;
-        int m12 = z10 ? org.telegram.ui.ActionBar.h6.m1(0.1f, org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Oh, d6Var)) : org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.i6, d6Var);
-        int i10 = this.c;
-        setBackground(org.telegram.ui.ActionBar.h6.Z(m12, i10, i10));
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void addColorKeys(HashSet hashSet) {
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.k6.G6));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.k6.Oh));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.k6.i6));
     }
 
-    public /* bridge */ /* synthetic */ int[] getColorKeys() {
-        return null;
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void updateColors() {
+        a(this.r, true);
+        boolean z10 = this.d;
+        org.telegram.ui.ActionBar.g6 g6Var = this.b;
+        int o12 = z10 ? org.telegram.ui.ActionBar.k6.o1(0.1f, org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Oh, g6Var)) : org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.i6, g6Var);
+        int i10 = this.c;
+        setBackground(org.telegram.ui.ActionBar.k6.Z(o12, i10, i10));
     }
 }

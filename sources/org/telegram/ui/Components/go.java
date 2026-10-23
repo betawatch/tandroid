@@ -11,48 +11,48 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class go extends li {
     public final vz n;
-    public final jm0 r;
+    public final mm0 r;
     public final int s;
     public final org.telegram.ui.z7 v;
     public int w;
 
-    public go(int i10, Context context, org.telegram.ui.ActionBar.d6 d6Var, ti tiVar) {
-        super(context, d6Var, tiVar);
+    public go(int i10, Context context, org.telegram.ui.ActionBar.g6 g6Var, ti tiVar) {
+        super(context, g6Var, tiVar);
         this.s = i10;
-        vz vzVar = new vz(context, d6Var);
+        vz vzVar = new vz(context, g6Var);
         this.n = vzVar;
         vzVar.setText(LocaleController.getString(R.string.NoPhotos));
         vzVar.setOnTouchListener(null);
         vzVar.setTextSize(16);
         addView(vzVar, w7.z5.c(-2.0f, -1));
         vzVar.a(R.raw.media_forbidden, ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION);
-        TLRPC.Chat m12 = this.b.m1();
+        TLRPC.Chat p12 = this.b.p1();
         if (i10 == 1) {
-            vzVar.setText(ChatObject.getRestrictedErrorText(m12, 7));
+            vzVar.setText(ChatObject.getRestrictedErrorText(p12, 7));
         } else if (i10 == 3) {
-            vzVar.setText(ChatObject.getRestrictedErrorText(m12, 18));
+            vzVar.setText(ChatObject.getRestrictedErrorText(p12, 18));
         } else if (i10 == 4) {
-            vzVar.setText(ChatObject.getRestrictedErrorText(m12, 19));
+            vzVar.setText(ChatObject.getRestrictedErrorText(p12, 19));
         } else {
-            vzVar.setText(ChatObject.getRestrictedErrorText(m12, 22));
+            vzVar.setText(ChatObject.getRestrictedErrorText(p12, 22));
         }
         vzVar.c();
-        jm0 jm0Var = new jm0(context, d6Var);
-        this.r = jm0Var;
-        jm0Var.setSectionsType(2);
-        jm0Var.setVerticalScrollBarEnabled(false);
-        jm0Var.setLayoutManager(new s4.b0());
-        jm0Var.setClipToPadding(false);
+        mm0 mm0Var = new mm0(context, g6Var);
+        this.r = mm0Var;
+        mm0Var.setSectionsType(2);
+        mm0Var.setVerticalScrollBarEnabled(false);
+        mm0Var.setLayoutManager(new s4.b0());
+        mm0Var.setClipToPadding(false);
         org.telegram.ui.z7 z7Var = new org.telegram.ui.z7(this, 4);
         this.v = z7Var;
-        jm0Var.setAdapter(z7Var);
-        jm0Var.setPadding(0, 0, 0, AndroidUtilities.dp(48.0f));
-        jm0Var.setOnScrollListener(new ah.d0(this, 28));
-        addView(jm0Var, w7.z5.c(-1.0f, -1));
+        mm0Var.setAdapter(z7Var);
+        mm0Var.setPadding(0, 0, 0, AndroidUtilities.dp(48.0f));
+        mm0Var.setOnScrollListener(new ah.d0(this, 28));
+        addView(mm0Var, w7.z5.c(-1.0f, -1));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:11:0x0038  */
@@ -65,7 +65,7 @@ public final class go extends li {
     public final void B(int i10, int i11) {
         int i12;
         int i13;
-        jm0 jm0Var;
+        mm0 mm0Var;
         int max = Math.max(0, i11 - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight());
         if (this.w != max) {
             this.w = max;
@@ -77,9 +77,9 @@ public final class go extends li {
                 i12 = (int) (i11 / 3.5f);
                 int dp = i12 - AndroidUtilities.dp(52.0f);
                 i13 = dp >= 0 ? dp : 0;
-                jm0Var = this.r;
-                if (jm0Var.getPaddingTop() == i13) {
-                    jm0Var.setPadding(AndroidUtilities.dp(6.0f), i13, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(48.0f));
+                mm0Var = this.r;
+                if (mm0Var.getPaddingTop() == i13) {
+                    mm0Var.setPadding(AndroidUtilities.dp(6.0f), i13, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(48.0f));
                     return;
                 }
                 return;
@@ -89,25 +89,25 @@ public final class go extends li {
         int dp2 = i12 - AndroidUtilities.dp(52.0f);
         if (dp2 >= 0) {
         }
-        jm0Var = this.r;
-        if (jm0Var.getPaddingTop() == i13) {
+        mm0Var = this.r;
+        if (mm0Var.getPaddingTop() == i13) {
         }
     }
 
     @Override // org.telegram.ui.Components.li
     public int getCurrentItemTop() {
-        jm0 jm0Var = this.r;
-        if (jm0Var.getChildCount() <= 0) {
+        mm0 mm0Var = this.r;
+        if (mm0Var.getChildCount() <= 0) {
             return ConnectionsManager.DEFAULT_DATACENTER_ID;
         }
         int i10 = 0;
-        View childAt = jm0Var.getChildAt(0);
-        tl0 tl0Var = (tl0) jm0Var.G(childAt);
+        View childAt = mm0Var.getChildAt(0);
+        wl0 wl0Var = (wl0) mm0Var.G(childAt);
         int top = childAt.getTop() - AndroidUtilities.dp(8.0f);
-        if (top > 0 && tl0Var != null && tl0Var.b() == 0) {
+        if (top > 0 && wl0Var != null && wl0Var.b() == 0) {
             i10 = top;
         }
-        if (top < 0 || tl0Var == null || tl0Var.b() != 0) {
+        if (top < 0 || wl0Var == null || wl0Var.b() != 0) {
             top = i10;
         }
         int measuredHeight = (getMeasuredHeight() - top) - AndroidUtilities.dp(50.0f);

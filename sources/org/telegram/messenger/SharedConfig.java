@@ -31,7 +31,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public class SharedConfig {
     private static final int[] LOW_SOC;
@@ -186,7 +186,7 @@ public class SharedConfig {
     public static boolean useThreeLinesLayout;
     public static boolean walletUseFingerprintLock;
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public static class BackgroundActivityPrefs {
         private static SharedPreferences prefs;
 
@@ -207,17 +207,17 @@ public class SharedConfig {
         }
     }
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     @Retention(RetentionPolicy.SOURCE)
     public @interface PasscodeType {
     }
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     @Retention(RetentionPolicy.SOURCE)
     public @interface PerformanceClass {
     }
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public static class ProxyInfo {
         public boolean available;
         public long availableCheckTime;
@@ -835,7 +835,7 @@ public class SharedConfig {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static void lambda$checkSdCard$2() {
-        org.telegram.ui.ActionBar.n2 R;
+        org.telegram.ui.ActionBar.o2 R;
         if (readOnlyStorageDirAlertShowed || (R = LaunchActivity.R()) == null || R.getParentActivity() == null) {
             return;
         }
@@ -847,9 +847,9 @@ public class SharedConfig {
         alertDialog$Builder.a.R = LocaleController.getString(R.string.SdCardError);
         alertDialog$Builder.a.S = LocaleController.getString(R.string.SdCardErrorDescription);
         alertDialog$Builder.k(LocaleController.getString(R.string.DoNotUseSDCard), new wg(3));
-        org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-        b2Var.setCanceledOnTouchOutside(false);
-        b2Var.show();
+        org.telegram.ui.ActionBar.c2 c2Var = alertDialog$Builder.a;
+        c2Var.setCanceledOnTouchOutside(false);
+        c2Var.show();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1279,17 +1279,17 @@ public class SharedConfig {
             i12 = (i11 < 8 || memoryClass <= 160 || (ceil != -1 && ceil <= 2055) || (ceil == -1 && i11 == 8 && i10 <= 23)) ? 1 : 2;
         }
         if (BuildVars.LOGS_ENABLED) {
-            StringBuilder m10 = i2.e.m("device performance info selected_class = ", i12, " (cpu_count = ", i11, ", freq = ");
-            i2.e.w(m10, ceil, ", memoryClass = ", memoryClass, ", android version ");
-            m10.append(i10);
-            m10.append(", manufacture ");
-            m10.append(Build.MANUFACTURER);
-            m10.append(", screenRefreshRate=");
-            m10.append(AndroidUtilities.screenRefreshRate);
-            m10.append(", screenMaxRefreshRate=");
-            m10.append(AndroidUtilities.screenMaxRefreshRate);
-            m10.append(")");
-            FileLog.d(m10.toString());
+            StringBuilder k10 = com.google.android.gms.internal.play_billing.k3.k("device performance info selected_class = ", i12, " (cpu_count = ", i11, ", freq = ");
+            com.google.android.gms.internal.play_billing.k3.r(k10, ceil, ", memoryClass = ", memoryClass, ", android version ");
+            k10.append(i10);
+            k10.append(", manufacture ");
+            k10.append(Build.MANUFACTURER);
+            k10.append(", screenRefreshRate=");
+            k10.append(AndroidUtilities.screenRefreshRate);
+            k10.append(", screenMaxRefreshRate=");
+            k10.append(AndroidUtilities.screenMaxRefreshRate);
+            k10.append(")");
+            FileLog.d(k10.toString());
         }
         return i12;
     }
@@ -1940,6 +1940,6 @@ public class SharedConfig {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$checkSdCard$1(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    public static /* synthetic */ void lambda$checkSdCard$1(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
     }
 }

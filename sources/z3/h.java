@@ -3,15 +3,14 @@ package z3;
 import b2.v;
 import b2.v0;
 import b2.w;
-import c3.j0;
-import c3.o;
-import c3.p;
+import c3.b0;
+import c3.l0;
 import c3.q;
+import c3.r;
 import c3.s;
-import c3.z;
+import c3.u;
 import e2.m0;
 import e2.x;
-import e9.l0;
 import e9.n0;
 import e9.x1;
 import java.util.ArrayList;
@@ -20,13 +19,13 @@ import java.util.List;
 import v7.b8;
 import v7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public final class h implements o {
+public final class h implements q {
     public final m a;
     public final w b;
     public final ArrayList c;
-    public j0 f;
+    public l0 f;
     public int g;
     public int h;
     public long[] i;
@@ -53,26 +52,26 @@ public final class h implements o {
         this.j = -9223372036854775807L;
     }
 
-    @Override // c3.o
-    public final boolean a(p pVar) {
+    @Override // c3.q
+    public final boolean a(r rVar) {
         return true;
     }
 
-    @Override // c3.o
-    public final void c(q qVar) {
+    @Override // c3.q
+    public final void c(s sVar) {
         u6.p(this.h == 0);
-        j0 j02 = qVar.j0(0, 3);
+        l0 j02 = sVar.j0(0, 3);
         this.f = j02;
         w wVar = this.b;
         if (wVar != null) {
             j02.b(wVar);
-            qVar.H();
-            qVar.g0(new z(-9223372036854775807L, new long[]{0}, new long[]{0}));
+            sVar.C();
+            sVar.g0(new b0(-9223372036854775807L, new long[]{0}, new long[]{0}));
         }
         this.h = 1;
     }
 
-    @Override // c3.o
+    @Override // c3.q
     public final void d(long j10, long j11) {
         int i10 = this.h;
         u6.p((i10 == 0 || i10 == 5) ? false : true);
@@ -85,9 +84,9 @@ public final class h implements o {
         }
     }
 
-    @Override // c3.o
+    @Override // c3.q
     public final List e() {
-        l0 l0Var = n0.b;
+        e9.l0 l0Var = n0.b;
         return x1.e;
     }
 
@@ -147,16 +146,16 @@ public final class h implements o {
     
         throw b2.w0.a(r0, "SubtitleParser failed.");
      */
-    @Override // c3.o
+    @Override // c3.q
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final int f(p pVar, s sVar) {
+    public final int f(r rVar, u uVar) {
         int i10;
         int i11 = this.h;
         u6.p((i11 == 0 || i11 == 5) ? false : true);
         if (this.h == 1) {
-            int b10 = pVar.getLength() != -1 ? b8.b(pVar.getLength()) : 1024;
+            int b10 = rVar.getLength() != -1 ? b8.b(rVar.getLength()) : 1024;
             if (b10 > this.e.length) {
                 this.e = new byte[b10];
             }
@@ -172,11 +171,11 @@ public final class h implements o {
             }
             byte[] bArr2 = this.e;
             int i13 = this.g;
-            int read = pVar.read(bArr2, i13, bArr2.length - i13);
+            int read = rVar.read(bArr2, i13, bArr2.length - i13);
             if (read != -1) {
                 this.g += read;
             }
-            long length = pVar.getLength();
+            long length = rVar.getLength();
             if (length != -1) {
                 i10 = 0;
             } else {
@@ -186,7 +185,7 @@ public final class h implements o {
             i10 = 0;
         }
         if (this.h == 3) {
-            if (pVar.skip(pVar.getLength() != -1 ? b8.b(pVar.getLength()) : 1024) == -1) {
+            if (rVar.skip(rVar.getLength() != -1 ? b8.b(rVar.getLength()) : 1024) == -1) {
                 long j10 = this.j;
                 for (int f7 = j10 == -9223372036854775807L ? i10 : m0.f(this.i, j10, true); f7 < arrayList.size(); f7++) {
                     g((g) arrayList.get(f7));
@@ -211,7 +210,7 @@ public final class h implements o {
         this.f.c(gVar.a, 1, length, 0, null);
     }
 
-    @Override // c3.o
+    @Override // c3.q
     public final void release() {
         if (this.h == 5) {
             return;
@@ -220,8 +219,8 @@ public final class h implements o {
         this.h = 5;
     }
 
-    @Override // c3.o
-    public final o b() {
+    @Override // c3.q
+    public final q b() {
         return this;
     }
 }

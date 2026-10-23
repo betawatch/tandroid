@@ -6,7 +6,7 @@ import android.os.Build;
 import android.os.Handler;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class j implements androidx.lifecycle.a0 {
     public final /* synthetic */ int a;
@@ -25,7 +25,7 @@ public final class j implements androidx.lifecycle.a0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void Y(Object obj) {
+    public final void Z(Object obj) {
         boolean z10;
         int i10 = this.a;
         q qVar = this.b;

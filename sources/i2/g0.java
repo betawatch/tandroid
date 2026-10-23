@@ -1,34 +1,45 @@
 package i2;
 
-import android.os.Handler;
-import java.util.concurrent.Executor;
+import android.content.Context;
+import j$.util.function.IntConsumer$-CC;
+import java.lang.ref.WeakReference;
+import java.util.function.IntConsumer;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class g0 implements Executor {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class g0 {
+    public final WeakReference a;
+    public final e0 b;
+    public final /* synthetic */ h0 c;
 
-    public /* synthetic */ g0(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r0v1, types: [i2.e0, java.util.function.IntConsumer] */
+    public g0(h0 h0Var, Context context) {
+        this.c = h0Var;
+        this.a = new WeakReference(context);
+        ?? r02 = new IntConsumer() { // from class: i2.e0
+            @Override // java.util.function.IntConsumer
+            public final void accept(int i10) {
+                h0 h0Var2 = g0.this.c;
+                if (h0Var2.i0) {
+                    return;
+                }
+                h0Var2.t1(1, 19, Integer.valueOf(i10));
+            }
+
+            public /* synthetic */ IntConsumer andThen(IntConsumer intConsumer) {
+                return IntConsumer$-CC.$default$andThen(this, intConsumer);
+            }
+        };
+        this.b = r02;
+        context.registerDeviceIdChangeListener(new f0(h0Var.v.a(h0Var.t, null), 0), r02);
     }
 
-    @Override // java.util.concurrent.Executor
-    public final void execute(Runnable runnable) {
-        switch (this.a) {
-            case 0:
-                ((e2.i0) this.b).d(runnable);
-                break;
-            case 1:
-                ((Handler) this.b).post(runnable);
-                break;
-            case 2:
-                e2.m0.W(((m4.f0) this.b).l, runnable);
-                break;
-            default:
-                ((p4.b) this.b).post(runnable);
-                break;
+    public static void a(g0 g0Var) {
+        Context context = (Context) g0Var.a.get();
+        if (context == null) {
+            return;
         }
+        context.unregisterDeviceIdChangeListener(g0Var.b);
     }
 }

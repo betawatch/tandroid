@@ -5,7 +5,7 @@ import org.telegram.messenger.BillingController;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c8 implements q0.a {
     public final /* synthetic */ int a;
@@ -23,34 +23,34 @@ public final /* synthetic */ class c8 implements q0.a {
         switch (this.a) {
             case 0:
                 c5.i iVar = (c5.i) this.b;
-                tc tcVar = (tc) this.c;
+                uc ucVar = (uc) this.c;
                 int i10 = iVar.a;
                 boolean z10 = i10 == 0;
-                AndroidUtilities.runOnUIThread(new y7(tcVar, z10, z10 ? null : BillingController.getResponseCodeString(i10), 1));
+                AndroidUtilities.runOnUIThread(new y7(ucVar, z10, z10 ? null : BillingController.getResponseCodeString(i10), 1));
                 break;
             case 1:
                 c5.i iVar2 = (c5.i) this.b;
-                org.telegram.ui.Wallet.s1 s1Var = (org.telegram.ui.Wallet.s1) this.c;
+                org.telegram.ui.Wallet.r1 r1Var = (org.telegram.ui.Wallet.r1) this.c;
                 int i11 = iVar2.a;
                 boolean z11 = i11 == 0;
-                AndroidUtilities.runOnUIThread(new y7(s1Var, z11, z11 ? null : BillingController.getResponseCodeString(i11), 2));
+                AndroidUtilities.runOnUIThread(new y7(r1Var, z11, z11 ? null : BillingController.getResponseCodeString(i11), 2));
                 break;
             case 2:
-                ei.f6.Z((ei.xa) this.b, (qg.v0) this.c, (Integer) obj);
+                ei.f6.Y((ei.xa) this.b, (qg.u0) this.c, (Integer) obj);
                 break;
             case 3:
-                org.telegram.ui.h5 h5Var = (org.telegram.ui.h5) this.b;
-                org.telegram.ui.c5 c5Var = (org.telegram.ui.c5) this.c;
-                org.telegram.ui.i5[] i5VarArr = c5Var.i;
-                org.telegram.ui.e5 e5Var = c5Var.j;
-                if (!h5Var.E) {
+                org.telegram.ui.g5 g5Var = (org.telegram.ui.g5) this.b;
+                org.telegram.ui.b5 b5Var = (org.telegram.ui.b5) this.c;
+                org.telegram.ui.h5[] h5VarArr = b5Var.i;
+                org.telegram.ui.d5 d5Var = b5Var.j;
+                if (!g5Var.E) {
                     if (!(obj instanceof TLRPC.UserFull)) {
                         if (obj instanceof TLRPC.ChatFull) {
-                            h5Var.a(org.telegram.ui.c5.a((TLRPC.Chat) e5Var.c, (TLRPC.ChatFull) obj, i5VarArr));
+                            g5Var.a(org.telegram.ui.b5.a((TLRPC.Chat) d5Var.c, (TLRPC.ChatFull) obj, h5VarArr));
                             break;
                         }
                     } else {
-                        h5Var.a(org.telegram.ui.c5.c((TLRPC.User) e5Var.c, (TLRPC.UserFull) obj, i5VarArr));
+                        g5Var.a(org.telegram.ui.b5.c((TLRPC.User) d5Var.c, (TLRPC.UserFull) obj, h5VarArr));
                         break;
                     }
                 }
@@ -65,9 +65,9 @@ public final /* synthetic */ class c8 implements q0.a {
                 break;
             default:
                 c5.i iVar4 = (c5.i) this.b;
-                ug.u uVar = (ug.u) this.c;
+                ug.t tVar = (ug.t) this.c;
                 if (iVar4.a == 0) {
-                    AndroidUtilities.runOnUIThread(new tg.p(uVar, 6));
+                    AndroidUtilities.runOnUIThread(new tg.p(tVar, 6));
                     break;
                 }
                 break;

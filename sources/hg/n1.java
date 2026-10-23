@@ -3,7 +3,7 @@ package hg;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
-import ci.u6;
+import ci.t6;
 import com.google.android.gms.internal.play_billing.k3;
 import ei.bc;
 import java.util.ArrayList;
@@ -16,38 +16,38 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.Cells.r2;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.Cells.q2;
 import org.telegram.ui.Components.b10;
-import org.telegram.ui.Components.im0;
-import org.telegram.ui.qn;
+import org.telegram.ui.Components.lm0;
+import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class n1 extends im0 implements NotificationCenter.NotificationCenterDelegate {
+public final class n1 extends lm0 implements NotificationCenter.NotificationCenterDelegate {
     public final Context c;
-    public final qn f;
+    public final sn f;
     public int h;
     public int n;
-    public final d6 s;
+    public final g6 s;
     public final int v;
     public final boolean w;
     public String x;
-    public u6 y;
+    public t6 y;
     public final HashSet d = new HashSet();
     public final ArrayList e = new ArrayList();
     public final int r = UserConfig.selectedAccount;
     public final bc E = new bc(this, 13);
 
-    public n1(Context context, qn qnVar, d6 d6Var, int i10, boolean z10) {
-        this.s = d6Var;
+    public n1(Context context, sn snVar, g6 g6Var, int i10, boolean z10) {
+        this.s = g6Var;
         this.c = context;
-        this.f = qnVar;
+        this.f = snVar;
         this.v = i10;
         this.w = z10;
     }
 
-    @Override // org.telegram.ui.Components.im0
+    @Override // org.telegram.ui.Components.lm0
     public final boolean D(s4.b1 b1Var) {
         int i10 = b1Var.f;
         return i10 == 0 || i10 == 2;
@@ -137,13 +137,13 @@ public final class n1 extends im0 implements NotificationCenter.NotificationCent
             }
             return;
         }
-        r2 r2Var = (r2) view;
-        r2Var.s2 = true;
+        q2 q2Var = (q2) view;
+        q2Var.s2 = true;
         MessageObject messageObject = (MessageObject) E(i10);
         long dialogId = messageObject.getDialogId();
         int i14 = messageObject.messageOwner.date;
         if (this.w) {
-            r2Var.r0 = true;
+            q2Var.r0 = true;
             long savedDialogId = messageObject.getSavedDialogId();
             TLRPC.Message message = messageObject.messageOwner;
             TLRPC.MessageFwdHeader messageFwdHeader = message.fwd_from;
@@ -166,31 +166,31 @@ public final class n1 extends im0 implements NotificationCenter.NotificationCent
             z10 = true;
             i11 = i14;
         }
-        r2Var.W(dialogId, messageObject, i11, z10, false);
-        r2Var.setDialogCellDelegate(new k1(this));
+        q2Var.V(dialogId, messageObject, i11, z10, false);
+        q2Var.setDialogCellDelegate(new k1(this));
     }
 
     @Override // s4.g0
     public final s4.b1 x(ViewGroup viewGroup, int i10) {
-        View r2Var;
+        View q2Var;
         View view;
         if (i10 != 0) {
-            d6 d6Var = this.s;
+            g6 g6Var = this.s;
             Context context = this.c;
             if (i10 == 1) {
-                b10 b10Var = new b10(context, d6Var);
+                b10 b10Var = new b10(context, g6Var);
                 b10Var.setIsSingleCell(true);
                 b10Var.setViewType(7);
                 view = b10Var;
             } else if (i10 != 2) {
-                r2Var = null;
+                q2Var = null;
             } else {
-                view = new m1(context, d6Var);
+                view = new m1(context, g6Var);
             }
-            r2Var = view;
+            q2Var = view;
         } else {
-            r2Var = new r2(null, this.c, true, this.r, this.s);
+            q2Var = new q2(null, this.c, true, this.r, this.s);
         }
-        return k3.l(r2Var, r2Var, -1, -2);
+        return k3.l(q2Var, q2Var, -1, -2);
     }
 }

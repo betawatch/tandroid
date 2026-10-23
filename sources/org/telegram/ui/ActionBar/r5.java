@@ -1,17 +1,57 @@
 package org.telegram.ui.ActionBar;
 
-import android.graphics.Point;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.os.SystemClock;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class r5 extends w7.w5 {
-    @Override // w7.w5
-    public final void b(int i10, int i11) {
-        Point point = AndroidUtilities.displaySize;
-        if ((point.x <= point.y) == (i10 <= i11)) {
-            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didSetNewWallpapper, new Object[0]);
+public final class r5 implements SensorEventListener {
+    @Override // android.hardware.SensorEventListener
+    public final void onSensorChanged(SensorEvent sensorEvent) {
+        float f7 = sensorEvent.values[0];
+        if (f7 <= 0.0f) {
+            f7 = 0.1f;
         }
+        if (ApplicationLoader.mainInterfacePaused || !ApplicationLoader.isScreenOn) {
+            return;
+        }
+        if (f7 > 500.0f) {
+            k6.h = 1.0f;
+        } else {
+            k6.h = ((float) Math.ceil((Math.log(f7) * 9.932299613952637d) + 27.05900001525879d)) / 100.0f;
+        }
+        if (k6.h > k6.q) {
+            if (k6.k) {
+                k6.k = false;
+                AndroidUtilities.cancelRunOnUIThread(k6.m);
+            }
+            if (k6.j) {
+                return;
+            }
+            k6.j = true;
+            AndroidUtilities.runOnUIThread(k6.l, Math.abs(k6.i - SystemClock.elapsedRealtime()) < 12000 ? 12000L : 1800L);
+            return;
+        }
+        if (MediaController.getInstance().isRecordingOrListeningByProximity()) {
+            return;
+        }
+        if (k6.j) {
+            k6.j = false;
+            AndroidUtilities.cancelRunOnUIThread(k6.l);
+        }
+        if (k6.k) {
+            return;
+        }
+        k6.k = true;
+        AndroidUtilities.runOnUIThread(k6.m, Math.abs(k6.i - SystemClock.elapsedRealtime()) < 12000 ? 12000L : 1800L);
+    }
+
+    @Override // android.hardware.SensorEventListener
+    public final void onAccuracyChanged(Sensor sensor, int i10) {
     }
 }

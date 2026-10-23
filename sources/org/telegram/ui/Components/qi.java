@@ -16,9 +16,9 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class qi extends im0 {
+public final class qi extends lm0 {
     public int E;
     public int F;
     public int G;
@@ -44,7 +44,7 @@ public final class qi extends im0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.im0
+    @Override // org.telegram.ui.Components.lm0
     public final boolean D(s4.b1 b1Var) {
         return false;
     }
@@ -53,7 +53,7 @@ public final class qi extends im0 {
     public final int h() {
         int i10 = this.J;
         ti tiVar = this.K;
-        return (tiVar.K1 == null && (tiVar.f0 instanceof org.telegram.ui.qn) && !tiVar.H) ? MediaDataController.getInstance(tiVar.M1).inlineBots.size() + i10 : i10;
+        return (tiVar.K1 == null && (tiVar.f0 instanceof org.telegram.ui.sn) && !tiVar.H) ? MediaDataController.getInstance(tiVar.M1).inlineBots.size() + i10 : i10;
     }
 
     @Override // s4.g0
@@ -85,7 +85,7 @@ public final class qi extends im0 {
         this.r = -1;
         ti tiVar = this.K;
         int i11 = tiVar.M1;
-        org.telegram.ui.ActionBar.n2 n2Var = tiVar.f0;
+        org.telegram.ui.ActionBar.o2 o2Var = tiVar.f0;
         if (tiVar.H) {
             this.J = 1;
             this.d = 0;
@@ -125,7 +125,7 @@ public final class qi extends im0 {
                 this.J = i23 + 1;
                 this.H = i23;
             }
-        } else if (!(n2Var instanceof org.telegram.ui.qn)) {
+        } else if (!(o2Var instanceof org.telegram.ui.sn)) {
             this.d = 0;
             this.J = 2;
             this.n = 1;
@@ -157,14 +157,14 @@ public final class qi extends im0 {
                 }
             }
         } else {
-            TLRPC.User i27 = ((org.telegram.ui.qn) n2Var).i();
-            TLRPC.Chat chat = n2Var instanceof org.telegram.ui.qn ? ((org.telegram.ui.qn) n2Var).e : null;
-            boolean z10 = i27 != null && ((org.telegram.ui.qn) n2Var).getMessagesController().getSendPaidMessagesStars(i27.id) > 0;
+            TLRPC.User i27 = ((org.telegram.ui.sn) o2Var).i();
+            TLRPC.Chat chat = o2Var instanceof org.telegram.ui.sn ? ((org.telegram.ui.sn) o2Var).e : null;
+            boolean z10 = i27 != null && ((org.telegram.ui.sn) o2Var).getMessagesController().getSendPaidMessagesStars(i27.id) > 0;
             int i28 = this.J;
             this.d = i28;
             this.J = i28 + 2;
             this.n = i28 + 1;
-            if (MessagesController.getInstance(i11).config.walletAvailable.get() && ((org.telegram.ui.qn) n2Var).R3 == 0 && ti.v1(i27)) {
+            if (MessagesController.getInstance(i11).config.walletAvailable.get() && ((org.telegram.ui.sn) o2Var).d4 == 0 && ti.y1(i27)) {
                 int i29 = this.J;
                 this.J = i29 + 1;
                 this.r = i29;
@@ -198,14 +198,14 @@ public final class qi extends im0 {
                 this.J = i34 + 2;
                 this.w = i35;
             }
-            if ((n2Var instanceof org.telegram.ui.qn) && ((org.telegram.ui.qn) n2Var).R3 == 0 && i27 != null && !z10 && !i27.bot && !ig.a2.f(i11).b.isEmpty()) {
+            if ((o2Var instanceof org.telegram.ui.sn) && ((org.telegram.ui.sn) o2Var).d4 == 0 && i27 != null && !z10 && !i27.bot && !ig.z1.f(i11).b.isEmpty()) {
                 int i36 = this.J;
                 this.J = i36 + 1;
                 this.y = i36;
             }
-            if ((tiVar.O1 || tiVar.P1) && !z10 && ((chat == null || !ChatObject.isMonoForum(chat)) && (n2Var instanceof org.telegram.ui.qn) && !((org.telegram.ui.qn) n2Var).c() && !((org.telegram.ui.qn) n2Var).x())) {
-                org.telegram.ui.qn qnVar = (org.telegram.ui.qn) n2Var;
-                if (qnVar.R3 != 5) {
+            if ((tiVar.O1 || tiVar.P1) && !z10 && ((chat == null || !ChatObject.isMonoForum(chat)) && (o2Var instanceof org.telegram.ui.sn) && !((org.telegram.ui.sn) o2Var).c() && !((org.telegram.ui.sn) o2Var).x())) {
+                org.telegram.ui.sn snVar = (org.telegram.ui.sn) o2Var;
+                if (snVar.d4 != 5) {
                     this.e = this.J;
                     ArrayList arrayList = this.h;
                     arrayList.clear();
@@ -216,9 +216,9 @@ public final class qi extends im0 {
                         i10++;
                         TLRPC.TL_attachMenuBot tL_attachMenuBot2 = tL_attachMenuBot;
                         if (tL_attachMenuBot2.show_in_attach_menu) {
-                            TLObject tLObject = qnVar.e;
+                            TLObject tLObject = snVar.e;
                             if (tLObject == null) {
-                                tLObject = qnVar.i();
+                                tLObject = snVar.i();
                             }
                             if (MediaDataController.canShowAttachMenuBot(tL_attachMenuBot2, tLObject)) {
                                 arrayList.add(tL_attachMenuBot2);
@@ -286,12 +286,12 @@ public final class qi extends im0 {
                     bVar2.c.s(AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f));
                     bVar2.c.setLayoutParams(w7.z5.d(24, 24.0f, 49, 0.0f, 4.0f, 0.0f, 0.0f));
                     bVar2.M = true;
-                    bVar2.a(false);
-                    bVar2.f();
+                    bVar2.b(false);
+                    bVar2.a();
                     bVar2.invalidate();
                     miVar.b = user;
                     miVar.c = tL_attachMenuBot;
-                    miVar.a.e(false, false);
+                    miVar.a.f(false, false);
                     miVar.invalidate();
                     return;
                 }
@@ -311,7 +311,7 @@ public final class qi extends im0 {
             bVar3.P = 0L;
             bVar3.a.setText(ContactsController.formatName(user2.first_name, user2.last_name));
             if (bVar3.U == null) {
-                bVar3.U = new h9((org.telegram.ui.ActionBar.d6) null);
+                bVar3.U = new h9((org.telegram.ui.ActionBar.g6) null);
             }
             bVar3.U.m(i16, user2);
             bVar3.c.e(user2, bVar3.U);
@@ -323,7 +323,7 @@ public final class qi extends im0 {
             bVar3.invalidate();
             miVar.b = user2;
             miVar.c = null;
-            miVar.a.e(false, false);
+            miVar.a.f(false, false);
             miVar.invalidate();
             return;
         }
@@ -371,7 +371,7 @@ public final class qi extends im0 {
                         niVar.setTag(16);
                         z10 = !MessagesController.getInstance(i11).storyEntitiesAllowed();
                         z11 = false;
-                        niVar.a.d(z11 ? "!" : null, z11, false);
+                        niVar.a.e(z11 ? "!" : null, z11, false);
                         ph.b bVar4 = niVar.a;
                         if (z10 && !UserConfig.getInstance(i11).isPremium()) {
                             z13 = true;
@@ -380,7 +380,7 @@ public final class qi extends im0 {
                     }
                     z11 = false;
                     z10 = true;
-                    niVar.a.d(z11 ? "!" : null, z11, false);
+                    niVar.a.e(z11 ? "!" : null, z11, false);
                     ph.b bVar42 = niVar.a;
                     if (z10) {
                         z13 = true;
@@ -392,7 +392,7 @@ public final class qi extends im0 {
             }
             z11 = false;
             z10 = false;
-            niVar.a.d(z11 ? "!" : null, z11, false);
+            niVar.a.e(z11 ? "!" : null, z11, false);
             ph.b bVar422 = niVar.a;
             if (z10) {
             }
@@ -403,7 +403,7 @@ public final class qi extends im0 {
         z12 = Build.VERSION.SDK_INT < 33 ? false : false;
         z11 = !z12;
         z10 = false;
-        niVar.a.d(z11 ? "!" : null, z11, false);
+        niVar.a.e(z11 ? "!" : null, z11, false);
         ph.b bVar4222 = niVar.a;
         if (z10) {
         }
@@ -418,7 +418,7 @@ public final class qi extends im0 {
         miVar.setImportantForAccessibility(1);
         miVar.setFocusable(true);
         miVar.setLayoutParams(new s4.o0(-2, -1));
-        return new tl0(miVar);
+        return new wl0(miVar);
     }
 
     @Override // s4.g0

@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.graphics.Canvas;
 import android.graphics.RectF;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class wa implements ch.a {
     public final /* synthetic */ int a;
@@ -26,20 +26,20 @@ public final /* synthetic */ class wa implements ch.a {
     public final void f(Canvas canvas, RectF rectF) {
         switch (this.a) {
             case 0:
-                ((sb) this.b).Z(canvas, rectF);
+                ((sb) this.b).Y(canvas, rectF);
                 break;
             case 1:
-                ip0 ip0Var = (ip0) this.b;
-                m0 m0Var = ip0Var.d;
-                to0 to0Var = ip0Var.h.b;
-                hh.d.a(to0Var, canvas, rectF, to0Var, m0Var);
-                to0 to0Var2 = ip0Var.n.b;
-                hh.d.a(to0Var2, canvas, rectF, to0Var2, m0Var);
+                lp0 lp0Var = (lp0) this.b;
+                l0 l0Var = lp0Var.d;
+                wo0 wo0Var = lp0Var.h.b;
+                hh.d.a(wo0Var, canvas, rectF, wo0Var, l0Var);
+                wo0 wo0Var2 = lp0Var.n.b;
+                hh.d.a(wo0Var2, canvas, rectF, wo0Var2, l0Var);
                 break;
             default:
                 PremiumPreviewFragment premiumPreviewFragment = (PremiumPreviewFragment) this.b;
-                org.telegram.ui.Components.jm0 jm0Var = premiumPreviewFragment.a;
-                hh.d.a(jm0Var, canvas, rectF, jm0Var, premiumPreviewFragment.d0);
+                org.telegram.ui.Components.mm0 mm0Var = premiumPreviewFragment.a;
+                hh.d.a(mm0Var, canvas, rectF, mm0Var, premiumPreviewFragment.d0);
                 break;
         }
     }

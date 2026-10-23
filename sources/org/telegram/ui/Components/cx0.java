@@ -1,34 +1,71 @@
 package org.telegram.ui.Components;
 
+import android.animation.TimeAnimator;
+import android.animation.ValueAnimator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class cx0 {
-    public MessagesController.PeerColor a;
-    public org.telegram.ui.ActionBar.d6 b;
-    public int c;
-    public int d;
-    public float e;
+public final class cx0 extends TimeAnimator {
+    public int a;
+    public int b;
+    public ValueAnimator.AnimatorUpdateListener c;
+    public Float d;
+    public float[] e;
 
-    public final void a(MessagesController.PeerColor peerColor) {
-        this.a = peerColor;
-        if (peerColor == null) {
-            this.c = org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.A8, this.b);
-            this.d = org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.s8, this.b);
-            this.c = i0.a.f(this.e, this.c, 603979776);
-            this.d = i0.a.f(this.e, this.d, -1);
-            return;
-        }
-        int bgColor1 = peerColor.getBgColor1(org.telegram.ui.ActionBar.h6.I.q());
-        int bgColor2 = peerColor.getBgColor2(org.telegram.ui.ActionBar.h6.I.q());
-        org.telegram.ui.ActionBar.d6 d6Var = this.b;
-        int f7 = i0.a.f(0.75f, bgColor2, bgColor1);
-        int w02 = AndroidUtilities.computePerceivedBrightness(f7) > 0.721f ? org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.v6, d6Var) : org.telegram.ui.ActionBar.h6.b(0.08f, -0.08f, f7);
-        this.c = w02;
-        this.d = AndroidUtilities.computePerceivedBrightness(w02) > 0.721f ? -16777216 : -1;
-        this.c = i0.a.f(this.e, this.c, 603979776);
-        this.d = i0.a.f(this.e, this.d, -1);
+    @Override // android.animation.ValueAnimator
+    public final void addUpdateListener(ValueAnimator.AnimatorUpdateListener animatorUpdateListener) {
+        this.c = animatorUpdateListener;
+    }
+
+    @Override // android.animation.ValueAnimator, android.animation.Animator
+    public final void end() {
+        this.c = null;
+        super.end();
+    }
+
+    @Override // android.animation.ValueAnimator
+    public final Object getAnimatedValue() {
+        return this.d;
+    }
+
+    @Override // android.animation.ValueAnimator
+    public final void setFloatValues(float[] fArr) {
+        super.setFloatValues(fArr);
+        this.e = fArr;
+    }
+
+    @Override // android.animation.TimeAnimator, android.animation.ValueAnimator, android.animation.Animator
+    public final void start() {
+        setTimeListener(new TimeAnimator.TimeListener() { // from class: org.telegram.ui.Components.bx0
+            @Override // android.animation.TimeAnimator.TimeListener
+            public final void onTimeUpdate(TimeAnimator timeAnimator, long j10, long j11) {
+                int i10;
+                cx0 cx0Var = cx0.this;
+                int i11 = cx0Var.a;
+                if (i11 <= 0 || (i10 = cx0Var.b) <= 0) {
+                    cx0Var.end();
+                    return;
+                }
+                int i12 = i11 - 1;
+                cx0Var.a = i12;
+                if (cx0Var.c != null) {
+                    float[] fArr = cx0Var.e;
+                    if (fArr == null || fArr.length != 2) {
+                        cx0Var.end();
+                        return;
+                    }
+                    float interpolation = cx0Var.getInterpolator().getInterpolation(1.0f - (i12 / i10));
+                    float[] fArr2 = cx0Var.e;
+                    float f7 = fArr2[0];
+                    cx0Var.d = Float.valueOf(((fArr2[1] - f7) * interpolation) + f7);
+                    cx0Var.c.onAnimationUpdate(cx0Var);
+                }
+            }
+        });
+        int duration = (int) (getDuration() / AndroidUtilities.screenRefreshTime);
+        this.a = duration;
+        this.b = duration;
+        super.start();
     }
 }

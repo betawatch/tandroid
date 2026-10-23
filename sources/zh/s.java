@@ -6,22 +6,22 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class s implements NotificationCenter.NotificationCenterDelegate {
     public final int a;
     public final TLRPC.Document b;
     public final int c;
-    public final org.telegram.ui.Wallet.x d;
+    public final org.telegram.ui.Wallet.w d;
     public boolean e;
     public boolean f;
     public boolean h;
 
-    public s(int i10, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, int i11, org.telegram.ui.Wallet.x xVar) {
+    public s(int i10, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, int i11, org.telegram.ui.Wallet.w wVar) {
         this.a = i10;
         this.b = document;
         this.c = i11;
-        this.d = xVar;
+        this.d = wVar;
         NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.fileLoaded);
         if (!FileLoader.getInstance(i10).getPathToAttach(document, true).exists()) {
             FileLoader.getInstance(i10).loadFile(document, tL_starGiftUnique, 3, 1);
@@ -35,7 +35,7 @@ public final class s implements NotificationCenter.NotificationCenterDelegate {
         }
         this.f = true;
         NotificationCenter.getInstance(this.a).removeObserver(this, NotificationCenter.fileLoaded);
-        Utilities.globalQueue.postRunnable(new u2.j0(23, this, FileLoader.getInstance(this.a).getPathToAttach(this.b, true)));
+        Utilities.globalQueue.postRunnable(new u2.k0(23, this, FileLoader.getInstance(this.a).getPathToAttach(this.b, true)));
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate

@@ -1,63 +1,30 @@
 package ci;
 
 import android.view.View;
-import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.concurrent.atomic.AtomicInteger;
-import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.voip.ConferenceCall;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_phone;
-import org.telegram.ui.qn;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class b8 implements RequestDelegate {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+public final class b8 {
+    public int a;
+    public View b;
 
-    public /* synthetic */ b8(c8 c8Var, long j10, View view, y7 y7Var, MessagesController messagesController) {
-        this.c = c8Var;
-        this.b = j10;
-        this.d = view;
-        this.e = y7Var;
-        this.f = messagesController;
+    public b8() {
+        ConnectionsManager.generateClassGuid();
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.runOnUIThread(new ai.q3((c8) this.c, tLObject, this.b, (View) this.d, (y7) this.e, (MessagesController) this.f, 3));
-                break;
-            case 1:
-                ((ConferenceCall) this.c).lambda$poll$8((TL_phone.getGroupCallChainBlocks) this.d, this.b, (AtomicBoolean) this.e, (AtomicInteger) this.f, tLObject, tL_error);
-                break;
-            default:
-                AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.e(tL_error, (qn) this.c, tLObject, (TLRPC.FileLocation[]) this.d, (String) this.e, (TLRPC.FileLocation[]) this.f, this.b));
-                break;
-        }
-    }
-
-    public /* synthetic */ b8(ConferenceCall conferenceCall, TL_phone.getGroupCallChainBlocks getgroupcallchainblocks, long j10, AtomicBoolean atomicBoolean, AtomicInteger atomicInteger) {
-        this.c = conferenceCall;
-        this.d = getgroupcallchainblocks;
-        this.b = j10;
-        this.e = atomicBoolean;
-        this.f = atomicInteger;
-    }
-
-    public /* synthetic */ b8(qn qnVar, TLRPC.FileLocation[] fileLocationArr, String str, TLRPC.FileLocation[] fileLocationArr2, long j10) {
-        this.c = qnVar;
-        this.d = fileLocationArr;
-        this.e = str;
-        this.f = fileLocationArr2;
-        this.b = j10;
+    public final void a(long j10, View view, x7 x7Var) {
+        int i10 = UserConfig.selectedAccount;
+        this.a = i10;
+        this.b = view;
+        MessagesController messagesController = MessagesController.getInstance(i10);
+        messagesController.getStoriesController().e0(j10, true);
+        view.invalidate();
+        TL_stories.TL_stories_getPeerStories tL_stories_getPeerStories = new TL_stories.TL_stories_getPeerStories();
+        tL_stories_getPeerStories.peer = MessagesController.getInstance(this.a).getInputPeer(j10);
+        ConnectionsManager.getInstance(this.a).sendRequest(tL_stories_getPeerStories, new a8(this, j10, view, x7Var, messagesController));
     }
 }

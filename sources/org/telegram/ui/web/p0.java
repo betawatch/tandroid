@@ -1,20 +1,20 @@
 package org.telegram.ui.web;
 
-import android.webkit.GeolocationPermissions;
+import android.webkit.PermissionRequest;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p0 implements q0.a {
     public final /* synthetic */ int a;
-    public final /* synthetic */ u0 b;
-    public final /* synthetic */ GeolocationPermissions.Callback c;
-    public final /* synthetic */ String d;
+    public final /* synthetic */ v0 b;
+    public final /* synthetic */ PermissionRequest c;
+    public final /* synthetic */ String[] d;
 
-    public /* synthetic */ p0(u0 u0Var, GeolocationPermissions.Callback callback, String str, int i10) {
+    public /* synthetic */ p0(v0 v0Var, PermissionRequest permissionRequest, String[] strArr, int i10) {
         this.a = i10;
-        this.b = u0Var;
-        this.c = callback;
-        this.d = str;
+        this.b = v0Var;
+        this.c = permissionRequest;
+        this.d = strArr;
     }
 
     @Override // q0.a
@@ -22,30 +22,34 @@ public final /* synthetic */ class p0 implements q0.a {
         Boolean bool = (Boolean) obj;
         switch (this.a) {
             case 0:
-                u0 u0Var = this.b;
-                if (u0Var.a != null) {
-                    u0Var.a = null;
+                v0 v0Var = this.b;
+                if (v0Var.a != null) {
+                    v0Var.a = null;
                     boolean booleanValue = bool.booleanValue();
-                    GeolocationPermissions.Callback callback = this.c;
-                    String str = this.d;
+                    PermissionRequest permissionRequest = this.c;
                     if (!booleanValue) {
-                        callback.invoke(str, false, false);
+                        permissionRequest.deny();
                         break;
                     } else {
-                        a1.a(u0Var.e.Q, new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new p0(u0Var, callback, str, 1));
+                        b1.a(v0Var.e.Q, new String[]{"android.permission.CAMERA", "android.permission.RECORD_AUDIO"}, new p0(v0Var, permissionRequest, this.d, 1));
                         break;
                     }
                 }
                 break;
             default:
-                u0 u0Var2 = this.b;
-                u0Var2.getClass();
-                this.c.invoke(this.d, bool.booleanValue(), false);
-                if (bool.booleanValue()) {
-                    u0Var2.e.Q.T = true;
+                v0 v0Var2 = this.b;
+                v0Var2.getClass();
+                boolean booleanValue2 = bool.booleanValue();
+                PermissionRequest permissionRequest2 = this.c;
+                if (!booleanValue2) {
+                    permissionRequest2.deny();
+                    break;
+                } else {
+                    String[] strArr = this.d;
+                    permissionRequest2.grant(new String[]{strArr[0], strArr[1]});
+                    v0Var2.e.Q.T = true;
                     break;
                 }
-                break;
         }
     }
 }

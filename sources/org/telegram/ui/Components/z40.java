@@ -7,7 +7,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class z40 implements ri {
     public final /* synthetic */ e50 a;
@@ -30,8 +30,8 @@ public final class z40 implements ri {
     public final void b0(int i10, boolean z10, boolean z11, int i11, int i12, long j10, boolean z12, boolean z13, long j11) {
         ti tiVar;
         e50 e50Var = this.a;
-        org.telegram.ui.ActionBar.n2 n2Var = e50Var.a;
-        if (n2Var == null || n2Var.getParentActivity() == null || (tiVar = e50Var.c) == null) {
+        org.telegram.ui.ActionBar.o2 o2Var = e50Var.a;
+        if (o2Var == null || o2Var.getParentActivity() == null || (tiVar = e50Var.c) == null) {
             return;
         }
         if (i10 != 8 && i10 != 7) {
@@ -109,12 +109,12 @@ public final class z40 implements ri {
     }
 
     @Override // org.telegram.ui.Components.ri
-    public final void u(gh ghVar) {
+    public final void r(gh ghVar) {
         ghVar.run();
     }
 
     @Override // org.telegram.ui.Components.ri
-    public final boolean v() {
+    public final boolean u() {
         return false;
     }
 

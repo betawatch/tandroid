@@ -10,7 +10,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class h10 extends FrameLayout {
     public final q6 a;
@@ -22,15 +22,15 @@ public final class h10 extends FrameLayout {
         this.a = q6Var;
         q6Var.setTextSize(AndroidUtilities.dp(15.0f));
         q6Var.setTypeface(AndroidUtilities.bold());
-        int i10 = org.telegram.ui.ActionBar.h6.L6;
-        q6Var.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i10, false));
+        int i10 = org.telegram.ui.ActionBar.k6.L6;
+        org.telegram.ui.ActionBar.r6.a0(q6Var, i10, null);
         q6Var.setGravity(LocaleController.isRTL ? 5 : 3);
         addView(q6Var, w7.z5.d(-1, 20.0f, (LocaleController.isRTL ? 5 : 3) | 80, 21.0f, 15.0f, 21.0f, 2.0f));
         q6 q6Var2 = new q6(context, true, true, true);
         this.b = q6Var2;
         q6Var2.b(0.45f, 250L, bs.h);
         q6Var2.setTextSize(AndroidUtilities.dp(15.0f));
-        q6Var2.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i10, false));
+        org.telegram.ui.ActionBar.r6.a0(q6Var2, i10, null);
         q6Var2.setGravity(LocaleController.isRTL ? 3 : 5);
         addView(q6Var2, w7.z5.d(-2, 20.0f, (LocaleController.isRTL ? 3 : 5) | 80, 21.0f, 15.0f, 21.0f, 2.0f));
         WeakHashMap weakHashMap = r0.i0.a;

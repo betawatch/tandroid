@@ -4,22 +4,22 @@ import android.content.Context;
 import android.view.ViewGroup;
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class pc extends org.telegram.ui.Components.im0 {
+public final class pc extends org.telegram.ui.Components.lm0 {
     public final /* synthetic */ Context c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.d6 d;
+    public final /* synthetic */ org.telegram.ui.ActionBar.g6 d;
     public final /* synthetic */ int e;
     public final /* synthetic */ rc f;
 
-    public pc(rc rcVar, Context context, org.telegram.ui.ActionBar.d6 d6Var, int i10) {
+    public pc(rc rcVar, Context context, org.telegram.ui.ActionBar.g6 g6Var, int i10) {
         this.f = rcVar;
         this.c = context;
-        this.d = d6Var;
+        this.d = g6Var;
         this.e = i10;
     }
 
-    @Override // org.telegram.ui.Components.im0
+    @Override // org.telegram.ui.Components.lm0
     public final boolean D(s4.b1 b1Var) {
         return true;
     }
@@ -36,7 +36,7 @@ public final class pc extends org.telegram.ui.Components.im0 {
     @Override // s4.g0
     public final void v(s4.b1 b1Var, int i10) {
         qc qcVar = (qc) b1Var.a;
-        qcVar.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.d6, this.d));
+        org.telegram.ui.ActionBar.r6.i(org.telegram.ui.ActionBar.k6.d6, qcVar, this.d);
         boolean z10 = i10 == this.f.e;
         qcVar.s = z10;
         qcVar.v.f(z10, true);
@@ -50,6 +50,6 @@ public final class pc extends org.telegram.ui.Components.im0 {
 
     @Override // s4.g0
     public final s4.b1 x(ViewGroup viewGroup, int i10) {
-        return new org.telegram.ui.Components.tl0(new qc(this.f, this.c));
+        return new org.telegram.ui.Components.wl0(new qc(this.f, this.c));
     }
 }

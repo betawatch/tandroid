@@ -1,23 +1,34 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.MessagesStorage;
+import android.animation.ValueAnimator;
+import android.view.View;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ay0 implements org.telegram.ui.ActionBar.q0, MessagesStorage.StringCallback {
-    public final /* synthetic */ qy0 a;
+public final class ay0 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ View b;
+    public final /* synthetic */ FrameLayout c;
 
-    public /* synthetic */ ay0(qy0 qy0Var) {
-        this.a = qy0Var;
+    public /* synthetic */ ay0(FrameLayout frameLayout, View view, int i10) {
+        this.a = i10;
+        this.c = frameLayout;
+        this.b = view;
     }
 
-    @Override // org.telegram.ui.ActionBar.q0
-    public void j(int i10) {
-        qy0.D(this.a, i10);
-    }
-
-    @Override // org.telegram.messenger.MessagesStorage.StringCallback
-    public void run(String str) {
-        new g50(r1.getContext(), r1.o0, null, this.a.resourcesProvider).show();
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                by0 by0Var = (by0) this.c;
+                by0Var.b = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                by0Var.invalidate();
+                ((kn0) this.b).invalidate();
+                break;
+            default:
+                ((l91) this.c).E(this.b, ((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+        }
     }
 }

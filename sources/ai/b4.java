@@ -4,10 +4,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.go0;
-import org.telegram.ui.ip0;
+import org.telegram.ui.ko0;
+import org.telegram.ui.lp0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b4 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -37,7 +37,7 @@ public final /* synthetic */ class b4 implements Utilities.Callback2 {
                 if (((Boolean) obj).booleanValue()) {
                     n5 n5Var = l7Var.R0;
                     if (n5Var != null) {
-                        n5Var.a(this.b, this.c, i0Var != null);
+                        n5Var.b(this.b, this.c, i0Var != null);
                     }
                     if (i0Var != null) {
                         AndroidUtilities.runOnUIThread(new f4(i0Var, 0));
@@ -48,7 +48,7 @@ public final /* synthetic */ class b4 implements Utilities.Callback2 {
                 }
                 break;
             default:
-                ip0.U((ip0) this.d, (boolean[]) this.e, this.b, this.c, (go0) this.f, (i6) obj, (pf.c) obj2);
+                lp0.U((lp0) this.d, (boolean[]) this.e, this.b, this.c, (ko0) this.f, (i6) obj, (pf.c) obj2);
                 break;
         }
     }

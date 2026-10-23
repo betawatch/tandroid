@@ -1,7 +1,60 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+import android.text.Editable;
+import android.text.TextWatcher;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public interface t70 {
-    void a(int i10);
+public final class t70 implements TextWatcher {
+    public final /* synthetic */ u70 a;
+
+    public t70(u70 u70Var) {
+        this.a = u70Var;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        x70 x70Var = this.a.f;
+        if (x70Var.d.d.length() != 0) {
+            x70Var.E = true;
+            x70Var.y = true;
+            s70 s70Var = x70Var.s;
+            if (!s70Var.h) {
+                s70Var.h = true;
+                s70Var.l();
+            }
+            x70Var.s.E(x70Var.d.d.toString());
+            x70Var.h.setFastScrollVisible(false);
+            x70Var.h.setVerticalScrollBarEnabled(true);
+            x70Var.r.e(true, true);
+            x70Var.r.setStickerType(1);
+            x70Var.r.d.setText(LocaleController.getString(R.string.NoResult));
+            x70Var.r.e.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
+            return;
+        }
+        x70Var.E = false;
+        x70Var.y = false;
+        s70 s70Var2 = x70Var.s;
+        if (s70Var2.h) {
+            s70Var2.h = false;
+            s70Var2.l();
+        }
+        x70Var.s.E(null);
+        x70Var.h.setFastScrollVisible(true);
+        x70Var.h.setVerticalScrollBarEnabled(false);
+        x70Var.r.e(false, true);
+        x70Var.r.setStickerType(0);
+        x70Var.r.d.setText(LocaleController.getString(R.string.NoContacts));
+        x70Var.r.e.setText("");
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
 }

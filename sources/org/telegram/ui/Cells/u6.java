@@ -1,37 +1,111 @@
 package org.telegram.ui.Cells;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.messenger.MessagesController;
-import org.telegram.ui.Components.c71;
-import org.telegram.ui.Components.g61;
-import org.telegram.ui.Components.h61;
-import org.telegram.ui.Components.jm0;
-import org.telegram.ui.Components.u61;
-import org.telegram.ui.l01;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class u6 extends g61 {
-    public static final /* synthetic */ int a = 0;
+public final class u6 extends Drawable {
+    public final /* synthetic */ int a;
+    public int b;
+    public Object c;
 
-    static {
-        g61.setup(new u6());
-    }
-
-    @Override // org.telegram.ui.Components.g61
-    public final void bindView(View view, h61 h61Var, boolean z10, u61 u61Var, c71 c71Var) {
-        Object obj = h61Var.G;
-        if (obj instanceof l01) {
-            l01 l01Var = (l01) obj;
-            ((w6) view).b(h61Var.l, l01Var.d, l01Var.e, z10);
-        } else if (obj instanceof MessagesController.FaqSearchResult) {
-            ((w6) view).a(h61Var.l, ((MessagesController.FaqSearchResult) obj).path, true, z10);
+    public u6(int i10) {
+        this.a = i10;
+        switch (i10) {
+            case 1:
+                this.b = 255;
+                break;
         }
     }
 
-    @Override // org.telegram.ui.Components.g61
-    public final View createView(Context context, jm0 jm0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
-        return new w6(context);
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        switch (this.a) {
+            case 0:
+                canvas.drawCircle(getBounds().centerX(), getBounds().centerY(), Math.min(getBounds().width(), getBounds().height()) / 2.0f, (Paint) this.c);
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public int getAlpha() {
+        switch (this.a) {
+            case 1:
+                return this.b;
+            default:
+                return super.getAlpha();
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public ColorFilter getColorFilter() {
+        switch (this.a) {
+            case 1:
+                return (ColorFilter) this.c;
+            default:
+                return super.getColorFilter();
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public int getIntrinsicHeight() {
+        switch (this.a) {
+            case 0:
+                return this.b;
+            default:
+                return super.getIntrinsicHeight();
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public int getIntrinsicWidth() {
+        switch (this.a) {
+            case 0:
+                return this.b;
+            default:
+                return super.getIntrinsicWidth();
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        switch (this.a) {
+            case 0:
+                return -2;
+            default:
+                return -1;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        switch (this.a) {
+            case 0:
+                ((Paint) this.c).setAlpha(i10);
+                break;
+            default:
+                this.b = i10;
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        switch (this.a) {
+            case 0:
+                break;
+            default:
+                this.c = colorFilter;
+                break;
+        }
+    }
+
+    private final void a(Canvas canvas) {
+    }
+
+    private final void b(ColorFilter colorFilter) {
     }
 }

@@ -1,31 +1,40 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
-/* loaded from: classes3.dex */
-public final class o20 extends g.o {
-    public final /* synthetic */ q50 c;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 
-    public o20(q50 q50Var) {
-        this.c = q50Var;
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class o20 implements Utilities.Callback2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ u50 b;
+
+    public /* synthetic */ o20(u50 u50Var, int i10) {
+        this.a = i10;
+        this.b = u50Var;
     }
 
-    @Override // g.o
-    public final int i(int i10) {
-        k50 k50Var;
-        int i11;
-        int i12;
-        int i13 = q50.F3 ? 6 : 2;
-        if (q50.G3 || i10 < (i11 = (k50Var = this.c.P).G) || i10 >= (i12 = k50Var.H)) {
-            return i13;
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
+        TLRPC.Updates updates = (TLRPC.Updates) obj;
+        switch (this.a) {
+            case 0:
+                u50 u50Var = this.b;
+                if (updates != null) {
+                    u50Var.d.getMessagesController().lambda$processUpdates$377(updates, false);
+                }
+                AndroidUtilities.runOnUIThread(new f20(u50Var, 10));
+                break;
+            default:
+                u50 u50Var2 = this.b;
+                if (updates == null) {
+                    u50Var2.getClass();
+                    break;
+                } else {
+                    u50Var2.d.getMessagesController().lambda$processUpdates$377(updates, false);
+                    break;
+                }
         }
-        int i14 = i12 - i11;
-        int i15 = (i10 != i12 - 1 || (!q50.F3 && i14 % 2 == 0)) ? 1 : 2;
-        if (!q50.F3) {
-            return i15;
-        }
-        if (i14 == 1) {
-            return 6;
-        }
-        return i14 == 2 ? 3 : 2;
     }
 }

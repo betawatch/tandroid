@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public class yz extends s4.b0 {
     public final SparseArray I;
@@ -21,13 +21,13 @@ public class yz extends s4.b0 {
     public int S;
     public final boolean T;
 
-    public yz(jm0 jm0Var, int i10) {
+    public yz(mm0 mm0Var, int i10) {
         this.I = new SparseArray();
         this.J = -1;
         this.P = true;
         this.Q = true;
         this.T = true;
-        this.N = jm0Var;
+        this.N = mm0Var;
         this.M = i10;
     }
 
@@ -111,7 +111,7 @@ public class yz extends s4.b0 {
                 SparseArray sparseArray = this.I;
                 s4.b1 b1Var = (s4.b1) sparseArray.get(j10, null);
                 if (b1Var == null) {
-                    b1Var = adapter.d(recyclerView, j10);
+                    b1Var = adapter.g(recyclerView, j10);
                     View view = b1Var.a;
                     sparseArray.put(j10, b1Var);
                     if (view.getLayoutParams() == null) {
@@ -146,14 +146,14 @@ public class yz extends s4.b0 {
         }
     }
 
-    public yz(int i10, int i11, jm0 jm0Var) {
+    public yz(int i10, int i11, mm0 mm0Var) {
         super(1, false);
         this.I = new SparseArray();
         this.J = -1;
         this.P = true;
         this.Q = true;
         this.T = true;
-        this.N = jm0Var;
+        this.N = mm0Var;
         this.M = i10;
     }
 }

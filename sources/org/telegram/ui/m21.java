@@ -1,26 +1,36 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.text.Editable;
-import android.text.TextUtils;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class m21 extends org.telegram.ui.Cells.i3 {
-    public final /* synthetic */ n21 x;
+public final class m21 implements o21 {
+    public final /* synthetic */ org.telegram.ui.ActionBar.o2 a;
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.g6 c;
+    public final /* synthetic */ org.telegram.ui.Components.ko0 d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m21(n21 n21Var, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, "", true, false, 1024, d6Var);
-        this.x = n21Var;
+    public m21(org.telegram.ui.ActionBar.o2 o2Var, Context context, org.telegram.ui.ActionBar.g6 g6Var, org.telegram.ui.Components.ko0 ko0Var) {
+        this.a = o2Var;
+        this.b = context;
+        this.c = g6Var;
+        this.d = ko0Var;
     }
 
-    @Override // org.telegram.ui.Cells.i3
-    public final void b(Editable editable) {
-        n21 n21Var = this.x;
-        ei.d dVar = n21Var.s;
-        if (dVar != null) {
-            dVar.setEnabled(n21Var.d.optional || !TextUtils.isEmpty(n21Var.n.getText()));
-        }
+    @Override // org.telegram.ui.o21
+    public final void a() {
+        AndroidUtilities.runOnUIThread(new g21(this.a, this.b, this.c, this.d, 2), 200L);
+    }
+
+    @Override // org.telegram.ui.o21
+    public final void b() {
+        AndroidUtilities.runOnUIThread(new mv0(26, this.a, this.d), 200L);
+    }
+
+    @Override // org.telegram.ui.o21
+    public final void c() {
+        org.telegram.ui.ActionBar.o2 o2Var = this.a;
+        o2Var.showDialog(new sg.y0(o2Var, 3, true));
     }
 }

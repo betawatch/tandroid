@@ -17,7 +17,7 @@ import android.os.RemoteException;
 import android.util.SparseBooleanArray;
 import android.view.KeyEvent;
 import b2.v1;
-import ig.e2;
+import ig.d2;
 import j$.util.Objects;
 import java.lang.reflect.Field;
 import java.util.Iterator;
@@ -28,7 +28,7 @@ import v7.q8;
 import v7.u6;
 import v7.w6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public class f0 {
     public static final s1 B = new s1(1);
@@ -199,7 +199,7 @@ public class f0 {
             }
             u uVar = vVar.d;
             if (uVar != null) {
-                e0Var.b(uVar, i10);
+                e0Var.e(uVar, i10);
             }
         } catch (DeadObjectException unused) {
             i1Var.b.E(vVar);
@@ -214,7 +214,7 @@ public class f0 {
             c((v) p5.get(i10), e0Var);
         }
         try {
-            e0Var.b(this.h.i, 0);
+            e0Var.e(this.h.i, 0);
         } catch (RemoteException e) {
             e2.a.d("MediaSessionImpl", "Exception in using media1 API", e);
         }
@@ -272,7 +272,7 @@ public class f0 {
             oVar.c = this;
             oVar.b = s10;
             oVar.a = z10;
-            vVar2.a(new j9.u(0, vVar2, oVar), new i2.g0(this, 2));
+            vVar2.a(new j9.u(0, vVar2, oVar), new i2.f0(this, 2));
         }
     }
 
@@ -394,9 +394,9 @@ public class f0 {
                 }
                 this.v = true;
                 b0 b0Var = this.d;
-                e2 e2Var = b0Var.a;
-                if (e2Var != null) {
-                    b0Var.removeCallbacks(e2Var);
+                d2 d2Var = b0Var.a;
+                if (d2Var != null) {
+                    b0Var.removeCallbacks(d2Var);
                     b0Var.a = null;
                 }
                 this.l.removeCallbacksAndMessages(null);

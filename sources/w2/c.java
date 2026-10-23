@@ -8,13 +8,13 @@ import e9.r;
 import e9.s1;
 import e9.x1;
 import java.util.ArrayList;
-import sg.y;
+import v0.k;
 import v7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class c implements a {
-    public static final c0 b = new c0(new r(new y(23), s1.b), new r(new y(24), s1.c));
+    public static final c0 b = new c0(new r(new k(5), s1.b), new r(new k(6), s1.c));
     public final ArrayList a = new ArrayList();
 
     @Override // w2.a

@@ -2,12 +2,12 @@ package e2;
 
 import b2.l1;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class e0 {
-    public final i2.i0 a;
+    public final i2.h0 a;
     public final z b;
-    public final i2.c0 c;
+    public final i2.b0 c;
     public final g0 d;
     public final l1 e = new l1();
     public final i0 f;
@@ -16,17 +16,17 @@ public final class e0 {
     public final c0 i;
     public final d0 j;
 
-    public e0(i2.i0 i0Var, i2.c0 c0Var, g0 g0Var, int i10, int i11, int i12, int i13) {
-        this.a = i0Var;
-        this.c = c0Var;
+    public e0(i2.h0 h0Var, i2.b0 b0Var, g0 g0Var, int i10, int i11, int i12, int i13) {
+        this.a = h0Var;
+        this.c = b0Var;
         this.d = g0Var;
-        this.f = g0Var.a(i0Var.t, new n(this, 1));
+        this.f = g0Var.a(h0Var.t, new n(this, 1));
         this.g = new a0(this, i10);
         this.h = new b0(this, i11);
         this.i = new c0(this, i12);
         this.j = new d0(this, i13);
         z zVar = new z(this, 0);
         this.b = zVar;
-        i0Var.m.a(zVar);
+        h0Var.m.a(zVar);
     }
 }

@@ -1,6 +1,6 @@
 package org.telegram.ui.Cells;
 
-import ai.vd;
+import ai.wd;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
@@ -14,46 +14,46 @@ import org.telegram.messenger.Emoji;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
-import org.telegram.messenger.nk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class g5 extends LinearLayout {
     public final org.telegram.ui.Components.w9 a;
-    public final vd b;
+    public final wd b;
     public final TextView c;
     public final org.telegram.ui.Components.h9 d;
-    public final org.telegram.ui.ActionBar.d6 e;
+    public final org.telegram.ui.ActionBar.g6 e;
     public Drawable f;
     public boolean h;
     public boolean n;
 
-    public g5(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+    public g5(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
         super(context);
         this.h = false;
-        this.e = d6Var;
+        this.e = g6Var;
         setOrientation(0);
-        org.telegram.ui.Components.h9 h9Var = new org.telegram.ui.Components.h9((org.telegram.ui.ActionBar.d6) null);
+        org.telegram.ui.Components.h9 h9Var = new org.telegram.ui.Components.h9((org.telegram.ui.ActionBar.g6) null);
         this.d = h9Var;
         h9Var.u(AndroidUtilities.dp(18.0f));
         org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
         this.a = w9Var;
         w9Var.setRoundRadius(AndroidUtilities.dp(14.0f));
         addView(w9Var, w7.z5.k(8.0f, 4.0f, 0.0f, 0.0f, 28, 28));
-        vd vdVar = new vd(context, 7);
-        this.b = vdVar;
-        vdVar.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.G6, d6Var));
-        vdVar.setTextSize(1, 15.0f);
-        vdVar.setSingleLine(true);
-        vdVar.setGravity(3);
+        wd wdVar = new wd(context, 7);
+        this.b = wdVar;
+        org.telegram.ui.ActionBar.r6.W(wdVar, org.telegram.ui.ActionBar.k6.G6, g6Var);
+        wdVar.setTextSize(1, 15.0f);
+        wdVar.setSingleLine(true);
+        wdVar.setGravity(3);
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
-        vdVar.setEllipsize(truncateAt);
-        addView(vdVar, w7.z5.t(-2, -2, 16, 12, 0, 0, 0));
+        wdVar.setEllipsize(truncateAt);
+        addView(wdVar, w7.z5.t(-2, -2, 16, 12, 0, 0, 0));
         TextView textView = new TextView(context);
         this.c = textView;
-        nk.o(org.telegram.ui.ActionBar.h6.A6, d6Var, textView, 1, 15.0f);
+        org.telegram.ui.ActionBar.r6.W(textView, org.telegram.ui.ActionBar.k6.A6, g6Var);
+        textView.setTextSize(1, 15.0f);
         textView.setSingleLine(true);
         textView.setGravity(3);
         textView.setEllipsize(truncateAt);
@@ -80,8 +80,8 @@ public final class g5 extends LinearLayout {
             int dp = AndroidUtilities.dp(drawable instanceof org.telegram.ui.Components.r5 ? 24.0f : 20.0f);
             int dp2 = AndroidUtilities.dp(this.f instanceof org.telegram.ui.Components.r5 ? -2.0f : 0.0f);
             Drawable drawable2 = this.f;
-            vd vdVar = this.b;
-            drawable2.setBounds(vdVar.getLeft() + dp2, ((vdVar.getBottom() + vdVar.getTop()) - dp) / 2, vdVar.getLeft() + dp2 + dp, ((vdVar.getBottom() + vdVar.getTop()) + dp) / 2);
+            wd wdVar = this.b;
+            drawable2.setBounds(wdVar.getLeft() + dp2, ((wdVar.getBottom() + wdVar.getTop()) - dp) / 2, wdVar.getLeft() + dp2 + dp, ((wdVar.getBottom() + wdVar.getTop()) + dp) / 2);
             Drawable drawable3 = this.f;
             if (drawable3 instanceof org.telegram.ui.Components.r5) {
                 ((org.telegram.ui.Components.r5) drawable3).q(System.currentTimeMillis());
@@ -120,7 +120,7 @@ public final class g5 extends LinearLayout {
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (this.h) {
-            canvas.drawLine(AndroidUtilities.dp(52.0f), getHeight() - 1, getWidth() - AndroidUtilities.dp(8.0f), getHeight() - 1, org.telegram.ui.ActionBar.h6.k0);
+            canvas.drawLine(AndroidUtilities.dp(52.0f), getHeight() - 1, getWidth() - AndroidUtilities.dp(8.0f), getHeight() - 1, org.telegram.ui.ActionBar.k6.k0);
         }
     }
 
@@ -131,11 +131,11 @@ public final class g5 extends LinearLayout {
 
     public void setChat(TLRPC.Chat chat) {
         a();
-        vd vdVar = this.b;
+        wd wdVar = this.b;
         org.telegram.ui.Components.w9 w9Var = this.a;
         TextView textView = this.c;
         if (chat == null) {
-            vdVar.setText("");
+            wdVar.setText("");
             textView.setText("");
             w9Var.setImageDrawable(null);
             return;
@@ -148,7 +148,7 @@ public final class g5 extends LinearLayout {
         } else {
             w9Var.e(chat, h9Var);
         }
-        vdVar.setText(chat.title);
+        wdVar.setText(chat.title);
         String publicUsername = ChatObject.getPublicUsername(chat);
         if (publicUsername != null) {
             textView.setText("@".concat(publicUsername));
@@ -190,35 +190,37 @@ public final class g5 extends LinearLayout {
             }
         }
         Drawable drawable2 = this.f;
-        vd vdVar = this.b;
+        wd wdVar = this.b;
         if (drawable2 != null) {
-            vdVar.setPadding(AndroidUtilities.dp(22.0f), 0, 0, 0);
+            wdVar.setPadding(AndroidUtilities.dp(22.0f), 0, 0, 0);
             StringBuilder sb2 = new StringBuilder();
             sb2.append(":  ");
             sb2.append(keywordResult.keyword);
-            vdVar.setText(sb2);
+            wdVar.setText(sb2);
             return;
         }
-        vdVar.setPadding(0, 0, 0, 0);
+        wdVar.setPadding(0, 0, 0, 0);
         StringBuilder sb3 = new StringBuilder();
         sb3.append(keywordResult.emoji);
         sb3.append(":  ");
         sb3.append(keywordResult.keyword);
-        vdVar.setText(sb3);
+        wdVar.setText(sb3);
     }
 
     public void setIsDarkTheme(boolean z10) {
         TextView textView = this.c;
-        vd vdVar = this.b;
+        wd wdVar = this.b;
         if (z10) {
-            vdVar.setTextColor(-1);
+            org.telegram.ui.ActionBar.r6.r(wdVar);
+            org.telegram.ui.ActionBar.r6.r(textView);
+            wdVar.setTextColor(-1);
             textView.setTextColor(-4473925);
-        } else {
-            int i10 = org.telegram.ui.ActionBar.h6.G6;
-            org.telegram.ui.ActionBar.d6 d6Var = this.e;
-            vdVar.setTextColor(org.telegram.ui.ActionBar.h6.w0(i10, d6Var));
-            textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.A6, d6Var));
+            return;
         }
+        int i10 = org.telegram.ui.ActionBar.k6.G6;
+        org.telegram.ui.ActionBar.g6 g6Var = this.e;
+        org.telegram.ui.ActionBar.r6.W(wdVar, i10, g6Var);
+        org.telegram.ui.ActionBar.r6.W(textView, org.telegram.ui.ActionBar.k6.A6, g6Var);
     }
 
     public void setText(String str) {
@@ -230,11 +232,11 @@ public final class g5 extends LinearLayout {
 
     public void setUser(TLRPC.User user) {
         a();
-        vd vdVar = this.b;
+        wd wdVar = this.b;
         org.telegram.ui.Components.w9 w9Var = this.a;
         TextView textView = this.c;
         if (user == null) {
-            vdVar.setText("");
+            wdVar.setText("");
             textView.setText("");
             w9Var.setImageDrawable(null);
             return;
@@ -247,7 +249,7 @@ public final class g5 extends LinearLayout {
         } else {
             w9Var.e(user, h9Var);
         }
-        vdVar.setText(UserObject.getUserName(user));
+        wdVar.setText(UserObject.getUserName(user));
         if (UserObject.getPublicUsername(user) != null) {
             textView.setText("@" + UserObject.getPublicUsername(user));
         } else {

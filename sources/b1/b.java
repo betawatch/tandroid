@@ -1,13 +1,13 @@
 package b1;
 
-import ai.pa;
-import ci.v7;
+import ai.qa;
+import ci.u7;
 import com.google.android.gms.common.api.r;
 import java.util.concurrent.Executor;
 import v0.i;
-import v0.o;
+import v0.p;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements td.a {
     public final /* synthetic */ int a;
@@ -27,10 +27,10 @@ public final /* synthetic */ class b implements td.a {
         Object cVar;
         switch (this.a) {
             case 0:
-                this.b.execute(new pa(3, this.c, this.d));
+                this.b.execute(new qa(3, this.c, this.d));
                 break;
             case 1:
-                this.b.execute(new pa(4, this.c, (o) this.d));
+                this.b.execute(new qa(4, this.c, (p) this.d));
                 break;
             case 2:
                 this.b.execute(new h(this.c, (w0.i) this.d, 0));
@@ -55,7 +55,7 @@ public final /* synthetic */ class b implements td.a {
                 } else {
                     cVar = new w0.c("Conditional create failed, failure: " + exc, 2);
                 }
-                this.b.execute(new v7(13, this.c, cVar));
+                this.b.execute(new u7(13, this.c, cVar));
                 break;
         }
         return id.i.a;

@@ -1,24 +1,108 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.tgnet.TLObject;
+
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class ew0 extends o1.i {
-    public final cw0 a;
-    public final dw0 b;
-    public float c = 1.0f;
+public final class ew0 extends View {
+    public final ImageReceiver a;
+    public final h9 b;
+    public final Paint c;
+    public float d;
+    public boolean e;
+    public ValueAnimator f;
 
-    public ew0(cw0 cw0Var, dw0 dw0Var) {
-        this.a = cw0Var;
-        this.b = dw0Var;
+    public ew0(Context context) {
+        super(context);
+        ImageReceiver imageReceiver = new ImageReceiver(this);
+        this.a = imageReceiver;
+        this.b = new h9((org.telegram.ui.ActionBar.g6) null);
+        Paint paint = new Paint(1);
+        this.c = paint;
+        imageReceiver.setRoundRadius(AndroidUtilities.dp(28.0f));
+        paint.setStrokeWidth(AndroidUtilities.dp(2.0f));
+        paint.setStyle(Paint.Style.STROKE);
     }
 
-    @Override // o1.i
-    public final float a(Object obj) {
-        return this.a.get(obj) * this.c;
+    public final void a(boolean z10, boolean z11) {
+        ValueAnimator valueAnimator = this.f;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+        }
+        if (!z11) {
+            this.d = z10 ? 1.0f : 0.0f;
+            invalidate();
+            return;
+        }
+        ValueAnimator duration = ValueAnimator.ofFloat(this.d, z10 ? 1.0f : 0.0f).setDuration(200L);
+        duration.setInterpolator(bs.f);
+        duration.addUpdateListener(new d80(this, 22));
+        duration.addListener(new i60(this, 22));
+        duration.start();
+        this.f = duration;
     }
 
-    @Override // o1.i
-    public final void b(Object obj, float f7) {
-        this.b.b(obj, f7 / this.c);
+    @Override // android.view.View
+    public final boolean isSelected() {
+        return this.d == 1.0f;
+    }
+
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.a.onAttachedToWindow();
+    }
+
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.a.onDetachedFromWindow();
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        canvas.save();
+        float f7 = (this.d * 0.1f) + 0.9f;
+        canvas.scale(f7, f7);
+        int x02 = org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.m5, false);
+        Paint paint = this.c;
+        paint.setColor(x02);
+        paint.setAlpha((int) (Color.alpha(paint.getColor()) * this.d));
+        float strokeWidth = paint.getStrokeWidth();
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(strokeWidth, strokeWidth, getWidth() - strokeWidth, getHeight() - strokeWidth);
+        canvas.drawArc(rectF, -90.0f, this.d * 360.0f, false, paint);
+        canvas.restore();
+        if (this.e) {
+            return;
+        }
+        float strokeWidth2 = paint.getStrokeWidth() * 2.5f * this.d;
+        float f10 = 2.0f * strokeWidth2;
+        float width = getWidth() - f10;
+        float height = getHeight() - f10;
+        ImageReceiver imageReceiver = this.a;
+        imageReceiver.setImageCoords(strokeWidth2, strokeWidth2, width, height);
+        imageReceiver.draw(canvas);
+    }
+
+    public void setAvatar(TLObject tLObject) {
+        h9 h9Var = this.b;
+        h9Var.p(tLObject);
+        this.a.setForUserOrChat(tLObject, h9Var);
+    }
+
+    public void setHideAvatar(boolean z10) {
+        this.e = z10;
+        invalidate();
     }
 }

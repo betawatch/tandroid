@@ -2,12 +2,13 @@ package hg;
 
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
+import com.google.android.gms.internal.play_billing.k3;
 import java.util.ArrayList;
 import java.util.WeakHashMap;
 import org.telegram.messenger.BuildVars;
-import org.telegram.ui.Components.jm0;
+import org.telegram.ui.Components.mm0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class o1 extends s4.i0 {
     public final /* synthetic */ int a;
@@ -25,15 +26,15 @@ public final class o1 extends s4.i0 {
                 ((p1) this.b).l();
                 break;
             case 1:
-                jm0 jm0Var = (jm0) this.b;
-                jm0Var.K0(true);
-                if (jm0Var.q2) {
-                    jm0Var.q1 = -1;
-                    if (jm0Var.T1 == null) {
-                        jm0Var.E1.setEmpty();
+                mm0 mm0Var = (mm0) this.b;
+                mm0Var.K0(true);
+                if (mm0Var.q2) {
+                    mm0Var.q1 = -1;
+                    if (mm0Var.T1 == null) {
+                        mm0Var.E1.setEmpty();
                     }
                 }
-                jm0Var.invalidate();
+                mm0Var.invalidate();
                 break;
             default:
                 RecyclerView recyclerView = (RecyclerView) this.b;
@@ -70,10 +71,10 @@ public final class o1 extends s4.i0 {
                 ArrayList arrayList = (ArrayList) bVar.d;
                 if (i11 >= 1) {
                     if (BuildVars.DEBUG_VERSION) {
-                        StringBuilder m10 = i2.e.m("onItemRangeChanged(", i10, ", ", i11, ", ");
-                        m10.append(obj);
-                        m10.append(")");
-                        bVar.i(m10.toString());
+                        StringBuilder k10 = k3.k("onItemRangeChanged(", i10, ", ", i11, ", ");
+                        k10.append(obj);
+                        k10.append(")");
+                        bVar.i(k10.toString());
                     }
                     arrayList.add(bVar.j(4, i10, obj, i11));
                     bVar.b |= 4;
@@ -96,12 +97,12 @@ public final class o1 extends s4.i0 {
                 ((p1) this.b).s(i10 + 1, i11);
                 break;
             case 1:
-                jm0 jm0Var = (jm0) this.b;
-                jm0Var.K0(true);
-                View view = jm0Var.p1;
+                mm0 mm0Var = (mm0) this.b;
+                mm0Var.K0(true);
+                View view = mm0Var.p1;
                 if (view != null && view.getAlpha() == 0.0f) {
-                    jm0Var.q1 = -1;
-                    jm0Var.f1();
+                    mm0Var.q1 = -1;
+                    mm0Var.g1();
                     break;
                 }
                 break;
@@ -158,7 +159,7 @@ public final class o1 extends s4.i0 {
                 ((p1) this.b).t(i10 + 1, i11);
                 break;
             case 1:
-                ((jm0) this.b).K0(true);
+                ((mm0) this.b).K0(true);
                 break;
             default:
                 RecyclerView recyclerView = (RecyclerView) this.b;

@@ -1,18 +1,60 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.IMapsProvider;
-import org.telegram.messenger.ImageReceiver;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class hc0 {
-    public long a;
-    public TLRPC.Message b;
-    public TLRPC.User c;
-    public TLRPC.Chat d;
-    public IMapsProvider.IMarker e;
-    public IMapsProvider.IMarker f;
-    public boolean g;
-    public ImageReceiver h;
+public final class hc0 implements org.telegram.ui.Components.ju0 {
+    public final /* synthetic */ sc0 a;
+
+    public hc0(sc0 sc0Var) {
+        this.a = sc0Var;
+    }
+
+    @Override // org.telegram.ui.Components.ju0
+    public final void R() {
+        sc0 sc0Var = this.a;
+        ic0 ic0Var = sc0Var.K0;
+        int d02 = ic0Var == null ? 0 : ic0Var.d0(8);
+        sc0Var.L0.setText(LocaleController.formatPluralString("LocationStories", d02, new Object[0]));
+        gc0 gc0Var = sc0Var.T;
+        boolean z10 = d02 > 0;
+        if (gc0Var.i0 != z10) {
+            gc0Var.i0 = z10;
+            gc0Var.l();
+            sc0Var.U.v0(0, AndroidUtilities.dp(200.0f), null);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.ju0
+    public final boolean T() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.ju0
+    public final org.telegram.ui.Components.mm0 f() {
+        return this.a.U;
+    }
+
+    @Override // org.telegram.ui.Components.ju0
+    public final TLRPC.Chat g() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.ju0
+    public final boolean h(TLRPC.ChatParticipant chatParticipant, boolean z10, boolean z11, View view) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.ju0
+    public final boolean r() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.ju0
+    public final void C() {
+    }
 }

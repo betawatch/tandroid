@@ -1,18 +1,16 @@
 package ki;
 
 import android.view.View;
-import org.telegram.ui.Components.i80;
+import org.telegram.ui.Components.j80;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public interface u3 {
-    void A(int i10);
-
     void C(c6 c6Var, String str);
 
     void J();
 
-    i80 M(View view);
+    j80 M(View view);
 
     void P();
 
@@ -32,7 +30,9 @@ public interface u3 {
 
     void p();
 
-    void r();
+    void s();
 
-    void x();
+    void y();
+
+    void z(int i10);
 }

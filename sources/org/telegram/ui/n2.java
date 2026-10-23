@@ -1,44 +1,93 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.MotionEvent;
+import org.telegram.messenger.Intro;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class n2 extends z4.g {
-    public final /* synthetic */ s2 w0;
+public final class n2 implements z4.f {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n2(s2 s2Var, Context context) {
-        super(context);
-        this.w0 = s2Var;
+    public /* synthetic */ n2(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // z4.g, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        int actionMasked = motionEvent.getActionMasked();
-        s2 s2Var = this.w0;
-        if (actionMasked == 0) {
-            s2Var.x.f0.requestDisallowInterceptTouchEvent(true);
-        } else if (motionEvent.getActionMasked() == 1 || motionEvent.getActionMasked() == 3) {
-            s2Var.x.f0.requestDisallowInterceptTouchEvent(false);
+    @Override // z4.f
+    public final void a(int i10) {
+        switch (this.a) {
+            case 0:
+                r2 r2Var = (r2) this.b;
+                r2Var.w = i10;
+                r2Var.d.invalidate();
+                break;
+            case 1:
+                ((n70) this.b).H = i10;
+                break;
+            default:
+                ((qc1) this.b).b0.invalidate();
+                break;
         }
-        s2Var.x.k();
-        return super.onInterceptTouchEvent(motionEvent);
     }
 
-    @Override // z4.g, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        int actionMasked = motionEvent.getActionMasked();
-        s2 s2Var = this.w0;
-        if (actionMasked == 0) {
-            s2Var.x.f0.requestDisallowInterceptTouchEvent(true);
+    @Override // z4.f
+    public final void b(float f7, int i10, int i11) {
+        switch (this.a) {
+            case 0:
+                r2 r2Var = (r2) this.b;
+                float measuredWidth = r2Var.b.getMeasuredWidth();
+                if (measuredWidth != 0.0f) {
+                    r2Var.v = com.google.android.gms.internal.play_billing.k3.c(r2Var.w, measuredWidth, (i10 * measuredWidth) + i11, measuredWidth);
+                    r2Var.d.invalidate();
+                    break;
+                }
+                break;
+            case 1:
+                n70 n70Var = (n70) this.b;
+                org.telegram.ui.Components.sa saVar = n70Var.e;
+                saVar.b = f7;
+                saVar.c = i10;
+                saVar.invalidate();
+                float measuredWidth2 = n70Var.d.getMeasuredWidth();
+                if (measuredWidth2 != 0.0f) {
+                    Intro.setScrollOffset((((i10 * measuredWidth2) + i11) - (n70Var.H * measuredWidth2)) / measuredWidth2);
+                    break;
+                }
+                break;
         }
-        boolean onTouchEvent = super.onTouchEvent(motionEvent);
-        if (motionEvent.getActionMasked() != 1 && motionEvent.getActionMasked() != 3) {
-            return onTouchEvent;
+    }
+
+    @Override // z4.f
+    public final void c(int i10) {
+        switch (this.a) {
+            case 1:
+                n70 n70Var = (n70) this.b;
+                if (i10 != 1) {
+                    if (i10 == 0 || i10 == 2) {
+                        if (n70Var.K) {
+                            n70Var.K = false;
+                        }
+                        if (n70Var.w != n70Var.d.getCurrentItem()) {
+                            n70Var.w = n70Var.d.getCurrentItem();
+                            break;
+                        }
+                    }
+                } else {
+                    n70Var.K = true;
+                    n70Var.d.getCurrentItem();
+                    n70Var.d.getMeasuredWidth();
+                    break;
+                }
+                break;
         }
-        s2Var.x.f0.requestDisallowInterceptTouchEvent(false);
-        return onTouchEvent;
+    }
+
+    private final void d(int i10) {
+    }
+
+    private final void e(int i10) {
+    }
+
+    private final void f(float f7, int i10, int i11) {
     }
 }

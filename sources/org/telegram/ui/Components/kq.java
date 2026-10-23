@@ -1,8 +1,8 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class kq implements ow0 {
+public final class kq implements rw0 {
     public final /* synthetic */ iq a;
     public final /* synthetic */ mq b;
 
@@ -11,16 +11,16 @@ public final class kq implements ow0 {
         this.a = iqVar;
     }
 
-    @Override // org.telegram.ui.Components.ow0
-    public final void h(int i10) {
+    @Override // org.telegram.ui.Components.rw0
+    public final void i(int i10) {
         mq mqVar = this.b;
-        mqVar.r = i10;
+        mqVar.s = i10;
         mqVar.q(true);
     }
 
-    @Override // org.telegram.ui.Components.ow0
+    @Override // org.telegram.ui.Components.rw0
     public final void m() {
-        int measuredHeight = this.b.c.getMeasuredHeight();
+        int measuredHeight = this.b.d.getMeasuredHeight();
         iq iqVar = this.a;
         iqVar.y(0 - iqVar.getScrollX(), measuredHeight - iqVar.getScrollY(), false);
     }

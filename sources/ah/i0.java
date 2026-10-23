@@ -1,9 +1,9 @@
 package ah;
 
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.rc0;
+import org.telegram.ui.Components.yb0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i0 implements Runnable {
     public final /* synthetic */ int a;
@@ -32,9 +32,9 @@ public final /* synthetic */ class i0 implements Runnable {
                         } catch (Exception unused) {
                         }
                     }
-                    rc0 rc0Var = t0Var.p;
-                    if (rc0Var != null) {
-                        rc0Var.run();
+                    yb0 yb0Var = t0Var.p;
+                    if (yb0Var != null) {
+                        yb0Var.run();
                         break;
                     }
                 }

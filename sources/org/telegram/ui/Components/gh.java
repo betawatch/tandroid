@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import android.text.TextUtils;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class gh implements Runnable {
     public final /* synthetic */ int a;
@@ -15,15 +15,15 @@ public final /* synthetic */ class gh implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        boolean J1;
+        boolean N1;
         switch (this.a) {
             case 0:
                 ti tiVar = this.b;
                 qu quVar = tiVar.c0 ? tiVar.S0 : tiVar.H0;
-                tiVar.Q1(quVar.getEditText().getLineCount() > 2 && !TextUtils.isEmpty(quVar.getText().toString().trim()));
+                tiVar.U1(quVar.getEditText().getLineCount() > 2 && !TextUtils.isEmpty(quVar.getText().toString().trim()));
                 break;
             case 1:
-                ti.v(this.b);
+                ti.u(this.b);
                 break;
             case 2:
                 ti tiVar2 = this.b;
@@ -34,25 +34,25 @@ public final /* synthetic */ class gh implements Runnable {
                 eiVar.setEffect(j10);
                 li liVar = tiVar2.B0;
                 if (liVar == tiVar2.j0 || liVar == tiVar2.q0) {
-                    J1 = tiVar2.J1(0, false, 0, tiVar2.u1(), j10);
+                    N1 = tiVar2.N1(0, false, 0, tiVar2.x1(), j10);
                 } else {
-                    if (!liVar.K(0, false, 0, tiVar2.u1(), j10)) {
+                    if (!liVar.K(0, false, 0, tiVar2.x1(), j10)) {
                         tiVar2.dismiss();
                     }
-                    J1 = false;
+                    N1 = false;
                 }
                 mf mfVar2 = tiVar2.h0;
                 if (mfVar2 != null) {
-                    mfVar2.g(!J1);
+                    mfVar2.g(!N1);
                     tiVar2.h0 = null;
                     break;
                 }
                 break;
             case 3:
-                this.b.I1();
+                this.b.M1();
                 break;
             default:
-                ti.z(this.b);
+                ti.y(this.b);
                 break;
         }
     }

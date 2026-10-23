@@ -1,43 +1,35 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.widget.TextView;
+import android.os.Bundle;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class nb0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ ob0 c;
+public final class nb0 extends sn {
+    public boolean ed;
+    public final /* synthetic */ TLRPC.User fd;
+    public final /* synthetic */ TLRPC.User[] gd;
+    public final /* synthetic */ long hd;
 
-    public /* synthetic */ nb0(ob0 ob0Var, float f7, int i10) {
-        this.a = i10;
-        this.c = ob0Var;
-        this.b = f7;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public nb0(Bundle bundle, TLRPC.User user, TLRPC.User[] userArr, long j10) {
+        super(bundle);
+        this.fd = user;
+        this.gd = userArr;
+        this.hd = j10;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                ob0 ob0Var = this.c;
-                TextView textView = ob0Var.f;
-                int x02 = org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.y6, false);
-                int x03 = org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.n6, false);
-                float f7 = this.b;
-                ob0Var.s = f7;
-                textView.setTextColor(i0.a.f(f7, x02, x03));
-                break;
-            default:
-                ob0 ob0Var2 = this.c;
-                TextView textView2 = ob0Var2.d;
-                int x04 = org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.y6, false);
-                int x05 = org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.n6, false);
-                float f10 = this.b;
-                ob0Var2.w = f10;
-                textView2.setTextColor(i0.a.f(f10, x04, x05));
-                break;
+    @Override // org.telegram.ui.sn, org.telegram.ui.ActionBar.o2
+    public final void onBecomeFullyVisible() {
+        super.onBecomeFullyVisible();
+        if (this.ed) {
+            return;
         }
+        this.ed = true;
+        org.telegram.ui.Components.xc.a0(this).M(LocaleController.formatString(R.string.CreateManagedBotCreatedTitle, UserObject.getUserName(this.fd)), AndroidUtilities.replaceSingleTag(LocaleController.formatString(R.string.CreateManagedBotCreatedText, UserObject.getUserName(this.gd[0])), new ai.v3(this, this.hd, 29)), R.raw.contact_check).j();
     }
 }

@@ -7,48 +7,48 @@ import android.graphics.Paint;
 import android.graphics.Shader;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class we implements Utilities.Callback2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ qn b;
+    public final /* synthetic */ sn b;
 
-    public /* synthetic */ we(qn qnVar, int i10) {
+    public /* synthetic */ we(sn snVar, int i10) {
         this.a = i10;
-        this.b = qnVar;
+        this.b = snVar;
     }
 
     @Override // org.telegram.messenger.Utilities.Callback2
     public final void run(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                qn.z1(this.b, (Integer) obj, (Boolean) obj2);
+                sn.z1(this.b, (Integer) obj, (Boolean) obj2);
                 break;
             case 1:
-                qn.p1(this.b, (Long) obj, (Boolean) obj2);
+                sn.s1(this.b, (Long) obj, (Boolean) obj2);
                 break;
             case 2:
-                qn qnVar = this.b;
-                gh.b bVar = qnVar.z8;
+                sn snVar = this.b;
+                gh.b bVar = snVar.L8;
                 bVar.a((Bitmap) obj2);
-                hh.d.c(bVar, qnVar.fragmentView);
-                qnVar.A8.d();
+                hh.d.c(bVar, snVar.fragmentView);
+                snVar.M8.d();
                 break;
             default:
-                qn qnVar2 = this.b;
-                qnVar2.B8 = (Bitmap) obj;
+                sn snVar2 = this.b;
+                snVar2.N8 = (Bitmap) obj;
                 Paint paint = new Paint(1);
-                qnVar2.D8 = paint;
-                Bitmap bitmap = qnVar2.B8;
+                snVar2.P8 = paint;
+                Bitmap bitmap = snVar2.N8;
                 Shader.TileMode tileMode = Shader.TileMode.CLAMP;
                 BitmapShader bitmapShader = new BitmapShader(bitmap, tileMode, tileMode);
-                qnVar2.C8 = bitmapShader;
+                snVar2.O8 = bitmapShader;
                 paint.setShader(bitmapShader);
-                qnVar2.E8 = new Matrix();
-                gh.b bVar2 = qnVar2.z8;
+                snVar2.Q8 = new Matrix();
+                gh.b bVar2 = snVar2.L8;
                 bVar2.a((Bitmap) obj2);
-                hh.d.c(bVar2, qnVar2.fragmentView);
-                qnVar2.A8.d();
+                hh.d.c(bVar2, snVar2.fragmentView);
+                snVar2.M8.d();
                 break;
         }
     }

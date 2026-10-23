@@ -9,9 +9,8 @@ import c6.e0;
 import com.google.android.gms.cast.CastDevice;
 import java.util.HashSet;
 import java.util.Iterator;
-import org.telegram.ui.fk0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class j extends b8.b {
     public final /* synthetic */ int b = 2;
@@ -34,16 +33,16 @@ public final class j extends b8.b {
         int i13 = 0;
         switch (i11) {
             case 0:
-                fk0 fk0Var = (fk0) obj;
+                org.telegram.ui.web.d0 d0Var = (org.telegram.ui.web.d0) obj;
                 if (i10 == 1) {
-                    x6.b bVar = new x6.b(fk0Var);
+                    x6.b bVar = new x6.b(d0Var);
                     parcel2.writeNoException();
                     com.google.android.gms.internal.cast.v.d(parcel2, bVar);
                     break;
                 } else if (i10 == 2) {
                     int readInt = parcel.readInt();
                     com.google.android.gms.internal.cast.v.b(parcel);
-                    fk0Var.getClass();
+                    d0Var.getClass();
                     Log.d("CAST_STATE", "onCastStateChanged " + readInt);
                     parcel2.writeNoException();
                     break;
@@ -199,7 +198,7 @@ public final class j extends b8.b {
                         com.google.android.gms.common.api.internal.u b12 = com.google.android.gms.common.api.internal.v.b();
                         b12.c = new androidx.biometric.e(e0Var2, readString4, iVar, i12);
                         b12.a = 8406;
-                        e0Var2.e(1, b12.a()).addOnCompleteListener(new ya.d(this, 13));
+                        e0Var2.e(1, b12.a()).addOnCompleteListener(new ya.c(this, 13));
                     }
                     parcel2.writeNoException();
                     break;
@@ -265,8 +264,8 @@ public final class j extends b8.b {
         this.c = bVar;
     }
 
-    public j(fk0 fk0Var) {
+    public j(org.telegram.ui.web.d0 d0Var) {
         super("com.google.android.gms.cast.framework.ICastStateListener", 1);
-        this.c = fk0Var;
+        this.c = d0Var;
     }
 }

@@ -1,74 +1,151 @@
 package ci;
 
-import android.animation.ValueAnimator;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.SurfaceView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.ui.Components.ck0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class i9 implements ValueAnimator.AnimatorUpdateListener {
+public final class i9 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ aa b;
+    public final /* synthetic */ z9 b;
 
-    public /* synthetic */ i9(aa aaVar, int i10) {
+    public /* synthetic */ i9(z9 z9Var, int i10) {
         this.a = i10;
-        this.b = aaVar;
+        this.b = z9Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        p4 t10;
+        ck0 ck0Var;
         switch (this.a) {
             case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                aa aaVar = this.b;
-                aaVar.U = floatValue;
-                aaVar.o();
-                o9 o9Var = aaVar.s;
+                super.onAnimationEnd(animator);
+                z9 z9Var = this.b;
+                w9 w9Var = z9Var.s0;
+                o9 o9Var = z9Var.v;
                 if (o9Var != null) {
-                    o9Var.invalidate();
+                    o9Var.a(true);
                 }
-                h1 h1Var = aaVar.A0;
-                if (h1Var != null) {
-                    h1Var.v((1.0f - aaVar.V) * aaVar.U);
+                z9Var.o();
+                z9Var.J0.unlock();
+                l7 l7Var = z9Var.u1;
+                if (l7Var != null) {
+                    l7Var.b();
+                    AndroidUtilities.removeFromParent(z9Var.u1);
+                    z9Var.u1 = null;
+                }
+                ImageReceiver imageReceiver = w9Var.b;
+                if (imageReceiver != null) {
+                    imageReceiver.setVisible(true, true);
+                    w9Var.b = null;
+                }
+                ImageReceiver imageReceiver2 = w9Var.c;
+                if (imageReceiver2 != null) {
+                    imageReceiver2.setAlpha(1.0f);
+                    w9Var.c.setVisible(true, true);
+                }
+                if (w9Var.d != null && (t10 = z9Var.t()) != null && (ck0Var = t10.o1.d) != null) {
+                    ck0 ck0Var2 = w9Var.d;
+                    ck0Var2.getClass();
+                    ck0Var2.c = ck0Var.c;
+                    ck0Var2.f = ck0Var.f;
+                    ck0Var2.b = ck0Var.b;
+                    ck0Var2.a = System.currentTimeMillis();
+                    ck0Var2.c();
+                }
+                o4 o4Var = z9Var.G0;
+                if (o4Var != null) {
+                    o4Var.b();
+                }
+                SurfaceView surfaceView = z9Var.C0;
+                if (surfaceView != null) {
+                    surfaceView.setVisibility(4);
+                }
+                z9Var.I();
+                try {
+                    AndroidUtilities.runOnUIThread(new androidx.fragment.app.d(this, 26));
+                } catch (Exception unused) {
+                }
+                z9Var.m0 = false;
+                z9Var.d = false;
+                s3 s3Var = z9Var.o1;
+                if (s3Var != null) {
+                    s3Var.run();
+                    z9Var.o1 = null;
                     break;
                 }
                 break;
             case 1:
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                aa aaVar2 = this.b;
-                aaVar2.U = floatValue2;
-                p9 p9Var = aaVar2.v;
-                if (p9Var != null && floatValue2 > 0.6f && w.c && p9Var.a) {
-                    p9Var.a(false);
-                }
-                h1 h1Var2 = aaVar2.A0;
-                if (h1Var2 != null) {
-                    h1Var2.v((1.0f - aaVar2.V) * aaVar2.U);
-                }
-                aaVar2.o();
-                o9 o9Var2 = aaVar2.s;
-                if (o9Var2 != null) {
-                    o9Var2.invalidate();
-                    break;
-                }
-                break;
-            case 2:
-                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                aa aaVar3 = this.b;
-                aaVar3.Z = floatValue3;
-                aaVar3.d0 = Utilities.clamp(aaVar3.Z / AndroidUtilities.dp(200.0f), 1.0f, 0.0f);
-                q9 q9Var = aaVar3.n0;
-                q4 currentPeerView = q9Var == null ? null : q9Var.getCurrentPeerView();
+                z9 z9Var2 = this.b;
+                z9Var2.H = null;
+                z9Var2.Z = 0.0f;
+                z9Var2.d0 = 0.0f;
+                p9 p9Var = z9Var2.n0;
+                p4 currentPeerView = p9Var != null ? p9Var.getCurrentPeerView() : null;
                 if (currentPeerView != null) {
                     currentPeerView.invalidate();
                     break;
                 }
                 break;
             default:
-                float floatValue4 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                aa aaVar4 = this.b;
-                aaVar4.e0 = floatValue4;
-                aaVar4.v.invalidate();
+                z9 z9Var3 = this.b;
+                w9 w9Var2 = z9Var3.s0;
+                z9Var3.U = 1.0f;
+                z9Var3.o();
+                z9.x1 = false;
+                o9 o9Var2 = z9Var3.v;
+                if (o9Var2 != null) {
+                    o9Var2.a(true);
+                }
+                n9 n9Var = z9Var3.s;
+                if (n9Var != null) {
+                    n9Var.invalidate();
+                }
+                ImageReceiver imageReceiver3 = w9Var2.b;
+                if (imageReceiver3 != null && !z9Var3.d) {
+                    imageReceiver3.setVisible(true, true);
+                    w9Var2.b = null;
+                }
+                ImageReceiver imageReceiver4 = w9Var2.c;
+                if (imageReceiver4 != null && !z9Var3.d) {
+                    imageReceiver4.setAlpha(1.0f);
+                    w9Var2.c.setVisible(true, true);
+                    w9Var2.c = null;
+                }
+                p4 t11 = z9Var3.t();
+                if (t11 != null) {
+                    t11.e1(false);
+                }
+                h1 h1Var = z9Var3.A0;
+                if (h1Var != null) {
+                    h1Var.v((1.0f - z9Var3.V) * z9Var3.U);
+                }
+                if (z9Var3.w1) {
+                    z9Var3.w1 = false;
+                    z9Var3.p();
+                    AndroidUtilities.runOnUIThread(new s3(z9Var3, 1), 30L);
+                } else if (!SharedConfig.storiesIntroShown) {
+                    if (z9Var3.u1 == null && z9Var3.v != null) {
+                        l7 l7Var2 = new l7(z9Var3.v.getContext(), z9Var3.s);
+                        z9Var3.u1 = l7Var2;
+                        l7Var2.setAlpha(0.0f);
+                        z9Var3.v.addView(z9Var3.u1);
+                    }
+                    l7 l7Var3 = z9Var3.u1;
+                    if (l7Var3 != null) {
+                        l7Var3.setOnClickListener(new ah.g0(this, 16));
+                        z9Var3.u1.animate().alpha(1.0f).setDuration(150L).setListener(new s9(this, 1)).start();
+                    }
+                    SharedConfig.setStoriesIntroShown(true);
+                }
+                z9Var3.P();
+                z9Var3.J0.unlock();
                 break;
         }
     }

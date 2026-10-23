@@ -1,17 +1,18 @@
 package r9;
 
-import qg.f0;
+import org.telegram.ui.Wallet.e8;
+import org.telegram.ui.web.d0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class p implements qa.b {
-    public static final f0 c = new f0(7);
+    public static final d0 c = new d0(19);
     public static final f d = new f(1);
     public qa.a a;
     public volatile qa.b b;
 
-    public p(f0 f0Var, qa.b bVar) {
-        this.a = f0Var;
+    public p(d0 d0Var, qa.b bVar) {
+        this.a = d0Var;
         this.b = bVar;
     }
 
@@ -29,7 +30,7 @@ public final class p implements qa.b {
             if (bVar != fVar) {
                 bVar2 = bVar;
             } else {
-                this.a = new org.telegram.ui.web.m(6, this.a, aVar);
+                this.a = new e8(8, this.a, aVar);
                 bVar2 = null;
             }
         }

@@ -1,22 +1,48 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class lt0 implements View.OnLayoutChangeListener {
-    public final /* synthetic */ uv0 a;
+public final class lt0 extends g.o {
+    public final /* synthetic */ int c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ ViewGroup e;
 
-    public lt0(uv0 uv0Var) {
-        this.a = uv0Var;
+    public /* synthetic */ lt0(ViewGroup viewGroup, Object obj, int i10) {
+        this.c = i10;
+        this.e = viewGroup;
+        this.d = obj;
     }
 
-    @Override // android.view.View.OnLayoutChangeListener
-    public final void onLayoutChange(View view, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17) {
-        uv0 uv0Var = this.a;
-        if (uv0Var.n0 == null) {
-            return;
+    @Override // g.o
+    public final int i(int i10) {
+        int i11;
+        switch (this.c) {
+            case 0:
+                qu0 qu0Var = (qu0) this.d;
+                s4.g0 adapter = qu0Var.r.getAdapter();
+                xv0 xv0Var = (xv0) this.e;
+                rv0 rv0Var = xv0Var.I;
+                if (adapter == rv0Var) {
+                    if (rv0Var.j(i10) == 2) {
+                        return qu0Var.s.J;
+                    }
+                    return 1;
+                }
+                if (xv0.p(xv0Var, adapter) == -1) {
+                    return 1;
+                }
+                ((uv0) adapter).getClass();
+                return 1;
+            default:
+                di.h hVar = (di.h) this.d;
+                b71 b71Var = ((j71) this.e).Z2;
+                if (b71Var == null) {
+                    return hVar.J;
+                }
+                m61 G = b71Var.G(i10);
+                return (G == null || (i11 = G.u) == -1) ? hVar.J : i11;
         }
-        uv0Var.n0.setTranslationX(((View) r2.getParent()).getMeasuredWidth() - uv0Var.n0.getRight());
     }
 }

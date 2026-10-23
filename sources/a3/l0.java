@@ -2,9 +2,8 @@ package a3;
 
 import ah.d1;
 import ah.i1;
-import ah.l1;
-import ai.ga;
 import ai.h3;
+import ai.ha;
 import ai.l7;
 import ai.u0;
 import ai.u2;
@@ -14,24 +13,25 @@ import android.content.Intent;
 import android.util.Log;
 import android.view.View;
 import androidx.car.app.IOnDoneCallback;
-import ci.a7;
-import ci.aa;
-import ci.c7;
-import ci.h4;
-import ci.i7;
-import ci.ja;
-import ci.n7;
+import ci.b7;
+import ci.g4;
+import ci.h7;
+import ci.ia;
+import ci.m7;
+import ci.n3;
+import ci.n4;
 import ci.o3;
-import ci.o4;
 import ci.p3;
-import ci.q3;
-import ci.q4;
-import ci.r9;
-import ci.s2;
+import ci.p4;
+import ci.q9;
+import ci.r2;
+import ci.r6;
 import ci.s6;
-import ci.t6;
-import ci.x6;
+import ci.w6;
+import ci.z6;
+import ci.z9;
 import com.google.android.gms.tasks.TaskCompletionSource;
+import i2.o1;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -57,10 +57,9 @@ import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.b2;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.f3;
-import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.ActionBar.c2;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.o2;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.f5;
 import org.telegram.ui.Components.qc;
@@ -68,12 +67,12 @@ import org.telegram.ui.Components.r5;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
-import ug.m1;
+import ug.l1;
 import v7.q8;
 import w7.z5;
 import yh.a2;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class l0 implements Runnable {
     public final /* synthetic */ int a;
@@ -89,12 +88,12 @@ public final /* synthetic */ class l0 implements Runnable {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r3v45 */
-    /* JADX WARN: Type inference failed for: r3v46, types: [int] */
-    /* JADX WARN: Type inference failed for: r3v90 */
-    /* JADX WARN: Type inference failed for: r9v0 */
-    /* JADX WARN: Type inference failed for: r9v1 */
-    /* JADX WARN: Type inference failed for: r9v10 */
+    /* JADX WARN: Type inference failed for: r10v0 */
+    /* JADX WARN: Type inference failed for: r10v1 */
+    /* JADX WARN: Type inference failed for: r10v3 */
+    /* JADX WARN: Type inference failed for: r3v44 */
+    /* JADX WARN: Type inference failed for: r3v45, types: [int] */
+    /* JADX WARN: Type inference failed for: r3v91 */
     @Override // java.lang.Runnable
     public final void run() {
         boolean z10;
@@ -118,19 +117,19 @@ public final /* synthetic */ class l0 implements Runnable {
         int i10 = 3;
         boolean z15 = true;
         boolean z16 = true;
-        ?? r92 = 0;
+        ?? r10 = 0;
         switch (this.a) {
             case 0:
                 n4.s sVar = (n4.s) this.b;
                 b2.w wVar = (b2.w) this.c;
-                i2.g gVar = (i2.g) this.d;
+                i2.f fVar = (i2.f) this.d;
                 m0 m0Var = (m0) sVar.c;
                 String str = e2.m0.a;
-                i2.i0 i0Var = ((i2.c0) m0Var).a;
-                i0Var.S = wVar;
-                j2.f fVar = i0Var.s;
-                j2.a p5 = fVar.p();
-                fVar.q(p5, 1017, new j2.e(p5, wVar, gVar, 0));
+                i2.h0 h0Var = ((i2.b0) m0Var).a;
+                h0Var.S = wVar;
+                j2.e eVar2 = h0Var.s;
+                j2.a p5 = eVar2.p();
+                eVar2.q(p5, 1017, new j2.d(p5, wVar, fVar, 4));
                 return;
             case 1:
                 ai.x xVar = (ai.x) this.b;
@@ -147,7 +146,7 @@ public final /* synthetic */ class l0 implements Runnable {
             case 3:
                 l7 l7Var = (l7) this.b;
                 Long l4 = (Long) this.c;
-                l7Var.z2(l4.longValue(), new h3(l7Var, l4, (m1[]) this.d, 0 == true ? 1 : 0));
+                l7Var.y2(l4.longValue(), new h3(l7Var, l4, (l1[]) this.d, 0 == true ? 1 : 0));
                 return;
             case 4:
                 l7 l7Var2 = (l7) this.b;
@@ -163,7 +162,7 @@ public final /* synthetic */ class l0 implements Runnable {
                 if (a2Var != null) {
                     a2Var.run();
                 }
-                i2.e.s(R.string.Gift2ResaleDisable, new Object[]{l7Var2.X1()}, l7Var2.getBulletinFactory(), R.raw.contact_check, 36);
+                o1.t(R.string.Gift2ResaleDisable, new Object[]{l7Var2.W1()}, l7Var2.getBulletinFactory(), R.raw.contact_check, 36);
                 return;
             case 5:
                 l7 l7Var3 = (l7) this.b;
@@ -174,7 +173,7 @@ public final /* synthetic */ class l0 implements Runnable {
                 l7Var3.getBulletinFactory().f0(tL_error, false);
                 return;
             case 6:
-                l7.L0((l7) this.b, (TLObject) this.c, (MessageObject) this.d);
+                l7.K0((l7) this.b, (TLObject) this.c, (MessageObject) this.d);
                 return;
             case 7:
                 Runnable runnable = (Runnable) this.b;
@@ -182,23 +181,23 @@ public final /* synthetic */ class l0 implements Runnable {
                 TwoStepVerificationActivity twoStepVerificationActivity = (TwoStepVerificationActivity) this.d;
                 runnable.run();
                 cVar3.c(false);
-                l7.E2(twoStepVerificationActivity);
+                l7.D2(twoStepVerificationActivity);
                 return;
             case 8:
                 Runnable runnable2 = (Runnable) this.b;
                 TLRPC.Document document3 = (TLRPC.Document) this.c;
                 CharSequence charSequence = (CharSequence) this.d;
-                n2 U = LaunchActivity.U();
+                o2 U = LaunchActivity.U();
                 xc a02 = U != null ? xc.a0(U) : xc.X();
                 qc q6 = runnable2 == null ? document3 != null ? a02.q(document3, charSequence) : a02.Q(R.raw.contact_check, 36, charSequence) : document3 != null ? a02.r(document3, charSequence, LocaleController.getString(R.string.Gift2UniqueView), runnable2) : a02.J(R.raw.contact_check, charSequence, LocaleController.getString(R.string.Gift2UniqueView), runnable2);
                 q6.t = true;
                 q6.j();
                 return;
             case 9:
-                l7.g1((l7) this.b, (b2) this.c, (MessageObject) this.d);
+                l7.f1((l7) this.b, (c2) this.c, (MessageObject) this.d);
                 return;
             case 10:
-                l7.o1((l7) this.b, (TL_stars.TL_starGiftUnique) this.c, (String) this.d);
+                l7.n1((l7) this.b, (TL_stars.TL_starGiftUnique) this.c, (String) this.d);
                 return;
             case 11:
                 TLObject tLObject2 = (TLObject) this.b;
@@ -227,20 +226,20 @@ public final /* synthetic */ class l0 implements Runnable {
                     callback.run((TLRPC.TL_payments_paymentFormStarGift) tLObject3);
                     return;
                 } else {
-                    ga.e(tL_error2 != null ? tL_error2.text : "NO_PAYMENT_FORM");
+                    ha.e(tL_error2 != null ? tL_error2.text : "NO_PAYMENT_FORM");
                     callback.run(null);
                     return;
                 }
             case 13:
-                ga gaVar = (ga) this.b;
+                ha haVar = (ha) this.b;
                 TLObject tLObject4 = (TLObject) this.c;
                 Runnable runnable3 = (Runnable) this.d;
-                ArrayList arrayList = gaVar.v;
-                boolean[] zArr = gaVar.r;
-                ArrayList[] arrayListArr = gaVar.q;
-                int i11 = gaVar.a;
-                boolean z17 = !gaVar.e;
-                gaVar.c = System.currentTimeMillis();
+                ArrayList arrayList = haVar.v;
+                boolean[] zArr = haVar.r;
+                ArrayList[] arrayListArr = haVar.q;
+                int i11 = haVar.a;
+                boolean z17 = !haVar.e;
+                haVar.c = System.currentTimeMillis();
                 if (tLObject4 instanceof TL_stars.StarsStatus) {
                     TL_stars.StarsStatus starsStatus = (TL_stars.StarsStatus) tLObject4;
                     MessagesController.getInstance(i11).putUsers(starsStatus.users, false);
@@ -254,26 +253,26 @@ public final /* synthetic */ class l0 implements Runnable {
                             i12++;
                             TL_stars.StarsTransaction starsTransaction2 = starsTransaction;
                             boolean z18 = z15;
-                            arrayListArr[r92].add(starsTransaction2);
-                            boolean z19 = r92;
+                            arrayListArr[r10].add(starsTransaction2);
+                            boolean z19 = r10;
                             ArrayList[] arrayListArr2 = arrayListArr;
                             arrayListArr2[starsTransaction2.amount.amount > 0 ? z18 ? 1 : 0 : (char) 2].add(starsTransaction2);
                             z15 = z18 ? 1 : 0;
-                            r92 = z19 ? 1 : 0;
+                            r10 = z19 ? 1 : 0;
                             arrayListArr = arrayListArr2;
                         }
                         z10 = z15;
-                        z13 = r92;
+                        z13 = r10;
                         ArrayList[] arrayListArr3 = arrayListArr;
                         for (?? r32 = z13; r32 < 3; r32++) {
                             zArr[r32] = (!arrayListArr3[r32].isEmpty() || zArr[r32]) ? z10 : z13;
-                            boolean[] zArr2 = gaVar.u;
+                            boolean[] zArr2 = haVar.u;
                             boolean z20 = (starsStatus.flags & 1) == 0 ? z10 : z13;
                             zArr2[r32] = z20;
                             if (z20) {
-                                gaVar.t[r32] = z13;
+                                haVar.t[r32] = z13;
                             }
-                            gaVar.s[r32] = zArr2[r32] ? null : starsStatus.next_offset;
+                            haVar.s[r32] = zArr2[r32] ? null : starsStatus.next_offset;
                         }
                         z14 = z10;
                     } else {
@@ -283,28 +282,28 @@ public final /* synthetic */ class l0 implements Runnable {
                     }
                     if (arrayList.isEmpty()) {
                         arrayList.addAll(starsStatus.subscriptions);
-                        gaVar.x = z13;
-                        gaVar.w = starsStatus.subscriptions_next_offset;
-                        gaVar.y = (starsStatus.flags & 4) == 0 ? z10 : false;
+                        haVar.x = z13;
+                        haVar.w = starsStatus.subscriptions_next_offset;
+                        haVar.y = (starsStatus.flags & 4) == 0 ? z10 : false;
                         z11 = z10;
                     } else {
                         z11 = false;
                     }
-                    long j10 = gaVar.f.amount;
+                    long j10 = haVar.f.amount;
                     TL_stars.StarsAmount starsAmount = starsStatus.balance;
                     if (j10 != starsAmount.amount) {
                         z17 = z10;
                     }
-                    gaVar.f = starsAmount;
-                    gaVar.g = 0L;
+                    haVar.f = starsAmount;
+                    haVar.g = 0L;
                     z12 = z14;
                 } else {
                     z10 = true;
                     z11 = false;
                     z12 = false;
                 }
-                gaVar.d = false;
-                gaVar.e = z10;
+                haVar.d = false;
+                haVar.e = z10;
                 if (z17) {
                     NotificationCenter.getInstance(i11).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starBalanceUpdated, new Object[0]);
                 }
@@ -320,26 +319,26 @@ public final /* synthetic */ class l0 implements Runnable {
                 }
                 return;
             case 14:
-                ga gaVar2 = (ga) this.b;
+                ha haVar2 = (ha) this.b;
                 HashSet hashSet = (HashSet) this.c;
                 Runnable runnable4 = (Runnable) this.d;
-                gaVar2.getClass();
+                haVar2.getClass();
                 Iterator it = hashSet.iterator();
                 while (it.hasNext()) {
                     Integer num = (Integer) it.next();
                     num.intValue();
-                    gaVar2.Q.remove(num);
-                    gaVar2.R.remove(num);
+                    haVar2.Q.remove(num);
+                    haVar2.R.remove(num);
                 }
                 runnable4.run();
                 return;
             case 15:
                 boolean[] zArr3 = (boolean[]) this.b;
                 EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) this.c;
-                f3[] f3VarArr = (f3[]) this.d;
+                org.telegram.ui.ActionBar.h3[] h3VarArr = (org.telegram.ui.ActionBar.h3[]) this.d;
                 zArr3[0] = false;
                 AndroidUtilities.hideKeyboard(editTextBoldCursor);
-                f3VarArr[0].dismiss();
+                h3VarArr[0].dismiss();
                 return;
             case 16:
                 androidx.lifecycle.o oVar = (androidx.lifecycle.o) this.b;
@@ -395,108 +394,108 @@ public final /* synthetic */ class l0 implements Runnable {
                     return;
                 }
             case 19:
-                q3 q3Var = (q3) this.b;
+                p3 p3Var = (p3) this.b;
                 i1 i1Var = (i1) this.c;
                 View view = (View) this.d;
-                q4 q4Var = q3Var.a;
-                q4Var.u3 = true;
-                o4 o4Var = q4Var.O1;
-                ImageReceiver imageReceiver = q4Var.l3;
+                p4 p4Var = p3Var.a;
+                p4Var.u3 = true;
+                n4 n4Var = p4Var.O1;
+                ImageReceiver imageReceiver = p4Var.l3;
                 boolean[] zArr4 = {false};
-                n7 n7Var = q4Var.E0;
-                n7Var.animate().alpha(0.0f).scaleX(0.8f).scaleY(0.8f).setListener(new s2(true ? 1 : 0, n7Var)).setDuration(150L).start();
+                m7 m7Var = p4Var.E0;
+                m7Var.animate().alpha(0.0f).scaleX(0.8f).scaleY(0.8f).setListener(new r2(true ? 1 : 0, m7Var)).setDuration(150L).start();
                 int dp = AndroidUtilities.dp(8.0f);
-                n7 n7Var2 = new n7(q4Var.getContext(), q4Var.x1);
-                q4Var.E0 = n7Var2;
-                n7Var2.setPadding(dp, dp, dp, dp);
-                q4Var.D0.addView(q4Var.E0, z5.e(40, 40, 3));
-                r5 r5Var2 = q4Var.o3;
+                m7 m7Var2 = new m7(p4Var.getContext(), p4Var.x1);
+                p4Var.E0 = m7Var2;
+                m7Var2.setPadding(dp, dp, dp, dp);
+                p4Var.D0.addView(p4Var.E0, z5.e(40, 40, 3));
+                r5 r5Var2 = p4Var.o3;
                 if (r5Var2 != null) {
-                    r5Var2.o(q4Var);
+                    r5Var2.o(p4Var);
                     eVar = null;
-                    q4Var.o3 = null;
+                    p4Var.o3 = null;
                 } else {
                     eVar = null;
                 }
-                ah.e eVar2 = q4Var.m3;
-                if (eVar2 != null) {
-                    eVar2.d(q4Var);
-                    q4Var.m3 = eVar;
+                ah.e eVar3 = p4Var.m3;
+                if (eVar3 != null) {
+                    eVar3.d(p4Var);
+                    p4Var.m3 = eVar;
                 }
-                q4Var.p3 = false;
+                p4Var.p3 = false;
                 if (i1Var.g != 0) {
-                    q4Var.p3 = true;
-                    r5 r5Var3 = new r5(2, q4Var.C2, i1Var.g);
-                    q4Var.o3 = r5Var3;
-                    r5Var3.a(q4Var);
-                } else if (i1Var.f != null && (tL_availableReaction = MediaDataController.getInstance(q4Var.C2).getReactionsMap().get(i1Var.f)) != null) {
-                    q4Var.n3.setImage(null, null, ImageLocation.getForDocument(tL_availableReaction.select_animation), "60_60", null, null, null, 0L, null, null, 0);
+                    p4Var.p3 = true;
+                    r5 r5Var3 = new r5(2, p4Var.C2, i1Var.g);
+                    p4Var.o3 = r5Var3;
+                    r5Var3.a(p4Var);
+                } else if (i1Var.f != null && (tL_availableReaction = MediaDataController.getInstance(p4Var.C2).getReactionsMap().get(i1Var.f)) != null) {
+                    p4Var.n3.setImage(null, null, ImageLocation.getForDocument(tL_availableReaction.select_animation), "60_60", null, null, null, 0L, null, null, 0);
                     imageReceiver.setImage(ImageLocation.getForDocument(tL_availableReaction.around_animation), d1.a(), null, null, null, 0);
                     if (imageReceiver.getLottieAnimation() != null) {
                         imageReceiver.getLottieAnimation().N(0, false, true);
                     }
                 }
-                q4Var.E0.setReaction(i1Var);
-                if (q4Var.D1) {
-                    TL_stories.StoryItem storyItem3 = o4Var.a;
+                p4Var.E0.setReaction(i1Var);
+                if (p4Var.D1) {
+                    TL_stories.StoryItem storyItem3 = n4Var.a;
                     if (storyItem3.sent_reaction == null) {
                         if (storyItem3.views == null) {
                             storyItem3.views = new TL_stories.TL_storyViews();
                         }
-                        TL_stories.StoryItem storyItem4 = o4Var.a;
+                        TL_stories.StoryItem storyItem4 = n4Var.a;
                         TL_stories.StoryViews storyViews = storyItem4.views;
                         storyViews.reactions_count++;
-                        l1.b(null, storyItem4.sent_reaction, storyViews);
-                        q4Var.k1(true);
+                        ah.l1.b(null, storyItem4.sent_reaction, storyViews);
+                        p4Var.j1(true);
                     }
                 }
-                if (i1Var.g != 0 && (r5Var = q4Var.E0.f) != null) {
+                if (i1Var.g != 0 && (r5Var = p4Var.E0.f) != null) {
                     ah.e a10 = ah.e.a(r5Var, false, true);
-                    q4Var.m3 = a10;
-                    a10.f(q4Var);
+                    p4Var.m3 = a10;
+                    a10.f(p4Var);
                 }
-                q4Var.S1.g0(q4Var.B1, o4Var.a, i1Var);
+                p4Var.S1.g0(p4Var.B1, n4Var.a, i1Var);
                 int[] iArr = new int[2];
                 view.getLocationInWindow(iArr);
                 int[] iArr2 = new int[2];
-                q4Var.getLocationInWindow(iArr2);
-                q4Var.w3 = iArr[0] - iArr2[0];
-                q4Var.x3 = iArr[1] - iArr2[1];
-                q4Var.y3 = view.getMeasuredHeight();
+                p4Var.getLocationInWindow(iArr2);
+                p4Var.w3 = iArr[0] - iArr2[0];
+                p4Var.x3 = iArr[1] - iArr2[1];
+                p4Var.y3 = view.getMeasuredHeight();
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                q4Var.v3 = 0.0f;
-                q4Var.invalidate();
-                n7 n7Var3 = q4Var.E0;
-                n7Var3.setAllowDrawReaction(false);
-                ImageReceiver imageReceiver2 = n7Var3.e;
+                p4Var.v3 = 0.0f;
+                p4Var.invalidate();
+                m7 m7Var3 = p4Var.E0;
+                m7Var3.setAllowDrawReaction(false);
+                ImageReceiver imageReceiver2 = m7Var3.e;
                 if (i1Var.g == 0 && (tL_availableReaction2 = MediaDataController.getInstance(UserConfig.selectedAccount).getReactionsMap().get(i1Var.f)) != null) {
                     imageReceiver2.setImage(ImageLocation.getForDocument(tL_availableReaction2.center_icon), "40_40_nolimit", null, "tgs", tL_availableReaction2, 1);
                     imageReceiver2.setAutoRepeat(0);
                 }
-                ofFloat.addUpdateListener(new o3(q3Var, ofFloat, zArr4, 0 == true ? 1 : 0));
-                ofFloat.addListener(new p3(q3Var, zArr4, n7Var3, 0 == true ? 1 : 0));
+                ofFloat.addUpdateListener(new n3(p3Var, ofFloat, zArr4, 0 == true ? 1 : 0));
+                ofFloat.addListener(new o3(p3Var, zArr4, m7Var3, 0 == true ? 1 : 0));
                 ofFloat.setDuration(220L);
                 ofFloat.start();
-                q4Var.b1(false);
+                p4Var.a1(false);
                 return;
             case 20:
-                h4 h4Var = (h4) this.b;
-                d6 d6Var = (d6) this.c;
+                g4 g4Var = (g4) this.b;
+                g6 g6Var = (g6) this.c;
                 TL_stories.StoryItem storyItem5 = (TL_stories.StoryItem) this.d;
-                q4 q4Var2 = h4Var.l;
-                f5.R(q4Var2.getContext(), null, d6Var, new u2(h4Var, storyItem5, d6Var, i10));
-                h4 h4Var2 = q4Var2.t1;
-                if (h4Var2 != null) {
-                    h4Var2.a();
+                p4 p4Var2 = g4Var.l;
+                f5.S(p4Var2.getContext(), null, g6Var, new u2(g4Var, storyItem5, g6Var, i10));
+                g4 g4Var2 = p4Var2.t1;
+                if (g4Var2 != null) {
+                    g4Var2.a();
                     return;
                 }
                 return;
             case 21:
-                t6 t6Var = (t6) this.b;
+                s6 s6Var = (s6) this.b;
                 TL_stories.StoryItem storyItem6 = (TL_stories.StoryItem) this.c;
                 Utilities.Callback callback2 = (Utilities.Callback) this.d;
-                for (int i13 = 0; i13 < t6Var.i.size(); i13++) {
-                    MessageObject messageObject2 = (MessageObject) t6Var.i.get(i13);
+                for (int i13 = 0; i13 < s6Var.i.size(); i13++) {
+                    MessageObject messageObject2 = (MessageObject) s6Var.i.get(i13);
                     if (messageObject2 != null && (storyItem = messageObject2.storyItem) != null && (messageMedia = storyItem.media) != null && (document = storyItem6.media.document) != null && (document2 = messageMedia.document) != null && document2.id == document.id) {
                         callback2.run(document2);
                         return;
@@ -505,45 +504,45 @@ public final /* synthetic */ class l0 implements Runnable {
                 callback2.run(null);
                 return;
             case 22:
-                i7 i7Var = (i7) this.b;
+                h7 h7Var = (h7) this.b;
                 TLObject tLObject5 = (TLObject) this.c;
                 TLRPC.TL_error tL_error3 = (TLRPC.TL_error) this.d;
-                int i14 = i7Var.a;
-                i7Var.R = true;
+                int i14 = h7Var.a;
+                h7Var.R = true;
                 if (tLObject5 instanceof TLRPC.TL_boolTrue) {
-                    i7Var.S = null;
+                    h7Var.S = null;
                     NotificationCenter.getInstance(i14).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesLimitUpdate, new Object[0]);
                     return;
                 } else if (!(tLObject5 instanceof TL_stories.canSendStoryCount)) {
-                    i7Var.n(tL_error3);
+                    h7Var.n(tL_error3);
                     return;
                 } else {
-                    i7Var.S = new c7(1, ((TL_stories.canSendStoryCount) tLObject5).count_remains, -1L);
+                    h7Var.S = new b7(1, ((TL_stories.canSendStoryCount) tLObject5).count_remains, -1L);
                     NotificationCenter.getInstance(i14).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesLimitUpdate, new Object[0]);
                     return;
                 }
             case 23:
-                t6 t6Var2 = (t6) this.b;
-                s6 s6Var = (s6) this.c;
+                s6 s6Var2 = (s6) this.b;
+                r6 r6Var = (r6) this.c;
                 k2 k2Var = (k2) this.d;
-                ArrayList arrayList3 = t6Var2.i;
+                ArrayList arrayList3 = s6Var2.i;
                 for (int i15 = 0; i15 < arrayList3.size(); i15++) {
                     MessageObject messageObject3 = (MessageObject) arrayList3.get(i15);
                     if (messageObject3 != null && (storyItem2 = messageObject3.storyItem) != null && (messageMedia2 = storyItem2.media) != null) {
-                        TLRPC.MessageMedia messageMedia3 = s6Var.media;
+                        TLRPC.MessageMedia messageMedia3 = r6Var.media;
                         TLRPC.Document document4 = messageMedia3.document;
                         if (document4 != null) {
                             TLRPC.Document document5 = messageMedia2.document;
                             if (document5 == null) {
                                 continue;
                             } else if (document5.id == document4.id) {
-                                k2Var.run((s6) storyItem2);
+                                k2Var.run((r6) storyItem2);
                                 return;
                             }
                         }
                         TLRPC.Photo photo2 = messageMedia3.photo;
                         if (photo2 != null && (photo = messageMedia2.photo) != null && photo.id == photo2.id) {
-                            k2Var.run((s6) storyItem2);
+                            k2Var.run((r6) storyItem2);
                             return;
                         }
                     }
@@ -551,17 +550,17 @@ public final /* synthetic */ class l0 implements Runnable {
                 k2Var.run(null);
                 return;
             case 24:
-                t6 t6Var3 = (t6) this.b;
+                s6 s6Var3 = (s6) this.b;
                 TLObject tLObject6 = (TLObject) this.c;
                 Runnable runnable5 = (Runnable) this.d;
-                x6 x6Var = t6Var3.q;
-                ArrayList arrayList4 = t6Var3.G;
-                ArrayList arrayList5 = t6Var3.i;
-                ArrayList arrayList6 = t6Var3.H;
-                t6Var3.F = 0;
-                t6Var3.C = false;
-                t6Var3.D = true;
-                t6Var3.r = true;
+                w6 w6Var = s6Var3.q;
+                ArrayList arrayList4 = s6Var3.G;
+                ArrayList arrayList5 = s6Var3.i;
+                ArrayList arrayList6 = s6Var3.H;
+                s6Var3.F = 0;
+                s6Var3.C = false;
+                s6Var3.D = true;
+                s6Var3.r = true;
                 ArrayList arrayList7 = new ArrayList();
                 if (tLObject6 instanceof Vector) {
                     ArrayList arrayList8 = ((Vector) tLObject6).objects;
@@ -591,7 +590,7 @@ public final /* synthetic */ class l0 implements Runnable {
                     i17++;
                     TL_bots.botPreviewMedia botpreviewmedia = (TL_bots.botPreviewMedia) obj2;
                     ArrayList arrayList10 = arrayList7;
-                    MessageObject messageObject4 = new MessageObject(t6Var3.c, new s6(t6Var3, t6Var3.d, botpreviewmedia));
+                    MessageObject messageObject4 = new MessageObject(s6Var3.c, new r6(s6Var3, s6Var3.d, botpreviewmedia));
                     int i18 = 0;
                     while (true) {
                         if (i18 >= arrayList9.size()) {
@@ -605,14 +604,14 @@ public final /* synthetic */ class l0 implements Runnable {
                     TL_stories.StoryItem storyItem7 = messageObject4.storyItem;
                     TLRPC.Message message = messageObject4.messageOwner;
                     if (messageObject == null) {
-                        id2 = t6Var3.I;
-                        t6Var3.I = id2 + 1;
+                        id2 = s6Var3.I;
+                        s6Var3.I = id2 + 1;
                     } else {
                         id2 = messageObject.getId();
                     }
                     message.id = id2;
                     storyItem7.id = id2;
-                    messageObject4.parentStoriesList = t6Var3;
+                    messageObject4.parentStoriesList = s6Var3;
                     messageObject4.generateThumbs(false);
                     if (arrayList6.isEmpty()) {
                         arrayList6.add(new ArrayList());
@@ -621,51 +620,51 @@ public final /* synthetic */ class l0 implements Runnable {
                     arrayList5.add(messageObject4);
                     arrayList7 = arrayList10;
                 }
-                AndroidUtilities.cancelRunOnUIThread(x6Var);
-                AndroidUtilities.runOnUIThread(x6Var);
+                AndroidUtilities.cancelRunOnUIThread(w6Var);
+                AndroidUtilities.runOnUIThread(w6Var);
                 if (runnable5 != null) {
                     AndroidUtilities.runOnUIThread(runnable5);
                     return;
                 }
                 return;
             case 25:
-                r9 r9Var = (r9) this.b;
-                a7 a7Var = (a7) this.c;
+                q9 q9Var = (q9) this.b;
+                z6 z6Var = (z6) this.c;
                 ArrayList arrayList11 = (ArrayList) this.d;
-                aa aaVar = r9Var.d;
-                aaVar.n0.D(aaVar.h, a7Var.d, arrayList11);
+                z9 z9Var = q9Var.d;
+                z9Var.n0.D(z9Var.h, z6Var.d, arrayList11);
                 return;
             case 26:
-                ja jaVar = (ja) this.b;
+                ia iaVar = (ia) this.b;
                 TLObject tLObject7 = (TLObject) this.c;
                 TL_stories.TL_stories_getStoriesViews tL_stories_getStoriesViews = (TL_stories.TL_stories_getStoriesViews) this.d;
-                androidx.fragment.app.d dVar = jaVar.f;
-                int i19 = jaVar.b;
-                ja.g = System.currentTimeMillis();
+                androidx.fragment.app.d dVar = iaVar.f;
+                int i19 = iaVar.b;
+                ia.g = System.currentTimeMillis();
                 if (tLObject7 != null) {
                     TL_stories.TL_stories_storyViews tL_stories_storyViews = (TL_stories.TL_stories_storyViews) tLObject7;
                     MessagesController.getInstance(i19).putUsers(tL_stories_storyViews.users, false);
-                    if (!jaVar.d(tL_stories_getStoriesViews.id, tL_stories_storyViews)) {
-                        jaVar.d = 0;
-                        jaVar.e = false;
+                    if (!iaVar.d(tL_stories_getStoriesViews.id, tL_stories_storyViews)) {
+                        iaVar.d = 0;
+                        iaVar.e = false;
                         return;
                     }
                     NotificationCenter.getInstance(i19).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesUpdated, new Object[0]);
                 }
-                jaVar.d = 0;
-                if (jaVar.e) {
+                iaVar.d = 0;
+                if (iaVar.e) {
                     AndroidUtilities.cancelRunOnUIThread(dVar);
                     AndroidUtilities.runOnUIThread(dVar, 10000L);
                     return;
                 }
                 return;
             case 27:
-                com.google.firebase.messaging.g gVar2 = (com.google.firebase.messaging.g) this.b;
+                com.google.firebase.messaging.g gVar = (com.google.firebase.messaging.g) this.b;
                 Intent intent = (Intent) this.c;
                 TaskCompletionSource taskCompletionSource = (TaskCompletionSource) this.d;
-                gVar2.getClass();
+                gVar.getClass();
                 try {
-                    gVar2.handleIntent(intent);
+                    gVar.handleIntent(intent);
                     return;
                 } finally {
                     taskCompletionSource.setResult(null);

@@ -57,16 +57,17 @@ import org.json.JSONObject;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.da1;
 import org.telegram.ui.Components.o10;
-import org.telegram.ui.Components.w91;
-import org.telegram.ui.web.j1;
 import org.telegram.ui.web.k1;
+import org.telegram.ui.web.l1;
+import si.o0;
 import v7.u6;
 import z3.m;
 import z9.w0;
 import z9.x0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class e implements m, n5.b {
     public static volatile e e;
@@ -86,11 +87,11 @@ public final class e implements m, n5.b {
         this.a = file;
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
         hashMap.putAll(C(bufferedReader));
-        k1 k1Var = (k1) hashMap.get("content-type");
-        String str = k1Var == null ? null : (String) k1Var.b.get("boundary");
+        l1 l1Var = (l1) hashMap.get("content-type");
+        String str = l1Var == null ? null : (String) l1Var.b.get("boundary");
         if (str != null) {
             int length = str.length() + 2;
-            j1 j1Var = null;
+            k1 k1Var = null;
             while (true) {
                 String readLine = bufferedReader.readLine();
                 if (readLine == null) {
@@ -98,22 +99,22 @@ public final class e implements m, n5.b {
                 }
                 jArr[0] = jArr[0] + readLine.getBytes().length + 2;
                 if (readLine.length() == length && readLine.substring(2).equals(str)) {
-                    if (j1Var != null) {
-                        j1Var.d = (jArr[0] - length) - 2;
-                        arrayList.add(j1Var);
-                        k1 k1Var2 = (k1) j1Var.a.get("content-location");
-                        hashMap2.put(k1Var2 == null ? null : k1Var2.a, j1Var);
+                    if (k1Var != null) {
+                        k1Var.d = (jArr[0] - length) - 2;
+                        arrayList.add(k1Var);
+                        l1 l1Var2 = (l1) k1Var.a.get("content-location");
+                        hashMap2.put(l1Var2 == null ? null : l1Var2.a, k1Var);
                     }
-                    j1Var = new j1();
-                    j1Var.b = (File) this.a;
-                    j1Var.a.putAll(C(bufferedReader));
-                    j1Var.c = jArr[0];
+                    k1Var = new k1();
+                    k1Var.b = (File) this.a;
+                    k1Var.a.putAll(C(bufferedReader));
+                    k1Var.c = jArr[0];
                 }
             }
-            if (j1Var != null && j1Var.c != 0 && j1Var.d != 0) {
-                arrayList.add(j1Var);
-                k1 k1Var3 = (k1) j1Var.a.get("content-location");
-                hashMap2.put(k1Var3 != null ? k1Var3.a : null, j1Var);
+            if (k1Var != null && k1Var.c != 0 && k1Var.d != 0) {
+                arrayList.add(k1Var);
+                l1 l1Var3 = (l1) k1Var.a.get("content-location");
+                hashMap2.put(l1Var3 != null ? l1Var3.a : null, k1Var);
             }
         }
         bufferedReader.close();
@@ -132,25 +133,25 @@ public final class e implements m, n5.b {
     }
 
     public static void e(String str, String str2, HashMap hashMap) {
-        k1 k1Var = new k1();
+        l1 l1Var = new l1();
         String[] split = str2.split(";(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)");
         for (int i10 = 0; i10 < split.length; i10++) {
             String trim = split[i10].trim();
             if (!trim.isEmpty()) {
                 int indexOf = trim.indexOf(61);
                 if (i10 == 0 || indexOf < 0) {
-                    k1Var.a = trim;
+                    l1Var.a = trim;
                 } else {
                     String trim2 = trim.substring(0, indexOf).trim();
                     String trim3 = trim.substring(indexOf + 1).trim();
                     if (trim3.length() >= 2 && trim3.charAt(0) == '\"' && trim3.charAt(trim3.length() - 1) == '\"') {
-                        trim3 = k3.j(1, 1, trim3);
+                        trim3 = k3.i(1, 1, trim3);
                     }
-                    k1Var.b.put(trim2, trim3);
+                    l1Var.b.put(trim2, trim3);
                 }
             }
         }
-        hashMap.put(str.trim().toLowerCase(), k1Var);
+        hashMap.put(str.trim().toLowerCase(), l1Var);
     }
 
     public boolean A(k.a aVar, MenuItem menuItem) {
@@ -349,7 +350,7 @@ public final class e implements m, n5.b {
 
     @Override // z3.m
     public /* synthetic */ z3.d a(int i10, int i11, byte[] bArr) {
-        return r4.c.a(this, bArr, i11);
+        return o0.a(this, bArr, i11);
     }
 
     public void b(Object obj, v vVar, p1 p1Var, b1 b1Var) {
@@ -575,10 +576,10 @@ public final class e implements m, n5.b {
             str = str.concat(" parameterKey");
         }
         if (((String) this.c) == null) {
-            str = r4.c.u(str, " parameterValue");
+            str = o0.u(str, " parameterValue");
         }
         if (((Long) this.d) == null) {
-            str = r4.c.u(str, " templateVersion");
+            str = o0.u(str, " templateVersion");
         }
         if (str.isEmpty()) {
             return new w0((x0) this.a, (String) this.b, (String) this.c, ((Long) this.d).longValue());
@@ -784,7 +785,7 @@ public final class e implements m, n5.b {
      */
     /* JADX WARN: Code restructure failed: missing block: B:18:0x0063, code lost:
     
-        throw new java.lang.Exception(r4.c.h("Premature end of parens in ", r13));
+        throw new java.lang.Exception(si.o0.h("Premature end of parens in ", r13));
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -795,7 +796,7 @@ public final class e implements m, n5.b {
             return;
         }
         if (trim.charAt(0) == '(') {
-            Matcher matcher = w91.z0.matcher(trim);
+            Matcher matcher = da1.z0.matcher(trim);
             int i11 = 0;
             while (true) {
                 if (!matcher.find()) {
@@ -931,11 +932,11 @@ public final class e implements m, n5.b {
                                 int i14 = i10 - 1;
                                 v(matcher9.group(1), hashMap, zArr, i14);
                                 if (zArr[0]) {
-                                    throw new Exception(k3.k("Premature left-side return of ", str5, " in ", trim));
+                                    throw new Exception(k3.j("Premature left-side return of ", str5, " in ", trim));
                                 }
                                 v(matcher9.group(2), hashMap, zArr, i14);
                                 if (zArr[0]) {
-                                    throw new Exception(k3.k("Premature right-side return of ", str5, " in ", trim));
+                                    throw new Exception(k3.j("Premature right-side return of ", str5, " in ", trim));
                                 }
                             }
                             i13++;
@@ -952,11 +953,11 @@ public final class e implements m, n5.b {
         }
         zArr[0] = false;
         String trim = str.trim();
-        Matcher matcher = w91.x0.matcher(trim);
+        Matcher matcher = da1.x0.matcher(trim);
         if (matcher.find()) {
             trim = trim.substring(matcher.group(0).length());
         } else {
-            Matcher matcher2 = w91.y0.matcher(trim);
+            Matcher matcher2 = da1.y0.matcher(trim);
             if (matcher2.find()) {
                 trim = trim.substring(matcher2.group(0).length());
                 zArr[0] = true;

@@ -1,37 +1,66 @@
 package org.telegram.ui;
 
-import android.view.KeyEvent;
-import android.widget.TextView;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.widget.FrameLayout;
+import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class gz implements TextView.OnEditorActionListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ AlertDialog$Builder b;
+public final class gz extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
+    public Paint a;
+    public float[] b;
+    public Path c;
+    public float d;
 
-    public /* synthetic */ gz(AlertDialog$Builder alertDialog$Builder, int i10) {
-        this.a = i10;
-        this.b = alertDialog$Builder;
+    public final void a(float f7, float f10) {
+        float[] fArr = this.b;
+        fArr[7] = f7;
+        fArr[6] = f7;
+        fArr[1] = f7;
+        fArr[0] = f7;
+        fArr[5] = f10;
+        fArr[4] = f10;
+        fArr[3] = f10;
+        fArr[2] = f10;
     }
 
-    @Override // android.widget.TextView.OnEditorActionListener
-    public final boolean onEditorAction(TextView textView, int i10, KeyEvent keyEvent) {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.hideKeyboard(textView);
-                this.b.a.d(-1).callOnClick();
-                break;
-            case 1:
-                AndroidUtilities.hideKeyboard(textView);
-                this.b.a.d(-1).callOnClick();
-                break;
-            default:
-                AndroidUtilities.hideKeyboard(textView);
-                this.b.a.d(-1).callOnClick();
-                break;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        float measuredWidth = getMeasuredWidth() / 2.0f;
+        Path path = this.c;
+        path.rewind();
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(0.0f, 0.0f, measuredWidth - AndroidUtilities.lerp(0, AndroidUtilities.dp(4.0f), this.d), getMeasuredHeight());
+        a(AndroidUtilities.dp(8.0f), AndroidUtilities.lerp(0, AndroidUtilities.dp(8.0f), this.d));
+        float[] fArr = this.b;
+        Path.Direction direction = Path.Direction.CW;
+        path.addRoundRect(rectF, fArr, direction);
+        Paint paint = this.a;
+        canvas.drawPath(path, paint);
+        path.rewind();
+        rectF.set(measuredWidth + AndroidUtilities.lerp(0, AndroidUtilities.dp(4.0f), this.d), 0.0f, getMeasuredWidth(), getMeasuredHeight());
+        a(AndroidUtilities.lerp(0, AndroidUtilities.dp(8.0f), this.d), AndroidUtilities.dp(8.0f));
+        path.addRoundRect(rectF, fArr, direction);
+        canvas.drawPath(path, paint);
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void updateColors() {
+        try {
+            this.a.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Oh, false));
+            invalidate();
+        } catch (Exception e) {
+            FileLog.e(e);
         }
-        return false;
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

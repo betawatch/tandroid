@@ -1,69 +1,67 @@
 package org.telegram.ui;
 
-import android.graphics.SurfaceTexture;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class w31 implements org.telegram.ui.Components.z71, org.telegram.ui.Components.v71 {
-    public final /* synthetic */ x31 a;
+public final /* synthetic */ class w31 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ b41 b;
 
-    public /* synthetic */ w31(x31 x31Var) {
-        this.a = x31Var;
+    public /* synthetic */ w31(b41 b41Var, int i10) {
+        this.a = i10;
+        this.b = b41Var;
     }
 
-    @Override // org.telegram.ui.Components.v71
-    public boolean needUpdate() {
-        return this.a.V.i != null;
-    }
-
-    @Override // org.telegram.ui.Components.z71
-    public /* synthetic */ void onRenderedFirstFrame(j2.a aVar) {
-    }
-
-    @Override // org.telegram.ui.Components.z71
-    public void onStateChanged(boolean z10, int i10) {
-        x31 x31Var = this.a;
-        if (i10 == 4) {
-            x31Var.dismiss();
-        } else {
-            AndroidUtilities.cancelRunOnUIThread(x31Var.Z);
-            AndroidUtilities.runOnUIThread(x31Var.Z, 16L);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                b41 b41Var = this.b;
+                w31 w31Var = b41Var.Z;
+                if (b41Var.w != null) {
+                    b41Var.a0 = r2.n() / b41Var.w.p();
+                    z31 z31Var = b41Var.N;
+                    if (z31Var != null) {
+                        z31Var.Xd = (b41Var.w.p() - b41Var.w.n()) / 1000;
+                        b41Var.N.p4();
+                        org.telegram.ui.Components.kp0 seekBarWaveform = b41Var.N.getSeekBarWaveform();
+                        if (seekBarWaveform != null) {
+                            float f7 = b41Var.a0;
+                            seekBarWaveform.J = true;
+                            seekBarWaveform.K = f7;
+                            org.telegram.ui.Cells.t1 t1Var = seekBarWaveform.n;
+                            if (t1Var != null) {
+                                t1Var.invalidate();
+                            }
+                        }
+                    }
+                    if (b41Var.w.y()) {
+                        AndroidUtilities.cancelRunOnUIThread(w31Var);
+                        AndroidUtilities.runOnUIThread(w31Var, 16L);
+                        break;
+                    }
+                }
+                break;
+            case 1:
+                super/*android.app.Dialog*/.dismiss();
+                break;
+            case 2:
+                super/*android.app.Dialog*/.dismiss();
+                break;
+            default:
+                b41 b41Var2 = this.b;
+                if (b41Var2.d == null) {
+                    AndroidUtilities.runOnUIThread(new w31(b41Var2, 2));
+                    org.telegram.ui.Cells.t1 t1Var2 = b41Var2.O;
+                    if (t1Var2 != null) {
+                        t1Var2.setVisibility(0);
+                        b41Var2.O.invalidate();
+                    }
+                }
+                MediaController.getInstance().tryResumePausedAudio();
+                break;
         }
-    }
-
-    @Override // org.telegram.ui.Components.z71
-    public /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.v71
-    public void onVisualizerUpdate(boolean z10, boolean z11, float[] fArr) {
-        this.a.V.e(z10, true, fArr);
-    }
-
-    @Override // org.telegram.ui.Components.z71
-    public void onRenderedFirstFrame() {
-        AndroidUtilities.runOnUIThread(new qy0(this, 13));
-    }
-
-    @Override // org.telegram.ui.Components.z71
-    public /* synthetic */ void onSeekFinished(j2.a aVar) {
-    }
-
-    @Override // org.telegram.ui.Components.z71
-    public /* synthetic */ void onSeekStarted(j2.a aVar) {
-    }
-
-    @Override // org.telegram.ui.Components.z71
-    public /* synthetic */ void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
-    }
-
-    @Override // org.telegram.ui.Components.z71
-    public void onError(org.telegram.ui.Components.c81 c81Var, Exception exc) {
-    }
-
-    @Override // org.telegram.ui.Components.z71
-    public void onVideoSizeChanged(int i10, int i11, int i12, float f7) {
     }
 }

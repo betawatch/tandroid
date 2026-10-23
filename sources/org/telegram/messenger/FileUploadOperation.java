@@ -15,7 +15,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public class FileUploadOperation {
     private static final int initialRequestsCount = 8;
@@ -72,7 +72,7 @@ public class FileUploadOperation {
     private SparseArray<UploadCachedResult> cachedResults = new SparseArray<>();
     private boolean[] recalculatedEstimatedSize = {false, false};
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public interface FileUploadOperationDelegate {
         void didChangedUploadProgress(FileUploadOperation fileUploadOperation, long j10, long j11);
 
@@ -81,7 +81,7 @@ public class FileUploadOperation {
         void didFinishUploadingFile(FileUploadOperation fileUploadOperation, TLRPC.InputFile inputFile, TLRPC.InputEncryptedFile inputEncryptedFile, byte[] bArr, byte[] bArr2);
     }
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public static class UploadCachedResult {
         private long bytesOffset;
         private byte[] iv;
@@ -263,7 +263,7 @@ public class FileUploadOperation {
             StringBuilder sb2 = new StringBuilder("debug_uploading:  response reqId ");
             sb2.append(iArr[0]);
             sb2.append(" time");
-            i2.e.v(this.uploadingFilePath, sb2);
+            i2.o1.w(this.uploadingFilePath, sb2);
         }
         int currentNetworkType = tLObject != null ? tLObject.networkType : ApplicationLoader.getCurrentNetworkType();
         int i16 = this.currentType;
@@ -753,7 +753,7 @@ public class FileUploadOperation {
                     sb3.append(" isBig=");
                     sb3.append(this.isBigFile);
                     sb3.append(" file_id=");
-                    i2.e.x(sb3, this.currentFileId);
+                    i2.o1.x(sb3, this.currentFileId);
                 }
                 this.requestTokens.put(i28, iArr3[0]);
                 AndroidUtilities.runOnUIThread(new z3(this, iArr3, 0));

@@ -1,31 +1,60 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
+import android.content.SharedPreferences;
+import android.os.StatFs;
+import java.io.File;
 import java.util.regex.Pattern;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class i80 implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class i80 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ LaunchActivity b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ i80(LaunchActivity launchActivity, int i10) {
-        this.a = i10;
+    public /* synthetic */ i80(LaunchActivity launchActivity, int i10, int i11) {
+        this.a = i11;
         this.b = launchActivity;
+        this.c = i10;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        File directory;
         int i10 = this.a;
+        int i11 = this.c;
         LaunchActivity launchActivity = this.b;
         switch (i10) {
             case 0:
-                launchActivity.w0.invalidate();
+                Pattern pattern = LaunchActivity.E1;
+                if (UserConfig.getInstance(launchActivity.O).isClientActivated()) {
+                    try {
+                        SharedPreferences globalMainSettings = MessagesController.getGlobalMainSettings();
+                        if ((((i11 == 2 || i11 == 1) && Math.abs(launchActivity.z1 - System.currentTimeMillis()) > 240000) || Math.abs(globalMainSettings.getLong("last_space_check", 0L) - System.currentTimeMillis()) >= 259200000) && (directory = FileLoader.getDirectory(4)) != null) {
+                            StatFs statFs = new StatFs(directory.getAbsolutePath());
+                            long availableBlocksLong = statFs.getAvailableBlocksLong() * statFs.getBlockSizeLong();
+                            if (i11 > 0 || availableBlocksLong < 52428800) {
+                                if (i11 > 0) {
+                                    launchActivity.z1 = System.currentTimeMillis();
+                                }
+                                globalMainSettings.edit().putLong("last_space_check", System.currentTimeMillis()).commit();
+                                AndroidUtilities.runOnUIThread(new p80(launchActivity, 10));
+                                break;
+                            }
+                        }
+                    } catch (Throwable unused) {
+                        return;
+                    }
+                }
                 break;
             default:
-                Pattern pattern = LaunchActivity.C1;
-                launchActivity.getClass();
-                launchActivity.D0(((Integer) valueAnimator.getAnimatedValue()).intValue());
+                Pattern pattern2 = LaunchActivity.E1;
+                ConnectionsManager.getInstance(launchActivity.O).cancelRequest(i11, true);
                 break;
         }
     }

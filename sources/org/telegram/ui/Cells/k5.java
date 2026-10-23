@@ -11,11 +11,11 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.WebFile;
-import org.telegram.messenger.nk;
+import org.telegram.messenger.sl;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class k5 extends FrameLayout {
     public final TextView a;
@@ -31,8 +31,8 @@ public final class k5 extends FrameLayout {
         addView(w9Var, w7.z5.d(100, 100.0f, LocaleController.isRTL ? 5 : 3, 10.0f, 10.0f, 10.0f, 0.0f));
         TextView textView = new TextView(context);
         this.a = textView;
-        int i10 = org.telegram.ui.ActionBar.h6.G6;
-        textView.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i10, false));
+        int i10 = org.telegram.ui.ActionBar.k6.G6;
+        org.telegram.ui.ActionBar.r6.W(textView, i10, null);
         textView.setTextSize(1, 16.0f);
         textView.setLines(1);
         textView.setTypeface(AndroidUtilities.bold());
@@ -45,7 +45,7 @@ public final class k5 extends FrameLayout {
         addView(textView, w7.z5.d(-1, -2.0f, (z10 ? 5 : 3) | 48, z10 ? 10.0f : 123.0f, 9.0f, z10 ? 123.0f : 10.0f, 0.0f));
         TextView textView2 = new TextView(context);
         this.b = textView2;
-        textView2.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i10, false));
+        org.telegram.ui.ActionBar.r6.W(textView2, i10, null);
         textView2.setTextSize(1, 14.0f);
         textView2.setMaxLines(3);
         textView2.setEllipsize(truncateAt);
@@ -54,8 +54,8 @@ public final class k5 extends FrameLayout {
         addView(textView2, w7.z5.d(-1, -2.0f, (z11 ? 5 : 3) | 48, z11 ? 10.0f : 123.0f, 33.0f, z11 ? 123.0f : 10.0f, 0.0f));
         TextView textView3 = new TextView(context);
         this.c = textView3;
-        nk.u(textView3, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.z6, false), 1, 14.0f, 1);
-        textView3.setMaxLines(1);
+        org.telegram.ui.ActionBar.r6.W(textView3, org.telegram.ui.ActionBar.k6.z6, null);
+        sl.u(textView3, 1, 14.0f, 1, 1);
         textView3.setSingleLine(true);
         textView3.setEllipsize(truncateAt);
         textView3.setGravity((LocaleController.isRTL ? 5 : 3) | 48);

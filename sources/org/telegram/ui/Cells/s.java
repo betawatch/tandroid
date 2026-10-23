@@ -6,27 +6,31 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
 import org.telegram.ui.Components.st;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class s extends LinearLayout {
-    public static final /* synthetic */ int f = 0;
+public final class s extends LinearLayout implements org.telegram.ui.ActionBar.b6 {
+    public static final /* synthetic */ int h = 0;
     public Paint a;
     public Paint b;
     public q c;
     public TextView d;
     public float e;
+    public boolean f;
 
     public final void a(float f7) {
         this.e = f7;
+        this.f = true;
         TextView textView = this.d;
-        int x02 = org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false);
-        int i10 = org.telegram.ui.ActionBar.h6.I6;
-        textView.setTextColor(i0.a.f(f7, x02, org.telegram.ui.ActionBar.h6.x0(null, i10, false)));
+        int x02 = org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.G6, false);
+        int i10 = org.telegram.ui.ActionBar.k6.I6;
+        textView.setTextColor(i0.a.f(f7, x02, org.telegram.ui.ActionBar.k6.x0(null, i10, false)));
         Paint paint = this.a;
-        paint.setColor(i0.a.f(f7, i0.a.o(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.M6, false), 63), org.telegram.ui.ActionBar.h6.x0(null, i10, false)));
+        paint.setColor(i0.a.f(f7, i0.a.o(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.M6, false), 63), org.telegram.ui.ActionBar.k6.x0(null, i10, false)));
         paint.setStrokeWidth(Math.max(2, AndroidUtilities.dp(AndroidUtilities.lerp(0.5f, 2.0f, f7))));
         invalidate();
     }
@@ -57,5 +61,21 @@ public final class s extends LinearLayout {
         canvas.drawRoundRect(rectF, AndroidUtilities.dp(18.0f), AndroidUtilities.dp(18.0f), this.b);
         super.draw(canvas);
         canvas.drawRoundRect(rectF, AndroidUtilities.dp(18.0f), AndroidUtilities.dp(18.0f), paint);
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void updateColors() {
+        try {
+            if (!this.f || this.d == null) {
+                return;
+            }
+            a(this.e);
+        } catch (Exception e) {
+            FileLog.e(e);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

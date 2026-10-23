@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class zx implements Runnable {
     public final /* synthetic */ int a;
@@ -35,13 +35,13 @@ public final /* synthetic */ class zx implements Runnable {
                     return;
                 }
             default:
-                org.telegram.ui.x51 x51Var = (org.telegram.ui.x51) this.d;
+                org.telegram.ui.b61 b61Var = (org.telegram.ui.b61) this.d;
                 float f10 = this.b;
                 int i11 = this.c;
                 try {
-                    li.n nVar2 = new li.n(x51Var.h0.getContext(), 0, f10);
+                    li.n nVar2 = new li.n(b61Var.h0.getContext(), 0, f10);
                     nVar2.a = i11;
-                    x51Var.r0.w0(nVar2);
+                    b61Var.r0.w0(nVar2);
                     break;
                 } catch (Exception e7) {
                     FileLog.e(e7);

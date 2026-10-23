@@ -2,52 +2,33 @@ package ai;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
-import android.view.View;
-import org.telegram.ui.Components.q00;
+import android.graphics.LinearGradient;
+import android.graphics.Shader;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class he extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ View d;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ je e;
 
-    public /* synthetic */ he(View view, int i10, float f7, int i11) {
-        this.a = i11;
-        this.d = view;
-        this.b = i10;
-        this.c = f7;
+    public he(je jeVar, int i10, int i11, int i12, int i13) {
+        this.e = jeVar;
+        this.a = i10;
+        this.b = i11;
+        this.c = i12;
+        this.d = i13;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                ie ieVar = (ie) this.d;
-                ieVar.c0 = this.c;
-                if (ieVar.getValue() != this.b) {
-                    ieVar.e(ieVar.getValue());
-                }
-                ieVar.invalidate();
-                break;
-            case 1:
-                q00 q00Var = (q00) this.d;
-                int i10 = this.b;
-                q00Var.b(i10 == 5 ? 0.0f : -this.c, i10 + 1);
-                q00Var.y = 0.0f;
-                q00Var.invalidate();
-                break;
-            default:
-                ((org.telegram.ui.web.t1) this.d).c(this.b, this.c, false);
-                break;
-        }
-    }
-
-    public he(ie ieVar, float f7, int i10) {
-        this.a = 0;
-        this.d = ieVar;
-        this.c = f7;
-        this.b = i10;
+        int f7 = i0.a.f(1.0f, this.a, this.b);
+        je jeVar = this.e;
+        jeVar.r = f7;
+        jeVar.s = i0.a.f(1.0f, this.c, this.d);
+        jeVar.y = new LinearGradient(0.0f, 0.0f, 255.0f, 0.0f, new int[]{jeVar.r, jeVar.s}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
+        jeVar.invalidate();
     }
 }

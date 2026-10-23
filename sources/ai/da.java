@@ -4,7 +4,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class da implements Runnable {
     public final /* synthetic */ int a;
@@ -28,15 +28,15 @@ public final /* synthetic */ class da implements Runnable {
                 break;
             default:
                 org.telegram.ui.Components.qc qcVar = faVar.d;
-                ga gaVar = faVar.q;
+                ha haVar = faVar.q;
                 da daVar = faVar.p;
                 MessageObject messageObject = faVar.b;
                 if (!faVar.l) {
                     faVar.l = true;
                     messageObject.addPaidReactions((int) faVar.k, true, faVar.c());
-                    long j10 = gaVar.g;
-                    int i11 = gaVar.a;
-                    gaVar.g = j10 + faVar.k;
+                    long j10 = haVar.g;
+                    int i11 = haVar.a;
+                    haVar.g = j10 + faVar.k;
                     NotificationCenter.getInstance(i11).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starBalanceUpdated, new Object[0]);
                     faVar.k = 0L;
                     NotificationCenter.getInstance(i11).lambda$postNotificationNameOnUIThread$1(NotificationCenter.didUpdateReactions, Long.valueOf(messageObject.getDialogId()), Integer.valueOf(messageObject.getId()), messageObject.messageOwner.reactions);

@@ -13,19 +13,21 @@ import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
+import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Cells.m9;
+import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Cells.n9;
+import org.telegram.ui.Cells.o9;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final class q4 extends a0 implements org.telegram.ui.ActionBar.y5, m9 {
-    public final int[] E;
-    public final org.telegram.ui.ActionBar.d6 n;
+public final class q4 extends a0 implements org.telegram.ui.ActionBar.b6, n9 {
+    public boolean E;
+    public final int[] F;
+    public final org.telegram.ui.ActionBar.g6 n;
     public final Paint r;
     public final HorizontalScrollView s;
     public final ImageView v;
@@ -33,14 +35,14 @@ public final class q4 extends a0 implements org.telegram.ui.ActionBar.y5, m9 {
     public int x;
     public a3 y;
 
-    public q4(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+    public q4(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
         super(context);
         this.r = new Paint(1);
         this.x = 0;
-        this.E = new int[4];
-        this.n = d6Var;
+        this.F = new int[4];
+        this.n = g6Var;
         setWillNotDraw(false);
-        g(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(6.0f));
+        f(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(6.0f));
         ImageView imageView = new ImageView(context);
         this.v = imageView;
         FrameLayout frameLayout = new FrameLayout(context);
@@ -53,7 +55,7 @@ public final class q4 extends a0 implements org.telegram.ui.ActionBar.y5, m9 {
         horizontalScrollView.setFillViewport(true);
         horizontalScrollView.addView(frameLayout, new FrameLayout.LayoutParams(-2, -2));
         addView(horizontalScrollView, w7.z5.e(-1, -2, 16));
-        d();
+        updateColors();
     }
 
     private String getSource() {
@@ -68,32 +70,20 @@ public final class q4 extends a0 implements org.telegram.ui.ActionBar.y5, m9 {
         return null;
     }
 
-    @Override // org.telegram.ui.ActionBar.y5
-    public final void d() {
-        int i10 = h6.uf;
-        org.telegram.ui.ActionBar.d6 d6Var = this.n;
-        this.r.setColor(h6.w0(i10, d6Var));
-        this.x = h6.w0(h6.G6, d6Var);
-        this.v.setColorFilter(new PorterDuffColorFilter(this.x, PorterDuff.Mode.SRC_IN));
-        invalidate();
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void addColorKeys(HashSet hashSet) {
+        hashSet.add(Integer.valueOf(k6.uf));
+        hashSet.add(Integer.valueOf(k6.G6));
     }
 
-    @Override // org.telegram.ui.Cells.m9
+    @Override // org.telegram.ui.Cells.n9
     public final void fillTextLayoutBlocks(ArrayList arrayList) {
-        int[] iArr = this.E;
-        i(iArr);
+        int[] iArr = this.F;
+        h(iArr);
         arrayList.add(w7.j.a(iArr[0], iArr[1], iArr[2], iArr[3]));
     }
 
-    public /* bridge */ /* synthetic */ int[] getColorKeys() {
-        return null;
-    }
-
-    public a getRow() {
-        return this.a;
-    }
-
-    public final void h(a aVar, a3 a3Var) {
+    public final void g(a aVar, a3 a3Var) {
         r a2;
         this.a = aVar;
         this.y = a3Var;
@@ -108,7 +98,11 @@ public final class q4 extends a0 implements org.telegram.ui.ActionBar.y5, m9 {
         invalidate();
     }
 
-    public final void i(int[] iArr) {
+    public a getRow() {
+        return this.a;
+    }
+
+    public final void h(int[] iArr) {
         int paddingTop = getPaddingTop();
         int height = getHeight() - getPaddingBottom();
         if (this.w != null && this.v.getWidth() > this.s.getWidth()) {
@@ -130,9 +124,9 @@ public final class q4 extends a0 implements org.telegram.ui.ActionBar.y5, m9 {
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         a3 a3Var;
-        n9 textSelectionHelper;
-        if (this.x != h6.w0(h6.G6, this.n)) {
-            d();
+        o9 textSelectionHelper;
+        if (this.x != k6.w0(k6.G6, this.n)) {
+            updateColors();
         }
         if (this.w == null || (a3Var = this.y) == null || (textSelectionHelper = a3Var.a.getTextSelectionHelper()) == null || !textSelectionHelper.x() || !(getParent() instanceof RecyclerView)) {
             return;
@@ -140,7 +134,7 @@ public final class q4 extends a0 implements org.telegram.ui.ActionBar.y5, m9 {
         ((RecyclerView) getParent()).getClass();
         int R = RecyclerView.R(this);
         if (R >= 0 && R >= textSelectionHelper.p0 && R <= textSelectionHelper.s0) {
-            i(this.E);
+            h(this.F);
             canvas.drawRoundRect(r0[0], r0[1], r0[2], r0[3], AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), this.r);
         }
     }
@@ -148,5 +142,19 @@ public final class q4 extends a0 implements org.telegram.ui.ActionBar.y5, m9 {
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void updateColors() {
+        int i10 = k6.uf;
+        org.telegram.ui.ActionBar.g6 g6Var = this.n;
+        this.r.setColor(k6.w0(i10, g6Var));
+        int w02 = k6.w0(k6.G6, g6Var);
+        if (!this.E || w02 != this.x) {
+            this.E = true;
+            this.x = w02;
+            this.v.setColorFilter(new PorterDuffColorFilter(this.x, PorterDuff.Mode.SRC_IN));
+        }
+        invalidate();
     }
 }

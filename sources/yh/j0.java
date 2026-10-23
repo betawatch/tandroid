@@ -24,14 +24,14 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Components.a6;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.w5;
 import v7.v7;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class j0 extends Drawable {
     public NinePatchDrawable a;
@@ -61,7 +61,7 @@ public final class j0 extends Drawable {
         this.c = textPaint;
         ImageReceiver imageReceiver = new ImageReceiver();
         this.d = imageReceiver;
-        this.e = new h9((d6) null);
+        this.e = new h9((g6) null);
         int dp = AndroidUtilities.dp(10.66f);
         this.f = dp * 2;
         this.g = AndroidUtilities.dp(4.0f);

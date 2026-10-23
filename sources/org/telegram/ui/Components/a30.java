@@ -7,38 +7,38 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class a30 extends im0 {
+public final class a30 extends lm0 {
     public ChatObject.Call c;
     public final int d;
     public ArrayList h;
-    public org.telegram.ui.h30 n;
-    public final org.telegram.ui.q50 r;
+    public org.telegram.ui.k30 n;
+    public final org.telegram.ui.u50 r;
     public final ArrayList e = new ArrayList();
     public final ArrayList f = new ArrayList();
     public boolean s = false;
 
-    public a30(ChatObject.Call call, int i10, org.telegram.ui.q50 q50Var) {
+    public a30(ChatObject.Call call, int i10, org.telegram.ui.u50 u50Var) {
         this.c = call;
         this.d = i10;
-        this.r = q50Var;
+        this.r = u50Var;
     }
 
-    @Override // org.telegram.ui.Components.im0
+    @Override // org.telegram.ui.Components.lm0
     public final boolean D(s4.b1 b1Var) {
         return false;
     }
 
-    public final void E(ArrayList arrayList, org.telegram.ui.h30 h30Var) {
+    public final void E(ArrayList arrayList, org.telegram.ui.k30 k30Var) {
         this.h = arrayList;
-        this.n = h30Var;
+        this.n = k30Var;
     }
 
-    public final void F(org.telegram.ui.d30 d30Var, boolean z10) {
+    public final void F(org.telegram.ui.g30 g30Var, boolean z10) {
         this.s = z10;
-        for (int i10 = 0; i10 < d30Var.getChildCount(); i10++) {
-            View childAt = d30Var.getChildAt(i10);
+        for (int i10 = 0; i10 < g30Var.getChildCount(); i10++) {
+            View childAt = g30Var.getChildAt(i10);
             if (childAt instanceof z20) {
                 z20 z20Var = (z20) childAt;
                 if (z20Var.getVideoParticipant() != null) {
@@ -48,7 +48,7 @@ public final class a30 extends im0 {
         }
     }
 
-    public final void G(jm0 jm0Var, boolean z10) {
+    public final void G(mm0 mm0Var, boolean z10) {
         if (this.c == null) {
             return;
         }
@@ -81,7 +81,7 @@ public final class a30 extends im0 {
             arrayList.addAll(call4.visibleVideoParticipants);
         }
         s4.o.c(new y20(this, arrayList4, arrayList3), true).c(this);
-        AndroidUtilities.updateVisibleRows(jm0Var);
+        AndroidUtilities.updateVisibleRows(mm0Var);
     }
 
     @Override // s4.g0
@@ -131,6 +131,6 @@ public final class a30 extends im0 {
 
     @Override // s4.g0
     public final s4.b1 x(ViewGroup viewGroup, int i10) {
-        return new tl0(new z20(this, viewGroup.getContext()));
+        return new wl0(new z20(this, viewGroup.getContext()));
     }
 }

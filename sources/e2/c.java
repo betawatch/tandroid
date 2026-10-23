@@ -17,7 +17,7 @@ import m.g3;
 import m.m1;
 import v7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class c {
     public int a;
@@ -73,7 +73,7 @@ public final class c {
             }
             return;
         }
-        ((f2.w) this.b).c(j10, xVar);
+        ((f2.w) this.b).b(j10, xVar);
     }
 
     public void b() {
@@ -129,7 +129,7 @@ public final class c {
                 if (i11 >= arrayList.size()) {
                     break;
                 }
-                ((f2.w) this.b).c(vVar.b, (x) arrayList.get(i11));
+                ((f2.w) this.b).b(vVar.b, (x) arrayList.get(i11));
                 ((ArrayDeque) this.c).push((x) arrayList.get(i11));
                 i11++;
             }
@@ -268,14 +268,14 @@ public final class c {
         if (obj2.equals(obj)) {
             return;
         }
-        i2.i0 i0Var = ((i2.x) this.d).b;
+        i2.h0 h0Var = ((i2.w) this.d).b;
         ((Integer) obj2).getClass();
         Integer num = (Integer) obj;
         int intValue = num.intValue();
-        i0Var.F1();
-        i0Var.t1(1, 10, num);
-        i0Var.t1(2, 10, num);
-        i0Var.m.e(21, new i2.w(intValue, 1));
+        h0Var.F1();
+        h0Var.t1(1, 10, num);
+        h0Var.t1(2, 10, num);
+        h0Var.m.e(21, new i2.v(intValue, 1));
     }
 
     public c(f2.w wVar) {
@@ -286,11 +286,11 @@ public final class c {
         this.a = -1;
     }
 
-    public c(Object obj, Looper looper, Looper looper2, g0 g0Var, i2.x xVar) {
+    public c(Object obj, Looper looper, Looper looper2, g0 g0Var, i2.w wVar) {
         this.b = g0Var.a(looper, null);
         this.c = g0Var.a(looper2, null);
         this.e = obj;
         this.f = obj;
-        this.d = xVar;
+        this.d = wVar;
     }
 }

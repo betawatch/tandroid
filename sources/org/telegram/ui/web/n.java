@@ -11,9 +11,10 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.ActionBar.o2;
+import org.telegram.ui.Wallet.e8;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class n extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ p a;
@@ -29,13 +30,13 @@ public final class n extends org.telegram.ui.ActionBar.j {
         p pVar = this.a;
         HashSet hashSet = pVar.w;
         if (i10 == -1) {
-            kVar = ((n2) pVar).actionBar;
-            if (!kVar.t()) {
+            kVar = ((o2) pVar).actionBar;
+            if (!kVar.s()) {
                 pVar.finishFragment();
                 return;
             }
-            kVar2 = ((n2) pVar).actionBar;
-            kVar2.s();
+            kVar2 = ((o2) pVar).actionBar;
+            kVar2.r();
             hashSet.clear();
             AndroidUtilities.forEachViews((RecyclerView) pVar.a, (Utilities.Callback<View>) new ci.e(22));
             return;
@@ -73,9 +74,9 @@ public final class n extends org.telegram.ui.ActionBar.j {
                     break;
                 }
             }
-            i iVar = pVar.e;
-            if (iVar != null && messageObject == null) {
-                ArrayList arrayList3 = iVar.a;
+            j jVar = pVar.e;
+            if (jVar != null && messageObject == null) {
+                ArrayList arrayList3 = jVar.a;
                 int size2 = arrayList3.size();
                 while (true) {
                     if (i11 >= size2) {
@@ -93,15 +94,15 @@ public final class n extends org.telegram.ui.ActionBar.j {
             if (messageObject != null) {
                 arrayList.add(messageObject);
                 hashSet3.add(Integer.valueOf(messageObject.getId()));
-                hashSet2.add(k.a(messageObject));
+                hashSet2.add(l.a(messageObject));
             }
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(pVar.getParentActivity(), 0, pVar.getResourceProvider());
         alertDialog$Builder.a.R = LocaleController.formatPluralString("DeleteOptionsTitle", hashSet3.size(), new Object[0]);
         alertDialog$Builder.a.T = LocaleController.getString(hashSet3.size() == 1 ? "AreYouSureUnsaveSingleMessage" : "AreYouSureUnsaveFewMessages");
-        alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new m(0, pVar, hashSet3));
+        alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new e8(2, pVar, hashSet3));
         alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
         alertDialog$Builder.d(-1);
-        alertDialog$Builder.o();
+        alertDialog$Builder.p();
     }
 }

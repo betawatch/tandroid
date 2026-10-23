@@ -5,7 +5,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class qf implements View.OnKeyListener {
     public final /* synthetic */ ChatActivityEnterView a;
@@ -40,9 +40,9 @@ public final class qf implements View.OnKeyListener {
             chatActivityEnterView.D0 = keyEvent.isShiftPressed();
             chatActivityEnterView.C0 = keyEvent.isCtrlPressed();
         }
-        if (i10 == 4 && !chatActivityEnterView.z2 && chatActivityEnterView.r0() && keyEvent.getAction() == 1) {
-            if (org.telegram.ui.et.g0 != null && org.telegram.ui.et.q().E) {
-                org.telegram.ui.et.q().o();
+        if (i10 == 4 && !chatActivityEnterView.z2 && chatActivityEnterView.q0() && keyEvent.getAction() == 1) {
+            if (org.telegram.ui.ht.g0 != null && org.telegram.ui.ht.o().E) {
+                org.telegram.ui.ht.o().m();
                 return true;
             }
             if (chatActivityEnterView.f2 != 1 || chatActivityEnterView.m2 == null) {

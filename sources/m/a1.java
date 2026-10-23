@@ -23,7 +23,7 @@ import v7.y7;
 import w7.l6;
 import w7.w7;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public class a1 extends TextView implements u0.k {
     public final e2.c a;
@@ -365,7 +365,7 @@ public class a1 extends TextView implements u0.k {
     @Override // android.widget.TextView
     public void setFirstBaselineToTopHeight(int i10) {
         if (Build.VERSION.SDK_INT >= 28) {
-            getSuperCaller().q(i10);
+            getSuperCaller().s(i10);
         } else {
             w7.b(i10, this);
         }
@@ -374,7 +374,7 @@ public class a1 extends TextView implements u0.k {
     @Override // android.widget.TextView
     public void setLastBaselineToBottomHeight(int i10) {
         if (Build.VERSION.SDK_INT >= 28) {
-            getSuperCaller().m(i10);
+            getSuperCaller().n(i10);
         } else {
             w7.c(i10, this);
         }

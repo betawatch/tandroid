@@ -1,35 +1,38 @@
 package org.telegram.ui;
 
-import android.view.View;
-import java.util.Iterator;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class c50 implements org.telegram.ui.Components.x5 {
+public final /* synthetic */ class c50 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ d50 b;
 
-    public /* synthetic */ c50(Object obj, int i10) {
+    public /* synthetic */ c50(d50 d50Var, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.b = d50Var;
     }
 
-    @Override // org.telegram.ui.Components.x5
-    public final void invalidate() {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                Iterator it = ((d50) this.b).i.iterator();
-                while (it.hasNext()) {
-                    ((View) it.next()).invalidate();
+                d50 d50Var = this.b;
+                e50 e50Var = d50Var.b;
+                if (e50Var != null) {
+                    e50Var.setVisibility(0);
+                }
+                AndroidUtilities.runOnUIThread(new c50(d50Var, 2), 16L);
+                break;
+            case 1:
+                e50 e50Var2 = this.b.b;
+                if (e50Var2 != null) {
+                    e50Var2.setVisibility(4);
+                    break;
                 }
                 break;
             default:
-                g51 g51Var = (g51) this.b;
-                g51Var.getClass();
-                if (!ah.x0.b && g51Var.getParent() != null) {
-                    ((View) g51Var.getParent()).invalidate();
-                    break;
-                }
+                super/*android.app.Dialog*/.dismiss();
                 break;
         }
     }

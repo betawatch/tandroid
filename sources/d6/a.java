@@ -13,10 +13,11 @@ import android.os.Parcel;
 import android.os.RemoteException;
 import android.text.TextUtils;
 import android.util.Log;
-import c3.l0;
+import c3.n0;
 import com.google.android.gms.internal.cast.l4;
 import com.google.android.gms.internal.cast.m4;
 import com.google.android.gms.internal.cast.q4;
+import i2.o1;
 import j$.util.DesugarCollections;
 import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
@@ -28,7 +29,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import v7.k5;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class a {
     public static final g6.b l = new g6.b("CastContext", null);
@@ -144,7 +145,7 @@ public final class a {
                             com.google.android.gms.internal.cast.n nVar = this.h;
                             List unmodifiableList = DesugarCollections.unmodifiableList(this.e.w);
                             nVar.getClass();
-                            com.google.android.gms.internal.cast.n.f.b(i2.e.k(unmodifiableList.size(), "SetRouteDiscovery for ", " IDs"), new Object[0]);
+                            com.google.android.gms.internal.cast.n.f.b(o1.l(unmodifiableList.size(), "SetRouteDiscovery for ", " IDs"), new Object[0]);
                             LinkedHashSet<String> linkedHashSet = new LinkedHashSet();
                             Iterator it2 = unmodifiableList.iterator();
                             while (it2.hasNext()) {
@@ -174,7 +175,7 @@ public final class a {
                         }
                         rVar2.f(new String[]{"com.google.android.gms.cast.FLAG_CLIENT_SESSION_ANALYTICS_ENABLED", "com.google.android.gms.cast.FLAG_CLIENT_SESSION_ANALYTICS_MODE", "com.google.android.gms.cast.FLAG_FIRELOG_UPLOAD_MODE", "com.google.android.gms.cast.FLAG_ANALYTICS_LOGGING_BUCKET_SIZE", "com.google.android.gms.cast.FLAG_CLIENT_FEATURE_USAGE_ANALYTICS_ENABLED"}).addOnSuccessListener(new a4.l(this, 12));
                         com.google.android.gms.common.api.internal.u b10 = com.google.android.gms.common.api.internal.v.b();
-                        b10.c = new l0(rVar2, new String[]{"com.google.android.gms.cast.MAP_CAST_STATUS_CODES_TO_CAST_REASON_CODES"});
+                        b10.c = new n0(rVar2, new String[]{"com.google.android.gms.cast.MAP_CAST_STATUS_CODES_TO_CAST_REASON_CODES"});
                         b10.d = new k6.c[]{c6.y.d};
                         b10.b = false;
                         b10.a = 8427;

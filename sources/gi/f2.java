@@ -4,7 +4,7 @@ import android.animation.ValueAnimator;
 import android.graphics.Paint;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f2 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -24,21 +24,21 @@ public final /* synthetic */ class f2 implements ValueAnimator.AnimatorUpdateLis
         switch (this.a) {
             case 0:
                 d3 d3Var = this.b;
-                Paint paint = d3Var.P;
+                Paint paint = d3Var.Q;
                 paint.setColor(i0.a.f(((Float) valueAnimator.getAnimatedValue()).floatValue(), this.c, this.d));
                 d3Var.B();
-                d3Var.e.invalidate();
-                org.telegram.ui.f3 f3Var = d3Var.U0;
-                if (f3Var != null) {
-                    f3Var.b(AndroidUtilities.computePerceivedBrightness(paint.getColor()) <= 0.721f, false);
-                    d3Var.U0.setBackgroundColor(paint.getColor());
+                d3Var.f.invalidate();
+                org.telegram.ui.e3 e3Var = d3Var.Y0;
+                if (e3Var != null) {
+                    e3Var.b(AndroidUtilities.computePerceivedBrightness(paint.getColor()) <= 0.721f, false);
+                    d3Var.Y0.setBackgroundColor(paint.getColor());
                 }
                 d3Var.G();
                 break;
             default:
                 d3 d3Var2 = this.b;
                 d3Var2.getClass();
-                d3Var2.R = i0.a.f(((Float) valueAnimator.getAnimatedValue()).floatValue(), this.c, this.d);
+                d3Var2.S = i0.a.f(((Float) valueAnimator.getAnimatedValue()).floatValue(), this.c, this.d);
                 d3Var2.h();
                 break;
         }

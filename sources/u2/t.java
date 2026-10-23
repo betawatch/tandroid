@@ -1,95 +1,61 @@
 package u2;
 
-import android.net.Uri;
-import java.util.Map;
-import v7.u6;
-
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public final class t implements g2.h {
-    public final g2.h a;
-    public final int b;
-    public final u0 c;
-    public final byte[] d;
-    public int e;
+public abstract class t extends b2.o1 {
+    public final b2.o1 e;
 
-    public t(g2.h hVar, int i10, u0 u0Var) {
-        u6.g(i10 > 0);
-        this.a = hVar;
-        this.b = i10;
-        this.c = u0Var;
-        this.d = new byte[1];
-        this.e = i10;
+    public t(b2.o1 o1Var) {
+        this.e = o1Var;
     }
 
-    @Override // g2.h
-    public final void addTransferListener(g2.c0 c0Var) {
-        c0Var.getClass();
-        this.a.addTransferListener(c0Var);
+    @Override // b2.o1
+    public final int a(boolean z10) {
+        return this.e.a(z10);
     }
 
-    @Override // g2.h
-    public final void close() {
-        throw new UnsupportedOperationException();
+    @Override // b2.o1
+    public int b(Object obj) {
+        return this.e.b(obj);
     }
 
-    @Override // g2.h
-    public final Map getResponseHeaders() {
-        return this.a.getResponseHeaders();
+    @Override // b2.o1
+    public final int c(boolean z10) {
+        return this.e.c(z10);
     }
 
-    @Override // g2.h
-    public final Uri getUri() {
-        return this.a.getUri();
+    @Override // b2.o1
+    public int e(int i10, int i11, boolean z10) {
+        return this.e.e(i10, i11, z10);
     }
 
-    @Override // g2.h
-    public final long open(g2.m mVar) {
-        throw new UnsupportedOperationException();
+    @Override // b2.o1
+    public b2.l1 f(int i10, b2.l1 l1Var, boolean z10) {
+        return this.e.f(i10, l1Var, z10);
     }
 
-    @Override // b2.o
-    public final int read(byte[] bArr, int i10, int i11) {
-        int i12 = this.e;
-        g2.h hVar = this.a;
-        if (i12 == 0) {
-            byte[] bArr2 = this.d;
-            int i13 = 0;
-            if (hVar.read(bArr2, 0, 1) != -1) {
-                int i14 = (bArr2[0] & 255) << 4;
-                if (i14 != 0) {
-                    byte[] bArr3 = new byte[i14];
-                    int i15 = i14;
-                    while (i15 > 0) {
-                        int read = hVar.read(bArr3, i13, i15);
-                        if (read != -1) {
-                            i13 += read;
-                            i15 -= read;
-                        }
-                    }
-                    while (i14 > 0 && bArr3[i14 - 1] == 0) {
-                        i14--;
-                    }
-                    if (i14 > 0) {
-                        e2.x xVar = new e2.x(bArr3, i14);
-                        u0 u0Var = this.c;
-                        long max = !u0Var.w ? u0Var.r : Math.max(u0Var.x.m(true), u0Var.r);
-                        int a2 = xVar.a();
-                        c3.j0 j0Var = u0Var.v;
-                        j0Var.getClass();
-                        j0Var.d(a2, xVar);
-                        j0Var.c(max, 1, a2, 0, null);
-                        u0Var.w = true;
-                    }
-                }
-                this.e = this.b;
-            }
-            return -1;
-        }
-        int read2 = hVar.read(bArr, i10, Math.min(this.e, i11));
-        if (read2 != -1) {
-            this.e -= read2;
-        }
-        return read2;
+    @Override // b2.o1
+    public final int h() {
+        return this.e.h();
+    }
+
+    @Override // b2.o1
+    public int k(int i10, int i11, boolean z10) {
+        return this.e.k(i10, i11, z10);
+    }
+
+    @Override // b2.o1
+    public Object l(int i10) {
+        return this.e.l(i10);
+    }
+
+    @Override // b2.o1
+    public b2.n1 m(int i10, b2.n1 n1Var, long j10) {
+        return this.e.m(i10, n1Var, j10);
+    }
+
+    @Override // b2.o1
+    public final int o() {
+        return this.e.o();
     }
 }

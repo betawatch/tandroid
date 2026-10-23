@@ -10,7 +10,7 @@ import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public abstract class qt implements NotificationCenter.NotificationCenterDelegate {
     public static pt L;
@@ -62,7 +62,7 @@ public abstract class qt implements NotificationCenter.NotificationCenterDelegat
     public void a(Canvas canvas, long j10, int i10, int i11, float f7) {
         if (this.E) {
             if (BuildVars.DEBUG_PRIVATE_VERSION) {
-                canvas.drawRect(0.0f, 0.0f, i10, i11, org.telegram.ui.ActionBar.h6.Ml);
+                canvas.drawRect(0.0f, 0.0f, i10, i11, org.telegram.ui.ActionBar.k6.Nl);
                 return;
             }
             return;

@@ -11,6 +11,7 @@ import android.os.Message;
 import android.util.Log;
 import android.util.SparseArray;
 import ei.a8;
+import i2.o1;
 import java.io.File;
 import java.lang.ref.WeakReference;
 import java.nio.Buffer;
@@ -22,9 +23,9 @@ import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.camera.Size;
-import org.telegram.messenger.g0;
+import org.telegram.messenger.v0;
 import org.telegram.messenger.video.MP4Builder;
-import org.telegram.ui.Cells.k7;
+import org.telegram.ui.Cells.u5;
 import org.telegram.ui.Components.a60;
 import org.telegram.ui.Components.c60;
 import org.telegram.ui.Components.f60;
@@ -32,7 +33,7 @@ import org.telegram.ui.Components.i50;
 import org.telegram.ui.Components.j50;
 import org.telegram.ui.Components.k50;
 import org.telegram.ui.Components.l50;
-import org.telegram.ui.Components.m60;
+import org.telegram.ui.Components.n60;
 import org.telegram.ui.Components.u50;
 import p4.m0;
 import p4.n0;
@@ -41,7 +42,7 @@ import p4.p0;
 import p4.r0;
 import p4.s0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class c extends Handler {
     public final /* synthetic */ int a;
@@ -171,15 +172,15 @@ public final class c extends Handler {
                                         if (f60Var.c0 == -1) {
                                             f60Var.c0 = j17 / 1000;
                                             if (BuildVars.LOGS_ENABLED) {
-                                                i2.e.x(new StringBuilder("InstantCamera first video frame was at "), f60Var.c0);
+                                                o1.x(new StringBuilder("InstantCamera first video frame was at "), f60Var.c0);
                                             }
                                         }
                                         f60Var.e0 = j17 - f60Var.d0;
                                         f60Var.d0 = j17;
-                                        m60 m60Var = f60Var.H0;
-                                        floatBuffer = m60Var.J0;
-                                        floatBuffer2 = m60Var.I0;
-                                        FloatBuffer floatBuffer3 = m60Var.K0;
+                                        n60 n60Var = f60Var.H0;
+                                        floatBuffer = n60Var.J0;
+                                        floatBuffer2 = n60Var.I0;
+                                        FloatBuffer floatBuffer3 = n60Var.K0;
                                         if (floatBuffer != null || floatBuffer2 == null) {
                                             FileLog.d("InstantCamera handleVideoFrameAvailable skip frame " + floatBuffer + " " + floatBuffer2);
                                             break;
@@ -202,8 +203,8 @@ public final class c extends Handler {
                                             GLES20.glEnableVertexAttribArray(f60Var.q0);
                                             GLES20.glUniformMatrix4fv(f60Var.n0, 1, false, f60Var.H0.F0, 0);
                                             GLES20.glUniform2f(f60Var.r0, f60Var.d, f60Var.e);
-                                            m60 m60Var2 = f60Var.H0;
-                                            if (m60Var2.c0[0] == 0 || floatBuffer3 == null || m60Var2.u0) {
+                                            n60 n60Var2 = f60Var.H0;
+                                            if (n60Var2.c0[0] == 0 || floatBuffer3 == null || n60Var2.u0) {
                                                 i10 = 33984;
                                                 i11 = 36197;
                                                 f7 = 1.0f;
@@ -226,24 +227,24 @@ public final class c extends Handler {
                                                 GLES20.glBindTexture(36197, f60Var.H0.c0[0]);
                                                 GLES20.glDrawArrays(5, 0, 4);
                                             }
-                                            m60 m60Var3 = f60Var.H0;
-                                            Size[] sizeArr = m60Var3.n0;
+                                            n60 n60Var3 = f60Var.H0;
+                                            Size[] sizeArr = n60Var3.n0;
                                             if (sizeArr != null) {
                                                 int i20 = f60Var.s0;
-                                                float width = sizeArr[m60Var3.k1].getWidth();
-                                                m60 m60Var4 = f60Var.H0;
+                                                float width = sizeArr[n60Var3.k1].getWidth();
+                                                n60 n60Var4 = f60Var.H0;
                                                 f10 = 2.0f;
-                                                GLES20.glUniform2f(i20, width, m60Var4.n0[m60Var4.k1].getHeight());
+                                                GLES20.glUniform2f(i20, width, n60Var4.n0[n60Var4.k1].getHeight());
                                                 int i21 = f60Var.t0;
-                                                m60 m60Var5 = f60Var.H0;
-                                                float width2 = (f7 / m60Var5.n0[m60Var5.k1].getWidth()) / 2.0f;
-                                                m60 m60Var6 = f60Var.H0;
-                                                GLES20.glUniform2f(i21, width2, (f7 / m60Var6.n0[m60Var6.k1].getHeight()) / 2.0f);
+                                                n60 n60Var5 = f60Var.H0;
+                                                float width2 = (f7 / n60Var5.n0[n60Var5.k1].getWidth()) / 2.0f;
+                                                n60 n60Var6 = f60Var.H0;
+                                                GLES20.glUniform2f(i21, width2, (f7 / n60Var6.n0[n60Var6.k1].getHeight()) / 2.0f);
                                             } else {
                                                 f10 = 2.0f;
                                             }
-                                            m60 m60Var7 = f60Var.H0;
-                                            int i22 = m60Var7.b0[m60Var7.k1];
+                                            n60 n60Var7 = f60Var.H0;
+                                            int i22 = n60Var7.b0[n60Var7.k1];
                                             if (i22 != Integer.MIN_VALUE) {
                                                 i12 = 0;
                                                 GLES20.glUniformMatrix4fv(f60Var.o0, 1, false, f60Var.H0.G0, 0);
@@ -376,24 +377,24 @@ public final class c extends Handler {
                                             EGLExt.eglPresentationTimeANDROID(f60Var.s, f60Var.y, f60Var.R);
                                             EGL14.eglSwapBuffers(f60Var.s, f60Var.y);
                                             if (f60Var.B0 != null && SharedConfig.getDevicePerformanceClass() == 2 && f60Var.C0 % 33 == 0) {
-                                                f60Var.B0.postRunnable(new k7(f60Var, 13));
+                                                f60Var.B0.postRunnable(new u5(f60Var, 15));
                                             }
                                             f60Var.C0++;
-                                            m60 m60Var8 = f60Var.H0;
-                                            if (m60Var8.c0[0] != 0) {
-                                                float f12 = m60Var8.d0;
-                                                if (f12 < f11 && !m60Var8.u0) {
+                                            n60 n60Var8 = f60Var.H0;
+                                            if (n60Var8.c0[0] != 0) {
+                                                float f12 = n60Var8.d0;
+                                                if (f12 < f11 && !n60Var8.u0) {
                                                     float f13 = (j11 / 2.0E8f) + f12;
-                                                    m60Var8.d0 = f13;
+                                                    n60Var8.d0 = f13;
                                                     if (f13 > f11) {
                                                         GLES20.glDisable(3042);
                                                         f60Var.n = false;
-                                                        m60 m60Var9 = f60Var.H0;
-                                                        m60Var9.d0 = f11;
-                                                        GLES20.glDeleteTextures(1, m60Var9.c0, 0);
-                                                        m60 m60Var10 = f60Var.H0;
-                                                        m60Var10.c0[0] = 0;
-                                                        if (!m60Var10.K) {
+                                                        n60 n60Var9 = f60Var.H0;
+                                                        n60Var9.d0 = f11;
+                                                        GLES20.glDeleteTextures(1, n60Var9.c0, 0);
+                                                        n60 n60Var10 = f60Var.H0;
+                                                        n60Var10.c0[0] = 0;
+                                                        if (!n60Var10.K) {
                                                             f60Var.H0.K = true;
                                                             AndroidUtilities.runOnUIThread(new c60(f60Var, 4));
                                                             break;
@@ -401,7 +402,7 @@ public final class c extends Handler {
                                                     }
                                                 }
                                             }
-                                            if (!m60Var8.K) {
+                                            if (!n60Var8.K) {
                                                 f60Var.H0.K = true;
                                                 AndroidUtilities.runOnUIThread(new c60(f60Var, i18));
                                                 break;
@@ -436,10 +437,10 @@ public final class c extends Handler {
                                 }
                                 f60Var.e0 = j17 - f60Var.d0;
                                 f60Var.d0 = j17;
-                                m60 m60Var11 = f60Var.H0;
-                                floatBuffer = m60Var11.J0;
-                                floatBuffer2 = m60Var11.I0;
-                                FloatBuffer floatBuffer32 = m60Var11.K0;
+                                n60 n60Var11 = f60Var.H0;
+                                floatBuffer = n60Var11.J0;
+                                floatBuffer2 = n60Var11.I0;
+                                FloatBuffer floatBuffer32 = n60Var11.K0;
                                 if (floatBuffer != null) {
                                 }
                                 FileLog.d("InstantCamera handleVideoFrameAvailable skip frame " + floatBuffer + " " + floatBuffer2);
@@ -465,11 +466,11 @@ public final class c extends Handler {
                                                         u50Var.e = i37;
                                                         f60Var.h0 = j21;
                                                         if (BuildVars.LOGS_ENABLED) {
-                                                            i2.e.x(i2.e.l(i37, "InstantCamera found first audio frame at ", " timestamp = "), u50Var.b[i37]);
+                                                            o1.x(o1.n(i37, "InstantCamera found first audio frame at ", " timestamp = "), u50Var.b[i37]);
                                                         }
                                                     } else {
                                                         if (BuildVars.LOGS_ENABLED) {
-                                                            i2.e.x(i2.e.l(i37, "InstantCamera ignore first audio frame at ", " timestamp = "), u50Var.b[i37]);
+                                                            o1.x(o1.n(i37, "InstantCamera ignore first audio frame at ", " timestamp = "), u50Var.b[i37]);
                                                         }
                                                         i37++;
                                                         j16 = j12;
@@ -480,13 +481,13 @@ public final class c extends Handler {
                                                     f60Var.b0 = j22 - j23;
                                                     f60Var.h0 = j23;
                                                     if (BuildVars.LOGS_ENABLED) {
-                                                        i2.e.x(new StringBuilder("InstantCamera detected desync between audio and video "), f60Var.b0);
+                                                        o1.x(new StringBuilder("InstantCamera detected desync between audio and video "), f60Var.b0);
                                                     }
                                                 }
                                             }
                                             long j24 = j16;
                                             if (BuildVars.LOGS_ENABLED) {
-                                                g0.o(u50Var.d, new StringBuilder("InstantCamera first audio frame not found, removing buffers "));
+                                                v0.n(u50Var.d, new StringBuilder("InstantCamera first audio frame not found, removing buffers "));
                                             }
                                             f60Var.L.remove(u50Var);
                                             if (f60Var.L.isEmpty()) {
@@ -593,8 +594,8 @@ public final class c extends Handler {
                                 file.delete();
                                 f60Var.H0.g0 = null;
                             }
-                            m60 m60Var12 = f60Var.H0;
-                            m60Var12.g0 = a8.x(m60Var12.f, true);
+                            n60 n60Var12 = f60Var.H0;
+                            n60Var12.g0 = a8.x(n60Var12.f, true);
                             try {
                                 FileLog.d("InstantCamera handlePauseRecording drain encoders");
                                 f60Var.d(false);

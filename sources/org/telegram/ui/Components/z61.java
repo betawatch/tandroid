@@ -1,20 +1,26 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.graphics.Canvas;
+import android.graphics.drawable.ColorDrawable;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class z61 extends wz {
-    public final /* synthetic */ c71 X;
+public final class z61 extends ColorDrawable {
+    public final int a;
+    public final org.telegram.ui.ActionBar.g6 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z61(c71 c71Var, int i10) {
-        super(i10, false);
-        this.X = c71Var;
+    public z61(int i10, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(org.telegram.ui.ActionBar.k6.w0(i10, g6Var));
+        this.a = i10;
+        this.b = g6Var;
     }
 
-    @Override // s4.b0
-    public final int W0(s4.y0 y0Var) {
-        return this.X.Y2 ? AndroidUtilities.displaySize.y : super.W0(y0Var);
+    @Override // android.graphics.drawable.ColorDrawable, android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        int w02 = org.telegram.ui.ActionBar.k6.w0(this.a, this.b);
+        if (getColor() != w02) {
+            setColor(w02);
+        }
+        super.draw(canvas);
     }
 }

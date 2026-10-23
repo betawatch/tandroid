@@ -12,10 +12,10 @@ import android.view.Surface;
 import e2.m0;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
-import org.telegram.ui.web.z1;
+import org.telegram.ui.web.a2;
 import v7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class c implements l {
     public final MediaCodec a;
@@ -113,7 +113,7 @@ public final class c implements l {
             fVar.l++;
             Handler handler = fVar.c;
             String str = m0.a;
-            handler.post(new z1(fVar, 10));
+            handler.post(new a2(fVar, 10));
         }
         this.a.start();
     }
@@ -158,7 +158,7 @@ public final class c implements l {
     */
     public final int h() {
         boolean z10;
-        this.c.n();
+        this.c.p();
         f fVar = this.b;
         synchronized (fVar.a) {
             try {
@@ -198,7 +198,7 @@ public final class c implements l {
     */
     public final int i(MediaCodec.BufferInfo bufferInfo) {
         boolean z10;
-        this.c.n();
+        this.c.p();
         f fVar = this.b;
         synchronized (fVar.a) {
             try {

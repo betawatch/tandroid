@@ -18,7 +18,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class ym {
     public TextPaint B;
@@ -79,24 +79,24 @@ public final class ym {
         if (ymVar.c == null) {
             ymVar.c = new ImageReceiver(zmVar.z);
             ymVar.d = new ImageReceiver(zmVar.z);
-            ymVar.c.setDelegate(new q2(11, ymVar, photoEntry));
+            ymVar.c.setDelegate(new p2(12, ymVar, photoEntry));
         }
         String str = photoEntry.thumbPath;
         if (str != null) {
-            ymVar.c.setImage(ImageLocation.getForPath(str), null, null, null, org.telegram.ui.ActionBar.h6.R4, 0L, null, null, 0);
+            ymVar.c.setImage(ImageLocation.getForPath(str), null, null, null, org.telegram.ui.ActionBar.k6.R4, 0L, null, null, 0);
             return;
         }
         if (photoEntry.path == null) {
-            ymVar.c.setImageBitmap(org.telegram.ui.ActionBar.h6.R4);
+            ymVar.c.setImageBitmap(org.telegram.ui.ActionBar.k6.R4);
             return;
         }
         if (photoEntry.isVideo) {
-            ymVar.c.setImage(ImageLocation.getForPath("vthumb://" + photoEntry.imageId + ":" + photoEntry.path), null, null, null, org.telegram.ui.ActionBar.h6.R4, 0L, null, null, 0);
+            ymVar.c.setImage(ImageLocation.getForPath("vthumb://" + photoEntry.imageId + ":" + photoEntry.path), null, null, null, org.telegram.ui.ActionBar.k6.R4, 0L, null, null, 0);
             ymVar.c.setAllowStartAnimation(true);
             return;
         }
         ymVar.c.setOrientation(photoEntry.orientation, true);
-        ymVar.c.setImage(ImageLocation.getForPath("thumb://" + photoEntry.imageId + ":" + photoEntry.path), null, null, null, org.telegram.ui.ActionBar.h6.R4, 0L, null, null, 0);
+        ymVar.c.setImage(ImageLocation.getForPath("thumb://" + photoEntry.imageId + ":" + photoEntry.path), null, null, null, org.telegram.ui.ActionBar.k6.R4, 0L, null, null, 0);
     }
 
     public static void b(ym ymVar, um umVar, MessageObject.GroupedMessagePosition groupedMessagePosition, boolean z10) {
@@ -329,7 +329,7 @@ public final class ym {
                         canvas.clipPath(path);
                         f11 = 255.0f;
                         i11 = i10;
-                        float c12 = org.telegram.ui.Cells.c1.c(Math.min(16L, SystemClock.elapsedRealtime() - this.h), 250.0f, this.w, 1.0f);
+                        float c12 = org.telegram.ui.Cells.b1.c(Math.min(16L, SystemClock.elapsedRealtime() - this.h), 250.0f, this.w, 1.0f);
                         this.w = c12;
                         Paint paint = this.x;
                         paint.setAlpha((int) ((1.0f - c12) * 255.0f));
@@ -379,21 +379,21 @@ public final class ym {
                             z12 = z11;
                         }
                         TextPaint textPaint2 = this.B;
-                        int i18 = org.telegram.ui.ActionBar.h6.V9;
+                        int i18 = org.telegram.ui.ActionBar.k6.V9;
                         f14 = dp2;
-                        textPaint2.setColor(org.telegram.ui.ActionBar.h6.w0(i18, bnVar.a));
+                        textPaint2.setColor(org.telegram.ui.ActionBar.k6.w0(i18, bnVar.a));
                         int length = str.length();
                         float f26 = (length == 0 || length == 1 || length == i11) ? 14.0f : length != 3 ? 8.0f : 10.0f;
                         this.B.setTextSize(AndroidUtilities.dp(f26));
                         float f27 = i16 / 2.0f;
                         f15 = f12;
-                        int w02 = org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.W9, bnVar.a);
+                        int w02 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.W9, bnVar.a);
                         Paint paint2 = this.z;
                         paint2.setColor(w02);
                         float f28 = (int) f27;
                         float f29 = dp4;
                         canvas2.drawCircle(f28, f28, f29, paint2);
-                        int offsetColor = AndroidUtilities.getOffsetColor(-1, org.telegram.ui.ActionBar.h6.w0(i18, bnVar.a), 1.0f, 1.0f);
+                        int offsetColor = AndroidUtilities.getOffsetColor(-1, org.telegram.ui.ActionBar.k6.w0(i18, bnVar.a), 1.0f, 1.0f);
                         Paint paint3 = this.A;
                         paint3.setColor(offsetColor);
                         paint3.setStyle(Paint.Style.STROKE);
@@ -454,7 +454,7 @@ public final class ym {
                             Canvas canvas3 = new Canvas(this.G);
                             RectF rectF3 = AndroidUtilities.rectTmp;
                             rectF3.set(0.0f, 0.0f, intrinsicWidth, max);
-                            canvas3.drawRoundRect(rectF3, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), org.telegram.ui.ActionBar.h6.i2);
+                            canvas3.drawRoundRect(rectF3, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), org.telegram.ui.ActionBar.k6.i2);
                             int dp9 = AndroidUtilities.dp(5.0f);
                             int intrinsicHeight = (int) ((max - drawable.getIntrinsicHeight()) / 2.0f);
                             drawable.setBounds(dp9, intrinsicHeight, drawable.getIntrinsicWidth() + dp9, drawable.getIntrinsicHeight() + intrinsicHeight);

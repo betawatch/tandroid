@@ -15,9 +15,9 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SvgHelper;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.k6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class a extends Drawable {
     public static SvgHelper.SvgDrawable j;
@@ -83,7 +83,7 @@ public final class a extends Drawable {
             }
         }
         int[] iArr2 = (int[]) l.get(iArr[this.e]);
-        int[] iArr3 = h6.I.q() ? new int[]{i0.a.f(0.2f, iArr2[0], -1), i0.a.f(0.2f, iArr2[1], -1)} : iArr2;
+        int[] iArr3 = k6.I.q() ? new int[]{i0.a.f(0.2f, iArr2[0], -1), i0.a.f(0.2f, iArr2[1], -1)} : iArr2;
         this.h = iArr3;
         Paint paint = new Paint(1);
         LinearGradient linearGradient = new LinearGradient(0.0f, 100.0f, 0.0f, 0.0f, iArr3, (float[]) null, Shader.TileMode.CLAMP);

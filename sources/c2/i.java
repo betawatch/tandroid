@@ -1,6 +1,6 @@
 package c2;
 
-import ai.pa;
+import ai.qa;
 import android.app.Notification;
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -14,7 +14,7 @@ import android.view.Display;
 import android.view.ViewConfiguration;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public abstract class i {
     public static AudioManager a;
@@ -67,7 +67,7 @@ public abstract class i {
                     Looper myLooper = Looper.myLooper();
                     if (myLooper != null && myLooper != Looper.getMainLooper()) {
                         e2.i iVar = new e2.i();
-                        e2.a.e().execute(new pa(8, applicationContext, iVar));
+                        e2.a.e().execute(new qa(8, applicationContext, iVar));
                         iVar.b();
                         AudioManager audioManager2 = a;
                         audioManager2.getClass();

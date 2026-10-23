@@ -2,18 +2,17 @@ package x3;
 
 import b2.v;
 import b2.v0;
-import b2.w;
-import c3.u;
+import c3.w;
 import e2.x;
 import java.util.Arrays;
 import n4.s;
-import u2.a1;
+import u2.b1;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class c extends i {
-    public u n;
-    public a1 o;
+    public w n;
+    public b1 o;
 
     @Override // x3.i
     public final long b(x xVar) {
@@ -34,13 +33,13 @@ public final class c extends i {
     @Override // x3.i
     public final boolean c(x xVar, long j10, n2.e eVar) {
         byte[] bArr = xVar.a;
-        u uVar = this.n;
-        if (uVar == null) {
-            u uVar2 = new u(bArr, 17);
-            this.n = uVar2;
-            v a2 = uVar2.c(Arrays.copyOfRange(bArr, 9, xVar.c), null).a();
+        w wVar = this.n;
+        if (wVar == null) {
+            w wVar2 = new w(bArr, 17);
+            this.n = wVar2;
+            v a2 = wVar2.c(Arrays.copyOfRange(bArr, 9, xVar.c), null).a();
             a2.q = v0.n("audio/ogg");
-            eVar.b = new w(a2);
+            eVar.b = new b2.w(a2);
             return true;
         }
         byte b10 = bArr[0];
@@ -48,23 +47,23 @@ public final class c extends i {
             if (b10 != -1) {
                 return true;
             }
-            a1 a1Var = this.o;
-            if (a1Var != null) {
-                a1Var.a = j10;
-                eVar.c = a1Var;
+            b1 b1Var = this.o;
+            if (b1Var != null) {
+                b1Var.a = j10;
+                eVar.c = b1Var;
             }
-            ((w) eVar.b).getClass();
+            ((b2.w) eVar.b).getClass();
             return false;
         }
         s t10 = c3.b.t(xVar);
-        u uVar3 = new u(uVar.a, uVar.b, uVar.c, uVar.d, uVar.e, uVar.g, uVar.h, uVar.j, t10, uVar.l);
-        this.n = uVar3;
-        a1 a1Var2 = new a1();
-        a1Var2.c = uVar3;
-        a1Var2.d = t10;
-        a1Var2.a = -1L;
-        a1Var2.b = -1L;
-        this.o = a1Var2;
+        w wVar3 = new w(wVar.a, wVar.b, wVar.c, wVar.d, wVar.e, wVar.g, wVar.h, wVar.j, t10, wVar.l);
+        this.n = wVar3;
+        b1 b1Var2 = new b1();
+        b1Var2.c = wVar3;
+        b1Var2.d = t10;
+        b1Var2.a = -1L;
+        b1Var2.b = -1L;
+        this.o = b1Var2;
         return true;
     }
 

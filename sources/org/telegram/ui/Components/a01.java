@@ -1,37 +1,22 @@
 package org.telegram.ui.Components;
 
-import android.view.ViewGroup;
-import org.telegram.tgnet.TLObject;
+import android.graphics.Canvas;
+import android.view.View;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class a01 extends ViewGroup.MarginLayoutParams {
-    public c01 a;
-    public c01 b;
+public interface a01 extends org.telegram.ui.Cells.z9 {
+    void attach(View view);
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a01() {
-        super(-2, -2);
-        c01 c01Var = c01.e;
-        this.a = c01Var;
-        this.b = c01Var;
-        setMargins(TLObject.FLAG_31, TLObject.FLAG_31, TLObject.FLAG_31, TLObject.FLAG_31);
-        this.a = c01Var;
-        this.b = c01Var;
-    }
+    void detach(View view);
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || a01.class != obj.getClass()) {
-            return false;
-        }
-        a01 a01Var = (a01) obj;
-        return this.b.equals(a01Var.b) && this.a.equals(a01Var.a);
-    }
+    void draw(Canvas canvas, View view);
 
-    public final int hashCode() {
-        return this.b.hashCode() + (this.a.hashCode() * 31);
-    }
+    int getEmojiOnlyCount();
+
+    void setRow(int i10);
+
+    void setX(int i10);
+
+    void setY(int i10);
 }

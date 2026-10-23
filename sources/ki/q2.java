@@ -2,7 +2,7 @@ package ki;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q2 implements Runnable {
     public final /* synthetic */ int a;
@@ -19,21 +19,21 @@ public final /* synthetic */ class q2 implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        View A1;
-        View A12;
+        View F1;
+        View F12;
         switch (this.a) {
             case 0:
                 w3 w3Var = this.b;
                 a aVar = this.c;
                 if (aVar == null) {
                     w3Var.getClass();
-                    A1 = null;
+                    F1 = null;
                 } else {
-                    A1 = w3Var.A1(aVar);
+                    F1 = w3Var.F1(aVar);
                 }
-                if (A1 instanceof c6) {
-                    c6 c6Var = (c6) A1;
-                    c6Var.B();
+                if (F1 instanceof c6) {
+                    c6 c6Var = (c6) F1;
+                    c6Var.A();
                     c6Var.getEditText().setSelection(Math.min(this.d, c6Var.getEditText().length()));
                     break;
                 }
@@ -43,49 +43,49 @@ public final /* synthetic */ class q2 implements Runnable {
                 a aVar2 = this.c;
                 if (aVar2 == null) {
                     w3Var2.getClass();
-                    A12 = null;
+                    F12 = null;
                 } else {
-                    A12 = w3Var2.A1(aVar2);
+                    F12 = w3Var2.F1(aVar2);
                 }
-                if (A12 instanceof c6) {
-                    c6 c6Var2 = (c6) A12;
-                    c6Var2.B();
+                if (F12 instanceof c6) {
+                    c6 c6Var2 = (c6) F12;
+                    c6Var2.A();
                     c6Var2.getEditText().setSelection(Math.min(this.d, c6Var2.getEditText().length()));
                     break;
                 }
                 break;
             case 2:
-                View A13 = this.b.A1(this.c);
-                if (A13 instanceof c6) {
-                    c6 c6Var3 = (c6) A13;
-                    c6Var3.B();
+                View F13 = this.b.F1(this.c);
+                if (F13 instanceof c6) {
+                    c6 c6Var3 = (c6) F13;
+                    c6Var3.A();
                     c6Var3.getEditText().setSelection(Math.max(0, Math.min(this.d, c6Var3.getEditText().length())));
                     break;
                 }
                 break;
             case 3:
-                View A14 = this.b.A1(this.c);
-                if (A14 instanceof c6) {
-                    c6 c6Var4 = (c6) A14;
-                    c6Var4.B();
+                View F14 = this.b.F1(this.c);
+                if (F14 instanceof c6) {
+                    c6 c6Var4 = (c6) F14;
+                    c6Var4.A();
                     c6Var4.getEditText().setSelection(Math.max(0, Math.min(this.d, c6Var4.getEditText().length())));
                     break;
                 }
                 break;
             case 4:
-                View A15 = this.b.A1(this.c);
-                if (A15 instanceof c6) {
-                    c6 c6Var5 = (c6) A15;
-                    c6Var5.B();
+                View F15 = this.b.F1(this.c);
+                if (F15 instanceof c6) {
+                    c6 c6Var5 = (c6) F15;
+                    c6Var5.A();
                     c6Var5.getEditText().setSelection(Math.max(0, Math.min(this.d, c6Var5.getEditText().length())));
                     break;
                 }
                 break;
             default:
-                View A16 = this.b.A1(this.c);
-                if (A16 instanceof c6) {
-                    c6 c6Var6 = (c6) A16;
-                    c6Var6.B();
+                View F16 = this.b.F1(this.c);
+                if (F16 instanceof c6) {
+                    c6 c6Var6 = (c6) F16;
+                    c6Var6.A();
                     c6Var6.getEditText().setSelection(Math.max(0, Math.min(this.d, c6Var6.getEditText().length())));
                     break;
                 }

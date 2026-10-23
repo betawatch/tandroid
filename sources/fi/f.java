@@ -1,75 +1,76 @@
 package fi;
 
-import ai.ga;
+import ai.ha;
 import ai.q;
-import ai.uc;
-import ai.wa;
+import ai.vc;
+import ai.xa;
 import android.content.Context;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import ei.x3;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.o2;
+import org.telegram.ui.Components.b71;
 import org.telegram.ui.Components.bb;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.jm0;
-import org.telegram.ui.Components.u61;
-import org.telegram.ui.Components.xa;
+import org.telegram.ui.Components.lm0;
+import org.telegram.ui.Components.mm0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.m6;
-import org.telegram.ui.fk;
-import org.telegram.ui.qn;
+import org.telegram.ui.gk;
+import org.telegram.ui.sn;
 import s4.k;
 import w7.z5;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class f extends bb implements NotificationCenter.NotificationCenterDelegate {
     public final ag.a X;
-    public final uc Y;
+    public final vc Y;
     public final FrameLayout Z;
     public Runnable a0;
-    public u61 b0;
+    public int b0;
+    public b71 c0;
 
-    public f(Context context, d6 d6Var, ag.a aVar, boolean z10, Runnable runnable) {
-        super(context, null, false, false, d6Var);
+    public f(Context context, g6 g6Var, ag.a aVar, boolean z10, Runnable runnable) {
+        super(context, null, false, false, g6Var);
         this.v = 0.2f;
         this.a0 = runnable;
         fixNavigationBar();
-        jm0 jm0Var = this.d;
+        mm0 mm0Var = this.d;
         int i10 = this.backgroundPaddingLeft;
         final int i11 = 0;
-        jm0Var.setPadding(i10, 0, i10, 0);
-        this.d.setOnItemClickListener(new wa(this, 11));
+        mm0Var.setPadding(i10, 0, i10, 0);
+        this.d.setOnItemClickListener(new xa(this, 11));
         k kVar = new k();
         kVar.m = false;
         kVar.C = false;
         kVar.o(bs.h);
         kVar.n(350L);
         this.d.setItemAnimator(kVar);
-        setBackgroundColor(h6.w0(h6.h5, d6Var));
+        setBackgroundColor(k6.w0(k6.h5, g6Var));
         this.X = aVar;
-        uc ucVar = new uc(context, 2, d6Var);
-        this.Y = ucVar;
+        vc vcVar = new vc(context, 2, g6Var);
+        this.Y = vcVar;
         final int i12 = 1;
-        ((TextView) ucVar.c).setText(LocaleController.formatString(R.string.TonNeededTitle, ag.a.i(aVar.b - ga.y(this.currentAccount, true).s().b, ag.b.b).d()));
-        TextView textView = (TextView) ucVar.d;
+        ((TextView) vcVar.c).setText(LocaleController.formatString(R.string.TonNeededTitle, ag.a.i(aVar.b - ha.y(this.currentAccount, true).s().b, ag.b.b).d()));
+        TextView textView = (TextView) vcVar.d;
         textView.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.FragmentAddFunds)));
         textView.setMaxWidth(x3.a(textView.getText(), textView.getPaint()));
-        this.e.setTitle(A());
+        this.e.setTitle(z());
         FrameLayout frameLayout = new FrameLayout(context);
         this.Z = frameLayout;
         ei.d dVar = new ei.d(getContext(), getResourcesProvider(), true);
         frameLayout.addView(dVar, z5.t(-1, 48, 17, 20, 10, 20, 20));
         if (z10 || g.C0()) {
-            dVar.g(LocaleController.getString(R.string.TopUpViaFragment), false, true);
+            dVar.i(LocaleController.getString(R.string.TopUpViaFragment), false, true);
             dVar.setOnClickListener(new View.OnClickListener(this) { // from class: fi.e
                 public final /* synthetic */ f b;
 
@@ -90,7 +91,7 @@ public final class f extends bb implements NotificationCenter.NotificationCenter
                 }
             });
         } else {
-            dVar.g(LocaleController.getString(R.string.Close), false, true);
+            dVar.i(LocaleController.getString(R.string.Close), false, true);
             dVar.setOnClickListener(new View.OnClickListener(this) { // from class: fi.e
                 public final /* synthetic */ f b;
 
@@ -111,37 +112,28 @@ public final class f extends bb implements NotificationCenter.NotificationCenter
                 }
             });
         }
-        u61 u61Var = this.b0;
-        if (u61Var != null) {
-            u61Var.N(false);
+        b71 b71Var = this.c0;
+        if (b71Var != null) {
+            b71Var.N(false);
         }
-    }
-
-    @Override // org.telegram.ui.Components.bb
-    public final CharSequence A() {
-        uc ucVar = this.Y;
-        if (ucVar == null) {
-            return null;
-        }
-        return ((TextView) ucVar.c).getText();
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
         Runnable runnable;
         if (i10 == NotificationCenter.starOptionsLoaded || i10 == NotificationCenter.starBalanceUpdated) {
-            u61 u61Var = this.b0;
-            if (u61Var != null) {
-                u61Var.N(true);
+            b71 b71Var = this.c0;
+            if (b71Var != null) {
+                b71Var.N(true);
             }
-            ag.a s10 = ga.y(this.currentAccount, true).s();
+            ag.a s10 = ha.y(this.currentAccount, true).s();
             TextView textView = (TextView) this.Y.c;
             int i12 = R.string.TonNeededTitle;
             ag.a aVar = this.X;
             textView.setText(LocaleController.formatString(i12, ag.a.i(aVar.b - s10.b, ag.b.b).d()));
-            xa xaVar = this.e;
+            org.telegram.ui.Components.xa xaVar = this.e;
             if (xaVar != null) {
-                xaVar.setTitle(A());
+                xaVar.setTitle(z());
             }
             if (s10.b < aVar.b || (runnable = this.a0) == null) {
                 return;
@@ -152,26 +144,40 @@ public final class f extends bb implements NotificationCenter.NotificationCenter
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
+    @Override // org.telegram.ui.ActionBar.h3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.k2
     public final void dismiss() {
         super.dismiss();
-        uc ucVar = this.Y;
-        if (ucVar != null) {
-            ((m6) ucVar.b).setPaused(true);
+        vc vcVar = this.Y;
+        if (vcVar != null) {
+            ((m6) vcVar.b).setPaused(true);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.f3
+    @Override // org.telegram.ui.ActionBar.h3
     public final void dismissInternal() {
         super.dismissInternal();
         NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.starOptionsLoaded);
         NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.starBalanceUpdated);
     }
 
-    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog
+    @Override // org.telegram.ui.ActionBar.h3
+    public final void onThemeColorsChanged() {
+        super.onThemeColorsChanged();
+        try {
+            int w02 = k6.w0(k6.h5, this.resourcesProvider);
+            if (w02 != this.b0) {
+                this.b0 = w02;
+                setBackgroundColor(w02);
+            }
+        } catch (Exception e) {
+            FileLog.e(e);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.h3, android.app.Dialog
     public final void show() {
-        fk fkVar;
-        if (ga.y(this.currentAccount, true).s().b >= this.X.b) {
+        gk gkVar;
+        if (ha.y(this.currentAccount, true).s().b >= this.X.b) {
             Runnable runnable = this.a0;
             if (runnable != null) {
                 runnable.run();
@@ -180,11 +186,11 @@ public final class f extends bb implements NotificationCenter.NotificationCenter
             }
             return;
         }
-        n2 R = LaunchActivity.R();
-        if (R instanceof qn) {
-            qn qnVar = (qn) R;
-            if (qnVar.C9() && (fkVar = qnVar.Y) != null) {
-                fkVar.N();
+        o2 R = LaunchActivity.R();
+        if (R instanceof sn) {
+            sn snVar = (sn) R;
+            if (snVar.C9() && (gkVar = snVar.Y) != null) {
+                gkVar.M();
             }
         }
         super.show();
@@ -193,9 +199,18 @@ public final class f extends bb implements NotificationCenter.NotificationCenter
     }
 
     @Override // org.telegram.ui.Components.bb
-    public final im0 x(jm0 jm0Var) {
-        u61 u61Var = new u61(this.d, getContext(), this.currentAccount, 0, true, new q(this, 22), this.resourcesProvider);
-        this.b0 = u61Var;
-        return u61Var;
+    public final lm0 w(mm0 mm0Var) {
+        b71 b71Var = new b71(this.d, getContext(), this.currentAccount, 0, true, new q(this, 22), this.resourcesProvider);
+        this.c0 = b71Var;
+        return b71Var;
+    }
+
+    @Override // org.telegram.ui.Components.bb
+    public final CharSequence z() {
+        vc vcVar = this.Y;
+        if (vcVar == null) {
+            return null;
+        }
+        return ((TextView) vcVar.c).getText();
     }
 }

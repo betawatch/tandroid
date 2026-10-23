@@ -9,9 +9,9 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class b20 extends yj0 {
+public final class b20 extends bk0 {
     public boolean r;
     public boolean s;
     public final a20 v;
@@ -47,8 +47,8 @@ public final class b20 extends yj0 {
                                 }
                             }
                             fragmentContextView2.y.d();
-                            org.telegram.ui.ActionBar.h6.E0().c(true);
-                            fragmentContextView2.a.f(true);
+                            org.telegram.ui.ActionBar.k6.F0().c(true);
+                            fragmentContextView2.a.h(true);
                             break;
                         }
                         break;
@@ -94,8 +94,8 @@ public final class b20 extends yj0 {
                                 }
                             }
                             fragmentContextView2.y.d();
-                            org.telegram.ui.ActionBar.h6.E0().c(true);
-                            fragmentContextView2.a.f(true);
+                            org.telegram.ui.ActionBar.k6.F0().c(true);
+                            fragmentContextView2.a.h(true);
                             break;
                         }
                         break;
@@ -170,8 +170,8 @@ public final class b20 extends yj0 {
                     }
                 }
                 this.s = false;
-                org.telegram.ui.ActionBar.h6.E0().c(true);
-                fragmentContextView.a.f(true);
+                org.telegram.ui.ActionBar.k6.F0().c(true);
+                fragmentContextView.a.h(true);
                 MotionEvent obtain = MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0);
                 super.onTouchEvent(obtain);
                 obtain.recycle();

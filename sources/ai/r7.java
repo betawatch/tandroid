@@ -7,7 +7,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.bs;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class r7 implements q0.a {
     public final /* synthetic */ int a;
@@ -33,12 +33,12 @@ public final /* synthetic */ class r7 implements q0.a {
                 AndroidUtilities.runOnUIThread(new y7(callback2, z10, responseCodeString, i11));
                 break;
             case 1:
-                ei.f6.a0((ei.xa) obj2, (Integer) obj);
+                ei.f6.Z((ei.xa) obj2, (Integer) obj);
                 break;
             case 2:
                 gi.d3 d3Var = (gi.d3) obj2;
                 Float f7 = (Float) obj;
-                d3Var.y.setLoadProgressAnimated(f7.floatValue());
+                d3Var.E.setLoadProgressAnimated(f7.floatValue());
                 if (f7.floatValue() == 1.0f) {
                     ValueAnimator duration = ValueAnimator.ofFloat(1.0f, 0.0f).setDuration(200L);
                     duration.setInterpolator(bs.f);

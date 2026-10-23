@@ -2,12 +2,12 @@ package ai;
 
 import android.content.Context;
 import android.view.MotionEvent;
-import org.telegram.ui.Components.c71;
-import org.telegram.ui.Components.sd0;
+import org.telegram.ui.Components.j71;
+import org.telegram.ui.Components.vd0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final class s extends sd0 {
+public final class s extends vd0 {
     public final /* synthetic */ int L;
     public final /* synthetic */ Object M;
 
@@ -27,25 +27,25 @@ public final class s extends sd0 {
                 if (tVar != null && !tVar.isFocusable()) {
                     xVar.Q.setFocusable(true);
                     xVar.Q.setFocusableInTouchMode(true);
-                    int y12 = xVar.e.y1(1);
-                    if (y12 >= 0 && y12 < xVar.e.W2.x.size()) {
+                    int D1 = xVar.e.D1(1);
+                    if (D1 >= 0 && D1 < xVar.e.Z2.y.size()) {
                         xVar.e.B0();
-                        xVar.e.x0(y12);
+                        xVar.e.x0(D1);
                     }
                     xVar.Q.requestFocus();
                 }
                 break;
             default:
                 org.telegram.ui.ie ieVar = (org.telegram.ui.ie) this.M;
-                c71 c71Var = ieVar.a1;
+                j71 j71Var = ieVar.a1;
                 t tVar2 = ieVar.Y0;
                 if (tVar2 != null && !tVar2.isFocusable()) {
                     tVar2.setFocusable(true);
                     tVar2.setFocusableInTouchMode(true);
-                    int y13 = c71Var.y1(3);
-                    if (y13 >= 0 && y13 < c71Var.W2.x.size()) {
-                        c71Var.B0();
-                        c71Var.x0(y13);
+                    int D12 = j71Var.D1(3);
+                    if (D12 >= 0 && D12 < j71Var.Z2.y.size()) {
+                        j71Var.B0();
+                        j71Var.x0(D12);
                     }
                     tVar2.requestFocus();
                 }

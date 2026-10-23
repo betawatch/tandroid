@@ -2,9 +2,9 @@ package gi;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.k6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class t2 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -23,15 +23,15 @@ public final class t2 extends AnimatorListenerAdapter {
     public final void onAnimationEnd(Animator animator) {
         int f7 = i0.a.f(1.0f, this.a, this.b);
         d3 d3Var = this.d;
-        d3Var.Q = f7;
+        d3Var.R = f7;
         d3Var.h();
-        c3 c3Var = d3Var.e;
+        c3 c3Var = d3Var.f;
         c3Var.invalidate();
-        a3 a3Var = d3Var.W;
-        a3Var.setBackgroundColor(d3Var.Q);
+        a3 a3Var = d3Var.X;
+        a3Var.setBackgroundColor(d3Var.R);
         w1 w1Var = this.c;
         w1Var.b(a3Var, 1.0f);
-        d3Var.a = w1Var.a(h6.Ii);
+        d3Var.a = w1Var.a(k6.Ii);
         c3Var.invalidate();
     }
 }

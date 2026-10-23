@@ -4,17 +4,18 @@ import b2.o;
 import b2.v;
 import b2.v0;
 import b2.w;
-import c3.i0;
-import c3.j0;
+import c3.k0;
+import c3.l0;
 import e2.m0;
 import e2.x;
+import i2.o1;
 import java.io.EOFException;
 import v7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public final class n implements j0 {
-    public final j0 a;
+public final class n implements l0 {
+    public final l0 a;
     public final k b;
     public m g;
     public w h;
@@ -24,17 +25,17 @@ public final class n implements j0 {
     public byte[] f = m0.b;
     public final x c = new x();
 
-    public n(j0 j0Var, k kVar) {
-        this.a = j0Var;
+    public n(l0 l0Var, k kVar) {
+        this.a = l0Var;
         this.b = kVar;
     }
 
-    @Override // c3.j0
+    @Override // c3.l0
     public final int a(o oVar, int i10, boolean z10) {
         return f(oVar, i10, z10);
     }
 
-    @Override // c3.j0
+    @Override // c3.l0
     public final void b(w wVar) {
         wVar.s.getClass();
         String str = wVar.s;
@@ -46,9 +47,9 @@ public final class n implements j0 {
             this.g = kVar.a0(wVar) ? kVar.y(wVar) : null;
         }
         m mVar = this.g;
-        j0 j0Var = this.a;
+        l0 l0Var = this.a;
         if (mVar == null) {
-            j0Var.b(wVar);
+            l0Var.b(wVar);
             return;
         }
         v a2 = wVar.a();
@@ -56,31 +57,31 @@ public final class n implements j0 {
         a2.j = str;
         a2.w = Long.MAX_VALUE;
         a2.P = kVar.L(wVar);
-        i2.e.u(a2, j0Var);
+        o1.v(a2, l0Var);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:21:0x005b  */
     /* JADX WARN: Removed duplicated region for block: B:23:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:30:0x004c  */
     /* JADX WARN: Removed duplicated region for block: B:31:0x0060  */
-    @Override // c3.j0
+    @Override // c3.l0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void c(long j10, int i10, int i11, int i12, i0 i0Var) {
+    public final void c(long j10, int i10, int i11, int i12, k0 k0Var) {
         n nVar;
         int i13;
         int i14;
         m mVar;
         byte[] bArr;
         l lVar;
-        j2.d dVar;
+        j2.c cVar;
         if (this.g == null) {
-            this.a.c(j10, i10, i11, i12, i0Var);
+            this.a.c(j10, i10, i11, i12, k0Var);
             return;
         }
         int i15 = i11;
-        u6.f("DRM on subtitles is not supported", i0Var == null);
+        u6.f("DRM on subtitles is not supported", k0Var == null);
         int i16 = (this.e - i12) - i15;
         try {
             mVar = this.g;
@@ -91,7 +92,7 @@ public final class n implements j0 {
             nVar = this;
         }
         try {
-            dVar = new j2.d(this, j10, i10, 7);
+            cVar = new j2.c(this, j10, i10, 7);
             nVar = this;
             i13 = i16;
         } catch (RuntimeException e7) {
@@ -109,7 +110,7 @@ public final class n implements j0 {
             }
         }
         try {
-            mVar.f(bArr, i13, i15, lVar, dVar);
+            mVar.f(bArr, i13, i15, lVar, cVar);
             i15 = i15;
         } catch (RuntimeException e10) {
             e = e10;
@@ -126,12 +127,12 @@ public final class n implements j0 {
         }
     }
 
-    @Override // c3.j0
+    @Override // c3.l0
     public final /* synthetic */ void d(int i10, x xVar) {
         a1.g.a(this, xVar, i10);
     }
 
-    @Override // c3.j0
+    @Override // c3.l0
     public final int f(o oVar, int i10, boolean z10) {
         if (this.g == null) {
             return this.a.f(oVar, i10, z10);
@@ -148,7 +149,7 @@ public final class n implements j0 {
         throw new EOFException();
     }
 
-    @Override // c3.j0
+    @Override // c3.l0
     public final void g(x xVar, int i10, int i11) {
         if (this.g == null) {
             this.a.g(xVar, i10, i11);
@@ -175,7 +176,7 @@ public final class n implements j0 {
         this.f = bArr2;
     }
 
-    @Override // c3.j0
+    @Override // c3.l0
     public final /* synthetic */ void e(long j10) {
     }
 }

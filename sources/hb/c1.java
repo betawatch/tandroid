@@ -1,6 +1,8 @@
 package hb;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+import i2.o1;
+
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public class c1 extends eb.u {
     @Override // eb.u
@@ -14,9 +16,9 @@ public class c1 extends eb.u {
             if (p5 <= 65535 && p5 >= -32768) {
                 return Short.valueOf((short) p5);
             }
-            StringBuilder l4 = i2.e.l(p5, "Lossy conversion from ", " to short; at path ");
-            l4.append(aVar.j());
-            throw new eb.j(l4.toString());
+            StringBuilder n10 = o1.n(p5, "Lossy conversion from ", " to short; at path ");
+            n10.append(aVar.j());
+            throw new eb.j(n10.toString());
         } catch (NumberFormatException e) {
             throw new eb.j(e);
         }

@@ -1,50 +1,13 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Point;
-import android.widget.LinearLayout;
-import org.telegram.messenger.AndroidUtilities;
+import android.widget.Button;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class p4 extends LinearLayout {
-    public boolean a;
-    public final /* synthetic */ od0 b;
-    public final /* synthetic */ od0 c;
-    public final /* synthetic */ od0 d;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p4(Context context, od0 od0Var, od0 od0Var2, od0 od0Var3) {
-        super(context);
-        this.b = od0Var;
-        this.c = od0Var2;
-        this.d = od0Var3;
-        this.a = false;
-    }
-
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        this.a = true;
-        Point point = AndroidUtilities.displaySize;
-        int i12 = point.x > point.y ? 3 : 5;
-        od0 od0Var = this.b;
-        od0Var.setItemCount(i12);
-        od0 od0Var2 = this.c;
-        od0Var2.setItemCount(i12);
-        od0 od0Var3 = this.d;
-        od0Var3.setItemCount(i12);
-        od0Var.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i12;
-        od0Var2.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i12;
-        od0Var3.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i12;
-        this.a = false;
-        super.onMeasure(i10, i11);
-    }
-
-    @Override // android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.a) {
-            return;
-        }
-        super.requestLayout();
+public final class p4 extends TextView {
+    @Override // android.widget.TextView, android.view.View
+    public final CharSequence getAccessibilityClassName() {
+        return Button.class.getName();
     }
 }

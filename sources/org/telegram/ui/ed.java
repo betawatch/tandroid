@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ed implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -21,27 +21,27 @@ public final /* synthetic */ class ed implements View.OnClickListener {
                 break;
             case 1:
                 md mdVar = this.b;
-                mdVar.v.n(mdVar.x != null, new dd(mdVar, 1), new w5(mdVar, 2), 0);
-                mdVar.J.M(0);
-                mdVar.J.P(43);
-                mdVar.h.d();
+                mdVar.w.n(mdVar.y != null, new cd(mdVar, 2), new v5(mdVar, 2), 0);
+                mdVar.K.M(0);
+                mdVar.K.P(43);
+                mdVar.n.d();
                 break;
             case 2:
                 md mdVar2 = this.b;
-                if (!mdVar2.j0) {
-                    mdVar2.f0();
+                if (!mdVar2.k0) {
+                    mdVar2.g0();
                     break;
-                } else if (mdVar2.a0) {
-                    mdVar2.a0 = false;
-                    mdVar2.h0();
+                } else if (mdVar2.b0) {
+                    mdVar2.b0 = false;
+                    mdVar2.i0();
                     break;
                 }
                 break;
             default:
                 md mdVar3 = this.b;
-                if (!mdVar3.a0) {
-                    mdVar3.a0 = true;
-                    mdVar3.h0();
+                if (!mdVar3.b0) {
+                    mdVar3.b0 = true;
+                    mdVar3.i0();
                     break;
                 }
                 break;

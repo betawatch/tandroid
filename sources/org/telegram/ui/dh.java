@@ -7,7 +7,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class dh implements Runnable {
     public final /* synthetic */ int a;
@@ -43,15 +43,15 @@ public final /* synthetic */ class dh implements Runnable {
                 break;
             case 4:
                 SharedConfig.setSuggestStickers(0);
-                ((org.telegram.ui.Cells.ba) view).c.c(LocaleController.getString(R.string.SuggestStickersAll), true, true);
+                ((org.telegram.ui.Cells.ca) view).c.c(LocaleController.getString(R.string.SuggestStickersAll), true, true);
                 break;
             case 5:
                 SharedConfig.setSuggestStickers(1);
-                ((org.telegram.ui.Cells.ba) view).c.c(LocaleController.getString(R.string.SuggestStickersInstalled), true, true);
+                ((org.telegram.ui.Cells.ca) view).c.c(LocaleController.getString(R.string.SuggestStickersInstalled), true, true);
                 break;
             default:
                 SharedConfig.setSuggestStickers(2);
-                ((org.telegram.ui.Cells.ba) view).c.c(LocaleController.getString(R.string.SuggestStickersNone), true, true);
+                ((org.telegram.ui.Cells.ca) view).c.c(LocaleController.getString(R.string.SuggestStickersNone), true, true);
                 break;
         }
     }

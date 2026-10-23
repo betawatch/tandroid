@@ -10,7 +10,7 @@ import org.telegram.ui.Components.gh;
 import org.telegram.ui.Components.ri;
 import org.telegram.ui.Components.ti;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class r1 implements ri {
     public final /* synthetic */ ti a;
@@ -30,8 +30,8 @@ public final class r1 implements ri {
             HashMap<Object, Object> selectedPhotos = chatAttachAlertPhotoLayout.getSelectedPhotos();
             ArrayList<Object> selectedPhotosOrder = chatAttachAlertPhotoLayout.getSelectedPhotosOrder();
             w3 w3Var = d2Var.P;
-            a aVar = w3Var.Z3;
-            w3Var.Z3 = null;
+            a aVar = w3Var.c4;
+            w3Var.c4 = null;
             int i13 = 0;
             while (true) {
                 if (i13 >= selectedPhotosOrder.size()) {
@@ -41,13 +41,13 @@ public final class r1 implements ri {
                 if (!(obj instanceof MediaController.PhotoEntry)) {
                     i13++;
                 } else if (aVar != null) {
-                    d2Var.P.U1(aVar, (MediaController.PhotoEntry) obj);
+                    d2Var.P.Z1(aVar, (MediaController.PhotoEntry) obj);
                 } else {
-                    d2Var.P.g2((MediaController.PhotoEntry) obj);
+                    d2Var.P.l2((MediaController.PhotoEntry) obj);
                 }
             }
         }
-        d2Var.P.Z3 = null;
+        d2Var.P.c4 = null;
         tiVar.dismiss(true);
     }
 
@@ -57,21 +57,13 @@ public final class r1 implements ri {
     }
 
     @Override // org.telegram.ui.Components.ri
-    public final void u(gh ghVar) {
+    public final void r(gh ghVar) {
         NotificationCenter.getInstance(this.b.getCurrentAccount()).doOnIdle(ghVar);
     }
 
     @Override // org.telegram.ui.Components.ri
-    public final boolean v() {
+    public final boolean u() {
         return false;
-    }
-
-    @Override // org.telegram.ui.Components.ri
-    public final /* synthetic */ void E() {
-    }
-
-    @Override // org.telegram.ui.Components.ri
-    public final void J() {
     }
 
     @Override // org.telegram.ui.Components.ri
@@ -80,6 +72,14 @@ public final class r1 implements ri {
 
     @Override // org.telegram.ui.Components.ri
     public final void X(TLRPC.User user) {
+    }
+
+    @Override // org.telegram.ui.Components.ri
+    public final /* synthetic */ void E() {
+    }
+
+    @Override // org.telegram.ui.Components.ri
+    public final void J() {
     }
 
     @Override // org.telegram.ui.Components.ri

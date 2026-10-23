@@ -22,7 +22,7 @@ import java.util.Set;
 import qb.c;
 import w1.a;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public class SignInHubActivity extends v {
     public static boolean T = false;
@@ -50,11 +50,11 @@ public class SignInHubActivity extends v {
         if (intent != null) {
             SignInAccount signInAccount = (SignInAccount) intent.getParcelableExtra("signInAccount");
             if (signInAccount != null && (googleSignInAccount = signInAccount.b) != null) {
-                i F = i.F(this);
+                i Q = i.Q(this);
                 GoogleSignInOptions googleSignInOptions = this.P.b;
-                synchronized (F) {
-                    synchronized (F) {
-                        ((b) F.b).c(googleSignInAccount, googleSignInOptions);
+                synchronized (Q) {
+                    synchronized (Q) {
+                        ((b) Q.b).c(googleSignInAccount, googleSignInOptions);
                     }
                     intent.removeExtra("signInAccount");
                     intent.putExtra("googleSignInAccount", googleSignInAccount);

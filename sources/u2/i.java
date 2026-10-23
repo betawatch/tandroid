@@ -3,9 +3,9 @@ package u2;
 import java.util.ArrayList;
 import v7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public final class i extends u1 {
+public final class i extends v1 {
     public final long l;
     public final long m;
     public final boolean n;
@@ -31,7 +31,7 @@ public final class i extends u1 {
         this.s = new b2.n1();
     }
 
-    @Override // u2.u1
+    @Override // u2.v1
     public final void A(b2.o1 o1Var) {
         if (this.u != null) {
             return;
@@ -86,15 +86,15 @@ public final class i extends u1 {
         }
     }
 
-    @Override // u2.u1, u2.a
+    @Override // u2.v1, u2.a
     public final boolean a(b2.o0 o0Var) {
         a aVar = this.k;
         return aVar.i().e.equals(o0Var.e) && aVar.a(o0Var);
     }
 
     @Override // u2.a
-    public final e0 c(g0 g0Var, androidx.biometric.e eVar, long j10) {
-        e eVar2 = new e(this.k.c(g0Var, eVar, j10), this.n, this.v, this.w, 0);
+    public final f0 c(h0 h0Var, androidx.biometric.e eVar, long j10) {
+        e eVar2 = new e(this.k.c(h0Var, eVar, j10), this.n, this.v, this.w, 0);
         this.r.add(eVar2);
         return eVar2;
     }
@@ -109,10 +109,10 @@ public final class i extends u1 {
     }
 
     @Override // u2.a
-    public final void o(e0 e0Var) {
+    public final void o(f0 f0Var) {
         ArrayList arrayList = this.r;
-        u6.p(arrayList.remove(e0Var));
-        this.k.o(((e) e0Var).a);
+        u6.p(arrayList.remove(f0Var));
+        this.k.o(((e) f0Var).a);
         if (!arrayList.isEmpty() || this.o) {
             return;
         }

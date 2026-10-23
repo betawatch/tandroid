@@ -1,171 +1,267 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
+import android.app.Activity;
+import android.content.Context;
+import android.text.TextUtils;
 import android.view.View;
-import java.util.HashSet;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.support.LongSparseIntArray;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class w40 extends org.telegram.ui.Components.jm0 {
-    public final LongSparseIntArray V2;
-    public final /* synthetic */ q50 W2;
+public final class w40 extends org.telegram.ui.ActionBar.j {
+    public final /* synthetic */ Activity a;
+    public final /* synthetic */ u50 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w40(q50 q50Var, LaunchActivity launchActivity) {
-        super(launchActivity, null);
-        this.W2 = q50Var;
-        this.V2 = new LongSparseIntArray();
+    public w40(u50 u50Var, Activity activity) {
+        this.b = u50Var;
+        this.a = activity;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:30:0x008e  */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x00b0  */
-    @Override // org.telegram.ui.Components.jm0, android.view.ViewGroup, android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void dispatchDraw(Canvas canvas) {
-        float f7;
-        boolean z10;
-        float f10;
-        q50 q50Var = this.W2;
-        float f11 = Float.MAX_VALUE;
-        boolean z11 = q50Var.X.K != Float.MAX_VALUE;
-        LongSparseIntArray longSparseIntArray = this.V2;
-        longSparseIntArray.clear();
-        for (int i10 = 0; i10 < q50Var.B2.size(); i10++) {
-            longSparseIntArray.put(q50Var.B2.keyAt(i10), 1);
+    @Override // org.telegram.ui.ActionBar.j
+    public final void b(int i10) {
+        VoIPService sharedInstance;
+        int x02;
+        u50 u50Var = this.b;
+        if (i10 == -1) {
+            u50Var.onBackPressed();
+            return;
         }
-        q50Var.B2.clear();
-        int childCount = getChildCount();
-        float f12 = Float.MAX_VALUE;
-        int i11 = 0;
-        boolean z12 = false;
-        float f13 = 0.0f;
-        while (i11 < childCount) {
-            View childAt = getChildAt(i11);
-            s4.b1 G = G(childAt);
-            if (G != null) {
-                f10 = f11;
-                int i12 = G.f;
-                if (i12 == 3 || i12 == 4 || i12 == 5 || i12 == 6 || i12 == 7) {
-                    z10 = z11;
-                } else {
-                    if (i12 == 1) {
-                        View view = G.a;
-                        if (view instanceof org.telegram.ui.Cells.d4) {
-                            org.telegram.ui.Cells.d4 d4Var = (org.telegram.ui.Cells.d4) view;
-                            z10 = z11;
-                            q50Var.B2.append(d4Var.getPeerId(), 1);
-                            if (longSparseIntArray.get(d4Var.getPeerId(), 0) == 0) {
-                                z12 = true;
-                            } else {
-                                longSparseIntArray.delete(d4Var.getPeerId());
-                            }
-                            if (z10) {
-                                f13 = Math.max(f13, childAt.getY() + childAt.getMeasuredHeight());
-                                f12 = Math.min(f12, Math.max(0.0f, childAt.getY()));
-                                i11++;
-                                f11 = f10;
-                                z11 = z10;
-                            } else if (!q50Var.X.I.contains(G)) {
-                                f12 = Math.min(f12, Math.max(0, childAt.getTop()));
-                                f13 = Math.max(f13, childAt.getBottom());
-                            }
-                        }
-                    }
-                    z10 = z11;
-                    if (z10) {
-                    }
-                }
+        if (i10 == 1) {
+            u50Var.a1.call.join_muted = false;
+            u50.F0(u50Var);
+            return;
+        }
+        if (i10 == 2) {
+            u50Var.a1.call.join_muted = true;
+            u50.F0(u50Var);
+            return;
+        }
+        if (i10 == 3) {
+            u50Var.j1(false);
+            return;
+        }
+        if (i10 == 12) {
+            u50.G0(u50Var, true);
+            return;
+        }
+        if (i10 == 13) {
+            u50.G0(u50Var, false);
+            return;
+        }
+        if (i10 == 4) {
+            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(u50Var.getContext());
+            if (ChatObject.isChannelOrGiga(u50Var.Z0)) {
+                alertDialog$Builder.a.R = LocaleController.getString(R.string.VoipChannelEndAlertTitle);
+                alertDialog$Builder.a.T = LocaleController.getString(R.string.VoipChannelEndAlertText);
             } else {
-                z10 = z11;
-                f10 = f11;
+                alertDialog$Builder.a.R = LocaleController.getString(R.string.VoipGroupEndAlertTitle);
+                alertDialog$Builder.a.T = LocaleController.getString(R.string.VoipGroupEndAlertText);
             }
-            i11++;
-            f11 = f10;
-            z11 = z10;
-        }
-        boolean z13 = z11;
-        float f14 = f11;
-        if (longSparseIntArray.size() > 0) {
-            z12 = true;
-        }
-        if (z12) {
-            q50Var.P1();
-        }
-        if (z13) {
-            e50 e50Var = q50Var.X;
-            float f15 = e50Var.K;
-            float f16 = e50Var.F;
-            f7 = (f12 * f16) + ((1.0f - f16) * f15);
-            f13 = (f13 * f16) + ((1.0f - f16) * e50Var.J);
-        } else {
-            f7 = f12;
-        }
-        if (f12 != f14) {
-            q50Var.v0.set((getMeasuredWidth() - (AndroidUtilities.isTablet() ? Math.min(AndroidUtilities.dp(420.0f), getMeasuredWidth()) : getMeasuredWidth())) >> 1, f7, getMeasuredWidth() - r3, Math.min(getMeasuredHeight() - getTranslationY(), f13));
-            canvas.drawRoundRect(q50Var.v0, AndroidUtilities.dp(13.0f), AndroidUtilities.dp(13.0f), q50Var.C0);
-        }
-        canvas.save();
-        canvas.clipRect(0, 0, getMeasuredWidth(), getMeasuredHeight());
-        super.dispatchDraw(canvas);
-        canvas.restore();
-    }
-
-    @Override // org.telegram.ui.Components.jm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j10) {
-        if (view == this.W2.X2) {
-            return false;
-        }
-        return super.drawChild(canvas, view, j10);
-    }
-
-    @Override // org.telegram.ui.Components.jm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        int i14;
-        super.onLayout(z10, i10, i11, i12, i13);
-        e50 e50Var = this.W2.X;
-        HashSet hashSet = e50Var.I;
-        q50 q50Var = e50Var.L;
-        HashSet hashSet2 = e50Var.H;
-        if (e50Var.G != null) {
+            alertDialog$Builder.a.I = org.telegram.ui.ActionBar.k6.pg;
+            alertDialog$Builder.k(LocaleController.getString(R.string.VoipGroupEnd), new q40(this));
+            alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
+            int x03 = org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.ug, false);
+            org.telegram.ui.ActionBar.c2 c2Var = alertDialog$Builder.a;
+            c2Var.j(x03);
+            c2Var.show();
+            TextView textView = (TextView) c2Var.d(-1);
+            if (textView != null) {
+                org.telegram.ui.ActionBar.r6.W(textView, org.telegram.ui.ActionBar.k6.vg, null);
+            }
+            c2Var.p(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.hg, false));
             return;
         }
-        hashSet2.clear();
-        hashSet2.addAll(e50Var.q);
-        hashSet.clear();
-        hashSet.addAll(e50Var.p);
-        e50Var.J = 0.0f;
-        e50Var.K = Float.MAX_VALUE;
-        if (hashSet2.isEmpty() && hashSet.isEmpty()) {
+        if (i10 == 9) {
+            u50Var.m1.callOnClick();
             return;
         }
-        w40 w40Var = q50Var.Q;
-        int childCount = w40Var.getChildCount();
-        for (int i15 = 0; i15 < childCount; i15++) {
-            View childAt = w40Var.getChildAt(i15);
-            s4.b1 G = w40Var.G(childAt);
-            if (G != null && (i14 = G.f) != 3 && i14 != 4 && i14 != 5 && i14 != 7 && !hashSet2.contains(G)) {
-                e50Var.J = Math.max(e50Var.J, childAt.getY() + childAt.getMeasuredHeight());
-                e50Var.K = Math.min(e50Var.K, Math.max(0.0f, childAt.getY()));
-            }
-        }
-        e50Var.F = 0.0f;
-        w40Var.invalidate();
-    }
-
-    @Override // org.telegram.ui.Components.jm0, android.view.View
-    public final void setVisibility(int i10) {
-        if (getVisibility() != i10) {
-            for (int i11 = 0; i11 < getChildCount(); i11++) {
-                View childAt = getChildAt(i11);
-                if (childAt instanceof org.telegram.ui.Components.voip.l) {
-                    q50.O(this.W2, (org.telegram.ui.Components.voip.l) childAt, childAt.isAttachedToWindow() && i10 == 0);
+        if (i10 == 5) {
+            ChatObject.Call call = u50Var.a1;
+            if (!call.recording) {
+                s40 s40Var = new s40(this, u50Var.getContext(), u50Var.Z0, u50Var.I2);
+                if (u50Var.r1()) {
+                    s40Var.n(2);
+                    return;
+                } else {
+                    s40Var.show();
+                    return;
                 }
             }
+            boolean z10 = call.call.record_video_active;
+            AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(u50Var.getContext());
+            alertDialog$Builder2.a.I = org.telegram.ui.ActionBar.k6.pg;
+            alertDialog$Builder2.a.R = LocaleController.getString(R.string.VoipGroupStopRecordingTitle);
+            if (ChatObject.isChannelOrGiga(u50Var.Z0)) {
+                alertDialog$Builder2.a.T = LocaleController.getString(R.string.VoipChannelStopRecordingText);
+            } else {
+                alertDialog$Builder2.a.T = LocaleController.getString(R.string.VoipGroupStopRecordingText);
+            }
+            alertDialog$Builder2.k(LocaleController.getString(R.string.Stop), new ci.f(11, this, z10));
+            alertDialog$Builder2.h(LocaleController.getString(R.string.Cancel), null);
+            int x04 = org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.ug, false);
+            org.telegram.ui.ActionBar.c2 c2Var2 = alertDialog$Builder2.a;
+            c2Var2.j(x04);
+            c2Var2.show();
+            c2Var2.p(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.ng, false));
+            return;
         }
-        super.setVisibility(i10);
+        if (i10 == 7) {
+            u50Var.l0 = true;
+            u50Var.u1.setVisibility(0);
+            u50Var.v1.setVisibility(0);
+            u50Var.n1.setVisibility(8);
+            u50Var.x1.setVisibility(8);
+            u50Var.y1.setVisibility(8);
+            u50Var.w1.setVisibility(8);
+            u50Var.r1.setVisibility(8);
+            u50Var.o1.setVisibility(8);
+            u50Var.s1.setVisibility(8);
+            u50Var.t1.setVisibility(8);
+            u50Var.k0.setVisibility(8);
+            u50Var.p1.setVisibility(8);
+            u50Var.q1.setVisibility(8);
+            org.telegram.ui.ActionBar.u0 u0Var = u50Var.k1;
+            org.telegram.ui.ActionBar.m1 m1Var = u0Var.d;
+            if (m1Var == null || !m1Var.isShowing()) {
+                return;
+            }
+            u0Var.b.measure(org.telegram.messenger.sl.c(40.0f, AndroidUtilities.displaySize.x, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y, TLObject.FLAG_31));
+            u0Var.O(true, true);
+            return;
+        }
+        if (i10 == 6) {
+            u50Var.w0 = false;
+            EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(u50Var.getContext());
+            editTextBoldCursor.setBackgroundDrawable(org.telegram.ui.ActionBar.k6.T(u50Var.getContext()));
+            AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(u50Var.getContext());
+            alertDialog$Builder3.a.I = org.telegram.ui.ActionBar.k6.pg;
+            if (ChatObject.isChannelOrGiga(u50Var.Z0)) {
+                alertDialog$Builder3.a.R = LocaleController.getString(R.string.VoipChannelTitle);
+            } else {
+                alertDialog$Builder3.a.R = LocaleController.getString(R.string.VoipGroupTitle);
+            }
+            alertDialog$Builder3.a.A0 = false;
+            alertDialog$Builder3.h(LocaleController.getString(R.string.Cancel), new iz(editTextBoldCursor, 1));
+            LinearLayout linearLayout = new LinearLayout(u50Var.getContext());
+            linearLayout.setOrientation(1);
+            alertDialog$Builder3.o(linearLayout);
+            editTextBoldCursor.setTextSize(1, 16.0f);
+            int i11 = org.telegram.ui.ActionBar.k6.ng;
+            org.telegram.ui.ActionBar.r6.W(editTextBoldCursor, i11, null);
+            editTextBoldCursor.setMaxLines(1);
+            editTextBoldCursor.setLines(1);
+            editTextBoldCursor.setInputType(16385);
+            editTextBoldCursor.setGravity(51);
+            editTextBoldCursor.setSingleLine(true);
+            editTextBoldCursor.setImeOptions(6);
+            TLRPC.Chat chat = u50Var.Z0;
+            editTextBoldCursor.setHint(chat != null ? chat.title : "");
+            org.telegram.ui.ActionBar.r6.F(editTextBoldCursor, org.telegram.ui.ActionBar.k6.og, null);
+            org.telegram.ui.ActionBar.r6.m(editTextBoldCursor, 30, i11, null);
+            editTextBoldCursor.setCursorSize(AndroidUtilities.dp(20.0f));
+            editTextBoldCursor.setCursorWidth(1.5f);
+            editTextBoldCursor.setPadding(0, AndroidUtilities.dp(4.0f), 0, 0);
+            linearLayout.addView(editTextBoldCursor, w7.z5.t(-1, 36, 51, 24, 6, 24, 0));
+            int i12 = 1;
+            editTextBoldCursor.setOnEditorActionListener(new jz(alertDialog$Builder3, i12));
+            editTextBoldCursor.addTextChangedListener(new lz(editTextBoldCursor, i12));
+            if (!TextUtils.isEmpty(u50Var.a1.call.title)) {
+                editTextBoldCursor.setText(u50Var.a1.call.title);
+                editTextBoldCursor.setSelection(editTextBoldCursor.length());
+            }
+            alertDialog$Builder3.k(LocaleController.getString(R.string.Save), new e7(this, editTextBoldCursor, alertDialog$Builder3, 15));
+            int x05 = org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.fg, false);
+            org.telegram.ui.ActionBar.c2 c2Var3 = alertDialog$Builder3.a;
+            c2Var3.j(x05);
+            c2Var3.setOnShowListener(new r40(this, c2Var3, editTextBoldCursor, 0));
+            c2Var3.setOnDismissListener(new kz(editTextBoldCursor, 1));
+            c2Var3.show();
+            c2Var3.p(org.telegram.ui.ActionBar.k6.x0(null, i11, false));
+            editTextBoldCursor.requestFocus();
+            return;
+        }
+        if (i10 == 8) {
+            org.telegram.ui.Components.s80.v(u50Var.getContext(), -u50Var.i1(), u50Var.d, null, 2, u50Var.A0, new q40(this));
+            return;
+        }
+        if (i10 == 11) {
+            SharedConfig.toggleNoiseSupression();
+            VoIPService sharedInstance2 = VoIPService.getSharedInstance();
+            if (sharedInstance2 == null) {
+                return;
+            }
+            sharedInstance2.setNoiseSupressionEnabled(SharedConfig.noiseSupression);
+            return;
+        }
+        if (i10 != 10 || (sharedInstance = VoIPService.getSharedInstance()) == null) {
+            return;
+        }
+        ArrayList arrayList = new ArrayList();
+        ArrayList arrayList2 = new ArrayList();
+        ArrayList arrayList3 = new ArrayList();
+        arrayList.add(LocaleController.getString(R.string.VoipAudioRoutingSpeaker));
+        arrayList2.add(Integer.valueOf(R.drawable.msg_voice_speaker));
+        arrayList3.add(0);
+        if (sharedInstance.hasEarpiece()) {
+            arrayList.add(LocaleController.getString(sharedInstance.isHeadsetPlugged() ? R.string.VoipAudioRoutingHeadset : R.string.VoipAudioRoutingPhone));
+            org.telegram.ui.Cells.b1.n(sharedInstance.isHeadsetPlugged() ? R.drawable.msg_voice_headphones : R.drawable.msg_voice_phone, 1, arrayList2, arrayList3);
+        }
+        if (sharedInstance.isBluetoothHeadsetConnected()) {
+            String str = sharedInstance.currentBluetoothDeviceName;
+            if (str == null) {
+                str = LocaleController.getString(R.string.VoipAudioRoutingBluetooth);
+            }
+            arrayList.add(str);
+            org.telegram.ui.Cells.b1.n(R.drawable.msg_voice_bluetooth, 2, arrayList2, arrayList3);
+        }
+        int size = arrayList.size();
+        CharSequence[] charSequenceArr = new CharSequence[size];
+        int[] iArr = new int[size];
+        for (int i13 = 0; i13 < size; i13++) {
+            charSequenceArr[i13] = (CharSequence) arrayList.get(i13);
+            iArr[i13] = ((Integer) arrayList2.get(i13)).intValue();
+        }
+        org.telegram.ui.ActionBar.h3 h3Var = new org.telegram.ui.ActionBar.h3(1, (Context) this.a, (org.telegram.ui.ActionBar.g6) null, false);
+        h3Var.fixNavigationBar();
+        h3Var.title = LocaleController.getString(R.string.VoipSelectAudioOutput);
+        h3Var.bigTitle = true;
+        mg.j jVar = new mg.j(8, this, arrayList3);
+        h3Var.items = charSequenceArr;
+        h3Var.itemIcons = iArr;
+        h3Var.onClickListener = jVar;
+        int i14 = org.telegram.ui.ActionBar.k6.kg;
+        h3Var.setBackgroundColor(org.telegram.ui.ActionBar.k6.x0(null, i14, false));
+        h3Var.fixNavigationBar(org.telegram.ui.ActionBar.k6.x0(null, i14, false));
+        int i15 = sharedInstance.getCurrentAudioRoute() == 1 ? 0 : sharedInstance.getCurrentAudioRoute() == 0 ? 1 : 2;
+        h3Var.show();
+        h3Var.setTitleColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.ng, false));
+        for (int i16 = 0; i16 < h3Var.getItemViews().size(); i16++) {
+            org.telegram.ui.ActionBar.z2 z2Var = h3Var.getItemViews().get(i16);
+            if (i16 == i15) {
+                x02 = org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.pg, false);
+                z2Var.f = true;
+            } else {
+                x02 = org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.ng, false);
+            }
+            z2Var.setTextColor(x02);
+            z2Var.setIconColor(x02);
+            int i17 = org.telegram.ui.ActionBar.k6.hg;
+            org.telegram.ui.Cells.y g02 = org.telegram.ui.ActionBar.k6.g0(i0.a.o(org.telegram.ui.ActionBar.k6.x0(null, i17, false), 12), 2, -1);
+            org.telegram.ui.ActionBar.n6 h = org.telegram.ui.ActionBar.r6.h(i17, 12);
+            z2Var.setBackground(g02);
+            org.telegram.ui.ActionBar.r6.k(z2Var, g02, null, h, null);
+        }
     }
 }

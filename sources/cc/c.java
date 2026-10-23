@@ -1,16 +1,12 @@
 package cc;
 
 import ai.c1;
-import android.content.Context;
-import com.google.android.gms.common.api.i;
-import java.util.concurrent.atomic.AtomicLong;
-import n6.p;
 import rb.g;
-import z7.qa;
+import z7.wf;
 import z7.xf;
 import z7.zf;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class c extends c1 {
     public final g b;
@@ -22,12 +18,8 @@ public final class c extends c1 {
 
     @Override // ai.c1
     public final Object Q0(Object obj) {
-        xf b10 = zf.b();
+        wf b10 = zf.b();
         g gVar = this.b;
-        Context b11 = gVar.b();
-        qa qaVar = new qa();
-        qaVar.b = new AtomicLong(-1L);
-        qaVar.a = new p6.b(b11, p6.b.k, new p("mlkit:vision"), i.c);
-        return new f(gVar, (bc.e) obj, b10, qaVar);
+        return new f(gVar, (bc.e) obj, b10, new xf(gVar.b()));
     }
 }

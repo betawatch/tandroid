@@ -1,28 +1,63 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class tn0 {
-    public final /* synthetic */ eo0 a;
+public final class tn0 extends org.telegram.ui.ActionBar.j {
+    public final /* synthetic */ io0 a;
 
-    public tn0(eo0 eo0Var) {
-        this.a = eo0Var;
+    public tn0(io0 io0Var) {
+        this.a = io0Var;
     }
 
-    public final void a(Exception exc) {
-        eo0 eo0Var = this.a;
-        if (eo0Var.Q0) {
+    @Override // org.telegram.ui.ActionBar.j
+    public final void b(int i10) {
+        io0 io0Var = this.a;
+        if (i10 == -1) {
+            if (io0Var.P0) {
+                return;
+            }
+            io0Var.finishFragment();
             return;
         }
-        eo0Var.H0(true, false);
-        eo0Var.D0(false);
-        if ((exc instanceof vc.a) || (exc instanceof vc.b)) {
-            org.telegram.ui.Components.f5.v0(eo0Var, LocaleController.getString(R.string.PaymentConnectionFailed));
+        if (i10 != 1 || io0Var.P0) {
+            return;
+        }
+        if (io0Var.u0 != 3) {
+            AndroidUtilities.hideKeyboard(io0Var.getParentActivity().getCurrentFocus());
+        }
+        int i11 = io0Var.u0;
+        if (i11 == 0) {
+            io0Var.D0(true);
+            io0.m0(io0Var);
+            return;
+        }
+        int i12 = 0;
+        if (i11 == 1) {
+            while (true) {
+                org.telegram.ui.Cells.k6[] k6VarArr = io0Var.h;
+                if (i12 >= k6VarArr.length) {
+                    break;
+                }
+                if (k6VarArr[i12].b.f) {
+                    io0Var.G0 = io0Var.E0.shipping_options.get(i12);
+                    break;
+                }
+                i12++;
+            }
+            io0Var.t0();
+            return;
+        }
+        if (i11 == 2) {
+            io0.j0(io0Var);
+        } else if (i11 == 3) {
+            io0.k0(io0Var);
         } else {
-            org.telegram.ui.Components.f5.v0(eo0Var, exc.getMessage());
+            if (i11 != 6) {
+                return;
+            }
+            io0Var.A0(false);
         }
     }
 }

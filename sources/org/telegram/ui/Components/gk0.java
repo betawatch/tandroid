@@ -1,67 +1,144 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
+import android.text.TextUtils;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
+import java.util.ArrayList;
+import java.util.List;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class gk0 extends s4.g0 {
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Context d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.d6 e;
-    public final /* synthetic */ boolean f;
-    public final /* synthetic */ nk0 h;
+public final class gk0 extends FrameLayout {
+    public final b10 a;
+    public final TextView b;
+    public final k9 c;
+    public final ImageView d;
+    public final w9 e;
+    public final int f;
+    public boolean h;
+    public final ArrayList n;
+    public final ArrayList r;
+    public final MessageObject s;
+    public int v;
+    public q0.a w;
 
-    public gk0(nk0 nk0Var, int i10, Context context, org.telegram.ui.ActionBar.d6 d6Var, boolean z10) {
-        this.h = nk0Var;
-        this.c = i10;
-        this.d = context;
-        this.e = d6Var;
-        this.f = z10;
+    public gk0(Context context, int i10, MessageObject messageObject) {
+        super(context);
+        this.n = new ArrayList();
+        this.r = new ArrayList();
+        this.f = i10;
+        this.s = messageObject;
+        b10 b10Var = new b10(context, null);
+        this.a = b10Var;
+        b10Var.e(org.telegram.ui.ActionBar.k6.G8, org.telegram.ui.ActionBar.k6.i6, -1);
+        b10Var.setViewType(13);
+        b10Var.setIsSingleCell(false);
+        addView(b10Var, w7.z5.c(-1.0f, -2));
+        TextView textView = new TextView(context);
+        this.b = textView;
+        org.telegram.ui.ActionBar.r6.W(textView, org.telegram.ui.ActionBar.k6.E8, null);
+        textView.setTextSize(1, 16.0f);
+        textView.setLines(1);
+        textView.setEllipsize(TextUtils.TruncateAt.END);
+        addView(textView, w7.z5.i(-2.0f, -2.0f, 8388627, 40.0f, 0.0f, 62.0f, 0.0f));
+        k9 k9Var = new k9(context, false);
+        this.c = k9Var;
+        k9Var.setStyle(11);
+        k9Var.setAvatarsTextSize(AndroidUtilities.dp(22.0f));
+        addView(k9Var, w7.z5.i(56.0f, -1.0f, 8388629, 0.0f, 0.0f, 0.0f, 0.0f));
+        ImageView imageView = new ImageView(context);
+        this.d = imageView;
+        addView(imageView, w7.z5.i(24.0f, 24.0f, 8388627, 11.0f, 0.0f, 0.0f, 0.0f));
+        Drawable mutate = context.getDrawable(R.drawable.msg_reactions).mutate();
+        org.telegram.ui.ActionBar.r6.z(this, mutate, org.telegram.ui.ActionBar.k6.F8, null, PorterDuff.Mode.MULTIPLY);
+        imageView.setImageDrawable(mutate);
+        imageView.setVisibility(8);
+        w9 w9Var = new w9(context);
+        this.e = w9Var;
+        addView(w9Var, w7.z5.i(24.0f, 24.0f, 8388627, 11.0f, 0.0f, 0.0f, 0.0f));
+        textView.setAlpha(0.0f);
+        k9Var.setAlpha(0.0f);
+        setBackground(org.telegram.ui.ActionBar.k6.M0(false));
     }
 
-    @Override // s4.g0
-    public final int h() {
-        nk0 nk0Var = this.h;
-        return nk0Var.n.size() + ((nk0Var.H.isEmpty() || MessagesController.getInstance(this.c).premiumFeaturesBlocked()) ? 0 : 1);
+    public final void a() {
+        int i10 = this.f;
+        MessagesController messagesController = MessagesController.getInstance(i10);
+        TLRPC.TL_messages_getMessageReactionsList tL_messages_getMessageReactionsList = new TLRPC.TL_messages_getMessageReactionsList();
+        MessageObject messageObject = this.s;
+        tL_messages_getMessageReactionsList.peer = messagesController.getInputPeer(messageObject.getDialogId());
+        tL_messages_getMessageReactionsList.id = messageObject.getId();
+        tL_messages_getMessageReactionsList.limit = 3;
+        tL_messages_getMessageReactionsList.reaction = null;
+        tL_messages_getMessageReactionsList.offset = null;
+        ConnectionsManager.getInstance(i10).sendRequest(tL_messages_getMessageReactionsList, new x1(this, 10), 64);
     }
 
-    @Override // s4.g0
-    public final int j(int i10) {
-        return i10 < this.h.n.size() ? 0 : 1;
+    public List<fk0> getSeenUsers() {
+        return this.n;
     }
 
-    @Override // s4.g0
-    public final void v(s4.b1 b1Var, int i10) {
-        if (b1Var.f == 0) {
-            ((org.telegram.ui.Cells.n6) b1Var.a).setUserReaction((TLRPC.MessagePeerReaction) this.h.n.get(i10));
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        int i10 = this.f;
+        MessagesController messagesController = MessagesController.getInstance(i10);
+        MessageObject messageObject = this.s;
+        TLRPC.Chat chat = messagesController.getChat(Long.valueOf(messageObject.getChatId()));
+        TLRPC.ChatFull chatFull = messagesController.getChatFull(messageObject.getChatId());
+        if (chat == null || !messageObject.isOutOwner() || !messageObject.isSent() || messageObject.isEditing() || messageObject.isSending() || messageObject.isSendError() || messageObject.isContentUnread() || messageObject.isUnread() || ConnectionsManager.getInstance(i10).getCurrentTime() - messageObject.messageOwner.date >= 604800 || ((!ChatObject.isMegagroup(chat) && ChatObject.isChannel(chat)) || chatFull == null || chatFull.participants_count > MessagesController.getInstance(i10).chatReadMarkSizeThreshold || (messageObject.messageOwner.action instanceof TLRPC.TL_messageActionChatJoinedByRequest))) {
+            a();
+            return;
         }
+        TLRPC.TL_messages_getMessageReadParticipants tL_messages_getMessageReadParticipants = new TLRPC.TL_messages_getMessageReadParticipants();
+        tL_messages_getMessageReadParticipants.msg_id = messageObject.getId();
+        tL_messages_getMessageReadParticipants.peer = MessagesController.getInstance(i10).getInputPeer(messageObject.getDialogId());
+        TLRPC.Peer peer = messageObject.messageOwner.from_id;
+        ConnectionsManager.getInstance(i10).sendRequest(tL_messages_getMessageReadParticipants, new ai.m3(this, peer != null ? peer.user_id : 0L, chat, 5), 64);
     }
 
-    @Override // s4.g0
-    public final s4.b1 x(ViewGroup viewGroup, int i10) {
-        FrameLayout n6Var;
-        if (i10 != 0) {
-            nk0 nk0Var = this.h;
-            ob0 ob0Var = nk0Var.J;
-            if (ob0Var == null) {
-                nk0Var.i();
-            } else if (ob0Var.getParent() != null) {
-                ((ViewGroup) nk0Var.J.getParent()).removeView(nk0Var.J);
-            }
-            Context context = this.d;
-            n6Var = new FrameLayout(context);
-            View view = new View(context);
-            view.setBackgroundColor(org.telegram.ui.ActionBar.h6.m1(0.06f, org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.E8, this.e)));
-            n6Var.addView(view, w7.z5.c(8.0f, -1));
-            n6Var.addView(nk0Var.J, w7.z5.d(-1, -1.0f, 0, 0.0f, 8.0f, 0.0f, 0.0f));
-        } else {
-            n6Var = new org.telegram.ui.Cells.n6(0, this.c, this.d, this.e, true, this.f);
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int i12 = this.v;
+        if (i12 > 0) {
+            i10 = View.MeasureSpec.makeMeasureSpec(i12, TLObject.FLAG_30);
         }
-        return new tl0(n6Var);
+        b10 b10Var = this.a;
+        if (b10Var.getVisibility() != 0) {
+            super.onMeasure(i10, i11);
+            return;
+        }
+        this.h = true;
+        b10Var.setVisibility(8);
+        super.onMeasure(i10, i11);
+        b10Var.getLayoutParams().width = getMeasuredWidth();
+        b10Var.setVisibility(0);
+        this.h = false;
+        super.onMeasure(i10, i11);
+    }
+
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.h) {
+            return;
+        }
+        super.requestLayout();
+    }
+
+    public void setSeenCallback(q0.a aVar) {
+        this.w = aVar;
     }
 }

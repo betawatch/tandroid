@@ -3,32 +3,32 @@ package di;
 import android.content.Context;
 import android.graphics.Canvas;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.kv0;
-import org.telegram.ui.Components.mu0;
-import org.telegram.ui.Components.rl0;
+import org.telegram.ui.Components.nv0;
+import org.telegram.ui.Components.pu0;
+import org.telegram.ui.Components.ul0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final class i extends kv0 {
-    public final /* synthetic */ r o3;
+public final class i extends nv0 {
+    public final /* synthetic */ r r3;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public i(r rVar, Context context) {
         super(context);
-        this.o3 = rVar;
+        this.r3 = rVar;
     }
 
-    @Override // org.telegram.ui.Components.kv0
-    public final boolean A1() {
-        return this.o3.b;
+    @Override // org.telegram.ui.Components.nv0
+    public final boolean F1() {
+        return this.r3.b;
     }
 
-    @Override // org.telegram.ui.Components.kv0
-    public final boolean B1() {
+    @Override // org.telegram.ui.Components.nv0
+    public final boolean G1() {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.kv0, org.telegram.ui.Components.ia, org.telegram.ui.Components.jm0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.nv0, org.telegram.ui.Components.ia, org.telegram.ui.Components.mm0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
         int i10 = 0;
@@ -39,13 +39,13 @@ public final class i extends kv0 {
             }
         }
         float f7 = i10;
-        r rVar = this.o3;
+        r rVar = this.r3;
         o oVar = rVar.J;
         if (rVar.b) {
-            mu0 mu0Var = rVar.r;
+            pu0 pu0Var = rVar.r;
             int i12 = 0;
-            for (int i13 = 0; i13 < mu0Var.getChildCount(); i13++) {
-                int bottom2 = mu0Var.getChildAt(i13).getBottom() - mu0Var.getPaddingTop();
+            for (int i13 = 0; i13 < pu0Var.getChildCount(); i13++) {
+                int bottom2 = pu0Var.getChildAt(i13).getBottom() - pu0Var.getPaddingTop();
                 if (bottom2 > i12) {
                     i12 = bottom2;
                 }
@@ -56,37 +56,37 @@ public final class i extends kv0 {
         oVar.setTranslationY(f7);
     }
 
-    @Override // org.telegram.ui.Components.kv0
+    @Override // org.telegram.ui.Components.nv0
     public final int getAnimateToColumnsCount() {
-        return this.o3.e;
+        return this.r3.e;
     }
 
-    @Override // org.telegram.ui.Components.kv0
+    @Override // org.telegram.ui.Components.nv0
     public final float getChangeColumnsProgress() {
-        return this.o3.c;
+        return this.r3.c;
     }
 
-    @Override // org.telegram.ui.Components.kv0
+    @Override // org.telegram.ui.Components.nv0
     public final int getColumnsCount() {
-        return this.o3.d;
+        return this.r3.d;
     }
 
-    @Override // org.telegram.ui.Components.kv0
-    public final rl0 getMovingAdapter() {
-        r rVar = this.o3;
+    @Override // org.telegram.ui.Components.nv0
+    public final ul0 getMovingAdapter() {
+        r rVar = this.r3;
         if (rVar.G.y != 0 || rVar.W.G.C1) {
             return null;
         }
         return rVar.v;
     }
 
-    @Override // org.telegram.ui.Components.kv0
-    public final rl0 getSupportingAdapter() {
-        return this.o3.w;
+    @Override // org.telegram.ui.Components.nv0
+    public final ul0 getSupportingAdapter() {
+        return this.r3.w;
     }
 
-    @Override // org.telegram.ui.Components.kv0
-    public final mu0 getSupportingListView() {
-        return this.o3.r;
+    @Override // org.telegram.ui.Components.nv0
+    public final pu0 getSupportingListView() {
+        return this.r3.r;
     }
 }

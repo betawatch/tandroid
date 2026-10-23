@@ -3,15 +3,15 @@ package gi;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.dq;
+import org.telegram.ui.Components.eq;
 import org.telegram.ui.Components.f6;
 import org.telegram.ui.Components.i5;
 import org.telegram.ui.Components.p6;
 import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class u {
     public final RectF a = new RectF();
@@ -27,8 +27,8 @@ public final class u {
     public final Paint k;
     public final p6 l;
     public int m;
-    public final org.telegram.ui.Cells.z n;
-    public final dq o;
+    public final org.telegram.ui.Cells.y n;
+    public final eq o;
     public final org.telegram.ui.Components.voip.h p;
 
     public u(w wVar) {
@@ -45,10 +45,10 @@ public final class u {
         this.k = new Paint(1);
         p6 p6Var = new p6(true, false, true);
         this.l = p6Var;
-        org.telegram.ui.Cells.z Z = h6.Z(0, 9, 9);
+        org.telegram.ui.Cells.y Z = k6.Z(0, 9, 9);
         this.n = Z;
-        dq dqVar = new dq(-1);
-        this.o = dqVar;
+        eq eqVar = new eq(-1);
+        this.o = eqVar;
         org.telegram.ui.Components.voip.h hVar = new org.telegram.ui.Components.voip.h();
         this.p = hVar;
         p6Var.b = 17;
@@ -57,7 +57,7 @@ public final class u {
         p6Var.M = AndroidUtilities.displaySize.x * 4;
         p6Var.q(true);
         p6Var.setCallback(wVar);
-        dqVar.setCallback(wVar);
+        eqVar.setCallback(wVar);
         Z.setCallback(wVar);
         hVar.l = true;
         hVar.m = 2.0f;

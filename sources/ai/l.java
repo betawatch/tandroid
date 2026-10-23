@@ -6,11 +6,11 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.a90;
+import org.telegram.ui.Components.b90;
 import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.ib0;
+import org.telegram.ui.ob0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -40,10 +40,10 @@ public final /* synthetic */ class l implements RequestDelegate {
                 ((MessagesController) this.d).lambda$checkChatInviter$374((TLRPC.Chat) this.e, this.b, this.c, tLObject, tL_error);
                 break;
             case 3:
-                a90.u((a90) this.d, this.c, this.b, (TLRPC.TL_messages_importChatInvite) this.e, tLObject, tL_error);
+                b90.t((b90) this.d, this.c, this.b, (TLRPC.TL_messages_importChatInvite) this.e, tLObject, tL_error);
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new m((ib0) this.d, tLObject, this.c, (String) this.e, this.b, tL_error));
+                AndroidUtilities.runOnUIThread(new m((ob0) this.d, tLObject, this.c, (String) this.e, this.b, tL_error));
                 break;
         }
     }
@@ -56,17 +56,17 @@ public final /* synthetic */ class l implements RequestDelegate {
         this.c = j10;
     }
 
-    public /* synthetic */ l(a90 a90Var, long j10, boolean z10, TLRPC.TL_messages_importChatInvite tL_messages_importChatInvite) {
+    public /* synthetic */ l(b90 b90Var, long j10, boolean z10, TLRPC.TL_messages_importChatInvite tL_messages_importChatInvite) {
         this.a = 3;
-        this.d = a90Var;
+        this.d = b90Var;
         this.c = j10;
         this.b = z10;
         this.e = tL_messages_importChatInvite;
     }
 
-    public /* synthetic */ l(ib0 ib0Var, long j10, String str, boolean z10) {
+    public /* synthetic */ l(ob0 ob0Var, long j10, String str, boolean z10) {
         this.a = 4;
-        this.d = ib0Var;
+        this.d = ob0Var;
         this.c = j10;
         this.e = str;
         this.b = z10;

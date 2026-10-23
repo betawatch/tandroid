@@ -4,20 +4,20 @@ import b2.v;
 import b2.v0;
 import b2.w;
 import b2.w0;
-import c3.j0;
-import c3.q;
+import c3.l0;
+import c3.s;
 import e2.m0;
 import e2.x;
 import f2.u;
 import java.math.RoundingMode;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class a implements b {
     public static final int[] m = {-1, -1, -1, -1, 2, 4, 6, 8, -1, -1, -1, -1, 2, 4, 6, 8};
     public static final int[] n = {7, 8, 9, 10, 11, 12, 13, 14, 16, 17, 19, 21, 23, 25, 28, 31, 34, 37, 41, 45, 50, 55, 60, 66, 73, 80, 88, 97, 107, 118, 130, 143, 157, 173, 190, 209, 230, 253, 279, 307, 337, 371, 408, 449, 494, 544, 598, 658, 724, 796, 876, 963, 1060, 1166, 1282, 1411, 1552, 1707, 1878, 2066, 2272, 2499, 2749, 3024, 3327, 3660, 4026, 4428, 4871, 5358, 5894, 6484, 7132, 7845, 8630, 9493, 10442, 11487, 12635, 13899, 15289, 16818, 18500, 20350, 22385, 24623, 27086, 29794, 32767};
-    public final q a;
-    public final j0 b;
+    public final s a;
+    public final l0 b;
     public final u c;
     public final int d;
     public final byte[] e;
@@ -29,9 +29,9 @@ public final class a implements b {
     public int k;
     public long l;
 
-    public a(q qVar, j0 j0Var, u uVar) {
-        this.a = qVar;
-        this.b = j0Var;
+    public a(s sVar, l0 l0Var, u uVar) {
+        this.a = sVar;
+        this.b = l0Var;
         this.c = uVar;
         int i10 = uVar.b;
         int max = Math.max(1, i10 / 10);
@@ -82,12 +82,12 @@ public final class a implements b {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final boolean b(c3.p r25, long r26) {
+    public final boolean b(c3.r r25, long r26) {
         /*
             Method dump skipped, instructions count: 327
             To view this dump add '--comments-level debug' option
         */
-        throw new UnsupportedOperationException("Method not decompiled: k4.a.b(c3.p, long):boolean");
+        throw new UnsupportedOperationException("Method not decompiled: k4.a.b(c3.r, long):boolean");
     }
 
     @Override // k4.b
@@ -95,9 +95,9 @@ public final class a implements b {
         f fVar = new f(this.c, this.d, i10, j10);
         this.a.g0(fVar);
         w wVar = this.h;
-        j0 j0Var = this.b;
-        j0Var.b(wVar);
-        j0Var.e(fVar.e);
+        l0 l0Var = this.b;
+        l0Var.b(wVar);
+        l0Var.e(fVar.e);
     }
 
     public final void d(int i10) {

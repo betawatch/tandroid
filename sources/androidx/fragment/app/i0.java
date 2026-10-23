@@ -1,11 +1,12 @@
 package androidx.fragment.app;
 
 import android.util.Log;
+import i2.o1;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class i0 implements g0 {
     public final /* synthetic */ j0 a;
@@ -27,7 +28,7 @@ public final class i0 implements g0 {
             Log.i("FragmentManager", "Ignoring call to start back stack pop because the back stack is empty.");
             U = false;
         } else {
-            a aVar = (a) i2.e.h(1, j0Var.d);
+            a aVar = (a) o1.i(1, j0Var.d);
             j0Var.h = aVar;
             ArrayList arrayList4 = aVar.a;
             int size = arrayList4.size();

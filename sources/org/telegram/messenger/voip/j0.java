@@ -1,15 +1,15 @@
 package org.telegram.messenger.voip;
 
-import ai.db;
+import ai.eb;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.at;
+import org.telegram.ui.Components.b71;
 import org.telegram.ui.Components.ct;
-import org.telegram.ui.Components.u61;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class j0 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -33,17 +33,17 @@ public final /* synthetic */ class j0 implements RequestDelegate {
                 ((VoIPService) this.d).lambda$startConferenceGroupCall$54(this.b, this.c, (String) this.e, tLObject, tL_error);
                 break;
             case 1:
-                AndroidUtilities.runOnUIThread(new db((at) this.d, this.b, (TLRPC.TL_messages_searchGlobal) this.e, this.c, tLObject, 3));
+                AndroidUtilities.runOnUIThread(new eb((at) this.d, this.b, (TLRPC.TL_messages_searchGlobal) this.e, this.c, tLObject, 3));
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new db((ct) this.d, this.b, (TLRPC.TL_messages_searchGlobal) this.e, this.c, tLObject, 4));
+                AndroidUtilities.runOnUIThread(new eb((ct) this.d, this.b, (TLRPC.TL_messages_searchGlobal) this.e, this.c, tLObject, 4));
                 break;
         }
     }
 
-    public /* synthetic */ j0(u61 u61Var, int i10, TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal, boolean z10, int i11) {
+    public /* synthetic */ j0(b71 b71Var, int i10, TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal, boolean z10, int i11) {
         this.a = i11;
-        this.d = u61Var;
+        this.d = b71Var;
         this.b = i10;
         this.e = tL_messages_searchGlobal;
         this.c = z10;

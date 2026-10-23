@@ -1,16 +1,15 @@
 package rh;
 
-import ci.b2;
+import ci.a2;
 import java.util.ArrayList;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.h61;
-import org.telegram.ui.web.z1;
+import org.telegram.ui.Components.m61;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -39,27 +38,27 @@ public final /* synthetic */ class j implements Utilities.Callback2 {
                     long peerDialogId = DialogObject.getPeerDialogId(messagePeerVote.peer);
                     TLObject userOrChat = MessagesController.getInstance(pVar.a).getUserOrChat(peerDialogId);
                     int i12 = messagePeerVote.date;
-                    b2 b2Var = new b2(pVar, peerDialogId, 3);
+                    a2 a2Var = new a2(pVar, peerDialogId, 3);
                     int i13 = m.a;
-                    h61 J = h61.J(m.class);
+                    m61 J = m61.J(m.class);
                     J.G = userOrChat;
                     J.B = peerDialogId;
                     J.z = i12;
-                    J.D = b2Var;
+                    J.D = a2Var;
                     arrayList.add(J);
                 }
                 if (!pVar.h) {
                     if (!arrayList2.isEmpty()) {
                         int i14 = o.a;
-                        arrayList.add(h61.J(o.class));
+                        arrayList.add(m61.J(o.class));
                         break;
                     } else {
                         int i15 = n.a;
-                        arrayList.add(h61.J(n.class));
-                        arrayList.add(h61.J(n.class));
-                        arrayList.add(h61.J(n.class));
-                        arrayList.add(h61.J(n.class));
-                        arrayList.add(h61.J(n.class));
+                        arrayList.add(m61.J(n.class));
+                        arrayList.add(m61.J(n.class));
+                        arrayList.add(m61.J(n.class));
+                        arrayList.add(m61.J(n.class));
+                        arrayList.add(m61.J(n.class));
                         break;
                     }
                 }
@@ -79,9 +78,9 @@ public final /* synthetic */ class j implements Utilities.Callback2 {
                     pVar.g = str;
                     pVar.h = str == null;
                     pVar.j.addAll(tL_messages_votesList.votes);
-                    z1 z1Var = pVar.e;
-                    if (z1Var != null) {
-                        z1Var.run();
+                    org.telegram.ui.web.a2 a2Var2 = pVar.e;
+                    if (a2Var2 != null) {
+                        a2Var2.run();
                         break;
                     }
                 }

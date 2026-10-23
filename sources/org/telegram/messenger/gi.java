@@ -8,9 +8,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.qn;
+import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class gi implements RequestDelegate {
     public final /* synthetic */ int a = 0;
@@ -26,14 +26,14 @@ public final /* synthetic */ class gi implements RequestDelegate {
     public final /* synthetic */ Object k;
     public final /* synthetic */ Object l;
 
-    public /* synthetic */ gi(SendMessagesHelper sendMessagesHelper, String str, List list, boolean z10, MessageObject messageObject, TL_keyboard.KeyboardButtonProto keyboardButtonProto, qn qnVar, TwoStepVerificationActivity twoStepVerificationActivity, TLObject[] tLObjectArr, TLRPC.InputCheckPasswordSRP inputCheckPasswordSRP, boolean z11) {
+    public /* synthetic */ gi(SendMessagesHelper sendMessagesHelper, String str, List list, boolean z10, MessageObject messageObject, TL_keyboard.KeyboardButtonProto keyboardButtonProto, sn snVar, TwoStepVerificationActivity twoStepVerificationActivity, TLObject[] tLObjectArr, TLRPC.InputCheckPasswordSRP inputCheckPasswordSRP, boolean z11) {
         this.b = sendMessagesHelper;
         this.d = str;
         this.g = list;
         this.e = z10;
         this.c = messageObject;
         this.h = keyboardButtonProto;
-        this.i = qnVar;
+        this.i = snVar;
         this.j = twoStepVerificationActivity;
         this.k = tLObjectArr;
         this.l = inputCheckPasswordSRP;
@@ -46,12 +46,12 @@ public final /* synthetic */ class gi implements RequestDelegate {
             case 0:
                 List list = (List) this.g;
                 TL_keyboard.KeyboardButtonProto keyboardButtonProto = (TL_keyboard.KeyboardButtonProto) this.h;
-                qn qnVar = (qn) this.i;
+                sn snVar = (sn) this.i;
                 TwoStepVerificationActivity twoStepVerificationActivity = (TwoStepVerificationActivity) this.j;
                 TLObject[] tLObjectArr = (TLObject[]) this.k;
                 TLRPC.InputCheckPasswordSRP inputCheckPasswordSRP = (TLRPC.InputCheckPasswordSRP) this.l;
                 boolean z10 = this.f;
-                this.b.lambda$sendCallback$49(this.d, list, this.e, this.c, keyboardButtonProto, qnVar, twoStepVerificationActivity, tLObjectArr, inputCheckPasswordSRP, z10, tLObject, tL_error);
+                this.b.lambda$sendCallback$49(this.d, list, this.e, this.c, keyboardButtonProto, snVar, twoStepVerificationActivity, tLObjectArr, inputCheckPasswordSRP, z10, tLObject, tL_error);
                 break;
             case 1:
                 this.b.lambda$performSendMessageRequest$79((TLRPC.TL_messages_addPollAnswer) this.g, (TLRPC.TL_messages_addPollAnswer) this.h, this.c, this.d, (SendMessagesHelper.DelayedMessage) this.i, this.e, (SendMessagesHelper.DelayedMessage) this.j, this.k, (HashMap) this.l, this.f, tLObject, tL_error);

@@ -1,15 +1,15 @@
 package k4;
 
-import c3.b0;
-import c3.c0;
 import c3.d0;
+import c3.e0;
+import c3.f0;
 import e2.m0;
 import f2.u;
 import java.math.RoundingMode;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public final class f implements c0 {
+public final class f implements e0 {
     public final u a;
     public final int b;
     public final long c;
@@ -25,32 +25,32 @@ public final class f implements c0 {
         this.e = i(j12);
     }
 
-    @Override // c3.c0
+    @Override // c3.e0
     public final boolean d() {
         return true;
     }
 
-    @Override // c3.c0
+    @Override // c3.e0
     public final /* synthetic */ boolean e() {
         return false;
     }
 
-    @Override // c3.c0
-    public final b0 f(long j10) {
+    @Override // c3.e0
+    public final d0 f(long j10) {
         u uVar = this.a;
         long j11 = this.d;
         long j12 = m0.j((uVar.b * j10) / (this.b * 1000000), 0L, j11 - 1);
         long j13 = this.c;
         long i10 = i(j12);
-        d0 d0Var = new d0(i10, (uVar.c * j12) + j13);
+        f0 f0Var = new f0(i10, (uVar.c * j12) + j13);
         if (i10 >= j10 || j12 == j11 - 1) {
-            return new b0(d0Var, d0Var);
+            return new d0(f0Var, f0Var);
         }
         long j14 = j12 + 1;
-        return new b0(d0Var, new d0(i(j14), (uVar.c * j14) + j13));
+        return new d0(f0Var, new f0(i(j14), (uVar.c * j14) + j13));
     }
 
-    @Override // c3.c0
+    @Override // c3.e0
     public final long h() {
         return this.e;
     }

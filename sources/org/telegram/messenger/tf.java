@@ -6,7 +6,7 @@ import org.telegram.SQLite.SQLiteCursor;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class tf implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -46,7 +46,7 @@ public final /* synthetic */ class tf implements Runnable {
                 this.c.lambda$loadPendingTasks$22(this.d, this.b, (TLRPC.InputChannel) obj, this.f, this.e);
                 return;
             default:
-                final org.telegram.ui.Cells.f6 f6Var = (org.telegram.ui.Cells.f6) obj;
+                final org.telegram.ui.Cells.g6 g6Var = (org.telegram.ui.Cells.g6) obj;
                 long j11 = this.e;
                 final ArrayList arrayList = new ArrayList();
                 ArrayList<TLRPC.User> arrayList2 = new ArrayList<>();
@@ -76,10 +76,10 @@ public final /* synthetic */ class tf implements Runnable {
                                 }
                                 final int i13 = this.f;
                                 final int i14 = i10;
-                                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Cells.e6
+                                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Cells.f6
                                     @Override // java.lang.Runnable
                                     public final void run() {
-                                        f6.b(f6.this, i13, arrayList, j12, i14, messagesStorage);
+                                        g6.b(g6.this, i13, arrayList, j12, i14, messagesStorage);
                                     }
                                 });
                                 return;
@@ -111,10 +111,10 @@ public final /* synthetic */ class tf implements Runnable {
                         }
                         final int i132 = this.f;
                         final int i142 = i10;
-                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Cells.e6
+                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Cells.f6
                             @Override // java.lang.Runnable
                             public final void run() {
-                                f6.b(f6.this, i132, arrayList, j12, i142, messagesStorage);
+                                g6.b(g6.this, i132, arrayList, j12, i142, messagesStorage);
                             }
                         });
                         return;
@@ -168,10 +168,10 @@ public final /* synthetic */ class tf implements Runnable {
                     }
                     final int i1322 = this.f;
                     final int i1422 = i10;
-                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Cells.e6
+                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Cells.f6
                         @Override // java.lang.Runnable
                         public final void run() {
-                            f6.b(f6.this, i1322, arrayList, j12, i1422, messagesStorage);
+                            g6.b(g6.this, i1322, arrayList, j12, i1422, messagesStorage);
                         }
                     });
                     return;
@@ -184,18 +184,18 @@ public final /* synthetic */ class tf implements Runnable {
                 }
                 final int i13222 = this.f;
                 final int i14222 = i10;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Cells.e6
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Cells.f6
                     @Override // java.lang.Runnable
                     public final void run() {
-                        f6.b(f6.this, i13222, arrayList, j12, i14222, messagesStorage);
+                        g6.b(g6.this, i13222, arrayList, j12, i14222, messagesStorage);
                     }
                 });
                 return;
         }
     }
 
-    public /* synthetic */ tf(org.telegram.ui.Cells.f6 f6Var, int i10, MessagesStorage messagesStorage, long j10, long j11, int i11) {
-        this.h = f6Var;
+    public /* synthetic */ tf(org.telegram.ui.Cells.g6 g6Var, int i10, MessagesStorage messagesStorage, long j10, long j11, int i11) {
+        this.h = g6Var;
         this.b = i10;
         this.c = messagesStorage;
         this.d = j10;

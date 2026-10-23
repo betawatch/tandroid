@@ -47,7 +47,7 @@ import org.telegram.messenger.video.Mp4Movie;
 import org.webrtc.EglBase;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class f60 implements Runnable {
     public DispatchQueue B0;
@@ -59,7 +59,7 @@ public final class f60 implements Runnable {
     public int G;
     public boolean G0;
     public boolean H;
-    public final /* synthetic */ m60 H0;
+    public final /* synthetic */ n60 H0;
     public MediaCodec.BufferInfo I;
     public MediaCodec.BufferInfo J;
     public MP4Builder K;
@@ -121,8 +121,8 @@ public final class f60 implements Runnable {
     public final ArrayList A0 = new ArrayList();
     public final e60 E0 = new e60(this, 0);
 
-    public f60(m60 m60Var) {
-        this.H0 = m60Var;
+    public f60(n60 n60Var) {
+        this.H0 = n60Var;
     }
 
     public static void a(f60 f60Var, boolean z10) {
@@ -215,9 +215,9 @@ public final class f60 implements Runnable {
                 mp4Movie.setSize(f60Var.d, f60Var.e);
                 MP4Builder createMovie = new MP4Builder().createMovie(mp4Movie, f60Var.H0.R, false);
                 f60Var.K = createMovie;
-                m60 m60Var = f60Var.H0;
+                n60 n60Var = f60Var.H0;
                 boolean deviceIsHigh = SharedConfig.deviceIsHigh();
-                m60Var.a1 = deviceIsHigh;
+                n60Var.a1 = deviceIsHigh;
                 createMovie.setAllowSyncFiles(deviceIsHigh);
             }
             AndroidUtilities.runOnUIThread(new b60(0, f60Var, z10));
@@ -267,11 +267,11 @@ public final class f60 implements Runnable {
                 f60Var.x0 = null;
             }
             f60Var.x0 = new l50(f60Var.d, f60Var.e);
-            m60 m60Var2 = f60Var.H0;
-            Size size = m60Var2.n0[0];
-            String str = (SharedConfig.deviceIsLow() || !m60.k() || (size != null && ((float) Math.max(size.getHeight(), size.getWidth())) * 0.7f < ((float) MessagesController.getInstance(m60Var2.f).roundVideoSize))) ? "#extension GL_OES_EGL_image_external : require\nprecision highp float;\nvarying vec2 vTextureCoord;\nuniform float alpha;\nuniform vec2 preview;\nuniform vec2 resolution;\nuniform samplerExternalOES sTexture;\nvoid main() {\n   vec4 textColor = texture2D(sTexture, vTextureCoord);\n   gl_FragColor = vec4(textColor.rgb * alpha, alpha);\n}\n" : "#extension GL_OES_EGL_image_external : require\nprecision highp float;\nvarying vec2 vTextureCoord;\nuniform vec2 resolution;\nuniform vec2 preview;\nuniform float alpha;\nuniform samplerExternalOES sTexture;\nvoid main() {\n   vec2 c_textureSize = preview;\n   vec2 c_onePixel = (1.0 / c_textureSize);\n   vec2 uv = vTextureCoord;\n   vec2 pixel = uv * c_textureSize + 0.5;\n   vec2 frac = fract(pixel);\n   pixel = (floor(pixel) / c_textureSize) - vec2(c_onePixel);\n   vec4 tl = texture2D(sTexture, pixel + vec2(0.0         , 0.0));\n   vec4 tr = texture2D(sTexture, pixel + vec2(c_onePixel.x, 0.0));\n   vec4 bl = texture2D(sTexture, pixel + vec2(0.0         , c_onePixel.y));\n   vec4 br = texture2D(sTexture, pixel + vec2(c_onePixel.x, c_onePixel.y));\n   vec4 x1 = mix(tl, tr, frac.x);\n   vec4 x2 = mix(bl, br, frac.x);\n   gl_FragColor = mix(x1, x2, frac.y) * alpha;\n}\n";
-            int j11 = m60.j(f60Var.H0, 35633, "uniform mat4 uMVPMatrix;\nuniform mat4 uSTMatrix;\nattribute vec4 aPosition;\nattribute vec4 aTextureCoord;\nvarying vec2 vTextureCoord;\nvoid main() {\n   gl_Position = uMVPMatrix * aPosition;\n   vTextureCoord = (uSTMatrix * aTextureCoord).xy;\n}\n");
-            int j12 = m60.j(f60Var.H0, 35632, str);
+            n60 n60Var2 = f60Var.H0;
+            Size size = n60Var2.n0[0];
+            String str = (SharedConfig.deviceIsLow() || !n60.k() || (size != null && ((float) Math.max(size.getHeight(), size.getWidth())) * 0.7f < ((float) MessagesController.getInstance(n60Var2.f).roundVideoSize))) ? "#extension GL_OES_EGL_image_external : require\nprecision highp float;\nvarying vec2 vTextureCoord;\nuniform float alpha;\nuniform vec2 preview;\nuniform vec2 resolution;\nuniform samplerExternalOES sTexture;\nvoid main() {\n   vec4 textColor = texture2D(sTexture, vTextureCoord);\n   gl_FragColor = vec4(textColor.rgb * alpha, alpha);\n}\n" : "#extension GL_OES_EGL_image_external : require\nprecision highp float;\nvarying vec2 vTextureCoord;\nuniform vec2 resolution;\nuniform vec2 preview;\nuniform float alpha;\nuniform samplerExternalOES sTexture;\nvoid main() {\n   vec2 c_textureSize = preview;\n   vec2 c_onePixel = (1.0 / c_textureSize);\n   vec2 uv = vTextureCoord;\n   vec2 pixel = uv * c_textureSize + 0.5;\n   vec2 frac = fract(pixel);\n   pixel = (floor(pixel) / c_textureSize) - vec2(c_onePixel);\n   vec4 tl = texture2D(sTexture, pixel + vec2(0.0         , 0.0));\n   vec4 tr = texture2D(sTexture, pixel + vec2(c_onePixel.x, 0.0));\n   vec4 bl = texture2D(sTexture, pixel + vec2(0.0         , c_onePixel.y));\n   vec4 br = texture2D(sTexture, pixel + vec2(c_onePixel.x, c_onePixel.y));\n   vec4 x1 = mix(tl, tr, frac.x);\n   vec4 x2 = mix(bl, br, frac.x);\n   gl_FragColor = mix(x1, x2, frac.y) * alpha;\n}\n";
+            int j11 = n60.j(f60Var.H0, 35633, "uniform mat4 uMVPMatrix;\nuniform mat4 uSTMatrix;\nattribute vec4 aPosition;\nattribute vec4 aTextureCoord;\nvarying vec2 vTextureCoord;\nvoid main() {\n   gl_Position = uMVPMatrix * aPosition;\n   vTextureCoord = (uSTMatrix * aTextureCoord).xy;\n}\n");
+            int j12 = n60.j(f60Var.H0, 35632, str);
             if (j11 == 0 || j12 == 0) {
                 return;
             }
@@ -400,7 +400,7 @@ public final class f60 implements Runnable {
         } else {
             if (z10 && (i10 != 1 || !f60Var.G0)) {
                 f60Var.G0 = true;
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.i4(f60Var, i10, a60Var, 13));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.h4(f60Var, i10, a60Var, 13));
             }
             AndroidUtilities.runOnUIThread(new c60(f60Var, 2));
         }
@@ -434,7 +434,7 @@ public final class f60 implements Runnable {
 
     public static void g(boolean z10) {
         AudioManager audioManager = (AudioManager) ApplicationLoader.applicationContext.getSystemService(MediaStreamTrack.AUDIO_TRACK_KIND);
-        if (SharedConfig.recordViaSco && !xe0.d("android.permission.BLUETOOTH_CONNECT")) {
+        if (SharedConfig.recordViaSco && !af0.d("android.permission.BLUETOOTH_CONNECT")) {
             SharedConfig.recordViaSco = false;
             SharedConfig.saveConfig();
         }
@@ -482,16 +482,16 @@ public final class f60 implements Runnable {
     }
 
     public final void c(s50 s50Var, long j10, boolean z10) {
-        m60 m60Var = this.H0;
-        int i10 = m60Var.f;
+        n60 n60Var = this.H0;
+        int i10 = n60Var.f;
         if (!this.h) {
-            FileLoader.getInstance(i10).checkUploadNewDataAvailable(s50Var.toString(), m60Var.R, j10, z10 ? s50Var.length() : 0L);
+            FileLoader.getInstance(i10).checkUploadNewDataAvailable(s50Var.toString(), n60Var.R, j10, z10 ? s50Var.length() : 0L);
             return;
         }
-        FileLoader.getInstance(i10).uploadFile(s50Var.toString(), m60Var.R, false, 1L, 33554432, false);
+        FileLoader.getInstance(i10).uploadFile(s50Var.toString(), n60Var.R, false, 1L, 33554432, false);
         this.h = false;
         if (z10) {
-            FileLoader.getInstance(i10).checkUploadNewDataAvailable(s50Var.toString(), m60Var.R, j10, z10 ? s50Var.length() : 0L);
+            FileLoader.getInstance(i10).checkUploadNewDataAvailable(s50Var.toString(), n60Var.R, j10, z10 ? s50Var.length() : 0L);
         }
     }
 
@@ -523,7 +523,7 @@ public final class f60 implements Runnable {
             } else {
                 ByteBuffer outputBuffer = this.E.getOutputBuffer(dequeueOutputBuffer);
                 if (outputBuffer == null) {
-                    throw new RuntimeException(i2.e.k(dequeueOutputBuffer, "encoderOutputBuffer ", " was null"));
+                    throw new RuntimeException(i2.o1.l(dequeueOutputBuffer, "encoderOutputBuffer ", " was null"));
                 }
                 MediaCodec.BufferInfo bufferInfo = this.I;
                 int i10 = bufferInfo.size;
@@ -618,7 +618,7 @@ public final class f60 implements Runnable {
                 } else {
                     ByteBuffer outputBuffer2 = this.F.getOutputBuffer(dequeueOutputBuffer2);
                     if (outputBuffer2 == null) {
-                        throw new RuntimeException(i2.e.k(dequeueOutputBuffer2, "encoderOutputBuffer ", " was null"));
+                        throw new RuntimeException(i2.o1.l(dequeueOutputBuffer2, "encoderOutputBuffer ", " was null"));
                     }
                     MediaCodec.BufferInfo bufferInfo3 = this.J;
                     if ((bufferInfo3.flags & 2) != 0) {
@@ -697,19 +697,19 @@ public final class f60 implements Runnable {
     }
 
     public final void h(File file) {
-        c81 c81Var = new c81();
-        m60 m60Var = this.H0;
-        m60Var.T = c81Var;
-        c81Var.J = new k2.w0(this, 12);
-        c81Var.V(m60Var.q0);
-        m60Var.T.D(Uri.fromFile(file), "other");
-        m60Var.T.C();
-        m60Var.T.O(true);
-        m60Var.s();
+        j81 j81Var = new j81();
+        n60 n60Var = this.H0;
+        n60Var.T = j81Var;
+        j81Var.J = new k2.w0(this, 12);
+        j81Var.V(n60Var.q0);
+        n60Var.T.D(Uri.fromFile(file), "other");
+        n60Var.T.C();
+        n60Var.T.O(true);
+        n60Var.s();
         AnimatorSet animatorSet = new AnimatorSet();
-        LinearLayout linearLayout = m60Var.b1;
+        LinearLayout linearLayout = n60Var.b1;
         Property property = View.ALPHA;
-        animatorSet.playTogether(ObjectAnimator.ofFloat(linearLayout, (Property<LinearLayout, Float>) property, 0.0f), ObjectAnimator.ofInt(m60Var.r, t6.b, 0), ObjectAnimator.ofFloat(m60Var.G, (Property<ImageView, Float>) property, 1.0f));
+        animatorSet.playTogether(ObjectAnimator.ofFloat(linearLayout, (Property<LinearLayout, Float>) property, 0.0f), ObjectAnimator.ofInt(n60Var.r, t6.b, 0), ObjectAnimator.ofFloat(n60Var.G, (Property<ImageView, Float>) property, 1.0f));
         animatorSet.setDuration(180L);
         animatorSet.setInterpolator(new DecelerateInterpolator());
         animatorSet.start();

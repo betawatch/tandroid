@@ -7,10 +7,10 @@ import android.graphics.RectF;
 import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class e extends ViewGroup {
     public final tf.e a;
@@ -26,7 +26,7 @@ public final class e extends ViewGroup {
         Path path = eVar.m;
         float f7 = (1.0f - eVar.o) * eVar.j.e;
         boolean z10 = f7 > 1.0f;
-        canvas.drawColor(i0.a.o(h6.x0(null, h6.d6, false), (int) Math.min(eVar.o * 420.0f, 255.0f)));
+        canvas.drawColor(i0.a.o(k6.x0(null, k6.d6, false), (int) Math.min(eVar.o * 420.0f, 255.0f)));
         eVar.d.a(canvas, 1.0f);
         if (z10) {
             RectF rectF = eVar.l;

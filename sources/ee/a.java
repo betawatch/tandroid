@@ -2,7 +2,7 @@ package ee;
 
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class a extends md.c {
     public fe.g a;
@@ -20,6 +20,6 @@ public final class a extends md.c {
     public final Object invokeSuspend(Object obj) {
         this.b = obj;
         this.d |= TLObject.FLAG_31;
-        return this.c.l(null, this);
+        return this.c.q(null, this);
     }
 }

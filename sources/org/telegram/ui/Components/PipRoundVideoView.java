@@ -19,16 +19,16 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public class PipRoundVideoView implements NotificationCenter.NotificationCenterDelegate {
     public static PipRoundVideoView F;
     public final RectF E = new RectF();
-    public rg0 a;
+    public vg0 a;
     public int b;
     public TextureView c;
     public ImageView d;
-    public sg0 e;
+    public wg0 e;
     public Bitmap f;
     public int h;
     public int n;
@@ -96,12 +96,12 @@ public class PipRoundVideoView implements NotificationCenter.NotificationCenterD
         }
         AnimatorSet animatorSet2 = new AnimatorSet();
         this.r = animatorSet2;
-        animatorSet2.playTogether(ObjectAnimator.ofFloat(this.a, (Property<rg0, Float>) View.ALPHA, z10 ? 1.0f : 0.0f), ObjectAnimator.ofFloat(this.a, (Property<rg0, Float>) View.SCALE_X, z10 ? 1.0f : 0.8f), ObjectAnimator.ofFloat(this.a, (Property<rg0, Float>) View.SCALE_Y, z10 ? 1.0f : 0.8f));
+        animatorSet2.playTogether(ObjectAnimator.ofFloat(this.a, (Property<vg0, Float>) View.ALPHA, z10 ? 1.0f : 0.0f), ObjectAnimator.ofFloat(this.a, (Property<vg0, Float>) View.SCALE_X, z10 ? 1.0f : 0.8f), ObjectAnimator.ofFloat(this.a, (Property<vg0, Float>) View.SCALE_Y, z10 ? 1.0f : 0.8f));
         this.r.setDuration(150L);
         if (this.y == null) {
             this.y = new DecelerateInterpolator();
         }
-        this.r.addListener(new org.telegram.ui.fo(18, this, z10));
+        this.r.addListener(new org.telegram.ui.ho(18, this, z10));
         this.r.setInterpolator(this.y);
         this.r.start();
     }
@@ -112,14 +112,14 @@ public class PipRoundVideoView implements NotificationCenter.NotificationCenterD
         }
         F = this;
         this.s = runnable;
-        rg0 rg0Var = new rg0(this, activity);
-        this.a = rg0Var;
-        rg0Var.setWillNotDraw(false);
+        vg0 vg0Var = new vg0(this, activity);
+        this.a = vg0Var;
+        vg0Var.setWillNotDraw(false);
         this.h = AndroidUtilities.dp(126.0f);
         this.n = AndroidUtilities.dp(126.0f);
-        sg0 sg0Var = new sg0(this, activity, 0);
-        this.e = sg0Var;
-        sg0Var.setOutlineProvider(new ci.o1(14));
+        wg0 wg0Var = new wg0(this, activity, 0);
+        this.e = wg0Var;
+        wg0Var.setOutlineProvider(new ci.n1(14));
         this.e.setClipToOutline(true);
         this.e.a(1.0f, 0);
         this.a.addView(this.e, w7.z5.d(120, 120.0f, 51, 3.0f, 3.0f, 0.0f, 0.0f));
@@ -168,11 +168,11 @@ public class PipRoundVideoView implements NotificationCenter.NotificationCenterD
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        sg0 sg0Var;
-        if (i10 != NotificationCenter.messagePlayingProgressDidChanged || (sg0Var = this.e) == null) {
+        wg0 wg0Var;
+        if (i10 != NotificationCenter.messagePlayingProgressDidChanged || (wg0Var = this.e) == null) {
             return;
         }
-        sg0Var.invalidate();
+        wg0Var.invalidate();
     }
 
     public final void e(boolean z10) {
@@ -182,12 +182,12 @@ public class PipRoundVideoView implements NotificationCenter.NotificationCenterD
         }
         AnimatorSet animatorSet2 = new AnimatorSet();
         this.r = animatorSet2;
-        animatorSet2.playTogether(ObjectAnimator.ofFloat(this.a, (Property<rg0, Float>) View.ALPHA, z10 ? 1.0f : 0.0f), ObjectAnimator.ofFloat(this.a, (Property<rg0, Float>) View.SCALE_X, z10 ? 1.0f : 0.8f), ObjectAnimator.ofFloat(this.a, (Property<rg0, Float>) View.SCALE_Y, z10 ? 1.0f : 0.8f));
+        animatorSet2.playTogether(ObjectAnimator.ofFloat(this.a, (Property<vg0, Float>) View.ALPHA, z10 ? 1.0f : 0.0f), ObjectAnimator.ofFloat(this.a, (Property<vg0, Float>) View.SCALE_X, z10 ? 1.0f : 0.8f), ObjectAnimator.ofFloat(this.a, (Property<vg0, Float>) View.SCALE_Y, z10 ? 1.0f : 0.8f));
         this.r.setDuration(150L);
         if (this.y == null) {
             this.y = new DecelerateInterpolator();
         }
-        this.r.addListener(new tg0(this, 0));
+        this.r.addListener(new xg0(this, 0));
         this.r.setInterpolator(this.y);
         this.r.start();
     }

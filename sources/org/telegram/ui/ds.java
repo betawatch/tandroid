@@ -1,90 +1,60 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.content.Context;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class ds extends org.telegram.ui.Cells.q8 {
-    public final /* synthetic */ int R = 2;
-    public final /* synthetic */ Object S;
+public final class ds extends org.telegram.ui.ActionBar.j {
+    public final /* synthetic */ hs a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ds(fs fsVar, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, d6Var);
-        this.S = fsVar;
+    public ds(hs hsVar) {
+        this.a = hsVar;
     }
 
-    @Override // org.telegram.ui.Cells.q8
-    public int c(int i10) {
-        switch (this.R) {
-            case 2:
-                ((b01) this.S).e.getClass();
-                break;
+    @Override // org.telegram.ui.ActionBar.j
+    public final void b(int i10) {
+        int i11;
+        int i12;
+        hs hsVar = this.a;
+        if (i10 == -1) {
+            hsVar.finishFragment();
+            return;
         }
-        return i10;
-    }
-
-    @Override // org.telegram.ui.Cells.q8, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        switch (this.R) {
-            case 0:
-                super.onLayout(z10, i10, i11, i12, i13);
-                int dp = AndroidUtilities.dp(21.0f);
-                int measuredHeight = getMeasuredHeight();
-                fs fsVar = (fs) this.S;
-                int measuredHeight2 = (measuredHeight - fsVar.U.getMeasuredHeight()) / 2;
-                org.telegram.ui.Components.w9 w9Var = fsVar.U;
-                w9Var.layout(dp, measuredHeight2, w9Var.getMeasuredWidth() + dp, fsVar.U.getMeasuredHeight() + measuredHeight2);
-                break;
-            case 1:
-                super.onLayout(z10, i10, i11, i12, i13);
-                int dp2 = AndroidUtilities.dp(21.0f);
-                int measuredHeight3 = getMeasuredHeight();
-                cx0 cx0Var = (cx0) this.S;
-                int measuredHeight4 = (measuredHeight3 - cx0Var.d.v0.getMeasuredHeight()) / 2;
-                org.telegram.ui.Components.w9 w9Var2 = cx0Var.d.v0;
-                w9Var2.layout(dp2, measuredHeight4, w9Var2.getMeasuredWidth() + dp2, cx0Var.d.v0.getMeasuredHeight() + measuredHeight4);
-                break;
-            default:
-                super.onLayout(z10, i10, i11, i12, i13);
-                break;
+        if (i10 != 1 || hsVar.b.getText().length() == 0) {
+            return;
         }
-    }
-
-    @Override // org.telegram.ui.Cells.q8, android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i10, int i11) {
-        switch (this.R) {
-            case 0:
-                super.onMeasure(i10, i11);
-                fs fsVar = (fs) this.S;
-                fsVar.U.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(30.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(30.0f), TLObject.FLAG_30));
-                fsVar.U.setRoundRadius(AndroidUtilities.dp(30.0f));
-                break;
-            case 1:
-                super.onMeasure(i10, i11);
-                cx0 cx0Var = (cx0) this.S;
-                cx0Var.d.v0.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(30.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(30.0f), TLObject.FLAG_30));
-                cx0Var.d.v0.setRoundRadius(AndroidUtilities.dp(30.0f));
-                break;
-            default:
-                super.onMeasure(i10, i11);
-                break;
+        TLRPC.User user = hsVar.getMessagesController().getUser(Long.valueOf(hsVar.H));
+        TLRPC.UserFull userFull = hsVar.getMessagesController().getUserFull(hsVar.H);
+        user.first_name = hsVar.b.getText().toString();
+        user.last_name = hsVar.c.getText().toString();
+        user.contact = true;
+        TLRPC.TL_textWithEntities textWithEntities = hsVar.d.getTextWithEntities();
+        hsVar.getMessagesController().putUser(user, false);
+        hsVar.getContactsController().addContact(user, textWithEntities, hsVar.K && hsVar.X);
+        i11 = ((org.telegram.ui.ActionBar.o2) hsVar).currentAccount;
+        MessagesController.getNotificationsSettings(i11).edit().putInt("dialog_bar_vis3" + hsVar.H, 3).commit();
+        hsVar.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.updateInterfaces, Integer.valueOf(MessagesController.UPDATE_MASK_NAME));
+        hsVar.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.peerSettingsDidLoad, Long.valueOf(hsVar.H));
+        if (userFull != null) {
+            if (textWithEntities == null || textWithEntities.text.length() <= 0) {
+                userFull.flags2 &= -4194305;
+                userFull.note = null;
+            } else {
+                userFull.flags2 |= TLObject.FLAG_22;
+                userFull.note = textWithEntities;
+            }
+            i12 = ((org.telegram.ui.ActionBar.o2) hsVar).currentAccount;
+            MessagesStorage.getInstance(i12).updateUserInfo(userFull, true);
+            hsVar.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.userInfoDidLoad, Long.valueOf(userFull.id), userFull);
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ds(cx0 cx0Var, Activity activity) {
-        super(activity);
-        this.S = cx0Var;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ds(b01 b01Var, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(18, context, d6Var, false, false);
-        this.S = b01Var;
+        hsVar.finishFragment();
+        gs gsVar = hsVar.O;
+        if (gsVar != null) {
+            gsVar.b();
+        }
     }
 }

@@ -6,29 +6,36 @@ import android.graphics.BlendModeColorFilter;
 import android.graphics.Canvas;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.RippleDrawable;
 import android.os.Build;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import java.util.HashSet;
 import ne.d;
 import ne.e;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.b6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.Cells.y;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.dq;
+import org.telegram.ui.Components.eq;
 import w7.z5;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
-/* loaded from: classes3.dex */
-public final class a extends FrameLayout implements d {
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+/* loaded from: classes4.dex */
+public final class a extends FrameLayout implements d, b6 {
     public final ne.b a;
     public final ne.b b;
     public ImageView c;
     public ImageView d;
-    public dq e;
-    public d6 f;
+    public eq e;
+    public g6 f;
     public float h;
-    public dh.d n;
+    public int n;
+    public dh.d r;
 
     public a(Context context) {
         super(context);
@@ -38,30 +45,38 @@ public final class a extends FrameLayout implements d {
         this.h = 1.0f;
     }
 
-    public static a c(Context context, bh.b bVar, eh.a aVar, d6 d6Var) {
-        int w02 = h6.w0(h6.Wk, d6Var);
+    public static a c(Context context, bh.b bVar, eh.a aVar, g6 g6Var) {
+        int i10 = k6.Wk;
+        int w02 = k6.w0(i10, g6Var);
         a aVar2 = new a(context);
-        aVar2.f = d6Var;
+        aVar2.f = g6Var;
         aVar2.setBlurredBackgroundDrawable(bVar.c(aVar2, aVar, false));
         aVar2.setIconColor(w02);
         int dp = AndroidUtilities.dp(22.0f);
-        int m12 = h6.m1(0.15f, w02);
+        int o12 = k6.o1(0.15f, w02);
         int dp2 = AndroidUtilities.dp(6.0f);
-        aVar2.setBackground(h6.X(dp, m12, dp2, dp2, dp2, dp2));
+        y X = k6.X(dp, o12, dp2, dp2, dp2, dp2);
+        n6 M = r6.M(0.15f, i10);
+        aVar2.setBackground(X);
+        r6.k(aVar2, X, null, M, g6Var);
         return aVar2;
     }
 
-    public static a d(Context context, bh.b bVar, eh.a aVar, d6 d6Var, int i10, int i11) {
-        int w02 = h6.w0(h6.Wk, d6Var);
+    public static a d(Context context, bh.b bVar, eh.a aVar, g6 g6Var, int i10, int i11) {
+        int i12 = k6.Wk;
+        int w02 = k6.w0(i12, g6Var);
         a aVar2 = new a(context);
-        aVar2.f = d6Var;
+        aVar2.f = g6Var;
         aVar2.setBlurredBackgroundDrawable(bVar.c(aVar2, aVar, false));
         aVar2.f(i10, i11);
         aVar2.setIconColor(w02);
         int dp = AndroidUtilities.dp(22.0f);
-        int m12 = h6.m1(0.15f, w02);
+        int o12 = k6.o1(0.15f, w02);
         int dp2 = AndroidUtilities.dp(6.0f);
-        aVar2.setBackground(h6.X(dp, m12, dp2, dp2, dp2, dp2));
+        y X = k6.X(dp, o12, dp2, dp2, dp2, dp2);
+        n6 M = r6.M(0.15f, i12);
+        aVar2.setBackground(X);
+        r6.k(aVar2, X, null, M, g6Var);
         return aVar2;
     }
 
@@ -100,7 +115,7 @@ public final class a extends FrameLayout implements d {
 
     @Override // android.view.View
     public final void draw(Canvas canvas) {
-        this.n.draw(canvas);
+        this.r.draw(canvas);
         super.draw(canvas);
     }
 
@@ -123,29 +138,8 @@ public final class a extends FrameLayout implements d {
         this.c.setImageResource(i10);
     }
 
-    public final void g() {
-        dh.d dVar = this.n;
-        if (dVar != null) {
-            dVar.v();
-            invalidate();
-        }
-        int i10 = h6.Wk;
-        int w02 = h6.w0(i10, this.f);
-        setIconColor(h6.w0(i10, this.f));
-        int dp = AndroidUtilities.dp(22.0f);
-        int m12 = h6.m1(0.15f, w02);
-        int dp2 = AndroidUtilities.dp(6.0f);
-        setBackground(h6.X(dp, m12, dp2, dp2, dp2, dp2));
-    }
-
-    @Override // android.view.View
-    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
-        super.onSizeChanged(i10, i11, i12, i13);
-        this.n.setBounds(0, 0, i10, i11);
-    }
-
     @Override // ne.d
-    public final void r(int i10, float f7, float f10, e eVar) {
+    public final void o(int i10, float f7, float f10, e eVar) {
         if (i10 == 0) {
             a();
             b();
@@ -156,10 +150,16 @@ public final class a extends FrameLayout implements d {
         }
     }
 
+    @Override // android.view.View
+    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
+        super.onSizeChanged(i10, i11, i12, i13);
+        this.r.setBounds(0, 0, i10, i11);
+    }
+
     public void setBlurredBackgroundDrawable(dh.d dVar) {
-        this.n = dVar;
+        this.r = dVar;
         dVar.p(AndroidUtilities.dp(6.0f));
-        this.n.q(AndroidUtilities.dp(22.0f));
+        this.r.q(AndroidUtilities.dp(22.0f));
     }
 
     @Override // android.view.View
@@ -177,6 +177,7 @@ public final class a extends FrameLayout implements d {
         if (imageView == null) {
             return;
         }
+        this.n = i10;
         if (Build.VERSION.SDK_INT < 29) {
             imageView.setColorFilter(new PorterDuffColorFilter(i10, PorterDuff.Mode.SRC_IN));
         } else {
@@ -190,6 +191,31 @@ public final class a extends FrameLayout implements d {
         if (imageView != null) {
             imageView.setPadding(0, i10, 0, 0);
         }
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void updateColors() {
+        dh.d dVar = this.r;
+        if (dVar != null) {
+            dVar.updateColors();
+            invalidate();
+        }
+        int w02 = k6.w0(k6.Wk, this.f);
+        if (this.c != null && w02 != this.n) {
+            setIconColor(w02);
+        }
+        int dp = AndroidUtilities.dp(22.0f);
+        int o12 = k6.o1(0.15f, w02);
+        if (getBackground() instanceof RippleDrawable) {
+            k6.E1(getBackground(), o12, true);
+        } else {
+            int dp2 = AndroidUtilities.dp(6.0f);
+            setBackground(k6.X(dp, o12, dp2, dp2, dp2, dp2));
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 
     @Override // ne.d

@@ -1,9 +1,9 @@
 package ki;
 
 import org.telegram.messenger.UserConfig;
-import org.telegram.ui.mi0;
+import org.telegram.ui.qi0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d implements Runnable {
     public final /* synthetic */ int a;
@@ -20,9 +20,9 @@ public final /* synthetic */ class d implements Runnable {
             case 0:
                 q qVar = this.b;
                 qVar.K(2147483646, true, 0, false, 0L);
-                mi0 mi0Var = qVar.O;
-                if (mi0Var != null) {
-                    mi0Var.g(false);
+                qi0 qi0Var = qVar.O;
+                if (qi0Var != null) {
+                    qi0Var.g(false);
                     qVar.O = null;
                     break;
                 }
@@ -30,9 +30,9 @@ public final /* synthetic */ class d implements Runnable {
             case 1:
                 q qVar2 = this.b;
                 qVar2.K(0, false, 0, false, 0L);
-                mi0 mi0Var2 = qVar2.O;
-                if (mi0Var2 != null) {
-                    mi0Var2.g(true);
+                qi0 qi0Var2 = qVar2.O;
+                if (qi0Var2 != null) {
+                    qi0Var2.g(true);
                     qVar2.O = null;
                     break;
                 }
@@ -48,7 +48,7 @@ public final /* synthetic */ class d implements Runnable {
                 q qVar4 = this.b;
                 b4 b4Var = qVar4.s;
                 if (b4Var != null) {
-                    b4Var.setSendEnabled(qVar4.r.N3());
+                    b4Var.setSendEnabled(qVar4.r.S3());
                     break;
                 }
                 break;

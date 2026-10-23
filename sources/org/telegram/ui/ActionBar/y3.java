@@ -1,154 +1,73 @@
 package org.telegram.ui.ActionBar;
 
-import android.app.Activity;
-import android.graphics.Canvas;
+import android.animation.ValueAnimator;
+import android.graphics.Matrix;
 import android.graphics.Paint;
-import android.graphics.Point;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import java.util.WeakHashMap;
+import android.graphics.Path;
+import android.graphics.RadialGradient;
+import android.graphics.RectF;
+import android.graphics.Shader;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.FileLog;
-import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.bs;
+import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class y3 extends FrameLayout {
-    public d5 a;
-    public ActionBarLayout b;
-    public boolean c;
-    public final Paint d;
-    public r0.k1 e;
-    public i0.b f;
-    public i0.b h;
+public final class y3 {
+    public final RectF a = new RectF();
+    public final z3 b;
+    public final p3 c;
+    public final n3 d;
+    public final Paint e;
+    public final Matrix f;
+    public final float[] g;
+    public final float[] h;
+    public float i;
+    public ValueAnimator j;
+    public final yc k;
+    public final Paint l;
+    public final RectF m;
+    public final Path n;
+    public final Paint o;
+    public final RadialGradient p;
+    public final Matrix q;
+    public final Paint r;
 
-    public y3(Activity activity) {
-        super(activity);
-        this.d = new Paint(1);
-        i0.b bVar = i0.b.e;
-        this.f = bVar;
-        this.h = bVar;
-        n nVar = new n(this, 8);
-        WeakHashMap weakHashMap = r0.i0.a;
-        r0.a0.i(this, nVar);
-        setSystemUiVisibility(1280);
+    public y3(z3 z3Var, p3 p3Var, n3 n3Var) {
+        Paint paint = new Paint(1);
+        this.e = paint;
+        this.f = new Matrix();
+        this.g = new float[8];
+        this.h = new float[8];
+        this.i = 0.0f;
+        this.l = new Paint(1);
+        this.m = new RectF();
+        this.n = new Path();
+        this.o = new Paint(3);
+        this.p = new RadialGradient(0.0f, 0.0f, 255.0f, new int[]{0, 805306368}, new float[]{0.5f, 1.0f}, Shader.TileMode.CLAMP);
+        this.q = new Matrix();
+        this.r = new Paint(1);
+        this.b = z3Var;
+        this.c = p3Var;
+        this.d = n3Var;
+        this.k = new yc(z3Var);
+        paint.setColor(p3Var.r);
     }
 
-    @Override // android.view.ViewGroup
-    public final void addView(View view, int i10, ViewGroup.LayoutParams layoutParams) {
-        super.addView(view, i10, layoutParams);
-        r0.k1 k1Var = this.e;
-        if (k1Var != null) {
-            if ((view instanceof ActionBarLayout) || view.getTag() == null) {
-                r0.i0.b(view, k1Var);
-            }
+    public final void a(float f7) {
+        ValueAnimator valueAnimator = this.j;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
         }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        ActionBarLayout actionBarLayout = this.b;
-        if (actionBarLayout != null && actionBarLayout.getParent() == this) {
-            this.b.N(canvas, this);
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.i, f7);
+        this.j = ofFloat;
+        ofFloat.addUpdateListener(new v0(this, 5));
+        this.j.addListener(new y0(this, f7, 1));
+        if (Math.abs(f7) < 0.1f) {
+            AndroidUtilities.applySpring(this.j, 285.0d, 20.0d);
+        } else {
+            this.j.setInterpolator(bs.h);
         }
-        super.dispatchDraw(canvas);
-    }
-
-    public Paint getInternalNavbarPaint() {
-        return this.d;
-    }
-
-    @Override // android.view.View
-    public final boolean hasOverlappingRendering() {
-        return false;
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        return ((ActionBarLayout) this.a).j();
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        this.c = true;
-        int childCount = getChildCount();
-        for (int i14 = 0; i14 < childCount; i14++) {
-            View childAt = getChildAt(i14);
-            if (childAt.getVisibility() != 8) {
-                FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) childAt.getLayoutParams();
-                try {
-                    childAt.layout(layoutParams.leftMargin, layoutParams.topMargin + getPaddingTop(), layoutParams.leftMargin + childAt.getMeasuredWidth(), layoutParams.topMargin + childAt.getMeasuredHeight() + getPaddingTop());
-                } catch (Exception e) {
-                    FileLog.e(e);
-                    if (BuildVars.DEBUG_VERSION) {
-                        throw e;
-                    }
-                }
-            }
-        }
-        this.c = false;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int size = View.MeasureSpec.getSize(i10);
-        int size2 = View.MeasureSpec.getSize(i11);
-        setMeasuredDimension(size, size2);
-        i0.b bVar = this.f;
-        int i12 = (size - bVar.a) - bVar.c;
-        int i13 = (size2 - bVar.b) - bVar.d;
-        Point point = AndroidUtilities.displaySize;
-        point.x = i12;
-        point.y = i13;
-        int childCount = getChildCount();
-        for (int i14 = 0; i14 < childCount; i14++) {
-            View childAt = getChildAt(i14);
-            if (childAt.getVisibility() != 8) {
-                FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) childAt.getLayoutParams();
-                int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec((size - layoutParams.leftMargin) - layoutParams.rightMargin, TLObject.FLAG_30);
-                int i15 = layoutParams.height;
-                int makeMeasureSpec2 = i15 > 0 ? View.MeasureSpec.makeMeasureSpec(i15, TLObject.FLAG_30) : View.MeasureSpec.makeMeasureSpec((size2 - layoutParams.topMargin) - layoutParams.bottomMargin, TLObject.FLAG_30);
-                if ((childAt instanceof ActionBarLayout) && ((ActionBarLayout) childAt).e0()) {
-                    childAt.forceLayout();
-                }
-                childAt.measure(makeMeasureSpec, makeMeasureSpec2);
-            }
-        }
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        return false;
-    }
-
-    @Override // android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.c) {
-            return;
-        }
-        super.requestLayout();
-    }
-
-    public void setActionBarLayout(ActionBarLayout actionBarLayout) {
-        this.b = actionBarLayout;
-    }
-
-    public void setInternalNavigationBarColor(int i10) {
-        Paint paint = this.d;
-        if (paint.getColor() != i10) {
-            paint.setColor(i10);
-            invalidate();
-            int childCount = getChildCount();
-            for (int i11 = 0; i11 < childCount; i11++) {
-                getChildAt(i11).invalidate();
-            }
-        }
-    }
-
-    public void setParentActionBarLayout(d5 d5Var) {
-        this.a = d5Var;
+        this.j.start();
     }
 }

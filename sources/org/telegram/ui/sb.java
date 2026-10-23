@@ -6,9 +6,9 @@ import android.graphics.RectF;
 import android.os.SystemClock;
 import android.view.View;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public abstract class sb extends org.telegram.ui.Components.lw0 {
+public abstract class sb extends org.telegram.ui.Components.ow0 {
     public final /* synthetic */ vb w0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -17,11 +17,11 @@ public abstract class sb extends org.telegram.ui.Components.lw0 {
         this.w0 = vbVar;
     }
 
-    public final void Z(Canvas canvas, RectF rectF) {
+    public final void Y(Canvas canvas, RectF rectF) {
         boolean z10;
         long uptimeMillis = SystemClock.uptimeMillis();
         vb vbVar = this.w0;
-        if (vbVar.v.Z0()) {
+        if (vbVar.v.a1()) {
             canvas.save();
             canvas.clipRect(rectF);
             drawChild(canvas, vbVar.v, uptimeMillis);
@@ -42,29 +42,29 @@ public abstract class sb extends org.telegram.ui.Components.lw0 {
                 z10 = !rectF2.intersect(rectF);
             }
             if (!z10) {
-                if (childAt instanceof org.telegram.ui.Cells.u1) {
+                if (childAt instanceof org.telegram.ui.Cells.t1) {
                     canvas.save();
                     canvas.translate(childAt.getX(), childAt.getY());
-                    org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) childAt;
-                    if (u1Var.C1()) {
+                    org.telegram.ui.Cells.t1 t1Var = (org.telegram.ui.Cells.t1) childAt;
+                    if (t1Var.B1()) {
                         canvas.save();
-                        canvas.translate(0.0f, u1Var.V);
-                        u1Var.D1(canvas, true, false);
+                        canvas.translate(0.0f, t1Var.V);
+                        t1Var.C1(canvas, true, false);
                         canvas.restore();
                     }
                     canvas.restore();
                     vbVar.v.drawChild(canvas, childAt, uptimeMillis);
-                    if (u1Var.U2()) {
+                    if (t1Var.T2()) {
                         canvas.save();
-                        canvas.translate(u1Var.getX(), u1Var.getY());
-                        u1Var.X1(canvas);
+                        canvas.translate(t1Var.getX(), t1Var.getY());
+                        t1Var.W1(canvas);
                         canvas.restore();
                     }
-                } else if (childAt instanceof org.telegram.ui.Cells.w0) {
+                } else if (childAt instanceof org.telegram.ui.Cells.v0) {
                     vbVar.v.drawChild(canvas, childAt, uptimeMillis);
                     canvas.save();
                     canvas.translate(childAt.getX(), childAt.getY());
-                    ((org.telegram.ui.Cells.w0) childAt).B(canvas);
+                    ((org.telegram.ui.Cells.v0) childAt).A(canvas);
                     canvas.restore();
                 } else {
                     vbVar.v.drawChild(canvas, childAt, uptimeMillis);
@@ -73,10 +73,5 @@ public abstract class sb extends org.telegram.ui.Components.lw0 {
         }
         vbVar.v.getClass();
         canvas.restore();
-    }
-
-    @Override // org.telegram.ui.Components.lw0
-    public /* bridge */ /* synthetic */ int[] getColorKeys() {
-        return null;
     }
 }

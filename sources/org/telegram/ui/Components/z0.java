@@ -1,8 +1,8 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class z0 implements org.telegram.ui.ActionBar.a2 {
+public final /* synthetic */ class z0 implements org.telegram.ui.ActionBar.z1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Runnable b;
 
@@ -11,8 +11,8 @@ public final /* synthetic */ class z0 implements org.telegram.ui.ActionBar.a2 {
         this.b = runnable;
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public final void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    @Override // org.telegram.ui.ActionBar.z1
+    public final void g(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
         switch (this.a) {
             case 0:
                 Runnable runnable = this.b;
@@ -32,7 +32,7 @@ public final /* synthetic */ class z0 implements org.telegram.ui.ActionBar.a2 {
                 break;
             case 4:
                 this.b.run();
-                b2Var.dismiss();
+                c2Var.dismiss();
                 break;
             case 5:
                 Runnable runnable2 = this.b;
@@ -42,7 +42,7 @@ public final /* synthetic */ class z0 implements org.telegram.ui.ActionBar.a2 {
                 }
                 break;
             default:
-                b2Var.dismiss();
+                c2Var.dismiss();
                 Runnable runnable3 = this.b;
                 if (runnable3 != null) {
                     runnable3.run();

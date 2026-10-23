@@ -12,9 +12,9 @@ import android.graphics.drawable.Drawable;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.rc0;
+import org.telegram.ui.Components.yb0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class u extends Drawable {
     public final /* synthetic */ int a = 1;
@@ -34,7 +34,7 @@ public final class u extends Drawable {
         this.d = paint2;
         Paint paint3 = new Paint(1);
         this.e = paint3;
-        this.g = new org.telegram.ui.Components.f6(new rc0(this, 1), 320L, bs.h, 0);
+        this.g = new org.telegram.ui.Components.f6(new yb0(this, 2), 320L, bs.h, 0);
         Paint.Style style = Paint.Style.STROKE;
         paint.setStyle(style);
         paint.setColor(-1);
@@ -91,8 +91,8 @@ public final class u extends Drawable {
                 canvas.restore();
                 if (e > 0.0f) {
                     if (this.f) {
-                        canvas.drawLine(centerX - AndroidUtilities.dpf2(8.33f), centerY - AndroidUtilities.dpf2(8.33f), org.telegram.ui.Cells.c1.b(16.66f, e, centerX - AndroidUtilities.dpf2(8.33f)), org.telegram.ui.Cells.c1.b(16.66f, e, centerY - AndroidUtilities.dpf2(8.33f)), paint2);
-                        canvas.drawLine(centerX - AndroidUtilities.dpf2(8.33f), centerY - AndroidUtilities.dpf2(8.33f), org.telegram.ui.Cells.c1.b(16.66f, e, centerX - AndroidUtilities.dpf2(8.33f)), org.telegram.ui.Cells.c1.b(16.66f, e, centerY - AndroidUtilities.dpf2(8.33f)), paint);
+                        canvas.drawLine(centerX - AndroidUtilities.dpf2(8.33f), centerY - AndroidUtilities.dpf2(8.33f), org.telegram.ui.Cells.b1.b(16.66f, e, centerX - AndroidUtilities.dpf2(8.33f)), org.telegram.ui.Cells.b1.b(16.66f, e, centerY - AndroidUtilities.dpf2(8.33f)), paint2);
+                        canvas.drawLine(centerX - AndroidUtilities.dpf2(8.33f), centerY - AndroidUtilities.dpf2(8.33f), org.telegram.ui.Cells.b1.b(16.66f, e, centerX - AndroidUtilities.dpf2(8.33f)), org.telegram.ui.Cells.b1.b(16.66f, e, centerY - AndroidUtilities.dpf2(8.33f)), paint);
                     } else {
                         canvas.drawLine(AndroidUtilities.dpf2(8.33f) + centerX, AndroidUtilities.dpf2(8.33f) + centerY, (AndroidUtilities.dpf2(8.33f) + centerX) - (AndroidUtilities.dpf2(16.66f) * e), (AndroidUtilities.dpf2(8.33f) + centerY) - (AndroidUtilities.dpf2(16.66f) * e), paint2);
                         canvas.drawLine(AndroidUtilities.dpf2(8.33f) + centerX, AndroidUtilities.dpf2(8.33f) + centerY, (AndroidUtilities.dpf2(8.33f) + centerX) - (AndroidUtilities.dpf2(16.66f) * e), (AndroidUtilities.dpf2(8.33f) + centerY) - (AndroidUtilities.dpf2(16.66f) * e), paint);
@@ -216,7 +216,7 @@ public final class u extends Drawable {
             float f22 = dpf25;
             float f23 = f21 + f20;
             float f24 = dpf26;
-            rectF2.set(f16 + f15, f23, r4.c.c(max, i15 + 1, f13, f16), r4.c.c(max2, i14 + 1, f17, f21));
+            rectF2.set(f16 + f15, f23, si.o0.c(max, i15 + 1, f13, f16), si.o0.c(max2, i14 + 1, f17, f21));
             float[] fArr = (float[]) this.g;
             float f25 = 0.0f;
             float f26 = (i15 == 0 && i14 == 0) ? f24 : 0.0f;

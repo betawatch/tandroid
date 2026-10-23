@@ -1,48 +1,32 @@
 package org.telegram.ui.Components;
 
-import android.view.ViewGroup;
+import android.content.Context;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class it0 extends g.o {
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ ViewGroup e;
+public final class it0 extends org.telegram.ui.Cells.j7 {
+    public final /* synthetic */ xv0 l0;
 
-    public /* synthetic */ it0(ViewGroup viewGroup, Object obj, int i10) {
-        this.c = i10;
-        this.e = viewGroup;
-        this.d = obj;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public it0(xv0 xv0Var, Context context) {
+        super(context);
+        this.l0 = xv0Var;
     }
 
-    @Override // g.o
-    public final int i(int i10) {
-        int i11;
-        switch (this.c) {
-            case 0:
-                nu0 nu0Var = (nu0) this.d;
-                s4.g0 adapter = nu0Var.r.getAdapter();
-                uv0 uv0Var = (uv0) this.e;
-                ov0 ov0Var = uv0Var.I;
-                if (adapter == ov0Var) {
-                    if (ov0Var.j(i10) == 2) {
-                        return nu0Var.s.J;
-                    }
-                    return 1;
-                }
-                if (uv0.p(uv0Var, adapter) == -1) {
-                    return 1;
-                }
-                ((rv0) adapter).getClass();
-                return 1;
-            default:
-                di.h hVar = (di.h) this.d;
-                u61 u61Var = ((c71) this.e).W2;
-                if (u61Var == null) {
-                    return hVar.J;
-                }
-                h61 G = u61Var.G(i10);
-                return (G == null || (i11 = G.u) == -1) ? hVar.J : i11;
+    @Override // org.telegram.ui.Cells.j7
+    public final boolean d(MessageObject messageObject) {
+        boolean isVoice = messageObject.isVoice();
+        xv0 xv0Var = this.l0;
+        if (isVoice || messageObject.isRoundVideo()) {
+            boolean playMessage = MediaController.getInstance().playMessage(messageObject);
+            MediaController.getInstance().setVoiceMessagesPlaylist(playMessage ? xv0Var.t1[4].a : null, false);
+            return playMessage;
         }
+        if (messageObject.isMusic()) {
+            return MediaController.getInstance().setPlaylist(xv0Var.t1[4].a, messageObject, xv0Var.c1);
+        }
+        return false;
     }
 }

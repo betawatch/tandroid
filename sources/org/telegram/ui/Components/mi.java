@@ -5,7 +5,7 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class mi extends oi {
     public TLRPC.User b;
@@ -15,36 +15,36 @@ public final class mi extends oi {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public mi(ti tiVar, Context context) {
         super(context);
-        org.telegram.ui.ActionBar.d6 d6Var;
+        org.telegram.ui.ActionBar.g6 g6Var;
         this.d = tiVar;
         setWillNotDraw(false);
         setFocusable(true);
         setFocusableInTouchMode(true);
-        d6Var = ((org.telegram.ui.ActionBar.f3) tiVar).resourcesProvider;
+        g6Var = ((org.telegram.ui.ActionBar.h3) tiVar).resourcesProvider;
         ph.b bVar = new ph.b(context);
-        bVar.d = d6Var;
+        bVar.d = g6Var;
         bVar.Q = true;
         TextView textView = bVar.a;
         textView.setTextSize(1, 11.0f);
         textView.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), 0);
         bVar.b.setVisibility(8);
-        bVar.a(false);
+        bVar.b(false);
         w9 w9Var = new w9(context);
         bVar.c = w9Var;
         bVar.addView(w9Var, w7.z5.d(24, 24.0f, 49, 0.0f, 4.0f, 0.0f, 0.0f));
-        bVar.w = org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.cl, d6Var);
-        bVar.s = org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.al, d6Var);
-        bVar.v = org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.bl, d6Var);
-        bVar.f();
+        bVar.w = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.cl, g6Var);
+        bVar.s = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.al, g6Var);
+        bVar.v = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.bl, g6Var);
+        bVar.a();
         this.a = bVar;
-        bVar.getBackupImageView().a.setDelegate(new k2(12));
+        bVar.getBackupImageView().a.setDelegate(new e2(18));
         addView(this.a, w7.z5.c(-1.0f, -1));
     }
 
     public final void a(boolean z10) {
         boolean z11 = this.c != null && (-this.b.id) == this.d.Z0;
-        this.a.e(z11, z10);
-        vj0 lottieAnimation = this.a.getBackupImageView().getImageReceiver().getLottieAnimation();
+        this.a.f(z11, z10);
+        yj0 lottieAnimation = this.a.getBackupImageView().getImageReceiver().getLottieAnimation();
         if (!z10) {
             if (lottieAnimation != null) {
                 lottieAnimation.stop();

@@ -9,10 +9,10 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class r00 extends s4.v {
-    public final hq d = new hq(this, 17);
+    public final zp d = new zp(this, 18);
     public final /* synthetic */ s00 e;
 
     public r00(s00 s00Var) {
@@ -77,18 +77,18 @@ public final class r00 extends s4.v {
             n00 n00Var = s00Var.J;
             int i14 = p00Var2.a;
             int i15 = p00Var.a;
-            org.telegram.ui.bw bwVar = (org.telegram.ui.bw) n00Var;
+            org.telegram.ui.dw dwVar = (org.telegram.ui.dw) n00Var;
             while (true) {
-                org.telegram.ui.ay[] ayVarArr = bwVar.b.e0;
-                if (i10 >= ayVarArr.length) {
+                org.telegram.ui.dy[] dyVarArr = dwVar.b.e0;
+                if (i10 >= dyVarArr.length) {
                     break;
                 }
-                org.telegram.ui.ay ayVar = ayVarArr[i10];
-                int i16 = ayVar.h;
+                org.telegram.ui.dy dyVar = dyVarArr[i10];
+                int i16 = dyVar.h;
                 if (i16 == i14) {
-                    ayVar.h = i15;
+                    dyVar.h = i15;
                 } else if (i16 == i15) {
-                    ayVar.h = i14;
+                    dyVar.h = i14;
                 }
                 i10++;
             }
@@ -124,11 +124,11 @@ public final class r00 extends s4.v {
             s00 s00Var = this.e;
             s00Var.F.I0(false);
             b1Var.a.setPressed(true);
-            b1Var.a.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(s00Var.b0, s00Var.a));
+            org.telegram.ui.ActionBar.r6.i(s00Var.b0, b1Var.a, s00Var.a);
         } else {
-            hq hqVar = this.d;
-            AndroidUtilities.cancelRunOnUIThread(hqVar);
-            AndroidUtilities.runOnUIThread(hqVar, 320L);
+            zp zpVar = this.d;
+            AndroidUtilities.cancelRunOnUIThread(zpVar);
+            AndroidUtilities.runOnUIThread(zpVar, 320L);
         }
         if (b1Var != null) {
             b1Var.a.setTag(R.id.dragging, i10 == 2 ? Boolean.TRUE : null);

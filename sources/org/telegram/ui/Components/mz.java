@@ -8,7 +8,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class mz implements hz {
     public String a;
@@ -28,22 +28,19 @@ public final class mz implements hz {
         this.w = ozVar;
     }
 
-    public final boolean a() {
-        return this.w.Q.G0.F;
-    }
-
-    public final void b(Runnable runnable, boolean z10) {
+    public final void a(Runnable runnable, boolean z10) {
         String[] currentKeyboardLanguage = AndroidUtilities.getCurrentKeyboardLanguage();
         MediaDataController.getInstance(this.w.Q.c1).searchStickers(false, (currentKeyboardLanguage == null || currentKeyboardLanguage.length == 0) ? "" : currentKeyboardLanguage[0], this.a, new ei.oc(this, z10, runnable, 2), z10);
     }
 
     @Override // org.telegram.ui.Components.hz
     public final void e() {
-        if (a()) {
+        dx dxVar = this.w.Q.G0;
+        if (dxVar.F) {
             return;
         }
-        this.w.Q.G0.e(true);
-        Utilities.raceCallbacks(new hq(this, 16), new lz(this, 0));
+        dxVar.e(true);
+        Utilities.raceCallbacks(new zp(this, 17), new lz(this, 0));
     }
 
     @Override // java.lang.Runnable
@@ -74,11 +71,10 @@ public final class mz implements hz {
         this.s.clear();
         this.v.clear();
         tzVar.G0.e(true);
-        int i12 = 16;
         if ("premium".equalsIgnoreCase(this.a)) {
-            Utilities.raceCallbacks(new hq(this, i12), new lz(this, i10));
+            Utilities.raceCallbacks(new zp(this, 17), new lz(this, i10));
         } else {
-            Utilities.raceCallbacks(new hq(this, i12), new lz(this, 2), new lz(this, 3), new lz(this, 4), new lz(this, 5), new lz(this, 6), new lz(this, 7));
+            Utilities.raceCallbacks(new zp(this, 17), new lz(this, 2), new lz(this, 3), new lz(this, 4), new lz(this, 5), new lz(this, 6), new lz(this, 7));
         }
     }
 }

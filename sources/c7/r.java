@@ -2,9 +2,10 @@ package c7;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import i2.o1;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public enum r implements Parcelable {
     b(9),
@@ -34,7 +35,7 @@ public enum r implements Parcelable {
             }
         }
         Locale locale = Locale.US;
-        throw new q(i2.e.k(i10, "Error code ", " is not supported"));
+        throw new q(o1.l(i10, "Error code ", " is not supported"));
     }
 
     @Override // android.os.Parcelable

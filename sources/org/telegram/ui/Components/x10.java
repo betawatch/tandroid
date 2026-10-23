@@ -5,7 +5,7 @@ import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class x10 implements Runnable {
     public final /* synthetic */ FragmentContextView a;
@@ -17,8 +17,8 @@ public final class x10 implements Runnable {
     @Override // java.lang.Runnable
     public final void run() {
         FragmentContextView fragmentContextView = this.a;
-        org.telegram.ui.ActionBar.n2 n2Var = fragmentContextView.h;
-        if (fragmentContextView.g0 == null || !(n2Var instanceof org.telegram.ui.qn)) {
+        org.telegram.ui.ActionBar.o2 o2Var = fragmentContextView.h;
+        if (fragmentContextView.g0 == null || !(o2Var instanceof org.telegram.ui.sn)) {
             fragmentContextView.l0 = false;
             return;
         }
@@ -28,7 +28,7 @@ public final class x10 implements Runnable {
             fragmentContextView.l0 = false;
             return;
         }
-        int currentTime = groupCall.call.schedule_date - n2Var.getConnectionsManager().getCurrentTime();
+        int currentTime = groupCall.call.schedule_date - o2Var.getConnectionsManager().getCurrentTime();
         String formatPluralString = currentTime >= 86400 ? LocaleController.formatPluralString("Days", Math.round(currentTime / 86400.0f), new Object[0]) : AndroidUtilities.formatFullDuration(currentTime);
         p6 p6Var = fragmentContextView.j0;
         if (!fragmentContextView.i0) {

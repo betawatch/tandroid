@@ -10,7 +10,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class ch extends h6 {
     public dh.d s;
@@ -25,9 +25,9 @@ public final class ch extends h6 {
         setOrientation(1);
         dh.d dVar = this.s;
         if (dVar != null) {
-            dVar.v();
+            dVar.updateColors();
         }
-        Color.alpha(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false));
+        Color.alpha(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.d6, false));
         invalidate();
     }
 
@@ -59,7 +59,7 @@ public final class ch extends h6 {
                 float c10 = m10.c();
                 if (c10 > 0.0f && ((fragmentContextView2 = this.x) == view || fragmentContextView2.getParent() == view)) {
                     id capsuleBlobDrawable = this.x.getCapsuleBlobDrawable();
-                    int dp = AndroidUtilities.dp(1.0f) + ((int) capsuleBlobDrawable.c());
+                    int dp = AndroidUtilities.dp(1.0f) + ((int) capsuleBlobDrawable.d());
                     int i11 = -dp;
                     capsuleBlobDrawable.setBounds(getPaddingLeft() - dp, i11, (getMeasuredWidth() - getPaddingRight()) + dp, (dp * 2) + AndroidUtilities.dp(36.0f) + i11);
                     capsuleBlobDrawable.setAlpha((int) (c10 * 255.0f));
@@ -82,11 +82,11 @@ public final class ch extends h6 {
             View view2 = ((g6) m11.a).a;
             float min = Math.min(1.0f, m11.c.a) * m11.c();
             if (min > 0.0f && (!z10 || (fragmentContextView = this.x) == null || (fragmentContextView != view2 && fragmentContextView.getParent() != view2))) {
-                int alpha = org.telegram.ui.ActionBar.h6.k0.getAlpha();
-                org.telegram.ui.ActionBar.h6.k0.setAlpha((int) (alpha * min));
+                int alpha = org.telegram.ui.ActionBar.k6.k0.getAlpha();
+                org.telegram.ui.ActionBar.k6.k0.setAlpha((int) (alpha * min));
                 float f7 = 1.0f - min;
-                canvas2.drawLine(getPaddingLeft() + (AndroidUtilities.dp(16.0f) * f7), paddingTop2, getWidth() - ((AndroidUtilities.dp(16.0f) * f7) + getPaddingRight()), paddingTop2, org.telegram.ui.ActionBar.h6.k0);
-                org.telegram.ui.ActionBar.h6.k0.setAlpha(alpha);
+                canvas2.drawLine(getPaddingLeft() + (AndroidUtilities.dp(16.0f) * f7), paddingTop2, getWidth() - ((AndroidUtilities.dp(16.0f) * f7) + getPaddingRight()), paddingTop2, org.telegram.ui.ActionBar.k6.k0);
+                org.telegram.ui.ActionBar.k6.k0.setAlpha(alpha);
             }
             i12++;
             canvas2 = canvas;

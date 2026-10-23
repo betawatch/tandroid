@@ -13,7 +13,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.ui.Components.bs;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public abstract class o1 {
     public static final bs w = li.m.V;
@@ -31,7 +31,7 @@ public abstract class o1 {
     public boolean s;
     public boolean v;
     public boolean e = false;
-    public final v2 h = new v2(this, 2);
+    public final w2 h = new w2(this, 2);
     public int i = -1;
     public int j = -1;
     public int k = -1;
@@ -69,7 +69,7 @@ public abstract class o1 {
             while (true) {
                 view2 = null;
                 if (view != null) {
-                    if (!(view.getParent() instanceof y3)) {
+                    if (!(view.getParent() instanceof b4)) {
                         if (!(view.getParent() instanceof View)) {
                             break;
                         } else {

@@ -1,8 +1,14 @@
 package s0;
 
-import w7.i7;
+import android.os.Bundle;
+import android.view.accessibility.AccessibilityNodeInfo;
+import org.telegram.ui.Components.yh0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public abstract class e extends i7 {
+public final class e extends yh0 {
+    @Override // android.view.accessibility.AccessibilityNodeProvider
+    public final void addExtraDataToAccessibilityNodeInfo(int i10, AccessibilityNodeInfo accessibilityNodeInfo, String str, Bundle bundle) {
+        ((l2.f) this.b).getClass();
+    }
 }

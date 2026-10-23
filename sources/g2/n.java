@@ -10,7 +10,7 @@ import java.util.Collections;
 import java.util.Map;
 import v7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class n implements h {
     public final Context a;
@@ -32,13 +32,27 @@ public final class n implements h {
         this.b = new ArrayList();
     }
 
-    public static void d(h hVar, c0 c0Var) {
+    public static void c(h hVar, c0 c0Var) {
         if (hVar != null) {
             hVar.addTransferListener(c0Var);
         }
     }
 
-    public final void a(h hVar) {
+    @Override // g2.h
+    public final void addTransferListener(c0 c0Var) {
+        c0Var.getClass();
+        this.c.addTransferListener(c0Var);
+        this.b.add(c0Var);
+        c(this.d, c0Var);
+        c(this.e, c0Var);
+        c(this.f, c0Var);
+        c(this.h, c0Var);
+        c(this.n, c0Var);
+        c(this.r, c0Var);
+        c(this.s, c0Var);
+    }
+
+    public final void b(h hVar) {
         int i10 = 0;
         while (true) {
             ArrayList arrayList = this.b;
@@ -48,20 +62,6 @@ public final class n implements h {
             hVar.addTransferListener((c0) arrayList.get(i10));
             i10++;
         }
-    }
-
-    @Override // g2.h
-    public final void addTransferListener(c0 c0Var) {
-        c0Var.getClass();
-        this.c.addTransferListener(c0Var);
-        this.b.add(c0Var);
-        d(this.d, c0Var);
-        d(this.e, c0Var);
-        d(this.f, c0Var);
-        d(this.h, c0Var);
-        d(this.n, c0Var);
-        d(this.r, c0Var);
-        d(this.s, c0Var);
     }
 
     @Override // g2.h
@@ -106,14 +106,14 @@ public final class n implements h {
                 if (this.d == null) {
                     t tVar = new t(false);
                     this.d = tVar;
-                    a(tVar);
+                    b(tVar);
                 }
                 this.v = this.d;
             } else {
                 if (this.e == null) {
                     b bVar = new b(context);
                     this.e = bVar;
-                    a(bVar);
+                    b(bVar);
                 }
                 this.v = this.e;
             }
@@ -121,14 +121,14 @@ public final class n implements h {
             if (this.e == null) {
                 b bVar2 = new b(context);
                 this.e = bVar2;
-                a(bVar2);
+                b(bVar2);
             }
             this.v = this.e;
         } else if ("content".equals(scheme)) {
             if (this.f == null) {
                 e eVar = new e(context);
                 this.f = eVar;
-                a(eVar);
+                b(eVar);
             }
             this.v = this.f;
         } else {
@@ -139,7 +139,7 @@ public final class n implements h {
                     try {
                         h hVar2 = (h) Class.forName("androidx.media3.datasource.rtmp.RtmpDataSource").getConstructor(null).newInstance(null);
                         this.h = hVar2;
-                        a(hVar2);
+                        b(hVar2);
                     } catch (ClassNotFoundException unused) {
                         e2.a.l("DefaultDataSource", "Attempting to play RTMP stream without depending on the RTMP extension");
                     } catch (Exception e) {
@@ -154,21 +154,21 @@ public final class n implements h {
                 if (this.n == null) {
                     e0 e0Var = new e0();
                     this.n = e0Var;
-                    a(e0Var);
+                    b(e0Var);
                 }
                 this.v = this.n;
             } else if ("data".equals(scheme)) {
                 if (this.r == null) {
                     f fVar = new f(false);
                     this.r = fVar;
-                    a(fVar);
+                    b(fVar);
                 }
                 this.v = this.r;
             } else if ("rawresource".equals(scheme) || "android.resource".equals(scheme)) {
                 if (this.s == null) {
                     a0 a0Var = new a0(context);
                     this.s = a0Var;
-                    a(a0Var);
+                    b(a0Var);
                 }
                 this.v = this.s;
             } else {

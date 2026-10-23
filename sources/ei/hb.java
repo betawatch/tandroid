@@ -10,12 +10,12 @@ import android.view.MotionEvent;
 import android.widget.FrameLayout;
 import java.util.Arrays;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.fl0;
-import org.telegram.ui.Components.fw0;
-import org.telegram.ui.Components.sf0;
-import org.telegram.ui.Components.uf0;
+import org.telegram.ui.Components.il0;
+import org.telegram.ui.Components.iw0;
+import org.telegram.ui.Components.vf0;
+import org.telegram.ui.Components.xf0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class hb extends FrameLayout {
     public final Rect a;
@@ -89,23 +89,23 @@ public final class hb extends FrameLayout {
     public final void onMeasure(int i10, int i11) {
         super.onMeasure(i10, i11);
         vb vbVar = this.d;
-        uf0 uf0Var = vbVar.F1;
-        if (uf0Var != null) {
-            float measuredWidth = uf0Var.getMeasuredWidth();
+        xf0 xf0Var = vbVar.F1;
+        if (xf0Var != null) {
+            float measuredWidth = xf0Var.getMeasuredWidth();
             float measuredHeight = vbVar.F1.getMeasuredHeight();
-            fl0 fl0Var = uf0Var.e;
-            fl0Var.a = 0.0f;
-            fl0Var.b = 0.0f;
-            fl0Var.c = measuredWidth;
-            fl0Var.d = measuredHeight;
+            il0 il0Var = xf0Var.e;
+            il0Var.a = 0.0f;
+            il0Var.b = 0.0f;
+            il0Var.c = measuredWidth;
+            il0Var.d = measuredHeight;
         }
-        sf0 sf0Var = vbVar.E1;
-        if (sf0Var != null) {
-            float measuredWidth2 = sf0Var.getMeasuredWidth();
+        vf0 vf0Var = vbVar.E1;
+        if (vf0Var != null) {
+            float measuredWidth2 = vf0Var.getMeasuredWidth();
             float measuredHeight2 = vbVar.E1.getMeasuredHeight();
-            fw0 fw0Var = sf0Var.d;
-            fw0Var.a = measuredWidth2;
-            fw0Var.b = measuredHeight2;
+            iw0 iw0Var = vf0Var.d;
+            iw0Var.a = measuredWidth2;
+            iw0Var.b = measuredHeight2;
         }
     }
 
@@ -116,7 +116,7 @@ public final class hb extends FrameLayout {
         if (r02 == 0) {
             return super.onTouchEvent(motionEvent);
         }
-        r02.l(motionEvent);
+        r02.k(motionEvent);
         return true;
     }
 }

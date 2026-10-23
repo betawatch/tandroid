@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public class ChatsWidgetConfigActivity extends ExternalActionActivity {
     public static final /* synthetic */ int F = 0;
@@ -21,22 +21,22 @@ public class ChatsWidgetConfigActivity extends ExternalActionActivity {
                 finish();
                 return;
             }
-            org.telegram.messenger.nk.d(10, "onlySelect", "dialogsType", true).putBoolean("allowSwitchAccount", true);
-            ly lyVar = new ly(0, this.E);
-            lyVar.y = new b1(this, 25);
+            org.telegram.messenger.v0.e(10, "onlySelect", "dialogsType", true).putBoolean("allowSwitchAccount", true);
+            ny nyVar = new ny(0, this.E);
+            nyVar.y = new a1(this, 25);
             if (AndroidUtilities.isTablet()) {
                 if (this.d.getFragmentStack().isEmpty()) {
-                    this.d.c(-1, lyVar);
+                    this.d.c(-1, nyVar);
                 }
             } else if (this.c.getFragmentStack().isEmpty()) {
-                this.c.c(-1, lyVar);
+                this.c.c(-1, nyVar);
             }
             if (!AndroidUtilities.isTablet()) {
                 this.e.setVisibility(8);
             }
-            this.c.c0();
+            this.c.d0();
             if (AndroidUtilities.isTablet()) {
-                this.d.c0();
+                this.d.d0();
             }
             intent.setAction(null);
         }

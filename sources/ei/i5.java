@@ -1,6 +1,6 @@
 package ei;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class i5 extends b4 {
     public final /* synthetic */ xa m;
@@ -15,7 +15,7 @@ public final class i5 extends b4 {
     public final void b(boolean z10) {
         super.b(z10);
         if (z10) {
-            this.m.O0(false);
+            this.m.N0(false);
         }
     }
 }

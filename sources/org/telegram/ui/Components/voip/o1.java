@@ -8,7 +8,7 @@ import android.view.animation.LinearInterpolator;
 import java.util.ArrayList;
 import org.telegram.ui.Components.p31;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class o1 {
     public final com.google.firebase.messaging.l a;
@@ -39,8 +39,8 @@ public final class o1 {
         Paint paint3 = new Paint(1);
         this.l = paint3;
         this.m = new ArrayList();
-        lVar2.E(0.0f, 0.0f, 80.0f, 80.0f);
-        lVar.E(0.0f, 0.0f, 80.0f, 80.0f);
+        lVar2.w(0.0f, 0.0f, 80.0f, 80.0f);
+        lVar.w(0.0f, 0.0f, 80.0f, 80.0f);
         paint.setColor(-1);
         paint.setAlpha(35);
         paint2.setColor(-16777216);
@@ -73,8 +73,8 @@ public final class o1 {
         float f11 = this.g * 1.12f;
         float f12 = -f7;
         float f13 = -f10;
-        this.b.H(f12 - ((f11 - this.f) / 2.0f), f13 - ((f11 - this.g) / 2.0f), f11 / ((Bitmap) r1.c).getHeight(), this.h);
-        this.d.E(f12, f13, this.f - f7, this.g - f10);
+        this.b.y(f12 - ((f11 - this.f) / 2.0f), f13 - ((f11 - this.g) / 2.0f), f11 / ((Bitmap) r1.c).getHeight(), this.h);
+        this.d.w(f12, f13, this.f - f7, this.g - f10);
     }
 
     public final void e(boolean z10) {
@@ -116,7 +116,7 @@ public final class o1 {
             });
             ofFloat.setInterpolator(new LinearInterpolator());
             ofFloat.setDuration(80L);
-            ofFloat.addListener(new p31(this, 12));
+            ofFloat.addListener(new p31(this, 13));
             ofFloat.start();
             ValueAnimator ofFloat2 = ValueAnimator.ofFloat(0.0f, 1.0f);
             final int i11 = 1;

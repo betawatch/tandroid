@@ -1,81 +1,157 @@
 package ci;
 
-import android.app.Activity;
 import android.view.View;
-import org.telegram.messenger.AccountInstance;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaController;
+import java.util.ArrayList;
+import java.util.List;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.R;
 import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.messenger.VideoEditedInfo;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.y50;
+import org.telegram.ui.Components.ChatActivityEnterView;
+import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final class k3 implements y50 {
-    public final /* synthetic */ q4 a;
+public final /* synthetic */ class k3 implements Utilities.Callback {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
 
-    public k3(q4 q4Var) {
-        this.a = q4Var;
+    public /* synthetic */ k3(l3 l3Var, boolean z10, ah.i1 i1Var, View view) {
+        this.c = l3Var;
+        this.b = z10;
+        this.d = i1Var;
+        this.e = view;
     }
 
-    @Override // org.telegram.ui.Components.y50
-    public final long a() {
-        return this.a.B1;
-    }
-
-    @Override // org.telegram.ui.Components.y50
-    public final /* synthetic */ boolean c() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.y50
-    public final int getClassGuid() {
-        return this.a.z2;
-    }
-
-    @Override // org.telegram.ui.Components.y50
-    public final View getFragmentView() {
-        return this.a;
-    }
-
-    @Override // org.telegram.ui.Components.y50
-    public final Activity getParentActivity() {
-        return AndroidUtilities.findActivity(this.a.getContext());
-    }
-
-    @Override // org.telegram.ui.Components.y50
-    public final void s(MediaController.PhotoEntry photoEntry, VideoEditedInfo videoEditedInfo, boolean z10, int i10, int i11, boolean z11, long j10) {
-        AccountInstance accountInstance;
-        AccountInstance accountInstance2;
-        AccountInstance accountInstance3;
-        AccountInstance accountInstance4;
-        q4 q4Var = this.a;
-        TL_stories.StoryItem storyItem = q4Var.O1.a;
-        if (storyItem == null || (storyItem instanceof TL_stories.TL_storyItemSkipped)) {
-            return;
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        ah.d1 d1Var;
+        TLRPC.Document f7;
+        xc xcVar;
+        int i10;
+        int i11;
+        int i12 = this.a;
+        boolean z10 = this.b;
+        Object obj2 = this.e;
+        Object obj3 = this.d;
+        Object obj4 = this.c;
+        switch (i12) {
+            case 0:
+                l3 l3Var = (l3) obj4;
+                ah.i1 i1Var = (ah.i1) obj3;
+                View view = (View) obj2;
+                Long l4 = (Long) obj;
+                p4 p4Var = l3Var.a;
+                if (!z10 || i1Var.f == null) {
+                    d1Var = new ah.d1(view.getContext(), null, p4Var.f2, null, view, p4Var.getMeasuredWidth() / 2.0f, p4Var.getMeasuredHeight() / 2.0f, i1Var, p4Var.C2, 2, true);
+                } else {
+                    try {
+                        p4Var.performHapticFeedback(0);
+                    } catch (Exception unused) {
+                    }
+                    d1Var = new ah.d1(view.getContext(), null, p4Var.f2, null, view, p4Var.getMeasuredWidth() / 2.0f, p4Var.getMeasuredHeight() / 2.0f, i1Var, p4Var.C2, 0, true);
+                }
+                ah.d1.B = d1Var;
+                int i13 = R.id.parent_tag;
+                ah.a1 a1Var = d1Var.i;
+                a1Var.setTag(i13, 1);
+                p4Var.addView(a1Var);
+                n4 n4Var = p4Var.O1;
+                d1Var.s = true;
+                d1Var.y = System.currentTimeMillis();
+                if (i1Var.f != null) {
+                    f7 = MediaDataController.getInstance(p4Var.C2).getEmojiAnimatedSticker(i1Var.f);
+                    SendMessagesHelper.SendMessageParams of2 = SendMessagesHelper.SendMessageParams.of(i1Var.f, p4Var.B1);
+                    of2.replyToStoryItem = n4Var.a;
+                    of2.payStars = l4.longValue();
+                    SendMessagesHelper.getInstance(p4Var.C2).sendMessage(of2);
+                } else {
+                    f7 = org.telegram.ui.Components.r5.f(p4Var.C2, i1Var.g);
+                    String findAnimatedEmojiEmoticon = MessageObject.findAnimatedEmojiEmoticon(f7, null);
+                    if (findAnimatedEmojiEmoticon == null) {
+                        if (p4Var.f2.getReactionsWindow() != null) {
+                            p4Var.f2.getReactionsWindow().e();
+                        }
+                        p4Var.r0();
+                        break;
+                    } else {
+                        SendMessagesHelper.SendMessageParams of3 = SendMessagesHelper.SendMessageParams.of(findAnimatedEmojiEmoticon, p4Var.B1);
+                        of3.entities = new ArrayList<>();
+                        TLRPC.TL_messageEntityCustomEmoji tL_messageEntityCustomEmoji = new TLRPC.TL_messageEntityCustomEmoji();
+                        tL_messageEntityCustomEmoji.document_id = i1Var.g;
+                        tL_messageEntityCustomEmoji.offset = 0;
+                        tL_messageEntityCustomEmoji.length = findAnimatedEmojiEmoticon.length();
+                        of3.entities.add(tL_messageEntityCustomEmoji);
+                        of3.replyToStoryItem = n4Var.a;
+                        of3.payStars = l4.longValue();
+                        SendMessagesHelper.getInstance(p4Var.C2).sendMessage(of3);
+                    }
+                }
+                if (l4.longValue() <= 0) {
+                    qc r10 = new xc(p4Var.c1, p4Var.B0).r(f7, LocaleController.getString(R.string.ReactionSent), LocaleController.getString(R.string.ViewInChat), new androidx.fragment.app.d(l3Var, 10));
+                    r10.j = 5000;
+                    r10.j();
+                }
+                if (p4Var.f2.getReactionsWindow() != null) {
+                    p4Var.f2.getReactionsWindow().e();
+                }
+                p4Var.r0();
+                break;
+            case 1:
+                TL_stories.StoryItem storyItem = (TL_stories.StoryItem) obj3;
+                org.telegram.ui.ActionBar.g6 g6Var = (org.telegram.ui.ActionBar.g6) obj2;
+                p4 p4Var2 = ((g4) obj4).l;
+                q3 q3Var = p4Var2.c1;
+                if (((Boolean) obj).booleanValue()) {
+                    storyItem.pinned = z10;
+                    if (p4Var2.C1) {
+                        new xc(q3Var, g6Var).Q(z10 ? R.raw.contact_check : R.raw.chats_archived, 36, LocaleController.getString(z10 ? R.string.StoryPinnedToProfile : R.string.StoryArchivedFromProfile)).j();
+                        break;
+                    } else if (z10) {
+                        new xc(q3Var, g6Var).M(LocaleController.getString(R.string.StoryPinnedToPosts), LocaleController.getString(R.string.StoryPinnedToPostsDescription), R.raw.contact_check).j();
+                        break;
+                    } else {
+                        xcVar = new xc(q3Var, g6Var);
+                        i10 = R.raw.chats_archived;
+                        i11 = R.string.StoryUnpinnedFromPosts;
+                    }
+                } else {
+                    xcVar = new xc(q3Var, g6Var);
+                    i10 = R.raw.error;
+                    i11 = R.string.UnknownError;
+                }
+                org.telegram.messenger.v0.p(i11, xcVar, i10, 36);
+                break;
+            default:
+                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) obj4;
+                int i14 = ChatActivityEnterView.r5;
+                ((org.telegram.ui.ActionBar.c2) obj3).dismiss();
+                yh.o1 o1Var = new yh.o1(chatActivityEnterView.getContext(), chatActivityEnterView.Q, ((TLRPC.User) obj2).id, ug.q.c(ug.q.b(1, (List) obj)), null);
+                o1Var.V(z10);
+                o1Var.show();
+                break;
         }
-        storyItem.dialogId = q4Var.B1;
-        if (photoEntry.isVideo) {
-            if (videoEditedInfo != null) {
-                accountInstance4 = q4Var.getAccountInstance();
-                SendMessagesHelper.prepareSendingVideo(accountInstance4, photoEntry.path, videoEditedInfo, null, null, q4Var.B1, null, null, storyItem, null, photoEntry.entities, photoEntry.ttl, null, z10, i10, i11, false, photoEntry.hasSpoiler, photoEntry.caption, null, 0L, j10);
-            } else {
-                accountInstance3 = q4Var.getAccountInstance();
-                SendMessagesHelper.prepareSendingVideo(accountInstance3, photoEntry.path, null, null, null, q4Var.B1, null, null, storyItem, null, photoEntry.entities, photoEntry.ttl, null, z10, i10, i11, false, photoEntry.hasSpoiler, photoEntry.caption, null, 0L, j10);
-            }
-        } else if (photoEntry.imagePath != null) {
-            accountInstance2 = q4Var.getAccountInstance();
-            SendMessagesHelper.prepareSendingPhoto(accountInstance2, photoEntry.imagePath, photoEntry.thumbPath, null, q4Var.B1, null, null, storyItem, null, photoEntry.entities, photoEntry.stickers, null, photoEntry.ttl, null, videoEditedInfo, z10, i10, i11, false, photoEntry.caption, null, 0L, j10);
-        } else if (photoEntry.path != null) {
-            accountInstance = q4Var.getAccountInstance();
-            SendMessagesHelper.prepareSendingPhoto(accountInstance, photoEntry.path, photoEntry.thumbPath, null, q4Var.B1, null, null, storyItem, null, photoEntry.entities, photoEntry.stickers, null, photoEntry.ttl, null, videoEditedInfo, z10, i10, i11, false, photoEntry.caption, null, 0L, j10);
-        }
-        q4Var.k0(j10 <= 0);
     }
 
-    @Override // org.telegram.ui.Components.y50
-    public final /* synthetic */ boolean x() {
-        return false;
+    public /* synthetic */ k3(g4 g4Var, TL_stories.StoryItem storyItem, boolean z10, org.telegram.ui.ActionBar.g6 g6Var) {
+        this.c = g4Var;
+        this.d = storyItem;
+        this.b = z10;
+        this.e = g6Var;
+    }
+
+    public /* synthetic */ k3(ChatActivityEnterView chatActivityEnterView, org.telegram.ui.ActionBar.c2 c2Var, TLRPC.User user, boolean z10) {
+        this.c = chatActivityEnterView;
+        this.d = c2Var;
+        this.e = user;
+        this.b = z10;
     }
 }

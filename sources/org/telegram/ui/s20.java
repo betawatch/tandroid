@@ -1,24 +1,40 @@
 package org.telegram.ui;
 
-import android.view.ViewGroup;
+import android.graphics.Rect;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class s20 extends s4.k {
-    public final /* synthetic */ q50 F;
+public final class s20 extends s4.m0 {
+    public final /* synthetic */ u50 a;
 
-    public s20(q50 q50Var) {
-        this.F = q50Var;
+    public s20(u50 u50Var) {
+        this.a = u50Var;
     }
 
-    @Override // s4.k
-    public final void P(s4.b1 b1Var) {
-        ViewGroup viewGroup;
-        q50 q50Var = this.F;
-        q50Var.Q.invalidate();
-        q50Var.a2.invalidate();
-        viewGroup = ((org.telegram.ui.ActionBar.f3) q50Var).containerView;
-        viewGroup.invalidate();
-        q50.K0(q50Var);
+    @Override // s4.m0
+    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.y0 y0Var) {
+        recyclerView.getClass();
+        int R = RecyclerView.R(view);
+        if (R >= 0) {
+            rect.setEmpty();
+            o50 o50Var = this.a.P;
+            int i10 = o50Var.G;
+            if (R < i10 || R >= o50Var.H) {
+                return;
+            }
+            int i11 = R - i10;
+            int i12 = u50.F3 ? 6 : 2;
+            int i13 = i11 % i12;
+            if (i13 == 0) {
+                rect.right = AndroidUtilities.dp(2.0f);
+            } else if (i13 == i12 - 1) {
+                rect.left = AndroidUtilities.dp(2.0f);
+            } else {
+                rect.left = AndroidUtilities.dp(1.0f);
+            }
+        }
     }
 }

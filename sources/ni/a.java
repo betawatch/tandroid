@@ -4,11 +4,11 @@ import a1.g;
 import android.graphics.RectF;
 import android.os.Build;
 import android.view.View;
-import ih.j;
+import ih.k;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a {
     public final /* synthetic */ e a;
@@ -45,7 +45,7 @@ public final /* synthetic */ class a {
             RectF rectF5 = dVar.e;
             dh.d dVar2 = dVar.b;
             boolean z14 = z10;
-            if (j.c(view, eVar.i, rectF)) {
+            if (k.c(view, eVar.i, rectF)) {
                 if (rectF4.equals(rectF)) {
                     z11 = z14;
                 } else {
@@ -70,14 +70,14 @@ public final /* synthetic */ class a {
                     z11 = true;
                 }
                 rectF.set(rectF5);
-                rectF.inset(-dVar2.h, -dVar2.i);
+                rectF.inset(-dVar2.n, -dVar2.r);
                 if (!rectF2.equals(rectF)) {
                     rectF2.set(rectF);
                     dVar.g = true;
                     z11 = true;
                 }
                 View view2 = dVar.a;
-                boolean z15 = !rectF5.isEmpty() && view2.isAttachedToWindow() && rectF5.intersects(0.0f, 0.0f, (float) width, (float) height) && dVar2.l > 0 && view2.getVisibility() == 0 && view2.getAlpha() > 0.0f && view2.getScaleX() != 0.0f && view2.getScaleY() != 0.0f;
+                boolean z15 = !rectF5.isEmpty() && view2.isAttachedToWindow() && rectF5.intersects(0.0f, 0.0f, (float) width, (float) height) && dVar2.x > 0 && view2.getVisibility() == 0 && view2.getAlpha() > 0.0f && view2.getScaleX() != 0.0f && view2.getScaleY() != 0.0f;
                 boolean z16 = z15 && dVar2.j();
                 if (dVar.h != z15 || (z15 && !z16)) {
                     dVar.h = z15;
@@ -211,7 +211,7 @@ public final /* synthetic */ class a {
         if (i18 != 0) {
             c cVar = eVar.a;
             if (cVar != null) {
-                cVar.c(i18);
+                cVar.b(i18);
             }
             int size3 = arrayList.size();
             int i19 = 0;
@@ -226,7 +226,7 @@ public final /* synthetic */ class a {
                     if (Build.VERSION.SDK_INT < 29 || !(dVar5 instanceof dh.e)) {
                         dVar5.invalidateSelf();
                     } else {
-                        dVar5.w();
+                        dVar5.v();
                     }
                 }
             }

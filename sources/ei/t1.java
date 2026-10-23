@@ -14,13 +14,13 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.tl0;
+import org.telegram.ui.Components.lm0;
+import org.telegram.ui.Components.wl0;
 import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final class t1 extends im0 {
+public final class t1 extends lm0 {
     public String e;
     public TLRPC.User f;
     public String h;
@@ -39,14 +39,14 @@ public final class t1 extends im0 {
         v1 v1Var = t1Var.s;
         ArrayList arrayList = v1Var.h;
         arrayList.clear();
-        i10 = ((org.telegram.ui.ActionBar.f3) v1Var.r).currentAccount;
+        i10 = ((org.telegram.ui.ActionBar.h3) v1Var.r).currentAccount;
         arrayList.addAll(MediaDataController.getInstance(i10).getRecentGifs());
         if (z10) {
             t1Var.l();
         }
     }
 
-    @Override // org.telegram.ui.Components.im0
+    @Override // org.telegram.ui.Components.lm0
     public final boolean D(s4.b1 b1Var) {
         return b1Var.f == 2;
     }
@@ -88,14 +88,14 @@ public final class t1 extends im0 {
         this.r = true;
         v1Var.d.c(true);
         if (this.d >= 0) {
-            i16 = ((org.telegram.ui.ActionBar.f3) n2Var).currentAccount;
+            i16 = ((org.telegram.ui.ActionBar.h3) n2Var).currentAccount;
             ConnectionsManager.getInstance(i16).cancelRequest(this.d, true);
             this.d = -1;
         }
         if (this.f == null) {
-            i14 = ((org.telegram.ui.ActionBar.f3) n2Var).currentAccount;
+            i14 = ((org.telegram.ui.ActionBar.h3) n2Var).currentAccount;
             MessagesController messagesController = MessagesController.getInstance(i14);
-            i15 = ((org.telegram.ui.ActionBar.f3) n2Var).currentAccount;
+            i15 = ((org.telegram.ui.ActionBar.h3) n2Var).currentAccount;
             TLObject userOrChat = messagesController.getUserOrChat(MessagesController.getInstance(i15).gifSearchBot);
             if (userOrChat instanceof TLRPC.User) {
                 this.f = (TLRPC.User) userOrChat;
@@ -104,9 +104,9 @@ public final class t1 extends im0 {
         TLRPC.User user = this.f;
         if (user == null && !this.n) {
             TLRPC.TL_contacts_resolveUsername tL_contacts_resolveUsername = new TLRPC.TL_contacts_resolveUsername();
-            i12 = ((org.telegram.ui.ActionBar.f3) n2Var).currentAccount;
+            i12 = ((org.telegram.ui.ActionBar.h3) n2Var).currentAccount;
             tL_contacts_resolveUsername.username = MessagesController.getInstance(i12).gifSearchBot;
-            i13 = ((org.telegram.ui.ActionBar.f3) n2Var).currentAccount;
+            i13 = ((org.telegram.ui.ActionBar.h3) n2Var).currentAccount;
             this.d = ConnectionsManager.getInstance(i13).sendRequest(tL_contacts_resolveUsername, new ai.h(this, 9));
             return;
         }
@@ -114,7 +114,7 @@ public final class t1 extends im0 {
             return;
         }
         TLRPC.TL_messages_getInlineBotResults tL_messages_getInlineBotResults = new TLRPC.TL_messages_getInlineBotResults();
-        i10 = ((org.telegram.ui.ActionBar.f3) n2Var).currentAccount;
+        i10 = ((org.telegram.ui.ActionBar.h3) n2Var).currentAccount;
         tL_messages_getInlineBotResults.bot = MessagesController.getInstance(i10).getInputUser(this.f);
         String str = this.e;
         if (str == null) {
@@ -126,7 +126,7 @@ public final class t1 extends im0 {
         tL_messages_getInlineBotResults.offset = str2 != null ? str2 : "";
         tL_messages_getInlineBotResults.peer = new TLRPC.TL_inputPeerEmpty();
         String str3 = "gif_search_" + tL_messages_getInlineBotResults.query + "_" + tL_messages_getInlineBotResults.offset;
-        i11 = ((org.telegram.ui.ActionBar.f3) n2Var).currentAccount;
+        i11 = ((org.telegram.ui.ActionBar.h3) n2Var).currentAccount;
         MessagesStorage.getInstance(i11).getBotCache(str3, new ai.i4(this, isEmpty, tL_messages_getInlineBotResults, str3));
     }
 
@@ -136,7 +136,7 @@ public final class t1 extends im0 {
         h2 h2Var = v1Var.d;
         if (!TextUtils.equals(this.e, str)) {
             if (this.d != -1) {
-                i10 = ((org.telegram.ui.ActionBar.f3) v1Var.r).currentAccount;
+                i10 = ((org.telegram.ui.ActionBar.h3) v1Var.r).currentAccount;
                 ConnectionsManager.getInstance(i10).cancelRequest(this.d, true);
                 this.d = -1;
             }
@@ -197,52 +197,52 @@ public final class t1 extends im0 {
             return;
         }
         if (i11 == 2) {
-            org.telegram.ui.Cells.f2 f2Var = (org.telegram.ui.Cells.f2) view;
+            org.telegram.ui.Cells.e2 e2Var = (org.telegram.ui.Cells.e2) view;
             Object F = F(i10);
             if (!(F instanceof TLRPC.Document)) {
                 if (F instanceof TLRPC.BotInlineResult) {
-                    f2Var.e((TLRPC.BotInlineResult) F, this.f, true, false, false, true);
+                    e2Var.e((TLRPC.BotInlineResult) F, this.f, true, false, false, true);
                 }
             } else {
                 TLRPC.Document document = (TLRPC.Document) F;
-                f2Var.getClass();
-                f2Var.d(0, document, "gif" + document);
+                e2Var.getClass();
+                e2Var.d(0, document, "gif" + document);
             }
         }
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r1v3, types: [android.view.View, org.telegram.ui.Cells.n8] */
+    /* JADX WARN: Type inference failed for: r1v3, types: [android.view.View, org.telegram.ui.Cells.o8] */
     /* JADX WARN: Type inference failed for: r9v10, types: [android.view.View] */
     @Override // s4.g0
     public final s4.b1 x(ViewGroup viewGroup, int i10) {
-        org.telegram.ui.ActionBar.d6 d6Var;
-        org.telegram.ui.Cells.f2 f2Var;
+        org.telegram.ui.ActionBar.g6 g6Var;
+        org.telegram.ui.Cells.e2 e2Var;
         v1 v1Var = this.s;
         if (i10 == 0) {
-            f2Var = new View(v1Var.getContext());
+            e2Var = new View(v1Var.getContext());
         } else if (i10 == 1) {
             Context context = v1Var.getContext();
-            d6Var = ((org.telegram.ui.ActionBar.f3) v1Var.r).resourcesProvider;
-            ?? n8Var = new org.telegram.ui.Cells.n8(context, false, false, d6Var, false);
-            n8Var.b(0, LocaleController.getString(R.string.FeaturedGifs));
+            g6Var = ((org.telegram.ui.ActionBar.h3) v1Var.r).resourcesProvider;
+            ?? o8Var = new org.telegram.ui.Cells.o8(context, false, false, g6Var, false);
+            o8Var.a(0, LocaleController.getString(R.string.FeaturedGifs));
             s4.o0 o0Var = new s4.o0(-1, -2);
             ((ViewGroup.MarginLayoutParams) o0Var).topMargin = AndroidUtilities.dp(2.5f);
             ((ViewGroup.MarginLayoutParams) o0Var).bottomMargin = AndroidUtilities.dp(5.5f);
-            n8Var.setLayoutParams(o0Var);
-            f2Var = n8Var;
+            o8Var.setLayoutParams(o0Var);
+            e2Var = o8Var;
         } else {
-            org.telegram.ui.Cells.f2 f2Var2 = new org.telegram.ui.Cells.f2(v1Var.getContext());
-            f2Var2.getPhotoImage().setLayerNum(7);
-            if (f2Var2.c0 == null) {
-                yc ycVar = new yc(f2Var2, 1.0f, 3.0f);
+            org.telegram.ui.Cells.e2 e2Var2 = new org.telegram.ui.Cells.e2(v1Var.getContext());
+            e2Var2.getPhotoImage().setLayerNum(7);
+            if (e2Var2.c0 == null) {
+                yc ycVar = new yc(e2Var2, 1.0f, 3.0f);
                 ycVar.e = 120L;
-                f2Var2.c0 = ycVar;
+                e2Var2.c0 = ycVar;
             }
-            f2Var2.setIsKeyboard(true);
-            f2Var2.setCanPreviewGif(true);
-            f2Var = f2Var2;
+            e2Var2.setIsKeyboard(true);
+            e2Var2.setCanPreviewGif(true);
+            e2Var = e2Var2;
         }
-        return new tl0(f2Var);
+        return new wl0(e2Var);
     }
 }

@@ -3,13 +3,14 @@ package kh;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.view.View;
+import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.y5;
+import org.telegram.ui.ActionBar.b6;
+import org.telegram.ui.ActionBar.k6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
-/* loaded from: classes3.dex */
-public final class f extends View implements y5 {
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+/* loaded from: classes4.dex */
+public final class f extends View implements b6 {
     public bh.c a;
     public bh.c b;
     public int c;
@@ -26,6 +27,11 @@ public final class f extends View implements y5 {
         this.b.setBounds(0, getMeasuredHeight() - this.d, getMeasuredWidth(), getMeasuredHeight());
     }
 
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void addColorKeys(HashSet hashSet) {
+        hashSet.add(Integer.valueOf(this.f));
+    }
+
     public final void b(bh.b bVar, eh.e eVar) {
         dh.d c10 = bVar.c(this, null, false);
         c10.o(eVar);
@@ -37,21 +43,6 @@ public final class f extends View implements y5 {
         bh.c cVar2 = new bh.c(c11);
         this.b = cVar2;
         cVar2.b(AndroidUtilities.dp(30.0f), true);
-    }
-
-    @Override // org.telegram.ui.ActionBar.y5
-    public final void d() {
-        int i10;
-        gh.c cVar = this.e;
-        if (cVar == null || (i10 = this.f) == -1) {
-            return;
-        }
-        cVar.a(h6.x0(null, i10, false));
-        invalidate();
-    }
-
-    public /* bridge */ /* synthetic */ int[] getColorKeys() {
-        return null;
     }
 
     @Override // android.view.View
@@ -77,8 +68,8 @@ public final class f extends View implements y5 {
 
     public void setFadeTopAlpha(int i10) {
         bh.c cVar = this.a;
-        if (cVar.q != i10) {
-            cVar.q = i10;
+        if (cVar.G != i10) {
+            cVar.G = i10;
             invalidate();
         }
     }
@@ -100,8 +91,8 @@ public final class f extends View implements y5 {
     }
 
     public void setIgnoreFastWay(boolean z10) {
-        this.a.p = z10;
-        this.b.p = z10;
+        this.a.F = z10;
+        this.b.F = z10;
     }
 
     public void setup(bh.b bVar) {
@@ -113,8 +104,19 @@ public final class f extends View implements y5 {
         if (this.e == null) {
             gh.c cVar = new gh.c();
             this.e = cVar;
-            cVar.a(h6.x0(null, i10, false));
+            cVar.a(k6.x0(null, i10, false));
             setup(new bh.b(this.e));
         }
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void updateColors() {
+        int i10;
+        gh.c cVar = this.e;
+        if (cVar == null || (i10 = this.f) == -1) {
+            return;
+        }
+        cVar.a(k6.x0(null, i10, false));
+        invalidate();
     }
 }

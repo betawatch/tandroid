@@ -10,10 +10,10 @@ import android.text.style.ForegroundColorSpan;
 import android.text.style.StrikethroughSpan;
 import android.text.style.StyleSpan;
 import android.text.style.UnderlineSpan;
+import com.google.android.gms.internal.play_billing.k3;
 import e2.j;
 import e2.m0;
 import e2.x;
-import i2.e;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
@@ -24,13 +24,14 @@ import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.telegram.tgnet.TLObject;
+import si.o0;
 import v7.b8;
 import v7.s6;
 import v7.u6;
 import z3.l;
 import z3.m;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class a implements m {
     public static final Pattern h = Pattern.compile("(?:(\\d+):)?(\\d+):(\\d+)[:.](\\d+)");
@@ -90,7 +91,7 @@ public final class a implements m {
 
     @Override // z3.m
     public final /* synthetic */ z3.d a(int i10, int i11, byte[] bArr) {
-        return r4.c.a(this, bArr, i11);
+        return o0.a(this, bArr, i11);
     }
 
     @Override // z3.m
@@ -286,10 +287,10 @@ public final class a implements m {
                                         int length2 = split3.length;
                                         String str = m0.a;
                                         Locale locale = Locale.US;
-                                        StringBuilder m10 = e.m("Skipping malformed 'Style:' line (expected ", i25, " values, found ", length2, "): '");
-                                        m10.append(n12);
-                                        m10.append("'");
-                                        e2.a.l("SsaStyle", m10.toString());
+                                        StringBuilder k10 = k3.k("Skipping malformed 'Style:' line (expected ", i25, " values, found ", length2, "): '");
+                                        k10.append(n12);
+                                        k10.append("'");
+                                        e2.a.l("SsaStyle", k10.toString());
                                     } else {
                                         try {
                                             String trim = split3[bVar.a].trim();

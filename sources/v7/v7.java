@@ -9,7 +9,7 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import org.telegram.messenger.ApplicationLoader;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public abstract class v7 {
     public static NinePatchDrawable a(Bitmap bitmap, Rect rect, int i10, int i11) {
@@ -22,11 +22,11 @@ public abstract class v7 {
         if (i10 >= 0 && i10 < bitmap.getWidth() && i11 >= 0 && i11 < bitmap.getHeight()) {
             return new NinePatchDrawable(ApplicationLoader.applicationContext.getResources(), bitmap, c(i10, i10 + 1, i11, i11 + 1, rect.left, rect.top, rect.right, rect.bottom, bitmap.getPixel(i10, i11)).array(), rect, null);
         }
-        StringBuilder m10 = i2.e.m("center pixel is outside bitmap: (", i10, ", ", i11, ") for ");
-        m10.append(bitmap.getWidth());
-        m10.append("x");
-        m10.append(bitmap.getHeight());
-        throw new IllegalArgumentException(m10.toString());
+        StringBuilder k10 = com.google.android.gms.internal.play_billing.k3.k("center pixel is outside bitmap: (", i10, ", ", i11, ") for ");
+        k10.append(bitmap.getWidth());
+        k10.append("x");
+        k10.append(bitmap.getHeight());
+        throw new IllegalArgumentException(k10.toString());
     }
 
     /* JADX WARN: Removed duplicated region for block: B:25:0x0102  */

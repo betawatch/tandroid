@@ -5,29 +5,29 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
-import ci.p4;
+import ci.o4;
 import e2.l0;
 import e2.z;
-import i2.i0;
+import i2.h0;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.atomic.AtomicLong;
-import org.telegram.ui.Components.cy0;
-import org.telegram.ui.eo;
+import org.telegram.ui.Components.fy0;
+import org.telegram.ui.go;
 import ri.h;
 import ri.i;
 import ri.o;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class o {
     public static final pb.a H = new pb.a(22);
     public static final AtomicLong I = new AtomicLong(1);
     public volatile i A;
-    public i0 B;
+    public h0 B;
     public byte[] C;
     public l D;
     public final d E;
@@ -62,21 +62,21 @@ public final class o {
 
     /* JADX WARN: Type inference failed for: r4v3, types: [ri.d] */
     /* JADX WARN: Type inference failed for: r4v4, types: [ri.d] */
-    public o(p4 p4Var) {
+    public o(o4 o4Var) {
         p();
-        Context context = (Context) p4Var.b;
+        Context context = (Context) o4Var.b;
         Context applicationContext = context.getApplicationContext();
         context = applicationContext != null ? applicationContext : context;
         this.a = context;
-        File file = (File) p4Var.c;
+        File file = (File) o4Var.c;
         this.b = file == null ? context.getCacheDir() : file;
         this.c = 700L;
-        h hVar = (h) p4Var.d;
+        h hVar = (h) o4Var.d;
         this.d = hVar;
-        this.e = p4Var.a;
-        this.f = (f) p4Var.e;
-        this.g = (k) p4Var.f;
-        b bVar = new b((g) p4Var.g);
+        this.e = o4Var.a;
+        this.f = (f) o4Var.e;
+        this.g = (k) o4Var.f;
+        b bVar = new b((g) o4Var.g);
         this.h = bVar;
         final int i10 = 0;
         this.E = new Runnable(this) { // from class: ri.d
@@ -88,7 +88,7 @@ public final class o {
 
             @Override // java.lang.Runnable
             public final void run() {
-                i0 i0Var;
+                h0 h0Var;
                 switch (i10) {
                     case 0:
                         o oVar = this.b;
@@ -102,8 +102,8 @@ public final class o {
                         break;
                     default:
                         o oVar2 = this.b;
-                        if (oVar2.n == m.e && (i0Var = oVar2.B) != null && oVar2.v) {
-                            long M0 = i0Var.M0();
+                        if (oVar2.n == m.e && (h0Var = oVar2.B) != null && oVar2.v) {
+                            long M0 = h0Var.M0();
                             long j10 = oVar2.s;
                             if (M0 < j10 || M0 >= oVar2.t) {
                                 oVar2.B.Z0(5, j10);
@@ -127,7 +127,7 @@ public final class o {
 
             @Override // java.lang.Runnable
             public final void run() {
-                i0 i0Var;
+                h0 h0Var;
                 switch (i11) {
                     case 0:
                         o oVar = this.b;
@@ -141,8 +141,8 @@ public final class o {
                         break;
                     default:
                         o oVar2 = this.b;
-                        if (oVar2.n == m.e && (i0Var = oVar2.B) != null && oVar2.v) {
-                            long M0 = i0Var.M0();
+                        if (oVar2.n == m.e && (h0Var = oVar2.B) != null && oVar2.v) {
+                            long M0 = h0Var.M0();
                             long j10 = oVar2.s;
                             if (M0 < j10 || M0 >= oVar2.t) {
                                 oVar2.B.Z0(5, j10);
@@ -232,7 +232,7 @@ public final class o {
         i iVar = new i(j10, f7);
         synchronized (this.l) {
             this.A = iVar;
-            this.k.execute(new cy0(this, iVar, f7, 17));
+            this.k.execute(new fy0(this, iVar, f7, 17));
         }
         b bVar = this.h;
         StringBuilder t10 = a1.g.t(j10, "output generation started: id=", ", file=");
@@ -268,7 +268,7 @@ public final class o {
         r(mVar2);
         i iVar = this.A;
         if (iVar != null) {
-            this.k.execute(new cy0(this, iVar, exc, 18));
+            this.k.execute(new fy0(this, iVar, exc, 18));
         }
         this.f.onError(exc);
         org.telegram.utils.recorder.audio.d dVar = this.o;
@@ -333,7 +333,7 @@ public final class o {
                             }
                             oVar2.h.b("final trim completed: source=" + iVar2.b.getName() + ", output=" + file.getName() + ", trim=" + j12 + ".." + j13 + ", bytes=" + file.length() + ", elapsedMs=" + (SystemClock.elapsedRealtime() - elapsedRealtime));
                             oVar2.a(iVar3, file.length());
-                            handler.post(new eo(oVar2, j13, j12, 2));
+                            handler.post(new go(oVar2, j13, j12, 2));
                         } catch (Throwable th2) {
                             th = th2;
                             oVar = absolutePath2;
@@ -381,7 +381,7 @@ public final class o {
             i iVar = this.A;
             if (iVar != null && iVar.d && !iVar.e) {
                 iVar.d = false;
-                this.k.execute(new cy0(this, iVar, jVar, 19));
+                this.k.execute(new fy0(this, iVar, jVar, 19));
                 this.h.b("output generation invalidated: id=" + iVar.a + ", reason=" + jVar);
             }
         }
@@ -431,9 +431,9 @@ public final class o {
     public final void o() {
         this.i.removeCallbacks(this.F);
         this.v = false;
-        i0 i0Var = this.B;
-        if (i0Var != null) {
-            i0Var.C(this.G);
+        h0 h0Var = this.B;
+        if (h0Var != null) {
+            h0Var.C(this.G);
             this.B.X0();
             this.B = null;
         }

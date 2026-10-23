@@ -7,9 +7,10 @@ import androidx.media3.decoder.VideoDecoderOutputBuffer;
 import b2.v0;
 import b2.w;
 import e2.m0;
-import i2.e;
+import h2.e;
+import i2.o1;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class ExperimentalFfmpegVideoRenderer extends a3.a {
     public static final int r0 = ((m0.g(720, 64) * m0.g(1280, 64)) * 6144) / 2;
@@ -32,19 +33,19 @@ public final class ExperimentalFfmpegVideoRenderer extends a3.a {
         String str = wVar.s;
         String str2 = FfmpegLibrary.a;
         if (!v0.m(str)) {
-            return e.c(0, 0, 0, 0);
+            return o1.c(0, 0, 0, 0);
         }
         if (!FfmpegLibrary.d(str)) {
-            return e.c(1, 0, 0, 0);
+            return o1.c(1, 0, 0, 0);
         }
         if (wVar.T != 0) {
-            return e.c(2, 0, 0, 0);
+            return o1.c(2, 0, 0, 0);
         }
         return 140;
     }
 
     @Override // a3.a
-    public final h2.e F(w wVar) {
+    public final e F(w wVar) {
         Trace.beginSection("createFfmpegVideoDecoder");
         int i10 = wVar.t;
         if (i10 == -1) {

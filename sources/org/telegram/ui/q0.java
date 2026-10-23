@@ -1,51 +1,28 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.text.TextPaint;
-import android.text.style.ClickableSpan;
-import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class q0 extends ClickableSpan {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+public final class q0 extends w7.j0 {
+    public final /* synthetic */ k4 a;
 
-    public /* synthetic */ q0(Object obj, Object obj2, Object obj3, int i10) {
-        this.a = i10;
-        this.b = obj;
-        this.c = obj2;
-        this.d = obj3;
+    public q0(k4 k4Var) {
+        this.a = k4Var;
     }
 
-    @Override // android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                ((b70) this.b).c((j4) this.c, (org.telegram.ui.Components.j11) this.d);
-                break;
-            default:
-                org.telegram.ui.ActionBar.b2 b2Var = ((org.telegram.ui.ActionBar.b2[]) this.b)[0];
-                if (b2Var != null) {
-                    b2Var.dismiss();
-                }
-                pf.d.r((Context) this.c, "https://t.me/" + ((String) this.d));
-                break;
+    @Override // w7.j0
+    public final void a(boolean z10) {
+        if (z10) {
+            this.a.h0.h(false);
         }
     }
 
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public void updateDrawState(TextPaint textPaint) {
-        switch (this.a) {
-            case 1:
-                super.updateDrawState(textPaint);
-                textPaint.setUnderlineText(false);
-                break;
-            default:
-                super.updateDrawState(textPaint);
-                break;
+    @Override // w7.j0
+    public final void b() {
+        if (AndroidUtilities.shouldShowClipboardToast()) {
+            org.telegram.messenger.sl.p(R.string.TextCopied, new org.telegram.ui.Components.xc(this.a.g0, null));
         }
     }
 }

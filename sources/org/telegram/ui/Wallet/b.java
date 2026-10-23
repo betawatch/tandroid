@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
+import android.graphics.drawable.ShapeDrawable;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.view.View;
@@ -14,28 +15,28 @@ import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.c71;
-import org.telegram.ui.Components.g61;
-import org.telegram.ui.Components.h61;
-import org.telegram.ui.Components.jm0;
-import org.telegram.ui.Components.u61;
-import org.telegram.ui.Components.zq;
+import org.telegram.ui.Components.b71;
+import org.telegram.ui.Components.j71;
+import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.m61;
+import org.telegram.ui.Components.mm0;
+import org.telegram.ui.Components.yq;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final class b extends g61 {
+public final class b extends l61 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        g61.setup(new b());
+        l61.setup(new b());
     }
 
-    @Override // org.telegram.ui.Components.g61
-    public final void bindView(View view, h61 h61Var, boolean z10, u61 u61Var, c71 c71Var) {
+    @Override // org.telegram.ui.Components.l61
+    public final void bindView(View view, m61 m61Var, boolean z10, b71 b71Var, j71 j71Var) {
         c cVar = (c) view;
         boolean z11 = false;
-        cVar.setGrid(h61Var.u == 1);
-        TL_wallet.nftItem nftitem = (TL_wallet.nftItem) h61Var.G;
+        cVar.setGrid(m61Var.u == 1);
+        TL_wallet.nftItem nftitem = (TL_wallet.nftItem) m61Var.G;
         TextView textView = cVar.d;
         TextView textView2 = cVar.c;
         org.telegram.ui.Components.w9 w9Var = cVar.b;
@@ -57,52 +58,56 @@ public final class b extends g61 {
             textView.setText(LocaleController.formatSpannable(R.string.WalletCollectibleModelBackdrop, b10, b11));
         }
         ImageLocation c10 = c.c(nftitem, !cVar.f);
-        int w02 = org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.y6, cVar.a);
+        int w02 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.y6, cVar.a);
         Drawable mutate = cVar.getContext().getResources().getDrawable(R.drawable.wallet_nft_placeholder).mutate();
         mutate.setColorFilter(new PorterDuffColorFilter(w02, PorterDuff.Mode.SRC_IN));
-        zq zqVar = new zq(org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(cVar.f ? 11.0f : 8.0f), org.telegram.ui.ActionBar.h6.m1(0.1f, w02)), mutate);
+        ShapeDrawable c02 = org.telegram.ui.ActionBar.k6.c0(AndroidUtilities.dp(cVar.f ? 11.0f : 8.0f), org.telegram.ui.ActionBar.k6.o1(0.1f, w02));
+        yq yqVar = new yq(c02, mutate);
+        cVar.h = mutate;
+        cVar.n = c02;
+        cVar.r = w02;
         if (c10 != null && cVar.f) {
-            w9Var.a.setImage(c10, "160_160", (nftitem.image_small == null || nftitem.image == null) ? null : c.c(nftitem, true), "100_100", zqVar, 0L, null, nftitem, 0);
+            w9Var.a.setImage(c10, "160_160", (nftitem.image_small == null || nftitem.image == null) ? null : c.c(nftitem, true), "100_100", yqVar, 0L, null, nftitem, 0);
             w9Var.d();
         } else if (c10 != null) {
-            w9Var.h(c10, "46_46", zqVar, nftitem);
+            w9Var.h(c10, "46_46", yqVar, nftitem);
         } else {
-            w9Var.setImageDrawable(zqVar);
+            w9Var.setImageDrawable(yqVar);
         }
         if (z10 && !cVar.f) {
             z11 = true;
         }
         cVar.e = z11;
-        cVar.d();
+        cVar.updateColors();
         cVar.invalidate();
     }
 
-    @Override // org.telegram.ui.Components.g61
-    public final boolean contentsEquals(h61 h61Var, h61 h61Var2) {
-        if (!equals(h61Var, h61Var2)) {
+    @Override // org.telegram.ui.Components.l61
+    public final boolean contentsEquals(m61 m61Var, m61 m61Var2) {
+        if (!equals(m61Var, m61Var2)) {
             return false;
         }
-        TL_wallet.nftItem nftitem = (TL_wallet.nftItem) h61Var.G;
-        TL_wallet.nftItem nftitem2 = (TL_wallet.nftItem) h61Var2.G;
+        TL_wallet.nftItem nftitem = (TL_wallet.nftItem) m61Var.G;
+        TL_wallet.nftItem nftitem2 = (TL_wallet.nftItem) m61Var2.G;
         if (nftitem != nftitem2) {
             return nftitem != null && nftitem2 != null && Objects.equals(nftitem.name, nftitem2.name) && Objects.equals(nftitem.image, nftitem2.image) && Objects.equals(nftitem.image_small, nftitem2.image_small) && Objects.equals(nftitem.description, nftitem2.description) && Objects.equals(nftitem.attributes, nftitem2.attributes) && Objects.equals(nftitem.extra, nftitem2.extra);
         }
         return true;
     }
 
-    @Override // org.telegram.ui.Components.g61
-    public final View createView(Context context, jm0 jm0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
-        return new c(context, d6Var);
+    @Override // org.telegram.ui.Components.l61
+    public final View createView(Context context, mm0 mm0Var, int i10, int i11, org.telegram.ui.ActionBar.g6 g6Var) {
+        return new c(context, g6Var);
     }
 
-    @Override // org.telegram.ui.Components.g61
-    public final boolean equals(h61 h61Var, h61 h61Var2) {
-        TL_wallet.nftItem nftitem = (TL_wallet.nftItem) h61Var.G;
-        TL_wallet.nftItem nftitem2 = (TL_wallet.nftItem) h61Var2.G;
+    @Override // org.telegram.ui.Components.l61
+    public final boolean equals(m61 m61Var, m61 m61Var2) {
+        TL_wallet.nftItem nftitem = (TL_wallet.nftItem) m61Var.G;
+        TL_wallet.nftItem nftitem2 = (TL_wallet.nftItem) m61Var2.G;
         return (nftitem == null || nftitem2 == null) ? nftitem == nftitem2 : TextUtils.equals(nftitem.address, nftitem2.address);
     }
 
-    @Override // org.telegram.ui.Components.g61
+    @Override // org.telegram.ui.Components.l61
     public final boolean isClickable() {
         return true;
     }

@@ -3,12 +3,12 @@ package org.telegram.messenger;
 import android.content.SharedPreferences;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.dl0;
+import org.telegram.ui.Components.gl0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.NotificationsSettingsActivity;
-import org.telegram.ui.qn;
+import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class yi implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -34,22 +34,22 @@ public final /* synthetic */ class yi implements Runnable {
                 ((SendMessagesHelper) this.e).lambda$performSendMessageRequest$101((TLRPC.Message) this.f, this.b, this.c, this.d);
                 break;
             case 1:
-                qn qnVar = (qn) this.e;
-                dl0 dl0Var = (dl0) this.f;
-                org.telegram.ui.ActionBar.m1 m1Var = qnVar.Q8;
-                if (m1Var != null && qnVar.fragmentView != null && !m1Var.isShowing() && AndroidUtilities.isActivityRunning(qnVar.getParentActivity())) {
-                    qnVar.Q8.showAtLocation(qnVar.x0, 51, this.b, this.c);
-                    if (this.d && dl0Var != null) {
-                        dl0Var.r(true);
+                sn snVar = (sn) this.e;
+                gl0 gl0Var = (gl0) this.f;
+                org.telegram.ui.ActionBar.m1 m1Var = snVar.c9;
+                if (m1Var != null && snVar.fragmentView != null && !m1Var.isShowing() && AndroidUtilities.isActivityRunning(snVar.getParentActivity())) {
+                    snVar.c9.showAtLocation(snVar.x0, 51, this.b, this.c);
+                    if (this.d && gl0Var != null) {
+                        gl0Var.r(true);
                     }
-                    AndroidUtilities.runOnUIThread(new org.telegram.ui.kf(qnVar, 22), 420L);
+                    AndroidUtilities.runOnUIThread(new org.telegram.ui.kf(snVar, 23), 420L);
                     break;
                 }
                 break;
             case 2:
                 org.telegram.ui.Components.ac acVar = (org.telegram.ui.Components.ac) this.e;
                 ah.i1 i1Var = (ah.i1) this.f;
-                org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
+                org.telegram.ui.ActionBar.o2 R = LaunchActivity.R();
                 long j10 = i1Var.g;
                 if (j10 == 0) {
                     TLRPC.TL_availableReaction tL_availableReaction = MediaDataController.getInstance(UserConfig.selectedAccount).getReactionsMap().get(i1Var.f);
@@ -99,12 +99,12 @@ public final /* synthetic */ class yi implements Runnable {
         }
     }
 
-    public /* synthetic */ yi(qn qnVar, int i10, int i11, boolean z10, dl0 dl0Var) {
-        this.e = qnVar;
+    public /* synthetic */ yi(sn snVar, int i10, int i11, boolean z10, gl0 gl0Var) {
+        this.e = snVar;
         this.b = i10;
         this.c = i11;
         this.d = z10;
-        this.f = dl0Var;
+        this.f = gl0Var;
     }
 
     public /* synthetic */ yi(org.telegram.ui.Components.ac acVar, ah.i1 i1Var, boolean z10, int i10, int i11) {

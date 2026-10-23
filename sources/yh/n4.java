@@ -1,8 +1,8 @@
 package yh;
 
-import ai.dd;
+import ai.ed;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class n4 implements Runnable {
     public final /* synthetic */ int a;
@@ -17,19 +17,19 @@ public final /* synthetic */ class n4 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.Z(false);
+                this.b.Y(false);
                 break;
             case 1:
-                this.b.Z(true);
+                this.b.Y(true);
                 break;
             case 2:
-                x4.V(this.b);
+                x4.U(this.b);
                 break;
             case 3:
-                v.V(r0.getContext(), r0.c0, this.b.resourcesProvider);
+                v.U(r0.getContext(), r0.c0, this.b.resourcesProvider);
                 break;
             case 4:
-                new dd(r0.getContext(), this.b.resourcesProvider).show();
+                new ed(r0.getContext(), this.b.resourcesProvider).show();
                 break;
             default:
                 this.b.dismiss();

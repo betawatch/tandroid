@@ -1,308 +1,474 @@
 package org.telegram.ui.Cells;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.text.Layout;
+import android.text.SpannableStringBuilder;
+import android.text.StaticLayout;
 import android.text.TextUtils;
-import android.util.Property;
+import android.view.MotionEvent;
 import android.view.View;
-import android.view.animation.OvershootInterpolator;
-import android.widget.Button;
-import android.widget.Checkable;
+import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.FrameLayout;
-import android.widget.TextView;
-import java.util.ArrayList;
+import android.widget.ImageView;
+import java.io.File;
+import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DocumentObject;
+import org.telegram.messenger.DownloadController;
 import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.ImageLoader;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
-import org.telegram.messenger.SvgHelper;
-import org.telegram.messenger.nk;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ui0;
+import org.telegram.ui.Components.RadialProgress2;
+import org.telegram.ui.Components.lt;
+import org.telegram.ui.i10;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class w extends FrameLayout implements Checkable {
-    public final boolean a;
-    public final TextView b;
-    public final TextView c;
-    public final org.telegram.ui.Components.w9 d;
-    public final ui0 e;
-    public final ui0 f;
-    public boolean h;
-    public Button n;
-    public AnimatorSet r;
-    public TLRPC.StickerSetCovered s;
-    public v v;
-    public boolean w;
+public final class w extends FrameLayout implements DownloadController.FileDownloadProgressListener, org.telegram.ui.ActionBar.b6 {
+    public static final /* synthetic */ int L = 0;
+    public final int E;
+    public int F;
+    public int G;
+    public final RadialProgress2 H;
+    public final int I;
+    public final SpannableStringBuilder J;
+    public final org.telegram.ui.ActionBar.g6 K;
+    public boolean a;
+    public int b;
+    public int c;
+    public int d;
+    public final int e;
+    public org.telegram.ui.Components.w5 f;
+    public StaticLayout h;
+    public final int n;
+    public org.telegram.ui.Components.w5 r;
+    public StaticLayout s;
+    public final ImageView v;
+    public MessageObject w;
+    public boolean x;
+    public final int y;
 
-    public w(Context context, boolean z10) {
+    public w(Context context, int i10, org.telegram.ui.ActionBar.g6 g6Var) {
         super(context);
-        this.a = z10;
-        if (z10) {
-            ui0 ui0Var = new ui0(context);
-            this.f = ui0Var;
-            this.n = ui0Var;
-            ui0Var.setText(LocaleController.getString(R.string.Add));
-            ui0Var.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Sh, false));
-            ui0Var.setProgressColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Nh, false));
-            int x02 = org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Oh, false);
-            org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Qh, false);
-            ui0Var.setBackground(org.telegram.ui.ActionBar.x5.e(new float[]{14.0f}, x02));
-            addView(ui0Var, w7.z5.i(-2.0f, 28.0f, 8388661, 0.0f, 18.0f, 14.0f, 0.0f));
-            int dp = AndroidUtilities.dp(60.0f);
-            ui0 ui0Var2 = new ui0(context);
-            this.e = ui0Var2;
-            ui0Var2.setAllCaps(false);
-            ui0Var2.setMinWidth(dp);
-            ui0Var2.setMinimumWidth(dp);
-            ui0Var2.setTextSize(1, 14.0f);
-            int i10 = org.telegram.ui.ActionBar.h6.Rh;
-            ui0Var2.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i10, false));
-            ui0Var2.setText(LocaleController.getString(R.string.StickersRemove));
-            ui0Var2.setBackground(org.telegram.ui.ActionBar.h6.H0(AndroidUtilities.dp(3.0f), org.telegram.ui.ActionBar.h6.x0(null, i10, false)));
-            ui0Var2.setTypeface(AndroidUtilities.bold());
-            w7.f6.a(ui0Var2, 8.0f, 0.0f, 8.0f, 0.0f);
-            ui0Var2.setOutlineProvider(null);
-            addView(ui0Var2, w7.z5.i(-2.0f, 28.0f, 8388661, 0.0f, 18.0f, 14.0f, 0.0f));
-            a aVar = new a(this, 2);
-            ui0Var.setOnClickListener(aVar);
-            ui0Var2.setOnClickListener(aVar);
-            c(false);
-        } else {
-            this.f = null;
-            this.e = null;
+        this.e = AndroidUtilities.dp(9.0f);
+        this.n = AndroidUtilities.dp(29.0f);
+        int i11 = UserConfig.selectedAccount;
+        this.y = i11;
+        setWillNotDraw(false);
+        this.K = g6Var;
+        this.I = i10;
+        ImageView imageView = new ImageView(context);
+        this.v = imageView;
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        imageView.setImageResource(R.drawable.ic_ab_other);
+        org.telegram.ui.ActionBar.r6.t(imageView, org.telegram.ui.ActionBar.k6.m6, g6Var, PorterDuff.Mode.SRC_IN);
+        int i12 = org.telegram.ui.ActionBar.k6.i6;
+        y g02 = org.telegram.ui.ActionBar.k6.g0(org.telegram.ui.ActionBar.k6.w0(i12, g6Var), 1, -1);
+        org.telegram.ui.ActionBar.n6 O = org.telegram.ui.ActionBar.r6.O(i12);
+        imageView.setBackground(g02);
+        org.telegram.ui.ActionBar.r6.k(imageView, g02, null, O, g6Var);
+        addView(imageView, w7.z5.d(42, 42.0f, (LocaleController.isRTL ? 3 : 5) | 16, 5.0f, 0.0f, 5.0f, 0.0f));
+        imageView.setOnClickListener(new ah.f(8));
+        RadialProgress2 radialProgress2 = new RadialProgress2(this, g6Var);
+        this.H = radialProgress2;
+        radialProgress2.g(org.telegram.ui.ActionBar.k6.ie, org.telegram.ui.ActionBar.k6.je, org.telegram.ui.ActionBar.k6.uc, org.telegram.ui.ActionBar.k6.vc);
+        this.E = DownloadController.getInstance(i11).generateObserverTag();
+        setFocusable(true);
+        if (i10 == 1) {
+            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(".");
+            this.J = spannableStringBuilder;
+            spannableStringBuilder.setSpan(new lt(), 0, 1, 0);
         }
-        TextView textView = new TextView(context);
-        this.b = textView;
-        nk.u(textView, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false), 1, 16.0f, 1);
-        textView.setMaxLines(1);
-        textView.setSingleLine(true);
-        textView.setEllipsize(TextUtils.TruncateAt.END);
-        textView.setGravity(w7.z5.y());
-        addView(textView, w7.z5.i(-2.0f, -2.0f, 8388611, 71.0f, 10.0f, 21.0f, 0.0f));
-        TextView textView2 = new TextView(context);
-        this.c = textView2;
-        nk.u(textView2, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.z6, false), 1, 13.0f, 1);
-        textView2.setMaxLines(1);
-        textView2.setSingleLine(true);
-        textView2.setGravity(w7.z5.y());
-        addView(textView2, w7.z5.i(-2.0f, -2.0f, 8388611, 71.0f, 35.0f, 21.0f, 0.0f));
-        org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
-        this.d = w9Var;
-        w9Var.setAspectFit(true);
-        w9Var.setLayerNum(1);
-        addView(w9Var, w7.z5.i(48.0f, 48.0f, 8388659, 12.0f, 8.0f, 0.0f, 0.0f));
     }
 
-    public final void a(boolean z10, boolean z11, boolean z12) {
-        v vVar;
-        int i10;
-        if (!this.a || this.w == z10) {
-            return;
+    private int getIconForCurrentState() {
+        int i10 = this.F;
+        if (i10 == 1) {
+            return 1;
         }
-        this.w = z10;
-        c(z11);
-        if (!z12 || (vVar = this.v) == null) {
-            return;
+        if (i10 == 2) {
+            return 2;
         }
-        m4.w0 w0Var = (m4.w0) vVar;
-        org.telegram.ui.p pVar = ((org.telegram.ui.o) w0Var.b).d;
-        TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) w0Var.c;
-        a0.h hVar = pVar.a;
-        if (z10) {
-            a(false, false, false);
-            if (hVar.h(stickerSetCovered.set.id) >= 0) {
-                return;
-            }
-            ui0 ui0Var = this.f;
-            if (ui0Var != null) {
-                ui0Var.a(true, true);
-            }
-            hVar.k(stickerSetCovered, stickerSetCovered.set.id);
-        }
-        i10 = ((org.telegram.ui.ActionBar.n2) pVar).currentAccount;
-        MediaDataController.getInstance(i10).toggleStickerSet(pVar.getParentActivity(), stickerSetCovered, z10 ? 2 : 1, pVar, false, false);
+        return i10 == 4 ? 3 : 0;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:26:0x008d  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x0103  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void b(TLRPC.StickerSetCovered stickerSetCovered, boolean z10) {
-        TLRPC.Document document;
-        this.h = z10;
-        this.s = stickerSetCovered;
-        setWillNotDraw(!z10);
-        this.b.setText(this.s.set.title);
-        TLRPC.StickerSet stickerSet = stickerSetCovered.set;
-        boolean z11 = stickerSet.emojis;
-        TextView textView = this.c;
-        if (z11) {
-            textView.setText(LocaleController.formatPluralString("EmojiCount", stickerSet.count, new Object[0]));
-        } else {
-            textView.setText(LocaleController.formatPluralString("Stickers", stickerSet.count, new Object[0]));
+    private int getMiniIconForCurrentState() {
+        int i10 = this.G;
+        if (i10 < 0) {
+            return 4;
         }
-        TLRPC.Document document2 = null;
-        if (stickerSetCovered instanceof TLRPC.TL_stickerSetFullCovered) {
-            ArrayList<TLRPC.Document> arrayList = ((TLRPC.TL_stickerSetFullCovered) stickerSetCovered).documents;
-            if (arrayList == null) {
-                return;
+        return i10 == 0 ? 2 : 3;
+    }
+
+    public final void a() {
+        int i10 = this.F;
+        int i11 = this.y;
+        RadialProgress2 radialProgress2 = this.H;
+        if (i10 == 0) {
+            if (this.G == 0) {
+                FileLoader.getInstance(i11).loadFile(this.w.getDocument(), this.w, 1, 0);
             }
-            long j10 = stickerSetCovered.set.thumb_document_id;
-            int i10 = 0;
-            while (true) {
-                if (i10 < arrayList.size()) {
-                    TLRPC.Document document3 = arrayList.get(i10);
-                    if (document3 != null && document3.id == j10) {
-                        document2 = document3;
-                        break;
-                    }
-                    i10++;
-                } else {
-                    break;
+            if (MediaController.getInstance().findMessageInPlaylistAndPlay(this.w)) {
+                if (this.b == 2 && this.G != 1) {
+                    this.G = 1;
+                    radialProgress2.p(0.0f, false);
+                    radialProgress2.k(getMiniIconForCurrentState(), false, true);
                 }
-            }
-            if (document2 == null && !arrayList.isEmpty()) {
-                document = arrayList.get(0);
-                document2 = document;
-            }
-            org.telegram.ui.Components.w9 w9Var = this.d;
-            if (document2 == null) {
-                w9Var.i(null, null, "webp", null, stickerSetCovered);
+                this.F = 1;
+                radialProgress2.setIcon(getIconForCurrentState(), false, true);
+                invalidate();
                 return;
             }
-            TLObject closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(stickerSetCovered.set.thumbs, 90);
-            if (closestPhotoSizeWithSize == null) {
-                closestPhotoSizeWithSize = document2;
+            return;
+        }
+        if (i10 == 1) {
+            if (MediaController.getInstance().lambda$startAudioAgain$7(this.w)) {
+                this.F = 0;
+                radialProgress2.setIcon(getIconForCurrentState(), false, true);
+                invalidate();
+                return;
             }
-            SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(stickerSetCovered.set.thumbs, org.telegram.ui.ActionBar.h6.a7, 1.0f);
-            boolean z12 = closestPhotoSizeWithSize instanceof TLRPC.Document;
-            ImageLocation forDocument = z12 ? ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(document2.thumbs, 90), document2) : ImageLocation.getForSticker((TLRPC.PhotoSize) closestPhotoSizeWithSize, document2, stickerSetCovered.set.thumb_version);
-            if (z12 && (MessageObject.isAnimatedStickerDocument(document2, true) || MessageObject.isVideoSticker(document2))) {
-                if (svgThumb != null) {
-                    w9Var.n(ImageLocation.getForDocument(document2), "50_50", svgThumb, stickerSetCovered);
-                    return;
+            return;
+        }
+        if (i10 == 2) {
+            radialProgress2.p(0.0f, false);
+            FileLoader.getInstance(i11).loadFile(this.w.getDocument(), this.w, 1, 0);
+            this.F = 4;
+            radialProgress2.setIcon(getIconForCurrentState(), false, true);
+            invalidate();
+            return;
+        }
+        if (i10 == 4) {
+            FileLoader.getInstance(i11).cancelLoadFile(this.w.getDocument());
+            this.F = 2;
+            radialProgress2.setIcon(getIconForCurrentState(), false, true);
+            invalidate();
+        }
+    }
+
+    public final void b(boolean z10, boolean z11) {
+        String fileName = this.w.getFileName();
+        File file = null;
+        if (!TextUtils.isEmpty(this.w.messageOwner.attachPath)) {
+            File file2 = new File(this.w.messageOwner.attachPath);
+            if (file2.exists()) {
+                file = file2;
+            }
+        }
+        int i10 = this.y;
+        if (file == null) {
+            file = FileLoader.getInstance(i10).getPathToAttach(this.w.getDocument());
+        }
+        if (TextUtils.isEmpty(fileName)) {
+            return;
+        }
+        if (file.exists() && file.length() == 0) {
+            file.delete();
+        }
+        boolean exists = file.exists();
+        if (!SharedConfig.streamMedia || ((int) this.w.getDialogId()) == 0) {
+            this.G = -1;
+        } else {
+            this.b = exists ? 1 : 2;
+            exists = true;
+        }
+        int i11 = this.b;
+        RadialProgress2 radialProgress2 = this.H;
+        if (i11 == 0) {
+            if (exists) {
+                DownloadController.getInstance(i10).removeLoadingFileObserver(this);
+                boolean isPlayingMessage = MediaController.getInstance().isPlayingMessage(this.w);
+                if (!isPlayingMessage || (isPlayingMessage && MediaController.getInstance().isMessagePaused())) {
+                    this.F = 0;
                 } else {
-                    w9Var.j(ImageLocation.getForDocument(document2), "50_50", forDocument, null, 0, stickerSetCovered);
-                    return;
+                    this.F = 1;
                 }
-            }
-            if (forDocument == null || forDocument.imageType != 1) {
-                w9Var.i(forDocument, "50_50", "webp", svgThumb, stickerSetCovered);
+                radialProgress2.p(1.0f, z11);
+                radialProgress2.setIcon(getIconForCurrentState(), z10, z11);
+                invalidate();
                 return;
+            }
+            DownloadController.getInstance(i10).addLoadingFileObserver(fileName, this);
+            if (FileLoader.getInstance(i10).isLoadingFile(fileName)) {
+                this.F = 4;
+                Float fileProgress = ImageLoader.getInstance().getFileProgress(fileName);
+                if (fileProgress != null) {
+                    radialProgress2.p(fileProgress.floatValue(), z11);
+                } else {
+                    radialProgress2.p(0.0f, z11);
+                }
+                radialProgress2.setIcon(getIconForCurrentState(), z10, z11);
             } else {
-                w9Var.i(forDocument, "50_50", "tgs", svgThumb, stickerSetCovered);
-                return;
+                this.F = 2;
+                radialProgress2.setIcon(getIconForCurrentState(), z10, z11);
             }
+            invalidate();
+            return;
         }
-        document = stickerSetCovered.cover;
-        if (document == null) {
-            if (!stickerSetCovered.covers.isEmpty()) {
-                document2 = stickerSetCovered.covers.get(0);
-            }
-            org.telegram.ui.Components.w9 w9Var2 = this.d;
-            if (document2 == null) {
-            }
+        radialProgress2.m(org.telegram.ui.ActionBar.k6.w0(this.w.isOutOwner() ? org.telegram.ui.ActionBar.k6.Nb : org.telegram.ui.ActionBar.k6.ie, this.K));
+        boolean isPlayingMessage2 = MediaController.getInstance().isPlayingMessage(this.w);
+        if (!isPlayingMessage2 || (isPlayingMessage2 && MediaController.getInstance().isMessagePaused())) {
+            this.F = 0;
+        } else {
+            this.F = 1;
         }
-        document2 = document;
-        org.telegram.ui.Components.w9 w9Var22 = this.d;
-        if (document2 == null) {
+        radialProgress2.setIcon(getIconForCurrentState(), z10, z11);
+        if (this.b == 1) {
+            DownloadController.getInstance(i10).removeLoadingFileObserver(this);
+            this.G = -1;
+            radialProgress2.k(getMiniIconForCurrentState(), z10, z11);
+            return;
         }
-    }
-
-    public final void c(boolean z10) {
-        if (this.a) {
-            AnimatorSet animatorSet = this.r;
-            if (animatorSet != null) {
-                animatorSet.cancel();
-            }
-            boolean z11 = this.w;
-            float f7 = z11 ? 1.0f : 0.0f;
-            float f10 = z11 ? 0.0f : 1.0f;
-            ui0 ui0Var = this.f;
-            ui0 ui0Var2 = this.e;
-            if (!z10) {
-                ui0Var2.setVisibility(z11 ? 0 : 4);
-                ui0Var2.setAlpha(f7);
-                ui0Var2.setScaleX(f7);
-                ui0Var2.setScaleY(f7);
-                ui0Var.setVisibility(this.w ? 4 : 0);
-                ui0Var.setAlpha(f10);
-                ui0Var.setScaleX(f10);
-                ui0Var.setScaleY(f10);
-                return;
-            }
-            this.n = z11 ? ui0Var2 : ui0Var;
-            ui0Var.setVisibility(0);
-            ui0Var2.setVisibility(0);
-            AnimatorSet animatorSet2 = new AnimatorSet();
-            this.r = animatorSet2;
-            animatorSet2.setDuration(250L);
-            AnimatorSet animatorSet3 = this.r;
-            Property property = View.ALPHA;
-            ObjectAnimator ofFloat = ObjectAnimator.ofFloat(ui0Var2, (Property<ui0, Float>) property, f7);
-            Property property2 = View.SCALE_X;
-            ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(ui0Var2, (Property<ui0, Float>) property2, f7);
-            float[] fArr = {f7};
-            Property property3 = View.SCALE_Y;
-            animatorSet3.playTogether(ofFloat, ofFloat2, ObjectAnimator.ofFloat(ui0Var2, (Property<ui0, Float>) property3, fArr), ObjectAnimator.ofFloat(ui0Var, (Property<ui0, Float>) property, f10), ObjectAnimator.ofFloat(ui0Var, (Property<ui0, Float>) property2, f10), ObjectAnimator.ofFloat(ui0Var, (Property<ui0, Float>) property3, f10));
-            this.r.addListener(new m.a(this, 10));
-            this.r.setInterpolator(new OvershootInterpolator(1.02f));
-            this.r.start();
+        DownloadController.getInstance(i10).addLoadingFileObserver(fileName, this.w, this);
+        if (!FileLoader.getInstance(i10).isLoadingFile(fileName)) {
+            this.G = 0;
+            radialProgress2.k(getMiniIconForCurrentState(), z10, z11);
+            return;
+        }
+        this.G = 1;
+        radialProgress2.k(getMiniIconForCurrentState(), z10, z11);
+        Float fileProgress2 = ImageLoader.getInstance().getFileProgress(fileName);
+        if (fileProgress2 != null) {
+            radialProgress2.p(fileProgress2.floatValue(), z11);
+        } else {
+            radialProgress2.p(0.0f, z11);
         }
     }
 
-    public TLRPC.StickerSetCovered getStickersSet() {
-        return this.s;
-    }
-
-    @Override // android.widget.Checkable
-    public final boolean isChecked() {
+    public MessageObject getMessageObject() {
         return this.w;
     }
 
-    @Override // android.view.ViewGroup
-    public final void measureChildWithMargins(View view, int i10, int i11, int i12, int i13) {
-        if (this.a && view == this.b) {
-            i11 += Math.max(this.f.getMeasuredWidth(), this.e.getMeasuredWidth());
-        }
-        super.measureChildWithMargins(view, i10, i11, i12, i13);
+    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
+    public int getObserverTag() {
+        return this.E;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.H.e();
+        this.f = org.telegram.ui.Components.a6.update(0, this, this.f, this.h);
+        this.r = org.telegram.ui.Components.a6.update(0, this, this.r, this.s);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.H.f();
+        DownloadController.getInstance(this.y).removeLoadingFileObserver(this);
+        org.telegram.ui.Components.a6.release(this, this.f);
+        org.telegram.ui.Components.a6.release(this, this.r);
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        if (this.h) {
-            canvas.drawLine(0.0f, getHeight() - 1, getWidth() - getPaddingRight(), getHeight() - 1, org.telegram.ui.ActionBar.h6.k0);
+        Paint V0;
+        StaticLayout staticLayout = this.h;
+        int i10 = 0;
+        ImageView imageView = this.v;
+        if (staticLayout != null) {
+            canvas.save();
+            canvas.translate(AndroidUtilities.dp(LocaleController.isRTL ? 16.0f : AndroidUtilities.leftBaseline) + ((LocaleController.isRTL && imageView.getVisibility() == 0) ? AndroidUtilities.dp(32.0f) : 0), this.e);
+            this.h.draw(canvas);
+            org.telegram.ui.Components.a6.drawAnimatedEmojis(canvas, this.h, this.f, 0.0f, null, 0.0f, 0.0f, 0.0f, 1.0f);
+            canvas.restore();
         }
+        StaticLayout staticLayout2 = this.s;
+        org.telegram.ui.ActionBar.g6 g6Var = this.K;
+        if (staticLayout2 != null) {
+            org.telegram.ui.ActionBar.k6.g3.setColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.z6, g6Var));
+            canvas.save();
+            int dp = AndroidUtilities.dp(LocaleController.isRTL ? 16.0f : AndroidUtilities.leftBaseline);
+            if (LocaleController.isRTL && imageView.getVisibility() == 0) {
+                i10 = AndroidUtilities.dp(32.0f);
+            }
+            canvas.translate(dp + i10, this.n);
+            this.s.draw(canvas);
+            org.telegram.ui.Components.a6.drawAnimatedEmojis(canvas, this.s, this.r, 0.0f, null, 0.0f, 0.0f, 0.0f, 1.0f);
+            canvas.restore();
+        }
+        int w02 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.id, g6Var);
+        RadialProgress2 radialProgress2 = this.H;
+        radialProgress2.d = w02;
+        radialProgress2.draw(canvas);
+        super.onDraw(canvas);
+        if (!this.x || (V0 = org.telegram.ui.ActionBar.k6.V0("paintDivider", g6Var)) == null) {
+            return;
+        }
+        if (LocaleController.isRTL) {
+            canvas.drawRect(0.0f, getHeight() - 1, getWidth() - AndroidUtilities.dp(AndroidUtilities.leftBaseline), getHeight(), V0);
+        } else {
+            canvas.drawRect(AndroidUtilities.dp(AndroidUtilities.leftBaseline), getHeight() - 1, getWidth(), getHeight(), V0);
+        }
+    }
+
+    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
+    public final void onFailedDownload(String str, boolean z10) {
+        b(true, z10);
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        if (this.w.isMusic()) {
+            accessibilityNodeInfo.setText(LocaleController.formatString("AccDescrMusicInfo", R.string.AccDescrMusicInfo, this.w.getMusicAuthor(), this.w.getMusicTitle()));
+            return;
+        }
+        accessibilityNodeInfo.setText(((Object) this.h.getText()) + ", " + ((Object) this.s.getText()));
     }
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(64.0f) + (this.h ? 1 : 0), TLObject.FLAG_30));
-    }
-
-    @Override // android.widget.Checkable
-    public void setChecked(boolean z10) {
-        a(z10, true, true);
-    }
-
-    public void setOnCheckedChangeListener(v vVar) {
-        this.v = vVar;
-    }
-
-    @Override // android.widget.Checkable
-    public final void toggle() {
-        if (this.a) {
-            setChecked(!this.w);
+        org.telegram.ui.ActionBar.g6 g6Var = this.K;
+        this.s = null;
+        this.h = null;
+        int size = (View.MeasureSpec.getSize(i10) - AndroidUtilities.dp(AndroidUtilities.leftBaseline)) - AndroidUtilities.dp(48.0f);
+        try {
+            CharSequence ellipsize = TextUtils.ellipsize(this.w.getMusicTitle().replace('\n', ' '), org.telegram.ui.ActionBar.k6.f3, Math.min((int) Math.ceil(org.telegram.ui.ActionBar.k6.f3.measureText(r0)), size), TextUtils.TruncateAt.END);
+            CharSequence highlightText = AndroidUtilities.highlightText(ellipsize, this.w.highlightedWords, g6Var);
+            StaticLayout staticLayout = new StaticLayout(highlightText == null ? ellipsize : highlightText, org.telegram.ui.ActionBar.k6.f3, size + AndroidUtilities.dp(4.0f), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+            this.h = staticLayout;
+            this.f = org.telegram.ui.Components.a6.update(0, this, this.f, staticLayout);
+        } catch (Exception e) {
+            FileLog.e(e);
         }
+        try {
+            CharSequence replace = this.w.getMusicAuthor().replace('\n', ' ');
+            if (this.I == 1) {
+                replace = new SpannableStringBuilder(replace).append(' ').append((CharSequence) this.J).append(' ').append(i10.d(this.w, true, 2, null));
+            }
+            CharSequence ellipsize2 = TextUtils.ellipsize(replace, org.telegram.ui.ActionBar.k6.g3, size, TextUtils.TruncateAt.END);
+            CharSequence highlightText2 = AndroidUtilities.highlightText(ellipsize2, this.w.highlightedWords, g6Var);
+            StaticLayout staticLayout2 = new StaticLayout(highlightText2 == null ? ellipsize2 : highlightText2, org.telegram.ui.ActionBar.k6.g3, size + AndroidUtilities.dp(4.0f), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+            this.s = staticLayout2;
+            this.r = org.telegram.ui.Components.a6.update(0, this, this.r, staticLayout2);
+        } catch (Exception e7) {
+            FileLog.e(e7);
+        }
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(56.0f), TLObject.FLAG_30));
+        int B = LocaleController.isRTL ? org.telegram.messenger.v0.B(8.0f, View.MeasureSpec.getSize(i10), AndroidUtilities.dp(52.0f)) : AndroidUtilities.dp(8.0f);
+        int dp = AndroidUtilities.dp(4.0f) + B;
+        this.c = dp;
+        int dp2 = AndroidUtilities.dp(6.0f);
+        this.d = dp2;
+        this.H.r(dp, dp2, AndroidUtilities.dp(48.0f) + B, AndroidUtilities.dp(50.0f));
+    }
+
+    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
+    public final void onProgressDownload(String str, long j10, long j11) {
+        this.H.p(Math.min(1.0f, j10 / j11), true);
+        if (this.b != 0) {
+            if (this.G != 1) {
+                b(false, true);
+            }
+        } else if (this.F != 4) {
+            b(false, true);
+        }
+    }
+
+    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
+    public final void onSuccessDownload(String str) {
+        this.H.p(1.0f, true);
+        b(false, true);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:23:0x00da  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x00dd A[RETURN] */
+    @Override // android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        int dp;
+        int dp2;
+        int i10;
+        if (this.w == null) {
+            return super.onTouchEvent(motionEvent);
+        }
+        int x10 = (int) motionEvent.getX();
+        int y3 = (int) motionEvent.getY();
+        int dp3 = AndroidUtilities.dp(36.0f);
+        boolean z10 = true;
+        boolean z11 = this.G >= 0 && x10 >= (dp2 = this.c + (dp = AndroidUtilities.dp(27.0f))) && x10 <= dp2 + dp3 && y3 >= (i10 = this.d + dp) && y3 <= i10 + dp3;
+        int action = motionEvent.getAction();
+        RadialProgress2 radialProgress2 = this.H;
+        if (action == 0) {
+            if (z11) {
+                this.a = true;
+                radialProgress2.o(true, true);
+                invalidate();
+                if (motionEvent.getAction() == 3) {
+                    return z10;
+                }
+                this.a = false;
+                return false;
+            }
+        } else if (this.a) {
+            if (motionEvent.getAction() == 1) {
+                this.a = false;
+                playSoundEffect(0);
+                int i11 = this.G;
+                int i12 = this.y;
+                if (i11 == 0) {
+                    this.G = 1;
+                    radialProgress2.p(0.0f, false);
+                    FileLoader.getInstance(i12).loadFile(this.w.getDocument(), this.w, 3, 0);
+                    radialProgress2.k(getMiniIconForCurrentState(), false, true);
+                    invalidate();
+                } else if (i11 == 1) {
+                    if (MediaController.getInstance().isPlayingMessage(this.w)) {
+                        MediaController.getInstance().cleanupPlayer(true, true);
+                    }
+                    this.G = 0;
+                    FileLoader.getInstance(i12).cancelLoadFile(this.w.getDocument());
+                    radialProgress2.k(getMiniIconForCurrentState(), false, true);
+                    invalidate();
+                }
+                invalidate();
+            } else if (motionEvent.getAction() == 3) {
+                this.a = false;
+                invalidate();
+            } else if (motionEvent.getAction() == 2 && !z11) {
+                this.a = false;
+                invalidate();
+            }
+            radialProgress2.o(this.a, true);
+        }
+        z10 = false;
+        if (motionEvent.getAction() == 3) {
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void updateColors() {
+        MessageObject messageObject;
+        try {
+            RadialProgress2 radialProgress2 = this.H;
+            if (radialProgress2 == null || (messageObject = this.w) == null || this.b == 0) {
+                return;
+            }
+            radialProgress2.m(org.telegram.ui.ActionBar.k6.w0(messageObject.isOutOwner() ? org.telegram.ui.ActionBar.k6.Nb : org.telegram.ui.ActionBar.k6.ie, this.K));
+            invalidate();
+        } catch (Exception e) {
+            FileLog.e(e);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+    }
+
+    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
+    public final void onProgressUpload(String str, long j10, long j11, boolean z10) {
     }
 }

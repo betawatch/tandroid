@@ -12,13 +12,13 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.ed;
 import org.telegram.ui.Components.kz;
-import org.telegram.ui.Components.lw0;
 import org.telegram.ui.Components.og;
+import org.telegram.ui.Components.ow0;
 import org.telegram.ui.Components.pf;
 import org.telegram.ui.Components.xx;
 import r0.m0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class f implements m0, xx {
     public int a;
@@ -62,7 +62,7 @@ public final class f implements m0, xx {
 
     public void e() {
         ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.c;
-        lw0 lw0Var = chatActivityEnterView.m1;
+        ow0 ow0Var = chatActivityEnterView.m1;
         if (d()) {
             AnimatorSet animatorSet = chatActivityEnterView.B3;
             if (animatorSet != null) {
@@ -72,20 +72,20 @@ public final class f implements m0, xx {
             this.b = chatActivityEnterView.z3;
             chatActivityEnterView.z3 = true;
             NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 1);
-            int height = ((((lw0Var.getHeight() - AndroidUtilities.statusBarHeight) - AndroidUtilities.navigationBarHeight) - AndroidUtilities.dp(6.0f)) - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - chatActivityEnterView.getHeight();
+            int height = ((((ow0Var.getHeight() - AndroidUtilities.statusBarHeight) - AndroidUtilities.navigationBarHeight) - AndroidUtilities.dp(6.0f)) - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - chatActivityEnterView.getHeight();
             chatActivityEnterView.D3 = height;
             if (chatActivityEnterView.R1 == 2) {
                 int dp = AndroidUtilities.dp(175.0f);
                 Point point = AndroidUtilities.displaySize;
                 chatActivityEnterView.D3 = Math.min(height, dp + (point.x > point.y ? chatActivityEnterView.y2 : chatActivityEnterView.x2));
             }
-            if (chatActivityEnterView.d5 == null) {
+            if (chatActivityEnterView.h5 == null) {
                 chatActivityEnterView.U0.getLayoutParams().height = chatActivityEnterView.D3;
             }
             chatActivityEnterView.U0.setLayerType(2, null);
-            lw0Var.requestLayout();
+            ow0Var.requestLayout();
             if (chatActivityEnterView.y4) {
-                lw0Var.setForeground(new ed(chatActivityEnterView));
+                ow0Var.setForeground(new ed(chatActivityEnterView));
             }
             this.a = (int) chatActivityEnterView.getTranslationY();
             og ogVar = chatActivityEnterView.Z2;

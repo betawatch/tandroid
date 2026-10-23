@@ -1,12 +1,12 @@
 package w3;
 
-import c3.b0;
-import c3.c0;
 import c3.d0;
+import c3.e0;
+import c3.f0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public final class j implements c0 {
+public final class j implements e0 {
     public final long a;
     public final k[] b;
     public final int c;
@@ -17,18 +17,18 @@ public final class j implements c0 {
         this.c = i10;
     }
 
-    @Override // c3.c0
+    @Override // c3.e0
     public final boolean d() {
         return true;
     }
 
-    @Override // c3.c0
+    @Override // c3.e0
     public final /* synthetic */ boolean e() {
         return false;
     }
 
-    @Override // c3.c0
-    public final b0 f(long j10) {
+    @Override // c3.e0
+    public final d0 f(long j10) {
         long j11;
         long j12;
         long j13;
@@ -38,9 +38,9 @@ public final class j implements c0 {
         long j16 = j10;
         k[] kVarArr = this.b;
         int length = kVarArr.length;
-        d0 d0Var = d0.c;
+        f0 f0Var = f0.c;
         if (length == 0) {
-            return new b0(d0Var, d0Var);
+            return new d0(f0Var, f0Var);
         }
         int i10 = this.c;
         int i11 = -1;
@@ -53,7 +53,7 @@ public final class j implements c0 {
             long[] jArr = tVar.c;
             long[] jArr2 = tVar.f;
             if (a2 == -1) {
-                return new b0(d0Var, d0Var);
+                return new d0(f0Var, f0Var);
             }
             long j17 = jArr2[a2];
             j11 = jArr[a2];
@@ -108,11 +108,11 @@ public final class j implements c0 {
             i11 = -1;
         }
         long j20 = j13;
-        d0 d0Var2 = new d0(j16, j18);
-        return j20 == -9223372036854775807L ? new b0(d0Var2, d0Var2) : new b0(d0Var2, new d0(j20, j12));
+        f0 f0Var2 = new f0(j16, j18);
+        return j20 == -9223372036854775807L ? new d0(f0Var2, f0Var2) : new d0(f0Var2, new f0(j20, j12));
     }
 
-    @Override // c3.c0
+    @Override // c3.e0
     public final long h() {
         return this.a;
     }

@@ -1,5 +1,6 @@
 package n7;
 
+import i2.o1;
 import j$.util.Map;
 import java.io.Serializable;
 import java.util.Map;
@@ -7,7 +8,7 @@ import java.util.function.BiConsumer;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public abstract class n implements Map, Serializable, j$.util.Map {
     public static final Map.Entry[] b = new Map.Entry[0];
@@ -129,7 +130,7 @@ public abstract class n implements Map, Serializable, j$.util.Map {
         r rVar = (r) this;
         int size = rVar.size();
         if (size < 0) {
-            throw new IllegalArgumentException(i2.e.j(size, "size cannot be negative but was: "));
+            throw new IllegalArgumentException(o1.k(size, "size cannot be negative but was: "));
         }
         StringBuilder sb2 = new StringBuilder((int) Math.min(size * 8, 1073741824L));
         sb2.append('{');

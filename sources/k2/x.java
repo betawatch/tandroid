@@ -1,29 +1,24 @@
 package k2;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+import com.google.android.gms.internal.play_billing.k3;
+
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public interface x {
-    void B();
+public final class x extends Exception {
+    public final boolean a;
+    public final b2.w b;
 
-    void I(Exception exc);
-
-    void L();
-
-    void Q(u0 u0Var);
-
-    void T(u0 u0Var);
-
-    void U();
-
-    void a(long j10);
-
-    void j();
-
-    void l();
-
-    void onAudioSessionIdChanged(int i10);
-
-    void onSkipSilenceEnabledChanged(boolean z10);
-
-    void t(int i10, long j10, long j11);
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public x(int i10, int i11, int i12, int i13, b2.w wVar, boolean z10, n nVar) {
+        super(r3.toString(), nVar);
+        StringBuilder k10 = k3.k("AudioTrack init failed 0 Config(", i10, ", ", i11, ", ");
+        k3.r(k10, i12, ", ", i13, ") ");
+        k10.append(wVar);
+        k10.append(z10 ? " (recoverable)" : "");
+        this.a = z10;
+        this.b = wVar;
+    }
 }

@@ -1,51 +1,42 @@
 package ci;
 
-import java.util.Locale;
-import org.telegram.SQLite.SQLiteDatabase;
-import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.DialogObject;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s7 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ w7 b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ int d;
+    public final /* synthetic */ v7 b;
+    public final /* synthetic */ TL_stories.PeerStories c;
 
-    public /* synthetic */ s7(w7 w7Var, long j10, int i10, int i11) {
-        this.a = i11;
-        this.b = w7Var;
-        this.c = j10;
-        this.d = i10;
+    public /* synthetic */ s7(v7 v7Var, TL_stories.PeerStories peerStories, int i10) {
+        this.a = i10;
+        this.b = v7Var;
+        this.c = peerStories;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                long j10 = this.c;
-                int i10 = this.d;
-                MessagesStorage messagesStorage = this.b.b;
-                SQLiteDatabase database = messagesStorage.getDatabase();
-                try {
-                    Locale locale = Locale.US;
-                    database.executeFast("REPLACE INTO stories_counter VALUES(" + j10 + ", 0, " + i10 + ")").stepThis().dispose();
-                    break;
-                } catch (Throwable th2) {
-                    messagesStorage.checkSQLException(th2);
-                    return;
-                }
+                v7 v7Var = this.b;
+                v7Var.getClass();
+                TL_stories.PeerStories peerStories = this.c;
+                v7Var.g(DialogObject.getPeerDialogId(peerStories.peer), peerStories);
+                break;
             default:
-                long j11 = this.c;
-                int i11 = this.d;
-                MessagesStorage messagesStorage2 = this.b.b;
-                SQLiteDatabase database2 = messagesStorage2.getDatabase();
-                try {
-                    Locale locale2 = Locale.US;
-                    database2.executeFast("DELETE FROM stories WHERE dialog_id = " + j11 + " AND story_id = " + i11).stepThis().dispose();
-                    break;
-                } catch (Throwable th3) {
-                    messagesStorage2.checkSQLException(th3);
+                v7 v7Var2 = this.b;
+                v7Var2.getClass();
+                int i10 = 0;
+                while (true) {
+                    TL_stories.PeerStories peerStories2 = this.c;
+                    if (i10 >= peerStories2.stories.size()) {
+                        break;
+                    } else {
+                        v7Var2.l(DialogObject.getPeerDialogId(peerStories2.peer), peerStories2.stories.get(i10));
+                        i10++;
+                    }
                 }
         }
     }

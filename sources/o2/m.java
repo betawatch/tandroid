@@ -3,15 +3,16 @@ package o2;
 import b2.w;
 import com.google.android.gms.internal.cast.z4;
 import e2.m0;
+import i2.o1;
 import java.util.ArrayList;
 import java.util.Iterator;
-import u2.e1;
+import u2.f1;
 import v7.b8;
 import v7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public final class m implements e1 {
+public final class m implements f1 {
     public final int a;
     public final q b;
     public int c = -1;
@@ -21,7 +22,7 @@ public final class m implements e1 {
         this.a = i10;
     }
 
-    @Override // u2.e1
+    @Override // u2.f1
     public final void a() {
         int i10 = this.c;
         q qVar = this.b;
@@ -30,9 +31,9 @@ public final class m implements e1 {
             throw new z4(a1.g.p("Unable to bind a sample queue to TrackGroup with MIME type ", qVar.Y.a(this.a).d[0].s, "."));
         }
         if (i10 == -1) {
-            qVar.C();
+            qVar.E();
         } else if (i10 != -3) {
-            qVar.C();
+            qVar.E();
             qVar.L[i10].C();
         }
     }
@@ -65,7 +66,7 @@ public final class m implements e1 {
         return (i10 == -1 || i10 == -3 || i10 == -2) ? false : true;
     }
 
-    @Override // u2.e1
+    @Override // u2.f1
     public final boolean f() {
         if (this.c == -3) {
             return true;
@@ -75,10 +76,10 @@ public final class m implements e1 {
         }
         int i10 = this.c;
         q qVar = this.b;
-        return !qVar.A() && qVar.L[i10].A(qVar.j0);
+        return !qVar.B() && qVar.L[i10].A(qVar.j0);
     }
 
-    @Override // u2.e1
+    @Override // u2.f1
     public final int g(qf.b bVar, h2.h hVar, int i10) {
         w wVar;
         if (this.c == -3) {
@@ -89,7 +90,7 @@ public final class m implements e1 {
             int i11 = this.c;
             q qVar = this.b;
             ArrayList arrayList = qVar.y;
-            if (!qVar.A()) {
+            if (!qVar.B()) {
                 int i12 = 0;
                 if (!arrayList.isEmpty()) {
                     int i13 = 0;
@@ -138,7 +139,7 @@ public final class m implements e1 {
         return -3;
     }
 
-    @Override // u2.e1
+    @Override // u2.f1
     public final int m(long j10) {
         Object next;
         Object obj;
@@ -147,7 +148,7 @@ public final class m implements e1 {
         }
         int i10 = this.c;
         q qVar = this.b;
-        if (qVar.A()) {
+        if (qVar.B()) {
             return 0;
         }
         p pVar = qVar.L[i10];
@@ -155,7 +156,7 @@ public final class m implements e1 {
         ArrayList arrayList = qVar.y;
         if (arrayList != null) {
             if (!arrayList.isEmpty()) {
-                obj = i2.e.h(1, arrayList);
+                obj = o1.i(1, arrayList);
             }
             obj = null;
         } else {

@@ -17,25 +17,25 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.iu;
 import org.telegram.ui.Components.kd;
-import org.telegram.ui.Components.lw0;
 import org.telegram.ui.Components.mu;
+import org.telegram.ui.Components.ow0;
 import org.telegram.ui.Components.qu;
 import org.telegram.ui.Components.tz;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class g extends qu {
     public org.telegram.ui.Components.na V;
     public dh.d W;
-    public final /* synthetic */ org.telegram.ui.ActionBar.d6 a0;
+    public final /* synthetic */ org.telegram.ui.ActionBar.g6 a0;
     public final /* synthetic */ org.telegram.ui.Components.ja b0;
     public final /* synthetic */ m c0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g(m mVar, Context context, lw0 lw0Var, int i10, ci.b bVar, org.telegram.ui.ActionBar.d6 d6Var, org.telegram.ui.Components.ja jaVar) {
-        super(context, lw0Var, null, i10, true, bVar);
+    public g(m mVar, Context context, ow0 ow0Var, int i10, ci.b bVar, org.telegram.ui.ActionBar.g6 g6Var, org.telegram.ui.Components.ja jaVar) {
+        super(context, ow0Var, null, i10, true, bVar);
         this.c0 = mVar;
-        this.a0 = d6Var;
+        this.a0 = g6Var;
         this.b0 = jaVar;
     }
 
@@ -61,19 +61,19 @@ public final class g extends qu {
             m mVar = this.c0;
             if (mVar.getEditTextStyle() == 2 || mVar.getEditTextStyle() == 3) {
                 emojiView.w0 = false;
-                emojiView.w2 = false;
+                emojiView.x2 = false;
                 emojiView.setShouldDrawBackground(false);
                 if (mVar instanceof kd) {
                     emojiView.setPadding(0, 0, 0, AndroidUtilities.navigationBarHeight);
                     emojiView.c = 3;
                 }
-                emojiView.S();
+                emojiView.updateColors();
             }
         }
         if (emojiView != null) {
-            emojiView.H2 = true;
+            emojiView.N2 = true;
             emojiView.setClipToOutline(true);
-            emojiView.setOutlineProvider(new ci.o1(1));
+            emojiView.setOutlineProvider(new ci.n1(1));
         }
     }
 
@@ -108,10 +108,10 @@ public final class g extends qu {
                 this.W = c10;
                 c10.s(AndroidUtilities.dp(29.0f), AndroidUtilities.dp(29.0f), i10, i11);
                 dh.d dVar = this.W;
-                dVar.m = true;
+                dVar.y = true;
                 dVar.u(AndroidUtilities.dp(32.0f));
                 dh.d dVar2 = this.W;
-                dVar2.j.g = 0.4f;
+                dVar2.v.g = 0.4f;
                 dVar2.k();
             }
             Rect rect = AndroidUtilities.rectTmp2;
@@ -125,7 +125,7 @@ public final class g extends qu {
                 this.V = new org.telegram.ui.Components.na(this.b0, muVar, 7, false);
             }
             mVar.h(this.V, canvas, mVar.z0, AndroidUtilities.dp(29.0f), false, 0.0f, -muVar.getY(), false);
-            jVar.k = AndroidUtilities.dp(29.0f);
+            jVar.l = AndroidUtilities.dp(29.0f);
             jVar.setBounds((int) rectF.left, (int) rectF.top, (int) rectF.right, AndroidUtilities.dp(29.0f) + ((int) rectF.bottom));
             jVar.draw(canvas);
             return;

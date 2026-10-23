@@ -10,7 +10,7 @@ import android.util.TypedValue;
 import j$.util.Objects;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public class AnimatedPhoneNumberEditText extends o40 {
     public String E;
@@ -103,7 +103,7 @@ public class AnimatedPhoneNumberEditText extends o40 {
         }
         if (isEmpty) {
             int length = str2.length();
-            ai.y7 y7Var = new ai.y7(this, z10, str, 19);
+            ai.y7 y7Var = new ai.y7(this, z10, str, 18);
             Runnable runnable = this.F;
             if (runnable != null) {
                 removeCallbacks(runnable);
@@ -125,7 +125,7 @@ public class AnimatedPhoneNumberEditText extends o40 {
                 kVar.c = true;
                 arrayList2.add(kVar);
                 arrayList.add(Float.valueOf(f10));
-                postDelayed(new pg(kVar, 7), i11 * 5);
+                postDelayed(new pg(kVar, 8), i11 * 5);
             }
             this.F = y7Var;
             postDelayed(y7Var, (length * 5) + 150);
@@ -173,7 +173,7 @@ public class AnimatedPhoneNumberEditText extends o40 {
             ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "progress", -1.0f, 0.0f);
             this.n = ofFloat;
             ofFloat.setDuration(150L);
-            this.n.addListener(new org.telegram.ui.nq(this, 2));
+            this.n.addListener(new org.telegram.ui.pq(this, 2));
             this.n.start();
         }
         this.s = str;

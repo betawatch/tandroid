@@ -20,7 +20,7 @@ import m.s1;
 import org.telegram.messenger.beta.R;
 import r0.i0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class c0 extends s implements PopupWindow.OnDismissListener, View.OnKeyListener {
     public ViewTreeObserver E;
@@ -210,7 +210,7 @@ public final class c0 extends s implements PopupWindow.OnDismissListener, View.O
             }
             w wVar2 = this.y;
             if (wVar2 != null) {
-                wVar2.r(d0Var);
+                wVar2.o(d0Var);
             }
             return true;
         }
@@ -277,7 +277,7 @@ public final class c0 extends s implements PopupWindow.OnDismissListener, View.O
 
     @Override // l.s
     public final void t(int i10) {
-        this.n.k(i10);
+        this.n.j(i10);
     }
 
     @Override // l.s

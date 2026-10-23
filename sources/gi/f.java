@@ -2,23 +2,23 @@ package gi;
 
 import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.w10;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.z10;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class f extends sg.x1 {
-    public final /* synthetic */ int n;
+    public final /* synthetic */ int r;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public /* synthetic */ f(Context context, int i10) {
         super(context);
-        this.n = i10;
+        this.r = i10;
     }
 
     @Override // sg.x1
     public final void a() {
-        switch (this.n) {
+        switch (this.r) {
             case 0:
                 super.a();
                 sg.w1 w1Var = this.a;
@@ -38,19 +38,19 @@ public final class f extends sg.x1 {
                 w1Var2.c();
                 break;
             case 2:
-                w10 w10Var = new w10(50);
-                this.a = w10Var;
-                w10Var.O = 100;
-                w10Var.M = false;
-                w10Var.G = false;
-                w10Var.K = true;
-                w10Var.H = true;
-                w10Var.J = false;
-                w10Var.r = 4;
-                w10Var.w = 0.98f;
-                w10Var.v = 0.98f;
-                w10Var.u = 0.98f;
-                w10Var.c();
+                z10 z10Var = new z10(50);
+                this.a = z10Var;
+                z10Var.O = 100;
+                z10Var.M = false;
+                z10Var.G = false;
+                z10Var.K = true;
+                z10Var.H = true;
+                z10Var.J = false;
+                z10Var.r = 4;
+                z10Var.w = 0.98f;
+                z10Var.v = 0.98f;
+                z10Var.u = 0.98f;
+                z10Var.c();
                 break;
             case 3:
                 sg.w1 w1Var3 = this.a;
@@ -65,7 +65,7 @@ public final class f extends sg.x1 {
                 w1Var4.r = 16;
                 w1Var4.G = false;
                 w1Var4.O = 28;
-                w1Var4.Q = h6.Mj;
+                w1Var4.Q = k6.Mj;
                 w1Var4.c();
                 break;
             case 4:
@@ -81,7 +81,7 @@ public final class f extends sg.x1 {
                 w1Var6.r = 16;
                 w1Var6.G = false;
                 w1Var6.O = 28;
-                w1Var6.Q = h6.Mj;
+                w1Var6.Q = k6.Mj;
                 w1Var6.c();
                 break;
             default:
@@ -98,7 +98,7 @@ public final class f extends sg.x1 {
 
     @Override // sg.x1
     public int getStarsRectWidth() {
-        switch (this.n) {
+        switch (this.r) {
             case 0:
                 return getMeasuredWidth();
             case 1:
@@ -112,7 +112,7 @@ public final class f extends sg.x1 {
 
     @Override // sg.x1, android.view.View
     public void onMeasure(int i10, int i11) {
-        switch (this.n) {
+        switch (this.r) {
             case 3:
                 super.onMeasure(i10, i11);
                 this.a.b.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight() - AndroidUtilities.dp(52.0f));

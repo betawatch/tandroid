@@ -28,7 +28,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class h implements Handler.Callback {
     public static final Status E = new Status(4, "Sign-out occurred while this API call was in progress.", null, null);
@@ -91,7 +91,7 @@ public final class h implements Handler.Callback {
     }
 
     public static Status d(b bVar, k6.a aVar) {
-        return new Status(17, k3.k("API: ", bVar.b.c, " is not available on this device. Connection failed with: ", String.valueOf(aVar)), aVar.c, aVar);
+        return new Status(17, k3.j("API: ", bVar.b.c, " is not available on this device. Connection failed with: ", String.valueOf(aVar)), aVar.c, aVar);
     }
 
     public static h g(Context context) {
@@ -293,7 +293,7 @@ public final class h implements Handler.Callback {
                     }
                 }
                 if (o0Var == null) {
-                    Log.wtf("GoogleApiManager", i2.e.k(i11, "Could not find API instance ", " while trying to fail enqueued calls."), new Exception());
+                    Log.wtf("GoogleApiManager", i2.o1.l(i11, "Could not find API instance ", " while trying to fail enqueued calls."), new Exception());
                     return true;
                 }
                 int i12 = aVar.b;
@@ -303,7 +303,7 @@ public final class h implements Handler.Callback {
                 }
                 this.f.getClass();
                 AtomicBoolean atomicBoolean = k6.g.a;
-                o0Var.c(new Status(17, k3.k("Error resolution was canceled by the user, original error message: ", k6.a.d(i12), ": ", aVar.d), null, null));
+                o0Var.c(new Status(17, k3.j("Error resolution was canceled by the user, original error message: ", k6.a.d(i12), ": ", aVar.d), null, null));
                 return true;
             case 6:
                 if (context.getApplicationContext() instanceof Application) {

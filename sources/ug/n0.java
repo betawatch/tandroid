@@ -1,51 +1,40 @@
 package ug;
 
-import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.widget.FrameLayout;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.w9;
-import w7.z5;
+import org.telegram.ui.ActionBar.b6;
+import org.telegram.ui.ActionBar.k6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class n0 extends FrameLayout {
-    public final w9 a;
-    public final o0 b;
-    public final Paint c;
-    public TLRPC.Chat d;
-    public final h9 e;
+public final class n0 extends View implements b6 {
+    public Paint a;
+    public Drawable b;
 
-    public n0(Context context) {
-        super(context);
-        Paint paint = new Paint(1);
-        this.c = paint;
-        this.e = new h9((d6) null);
-        w9 w9Var = new w9(getContext());
-        this.a = w9Var;
-        w9Var.setRoundRadius(AndroidUtilities.dp(30.0f));
-        o0 o0Var = new o0(context);
-        Paint paint2 = new Paint(1);
-        o0Var.a = paint2;
-        o0Var.b = o0Var.getContext().getDrawable(R.drawable.mini_boost_remove);
-        int i10 = h6.h5;
-        paint2.setColor(h6.x0(null, i10, false));
-        this.b = o0Var;
-        o0Var.setAlpha(0.0f);
-        addView(w9Var, z5.d(-1, -1.0f, 0, 5.0f, 5.0f, 5.0f, 5.0f));
-        addView(o0Var, z5.d(28, 28.0f, 85, 0.0f, 0.0f, 0.0f, 3.0f));
-        paint.setColor(h6.x0(null, i10, false));
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        float measuredWidth = getMeasuredWidth() / 2.0f;
+        float measuredHeight = getMeasuredHeight() / 2.0f;
+        canvas.drawCircle(measuredWidth, measuredHeight, getMeasuredWidth() / 2.0f, this.a);
+        sg.b1.d().f(-AndroidUtilities.dp(10.0f), 0.0f, getMeasuredWidth(), getMeasuredHeight());
+        canvas.drawCircle(measuredWidth, measuredHeight, (getMeasuredWidth() / 2.0f) - AndroidUtilities.dp(2.0f), sg.b1.d().e());
+        float dp = AndroidUtilities.dp(18.0f) / 2.0f;
+        Drawable drawable = this.b;
+        drawable.setBounds((int) (measuredWidth - dp), (int) (measuredHeight - dp), (int) (measuredWidth + dp), (int) (measuredHeight + dp));
+        drawable.draw(canvas);
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        canvas.drawCircle(getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f, (getMeasuredHeight() / 2.0f) - AndroidUtilities.dp(2.0f), this.c);
-        super.dispatchDraw(canvas);
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void updateColors() {
+        this.a.setColor(k6.x0(null, k6.h5, false));
+        invalidate();
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

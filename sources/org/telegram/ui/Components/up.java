@@ -18,10 +18,10 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class up extends im0 {
-    public final org.telegram.ui.ActionBar.d6 c;
+public final class up extends lm0 {
+    public final org.telegram.ui.ActionBar.g6 c;
     public ArrayList d;
     public WeakReference e;
     public final int h;
@@ -31,14 +31,14 @@ public final class up extends im0 {
     public final HashMap s = new HashMap();
     public final HashMap v = new HashMap();
 
-    public up(int i10, long j10, org.telegram.ui.on onVar, int i11) {
+    public up(int i10, long j10, org.telegram.ui.qn qnVar, int i11) {
         this.n = i11;
         this.r = j10;
-        this.c = onVar;
+        this.c = qnVar;
         this.h = i10;
     }
 
-    @Override // org.telegram.ui.Components.im0
+    @Override // org.telegram.ui.Components.lm0
     public final boolean D(s4.b1 b1Var) {
         return false;
     }
@@ -51,9 +51,9 @@ public final class up extends im0 {
         if (i11 >= 0) {
             m(i11);
             WeakReference weakReference = this.e;
-            r21 r21Var = weakReference == null ? null : (r21) weakReference.get();
-            if (r21Var != null) {
-                r21Var.setSelected(false);
+            v21 v21Var = weakReference == null ? null : (v21) weakReference.get();
+            if (v21Var != null) {
+                v21Var.setSelected(false);
             }
         }
         this.f = i10;
@@ -76,8 +76,8 @@ public final class up extends im0 {
         int v;
         int intValue;
         String[] split;
-        r21 r21Var = (r21) b1Var.a;
-        org.telegram.ui.ActionBar.g6 i11 = ((vp) this.d.get(i10)).a.i(((vp) this.d.get(i10)).c);
+        v21 v21Var = (v21) b1Var.a;
+        org.telegram.ui.ActionBar.j6 i11 = ((vp) this.d.get(i10)).a.i(((vp) this.d.get(i10)).c);
         if (i11 != null && i11.b != null && !i11.T && new File(i11.b).exists() && i11.b != null) {
             try {
                 FileInputStream fileInputStream2 = new FileInputStream(new File(i11.b));
@@ -85,7 +85,7 @@ public final class up extends im0 {
                 boolean z10 = false;
                 while (true) {
                     try {
-                        int read = fileInputStream2.read(org.telegram.ui.Cells.ma.g3);
+                        int read = fileInputStream2.read(org.telegram.ui.Cells.na.j3);
                         if (read == -1) {
                             fileInputStream = fileInputStream2;
                             break;
@@ -98,7 +98,7 @@ public final class up extends im0 {
                                 fileInputStream = fileInputStream2;
                                 break;
                             }
-                            byte[] bArr = org.telegram.ui.Cells.ma.g3;
+                            byte[] bArr = org.telegram.ui.Cells.na.j3;
                             if (bArr[i14] == 10) {
                                 int i16 = i14 - i15;
                                 int i17 = i16 + 1;
@@ -183,7 +183,7 @@ public final class up extends im0 {
                                     }
                                     int indexOf = str.indexOf(61);
                                     c10 = 65535;
-                                    if (indexOf != -1 && ((v = org.telegram.ui.ActionBar.g5.v(str.substring(0, indexOf))) == org.telegram.ui.ActionBar.h6.ra || v == org.telegram.ui.ActionBar.h6.Aa || v == org.telegram.ui.ActionBar.h6.Nd || v == org.telegram.ui.ActionBar.h6.Od || v == org.telegram.ui.ActionBar.h6.Pd || v == org.telegram.ui.ActionBar.h6.Qd)) {
+                                    if (indexOf != -1 && ((v = org.telegram.ui.ActionBar.k5.v(str.substring(0, indexOf))) == org.telegram.ui.ActionBar.k6.ra || v == org.telegram.ui.ActionBar.k6.Aa || v == org.telegram.ui.ActionBar.k6.Nd || v == org.telegram.ui.ActionBar.k6.Od || v == org.telegram.ui.ActionBar.k6.Pd || v == org.telegram.ui.ActionBar.k6.Qd)) {
                                         String substring2 = str.substring(indexOf + 1);
                                         if (substring2.length() <= 0 || substring2.charAt(0) != '#') {
                                             intValue = Utilities.parseInt((CharSequence) substring2).intValue();
@@ -194,17 +194,17 @@ public final class up extends im0 {
                                                 intValue = Utilities.parseInt((CharSequence) substring2).intValue();
                                             }
                                         }
-                                        if (v == org.telegram.ui.ActionBar.h6.ra) {
+                                        if (v == org.telegram.ui.ActionBar.k6.ra) {
                                             i11.Q = intValue;
-                                        } else if (v == org.telegram.ui.ActionBar.h6.Aa) {
+                                        } else if (v == org.telegram.ui.ActionBar.k6.Aa) {
                                             i11.R = intValue;
-                                        } else if (v == org.telegram.ui.ActionBar.h6.Nd) {
+                                        } else if (v == org.telegram.ui.ActionBar.k6.Nd) {
                                             i11.L = intValue;
-                                        } else if (v == org.telegram.ui.ActionBar.h6.Od) {
+                                        } else if (v == org.telegram.ui.ActionBar.k6.Od) {
                                             i11.M = intValue;
-                                        } else if (v == org.telegram.ui.ActionBar.h6.Pd) {
+                                        } else if (v == org.telegram.ui.ActionBar.k6.Pd) {
                                             i11.N = intValue;
-                                        } else if (v == org.telegram.ui.ActionBar.h6.Qd) {
+                                        } else if (v == org.telegram.ui.ActionBar.k6.Qd) {
                                             i11.O = intValue;
                                         }
                                     }
@@ -248,22 +248,22 @@ public final class up extends im0 {
             }
         }
         vp vpVar = (vp) this.d.get(i10);
-        vp vpVar2 = r21Var.G;
-        boolean z11 = vpVar2 != null && gg.b.a(vpVar2.a.c, vpVar.a.c) && !org.telegram.ui.cy.x4 && r21Var.V == vpVar.c;
-        r21Var.setFocusable(true);
-        r21Var.setEnabled(true);
-        r21Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.i5, false));
-        r21Var.f(vpVar, this.r, z11);
-        r21Var.g(i10 == this.f, z11);
+        vp vpVar2 = v21Var.G;
+        boolean z11 = vpVar2 != null && gg.b.a(vpVar2.a.c, vpVar.a.c) && !org.telegram.ui.ey.z4 && v21Var.V == vpVar.c;
+        v21Var.setFocusable(true);
+        v21Var.setEnabled(true);
+        org.telegram.ui.ActionBar.r6.i(org.telegram.ui.ActionBar.k6.i5, v21Var, null);
+        v21Var.f(vpVar, this.r, z11);
+        v21Var.g(i10 == this.f, z11);
         if (i10 == this.f) {
-            this.e = new WeakReference(r21Var);
+            this.e = new WeakReference(v21Var);
         }
     }
 
     @Override // s4.g0
     public final s4.b1 x(ViewGroup viewGroup, int i10) {
         Context context = viewGroup.getContext();
-        org.telegram.ui.ActionBar.d6 d6Var = this.c;
-        return new tl0(new r21(this.h, this.n, context, d6Var));
+        org.telegram.ui.ActionBar.g6 g6Var = this.c;
+        return new wl0(new v21(this.h, this.n, context, g6Var));
     }
 }

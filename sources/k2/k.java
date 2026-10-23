@@ -1,17 +1,35 @@
 package k2;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+import android.media.AudioDeviceInfo;
+
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class k {
-    public int a = 0;
-    public boolean b;
-    public boolean c;
+    public final b2.w a;
+    public b2.f b;
+    public AudioDeviceInfo c;
     public boolean d;
+    public int e;
+    public int f;
+    public boolean g;
+    public int h;
 
-    public l a() {
-        if (this.b || !(this.c || this.d)) {
-            return new l(this);
-        }
-        throw new IllegalStateException("Secondary offload attribute fields are true but primary isFormatSupportedForOffload is false");
+    public k(k kVar) {
+        this.a = kVar.a;
+        this.b = kVar.b;
+        this.c = kVar.c;
+        this.d = kVar.d;
+        this.e = kVar.e;
+        this.f = kVar.f;
+        this.g = kVar.g;
+        this.h = kVar.h;
+    }
+
+    public k(b2.w wVar) {
+        this.a = wVar;
+        this.b = b2.f.i;
+        this.e = 0;
+        this.f = -1;
+        this.h = -1;
     }
 }

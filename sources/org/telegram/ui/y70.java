@@ -1,50 +1,24 @@
 package org.telegram.ui;
 
-import android.telephony.PhoneNumberUtils;
-import j$.util.function.Predicate$-CC;
-import java.util.function.Predicate;
-import org.telegram.tgnet.TLRPC;
+import android.os.Bundle;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class y70 implements Predicate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class y70 extends d6 {
+    public final /* synthetic */ ey f;
 
-    public /* synthetic */ y70(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public y70(Bundle bundle, ey eyVar) {
+        super(bundle);
+        this.f = eyVar;
     }
 
-    public /* synthetic */ Predicate and(Predicate predicate) {
-        int i10 = this.a;
-        return Predicate$-CC.$default$and(this, predicate);
-    }
-
-    public /* synthetic */ Predicate negate() {
-        switch (this.a) {
+    @Override // org.telegram.ui.ActionBar.o2
+    public final void onTransitionAnimationEnd(boolean z10, boolean z11) {
+        super.onTransitionAnimationEnd(z10, z11);
+        if (!z10 || z11) {
+            return;
         }
-        return Predicate$-CC.$default$negate(this);
-    }
-
-    public /* synthetic */ Predicate or(Predicate predicate) {
-        int i10 = this.a;
-        return Predicate$-CC.$default$or(this, predicate);
-    }
-
-    @Override // java.util.function.Predicate
-    public final boolean test(Object obj) {
-        switch (this.a) {
-            case 0:
-                String str = (String) obj;
-                return str != null && str.equals((String) this.b);
-            case 1:
-                return PhoneNumberUtils.compare((String) this.b, (String) obj);
-            case 2:
-                String str2 = (String) obj;
-                return str2 != null && str2.equals((String) this.b);
-            default:
-                return qn.P0((qn) this.b, (TLRPC.MessageEntity) obj);
-        }
+        this.f.removeSelfFromStack();
     }
 }

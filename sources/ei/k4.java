@@ -15,47 +15,50 @@ import android.util.Size;
 import android.view.MotionEvent;
 import android.view.View;
 import java.io.File;
+import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final class k4 extends View {
+public final class k4 extends View implements org.telegram.ui.ActionBar.b6 {
     public final org.telegram.ui.Components.f6 E;
-    public final ImageReceiver a;
-    public final Paint b;
+    public final org.telegram.ui.Components.f6 F;
+    public final org.telegram.ui.ActionBar.g6 a;
+    public final ImageReceiver b;
     public final Paint c;
-    public final org.telegram.ui.Components.p6 d;
-    public boolean e;
+    public final Paint d;
+    public final org.telegram.ui.Components.p6 e;
     public boolean f;
-    public View.OnClickListener h;
-    public final yc n;
-    public int r;
-    public String s;
-    public float v;
+    public boolean h;
+    public View.OnClickListener n;
+    public final yc r;
+    public int s;
+    public String v;
     public float w;
     public float x;
-    public final org.telegram.ui.Components.f6 y;
+    public float y;
 
-    public k4(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+    public k4(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
         super(context);
         ImageReceiver imageReceiver = new ImageReceiver(this);
-        this.a = imageReceiver;
+        this.b = imageReceiver;
         Paint paint = new Paint(1);
-        this.b = paint;
+        this.c = paint;
         Paint paint2 = new Paint(1);
-        this.c = paint2;
+        this.d = paint2;
         org.telegram.ui.Components.p6 p6Var = new org.telegram.ui.Components.p6(false, false, false);
-        this.d = p6Var;
-        this.n = new yc(this);
-        this.r = -1;
+        this.e = p6Var;
+        this.r = new yc(this);
+        this.s = -1;
         bs bsVar = bs.h;
-        this.y = new org.telegram.ui.Components.f6(this, 0L, 320L, bsVar);
         this.E = new org.telegram.ui.Components.f6(this, 0L, 320L, bsVar);
+        this.F = new org.telegram.ui.Components.f6(this, 0L, 320L, bsVar);
         p6Var.setCallback(this);
         p6Var.u(-1);
         p6Var.b = 17;
@@ -66,25 +69,26 @@ public final class k4 extends View {
         p6Var.A = 0.35f;
         paint.setStyle(Paint.Style.STROKE);
         paint.setColor(-1);
-        paint2.setColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Oh, d6Var));
+        this.a = g6Var;
+        paint2.setColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Oh, g6Var));
         imageReceiver.setRoundRadius(AndroidUtilities.dp(6.0f));
         w7.b6.a(this);
     }
 
     public final void a(int i10, int i11, final a8 a8Var) {
         String str;
-        if (this.r != i10) {
-            this.s = null;
-            this.a.clearImage();
-            this.r = i10;
+        if (this.s != i10) {
+            this.v = null;
+            this.b.clearImage();
+            this.s = i10;
         }
-        this.d.t(Integer.toString(i11 + 1), false, true);
+        this.e.t(Integer.toString(i11 + 1), false, true);
         File file = a8Var.O0;
         if (file != null) {
-            if (TextUtils.equals(this.s, file.getPath())) {
+            if (TextUtils.equals(this.v, file.getPath())) {
                 return;
             }
-            this.s = a8Var.O0.getPath();
+            this.v = a8Var.O0.getPath();
             final int i12 = 0;
             Utilities.searchQueue.postRunnable(new Runnable(this) { // from class: ei.h4
                 public final /* synthetic */ k4 b;
@@ -115,10 +119,10 @@ public final class k4 extends View {
                                 public final void run() {
                                     switch (i13) {
                                         case 0:
-                                            k4Var.a.setImageBitmap(decodeFile);
+                                            k4Var.b.setImageBitmap(decodeFile);
                                             break;
                                         default:
-                                            k4Var.a.setImageBitmap(decodeFile);
+                                            k4Var.b.setImageBitmap(decodeFile);
                                             break;
                                     }
                                 }
@@ -143,10 +147,10 @@ public final class k4 extends View {
                                 public final void run() {
                                     switch (i14) {
                                         case 0:
-                                            k4Var2.a.setImageBitmap(decodeFile2);
+                                            k4Var2.b.setImageBitmap(decodeFile2);
                                             break;
                                         default:
-                                            k4Var2.a.setImageBitmap(decodeFile2);
+                                            k4Var2.b.setImageBitmap(decodeFile2);
                                             break;
                                     }
                                 }
@@ -159,10 +163,10 @@ public final class k4 extends View {
         }
         if (!a8Var.K) {
             File file2 = a8Var.L;
-            if (file2 == null || TextUtils.equals(this.s, file2.getPath())) {
+            if (file2 == null || TextUtils.equals(this.v, file2.getPath())) {
                 return;
             }
-            this.s = a8Var.L.getPath();
+            this.v = a8Var.L.getPath();
             final int i13 = 1;
             Utilities.searchQueue.postRunnable(new Runnable(this) { // from class: ei.h4
                 public final /* synthetic */ k4 b;
@@ -193,10 +197,10 @@ public final class k4 extends View {
                                 public final void run() {
                                     switch (i132) {
                                         case 0:
-                                            k4Var.a.setImageBitmap(decodeFile);
+                                            k4Var.b.setImageBitmap(decodeFile);
                                             break;
                                         default:
-                                            k4Var.a.setImageBitmap(decodeFile);
+                                            k4Var.b.setImageBitmap(decodeFile);
                                             break;
                                     }
                                 }
@@ -221,10 +225,10 @@ public final class k4 extends View {
                                 public final void run() {
                                     switch (i14) {
                                         case 0:
-                                            k4Var2.a.setImageBitmap(decodeFile2);
+                                            k4Var2.b.setImageBitmap(decodeFile2);
                                             break;
                                         default:
-                                            k4Var2.a.setImageBitmap(decodeFile2);
+                                            k4Var2.b.setImageBitmap(decodeFile2);
                                             break;
                                     }
                                 }
@@ -240,11 +244,11 @@ public final class k4 extends View {
             bitmap = null;
         }
         if (bitmap == null && (str = a8Var.N) != null && str.startsWith("vthumb://")) {
-            if (TextUtils.equals(this.s, a8Var.N)) {
+            if (TextUtils.equals(this.v, a8Var.N)) {
                 return;
             }
             String str2 = a8Var.N;
-            this.s = str2;
+            this.v = str2;
             long parseLong = Long.parseLong(str2.substring(9));
             if (bitmap == null && Build.VERSION.SDK_INT >= 29) {
                 try {
@@ -253,16 +257,16 @@ public final class k4 extends View {
                 }
             }
         }
-        this.a.setImageBitmap(bitmap);
+        this.b.setImageBitmap(bitmap);
     }
 
     public final void b(boolean z10, boolean z11) {
-        if (this.e == z10) {
+        if (this.f == z10) {
             return;
         }
-        this.e = z10;
+        this.f = z10;
         if (!z11) {
-            this.y.a(z10);
+            this.E.a(z10);
         }
         invalidate();
     }
@@ -274,40 +278,40 @@ public final class k4 extends View {
         float dp2 = AndroidUtilities.dp(4.0f);
         float dp3 = AndroidUtilities.dp(94.0f);
         float dp4 = AndroidUtilities.dp(112.0f);
-        ImageReceiver imageReceiver = this.a;
+        ImageReceiver imageReceiver = this.b;
         imageReceiver.setImageCoords(dp, dp2, dp3, dp4);
         imageReceiver.draw(canvas);
         float dp5 = AndroidUtilities.dp(1.5f);
-        Paint paint = this.b;
+        Paint paint = this.c;
         paint.setStrokeWidth(dp5);
-        float e = this.y.e(this.e);
+        float e = this.E.e(this.f);
         if (e > 0.0f) {
             RectF rectF = AndroidUtilities.rectTmp;
             rectF.set(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(96.0f), AndroidUtilities.dp(116.0f));
             paint.setAlpha((int) (e * 255.0f));
             canvas.drawRoundRect(rectF, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), paint);
         }
-        this.v = (getWidth() - AndroidUtilities.dp(17.163f)) - AndroidUtilities.dp(3.0f);
-        this.w = AndroidUtilities.dp(3.0f) + AndroidUtilities.dp(17.833f);
-        this.x = AndroidUtilities.dp(12.833f);
-        float e7 = this.E.e(this.f);
-        float a2 = this.n.a(0.075f);
+        this.w = (getWidth() - AndroidUtilities.dp(17.163f)) - AndroidUtilities.dp(3.0f);
+        this.x = AndroidUtilities.dp(3.0f) + AndroidUtilities.dp(17.833f);
+        this.y = AndroidUtilities.dp(12.833f);
+        float e7 = this.F.e(this.h);
+        float a2 = this.r.a(0.075f);
         canvas.save();
-        canvas.scale(a2, a2, this.v, this.w);
+        canvas.scale(a2, a2, this.w, this.x);
         if (e7 > 0.0f) {
-            Paint paint2 = this.c;
+            Paint paint2 = this.d;
             paint2.setAlpha((int) (e7 * 255.0f));
-            canvas.drawCircle(this.v, this.w, this.x, paint2);
+            canvas.drawCircle(this.w, this.x, this.y, paint2);
         }
         paint.setAlpha(255);
-        canvas.drawCircle(this.v, this.w, this.x - AndroidUtilities.dp(1.0f), paint);
+        canvas.drawCircle(this.w, this.x, this.y - AndroidUtilities.dp(1.0f), paint);
         if (e7 > 0.0f) {
-            float f7 = this.v;
-            float f10 = this.x;
+            float f7 = this.w;
+            float f10 = this.y;
             float f11 = f7 - f10;
-            float f12 = this.w;
+            float f12 = this.x;
             float f13 = f7 + f10;
-            org.telegram.ui.Components.p6 p6Var = this.d;
+            org.telegram.ui.Components.p6 p6Var = this.e;
             p6Var.o(f11, f12, f13, f12);
             p6Var.B = (int) (e7 * 255.0f);
             p6Var.draw(canvas);
@@ -318,13 +322,13 @@ public final class k4 extends View {
     @Override // android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        this.a.onAttachedToWindow();
+        this.b.onAttachedToWindow();
     }
 
     @Override // android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        this.a.onDetachedFromWindow();
+        this.b.onDetachedFromWindow();
     }
 
     @Override // android.view.View
@@ -335,13 +339,13 @@ public final class k4 extends View {
     @Override // android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         View.OnClickListener onClickListener;
-        boolean z10 = motionEvent.getX() >= this.v - ((float) AndroidUtilities.dp(14.0f)) && motionEvent.getX() <= this.v + ((float) AndroidUtilities.dp(14.0f)) && motionEvent.getY() >= this.w - ((float) AndroidUtilities.dp(14.0f)) && motionEvent.getY() <= this.w + ((float) AndroidUtilities.dp(14.0f));
+        boolean z10 = motionEvent.getX() >= this.w - ((float) AndroidUtilities.dp(14.0f)) && motionEvent.getX() <= this.w + ((float) AndroidUtilities.dp(14.0f)) && motionEvent.getY() >= this.x - ((float) AndroidUtilities.dp(14.0f)) && motionEvent.getY() <= this.x + ((float) AndroidUtilities.dp(14.0f));
         int action = motionEvent.getAction();
-        yc ycVar = this.n;
+        yc ycVar = this.r;
         if (action == 0) {
             ycVar.c(z10);
         } else if (motionEvent.getAction() == 1) {
-            if (ycVar.i && z10 && (onClickListener = this.h) != null) {
+            if (ycVar.i && z10 && (onClickListener = this.n) != null) {
                 onClickListener.onClick(this);
             }
             ycVar.c(false);
@@ -352,15 +356,29 @@ public final class k4 extends View {
     }
 
     public void setOnCheckboxClick(View.OnClickListener onClickListener) {
-        this.h = onClickListener;
+        this.n = onClickListener;
     }
 
     public void setPosition(int i10) {
-        this.d.t(i10 < 0 ? "" : Integer.toString(i10 + 1), true, true);
+        this.e.t(i10 < 0 ? "" : Integer.toString(i10 + 1), true, true);
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void updateColors() {
+        try {
+            this.d.setColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Oh, this.a));
+            invalidate();
+        } catch (Exception e) {
+            FileLog.e(e);
+        }
     }
 
     @Override // android.view.View
     public final boolean verifyDrawable(Drawable drawable) {
-        return drawable == this.d || super.verifyDrawable(drawable);
+        return drawable == this.e || super.verifyDrawable(drawable);
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

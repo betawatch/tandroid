@@ -10,7 +10,7 @@ import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class l {
     public boolean a;
@@ -25,27 +25,27 @@ public final class l {
     public long j;
     public float k;
     public float l;
-    public final /* synthetic */ org.telegram.ui.Cells.u0 m;
+    public final /* synthetic */ org.telegram.ui.Cells.t0 m;
 
-    public l(org.telegram.ui.Cells.u0 u0Var) {
-        this.m = u0Var;
+    public l(org.telegram.ui.Cells.t0 t0Var) {
+        this.m = t0Var;
     }
 
     public final void a(int i10, boolean z10) {
         ArrayList arrayList;
-        org.telegram.ui.Cells.u0 u0Var = this.m;
-        ArrayList arrayList2 = u0Var.c;
-        HashMap hashMap = (HashMap) u0Var.f;
-        RectF rectF = (RectF) u0Var.g;
+        org.telegram.ui.Cells.t0 t0Var = this.m;
+        ArrayList arrayList2 = t0Var.c;
+        HashMap hashMap = (HashMap) t0Var.f;
+        RectF rectF = (RectF) t0Var.g;
         this.j = Math.abs(Utilities.fastRandom.nextLong() % 2250) + 2250;
         this.k = (Math.abs(Utilities.fastRandom.nextFloat()) * 0.45f) + 0.6f;
-        String str = m.a[org.telegram.ui.Cells.c1.g(Utilities.fastRandom, 49)];
+        String str = m.a[org.telegram.ui.Cells.b1.g(Utilities.fastRandom, 49)];
         if (str.length() > 7) {
             this.k *= 0.6f;
         } else if (str.length() > 5) {
             this.k *= 0.75f;
         }
-        StaticLayout staticLayout = new StaticLayout(str, u0Var.a, AndroidUtilities.displaySize.x, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+        StaticLayout staticLayout = new StaticLayout(str, t0Var.a, AndroidUtilities.displaySize.x, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
         this.e = staticLayout;
         int i11 = 0;
         if (staticLayout.getLineCount() <= 0) {
@@ -87,7 +87,7 @@ public final class l {
                 l lVar = (l) arrayList2.get(i11);
                 if (lVar.a) {
                     arrayList = arrayList2;
-                    float min = Math.min(Math.abs(((((this.k / u0Var.b) * lVar.h) * 1.1f) + lVar.b) - abs3), Math.abs(lVar.b - abs3));
+                    float min = Math.min(Math.abs(((((this.k / t0Var.b) * lVar.h) * 1.1f) + lVar.b) - abs3), Math.abs(lVar.b - abs3));
                     float f15 = lVar.c - abs4;
                     float f16 = (f15 * f15) + (min * min);
                     if (f16 < f14) {

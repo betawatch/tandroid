@@ -1,14 +1,14 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class qb implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.n2 b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.o2 b;
 
-    public /* synthetic */ qb(int i10, org.telegram.ui.ActionBar.n2 n2Var) {
+    public /* synthetic */ qb(int i10, org.telegram.ui.ActionBar.o2 o2Var) {
         this.a = i10;
-        this.b = n2Var;
+        this.b = o2Var;
     }
 
     @Override // java.lang.Runnable
@@ -18,10 +18,10 @@ public final /* synthetic */ class qb implements Runnable {
                 MessagesController.lambda$checkSensitive$450(this.b);
                 break;
             case 1:
-                org.telegram.ui.Components.f5.s0(7, this.b, null);
+                org.telegram.ui.Components.f5.t0(7, this.b, null);
                 break;
             case 2:
-                org.telegram.ui.Components.f5.s0(8, this.b, null);
+                org.telegram.ui.Components.f5.t0(8, this.b, null);
                 break;
             default:
                 TranslateController.lambda$pushToSummarize$18(this.b);

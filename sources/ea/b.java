@@ -24,20 +24,22 @@ import k5.t;
 import k5.w;
 import l5.h;
 import l5.i;
+import l5.m;
 import l5.o;
 import m.g3;
 import m.s3;
 import m1.j;
 import m5.e;
 import org.json.JSONObject;
-import org.telegram.ui.web.m;
-import qg.h0;
+import org.telegram.ui.Wallet.e8;
+import qg.g0;
+import si.o0;
 import t7.u;
 import w7.i6;
 import z9.b0;
 import z9.k0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class b {
     public Object a;
@@ -65,19 +67,19 @@ public final class b {
             str = str.concat(" processName");
         }
         if (((Integer) this.c) == null) {
-            str = r4.c.u(str, " reasonCode");
+            str = o0.u(str, " reasonCode");
         }
         if (((Integer) this.d) == null) {
-            str = r4.c.u(str, " importance");
+            str = o0.u(str, " importance");
         }
         if (((Long) this.e) == null) {
-            str = r4.c.u(str, " pss");
+            str = o0.u(str, " pss");
         }
         if (((Long) this.f) == null) {
-            str = r4.c.u(str, " rss");
+            str = o0.u(str, " rss");
         }
         if (((Long) this.g) == null) {
-            str = r4.c.u(str, " timestamp");
+            str = o0.u(str, " timestamp");
         }
         if (str.isEmpty()) {
             return new b0(((Integer) this.a).intValue(), (String) this.b, ((Integer) this.c).intValue(), ((Integer) this.d).intValue(), ((Long) this.e).longValue(), ((Long) this.f).longValue(), ((Long) this.g).longValue(), (String) this.h, (List) this.i);
@@ -91,25 +93,25 @@ public final class b {
             str = str.concat(" model");
         }
         if (((Integer) this.c) == null) {
-            str = r4.c.u(str, " cores");
+            str = o0.u(str, " cores");
         }
         if (((Long) this.d) == null) {
-            str = r4.c.u(str, " ram");
+            str = o0.u(str, " ram");
         }
         if (((Long) this.e) == null) {
-            str = r4.c.u(str, " diskSpace");
+            str = o0.u(str, " diskSpace");
         }
         if (((Boolean) this.f) == null) {
-            str = r4.c.u(str, " simulator");
+            str = o0.u(str, " simulator");
         }
         if (((Integer) this.g) == null) {
-            str = r4.c.u(str, " state");
+            str = o0.u(str, " state");
         }
         if (((String) this.h) == null) {
-            str = r4.c.u(str, " manufacturer");
+            str = o0.u(str, " manufacturer");
         }
         if (((String) this.i) == null) {
-            str = r4.c.u(str, " modelClass");
+            str = o0.u(str, " modelClass");
         }
         if (str.isEmpty()) {
             return new k0(((Integer) this.a).intValue(), (String) this.b, ((Integer) this.c).intValue(), ((Long) this.d).longValue(), ((Long) this.e).longValue(), ((Boolean) this.f).booleanValue(), ((Integer) this.g).intValue(), (String) this.h, (String) this.i);
@@ -121,21 +123,21 @@ public final class b {
         a aVar = null;
         try {
             if (!j.b(2, i10)) {
-                JSONObject u10 = ((qb.c) this.e).u();
-                if (u10 != null) {
-                    a Z = ((l) this.c).Z(u10);
-                    f("Loaded cached settings: ", u10);
+                JSONObject v = ((qb.c) this.e).v();
+                if (v != null) {
+                    a Y = ((l) this.c).Y(v);
+                    f("Loaded cached settings: ", v);
                     ((u) this.d).getClass();
                     long currentTimeMillis = System.currentTimeMillis();
-                    if (j.b(3, i10) || Z.c >= currentTimeMillis) {
+                    if (j.b(3, i10) || Y.c >= currentTimeMillis) {
                         try {
                             if (Log.isLoggable("FirebaseCrashlytics", 2)) {
                                 Log.v("FirebaseCrashlytics", "Returning cached settings.", null);
                             }
-                            return Z;
+                            return Y;
                         } catch (Exception e) {
                             e = e;
-                            aVar = Z;
+                            aVar = Y;
                             Log.e("FirebaseCrashlytics", "Failed to get cached settings", e);
                             return aVar;
                         }
@@ -158,8 +160,8 @@ public final class b {
         return (a) ((AtomicReference) this.h).get();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:11:0x040b  */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x03ef A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:11:0x0405  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x03e9 A[SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -171,10 +173,8 @@ public final class b {
         m5.a aVar2;
         int i11;
         j5.c f7;
-        Integer num;
         String str2;
-        String str3;
-        Iterator it;
+        Integer num;
         s3 s3Var;
         int i12;
         final b bVar = this;
@@ -225,7 +225,7 @@ public final class b {
                         default:
                             s5.g gVar3 = (s5.g) ((s5.d) this.b.c);
                             gVar3.getClass();
-                            return (Iterable) gVar3.c(new m(8, gVar3, iVar2));
+                            return (Iterable) gVar3.c(new e8(10, gVar3, iVar2));
                     }
                 }
             })).booleanValue()) {
@@ -272,7 +272,7 @@ public final class b {
                         default:
                             s5.g gVar3 = (s5.g) ((s5.d) this.b.c);
                             gVar3.getClass();
-                            return (Iterable) gVar3.c(new m(8, gVar3, iVar2));
+                            return (Iterable) gVar3.c(new e8(10, gVar3, iVar2));
                     }
                 }
             });
@@ -288,15 +288,14 @@ public final class b {
                 i11 = 2;
             } else {
                 ArrayList arrayList = new ArrayList();
-                Iterator it2 = iterable.iterator();
-                while (it2.hasNext()) {
-                    arrayList.add(((s5.b) it2.next()).c);
+                Iterator it = iterable.iterator();
+                while (it.hasNext()) {
+                    arrayList.add(((s5.b) it.next()).c);
                 }
-                String str4 = "proto";
                 if (bArr2 != null) {
                     s5.c cVar2 = (s5.c) bVar.i;
                     Objects.requireNonNull(cVar2);
-                    o5.a aVar3 = (o5.a) gVar.f(new h0(cVar2, i15));
+                    o5.a aVar3 = (o5.a) gVar.f(new g0(cVar2, i15));
                     com.google.firebase.messaging.l lVar = new com.google.firebase.messaging.l();
                     lVar.f = new HashMap();
                     lVar.d = Long.valueOf(((u5.a) bVar.g).d());
@@ -311,8 +310,8 @@ public final class b {
                         g3Var.z(aVar3, byteArrayOutputStream);
                     } catch (IOException unused) {
                     }
-                    lVar.c = new l5.m(cVar3, byteArrayOutputStream.toByteArray());
-                    arrayList.add(((j5.d) a2).a(lVar.h()));
+                    lVar.c = new m(cVar3, byteArrayOutputStream.toByteArray());
+                    arrayList.add(((j5.d) a2).a(lVar.f()));
                 }
                 j5.d dVar = (j5.d) a2;
                 HashMap hashMap = new HashMap();
@@ -322,89 +321,82 @@ public final class b {
                     Object obj = arrayList.get(i16);
                     i16++;
                     h hVar = (h) obj;
-                    String str5 = hVar.a;
-                    if (hashMap.containsKey(str5)) {
-                        ((List) hashMap.get(str5)).add(hVar);
+                    String str3 = hVar.a;
+                    if (hashMap.containsKey(str3)) {
+                        ((List) hashMap.get(str3)).add(hVar);
                     } else {
                         ArrayList arrayList2 = new ArrayList();
                         arrayList2.add(hVar);
-                        hashMap.put(str5, arrayList2);
+                        hashMap.put(str3, arrayList2);
                     }
                 }
                 ArrayList arrayList3 = new ArrayList();
-                Iterator it3 = hashMap.entrySet().iterator();
-                while (it3.hasNext()) {
-                    Map.Entry entry = (Map.Entry) it3.next();
+                Iterator it2 = hashMap.entrySet().iterator();
+                while (it2.hasNext()) {
+                    Map.Entry entry = (Map.Entry) it2.next();
                     h hVar2 = (h) ((List) entry.getValue()).get(0);
                     w wVar = w.a;
                     long d = dVar.f.d();
                     long d10 = dVar.e.d();
                     k5.j jVar = new k5.j(new k5.h(Integer.valueOf(hVar2.b("sdk-version")), hVar2.a("model"), hVar2.a("hardware"), hVar2.a("device"), hVar2.a("product"), hVar2.a("os-uild"), hVar2.a("manufacturer"), hVar2.a("fingerprint"), hVar2.a("locale"), hVar2.a("country"), hVar2.a("mcc_mnc"), hVar2.a("application_build")));
                     try {
-                        str2 = null;
                         num = Integer.valueOf(Integer.parseInt((String) entry.getKey()));
+                        str2 = null;
                     } catch (NumberFormatException unused2) {
-                        num = null;
                         str2 = (String) entry.getKey();
+                        num = null;
                     }
                     ArrayList arrayList4 = new ArrayList();
                     for (h hVar3 : (List) entry.getValue()) {
+                        Iterator it3 = it2;
+                        m mVar = hVar3.c;
                         byte[] bArr3 = bArr2;
-                        l5.m mVar = hVar3.c;
-                        long j12 = j11;
                         i5.c cVar4 = mVar.a;
                         byte[] bArr4 = mVar.b;
-                        if (cVar4.equals(new i5.c(str4))) {
+                        long j12 = j11;
+                        if (cVar4.equals(new i5.c("proto"))) {
                             s3Var = new s3();
                             s3Var.d = bArr4;
-                            str3 = str4;
+                        } else if (cVar4.equals(new i5.c("json"))) {
+                            String str4 = new String(bArr4, Charset.forName("UTF-8"));
+                            s3 s3Var2 = new s3();
+                            s3Var2.e = str4;
+                            s3Var = s3Var2;
                         } else {
-                            str3 = str4;
-                            if (cVar4.equals(new i5.c("json"))) {
-                                String str6 = new String(bArr4, Charset.forName("UTF-8"));
-                                s3Var = new s3();
-                                s3Var.e = str6;
-                            } else {
-                                it = it3;
-                                String c10 = i6.c("CctTransportBackend");
-                                if (Log.isLoggable(c10, 5)) {
-                                    Log.w(c10, "Received event of unsupported encoding " + cVar4 + ". Skipping...");
-                                }
-                                it3 = it;
-                                bArr2 = bArr3;
-                                j11 = j12;
-                                str4 = str3;
+                            String c10 = i6.c("CctTransportBackend");
+                            if (Log.isLoggable(c10, 5)) {
+                                Log.w(c10, "Received event of unsupported encoding " + cVar4 + ". Skipping...");
                             }
+                            it2 = it3;
+                            bArr2 = bArr3;
+                            j11 = j12;
                         }
-                        it = it3;
                         s3Var.a = Long.valueOf(hVar3.d);
                         s3Var.c = Long.valueOf(hVar3.e);
-                        String str7 = (String) hVar3.f.get("tz-offset");
-                        s3Var.f = Long.valueOf(str7 == null ? 0L : Long.valueOf(str7).longValue());
+                        String str5 = (String) hVar3.f.get("tz-offset");
+                        s3Var.f = Long.valueOf(str5 == null ? 0L : Long.valueOf(str5).longValue());
                         s3Var.h = new n((k5.u) k5.u.a.get(hVar3.b("net-type")), (t) t.a.get(hVar3.b("mobile-subtype")));
                         Integer num2 = hVar3.b;
                         if (num2 != null) {
                             s3Var.b = num2;
                         }
-                        String str8 = ((Long) s3Var.a) == null ? " eventTimeMs" : "";
+                        String str6 = ((Long) s3Var.a) == null ? " eventTimeMs" : "";
                         if (((Long) s3Var.c) == null) {
-                            str8 = str8.concat(" eventUptimeMs");
+                            str6 = str6.concat(" eventUptimeMs");
                         }
                         if (((Long) s3Var.f) == null) {
-                            str8 = r4.c.u(str8, " timezoneOffsetSeconds");
+                            str6 = o0.u(str6, " timezoneOffsetSeconds");
                         }
-                        if (!str8.isEmpty()) {
-                            throw new IllegalStateException("Missing required properties:".concat(str8));
+                        if (!str6.isEmpty()) {
+                            throw new IllegalStateException("Missing required properties:".concat(str6));
                         }
                         arrayList4.add(new k(((Long) s3Var.a).longValue(), (Integer) s3Var.b, ((Long) s3Var.c).longValue(), (byte[]) s3Var.d, (String) s3Var.e, ((Long) s3Var.f).longValue(), (n) s3Var.h));
-                        it3 = it;
+                        it2 = it3;
                         bArr2 = bArr3;
                         j11 = j12;
-                        str4 = str3;
                     }
                     arrayList3.add(new k5.l(d, d10, jVar, num, str2, arrayList4));
-                    bArr2 = bArr2;
-                    str4 = str4;
+                    it2 = it2;
                 }
                 bArr = bArr2;
                 j10 = j11;
@@ -417,9 +409,9 @@ public final class b {
                         if (str == null) {
                             str = null;
                         }
-                        String str9 = a10.a;
-                        if (str9 != null) {
-                            url = j5.d.b(str9);
+                        String str7 = a10.a;
+                        if (str7 != null) {
+                            url = j5.d.b(str7);
                         }
                     } catch (IllegalArgumentException unused3) {
                         aVar = new m5.a(3, -1L);
@@ -484,29 +476,25 @@ public final class b {
             }
             bVar = this;
             iVar2 = iVar;
-            long j13 = j10;
-            int i20 = 4;
-            gVar.f(new m(i20, bVar, iterable));
+            j11 = j10;
+            gVar.f(new e8(6, bVar, iterable));
             if (i12 == 1) {
-                j11 = Math.max(j13, aVar2.b);
+                j11 = Math.max(j11, aVar2.b);
                 if (bArr != null) {
-                    gVar.f(new h0(bVar, i20));
+                    gVar.f(new g0(bVar, 4));
                 }
-            } else {
-                if (i12 == 4) {
-                    HashMap hashMap2 = new HashMap();
-                    Iterator it4 = iterable.iterator();
-                    while (it4.hasNext()) {
-                        String str10 = ((s5.b) it4.next()).c.a;
-                        if (hashMap2.containsKey(str10)) {
-                            hashMap2.put(str10, Integer.valueOf(((Integer) hashMap2.get(str10)).intValue() + 1));
-                        } else {
-                            hashMap2.put(str10, 1);
-                        }
+            } else if (i12 == 4) {
+                HashMap hashMap2 = new HashMap();
+                Iterator it4 = iterable.iterator();
+                while (it4.hasNext()) {
+                    String str8 = ((s5.b) it4.next()).c.a;
+                    if (hashMap2.containsKey(str8)) {
+                        hashMap2.put(str8, Integer.valueOf(((Integer) hashMap2.get(str8)).intValue() + 1));
+                    } else {
+                        hashMap2.put(str8, 1);
                     }
-                    gVar.f(new m(5, bVar, hashMap2));
                 }
-                j11 = j13;
+                gVar.f(new e8(7, bVar, hashMap2));
             }
             bArr2 = bArr;
         }

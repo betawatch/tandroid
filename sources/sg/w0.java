@@ -5,11 +5,11 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.sa;
-import org.telegram.ui.ow0;
+import org.telegram.ui.sw0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class w0 implements z4.e {
+public final class w0 implements z4.f {
     public final /* synthetic */ sa a;
     public final /* synthetic */ y0 b;
 
@@ -18,8 +18,28 @@ public final class w0 implements z4.e {
         this.a = saVar;
     }
 
-    @Override // z4.e
-    public final void a(float f7, int i10, int i11) {
+    @Override // z4.f
+    public final void a(int i10) {
+        y0 y0Var = this.b;
+        ArrayList arrayList = y0Var.d;
+        if (((sw0) arrayList.get(i10)).a == 0) {
+            y0Var.N.setTitle(LocaleController.getString(R.string.DoubledLimits));
+            y0Var.N.requestLayout();
+        } else if (((sw0) arrayList.get(i10)).a == 14) {
+            y0Var.N.setTitle(LocaleController.getString(R.string.UpgradedStories));
+            y0Var.N.requestLayout();
+        } else if (((sw0) arrayList.get(i10)).a == 40) {
+            y0Var.N.setTitle(LocaleController.getString(R.string.FeaturePreviewGifts));
+            y0Var.N.requestLayout();
+        } else if (((sw0) arrayList.get(i10)).a == 28) {
+            y0Var.N.setTitle(LocaleController.getString(R.string.TelegramBusiness));
+            y0Var.N.requestLayout();
+        }
+        d();
+    }
+
+    @Override // z4.f
+    public final void b(float f7, int i10, int i11) {
         sa saVar = this.a;
         saVar.b = f7;
         saVar.c = i10;
@@ -28,26 +48,6 @@ public final class w0 implements z4.e {
         y0Var.G = i10;
         y0Var.H = i11 > 0 ? i10 + 1 : i10 - 1;
         y0Var.I = f7;
-        d();
-    }
-
-    @Override // z4.e
-    public final void b(int i10) {
-        y0 y0Var = this.b;
-        ArrayList arrayList = y0Var.d;
-        if (((ow0) arrayList.get(i10)).a == 0) {
-            y0Var.N.setTitle(LocaleController.getString(R.string.DoubledLimits));
-            y0Var.N.requestLayout();
-        } else if (((ow0) arrayList.get(i10)).a == 14) {
-            y0Var.N.setTitle(LocaleController.getString(R.string.UpgradedStories));
-            y0Var.N.requestLayout();
-        } else if (((ow0) arrayList.get(i10)).a == 40) {
-            y0Var.N.setTitle(LocaleController.getString(R.string.FeaturePreviewGifts));
-            y0Var.N.requestLayout();
-        } else if (((ow0) arrayList.get(i10)).a == 28) {
-            y0Var.N.setTitle(LocaleController.getString(R.string.TelegramBusiness));
-            y0Var.N.requestLayout();
-        }
         d();
     }
 
@@ -64,20 +64,20 @@ public final class w0 implements z4.e {
                 break;
             }
             x0 x0Var = (x0) v0Var.getChildAt(i12);
-            if (!y0Var.w || !(x0Var.f instanceof o0)) {
+            if (!y0Var.w || !(x0Var.f instanceof n0)) {
                 int i13 = x0Var.a;
-                m0 m0Var = x0Var.e;
+                l0 l0Var = x0Var.e;
                 if (i13 == y0Var.G) {
                     f7 = (-x0Var.getMeasuredWidth()) * y0Var.I;
-                    m0Var.setOffset(f7);
+                    l0Var.setOffset(f7);
                 } else if (i13 == y0Var.H) {
                     f7 = ((-x0Var.getMeasuredWidth()) * y0Var.I) + x0Var.getMeasuredWidth();
-                    m0Var.setOffset(f7);
+                    l0Var.setOffset(f7);
                 } else {
-                    m0Var.setOffset(x0Var.getMeasuredWidth());
+                    l0Var.setOffset(x0Var.getMeasuredWidth());
                 }
             }
-            if (x0Var.f instanceof o0) {
+            if (x0Var.f instanceof n0) {
                 x0Var.setTranslationX(-f7);
                 x0Var.b.setTranslationX(f7);
                 x0Var.c.setTranslationX(f7);
@@ -85,9 +85,9 @@ public final class w0 implements z4.e {
             i12++;
         }
         int i14 = y0Var.G;
-        boolean z10 = i14 >= 0 && i14 < arrayList.size() && ((i11 = ((ow0) arrayList.get(y0Var.G)).a) == 0 || i11 == 14 || i11 == 28);
+        boolean z10 = i14 >= 0 && i14 < arrayList.size() && ((i11 = ((sw0) arrayList.get(y0Var.G)).a) == 0 || i11 == 14 || i11 == 28);
         int i15 = y0Var.H;
-        boolean z11 = i15 >= 0 && i15 < arrayList.size() && ((i10 = ((ow0) arrayList.get(y0Var.H)).a) == 0 || i10 == 14 || i10 == 28);
+        boolean z11 = i15 >= 0 && i15 < arrayList.size() && ((i10 = ((sw0) arrayList.get(y0Var.H)).a) == 0 || i10 == 14 || i10 == 28);
         if (z10 && z11) {
             y0Var.f = 1.0f;
             float f10 = y0Var.I;
@@ -115,11 +115,11 @@ public final class w0 implements z4.e {
         if (i16 != y0Var.K) {
             y0Var.K = i16;
             y0Var.r.invalidate();
-            AndroidUtilities.runOnUIThread(new org.telegram.ui.web.z1(this, 23));
+            AndroidUtilities.runOnUIThread(new org.telegram.ui.web.a2(this, 23));
         }
     }
 
-    @Override // z4.e
+    @Override // z4.f
     public final void c(int i10) {
     }
 }

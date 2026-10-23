@@ -1,32 +1,25 @@
 package org.telegram.ui;
 
-import android.view.View;
+import android.widget.ImageView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class bk0 implements org.telegram.ui.Components.yl0, org.telegram.ui.ActionBar.a2 {
-    public final /* synthetic */ NotificationsSettingsActivity a;
+public final class bk0 extends org.telegram.ui.Cells.r8 {
+    public ImageView W;
 
-    public /* synthetic */ bk0(NotificationsSettingsActivity notificationsSettingsActivity) {
-        this.a = notificationsSettingsActivity;
+    @Override // org.telegram.ui.Cells.r8, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        int dp = LocaleController.isRTL ? AndroidUtilities.dp(17.0f) : (i12 - i10) - AndroidUtilities.dp(41.0f);
+        int A = org.telegram.messenger.sl.A(24.0f, i13 - i11, 2);
+        this.W.layout(dp, A, AndroidUtilities.dp(24.0f) + dp, AndroidUtilities.dp(24.0f) + A);
     }
 
-    @Override // org.telegram.ui.Components.yl0
-    public /* synthetic */ boolean P0(View view) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.yl0
-    public void d(float f7, float f10, int i10, View view) {
-        NotificationsSettingsActivity.Y(this.a, view, i10, f7);
-    }
-
-    @Override // org.telegram.ui.ActionBar.a2
-    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        NotificationsSettingsActivity.Z(this.a);
-    }
-
-    @Override // org.telegram.ui.Components.yl0
-    public /* synthetic */ void a0(View view, float f7, float f10) {
+    @Override // org.telegram.ui.Cells.r8, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        this.W.measure(i10, i11);
     }
 }

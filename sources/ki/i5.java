@@ -2,9 +2,9 @@ package ki;
 
 import android.text.Editable;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Cells.n9;
+import org.telegram.ui.Cells.o9;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class i5 implements g1 {
     public final /* synthetic */ r5 a;
@@ -32,7 +32,7 @@ public final class i5 implements g1 {
 
     @Override // ki.g1
     public final boolean M(boolean z10) {
-        return this.b.s(this.a, z10);
+        return this.b.r(this.a, z10);
     }
 
     @Override // ki.g1
@@ -43,13 +43,13 @@ public final class i5 implements g1 {
     @Override // ki.g1
     public final void R(final h1 h1Var, final int i10, final int i11) {
         c3 c3Var;
-        final n9 textSelectionHelper;
-        final int k10;
+        final o9 textSelectionHelper;
+        final int j10;
         o5 o5Var = this.b;
         if (o5Var.G || i10 == i11 || (c3Var = o5Var.E) == null || (textSelectionHelper = c3Var.a.getTextSelectionHelper()) == null) {
             return;
         }
-        if (!(textSelectionHelper.x() && textSelectionHelper.W == o5Var) && (k10 = o5Var.k(this.a.b)) >= 0) {
+        if (!(textSelectionHelper.x() && textSelectionHelper.W == o5Var) && (j10 = o5Var.j(this.a.b)) >= 0) {
             o5Var.post(new Runnable() { // from class: ki.h5
                 @Override // java.lang.Runnable
                 public final void run() {
@@ -57,7 +57,7 @@ public final class i5 implements g1 {
                     h1 h1Var2 = h1Var;
                     int length = h1Var2.length();
                     int i12 = i11;
-                    if (length < i12 || h1Var2.getSelectionStart() == h1Var2.getSelectionEnd() || !textSelectionHelper.j0(o5Var2, k10, i10, i12)) {
+                    if (length < i12 || h1Var2.getSelectionStart() == h1Var2.getSelectionEnd() || !textSelectionHelper.j0(o5Var2, j10, i10, i12)) {
                         return;
                     }
                     o5Var2.G = true;
@@ -73,8 +73,8 @@ public final class i5 implements g1 {
         c3 c3Var = this.b.E;
         if (c3Var != null) {
             w3 w3Var = c3Var.a;
-            w3.N1(w3Var, h1Var);
-            w3Var.f3.o(h1Var, true);
+            w3.S1(w3Var, h1Var);
+            w3Var.i3.o(h1Var, true);
         }
     }
 
@@ -85,7 +85,7 @@ public final class i5 implements g1 {
         if (c3Var == null || o5Var.a == null) {
             return false;
         }
-        return c3Var.a.T4();
+        return c3Var.a.Y4();
     }
 
     @Override // ki.g1
@@ -93,7 +93,7 @@ public final class i5 implements g1 {
         h2 h2Var;
         o5 o5Var = this.b;
         c3 c3Var = o5Var.E;
-        if (c3Var == null || o5Var.a == null || (h2Var = c3Var.a.H3) == null) {
+        if (c3Var == null || o5Var.a == null || (h2Var = c3Var.a.K3) == null) {
             return;
         }
         h2Var.f(i10, i11);
@@ -110,7 +110,7 @@ public final class i5 implements g1 {
         if (c3Var == null || charSequence == null || charSequence.length() <= 0) {
             return;
         }
-        c3Var.a.u4(charSequence.toString());
+        c3Var.a.z4(charSequence.toString());
     }
 
     @Override // ki.g1
@@ -118,6 +118,6 @@ public final class i5 implements g1 {
     }
 
     @Override // ki.g1
-    public final /* synthetic */ void o() {
+    public final /* synthetic */ void m() {
     }
 }

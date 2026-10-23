@@ -13,24 +13,23 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.cn0;
 import org.telegram.ui.Components.ey;
-import org.telegram.ui.Components.i80;
+import org.telegram.ui.Components.j80;
 import org.telegram.ui.Components.ky;
-import org.telegram.ui.Components.n61;
 import org.telegram.ui.Components.rw;
+import org.telegram.ui.Components.s61;
 import org.telegram.ui.Components.sy;
 import org.telegram.ui.Components.ty;
 import org.telegram.ui.Components.tz;
-import org.telegram.ui.Components.zm0;
-import org.telegram.ui.cy;
-import org.telegram.ui.ig;
+import org.telegram.ui.bg;
 import org.telegram.ui.qe;
-import org.telegram.ui.qn;
 import org.telegram.ui.re;
-import org.telegram.ui.st0;
-import org.telegram.ui.vx;
+import org.telegram.ui.sn;
+import org.telegram.ui.vt0;
+import org.telegram.ui.xx;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f3 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -53,148 +52,148 @@ public final /* synthetic */ class f3 implements Utilities.Callback {
     public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                l7.a1((l7) this.b, (TL_stars.StarGift) this.c, (TL_stars.StarGiftAttribute) this.d, (org.telegram.ui.Components.zc[]) this.e, (boolean[]) this.f, (ArrayList) obj);
+                l7.Z0((l7) this.b, (TL_stars.StarGift) this.c, (TL_stars.StarGiftAttribute) this.d, (org.telegram.ui.Components.zc[]) this.e, (boolean[]) this.f, (ArrayList) obj);
                 break;
             case 1:
                 AndroidUtilities.runOnUIThread(new g3((org.telegram.ui.vb) this.b, (TLRPC.ChannelParticipant) obj, (ArrayList) this.c, (ArrayList) this.d, (ArrayList) this.e, (org.telegram.ui.ta) this.f, 12));
                 break;
             case 2:
-                qn qnVar = (qn) this.b;
+                sn snVar = (sn) this.b;
                 TLRPC.TL_document tL_document = (TLRPC.TL_document) this.c;
                 String str = (String) this.d;
                 MessageObject.SendAnimationData sendAnimationData = (MessageObject.SendAnimationData) this.f;
                 Long l4 = (Long) obj;
-                int i10 = qnVar.R3;
+                int i10 = snVar.d4;
                 Object obj2 = this.e;
                 if (i10 == 1) {
-                    org.telegram.ui.Components.f5.L(qnVar.getParentActivity(), qnVar.T5, new a1.d(qnVar, tL_document, str, obj2, 6), qnVar.ea);
+                    org.telegram.ui.Components.f5.M(snVar.getParentActivity(), snVar.f6, new a1.d(snVar, tL_document, str, obj2, 6), snVar.qa);
                 } else {
-                    qnVar.getSendMessagesHelper().sendSticker(tL_document, str, qnVar.T5, qnVar.n5, qnVar.X3, null, qnVar.l5, sendAnimationData, true, 0, 0, false, obj2, qnVar.H8(), l4.longValue(), qnVar.S8(), qnVar.g5);
+                    snVar.getSendMessagesHelper().sendSticker(tL_document, str, snVar.f6, snVar.z5, snVar.j4, null, snVar.x5, sendAnimationData, true, 0, 0, false, obj2, snVar.H8(), l4.longValue(), snVar.S8(), snVar.s5);
                     tL_document = tL_document;
                 }
-                qnVar.j9(false);
-                qnVar.Y.m(tL_document);
-                qnVar.Y.setFieldText("");
+                snVar.j9(false);
+                snVar.Y.l(tL_document);
+                snVar.Y.setFieldText("");
                 break;
             case 3:
-                final qn qnVar2 = (qn) this.b;
-                org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) this.c;
+                final sn snVar2 = (sn) this.b;
+                org.telegram.ui.Cells.t1 t1Var = (org.telegram.ui.Cells.t1) this.c;
                 String str2 = (String) this.d;
                 TLRPC.TL_contact tL_contact = (TLRPC.TL_contact) this.e;
                 CharacterStyle characterStyle = (CharacterStyle) this.f;
                 final TLRPC.User user = (TLRPC.User) obj;
-                final TLRPC.UserFull userFull = user != null ? qnVar2.getMessagesController().getUserFull(user.id) : null;
-                i80 I = i80.I(qnVar2, u1Var);
-                zm0 zm0Var = new zm0(qnVar2.getParentActivity(), qnVar2.ea);
-                I.p = new qe(zm0Var, 1);
-                org.telegram.ui.z zVar = new org.telegram.ui.z(qnVar2, user, str2, 2);
-                i80 J = I.J();
-                J.c(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new st0(I, 26), false);
+                final TLRPC.UserFull userFull = user != null ? snVar2.getMessagesController().getUserFull(user.id) : null;
+                j80 I = j80.I(snVar2, t1Var);
+                cn0 cn0Var = new cn0(snVar2.getParentActivity(), snVar2.qa);
+                I.p = new qe(cn0Var, 1);
+                org.telegram.ui.y yVar = new org.telegram.ui.y(snVar2, user, str2, 2);
+                j80 J = I.J();
+                J.c(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new vt0(I, 26), false);
                 J.k();
-                J.c(R.drawable.msg_addbot, LocaleController.getString(R.string.CreateNewContact), new org.telegram.ui.t1(qnVar2, I, str2), false);
-                J.c(R.drawable.menu_contact_existing, LocaleController.getString(R.string.AddToExistingContact), new st0(zVar, 27), false);
-                if (tL_contact == null && (user == null || !qnVar2.getContactsController().contactsDict.containsKey(Long.valueOf(user.id)))) {
+                J.c(R.drawable.msg_addbot, LocaleController.getString(R.string.CreateNewContact), new org.telegram.ui.s1(snVar2, I, str2), false);
+                J.c(R.drawable.menu_contact_existing, LocaleController.getString(R.string.AddToExistingContact), new vt0(yVar, 27), false);
+                if (tL_contact == null && (user == null || !snVar2.getContactsController().contactsDict.containsKey(Long.valueOf(user.id)))) {
                     I.c(R.drawable.msg_contact_add, LocaleController.getString(R.string.AddToContacts), new gi.g2(I, J, 4), false);
                     I.k();
                 }
                 if (user == null) {
-                    I.c(R.drawable.menu_invit_telegram, LocaleController.getString(R.string.InviteToTelegramShort), new re(qnVar2, str2, 8), false);
-                    I.c(R.drawable.msg_calls_regular, LocaleController.getString(R.string.VoiceCallViaCarrier), new re(qnVar2, str2, 9), false);
-                    I.c(R.drawable.msg_copy, LocaleController.getString(R.string.CopyNumber), new re(qnVar2, str2, 10), false);
+                    I.c(R.drawable.menu_invit_telegram, LocaleController.getString(R.string.InviteToTelegramShort), new re(snVar2, str2, 7), false);
+                    I.c(R.drawable.msg_calls_regular, LocaleController.getString(R.string.VoiceCallViaCarrier), new re(snVar2, str2, 8), false);
+                    I.c(R.drawable.msg_copy, LocaleController.getString(R.string.CopyNumber), new re(snVar2, str2, 9), false);
                     I.k();
                     I.p(13, -1, LocaleController.getString(R.string.NumberNotOnTelegram));
                 } else {
-                    I.c(R.drawable.msg_discussion, LocaleController.getString(R.string.SendMessage), new ig(qnVar2, user, 0), false);
+                    I.c(R.drawable.msg_discussion, LocaleController.getString(R.string.SendMessage), new bg(snVar2, user, 0), false);
                     if (!UserObject.isUserSelf(user)) {
                         final int i11 = 0;
-                        I.c(R.drawable.msg_calls, LocaleController.getString(R.string.VoiceCallViaTelegram), new Runnable() { // from class: org.telegram.ui.gg
+                        I.c(R.drawable.msg_calls, LocaleController.getString(R.string.VoiceCallViaTelegram), new Runnable() { // from class: org.telegram.ui.ag
                             @Override // java.lang.Runnable
                             public final void run() {
                                 boolean z10;
                                 boolean z11;
                                 switch (i11) {
                                     case 0:
-                                        qn qnVar3 = qnVar2;
+                                        sn snVar3 = snVar2;
                                         TLRPC.UserFull userFull2 = userFull;
                                         if (userFull2 != null) {
-                                            qnVar3.getClass();
+                                            snVar3.getClass();
                                             if (userFull2.video_calls_available) {
                                                 z10 = true;
                                                 boolean z12 = z10;
-                                                org.telegram.ui.Components.voip.d2.m(user, false, z12, qnVar3.getParentActivity(), userFull2, qnVar3.getAccountInstance());
+                                                org.telegram.ui.Components.voip.d2.m(user, false, z12, snVar3.getParentActivity(), userFull2, snVar3.getAccountInstance());
                                                 break;
                                             }
                                         }
                                         z10 = false;
                                         boolean z122 = z10;
-                                        org.telegram.ui.Components.voip.d2.m(user, false, z122, qnVar3.getParentActivity(), userFull2, qnVar3.getAccountInstance());
+                                        org.telegram.ui.Components.voip.d2.m(user, false, z122, snVar3.getParentActivity(), userFull2, snVar3.getAccountInstance());
                                     default:
-                                        qn qnVar4 = qnVar2;
+                                        sn snVar4 = snVar2;
                                         TLRPC.UserFull userFull3 = userFull;
                                         if (userFull3 != null) {
-                                            qnVar4.getClass();
+                                            snVar4.getClass();
                                             if (userFull3.video_calls_available) {
                                                 z11 = true;
                                                 boolean z13 = z11;
-                                                org.telegram.ui.Components.voip.d2.m(user, true, z13, qnVar4.getParentActivity(), userFull3, qnVar4.getAccountInstance());
+                                                org.telegram.ui.Components.voip.d2.m(user, true, z13, snVar4.getParentActivity(), userFull3, snVar4.getAccountInstance());
                                                 break;
                                             }
                                         }
                                         z11 = false;
                                         boolean z132 = z11;
-                                        org.telegram.ui.Components.voip.d2.m(user, true, z132, qnVar4.getParentActivity(), userFull3, qnVar4.getAccountInstance());
+                                        org.telegram.ui.Components.voip.d2.m(user, true, z132, snVar4.getParentActivity(), userFull3, snVar4.getAccountInstance());
                                 }
                             }
                         }, false);
                         final int i12 = 1;
-                        I.c(R.drawable.msg_videocall, LocaleController.getString(R.string.VideoCallViaTelegram), new Runnable() { // from class: org.telegram.ui.gg
+                        I.c(R.drawable.msg_videocall, LocaleController.getString(R.string.VideoCallViaTelegram), new Runnable() { // from class: org.telegram.ui.ag
                             @Override // java.lang.Runnable
                             public final void run() {
                                 boolean z10;
                                 boolean z11;
                                 switch (i12) {
                                     case 0:
-                                        qn qnVar3 = qnVar2;
+                                        sn snVar3 = snVar2;
                                         TLRPC.UserFull userFull2 = userFull;
                                         if (userFull2 != null) {
-                                            qnVar3.getClass();
+                                            snVar3.getClass();
                                             if (userFull2.video_calls_available) {
                                                 z10 = true;
                                                 boolean z122 = z10;
-                                                org.telegram.ui.Components.voip.d2.m(user, false, z122, qnVar3.getParentActivity(), userFull2, qnVar3.getAccountInstance());
+                                                org.telegram.ui.Components.voip.d2.m(user, false, z122, snVar3.getParentActivity(), userFull2, snVar3.getAccountInstance());
                                                 break;
                                             }
                                         }
                                         z10 = false;
                                         boolean z1222 = z10;
-                                        org.telegram.ui.Components.voip.d2.m(user, false, z1222, qnVar3.getParentActivity(), userFull2, qnVar3.getAccountInstance());
+                                        org.telegram.ui.Components.voip.d2.m(user, false, z1222, snVar3.getParentActivity(), userFull2, snVar3.getAccountInstance());
                                     default:
-                                        qn qnVar4 = qnVar2;
+                                        sn snVar4 = snVar2;
                                         TLRPC.UserFull userFull3 = userFull;
                                         if (userFull3 != null) {
-                                            qnVar4.getClass();
+                                            snVar4.getClass();
                                             if (userFull3.video_calls_available) {
                                                 z11 = true;
                                                 boolean z132 = z11;
-                                                org.telegram.ui.Components.voip.d2.m(user, true, z132, qnVar4.getParentActivity(), userFull3, qnVar4.getAccountInstance());
+                                                org.telegram.ui.Components.voip.d2.m(user, true, z132, snVar4.getParentActivity(), userFull3, snVar4.getAccountInstance());
                                                 break;
                                             }
                                         }
                                         z11 = false;
                                         boolean z1322 = z11;
-                                        org.telegram.ui.Components.voip.d2.m(user, true, z1322, qnVar4.getParentActivity(), userFull3, qnVar4.getAccountInstance());
+                                        org.telegram.ui.Components.voip.d2.m(user, true, z1322, snVar4.getParentActivity(), userFull3, snVar4.getAccountInstance());
                                 }
                             }
                         }, false);
                     }
-                    I.c(R.drawable.msg_calls_regular, LocaleController.getString(R.string.VoiceCallViaCarrier), new re(qnVar2, str2, 6), false);
-                    I.c(R.drawable.msg_copy, LocaleController.getString(R.string.CopyNumber), new re(qnVar2, str2, 7), false);
+                    I.c(R.drawable.msg_calls_regular, LocaleController.getString(R.string.VoiceCallViaCarrier), new re(snVar2, str2, 5), false);
+                    I.c(R.drawable.msg_copy, LocaleController.getString(R.string.CopyNumber), new re(snVar2, str2, 6), false);
                     I.k();
-                    I.n(user, LocaleController.getString(R.string.ViewProfile), new org.telegram.ui.t1(qnVar2, zm0Var, user, 17));
+                    I.n(user, LocaleController.getString(R.string.ViewProfile), new org.telegram.ui.s1(snVar2, cn0Var, user, 17));
                 }
-                zm0Var.e(I);
-                if (characterStyle instanceof n61) {
-                    String url = ((n61) characterStyle).getURL();
+                cn0Var.e(I);
+                if (characterStyle instanceof s61) {
+                    String url = ((s61) characterStyle).getURL();
                     if (url == null) {
                         url = "";
                     }
@@ -207,11 +206,11 @@ public final /* synthetic */ class f3 implements Utilities.Callback {
                     }
                     SpannableString spannableString = new SpannableString(trim);
                     spannableString.setSpan(characterStyle, 0, spannableString.length(), 33);
-                    zm0Var.f(u1Var, characterStyle, spannableString, false);
+                    cn0Var.f(t1Var, characterStyle, spannableString, false);
                 } else {
-                    zm0Var.f(u1Var, characterStyle, null, false);
+                    cn0Var.f(t1Var, characterStyle, null, false);
                 }
-                qnVar2.showDialog(zm0Var);
+                snVar2.showDialog(cn0Var);
                 break;
             case 4:
                 sy syVar = (sy) this.b;
@@ -268,22 +267,22 @@ public final /* synthetic */ class f3 implements Utilities.Callback {
                 }
                 break;
             default:
-                cy cyVar = (cy) this.b;
-                org.telegram.ui.ActionBar.b2 b2Var = (org.telegram.ui.ActionBar.b2) this.c;
+                org.telegram.ui.ey eyVar2 = (org.telegram.ui.ey) this.b;
+                org.telegram.ui.ActionBar.c2 c2Var = (org.telegram.ui.ActionBar.c2) this.c;
                 Long l10 = (Long) this.d;
                 org.telegram.ui.md mdVar = (org.telegram.ui.md) this.e;
-                org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) this.f;
-                cyVar.getClass();
-                b2Var.dismiss();
-                cyVar.getMessagesController().loadChannelParticipants(l10);
-                vx vxVar = cyVar.C2;
-                cyVar.removeSelfFromStack();
+                org.telegram.ui.ActionBar.o2 o2Var = (org.telegram.ui.ActionBar.o2) this.f;
+                eyVar2.getClass();
+                c2Var.dismiss();
+                eyVar2.getMessagesController().loadChannelParticipants(l10);
+                xx xxVar = eyVar2.C2;
+                eyVar2.removeSelfFromStack();
                 mdVar.removeSelfFromStack();
-                n2Var.finishFragment();
-                if (vxVar != null) {
+                o2Var.finishFragment();
+                if (xxVar != null) {
                     ArrayList arrayList7 = new ArrayList();
                     arrayList7.add(MessagesStorage.TopicKey.of(-l10.longValue(), 0L));
-                    vxVar.w(cyVar, arrayList7, null, false, cyVar.J2, cyVar.K2, cyVar.L2, null);
+                    xxVar.w(eyVar2, arrayList7, null, false, eyVar2.J2, eyVar2.K2, eyVar2.L2, null);
                     break;
                 }
                 break;

@@ -3,36 +3,36 @@ package org.telegram.ui.Components;
 import android.content.Context;
 import org.telegram.messenger.LiteMode;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class fz extends rx0 {
-    public final /* synthetic */ int x3;
-    public final /* synthetic */ gz y3;
+public final class fz extends ux0 {
+    public final /* synthetic */ int A3;
+    public final /* synthetic */ gz B3;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fz(gz gzVar, Context context, int i10, org.telegram.ui.ActionBar.d6 d6Var, int i11) {
-        super(context, i10, d6Var);
-        this.y3 = gzVar;
-        this.x3 = i11;
+    public fz(gz gzVar, Context context, int i10, org.telegram.ui.ActionBar.g6 g6Var, int i11) {
+        super(context, i10, g6Var);
+        this.B3 = gzVar;
+        this.A3 = i11;
     }
 
-    @Override // org.telegram.ui.Components.rx0
-    public final boolean B1() {
+    @Override // org.telegram.ui.Components.ux0
+    public final boolean G1() {
         return LiteMode.isEnabled(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
     }
 
-    @Override // org.telegram.ui.Components.rx0
-    public final void F1(int i10) {
+    @Override // org.telegram.ui.Components.ux0
+    public final void K1(int i10) {
         ex exVar;
         vx vxVar;
-        super.F1(i10);
-        gz gzVar = this.y3;
+        super.K1(i10);
+        gz gzVar = this.B3;
         tz tzVar = gzVar.G;
         fz fzVar = gzVar.r;
         boolean z10 = fzVar.getSelectedCategory() == null;
-        int i11 = tz.O2;
+        int i11 = tz.U2;
         tzVar.M(z10);
-        int i12 = this.x3;
+        int i12 = this.A3;
         if (i12 == 1 && (vxVar = tzVar.I) != null) {
             vxVar.n(fzVar.getSelectedCategory() == null);
         } else if (i12 == 0 && (exVar = tzVar.B0) != null) {

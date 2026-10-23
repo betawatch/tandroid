@@ -1,9 +1,10 @@
 package eb;
 
+import i2.o1;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class h extends i implements Iterable {
     public final ArrayList a = new ArrayList();
@@ -31,6 +32,6 @@ public final class h extends i implements Iterable {
         if (size == 1) {
             return ((i) arrayList.get(0)).m();
         }
-        throw new IllegalStateException(i2.e.j(size, "Array must have size 1, but has size "));
+        throw new IllegalStateException(o1.k(size, "Array must have size 1, but has size "));
     }
 }

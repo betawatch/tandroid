@@ -1,43 +1,160 @@
 package ai;
 
-import android.content.DialogInterface;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.gt0;
+import android.animation.AnimatorSet;
+import android.app.Activity;
+import android.net.Uri;
+import android.text.TextUtils;
+import android.view.View;
+import org.json.JSONObject;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.tgnet.tl.TL_wallet;
+import org.telegram.ui.DataAutoDownloadActivity;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class qb implements DialogInterface.OnDismissListener {
-    public final /* synthetic */ int a = 0;
+public final /* synthetic */ class qb implements View.OnClickListener {
+    public final /* synthetic */ int a = 2;
     public final /* synthetic */ int b;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate c;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object n;
 
-    public /* synthetic */ qb(int i10, dc dcVar) {
+    public /* synthetic */ qb(ei.d dVar, TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, boolean[] zArr, org.telegram.ui.ActionBar.h3 h3Var, ei.d dVar2, org.telegram.ui.web.b1 b1Var, int i10) {
+        this.c = dVar;
+        this.d = tL_messages_requestUrlAuth;
+        this.h = zArr;
+        this.e = h3Var;
+        this.f = dVar2;
+        this.n = b1Var;
         this.b = i10;
-        this.c = dcVar;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
-        switch (this.a) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        int i10 = this.a;
+        JSONObject jSONObject = null;
+        int i11 = this.b;
+        Object obj = this.n;
+        Object obj2 = this.e;
+        Object obj3 = this.d;
+        Object obj4 = this.f;
+        Object obj5 = this.c;
+        Object obj6 = this.h;
+        switch (i10) {
             case 0:
-                NotificationCenter.getInstance(this.b).removeObserver((dc) this.c, NotificationCenter.starSubscriptionsLoaded);
+                ei.d dVar = (ei.d) obj5;
+                TL_stars.StarsSubscription starsSubscription = (TL_stars.StarsSubscription) obj3;
+                org.telegram.ui.ActionBar.h3[] h3VarArr = (org.telegram.ui.ActionBar.h3[]) obj2;
+                org.telegram.ui.ActionBar.g6 g6Var = (org.telegram.ui.ActionBar.g6) obj4;
+                boolean[] zArr = (boolean[]) obj6;
+                Activity activity = (Activity) obj;
+                if (!dVar.Q) {
+                    dVar.setLoading(true);
+                    if (starsSubscription.chat_invite_hash == null) {
+                        if (starsSubscription.invoice_slug != null) {
+                            zArr[0] = true;
+                            pf.d.q(activity, Uri.parse("https://t.me/$" + starsSubscription.invoice_slug), true, false, false, new gc(dVar), null, false, true, false);
+                            break;
+                        }
+                    } else {
+                        TLRPC.TL_messages_checkChatInvite tL_messages_checkChatInvite = new TLRPC.TL_messages_checkChatInvite();
+                        tL_messages_checkChatInvite.hash = starsSubscription.chat_invite_hash;
+                        int i12 = this.b;
+                        ConnectionsManager.getInstance(i12).sendRequest(tL_messages_checkChatInvite, new tb(dVar, h3VarArr, g6Var, i12, tL_messages_checkChatInvite, 1));
+                        break;
+                    }
+                }
+                break;
+            case 1:
+                DataAutoDownloadActivity.U((DataAutoDownloadActivity) obj5, (org.telegram.ui.Cells.s8) obj3, (org.telegram.ui.Cells.s8[]) obj2, this.b, (org.telegram.ui.Cells.c5[]) obj4, (org.telegram.ui.Cells.w8[]) obj6, (AnimatorSet[]) obj, view);
+                break;
+            case 2:
+                TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth = (TLRPC.TL_messages_requestUrlAuth) obj3;
+                boolean[] zArr2 = (boolean[]) obj6;
+                org.telegram.ui.ActionBar.h3 h3Var = (org.telegram.ui.ActionBar.h3) obj2;
+                ei.d dVar2 = (ei.d) obj4;
+                org.telegram.ui.web.b1 b1Var = (org.telegram.ui.web.b1) obj;
+                if (!((ei.d) obj5).Q) {
+                    if (tL_messages_requestUrlAuth != null && !TextUtils.isEmpty(tL_messages_requestUrlAuth.url)) {
+                        if (!dVar2.Q) {
+                            dVar2.setLoading(true);
+                            if (b1Var != null) {
+                                boolean z10 = org.telegram.ui.web.b1.Q0;
+                                try {
+                                    jSONObject = new JSONObject();
+                                } catch (Exception unused) {
+                                }
+                                b1Var.y("oauth_result_failed", jSONObject);
+                            }
+                            TLRPC.TL_messages_declineUrlAuth tL_messages_declineUrlAuth = new TLRPC.TL_messages_declineUrlAuth();
+                            tL_messages_declineUrlAuth.url = tL_messages_requestUrlAuth.url;
+                            ConnectionsManager.getInstance(i11).sendRequestTyped(tL_messages_declineUrlAuth, new org.telegram.messenger.a(), new r5(20, zArr2, h3Var));
+                            break;
+                        }
+                    } else {
+                        zArr2[0] = true;
+                        h3Var.dismiss();
+                        break;
+                    }
+                }
                 break;
             default:
-                rg.m0 m0Var = (rg.m0) this.c;
-                PhotoViewer photoViewer = ((gt0) m0Var).o2;
-                if (photoViewer.F2 != null) {
-                    photoViewer.H2 = false;
-                    photoViewer.v0();
-                    photoViewer.F2.C();
+                boolean[] zArr3 = (boolean[]) obj6;
+                org.telegram.ui.Wallet.j2[] j2VarArr = (org.telegram.ui.Wallet.j2[]) obj5;
+                org.telegram.ui.ActionBar.g6 g6Var2 = (org.telegram.ui.ActionBar.g6) obj4;
+                wh.n nVar = (wh.n) obj3;
+                TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) obj2;
+                String str = (String) obj;
+                if (!zArr3[0]) {
+                    zArr3[0] = true;
+                    org.telegram.ui.Wallet.p pVar = new org.telegram.ui.Wallet.p(zArr3, j2VarArr, g6Var2, nVar, 9);
+                    if (!wallettransaction.comment_encrypted_preparing) {
+                        org.telegram.ui.Wallet.l0 w9 = org.telegram.ui.Wallet.l0.w(i11);
+                        String str2 = wallettransaction.comment;
+                        org.telegram.ui.Wallet.l0.F("decrypting transaction comment");
+                        w9.y(new org.telegram.ui.Wallet.j(w9, pVar, str, str2), true, false);
+                        break;
+                    } else {
+                        pVar.run(wallettransaction.comment, null);
+                        break;
+                    }
                 }
-                m0Var.C0(this.b);
                 break;
         }
     }
 
-    public /* synthetic */ qb(rg.m0 m0Var, int i10) {
-        this.c = m0Var;
+    public /* synthetic */ qb(ei.d dVar, TL_stars.StarsSubscription starsSubscription, int i10, org.telegram.ui.ActionBar.h3[] h3VarArr, org.telegram.ui.ActionBar.g6 g6Var, boolean[] zArr, Activity activity) {
+        this.c = dVar;
+        this.d = starsSubscription;
         this.b = i10;
+        this.e = h3VarArr;
+        this.f = g6Var;
+        this.h = zArr;
+        this.n = activity;
+    }
+
+    public /* synthetic */ qb(DataAutoDownloadActivity dataAutoDownloadActivity, org.telegram.ui.Cells.s8 s8Var, org.telegram.ui.Cells.s8[] s8VarArr, int i10, org.telegram.ui.Cells.c5[] c5VarArr, org.telegram.ui.Cells.w8[] w8VarArr, AnimatorSet[] animatorSetArr) {
+        this.c = dataAutoDownloadActivity;
+        this.d = s8Var;
+        this.e = s8VarArr;
+        this.b = i10;
+        this.f = c5VarArr;
+        this.h = w8VarArr;
+        this.n = animatorSetArr;
+    }
+
+    public /* synthetic */ qb(boolean[] zArr, org.telegram.ui.Wallet.j2[] j2VarArr, org.telegram.ui.ActionBar.g6 g6Var, wh.n nVar, TL_wallet.walletTransaction wallettransaction, int i10, String str) {
+        this.h = zArr;
+        this.c = j2VarArr;
+        this.f = g6Var;
+        this.d = nVar;
+        this.e = wallettransaction;
+        this.b = i10;
+        this.n = str;
     }
 }

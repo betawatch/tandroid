@@ -1,46 +1,12 @@
 package org.telegram.ui.Components;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class z3 implements TextWatcher {
-    public boolean a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ EditTextBoldCursor c;
-
-    public z3(int i10, EditTextBoldCursor editTextBoldCursor) {
-        this.b = i10;
-        this.c = editTextBoldCursor;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        if (this.a) {
-            return;
-        }
-        int length = editable.length();
-        int i10 = this.b;
-        if (length > i10) {
-            this.a = true;
-            editable.delete(i10, editable.length());
-            EditTextBoldCursor editTextBoldCursor = this.c;
-            AndroidUtilities.shakeView(editTextBoldCursor);
-            try {
-                editTextBoldCursor.performHapticFeedback(3, 2);
-            } catch (Exception unused) {
-            }
-            this.a = false;
-        }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+public final class z3 extends qd0 {
+    @Override // org.telegram.ui.Components.qd0
+    public final CharSequence d(int i10) {
+        return LocaleController.formatPluralString("Minutes", i10, new Object[0]);
     }
 }

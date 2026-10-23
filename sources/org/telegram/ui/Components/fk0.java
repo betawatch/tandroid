@@ -1,27 +1,22 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class fk0 extends jm0 {
-    public final /* synthetic */ nk0 V2;
+public final class fk0 {
+    public final TLObject a;
+    public final long b;
+    public int c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fk0(nk0 nk0Var, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, d6Var);
-        this.V2 = nk0Var;
-    }
-
-    @Override // org.telegram.ui.Components.jm0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        nk0 nk0Var = this.V2;
-        ob0 ob0Var = nk0Var.J;
-        if (ob0Var != null) {
-            ob0Var.measure(i10, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i11), 0));
+    public fk0(int i10, TLObject tLObject) {
+        this.a = tLObject;
+        this.c = i10;
+        if (tLObject instanceof TLRPC.User) {
+            this.b = ((TLRPC.User) tLObject).id;
+        } else if (tLObject instanceof TLRPC.Chat) {
+            this.b = -((TLRPC.Chat) tLObject).id;
         }
-        super.onMeasure(i10, i11);
-        nk0Var.j();
     }
 }

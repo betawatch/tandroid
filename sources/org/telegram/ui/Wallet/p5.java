@@ -28,8 +28,9 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.R;
+import org.telegram.ui.wg1;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class p5 {
     public static volatile boolean j0;
@@ -342,7 +343,7 @@ public final class p5 {
             }
             this.L[i38][i37] = (((random.nextFloat() * 6.0f) + f17) * f7) / 512.0f;
             double nextFloat3 = random.nextFloat() * 3.141592653589793d * 2.0d;
-            float d11 = org.telegram.ui.Cells.c1.d(random, 0.45f, 0.05f);
+            float d11 = org.telegram.ui.Cells.b1.d(random, 0.45f, 0.05f);
             float sqrt = f17 / ((float) Math.sqrt((d11 * d11) + f17));
             this.L[i38][i26] = ((float) Math.cos(nextFloat3)) * d11 * sqrt;
             this.L[i38][c14] = ((float) Math.sin(nextFloat3)) * d11 * sqrt;
@@ -405,7 +406,7 @@ public final class p5 {
             str = "qr";
         } else {
             if (i10 != R.drawable.wallet_card_info) {
-                throw new IllegalArgumentException(i2.e.j(i10, "Missing packaged wallet icon: "));
+                throw new IllegalArgumentException(i2.o1.k(i10, "Missing packaged wallet icon: "));
             }
             str = "info";
         }
@@ -809,7 +810,7 @@ public final class p5 {
         if (bitmapArr != null) {
             f(bitmapArr);
         } else {
-            l0.postRunnable(new j(this, i10, 2));
+            l0.postRunnable(new wg1(this, i10, 3));
         }
     }
 
@@ -867,11 +868,11 @@ public final class p5 {
         float cos3 = (float) Math.cos(radians2);
         float f20 = -((float) Math.sin(radians2));
         float f21 = (f20 * cos) + ((-cos3) * sin);
-        float z10 = org.telegram.ui.Cells.c1.z(sin4, cos3, cos, (((-sin4) * f20) * sin) - (cos2 * sin2));
+        float x10 = org.telegram.ui.Cells.b1.x(sin4, cos3, cos, (((-sin4) * f20) * sin) - (cos2 * sin2));
         float t10 = com.google.android.gms.internal.play_billing.k3.t(cos2, cos3, cos, ((f20 * cos2) * sin) - (sin4 * sin2));
-        double d10 = z10;
+        double d10 = x10;
         double d11 = t10;
-        float c10 = c((((((float) Math.pow(Math.max(0.0d, (d11 * 0.68d) + ((0.12d * d10) + (f21 * 0.72d))), 31.15d)) * 0.7832f) + ((((float) Math.pow(Math.max(0.0d, (d11 * 0.72d) + ((0.46d * d10) + ((-f21) * 0.52d))), 16.55d)) * 2.5191f) + ((((float) Math.pow(Math.max(0.0d, (0.571d * d11) + (d10 * 0.821d)), 4.65d)) * 0.1133f) + ((((float) Math.pow(Math.max(0.0d, (0.9757d * d11) + (0.2191d * d10)), 3.365d)) * 0.2556f) + i(0.061f, 0.356f, l(-0.45f, 0.72f, z10)))))) - 0.12f) / 1.8f);
+        float c10 = c((((((float) Math.pow(Math.max(0.0d, (d11 * 0.68d) + ((0.12d * d10) + (f21 * 0.72d))), 31.15d)) * 0.7832f) + ((((float) Math.pow(Math.max(0.0d, (d11 * 0.72d) + ((0.46d * d10) + ((-f21) * 0.52d))), 16.55d)) * 2.5191f) + ((((float) Math.pow(Math.max(0.0d, (0.571d * d11) + (d10 * 0.821d)), 4.65d)) * 0.1133f) + ((((float) Math.pow(Math.max(0.0d, (0.9757d * d11) + (0.2191d * d10)), 3.365d)) * 0.2556f) + i(0.061f, 0.356f, l(-0.45f, 0.72f, x10)))))) - 0.12f) / 1.8f);
         float i10 = i(0.25f, 2.2f, c10);
         float i11 = i(0.9f, 1.2f, c10) * 0.35f;
         int i12 = 0;

@@ -1,6 +1,6 @@
 package ei;
 
-import ai.me;
+import ai.ne;
 import android.animation.ValueAnimator;
 import android.content.ClipboardManager;
 import android.content.Context;
@@ -22,7 +22,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.nk;
+import org.telegram.messenger.sl;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -31,9 +31,9 @@ import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.qn;
+import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p6 implements Runnable {
     public final /* synthetic */ int a;
@@ -82,35 +82,35 @@ public final /* synthetic */ class p6 implements Runnable {
                 break;
             case 3:
                 p pVar = (p) this.b;
-                rg.c2 c2Var = (rg.c2) this.c;
+                rg.d2 d2Var = (rg.d2) this.c;
                 d7 d7Var = pVar.a;
-                if (c2Var.getWidth() <= 0) {
+                if (d2Var.getWidth() <= 0) {
                     d7Var.animate().scaleX(0.0f).scaleY(1.0f).withEndAction(new com.google.firebase.messaging.s(pVar, 20)).start();
                     break;
                 } else {
-                    float width = c2Var.getWidth() / d7Var.getWidth();
+                    float width = d2Var.getWidth() / d7Var.getWidth();
                     ValueAnimator valueAnimator = pVar.w;
                     if (valueAnimator != null) {
                         valueAnimator.cancel();
                     }
                     pVar.w = ValueAnimator.ofFloat(0.0f, 1.0f);
-                    pVar.w.addUpdateListener(new c7(pVar, d7Var.getScaleX(), width, ((c2Var.getWidth() / 2.0f) + c2Var.getX()) - ((d7Var.getWidth() / 2.0f) + d7Var.getX()), ((c2Var.getHeight() / 2.0f) + c2Var.getY()) - ((d7Var.getHeight() / 2.0f) + d7Var.getY()), 0));
-                    pVar.w.addListener(new me(5, pVar, c2Var));
+                    pVar.w.addUpdateListener(new c7(pVar, d7Var.getScaleX(), width, ((d2Var.getWidth() / 2.0f) + d2Var.getX()) - ((d7Var.getWidth() / 2.0f) + d7Var.getX()), ((d2Var.getHeight() / 2.0f) + d2Var.getY()) - ((d7Var.getHeight() / 2.0f) + d7Var.getY()), 0));
+                    pVar.w.addListener(new ne(5, pVar, d2Var));
                     pVar.w.setDuration(320L);
                     pVar.w.setInterpolator(bs.h);
-                    pVar.v = c2Var;
+                    pVar.v = d2Var;
                     pVar.w.start();
                     break;
                 }
             case 4:
                 s7 s7Var = (s7) this.b;
                 ArrayList arrayList = (ArrayList) this.c;
-                s7Var.L0 = false;
+                s7Var.M0 = false;
                 s7Var.b0.addAll(arrayList);
-                s7Var.q0.N(true);
+                s7Var.r0.N(true);
                 break;
             case 5:
-                s7.S((s7) this.b, (TLObject) this.c);
+                s7.R((s7) this.b, (TLObject) this.c);
                 break;
             case 6:
                 a8 a8Var2 = (a8) this.c;
@@ -143,15 +143,15 @@ public final /* synthetic */ class p6 implements Runnable {
                 }
                 break;
             case 7:
-                j8.S((j8) this.b, (TLObject) this.c);
+                j8.R((j8) this.b, (TLObject) this.c);
                 break;
             case 8:
                 j8 j8Var = (j8) this.b;
                 TextView textView = (TextView) this.c;
                 ClipboardManager clipboardManager = (ClipboardManager) j8Var.getContext().getSystemService("clipboard");
-                org.telegram.ui.Cells.g3 g3Var = j8Var.Y.b;
-                boolean z10 = (TextUtils.isEmpty(g3Var.getText()) || TextUtils.equals(g3Var.getText(), "https://") || TextUtils.isEmpty(g3Var.getText().toString())) && clipboardManager != null && clipboardManager.hasPrimaryClip();
-                nk.t(textView.animate().alpha(z10 ? 1.0f : 0.0f).scaleX(z10 ? 1.0f : 0.7f).scaleY(z10 ? 1.0f : 0.7f), bs.h, 300L);
+                org.telegram.ui.Cells.f3 f3Var = j8Var.Y.d;
+                boolean z10 = (TextUtils.isEmpty(f3Var.getText()) || TextUtils.equals(f3Var.getText(), "https://") || TextUtils.isEmpty(f3Var.getText().toString())) && clipboardManager != null && clipboardManager.hasPrimaryClip();
+                sl.t(textView.animate().alpha(z10 ? 1.0f : 0.0f).scaleX(z10 ? 1.0f : 0.7f).scaleY(z10 ? 1.0f : 0.7f), bs.h, 300L);
                 break;
             case 9:
                 r9 r9Var = (r9) this.b;
@@ -204,17 +204,17 @@ public final /* synthetic */ class p6 implements Runnable {
                 gi.l lVar = (gi.l) this.b;
                 TLRPC.UserFull userFull = (TLRPC.UserFull) this.c;
                 if (userFull != null) {
-                    lVar.W = false;
+                    lVar.Y = false;
                     TL_payments.starRefProgram starrefprogram = userFull.starref_program;
-                    lVar.Y = starrefprogram;
+                    lVar.a0 = starrefprogram;
                     if (starrefprogram == null) {
-                        lVar.W = true;
-                        lVar.Y = lVar.G0();
-                        lVar.X = null;
+                        lVar.Y = true;
+                        lVar.a0 = lVar.G0();
+                        lVar.Z = null;
                     } else {
                         TL_payments.starRefProgram starrefprogram2 = new TL_payments.starRefProgram();
-                        lVar.X = starrefprogram2;
-                        TL_payments.starRefProgram starrefprogram3 = lVar.Y;
+                        lVar.Z = starrefprogram2;
+                        TL_payments.starRefProgram starrefprogram3 = lVar.a0;
                         starrefprogram2.commission_permille = starrefprogram3.commission_permille;
                         starrefprogram2.duration_months = starrefprogram3.duration_months;
                     }
@@ -233,19 +233,19 @@ public final /* synthetic */ class p6 implements Runnable {
             case 16:
                 gi.d3 d3Var2 = (gi.d3) this.b;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) this.c;
-                if (!d3Var2.c0) {
+                if (!d3Var2.d0) {
                     if (tL_error != null) {
                         d3Var2.k(false);
                         break;
                     } else {
-                        AndroidUtilities.runOnUIThread(d3Var2.t0, 60000L);
+                        AndroidUtilities.runOnUIThread(d3Var2.u0, 60000L);
                         break;
                     }
                 }
                 break;
             case 17:
                 gi.d3 d3Var3 = (gi.d3) this.b;
-                org.telegram.ui.Components.qc Q = new xc(d3Var3.p0, d3Var3.E).Q(R.raw.contact_check, 36, AndroidUtilities.replaceTags((String) this.c));
+                org.telegram.ui.Components.qc Q = new xc(d3Var3.q0, d3Var3.F).Q(R.raw.contact_check, 36, AndroidUtilities.replaceTags((String) this.c));
                 Q.j = 5000;
                 Q.k(true);
                 break;
@@ -257,7 +257,7 @@ public final /* synthetic */ class p6 implements Runnable {
                 gi.u3 u3Var2 = (gi.u3) this.b;
                 TL_payments.connectedBotStarRef connectedbotstarref = (TL_payments.connectedBotStarRef) this.c;
                 u3Var2.getClass();
-                u3Var2.presentFragment(qn.W9(connectedbotstarref.bot_id));
+                u3Var2.presentFragment(sn.W9(connectedbotstarref.bot_id));
                 break;
             case 20:
                 gi.f4 f4Var = (gi.f4) this.b;
@@ -386,9 +386,9 @@ public final /* synthetic */ class p6 implements Runnable {
                 }
             default:
                 hi.r rVar = (hi.r) this.b;
-                ii.e eVar2 = (ii.e) this.c;
+                ii.f fVar = (ii.f) this.c;
                 rVar.getClass();
-                rVar.presentFragment(qn.W9(eVar2.b.id));
+                rVar.presentFragment(sn.W9(fVar.b.id));
                 break;
         }
     }

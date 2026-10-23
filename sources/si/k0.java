@@ -1,15 +1,29 @@
 package si;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+import android.content.Context;
+import android.view.TextureView;
+import java.io.File;
+import org.telegram.ui.Components.j60;
+import org.telegram.ui.Components.tv;
+
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class k0 {
-    public final l0 a;
-    public final int b;
-    public final float c;
+    public final Context a;
+    public final TextureView b;
+    public File c;
+    public m0 d;
+    public s0 e;
+    public n0 f;
+    public p0 g;
+    public int h;
+    public boolean i = true;
+    public l2.f j;
+    public r0 k;
+    public tv l;
 
-    public k0(l0 l0Var, l0 l0Var2, int i10, float f7) {
-        this.a = l0Var;
-        this.b = i10;
-        this.c = f7;
+    public k0(Context context, j60 j60Var) {
+        this.a = context;
+        this.b = j60Var;
     }
 }

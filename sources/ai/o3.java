@@ -2,9 +2,9 @@ package ai;
 
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.p91;
+import org.telegram.ui.u91;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o3 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -18,14 +18,14 @@ public final /* synthetic */ class o3 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                l7.E2(p91.d0(this.b, true));
+                l7.D2(u91.d0(this.b, true));
                 break;
             default:
                 TLRPC.Chat chat = this.b;
                 if (chat != null) {
-                    org.telegram.ui.ActionBar.l2 l2Var = new org.telegram.ui.ActionBar.l2();
-                    l2Var.a = true;
-                    LaunchActivity.R().showAsSheet(new org.telegram.ui.z5(-chat.id), l2Var);
+                    org.telegram.ui.ActionBar.m2 m2Var = new org.telegram.ui.ActionBar.m2();
+                    m2Var.a = true;
+                    LaunchActivity.R().showAsSheet(new org.telegram.ui.y5(-chat.id), m2Var);
                     break;
                 }
                 break;

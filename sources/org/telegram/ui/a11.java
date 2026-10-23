@@ -1,35 +1,87 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class a11 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ e11 b;
-    public final /* synthetic */ int c;
+import android.content.SharedPreferences;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.NotificationsController;
+import org.telegram.messenger.NotificationsSettingsFacade;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ a11(e11 e11Var, int i10, int i11) {
-        this.a = i11;
-        this.b = e11Var;
-        this.c = i10;
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+/* loaded from: classes3.dex */
+public final class a11 extends org.telegram.ui.ActionBar.j {
+    public final /* synthetic */ String a;
+    public final /* synthetic */ d11 b;
+
+    public a11(d11 d11Var, String str) {
+        this.b = d11Var;
+        this.a = str;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                e11 e11Var = this.b;
-                org.telegram.ui.Components.d91 d91Var = e11Var.n;
-                d11 d11Var = e11Var.s;
-                int i10 = this.c;
-                d91Var.d(i10, d11Var.i(i10));
-                break;
-            default:
-                e11 e11Var2 = this.b;
-                org.telegram.ui.Components.d91 d91Var2 = e11Var2.n;
-                d11 d11Var2 = e11Var2.s;
-                int i11 = this.c;
-                d91Var2.d(i11, d11Var2.i(i11));
-                break;
+    @Override // org.telegram.ui.ActionBar.j
+    public final void b(int i10) {
+        int i11;
+        int i12;
+        int i13;
+        int i14;
+        int i15;
+        int i16;
+        int i17;
+        d11 d11Var = this.b;
+        long j10 = d11Var.f;
+        long j11 = d11Var.e;
+        String str = this.a;
+        if (i10 == -1) {
+            if (!d11Var.h && d11Var.n) {
+                i17 = ((org.telegram.ui.ActionBar.o2) d11Var).currentAccount;
+                MessagesController.getNotificationsSettings(i17).edit().putInt(NotificationsSettingsFacade.PROPERTY_NOTIFY + str, 0).apply();
+            }
+        } else if (i10 == 1) {
+            i11 = ((org.telegram.ui.ActionBar.o2) d11Var).currentAccount;
+            SharedPreferences notificationsSettings = MessagesController.getNotificationsSettings(i11);
+            SharedPreferences.Editor edit = notificationsSettings.edit();
+            edit.putBoolean(NotificationsSettingsFacade.PROPERTY_CUSTOM + str, true);
+            i12 = ((org.telegram.ui.ActionBar.o2) d11Var).currentAccount;
+            TLRPC.Dialog dialog = (TLRPC.Dialog) MessagesController.getInstance(i12).dialogs_dict.f(j11);
+            if (d11Var.n) {
+                edit.putInt(NotificationsSettingsFacade.PROPERTY_NOTIFY + str, 0);
+                if (j10 == 0) {
+                    i16 = ((org.telegram.ui.ActionBar.o2) d11Var).currentAccount;
+                    MessagesStorage.getInstance(i16).setDialogFlags(j11, 0L);
+                    if (dialog != null) {
+                        dialog.notify_settings = new TLRPC.TL_peerNotifySettings();
+                    }
+                }
+            } else {
+                edit.putInt(NotificationsSettingsFacade.PROPERTY_NOTIFY + str, 2);
+                if (j10 == 0) {
+                    i13 = ((org.telegram.ui.ActionBar.o2) d11Var).currentAccount;
+                    NotificationsController.getInstance(i13).removeNotificationsForDialog(j11);
+                    i14 = ((org.telegram.ui.ActionBar.o2) d11Var).currentAccount;
+                    MessagesStorage.getInstance(i14).setDialogFlags(j11, 1L);
+                    if (dialog != null) {
+                        TLRPC.TL_peerNotifySettings tL_peerNotifySettings = new TLRPC.TL_peerNotifySettings();
+                        dialog.notify_settings = tL_peerNotifySettings;
+                        tL_peerNotifySettings.mute_until = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                    }
+                }
+            }
+            edit.apply();
+            i15 = ((org.telegram.ui.ActionBar.o2) d11Var).currentAccount;
+            NotificationsController.getInstance(i15).updateServerNotificationsSettings(j11, j10);
+            if (d11Var.r != null) {
+                ik0 ik0Var = new ik0();
+                ik0Var.d = j11;
+                ik0Var.b = true;
+                int c10 = org.telegram.messenger.v0.c(NotificationsSettingsFacade.PROPERTY_NOTIFY, str, notificationsSettings, 0);
+                ik0Var.c = c10;
+                if (c10 != 0) {
+                    ik0Var.a = org.telegram.messenger.v0.c(NotificationsSettingsFacade.PROPERTY_NOTIFY_UNTIL, str, notificationsSettings, 0);
+                }
+                d11Var.r.r(ik0Var);
+            }
         }
+        d11Var.finishFragment();
     }
 }

@@ -1,99 +1,63 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
+import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.CornerPathEffect;
 import android.graphics.Paint;
 import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.text.StaticLayout;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class ym0 extends Drawable {
-    public int a = 255;
-    public final /* synthetic */ r90 b;
-    public final /* synthetic */ int[] c;
-    public final /* synthetic */ org.telegram.ui.Cells.u1 d;
-    public final /* synthetic */ int[] e;
-    public final /* synthetic */ Bitmap f;
-    public final /* synthetic */ RectF g;
-    public final /* synthetic */ Paint h;
-    public final /* synthetic */ Paint i;
-    public final /* synthetic */ StaticLayout j;
+public final class ym0 extends FrameLayout {
+    public final Paint a;
+    public final p50 b;
+    public final RectF c;
+    public final float d;
+    public float e;
 
-    public ym0(r90 r90Var, int[] iArr, org.telegram.ui.Cells.u1 u1Var, int[] iArr2, Bitmap bitmap, RectF rectF, Paint paint, Paint paint2, StaticLayout staticLayout) {
-        this.b = r90Var;
-        this.c = iArr;
-        this.d = u1Var;
-        this.e = iArr2;
-        this.f = bitmap;
-        this.g = rectF;
-        this.h = paint;
-        this.i = paint2;
-        this.j = staticLayout;
+    public ym0(Context context) {
+        super(context);
+        Paint paint = new Paint(1);
+        this.a = paint;
+        p50 p50Var = new p50(this, 1);
+        this.b = p50Var;
+        this.c = new RectF();
+        this.d = (AndroidUtilities.dp(3.0f) * 0.5f) + AndroidUtilities.dp(5.0f);
+        a(paint, 0.2f);
+        a(p50Var, 1.0f);
+        setWillNotDraw(false);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        if (this.a <= 0) {
+    public static void a(Paint paint, float f7) {
+        paint.setColor(-1);
+        paint.setAlpha(Math.round(f7 * 255.0f));
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeWidth(AndroidUtilities.dp(3.0f));
+        paint.setStrokeCap(Paint.Cap.ROUND);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        float width = getWidth();
+        float f7 = this.d;
+        RectF rectF = this.c;
+        rectF.set(f7, f7, width - f7, getHeight() - f7);
+        canvas.drawOval(rectF, this.a);
+        canvas.drawArc(rectF, -90.0f, this.e * 360.0f, false, this.b);
+    }
+
+    public Paint getPaint() {
+        return this.b;
+    }
+
+    public void setProgress(float f7) {
+        float max = Math.max(0.0f, Math.min(1.0f, f7));
+        if (this.e == max) {
             return;
         }
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(getBounds());
-        float f7 = rectF.left;
-        CornerPathEffect cornerPathEffect = r90.w;
-        rectF.left = f7 - (AndroidUtilities.dp(5.0f) / 2.0f);
-        canvas.save();
-        canvas.saveLayerAlpha(rectF, this.a, 31);
-        int[] iArr = this.c;
-        canvas.translate(iArr[0], iArr[1]);
-        r90 r90Var = this.b;
-        org.telegram.ui.Cells.u1 u1Var = this.d;
-        if (u1Var == null || !u1Var.C1()) {
-            canvas.drawPath(r90Var, this.i);
-        } else {
-            org.telegram.ui.ActionBar.f5 f5Var = u1Var.t8;
-            if (f5Var == null || f5Var.c == null) {
-                canvas.translate(-iArr[0], -iArr[1]);
-                int[] iArr2 = this.e;
-                canvas.translate(iArr2[0], u1Var.getPaddingTop() + iArr2[1]);
-                u1Var.D1(canvas, true, false);
-                canvas.translate(-iArr2[0], (-iArr2[1]) - u1Var.getPaddingTop());
-                canvas.translate(iArr[0], iArr[1]);
-            } else {
-                canvas.save();
-                u1Var.setBackgroundTopY(true);
-                canvas.translate(0.0f, -u1Var.t8.r);
-                canvas.drawPaint(u1Var.t8.c);
-                canvas.restore();
-            }
-            Bitmap bitmap = this.f;
-            if (bitmap != null) {
-                canvas.save();
-                RectF rectF2 = this.g;
-                canvas.drawBitmap(bitmap, rectF2.left, rectF2.top, this.h);
-                canvas.restore();
-            }
-        }
-        canvas.clipPath(r90Var);
-        this.j.draw(canvas);
-        canvas.restore();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.a = i10;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+        this.e = max;
+        invalidate();
     }
 }

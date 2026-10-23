@@ -14,7 +14,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class p20 extends LinearLayout {
     public final ei.d a;
@@ -27,38 +27,40 @@ public final class p20 extends LinearLayout {
         TLRPC.TL_emojiList a2 = g9.a(i10);
         setOrientation(1);
         w9 w9Var = new w9(context);
-        w9Var.setImageDrawable(new vj0(R.raw.utyan_gallery, AndroidUtilities.dp(110.0f), AndroidUtilities.dp(110.0f)));
+        w9Var.setImageDrawable(new yj0(R.raw.utyan_gallery, AndroidUtilities.dp(110.0f), AndroidUtilities.dp(110.0f)));
         if (!AndroidUtilities.isTablet()) {
             addView(w9Var, w7.z5.q(110, 110, 49));
         }
-        TextView f7 = org.telegram.messenger.g0.f(context, 1, 20.0f);
-        com.google.android.gms.internal.play_billing.k3.o(org.telegram.ui.ActionBar.h6.G6, null, false, f7, 1);
-        f7.setText(LocaleController.getString(R.string.GalleryAccessAllowAccess));
-        f7.setTypeface(AndroidUtilities.bold());
-        addView(f7, w7.z5.t(-2, -2, 49, 0, 15, 0, 7));
+        TextView g10 = org.telegram.messenger.v0.g(context, 1, 20.0f);
+        org.telegram.ui.ActionBar.r6.W(g10, org.telegram.ui.ActionBar.k6.G6, null);
+        g10.setGravity(1);
+        g10.setText(LocaleController.getString(R.string.GalleryAccessAllowAccess));
+        g10.setTypeface(AndroidUtilities.bold());
+        addView(g10, w7.z5.t(-2, -2, 49, 0, 15, 0, 7));
         TextView textView = new TextView(context);
         textView.setTextSize(1, 14.0f);
-        com.google.android.gms.internal.play_billing.k3.o(org.telegram.ui.ActionBar.h6.c7, null, false, textView, 1);
+        org.telegram.ui.ActionBar.r6.W(textView, org.telegram.ui.ActionBar.k6.c7, null);
+        textView.setGravity(1);
         textView.setText(LocaleController.getString(UserConfig.getInstance(i10).isPremium() ? R.string.GalleryAccessAllowAccessTextPremium : R.string.GalleryAccessAllowAccessTextNonPremium));
         textView.setMaxWidth(AndroidUtilities.dp(260.0f));
         textView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
         addView(textView, w7.z5.t(-2, -2, 49, 0, 0, 0, 14));
         ei.d dVar = new ei.d(context, null, true);
         this.a = dVar;
-        dVar.e();
-        dVar.g(LocaleController.getString(R.string.GalleryAccessAllowAccessButton), false, true);
+        dVar.f();
+        dVar.i(LocaleController.getString(R.string.GalleryAccessAllowAccessButton), false, true);
         addView(dVar, w7.z5.q(-2, 44, 49));
         ei.d dVar2 = new ei.d(context, null, false);
         this.b = dVar2;
-        dVar2.e();
+        dVar2.f();
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("c");
-        spannableStringBuilder.setSpan(new yq(R.drawable.outline_attach_camera_24, 0), 0, 1, 33);
+        spannableStringBuilder.setSpan(new xq(R.drawable.outline_attach_camera_24, 0), 0, 1, 33);
         spannableStringBuilder.append((CharSequence) "  ").append((CharSequence) LocaleController.getString(R.string.GalleryAccessAllowAccessOpenCamera));
-        dVar2.g(spannableStringBuilder, false, true);
+        dVar2.i(spannableStringBuilder, false, true);
         addView(dVar2, w7.z5.t(-2, 44, 49, 0, 8, 0, 0));
         ei.d dVar3 = new ei.d(context, null, false);
         this.c = dVar3;
-        dVar3.e();
+        dVar3.f();
         dVar3.setVisibility(8);
         SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder("c");
         ArrayList<Long> arrayList = a2.document_id;
@@ -71,7 +73,7 @@ public final class p20 extends LinearLayout {
             spannableStringBuilder2.append((CharSequence) "  ");
         }
         spannableStringBuilder2.append((CharSequence) LocaleController.getString(R.string.UseEmoji));
-        dVar3.g(spannableStringBuilder2, false, true);
+        dVar3.i(spannableStringBuilder2, false, true);
         addView(dVar3, w7.z5.t(-2, 44, 49, 0, 1, 0, 0));
     }
 

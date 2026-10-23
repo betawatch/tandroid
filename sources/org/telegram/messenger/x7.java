@@ -7,7 +7,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class x7 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -32,10 +32,10 @@ public final /* synthetic */ class x7 implements RequestDelegate {
                 ((MediaDataController) this.b).lambda$addRecentSticker$22(this.c, (TLRPC.TL_messages_saveRecentSticker) this.d, tLObject, tL_error);
                 break;
             case 2:
-                ((MessagesController) this.b).lambda$createChat$257((org.telegram.ui.ActionBar.n2) this.c, (TLRPC.TL_messages_createChat) this.d, tLObject, tL_error);
+                ((MessagesController) this.b).lambda$createChat$257((org.telegram.ui.ActionBar.o2) this.c, (TLRPC.TL_messages_createChat) this.d, tLObject, tL_error);
                 break;
             case 3:
-                ((MessagesController) this.b).lambda$createChat$260((org.telegram.ui.ActionBar.n2) this.c, (TLRPC.TL_channels_createChannel) this.d, tLObject, tL_error);
+                ((MessagesController) this.b).lambda$createChat$260((org.telegram.ui.ActionBar.o2) this.c, (TLRPC.TL_channels_createChannel) this.d, tLObject, tL_error);
                 break;
             case 4:
                 ((MessagesController) this.b).lambda$saveGif$145(this.c, (TLRPC.TL_messages_saveGif) this.d, tLObject, tL_error);
@@ -62,7 +62,7 @@ public final /* synthetic */ class x7 implements RequestDelegate {
                 ((SendMessagesHelper) this.b).lambda$sendNotificationCallback$32((String) this.c, (List) this.d, tLObject, tL_error);
                 break;
             default:
-                ((SendMessagesHelper) this.b).lambda$editMessage$24((org.telegram.ui.ActionBar.n2) this.c, (TLRPC.TL_messages_editMessage) this.d, tLObject, tL_error);
+                ((SendMessagesHelper) this.b).lambda$editMessage$24((org.telegram.ui.ActionBar.o2) this.c, (TLRPC.TL_messages_editMessage) this.d, tLObject, tL_error);
                 break;
         }
     }

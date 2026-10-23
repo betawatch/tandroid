@@ -17,20 +17,20 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.m0;
+import org.telegram.ui.Wallet.m4;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class x extends View {
     public vf.a E;
     public final AtomicBoolean F;
     public final AtomicBoolean G;
     public final Handler H;
-    public final p8.b I;
+    public final m4 I;
     public int a;
     public long b;
     public int c;
-    public r4.f d;
+    public r4.e d;
     public final AtomicInteger e;
     public int f;
     public final Paint h;
@@ -56,7 +56,7 @@ public final class x extends View {
         this.F = new AtomicBoolean(false);
         this.G = new AtomicBoolean(false);
         this.H = new Handler(Looper.getMainLooper());
-        this.I = new p8.b(this, 15);
+        this.I = new m4(this, 19);
         paint.setColor(-1342177280);
         paint2.setColor(-1);
         paint2.setTextSize(AndroidUtilities.dp(9.0f));
@@ -84,9 +84,9 @@ public final class x extends View {
         }
     }
 
-    public static x b(LaunchActivity launchActivity, m0 m0Var) {
+    public static x b(LaunchActivity launchActivity, org.telegram.ui.l0 l0Var) {
         x xVar = new x(launchActivity);
-        xVar.setObservedView(m0Var);
+        xVar.setObservedView(l0Var);
         xVar.r = (WindowManager) launchActivity.getSystemService("window");
         xVar.v = launchActivity.getWindow();
         WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams(-2, -2, 2, 792, -3);
@@ -109,7 +109,7 @@ public final class x extends View {
         v vVar = new v();
         xVar.x = vVar;
         xVar.v.addOnFrameMetricsAvailableListener(vVar, handler);
-        xVar.d = new r4.f(xVar, 3);
+        xVar.d = new r4.e(xVar, 3);
         Choreographer.getInstance().postFrameCallback(xVar.d);
         View view = xVar.y;
         if (view != null) {

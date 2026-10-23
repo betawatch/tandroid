@@ -1,5 +1,6 @@
 package jd;
 
+import i2.o1;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.Iterator;
@@ -7,7 +8,7 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class o implements List, Serializable, RandomAccess {
     public static final o a = new o();
@@ -135,7 +136,7 @@ public final class o implements List, Serializable, RandomAccess {
         if (i10 == 0) {
             return n.a;
         }
-        throw new IndexOutOfBoundsException(i2.e.j(i10, "Index: "));
+        throw new IndexOutOfBoundsException(o1.k(i10, "Index: "));
     }
 
     @Override // java.util.List, java.util.Collection

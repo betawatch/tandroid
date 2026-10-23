@@ -5,12 +5,12 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.i80;
-import org.telegram.ui.Components.s31;
+import org.telegram.ui.Components.j80;
+import org.telegram.ui.Components.w31;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class c4 implements org.telegram.ui.ActionBar.a2, MessagesController.IsInChatCheckedCallback {
+public final /* synthetic */ class c4 implements org.telegram.ui.ActionBar.z1, MessagesController.IsInChatCheckedCallback {
     public final /* synthetic */ long a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -27,20 +27,20 @@ public final /* synthetic */ class c4 implements org.telegram.ui.ActionBar.a2, M
         this.f = charSequence;
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        l7.b0((l7) this.b, (TL_stars.TL_starGiftUnique) this.c, (TLRPC.PaymentForm) this.d, (TLRPC.TL_inputInvoiceStarGiftDropOriginalDetails) this.e, this.a, (CharSequence) this.f, b2Var);
+    @Override // org.telegram.ui.ActionBar.z1
+    public void g(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
+        l7.a0((l7) this.b, (TL_stars.TL_starGiftUnique) this.c, (TLRPC.PaymentForm) this.d, (TLRPC.TL_inputInvoiceStarGiftDropOriginalDetails) this.e, this.a, (CharSequence) this.f, c2Var);
     }
 
     @Override // org.telegram.messenger.MessagesController.IsInChatCheckedCallback
     public void run(boolean z10, TLRPC.TL_chatAdminRights tL_chatAdminRights, String str) {
-        AndroidUtilities.runOnUIThread(new j((s31) this.b, z10, (org.telegram.ui.ActionBar.e1) this.c, (i80) this.d, this.a, (TLRPC.User) this.e, (TLRPC.Chat) this.f));
+        AndroidUtilities.runOnUIThread(new j((w31) this.b, z10, (org.telegram.ui.ActionBar.e1) this.c, (j80) this.d, this.a, (TLRPC.User) this.e, (TLRPC.Chat) this.f));
     }
 
-    public /* synthetic */ c4(s31 s31Var, org.telegram.ui.ActionBar.e1 e1Var, i80 i80Var, long j10, TLRPC.User user, TLRPC.Chat chat) {
-        this.b = s31Var;
+    public /* synthetic */ c4(w31 w31Var, org.telegram.ui.ActionBar.e1 e1Var, j80 j80Var, long j10, TLRPC.User user, TLRPC.Chat chat) {
+        this.b = w31Var;
         this.c = e1Var;
-        this.d = i80Var;
+        this.d = j80Var;
         this.a = j10;
         this.e = user;
         this.f = chat;

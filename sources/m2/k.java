@@ -5,7 +5,7 @@ import e9.n0;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class k extends m implements l2.i {
     public final n n;
@@ -16,17 +16,27 @@ public final class k extends m implements l2.i {
     }
 
     @Override // l2.i
-    public final long a(long j10) {
-        return this.n.g(j10);
+    public final long A(long j10) {
+        return this.n.d(j10);
+    }
+
+    @Override // l2.i
+    public final long B(long j10, long j11) {
+        return this.n.b(j10, j11);
     }
 
     @Override // m2.m
-    public final String b() {
+    public final String a() {
         return null;
     }
 
     @Override // l2.i
-    public final long d(long j10, long j11) {
+    public final long b(long j10) {
+        return this.n.g(j10);
+    }
+
+    @Override // l2.i
+    public final long c(long j10, long j11) {
         return this.n.e(j10, j11);
     }
 
@@ -56,7 +66,7 @@ public final class k extends m implements l2.i {
     }
 
     @Override // l2.i
-    public final long p(long j10, long j11) {
+    public final long n(long j10, long j11) {
         return this.n.f(j10, j11);
     }
 
@@ -66,22 +76,12 @@ public final class k extends m implements l2.i {
     }
 
     @Override // l2.i
-    public final long u() {
+    public final long w() {
         return this.n.d;
     }
 
-    @Override // l2.i
-    public final long w(long j10) {
-        return this.n.d(j10);
-    }
-
-    @Override // l2.i
-    public final long y(long j10, long j11) {
-        return this.n.b(j10, j11);
-    }
-
     @Override // m2.m
-    public final l2.i c() {
+    public final l2.i d() {
         return this;
     }
 }

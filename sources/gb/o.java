@@ -2,7 +2,7 @@ package gb;
 
 import java.lang.reflect.Method;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class o extends s {
     public final /* synthetic */ Method b;
@@ -15,10 +15,10 @@ public final class o extends s {
 
     @Override // gb.s
     public final Object a(Class cls) {
-        String z10 = qf.b.z(cls);
-        if (z10 == null) {
+        String y3 = qf.b.y(cls);
+        if (y3 == null) {
             return this.b.invoke(this.c, cls);
         }
-        throw new AssertionError("UnsafeAllocator is used for non-instantiable type: ".concat(z10));
+        throw new AssertionError("UnsafeAllocator is used for non-instantiable type: ".concat(y3));
     }
 }

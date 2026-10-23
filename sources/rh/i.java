@@ -2,6 +2,7 @@ package rh;
 
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
+import i2.o1;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.DialogObject;
@@ -12,7 +13,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import w7.j6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public abstract class i {
     public static int a(MessageObject messageObject) {
@@ -94,6 +95,6 @@ public abstract class i {
             }
             stringBuffer.append((String) arrayList.get(i13));
         }
-        return AndroidUtilities.replaceTags(LocaleController.formatString(z10 ? R.string.PollV2ToastOnlySubscribersFromCountriesCanVoteOther : R.string.PollV2ToastOnlyUsersFromCountriesCanVoteOther, stringBuffer, i2.e.h(1, arrayList)));
+        return AndroidUtilities.replaceTags(LocaleController.formatString(z10 ? R.string.PollV2ToastOnlySubscribersFromCountriesCanVoteOther : R.string.PollV2ToastOnlyUsersFromCountriesCanVoteOther, stringBuffer, o1.i(1, arrayList)));
     }
 }

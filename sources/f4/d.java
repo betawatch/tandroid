@@ -27,13 +27,14 @@ import org.telegram.tgnet.TLObject;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
+import si.o0;
 import v7.s6;
 import v7.u6;
 import w7.a9;
 import z3.l;
 import z3.m;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class d implements m {
     public static final Pattern b = Pattern.compile("^([0-9][0-9]+):([0-9][0-9]):([0-9][0-9])(?:(\\.[0-9]+)|:([0-9][0-9])(?:\\.([0-9]+))?)?$");
@@ -271,12 +272,12 @@ public final class d implements m {
                                 group6.getClass();
                                 parseFloat2 = Float.parseFloat(group6) / f10;
                             } catch (NumberFormatException unused3) {
-                                k3.r("Ignoring region with malformed extent: ", f21, "TtmlParser");
+                                k3.q("Ignoring region with malformed extent: ", f21, "TtmlParser");
                             }
                         } else if (!matcher4.matches()) {
-                            k3.r("Ignoring region with unsupported extent: ", f21, "TtmlParser");
+                            k3.q("Ignoring region with unsupported extent: ", f21, "TtmlParser");
                         } else if (u0Var == null) {
-                            k3.r("Ignoring region with missing tts:extent: ", f21, "TtmlParser");
+                            k3.q("Ignoring region with missing tts:extent: ", f21, "TtmlParser");
                         } else {
                             String group7 = matcher4.group(1);
                             group7.getClass();
@@ -888,7 +889,7 @@ public final class d implements m {
                         fVar2.c = true;
                         break;
                     } catch (IllegalArgumentException unused) {
-                        k3.r("Failed parsing color value: ", attributeValue, "TtmlParser");
+                        k3.q("Failed parsing color value: ", attributeValue, "TtmlParser");
                         break;
                     }
                 case '\n':
@@ -904,7 +905,7 @@ public final class d implements m {
                             e2.a.m("TtmlParser", "Failed to parse shear: " + attributeValue, e7);
                         }
                     } else {
-                        k3.r("Invalid value for shear: ", attributeValue, "TtmlParser");
+                        k3.q("Invalid value for shear: ", attributeValue, "TtmlParser");
                     }
                     b10.s = f7;
                     fVar2 = b10;
@@ -929,7 +930,7 @@ public final class d implements m {
                         g(attributeValue, fVar2);
                         break;
                     } catch (z3.f unused2) {
-                        k3.r("Failed parsing fontSize value: ", attributeValue, "TtmlParser");
+                        k3.q("Failed parsing fontSize value: ", attributeValue, "TtmlParser");
                         break;
                     }
                 case '\r':
@@ -1039,7 +1040,7 @@ public final class d implements m {
                         fVar2.e = true;
                         break;
                     } catch (IllegalArgumentException unused3) {
-                        k3.r("Failed parsing background value: ", attributeValue, "TtmlParser");
+                        k3.q("Failed parsing background value: ", attributeValue, "TtmlParser");
                         break;
                     }
                 case 16:
@@ -1132,7 +1133,7 @@ public final class d implements m {
         }
         Matcher matcher2 = c.matcher(str);
         if (!matcher2.matches()) {
-            throw new z3.f(r4.c.h("Malformed time expression: ", str));
+            throw new z3.f(o0.h("Malformed time expression: ", str));
         }
         String group3 = matcher2.group(1);
         group3.getClass();

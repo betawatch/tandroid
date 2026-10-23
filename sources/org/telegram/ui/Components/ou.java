@@ -12,7 +12,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class ou implements uy {
     public final /* synthetic */ qu a;
@@ -57,9 +57,9 @@ public final class ou implements uy {
         if (quVar.b()) {
             quVar.x = i10 != 0;
             quVar.y();
-            lw0 lw0Var = quVar.f;
-            if (lw0Var != null) {
-                lw0Var.S();
+            ow0 ow0Var = quVar.f;
+            if (ow0Var != null) {
+                ow0Var.R();
             }
         }
     }
@@ -104,11 +104,11 @@ public final class ou implements uy {
         alertDialog$Builder.a.T = LocaleController.getString(R.string.ClearRecentEmojiText);
         alertDialog$Builder.k(LocaleController.getString(R.string.ClearButton), new s(this, 29));
         alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-        org.telegram.ui.ActionBar.n2 n2Var = quVar.h;
-        if (n2Var != null) {
-            n2Var.showDialog(alertDialog$Builder.a);
+        org.telegram.ui.ActionBar.o2 o2Var = quVar.h;
+        if (o2Var != null) {
+            o2Var.showDialog(alertDialog$Builder.a);
         } else {
-            alertDialog$Builder.o();
+            alertDialog$Builder.p();
         }
     }
 
@@ -119,11 +119,11 @@ public final class ou implements uy {
 
     @Override // org.telegram.ui.Components.uy
     public final void q() {
-        org.telegram.ui.ActionBar.n2 n2Var = this.a.h;
-        if (n2Var == null) {
-            new sg.y0((org.telegram.ui.ActionBar.n2) new ai.a5(this, 5), 11, false).show();
+        org.telegram.ui.ActionBar.o2 o2Var = this.a.h;
+        if (o2Var == null) {
+            new sg.y0((org.telegram.ui.ActionBar.o2) new ai.a5(this, 5), 11, false).show();
         } else {
-            n2Var.showDialog(new sg.y0(n2Var, 11, false));
+            o2Var.showDialog(new sg.y0(o2Var, 11, false));
         }
     }
 
@@ -160,7 +160,7 @@ public final class ou implements uy {
     }
 
     @Override // org.telegram.ui.Components.uy
-    public final /* synthetic */ void o(d61 d61Var) {
+    public final /* synthetic */ void o(i61 i61Var) {
     }
 
     @Override // org.telegram.ui.Components.uy

@@ -5,7 +5,7 @@ import android.os.Bundle;
 import java.lang.reflect.Constructor;
 import java.util.LinkedHashMap;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class n0 implements s0 {
     public final Application a;
@@ -64,14 +64,14 @@ public final class n0 implements s0 {
         Constructor a2 = (!isAssignableFrom || this.a == null) ? o0.a(o0.b, cls) : o0.a(o0.a, cls);
         if (a2 == null) {
             if (this.a != null) {
-                return this.b.f(cls);
+                return this.b.c(cls);
             }
             if (q0.c == null) {
                 q0.c = new q0();
             }
             q0 q0Var = q0.c;
             kotlin.jvm.internal.i.b(q0Var);
-            return q0Var.f(cls);
+            return q0Var.c(cls);
         }
         m.q qVar = this.e;
         kotlin.jvm.internal.i.b(qVar);
@@ -108,7 +108,7 @@ public final class n0 implements s0 {
     }
 
     @Override // androidx.lifecycle.s0
-    public final p0 f(Class cls) {
+    public final p0 c(Class cls) {
         String canonicalName = cls.getCanonicalName();
         if (canonicalName != null) {
             return a(cls, canonicalName);

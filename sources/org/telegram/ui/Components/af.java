@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.animation.AnimatorSet;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class af implements Runnable {
     public final /* synthetic */ int a;
@@ -20,7 +20,7 @@ public final class af implements Runnable {
             case 0:
                 ChatActivityEnterView chatActivityEnterView = this.b;
                 af afVar = chatActivityEnterView.r3;
-                if ((!chatActivityEnterView.h0() || !chatActivityEnterView.u()) && !org.telegram.ui.ActionBar.n2.hasSheets(chatActivityEnterView.P2) && !chatActivityEnterView.Y1 && chatActivityEnterView.E0 != null && chatActivityEnterView.k3 && !chatActivityEnterView.z2 && !AndroidUtilities.usingHardwareInput && !AndroidUtilities.isInMultiwindow) {
+                if ((!chatActivityEnterView.g0() || !chatActivityEnterView.t()) && !org.telegram.ui.ActionBar.o2.hasSheets(chatActivityEnterView.P2) && !chatActivityEnterView.Y1 && chatActivityEnterView.E0 != null && chatActivityEnterView.k3 && !chatActivityEnterView.z2 && !AndroidUtilities.usingHardwareInput && !AndroidUtilities.isInMultiwindow) {
                     og ogVar = chatActivityEnterView.Z2;
                     if (ogVar != null) {
                         ogVar.m1();

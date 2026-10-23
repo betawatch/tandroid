@@ -3,7 +3,7 @@ package w3;
 import e2.x;
 import f2.w;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements d9.k, w {
     public final /* synthetic */ h a;
@@ -16,7 +16,7 @@ public final /* synthetic */ class e implements d9.k, w {
     }
 
     @Override // f2.w
-    public void c(long j10, x xVar) {
+    public void b(long j10, x xVar) {
         c3.b.c(j10, xVar, this.a.K);
     }
 }

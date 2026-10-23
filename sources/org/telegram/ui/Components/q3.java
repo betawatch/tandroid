@@ -1,22 +1,12 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class q3 extends l61 {
-    public final /* synthetic */ AlertDialog$Builder e;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public q3(String str, AlertDialog$Builder alertDialog$Builder) {
-        super(str, (n11) null);
-        this.e = alertDialog$Builder;
-    }
-
-    @Override // org.telegram.ui.Components.l61, android.text.style.URLSpan, android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        this.e.a.L0.run();
-        super.onClick(view);
+public final class q3 extends qd0 {
+    @Override // org.telegram.ui.Components.qd0
+    public final CharSequence d(int i10) {
+        return LocaleController.formatPluralString("Hours", i10, new Object[0]);
     }
 }

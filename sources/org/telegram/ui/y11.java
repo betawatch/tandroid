@@ -1,82 +1,114 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.graphics.Canvas;
+import android.content.SharedPreferences;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.TextView;
+import java.util.ArrayList;
+import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class y11 extends FrameLayout {
-    public final org.telegram.ui.Components.p5 a;
-    public final /* synthetic */ z11 b;
+public final class y11 extends org.telegram.ui.ActionBar.o2 {
+    public x11 a;
+    public org.telegram.ui.Components.mm0 b;
+    public int c;
+    public int d;
+    public int e;
+    public int f;
+    public int h;
+    public org.telegram.ui.Cells.i3[] n;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y11(z11 z11Var, Context context) {
-        super(context);
-        this.b = z11Var;
-        TextView f7 = org.telegram.messenger.g0.f(context, 1, 16.0f);
-        f7.setTextColor(z11Var.getThemedColor(org.telegram.ui.ActionBar.h6.G6));
-        f7.setText(LocaleController.getString(R.string.DoubleTapSetting));
-        addView(f7, w7.z5.d(-1, -2.0f, 23, 20.0f, 0.0f, 48.0f, 0.0f));
-        this.a = new org.telegram.ui.Components.p5(AndroidUtilities.dp(24.0f), this);
+    @Override // org.telegram.ui.ActionBar.o2
+    public final void addThemeColorKeys(HashSet hashSet) {
+        super.addThemeColorKeys(hashSet);
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.k6.I6));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.k6.G6));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.k6.d7));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.k6.i6));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.k6.H6));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.k6.t8));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.k6.A8));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.k6.v8));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.k6.s8));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.k6.d6));
     }
 
-    public final void a(boolean z10) {
-        int i10;
-        int i11;
-        z11 z11Var = this.b;
-        i10 = ((org.telegram.ui.ActionBar.n2) z11Var).currentAccount;
-        String doubleTapReaction = MediaDataController.getInstance(i10).getDoubleTapReaction();
-        org.telegram.ui.Components.p5 p5Var = this.a;
-        if (doubleTapReaction != null && doubleTapReaction.startsWith("animated_")) {
-            try {
-                p5Var.j(Long.parseLong(doubleTapReaction.substring(9)), z10);
+    @Override // org.telegram.ui.ActionBar.o2
+    public final View createView(Context context) {
+        this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
+        this.actionBar.setTitle(LocaleController.getString(R.string.VoipQuickReplies));
+        if (AndroidUtilities.isTablet()) {
+            this.actionBar.setOccupyStatusBar(false);
+        }
+        this.actionBar.setAllowOverlayTitle(true);
+        this.actionBar.setActionBarMenuOnItemClick(new s60(this, 27));
+        this.a = new x11(this, context);
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.fragmentView = frameLayout;
+        org.telegram.ui.ActionBar.r6.i(org.telegram.ui.ActionBar.k6.a7, frameLayout, null);
+        FrameLayout frameLayout2 = (FrameLayout) this.fragmentView;
+        org.telegram.ui.Components.mm0 mm0Var = new org.telegram.ui.Components.mm0(context, null);
+        this.b = mm0Var;
+        mm0Var.t1();
+        this.b.setVerticalScrollBarEnabled(false);
+        this.b.setLayoutManager(new s4.b0(1, false));
+        frameLayout2.addView(this.b, w7.z5.e(-1, -1, 51));
+        this.b.setAdapter(this.a);
+        this.actionBar.setAdaptiveBackground(this.b);
+        return this.fragmentView;
+    }
+
+    @Override // org.telegram.ui.ActionBar.o2
+    public final ArrayList getThemeDescriptions() {
+        return new ArrayList();
+    }
+
+    @Override // org.telegram.ui.ActionBar.o2
+    public final boolean onFragmentCreate() {
+        super.onFragmentCreate();
+        this.c = 1;
+        this.d = 2;
+        this.e = 3;
+        this.h = 5;
+        this.f = 4;
+        return true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.o2
+    public final void onFragmentDestroy() {
+        super.onFragmentDestroy();
+        int i10 = 0;
+        SharedPreferences.Editor edit = getParentActivity().getSharedPreferences("mainconfig", 0).edit();
+        while (true) {
+            org.telegram.ui.Cells.i3[] i3VarArr = this.n;
+            if (i10 >= i3VarArr.length) {
+                edit.commit();
                 return;
-            } catch (Exception unused) {
             }
+            org.telegram.ui.Cells.i3 i3Var = i3VarArr[i10];
+            if (i3Var != null) {
+                String obj = i3Var.getTextView().getText().toString();
+                if (TextUtils.isEmpty(obj)) {
+                    edit.remove("quick_reply_msg" + (i10 + 1));
+                } else {
+                    edit.putString("quick_reply_msg" + (i10 + 1), obj);
+                }
+            }
+            i10++;
         }
-        i11 = ((org.telegram.ui.ActionBar.n2) z11Var).currentAccount;
-        TLRPC.TL_availableReaction tL_availableReaction = MediaDataController.getInstance(i11).getReactionsMap().get(doubleTapReaction);
-        if (tL_availableReaction != null) {
-            p5Var.i(tL_availableReaction.static_icon, z10);
+    }
+
+    @Override // org.telegram.ui.ActionBar.o2
+    public final void onResume() {
+        super.onResume();
+        x11 x11Var = this.a;
+        if (x11Var != null) {
+            x11Var.l();
         }
-    }
-
-    public final void b() {
-        int width = getWidth();
-        org.telegram.ui.Components.p5 p5Var = this.a;
-        p5Var.setBounds((width - p5Var.s) - AndroidUtilities.dp(21.0f), (getHeight() - p5Var.s) / 2, getWidth() - AndroidUtilities.dp(21.0f), (getHeight() + p5Var.s) / 2);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        b();
-        this.a.draw(canvas);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.a.a();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.a.b();
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLObject.FLAG_30));
     }
 }

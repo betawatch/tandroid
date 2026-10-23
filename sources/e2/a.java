@@ -3,6 +3,7 @@ package e2;
 import android.media.MediaFormat;
 import android.text.TextUtils;
 import android.util.Log;
+import i2.o1;
 import java.net.UnknownHostException;
 import java.nio.ByteBuffer;
 import java.util.List;
@@ -11,7 +12,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import org.xmlpull.v1.XmlPullParser;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public abstract class a {
     public static ExecutorService a;
@@ -43,7 +44,7 @@ public abstract class a {
         if (TextUtils.isEmpty(replace)) {
             return str;
         }
-        StringBuilder i10 = r4.c.i(str, "\n  ");
+        StringBuilder i10 = si.o0.i(str, "\n  ");
         i10.append(replace.replace("\n", "\n  "));
         i10.append('\n');
         return i10.toString();
@@ -115,7 +116,7 @@ public abstract class a {
 
     public static void k(MediaFormat mediaFormat, List list) {
         for (int i10 = 0; i10 < list.size(); i10++) {
-            mediaFormat.setByteBuffer(i2.e.j(i10, "csd-"), ByteBuffer.wrap((byte[]) list.get(i10)));
+            mediaFormat.setByteBuffer(o1.k(i10, "csd-"), ByteBuffer.wrap((byte[]) list.get(i10)));
         }
     }
 

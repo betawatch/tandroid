@@ -6,7 +6,7 @@ import android.graphics.Paint;
 import android.view.MotionEvent;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class z5 extends rg.d {
     public final Paint h;
@@ -78,12 +78,12 @@ public final class z5 extends rg.d {
         if (i10 != 0) {
             float f11 = this.r;
             if (f11 != 1.0f) {
-                this.r = org.telegram.ui.Cells.c1.c(min, 150.0f, f11, 1.0f);
+                this.r = org.telegram.ui.Cells.b1.c(min, 150.0f, f11, 1.0f);
                 invalidate();
                 if (i11 != 0) {
                     float f12 = this.s;
                     if (f12 != 1.0f) {
-                        this.s = org.telegram.ui.Cells.c1.c(min, 150.0f, f12, 1.0f);
+                        this.s = org.telegram.ui.Cells.b1.c(min, 150.0f, f12, 1.0f);
                         invalidate();
                         f7 = this.s;
                         Paint paint = this.h;
@@ -133,7 +133,7 @@ public final class z5 extends rg.d {
                 if (i11 == 0) {
                     float f15 = this.s;
                     if (f15 != 0.0f) {
-                        this.s = org.telegram.ui.Cells.c1.v(min, 150.0f, f15, 0.0f);
+                        this.s = org.telegram.ui.Cells.b1.t(min, 150.0f, f15, 0.0f);
                         invalidate();
                     }
                 }
@@ -149,7 +149,7 @@ public final class z5 extends rg.d {
         if (i10 == 0) {
             float f16 = this.r;
             if (f16 != 0.0f) {
-                this.r = org.telegram.ui.Cells.c1.v(min, 150.0f, f16, 0.0f);
+                this.r = org.telegram.ui.Cells.b1.t(min, 150.0f, f16, 0.0f);
                 invalidate();
             }
         }
@@ -177,6 +177,6 @@ public final class z5 extends rg.d {
         if (xaVar.S1 <= 0) {
             xaVar.S1 = z5Var.getMeasuredHeight();
         }
-        xaVar.G0();
+        xaVar.F0();
     }
 }

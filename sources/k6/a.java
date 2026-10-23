@@ -3,11 +3,12 @@ package k6;
 import android.app.PendingIntent;
 import android.os.Parcel;
 import android.os.Parcelable;
+import i2.o1;
 import java.util.Arrays;
 import mi.q;
 import w7.f0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class a extends o6.a {
     public final int a;
@@ -87,7 +88,7 @@ public final class a extends o6.a {
                     case 25:
                         return "API_INSTALL_REQUIRED";
                     default:
-                        return i2.e.k(i10, "UNKNOWN_ERROR_CODE(", ")");
+                        return o1.l(i10, "UNKNOWN_ERROR_CODE(", ")");
                 }
         }
     }
@@ -117,9 +118,9 @@ public final class a extends o6.a {
 
     public final String toString() {
         q qVar = new q(this);
-        qVar.H(d(this.b), "statusCode");
-        qVar.H(this.c, "resolution");
-        qVar.H(this.d, "message");
+        qVar.z(d(this.b), "statusCode");
+        qVar.z(this.c, "resolution");
+        qVar.z(this.d, "message");
         return qVar.toString();
     }
 

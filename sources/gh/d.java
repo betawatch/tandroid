@@ -14,8 +14,8 @@ import bh.i;
 import java.util.Iterator;
 import java.util.List;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+/* loaded from: classes4.dex */
 public final class d implements a {
     public final a a;
     public i c;
@@ -61,15 +61,22 @@ public final class d implements a {
         this.r = null;
     }
 
-    public final int d(int i10, int i11, List list) {
+    @Override // gh.a
+    public final dh.d d() {
+        dh.e eVar = new dh.e(this);
+        this.s.add(eVar);
+        return eVar;
+    }
+
+    public final int e(int i10, int i11, List list) {
         RectF rectF;
         Iterator it = this.s.iterator();
         int i12 = 0;
         while (it.hasNext()) {
             dh.e eVar = (dh.e) it.next();
             boolean j10 = eVar.j();
-            dh.c cVar = eVar.j;
-            if (j10 && eVar.l > 0 && !cVar.m.isEmpty()) {
+            dh.c cVar = eVar.v;
+            if (j10 && eVar.x > 0 && !cVar.m.isEmpty()) {
                 if (i10 < list.size()) {
                     rectF = (RectF) list.get(i10);
                 } else {
@@ -87,18 +94,11 @@ public final class d implements a {
         return i12;
     }
 
-    public final void e() {
+    public final void f() {
         Iterator it = this.s.iterator();
         while (it.hasNext()) {
-            ((dh.e) it.next()).O = true;
+            ((dh.e) it.next()).f0 = true;
         }
-    }
-
-    @Override // gh.a
-    public final dh.d f() {
-        dh.e eVar = new dh.e(this);
-        this.s.add(eVar);
-        return eVar;
     }
 
     public final boolean g(int i10, int i11) {

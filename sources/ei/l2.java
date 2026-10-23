@@ -20,10 +20,10 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.ui.Components.ca0;
-import org.telegram.ui.Components.xe0;
+import org.telegram.ui.Components.af0;
+import org.telegram.ui.Components.da0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class l2 extends View {
     public final Paint a;
@@ -50,23 +50,23 @@ public final class l2 extends View {
         ArrayList arrayList = new ArrayList();
         this.c = arrayList;
         setPadding(0, 0, 0, 0);
-        if (n2Var.n0(4)) {
+        if (n2Var.o0(4)) {
             j2 j2Var = new j2(this, 4, R.drawable.msg_limit_links, LocaleController.getString(R.string.StoryWidgetLink));
-            i11 = ((org.telegram.ui.ActionBar.f3) n2Var).currentAccount;
+            i11 = ((org.telegram.ui.ActionBar.h3) n2Var).currentAccount;
             if (!UserConfig.getInstance(i11).isPremium()) {
                 Drawable mutate = getContext().getResources().getDrawable(R.drawable.msg_mini_lock3).mutate();
                 j2Var.j = mutate;
-                mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.m1(0.6f, -1), PorterDuff.Mode.SRC_IN));
+                mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.k6.o1(0.6f, -1), PorterDuff.Mode.SRC_IN));
                 Paint paint2 = new Paint(1);
                 j2Var.n = paint2;
                 paint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
             }
             arrayList.add(j2Var);
         }
-        if (n2Var.n0(0)) {
+        if (n2Var.o0(0)) {
             arrayList.add(new j2(this, 0, R.drawable.map_pin3, LocaleController.getString(R.string.StoryWidgetLocation)));
         }
-        if (n2Var.n0(5)) {
+        if (n2Var.o0(5)) {
             tc tcVar = uc.b;
             j2[] j2VarArr = {null};
             StringBuilder sb2 = new StringBuilder();
@@ -74,14 +74,14 @@ public final class l2 extends View {
             sb2.append(" ");
             sb2.append(tcVar == null ? uc.b() ? "24°C" : "72°F" : tcVar.a());
             CharSequence replaceEmoji = Emoji.replaceEmoji(sb2.toString(), textPaint.getFontMetricsInt(), false);
-            i10 = ((org.telegram.ui.ActionBar.f3) n2Var).currentAccount;
+            i10 = ((org.telegram.ui.ActionBar.h3) n2Var).currentAccount;
             CharSequence charSequence = replaceEmoji;
             if (MessagesController.getInstance(i10).storyWeatherPreload) {
                 charSequence = replaceEmoji;
                 charSequence = replaceEmoji;
-                if (xe0.d("android.permission.ACCESS_COARSE_LOCATION") && tcVar == null) {
+                if (af0.d("android.permission.ACCESS_COARSE_LOCATION") && tcVar == null) {
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("___");
-                    spannableStringBuilder.setSpan(new ca0(AndroidUtilities.dp(68.0f), this), 0, spannableStringBuilder.length(), 33);
+                    spannableStringBuilder.setSpan(new da0(AndroidUtilities.dp(68.0f), this), 0, spannableStringBuilder.length(), 33);
                     j2VarArr[0] = new j2(this, spannableStringBuilder);
                     uc.a(false, new ai.o2(7, this, j2VarArr));
                     charSequence = spannableStringBuilder;
@@ -90,13 +90,13 @@ public final class l2 extends View {
             j2 j2Var2 = j2VarArr[0];
             arrayList.add(j2Var2 == null ? new j2(this, charSequence) : j2Var2);
         }
-        if (n2Var.n0(1)) {
+        if (n2Var.o0(1)) {
             arrayList.add(new j2(this, 1, R.drawable.filled_widget_music, LocaleController.getString(R.string.StoryWidgetAudio)));
         }
-        if (n2Var.n0(2)) {
+        if (n2Var.o0(2)) {
             arrayList.add(new j2(this, 2, R.drawable.filled_premium_camera, LocaleController.getString(R.string.StoryWidgetPhoto)));
         }
-        if (n2Var.n0(3)) {
+        if (n2Var.o0(3)) {
             arrayList.add(new k2(this));
         }
     }
@@ -138,7 +138,7 @@ public final class l2 extends View {
             Object obj2 = arrayList.get(i10);
             i10++;
             i2 i2Var2 = (i2) obj2;
-            i2Var2.a(canvas, com.google.android.gms.internal.play_billing.k3.z((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight(), this.d[i2Var2.e - 1], 2.0f, getPaddingLeft()) + i2Var2.d, org.telegram.messenger.g0.D(48.0f, i2Var2.e - 1, AndroidUtilities.dp(12.0f)));
+            i2Var2.a(canvas, com.google.android.gms.internal.play_billing.k3.z((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight(), this.d[i2Var2.e - 1], 2.0f, getPaddingLeft()) + i2Var2.d, org.telegram.messenger.v0.D(48.0f, i2Var2.e - 1, AndroidUtilities.dp(12.0f)));
         }
     }
 
@@ -213,7 +213,7 @@ public final class l2 extends View {
             float[] fArr3 = this.d;
             fArr3[i15] = fArr3[i15] + i2Var2.b;
         }
-        setMeasuredDimension(size, org.telegram.messenger.g0.D(12.0f, i13 - 1, org.telegram.messenger.g0.D(36.0f, i13, AndroidUtilities.dp(24.0f))));
+        setMeasuredDimension(size, org.telegram.messenger.v0.D(12.0f, i13 - 1, org.telegram.messenger.v0.D(36.0f, i13, AndroidUtilities.dp(24.0f))));
     }
 
     @Override // android.view.View

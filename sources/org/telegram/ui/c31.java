@@ -1,16 +1,11 @@
 package org.telegram.ui;
 
-import android.util.LongSparseArray;
-import android.view.View;
-import java.util.ArrayList;
-import java.util.HashSet;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.SaveToGallerySettingsHelper;
-import org.telegram.tgnet.TLRPC;
+import android.app.Activity;
+import android.os.Bundle;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class c31 implements View.OnClickListener {
+public final class c31 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -19,94 +14,158 @@ public final /* synthetic */ class c31 implements View.OnClickListener {
         this.b = obj;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // org.telegram.ui.ActionBar.j
+    public final void b(int i10) {
+        int i11;
         switch (this.a) {
             case 0:
-                SaveToGallerySettingsActivity saveToGallerySettingsActivity = (SaveToGallerySettingsActivity) this.b;
-                if (saveToGallerySettingsActivity.d) {
-                    LongSparseArray<SaveToGallerySettingsHelper.DialogException> saveGalleryExceptions = saveToGallerySettingsActivity.getUserConfig().getSaveGalleryExceptions(saveToGallerySettingsActivity.a);
-                    SaveToGallerySettingsHelper.DialogException dialogException = saveToGallerySettingsActivity.c;
-                    saveGalleryExceptions.put(dialogException.dialogId, dialogException);
-                    saveToGallerySettingsActivity.getUserConfig().updateSaveGalleryExceptions(saveToGallerySettingsActivity.a, saveGalleryExceptions);
+                if (i10 == -1) {
+                    ((e31) this.b).finishFragment();
+                    break;
                 }
-                saveToGallerySettingsActivity.finishFragment();
                 break;
             case 1:
-                ((h31) this.b).dismiss();
+                if (i10 == -1) {
+                    ((SaveToGallerySettingsActivity) this.b).finishFragment();
+                    break;
+                }
                 break;
             case 2:
-                SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.b;
-                MessageObject messageObject = secretMediaViewer.h0;
-                if (messageObject != null) {
-                    TLRPC.Message message = messageObject.messageOwner;
-                    if (message.destroyTime != 0 || message.ttl == Integer.MAX_VALUE) {
-                        ei.x3 x3Var = secretMediaViewer.r;
-                        if (x3Var.V) {
-                            x3Var.e(true);
-                            break;
-                        } else {
-                            secretMediaViewer.l();
-                            break;
-                        }
-                    }
+                if (i10 == -1) {
+                    ((SecretMediaViewer) this.b).e(true, false);
+                    break;
                 }
                 break;
             case 3:
-                h61 h61Var = (h61) this.b;
-                if (h61Var.a0 instanceof TLRPC.User) {
-                    ei.d dVar = h61Var.h0;
-                    if (!dVar.N) {
-                        dVar.setLoading(true);
-                        h61Var.U((TLRPC.User) h61Var.a0, null, null);
-                        break;
-                    }
+                if (i10 == -1) {
+                    ((SessionsActivity) this.b).finishFragment();
+                    break;
                 }
                 break;
             case 4:
-                SessionsActivity sessionsActivity = ((i71) this.b).d;
-                if (sessionsActivity.getParentActivity() != null) {
-                    if (sessionsActivity.getParentActivity().checkSelfPermission("android.permission.CAMERA") != 0) {
-                        sessionsActivity.getParentActivity().requestPermissions(new String[]{"android.permission.CAMERA"}, 34);
+                c81 c81Var = (c81) this.b;
+                if (i10 != -1) {
+                    if (i10 == 2) {
+                        c81Var.n0(new lg0(null));
+                        break;
+                    }
+                } else if (!c81Var.M) {
+                    c81Var.finishFragment();
+                    break;
+                } else {
+                    Bundle bundle = new Bundle();
+                    bundle.putLong("user_id", c81Var.getUserConfig().getClientUserId());
+                    bundle.putBoolean("immediate", true);
+                    c81Var.presentFragment(new zh.n0(bundle));
+                    break;
+                }
+                break;
+            case 5:
+                if (i10 == -1) {
+                    ((u91) this.b).finishFragment();
+                    break;
+                }
+                break;
+            case 6:
+                StickersActivity stickersActivity = (StickersActivity) this.b;
+                if (i10 != -1) {
+                    StickersActivity.d0(stickersActivity, i10);
+                    break;
+                } else if (stickersActivity.onBackPressed(true)) {
+                    stickersActivity.finishFragment();
+                    break;
+                }
+                break;
+            case 7:
+                uc1 uc1Var = (uc1) this.b;
+                if (i10 != -1) {
+                    if (i10 == 1) {
+                        uc1.Y(uc1Var);
+                        break;
+                    }
+                } else {
+                    uc1Var.finishFragment();
+                    break;
+                }
+                break;
+            case 8:
+                if (i10 == -1) {
+                    ((md1) this.b).finishFragment();
+                    break;
+                }
+                break;
+            case 9:
+                if (i10 == -1) {
+                    ((ef1) this.b).finishFragment();
+                    break;
+                }
+                break;
+            case 10:
+                if (i10 == -1) {
+                    TwoStepVerificationActivity twoStepVerificationActivity = (TwoStepVerificationActivity) this.b;
+                    if (twoStepVerificationActivity.X < 0) {
+                        twoStepVerificationActivity.finishFragment();
                         break;
                     } else {
-                        w9.e0(sessionsActivity.getParentActivity(), 2, new g71(sessionsActivity));
+                        twoStepVerificationActivity.x0();
                         break;
                     }
                 }
                 break;
-            case 5:
-                ((yc1) this.b).c(true);
+            case 11:
+                UserInfoActivity userInfoActivity = (UserInfoActivity) this.b;
+                if (i10 != -1) {
+                    if (i10 == 1) {
+                        userInfoActivity.c0(true);
+                        break;
+                    }
+                } else if (userInfoActivity.onBackPressed(true)) {
+                    userInfoActivity.finishFragment();
+                    break;
+                }
                 break;
-            case 6:
-                ((yc1) ((ai.j5) this.b).c).c(true);
+            case 12:
+                UsersSelectActivity usersSelectActivity = (UsersSelectActivity) this.b;
+                if (i10 != -1) {
+                    if (i10 == 1) {
+                        usersSelectActivity.X();
+                        break;
+                    }
+                } else {
+                    usersSelectActivity.finishFragment();
+                    break;
+                }
                 break;
-            case 7:
-                gd1 gd1Var = (gd1) this.b;
-                ArrayList arrayList = gd1Var.f;
-                HashSet hashSet = gd1Var.w;
-                if (!hashSet.isEmpty()) {
-                    TLRPC.User user = gd1Var.getMessagesController().getUser(Long.valueOf(gd1Var.getUserConfig().getClientUserId()));
-                    ArrayList arrayList2 = new ArrayList();
-                    for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                        if (hashSet.contains(Long.valueOf(((TLRPC.Chat) arrayList.get(i10)).id))) {
-                            arrayList2.add((TLRPC.Chat) arrayList.get(i10));
+            case 13:
+                org.telegram.ui.Wallet.j9 j9Var = (org.telegram.ui.Wallet.j9) this.b;
+                if (i10 != -1) {
+                    if (i10 != 2) {
+                        if (i10 == 3) {
+                            j9Var.p0();
+                            break;
                         }
+                    } else {
+                        Activity parentActivity = j9Var.getParentActivity();
+                        i11 = ((org.telegram.ui.ActionBar.o2) j9Var).currentAccount;
+                        org.telegram.ui.Wallet.o5.E0(parentActivity, i11, j9Var.getResourceProvider());
+                        break;
                     }
-                    for (int i11 = 0; i11 < arrayList2.size(); i11++) {
-                        TLRPC.Chat chat = (TLRPC.Chat) arrayList2.get(i11);
-                        gd1Var.getMessagesController().putChat(chat, false);
-                        gd1Var.getMessagesController().deleteParticipantFromChat(chat.id, user);
-                    }
-                    gd1Var.finishFragment();
+                } else {
+                    j9Var.finishFragment();
+                    break;
+                }
+                break;
+            case 14:
+                if (i10 == -1) {
+                    ((sg.y0) this.b).dismiss();
                     break;
                 }
                 break;
             default:
-                zh1 zh1Var = (zh1) this.b;
-                zh1Var.a.c(!r0.b(), true);
-                zh1Var.c.setEnabled(zh1Var.a.b());
-                zh1Var.c.animate().alpha(zh1Var.a.b() ? 1.0f : 0.5f).start();
+                if (i10 == -1) {
+                    ((yh.g4) this.b).finishFragment();
+                    break;
+                }
                 break;
         }
     }

@@ -1,16 +1,64 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
-/* loaded from: classes3.dex */
-public final class z81 extends s4.k {
-    public final /* synthetic */ d91 F;
+import android.animation.ValueAnimator;
+import android.view.View;
 
-    public z81(d91 d91Var) {
-        this.F = d91Var;
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class z81 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ l91 b;
+
+    public /* synthetic */ z81(l91 l91Var, int i10) {
+        this.a = i10;
+        this.b = l91Var;
     }
 
-    @Override // s4.k
-    public final void P(s4.b1 b1Var) {
-        this.F.invalidate();
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                l91 l91Var = this.b;
+                l91Var.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                View[] viewArr = l91Var.e;
+                View view = viewArr[1];
+                if (view != null) {
+                    if (l91Var.y) {
+                        l91Var.E(view, (1.0f - floatValue) * viewArr[0].getMeasuredWidth());
+                        l91Var.E(viewArr[0], (-r1.getMeasuredWidth()) * floatValue);
+                    } else {
+                        l91Var.E(view, (1.0f - floatValue) * (-viewArr[0].getMeasuredWidth()));
+                        l91Var.E(viewArr[0], r1.getMeasuredWidth() * floatValue);
+                    }
+                    l91Var.c = floatValue;
+                    l91Var.w(true);
+                    b91 b91Var = l91Var.M;
+                    if (b91Var != null) {
+                        b91Var.v.invalidate();
+                        l91Var.M.v.g1();
+                        l91Var.M.invalidate();
+                        break;
+                    }
+                }
+                break;
+            case 1:
+                l91 l91Var2 = this.b;
+                l91Var2.getClass();
+                l91Var2.R = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                break;
+            case 2:
+                l91 l91Var3 = this.b;
+                l91Var3.N.onAnimationUpdate(valueAnimator);
+                l91Var3.M.a = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                l91Var3.M.v.g1();
+                l91Var3.M.invalidate();
+                break;
+            default:
+                l91 l91Var4 = this.b;
+                l91Var4.getClass();
+                l91Var4.R = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                break;
+        }
     }
 }

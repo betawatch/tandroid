@@ -2,7 +2,7 @@ package ei;
 
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class f9 extends s4.k {
     public final /* synthetic */ k9 F;
@@ -15,7 +15,7 @@ public final class f9 extends s4.k {
     public final void M() {
         ViewGroup viewGroup;
         k9 k9Var = this.F;
-        viewGroup = ((org.telegram.ui.ActionBar.f3) k9Var.W).containerView;
+        viewGroup = ((org.telegram.ui.ActionBar.h3) k9Var.W).containerView;
         viewGroup.invalidate();
         k9Var.e.invalidate();
     }
@@ -24,7 +24,7 @@ public final class f9 extends s4.k {
     public final void O() {
         ViewGroup viewGroup;
         k9 k9Var = this.F;
-        viewGroup = ((org.telegram.ui.ActionBar.f3) k9Var.W).containerView;
+        viewGroup = ((org.telegram.ui.ActionBar.h3) k9Var.W).containerView;
         viewGroup.invalidate();
         k9Var.e.invalidate();
     }
@@ -33,7 +33,7 @@ public final class f9 extends s4.k {
     public final void P(s4.b1 b1Var) {
         ViewGroup viewGroup;
         k9 k9Var = this.F;
-        viewGroup = ((org.telegram.ui.ActionBar.f3) k9Var.W).containerView;
+        viewGroup = ((org.telegram.ui.ActionBar.h3) k9Var.W).containerView;
         viewGroup.invalidate();
         k9Var.e.invalidate();
         k9Var.f.invalidate();
@@ -43,7 +43,7 @@ public final class f9 extends s4.k {
     public final void Q() {
         ViewGroup viewGroup;
         k9 k9Var = this.F;
-        viewGroup = ((org.telegram.ui.ActionBar.f3) k9Var.W).containerView;
+        viewGroup = ((org.telegram.ui.ActionBar.h3) k9Var.W).containerView;
         viewGroup.invalidate();
         k9Var.e.invalidate();
     }

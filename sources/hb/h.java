@@ -10,7 +10,7 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.TimeZone;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class h extends eb.u {
     public static final e c = new e();
@@ -28,7 +28,7 @@ public final class h extends eb.u {
             arrayList.add(DateFormat.getDateTimeInstance(2, 2));
         }
         if (gb.g.a >= 9) {
-            arrayList.add(new SimpleDateFormat(a1.g.C("MMM d, yyyy", " ", "h:mm:ss a"), locale));
+            arrayList.add(new SimpleDateFormat(a1.g.D("MMM d, yyyy", " ", "h:mm:ss a"), locale));
         }
     }
 

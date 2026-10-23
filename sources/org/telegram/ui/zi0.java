@@ -1,27 +1,28 @@
 package org.telegram.ui;
 
-import android.content.Context;
-
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class zi0 extends ei.d {
-    public final /* synthetic */ bj0 h0;
+public final /* synthetic */ class zi0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ fj0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zi0(bj0 bj0Var, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, d6Var, true);
-        this.h0 = bj0Var;
+    public /* synthetic */ zi0(fj0 fj0Var, int i10) {
+        this.a = i10;
+        this.b = fj0Var;
     }
 
-    @Override // ei.d
-    public final float a(float f7, float f10) {
-        bj0 bj0Var = this.h0;
-        boolean z10 = bj0Var.n0 == 0.0f;
-        bj0Var.n0 = f7;
-        if (z10) {
-            bj0Var.o0 = new org.telegram.ui.Components.mb0(bj0Var, 1);
-            bj0Var.T(false);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.dismiss();
+                break;
+            case 1:
+                this.b.U(true, false);
+                break;
+            default:
+                this.b.U(true, false);
+                break;
         }
-        return f7;
     }
 }

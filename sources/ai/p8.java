@@ -3,16 +3,16 @@ package ai;
 import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p8 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ga b;
+    public final /* synthetic */ ha b;
     public final /* synthetic */ TLRPC.TL_payments_paymentResult c;
 
-    public /* synthetic */ p8(ga gaVar, TLRPC.TL_payments_paymentResult tL_payments_paymentResult, int i10) {
+    public /* synthetic */ p8(ha haVar, TLRPC.TL_payments_paymentResult tL_payments_paymentResult, int i10) {
         this.a = i10;
-        this.b = gaVar;
+        this.b = haVar;
         this.c = tL_payments_paymentResult;
     }
 

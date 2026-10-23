@@ -1,104 +1,35 @@
 package org.telegram.ui.Wallet;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.graphics.RectF;
+import android.graphics.Rect;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final class x2 extends FrameLayout {
-    public final /* synthetic */ z2 a;
+public final class x2 extends View {
+    public final /* synthetic */ y2 a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x2(z2 z2Var, Context context) {
+    public x2(y2 y2Var, Context context) {
         super(context);
-        this.a = z2Var;
+        this.a = y2Var;
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j10) {
-        z2 z2Var = this.a;
-        if (view == z2Var.r && z2Var.J > 0.0f) {
-            z2Var.N.set(0.0f, 0.0f, r1.getWidth(), z2Var.r.getHeight());
-            z2Var.r.getMatrix().mapRect(z2Var.N);
-            z2Var.N.offset(z2Var.r.getLeft(), z2Var.r.getTop());
-            z2Var.N.inset(-AndroidUtilities.dp(4.0f), -AndroidUtilities.dp(4.0f));
-            float dp = AndroidUtilities.dp(28.0f);
-            RectF rectF = z2Var.N;
-            if (rectF.top < z2Var.J + dp && rectF.intersect(0.0f, 0.0f, getWidth(), getHeight())) {
-                int saveLayer = canvas.saveLayer(z2Var.N, null);
-                boolean drawChild = super.drawChild(canvas, view, j10);
-                RectF rectF2 = z2Var.M;
-                RectF rectF3 = z2Var.N;
-                rectF2.set(rectF3.left, rectF3.top, rectF3.right, Math.min(rectF3.bottom, z2Var.J));
-                if (z2Var.M.height() > 0.0f) {
-                    canvas.drawRect(z2Var.M, z2Var.L.c(1.0f, 1));
-                }
-                RectF rectF4 = z2Var.M;
-                RectF rectF5 = z2Var.N;
-                float f7 = rectF5.left;
-                float f10 = z2Var.J;
-                rectF4.set(f7, f10, rectF5.right, dp + f10);
-                z2Var.L.b(canvas, z2Var.M, 1, 1.0f);
-                canvas.restoreToCount(saveLayer);
-                return drawChild;
-            }
+    @Override // android.view.View
+    public final boolean hasOverlappingRendering() {
+        return false;
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        y2 y2Var = this.a;
+        Bitmap bitmap = y2Var.G;
+        if (bitmap == null || bitmap.isRecycled()) {
+            return;
         }
-        return super.drawChild(canvas, view, j10);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        z2 z2Var = this.a;
-        TextView textView = z2Var.w;
-        ci.i4 i4Var = z2Var.v;
-        x5 x5Var = z2Var.r;
-        getLocationOnScreen(z2Var.V);
-        int i14 = z2Var.H.a;
-        int width = getWidth();
-        i0.b bVar = z2Var.H;
-        int C = i2.e.C(width - bVar.a, bVar.c, 2, i14);
-        int height = ((getHeight() - z2Var.H.d) - AndroidUtilities.dp(16.0f)) - (z2Var.c() ? i4Var.getMeasuredHeight() : 0);
-        i4Var.layout(C - (i4Var.getMeasuredWidth() / 2), height, ((i4Var.getMeasuredWidth() + 1) / 2) + C, i4Var.getMeasuredHeight() + height);
-        int dp = AndroidUtilities.dp(36.0f) + Math.max(z2Var.H.b, AndroidUtilities.statusBarHeight);
-        textView.layout(C - (textView.getMeasuredWidth() / 2), dp, ((textView.getMeasuredWidth() + 1) / 2) + C, textView.getMeasuredHeight() + dp);
-        z2Var.d();
-        int measuredHeight = (textView.getVisibility() == 0 ? textView.getMeasuredHeight() + AndroidUtilities.dp(12.0f) : 0) + AndroidUtilities.dp(24.0f) + Math.max(z2Var.H.b, AndroidUtilities.statusBarHeight);
-        int max = Math.max(measuredHeight, Math.min(Math.max(measuredHeight, (height - AndroidUtilities.dp(24.0f)) - x5Var.getMeasuredHeight()), (getHeight() - x5Var.getMeasuredHeight()) / 2));
-        int measuredWidth = C - (x5Var.getMeasuredWidth() / 2);
-        x5Var.layout(measuredWidth, max, x5Var.getMeasuredWidth() + measuredWidth, x5Var.getMeasuredHeight() + max);
-        z2Var.s.layout(0, 0, getWidth(), getHeight());
-        z2Var.n.layout(0, 0, getWidth(), getHeight());
-        hh.d.c(z2Var.E, this);
-        z2Var.e();
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int size = View.MeasureSpec.getSize(i10);
-        int size2 = View.MeasureSpec.getSize(i11);
-        setMeasuredDimension(size, size2);
-        z2 z2Var = this.a;
-        x5 x5Var = z2Var.r;
-        i0.b bVar = z2Var.H;
-        int max = Math.max(1, (size - bVar.a) - bVar.c);
-        z2Var.v.measure(View.MeasureSpec.makeMeasureSpec(Math.max(1, max - AndroidUtilities.dp(24.0f)), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(60.0f), TLObject.FLAG_30));
-        TextView textView = z2Var.w;
-        textView.measure(View.MeasureSpec.makeMeasureSpec(Math.max(1, max - AndroidUtilities.dp(48.0f)), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(0, 0));
-        int min = Math.min(AndroidUtilities.dp(420.0f), Math.max(1, max - AndroidUtilities.dp(24.0f)));
-        int max2 = Math.max(1, (((size2 - Math.max(z2Var.H.b, AndroidUtilities.statusBarHeight)) - z2Var.H.d) - AndroidUtilities.dp(z2Var.c() ? 120.0f : 48.0f)) - (textView.getVisibility() == 0 ? textView.getMeasuredHeight() + AndroidUtilities.dp(12.0f) : 0));
-        x5Var.measure(View.MeasureSpec.makeMeasureSpec(min, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
-        if (x5Var.getMeasuredHeight() > max2) {
-            int paddingRight = x5Var.getPaddingRight() + x5Var.getPaddingLeft();
-            int paddingBottom = x5Var.getPaddingBottom() + x5Var.getPaddingTop();
-            x5Var.measure(View.MeasureSpec.makeMeasureSpec(Math.max(1, Math.round((Math.max(0, max2 - paddingBottom) * (min - paddingRight)) / Math.max(1, x5Var.getMeasuredHeight() - paddingBottom)) + paddingRight), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
-        }
-        z2Var.s.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
-        z2Var.n.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
+        y2Var.y.set(0.0f, 0.0f, getWidth(), getHeight());
+        canvas.drawBitmap(y2Var.G, (Rect) null, y2Var.y, y2Var.x);
     }
 }

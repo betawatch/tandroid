@@ -6,8 +6,9 @@ import e9.b0;
 import e9.n0;
 import e9.s1;
 import e9.v1;
+import i2.o1;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class j extends l implements Comparable {
     public final int e;
@@ -25,7 +26,7 @@ public final class j extends l implements Comparable {
         super(i10, p1Var, i11);
         int i13;
         int i14 = 0;
-        this.f = i2.e.e(i12, false);
+        this.f = o1.e(i12, false);
         int i15 = this.d.e;
         int i16 = iVar.C;
         n0 n0Var = iVar.y;
@@ -62,7 +63,7 @@ public final class j extends l implements Comparable {
         int i21 = n.i(this.d, str, n.l(str) == null);
         this.x = i21;
         boolean z10 = i13 > 0 || (n0Var.isEmpty() && bitCount > 0) || ((n0Var.isEmpty() && c10 != Integer.MAX_VALUE) || this.h || ((this.n && i21 > 0) || iVar.x));
-        if (i2.e.e(i12, iVar.B0) && z10) {
+        if (o1.e(i12, iVar.B0) && z10) {
             i14 = 1;
         }
         this.e = i14;

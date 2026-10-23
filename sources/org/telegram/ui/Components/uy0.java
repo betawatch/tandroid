@@ -1,30 +1,44 @@
 package org.telegram.ui.Components;
 
-import android.text.Editable;
-import android.text.TextWatcher;
+import android.app.Activity;
+import android.content.Context;
+import android.view.ViewGroup;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class uy0 implements TextWatcher {
-    public final /* synthetic */ NumberTextView a;
-    public final /* synthetic */ ty0 b;
+public final class uy0 extends lm0 {
+    public final Context c;
+    public final /* synthetic */ vy0 d;
 
-    public uy0(NumberTextView numberTextView, ty0 ty0Var) {
-        this.a = numberTextView;
-        this.b = ty0Var;
+    public uy0(vy0 vy0Var, Activity activity) {
+        this.d = vy0Var;
+        this.c = activity;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        this.a.a(50 - Character.codePointCount(editable, 0, editable.length()), true);
-        this.b.setErrorText(null);
+    @Override // org.telegram.ui.Components.lm0
+    public final boolean D(s4.b1 b1Var) {
+        return false;
     }
 
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    @Override // s4.g0
+    public final int h() {
+        return this.d.c.size();
     }
 
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    @Override // s4.g0
+    public final void v(s4.b1 b1Var, int i10) {
+        org.telegram.ui.Cells.v vVar = (org.telegram.ui.Cells.v) b1Var.a;
+        ArrayList arrayList = this.d.c;
+        vVar.b((TLRPC.StickerSetCovered) arrayList.get(i10), i10 != arrayList.size() - 1);
+    }
+
+    @Override // s4.g0
+    public final s4.b1 x(ViewGroup viewGroup, int i10) {
+        org.telegram.ui.Cells.v vVar = new org.telegram.ui.Cells.v(this.c, false);
+        vVar.setLayoutParams(new s4.o0(-1, AndroidUtilities.dp(82.0f)));
+        return new wl0(vVar);
     }
 }

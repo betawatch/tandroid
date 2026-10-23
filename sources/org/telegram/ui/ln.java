@@ -1,11 +1,48 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
-/* loaded from: classes3.dex */
-public final class ln {
-    public final /* synthetic */ on a;
+import android.util.SparseIntArray;
 
-    public ln(on onVar) {
-        this.a = onVar;
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class ln implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ qn b;
+
+    public /* synthetic */ ln(qn qnVar, int i10) {
+        this.a = i10;
+        this.b = qnVar;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        org.telegram.ui.ActionBar.h5 h5Var;
+        org.telegram.ui.ActionBar.h5 h5Var2;
+        switch (this.a) {
+            case 0:
+                SparseIntArray sparseIntArray = new SparseIntArray();
+                qn qnVar = this.b;
+                qnVar.e = sparseIntArray;
+                sn snVar = qnVar.F;
+                org.telegram.ui.ActionBar.j5 j5Var = (org.telegram.ui.ActionBar.j5) snVar.getThemedDrawable("drawableMsgOut");
+                qnVar.s = j5Var;
+                h5Var = ((org.telegram.ui.ActionBar.o2) snVar).parentLayout;
+                j5Var.J = h5Var.getMessageDrawableOutStart();
+                org.telegram.ui.ActionBar.j5 j5Var2 = (org.telegram.ui.ActionBar.j5) snVar.getThemedDrawable("drawableMsgOutMedia");
+                qnVar.t = j5Var2;
+                h5Var2 = ((org.telegram.ui.ActionBar.o2) snVar).parentLayout;
+                j5Var2.J = h5Var2.getMessageDrawableOutMediaStart();
+                qnVar.s.K = 0.0f;
+                qnVar.t.K = 0.0f;
+                snVar.Bc();
+                qnVar.s(0.0f);
+                break;
+            default:
+                qn qnVar2 = this.b;
+                qnVar2.s.J = null;
+                qnVar2.t.J = null;
+                qnVar2.e = null;
+                qnVar2.s(1.0f);
+                break;
+        }
     }
 }

@@ -15,7 +15,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class m9 extends Drawable {
     public final ViewGroup a;
@@ -96,7 +96,7 @@ public final class m9 extends Drawable {
             float f16 = f10 + f14;
             canvas.save();
             canvas.scale(c10, c10, f15, f16);
-            canvas.drawCircle(f15, f16, f14 + this.g, org.telegram.ui.ActionBar.h6.Ll);
+            canvas.drawCircle(f15, f16, f14 + this.g, org.telegram.ui.ActionBar.k6.Ml);
             l9 l9Var = (l9) obj;
             l9Var.a.setImageCoords(f13, f10, width, width);
             l9Var.a.setAlpha((this.i / 255.0f) * m10.c());

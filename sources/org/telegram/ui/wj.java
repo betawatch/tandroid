@@ -1,77 +1,186 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.MotionEvent;
-import org.telegram.messenger.AndroidUtilities;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class wj extends org.telegram.ui.Cells.w0 {
-    public final /* synthetic */ qn t2;
+public final class wj implements org.telegram.ui.ActionBar.g6 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public wj(Context context, org.telegram.ui.ActionBar.d6 d6Var, qn qnVar) {
-        super(context, d6Var, false);
-        this.t2 = qnVar;
+    public /* synthetic */ wj(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // org.telegram.ui.Cells.w0, android.view.View
-    public final void onDraw(Canvas canvas) {
-        qn qnVar = this.t2;
-        if (qnVar.B8 != null) {
-            return;
-        }
-        float y3 = ((qnVar.x0.getY() + qnVar.s9) - getY()) - AndroidUtilities.dp(4.0f);
-        if (y3 <= 0.0f) {
-            super.onDraw(canvas);
-        } else if (y3 < getMeasuredHeight()) {
-            canvas.save();
-            canvas.clipRect(0.0f, y3, getMeasuredWidth(), getMeasuredHeight());
-            super.onDraw(canvas);
-            canvas.restore();
+    @Override // org.telegram.ui.ActionBar.g6
+    public final boolean a() {
+        switch (this.a) {
+            case 0:
+                return org.telegram.ui.ActionBar.k6.I.q();
+            case 1:
+                return ((lp0) this.b).S;
+            default:
+                return ((mc1) this.b).f.a.a();
         }
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        org.telegram.ui.ActionBar.k kVar;
-        if (getAlpha() == 0.0f) {
-            return false;
+    @Override // org.telegram.ui.ActionBar.g6
+    public final void b(float f7, float f10, int i10, int i11) {
+        switch (this.a) {
+            case 0:
+                org.telegram.ui.ActionBar.k6.q(f7, f10, i10, i11);
+                break;
+            case 1:
+                org.telegram.ui.ActionBar.k6.q(f7, f10, i10, i11);
+                break;
+            default:
+                qb1 qb1Var = ((mc1) this.b).f.a;
+                if (qb1Var == null) {
+                    org.telegram.ui.ActionBar.k6.q(f7, f10, i10, i11);
+                    break;
+                } else {
+                    qb1Var.b(f7, f10, i10, i11);
+                    break;
+                }
         }
-        qn qnVar = this.t2;
-        kVar = ((org.telegram.ui.ActionBar.n2) qnVar).actionBar;
-        if (kVar.t() || qnVar.F9()) {
-            return false;
-        }
-        return super.onInterceptTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Cells.w0, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        org.telegram.ui.ActionBar.k kVar;
-        if (getAlpha() == 0.0f) {
-            return false;
+    @Override // org.telegram.ui.ActionBar.g6
+    public final ColorFilter c() {
+        switch (this.a) {
         }
-        qn qnVar = this.t2;
-        kVar = ((org.telegram.ui.ActionBar.n2) qnVar).actionBar;
-        if (kVar.t() || qnVar.F9()) {
-            return false;
-        }
-        return super.onTouchEvent(motionEvent);
+        return org.telegram.ui.ActionBar.k6.v3;
     }
 
-    @Override // android.view.View
-    public final void setAlpha(float f7) {
-        super.setAlpha(f7);
-        setVisibility(f7 > 0.0f ? 0 : 4);
+    @Override // org.telegram.ui.ActionBar.g6
+    public final Paint d(String str) {
+        switch (this.a) {
+            case 0:
+                return org.telegram.ui.ActionBar.k6.U0(str);
+            case 1:
+                return org.telegram.ui.ActionBar.k6.U0(str);
+            default:
+                return ((mc1) this.b).f.a.d(str);
+        }
     }
 
-    @Override // android.view.View
-    public final void setTranslationY(float f7) {
-        if (getTranslationY() != f7) {
-            invalidate();
+    @Override // org.telegram.ui.ActionBar.g6
+    public final int e(int i10) {
+        switch (this.a) {
+            case 0:
+                return g(i10);
+            case 1:
+                return g(i10);
+            default:
+                return ((mc1) this.b).f.a.g(i10);
         }
-        super.setTranslationY(f7);
+    }
+
+    @Override // org.telegram.ui.ActionBar.g6
+    public final boolean f() {
+        switch (this.a) {
+            case 0:
+                return false;
+            case 1:
+                return false;
+            default:
+                return ((mc1) this.b).f.a.f();
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.g6
+    public final int g(int i10) {
+        switch (this.a) {
+            case 0:
+                return ((sn) this.b).getThemedColor(i10);
+            case 1:
+                lp0 lp0Var = (lp0) this.b;
+                int indexOfKey = lp0Var.v.indexOfKey(i10);
+                if (indexOfKey >= 0) {
+                    return lp0Var.v.valueAt(indexOfKey);
+                }
+                org.telegram.ui.ActionBar.g6 g6Var = lp0Var.s;
+                return g6Var != null ? g6Var.g(i10) : org.telegram.ui.ActionBar.k6.x0(null, i10, false);
+            default:
+                return ((mc1) this.b).f.a.g(i10);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.g6
+    public final Drawable getDrawable(String str) {
+        switch (this.a) {
+            case 0:
+                break;
+            case 1:
+                lp0 lp0Var = (lp0) this.b;
+                if (!str.equals("drawableMsgIn")) {
+                    if (!str.equals("drawableMsgInSelected")) {
+                        org.telegram.ui.ActionBar.g6 g6Var = lp0Var.s;
+                        if (g6Var == null) {
+                            break;
+                        } else {
+                            break;
+                        }
+                    } else {
+                        break;
+                    }
+                } else {
+                    break;
+                }
+            default:
+                qc1 qc1Var = ((mc1) this.b).f;
+                if (!str.equals("drawableMsgOut")) {
+                    if (!str.equals("drawableMsgOutSelected")) {
+                        if (!str.equals("drawableMsgOutMedia")) {
+                            if (!str.equals("drawableMsgOutMediaSelected")) {
+                                qb1 qb1Var = qc1Var.a;
+                                if (qb1Var == null) {
+                                    break;
+                                } else {
+                                    break;
+                                }
+                            } else {
+                                break;
+                            }
+                        } else {
+                            break;
+                        }
+                    } else {
+                        break;
+                    }
+                } else {
+                    break;
+                }
+        }
+        return org.telegram.ui.ActionBar.k6.Q0(str);
+    }
+
+    @Override // org.telegram.ui.ActionBar.g6
+    public final /* synthetic */ void h(int i10, int i11) {
+        int i12 = this.a;
+    }
+
+    @Override // org.telegram.ui.ActionBar.g6
+    public final int i(int i10) {
+        switch (this.a) {
+            case 0:
+                return g(i10);
+            case 1:
+                return g(i10);
+            default:
+                return ((mc1) this.b).f.a.i(i10);
+        }
+    }
+
+    private final /* synthetic */ void j(int i10, int i11) {
+    }
+
+    private final /* synthetic */ void k(int i10, int i11) {
+    }
+
+    private final /* synthetic */ void l(int i10, int i11) {
     }
 }

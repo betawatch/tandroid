@@ -2,11 +2,11 @@ package tc;
 
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.cz0;
-import org.telegram.ui.Wallet.a1;
+import org.telegram.ui.Components.fz0;
+import org.telegram.ui.Wallet.y0;
 import org.telegram.ui.Wallet.z0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class b extends z {
     public final /* synthetic */ int b;
@@ -34,15 +34,15 @@ public final class b extends z {
                     while (i10 < size) {
                         Object obj = arrayList.get(i10);
                         i10++;
-                        z0 z0Var = (z0) obj;
+                        y0 y0Var = (y0) obj;
                         try {
                             try {
                                 u uVar2 = (u) bVar.b;
-                                AndroidUtilities.runOnUIThread(new cz0(z0Var.c, uVar2, z0Var.a, "connect error: " + a1.a(e), 15, false));
+                                AndroidUtilities.runOnUIThread(new fz0(y0Var.c, uVar2, y0Var.a, "connect error: " + z0.a(e), 16));
                             } catch (Throwable unused) {
                             }
                         } catch (Throwable unused2) {
-                            z0Var.getClass();
+                            y0Var.getClass();
                         }
                     }
                     return;

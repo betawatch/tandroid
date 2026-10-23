@@ -5,16 +5,16 @@ import android.graphics.Matrix;
 import android.view.View;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class h5 implements qg.v {
     public boolean a;
-    public final /* synthetic */ qg.v0 b;
+    public final /* synthetic */ qg.u0 b;
     public final /* synthetic */ xa c;
 
-    public h5(xa xaVar, qg.v0 v0Var) {
+    public h5(xa xaVar, qg.u0 u0Var) {
         this.c = xaVar;
-        this.b = v0Var;
+        this.b = u0Var;
     }
 
     @Override // qg.v
@@ -61,13 +61,13 @@ public final class h5 implements qg.v {
     @Override // qg.v
     public final void h(int i10) {
         xa xaVar = this.c;
-        xaVar.H0(false);
-        qg.v0 v0Var = this.b;
-        v0Var.h(i10, true);
-        v0Var.g();
+        xaVar.G0(false);
+        qg.u0 u0Var = this.b;
+        u0Var.h(i10, true);
+        u0Var.g();
         xaVar.setNewColor(i10);
         g5 g5Var = xaVar.w1;
-        g5Var.setSelectedColorIndex(v0Var.d());
+        g5Var.setSelectedColorIndex(u0Var.d());
         g5Var.getAdapter().l();
     }
 }

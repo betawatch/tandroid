@@ -7,12 +7,14 @@ import b2.v0;
 import b2.w;
 import com.google.android.gms.internal.cast.z5;
 import e2.m0;
+import i2.o1;
 import k2.w0;
 import ki.t1;
 import m.g3;
 import m.s3;
+import z7.xf;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class j implements v0.h {
     public Context a;
@@ -48,7 +50,7 @@ public final class j implements v0.h {
     public static int d(w wVar) {
         String str = wVar.s;
         if (str == null || !v0.k(str)) {
-            return i2.e.c(0, 0, 0, 0);
+            return o1.c(0, 0, 0, 0);
         }
         String str2 = wVar.s;
         String str3 = m0.a;
@@ -58,9 +60,9 @@ public final class j implements v0.h {
             case "image/webp":
             case "image/bmp":
             case "image/png":
-                return i2.e.c(4, 0, 0, 0);
+                return o1.c(4, 0, 0, 0);
         }
-        return i2.e.c(1, 0, 0, 0);
+        return o1.c(1, 0, 0, 0);
     }
 
     public k a() {
@@ -72,10 +74,10 @@ public final class j implements v0.h {
         kVar.a = n5.a.a(n.a);
         n5.c cVar = new n5.c(context);
         kVar.b = cVar;
-        kVar.c = n5.a.a(new n4.s(29, cVar, new t1(cVar, 6)));
+        kVar.c = n5.a.a(new xf(cVar, new t1(cVar, 6)));
         n5.c cVar2 = kVar.b;
         kVar.d = new w0(cVar2, 22);
-        hd.a a2 = n5.a.a(new mi.q(21, kVar.d, n5.a.a(new le.b(cVar2, 21))));
+        hd.a a2 = n5.a.a(new mi.q(20, kVar.d, n5.a.a(new le.b(cVar2, 21))));
         kVar.e = a2;
         oa.d dVar = new oa.d(20);
         n5.c cVar3 = kVar.b;

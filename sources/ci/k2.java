@@ -1,17 +1,18 @@
 package ci;
 
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class k2 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ Runnable b;
+    public final /* synthetic */ long c;
 
-    public /* synthetic */ k2(int i10, Runnable runnable) {
+    public /* synthetic */ k2(int i10, long j10, Runnable runnable) {
         this.a = i10;
         this.b = runnable;
+        this.c = j10;
     }
 
     @Override // java.lang.Runnable
@@ -20,23 +21,17 @@ public final /* synthetic */ class k2 implements Runnable {
             case 0:
                 Runnable runnable = this.b;
                 AndroidUtilities.cancelRunOnUIThread(runnable);
-                AndroidUtilities.runOnUIThread(runnable);
+                AndroidUtilities.runOnUIThread(runnable, Math.max(0L, 32 - (System.currentTimeMillis() - this.c)));
                 break;
             case 1:
                 Runnable runnable2 = this.b;
                 AndroidUtilities.cancelRunOnUIThread(runnable2);
-                AndroidUtilities.runOnUIThread(runnable2);
-                break;
-            case 2:
-                Runnable runnable3 = this.b;
-                AndroidUtilities.cancelRunOnUIThread(runnable3);
-                AndroidUtilities.runOnUIThread(runnable3);
-                break;
-            case 3:
-                ConnectionsManager.lambda$cancelRequest$9(this.b);
+                AndroidUtilities.runOnUIThread(runnable2, Math.max(0L, 32 - (System.currentTimeMillis() - this.c)));
                 break;
             default:
-                this.b.run();
+                Runnable runnable3 = this.b;
+                AndroidUtilities.cancelRunOnUIThread(runnable3);
+                AndroidUtilities.runOnUIThread(runnable3, Math.max(0L, 32 - (System.currentTimeMillis() - this.c)));
                 break;
         }
     }

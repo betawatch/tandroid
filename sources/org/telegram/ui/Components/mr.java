@@ -1,30 +1,18 @@
 package org.telegram.ui.Components;
 
-import android.text.Editable;
-import android.text.TextWatcher;
+import android.widget.LinearLayout;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class mr implements TextWatcher {
-    public final /* synthetic */ ee a;
-    public final /* synthetic */ kr b;
-
-    public mr(ee eeVar, kr krVar) {
-        this.a = eeVar;
-        this.b = krVar;
+public final class mr extends LinearLayout implements org.telegram.ui.ActionBar.b6 {
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void addColorKeys(HashSet hashSet) {
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.k6.a7));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.k6.H6));
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        this.a.run();
-        this.b.run();
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void updateColors() {
     }
 }

@@ -5,17 +5,17 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class ny implements View.OnClickListener {
     public final /* synthetic */ boolean[] a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.a3 b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.b3 b;
     public final /* synthetic */ oy c;
 
-    public ny(oy oyVar, boolean[] zArr, org.telegram.ui.ActionBar.a3 a3Var) {
+    public ny(oy oyVar, boolean[] zArr, org.telegram.ui.ActionBar.b3 b3Var) {
         this.c = oyVar;
         this.a = zArr;
-        this.b = a3Var;
+        this.b = b3Var;
     }
 
     @Override // android.view.View.OnClickListener
@@ -26,7 +26,7 @@ public final class ny implements View.OnClickListener {
             return;
         }
         zArr[0] = true;
-        org.telegram.ui.ActionBar.b2[] b2VarArr = {new org.telegram.ui.ActionBar.b2(tyVar.F.getContext(), 3, null)};
+        org.telegram.ui.ActionBar.c2[] c2VarArr = {new org.telegram.ui.ActionBar.c2(tyVar.F.getContext(), 3, null)};
         TLRPC.TL_messages_getEmojiURL tL_messages_getEmojiURL = new TLRPC.TL_messages_getEmojiURL();
         tz tzVar = tyVar.F;
         String str = tyVar.w;
@@ -34,6 +34,6 @@ public final class ny implements View.OnClickListener {
             str = tzVar.W0[0];
         }
         tL_messages_getEmojiURL.lang_code = str;
-        AndroidUtilities.runOnUIThread(new org.telegram.ui.i4(this, b2VarArr, ConnectionsManager.getInstance(tzVar.c1).sendRequest(tL_messages_getEmojiURL, new ai.j2(this, b2VarArr, this.b, 13)), 8), 1000L);
+        AndroidUtilities.runOnUIThread(new org.telegram.ui.h4(this, c2VarArr, ConnectionsManager.getInstance(tzVar.c1).sendRequest(tL_messages_getEmojiURL, new ai.j2(this, c2VarArr, this.b, 13)), 8), 1000L);
     }
 }

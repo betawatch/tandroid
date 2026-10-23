@@ -9,7 +9,7 @@ import android.view.animation.OvershootInterpolator;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class nl implements ValueAnimator.AnimatorUpdateListener {
     public boolean a;
@@ -29,9 +29,9 @@ public final class nl implements ValueAnimator.AnimatorUpdateListener {
             ol olVar = this.d;
             rl rlVar = olVar.b;
             rl rlVar2 = olVar.b;
-            if (rlVar.i0 != null) {
+            if (rlVar.g0 != null) {
                 AnimatorSet animatorSet = new AnimatorSet();
-                animatorSet.playTogether(ObjectAnimator.ofFloat(rlVar2.i0, (Property<FrameLayout, Float>) View.SCALE_X, 0.0f, 1.0f), ObjectAnimator.ofFloat(rlVar2.i0, (Property<FrameLayout, Float>) View.SCALE_Y, 0.0f, 1.0f), ObjectAnimator.ofFloat(rlVar2.i0, (Property<FrameLayout, Float>) View.ALPHA, 0.0f, 1.0f));
+                animatorSet.playTogether(ObjectAnimator.ofFloat(rlVar2.g0, (Property<FrameLayout, Float>) View.SCALE_X, 0.0f, 1.0f), ObjectAnimator.ofFloat(rlVar2.g0, (Property<FrameLayout, Float>) View.SCALE_Y, 0.0f, 1.0f), ObjectAnimator.ofFloat(rlVar2.g0, (Property<FrameLayout, Float>) View.ALPHA, 0.0f, 1.0f));
                 animatorSet.setInterpolator(new OvershootInterpolator(1.02f));
                 animatorSet.setDuration(250L);
                 animatorSet.start();

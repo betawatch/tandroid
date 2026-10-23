@@ -6,19 +6,19 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.ks0;
+import org.telegram.ui.Components.ns0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class i2 extends s4.v {
-    public final /* synthetic */ ks0 d;
+    public final /* synthetic */ ns0 d;
     public final /* synthetic */ l2 e;
 
-    public i2(l2 l2Var, ks0 ks0Var) {
+    public i2(l2 l2Var, ns0 ns0Var) {
         this.e = l2Var;
-        this.d = ks0Var;
+        this.d = ns0Var;
     }
 
     public static TL_stars.SavedStarGift s(s4.b1 b1Var) {
@@ -66,10 +66,10 @@ public final class i2 extends s4.v {
             return false;
         }
         boolean z10 = l2Var.d;
-        ks0 ks0Var = this.d;
+        ns0 ns0Var = this.d;
         if (z10) {
             l2Var.e.m(indexOf, indexOf2);
-            ks0Var.e.n(l2Var.e.d);
+            ns0Var.e.n(l2Var.e.d);
         } else {
             y9 y9Var = l2Var.e;
             if (y9Var.q == null) {
@@ -77,13 +77,13 @@ public final class i2 extends s4.v {
             }
             y9Var.m(indexOf, indexOf2);
         }
-        g2Var.W2.p(b10, b11);
-        g2Var.W2.S();
+        g2Var.Z2.p(b10, b11);
+        g2Var.Z2.S();
         if (l2Var.d) {
-            HashMap hashMap = p2.T;
-            ks0Var.f(true);
+            HashMap hashMap = p2.U;
+            ns0Var.f(true);
         }
-        org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
+        org.telegram.ui.ActionBar.o2 U = LaunchActivity.U();
         if ((U instanceof ProfileActivity) && (j1Var = ((ProfileActivity) U).w0) != null) {
             j1Var.a();
         }

@@ -16,10 +16,11 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import kotlin.jvm.internal.i;
 import m.q;
+import si.o0;
 import t4.c;
 import t4.e;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class Recreator implements r {
     public final e a;
@@ -77,7 +78,7 @@ public final class Recreator implements r {
                             g10.g();
                         }
                     } catch (Exception e) {
-                        throw new RuntimeException(r4.c.h("Failed to instantiate ", str2), e);
+                        throw new RuntimeException(o0.h("Failed to instantiate ", str2), e);
                     }
                 } catch (NoSuchMethodException e7) {
                     throw new IllegalStateException("Class " + asSubclass.getSimpleName() + " must have default constructor in order to be automatically recreated", e7);

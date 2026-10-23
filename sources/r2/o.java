@@ -7,6 +7,7 @@ import android.os.Build;
 import android.util.Pair;
 import android.util.Range;
 import b2.v0;
+import com.google.android.gms.internal.play_billing.k3;
 import e2.m0;
 import e9.k0;
 import e9.n0;
@@ -17,7 +18,7 @@ import java.util.List;
 import org.telegram.messenger.MediaController;
 import w7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class o {
     public final String a;
@@ -105,7 +106,7 @@ public final class o {
         return new o(str6, str4, str5, codecCapabilities2, z15, z16, z17, z18, z19, z14);
     }
 
-    public final i2.g b(b2.w wVar, b2.w wVar2) {
+    public final i2.f b(b2.w wVar, b2.w wVar2) {
         b2.w wVar3;
         b2.w wVar4;
         int i10;
@@ -140,7 +141,7 @@ public final class o {
                 }
             }
             if (i11 == 0) {
-                return new i2.g(this.a, wVar, wVar2, wVar.b(wVar2) ? 3 : 2, 0);
+                return new i2.f(this.a, wVar, wVar2, wVar.b(wVar2) ? 3 : 2, 0);
             }
             wVar3 = wVar;
             wVar4 = wVar2;
@@ -164,15 +165,15 @@ public final class o {
                     int intValue = ((Integer) b12.first).intValue();
                     int intValue2 = ((Integer) b13.first).intValue();
                     if (intValue == 42 && intValue2 == 42) {
-                        return new i2.g(this.a, wVar3, wVar4, 3, 0);
+                        return new i2.f(this.a, wVar3, wVar4, 3, 0);
                     }
                     if (str3.equals("audio/ac4") && b12.equals(b13)) {
-                        return new i2.g(this.a, wVar3, wVar4, 3, 0);
+                        return new i2.f(this.a, wVar3, wVar4, 3, 0);
                     }
                 }
             }
             if (i11 == 0 && (str3.equals("audio/eac3-joc") || str3.equals("audio/eac3"))) {
-                return new i2.g(this.a, wVar3, wVar4, 3, 0);
+                return new i2.f(this.a, wVar3, wVar4, 3, 0);
             }
             if (!wVar3.b(wVar4)) {
                 i11 |= 32;
@@ -181,10 +182,10 @@ public final class o {
                 i11 |= 2;
             }
             if (i11 == 0) {
-                return new i2.g(this.a, wVar3, wVar4, 1, 0);
+                return new i2.f(this.a, wVar3, wVar4, 1, 0);
             }
         }
-        return new i2.g(this.a, wVar3, wVar4, 0, i11);
+        return new i2.f(this.a, wVar3, wVar4, 0, i11);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:156:? A[RETURN, SYNTHETIC] */
@@ -408,9 +409,9 @@ public final class o {
             int c10 = (i12 < 29 || ((bool = u6.a) != null && bool.booleanValue())) ? 0 : b2.d.c(videoCapabilities, i10, i11, d);
             if (c10 != 2) {
                 if (c10 == 1) {
-                    StringBuilder m10 = i2.e.m("sizeAndRate.cover, ", i10, "x", i11, "@");
-                    m10.append(d);
-                    h(m10.toString());
+                    StringBuilder k10 = k3.k("sizeAndRate.cover, ", i10, "x", i11, "@");
+                    k10.append(d);
+                    h(k10.toString());
                     return false;
                 }
             }
@@ -420,9 +421,9 @@ public final class o {
             if (i10 < i11) {
                 String str = this.a;
                 if ((!"OMX.MTK.VIDEO.DECODER.HEVC".equals(str) || !"mcv5a".equals(Build.DEVICE)) && a(videoCapabilities, i11, i10, d)) {
-                    StringBuilder m11 = i2.e.m("sizeAndRate.rotated, ", i10, "x", i11, "@");
-                    m11.append(d);
-                    StringBuilder w9 = a1.g.w("AssumedSupport [", m11.toString(), "] [", str, ", ");
+                    StringBuilder k11 = k3.k("sizeAndRate.rotated, ", i10, "x", i11, "@");
+                    k11.append(d);
+                    StringBuilder w9 = a1.g.w("AssumedSupport [", k11.toString(), "] [", str, ", ");
                     w9.append(this.b);
                     w9.append("] [");
                     w9.append(m0.a);
@@ -431,9 +432,9 @@ public final class o {
                     return true;
                 }
             }
-            StringBuilder m12 = i2.e.m("sizeAndRate.support, ", i10, "x", i11, "@");
-            m12.append(d);
-            h(m12.toString());
+            StringBuilder k12 = k3.k("sizeAndRate.support, ", i10, "x", i11, "@");
+            k12.append(d);
+            h(k12.toString());
             return false;
         }
         return true;

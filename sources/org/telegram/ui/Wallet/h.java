@@ -9,15 +9,15 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.i80;
+import org.telegram.ui.Components.j80;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.WalletEngine2;
-import org.telegram.ui.en0;
-import org.telegram.ui.ex;
-import org.telegram.ui.l80;
-import org.telegram.ui.qn;
+import org.telegram.ui.gx;
+import org.telegram.ui.ql0;
+import org.telegram.ui.r80;
+import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class h implements Runnable {
     public final /* synthetic */ int a;
@@ -40,14 +40,14 @@ public final /* synthetic */ class h implements Runnable {
                 Exception exc = (Exception) this.c;
                 Utilities.Callback2 callback2 = (Utilities.Callback2) this.d;
                 if (importedWalletProof != null) {
-                    m0.F("proof done");
+                    l0.F("proof done");
                     callback2.run(importedWalletProof, null);
                     break;
                 } else {
                     StringBuilder sb2 = new StringBuilder("failed to prove: ");
                     String str = "PROOF_ERROR";
                     sb2.append((exc == null || exc.getMessage() == null) ? "PROOF_ERROR" : exc.getMessage());
-                    m0.j(sb2.toString(), exc);
+                    l0.j(sb2.toString(), exc);
                     if (exc != null && exc.getMessage() != null) {
                         str = exc.getMessage();
                     }
@@ -55,144 +55,144 @@ public final /* synthetic */ class h implements Runnable {
                     break;
                 }
             case 1:
-                m0 m0Var = (m0) this.b;
+                l0 l0Var = (l0) this.b;
                 String str2 = (String) this.c;
-                d0 d0Var = (d0) this.d;
-                if (m0Var.N.get(str2) == d0Var) {
-                    d0Var.e = true;
-                    ArrayList arrayList = d0Var.f;
-                    m0Var.h0(d0Var);
+                c0 c0Var = (c0) this.d;
+                if (l0Var.N.get(str2) == c0Var) {
+                    c0Var.e = true;
+                    ArrayList arrayList = c0Var.f;
+                    l0Var.h0(c0Var);
                     int size = arrayList.size();
                     int i10 = 0;
                     while (i10 < size) {
                         Object obj = arrayList.get(i10);
                         i10++;
-                        ((Utilities.Callback) obj).run(d0Var);
+                        ((Utilities.Callback) obj).run(c0Var);
                     }
                     arrayList.clear();
-                    m0Var.J();
+                    l0Var.J();
                     break;
                 }
                 break;
             case 2:
-                ex exVar = (ex) this.b;
-                b2 b2Var = (b2) this.c;
+                gx gxVar = (gx) this.b;
+                a2 a2Var = (a2) this.c;
                 ei.d dVar = (ei.d) this.d;
-                if (!exVar.canScrollVertically(1)) {
-                    b2Var.p = true;
+                if (!gxVar.canScrollVertically(1)) {
+                    a2Var.p = true;
                 }
-                dVar.setEnabled((!b2Var.p || b2Var.m || b2Var.n) ? false : true);
+                dVar.setEnabled((!a2Var.p || a2Var.m || a2Var.n) ? false : true);
                 break;
             case 3:
-                f2 f2Var = (f2) this.b;
-                a2 a2Var = (a2) this.c;
-                l80 l80Var = (l80) this.d;
-                f2Var.getClass();
-                l lVar = new l(l80Var, 2);
-                TL_wallet.tonConnectSession tonconnectsession = a2Var.e;
+                e2 e2Var = (e2) this.b;
+                z1 z1Var = (z1) this.c;
+                r80 r80Var = (r80) this.d;
+                e2Var.getClass();
+                k kVar = new k(r80Var, 2);
+                TL_wallet.tonConnectSession tonconnectsession = z1Var.e;
                 if (!tonconnectsession.closed && !tonconnectsession.closing && tonconnectsession.manifest_error == null && tonconnectsession.manifest != null) {
-                    if (!a2Var.f) {
-                        a2Var.f = true;
-                        f2Var.b.j0(new w6(f2Var, a2Var, lVar, tonconnectsession, 6));
+                    if (!z1Var.f) {
+                        z1Var.f = true;
+                        e2Var.b.j0(new w6(e2Var, z1Var, kVar, tonconnectsession, 6));
                         break;
                     } else {
-                        lVar.run("A TON Connect operation is already in progress");
+                        kVar.run("A TON Connect operation is already in progress");
                         break;
                     }
                 } else {
-                    lVar.run("The dApp manifest is unavailable or the session is closed");
+                    kVar.run("The dApp manifest is unavailable or the session is closed");
                     break;
                 }
                 break;
             case 4:
-                f2 f2Var2 = (f2) this.b;
+                e2 e2Var2 = (e2) this.b;
                 TL_wallet.tonConnectSession tonconnectsession2 = (TL_wallet.tonConnectSession) this.c;
                 Utilities.Callback callback = (Utilities.Callback) this.d;
-                f2Var2.getClass();
-                l lVar2 = new l(callback, 3);
+                e2Var2.getClass();
+                k kVar2 = new k(callback, 3);
                 if (tonconnectsession2 != null && tonconnectsession2.dapp_client_id != null && tonconnectsession2.client_id != null && tonconnectsession2.nonce != null) {
-                    if (!f2Var2.c.add(Long.valueOf(tonconnectsession2.id))) {
-                        lVar2.run("A TON Connect operation is already in progress");
+                    if (!e2Var2.c.add(Long.valueOf(tonconnectsession2.id))) {
+                        kVar2.run("A TON Connect operation is already in progress");
                         break;
                     } else {
-                        p pVar = new p(f2Var2, tonconnectsession2, lVar2, 3);
+                        o oVar = new o(e2Var2, tonconnectsession2, kVar2, 3);
                         if (!tonconnectsession2.closed) {
-                            f2Var2.b.j0(new h(f2Var2, pVar, tonconnectsession2, 6));
+                            e2Var2.b.j0(new h(e2Var2, oVar, tonconnectsession2, 6));
                             break;
                         } else {
-                            pVar.run(null);
+                            oVar.run(null);
                             break;
                         }
                     }
                 } else {
-                    lVar2.run("Missing TON Connect session data");
+                    kVar2.run("Missing TON Connect session data");
                     break;
                 }
             case 5:
-                ((s1) this.b).run((TL_wallet.inputTonConnectOauthSession) this.c, (String) this.d);
+                ((r1) this.b).run((TL_wallet.inputTonConnectOauthSession) this.c, (String) this.d);
                 break;
             case 6:
-                f2 f2Var3 = (f2) this.b;
-                p pVar2 = (p) this.c;
+                e2 e2Var3 = (e2) this.b;
+                o oVar2 = (o) this.c;
                 TL_wallet.tonConnectSession tonconnectsession3 = (TL_wallet.tonConnectSession) this.d;
-                m0 m0Var2 = f2Var3.b;
-                String s10 = m0Var2.s();
-                byte[] x10 = m0Var2.x();
+                l0 l0Var2 = e2Var3.b;
+                String s10 = l0Var2.s();
+                byte[] x10 = l0Var2.x();
                 byte[] bArr = x10 == null ? null : (byte[]) x10.clone();
                 if (s10 != null && bArr != null) {
-                    m0Var2.y(new ai.x3(f2Var3, pVar2, tonconnectsession3, s10, bArr, 7), true, false);
+                    l0Var2.y(new ai.x3(e2Var3, oVar2, tonconnectsession3, s10, bArr, 7), true, false);
                     break;
                 } else {
-                    pVar2.run("Wallet is not ready");
+                    oVar2.run("Wallet is not ready");
                     break;
                 }
             case 7:
-                a2 a2Var2 = (a2) this.b;
-                l lVar3 = (l) this.c;
+                z1 z1Var2 = (z1) this.b;
+                k kVar3 = (k) this.c;
                 String str3 = (String) this.d;
-                a2Var2.f = false;
-                lVar3.run(str3);
+                z1Var2.f = false;
+                kVar3.run(str3);
                 break;
             case 8:
                 w6 w6Var = (w6) this.b;
-                i80 i80Var = (i80) this.c;
-                i80 i80Var2 = (i80) this.d;
+                j80 j80Var = (j80) this.c;
+                j80 j80Var2 = (j80) this.d;
                 w6Var.run();
-                i80Var.K(i80Var2);
+                j80Var.K(j80Var2);
                 break;
             case 9:
                 Utilities.Callback3 callback3 = (Utilities.Callback3) this.b;
-                k2[] k2VarArr = (k2[]) this.c;
+                j2[] j2VarArr = (j2[]) this.c;
                 TL_wallet.walletTransactionPeerUser wallettransactionpeeruser = (TL_wallet.walletTransactionPeerUser) this.d;
                 if (callback3 == null) {
-                    k2 k2Var = k2VarArr[0];
-                    if (k2Var != null) {
-                        k2Var.dismiss();
+                    j2 j2Var = j2VarArr[0];
+                    if (j2Var != null) {
+                        j2Var.dismiss();
                     }
-                    org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
+                    org.telegram.ui.ActionBar.o2 U = LaunchActivity.U();
                     if (U != null) {
-                        U.presentFragment(qn.W9(wallettransactionpeeruser.user_id));
+                        U.presentFragment(sn.W9(wallettransactionpeeruser.user_id));
                         break;
                     }
                 }
                 break;
             case 10:
-                k2[] k2VarArr2 = (k2[]) this.b;
-                k2VarArr2[0].setOnDismissListener(new ai.z3(15, (TLRPC.User) this.c, (TL_wallet.walletTransactionPeerUser) this.d));
-                k2VarArr2[0].dismiss();
+                j2[] j2VarArr2 = (j2[]) this.b;
+                j2VarArr2[0].setOnDismissListener(new ai.z3(15, (TLRPC.User) this.c, (TL_wallet.walletTransactionPeerUser) this.d));
+                j2VarArr2[0].dismiss();
                 break;
             case 11:
                 Utilities.Callback3 callback32 = (Utilities.Callback3) this.b;
-                k2[] k2VarArr3 = (k2[]) this.c;
+                j2[] j2VarArr3 = (j2[]) this.c;
                 TL_wallet.WalletTransactionPeer walletTransactionPeer = (TL_wallet.WalletTransactionPeer) this.d;
                 if (callback32 == null) {
-                    k2 k2Var2 = k2VarArr3[0];
-                    if (k2Var2 != null) {
-                        k2Var2.dismiss();
+                    j2 j2Var2 = j2VarArr3[0];
+                    if (j2Var2 != null) {
+                        j2Var2.dismiss();
                     }
-                    org.telegram.ui.ActionBar.n2 U2 = LaunchActivity.U();
+                    org.telegram.ui.ActionBar.o2 U2 = LaunchActivity.U();
                     if (U2 != null) {
-                        U2.presentFragment(qn.W9(-walletTransactionPeer.channel_id));
+                        U2.presentFragment(sn.W9(-walletTransactionPeer.channel_id));
                         break;
                     }
                 }
@@ -210,10 +210,10 @@ public final /* synthetic */ class h implements Runnable {
                 s5Var.b(s5Var.c0, s5Var.f0);
                 s5Var.e.setVisibility(0);
                 q5Var.run();
-                v2 v2Var = s5Var.d;
-                if (v2Var != null) {
+                u2 u2Var = s5Var.d;
+                if (u2Var != null) {
                     s5Var.d = null;
-                    v2Var.run();
+                    u2Var.run();
                     break;
                 }
                 break;
@@ -221,13 +221,13 @@ public final /* synthetic */ class h implements Runnable {
                 ((Utilities.Callback2) this.d).run((String) this.b, (String) this.c);
                 break;
             case 15:
-                ((WalletEngine2) this.b).lambda$previewSignMessage$8((e2) this.c, (Utilities.Callback) this.d);
+                ((WalletEngine2) this.b).lambda$previewSignMessage$8((d2) this.c, (Utilities.Callback) this.d);
                 break;
             case 16:
                 ((Utilities.Callback2) this.d).run((Long) this.b, (String) this.c);
                 break;
             case 17:
-                ((WalletEngine2) this.b).lambda$previewTonConnect$2((e2) this.c, (Utilities.Callback2) this.d);
+                ((WalletEngine2) this.b).lambda$previewTonConnect$2((d2) this.c, (Utilities.Callback2) this.d);
                 break;
             case 18:
                 s7 s7Var = (s7) this.b;
@@ -258,26 +258,26 @@ public final /* synthetic */ class h implements Runnable {
                 }
                 break;
             case 19:
-                h8 h8Var = (h8) this.b;
-                m0 m0Var3 = (m0) this.c;
-                h0 h0Var = (h0) this.d;
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(h8Var.getParentActivity(), 0, h8Var.getResourceProvider());
+                i8 i8Var = (i8) this.b;
+                l0 l0Var3 = (l0) this.c;
+                g0 g0Var = (g0) this.d;
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(i8Var.getParentActivity(), 0, i8Var.getResourceProvider());
                 alertDialog$Builder.a.R = LocaleController.getString(R.string.WalletDisableBackupTitle);
                 alertDialog$Builder.a.T = LocaleController.getString(R.string.WalletDisableBackupConfirmInfo);
                 alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-                alertDialog$Builder.k(LocaleController.getString(R.string.WalletDisable), new b8(h8Var, m0Var3, h0Var));
+                alertDialog$Builder.k(LocaleController.getString(R.string.WalletDisable), new b8(i8Var, l0Var3, g0Var));
                 alertDialog$Builder.d(-1);
-                alertDialog$Builder.o();
+                alertDialog$Builder.p();
                 break;
             default:
-                h8 h8Var2 = (h8) this.b;
+                i8 i8Var2 = (i8) this.b;
                 Boolean bool = (Boolean) this.c;
-                m0 m0Var4 = (m0) this.d;
-                AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(h8Var2.getParentActivity(), 0, h8Var2.getResourceProvider());
+                l0 l0Var4 = (l0) this.d;
+                AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(i8Var2.getParentActivity(), 0, i8Var2.getResourceProvider());
                 alertDialog$Builder2.a.R = LocaleController.getString(R.string.WalletReplaceWalletTitle);
-                alertDialog$Builder2.k(LocaleController.getString(R.string.WalletCreateNew), new b8(h8Var2, bool, m0Var4, 0));
-                alertDialog$Builder2.h(LocaleController.getString(R.string.WalletImportExisting), new en0(26, h8Var2, bool));
-                alertDialog$Builder2.o();
+                alertDialog$Builder2.k(LocaleController.getString(R.string.WalletCreateNew), new b8(i8Var2, bool, l0Var4, 0));
+                alertDialog$Builder2.h(LocaleController.getString(R.string.WalletImportExisting), new ql0(28, i8Var2, bool));
+                alertDialog$Builder2.p();
                 break;
         }
     }
@@ -289,7 +289,7 @@ public final /* synthetic */ class h implements Runnable {
         this.c = serializable2;
     }
 
-    public /* synthetic */ h(m0 m0Var, WalletEngine2.ImportedWalletProof importedWalletProof, Exception exc, Utilities.Callback2 callback2) {
+    public /* synthetic */ h(l0 l0Var, WalletEngine2.ImportedWalletProof importedWalletProof, Exception exc, Utilities.Callback2 callback2) {
         this.a = 0;
         this.b = importedWalletProof;
         this.c = exc;

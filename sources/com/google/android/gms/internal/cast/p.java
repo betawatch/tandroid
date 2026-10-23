@@ -30,11 +30,11 @@ import x7.fa;
 import x7.i9;
 import x7.o7;
 import x7.pa;
-import z7.ib;
-import z7.xe;
-import z7.xf;
+import z7.hb;
+import z7.we;
+import z7.wf;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class p implements Runnable {
     public final /* synthetic */ int a;
@@ -323,10 +323,10 @@ public final /* synthetic */ class p implements Runnable {
                 }
                 return;
             case 2:
-                ((k2.w0) this.b).i((p4.p) this.e, (p4.m) this.c, (Collection) this.d);
+                ((k2.w0) this.b).h((p4.p) this.e, (p4.m) this.c, (Collection) this.d);
                 return;
             case 3:
-                ((k2.w0) this.b).i((p4.p) this.e, (p4.m) this.c, (ArrayList) this.d);
+                ((k2.w0) this.b).h((p4.p) this.e, (p4.m) this.c, (ArrayList) this.d);
                 return;
             case 4:
                 r0.q0.h((View) this.b, (r0.v0) this.c, (mi.q) this.d);
@@ -335,7 +335,7 @@ public final /* synthetic */ class p implements Runnable {
             case 5:
                 Handler handler = (Handler) this.b;
                 if (((AtomicBoolean) this.e).compareAndSet(false, true)) {
-                    handler.removeCallbacks((u2.j0) this.d);
+                    handler.removeCallbacks((u2.k0) this.d);
                     if (Looper.myLooper() == handler.getLooper()) {
                         ((tf.b) this.c).a(false);
                         return;
@@ -352,15 +352,15 @@ public final /* synthetic */ class p implements Runnable {
                 b();
                 return;
             default:
-                xf xfVar = (xf) this.b;
+                wf wfVar = (wf) this.b;
                 a5.a aVar2 = (a5.a) this.c;
-                ib ibVar = (ib) this.d;
+                hb hbVar = (hb) this.d;
                 String str2 = (String) this.e;
                 m.s3 s3Var = (m.s3) aVar2.c;
-                s3Var.b = ibVar;
-                xe xeVar = (xe) s3Var.a;
-                if (xeVar != null) {
-                    str = xeVar.d;
+                s3Var.b = hbVar;
+                we weVar = (we) s3Var.a;
+                if (weVar != null) {
+                    str = weVar.d;
                     int i13 = z7.l4.a;
                     if (str != null) {
                         break;
@@ -368,10 +368,10 @@ public final /* synthetic */ class p implements Runnable {
                 }
                 str = "NA";
                 d8 d8Var = new d8();
-                d8Var.a = xfVar.a;
-                d8Var.b = xfVar.b;
-                synchronized (xf.class) {
-                    mVar = xf.k;
+                d8Var.a = wfVar.a;
+                d8Var.b = wfVar.b;
+                synchronized (wf.class) {
+                    mVar = wf.k;
                     if (mVar == null) {
                         n0.c a11 = w7.z.a(Resources.getSystem().getConfiguration());
                         Object[] objArr = new Object[4];
@@ -399,18 +399,18 @@ public final /* synthetic */ class p implements Runnable {
                             i14 = i15;
                         }
                         mVar = z7.i.q(i14, objArr);
-                        xf.k = mVar;
+                        wf.k = mVar;
                     }
                 }
                 d8Var.k = mVar;
                 d8Var.g = Boolean.TRUE;
                 d8Var.d = str;
                 d8Var.c = str2;
-                d8Var.e = xfVar.f.isSuccessful() ? (String) xfVar.f.getResult() : xfVar.d.a();
+                d8Var.e = wfVar.f.isSuccessful() ? (String) wfVar.f.getResult() : wfVar.d.a();
                 d8Var.i = 10;
-                d8Var.j = Integer.valueOf(xfVar.h);
+                d8Var.j = Integer.valueOf(wfVar.h);
                 aVar2.d = d8Var;
-                xfVar.c.a(aVar2);
+                wfVar.c.a(aVar2);
                 return;
         }
     }
@@ -428,10 +428,10 @@ public final /* synthetic */ class p implements Runnable {
         this.e = new AtomicBoolean(false);
         this.b = handler;
         this.c = bVar;
-        u2.j0 j0Var = new u2.j0(2, this, bVar);
-        this.d = j0Var;
+        u2.k0 k0Var = new u2.k0(2, this, bVar);
+        this.d = k0Var;
         if (j10 > 0) {
-            handler.postDelayed(j0Var, j10);
+            handler.postDelayed(k0Var, j10);
         }
     }
 }

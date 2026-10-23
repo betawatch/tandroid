@@ -5,9 +5,9 @@ import com.google.mlkit.common.internal.MlKitComponentDiscoveryService;
 import java.util.ArrayList;
 import java.util.concurrent.Executor;
 import k2.w0;
-import qg.f0;
+import org.telegram.ui.web.d0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class g {
     public static final Object b = new Object();
@@ -34,14 +34,14 @@ public final class g {
             if (applicationContext != null) {
                 context = applicationContext;
             }
-            ArrayList S = new mi.q(19, context, new w0(MlKitComponentDiscoveryService.class, 19)).S();
+            ArrayList H = new mi.q(18, context, new w0(MlKitComponentDiscoveryService.class, 19)).H();
             ArrayList arrayList = new ArrayList();
             ArrayList arrayList2 = new ArrayList();
-            f0 f0Var = r9.e.A;
-            arrayList.addAll(S);
+            d0 d0Var = r9.e.A;
+            arrayList.addAll(H);
             arrayList2.add(r9.a.c(context, Context.class, new Class[0]));
             arrayList2.add(r9.a.c(gVar2, g.class, new Class[0]));
-            r9.g gVar3 = new r9.g(executor, arrayList, arrayList2, f0Var);
+            r9.g gVar3 = new r9.g(executor, arrayList, arrayList2, d0Var);
             gVar2.a = gVar3;
             gVar3.h(true);
             gVar = c;

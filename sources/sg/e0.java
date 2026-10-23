@@ -1,14 +1,28 @@
 package sg;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class e0 extends f0 {
-    public final int g;
-    public final boolean h;
+public class e0 {
+    public final int a;
+    public final int b;
+    public final String c;
+    public final String d;
+    public final int e;
+    public boolean f;
 
-    public e0(int i10, boolean z10) {
-        super(-1, -1, -1, null, null);
-        this.g = i10;
-        this.h = z10;
+    public e0(int i10, int i11, int i12, String str, String str2) {
+        this.a = i10;
+        this.b = i11;
+        this.c = str;
+        this.d = str2;
+        this.e = i12;
+    }
+
+    public static e0 a(int i10, int i11) {
+        return new e0(i10, i11, -1, null, null);
+    }
+
+    public static e0 b(int i10, int i11, String str) {
+        return new e0(i10, -1, i11, null, str);
     }
 }

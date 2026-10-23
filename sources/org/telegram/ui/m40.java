@@ -1,44 +1,37 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.view.ViewGroup;
-import org.telegram.messenger.AndroidUtilities;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class m40 extends org.telegram.ui.ActionBar.k {
-    public final /* synthetic */ org.telegram.ui.Components.bq u1;
-    public final /* synthetic */ q50 v1;
+public final class m40 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ u50 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m40(q50 q50Var, LaunchActivity launchActivity, org.telegram.ui.Components.bq bqVar) {
-        super(launchActivity, null);
-        this.v1 = q50Var;
-        this.u1 = bqVar;
+    public /* synthetic */ m40(u50 u50Var, int i10) {
+        this.a = i10;
+        this.b = u50Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.k, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        if (getAdditionalSubtitleTextView().getVisibility() == 0) {
-            canvas.save();
-            canvas.translate(getSubtitleTextView().getLeft(), getSubtitleTextView().getY() - AndroidUtilities.dp(1.0f));
-            int alpha = (int) (getAdditionalSubtitleTextView().getAlpha() * 255.0f);
-            org.telegram.ui.Components.bq bqVar = this.u1;
-            bqVar.f = alpha;
-            bqVar.draw(canvas);
-            canvas.restore();
-            invalidate();
-        }
-    }
-
-    @Override // android.view.View
-    public final void setAlpha(float f7) {
-        ViewGroup viewGroup;
-        if (getAlpha() != f7) {
-            super.setAlpha(f7);
-            viewGroup = ((org.telegram.ui.ActionBar.f3) this.v1).containerView;
-            viewGroup.invalidate();
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                u50 u50Var = this.b;
+                u50Var.V.setVisibility(4);
+                u50Var.W.setVisibility(4);
+                u50Var.U.setVisibility(4);
+                break;
+            case 1:
+                this.b.h0 = null;
+                break;
+            default:
+                u50 u50Var2 = this.b;
+                u50Var2.h1 = null;
+                u50Var2.g1.setColor(u50Var2.T1 == 3 ? -1163700 : -12761513);
+                u50Var2.f1.invalidate();
+                break;
         }
     }
 }

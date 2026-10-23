@@ -3,7 +3,7 @@ package ei;
 import android.graphics.Canvas;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class n7 implements bh.h {
     public final /* synthetic */ s7 a;
@@ -14,13 +14,13 @@ public final class n7 implements bh.h {
 
     @Override // bh.h
     public final void J(bh.a aVar) {
-        aVar.a(this.a.getThemedColor(org.telegram.ui.ActionBar.h6.d6));
+        aVar.a(this.a.getThemedColor(org.telegram.ui.ActionBar.k6.d6));
         aVar.b(SharedConfig.chatBlurEnabled());
     }
 
     @Override // bh.h
-    public final void b(Canvas canvas) {
-        int i10 = org.telegram.ui.ActionBar.h6.d6;
+    public final void z(Canvas canvas) {
+        int i10 = org.telegram.ui.ActionBar.k6.d6;
         s7 s7Var = this.a;
         canvas.drawColor(s7Var.getThemedColor(i10));
         if (SharedConfig.chatBlurEnabled()) {

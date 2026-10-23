@@ -10,9 +10,9 @@ import android.util.Log;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import m.g3;
-import org.telegram.ui.Cells.k7;
+import org.telegram.ui.Wallet.m4;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class x {
     public static e c;
@@ -114,7 +114,7 @@ public final class x {
                 c10.a(kVar, true);
                 c10.k();
                 s0 s0Var = c10.c;
-                ((Handler) s0Var.d).post((k7) s0Var.h);
+                ((Handler) s0Var.d).post((m4) s0Var.h);
             }
             if ((zVar2 != null && zVar2.d) != zVar.d) {
                 k kVar2 = c10.r;
@@ -138,7 +138,7 @@ public final class x {
                 }
                 c10.r = null;
                 s0 s0Var2 = c10.c;
-                ((Handler) s0Var2.d).post((k7) s0Var2.h);
+                ((Handler) s0Var2.d).post((m4) s0Var2.h);
             }
         }
         bVar.b(769, zVar);

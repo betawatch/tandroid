@@ -11,10 +11,10 @@ import android.text.style.ReplacementSpan;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.k6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class c extends ReplacementSpan {
     public final TextPaint a;
@@ -23,13 +23,15 @@ public final class c extends ReplacementSpan {
     public float d;
     public float e;
     public int f;
+    public final g6 h;
 
-    public c(d6 d6Var) {
+    public c(g6 g6Var) {
         TextPaint textPaint = new TextPaint(1);
         this.a = textPaint;
         this.b = new RectF();
+        this.h = g6Var;
         textPaint.setTextSize(AndroidUtilities.dp(15.0f));
-        textPaint.setColor(h6.w0(h6.C6, d6Var));
+        textPaint.setColor(k6.w0(k6.C6, g6Var));
     }
 
     public final void a() {
@@ -44,6 +46,7 @@ public final class c extends ReplacementSpan {
     @Override // android.text.style.ReplacementSpan
     public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
         a();
+        this.a.setColor(k6.w0(k6.C6, this.h));
         Rect clipBounds = canvas.getClipBounds();
         RectF rectF = this.b;
         rectF.set(clipBounds);

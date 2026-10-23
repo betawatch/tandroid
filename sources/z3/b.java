@@ -11,10 +11,10 @@ import java.util.Arrays;
 import java.util.List;
 import v7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class b implements d {
-    public static final r c = new r(new ya.b(5), s1.b);
+    public static final r c = new r(new v0.k(17), s1.b);
     public final n0 a;
     public final long[] b;
 
@@ -124,7 +124,7 @@ public final class b implements d {
     }
 
     @Override // z3.d
-    public final List s(long j10) {
+    public final List r(long j10) {
         int f7 = m0.f(this.b, j10, false);
         if (f7 != -1) {
             return (n0) this.a.get(f7);
@@ -134,7 +134,7 @@ public final class b implements d {
     }
 
     @Override // z3.d
-    public final int u() {
+    public final int v() {
         return this.a.size();
     }
 }

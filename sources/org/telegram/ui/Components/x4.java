@@ -1,35 +1,13 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.widget.LinearLayout;
-import org.telegram.messenger.AndroidUtilities;
+import android.widget.TextView;
+import org.telegram.messenger.Emoji;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class x4 extends LinearLayout {
-    public boolean a;
-    public final /* synthetic */ od0 b;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x4(Context context, od0 od0Var) {
-        super(context);
-        this.b = od0Var;
-        this.a = false;
-    }
-
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        this.a = true;
-        this.b.getLayoutParams().height = AndroidUtilities.dp(42.0f) * 8;
-        this.a = false;
-        super.onMeasure(i10, i11);
-    }
-
-    @Override // android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.a) {
-            return;
-        }
-        super.requestLayout();
+public final class x4 extends y90 {
+    @Override // org.telegram.ui.Components.y90, android.widget.TextView
+    public final void setText(CharSequence charSequence, TextView.BufferType bufferType) {
+        super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), false), bufferType);
     }
 }

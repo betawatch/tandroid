@@ -5,15 +5,17 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class ma extends FrameLayout {
+public final class ma extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public final EditTextBoldCursor a;
     public final TextView b;
     public final /* synthetic */ sa c;
@@ -27,9 +29,9 @@ public final class ma extends FrameLayout {
         EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(getContext());
         this.a = editTextBoldCursor;
         editTextBoldCursor.setTextSize(1, 17.0f);
-        editTextBoldCursor.setHintTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.H6, false));
-        int i10 = org.telegram.ui.ActionBar.h6.G6;
-        editTextBoldCursor.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i10, false));
+        org.telegram.ui.ActionBar.r6.F(editTextBoldCursor, org.telegram.ui.ActionBar.k6.H6, null);
+        int i10 = org.telegram.ui.ActionBar.k6.G6;
+        org.telegram.ui.ActionBar.r6.W(editTextBoldCursor, i10, null);
         editTextBoldCursor.setBackgroundDrawable(null);
         editTextBoldCursor.setMaxLines(1);
         editTextBoldCursor.setLines(1);
@@ -39,7 +41,7 @@ public final class ma extends FrameLayout {
         editTextBoldCursor.setInputType(180224);
         editTextBoldCursor.setImeOptions(6);
         editTextBoldCursor.setHint(LocaleController.getString(R.string.UsernameLinkPlaceholder));
-        editTextBoldCursor.setCursorColor(org.telegram.ui.ActionBar.h6.x0(null, i10, false));
+        org.telegram.ui.ActionBar.r6.m(editTextBoldCursor, 30, i10, null);
         editTextBoldCursor.setCursorSize(AndroidUtilities.dp(19.0f));
         editTextBoldCursor.setCursorWidth(1.5f);
         editTextBoldCursor.setOnEditorActionListener(new ka(this, 0));
@@ -58,7 +60,7 @@ public final class ma extends FrameLayout {
         textView.setSingleLine(true);
         textView.setText(saVar.getMessagesController().linkPrefix + "/");
         textView.setTextSize(1, 17.0f);
-        textView.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i10, false));
+        org.telegram.ui.ActionBar.r6.W(textView, i10, null);
         textView.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
         textView.setTranslationY(-AndroidUtilities.dp(3.0f));
         linearLayout.addView(textView, w7.z5.p(-2, -2, 0.0f, 16, 21, 15, 0, 15));
@@ -73,5 +75,19 @@ public final class ma extends FrameLayout {
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLObject.FLAG_30));
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void updateColors() {
+        try {
+            this.a.setCursorColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.G6, false));
+            invalidate();
+        } catch (Exception e) {
+            FileLog.e(e);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

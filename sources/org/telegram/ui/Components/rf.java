@@ -9,7 +9,7 @@ import org.telegram.messenger.Emoji;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class rf implements TextWatcher {
     public boolean a;
@@ -67,11 +67,11 @@ public final class rf implements TextWatcher {
         int i10 = chatActivityEnterView.c0;
         if (i10 > 0) {
             int i11 = i10 - codePointCount;
-            if (i11 <= (chatActivityEnterView.l5 ? 5 : 100)) {
+            if (i11 <= (chatActivityEnterView.p5 ? 5 : 100)) {
                 if (i11 < -9999) {
                     i11 = -9999;
                 }
-                chatActivityEnterView.Q();
+                chatActivityEnterView.P();
                 NumberTextView numberTextView = chatActivityEnterView.b0;
                 numberTextView.a(i11, numberTextView.getVisibility() == 0);
                 if (chatActivityEnterView.b0.getVisibility() != 0) {
@@ -83,7 +83,7 @@ public final class rf implements TextWatcher {
                 chatActivityEnterView.b0.animate().setListener(null).cancel();
                 chatActivityEnterView.b0.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(100L).start();
                 if (i11 >= 0) {
-                    chatActivityEnterView.b0.setTextColor(chatActivityEnterView.g0(org.telegram.ui.ActionBar.h6.y6));
+                    chatActivityEnterView.b0.setTextColor(chatActivityEnterView.f0(org.telegram.ui.ActionBar.k6.y6));
                     z10 = true;
                     if (chatActivityEnterView.q3 != z10) {
                         chatActivityEnterView.q3 = z10;
@@ -92,17 +92,17 @@ public final class rf implements TextWatcher {
                     nfVar = chatActivityEnterView.m0;
                     if (nfVar != null) {
                     }
-                    chatActivityEnterView.B();
+                    chatActivityEnterView.A();
                     if (chatActivityEnterView.a2) {
                         chatActivityEnterView.o0 = true;
                         if (this.e) {
                         }
                     }
                     chatActivityEnterView.m1(chatActivityEnterView.T <= 2 && !TextUtils.isEmpty(editable.toString().trim()));
-                    chatActivityEnterView.D(true);
+                    chatActivityEnterView.C(true);
                     chatActivityEnterView.s1(chatActivityEnterView.T <= 2 && !TextUtils.isEmpty(editable.toString().trim()));
                 }
-                chatActivityEnterView.b0.setTextColor(chatActivityEnterView.g0(org.telegram.ui.ActionBar.h6.p7));
+                chatActivityEnterView.b0.setTextColor(chatActivityEnterView.f0(org.telegram.ui.ActionBar.k6.p7));
                 z10 = false;
                 if (chatActivityEnterView.q3 != z10 && (xeVar = chatActivityEnterView.F1) != null) {
                     chatActivityEnterView.q3 = z10;
@@ -112,23 +112,23 @@ public final class rf implements TextWatcher {
                 if (nfVar != null) {
                     nfVar.c();
                 }
-                chatActivityEnterView.B();
+                chatActivityEnterView.A();
                 if (chatActivityEnterView.a2 && !chatActivityEnterView.o0 && !MessagesController.getInstance(chatActivityEnterView.Q).premiumFeaturesBlocked() && !UserConfig.getInstance(chatActivityEnterView.Q).isPremium() && chatActivityEnterView.d0 > MessagesController.getInstance(chatActivityEnterView.Q).captionLengthLimitDefault && chatActivityEnterView.d0 < MessagesController.getInstance(chatActivityEnterView.Q).captionLengthLimitPremium) {
                     chatActivityEnterView.o0 = true;
                     if (this.e) {
                         chatActivityEnterView.n1();
                     } else {
-                        AndroidUtilities.runOnUIThread(new pg(this, 19), 300L);
+                        AndroidUtilities.runOnUIThread(new pg(this, 20), 300L);
                     }
                 }
                 chatActivityEnterView.m1(chatActivityEnterView.T <= 2 && !TextUtils.isEmpty(editable.toString().trim()));
-                chatActivityEnterView.D(true);
+                chatActivityEnterView.C(true);
                 chatActivityEnterView.s1(chatActivityEnterView.T <= 2 && !TextUtils.isEmpty(editable.toString().trim()));
             }
         }
         NumberTextView numberTextView2 = chatActivityEnterView.b0;
         if (numberTextView2 != null) {
-            numberTextView2.animate().alpha(0.0f).scaleX(0.5f).scaleY(0.5f).setDuration(100L).setListener(new org.telegram.ui.nq(this, 7));
+            numberTextView2.animate().alpha(0.0f).scaleX(0.5f).scaleY(0.5f).setDuration(100L).setListener(new org.telegram.ui.pq(this, 7));
         }
         z10 = true;
         if (chatActivityEnterView.q3 != z10) {
@@ -136,11 +136,11 @@ public final class rf implements TextWatcher {
         nfVar = chatActivityEnterView.m0;
         if (nfVar != null) {
         }
-        chatActivityEnterView.B();
+        chatActivityEnterView.A();
         if (chatActivityEnterView.a2) {
         }
         chatActivityEnterView.m1(chatActivityEnterView.T <= 2 && !TextUtils.isEmpty(editable.toString().trim()));
-        chatActivityEnterView.D(true);
+        chatActivityEnterView.C(true);
         chatActivityEnterView.s1(chatActivityEnterView.T <= 2 && !TextUtils.isEmpty(editable.toString().trim()));
     }
 
@@ -181,7 +181,7 @@ public final class rf implements TextWatcher {
             this.b = true;
         }
         chatActivityEnterView.X1 = false;
-        chatActivityEnterView.I(true);
+        chatActivityEnterView.F(true);
         CharSequence trimmedString = AndroidUtilities.getTrimmedString(charSequence.toString());
         if (chatActivityEnterView.Z2 != null && !chatActivityEnterView.R2) {
             int i13 = i12 + 1;

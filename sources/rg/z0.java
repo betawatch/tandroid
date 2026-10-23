@@ -17,9 +17,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.ui.Components.na;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class z0 extends org.telegram.ui.Cells.u1 {
+public final class z0 extends org.telegram.ui.Cells.t1 {
     public final na Ge;
     public final float[] He;
     public final Path Ie;
@@ -29,8 +29,8 @@ public final class z0 extends org.telegram.ui.Cells.u1 {
     public final /* synthetic */ a1 Me;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z0(a1 a1Var, Context context, int i10, com.google.firebase.messaging.l lVar) {
-        super(context, i10, false, null, lVar);
+    public z0(a1 a1Var, Context context, int i10, e1 e1Var) {
+        super(context, i10, false, null, e1Var);
         this.Me = a1Var;
         this.Ge = new na(a1Var.d, this, 10, false);
         this.He = new float[8];
@@ -42,8 +42,8 @@ public final class z0 extends org.telegram.ui.Cells.u1 {
         this.Le = new RectF();
     }
 
-    @Override // org.telegram.ui.Cells.u1
-    public final Paint M2(String str) {
+    @Override // org.telegram.ui.Cells.t1
+    public final Paint L2(String str) {
         if ("paintChatActionBackground".equals(str)) {
             this.Me.h.v0 = true;
             Paint c10 = this.Ge.c(1.0f);
@@ -51,18 +51,18 @@ public final class z0 extends org.telegram.ui.Cells.u1 {
                 return c10;
             }
         }
-        return super.M2(str);
+        return super.L2(str);
     }
 
-    @Override // org.telegram.ui.Cells.u1
-    public final boolean a2(Canvas canvas) {
+    @Override // org.telegram.ui.Cells.t1
+    public final boolean Z1(Canvas canvas) {
         q6 q6Var;
         float[] fArr;
         ImageReceiver photoImage = getPhotoImage();
         a1 a1Var = this.Me;
         r5 r5Var = a1Var.h;
         if (!a1Var.f || photoImage == null || (((q6Var = a1Var.e) == null || !q6Var.g || !q6Var.d || !r5Var.x0) && !r5Var.u0 && (r5Var.w0 == null || !r5Var.M0.I0))) {
-            return super.a2(canvas);
+            return super.Z1(canvas);
         }
         int i10 = 0;
         while (true) {
@@ -88,7 +88,7 @@ public final class z0 extends org.telegram.ui.Cells.u1 {
         }
         Bitmap bitmap = textureView.getBitmap();
         if (bitmap == null) {
-            return super.a2(canvas);
+            return super.Z1(canvas);
         }
         canvas.save();
         canvas.clipPath(path);
@@ -109,7 +109,7 @@ public final class z0 extends org.telegram.ui.Cells.u1 {
         return true;
     }
 
-    @Override // org.telegram.ui.Cells.u1, android.view.View
+    @Override // org.telegram.ui.Cells.t1, android.view.View
     public final void onDraw(Canvas canvas) {
         Canvas canvas2;
         a1 a1Var = this.Me;
@@ -121,11 +121,11 @@ public final class z0 extends org.telegram.ui.Cells.u1 {
             canvas2 = canvas;
             canvas2.save();
         }
-        S1(canvas2);
+        R1(canvas2);
         canvas2.restore();
     }
 
-    @Override // org.telegram.ui.Cells.u1, android.view.View
+    @Override // org.telegram.ui.Cells.t1, android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         return false;
     }

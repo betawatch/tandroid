@@ -11,17 +11,19 @@ import android.text.TextPaint;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.LinearLayout;
+import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.zq;
+import org.telegram.ui.Components.yq;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final class a extends View {
+public final class a extends View implements org.telegram.ui.ActionBar.b6 {
     public final ImageReceiver a;
     public final String b;
     public final String c;
@@ -33,8 +35,9 @@ public final class a extends View {
     public StaticLayout r;
     public float s;
     public float v;
+    public final org.telegram.ui.ActionBar.g6 w;
 
-    public a(Context context, MediaController.PhotoEntry photoEntry, String str, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
+    public a(Context context, MediaController.PhotoEntry photoEntry, String str, int i10, org.telegram.ui.ActionBar.g6 g6Var) {
         super(context);
         String str2;
         ImageReceiver imageReceiver = new ImageReceiver(this);
@@ -43,37 +46,38 @@ public final class a extends View {
         this.d = textPaint;
         TextPaint textPaint2 = new TextPaint(1);
         this.n = textPaint2;
+        this.w = g6Var;
         setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
-        setBackground(org.telegram.ui.ActionBar.h6.L0(false));
+        setBackground(org.telegram.ui.ActionBar.k6.M0(false));
         setMinimumWidth(AndroidUtilities.dp(196.0f));
         setLayoutParams(new LinearLayout.LayoutParams(-1, 48));
-        int i11 = org.telegram.ui.ActionBar.h6.E8;
-        textPaint.setColor(org.telegram.ui.ActionBar.h6.w0(i11, d6Var));
+        int i11 = org.telegram.ui.ActionBar.k6.E8;
+        textPaint.setColor(org.telegram.ui.ActionBar.k6.w0(i11, g6Var));
         textPaint.setTextSize(AndroidUtilities.dp(16.0f));
-        textPaint2.setColor(org.telegram.ui.ActionBar.h6.w0(i11, d6Var));
+        textPaint2.setColor(org.telegram.ui.ActionBar.k6.w0(i11, g6Var));
         textPaint2.setAlpha(102);
         textPaint2.setTextSize(AndroidUtilities.dp(13.0f));
         String str3 = "";
         String str4 = "" + ((Object) str);
         this.b = str4;
-        this.c = i2.e.j(i10, "");
+        this.c = i2.o1.k(i10, "");
         imageReceiver.setRoundRadius(AndroidUtilities.dp(4.0f));
         Drawable mutate = context.getResources().getDrawable(R.drawable.msg_media_gallery).mutate();
         mutate.setColorFilter(new PorterDuffColorFilter(1308622847, PorterDuff.Mode.MULTIPLY));
-        zq zqVar = new zq(org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(6.0f), -13750737), mutate);
-        zqVar.w = false;
+        yq yqVar = new yq(org.telegram.ui.ActionBar.k6.c0(AndroidUtilities.dp(6.0f), -13750737), mutate);
+        yqVar.w = false;
         int dp = AndroidUtilities.dp(18.0f);
         int dp2 = AndroidUtilities.dp(18.0f);
-        zqVar.e = dp;
-        zqVar.f = dp2;
+        yqVar.e = dp;
+        yqVar.f = dp2;
         if (photoEntry != null && (str2 = photoEntry.thumbPath) != null) {
-            imageReceiver.setImage(ImageLocation.getForPath(str2), "30.0_30.0", (ImageLocation) null, (String) null, zqVar, (Object) null, 0);
+            imageReceiver.setImage(ImageLocation.getForPath(str2), "30.0_30.0", (ImageLocation) null, (String) null, yqVar, (Object) null, 0);
         } else if (photoEntry == null || photoEntry.path == null) {
-            imageReceiver.setImageBitmap(zqVar);
+            imageReceiver.setImageBitmap(yqVar);
         } else if (photoEntry.isVideo) {
-            imageReceiver.setImage(ImageLocation.getForPath("vthumb://" + photoEntry.imageId + ":" + photoEntry.path), "30.0_30.0", (ImageLocation) null, (String) null, zqVar, (Object) null, 0);
+            imageReceiver.setImage(ImageLocation.getForPath("vthumb://" + photoEntry.imageId + ":" + photoEntry.path), "30.0_30.0", (ImageLocation) null, (String) null, yqVar, (Object) null, 0);
         } else {
-            imageReceiver.setImage(ImageLocation.getForPath("thumb://" + photoEntry.imageId + ":" + photoEntry.path), "30.0_30.0", (ImageLocation) null, (String) null, zqVar, (Object) null, 0);
+            imageReceiver.setImage(ImageLocation.getForPath("thumb://" + photoEntry.imageId + ":" + photoEntry.path), "30.0_30.0", (ImageLocation) null, (String) null, yqVar, (Object) null, 0);
         }
         StringBuilder sb2 = new StringBuilder();
         sb2.append((Object) str4);
@@ -148,5 +152,23 @@ public final class a extends View {
         } else if (View.MeasureSpec.getMode(i10) == 1073741824) {
             setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(48.0f));
         }
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void updateColors() {
+        TextPaint textPaint = this.n;
+        try {
+            int w02 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.E8, this.w);
+            this.d.setColor(w02);
+            textPaint.setColor(w02);
+            textPaint.setAlpha(102);
+            invalidate();
+        } catch (Exception e) {
+            FileLog.e(e);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

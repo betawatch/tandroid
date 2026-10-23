@@ -2,18 +2,18 @@ package org.telegram.ui;
 
 import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class mg implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ qn b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.b2[] c;
+    public final /* synthetic */ sn b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.c2[] c;
     public final /* synthetic */ int d;
 
-    public /* synthetic */ mg(qn qnVar, org.telegram.ui.ActionBar.b2[] b2VarArr, int i10, int i11) {
+    public /* synthetic */ mg(sn snVar, org.telegram.ui.ActionBar.c2[] c2VarArr, int i10, int i11) {
         this.a = i11;
-        this.b = qnVar;
-        this.c = b2VarArr;
+        this.b = snVar;
+        this.c = c2VarArr;
         this.d = i10;
     }
 
@@ -21,83 +21,83 @@ public final /* synthetic */ class mg implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                org.telegram.ui.ActionBar.b2[] b2VarArr = this.c;
-                org.telegram.ui.ActionBar.b2 b2Var = b2VarArr[0];
-                if (b2Var != null) {
+                org.telegram.ui.ActionBar.c2[] c2VarArr = this.c;
+                org.telegram.ui.ActionBar.c2 c2Var = c2VarArr[0];
+                if (c2Var != null) {
                     final int i10 = 0;
-                    final qn qnVar = this.b;
+                    final sn snVar = this.b;
                     final int i11 = this.d;
-                    b2Var.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.wg
+                    c2Var.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.wg
                         @Override // android.content.DialogInterface.OnCancelListener
                         public final void onCancel(DialogInterface dialogInterface) {
                             switch (i10) {
                                 case 0:
-                                    qnVar.getConnectionsManager().cancelRequest(i11, true);
+                                    snVar.getConnectionsManager().cancelRequest(i11, true);
                                     break;
                                 case 1:
-                                    qnVar.getConnectionsManager().cancelRequest(i11, true);
+                                    snVar.getConnectionsManager().cancelRequest(i11, true);
                                     break;
                                 default:
-                                    qnVar.getConnectionsManager().cancelRequest(i11, true);
+                                    snVar.getConnectionsManager().cancelRequest(i11, true);
                                     break;
                             }
                         }
                     });
-                    qnVar.showDialog(b2VarArr[0]);
+                    snVar.showDialog(c2VarArr[0]);
                     break;
                 }
                 break;
             case 1:
-                org.telegram.ui.ActionBar.b2[] b2VarArr2 = this.c;
-                org.telegram.ui.ActionBar.b2 b2Var2 = b2VarArr2[0];
-                if (b2Var2 != null) {
+                org.telegram.ui.ActionBar.c2[] c2VarArr2 = this.c;
+                org.telegram.ui.ActionBar.c2 c2Var2 = c2VarArr2[0];
+                if (c2Var2 != null) {
                     final int i12 = 1;
-                    final qn qnVar2 = this.b;
+                    final sn snVar2 = this.b;
                     final int i13 = this.d;
-                    b2Var2.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.wg
+                    c2Var2.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.wg
                         @Override // android.content.DialogInterface.OnCancelListener
                         public final void onCancel(DialogInterface dialogInterface) {
                             switch (i12) {
                                 case 0:
-                                    qnVar2.getConnectionsManager().cancelRequest(i13, true);
+                                    snVar2.getConnectionsManager().cancelRequest(i13, true);
                                     break;
                                 case 1:
-                                    qnVar2.getConnectionsManager().cancelRequest(i13, true);
+                                    snVar2.getConnectionsManager().cancelRequest(i13, true);
                                     break;
                                 default:
-                                    qnVar2.getConnectionsManager().cancelRequest(i13, true);
+                                    snVar2.getConnectionsManager().cancelRequest(i13, true);
                                     break;
                             }
                         }
                     });
-                    qnVar2.showDialog(b2VarArr2[0]);
+                    snVar2.showDialog(c2VarArr2[0]);
                     break;
                 }
                 break;
             default:
-                org.telegram.ui.ActionBar.b2[] b2VarArr3 = this.c;
-                org.telegram.ui.ActionBar.b2 b2Var3 = b2VarArr3[0];
-                if (b2Var3 != null) {
+                org.telegram.ui.ActionBar.c2[] c2VarArr3 = this.c;
+                org.telegram.ui.ActionBar.c2 c2Var3 = c2VarArr3[0];
+                if (c2Var3 != null) {
                     final int i14 = 2;
-                    final qn qnVar3 = this.b;
+                    final sn snVar3 = this.b;
                     final int i15 = this.d;
-                    b2Var3.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.wg
+                    c2Var3.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.wg
                         @Override // android.content.DialogInterface.OnCancelListener
                         public final void onCancel(DialogInterface dialogInterface) {
                             switch (i14) {
                                 case 0:
-                                    qnVar3.getConnectionsManager().cancelRequest(i15, true);
+                                    snVar3.getConnectionsManager().cancelRequest(i15, true);
                                     break;
                                 case 1:
-                                    qnVar3.getConnectionsManager().cancelRequest(i15, true);
+                                    snVar3.getConnectionsManager().cancelRequest(i15, true);
                                     break;
                                 default:
-                                    qnVar3.getConnectionsManager().cancelRequest(i15, true);
+                                    snVar3.getConnectionsManager().cancelRequest(i15, true);
                                     break;
                             }
                         }
                     });
-                    qnVar3.showDialog(b2VarArr3[0]);
+                    snVar3.showDialog(c2VarArr3[0]);
                     break;
                 }
                 break;

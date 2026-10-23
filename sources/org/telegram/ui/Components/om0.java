@@ -1,200 +1,122 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
+import android.view.MotionEvent;
 import android.view.View;
-import java.util.ArrayList;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class om0 extends Drawable implements Animator.AnimatorListener {
-    public final Context a;
-    public ColorFilter b;
-    public Drawable d;
-    public Drawable e;
-    public ValueAnimator f;
-    public boolean r;
-    public int c = 0;
-    public float h = 1.0f;
-    public final ArrayList n = new ArrayList();
+public final class om0 implements s4.q0 {
+    public RecyclerView a;
+    public boolean c;
+    public int d;
+    public int e;
+    public int f;
+    public boolean g;
+    public boolean h;
+    public int i;
+    public final nm0 k;
+    public int b = -1;
+    public final int j = AndroidUtilities.dp(80.0f);
+    public final org.telegram.ui.Cells.u5 l = new org.telegram.ui.Cells.u5(this, 22);
 
-    public om0(Context context) {
-        this.a = context;
+    public om0(nm0 nm0Var) {
+        this.k = nm0Var;
     }
 
-    public final void a(int i10, boolean z10) {
-        if (this.c == i10) {
+    @Override // s4.q0
+    public final void a(RecyclerView recyclerView, MotionEvent motionEvent) {
+        View E = recyclerView.E(motionEvent.getX(), motionEvent.getY());
+        int R = E != null ? RecyclerView.R(E) : -1;
+        float y3 = motionEvent.getY();
+        int action = motionEvent.getAction();
+        nm0 nm0Var = this.k;
+        org.telegram.ui.Cells.u5 u5Var = this.l;
+        if (action == 1) {
+            this.c = false;
+            this.g = false;
+            this.h = false;
+            AndroidUtilities.cancelRunOnUIThread(u5Var);
+            nm0Var.a(false);
             return;
         }
-        b(this.a.getDrawable(i10).mutate(), z10);
-        this.c = i10;
-    }
-
-    public final void b(Drawable drawable, boolean z10) {
-        if (drawable == null) {
-            this.d = null;
-            this.e = null;
-            invalidateSelf();
+        if (action != 2) {
             return;
         }
-        if (getBounds() == null || getBounds().isEmpty()) {
-            z10 = false;
-        }
-        Drawable drawable2 = this.d;
-        if (drawable == drawable2) {
-            drawable2.setColorFilter(this.b);
-            return;
-        }
-        this.c = 0;
-        this.e = drawable2;
-        this.d = drawable;
-        drawable.setColorFilter(this.b);
-        c(this.d, getBounds());
-        c(this.e, getBounds());
-        ValueAnimator valueAnimator = this.f;
-        if (valueAnimator != null) {
-            valueAnimator.removeAllListeners();
-            this.f.cancel();
-        }
-        if (!z10) {
-            this.h = 1.0f;
-            this.e = null;
-            return;
-        }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        this.f = ofFloat;
-        ofFloat.addUpdateListener(new b80(this, 11));
-        this.f.addListener(this);
-        this.f.setDuration(150L);
-        this.f.start();
-    }
-
-    public final void c(Drawable drawable, Rect rect) {
-        int height;
-        int intrinsicHeight;
-        int width;
-        int intrinsicWidth;
-        if (drawable == null) {
-            return;
-        }
-        if (this.r) {
-            drawable.setBounds(rect);
-            return;
-        }
-        if (drawable.getIntrinsicHeight() < 0) {
-            height = rect.top;
-            intrinsicHeight = rect.bottom;
-        } else {
-            height = ((rect.height() - drawable.getIntrinsicHeight()) / 2) + rect.top;
-            intrinsicHeight = drawable.getIntrinsicHeight() + height;
-        }
-        if (drawable.getIntrinsicWidth() < 0) {
-            width = rect.left;
-            intrinsicWidth = rect.right;
-        } else {
-            width = ((rect.width() - drawable.getIntrinsicWidth()) / 2) + rect.left;
-            intrinsicWidth = drawable.getIntrinsicWidth() + width;
-        }
-        drawable.setBounds(width, height, intrinsicWidth, intrinsicHeight);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        int centerX = getBounds().centerX();
-        int centerY = getBounds().centerY();
-        if (this.h == 1.0f || this.d == null) {
-            Drawable drawable = this.d;
-            if (drawable != null) {
-                drawable.setAlpha(255);
-                this.d.draw(canvas);
-            }
-        } else {
-            canvas.save();
-            float f7 = this.h;
-            canvas.scale(f7, f7, centerX, centerY);
-            this.d.setAlpha((int) (this.h * 255.0f));
-            this.d.draw(canvas);
-            canvas.restore();
-        }
-        float f10 = this.h;
-        if (f10 == 1.0f || this.e == null) {
-            Drawable drawable2 = this.e;
-            if (drawable2 != null) {
-                drawable2.setAlpha(255);
-                this.e.draw(canvas);
-                return;
-            }
-            return;
-        }
-        float f11 = 1.0f - f10;
-        canvas.save();
-        canvas.scale(f11, f11, centerX, centerY);
-        this.e.setAlpha((int) (f11 * 255.0f));
-        this.e.draw(canvas);
-        canvas.restore();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void invalidateSelf() {
-        super.invalidateSelf();
-        ArrayList arrayList = this.n;
-        if (arrayList != null) {
-            for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                ((View) arrayList.get(i10)).invalidate();
+        if (this.j > -1) {
+            float f7 = 0;
+            if (y3 >= f7 && y3 <= this.d) {
+                this.h = false;
+                if (!this.g) {
+                    this.g = true;
+                    AndroidUtilities.cancelRunOnUIThread(u5Var);
+                    AndroidUtilities.runOnUIThread(u5Var);
+                }
+                this.i = ((int) (this.d - (y3 - f7))) / 2;
+            } else if (y3 >= this.e && y3 <= this.f) {
+                this.g = false;
+                if (!this.h) {
+                    this.h = true;
+                    AndroidUtilities.cancelRunOnUIThread(u5Var);
+                    AndroidUtilities.runOnUIThread(u5Var);
+                }
+                this.i = ((int) ((y3 + this.f) - (this.e + r11))) / 2;
+            } else if (this.g || this.h) {
+                AndroidUtilities.cancelRunOnUIThread(u5Var);
+                this.g = false;
+                this.h = false;
             }
         }
-    }
-
-    @Override // android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        this.e = null;
-        invalidateSelf();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void onBoundsChange(Rect rect) {
-        super.onBoundsChange(rect);
-        c(this.d, rect);
-        c(this.e, rect);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.b = colorFilter;
-        Drawable drawable = this.d;
-        if (drawable != null) {
-            drawable.setColorFilter(colorFilter);
+        if (R == -1 || this.b == R) {
+            return;
         }
-        Drawable drawable2 = this.e;
-        if (drawable2 != null) {
-            drawable2.setColorFilter(colorFilter);
+        this.b = R;
+        nm0Var.c(E, !nm0Var.d(R));
+    }
+
+    @Override // s4.q0
+    public final boolean b(RecyclerView recyclerView, MotionEvent motionEvent) {
+        boolean z10 = this.c && !(recyclerView.getAdapter() == null || recyclerView.getAdapter().h() == 0);
+        if (z10) {
+            this.a = recyclerView;
+            int i10 = this.j;
+            if (i10 > -1) {
+                this.d = i10;
+                this.e = recyclerView.getMeasuredHeight() - i10;
+                this.f = recyclerView.getMeasuredHeight();
+            }
         }
-        invalidateSelf();
+        if (z10 && motionEvent.getAction() == 1) {
+            this.c = false;
+            this.g = false;
+            this.h = false;
+            AndroidUtilities.cancelRunOnUIThread(this.l);
+            this.k.a(false);
+        }
+        return z10;
     }
 
-    @Override // android.animation.Animator.AnimatorListener
-    public final void onAnimationCancel(Animator animator) {
+    public final void d(View view, int i10, boolean z10) {
+        if (this.c) {
+            return;
+        }
+        this.b = -1;
+        AndroidUtilities.cancelRunOnUIThread(this.l);
+        this.g = false;
+        this.h = false;
+        nm0 nm0Var = this.k;
+        if (!nm0Var.b(i10)) {
+            this.c = false;
+            return;
+        }
+        nm0Var.a(true);
+        nm0Var.c(view, z10);
+        this.c = true;
+        this.b = i10;
     }
 
-    @Override // android.animation.Animator.AnimatorListener
-    public final void onAnimationRepeat(Animator animator) {
-    }
-
-    @Override // android.animation.Animator.AnimatorListener
-    public final void onAnimationStart(Animator animator) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
+    @Override // s4.q0
+    public final void c(boolean z10) {
     }
 }

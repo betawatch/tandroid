@@ -3,7 +3,7 @@ package j4;
 import e2.k0;
 import e2.m0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class x {
     public final /* synthetic */ int a;
@@ -63,7 +63,7 @@ public final class x {
         return -9223372036854775807L;
     }
 
-    public final void a(c3.p pVar) {
+    public final void a(c3.r rVar) {
         switch (this.a) {
             case 0:
                 byte[] bArr = m0.b;
@@ -71,7 +71,7 @@ public final class x {
                 xVar.getClass();
                 xVar.L(bArr.length, bArr);
                 this.d = true;
-                pVar.q();
+                rVar.q();
                 break;
             default:
                 byte[] bArr2 = m0.b;
@@ -79,7 +79,7 @@ public final class x {
                 xVar2.getClass();
                 xVar2.L(bArr2.length, bArr2);
                 this.d = true;
-                pVar.q();
+                rVar.q();
                 break;
         }
     }

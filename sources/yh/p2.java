@@ -1,13 +1,14 @@
 package yh;
 
-import ai.ga;
 import ai.ha;
+import ai.ia;
 import ai.j6;
 import ai.t8;
 import ai.v9;
 import ai.y9;
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.drawable.ShapeDrawable;
 import android.text.SpannableStringBuilder;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,38 +31,40 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.nk;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Cells.ya;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.Cells.za;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.d80;
-import org.telegram.ui.Components.d91;
-import org.telegram.ui.Components.i80;
-import org.telegram.ui.Components.jm0;
-import org.telegram.ui.Components.ks0;
+import org.telegram.ui.Components.e80;
+import org.telegram.ui.Components.j80;
+import org.telegram.ui.Components.k91;
+import org.telegram.ui.Components.mm0;
+import org.telegram.ui.Components.ns0;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.sr0;
 import org.telegram.ui.Components.ub;
+import org.telegram.ui.Components.vr0;
 import org.telegram.ui.Components.xp;
-import org.telegram.ui.Components.yq;
+import org.telegram.ui.Components.xq;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
+import org.telegram.ui.Wallet.e8;
 import w7.b6;
 import w7.z5;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public abstract class p2 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
-    public static final HashMap T = new HashMap();
+    public static final HashMap U = new HashMap();
     public final TextView E;
     public final xp F;
     public final FrameLayout G;
     public int H;
-    public i80 I;
+    public j80 I;
     public SpannableStringBuilder J;
     public int K;
     public boolean L;
@@ -70,16 +73,17 @@ public abstract class p2 extends FrameLayout implements NotificationCenter.Notif
     public final ne.b O;
     public int P;
     public int Q;
-    public m7 R;
-    public ViewGroup S;
-    public final org.telegram.ui.ActionBar.n2 a;
+    public final gh.c R;
+    public m7 S;
+    public ViewGroup T;
+    public final org.telegram.ui.ActionBar.o2 a;
     public final int b;
     public final long c;
     public final y9 d;
     public final v9 e;
-    public final d6 f;
+    public final g6 f;
     public final u1 h;
-    public final d91 n;
+    public final k91 n;
     public final FrameLayout r;
     public final SpannableStringBuilder s;
     public final SpannableStringBuilder v;
@@ -87,25 +91,25 @@ public abstract class p2 extends FrameLayout implements NotificationCenter.Notif
     public int x;
     public final LinearLayout y;
 
-    /* JADX WARN: Removed duplicated region for block: B:30:0x02ef  */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x02fc  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x02f1  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x02fc  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x0309  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x02fe  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public p2(int i10, long j10, Context context, org.telegram.ui.ActionBar.n2 n2Var, d6 d6Var) {
+    public p2(int i10, long j10, Context context, org.telegram.ui.ActionBar.o2 o2Var, g6 g6Var) {
         super(context);
         int i11;
         String str;
         this.H = -1;
-        ks0 ks0Var = (ks0) this;
-        this.N = new q1(ks0Var, 2);
-        this.O = new ne.b(0, new t1(ks0Var), bs.h, 380L, true);
+        ns0 ns0Var = (ns0) this;
+        this.N = new q1(ns0Var, 2);
+        this.O = new ne.b(0, new t1(ns0Var), bs.h, 380L, true);
         this.Q = AndroidUtilities.displaySize.y;
-        this.a = n2Var;
+        this.a = o2Var;
         this.b = i10;
         if (DialogObject.isEncryptedDialog(j10)) {
-            TLRPC.EncryptedChat l4 = org.telegram.messenger.g0.l(MessagesController.getInstance(i10), j10);
+            TLRPC.EncryptedChat l4 = org.telegram.messenger.v0.l(MessagesController.getInstance(i10), j10);
             if (l4 != null) {
                 this.c = l4.user_id;
             } else {
@@ -114,15 +118,15 @@ public abstract class p2 extends FrameLayout implements NotificationCenter.Notif
         } else {
             this.c = j10;
         }
-        ga.y(i10, false).Q(this.c);
+        ha.y(i10, false).Q(this.c);
         int i12 = 1;
-        y9 G = ga.y(i10, false).G(this.c, true);
+        y9 G = ha.y(i10, false).G(this.c, true);
         this.d = G;
-        v9 F = ga.y(i10, false).F(this.c, true);
+        v9 F = ha.y(i10, false).F(this.c, true);
         this.e = F;
         F.g = G;
         G.o = true;
-        if ((n2Var instanceof ProfileActivity) && ((ProfileActivity) n2Var).w1) {
+        if ((o2Var instanceof ProfileActivity) && ((ProfileActivity) o2Var).w1) {
             G.g = 4;
             G.e = true;
             G.j(true);
@@ -132,37 +136,38 @@ public abstract class p2 extends FrameLayout implements NotificationCenter.Notif
             G.j(true);
         }
         G.a();
-        this.f = d6Var;
-        u1 u1Var = new u1(ks0Var, context, n2Var);
+        this.f = g6Var;
+        u1 u1Var = new u1(ns0Var, context, o2Var);
         this.h = u1Var;
         u1Var.setAllowDisallowInterceptTouch(true);
-        u1Var.setAdapter(new v1(ks0Var, i10, d6Var));
+        u1Var.setAdapter(new v1(ns0Var, i10, g6Var));
         addView(u1Var, z5.e(-1, -1, 119));
-        d91 n10 = u1Var.n(10, true);
+        k91 n10 = u1Var.n(10, true);
         this.n = n10;
-        n10.g(h6.Gh, h6.G6, h6.Eh, h6.Hh, h6.s8);
+        n10.g(k6.Gh, k6.G6, k6.Eh, k6.Hh, k6.s8);
         n10.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), 0);
         n10.setClipToPadding(false);
         n10.r = 12;
-        n10.setPreTabClick(new t1(ks0Var));
-        n10.setOnTabLongClick(new j6(ks0Var, i10, n2Var, context, d6Var));
+        n10.setPreTabClick(new t1(ns0Var));
+        n10.setOnTabLongClick(new j6(ns0Var, i10, o2Var, context, g6Var));
         addView(n10, z5.e(-1, 42, 48));
         gh.c cVar = new gh.c();
-        int i13 = h6.d6;
-        cVar.a(h6.w0(i13, d6Var));
+        int i13 = k6.d6;
+        cVar.a(k6.w0(i13, g6Var));
+        this.R = cVar;
         bh.b bVar = new bh.b(cVar);
-        ci.i4 i4Var = new ci.i4(context);
-        dh.d c10 = bVar.c(i4Var, new eh.b(i13, d6Var), false);
+        ci.h4 h4Var = new ci.h4(context);
+        dh.d c10 = bVar.c(h4Var, new eh.b(i13, g6Var), false);
         c10.p(AndroidUtilities.dp(8.0f));
         c10.q(AndroidUtilities.dp(22.0f));
-        i4Var.setBackground(c10);
-        b6.b(i4Var, 0.02f, 1.2f);
+        h4Var.setBackground(c10);
+        b6.b(h4Var, 0.02f, 1.2f);
         FrameLayout frameLayout = new FrameLayout(context);
         this.r = frameLayout;
         FrameLayout.LayoutParams e = z5.e(-1, 60, 87);
         e.bottomMargin += AndroidUtilities.navigationBarHeight;
         addView(frameLayout, e);
-        frameLayout.addView(i4Var, z5.e(-2, 60, 1));
+        frameLayout.addView(h4Var, z5.e(-2, 60, 1));
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.G = frameLayout2;
         LinearLayout linearLayout = new LinearLayout(context);
@@ -170,22 +175,27 @@ public abstract class p2 extends FrameLayout implements NotificationCenter.Notif
         linearLayout.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(8.0f));
         linearLayout.setClipToPadding(false);
         linearLayout.setOrientation(0);
-        linearLayout.setBackground(h6.Z(h6.w0(h6.i6, d6Var), 24, 24));
-        xp xpVar = new xp(context, 24, d6Var);
+        int i14 = k6.i6;
+        org.telegram.ui.Cells.y Z = k6.Z(k6.w0(i14, g6Var), 24, 24);
+        n6 O = r6.O(i14);
+        linearLayout.setBackground(Z);
+        r6.k(linearLayout, Z, null, O, g6Var);
+        xp xpVar = new xp(context, 24, g6Var);
         this.F = xpVar;
-        xpVar.b(h6.h7, h6.j7, h6.k7);
+        xpVar.b(k6.h7, k6.j7, k6.k7);
         xpVar.setDrawUnchecked(true);
         xpVar.a(false, false);
         xpVar.setDrawBackgroundAsArc(10);
         linearLayout.addView(xpVar, z5.t(26, 26, 16, 0, 0, 0, 0));
         TextView textView = new TextView(context);
         this.E = textView;
-        nk.o(h6.j5, d6Var, textView, 1, 14.0f);
+        r6.W(textView, k6.j5, g6Var);
+        textView.setTextSize(1, 14.0f);
         textView.setText(LocaleController.getString(R.string.Gift2ChannelNotify));
         linearLayout.addView(textView, z5.t(-2, -2, 16, 9, 0, 0, 0));
-        i4Var.addView(linearLayout, z5.d(-2, 38.0f, 17, 0.0f, 6.0f, 0.0f, 6.0f));
+        h4Var.addView(linearLayout, z5.d(-2, 38.0f, 17, 0.0f, 6.0f, 0.0f, 6.0f));
         b6.b(linearLayout, 0.025f, 1.5f);
-        linearLayout.setOnClickListener(new ha(ks0Var, n2Var, i10, 22));
+        linearLayout.setOnClickListener(new ia(ns0Var, o2Var, i10, 22));
         Boolean bool = G.h;
         if (bool != null) {
             xpVar.a(bool.booleanValue(), false);
@@ -199,20 +209,20 @@ public abstract class p2 extends FrameLayout implements NotificationCenter.Notif
                 str = LocaleController.formatString(R.string.ProfileGiftsSendUser, DialogObject.getShortName(j11));
                 sb2.append(str);
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(sb2.toString());
-                spannableStringBuilder.setSpan(new yq(R.drawable.filled_gift_simple, 0), 0, 1, 33);
+                spannableStringBuilder.setSpan(new xq(R.drawable.filled_gift_simple, 0), 0, 1, 33);
                 this.s = spannableStringBuilder;
-                SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(org.telegram.messenger.g0.g(R.string.ProfileGiftsAdd, new StringBuilder("+ ")));
-                spannableStringBuilder2.setSpan(new yq(R.drawable.filled_add_album, 0), 0, 1, 33);
+                SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(org.telegram.messenger.v0.h(R.string.ProfileGiftsAdd, new StringBuilder("+ ")));
+                spannableStringBuilder2.setSpan(new xq(R.drawable.filled_add_album, 0), 0, 1, 33);
                 this.v = spannableStringBuilder2;
-                ei.d dVar = new ei.d(context, d6Var, true);
+                ei.d dVar = new ei.d(context, g6Var, true);
                 this.w = dVar;
                 dVar.setUseWrapContent(true);
                 dVar.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
                 dVar.setRoundRadius(AndroidUtilities.dp(19.0f));
-                dVar.g(spannableStringBuilder, false, true);
+                dVar.i(spannableStringBuilder, false, true);
                 dVar.setStateListAnimator(null);
-                i4Var.addView(dVar, z5.e(-2, -1, 17));
-                i4Var.setOnClickListener(new sr0(ks0Var, z10, i10, i12));
+                h4Var.addView(dVar, z5.e(-2, -1, 17));
+                h4Var.setOnClickListener(new vr0(ns0Var, z10, i10, i12));
                 dVar.setVisibility(!d() ? 8 : 0);
                 linearLayout.setVisibility(d() ? 0 : 8);
                 this.x = 60;
@@ -227,20 +237,20 @@ public abstract class p2 extends FrameLayout implements NotificationCenter.Notif
         str = LocaleController.getString(i11);
         sb2.append(str);
         SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder(sb2.toString());
-        spannableStringBuilder3.setSpan(new yq(R.drawable.filled_gift_simple, 0), 0, 1, 33);
+        spannableStringBuilder3.setSpan(new xq(R.drawable.filled_gift_simple, 0), 0, 1, 33);
         this.s = spannableStringBuilder3;
-        SpannableStringBuilder spannableStringBuilder22 = new SpannableStringBuilder(org.telegram.messenger.g0.g(R.string.ProfileGiftsAdd, new StringBuilder("+ ")));
-        spannableStringBuilder22.setSpan(new yq(R.drawable.filled_add_album, 0), 0, 1, 33);
+        SpannableStringBuilder spannableStringBuilder22 = new SpannableStringBuilder(org.telegram.messenger.v0.h(R.string.ProfileGiftsAdd, new StringBuilder("+ ")));
+        spannableStringBuilder22.setSpan(new xq(R.drawable.filled_add_album, 0), 0, 1, 33);
         this.v = spannableStringBuilder22;
-        ei.d dVar2 = new ei.d(context, d6Var, true);
+        ei.d dVar2 = new ei.d(context, g6Var, true);
         this.w = dVar2;
         dVar2.setUseWrapContent(true);
         dVar2.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
         dVar2.setRoundRadius(AndroidUtilities.dp(19.0f));
-        dVar2.g(spannableStringBuilder3, false, true);
+        dVar2.i(spannableStringBuilder3, false, true);
         dVar2.setStateListAnimator(null);
-        i4Var.addView(dVar2, z5.e(-2, -1, 17));
-        i4Var.setOnClickListener(new sr0(ks0Var, z10, i10, i12));
+        h4Var.addView(dVar2, z5.e(-2, -1, 17));
+        h4Var.setOnClickListener(new vr0(ns0Var, z10, i10, i12));
         dVar2.setVisibility(!d() ? 8 : 0);
         linearLayout.setVisibility(d() ? 0 : 8);
         this.x = 60;
@@ -250,8 +260,8 @@ public abstract class p2 extends FrameLayout implements NotificationCenter.Notif
     }
 
     public static void j(org.telegram.ui.ActionBar.e1 e1Var, y9 y9Var, Runnable runnable, int i10) {
-        e1Var.setOnClickListener(new ha(y9Var, i10, runnable, 23));
-        e1Var.setOnLongClickListener(new ya(y9Var, i10, runnable));
+        e1Var.setOnClickListener(new ia(y9Var, i10, runnable, 23));
+        e1Var.setOnLongClickListener(new za(y9Var, i10, runnable));
     }
 
     public final void a() {
@@ -261,7 +271,7 @@ public abstract class p2 extends FrameLayout implements NotificationCenter.Notif
             return;
         }
         int i10 = y9Var.d;
-        new k4(this.a, this.c, i10, new gi.g4(this, i10, currentPage, 5)).show();
+        new k4(this.a, this.c, i10, new gi.g4(this, i10, currentPage, 6)).show();
     }
 
     public final boolean b() {
@@ -360,7 +370,7 @@ public abstract class p2 extends FrameLayout implements NotificationCenter.Notif
     }
 
     public int getBottomOffset() {
-        float translationY = this.r.getTranslationY() - org.telegram.messenger.g0.B(this.x, Math.max(AndroidUtilities.dp(240.0f), this.Q) + (-r0.getTop()), 1);
+        float translationY = this.r.getTranslationY() - org.telegram.messenger.v0.B(this.x, Math.max(AndroidUtilities.dp(240.0f), this.Q) + (-r0.getTop()), 1);
         if (this.Q < AndroidUtilities.dp(240.0f)) {
             translationY += Math.min(AndroidUtilities.dp(240.0f) - this.Q, AndroidUtilities.dp(this.x));
         }
@@ -372,7 +382,7 @@ public abstract class p2 extends FrameLayout implements NotificationCenter.Notif
         return currentPage != null ? currentPage.e : this.d;
     }
 
-    public jm0 getCurrentListView() {
+    public mm0 getCurrentListView() {
         l2 currentPage = getCurrentPage();
         if (currentPage != null) {
             return currentPage.f;
@@ -448,38 +458,38 @@ public abstract class p2 extends FrameLayout implements NotificationCenter.Notif
     }
 
     public float getTabsVisibility() {
-        d91 d91Var = this.n;
-        if (d91Var != null) {
-            return d91Var.getAlpha();
+        k91 k91Var = this.n;
+        if (k91Var != null) {
+            return k91Var.getAlpha();
         }
         return 0.0f;
     }
 
     public final void h(String str, Utilities.Callback callback) {
-        d80 d80Var;
+        e80 e80Var;
         Context context = getContext();
         Activity findActivity = AndroidUtilities.findActivity(context);
         View currentFocus = findActivity != null ? findActivity.getCurrentFocus() : null;
-        org.telegram.ui.ActionBar.b2[] b2VarArr = new org.telegram.ui.ActionBar.b2[1];
-        d6 d6Var = this.f;
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, d6Var);
+        org.telegram.ui.ActionBar.c2[] c2VarArr = new org.telegram.ui.ActionBar.c2[1];
+        g6 g6Var = this.f;
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, g6Var);
         if (str != null) {
             alertDialog$Builder.a.R = LocaleController.getString(R.string.Gift2EditCollectionNameTitle);
         } else {
             alertDialog$Builder.a.R = LocaleController.getString(R.string.Gift2NewCollectionTitle);
             alertDialog$Builder.a.T = LocaleController.getString(R.string.Gift2NewCollectionText);
         }
-        x1 x1Var = new x1(this, context, d6Var);
+        x1 x1Var = new x1(this, context, g6Var);
         x1Var.lineYFix = true;
-        x1Var.setOnEditorActionListener(new y1(x1Var, callback, b2VarArr, currentFocus));
+        x1Var.setOnEditorActionListener(new y1(x1Var, callback, c2VarArr, currentFocus));
         MediaDataController.getInstance(this.b).fetchNewEmojiKeywords(AndroidUtilities.getCurrentKeyboardLanguage(), true);
         x1Var.setTextSize(1, 18.0f);
-        x1Var.setTextColor(h6.w0(h6.j5, d6Var));
-        x1Var.setHintColor(h6.w0(h6.Xh, d6Var));
+        r6.W(x1Var, k6.j5, g6Var);
+        r6.m(x1Var, 34, k6.Xh, g6Var);
         x1Var.setHintText(LocaleController.getString(R.string.Gift2NewCollectionHint));
         x1Var.setFocusable(true);
         x1Var.setInputType(147457);
-        x1Var.setLineColors(h6.w0(h6.k6, d6Var), h6.w0(h6.l6, d6Var), h6.w0(h6.p7, d6Var));
+        r6.H(x1Var, k6.k6, k6.l6, k6.p7, g6Var);
         x1Var.setImeOptions(6);
         x1Var.setBackgroundDrawable(null);
         x1Var.setPadding(0, AndroidUtilities.dp(6.0f), 0, AndroidUtilities.dp(6.0f));
@@ -489,22 +499,22 @@ public abstract class p2 extends FrameLayout implements NotificationCenter.Notif
         x1Var.setText(str);
         linearLayout.addView(x1Var, z5.k(24.0f, 0.0f, 24.0f, 10.0f, -1, -2));
         alertDialog$Builder.c();
-        alertDialog$Builder.n(linearLayout);
+        alertDialog$Builder.o(linearLayout);
         alertDialog$Builder.a.a = AndroidUtilities.dp(292.0f);
-        alertDialog$Builder.k(LocaleController.getString(str != null ? R.string.Edit : R.string.Create), new org.telegram.ui.web.m(22, x1Var, callback));
-        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new ya.b(2));
-        b2VarArr[0] = alertDialog$Builder.a;
-        i80 i80Var = this.I;
-        if (i80Var != null && (d80Var = i80Var.m) != null) {
-            d80Var.setSoftInputMode(48);
+        alertDialog$Builder.k(LocaleController.getString(str != null ? R.string.Edit : R.string.Create), new e8(24, x1Var, callback));
+        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new v0.k(14));
+        c2VarArr[0] = alertDialog$Builder.a;
+        j80 j80Var = this.I;
+        if (j80Var != null && (e80Var = j80Var.m) != null) {
+            e80Var.setSoftInputMode(48);
         }
         AndroidUtilities.requestAdjustNothing(findActivity, this.a.getClassGuid());
-        b2VarArr[0].setOnDismissListener(new gi.r0(this, x1Var, findActivity, 6));
-        b2VarArr[0].setOnShowListener(new ig.r(3, x1Var));
-        b2VarArr[0].show();
-        org.telegram.ui.ActionBar.b2 b2Var = b2VarArr[0];
-        b2Var.h0 = false;
-        b2Var.d(-1);
+        c2VarArr[0].setOnDismissListener(new gi.r0(this, x1Var, findActivity, 6));
+        c2VarArr[0].setOnShowListener(new ig.r(x1Var, 3));
+        c2VarArr[0].show();
+        org.telegram.ui.ActionBar.c2 c2Var = c2VarArr[0];
+        c2Var.j0 = false;
+        c2Var.d(-1);
         x1Var.setSelection(x1Var.getText().length());
     }
 
@@ -546,7 +556,7 @@ public abstract class p2 extends FrameLayout implements NotificationCenter.Notif
             nextPositionAlpha = ((u1Var.getNextPositionAlpha() * (k(u1Var.getNextPosition()) ? 1.0f : 0.0f)) + (u1Var.getCurrentPositionAlpha() * (k(u1Var.getCurrentPosition()) ? 1.0f : 0.0f))) * (AndroidUtilities.dp(68.0f) + 2);
         }
         FrameLayout frameLayout = this.r;
-        float B = nextPositionAlpha + org.telegram.messenger.g0.B(this.x, (-frameLayout.getTop()) + this.Q, 1);
+        float B = nextPositionAlpha + org.telegram.messenger.v0.B(this.x, (-frameLayout.getTop()) + this.Q, 1);
         boolean z10 = this.Q > AndroidUtilities.dp(184.0f);
         ne.b bVar = this.O;
         bVar.a(z10, true);
@@ -556,7 +566,7 @@ public abstract class p2 extends FrameLayout implements NotificationCenter.Notif
         frameLayout.setTranslationY(lerp - this.P);
         frameLayout.setAlpha(f7);
         frameLayout.setVisibility(f7 <= 0.0f ? 4 : 0);
-        this.w.g((!this.e.h() || u1Var.getPositionAnimated() < 0.5f) ? this.s : this.v, true, true);
+        this.w.i((!this.e.h() || u1Var.getPositionAnimated() < 0.5f) ? this.s : this.v, true, true);
         qc qcVar = qc.w;
         if (qcVar == null || (ubVar = qcVar.e) == null) {
             return;
@@ -566,33 +576,34 @@ public abstract class p2 extends FrameLayout implements NotificationCenter.Notif
 
     public final void m() {
         ei.d dVar = this.w;
-        dVar.j();
-        int dp = AndroidUtilities.dp(19.0f);
-        int i10 = h6.Oh;
-        d6 d6Var = this.f;
-        dVar.setBackground(h6.c0(dp, ((ks0) this).U.X0(h6.w0(i10, d6Var))));
+        dVar.updateColors();
+        int i10 = k6.Oh;
+        g6 g6Var = this.f;
+        int Y0 = ((ns0) this).V.Y0(k6.w0(i10, g6Var));
+        if (!(dVar.getBackground() instanceof ShapeDrawable)) {
+            dVar.setBackground(k6.c0(AndroidUtilities.dp(19.0f), Y0));
+        } else if (((ShapeDrawable) dVar.getBackground()).getPaint().getColor() != Y0) {
+            k6.z1(Y0, dVar.getBackground());
+            dVar.invalidate();
+        }
         View[] viewPages = this.h.getViewPages();
         if (viewPages != null) {
             for (View view : viewPages) {
                 if (view != null) {
                     l2 l2Var = (l2) view;
-                    d6 d6Var2 = l2Var.c;
+                    g6 g6Var2 = l2Var.c;
                     if (l2Var.s != null) {
-                        l2Var.w.setTextColor(h6.w0(h6.G6, d6Var2));
-                        TextView textView = l2Var.x;
-                        int i11 = h6.Oh;
-                        textView.setTextColor(h6.w0(i11, d6Var2));
-                        l2Var.x.setBackground(h6.Z(h6.m1(0.1f, h6.w0(i11, d6Var2)), 4, 4));
+                        l2Var.w.setTextColor(k6.w0(k6.G6, g6Var2));
+                        l2Var.x.setTextColor(k6.w0(k6.Oh, g6Var2));
                     } else {
-                        l2Var.F.setTextColor(h6.w0(h6.G6, d6Var2));
-                        l2Var.G.setTextColor(h6.w0(h6.y6, d6Var2));
-                        l2Var.H.j();
+                        l2Var.F.setTextColor(k6.w0(k6.G6, g6Var2));
+                        l2Var.G.setTextColor(k6.w0(k6.y6, g6Var2));
+                        l2Var.H.updateColors();
                     }
                 }
             }
         }
-        this.E.setTextColor(h6.w0(h6.j5, d6Var));
-        this.y.setBackground(h6.Z(h6.w0(h6.i6, d6Var), 24, 24));
+        this.E.setTextColor(k6.w0(k6.j5, g6Var));
     }
 
     public final void n() {
@@ -609,16 +620,16 @@ public abstract class p2 extends FrameLayout implements NotificationCenter.Notif
 
     public final void o() {
         float f7;
-        d91 d91Var = this.n;
-        if (d91Var == null) {
+        k91 k91Var = this.n;
+        if (k91Var == null) {
             return;
         }
         float min = Math.min(this.K, getTabsHeight() - AndroidUtilities.dp(42.0f));
         float clamp01 = Utilities.clamp01(AndroidUtilities.ilerp(min - this.K, -AndroidUtilities.dp(42.0f), 0.0f));
         float lerp = AndroidUtilities.lerp(0.9f, 1.0f, clamp01);
-        d91Var.setTranslationY(min);
-        d91Var.setScaleX(lerp);
-        d91Var.setScaleY(lerp);
+        k91Var.setTranslationY(min);
+        k91Var.setScaleX(lerp);
+        k91Var.setScaleY(lerp);
         u1 u1Var = this.h;
         if (u1Var.getViewPages() != null) {
             f7 = 0.0f;
@@ -630,7 +641,7 @@ public abstract class p2 extends FrameLayout implements NotificationCenter.Notif
         } else {
             f7 = 0.0f;
         }
-        d91Var.setAlpha(w7.r.a(f7, 0.0f, 1.0f) * clamp01);
+        k91Var.setAlpha(w7.r.a(f7, 0.0f, 1.0f) * clamp01);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -721,10 +732,10 @@ public abstract class p2 extends FrameLayout implements NotificationCenter.Notif
         p(g());
         this.n.setReordering(z10);
         if (z10) {
-            org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
-            if (U instanceof ProfileActivity) {
-                ProfileActivity profileActivity = (ProfileActivity) U;
-                profileActivity.G4(false);
+            org.telegram.ui.ActionBar.o2 U2 = LaunchActivity.U();
+            if (U2 instanceof ProfileActivity) {
+                ProfileActivity profileActivity = (ProfileActivity) U2;
+                profileActivity.I4(false);
                 AndroidUtilities.runOnUIThread(new t8(profileActivity, 1));
             }
         }

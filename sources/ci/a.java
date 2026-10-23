@@ -14,10 +14,10 @@ import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.nk;
+import org.telegram.messenger.sl;
 import org.telegram.ui.Components.bs;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class a extends FrameLayout {
     public final ImageView a;
@@ -75,7 +75,7 @@ public final class a extends FrameLayout {
         this.e = z10;
         ImageView imageView = this.a;
         if (z11) {
-            nk.t(imageView.animate().rotation(z10 ? 0.0f : 180.0f), bs.h, 420L);
+            sl.t(imageView.animate().rotation(z10 ? 0.0f : 180.0f), bs.h, 420L);
         } else {
             imageView.setRotation(z10 ? 0.0f : 180.0f);
         }
@@ -115,7 +115,7 @@ public final class a extends FrameLayout {
             this.n = ofFloat;
             ofFloat.addUpdateListener(new ah.c0(this, 8));
             this.n.addListener(new ah.b(this, 5));
-            nk.l(2.5f, this.n);
+            sl.l(2.5f, this.n);
             this.n.setDuration(200L);
             this.n.start();
             this.f = i10;

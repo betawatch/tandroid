@@ -6,7 +6,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l40 implements Utilities.Callback5, Utilities.Callback5Return {
     public final /* synthetic */ m40 a;
@@ -20,7 +20,7 @@ public final /* synthetic */ class l40 implements Utilities.Callback5, Utilities
         ((Integer) obj3).getClass();
         ((Float) obj4).getClass();
         ((Float) obj5).getClass();
-        int i10 = ((h61) obj).d;
+        int i10 = ((m61) obj).d;
         m40 m40Var = this.a;
         if (i10 == 0) {
             HashtagSearchController.getInstance(m40Var.a).clearHistory();
@@ -38,19 +38,19 @@ public final /* synthetic */ class l40 implements Utilities.Callback5, Utilities
         ((Integer) obj3).getClass();
         ((Float) obj4).getClass();
         ((Float) obj5).getClass();
-        int i10 = ((h61) obj).d;
+        int i10 = ((m61) obj).d;
         boolean z10 = false;
         if (i10 != 0) {
             m40 m40Var = this.a;
             String str = (String) m40Var.c.get(i10 - 1);
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(m40Var.getContext(), 0, m40Var.b);
             String string = LocaleController.getString(R.string.ClearSearchSingleAlertTitle);
-            org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-            b2Var.R = string;
-            b2Var.T = LocaleController.formatString(R.string.ClearSearchSingleHashtagAlertText, str);
-            alertDialog$Builder.k(LocaleController.getString(R.string.ClearSearchRemove), new q2(str, 17, m40Var));
+            org.telegram.ui.ActionBar.c2 c2Var = alertDialog$Builder.a;
+            c2Var.R = string;
+            c2Var.T = LocaleController.formatString(R.string.ClearSearchSingleHashtagAlertText, str);
+            alertDialog$Builder.k(LocaleController.getString(R.string.ClearSearchRemove), new p2(str, 18, m40Var));
             alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-            b2Var.show();
+            c2Var.show();
             z10 = true;
         }
         return Boolean.valueOf(z10);

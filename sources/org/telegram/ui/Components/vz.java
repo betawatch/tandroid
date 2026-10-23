@@ -2,7 +2,6 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -14,20 +13,20 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class vz extends FrameLayout {
     public static final /* synthetic */ int h = 0;
-    public final org.telegram.ui.ActionBar.d6 a;
+    public final org.telegram.ui.ActionBar.g6 a;
     public final TextView b;
     public final View c;
-    public final yj0 d;
+    public final bk0 d;
     public boolean e;
     public int f;
 
-    public vz(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+    public vz(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
         super(context);
-        this.a = d6Var;
+        this.a = g6Var;
         View radialProgressView = new RadialProgressView(context, null);
         addView(radialProgressView, w7.z5.c(-2.0f, -2));
         this.c = radialProgressView;
@@ -37,16 +36,17 @@ public final class vz extends FrameLayout {
         linearLayout.setClipChildren(false);
         linearLayout.setClipToPadding(false);
         linearLayout.setOrientation(1);
-        yj0 yj0Var = new yj0(context);
-        this.d = yj0Var;
-        yj0Var.setScaleType(ImageView.ScaleType.FIT_XY);
-        yj0Var.setImportantForAccessibility(2);
-        yj0Var.setVisibility(8);
-        linearLayout.addView(yj0Var, w7.z5.t(ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 17, 0, 0, 0, 20));
+        bk0 bk0Var = new bk0(context);
+        this.d = bk0Var;
+        bk0Var.setScaleType(ImageView.ScaleType.FIT_XY);
+        bk0Var.setImportantForAccessibility(2);
+        bk0Var.setVisibility(8);
+        linearLayout.addView(bk0Var, w7.z5.t(ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 17, 0, 0, 0, 20));
         TextView textView = new TextView(context);
         this.b = textView;
         textView.setTextSize(1, 20.0f);
-        org.telegram.ui.Cells.c1.q(org.telegram.ui.ActionBar.h6.c7, d6Var, textView, 1);
+        org.telegram.ui.ActionBar.r6.W(textView, org.telegram.ui.ActionBar.k6.c7, g6Var);
+        textView.setGravity(1);
         textView.setText(LocaleController.getString(R.string.NoResult));
         linearLayout.addView(textView, w7.z5.q(-2, -2, 17));
         addView(linearLayout, w7.z5.c(-2.0f, -2));
@@ -57,11 +57,11 @@ public final class vz extends FrameLayout {
 
     public final void a(int i10, int i11, int i12) {
         int i13 = i10 != 0 ? 0 : 8;
-        yj0 yj0Var = this.d;
-        yj0Var.setVisibility(i13);
+        bk0 bk0Var = this.d;
+        bk0Var.setVisibility(i13);
         if (i10 != 0) {
-            yj0Var.f(i10, i11, i12, null);
-            yj0Var.d();
+            bk0Var.f(i10, i11, i12, null);
+            bk0Var.d();
         }
     }
 
@@ -144,7 +144,9 @@ public final class vz extends FrameLayout {
     }
 
     public void setTextColor(int i10) {
-        this.b.setTextColor(i10);
+        TextView textView = this.b;
+        org.telegram.ui.ActionBar.r6.r(textView);
+        textView.setTextColor(i10);
     }
 
     public void setTextSize(int i10) {
@@ -159,7 +161,7 @@ public final class vz extends FrameLayout {
         }
         Drawable mutate = getContext().getResources().getDrawable(i10).mutate();
         if (mutate != null) {
-            mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.c7, this.a), PorterDuff.Mode.MULTIPLY));
+            org.telegram.ui.ActionBar.r6.z(this, mutate, org.telegram.ui.ActionBar.k6.c7, this.a, PorterDuff.Mode.MULTIPLY);
         }
         textView.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, mutate, (Drawable) null, (Drawable) null);
         textView.setCompoundDrawablePadding(AndroidUtilities.dp(1.0f));

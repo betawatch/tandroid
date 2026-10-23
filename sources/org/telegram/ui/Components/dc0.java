@@ -1,63 +1,85 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagePreviewParams;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.RichQuote;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class dc0 extends li.m {
-    public int W;
-    public Runnable X;
-    public final /* synthetic */ ic0 Y;
+public final class dc0 extends org.telegram.ui.Cells.p9 {
+    public final /* synthetic */ lc0 w0;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public dc0(ic0 ic0Var, bc0 bc0Var, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(null, bc0Var, d6Var);
-        this.Y = ic0Var;
-        this.W = -1;
+    public dc0(lc0 lc0Var) {
+        this.w0 = lc0Var;
+        this.g0 = lc0Var.c0.F;
     }
 
-    @Override // li.m, s4.k
-    public final void N() {
-        super.N();
-        Runnable runnable = this.X;
-        if (runnable != null) {
-            AndroidUtilities.cancelRunOnUIThread(runnable);
+    @Override // org.telegram.ui.Cells.ba
+    public final void I(MessageObject messageObject, int i10, int i11) {
+        org.telegram.ui.in inVar;
+        MessageObject messageObject2;
+        lc0 lc0Var = this.w0;
+        dc0 dc0Var = lc0Var.e;
+        int i12 = dc0Var.v - dc0Var.u;
+        rc0 rc0Var = lc0Var.c0;
+        if (i12 > MessagesController.getInstance(rc0Var.w).quoteLengthMax) {
+            lc0Var.g();
+            return;
         }
-        cc0 cc0Var = new cc0(this, 0);
-        this.X = cc0Var;
-        AndroidUtilities.runOnUIThread(cc0Var);
-        ic0 ic0Var = this.Y;
-        if (ic0Var.V) {
-            ic0Var.V = false;
-            AndroidUtilities.runOnUIThread(new cc0(this, 1));
+        MessagePreviewParams messagePreviewParams = rc0Var.d;
+        messagePreviewParams.quoteStart = dc0Var.u;
+        messagePreviewParams.quoteEnd = dc0Var.v;
+        MessageObject c10 = lc0Var.c(messageObject);
+        if (c10 != null && ((inVar = rc0Var.d.quote) == null || inVar.m || (messageObject2 = inVar.a) == null || messageObject2.getId() != c10.getId())) {
+            rc0Var.d.quote = org.telegram.ui.in.c(c10, i10, i11);
+        }
+        rc0Var.b();
+        rc0Var.a(true);
+    }
+
+    @Override // org.telegram.ui.Cells.ba
+    public final boolean b() {
+        MessageObject c10;
+        TLRPC.Message message;
+        lc0 lc0Var = this.w0;
+        if (lc0Var.a == 0 && (c10 = lc0Var.c(null)) != null && (message = c10.messageOwner) != null && message.rich_message != null) {
+            return false;
+        }
+        MessagePreviewParams messagePreviewParams = lc0Var.c0.d;
+        return messagePreviewParams == null || !messagePreviewParams.noforwards;
+    }
+
+    @Override // org.telegram.ui.Cells.ba
+    public final boolean e() {
+        MessageObject c10;
+        TLRPC.Message message;
+        lc0 lc0Var = this.w0;
+        int i10 = lc0Var.a;
+        if (i10 != 0 || lc0Var.c0.d.isSecret) {
+            return false;
+        }
+        return i10 != 0 || (c10 = lc0Var.c(null)) == null || (message = c10.messageOwner) == null || message.rich_message == null || RichQuote.canQuote(lc0Var.c(null));
+    }
+
+    @Override // org.telegram.ui.Cells.ba
+    public final org.telegram.ui.ActionBar.g6 q() {
+        return this.g0;
+    }
+
+    @Override // org.telegram.ui.Cells.p9, org.telegram.ui.Cells.ba
+    public final void w() {
+        super.w();
+        ec0 ec0Var = this.w0.f;
+        if (ec0Var != null) {
+            ec0Var.invalidate();
         }
     }
 
-    @Override // li.m
-    public final void W() {
-        oc0 oc0Var = this.Y.c0;
-        AndroidUtilities.cancelRunOnUIThread(oc0Var.y);
-        oc0Var.y.run();
-        if (this.W == -1) {
-            this.W = NotificationCenter.getInstance(oc0Var.w).setAnimationInProgress(this.W, null, false);
-        }
-        Runnable runnable = this.X;
-        if (runnable != null) {
-            AndroidUtilities.cancelRunOnUIThread(runnable);
-            this.X = null;
-        }
-    }
-
-    @Override // li.m, s4.k, s4.l0
-    public final void g() {
-        super.g();
-        Runnable runnable = this.X;
-        if (runnable != null) {
-            AndroidUtilities.cancelRunOnUIThread(runnable);
-        }
-        cc0 cc0Var = new cc0(this, 2);
-        this.X = cc0Var;
-        AndroidUtilities.runOnUIThread(cc0Var);
+    @Override // org.telegram.ui.Cells.ba
+    public final boolean z(MessageObject messageObject) {
+        lc0 lc0Var = this.w0;
+        return lc0Var.a == 0 && !lc0Var.c0.d.isSecret && x();
     }
 }

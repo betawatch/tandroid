@@ -10,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class fa {
     public DispatchQueue a;
@@ -33,19 +33,19 @@ public final class fa {
     public boolean t;
     public float u;
     public final Paint x;
-    public final org.telegram.ui.ActionBar.d6 y;
+    public final org.telegram.ui.ActionBar.g6 y;
     public boolean l = true;
     public boolean p = true;
     public ea v = new ea(this);
     public final Paint w = new Paint(2);
 
-    public fa(View view, ei.g6 g6Var, org.telegram.ui.ActionBar.d6 d6Var) {
+    public fa(View view, ei.g6 g6Var, org.telegram.ui.ActionBar.g6 g6Var2) {
         Paint paint = new Paint();
         this.x = paint;
         this.b = 1;
         this.c = view;
         this.d = g6Var;
-        this.y = d6Var;
+        this.y = g6Var2;
         paint.setColor(-16777216);
     }
 
@@ -81,9 +81,9 @@ public final class fa {
                 int i11 = (int) (measuredWidth / 15.0f);
                 Bitmap.Config config = Bitmap.Config.ARGB_8888;
                 bitmapArr2[i10] = Bitmap.createBitmap(i11, (int) (dp / 15.0f), config);
-                org.telegram.ui.ActionBar.d6 d6Var = this.y;
+                org.telegram.ui.ActionBar.g6 g6Var2 = this.y;
                 if (i10 == 1) {
-                    this.e[i10].eraseColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.d6, d6Var));
+                    this.e[i10].eraseColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.d6, g6Var2));
                 }
                 this.j[i10] = new Canvas(this.e[i10]);
                 if (i10 == 0) {
@@ -97,7 +97,7 @@ public final class fa {
                 View view = this.c;
                 Drawable background = view.getBackground();
                 if (background == null) {
-                    background = d6Var instanceof org.telegram.ui.on ? ((org.telegram.ui.on) d6Var).e() : org.telegram.ui.ActionBar.h6.t0();
+                    background = g6Var2 instanceof org.telegram.ui.qn ? ((org.telegram.ui.qn) g6Var2).l() : org.telegram.ui.ActionBar.k6.t0();
                 }
                 view.setTag(67108867, Integer.valueOf(i10));
                 if (i10 == 0) {
@@ -117,7 +117,7 @@ public final class fa {
                 Paint paint = this.w;
                 paint.setAlpha(255);
                 if (i10 == 1) {
-                    this.g[i10].eraseColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.d6, d6Var));
+                    this.g[i10].eraseColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.d6, g6Var2));
                 }
                 this.h[i10].drawBitmap(this.e[i10], 0.0f, 0.0f, paint);
             }

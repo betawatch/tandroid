@@ -10,9 +10,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.h61;
+import org.telegram.ui.Components.m61;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t3 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -30,7 +30,7 @@ public final /* synthetic */ class t3 implements Utilities.Callback2 {
         Object obj3 = this.b;
         switch (i10) {
             case 0:
-                f4.U((f4) obj3, (ArrayList) obj);
+                f4.T((f4) obj3, (ArrayList) obj);
                 break;
             case 1:
                 k4 k4Var = (k4) obj3;
@@ -38,33 +38,33 @@ public final /* synthetic */ class t3 implements Utilities.Callback2 {
                 y9 y9Var = k4Var.Y;
                 if (y9Var != null) {
                     ArrayList arrayList2 = y9Var.l;
-                    arrayList.add(h61.C(AndroidUtilities.dp(16.0f)));
+                    arrayList.add(m61.C(AndroidUtilities.dp(16.0f)));
                     if (y9Var.i && arrayList2.isEmpty()) {
-                        h61 o10 = h61.o(1, 34);
+                        m61 o10 = m61.o(1, 34);
                         o10.u = 1;
                         arrayList.add(o10);
-                        h61 o11 = h61.o(2, 34);
+                        m61 o11 = m61.o(2, 34);
                         o11.u = 1;
                         arrayList.add(o11);
-                        h61 o12 = h61.o(3, 34);
+                        m61 o12 = m61.o(3, 34);
                         o12.u = 1;
                         arrayList.add(o12);
-                        h61 o13 = h61.o(4, 34);
+                        m61 o13 = m61.o(4, 34);
                         o13.u = 1;
                         arrayList.add(o13);
-                        h61 o14 = h61.o(5, 34);
+                        m61 o14 = m61.o(5, 34);
                         o14.u = 1;
                         arrayList.add(o14);
-                        h61 o15 = h61.o(6, 34);
+                        m61 o15 = m61.o(6, 34);
                         o15.u = 1;
                         arrayList.add(o15);
-                        h61 o16 = h61.o(7, 34);
+                        m61 o16 = m61.o(7, 34);
                         o16.u = 1;
                         arrayList.add(o16);
-                        h61 o17 = h61.o(8, 34);
+                        m61 o17 = m61.o(8, 34);
                         o17.u = 1;
                         arrayList.add(o17);
-                        h61 o18 = h61.o(9, 34);
+                        m61 o18 = m61.o(9, 34);
                         o18.u = 1;
                         arrayList.add(o18);
                     } else {
@@ -77,7 +77,7 @@ public final /* synthetic */ class t3 implements Utilities.Callback2 {
                             TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj4;
                             if (!savedStarGift.collection_id.contains(Integer.valueOf(k4Var.X))) {
                                 int i14 = f1.a;
-                                h61 J = h61.J(f1.class);
+                                m61 J = m61.J(f1.class);
                                 J.u = 1;
                                 J.z = 0;
                                 J.G = savedStarGift;
@@ -99,14 +99,14 @@ public final /* synthetic */ class t3 implements Utilities.Callback2 {
                             while (true) {
                                 if (i11 < (i13 <= 0 ? 3 : i13)) {
                                     i11++;
-                                    h61 o19 = h61.o(i11, 34);
+                                    m61 o19 = m61.o(i11, 34);
                                     o19.u = 1;
                                     arrayList.add(o19);
                                 }
                             }
                         }
                     }
-                    arrayList.add(h61.C(AndroidUtilities.dp(68.0f)));
+                    arrayList.add(m61.C(AndroidUtilities.dp(68.0f)));
                     break;
                 }
                 break;

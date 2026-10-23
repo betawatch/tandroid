@@ -1,0 +1,321 @@
+package ci;
+
+import ai.cb;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.net.Uri;
+import android.os.Bundle;
+import android.text.style.CharacterStyle;
+import android.text.style.ClickableSpan;
+import android.text.style.URLSpan;
+import android.view.View;
+import java.net.URLDecoder;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.sl;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.j80;
+import org.telegram.ui.Components.k40;
+import org.telegram.ui.Components.p61;
+import org.telegram.ui.Components.q11;
+import org.telegram.ui.Components.q61;
+import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.rc;
+import org.telegram.ui.Components.s61;
+import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.xa0;
+import org.telegram.ui.Components.xc;
+import org.telegram.ui.sn;
+
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+/* loaded from: classes4.dex */
+public final class u3 extends r8 {
+    public final /* synthetic */ z9 x0;
+    public final /* synthetic */ org.telegram.ui.ActionBar.g6 y0;
+    public final /* synthetic */ p4 z0;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public u3(p4 p4Var, Context context, b bVar, z9 z9Var, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(context, bVar);
+        this.z0 = p4Var;
+        this.x0 = z9Var;
+        this.y0 = g6Var;
+    }
+
+    @Override // ci.r8
+    public final void F(org.telegram.ui.Components.a6 a6Var) {
+        if (a6Var != null) {
+            p4 p4Var = this.z0;
+            if (p4Var.Q1 == null) {
+                return;
+            }
+            TLRPC.Document document = a6Var.document;
+            if (document == null) {
+                document = org.telegram.ui.Components.r5.f(p4Var.C2, a6Var.documentId);
+            }
+            if (document == null) {
+                return;
+            }
+            q3 q3Var = p4Var.c1;
+            org.telegram.ui.ActionBar.g6 g6Var = this.y0;
+            qc h = new xc(q3Var, g6Var).h(document, 2, new ai.a4(this, this.x0, g6Var, 1));
+            if (h == null) {
+                return;
+            }
+            h.a = 1;
+            h.k(true);
+        }
+    }
+
+    @Override // ci.r8
+    public final void G(CharacterStyle characterStyle, View view) {
+        boolean z10 = characterStyle instanceof t61;
+        z9 z9Var = this.x0;
+        p4 p4Var = this.z0;
+        if (z10) {
+            TLRPC.User user = MessagesController.getInstance(p4Var.C2).getUser(Utilities.parseLong(((t61) characterStyle).getURL()));
+            if (user != null) {
+                MessagesController.getInstance(p4Var.C2).openChatOrProfileWith(user, null, z9Var.f, 0, false);
+                return;
+            }
+            return;
+        }
+        if (!(characterStyle instanceof q61)) {
+            if (characterStyle instanceof URLSpan) {
+                M(2, ((URLSpan) characterStyle).getURL(), characterStyle, characterStyle instanceof s61);
+                return;
+            }
+            if (!(characterStyle instanceof p61)) {
+                if (characterStyle instanceof ClickableSpan) {
+                    ((ClickableSpan) characterStyle).onClick(view);
+                    return;
+                }
+                return;
+            } else {
+                p61 p61Var = (p61) characterStyle;
+                AndroidUtilities.addToClipboard(p61Var.a.subSequence(p61Var.b, p61Var.c).toString());
+                sl.p(R.string.TextCopied, new xc(p4Var.c1, this.y0));
+                return;
+            }
+        }
+        String url = ((q61) characterStyle).getURL();
+        if (url != null && (url.startsWith("#") || url.startsWith("$"))) {
+            if (url.contains("@")) {
+                z9Var.H(new k40(url, null));
+                return;
+            }
+            Bundle bundle = new Bundle();
+            bundle.putInt(TeXSymbolParser.TYPE_ATTR, 3);
+            bundle.putString("hashtag", url);
+            z9Var.H(new xa0(bundle, null));
+            return;
+        }
+        String b10 = pf.d.b(url);
+        if (b10 == null) {
+            M(0, url, characterStyle, false);
+            return;
+        }
+        String lowerCase = b10.toLowerCase();
+        if (url.startsWith("@")) {
+            MessagesController.getInstance(p4Var.C2).openByUserName(lowerCase, z9Var.f, 0, null);
+        } else {
+            M(0, url, characterStyle, false);
+        }
+    }
+
+    @Override // ci.r8
+    public final void H(final URLSpan uRLSpan, final View view, androidx.fragment.app.d dVar) {
+        String str;
+        final String url = uRLSpan.getURL();
+        String url2 = uRLSpan.getURL();
+        try {
+            try {
+                Uri parse = Uri.parse(url2);
+                url2 = pf.d.u(parse, null, null, pf.d.a(parse.getHost()), null);
+            } catch (Exception e) {
+                FileLog.e((Throwable) e, false);
+            }
+            str = URLDecoder.decode(url2.replaceAll("\\+", "%2b"), "UTF-8");
+        } catch (Exception e7) {
+            FileLog.e(e7);
+            str = url2;
+        }
+        try {
+            performHapticFeedback(0, 1);
+        } catch (Exception unused) {
+        }
+        Context context = getContext();
+        org.telegram.ui.ActionBar.g6 g6Var = this.y0;
+        org.telegram.ui.ActionBar.h3 h3Var = new org.telegram.ui.ActionBar.h3(1, context, g6Var, false);
+        h3Var.fixNavigationBar();
+        h3Var.title = str;
+        h3Var.bigTitle = false;
+        h3Var.multipleLinesTitle = true;
+        p4 p4Var = this.z0;
+        n4 n4Var = p4Var.O1;
+        CharSequence[] charSequenceArr = (n4Var == null || n4Var.d()) ? new CharSequence[]{LocaleController.getString(R.string.Open), LocaleController.getString(R.string.Copy)} : new CharSequence[]{LocaleController.getString(R.string.Open)};
+        final org.telegram.ui.ActionBar.g6 g6Var2 = this.y0;
+        DialogInterface.OnClickListener onClickListener = new DialogInterface.OnClickListener() { // from class: ci.t3
+            @Override // android.content.DialogInterface.OnClickListener
+            public final void onClick(DialogInterface dialogInterface, int i10) {
+                u3 u3Var = u3.this;
+                if (i10 == 0) {
+                    u3Var.G(uRLSpan, view);
+                } else if (i10 == 1) {
+                    AndroidUtilities.addToClipboard(url);
+                    new xc(u3Var.z0.c1, g6Var2).k(false).j();
+                }
+            }
+        };
+        h3Var.items = charSequenceArr;
+        h3Var.onClickListener = onClickListener;
+        h3Var.setOnHideListener(new cb(dVar, 3));
+        h3Var.fixNavigationBar(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.h5, g6Var));
+        ((q9) p4Var.Q1).h(h3Var);
+    }
+
+    @Override // ci.r8
+    public final void I(m8 m8Var) {
+        if (m8Var == null) {
+            return;
+        }
+        final TLRPC.Document document = m8Var.g;
+        p4 p4Var = this.z0;
+        z9 z9Var = this.x0;
+        final org.telegram.ui.ActionBar.g6 g6Var = this.y0;
+        if (document != null) {
+            j80 F = j80.F(z9Var.v, g6Var, p4Var.K0);
+            F.i = 3;
+            F.a0(-AndroidUtilities.dp(8.0f), 0.0f);
+            final int i10 = 0;
+            F.l(R.drawable.msg_saved, LocaleController.getString(R.string.StoryAudioAddToSavedMessages), new Runnable(this) { // from class: ci.r3
+                public final /* synthetic */ u3 b;
+
+                {
+                    this.b = this;
+                }
+
+                @Override // java.lang.Runnable
+                public final void run() {
+                    switch (i10) {
+                        case 0:
+                            p4 p4Var2 = this.b.z0;
+                            SendMessagesHelper sendMessagesHelper = SendMessagesHelper.getInstance(p4Var2.C2);
+                            TLRPC.TL_document tL_document = (TLRPC.TL_document) document;
+                            long clientUserId = UserConfig.getInstance(p4Var2.C2).getClientUserId();
+                            n4 n4Var = p4Var2.O1;
+                            sendMessagesHelper.sendMessage(SendMessagesHelper.SendMessageParams.of(tL_document, null, null, clientUserId, null, null, null, null, null, null, false, 0, 0, 0, n4Var != null ? n4Var.a : null, null, false));
+                            new xc(p4Var2.c1, g6Var).Q(R.raw.saved_messages, 36, AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.StoryAudioAddToSavedMessagesToast), -1, 2, new rc(0))).k(true);
+                            break;
+                        default:
+                            p4 p4Var3 = this.b.z0;
+                            TLRPC.TL_account_saveMusic tL_account_saveMusic = new TLRPC.TL_account_saveMusic();
+                            TLRPC.TL_inputDocument tL_inputDocument = new TLRPC.TL_inputDocument();
+                            tL_account_saveMusic.id = tL_inputDocument;
+                            TLRPC.Document document2 = document;
+                            tL_inputDocument.id = document2.id;
+                            tL_inputDocument.access_hash = document2.access_hash;
+                            tL_inputDocument.file_reference = document2.file_reference;
+                            if (MediaController.getInstance().currentSavedMusicList != null && MediaController.getInstance().currentSavedMusicList.dialogId == UserConfig.getInstance(p4Var3.C2).getClientUserId()) {
+                                MediaController.getInstance().currentSavedMusicList.add(document2);
+                            }
+                            ConnectionsManager.getInstance(p4Var3.C2).sendRequest(tL_account_saveMusic, null);
+                            new xc(p4Var3.c1, g6Var).Q(R.raw.ic_save_to_music, 36, LocaleController.getString(R.string.StoryAudioAddToProfileToast)).k(true);
+                            break;
+                    }
+                }
+            }, document instanceof TLRPC.TL_document);
+            final int i11 = 1;
+            F.c(R.drawable.msg_tone_add, LocaleController.getString(R.string.StoryAudioAddToProfile), new Runnable(this) { // from class: ci.r3
+                public final /* synthetic */ u3 b;
+
+                {
+                    this.b = this;
+                }
+
+                @Override // java.lang.Runnable
+                public final void run() {
+                    switch (i11) {
+                        case 0:
+                            p4 p4Var2 = this.b.z0;
+                            SendMessagesHelper sendMessagesHelper = SendMessagesHelper.getInstance(p4Var2.C2);
+                            TLRPC.TL_document tL_document = (TLRPC.TL_document) document;
+                            long clientUserId = UserConfig.getInstance(p4Var2.C2).getClientUserId();
+                            n4 n4Var = p4Var2.O1;
+                            sendMessagesHelper.sendMessage(SendMessagesHelper.SendMessageParams.of(tL_document, null, null, clientUserId, null, null, null, null, null, null, false, 0, 0, 0, n4Var != null ? n4Var.a : null, null, false));
+                            new xc(p4Var2.c1, g6Var).Q(R.raw.saved_messages, 36, AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.StoryAudioAddToSavedMessagesToast), -1, 2, new rc(0))).k(true);
+                            break;
+                        default:
+                            p4 p4Var3 = this.b.z0;
+                            TLRPC.TL_account_saveMusic tL_account_saveMusic = new TLRPC.TL_account_saveMusic();
+                            TLRPC.TL_inputDocument tL_inputDocument = new TLRPC.TL_inputDocument();
+                            tL_account_saveMusic.id = tL_inputDocument;
+                            TLRPC.Document document2 = document;
+                            tL_inputDocument.id = document2.id;
+                            tL_inputDocument.access_hash = document2.access_hash;
+                            tL_inputDocument.file_reference = document2.file_reference;
+                            if (MediaController.getInstance().currentSavedMusicList != null && MediaController.getInstance().currentSavedMusicList.dialogId == UserConfig.getInstance(p4Var3.C2).getClientUserId()) {
+                                MediaController.getInstance().currentSavedMusicList.add(document2);
+                            }
+                            ConnectionsManager.getInstance(p4Var3.C2).sendRequest(tL_account_saveMusic, null);
+                            new xc(p4Var3.c1, g6Var).Q(R.raw.ic_save_to_music, 36, LocaleController.getString(R.string.StoryAudioAddToProfileToast)).k(true);
+                            break;
+                    }
+                }
+            }, false);
+            F.Z();
+            return;
+        }
+        if (m8Var.e && m8Var.b != null && m8Var.d != null) {
+            Bundle bundle = new Bundle();
+            if (m8Var.b.longValue() >= 0) {
+                bundle.putLong("user_id", m8Var.b.longValue());
+            } else {
+                bundle.putLong("chat_id", -m8Var.b.longValue());
+            }
+            bundle.putInt("message_id", m8Var.d.intValue());
+            z9Var.H(new sn(bundle));
+            return;
+        }
+        if (m8Var.b != null && m8Var.c != null) {
+            MessagesController.getInstance(p4Var.C2).getStoriesController().d0(m8Var.b.longValue(), m8Var.c.intValue(), new y2(this, m8Var, z9Var, g6Var, 1));
+            return;
+        }
+        qc Q = new xc(p4Var.c1, g6Var).Q(R.raw.error, 36, LocaleController.getString(R.string.StoryHidAccount));
+        Q.a = 3;
+        Q.k(true);
+    }
+
+    public final void M(int i10, String str, CharacterStyle characterStyle, boolean z10) {
+        q11 q11Var;
+        if (z10 || AndroidUtilities.shouldShowUrlInAlert(str)) {
+            z9 z9Var = this.x0;
+            if (i10 == 0 || i10 == 2) {
+                org.telegram.ui.Components.f5.r0(z9Var.f, str, true, true, true, (!(characterStyle instanceof s61) || (q11Var = ((s61) characterStyle).a) == null || (q11Var.a & 1024) == 0) ? false : true, null, null, this.y0);
+                return;
+            } else {
+                if (i10 == 1) {
+                    org.telegram.ui.Components.f5.r0(z9Var.f, str, true, true, false, false, null, null, this.y0);
+                    return;
+                }
+                return;
+            }
+        }
+        if (i10 == 0) {
+            pf.d.p(getContext(), Uri.parse(str), true, true, null);
+        } else if (i10 == 1) {
+            pf.d.p(getContext(), Uri.parse(str), false, false, null);
+        } else if (i10 == 2) {
+            pf.d.p(getContext(), Uri.parse(str), false, true, null);
+        }
+    }
+}

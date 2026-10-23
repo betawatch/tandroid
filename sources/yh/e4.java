@@ -3,7 +3,7 @@ package yh;
 import ai.y9;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class e4 implements NotificationCenter.NotificationCenterDelegate {
     public final int a;
@@ -17,7 +17,7 @@ public final class e4 implements NotificationCenter.NotificationCenterDelegate {
         y9 y9Var = new y9(i10, 0L, false);
         this.b = y9Var;
         y9Var.p = j10;
-        s3 s3Var = new s3(j10, i10, new ig.l0(this, 28));
+        s3 s3Var = new s3(j10, i10, new ig.k0(this, 28));
         s3Var.s = true;
         this.c = s3Var;
     }

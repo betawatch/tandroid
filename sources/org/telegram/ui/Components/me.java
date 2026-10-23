@@ -7,7 +7,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class me extends FrameLayout {
     public final /* synthetic */ ChatActivityEnterView a;
@@ -22,7 +22,7 @@ public final class me extends FrameLayout {
     public final boolean drawChild(final Canvas canvas, final View view, final long j10) {
         ChatActivityEnterView chatActivityEnterView = this.a;
         if (view != null && view == chatActivityEnterView.E0) {
-            return chatActivityEnterView.d0(canvas, new Utilities.Callback0Return() { // from class: org.telegram.ui.Components.le
+            return chatActivityEnterView.c0(canvas, new Utilities.Callback0Return() { // from class: org.telegram.ui.Components.le
                 @Override // org.telegram.messenger.Utilities.Callback0Return
                 public final Object run() {
                     Boolean valueOf;
@@ -60,12 +60,12 @@ public final class me extends FrameLayout {
         super.onMeasure(i10, i11);
         int max = Math.max(AndroidUtilities.dp(44.0f), getMeasuredHeight());
         ChatActivityEnterView chatActivityEnterView = this.a;
-        ne.e eVar = chatActivityEnterView.f5;
+        ne.e eVar = chatActivityEnterView.j5;
         if (eVar.e > 0.0f) {
             eVar.a(max);
         } else {
             eVar.c(max);
         }
-        chatActivityEnterView.L();
+        chatActivityEnterView.K();
     }
 }

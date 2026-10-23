@@ -2,32 +2,33 @@ package yh;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.text.Editable;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.Components.lw0;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.Components.ow0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final class s4 extends org.telegram.ui.Cells.f3 {
-    public final /* synthetic */ x4 E;
-    public final /* synthetic */ dh.f x;
-    public final /* synthetic */ int y;
+public final class s4 extends org.telegram.ui.Cells.e3 {
+    public final /* synthetic */ int E;
+    public final /* synthetic */ x4 F;
+    public final /* synthetic */ dh.f y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public s4(x4 x4Var, Context context, lw0 lw0Var, String str, int i10, d6 d6Var, dh.f fVar, int i11) {
-        super(context, lw0Var, str, true, i10, d6Var);
-        this.E = x4Var;
-        this.x = fVar;
-        this.y = i11;
+    public s4(x4 x4Var, Context context, ow0 ow0Var, String str, int i10, g6 g6Var, dh.f fVar, int i11) {
+        super(context, ow0Var, str, true, i10, g6Var);
+        this.F = x4Var;
+        this.y = fVar;
+        this.E = i11;
     }
 
-    @Override // org.telegram.ui.Cells.f3
-    public final void b() {
+    @Override // org.telegram.ui.Cells.e3
+    public final void b(Editable editable) {
         TLRPC.TL_textWithEntities tL_textWithEntities;
-        x4 x4Var = this.E;
+        x4 x4Var = this.F;
         MessageObject messageObject = x4Var.m0;
         TLRPC.MessageAction messageAction = x4Var.l0;
         if (messageAction instanceof TLRPC.TL_messageActionStarGift) {
@@ -47,13 +48,13 @@ public final class s4 extends org.telegram.ui.Cells.f3 {
             tL_textWithEntities = new TLRPC.TL_textWithEntities();
             tL_messageActionGiftPremium.message = tL_textWithEntities;
         }
-        CharSequence[] charSequenceArr = {x4Var.s0.getText()};
-        tL_textWithEntities.entities = MediaDataController.getInstance(this.y).getEntities(charSequenceArr, true);
+        CharSequence[] charSequenceArr = {x4Var.t0.getText()};
+        tL_textWithEntities.entities = MediaDataController.getInstance(this.E).getEntities(charSequenceArr, true);
         tL_textWithEntities.text = charSequenceArr[0].toString();
         messageObject.setType();
-        x4Var.k0.Y(messageObject, true);
-        x4Var.t0.N(true);
-        x4Var.a0(true);
+        x4Var.k0.X(messageObject, true);
+        x4Var.u0.N(true);
+        x4Var.Z(true);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -61,13 +62,13 @@ public final class s4 extends org.telegram.ui.Cells.f3 {
         int dp = AndroidUtilities.dp(10.0f);
         int measuredWidth = getMeasuredWidth() - AndroidUtilities.dp(10.0f);
         int measuredHeight = getMeasuredHeight();
-        dh.f fVar = this.x;
+        dh.f fVar = this.y;
         fVar.setBounds(dp, 0, measuredWidth, measuredHeight);
         fVar.draw(canvas);
         super.dispatchDraw(canvas);
     }
 
-    @Override // org.telegram.ui.Cells.f3, android.widget.FrameLayout, android.view.View
+    @Override // org.telegram.ui.Cells.e3, android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
         setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(12.0f), 0);
         super.onMeasure(i10, i11);

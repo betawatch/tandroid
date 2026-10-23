@@ -10,7 +10,7 @@ import com.google.android.gms.internal.cast.v;
 import com.google.android.gms.internal.cast.z5;
 import d6.j;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class b extends AsyncTask {
     public static final g6.b c = new g6.b("FetchBitmapTask", null);
@@ -72,7 +72,7 @@ public final class b extends AsyncTask {
         if (z5Var != null) {
             a aVar = (a) z5Var.e;
             if (aVar != null) {
-                aVar.m(bitmap);
+                aVar.l(bitmap);
             }
             z5Var.d = null;
         }

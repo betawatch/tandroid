@@ -7,7 +7,7 @@ import android.graphics.Rect;
 import android.text.TextPaint;
 import android.util.TypedValue;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public class o40 extends EditTextBoldCursor {
     public final TextPaint b;
@@ -19,7 +19,7 @@ public class o40 extends EditTextBoldCursor {
         TextPaint textPaint = new TextPaint(1);
         this.b = textPaint;
         this.d = new Rect();
-        textPaint.setColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.H6, false));
+        textPaint.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.H6, false));
     }
 
     public String getHintText() {

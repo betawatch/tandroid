@@ -1,79 +1,50 @@
 package rg;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MediaController;
+import android.app.Activity;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.gh;
-import org.telegram.ui.Components.ri;
-import org.telegram.ui.Components.ti;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class x implements ri {
-    public final /* synthetic */ ti a;
-    public final /* synthetic */ m0 b;
+public final class x extends sn {
+    public final /* synthetic */ m0 ed;
 
-    public x(m0 m0Var, ti tiVar) {
-        this.b = m0Var;
-        this.a = tiVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public x(m0 m0Var) {
+        super(null);
+        this.ed = m0Var;
     }
 
-    @Override // org.telegram.ui.Components.ri
-    public final void b0(int i10, boolean z10, boolean z11, int i11, int i12, long j10, boolean z12, boolean z13, long j11) {
-        ti tiVar = this.a;
-        try {
-            HashMap<Object, Object> selectedPhotos = tiVar.j0.getSelectedPhotos();
-            if (selectedPhotos.isEmpty()) {
-                return;
-            }
-            MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) selectedPhotos.values().iterator().next();
-            String str = photoEntry.imagePath;
-            if (str == null) {
-                str = photoEntry.path;
-            }
-            m0 m0Var = this.b;
-            m0Var.f0(m0Var.h0(str, true));
-            tiVar.dismiss();
-        } catch (Throwable th2) {
-            FileLog.e(th2);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.ri
-    public final boolean p0() {
-        System.currentTimeMillis();
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.ri
-    public final void u(gh ghVar) {
-        ghVar.run();
-    }
-
-    @Override // org.telegram.ui.Components.ri
-    public final /* synthetic */ boolean v() {
+    @Override // org.telegram.ui.sn
+    public final boolean C9() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.ri
-    public final /* synthetic */ void E() {
+    @Override // org.telegram.ui.sn, org.telegram.ui.Components.bh, org.telegram.ui.Components.y50
+    public final long a() {
+        return 0L;
     }
 
-    @Override // org.telegram.ui.Components.ri
-    public final /* synthetic */ void J() {
+    @Override // org.telegram.ui.ActionBar.o2
+    public final Activity getParentActivity() {
+        return AndroidUtilities.findActivity(this.ed.getContext());
     }
 
-    @Override // org.telegram.ui.Components.ri
-    public final /* synthetic */ void O(Object obj) {
+    @Override // org.telegram.ui.sn, org.telegram.ui.ActionBar.o2
+    public final g6 getResourceProvider() {
+        return this.ed.Q1;
     }
 
-    @Override // org.telegram.ui.Components.ri
-    public final /* synthetic */ void X(TLRPC.User user) {
+    @Override // org.telegram.ui.sn, org.telegram.ui.Components.bh
+    public final TLRPC.User i() {
+        return UserConfig.getInstance(this.currentAccount).getCurrentUser();
     }
 
-    @Override // org.telegram.ui.Components.ri
-    public final /* synthetic */ void r0(ArrayList arrayList, CharSequence charSequence, boolean z10, int i10, int i11, long j10, boolean z11, long j11) {
+    @Override // org.telegram.ui.sn, org.telegram.ui.ActionBar.o2
+    public final boolean isLightStatusBar() {
+        return false;
     }
 }

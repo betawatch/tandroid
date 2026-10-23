@@ -2,24 +2,24 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 import org.telegram.ui.WallpapersListActivity;
-import org.telegram.ui.kc1;
-import org.telegram.ui.uh1;
-import org.telegram.ui.vh1;
+import org.telegram.ui.bi1;
+import org.telegram.ui.ci1;
+import org.telegram.ui.qc1;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class hj extends org.telegram.ui.Cells.ab {
+public final class hj extends org.telegram.ui.Cells.bb {
     public final /* synthetic */ int w;
-    public final /* synthetic */ im0 x;
+    public final /* synthetic */ lm0 x;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ hj(im0 im0Var, Context context, int i10) {
+    public /* synthetic */ hj(lm0 lm0Var, Context context, int i10) {
         super(context, 5);
         this.w = i10;
-        this.x = im0Var;
+        this.x = lm0Var;
     }
 
-    @Override // org.telegram.ui.Cells.ab
+    @Override // org.telegram.ui.Cells.bb
     public final void a(int i10, Object obj) {
         switch (this.w) {
             case 0:
@@ -30,19 +30,19 @@ public final class hj extends org.telegram.ui.Cells.ab {
                 }
                 break;
             case 1:
-                WallpapersListActivity.r0(((uh1) this.x).d, this, obj, i10);
+                WallpapersListActivity.r0(((bi1) this.x).d, this, obj, i10);
                 break;
             default:
-                ((vh1) this.x).E.presentFragment(new kc1(obj, null, true));
+                ((ci1) this.x).E.presentFragment(new qc1(obj, null, true));
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Cells.ab
+    @Override // org.telegram.ui.Cells.bb
     public boolean b(Object obj, int i10) {
         switch (this.w) {
             case 1:
-                return WallpapersListActivity.s0(((uh1) this.x).d, this, obj, i10);
+                return WallpapersListActivity.s0(((bi1) this.x).d, this, obj, i10);
             default:
                 return super.b(obj, i10);
         }

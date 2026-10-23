@@ -3,21 +3,21 @@ package org.telegram.ui;
 import android.text.style.CharacterStyle;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class qi extends pf.c {
     public final /* synthetic */ int d;
     public final /* synthetic */ int e;
-    public final /* synthetic */ org.telegram.ui.Cells.u1 f;
-    public final /* synthetic */ qn g;
+    public final /* synthetic */ org.telegram.ui.Cells.t1 f;
+    public final /* synthetic */ sn g;
     public final /* synthetic */ Object h;
 
-    public /* synthetic */ qi(qn qnVar, int i10, Object obj, org.telegram.ui.Cells.u1 u1Var, int i11) {
+    public /* synthetic */ qi(sn snVar, int i10, Object obj, org.telegram.ui.Cells.t1 t1Var, int i11) {
         this.d = i11;
-        this.g = qnVar;
+        this.g = snVar;
         this.e = i10;
         this.h = obj;
-        this.f = u1Var;
+        this.f = t1Var;
     }
 
     @Override // pf.c
@@ -43,18 +43,18 @@ public final class qi extends pf.c {
         switch (this.d) {
             case 0:
                 int i10 = this.e;
-                qn qnVar = this.g;
-                qnVar.wb = i10;
-                qnVar.xb = 1;
-                qnVar.yb = (CharacterStyle) this.h;
+                sn snVar = this.g;
+                snVar.Jb = i10;
+                snVar.Kb = 1;
+                snVar.Lb = (CharacterStyle) this.h;
                 this.f.invalidate();
                 break;
             default:
                 int i11 = this.e;
-                qn qnVar2 = this.g;
-                qnVar2.wb = i11;
-                qnVar2.xb = 3;
-                qnVar2.zb = (String) this.h;
+                sn snVar2 = this.g;
+                snVar2.Jb = i11;
+                snVar2.Kb = 3;
+                snVar2.Mb = (String) this.h;
                 this.f.invalidate();
                 break;
         }

@@ -5,7 +5,7 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.Rect;
 import android.view.View;
-import ci.g3;
+import ci.f3;
 import j$.util.Objects;
 import org.telegram.messenger.DocumentObject;
 import org.telegram.messenger.ImageLocation;
@@ -13,10 +13,10 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.r5;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class y0 {
     public final ImageReceiver a;
@@ -42,9 +42,9 @@ public final class y0 {
         r5 r5Var = this.b;
         Rect rect = this.c;
         if (r5Var != null) {
-            g3 g3Var = r5Var.k;
-            if (g3Var != null) {
-                g3Var.setRoundRadius((int) (rect.width() * 0.1f));
+            f3 f3Var = r5Var.k;
+            if (f3Var != null) {
+                f3Var.setRoundRadius((int) (rect.width() * 0.1f));
             }
             this.b.setColorFilter(this.k);
             this.b.setBounds(rect);
@@ -113,7 +113,7 @@ public final class y0 {
         if (i1Var.f != null) {
             TLRPC.TL_availableReaction tL_availableReaction = MediaDataController.getInstance(this.d).getReactionsMap().get(i1Var.f);
             if (tL_availableReaction != null) {
-                imageReceiver.setImage(ImageLocation.getForDocument(tL_availableReaction.select_animation), str, null, null, DocumentObject.getSvgThumb(tL_availableReaction.select_animation, h6.m6, 0.2f), 0L, "tgs", i1Var, 0);
+                imageReceiver.setImage(ImageLocation.getForDocument(tL_availableReaction.select_animation), str, null, null, DocumentObject.getSvgThumb(tL_availableReaction.select_animation, k6.m6, 0.2f), 0L, "tgs", i1Var, 0);
                 return;
             }
             return;

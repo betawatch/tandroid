@@ -1,100 +1,116 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.widget.FrameLayout;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
+import java.util.ArrayList;
+import org.telegram.tgnet.InputSerializedData;
+import org.telegram.tgnet.OutputSerializedData;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class eg0 extends FrameLayout {
-    public final ei.gc a;
-    public final ei.d b;
-    public final xt c;
-    public c81 d;
-    public long e;
-    public float f;
-    public ei.u3 h;
-    public Utilities.Callback n;
-    public Runnable r;
+public final class eg0 {
+    public float a = 0.0f;
+    public float b = 25.0f;
+    public float c = 50.0f;
+    public float d = 75.0f;
+    public float e = 100.0f;
+    public float[] f;
 
-    public eg0(Context context, org.telegram.ui.ActionBar.d6 d6Var, ja jaVar) {
-        super(context);
-        this.e = -1L;
-        this.f = 1.39f;
-        org.telegram.ui.ActionBar.k kVar = new org.telegram.ui.ActionBar.k(context, d6Var);
-        kVar.setBackButtonImage(R.drawable.ic_ab_back);
-        kVar.setTitle(LocaleController.getString(R.string.EditorSetCoverTitle));
-        kVar.C(-1, false);
-        kVar.B(587202559, false);
-        kVar.setActionBarMenuOnItemClick(new org.telegram.ui.ea(this, 13));
-        addView(kVar, w7.z5.e(-1, -2, 55));
-        ei.gc gcVar = new ei.gc(context, null, null, d6Var, jaVar);
-        this.a = gcVar;
-        gcVar.X0 = true;
-        addView(gcVar, w7.z5.d(-1, 388, 87, 0.0f, 0.0f, 0.0f, 74.0f));
-        ei.d dVar = new ei.d(context, d6Var, true);
-        this.b = dVar;
-        dVar.g(LocaleController.getString(R.string.EditorSetCoverSave), false, true);
-        dVar.e();
-        addView(dVar, w7.z5.d(-1, 48.0f, 87, 16.0f, 10.0f, 16.0f, 16.0f));
-        xt xtVar = new xt(context, LocaleController.getString(R.string.EditorSetCoverGallery));
-        this.c = xtVar;
-        xtVar.setOnClickListener(new ai.v0(this, context, d6Var, 29));
-        addView(xtVar, w7.z5.d(-1, 32.0f, 87, 60.0f, 0.0f, 60.0f, 134.0f));
-        gcVar.setDelegate(new mi.q(this));
-    }
-
-    public final void a(MediaController.PhotoEntry photoEntry, c81 c81Var, org.telegram.ui.ActionBar.d6 d6Var) {
-        int i10;
-        ei.d dVar = this.b;
-        dVar.a = d6Var;
-        dVar.j();
-        int i11 = photoEntry.width;
-        if (i11 <= 0 || (i10 = photoEntry.height) <= 0) {
-            this.f = 1.39f;
-        } else {
-            this.f = Utilities.clamp(i10 / i11, 1.39f, 0.85f);
+    public final float[] a() {
+        float f7 = this.a;
+        float f10 = this.b / 100.0f;
+        float f11 = this.c / 100.0f;
+        float f12 = this.d / 100.0f;
+        float f13 = this.e;
+        int i10 = 2;
+        int i11 = 5;
+        char c10 = '\f';
+        char c11 = '\r';
+        float[] fArr = {-0.001f, f7 / 100.0f, 0.0f, f7 / 100.0f, 0.25f, f10, 0.5f, f11, 0.75f, f12, 1.0f, f13 / 100.0f, 1.001f, f13 / 100.0f};
+        int i12 = 100;
+        ArrayList arrayList = new ArrayList(100);
+        ArrayList arrayList2 = new ArrayList(100);
+        arrayList2.add(Float.valueOf(fArr[0]));
+        arrayList2.add(Float.valueOf(fArr[1]));
+        int i13 = 1;
+        while (i13 < i11) {
+            int i14 = (i13 - 1) * i10;
+            float f14 = fArr[i14];
+            float f15 = fArr[i14 + 1];
+            int i15 = i13 * 2;
+            float f16 = fArr[i15];
+            float f17 = fArr[i15 + 1];
+            int i16 = i13 + 1;
+            int i17 = i16 * 2;
+            int i18 = i10;
+            float f18 = fArr[i17];
+            char c12 = c10;
+            float f19 = fArr[i17 + 1];
+            int i19 = (i13 + 2) * 2;
+            float f20 = fArr[i19];
+            float f21 = fArr[i19 + 1];
+            char c13 = c11;
+            int i20 = 1;
+            while (i20 < i12) {
+                float f22 = i20 * 0.01f;
+                float f23 = f22 * f22;
+                float f24 = f23 * f22;
+                float y3 = ((((((f16 * 3.0f) - f14) - (f18 * 3.0f)) + f20) * f24) + ((((f18 * 4.0f) + ((f14 * 2.0f) - (f16 * 5.0f))) - f20) * f23) + com.google.android.gms.internal.play_billing.k3.y(f18, f14, f22, f16 * 2.0f)) * 0.5f;
+                float max = Math.max(0.0f, Math.min(1.0f, ((((((f17 * 3.0f) - f15) - (f19 * 3.0f)) + f21) * f24) + ((((4.0f * f19) + ((2.0f * f15) - (5.0f * f17))) - f21) * f23) + com.google.android.gms.internal.play_billing.k3.y(f19, f15, f22, f17 * 2.0f)) * 0.5f));
+                if (y3 > f14) {
+                    arrayList2.add(Float.valueOf(y3));
+                    arrayList2.add(Float.valueOf(max));
+                }
+                if ((i20 - 1) % 2 == 0) {
+                    arrayList.add(Float.valueOf(max));
+                }
+                i20++;
+                i12 = 100;
+            }
+            arrayList2.add(Float.valueOf(f18));
+            arrayList2.add(Float.valueOf(f19));
+            i13 = i16;
+            i10 = i18;
+            c10 = c12;
+            c11 = c13;
+            i11 = 5;
+            i12 = 100;
         }
-        this.d = c81Var;
-        long j10 = photoEntry.coverSavedPosition;
-        if (j10 >= 0) {
-            this.e = j10;
-            c81Var.L(j10, false);
-        } else {
-            this.e = c81Var.n();
+        arrayList2.add(Float.valueOf(fArr[c10]));
+        arrayList2.add(Float.valueOf(fArr[c11]));
+        this.f = new float[arrayList.size()];
+        int i21 = 0;
+        while (true) {
+            float[] fArr2 = this.f;
+            if (i21 >= fArr2.length) {
+                break;
+            }
+            fArr2[i21] = ((Float) arrayList.get(i21)).floatValue();
+            i21++;
         }
-        String path = c81Var.F.getPath();
-        long p5 = c81Var.p();
-        i2.i0 i0Var = c81Var.d;
-        i0Var.F1();
-        this.a.o(false, path, p5, i0Var.b0);
-        long p9 = c81Var.p();
-        float max = 2.8f / Math.max(60L, p9);
-        float max2 = (1.0f - max) * (this.e / Math.max(1L, c81Var.p()));
-        ei.gc gcVar = this.a;
-        gcVar.setVideoLeft(max2);
-        gcVar.setVideoRight(max2 + max);
-        gcVar.Z0 = 0L;
-        gcVar.a1 = p9;
-        ei.ac acVar = gcVar.h;
-        if (acVar != null) {
-            ei.ac.a(acVar, true);
+        int size = arrayList2.size();
+        float[] fArr3 = new float[size];
+        for (int i22 = 0; i22 < size; i22++) {
+            fArr3[i22] = ((Float) arrayList2.get(i22)).floatValue();
         }
-        gcVar.k();
+        return fArr3;
     }
 
-    public long getTime() {
-        return this.e;
+    public final boolean b() {
+        return ((double) Math.abs(this.a - 0.0f)) < 1.0E-5d && ((double) Math.abs(this.b - 25.0f)) < 1.0E-5d && ((double) Math.abs(this.c - 50.0f)) < 1.0E-5d && ((double) Math.abs(this.d - 75.0f)) < 1.0E-5d && ((double) Math.abs(this.e - 100.0f)) < 1.0E-5d;
     }
 
-    public void setOnClose(Runnable runnable) {
-        this.r = runnable;
+    public final void c(InputSerializedData inputSerializedData, boolean z10) {
+        this.a = inputSerializedData.readFloat(z10);
+        this.b = inputSerializedData.readFloat(z10);
+        this.c = inputSerializedData.readFloat(z10);
+        this.d = inputSerializedData.readFloat(z10);
+        this.e = inputSerializedData.readFloat(z10);
     }
 
-    public void setOnGalleryImage(Utilities.Callback<MediaController.PhotoEntry> callback) {
-        this.n = callback;
+    public final void d(OutputSerializedData outputSerializedData) {
+        outputSerializedData.writeFloat(this.a);
+        outputSerializedData.writeFloat(this.b);
+        outputSerializedData.writeFloat(this.c);
+        outputSerializedData.writeFloat(this.d);
+        outputSerializedData.writeFloat(this.e);
     }
 }

@@ -7,11 +7,11 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.e91;
+import org.telegram.ui.Components.l91;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final class i5 extends e91 {
+public final class i5 extends l91 {
     public final /* synthetic */ l7 T;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -20,7 +20,7 @@ public final class i5 extends e91 {
         this.T = l7Var;
     }
 
-    @Override // org.telegram.ui.Components.e91
+    @Override // org.telegram.ui.Components.l91
     public final void E(View view, float f7) {
         int i10;
         View view2;
@@ -35,7 +35,7 @@ public final class i5 extends e91 {
         }
         float clamp = Utilities.clamp(f7 / getMeasuredWidth(), 1.0f, -1.0f);
         l7 l7Var = this.T;
-        i10 = ((org.telegram.ui.ActionBar.f3) l7Var).backgroundPaddingLeft;
+        i10 = ((org.telegram.ui.ActionBar.h3) l7Var).backgroundPaddingLeft;
         view.setTranslationX(((-clamp) * 2.0f * i10) + f7);
         view.setPivotX(clamp <= 0.0f ? view.getMeasuredWidth() : 0.0f);
         view.setCameraDistance(view.getMeasuredHeight() * 3.4f);
@@ -74,13 +74,13 @@ public final class i5 extends e91 {
     }
 
     /* JADX WARN: Type inference failed for: r1v1, types: [boolean] */
-    @Override // org.telegram.ui.Components.e91
+    @Override // org.telegram.ui.Components.l91
     public final void F() {
         super.F();
         int i10 = this.b;
         l7 l7Var = this.T;
-        if (i10 != l7Var.g2(false)) {
-            AndroidUtilities.runOnUIThread(new ah.t(3, this, this.b > l7Var.g2(false)));
+        if (i10 != l7Var.f2(false)) {
+            AndroidUtilities.runOnUIThread(new ah.t(3, this, this.b > l7Var.f2(false)));
         }
     }
 
@@ -90,24 +90,24 @@ public final class i5 extends e91 {
         int i11;
         canvas.save();
         l7 l7Var = this.T;
-        i10 = ((org.telegram.ui.ActionBar.f3) l7Var).backgroundPaddingLeft;
+        i10 = ((org.telegram.ui.ActionBar.h3) l7Var).backgroundPaddingLeft;
         int i12 = -getHeight();
         int width = getWidth();
-        i11 = ((org.telegram.ui.ActionBar.f3) l7Var).backgroundPaddingLeft;
+        i11 = ((org.telegram.ui.ActionBar.h3) l7Var).backgroundPaddingLeft;
         canvas.clipRect(i10, i12, width - i11, getHeight() * 2);
         super.dispatchDraw(canvas);
         canvas.restore();
     }
 
-    @Override // org.telegram.ui.Components.e91
+    @Override // org.telegram.ui.Components.l91
     public final float getAvailableTranslationX() {
         int i10;
         int measuredWidth = getMeasuredWidth();
-        i10 = ((org.telegram.ui.ActionBar.f3) this.T).backgroundPaddingLeft;
+        i10 = ((org.telegram.ui.ActionBar.h3) this.T).backgroundPaddingLeft;
         return Math.max(1, measuredWidth - (i10 * 2));
     }
 
-    @Override // org.telegram.ui.Components.e91
+    @Override // org.telegram.ui.Components.l91
     public final boolean i(MotionEvent motionEvent) {
         h6 h6Var = this.T.b1;
         return h6Var == null || h6Var.c(0);

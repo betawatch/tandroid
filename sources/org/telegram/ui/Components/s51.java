@@ -1,45 +1,32 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.text.TextUtils;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class s51 extends vn0 {
-    public final /* synthetic */ d61 h;
+public final class s51 implements nw0 {
+    public int a;
+    public boolean b;
+    public final /* synthetic */ t51 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public s51(d61 d61Var, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, 14.0f, d6Var);
-        this.h = d61Var;
+    public s51(t51 t51Var) {
+        this.c = t51Var;
     }
 
-    @Override // org.telegram.ui.Components.vn0
-    public final void a(String str) {
-        hg.e2 e2Var = this.h.v;
-        hg.c2 c2Var = e2Var.S;
-        int i10 = e2Var.c;
-        if (e2Var.N != 0) {
-            ConnectionsManager.getInstance(i10).cancelRequest(e2Var.N, true);
-            e2Var.N = 0;
+    @Override // org.telegram.ui.Components.nw0
+    public final void G(int i10, boolean z10) {
+        if (this.a == i10 && this.b == z10) {
+            return;
         }
-        if (e2Var.O != 0) {
-            ConnectionsManager.getInstance(i10).cancelRequest(e2Var.O, true);
-            e2Var.O = 0;
+        this.a = i10;
+        this.b = z10;
+        if (i10 > AndroidUtilities.dp(20.0f)) {
+            t51 t51Var = this.c;
+            if (t51Var.x0) {
+                return;
+            }
+            t51Var.E0.setAllowNestedScroll(false);
+            t51Var.x0 = true;
         }
-        if (TextUtils.isEmpty(str)) {
-            e2Var.R = null;
-            e2Var.F.clear();
-            e2Var.I.clear();
-            e2Var.E.clear();
-            e2Var.e.b(false);
-            e2Var.l();
-        } else {
-            e2Var.R = str.toLowerCase();
-        }
-        AndroidUtilities.cancelRunOnUIThread(c2Var);
-        AndroidUtilities.runOnUIThread(c2Var, 300L);
     }
 }

@@ -14,16 +14,16 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class qj extends s4.t {
     public boolean S;
-    public final /* synthetic */ qn T;
+    public final /* synthetic */ sn T;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qj(qn qnVar, boolean z10) {
+    public qj(sn snVar, boolean z10) {
         super(z10);
-        this.T = qnVar;
+        this.T = snVar;
     }
 
     @Override // s4.t
@@ -32,10 +32,10 @@ public final class qj extends s4.t {
         MessageObject messageObject;
         MessageObject.GroupedMessages c92;
         byte b10;
-        qn qnVar = this.T;
-        dm dmVar = qnVar.A0;
-        int i12 = dmVar.J;
-        if (i10 >= i12 && i10 < dmVar.K && (i11 = i10 - i12) >= 0 && i11 < dmVar.L().size() && (c92 = qnVar.c9((messageObject = (MessageObject) qnVar.A0.L().get(i11)))) != null) {
+        sn snVar = this.T;
+        em emVar = snVar.A0;
+        int i12 = emVar.J;
+        if (i10 >= i12 && i10 < emVar.K && (i11 = i10 - i12) >= 0 && i11 < emVar.L().size() && (c92 = snVar.c9((messageObject = (MessageObject) snVar.A0.L().get(i11)))) != null) {
             MessageObject.GroupedMessagePosition position = c92.getPosition(messageObject);
             if (position.minX != position.maxX && (b10 = position.minY) == position.maxY && b10 != 0) {
                 int size = c92.posArray.size();
@@ -56,8 +56,8 @@ public final class qj extends s4.t {
 
     @Override // s4.t
     public final boolean C1(View view) {
-        if (view instanceof org.telegram.ui.Cells.u1) {
-            return !((org.telegram.ui.Cells.u1) view).getMessageObject().isOutOwner();
+        if (view instanceof org.telegram.ui.Cells.t1) {
+            return !((org.telegram.ui.Cells.t1) view).getMessageObject().isOutOwner();
         }
         return false;
     }
@@ -65,24 +65,24 @@ public final class qj extends s4.t {
     @Override // s4.n0
     public final int G() {
         if (this.S) {
-            return (int) this.T.s9;
+            return (int) this.T.E9;
         }
         return 0;
     }
 
     @Override // s4.n0
     public final int J() {
-        return this.S ? (int) this.T.s9 : F();
+        return this.S ? (int) this.T.E9 : F();
     }
 
     @Override // s4.n0
     public final int K() {
-        return this.S ? (int) ((this.n - this.T.s9) - C()) : super.K();
+        return this.S ? (int) ((this.n - this.T.E9) - C()) : super.K();
     }
 
     @Override // s4.b0
     public final int X0() {
-        return (int) this.T.s9;
+        return (int) this.T.E9;
     }
 
     @Override // s4.s, s4.b0, s4.n0
@@ -102,7 +102,7 @@ public final class qj extends s4.t {
     @Override // s4.b0
     public final void i1(int i10, int i11, boolean z10) {
         if (!z10) {
-            i11 = (int) ((i11 - F()) + this.T.s9);
+            i11 = (int) ((i11 - F()) + this.T.E9);
         }
         super.i1(i10, i11, z10);
     }
@@ -147,22 +147,22 @@ public final class qj extends s4.t {
         ah.d1 d1Var;
         bh.f fVar;
         boolean z11 = false;
-        qn qnVar = this.T;
+        sn snVar = this.T;
         if (i10 < 0) {
-            float f13 = qnVar.N9;
+            float f13 = snVar.Z9;
             if (f13 != 0.0f) {
                 float f14 = f13 + i10;
-                qnVar.N9 = f14;
+                snVar.Z9 = f14;
                 if (f14 < 0.0f) {
                     i10 = (int) f14;
-                    qnVar.N9 = 0.0f;
-                    qnVar.x0.invalidate();
+                    snVar.Z9 = 0.0f;
+                    snVar.x0.invalidate();
                 } else {
                     i10 = 0;
                 }
             }
         }
-        int childCount = qnVar.x0.getChildCount();
+        int childCount = snVar.x0.getChildCount();
         int i13 = 0;
         while (true) {
             if (i13 >= childCount) {
@@ -170,10 +170,10 @@ public final class qj extends s4.t {
                 z10 = false;
                 break;
             }
-            View childAt = qnVar.x0.getChildAt(i13);
-            float f15 = qnVar.s9;
-            qnVar.x0.getClass();
-            if (RecyclerView.R(childAt) == (qnVar.Qa ? 0 : qnVar.A0.h() - 1)) {
+            View childAt = snVar.x0.getChildAt(i13);
+            float f15 = snVar.E9;
+            snVar.x0.getClass();
+            if (RecyclerView.R(childAt) == (snVar.cb ? 0 : snVar.A0.h() - 1)) {
                 i11 = super.o0(((float) (childAt.getTop() - i10)) > f15 ? (int) (childAt.getTop() - f15) : i10, eVar, y0Var);
                 z10 = true;
             } else {
@@ -183,38 +183,38 @@ public final class qj extends s4.t {
         if (!z10) {
             i11 = super.o0(i10, eVar, y0Var);
         }
-        if (!qnVar.xc.f) {
-            SparseArray[] sparseArrayArr = qnVar.W5;
-            if (sparseArrayArr[0].size() <= 0 && sparseArrayArr[1].size() <= 0 && i10 > 0 && i11 == 0 && (((ChatObject.isChannel(qnVar.e) && !qnVar.e.megagroup) || (qnVar.h4 && !UserObject.isBotForum(qnVar.f))) && (i12 = qnVar.R3) != 3 && i12 != 9 && i12 != 1 && qnVar.x0.getScrollState() == 1)) {
-                nj njVar = qnVar.x0;
-                if (!njVar.V1 && !njVar.b2 && !qnVar.F9()) {
-                    if (qnVar.N9 == 0.0f && qnVar.P9 != null) {
-                        ArrayList arrayList = qnVar.fb;
+        if (!snVar.Kc.f) {
+            SparseArray[] sparseArrayArr = snVar.i6;
+            if (sparseArrayArr[0].size() <= 0 && sparseArrayArr[1].size() <= 0 && i10 > 0 && i11 == 0 && (((ChatObject.isChannel(snVar.e) && !snVar.e.megagroup) || (snVar.t4 && !UserObject.isBotForum(snVar.f))) && (i12 = snVar.d4) != 3 && i12 != 9 && i12 != 1 && snVar.x0.getScrollState() == 1)) {
+                nj njVar = snVar.x0;
+                if (!njVar.V1 && !njVar.b2 && !snVar.F9()) {
+                    if (snVar.Z9 == 0.0f && snVar.ba != null) {
+                        ArrayList arrayList = snVar.sb;
                         if (arrayList != null && !arrayList.isEmpty()) {
-                            qnVar.P9.i((TLRPC.Chat) qnVar.fb.get(0));
-                        } else if (qnVar.h4) {
-                            qnVar.P9.j();
+                            snVar.ba.i((TLRPC.Chat) snVar.sb.get(0));
+                        } else if (snVar.t4) {
+                            snVar.ba.j();
                         } else {
-                            qnVar.P9.h();
+                            snVar.ba.h();
                         }
                     }
-                    Animator animator = qnVar.Q9;
+                    Animator animator = snVar.ca;
                     if (animator != null) {
                         animator.removeAllListeners();
-                        qnVar.Q9.cancel();
+                        snVar.ca.cancel();
                     }
-                    if (qnVar.N9 < AndroidUtilities.dp(110.0f)) {
-                        float dp = qnVar.N9 / AndroidUtilities.dp(110.0f);
+                    if (snVar.Z9 < AndroidUtilities.dp(110.0f)) {
+                        float dp = snVar.Z9 / AndroidUtilities.dp(110.0f);
                         f10 = (1.0f - dp) * 0.65f;
                         f11 = dp * 0.45f;
-                    } else if (qnVar.N9 < AndroidUtilities.dp(160.0f)) {
-                        float dp2 = (qnVar.N9 - AndroidUtilities.dp(110.0f)) / AndroidUtilities.dp(50.0f);
+                    } else if (snVar.Z9 < AndroidUtilities.dp(160.0f)) {
+                        float dp2 = (snVar.Z9 - AndroidUtilities.dp(110.0f)) / AndroidUtilities.dp(50.0f);
                         f10 = (1.0f - dp2) * 0.45f;
                         f11 = dp2 * 0.05f;
                     } else {
                         f7 = 0.05f;
                         f12 = i10 * f7;
-                        qnVar.N9 += f12;
+                        snVar.Z9 += f12;
                         int i14 = (int) f12;
                         d1Var = ah.d1.B;
                         if (d1Var != null) {
@@ -223,14 +223,14 @@ public final class qj extends s4.t {
                                 d1Var.u = true;
                             }
                         }
-                        if (Build.VERSION.SDK_INT >= 31 && (fVar = qnVar.F) != null) {
+                        if (Build.VERSION.SDK_INT >= 31 && (fVar = snVar.F) != null) {
                             fVar.f(0.0f, f12);
                         }
-                        qnVar.x0.invalidate();
+                        snVar.x0.invalidate();
                     }
                     f7 = f11 + f10;
                     f12 = i10 * f7;
-                    qnVar.N9 += f12;
+                    snVar.Z9 += f12;
                     int i142 = (int) f12;
                     d1Var = ah.d1.B;
                     if (d1Var != null) {
@@ -238,18 +238,18 @@ public final class qj extends s4.t {
                     if (Build.VERSION.SDK_INT >= 31) {
                         fVar.f(0.0f, f12);
                     }
-                    qnVar.x0.invalidate();
+                    snVar.x0.invalidate();
                 }
             }
         }
-        if (qnVar.N9 == 0.0f) {
-            qnVar.x0.setOverScrollMode(0);
+        if (snVar.Z9 == 0.0f) {
+            snVar.x0.setOverScrollMode(0);
         } else {
-            qnVar.x0.setOverScrollMode(2);
+            snVar.x0.setOverScrollMode(2);
         }
-        if (qnVar.P9 != null) {
-            ne.b bVar = qnVar.vc;
-            if (qnVar.N9 > 0.0f && qnVar.x0.getScrollState() == 1) {
+        if (snVar.ba != null) {
+            ne.b bVar = snVar.Ic;
+            if (snVar.Z9 > 0.0f && snVar.x0.getScrollState() == 1) {
                 z11 = true;
             }
             bVar.a(z11, true);
@@ -259,7 +259,7 @@ public final class qj extends s4.t {
 
     @Override // s4.b0, s4.n0
     public final void v0(RecyclerView recyclerView, s4.y0 y0Var, int i10) {
-        this.T.sa = false;
+        this.T.Ea = false;
         li.n nVar = new li.n(recyclerView.getContext(), 0);
         nVar.a = i10;
         w0(nVar);

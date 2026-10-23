@@ -6,7 +6,7 @@ import df.s;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class j extends h {
     public static final Pattern e = Pattern.compile(" *$");
@@ -22,7 +22,7 @@ public final class j extends h {
                 Matcher matcher = e.matcher(str);
                 int end = matcher.find() ? matcher.end() - matcher.start() : 0;
                 if (end > 0) {
-                    sVar.g = k3.j(end, 0, str);
+                    sVar.g = k3.i(end, 0, str);
                 }
                 return end >= 2 ? new df.g(1) : new df.g(2);
             }

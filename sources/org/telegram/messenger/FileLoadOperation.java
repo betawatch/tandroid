@@ -24,7 +24,7 @@ import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public class FileLoadOperation {
     private static final int FINISH_CODE_DEFAULT = 0;
@@ -160,7 +160,7 @@ public class FileLoadOperation {
     public static volatile DispatchQueue filesQueue = new DispatchQueue("writeFileQueue");
     private static final Object lockObject = new Object();
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public interface FileLoadOperationDelegate {
         void didChangedLoadProgress(FileLoadOperation fileLoadOperation, long j10, long j11);
 
@@ -177,7 +177,7 @@ public class FileLoadOperation {
         void saveFilePath(FilePathDatabase.PathData pathData, File file);
     }
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public static class PreloadRange {
         private long fileOffset;
         private long length;
@@ -188,7 +188,7 @@ public class FileLoadOperation {
         }
     }
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public static class Range {
         private long end;
         private long start;
@@ -203,7 +203,7 @@ public class FileLoadOperation {
         }
     }
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public static class RequestInfo {
         public boolean cancelled;
         public boolean cancelling;
@@ -467,10 +467,10 @@ public class FileLoadOperation {
                     requestInfo.cancelling = true;
                     if (runnable == null) {
                         requestInfo.cancelled = true;
-                        g0.o(requestInfo.requestToken, new StringBuilder("cancelRequests cancel "));
+                        v0.n(requestInfo.requestToken, new StringBuilder("cancelRequests cancel "));
                         ConnectionsManager.getInstance(this.currentAccount).cancelRequest(requestInfo.requestToken, true);
                     } else {
-                        requestInfo.whenCancelled = new h0(requestInfo, iArr, runnable, 21);
+                        requestInfo.whenCancelled = new g0(requestInfo, iArr, runnable, 21);
                         iArr[0] = iArr[0] + 1;
                         FileLog.d("cancelRequests cancel " + requestInfo.requestToken + " with callback");
                         ConnectionsManager.getInstance(this.currentAccount).cancelRequest(requestInfo.requestToken, true, new r2(requestInfo, 1));
@@ -1370,7 +1370,7 @@ public class FileLoadOperation {
             sb2.append(" conType=");
             sb2.append(i11);
             sb2.append(" reqId");
-            g0.o(requestInfo.requestToken, sb2);
+            v0.n(requestInfo.requestToken, sb2);
         }
         if (requestInfo == this.priorityRequestInfo) {
             if (BuildVars.DEBUG_VERSION) {
@@ -1521,7 +1521,7 @@ public class FileLoadOperation {
                     sb2.append(" of ");
                     sb2.append(this.totalBytesCount);
                     sb2.append(" prefSize=");
-                    g0.o(this.preloadPrefixSize, sb2);
+                    v0.n(this.preloadPrefixSize, sb2);
                 }
             }
             if (this.fileMetadata != null) {
@@ -1580,7 +1580,7 @@ public class FileLoadOperation {
         TLRPC.TL_upload_getCdnFileHashes tL_upload_getCdnFileHashes = new TLRPC.TL_upload_getCdnFileHashes();
         tL_upload_getCdnFileHashes.file_token = this.cdnToken;
         tL_upload_getCdnFileHashes.offset = j10;
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_upload_getCdnFileHashes, new i0(this, 2), null, null, 0, this.datacenterId, 1, true);
+        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_upload_getCdnFileHashes, new h0(this, 2), null, null, 0, this.datacenterId, 1, true);
     }
 
     private void requestReference(RequestInfo requestInfo) {
@@ -1664,7 +1664,7 @@ public class FileLoadOperation {
     public File getCurrentFile() {
         CountDownLatch countDownLatch = new CountDownLatch(1);
         File[] fileArr = new File[1];
-        Utilities.stageQueue.postRunnable(new h0(this, fileArr, countDownLatch, 20));
+        Utilities.stageQueue.postRunnable(new g0(this, fileArr, countDownLatch, 20));
         try {
             countDownLatch.await();
         } catch (Exception e) {
@@ -2533,7 +2533,7 @@ public class FileLoadOperation {
                 }
                 if (fileLoadOperation.streamPriorityStartOffset != j10) {
                     if (BuildVars.DEBUG_VERSION) {
-                        i2.e.x(new StringBuilder("frame get offset = "), fileLoadOperation.streamPriorityStartOffset);
+                        i2.o1.x(new StringBuilder("frame get offset = "), fileLoadOperation.streamPriorityStartOffset);
                     }
                     j12 = j10;
                     fileLoadOperation.streamPriorityStartOffset = j12;
@@ -2568,7 +2568,7 @@ public class FileLoadOperation {
                         sb2.append(" conType=");
                         sb2.append(i22);
                         sb2.append(" priority=");
-                        g0.o(fileLoadOperation.priority, sb2);
+                        v0.n(fileLoadOperation.priority, sb2);
                     }
                     AndroidUtilities.runOnUIThread(new q2(fileLoadOperation, sendRequestSync, 3));
                     fileLoadOperation.requestsCount++;
@@ -2720,10 +2720,10 @@ public class FileLoadOperation {
         if (this.webLocation != null) {
             String MD5 = Utilities.MD5(this.webFile.url);
             if (this.encryptFile) {
-                str4 = r4.c.u(MD5, ".temp.enc");
-                str = a1.g.s(r4.c.i(MD5, "."), this.ext, ".enc");
+                str4 = si.o0.u(MD5, ".temp.enc");
+                str = a1.g.s(si.o0.i(MD5, "."), this.ext, ".enc");
                 if (this.key != null) {
-                    u10 = r4.c.u(MD5, "_64.iv.enc");
+                    u10 = si.o0.u(MD5, "_64.iv.enc");
                     String str5 = str4;
                     str2 = u10;
                     r10 = str5;
@@ -2735,12 +2735,12 @@ public class FileLoadOperation {
                 r10 = str52;
                 j11 = 0;
             } else {
-                String u11 = r4.c.u(MD5, ".temp");
-                StringBuilder i13 = r4.c.i(MD5, ".");
+                String u11 = si.o0.u(MD5, ".temp");
+                StringBuilder i13 = si.o0.i(MD5, ".");
                 i13.append(this.ext);
                 String sb2 = i13.toString();
                 if (this.key != null) {
-                    u10 = r4.c.u(MD5, "_64.iv");
+                    u10 = si.o0.u(MD5, "_64.iv");
                     str4 = u11;
                     str = sb2;
                     String str522 = str4;
@@ -2792,10 +2792,10 @@ public class FileLoadOperation {
             if (exists) {
                 this.cacheFileTemp = new File(this.tempPath, r10);
                 if (this.ungzip) {
-                    this.cacheFileGzipTemp = new File(this.tempPath, r4.c.u(r10, ".gz"));
+                    this.cacheFileGzipTemp = new File(this.tempPath, si.o0.u(r10, ".gz"));
                 }
                 if (this.encryptFile) {
-                    File file = new File(FileLoader.getInternalCacheDir(), r4.c.u(str, ".key"));
+                    File file = new File(FileLoader.getInternalCacheDir(), si.o0.u(str, ".key"));
                     try {
                         RandomAccessFile randomAccessFile = new RandomAccessFile(file, "rws");
                         long length = file.length();
@@ -3142,7 +3142,7 @@ public class FileLoadOperation {
                         sb3.append(" final = ");
                         sb3.append(this.cacheFileFinal);
                         sb3.append(" priority");
-                        g0.o(this.priority, sb3);
+                        v0.n(this.priority, sb3);
                     }
                 }
                 if (str2 != null) {

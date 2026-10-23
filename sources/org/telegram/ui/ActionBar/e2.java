@@ -1,12 +1,55 @@
 package org.telegram.ui.ActionBar;
 
-import android.content.Context;
+import android.view.animation.Animation;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class e2 extends AlertDialog$Builder {
-    @Override // org.telegram.ui.ActionBar.AlertDialog$Builder
-    public final b2 b(Context context, int i10, d6 d6Var) {
-        return new f2(context, i10, d6Var);
+public final class e2 implements Animation.AnimationListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+
+    public /* synthetic */ e2(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
+    }
+
+    @Override // android.view.animation.Animation.AnimationListener
+    public final void onAnimationEnd(Animation animation) {
+        switch (this.a) {
+            case 0:
+                ((g2) this.b).p1.setAlpha(0.0f);
+                break;
+            default:
+                ((y4) this.b).f.post(new p(this, 12));
+                break;
+        }
+    }
+
+    @Override // android.view.animation.Animation.AnimationListener
+    public final void onAnimationRepeat(Animation animation) {
+        int i10 = this.a;
+    }
+
+    @Override // android.view.animation.Animation.AnimationListener
+    public final void onAnimationStart(Animation animation) {
+        switch (this.a) {
+            case 0:
+                break;
+            default:
+                y4 y4Var = (y4) this.b;
+                y4Var.i.setEnabled(false);
+                y4Var.g.setVisibility(0);
+                y4Var.h.setVisibility(0);
+                break;
+        }
+    }
+
+    private final void a(Animation animation) {
+    }
+
+    private final void b(Animation animation) {
+    }
+
+    private final void c(Animation animation) {
     }
 }

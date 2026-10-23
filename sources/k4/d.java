@@ -1,10 +1,10 @@
 package k4;
 
-import c3.p;
+import c3.r;
 import e2.x;
 import v7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class d {
     public final int a;
@@ -15,8 +15,8 @@ public final class d {
         this.b = j10;
     }
 
-    public static d b(p pVar, x xVar) {
-        pVar.b(0, 8, xVar.a);
+    public static d b(r rVar, x xVar) {
+        rVar.a(0, 8, xVar.a);
         xVar.N(0);
         return new d(xVar.m(), xVar.r(), false);
     }

@@ -10,7 +10,7 @@ import com.google.android.gms.common.api.l;
 import m.s3;
 import mi.q;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class g extends n6.g {
     public final w5.b U;
@@ -18,7 +18,7 @@ public final class g extends n6.g {
     public g(Context context, Looper looper, s3 s3Var, w5.b bVar, k kVar, l lVar) {
         super(context, looper, 68, s3Var, kVar, lVar, 0);
         bVar = bVar == null ? w5.b.c : bVar;
-        q qVar = new q(25, (byte) 0);
+        q qVar = new q(24, (byte) 0);
         qVar.b = Boolean.FALSE;
         w5.b bVar2 = w5.b.c;
         bVar.getClass();

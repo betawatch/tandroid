@@ -4,10 +4,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public interface r {
     boolean B0(String str, byte[] bArr);
+
+    h2.b C(byte[] bArr);
 
     byte[] H();
 
@@ -19,7 +21,7 @@ public interface r {
 
     byte[] g0(byte[] bArr, byte[] bArr2);
 
-    void h(byte[] bArr, j2.k kVar);
+    void h(byte[] bArr, j2.j jVar);
 
     void j0(byte[] bArr);
 
@@ -28,8 +30,6 @@ public interface r {
     int m0();
 
     q o();
-
-    h2.b r(byte[] bArr);
 
     void release();
 

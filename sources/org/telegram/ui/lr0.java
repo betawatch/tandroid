@@ -1,52 +1,38 @@
 package org.telegram.ui;
 
-import android.animation.AnimatorSet;
 import android.graphics.drawable.Drawable;
-import android.view.View;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class lr0 implements Runnable {
-    public final /* synthetic */ PhotoViewer a;
-    public final /* synthetic */ View b;
-    public final /* synthetic */ ns0 c;
-    public final /* synthetic */ float d;
-    public final /* synthetic */ float e;
-    public final /* synthetic */ AnimatorSet f;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ PhotoViewer b;
 
-    public /* synthetic */ lr0(PhotoViewer photoViewer, View view, ns0 ns0Var, float f7, float f10, AnimatorSet animatorSet) {
-        this.a = photoViewer;
-        this.b = view;
-        this.c = ns0Var;
-        this.d = f7;
-        this.e = f10;
-        this.f = animatorSet;
+    public /* synthetic */ lr0(PhotoViewer photoViewer, int i10) {
+        this.a = i10;
+        this.b = photoViewer;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        Drawable[] drawableArr = PhotoViewer.U8;
-        View view = this.b;
-        ns0 ns0Var = this.c;
-        view.setOutlineProvider(ns0Var);
-        view.setClipToOutline(true);
-        PhotoViewer photoViewer = this.a;
-        photoViewer.x3.setOutlineProvider(ns0Var);
-        photoViewer.x3.setClipToOutline(true);
-        au0 au0Var = photoViewer.E2;
-        if (au0Var != null) {
-            au0Var.setOutlineProvider(ns0Var);
-            photoViewer.E2.setClipToOutline(true);
+        int i10 = this.a;
+        PhotoViewer photoViewer = this.b;
+        switch (i10) {
+            case 0:
+                Drawable[] drawableArr = PhotoViewer.U8;
+                photoViewer.H0(true, false);
+                break;
+            case 1:
+                Drawable[] drawableArr2 = PhotoViewer.U8;
+                photoViewer.h3(1, false);
+                break;
+            case 2:
+                Drawable[] drawableArr3 = PhotoViewer.U8;
+                photoViewer.h3(-1, false);
+                break;
+            default:
+                PhotoViewer.T(photoViewer);
+                break;
         }
-        photoViewer.x3.setTranslationY(this.d);
-        float f7 = this.e;
-        view.setTranslationY(f7);
-        au0 au0Var2 = photoViewer.E2;
-        if (au0Var2 != null) {
-            au0Var2.setTranslationY(f7);
-        }
-        photoViewer.Y5 = 0.0f;
-        photoViewer.e0.invalidate();
-        this.f.start();
     }
 }

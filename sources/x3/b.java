@@ -1,13 +1,13 @@
 package x3;
 
-import c3.c0;
-import c3.p;
+import c3.e0;
+import c3.r;
 import e2.m0;
 import java.io.EOFException;
 import java.io.IOException;
 import v7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class b implements g {
     public final f a;
@@ -53,7 +53,7 @@ public final class b implements g {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final long k(p pVar) {
+    public final long k(r rVar) {
         long j10;
         long j11;
         long j12;
@@ -62,7 +62,7 @@ public final class b implements g {
         f fVar = this.a;
         if (i10 == 0) {
             j10 = 0;
-            long position = pVar.getPosition();
+            long position = rVar.getPosition();
             this.h = position;
             this.e = 1;
             long j14 = j13 - 65307;
@@ -74,10 +74,10 @@ public final class b implements g {
                 if (this.r == this.s) {
                     j12 = -1;
                 } else {
-                    long position2 = pVar.getPosition();
-                    if (fVar.b(pVar, this.s)) {
-                        fVar.a(pVar, false);
-                        pVar.q();
+                    long position2 = rVar.getPosition();
+                    if (fVar.b(rVar, this.s)) {
+                        fVar.a(rVar, false);
+                        rVar.q();
                         long j15 = this.n;
                         long j16 = fVar.b;
                         long j17 = j15 - j16;
@@ -88,7 +88,7 @@ public final class b implements g {
                                 this.s = position2;
                                 this.w = j16;
                             } else {
-                                this.r = pVar.getPosition() + i11;
+                                this.r = rVar.getPosition() + i11;
                                 this.v = fVar.b;
                             }
                             long j18 = this.s;
@@ -97,7 +97,7 @@ public final class b implements g {
                                 this.s = j19;
                                 j12 = j19;
                             } else {
-                                long position3 = pVar.getPosition() - (i11 * (j17 <= 0 ? 2L : 1L));
+                                long position3 = rVar.getPosition() - (i11 * (j17 <= 0 ? 2L : 1L));
                                 long j20 = this.s;
                                 long j21 = this.r;
                                 j12 = m0.j((((j20 - j21) * j17) / (this.w - this.v)) + position3, j21, j20 - 1);
@@ -129,15 +129,15 @@ public final class b implements g {
                 j11 = 2;
             }
             while (true) {
-                fVar.b(pVar, -1L);
-                fVar.a(pVar, false);
+                fVar.b(rVar, -1L);
+                fVar.a(rVar, false);
                 if (fVar.b > this.n) {
-                    pVar.q();
+                    rVar.q();
                     this.e = 4;
                     return -(this.v + j11);
                 }
-                pVar.r(fVar.d + fVar.e);
-                this.r = pVar.getPosition();
+                rVar.r(fVar.d + fVar.e);
+                this.r = rVar.getPosition();
                 this.v = fVar.b;
             }
         } else {
@@ -148,15 +148,15 @@ public final class b implements g {
         fVar.c = 0;
         fVar.d = 0;
         fVar.e = 0;
-        if (!fVar.b(pVar, -1L)) {
+        if (!fVar.b(rVar, -1L)) {
             throw new EOFException();
         }
-        fVar.a(pVar, false);
-        pVar.r(fVar.d + fVar.e);
+        fVar.a(rVar, false);
+        rVar.r(fVar.d + fVar.e);
         long j22 = fVar.b;
-        while ((fVar.a & 4) != 4 && fVar.b(pVar, -1L) && pVar.getPosition() < j13 && fVar.a(pVar, true)) {
+        while ((fVar.a & 4) != 4 && fVar.b(rVar, -1L) && rVar.getPosition() < j13 && fVar.a(rVar, true)) {
             try {
-                pVar.r(fVar.d + fVar.e);
+                rVar.r(fVar.d + fVar.e);
                 j22 = fVar.b;
             } catch (EOFException unused) {
             }
@@ -167,7 +167,7 @@ public final class b implements g {
     }
 
     @Override // x3.g
-    public final c0 x() {
+    public final e0 x() {
         if (this.f != 0) {
             return new a(this);
         }

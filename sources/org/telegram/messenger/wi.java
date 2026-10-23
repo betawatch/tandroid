@@ -6,7 +6,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class wi implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -64,10 +64,10 @@ public final /* synthetic */ class wi implements Runnable {
                         alertDialog$Builder.a.R = LocaleController.getString(R.string.UsernameActivateErrorTitle);
                         alertDialog$Builder.a.T = LocaleController.getString(R.string.UsernameActivateErrorMessage);
                         alertDialog$Builder.k(LocaleController.getString(R.string.OK), new ai.e4(haVar, tL_username2, z12, 4));
-                        alertDialog$Builder.o();
+                        alertDialog$Builder.p();
                     }
                 }
-                i10 = ((org.telegram.ui.ActionBar.n2) saVar).currentAccount;
+                i10 = ((org.telegram.ui.ActionBar.o2) saVar).currentAccount;
                 TLRPC.User user = MessagesController.getInstance(i10).getUser(Long.valueOf(saVar.g0()));
                 saVar.getMessagesController().updateUsernameActiveness(user, tL_username2.username, tL_username2.active);
                 if (saVar.x != 0 && arrayList2 != null) {

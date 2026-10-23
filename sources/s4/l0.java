@@ -7,9 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 import ki.t1;
 import m.g3;
-import org.telegram.ui.Components.hl0;
+import org.telegram.ui.Components.kl0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public abstract class l0 {
     public k2.w0 a;
@@ -67,8 +67,8 @@ public abstract class l0 {
             int indexOfChild = ((RecyclerView) t1Var.b).indexOfChild(view);
             if (indexOfChild == -1) {
                 g3Var.X(view);
-            } else if (dVar.D(indexOfChild)) {
-                dVar.F(indexOfChild);
+            } else if (dVar.E(indexOfChild)) {
+                dVar.G(indexOfChild);
                 g3Var.X(view);
                 t1Var.Y(indexOfChild);
             } else {
@@ -91,8 +91,8 @@ public abstract class l0 {
         ArrayList arrayList = this.b;
         int size = arrayList.size();
         for (int i10 = 0; i10 < size; i10++) {
-            hl0 hl0Var = (hl0) arrayList.get(i10);
-            hl0Var.a.c(hl0Var.b, hl0Var.c, hl0Var.d, false);
+            kl0 kl0Var = (kl0) arrayList.get(i10);
+            kl0Var.a.c(kl0Var.b, kl0Var.c, kl0Var.d, false);
         }
         arrayList.clear();
     }

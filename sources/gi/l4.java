@@ -1,13 +1,13 @@
 package gi;
 
-import ai.cb;
+import ai.db;
 import android.content.Context;
 import android.content.DialogInterface;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l4 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a = 1;
@@ -18,9 +18,9 @@ public final /* synthetic */ class l4 implements DialogInterface.OnDismissListen
     public final /* synthetic */ Object f;
     public final /* synthetic */ Object h;
 
-    public /* synthetic */ l4(boolean[] zArr, cb cbVar, boolean[] zArr2, Utilities.Callback callback, int[] iArr, int i10) {
+    public /* synthetic */ l4(boolean[] zArr, db dbVar, boolean[] zArr2, Utilities.Callback callback, int[] iArr, int i10) {
         this.b = zArr;
-        this.e = cbVar;
+        this.e = dbVar;
         this.c = zArr2;
         this.f = callback;
         this.h = iArr;
@@ -45,11 +45,11 @@ public final /* synthetic */ class l4 implements DialogInterface.OnDismissListen
                 }
                 break;
             default:
-                cb cbVar = (cb) this.e;
+                db dbVar = (db) this.e;
                 Utilities.Callback callback = (Utilities.Callback) this.f;
                 int[] iArr = (int[]) this.h;
                 this.b[0] = true;
-                cbVar.run();
+                dbVar.run();
                 boolean[] zArr2 = this.c;
                 if (!zArr2[0]) {
                     zArr2[0] = true;

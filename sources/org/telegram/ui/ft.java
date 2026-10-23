@@ -1,32 +1,96 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ft implements NotificationCenter.NotificationCenterDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ View b;
+public interface ft {
+    MessageObject A();
 
-    public /* synthetic */ ft(int i10, View view) {
-        this.a = i10;
-        this.b = view;
-    }
+    boolean B();
 
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object[] objArr) {
-        switch (this.a) {
-            case 0:
-                org.telegram.ui.Cells.ba baVar = (org.telegram.ui.Cells.ba) this.b;
-                if (i10 == NotificationCenter.emojiLoaded) {
-                    baVar.getTextView().invalidate();
-                    break;
-                }
-                break;
-            default:
-                ((jj0) this.b).invalidate();
-                break;
-        }
-    }
+    void C(TLRPC.Document document);
+
+    boolean D();
+
+    boolean E(TLRPC.Document document);
+
+    void F(TLRPC.Document document);
+
+    String G(boolean z10);
+
+    void H(TLRPC.Document document);
+
+    boolean I();
+
+    boolean J();
+
+    void K();
+
+    void L();
+
+    void M(TLRPC.InputStickerSet inputStickerSet, boolean z10);
+
+    boolean N(TLRPC.Document document);
+
+    void O(String str);
+
+    Boolean P(TLRPC.Document document);
+
+    boolean Q();
+
+    long a();
+
+    boolean b();
+
+    boolean c();
+
+    TLRPC.TL_messageMediaPoll d();
+
+    boolean e(TLRPC.Document document);
+
+    boolean f();
+
+    TLRPC.PollAnswer g();
+
+    boolean h();
+
+    void i(SendMessagesHelper.ImportingSticker importingSticker);
+
+    boolean j();
+
+    boolean k(int i10);
+
+    void l(TLRPC.Document document, String str, Object obj, boolean z10, int i10, int i11);
+
+    void m(String str);
+
+    void n(TLRPC.Document document);
+
+    boolean o();
+
+    void p(TLRPC.Document document);
+
+    void q();
+
+    void r(int i10, int i11, Object obj, TLObject tLObject, boolean z10);
+
+    void s();
+
+    void t(CharSequence charSequence, String str, org.telegram.ui.Components.qy qyVar);
+
+    org.telegram.ui.Components.j80 u(ah.v vVar);
+
+    void v(TLRPC.Document document);
+
+    void w(TLRPC.StickerSet stickerSet, String str);
+
+    void x(TLObject tLObject, Object obj);
+
+    boolean y();
+
+    void z(String str);
 }

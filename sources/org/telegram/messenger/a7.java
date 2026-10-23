@@ -6,7 +6,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a7 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -38,7 +38,7 @@ public final /* synthetic */ class a7 implements Runnable {
                 ((MediaDataController) this.d).lambda$fillWithAnimatedEmoji$226((Integer) this.e, (ArrayList) this.f, this.b, this.c, (ArrayList[]) this.h, (Runnable) this.n);
                 break;
             default:
-                ((MessagesController) this.d).lambda$addUserToChat$301((MessagesController.ErrorDelegate) this.e, (TLRPC.TL_error) this.f, (org.telegram.ui.ActionBar.n2) this.h, (TLObject) this.n, this.b, this.c);
+                ((MessagesController) this.d).lambda$addUserToChat$301((MessagesController.ErrorDelegate) this.e, (TLRPC.TL_error) this.f, (org.telegram.ui.ActionBar.o2) this.h, (TLObject) this.n, this.b, this.c);
                 break;
         }
     }
@@ -53,11 +53,11 @@ public final /* synthetic */ class a7 implements Runnable {
         this.n = runnable;
     }
 
-    public /* synthetic */ a7(MessagesController messagesController, MessagesController.ErrorDelegate errorDelegate, TLRPC.TL_error tL_error, org.telegram.ui.ActionBar.n2 n2Var, TLObject tLObject, boolean z10, boolean z11) {
+    public /* synthetic */ a7(MessagesController messagesController, MessagesController.ErrorDelegate errorDelegate, TLRPC.TL_error tL_error, org.telegram.ui.ActionBar.o2 o2Var, TLObject tLObject, boolean z10, boolean z11) {
         this.d = messagesController;
         this.e = errorDelegate;
         this.f = tL_error;
-        this.h = n2Var;
+        this.h = o2Var;
         this.n = tLObject;
         this.b = z10;
         this.c = z11;

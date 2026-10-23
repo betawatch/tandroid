@@ -1,7 +1,6 @@
 package xh;
 
 import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -9,23 +8,23 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import ci.v;
-import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.o2;
+import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.Cells.y;
 import org.telegram.ui.Components.j9;
 import org.telegram.ui.pe;
 import w7.z5;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class d {
-    public final n2 a;
+    public final o2 a;
     public final TLRPC.Chat b;
     public final int c;
     public FrameLayout d;
@@ -39,10 +38,10 @@ public final class d {
     public int l = -1;
     public c m;
 
-    public d(TLRPC.Chat chat, n2 n2Var) {
-        this.a = n2Var;
+    public d(TLRPC.Chat chat, o2 o2Var) {
+        this.a = o2Var;
         this.b = chat;
-        this.c = n2Var.getCurrentAccount();
+        this.c = o2Var.getCurrentAccount();
     }
 
     public final void a(boolean z10, boolean z11) {
@@ -51,10 +50,10 @@ public final class d {
         }
         if (z10) {
             int i10 = this.l;
-            n2 n2Var = this.a;
+            o2 o2Var = this.a;
             TLRPC.Chat chat = this.b;
             if (i10 == -1 && chat != null) {
-                this.l = n2Var.getMessagesController().getChatPendingRequestsOnClosed(chat.id);
+                this.l = o2Var.getMessagesController().getChatPendingRequestsOnClosed(chat.id);
             }
             int i11 = this.k;
             int i12 = this.l;
@@ -62,7 +61,7 @@ public final class d {
                 return;
             }
             if (i12 != 0 && chat != null) {
-                n2Var.getMessagesController().setChatPendingRequestsOnClose(chat.id, 0);
+                o2Var.getMessagesController().setChatPendingRequestsOnClose(chat.id, 0);
             }
         }
         c cVar = this.m;
@@ -71,17 +70,12 @@ public final class d {
         }
     }
 
-    public final void b(ArrayList arrayList) {
-        arrayList.add(new j6(this.g, 4, null, null, null, null, h6.fe));
-        arrayList.add(new j6(this.h, 8, null, null, null, null, h6.de));
-    }
-
-    public final FrameLayout c() {
+    public final FrameLayout b() {
         if (this.d == null) {
-            n2 n2Var = this.a;
-            FrameLayout frameLayout = new FrameLayout(n2Var.getParentActivity());
+            o2 o2Var = this.a;
+            FrameLayout frameLayout = new FrameLayout(o2Var.getParentActivity());
             this.d = frameLayout;
-            frameLayout.setBackground(h6.L0(false));
+            frameLayout.setBackground(k6.M0(false));
             final int i10 = 0;
             this.d.setOnClickListener(new View.OnClickListener(this) { // from class: xh.a
                 public final /* synthetic */ d b;
@@ -95,11 +89,11 @@ public final class d {
                     switch (i10) {
                         case 0:
                             d dVar = this.b;
-                            n2 n2Var2 = dVar.a;
+                            o2 o2Var2 = dVar.a;
                             if (dVar.i == null) {
-                                dVar.i = new b(dVar, n2Var2, dVar.b.id);
+                                dVar.i = new b(dVar, o2Var2, dVar.b.id);
                             }
-                            n2Var2.showDialog(dVar.i);
+                            o2Var2.showDialog(dVar.i);
                             break;
                         default:
                             d dVar2 = this.b;
@@ -110,11 +104,11 @@ public final class d {
                     }
                 }
             });
-            LinearLayout linearLayout = new LinearLayout(n2Var.getParentActivity());
+            LinearLayout linearLayout = new LinearLayout(o2Var.getParentActivity());
             this.f = linearLayout;
             linearLayout.setOrientation(0);
             this.d.addView(this.f, z5.d(-1, -1.0f, 48, 0.0f, 0.0f, 100.0f, 0.0f));
-            v vVar = new v(1, n2Var.getParentActivity(), false);
+            v vVar = new v(1, o2Var.getParentActivity(), false);
             this.e = vVar;
             vVar.setAvatarsTextSize(AndroidUtilities.dp(18.0f));
             j9 j9Var = this.e.a;
@@ -122,23 +116,29 @@ public final class d {
                 j9Var.l(0, null, 0);
             }
             this.f.addView(this.e, z5.d(-2, -1.0f, 48, 8.0f, 0.0f, 10.0f, 0.0f));
-            TextView textView = new TextView(n2Var.getParentActivity());
+            TextView textView = new TextView(o2Var.getParentActivity());
             this.g = textView;
             textView.setEllipsize(TextUtils.TruncateAt.END);
             this.g.setGravity(16);
             this.g.setSingleLine();
             this.g.setText((CharSequence) null);
-            this.g.setTextColor(n2Var.getThemedColor(h6.fe));
+            r6.W(this.g, k6.fe, o2Var.getResourceProvider());
             this.g.setTypeface(AndroidUtilities.bold());
             this.f.addView(this.g, z5.d(-1, -1.0f, 48, 0.0f, 0.0f, 0.0f, 0.0f));
-            ImageView imageView = new ImageView(n2Var.getParentActivity());
-            this.h = imageView;
-            imageView.setBackground(h6.g0(n2Var.getThemedColor(h6.x7) & 436207615, 1, AndroidUtilities.dp(14.0f)));
-            this.h.setColorFilter(new PorterDuffColorFilter(n2Var.getThemedColor(h6.de), PorterDuff.Mode.MULTIPLY));
+            this.h = new ImageView(o2Var.getParentActivity());
+            int i12 = k6.x7;
+            int themedColor = o2Var.getThemedColor(i12);
+            y g02 = k6.g0(436207615 & themedColor, 1, AndroidUtilities.dp(14.0f));
+            if ((themedColor >>> 24) == 255) {
+                r6.S(this.h, g02, null, r6.h(i12, 25), o2Var.getResourceProvider());
+            } else {
+                this.h.setBackground(g02);
+            }
+            r6.t(this.h, k6.de, o2Var.getResourceProvider(), PorterDuff.Mode.MULTIPLY);
             this.h.setContentDescription(LocaleController.getString(R.string.Close));
             this.h.setImageResource(R.drawable.miniplayer_close);
             this.h.setScaleType(ImageView.ScaleType.CENTER);
-            final int i12 = 1;
+            final int i13 = 1;
             this.h.setOnClickListener(new View.OnClickListener(this) { // from class: xh.a
                 public final /* synthetic */ d b;
 
@@ -148,14 +148,14 @@ public final class d {
 
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    switch (i12) {
+                    switch (i13) {
                         case 0:
                             d dVar = this.b;
-                            n2 n2Var2 = dVar.a;
+                            o2 o2Var2 = dVar.a;
                             if (dVar.i == null) {
-                                dVar.i = new b(dVar, n2Var2, dVar.b.id);
+                                dVar.i = new b(dVar, o2Var2, dVar.b.id);
                             }
-                            n2Var2.showDialog(dVar.i);
+                            o2Var2.showDialog(dVar.i);
                             break;
                         default:
                             d dVar2 = this.b;
@@ -169,25 +169,25 @@ public final class d {
             this.d.addView(this.h, z5.d(36, -1.0f, 53, 0.0f, 0.0f, 4.0f, 0.0f));
             TLRPC.ChatFull chatFull = this.j;
             if (chatFull != null) {
-                e(chatFull.requests_pending, chatFull.recent_requesters, false);
+                d(chatFull.requests_pending, chatFull.recent_requesters, false);
             }
         }
         return this.d;
     }
 
-    public final void d(pe peVar) {
+    public final void c(pe peVar) {
         this.m = peVar;
     }
 
-    public final void e(int i10, List list, boolean z10) {
+    public final void d(int i10, List list, boolean z10) {
         if (this.d == null) {
             return;
         }
-        n2 n2Var = this.a;
+        o2 o2Var = this.a;
         if (i10 <= 0) {
             TLRPC.Chat chat = this.b;
             if (chat != null) {
-                n2Var.getMessagesController().setChatPendingRequestsOnClose(chat.id, 0);
+                o2Var.getMessagesController().setChatPendingRequestsOnClose(chat.id, 0);
                 this.l = 0;
             }
             a(false, z10);
@@ -203,7 +203,7 @@ public final class d {
             }
             int min = Math.min(3, list.size());
             for (int i11 = 0; i11 < min; i11++) {
-                TLRPC.User user = n2Var.getMessagesController().getUser((Long) list.get(i11));
+                TLRPC.User user = o2Var.getMessagesController().getUser((Long) list.get(i11));
                 if (user != null) {
                     this.e.b(i11, user, this.c);
                 }

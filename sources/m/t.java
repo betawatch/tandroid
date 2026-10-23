@@ -24,7 +24,7 @@ import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 import w7.w7;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class t extends EditText implements r0.o, u0.k {
     public final e2.c a;
@@ -146,7 +146,7 @@ public final class t extends EditText implements r0.o, u0.k {
         w7.p.a(editorInfo, onCreateInputConnection, this);
         if (onCreateInputConnection != null && Build.VERSION.SDK_INT <= 30 && (e = r0.i0.e(this)) != null) {
             t0.b.b(editorInfo, e);
-            onCreateInputConnection = t0.f.a(onCreateInputConnection, editorInfo, new qg.h0(this, 16));
+            onCreateInputConnection = t0.f.a(onCreateInputConnection, editorInfo, new qg.g0(this, 16));
         }
         return this.e.c(onCreateInputConnection, editorInfo);
     }
@@ -192,7 +192,7 @@ public final class t extends EditText implements r0.o, u0.k {
         ClipData primaryClip = clipboardManager == null ? null : clipboardManager.getPrimaryClip();
         if (primaryClip != null && primaryClip.getItemCount() > 0) {
             if (i11 >= 31) {
-                dVar = new j2.j(primaryClip, 1);
+                dVar = new j2.i(primaryClip, 1);
             } else {
                 r0.e eVar = new r0.e();
                 eVar.b = primaryClip;

@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.SystemClock;
 import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class a8 extends f8 {
     public long d;
@@ -22,12 +22,12 @@ public final class a8 extends f8 {
         k8 k8Var = this.e;
         if (action == 0) {
             if (this.a[this.b].getImageReceiver().hasBitmapImage()) {
-                k8Var.B0(true, true);
+                k8Var.H0(true, true);
                 this.d = SystemClock.elapsedRealtime();
                 return true;
             }
         } else if (action != 2 && SystemClock.elapsedRealtime() - this.d >= 400) {
-            k8Var.B0(false, true);
+            k8Var.H0(false, true);
         }
         return true;
     }

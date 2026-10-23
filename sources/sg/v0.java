@@ -9,9 +9,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class v0 extends z4.g {
+public final class v0 extends z4.h {
     public long w0;
     public boolean x0;
     public final u0 y0;
@@ -22,7 +22,7 @@ public final class v0 extends z4.g {
         super(context);
         this.z0 = y0Var;
         try {
-            Field declaredField = z4.g.class.getDeclaredField("r");
+            Field declaredField = z4.h.class.getDeclaredField("r");
             declaredField.setAccessible(true);
             u0 u0Var = new u0(this, getContext());
             this.y0 = u0Var;
@@ -61,7 +61,7 @@ public final class v0 extends z4.g {
         return false;
     }
 
-    @Override // z4.g, android.view.ViewGroup
+    @Override // z4.h, android.view.ViewGroup
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         try {
             A(motionEvent);
@@ -71,7 +71,7 @@ public final class v0 extends z4.g {
         }
     }
 
-    @Override // z4.g, android.view.View
+    @Override // z4.h, android.view.View
     public final void onMeasure(int i10, int i11) {
         int dp = AndroidUtilities.dp(100.0f);
         if (getChildCount() > 0) {
@@ -81,7 +81,7 @@ public final class v0 extends z4.g {
         super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(dp + this.z0.L, TLObject.FLAG_30));
     }
 
-    @Override // z4.g, android.view.View
+    @Override // z4.h, android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         if (this.z0.w) {
             return false;

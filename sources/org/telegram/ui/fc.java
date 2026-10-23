@@ -6,7 +6,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class fc implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -26,15 +26,15 @@ public final /* synthetic */ class fc implements Utilities.Callback {
                 bdVar.E = wallPaper;
                 bdVar.F = wallPaper;
                 bdVar.G = wallPaper;
-                bdVar.X0(false);
-                bdVar.a1(false);
+                bdVar.Z0(false);
+                bdVar.c1(false);
                 AndroidUtilities.runOnUIThread(new gc(bdVar, 1), 350L);
                 break;
             case 1:
                 bd.V(this.b, (ChannelBoostsController.CanApplyBoost) obj);
                 break;
             default:
-                this.b.W0((TL_stories.TL_premium_boostsStatus) obj);
+                this.b.Y0((TL_stories.TL_premium_boostsStatus) obj);
                 break;
         }
     }

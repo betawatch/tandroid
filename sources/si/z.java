@@ -2,7 +2,7 @@ package si;
 
 import android.opengl.GLES20;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public class z {
     public final int a;
@@ -57,6 +57,6 @@ public class z {
         }
         String glGetProgramInfoLog = GLES20.glGetProgramInfoLog(glCreateProgram);
         GLES20.glDeleteProgram(glCreateProgram);
-        throw new IllegalStateException(r4.c.h("Unable to link program: ", glGetProgramInfoLog));
+        throw new IllegalStateException(o0.h("Unable to link program: ", glGetProgramInfoLog));
     }
 }

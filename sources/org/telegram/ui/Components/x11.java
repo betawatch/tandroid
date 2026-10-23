@@ -1,75 +1,48 @@
 package org.telegram.ui.Components;
 
 import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
-import java.io.File;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.Components.ThemeEditorView;
+import android.graphics.Matrix;
+import android.view.View;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class x11 implements k91 {
-    public final /* synthetic */ ThemeEditorView a;
+public final class x11 {
+    public final View a;
+    public final ArrayList b;
+    public final Runnable c;
+    public Runnable d;
+    public final Bitmap e;
+    public final Matrix f;
+    public float g;
 
-    public x11(ThemeEditorView themeEditorView) {
-        this.a = themeEditorView;
+    public x11(View view, Runnable runnable) {
+        this.g = 1.0f;
+        this.a = view;
+        this.b = null;
+        this.c = null;
+        this.d = runnable;
+        this.e = null;
+        this.f = null;
     }
 
-    @Override // org.telegram.ui.Components.k91
-    public final void a() {
-        int i10 = 0;
-        while (true) {
-            ThemeEditorView themeEditorView = this.a;
-            if (i10 >= themeEditorView.c.size()) {
-                ThemeEditorView.EditorAlert editorAlert = themeEditorView.l;
-                int i11 = ThemeEditorView.EditorAlert.M;
-                editorAlert.M(true);
-                return;
-            } else {
-                org.telegram.ui.ActionBar.j6 j6Var = (org.telegram.ui.ActionBar.j6) themeEditorView.c.get(i10);
-                int x02 = org.telegram.ui.ActionBar.h6.x0(j6Var.j, j6Var.f, false);
-                j6Var.i = x02;
-                if (i10 == 0) {
-                    themeEditorView.l.b.c(x02);
-                }
-                i10++;
-            }
-        }
+    public x11(ArrayList arrayList, ig.d2 d2Var) {
+        this.g = 1.0f;
+        this.a = null;
+        this.b = arrayList;
+        this.c = null;
+        this.d = d2Var;
+        this.e = null;
+        this.f = null;
     }
 
-    @Override // org.telegram.ui.Components.k91
-    public final void b(File file, Bitmap bitmap, boolean z10) {
-        org.telegram.ui.ActionBar.g6 g6Var = this.a.m;
-        org.telegram.ui.ActionBar.h6.ul.delete(org.telegram.ui.ActionBar.h6.Nd);
-        org.telegram.ui.ActionBar.h6.ul.delete(org.telegram.ui.ActionBar.h6.Od);
-        org.telegram.ui.ActionBar.h6.ul.delete(org.telegram.ui.ActionBar.h6.Pd);
-        org.telegram.ui.ActionBar.h6.ul.delete(org.telegram.ui.ActionBar.h6.Qd);
-        org.telegram.ui.ActionBar.h6.ul.delete(org.telegram.ui.ActionBar.h6.Rd);
-        org.telegram.ui.ActionBar.h6.h0 = null;
-        g6Var.v(null);
-        if (bitmap == null) {
-            org.telegram.ui.ActionBar.h6.f0 = null;
-            org.telegram.ui.ActionBar.h6.e0 = null;
-            org.telegram.ui.ActionBar.h6.s1(g6Var, false, false, false);
-            org.telegram.ui.ActionBar.h6.p1(true);
-            return;
-        }
-        org.telegram.ui.ActionBar.h6.f0 = new BitmapDrawable(bitmap);
-        org.telegram.ui.ActionBar.h6.s1(g6Var, false, false, false);
-        int[] calcDrawableColor = AndroidUtilities.calcDrawableColor(org.telegram.ui.ActionBar.h6.f0);
-        int i10 = calcDrawableColor[0];
-        org.telegram.ui.ActionBar.h6.c0 = i10;
-        org.telegram.ui.ActionBar.h6.X = i10;
-        int i11 = calcDrawableColor[1];
-        org.telegram.ui.ActionBar.h6.d0 = i11;
-        org.telegram.ui.ActionBar.h6.b0 = i11;
-        Drawable drawable = org.telegram.ui.ActionBar.h6.e0;
-        if (drawable != null) {
-            org.telegram.ui.ActionBar.h6.i(drawable);
-        }
-        org.telegram.ui.ActionBar.h6.h(org.telegram.ui.ActionBar.h6.e0);
-        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didSetNewWallpapper, new Object[0]);
+    public x11(Matrix matrix, Bitmap bitmap, Runnable runnable, Runnable runnable2) {
+        this.g = 1.0f;
+        this.a = null;
+        this.b = null;
+        this.c = runnable;
+        this.d = runnable2;
+        this.f = matrix;
+        this.e = bitmap;
     }
 }

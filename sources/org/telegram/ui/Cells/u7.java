@@ -14,7 +14,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.LocationController;
 import org.telegram.ui.Components.rl;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u7 implements Runnable {
     public final /* synthetic */ int a;
@@ -40,11 +40,11 @@ public final /* synthetic */ class u7 implements Runnable {
                     List<Address> fromLocation = new Geocoder(ApplicationLoader.applicationContext, LocaleController.getInstance().getCurrentLocale()).getFromLocation(d, d10, 1);
                     if (fromLocation.isEmpty()) {
                         String detectOcean = LocationController.detectOcean(d10, d);
-                        v7Var.I = detectOcean;
+                        v7Var.K = detectOcean;
                         if (detectOcean == null) {
-                            v7Var.I = "";
+                            v7Var.K = "";
                         } else {
-                            v7Var.I = "🌊 " + ((Object) v7Var.I);
+                            v7Var.K = "🌊 " + ((Object) v7Var.K);
                         }
                     } else {
                         Address address = fromLocation.get(0);
@@ -64,10 +64,10 @@ public final /* synthetic */ class u7 implements Runnable {
                                 sb2.append(str);
                             }
                         }
-                        v7Var.I = sb2.toString();
+                        v7Var.K = sb2.toString();
                         String countryCodeToEmoji = LocationController.countryCodeToEmoji(address.getCountryCode());
                         if (countryCodeToEmoji != null && Emoji.getEmojiDrawable(countryCodeToEmoji) != null) {
-                            v7Var.I = countryCodeToEmoji + " " + ((Object) v7Var.I);
+                            v7Var.K = countryCodeToEmoji + " " + ((Object) v7Var.K);
                         }
                     }
                 } catch (Exception unused) {
@@ -78,17 +78,17 @@ public final /* synthetic */ class u7 implements Runnable {
                 v7 v7Var2 = (v7) this.b;
                 double d11 = this.c;
                 double d12 = this.d;
-                v7Var2.F = d11;
-                v7Var2.G = d12;
-                v7Var2.E = false;
-                CharSequence charSequence = v7Var2.I;
-                org.telegram.ui.ActionBar.j5 j5Var = v7Var2.b;
-                CharSequence replaceEmoji = Emoji.replaceEmoji(charSequence, j5Var.getPaint().getFontMetricsInt(), false);
-                v7Var2.I = replaceEmoji;
-                j5Var.l(replaceEmoji, false);
+                v7Var2.H = d11;
+                v7Var2.I = d12;
+                v7Var2.G = false;
+                CharSequence charSequence = v7Var2.K;
+                org.telegram.ui.ActionBar.n5 n5Var = v7Var2.d;
+                CharSequence replaceEmoji = Emoji.replaceEmoji(charSequence, n5Var.getPaint().getFontMetricsInt(), false);
+                v7Var2.K = replaceEmoji;
+                n5Var.l(replaceEmoji, false);
                 break;
             default:
-                ((rl) this.b).e0(this.c, this.d);
+                ((rl) this.b).f0(this.c, this.d);
                 break;
         }
     }

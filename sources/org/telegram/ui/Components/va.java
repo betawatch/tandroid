@@ -7,9 +7,9 @@ import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class va extends gd0 {
+public final class va extends id0 {
     public final /* synthetic */ boolean D0;
     public final /* synthetic */ boolean E0;
     public final /* synthetic */ bb F0;
@@ -22,12 +22,12 @@ public final class va extends gd0 {
         this.E0 = z11;
     }
 
-    @Override // org.telegram.ui.Components.lw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.ow0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         bb bbVar = this.F0;
-        bbVar.J(canvas, this);
-        super.dispatchDraw(canvas);
         bbVar.I(canvas, this);
+        super.dispatchDraw(canvas);
+        bbVar.G(canvas, this);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -36,7 +36,7 @@ public final class va extends gd0 {
         if (motionEvent.getAction() == 0) {
             float y3 = motionEvent.getY();
             bb bbVar = this.F0;
-            drawable = ((org.telegram.ui.ActionBar.f3) bbVar).shadowDrawable;
+            drawable = ((org.telegram.ui.ActionBar.h3) bbVar).shadowDrawable;
             if (y3 < drawable.getBounds().top) {
                 bbVar.dismiss();
             }
@@ -52,12 +52,12 @@ public final class va extends gd0 {
         return super.drawChild(canvas, view, j10);
     }
 
-    @Override // org.telegram.ui.Components.gd0, android.widget.FrameLayout, android.view.View
+    @Override // org.telegram.ui.Components.id0, android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
         int size = View.MeasureSpec.getSize(i11);
         bb bbVar = this.F0;
         bbVar.h = size;
-        bbVar.E(i10, i11);
+        bbVar.D(i10, i11);
         if (this.D0) {
             i11 = View.MeasureSpec.makeMeasureSpec(bbVar.h, TLObject.FLAG_30);
         }

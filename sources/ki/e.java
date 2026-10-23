@@ -8,7 +8,7 @@ import org.telegram.ui.Components.cj;
 import org.telegram.ui.Components.ml;
 import org.telegram.ui.Components.ti;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e implements ml, cj {
     public final /* synthetic */ q a;
@@ -33,15 +33,15 @@ public final /* synthetic */ class e implements ml, cj {
         pageblockmap.zoom = 15;
         pageblockmap.w = 600;
         pageblockmap.h = 400;
-        qVar.r.S1(pageblockmap);
+        qVar.r.X1(pageblockmap);
         qVar.Y(true);
         tiVar.dismiss(true);
     }
 
     @Override // org.telegram.ui.Components.cj
-    public void i(ArrayList arrayList, CharSequence charSequence, boolean z10, int i10, int i11, long j10, boolean z11, long j11) {
+    public void f(ArrayList arrayList, CharSequence charSequence, boolean z10, int i10, int i11, long j10, boolean z11, long j11) {
         if (!arrayList.isEmpty()) {
-            this.a.r.c2((MessageObject) arrayList.get(0));
+            this.a.r.h2((MessageObject) arrayList.get(0));
         }
         this.b.dismiss(true);
     }

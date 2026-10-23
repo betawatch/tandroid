@@ -1,39 +1,21 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class d01 implements z4.e {
-    public int a;
-    public final /* synthetic */ e01 b;
+public final class d01 extends ig.h1 {
+    public final /* synthetic */ f01 G;
 
-    public d01(e01 e01Var) {
-        this.b = e01Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public d01(f01 f01Var, Context context, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(context, g6Var);
+        this.G = f01Var;
     }
 
-    @Override // z4.e
-    public final void b(int i10) {
-        e01 e01Var = this.b;
-        ProfileActivity profileActivity = e01Var.n;
-        int k10 = profileActivity.o0.D0.k(i10);
-        e01Var.a(this.a != k10);
-        this.a = k10;
-        if (profileActivity.r0 == null) {
-            return;
-        }
-        if (profileActivity.U0.t()) {
-            AndroidUtilities.runOnUIThread(new qy0(e01Var, 3), 500L);
-        } else {
-            e01Var.c();
-        }
-    }
-
-    @Override // z4.e
-    public final void c(int i10) {
-    }
-
-    @Override // z4.e
-    public final void a(float f7, int i10, int i11) {
+    @Override // ig.h1
+    public final int a(int i10) {
+        this.G.e.getClass();
+        return i10;
     }
 }

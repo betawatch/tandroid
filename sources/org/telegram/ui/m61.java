@@ -1,21 +1,24 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class m61 implements View.OnClickListener {
-    public final /* synthetic */ TLRPC.TL_authorization a;
-    public final /* synthetic */ u61 b;
+public final class m61 extends g.o {
+    public final /* synthetic */ o61 c;
 
-    public m61(u61 u61Var, TLRPC.TL_authorization tL_authorization) {
-        this.b = u61Var;
-        this.a = tL_authorization;
+    public m61(o61 o61Var) {
+        this.c = o61Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        u61.n(this.b, this.a.country);
+    @Override // g.o
+    public final int i(int i10) {
+        int i11;
+        o61 o61Var = this.c;
+        org.telegram.ui.Components.wz wzVar = o61Var.X;
+        org.telegram.ui.Components.b71 b71Var = o61Var.d0;
+        if (b71Var == null) {
+            return wzVar.J;
+        }
+        org.telegram.ui.Components.m61 G = b71Var.G(i10 - 1);
+        return (G == null || (i11 = G.u) == -1) ? wzVar.J : i11;
     }
 }

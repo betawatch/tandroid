@@ -1,6 +1,6 @@
 package rg;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r implements o1.f {
     public final /* synthetic */ int a;
@@ -18,25 +18,25 @@ public final /* synthetic */ class r implements o1.f {
         switch (this.a) {
             case 0:
                 m0 m0Var = this.b;
-                t1 t1Var = m0Var.v1;
+                u1 u1Var = m0Var.v1;
                 if (hVar == m0Var.F1) {
                     m0Var.F1 = null;
                     if (!this.c) {
-                        t1Var.setVisibility(8);
+                        u1Var.setVisibility(8);
                     }
-                    t1Var.setMaskProvider(null);
+                    u1Var.setMaskProvider(null);
                     break;
                 }
                 break;
             default:
                 m0 m0Var2 = this.b;
-                i0 i0Var = m0Var2.G1;
+                j0 j0Var = m0Var2.G1;
                 if (hVar == m0Var2.M1) {
                     m0Var2.M1 = null;
                     if (!this.c) {
-                        i0Var.setVisibility(8);
-                        qg.v0.e(m0Var2.P1).g();
-                        i0Var.getAdapter().l();
+                        j0Var.setVisibility(8);
+                        qg.u0.e(m0Var2.P1).g();
+                        j0Var.getAdapter().l();
                         break;
                     }
                 }

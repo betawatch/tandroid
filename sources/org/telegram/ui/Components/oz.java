@@ -2,7 +2,6 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
 import android.text.TextUtils;
 import android.util.LongSparseArray;
 import android.util.SparseArray;
@@ -20,9 +19,9 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class oz extends im0 {
+public final class oz extends lm0 {
     public int L;
     public int M;
     public String N;
@@ -56,13 +55,13 @@ public final class oz extends im0 {
         this.c = nzVar;
         nzVar.setPadding(AndroidUtilities.dp(10.0f), 0, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(5.0f));
         nzVar.setClipToPadding(false);
-        nzVar.W2.r = false;
+        nzVar.Z2.r = false;
         nzVar.setNestedScrollingEnabled(false);
         nzVar.setDrawSelection(false);
         nzVar.setOnTouchListener(new m.d2(this, 3));
     }
 
-    @Override // org.telegram.ui.Components.im0
+    @Override // org.telegram.ui.Components.lm0
     public final boolean D(s4.b1 b1Var) {
         return b1Var.f == 7;
     }
@@ -122,7 +121,7 @@ public final class oz extends im0 {
         sparseArray3.clear();
         this.x = 0;
         int size = this.G.size() + this.E.size();
-        this.c.W2.N(false);
+        this.c.Z2.N(false);
         long j10 = this.d;
         String str = "";
         SparseArray sparseArray4 = this.s;
@@ -310,14 +309,14 @@ public final class oz extends im0 {
         }
         Integer num = null;
         if (i11 == 1) {
-            org.telegram.ui.Cells.k3 k3Var = (org.telegram.ui.Cells.k3) view;
+            org.telegram.ui.Cells.j3 j3Var = (org.telegram.ui.Cells.j3) view;
             if (i10 != this.x) {
-                k3Var.setHeight(AndroidUtilities.dp(82.0f));
+                j3Var.setHeight(AndroidUtilities.dp(82.0f));
                 return;
             }
             int i12 = this.v.get(i10 - 1, TLObject.FLAG_31);
             if (i12 == Integer.MIN_VALUE) {
-                k3Var.setHeight(1);
+                j3Var.setHeight(1);
                 return;
             }
             Object obj = this.n.get(i12);
@@ -327,24 +326,24 @@ public final class oz extends im0 {
                 num = (Integer) obj;
             }
             if (num == null) {
-                k3Var.setHeight(1);
+                j3Var.setHeight(1);
                 return;
             } else if (num.intValue() == 0) {
-                k3Var.setHeight(AndroidUtilities.dp(8.0f));
+                j3Var.setHeight(AndroidUtilities.dp(8.0f));
                 return;
             } else {
-                int B = org.telegram.messenger.nk.B(82.0f, (int) Math.ceil(num.intValue() / tzVar.y0.d), tzVar.h.getHeight());
-                k3Var.setHeight(B > 0 ? B : 1);
+                int B = org.telegram.messenger.sl.B(82.0f, (int) Math.ceil(num.intValue() / tzVar.y0.d), tzVar.h.getHeight());
+                j3Var.setHeight(B > 0 ? B : 1);
                 return;
             }
         }
         if (i11 == 2) {
-            org.telegram.ui.Cells.n8 n8Var = (org.telegram.ui.Cells.n8) view;
+            org.telegram.ui.Cells.o8 o8Var = (org.telegram.ui.Cells.o8) view;
             Object obj2 = sparseArray.get(i10);
             if (!(obj2 instanceof TLRPC.TL_messages_stickerSet)) {
                 if (obj2 instanceof String) {
-                    n8Var.b(0, (String) obj2);
-                    n8Var.d(0, null);
+                    o8Var.a(0, (String) obj2);
+                    o8Var.c(0, null);
                     return;
                 }
                 return;
@@ -353,17 +352,17 @@ public final class oz extends im0 {
             if (!TextUtils.isEmpty(this.N) && this.F.containsKey(tL_messages_stickerSet)) {
                 TLRPC.StickerSet stickerSet = tL_messages_stickerSet.set;
                 if (stickerSet != null) {
-                    n8Var.b(0, stickerSet.title);
+                    o8Var.a(0, stickerSet.title);
                 }
-                n8Var.d(this.N.length(), tL_messages_stickerSet.set.short_name);
+                o8Var.c(this.N.length(), tL_messages_stickerSet.set.short_name);
                 return;
             }
             Integer num2 = (Integer) this.G.get(tL_messages_stickerSet);
             TLRPC.StickerSet stickerSet2 = tL_messages_stickerSet.set;
             if (stickerSet2 != null && num2 != null) {
-                n8Var.c(stickerSet2.title, 0, null, num2.intValue(), !TextUtils.isEmpty(this.N) ? this.N.length() : 0);
+                o8Var.b(stickerSet2.title, 0, null, num2.intValue(), !TextUtils.isEmpty(this.N) ? this.N.length() : 0);
             }
-            n8Var.d(0, null);
+            o8Var.c(0, null);
             return;
         }
         if (i11 != 3) {
@@ -391,28 +390,34 @@ public final class oz extends im0 {
         if (TextUtils.isEmpty(this.N) || AndroidUtilities.indexOfIgnoreCase(stickerSetCovered.set.short_name, this.N) != 0) {
             return;
         }
-        String str = stickerSetCovered.set.short_name;
-        int length = this.N.length();
-        r3Var.F = str;
-        r3Var.G = length;
-        r3Var.f();
+        r3Var.d(this.N.length(), stickerSetCovered.set.short_name);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r14v10 */
+    /* JADX WARN: Type inference failed for: r14v13, types: [android.view.View] */
+    /* JADX WARN: Type inference failed for: r14v14 */
+    /* JADX WARN: Type inference failed for: r14v2, types: [hg.d2] */
+    /* JADX WARN: Type inference failed for: r14v3, types: [org.telegram.ui.Cells.j3] */
+    /* JADX WARN: Type inference failed for: r14v4 */
+    /* JADX WARN: Type inference failed for: r14v6 */
+    /* JADX WARN: Type inference failed for: r14v8, types: [ah.x, android.view.View, android.view.ViewGroup] */
     @Override // s4.g0
     public final s4.b1 x(ViewGroup viewGroup, int i10) {
-        View d2Var;
-        ViewGroup xVar;
-        Context context = this.h;
+        ?? d2Var;
+        View view;
         tz tzVar = this.Q;
+        org.telegram.ui.ActionBar.g6 g6Var = tzVar.Z1;
+        Context context = this.h;
         switch (i10) {
             case 0:
-                d2Var = new hg.d2(2, context, tzVar.Z1, true);
+                d2Var = new hg.d2(2, context, g6Var, true);
                 break;
             case 1:
-                d2Var = new org.telegram.ui.Cells.k3(context);
+                d2Var = new org.telegram.ui.Cells.j3(context);
                 break;
             case 2:
-                d2Var = new org.telegram.ui.Cells.n8(this.h, false, false, tzVar.Z1, tzVar.i2);
+                d2Var = new org.telegram.ui.Cells.o8(this.h, false, false, tzVar.Z1, tzVar.i2);
                 break;
             case 3:
                 org.telegram.ui.Cells.r3 r3Var = new org.telegram.ui.Cells.r3(17, this.h, tzVar.Z1, false, true);
@@ -420,40 +425,44 @@ public final class oz extends im0 {
                 d2Var = r3Var;
                 break;
             case 4:
-                d2Var = new View(context);
-                d2Var.setLayoutParams(new s4.o0(-1, tzVar.b1));
+                View view2 = new View(context);
+                view2.setLayoutParams(new s4.o0(-1, tzVar.b1));
+                view = view2;
+                d2Var = view;
                 break;
             case 5:
-                xVar = new ah.x(this, context, 17);
+                d2Var = new ah.x(this, context, 17);
                 ImageView imageView = new ImageView(context);
                 imageView.setScaleType(ImageView.ScaleType.CENTER);
                 imageView.setImageResource(R.drawable.stickers_empty);
-                int i11 = org.telegram.ui.ActionBar.h6.Le;
-                imageView.setColorFilter(new PorterDuffColorFilter(tzVar.A(i11), PorterDuff.Mode.MULTIPLY));
+                int i11 = org.telegram.ui.ActionBar.k6.Le;
+                org.telegram.ui.ActionBar.r6.t(imageView, i11, g6Var, PorterDuff.Mode.MULTIPLY);
                 imageView.setTranslationY(-AndroidUtilities.dp(24.0f));
-                xVar.addView(imageView, w7.z5.d(-2, -2.0f, 17, 0.0f, 42.0f, 0.0f, 28.0f));
+                d2Var.addView(imageView, w7.z5.d(-2, -2.0f, 17, 0.0f, 42.0f, 0.0f, 28.0f));
                 TextView textView = new TextView(context);
-                org.telegram.messenger.nk.j(16.0f, R.string.NoStickersFound, 1, textView);
-                textView.setTextColor(tzVar.A(i11));
-                xVar.addView(textView, w7.z5.d(-2, -2.0f, 17, 0.0f, 42.0f, 0.0f, 9.0f));
-                xVar.setLayoutParams(new s4.o0(-1, -2));
-                d2Var = xVar;
+                org.telegram.messenger.sl.n(R.string.NoStickersFound, textView, 1, 16.0f);
+                org.telegram.ui.ActionBar.r6.W(textView, i11, g6Var);
+                d2Var.addView(textView, w7.z5.d(-2, -2.0f, 17, 0.0f, 42.0f, 0.0f, 9.0f));
+                d2Var.setLayoutParams(new s4.o0(-1, -2));
                 break;
             case 6:
             default:
                 d2Var = null;
                 break;
             case 7:
-                ViewGroup.LayoutParams o0Var = new s4.o0(-1, AndroidUtilities.dp(79.0f));
-                xVar = this.c;
-                xVar.setLayoutParams(o0Var);
-                d2Var = xVar;
+                s4.o0 o0Var = new s4.o0(-1, AndroidUtilities.dp(79.0f));
+                nz nzVar = this.c;
+                nzVar.setLayoutParams(o0Var);
+                view = nzVar;
+                d2Var = view;
                 break;
             case 8:
-                d2Var = new View(tzVar.getContext());
-                d2Var.setLayoutParams(new s4.o0(-1, AndroidUtilities.dp(68.0f)));
+                View view3 = new View(tzVar.getContext());
+                view3.setLayoutParams(new s4.o0(-1, AndroidUtilities.dp(68.0f)));
+                view = view3;
+                d2Var = view;
                 break;
         }
-        return new tl0(d2Var);
+        return new wl0(d2Var);
     }
 }

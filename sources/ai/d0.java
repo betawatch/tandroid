@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d0 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -32,19 +32,19 @@ public final /* synthetic */ class d0 implements RequestDelegate {
     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new z((k0) this.c, (org.telegram.ui.ActionBar.b2) this.d, tLObject, this.b, (Utilities.Callback) this.e, 0));
+                AndroidUtilities.runOnUIThread(new z((k0) this.c, (org.telegram.ui.ActionBar.c2) this.d, tLObject, this.b, (Utilities.Callback) this.e, 0));
                 break;
             case 1:
                 AndroidUtilities.runOnUIThread(new q3((l7) this.c, tLObject, (String) this.d, (TL_stars.InputSavedStarGift) this.e, tL_error, this.b));
                 break;
             case 2:
-                AndroidUtilities.runOnUIThread(new z((ga) this.c, tLObject, (MessageObject) this.d, this.b, (Runnable) this.e));
+                AndroidUtilities.runOnUIThread(new z((ha) this.c, tLObject, (MessageObject) this.d, this.b, (Runnable) this.e));
                 break;
             case 3:
-                AndroidUtilities.runOnUIThread(new z((org.telegram.ui.ActionBar.b2) this.d, tLObject, this.b, (AccountInstance) this.c, (MessagesStorage.BooleanCallback) this.e));
+                AndroidUtilities.runOnUIThread(new z((org.telegram.ui.ActionBar.c2) this.d, tLObject, this.b, (AccountInstance) this.c, (MessagesStorage.BooleanCallback) this.e));
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new q3((org.telegram.ui.ActionBar.n2) this.c, tLObject, (MessagesController.DialogFilter) this.d, tL_error, (Runnable) this.e, this.b));
+                AndroidUtilities.runOnUIThread(new q3((org.telegram.ui.ActionBar.o2) this.c, tLObject, (MessagesController.DialogFilter) this.d, tL_error, (Runnable) this.e, this.b));
                 break;
         }
     }
@@ -57,9 +57,9 @@ public final /* synthetic */ class d0 implements RequestDelegate {
         this.b = j10;
     }
 
-    public /* synthetic */ d0(org.telegram.ui.ActionBar.b2 b2Var, long j10, AccountInstance accountInstance, MessagesStorage.BooleanCallback booleanCallback) {
+    public /* synthetic */ d0(org.telegram.ui.ActionBar.c2 c2Var, long j10, AccountInstance accountInstance, MessagesStorage.BooleanCallback booleanCallback) {
         this.a = 3;
-        this.d = b2Var;
+        this.d = c2Var;
         this.b = j10;
         this.c = accountInstance;
         this.e = booleanCallback;

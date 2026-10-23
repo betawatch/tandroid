@@ -2,7 +2,6 @@ package ki;
 
 import android.graphics.Bitmap;
 import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.view.KeyEvent;
@@ -14,28 +13,29 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.r6;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c implements Utilities.Callback2 {
     public final /* synthetic */ int a = 0;
     public final /* synthetic */ boolean[] b;
     public final /* synthetic */ ei.d c;
     public final /* synthetic */ boolean d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.d6 e;
+    public final /* synthetic */ org.telegram.ui.ActionBar.g6 e;
     public final /* synthetic */ Object f;
     public final /* synthetic */ Object g;
     public final /* synthetic */ Object h;
     public final /* synthetic */ Object i;
     public final /* synthetic */ KeyEvent.Callback j;
 
-    public /* synthetic */ c(String str, String[] strArr, ImageView imageView, org.telegram.ui.ActionBar.d6 d6Var, boolean z10, int[] iArr, ei.d dVar, HorizontalScrollView horizontalScrollView, boolean[] zArr) {
+    public /* synthetic */ c(String str, String[] strArr, ImageView imageView, org.telegram.ui.ActionBar.g6 g6Var, boolean z10, int[] iArr, ei.d dVar, HorizontalScrollView horizontalScrollView, boolean[] zArr) {
         this.f = str;
         this.g = strArr;
         this.h = imageView;
-        this.e = d6Var;
+        this.e = g6Var;
         this.d = z10;
         this.i = iArr;
         this.c = dVar;
@@ -46,7 +46,7 @@ public final /* synthetic */ class c implements Utilities.Callback2 {
     @Override // org.telegram.messenger.Utilities.Callback2
     public final void run(Object obj, Object obj2) {
         int i10 = this.a;
-        org.telegram.ui.ActionBar.d6 d6Var = this.e;
+        org.telegram.ui.ActionBar.g6 g6Var = this.e;
         KeyEvent.Callback callback = this.j;
         Object obj3 = this.i;
         Object obj4 = this.h;
@@ -64,14 +64,14 @@ public final /* synthetic */ class c implements Utilities.Callback2 {
                 Boolean bool = (Boolean) obj2;
                 if (TextUtils.equals((String) obj6, ((String[]) obj5)[0])) {
                     if (bool.booleanValue()) {
-                        imageView.setColorFilter(new PorterDuffColorFilter(h6.w0(h6.q7, d6Var), PorterDuff.Mode.SRC_IN));
+                        r6.t(imageView, k6.q7, g6Var, PorterDuff.Mode.SRC_IN);
                         if (!z10) {
                             int i11 = -iArr[0];
                             iArr[0] = i11;
                             AndroidUtilities.shakeViewSpring(imageView, i11);
                         }
                     } else {
-                        imageView.setColorFilter(new PorterDuffColorFilter(h6.w0(h6.G6, d6Var), PorterDuff.Mode.SRC_IN));
+                        r6.t(imageView, k6.G6, g6Var, PorterDuff.Mode.SRC_IN);
                     }
                     if (bitmap != null) {
                         imageView.setImageBitmap(bitmap);
@@ -83,29 +83,29 @@ public final /* synthetic */ class c implements Utilities.Callback2 {
                 }
                 break;
             default:
-                org.telegram.ui.Wallet.b2 b2Var = (org.telegram.ui.Wallet.b2) obj6;
+                org.telegram.ui.Wallet.a2 a2Var = (org.telegram.ui.Wallet.a2) obj6;
                 boolean[] zArr2 = (boolean[]) obj5;
-                org.telegram.ui.Wallet.m0 m0Var = (org.telegram.ui.Wallet.m0) obj4;
+                org.telegram.ui.Wallet.l0 l0Var = (org.telegram.ui.Wallet.l0) obj4;
                 TextView textView = (TextView) obj3;
-                org.telegram.ui.Wallet.j2 j2Var = (org.telegram.ui.Wallet.j2) callback;
+                org.telegram.ui.Wallet.i2 i2Var = (org.telegram.ui.Wallet.i2) callback;
                 TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) obj;
                 String str = (String) obj2;
-                if (!zArr[0] && !b2Var.m && !b2Var.n) {
-                    boolean z11 = b2Var.p;
+                if (!zArr[0] && !a2Var.m && !a2Var.n) {
+                    boolean z11 = a2Var.p;
                     zArr2[0] = z11;
                     dVar.setEnabled(z11);
                     boolean z12 = zArr2[0];
                     if (z12 && !z10) {
-                        SpannableStringBuilder m10 = org.telegram.ui.Wallet.m0.m(wallettransaction.fee, true);
-                        CharSequence l4 = m0Var.l(wallettransaction.fee, true);
+                        SpannableStringBuilder m10 = org.telegram.ui.Wallet.l0.m(wallettransaction.fee, true);
+                        CharSequence l4 = l0Var.l(wallettransaction.fee, true);
                         textView.setText(TextUtils.isEmpty(l4) ? LocaleController.formatSpannable(R.string.WalletFeeAmount, m10) : LocaleController.formatSpannable(R.string.WalletFeeAmountWithCurrency, m10, l4));
                         break;
                     } else if (!z12) {
                         String string = str != null ? str : LocaleController.getString(R.string.WalletTransactionSimulationFailed);
                         if (str == null) {
-                            org.telegram.ui.Wallet.f2.k("preview", string);
+                            org.telegram.ui.Wallet.e2.k("preview", string);
                         }
-                        xc.c0(string, j2Var.topBulletinContainer, d6Var);
+                        xc.c0(string, i2Var.topBulletinContainer, g6Var);
                         break;
                     }
                 }
@@ -113,15 +113,15 @@ public final /* synthetic */ class c implements Utilities.Callback2 {
         }
     }
 
-    public /* synthetic */ c(boolean[] zArr, org.telegram.ui.Wallet.b2 b2Var, boolean[] zArr2, ei.d dVar, boolean z10, org.telegram.ui.Wallet.m0 m0Var, TextView textView, org.telegram.ui.Wallet.j2 j2Var, org.telegram.ui.ActionBar.d6 d6Var) {
+    public /* synthetic */ c(boolean[] zArr, org.telegram.ui.Wallet.a2 a2Var, boolean[] zArr2, ei.d dVar, boolean z10, org.telegram.ui.Wallet.l0 l0Var, TextView textView, org.telegram.ui.Wallet.i2 i2Var, org.telegram.ui.ActionBar.g6 g6Var) {
         this.b = zArr;
-        this.f = b2Var;
+        this.f = a2Var;
         this.g = zArr2;
         this.c = dVar;
         this.d = z10;
-        this.h = m0Var;
+        this.h = l0Var;
         this.i = textView;
-        this.j = j2Var;
-        this.e = d6Var;
+        this.j = i2Var;
+        this.e = g6Var;
     }
 }

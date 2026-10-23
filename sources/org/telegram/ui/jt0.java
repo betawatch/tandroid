@@ -1,62 +1,28 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.ViewGroup;
-import java.lang.reflect.Method;
-import org.telegram.messenger.FileLog;
+import android.app.Activity;
+import android.content.Context;
+import android.graphics.Bitmap;
+import java.util.ArrayList;
+import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class jt0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.Components.dn0 b;
+public final class jt0 extends rg.m0 {
+    public final /* synthetic */ PhotoViewer o2;
 
-    public /* synthetic */ jt0(org.telegram.ui.Components.dn0 dn0Var, int i10) {
-        this.a = i10;
-        this.b = dn0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public jt0(PhotoViewer photoViewer, Context context, Activity activity, int i10, Bitmap bitmap, Bitmap bitmap2, int i11, ArrayList arrayList, MediaController.CropState cropState, tq0 tq0Var, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(context, activity, i10, bitmap, bitmap2, i11, arrayList, cropState, tq0Var, g6Var);
+        this.o2 = photoViewer;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                PhotoViewer photoViewer = (PhotoViewer) this.b.b;
-                photoViewer.Q1.getNextView().setText((CharSequence) null);
-                ht0 ht0Var = photoViewer.T1;
-                ht0Var.l0 = false;
-                if (ht0Var.m0 >= 0) {
-                    ((ViewGroup.MarginLayoutParams) ht0Var.o0.getLayoutParams()).topMargin = ht0Var.m0;
-                    ht0Var.m0 = -1;
-                    ht0Var.requestLayout();
-                    break;
-                }
-                break;
-            default:
-                ((PhotoViewer) this.b.b).Q1.setTranslationY(0.0f);
-                break;
+    @Override // rg.m0
+    public final int getPKeyboardHeight() {
+        ei.b4 b4Var = this.o2.K1;
+        if (b4Var != null) {
+            return b4Var.l;
         }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationStart(Animator animator) {
-        switch (this.a) {
-            case 0:
-                ht0 ht0Var = ((PhotoViewer) this.b.b).T1;
-                Method method = ht0Var.f0;
-                if (method != null) {
-                    try {
-                        method.invoke(ht0Var, null);
-                        break;
-                    } catch (Exception e) {
-                        FileLog.e(e);
-                        return;
-                    }
-                }
-                break;
-            default:
-                super.onAnimationStart(animator);
-                break;
-        }
+        return 0;
     }
 }

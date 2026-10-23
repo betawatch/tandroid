@@ -3,10 +3,10 @@ package di;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.b10;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class m extends b10 {
     public final Paint U;
@@ -32,7 +32,7 @@ public final class m extends b10 {
 
     @Override // org.telegram.ui.Components.b10, android.view.View
     public final void onDraw(Canvas canvas) {
-        int w02 = h6.w0(h6.d6, this.V.W.c);
+        int w02 = k6.w0(k6.d6, this.V.W.c);
         Paint paint = this.U;
         paint.setColor(w02);
         canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), paint);

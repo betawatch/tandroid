@@ -9,14 +9,15 @@ import android.view.ViewPropertyAnimator;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import java.util.ArrayList;
+import org.telegram.ui.ActionBar.o2;
 import org.telegram.ui.Components.ht;
 import org.telegram.ui.Components.kt;
-import org.telegram.ui.Components.nu0;
-import org.telegram.ui.Components.uv0;
+import org.telegram.ui.Components.qu0;
 import org.telegram.ui.Components.voip.n2;
+import org.telegram.ui.Components.xv0;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class j0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -39,8 +40,8 @@ public final class j0 extends AnimatorListenerAdapter {
             case 1:
                 View view = (View) this.c;
                 view.setTranslationY(0.0f);
-                if (view instanceof org.telegram.ui.Cells.u1) {
-                    ((org.telegram.ui.Cells.u1) view).getTransitionParams().h = false;
+                if (view instanceof org.telegram.ui.Cells.t1) {
+                    ((org.telegram.ui.Cells.t1) view).getTransitionParams().h = false;
                     break;
                 }
                 break;
@@ -72,8 +73,8 @@ public final class j0 extends AnimatorListenerAdapter {
                 s4.b1 b1Var2 = (s4.b1) this.b;
                 li.m mVar = (li.m) this.e;
                 View view2 = (View) this.c;
-                if (view2 instanceof org.telegram.ui.Cells.u1) {
-                    ((org.telegram.ui.Cells.u1) view2).getTransitionParams().h = false;
+                if (view2 instanceof org.telegram.ui.Cells.t1) {
+                    ((org.telegram.ui.Cells.t1) view2).getTransitionParams().h = false;
                 }
                 ((ViewPropertyAnimator) this.d).setListener(null);
                 if (mVar.y.remove(b1Var2)) {
@@ -95,10 +96,10 @@ public final class j0 extends AnimatorListenerAdapter {
                 ktVar.A();
                 break;
             case 3:
-                ((uv0) this.e).H1 = false;
+                ((xv0) this.e).I1 = false;
                 View view3 = (View) this.c;
                 if (view3.getParent() != null) {
-                    ((nu0) this.b).removeView(view3);
+                    ((qu0) this.b).removeView(view3);
                     ((Bitmap) this.d).recycle();
                     break;
                 }
@@ -150,13 +151,13 @@ public final class j0 extends AnimatorListenerAdapter {
                     profileActivity.f0.setProgressToExpand(0.0f);
                     profileActivity.a.setLayerType(0, null);
                     if (profileActivity.Q0 != null) {
-                        kVar = ((org.telegram.ui.ActionBar.n2) profileActivity).actionBar;
-                        org.telegram.ui.ActionBar.y n10 = kVar.n();
-                        ArrayList arrayList = n10.e;
+                        kVar = ((o2) profileActivity).actionBar;
+                        org.telegram.ui.ActionBar.y m10 = kVar.m();
+                        ArrayList arrayList = m10.e;
                         if (arrayList != null) {
                             arrayList.clear();
                         }
-                        n10.removeAllViews();
+                        m10.removeAllViews();
                         profileActivity.Q0 = null;
                     }
                     runnable2.run();

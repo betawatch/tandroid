@@ -1,54 +1,63 @@
 package org.telegram.ui;
 
-import android.os.Build;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class os extends s4.r0 {
-    public boolean a;
-    public boolean b;
-    public final /* synthetic */ ContactsActivity c;
+public final class os extends org.telegram.ui.ActionBar.j {
+    public final /* synthetic */ ContactsActivity a;
 
     public os(ContactsActivity contactsActivity) {
-        this.c = contactsActivity;
+        this.a = contactsActivity;
     }
 
-    @Override // s4.r0
-    public final void a(RecyclerView recyclerView, int i10) {
-        if (i10 != 1) {
-            this.b = false;
+    @Override // org.telegram.ui.ActionBar.j
+    public final void b(int i10) {
+        org.telegram.ui.ActionBar.k kVar;
+        ContactsActivity contactsActivity = this.a;
+        if (i10 == -1) {
+            kVar = ((org.telegram.ui.ActionBar.o2) contactsActivity).actionBar;
+            if (kVar.s()) {
+                contactsActivity.o0();
+                return;
+            } else {
+                contactsActivity.finishFragment();
+                return;
+            }
+        }
+        if (i10 != 100) {
+            if (i10 != 1) {
+                if (i10 == 0) {
+                    contactsActivity.f.x0(0);
+                    AndroidUtilities.doOnPreDraw(contactsActivity.Z.r, new ti(this, 15));
+                    return;
+                }
+                return;
+            }
+            SharedConfig.toggleSortContactsByName();
+            boolean z10 = SharedConfig.sortContactsByName;
+            contactsActivity.v = z10;
+            contactsActivity.d.Y(z10 ? 1 : 2, false);
+            contactsActivity.s.setIcon(contactsActivity.v ? R.drawable.msg_contacts_time : R.drawable.msg_contacts_name);
             return;
         }
-        ContactsActivity contactsActivity = this.c;
-        if ((contactsActivity.F && contactsActivity.E) || contactsActivity.Z.r.isFocused()) {
-            AndroidUtilities.hideKeyboard(contactsActivity.getParentActivity().getCurrentFocus());
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(contactsActivity.getParentActivity(), 0, contactsActivity.getResourceProvider());
+        a0.h hVar = contactsActivity.d0;
+        if (hVar.m() == 1) {
+            alertDialog$Builder.a.R = LocaleController.getString(R.string.DeleteContactTitle);
+            alertDialog$Builder.a.T = LocaleController.getString(R.string.DeleteContactSubtitle);
+        } else {
+            alertDialog$Builder.a.R = LocaleController.formatPluralString("DeleteContactsTitle", hVar.m(), new Object[0]);
+            alertDialog$Builder.a.T = LocaleController.getString(R.string.DeleteContactsSubtitle);
         }
-        this.b = true;
-    }
-
-    @Override // s4.r0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        bh.f fVar;
-        ContactsActivity contactsActivity = this.c;
-        int L0 = contactsActivity.n.L0();
-        View childAt = recyclerView.getChildAt(0);
-        int top = childAt != null ? childAt.getTop() : 0;
-        if (contactsActivity.w != null && !contactsActivity.F) {
-            boolean z10 = i11 > 0;
-            if (i11 != 0 && this.a && (z10 || this.b)) {
-                contactsActivity.x = !z10;
-                ContactsActivity.e0(contactsActivity);
-            }
-            this.a = true;
-        }
-        contactsActivity.Y.b(L0 != 0 || top < contactsActivity.f.getPaddingTop(), true);
-        if (Build.VERSION.SDK_INT >= 31 && (fVar = contactsActivity.t0) != null) {
-            fVar.f(i10, i11);
-            contactsActivity.g0();
-        }
-        ContactsActivity.d0(contactsActivity);
+        alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new ls(contactsActivity));
+        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new org.telegram.ui.Components.ud0(28));
+        org.telegram.ui.ActionBar.c2 c2Var = alertDialog$Builder.a;
+        c2Var.show();
+        c2Var.i();
     }
 }

@@ -1,22 +1,36 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.ThemeEditorView;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class b21 extends jm0 {
-    public final /* synthetic */ ThemeEditorView.EditorAlert V2;
+public final class b21 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ThemeEditorView b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b21(ThemeEditorView.EditorAlert editorAlert, Context context) {
-        super(context, null);
-        this.V2 = editorAlert;
+    public /* synthetic */ b21(ThemeEditorView themeEditorView, int i10) {
+        this.a = i10;
+        this.b = themeEditorView;
     }
 
-    @Override // org.telegram.ui.Components.jm0
-    public final boolean E0(float f7) {
-        return f7 >= ((float) ((AndroidUtilities.dp(48.0f) + this.V2.E) + AndroidUtilities.statusBarHeight));
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                ThemeEditorView themeEditorView = this.b;
+                z11 z11Var = themeEditorView.c;
+                if (z11Var != null) {
+                    z11Var.setBackground(null);
+                    themeEditorView.j.removeView(themeEditorView.c);
+                    break;
+                }
+                break;
+            default:
+                ThemeEditorView themeEditorView2 = this.b;
+                org.telegram.ui.ActionBar.k6.u1(themeEditorView2.o, true, false, false);
+                themeEditorView2.b();
+                break;
+        }
     }
 }

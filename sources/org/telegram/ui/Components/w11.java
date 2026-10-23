@@ -1,271 +1,556 @@
 package org.telegram.ui.Components;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.app.Activity;
-import android.content.SharedPreferences;
-import android.util.Property;
-import android.view.MotionEvent;
+import android.graphics.Bitmap;
+import android.graphics.Matrix;
+import android.graphics.SurfaceTexture;
+import android.opengl.GLES20;
+import android.opengl.GLES30;
+import android.opengl.GLUtils;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
 import android.view.View;
-import android.view.WindowManager;
-import android.view.animation.DecelerateInterpolator;
-import android.widget.FrameLayout;
 import java.util.ArrayList;
+import java.util.concurrent.atomic.AtomicBoolean;
+import javax.microedition.khronos.egl.EGL10;
+import javax.microedition.khronos.egl.EGLConfig;
+import javax.microedition.khronos.egl.EGLContext;
+import javax.microedition.khronos.egl.EGLDisplay;
+import javax.microedition.khronos.egl.EGLSurface;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.ThemeEditorView;
-import org.telegram.ui.Components.ThemeEditorView.EditorAlert;
-import org.telegram.ui.LaunchActivity;
+import org.telegram.messenger.DispatchQueue;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class w11 extends FrameLayout {
-    public static final /* synthetic */ int e = 0;
-    public float a;
-    public float b;
-    public boolean c;
-    public final /* synthetic */ ThemeEditorView d;
+public final class w11 extends DispatchQueue {
+    public int E;
+    public int F;
+    public int G;
+    public int H;
+    public int I;
+    public int J;
+    public int K;
+    public int L;
+    public int M;
+    public int N;
+    public int O;
+    public int P;
+    public int Q;
+    public int R;
+    public volatile boolean S;
+    public final ArrayList T;
+    public final ArrayList U;
+    public boolean V;
+    public final ArrayList W;
+    public boolean a;
+    public final AtomicBoolean b;
+    public final SurfaceTexture c;
+    public t11 d;
+    public int e;
+    public int f;
+    public EGL10 h;
+    public EGLDisplay n;
+    public EGLConfig r;
+    public EGLSurface s;
+    public EGLContext v;
+    public int w;
+    public int x;
+    public int y;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w11(ThemeEditorView themeEditorView, Activity activity) {
-        super(activity);
-        this.d = themeEditorView;
+    public w11(SurfaceTexture surfaceTexture, t11 t11Var, t11 t11Var2, int i10, int i11) {
+        super("ThanosEffect.DrawingThread", false);
+        this.b = new AtomicBoolean(true);
+        this.T = new ArrayList();
+        this.U = new ArrayList();
+        this.V = false;
+        this.W = new ArrayList();
+        this.c = surfaceTexture;
+        this.d = t11Var2;
+        this.e = i10;
+        this.f = i11;
+        start();
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        return true;
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:119:0x008e, code lost:
-    
-        if (r15.getFragmentStack().isEmpty() != false) goto L34;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:121:0x0093  */
-    /* JADX WARN: Removed duplicated region for block: B:123:0x0099  */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x02d0  */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x033b  */
-    /* JADX WARN: Removed duplicated region for block: B:78:0x0378 A[ORIG_RETURN, RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x013c  */
-    @Override // android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        org.telegram.ui.ActionBar.d5 d5Var;
-        ArrayList<org.telegram.ui.ActionBar.j6> themeDescriptions;
-        boolean z10;
-        ArrayList arrayList;
-        boolean z11;
-        boolean z12;
-        int i10;
-        ThemeEditorView themeEditorView = this.d;
-        int i11 = themeEditorView.e;
-        float rawX = motionEvent.getRawX();
-        float rawY = motionEvent.getRawY();
-        int action = motionEvent.getAction();
-        int i12 = 4;
-        Property property = View.ALPHA;
-        int i13 = 0;
-        if (action == 0) {
-            this.a = rawX;
-            this.b = rawY;
-        } else if (motionEvent.getAction() != 2 || this.c) {
-            if (motionEvent.getAction() == 1 && !this.c && themeEditorView.l == null) {
-                LaunchActivity launchActivity = (LaunchActivity) themeEditorView.b;
-                if (AndroidUtilities.isTablet()) {
-                    d5Var = launchActivity.r0;
-                    if (d5Var != null && d5Var.getFragmentStack().isEmpty()) {
-                        d5Var = null;
-                    }
-                    if (d5Var == null) {
-                        d5Var = launchActivity.s0;
-                        if (d5Var != null) {
-                        }
-                    }
-                    if (d5Var == null) {
-                        d5Var = launchActivity.O();
-                    }
-                    if (d5Var != null) {
-                        org.telegram.ui.ActionBar.n2 n2Var = !d5Var.getFragmentStack().isEmpty() ? (org.telegram.ui.ActionBar.n2) d5Var.getFragmentStack().get(d5Var.getFragmentStack().size() - 1) : null;
-                        if (n2Var != null && (themeDescriptions = n2Var.getThemeDescriptions()) != null) {
-                            ThemeEditorView.EditorAlert editorAlert = themeEditorView.new EditorAlert(themeEditorView.b, themeDescriptions);
-                            themeEditorView.l = editorAlert;
-                            editorAlert.setOnDismissListener(new ei.e1(i12));
-                            themeEditorView.l.setOnDismissListener(new b1(this, 10));
-                            themeEditorView.l.show();
-                            if (themeEditorView.b != null) {
-                                try {
-                                    AnimatorSet animatorSet = new AnimatorSet();
-                                    try {
-                                        z10 = true;
-                                        try {
-                                            animatorSet.playTogether(ObjectAnimator.ofFloat(themeEditorView.a, (Property<w11, Float>) property, 1.0f, 0.0f), ObjectAnimator.ofFloat(themeEditorView.a, (Property<w11, Float>) View.SCALE_X, 1.0f, 0.0f), ObjectAnimator.ofFloat(themeEditorView.a, (Property<w11, Float>) View.SCALE_Y, 1.0f, 0.0f));
-                                            animatorSet.setInterpolator(themeEditorView.i);
-                                            animatorSet.setDuration(150L);
-                                            animatorSet.addListener(new y11(themeEditorView, i13));
-                                            animatorSet.start();
-                                        } catch (Exception unused) {
-                                        }
-                                    } catch (Exception unused2) {
-                                    }
-                                } catch (Exception unused3) {
-                                }
-                                if (this.c) {
-                                    float f7 = 1.0f;
-                                    if (motionEvent.getAction() == 2) {
-                                        float f10 = rawX - this.a;
-                                        float f11 = rawY - this.b;
-                                        WindowManager.LayoutParams layoutParams = themeEditorView.g;
-                                        int i14 = (int) (layoutParams.x + f10);
-                                        layoutParams.x = i14;
-                                        layoutParams.y = (int) (layoutParams.y + f11);
-                                        int i15 = i11 / 2;
-                                        int i16 = -i15;
-                                        if (i14 < i16) {
-                                            layoutParams.x = i16;
-                                        } else {
-                                            int i17 = (AndroidUtilities.displaySize.x - layoutParams.width) + i15;
-                                            if (i14 > i17) {
-                                                layoutParams.x = i17;
-                                            }
-                                        }
-                                        int i18 = layoutParams.x;
-                                        if (i18 < 0) {
-                                            f7 = a1.g.d(i18, i15, 0.5f, 1.0f);
-                                        } else {
-                                            if (i18 > AndroidUtilities.displaySize.x - layoutParams.width) {
-                                                f7 = org.telegram.messenger.nk.x((i18 - r9) + r8, i15, 0.5f, 1.0f);
-                                            }
-                                        }
-                                        if (themeEditorView.a.getAlpha() != f7) {
-                                            themeEditorView.a.setAlpha(f7);
-                                        }
-                                        WindowManager.LayoutParams layoutParams2 = themeEditorView.g;
-                                        int i19 = layoutParams2.y;
-                                        if (i19 < 0) {
-                                            layoutParams2.y = 0;
-                                        } else {
-                                            int i20 = AndroidUtilities.displaySize.y - layoutParams2.height;
-                                            if (i19 > i20) {
-                                                layoutParams2.y = i20;
-                                            }
-                                        }
-                                        themeEditorView.h.updateViewLayout(themeEditorView.a, layoutParams2);
-                                        this.a = rawX;
-                                        this.b = rawY;
-                                    } else {
-                                        boolean z13 = z10;
-                                        if (motionEvent.getAction() != z13) {
-                                            return z13;
-                                        }
-                                        this.c = false;
-                                        int b10 = ThemeEditorView.b(0.0f, 0, i11, z13);
-                                        int b11 = ThemeEditorView.b(0.0f, z13 ? 1 : 0, i11, z13);
-                                        int i21 = themeEditorView.f;
-                                        int b12 = ThemeEditorView.b(0.0f, 0, i21, false);
-                                        int b13 = ThemeEditorView.b(0.0f, z13 ? 1 : 0, i21, false);
-                                        SharedPreferences.Editor edit = themeEditorView.j.edit();
-                                        int dp = AndroidUtilities.dp(20.0f);
-                                        if (Math.abs(b10 - themeEditorView.g.x) <= dp || ((i10 = themeEditorView.g.x) < 0 && i10 > (-i11) / 4)) {
-                                            arrayList = new ArrayList();
-                                            edit.putInt("sidex", 0);
-                                            if (themeEditorView.a.getAlpha() != 1.0f) {
-                                                arrayList.add(ObjectAnimator.ofFloat(themeEditorView.a, (Property<w11, Float>) property, 1.0f));
-                                            }
-                                            arrayList.add(ObjectAnimator.ofInt(themeEditorView, "x", b10));
-                                        } else {
-                                            if (Math.abs(b11 - i10) > dp) {
-                                                int i22 = themeEditorView.g.x;
-                                                int i23 = AndroidUtilities.displaySize.x;
-                                                if (i22 <= i23 - i11 || i22 >= i23 - ((i11 / 4) * 3)) {
-                                                    if (themeEditorView.a.getAlpha() != 1.0f) {
-                                                        arrayList = new ArrayList();
-                                                        if (themeEditorView.g.x < 0) {
-                                                            arrayList.add(ObjectAnimator.ofInt(themeEditorView, "x", -i11));
-                                                        } else {
-                                                            arrayList.add(ObjectAnimator.ofInt(themeEditorView, "x", AndroidUtilities.displaySize.x));
-                                                        }
-                                                        z11 = true;
-                                                    } else {
-                                                        edit.putFloat("px", (themeEditorView.g.x - b10) / (b11 - b10));
-                                                        edit.putInt("sidex", 2);
-                                                        z11 = false;
-                                                        arrayList = null;
-                                                    }
-                                                    if (!z11) {
-                                                        if (Math.abs(b12 - themeEditorView.g.y) <= dp || themeEditorView.g.y <= org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) {
-                                                            if (arrayList == null) {
-                                                                arrayList = new ArrayList();
-                                                            }
-                                                            edit.putInt("sidey", 0);
-                                                            arrayList.add(ObjectAnimator.ofInt(themeEditorView, "y", b12));
-                                                        } else if (Math.abs(b13 - themeEditorView.g.y) <= dp) {
-                                                            if (arrayList == null) {
-                                                                arrayList = new ArrayList();
-                                                            }
-                                                            edit.putInt("sidey", 1);
-                                                            arrayList.add(ObjectAnimator.ofInt(themeEditorView, "y", b13));
-                                                        } else {
-                                                            edit.putFloat("py", (themeEditorView.g.y - b12) / (b13 - b12));
-                                                            edit.putInt("sidey", 2);
-                                                        }
-                                                        edit.commit();
-                                                    }
-                                                    if (arrayList != null) {
-                                                        return true;
-                                                    }
-                                                    if (themeEditorView.i == null) {
-                                                        themeEditorView.i = new DecelerateInterpolator();
-                                                    }
-                                                    AnimatorSet animatorSet2 = new AnimatorSet();
-                                                    animatorSet2.setInterpolator(themeEditorView.i);
-                                                    animatorSet2.setDuration(150L);
-                                                    if (z11) {
-                                                        z12 = true;
-                                                        arrayList.add(ObjectAnimator.ofFloat(themeEditorView.a, (Property<w11, Float>) property, 0.0f));
-                                                        animatorSet2.addListener(new y11(themeEditorView, 1 == true ? 1 : 0));
-                                                    } else {
-                                                        z12 = true;
-                                                    }
-                                                    animatorSet2.playTogether(arrayList);
-                                                    animatorSet2.start();
-                                                    return z12;
-                                                }
-                                            }
-                                            ArrayList arrayList2 = new ArrayList();
-                                            edit.putInt("sidex", 1);
-                                            if (themeEditorView.a.getAlpha() != 1.0f) {
-                                                arrayList2.add(ObjectAnimator.ofFloat(themeEditorView.a, (Property<w11, Float>) property, 1.0f));
-                                            }
-                                            arrayList2.add(ObjectAnimator.ofInt(themeEditorView, "x", b11));
-                                            arrayList = arrayList2;
-                                        }
-                                        z11 = false;
-                                        if (!z11) {
-                                        }
-                                        if (arrayList != null) {
-                                        }
-                                    }
-                                }
-                                return z10;
-                            }
-                        }
-                    }
-                }
-                d5Var = null;
-                if (d5Var == null) {
-                }
-                if (d5Var != null) {
-                }
+    public final void b(v11 v11Var) {
+        int i10 = 0;
+        GLES20.glGenTextures(1, v11Var.A, 0);
+        GLES20.glBindTexture(3553, v11Var.A[0]);
+        GLES20.glTexParameteri(3553, 10241, 9729);
+        GLES20.glTexParameteri(3553, 10240, 9729);
+        GLES20.glTexParameteri(3553, 10242, 33071);
+        GLES20.glTexParameteri(3553, 10243, 33071);
+        GLUtils.texImage2D(3553, 0, v11Var.C, 0);
+        GLES20.glBindTexture(3553, 0);
+        v11Var.C.recycle();
+        v11Var.C = null;
+        if (v11Var.D) {
+            ArrayList arrayList = this.T;
+            int size = arrayList.size();
+            while (i10 < size) {
+                Object obj = arrayList.get(i10);
+                i10++;
+                ((v11) obj).a();
             }
-        } else if (Math.abs(this.a - rawX) >= AndroidUtilities.getPixelsInCM(0.3f, true) || Math.abs(this.b - rawY) >= AndroidUtilities.getPixelsInCM(0.3f, false)) {
-            this.c = true;
-            this.a = rawX;
-            this.b = rawY;
+            this.T.clear();
         }
-        z10 = true;
-        if (this.c) {
+        this.T.add(v11Var);
+        this.S = true;
+    }
+
+    public final void c(Matrix matrix, Bitmap bitmap, Runnable runnable, Runnable runnable2) {
+        if (!this.b.get()) {
+            AndroidUtilities.runOnUIThread(new ai.gb(runnable, runnable2, 1));
+            y11.b(this.d);
+            this.d = null;
+        } else {
+            v11 v11Var = new v11(this, matrix, bitmap, runnable, runnable2);
+            getHandler();
+            this.S = true;
+            postRunnable(new u11(this, v11Var, 1));
         }
-        return z10;
+    }
+
+    public final void d(View view, float f7, Runnable runnable) {
+        if (this.b.get()) {
+            v11 v11Var = new v11(this, view, f7, runnable);
+            getHandler();
+            this.S = true;
+            postRunnable(new u11(this, v11Var, 2));
+            return;
+        }
+        if (view != null) {
+            view.setVisibility(8);
+        }
+        if (runnable != null) {
+            AndroidUtilities.runOnUIThread(runnable);
+        }
+        t11 t11Var = this.d;
+        if (t11Var != null) {
+            AndroidUtilities.runOnUIThread(t11Var);
+            this.d = null;
+        }
+    }
+
+    public final void f(ArrayList arrayList, Runnable runnable) {
+        if (this.b.get()) {
+            v11 v11Var = new v11(this, arrayList, runnable);
+            this.S = true;
+            postRunnable(new u11(this, v11Var, 0));
+            return;
+        }
+        for (int i10 = 0; i10 < arrayList.size(); i10++) {
+            ((View) arrayList.get(i10)).setVisibility(8);
+        }
+        if (runnable != null) {
+            AndroidUtilities.runOnUIThread(runnable);
+        }
+        t11 t11Var = this.d;
+        if (t11Var != null) {
+            AndroidUtilities.runOnUIThread(t11Var);
+            this.d = null;
+        }
+    }
+
+    public final void g() {
+        int i10;
+        int i11;
+        int i12;
+        if (this.b.get()) {
+            GLES20.glClear(16384);
+            int i13 = 0;
+            int i14 = 0;
+            while (i14 < this.T.size()) {
+                v11 v11Var = (v11) this.T.get(i14);
+                if (v11Var.d) {
+                    ArrayList arrayList = this.T;
+                    int i15 = i13;
+                    int i16 = i15;
+                    while (i15 < arrayList.size()) {
+                        i16 += ((v11) arrayList.get(i15)).u;
+                        i15++;
+                    }
+                    float f7 = v11Var.u;
+                    float f10 = f7 / i16;
+                    int[] iArr = v11Var.B;
+                    int i17 = v11Var.t;
+                    int devicePerformanceClass = SharedConfig.getDevicePerformanceClass();
+                    int i18 = v11Var.E.a ? 120000 : devicePerformanceClass != 1 ? devicePerformanceClass != 2 ? 30000 : 120000 : 60000;
+                    if (v11Var.D) {
+                        i18 /= 2;
+                    }
+                    float max = Math.max(AndroidUtilities.dpf2(0.4f), 1.0f);
+                    v11Var.s = Utilities.clamp((int) ((r4 * i17) / (max * max)), (int) (i18 * f10), 10);
+                    float f11 = i17;
+                    float f12 = f11 / f7;
+                    int round = (int) Math.round(Math.sqrt(r4 / f12));
+                    v11Var.w = round;
+                    v11Var.v = Math.round(v11Var.s / round);
+                    while (true) {
+                        i10 = v11Var.v;
+                        i11 = v11Var.w;
+                        i12 = i10 * i11;
+                        if (i12 >= v11Var.s) {
+                            break;
+                        } else if (i10 / i11 < f12) {
+                            v11Var.v = i10 + 1;
+                        } else {
+                            v11Var.w = i11 + 1;
+                        }
+                    }
+                    v11Var.s = i12;
+                    v11Var.x = Math.max(f11 / i10, f7 / i11);
+                    GLES20.glGenBuffers(2, iArr, i13);
+                    for (int i19 = i13; i19 < 2; i19++) {
+                        GLES20.glBindBuffer(34962, iArr[i19]);
+                        GLES20.glBufferData(34962, v11Var.s * 28, null, 35048);
+                    }
+                    if (v11Var.e != null) {
+                        this.U.add(v11Var);
+                    }
+                }
+                this.V = true;
+                int[] iArr2 = v11Var.B;
+                boolean z10 = v11Var.D;
+                float f13 = v11Var.m;
+                int i20 = v11Var.u;
+                int i21 = v11Var.t;
+                Matrix matrix = v11Var.r;
+                w11 w11Var = v11Var.E;
+                long nanoTime = System.nanoTime();
+                double d = v11Var.b < 0 ? 0.0d : (nanoTime - r7) / 1.0E9d;
+                v11Var.b = nanoTime;
+                if (v11Var.n && !v11Var.o) {
+                    matrix.reset();
+                    matrix.postScale(i21, i20);
+                    matrix.postTranslate(v11Var.i, v11Var.j);
+                    v11Var.c();
+                }
+                v11Var.c = (float) ((f13 * d) + v11Var.c);
+                GLES20.glUniformMatrix3fv(w11Var.x, 1, false, v11Var.p, 0);
+                GLES20.glUniform1f(w11Var.y, v11Var.d ? 1.0f : 0.0f);
+                GLES20.glUniform1f(w11Var.E, v11Var.c);
+                GLES20.glUniform1f(w11Var.F, ((float) d) * f13);
+                GLES20.glUniform1f(w11Var.G, v11Var.s);
+                GLES20.glUniform3f(w11Var.I, v11Var.v, v11Var.w, v11Var.x);
+                GLES20.glUniform2f(w11Var.P, v11Var.g, v11Var.h);
+                GLES20.glUniform1f(w11Var.Q, z10 ? 0.8f : 1.0f);
+                GLES20.glUniform1f(w11Var.R, z10 ? 1.0f : 0.6f);
+                GLES20.glUniform2f(w11Var.J, i21, i20);
+                GLES20.glUniform1f(w11Var.K, v11Var.y);
+                GLES20.glUniform2f(w11Var.L, 0.0f, 0.0f);
+                GLES20.glUniform1f(w11Var.N, v11Var.k);
+                GLES20.glUniform1f(w11Var.O, v11Var.l);
+                GLES20.glActiveTexture(33984);
+                GLES20.glBindTexture(3553, v11Var.A[0]);
+                GLES20.glUniform1i(w11Var.M, 0);
+                GLES20.glBindBuffer(34962, iArr2[v11Var.z]);
+                GLES20.glVertexAttribPointer(0, 2, 5126, false, 28, 0);
+                GLES20.glEnableVertexAttribArray(0);
+                GLES20.glVertexAttribPointer(1, 2, 5126, false, 28, 8);
+                GLES20.glEnableVertexAttribArray(1);
+                GLES20.glVertexAttribPointer(2, 2, 5126, false, 28, 16);
+                GLES20.glEnableVertexAttribArray(2);
+                GLES20.glVertexAttribPointer(3, 1, 5126, false, 28, 24);
+                GLES20.glEnableVertexAttribArray(3);
+                GLES30.glBindBufferBase(35982, 0, iArr2[1 - v11Var.z]);
+                GLES20.glVertexAttribPointer(0, 2, 5126, false, 28, 0);
+                GLES20.glEnableVertexAttribArray(0);
+                GLES20.glVertexAttribPointer(1, 2, 5126, false, 28, 8);
+                GLES20.glEnableVertexAttribArray(1);
+                GLES20.glVertexAttribPointer(2, 2, 5126, false, 28, 16);
+                GLES20.glEnableVertexAttribArray(2);
+                GLES20.glVertexAttribPointer(3, 1, 5126, false, 28, 24);
+                GLES20.glEnableVertexAttribArray(3);
+                GLES30.glBeginTransformFeedback(0);
+                GLES20.glDrawArrays(0, 0, v11Var.s);
+                GLES30.glEndTransformFeedback();
+                GLES20.glBindBuffer(34962, 0);
+                GLES20.glBindBuffer(35982, 0);
+                v11Var.d = false;
+                v11Var.z = 1 - v11Var.z;
+                if (v11Var.c > v11Var.l + (v11Var.D ? 2.0f : 0.9f)) {
+                    v11Var.a();
+                    this.T.remove(i14);
+                    this.S = !this.T.isEmpty();
+                    i14--;
+                }
+                i14++;
+                i13 = 0;
+            }
+            int i22 = i13;
+            while (true) {
+                int glGetError = GLES20.glGetError();
+                if (glGetError == 0) {
+                    try {
+                        break;
+                    } catch (Exception e) {
+                        FileLog.e(e);
+                        for (int i23 = i22; i23 < this.U.size(); i23++) {
+                            AndroidUtilities.runOnUIThread(((v11) this.U.get(i23)).e);
+                        }
+                        this.U.clear();
+                        for (int i24 = i22; i24 < this.T.size(); i24++) {
+                            ((v11) this.T.get(i24)).a();
+                        }
+                        this.T.clear();
+                        AndroidUtilities.runOnUIThread(new rc(17));
+                        j();
+                        return;
+                    }
+                }
+                FileLog.e("thanos gles error " + glGetError);
+            }
+            this.h.eglSwapBuffers(this.n, this.s);
+            for (int i25 = i22; i25 < this.U.size(); i25++) {
+                AndroidUtilities.runOnUIThread(((v11) this.U.get(i25)).e);
+            }
+            this.U.clear();
+            if (this.T.isEmpty() && this.V) {
+                j();
+            }
+        }
+    }
+
+    public final void h() {
+        EGL10 egl10 = (EGL10) EGLContext.getEGL();
+        this.h = egl10;
+        EGLDisplay eglGetDisplay = egl10.eglGetDisplay(0);
+        this.n = eglGetDisplay;
+        EGL10 egl102 = this.h;
+        if (eglGetDisplay == EGL10.EGL_NO_DISPLAY) {
+            FileLog.e("ThanosEffect: eglDisplay == egl.EGL_NO_DISPLAY");
+            j();
+            return;
+        }
+        if (!egl102.eglInitialize(eglGetDisplay, new int[2])) {
+            FileLog.e("ThanosEffect: failed eglInitialize");
+            j();
+            return;
+        }
+        EGLConfig[] eGLConfigArr = new EGLConfig[1];
+        if (!this.h.eglChooseConfig(this.n, new int[]{12324, 8, 12323, 8, 12322, 8, 12321, 8, 12352, 64, 12344}, eGLConfigArr, 1, new int[1])) {
+            FileLog.e("ThanosEffect: failed eglChooseConfig");
+            i();
+            return;
+        }
+        EGLConfig eGLConfig = eGLConfigArr[0];
+        this.r = eGLConfig;
+        EGLContext eglCreateContext = this.h.eglCreateContext(this.n, eGLConfig, EGL10.EGL_NO_CONTEXT, new int[]{12440, 3, 12344});
+        this.v = eglCreateContext;
+        if (eglCreateContext == null) {
+            FileLog.e("ThanosEffect: eglContext == null");
+            j();
+            return;
+        }
+        EGLSurface eglCreateWindowSurface = this.h.eglCreateWindowSurface(this.n, this.r, this.c, null);
+        this.s = eglCreateWindowSurface;
+        if (eglCreateWindowSurface == null) {
+            FileLog.e("ThanosEffect: eglSurface == null");
+            j();
+            return;
+        }
+        if (!this.h.eglMakeCurrent(this.n, eglCreateWindowSurface, eglCreateWindowSurface, this.v)) {
+            FileLog.e("ThanosEffect: failed eglMakeCurrent");
+            j();
+            return;
+        }
+        int glCreateShader = GLES20.glCreateShader(35633);
+        int glCreateShader2 = GLES20.glCreateShader(35632);
+        if (glCreateShader == 0 || glCreateShader2 == 0) {
+            FileLog.e("ThanosEffect: vertexShader == 0 || fragmentShader == 0");
+            j();
+            return;
+        }
+        GLES20.glShaderSource(glCreateShader, AndroidUtilities.readRes(R.raw.thanos_vertex));
+        GLES20.glCompileShader(glCreateShader);
+        int[] iArr = new int[1];
+        GLES20.glGetShaderiv(glCreateShader, 35713, iArr, 0);
+        if (iArr[0] != 1) {
+            FileLog.e("ThanosEffect, compile vertex shader error: " + GLES20.glGetShaderInfoLog(glCreateShader));
+            GLES20.glDeleteShader(glCreateShader);
+            j();
+            return;
+        }
+        GLES20.glShaderSource(glCreateShader2, AndroidUtilities.readRes(R.raw.thanos_fragment));
+        GLES20.glCompileShader(glCreateShader2);
+        GLES20.glGetShaderiv(glCreateShader2, 35713, iArr, 0);
+        if (iArr[0] != 1) {
+            FileLog.e("ThanosEffect, compile fragment shader error: " + GLES20.glGetShaderInfoLog(glCreateShader2));
+            GLES20.glDeleteShader(glCreateShader2);
+            j();
+            return;
+        }
+        int glCreateProgram = GLES20.glCreateProgram();
+        this.w = glCreateProgram;
+        if (glCreateProgram == 0) {
+            FileLog.e("ThanosEffect: drawProgram == 0");
+            j();
+            return;
+        }
+        GLES20.glAttachShader(glCreateProgram, glCreateShader);
+        GLES20.glAttachShader(this.w, glCreateShader2);
+        GLES30.glTransformFeedbackVaryings(this.w, new String[]{"outUV", "outPosition", "outVelocity", "outTime"}, 35980);
+        GLES20.glLinkProgram(this.w);
+        GLES20.glGetProgramiv(this.w, 35714, iArr, 0);
+        if (iArr[0] != 1) {
+            FileLog.e("ThanosEffect, link program error: " + GLES20.glGetProgramInfoLog(this.w));
+            j();
+            return;
+        }
+        this.x = GLES20.glGetUniformLocation(this.w, "matrix");
+        this.J = GLES20.glGetUniformLocation(this.w, "rectSize");
+        this.L = GLES20.glGetUniformLocation(this.w, "rectPos");
+        this.y = GLES20.glGetUniformLocation(this.w, "reset");
+        this.E = GLES20.glGetUniformLocation(this.w, "time");
+        this.F = GLES20.glGetUniformLocation(this.w, "deltaTime");
+        this.G = GLES20.glGetUniformLocation(this.w, "particlesCount");
+        this.H = GLES20.glGetUniformLocation(this.w, "size");
+        this.I = GLES20.glGetUniformLocation(this.w, "gridSize");
+        this.M = GLES20.glGetUniformLocation(this.w, "tex");
+        this.K = GLES20.glGetUniformLocation(this.w, "seed");
+        this.N = GLES20.glGetUniformLocation(this.w, "dp");
+        this.O = GLES20.glGetUniformLocation(this.w, "longevity");
+        this.P = GLES20.glGetUniformLocation(this.w, "offset");
+        this.Q = GLES20.glGetUniformLocation(this.w, "scale");
+        this.R = GLES20.glGetUniformLocation(this.w, "uvOffset");
+        GLES20.glViewport(0, 0, this.e, this.f);
+        GLES20.glDisable(3042);
+        GLES20.glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
+        GLES20.glUseProgram(this.w);
+        GLES20.glUniform2f(this.H, this.e, this.f);
+    }
+
+    @Override // org.telegram.messenger.DispatchQueue
+    public final void handleMessage(Message message) {
+        int i10 = message.what;
+        if (i10 == 0) {
+            g();
+            return;
+        }
+        int i11 = 0;
+        if (i10 == 1) {
+            int i12 = message.arg1;
+            int i13 = message.arg2;
+            if (this.b.get()) {
+                this.e = i12;
+                this.f = i13;
+                GLES20.glViewport(0, 0, i12, i13);
+                GLES20.glUniform2f(this.H, i12, i13);
+            }
+            g();
+            return;
+        }
+        if (i10 == 2) {
+            j();
+            return;
+        }
+        if (i10 == 3) {
+            b((v11) message.obj);
+            return;
+        }
+        ArrayList arrayList = this.T;
+        if (i10 == 4) {
+            while (i11 < arrayList.size()) {
+                v11 v11Var = (v11) arrayList.get(i11);
+                v11Var.g += message.arg1;
+                v11Var.h += message.arg2;
+                i11++;
+            }
+            return;
+        }
+        if (i10 != 5) {
+            return;
+        }
+        View view = (View) message.obj;
+        while (i11 < arrayList.size()) {
+            v11 v11Var2 = (v11) arrayList.get(i11);
+            if (v11Var2.a.contains(view)) {
+                v11Var2.a();
+                arrayList.remove(i11);
+                i11--;
+            }
+            i11++;
+        }
+    }
+
+    public final void i() {
+        if (!this.b.get()) {
+            FileLog.d("ThanosEffect: kill failed, already dead");
+            return;
+        }
+        FileLog.d("ThanosEffect: kill");
+        try {
+            Handler handler = getHandler();
+            if (handler != null) {
+                handler.sendMessage(handler.obtainMessage(2));
+            }
+        } catch (Exception unused) {
+        }
+    }
+
+    public final void j() {
+        ArrayList arrayList;
+        AtomicBoolean atomicBoolean = this.b;
+        if (!atomicBoolean.get()) {
+            FileLog.d("ThanosEffect: killInternal failed, already dead");
+            return;
+        }
+        FileLog.d("ThanosEffect: killInternal");
+        int i10 = 0;
+        atomicBoolean.set(false);
+        while (true) {
+            arrayList = this.T;
+            if (i10 >= arrayList.size()) {
+                break;
+            }
+            ((v11) arrayList.get(i10)).a();
+            i10++;
+        }
+        arrayList.clear();
+        SurfaceTexture surfaceTexture = this.c;
+        if (surfaceTexture != null) {
+            surfaceTexture.release();
+        }
+        y11.b(this.d);
+        this.d = null;
+        Looper myLooper = Looper.myLooper();
+        if (myLooper != null) {
+            myLooper.quit();
+        }
+    }
+
+    @Override // org.telegram.messenger.DispatchQueue, java.lang.Thread, java.lang.Runnable
+    public final void run() {
+        ArrayList arrayList = this.W;
+        int i10 = 0;
+        try {
+            h();
+            if (!arrayList.isEmpty()) {
+                while (i10 < arrayList.size()) {
+                    b((v11) arrayList.get(i10));
+                    i10++;
+                }
+                arrayList.clear();
+            }
+            super.run();
+        } catch (Exception e) {
+            FileLog.e(e);
+            while (i10 < arrayList.size()) {
+                v11 v11Var = (v11) arrayList.get(i10);
+                Runnable runnable = v11Var.e;
+                if (runnable != null) {
+                    AndroidUtilities.runOnUIThread(runnable);
+                }
+                v11Var.a();
+                i10++;
+            }
+            arrayList.clear();
+            AndroidUtilities.runOnUIThread(new rc(16));
+            j();
+        }
     }
 }

@@ -1,20 +1,78 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class u10 extends sg.a1 {
-    public final /* synthetic */ int r;
+public final class u10 implements org.telegram.ui.Components.gp0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ tg.g b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ u10(int i10, int i11, int i12, int i13, org.telegram.ui.ActionBar.d6 d6Var, int i14) {
-        super(i10, i11, i12, i13, d6Var);
-        this.r = i14;
+    public /* synthetic */ u10(tg.g gVar, int i10) {
+        this.a = i10;
+        this.b = gVar;
     }
 
-    @Override // sg.a1
-    public final int c(int i10) {
-        switch (this.r) {
+    @Override // org.telegram.ui.Components.gp0
+    public final void L(float f7, boolean z10) {
+        switch (this.a) {
+            case 0:
+                tg.o oVar = this.b.c;
+                if (oVar != null) {
+                    oVar.B = f7 * 2.0f;
+                    break;
+                }
+                break;
+            case 1:
+                tg.o oVar2 = this.b.c;
+                if (oVar2 != null) {
+                    oVar2.C = f7 * 2.0f;
+                    break;
+                }
+                break;
+            case 2:
+                tg.o oVar3 = this.b.c;
+                if (oVar3 != null) {
+                    oVar3.D = f7;
+                    break;
+                }
+                break;
+            default:
+                tg.o oVar4 = this.b.c;
+                if (oVar4 != null) {
+                    oVar4.G = f7 * 2.0f;
+                    break;
+                }
+                break;
         }
-        return org.telegram.ui.ActionBar.h6.D0(i10);
+    }
+
+    @Override // org.telegram.ui.Components.gp0
+    public final /* synthetic */ int Y() {
+        switch (this.a) {
+        }
+        return 0;
+    }
+
+    @Override // org.telegram.ui.Components.gp0
+    public final /* synthetic */ CharSequence getContentDescription() {
+        switch (this.a) {
+        }
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.gp0
+    public final void v() {
+        int i10 = this.a;
+    }
+
+    private final void a() {
+    }
+
+    private final void b() {
+    }
+
+    private final void c() {
+    }
+
+    private final void d() {
     }
 }

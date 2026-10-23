@@ -5,18 +5,18 @@ import android.animation.AnimatorListenerAdapter;
 import ki.u4;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
-import org.telegram.ui.Components.aq;
+import org.telegram.ui.Components.bq;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.e8;
-import org.telegram.ui.Components.fi0;
+import org.telegram.ui.Components.ii0;
 import org.telegram.ui.Components.jy;
-import org.telegram.ui.Components.l60;
-import org.telegram.ui.Components.ol0;
+import org.telegram.ui.Components.m60;
 import org.telegram.ui.Components.p6;
-import org.telegram.ui.Components.pt0;
-import org.telegram.ui.oq;
+import org.telegram.ui.Components.rl0;
+import org.telegram.ui.Components.st0;
+import org.telegram.ui.qq;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class p2 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -35,13 +35,13 @@ public final class p2 extends AnimatorListenerAdapter {
         switch (this.a) {
             case 0:
                 d3 d3Var = (d3) this.c;
-                d3Var.P.setColor(this.b);
+                d3Var.Q.setColor(this.b);
                 d3Var.B();
-                d3Var.e.invalidate();
-                org.telegram.ui.f3 f3Var = d3Var.U0;
-                if (f3Var != null) {
-                    f3Var.b(AndroidUtilities.computePerceivedBrightness(d3Var.P.getColor()) <= 0.721f, false);
-                    d3Var.U0.setBackgroundColor(d3Var.P.getColor());
+                d3Var.f.invalidate();
+                org.telegram.ui.e3 e3Var = d3Var.Y0;
+                if (e3Var != null) {
+                    e3Var.b(AndroidUtilities.computePerceivedBrightness(d3Var.Q.getColor()) <= 0.721f, false);
+                    d3Var.Y0.setBackgroundColor(d3Var.Q.getColor());
                 }
                 d3Var.G();
                 break;
@@ -77,46 +77,46 @@ public final class p2 extends AnimatorListenerAdapter {
                 ((e8) this.c).a[this.b].setVisibility(8);
                 break;
             case 6:
-                ((aq) this.c).a[this.b].animate().scaleX(1.0f).scaleY(1.0f).setInterpolator(bs.g).setStartDelay(0L).setDuration(100L).start();
+                ((bq) this.c).a[this.b].animate().scaleX(1.0f).scaleY(1.0f).setInterpolator(bs.g).setStartDelay(0L).setDuration(100L).start();
                 break;
             case 7:
                 jy jyVar = (jy) this.c;
-                sg.q0 q0Var = jyVar.h;
+                sg.p0 p0Var = jyVar.r;
                 int i10 = this.b;
-                q0Var.setVisibility(i10 == 1 ? 0 : 8);
-                jyVar.e.setVisibility(i10 == 2 ? 0 : 8);
-                jyVar.f.setVisibility(i10 == 3 ? 0 : 8);
+                p0Var.setVisibility(i10 == 1 ? 0 : 8);
+                jyVar.h.setVisibility(i10 == 2 ? 0 : 8);
+                jyVar.n.setVisibility(i10 == 3 ? 0 : 8);
                 break;
             case 8:
-                l60 l60Var = (l60) this.c;
-                if (this.b == l60Var.s0) {
-                    l60Var.x.setRotationY(0.0f);
-                    l60Var.q0 = true;
-                    l60Var.b0 = null;
+                m60 m60Var = (m60) this.c;
+                if (this.b == m60Var.s0) {
+                    m60Var.x.setRotationY(0.0f);
+                    m60Var.q0 = true;
+                    m60Var.b0 = null;
                     StringBuilder sb2 = new StringBuilder("RoundVideo camera flip visual animation completed: elapsedMs=");
-                    cameraFlipElapsedMs = l60Var.getCameraFlipElapsedMs();
+                    cameraFlipElapsedMs = m60Var.getCameraFlipElapsedMs();
                     sb2.append(cameraFlipElapsedMs);
                     FileLog.d(sb2.toString());
-                    l60.l(l60Var);
+                    m60.l(m60Var);
                     break;
                 }
                 break;
             case 9:
-                fi0 fi0Var = (fi0) this.c;
-                fi0Var.H = null;
-                fi0Var.P.d1.delete(this.b);
+                ii0 ii0Var = (ii0) this.c;
+                ii0Var.H = null;
+                ii0Var.P.d1.delete(this.b);
                 break;
             case 10:
-                oq oqVar = (oq) this.c;
-                ((ol0) oqVar.d).b.remove(this.b);
-                ol0 ol0Var = (ol0) oqVar.d;
-                ol0Var.d = true;
-                ol0Var.a.invalidate();
+                qq qqVar = (qq) this.c;
+                ((rl0) qqVar.d).b.remove(this.b);
+                rl0 rl0Var = (rl0) qqVar.d;
+                rl0Var.d = true;
+                rl0Var.a.invalidate();
                 break;
             case 11:
-                pt0 pt0Var = (pt0) this.c;
-                pt0Var.e.O1.remove(this.b);
-                pt0Var.a.invalidate();
+                st0 st0Var = (st0) this.c;
+                st0Var.e.P1.remove(this.b);
+                st0Var.a.invalidate();
                 break;
             default:
                 org.telegram.ui.Components.voip.b1 b1Var = (org.telegram.ui.Components.voip.b1) this.c;
@@ -134,9 +134,9 @@ public final class p2 extends AnimatorListenerAdapter {
         switch (this.a) {
             case 7:
                 jy jyVar = (jy) this.c;
+                jyVar.r.setVisibility(0);
                 jyVar.h.setVisibility(0);
-                jyVar.e.setVisibility(0);
-                jyVar.f.setVisibility(0);
+                jyVar.n.setVisibility(0);
                 break;
             default:
                 super.onAnimationStart(animator);

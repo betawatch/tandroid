@@ -1,26 +1,28 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
+import java.util.ArrayList;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class no0 extends n40 {
-    public final /* synthetic */ org.telegram.ui.lx c0;
+public final class no0 extends at {
+    public final /* synthetic */ org.telegram.ui.nx k0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public no0(org.telegram.ui.lx lxVar, jm0 jm0Var, Context context, int i10) {
-        super(jm0Var, context, i10);
-        this.c0 = lxVar;
+    public no0(org.telegram.ui.nx nxVar, mm0 mm0Var, Context context, int i10, int i11) {
+        super(mm0Var, context, i10, i11, false, null);
+        this.k0 = nxVar;
     }
 
-    @Override // org.telegram.ui.Components.u61
+    @Override // org.telegram.ui.Components.b71
     public final void N(boolean z10) {
+        ArrayList arrayList;
         super.N(z10);
-        jo0 jo0Var = this.c0.s0;
-        jo0Var.e(false, z10);
-        jo0Var.d.setText(LocaleController.getString(R.string.NoResult));
-        jo0Var.e.setVisibility(8);
+        mo0 mo0Var = this.k0.l0;
+        mo0Var.e(this.b0 || this.c0 || (arrayList = this.V) == null || !arrayList.isEmpty(), z10);
+        mo0Var.d.setText(LocaleController.getString(R.string.NoResult));
+        mo0Var.e.setVisibility(8);
     }
 }

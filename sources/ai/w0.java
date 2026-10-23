@@ -2,7 +2,7 @@ package ai;
 
 import org.telegram.messenger.MessagesStorage;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class w0 implements MessagesStorage.IntCallback {
     public final /* synthetic */ int a;
@@ -19,13 +19,13 @@ public final /* synthetic */ class w0 implements MessagesStorage.IntCallback {
             case 0:
                 b1 b1Var = (b1) this.b;
                 b1Var.getClass();
-                b1Var.V(ag.a.i(0L, i10 == 0 ? ag.b.a : ag.b.b), true, false, true);
-                b1Var.d0.setText("");
+                b1Var.U(ag.a.i(0L, i10 == 0 ? ag.b.a : ag.b.b), true, false, true);
+                b1Var.e0.setText("");
                 break;
             case 1:
                 h1 h1Var = (h1) this.b;
                 h1Var.getClass();
-                h1Var.s(ag.a.i(0L, i10 == 0 ? ag.b.a : ag.b.b), true, false, true);
+                h1Var.r(ag.a.i(0L, i10 == 0 ? ag.b.a : ag.b.b), true, false, true);
                 h1Var.h.setText("");
                 break;
             default:

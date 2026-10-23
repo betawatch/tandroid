@@ -1,36 +1,23 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.MessagesStorage;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class dy0 extends fr0 {
-    public final /* synthetic */ qy0 c1;
+public final /* synthetic */ class dy0 implements org.telegram.ui.ActionBar.q0, MessagesStorage.StringCallback {
+    public final /* synthetic */ ty0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public dy0(qy0 qy0Var, Context context, String str, String str2, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, null, str, false, str2, false, d6Var);
-        this.c1 = qy0Var;
+    public /* synthetic */ dy0(ty0 ty0Var) {
+        this.a = ty0Var;
     }
 
-    @Override // org.telegram.ui.Components.fr0
-    public final void T0(a0.h hVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        if (z10) {
-            AndroidUtilities.runOnUIThread(new org.telegram.ui.i4(this, hVar, i10, 26), 100L);
-        }
+    @Override // org.telegram.ui.ActionBar.q0
+    public void h(int i10) {
+        ty0.E(this.a, i10);
     }
 
-    @Override // org.telegram.ui.Components.fr0, org.telegram.ui.ActionBar.f3
-    public final void dismissInternal() {
-        super.dismissInternal();
-        org.telegram.ui.ActionBar.n2 n2Var = this.c1.L;
-        if (n2Var instanceof org.telegram.ui.qn) {
-            AndroidUtilities.requestAdjustResize(n2Var.getParentActivity(), n2Var.getClassGuid());
-            if (((org.telegram.ui.qn) n2Var).Y.getVisibility() == 0) {
-                n2Var.getFragmentView().requestLayout();
-            }
-        }
+    @Override // org.telegram.messenger.MessagesStorage.StringCallback
+    public void run(String str) {
+        new g50(r1.getContext(), r1.o0, null, this.a.resourcesProvider).show();
     }
 }

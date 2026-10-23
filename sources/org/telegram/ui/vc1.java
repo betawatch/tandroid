@@ -1,153 +1,27 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.KeyEvent;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class vc1 extends FrameLayout {
+public final /* synthetic */ class vc1 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ yc1 b;
+    public final /* synthetic */ ed1 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ vc1(yc1 yc1Var, Context context, int i10) {
-        super(context);
+    public /* synthetic */ vc1(ed1 ed1Var, int i10) {
         this.a = i10;
-        this.b = yc1Var;
+        this.b = ed1Var;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public void dispatchDraw(Canvas canvas) {
-        Canvas canvas2;
-        org.telegram.ui.Cells.u1 u1Var;
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                yc1 yc1Var = this.b;
-                if (yc1Var.x <= 0.0f || yc1Var.v == null) {
-                    canvas2 = canvas;
-                } else {
-                    yc1Var.w.reset();
-                    float width = getWidth() / yc1Var.r.getWidth();
-                    yc1Var.w.postScale(width, width);
-                    yc1Var.s.setLocalMatrix(yc1Var.w);
-                    yc1Var.v.setAlpha((int) (yc1Var.x * 255.0f));
-                    canvas2 = canvas;
-                    canvas2.drawRect(0.0f, 0.0f, getWidth(), getHeight(), yc1Var.v);
-                }
-                if (yc1Var.N && (u1Var = yc1Var.K) != null) {
-                    u1Var.K7 = yc1Var.O;
-                    u1Var.invalidate();
-                    yc1Var.N = false;
-                }
-                super.dispatchDraw(canvas2);
+                this.b.c(false);
                 break;
-            default:
-                super.dispatchDraw(canvas);
-                break;
-        }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public boolean dispatchKeyEventPreIme(KeyEvent keyEvent) {
-        switch (this.a) {
-            case 0:
-                if (keyEvent == null || keyEvent.getKeyCode() != 4 || keyEvent.getAction() != 1) {
-                    return super.dispatchKeyEventPreIme(keyEvent);
-                }
-                this.b.c(true);
-                return true;
-            default:
-                return super.dispatchKeyEventPreIme(keyEvent);
-        }
-    }
-
-    @Override // android.view.ViewGroup
-    public boolean drawChild(Canvas canvas, View view, long j10) {
-        switch (this.a) {
             case 1:
-                yc1 yc1Var = this.b;
-                if (view != yc1Var.J && view != yc1Var.I) {
-                    return super.drawChild(canvas, view, j10);
-                }
-                canvas.save();
-                canvas.clipRect(0.0f, AndroidUtilities.lerp(yc1Var.L, 0.0f, yc1Var.x), getWidth(), AndroidUtilities.lerp(yc1Var.M, getHeight(), yc1Var.x));
-                boolean drawChild = super.drawChild(canvas, view, j10);
-                canvas.restore();
-                return drawChild;
-            default:
-                return super.drawChild(canvas, view, j10);
-        }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        switch (this.a) {
-            case 0:
-                super.onLayout(z10, i10, i11, i12, i13);
-                this.b.d();
+                super/*android.app.Dialog*/.dismiss();
                 break;
             default:
-                super.onLayout(z10, i10, i11, i12, i13);
-                break;
-        }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i10, int i11) {
-        switch (this.a) {
-            case 2:
-                int size = View.MeasureSpec.getSize(i10);
-                int size2 = View.MeasureSpec.getSize(i11);
-                yc1 yc1Var = this.b;
-                yc1Var.e();
-                for (int i12 = 0; i12 < getChildCount(); i12++) {
-                    View childAt = getChildAt(i12);
-                    ViewGroup viewGroup = yc1Var.S;
-                    if (childAt == viewGroup) {
-                        float f7 = yc1Var.T;
-                        if (f7 > 0.0f) {
-                            viewGroup.measure(View.MeasureSpec.makeMeasureSpec(Math.min(size, (int) f7), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_31));
-                        }
-                    }
-                    ViewGroup viewGroup2 = yc1Var.Q;
-                    if (childAt == viewGroup2) {
-                        float f10 = yc1Var.R;
-                        if (f10 > 0.0f) {
-                            viewGroup2.measure(View.MeasureSpec.makeMeasureSpec(Math.min(size, (int) f10), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_31));
-                        }
-                    }
-                    org.telegram.ui.Components.dl0 dl0Var = yc1Var.P;
-                    if (childAt == dl0Var) {
-                        childAt.measure(View.MeasureSpec.makeMeasureSpec(dl0Var.getTotalWidth(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_31));
-                    } else {
-                        childAt.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_31));
-                    }
-                }
-                setMeasuredDimension(size, size2);
-                break;
-            default:
-                super.onMeasure(i10, i11);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void onSizeChanged(int i10, int i11, int i12, int i13) {
-        switch (this.a) {
-            case 0:
-                super.onSizeChanged(i10, i11, i12, i13);
-                yc1 yc1Var = this.b;
-                hh.d.c(yc1Var.E, yc1Var.b);
-                yc1Var.F.d();
-                break;
-            default:
-                super.onSizeChanged(i10, i11, i12, i13);
+                this.b.c(false);
                 break;
         }
     }

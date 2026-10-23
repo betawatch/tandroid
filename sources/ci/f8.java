@@ -1,117 +1,72 @@
 package ci;
 
-import android.content.Context;
-import android.view.View;
-import android.widget.FrameLayout;
-import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
-import org.telegram.ui.Components.dl0;
-import org.telegram.ui.Components.m60;
+import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final class f8 extends z4.a {
-    public final ArrayList c = new ArrayList();
-    public final /* synthetic */ Context d;
-    public final /* synthetic */ aa e;
-    public final /* synthetic */ org.telegram.ui.ActionBar.d6 f;
-    public final /* synthetic */ q9 g;
+public final class f8 implements z4.f {
+    public final /* synthetic */ z9 a;
+    public final /* synthetic */ p9 b;
 
-    public f8(q9 q9Var, Context context, aa aaVar, org.telegram.ui.ActionBar.d6 d6Var) {
-        this.g = q9Var;
-        this.d = context;
-        this.e = aaVar;
-        this.f = d6Var;
+    public f8(p9 p9Var, z9 z9Var) {
+        this.b = p9Var;
+        this.a = z9Var;
     }
 
-    @Override // z4.a
-    public final void a(z4.g gVar, Object obj) {
-        FrameLayout frameLayout = (FrameLayout) obj;
-        gVar.removeView(frameLayout);
-        q4 q4Var = (q4) frameLayout.getChildAt(0);
-        AndroidUtilities.removeFromParent(q4Var);
-        this.c.add(q4Var);
-    }
-
-    @Override // z4.a
-    public final int b() {
-        q9 q9Var = this.g;
-        ArrayList arrayList = q9Var.x0;
-        return arrayList != null ? arrayList.size() : q9Var.A0.size();
-    }
-
-    @Override // z4.a
-    public final Object e(z4.g gVar, int i10) {
-        q4 e8Var;
-        Context context = this.d;
-        q9 q9Var = this.g;
-        h8 h8Var = new h8(q9Var, context);
-        ArrayList arrayList = this.c;
-        boolean isEmpty = arrayList.isEmpty();
-        aa aaVar = this.e;
-        if (isEmpty) {
-            e8Var = new e8(this, this.d, aaVar, q9Var.H0, this.f);
-        } else {
-            e8Var = (q4) arrayList.remove(0);
-            e8Var.o1.a.getImageReceiver().setVisible(true, true);
-            if (e8Var.e2 != null) {
-                e8Var.b2.N0();
-                e8Var.b2.setAlpha(1.0f - e8Var.d4);
-            }
-            dl0 dl0Var = e8Var.f2;
-            if (dl0Var != null) {
-                dl0Var.n();
-            }
-            dl0 dl0Var2 = e8Var.r3;
-            if (dl0Var2 != null) {
-                dl0Var2.n();
-            }
-            m60 m60Var = e8Var.J2;
-            if (m60Var != null) {
-                AndroidUtilities.removeFromParent(m60Var);
-                e8Var.J2.c(true);
-                e8Var.J2 = null;
-            }
-            e8Var.setActive(false);
-            e8Var.setIsVisible(false);
-            e8Var.L2 = false;
-            e8Var.O2.d(0.0f, false);
-            e8Var.l1 = null;
-            e8Var.i3 = false;
-            e8Var.p0();
+    @Override // z4.f
+    public final void a(int i10) {
+        p9 p9Var = this.b;
+        p4 currentPeerView = p9Var.getCurrentPeerView();
+        if (currentPeerView == null) {
+            return;
         }
-        h8Var.a = e8Var;
-        e8Var.setAccount(q9Var.y0);
-        e8Var.setDelegate(q9Var.B0);
-        e8Var.setLongpressed(aaVar.a1);
-        h8Var.setTag(Integer.valueOf(i10));
-        ArrayList arrayList2 = q9Var.x0;
-        if (arrayList2 != null) {
-            if (aaVar.R0) {
-                i10 = (arrayList2.size() - 1) - i10;
+        ((q9) p9Var.B0).a(currentPeerView.getSelectedPosition(), currentPeerView.getCurrentPeer());
+        p9Var.F();
+        z9 z9Var = this.a;
+        v9 v9Var = z9Var.t0;
+        if (v9Var != null) {
+            if (i10 < 3) {
+                v9Var.b(false);
+            } else if (i10 > p9Var.z0.b() - 4) {
+                z9Var.t0.b(true);
             }
-            ArrayList arrayList3 = (ArrayList) arrayList2.get(i10);
-            h8Var.c = arrayList3;
-            a7 a7Var = aaVar.O0;
-            if ((a7Var instanceof u6) || (a7Var instanceof d7)) {
-                MessageObject f7 = a7Var.f(((Integer) arrayList3.get(0)).intValue());
-                h8Var.b = f7 == null ? q9Var.w0 : f7.getDialogId();
-            } else {
-                h8Var.b = q9Var.w0;
-            }
-        } else {
-            h8Var.c = null;
-            h8Var.b = ((Long) q9Var.A0.get(i10)).longValue();
         }
-        h8Var.addView(e8Var);
-        e8Var.requestLayout();
-        gVar.addView(h8Var);
-        return h8Var;
     }
 
-    @Override // z4.a
-    public final boolean f(View view, Object obj) {
-        return view == obj;
+    @Override // z4.f
+    public final void b(float f7, int i10, int i11) {
+        p9 p9Var = this.b;
+        p9Var.I0 = i10;
+        p9Var.J0 = i11 > 0 ? i10 + 1 : i10 - 1;
+        p9Var.K0 = f7;
+        long j10 = UserConfig.getInstance(p9Var.y0).clientUserId;
+        int i12 = p9Var.I0;
+        if (i12 >= 0 && (p9Var.x0 != null ? p9Var.w0 == j10 : !(i12 >= p9Var.A0.size() || ((Long) p9Var.A0.get(p9Var.I0)).longValue() != j10))) {
+            ((q9) p9Var.B0).d(1.0f - p9Var.K0);
+            return;
+        }
+        int i13 = p9Var.J0;
+        if (i13 < 0 || (p9Var.x0 != null ? p9Var.w0 != j10 : i13 >= p9Var.A0.size() || ((Long) p9Var.A0.get(p9Var.J0)).longValue() != j10)) {
+            ((q9) p9Var.B0).d(0.0f);
+        } else {
+            ((q9) p9Var.B0).d(p9Var.K0);
+        }
+    }
+
+    @Override // z4.f
+    public final void c(int i10) {
+        p9 p9Var = this.b;
+        ((q9) p9Var.B0).d.P();
+        Runnable runnable = p9Var.G0;
+        if (runnable != null && i10 == 0) {
+            runnable.run();
+            p9Var.G0 = null;
+        }
+        p9Var.F0 = i10;
+        z9 z9Var = p9Var.Q0;
+        if (z9Var.n0.F0 == 1) {
+            AndroidUtilities.cancelRunOnUIThread(z9Var.b1);
+        }
     }
 }

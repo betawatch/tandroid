@@ -7,14 +7,14 @@ import android.view.View;
 import com.google.firebase.messaging.l;
 import com.google.firebase.messaging.r;
 import ei.z3;
-import i2.i0;
+import i2.h0;
 import java.util.HashMap;
 import k2.n0;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.LaunchActivity;
 import org.webrtc.TextureViewRenderer;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class d {
     public static int n;
@@ -30,7 +30,7 @@ public final class d {
     public final r i;
     public View j;
     public View k;
-    public i0 l;
+    public h0 l;
     public boolean m;
 
     public d(l lVar, c cVar) {
@@ -64,7 +64,7 @@ public final class d {
         }
         b(false);
         ((HashMap) lVar.a).put(sb3, this);
-        lVar.N();
+        lVar.E();
     }
 
     public final PictureInPictureParams a() {
@@ -83,7 +83,7 @@ public final class d {
             this.m = z11;
             if (z10) {
                 l lVar = this.a;
-                lVar.N();
+                lVar.E();
                 ((a) lVar.c).invalidate();
             }
         }
@@ -93,14 +93,14 @@ public final class d {
         this.i.t(null);
         l lVar = this.a;
         if (((HashMap) lVar.a).remove(this.c) != null) {
-            lVar.N();
+            lVar.E();
         }
     }
 
     public final void d(int i10, int i11) {
         if (this.h.d(i10, i11)) {
             b(true);
-            this.a.p(this);
+            this.a.l(this);
         }
     }
 
@@ -151,7 +151,7 @@ public final class d {
                 return;
             }
             b(true);
-            lVar.p(this);
+            lVar.l(this);
             return;
         }
         TextureViewRenderer textureViewRenderer = (TextureViewRenderer) view;

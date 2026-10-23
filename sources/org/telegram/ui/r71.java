@@ -1,34 +1,33 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class r71 extends org.telegram.ui.Components.g61 {
-    public static final /* synthetic */ int a = 0;
+public final /* synthetic */ class r71 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ c81 b;
 
-    static {
-        org.telegram.ui.Components.g61.setup(new r71());
+    public /* synthetic */ r71(c81 c81Var, int i10) {
+        this.a = i10;
+        this.b = c81Var;
     }
 
-    @Override // org.telegram.ui.Components.g61
-    public final void bindView(View view, org.telegram.ui.Components.h61 h61Var, boolean z10, org.telegram.ui.Components.u61 u61Var, org.telegram.ui.Components.c71 c71Var) {
-        ((s71) view).set(h61Var.z);
-    }
-
-    @Override // org.telegram.ui.Components.g61
-    public final boolean contentsEquals(org.telegram.ui.Components.h61 h61Var, org.telegram.ui.Components.h61 h61Var2) {
-        return h61Var.z == h61Var2.z;
-    }
-
-    @Override // org.telegram.ui.Components.g61
-    public final View createView(Context context, org.telegram.ui.Components.jm0 jm0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
-        return new s71(context, d6Var);
-    }
-
-    @Override // org.telegram.ui.Components.g61
-    public final boolean equals(org.telegram.ui.Components.h61 h61Var, org.telegram.ui.Components.h61 h61Var2) {
-        return h61Var.d == h61Var2.d;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                TLRPC.TL_help_dismissSuggestion tL_help_dismissSuggestion = new TLRPC.TL_help_dismissSuggestion();
+                tL_help_dismissSuggestion.suggestion = "VALIDATE_PASSWORD";
+                tL_help_dismissSuggestion.peer = new TLRPC.TL_inputPeerEmpty();
+                c81 c81Var = this.b;
+                c81Var.getConnectionsManager().sendRequest(tL_help_dismissSuggestion, new r71(c81Var, 1));
+                break;
+            default:
+                this.b.getMessagesController().loadAppConfig();
+                break;
+        }
     }
 }

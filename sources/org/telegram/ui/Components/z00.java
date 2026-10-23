@@ -19,7 +19,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public class z00 extends View {
     public static final int[] E;
@@ -249,9 +249,9 @@ public class z00 extends View {
                         y00Var.e = (byte) 2;
                     }
                 } else {
-                    float z10 = org.telegram.ui.Cells.c1.z(dp, f12, 0.05f, y00Var.j);
-                    y00Var.j = z10;
-                    if (z10 <= (-dp)) {
+                    float x10 = org.telegram.ui.Cells.b1.x(dp, f12, 0.05f, y00Var.j);
+                    y00Var.j = x10;
+                    if (x10 <= (-dp)) {
                         y00Var.e = (byte) 1;
                     }
                 }
@@ -274,13 +274,13 @@ public class z00 extends View {
             }
             float f17 = (-AndroidUtilities.dp(1.0f)) / f7;
             float f18 = y00Var.k;
-            boolean z11 = f18 < f17;
+            boolean z10 = f18 < f17;
             if (f18 > f17) {
                 y00Var.k = ((AndroidUtilities.dp(1.0f) / 3.0f) * f12 * z00Var2.e) + f18;
             } else {
                 y00Var.k = a1.g.d(AndroidUtilities.dp(1.0f), 3.0f, f12, f18);
             }
-            if (z11 && y00Var.k > f17) {
+            if (z10 && y00Var.k > f17) {
                 z00Var2.f++;
             }
             byte b11 = y00Var.a;
@@ -305,9 +305,9 @@ public class z00 extends View {
                     arrayList.add(a(true));
                 }
             }
-            float x10 = org.telegram.messenger.nk.x(i10, 16.0f, 0.15f, this.e);
-            this.e = x10;
-            if (x10 < 0.2f) {
+            float x11 = org.telegram.messenger.sl.x(i10, 16.0f, 0.15f, this.e);
+            this.e = x11;
+            if (x11 < 0.2f) {
                 this.e = 0.2f;
             }
         }
@@ -316,7 +316,7 @@ public class z00 extends View {
             return;
         }
         this.c = false;
-        AndroidUtilities.runOnUIThread(new hq(this, 18));
+        AndroidUtilities.runOnUIThread(new zp(this, 19));
         b();
     }
 

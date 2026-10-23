@@ -11,9 +11,9 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.k6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class b1 {
     public static b1 j;
@@ -28,9 +28,9 @@ public final class b1 {
     public int i;
 
     public b1() {
-        a1 a1Var = new a1(h6.Lj, h6.Mj, h6.Nj, h6.Oj, null);
+        a1 a1Var = new a1(k6.Lj, k6.Mj, k6.Nj, k6.Oj, null);
         this.a = a1Var;
-        a1 a1Var2 = new a1(h6.fk, h6.gk, -1, -1, null);
+        a1 a1Var2 = new a1(k6.fk, k6.gk, -1, -1, null);
         this.b = a1Var.f;
         this.e = ApplicationLoader.applicationContext.getDrawable(R.drawable.msg_premium_liststar).mutate();
         this.f = c(ApplicationLoader.applicationContext.getDrawable(R.drawable.msg_settings_premium), a1Var);
@@ -80,9 +80,9 @@ public final class b1 {
     }
 
     public final void b() {
-        int i10 = h6.z9;
-        if (h6.x0(null, i10, false) != this.i) {
-            this.i = h6.x0(null, i10, false);
+        int i10 = k6.z9;
+        if (k6.x0(null, i10, false) != this.i) {
+            this.i = k6.x0(null, i10, false);
             this.e.setColorFilter(new PorterDuffColorFilter(this.i, PorterDuff.Mode.MULTIPLY));
         }
         this.f = a(this.f);
@@ -96,7 +96,7 @@ public final class b1 {
         if (this.c == null) {
             this.c = new Paint(1);
         }
-        this.c.setColor(h6.x0(null, h6.Oh, false));
+        this.c.setColor(k6.x0(null, k6.Oh, false));
         return this.c;
     }
 

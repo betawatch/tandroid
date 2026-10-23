@@ -1,45 +1,31 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import org.telegram.messenger.voip.GroupCallMessage;
-
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class o30 implements mh.a {
-    public final /* synthetic */ q50 a;
+public final class o30 implements z4.f {
+    public final /* synthetic */ u50 a;
 
-    public o30(q50 q50Var) {
-        this.a = q50Var;
+    public o30(u50 u50Var) {
+        this.a = u50Var;
     }
 
-    public final void a(GroupCallMessage groupCallMessage) {
-        org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
-        if (R == null) {
-            return;
-        }
-        boolean z10 = R instanceof ProfileActivity;
-        q50 q50Var = this.a;
-        if (z10 && ((ProfileActivity) R).a() == groupCallMessage.fromId) {
-            q50Var.dismiss();
-            return;
-        }
-        int Q0 = q50Var.Q0();
-        Bundle bundle = new Bundle();
-        long j10 = groupCallMessage.fromId;
-        if (j10 > 0) {
-            bundle.putLong("user_id", j10);
-        } else {
-            bundle.putLong("chat_id", -j10);
-        }
-        boolean z11 = true;
-        if (groupCallMessage.fromId == q50Var.d.getUserConfig().getClientUserId()) {
-            bundle.putBoolean("my_profile", true);
-        }
-        ProfileActivity profileActivity = new ProfileActivity(bundle, null);
-        if (Q0 > 0 && Q0 != Integer.MAX_VALUE) {
-            z11 = false;
-        }
-        R.presentFragment(profileActivity, false, z11);
-        q50Var.dismiss();
+    @Override // z4.f
+    public final void a(int i10) {
+        u50 u50Var = this.a;
+        u50Var.b.D0.k(i10);
+        l30 l30Var = u50Var.D2;
+        l30Var.J = l30Var.L;
+        l30Var.K = l30Var.M;
+        l30Var.N = 0.0f;
+        l30Var.O = 1;
+        l30Var.invalidate();
+    }
+
+    @Override // z4.f
+    public final void c(int i10) {
+    }
+
+    @Override // z4.f
+    public final void b(float f7, int i10, int i11) {
     }
 }

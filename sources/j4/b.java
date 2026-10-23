@@ -1,12 +1,12 @@
 package j4;
 
 import b2.v0;
-import c3.j0;
+import c3.l0;
 import j$.util.Objects;
 import org.telegram.messenger.MediaDataController;
 import v7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class b implements i {
     public final /* synthetic */ int a;
@@ -16,7 +16,7 @@ public final class b implements i {
     public final int e;
     public final String f;
     public String g;
-    public j0 h;
+    public l0 h;
     public int i;
     public int j;
     public boolean k;
@@ -453,21 +453,21 @@ public final class b implements i {
     }
 
     @Override // j4.i
-    public final void d(c3.q qVar, f0 f0Var) {
+    public final void d(c3.s sVar, f0 f0Var) {
         switch (this.a) {
             case 0:
                 f0Var.b();
                 f0Var.c();
                 this.g = (String) f0Var.e;
                 f0Var.c();
-                this.h = qVar.j0(f0Var.c, 1);
+                this.h = sVar.j0(f0Var.c, 1);
                 break;
             default:
                 f0Var.b();
                 f0Var.c();
                 this.g = (String) f0Var.e;
                 f0Var.c();
-                this.h = qVar.j0(f0Var.c, 1);
+                this.h = sVar.j0(f0Var.c, 1);
                 break;
         }
     }

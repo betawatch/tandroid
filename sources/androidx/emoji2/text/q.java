@@ -3,6 +3,7 @@ package androidx.emoji2.text;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Handler;
+import i2.o1;
 import j$.util.DesugarCollections;
 import j$.util.Objects;
 import java.util.ArrayList;
@@ -11,7 +12,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import w7.k6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class q implements k {
     public final Context a;
@@ -92,7 +93,7 @@ public final class q implements k {
             j4.f a2 = o0.c.a(context, DesugarCollections.unmodifiableList(arrayList));
             int i10 = a2.a;
             if (i10 != 0) {
-                throw new RuntimeException(i2.e.k(i10, "fetchFonts failed (", ")"));
+                throw new RuntimeException(o1.l(i10, "fetchFonts failed (", ")"));
             }
             o0.h[] hVarArr = (o0.h[]) a2.b.get(0);
             if (hVarArr == null || hVarArr.length == 0) {

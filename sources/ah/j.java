@@ -1,15 +1,15 @@
 package ah;
 
-import ai.ga;
-import ai.md;
+import ai.ha;
+import ai.nd;
 import android.content.SharedPreferences;
 import android.os.Looper;
 import android.util.LongSparseArray;
-import ci.g6;
-import ci.i7;
-import ci.p1;
+import ci.f6;
+import ci.h7;
+import ci.o1;
 import gi.d3;
-import ig.a2;
+import ig.z1;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.regex.Pattern;
@@ -23,9 +23,10 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.l2;
-import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.m2;
+import org.telegram.ui.ActionBar.o2;
 import org.telegram.ui.Components.f5;
 import org.telegram.ui.Components.k8;
 import org.telegram.ui.Components.qc;
@@ -33,10 +34,10 @@ import org.telegram.ui.Components.r5;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.og1;
-import org.telegram.ui.qn;
+import org.telegram.ui.sn;
+import org.telegram.ui.ug1;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j implements Runnable {
     public final /* synthetic */ int a;
@@ -52,14 +53,14 @@ public final /* synthetic */ class j implements Runnable {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void run() {
-        n2 X;
+        o2 X;
         switch (this.a) {
             case 0:
                 NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
                 break;
             case 1:
-                n2 U = LaunchActivity.U();
-                if ((U instanceof og1) && (X = ((og1) U).X()) != null) {
+                o2 U = LaunchActivity.U();
+                if ((U instanceof ug1) && (X = ((ug1) U).X()) != null) {
                     U = X;
                 }
                 qc Q = (U != null ? xc.a0(U) : xc.X()).Q(R.raw.ic_delete, 36, LocaleController.getString(R.string.Gift2Deleted));
@@ -70,14 +71,14 @@ public final /* synthetic */ class j implements Runnable {
                 BotWebViewVibrationEffect.APP_ERROR.vibrate();
                 break;
             case 3:
-                n2 U2 = LaunchActivity.U();
+                o2 U2 = LaunchActivity.U();
                 if (U2 != null) {
-                    U2.presentFragment(new md());
+                    U2.presentFragment(new nd());
                     break;
                 }
                 break;
             case 4:
-                ga[][] gaVarArr = ga.S;
+                ha[][] haVarArr = ha.S;
                 break;
             case 5:
                 break;
@@ -85,23 +86,23 @@ public final /* synthetic */ class j implements Runnable {
                 NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.groupCallVisibilityChanged, new Object[0]);
                 break;
             case 7:
-                p1.j();
+                o1.j();
                 break;
             case 8:
-                p1 p1Var = p1.Z;
-                p1Var.e.invalidate();
-                if (!p1Var.e.isInLayout()) {
-                    p1Var.e.requestLayout();
-                    p1Var.d.requestLayout();
-                    p1Var.f.requestLayout();
+                o1 o1Var = o1.Z;
+                o1Var.e.invalidate();
+                if (!o1Var.e.isInLayout()) {
+                    o1Var.e.requestLayout();
+                    o1Var.d.requestLayout();
+                    o1Var.f.requestLayout();
                     break;
                 }
                 break;
             case 9:
-                int i10 = g6.h;
+                int i10 = f6.h;
                 break;
             case 10:
-                Comparator comparator = i7.X;
+                Comparator comparator = h7.X;
                 break;
             case 11:
                 int i11 = ei.e0.x0;
@@ -119,51 +120,51 @@ public final /* synthetic */ class j implements Runnable {
                 MessagesController.getGlobalMainSettings().edit().putInt("storydualhint", MessagesController.getGlobalMainSettings().getInt("storydualhint", 0) + 1).apply();
                 break;
             case 15:
-                HashSet hashSet = d3.W0;
+                HashSet hashSet = d3.a1;
                 break;
             case 16:
                 break;
             case 17:
-                a2[] a2VarArr = a2.g;
+                z1[] z1VarArr = z1.g;
                 break;
             case 18:
-                int i12 = ii.g.F;
+                int i12 = ii.h.H;
                 break;
             case 19:
                 SharedConfig.drawActionBarShadow = !SharedConfig.drawActionBarShadow;
                 SharedConfig.saveDebugConfig();
-                AndroidUtilities.forEachViews(LaunchActivity.H1.z0.getRootView(), new ci.e(5));
+                AndroidUtilities.forEachViews(LaunchActivity.J1.z0.getRootView(), new ci.e(5));
                 break;
             case 20:
                 SharedPreferences sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("themeconfig", 0);
                 String str = "Blue";
                 String string = sharedPreferences.getString("lastDayTheme", "Blue");
-                if (h6.O0(string) == null || h6.O0(string).q()) {
+                if (k6.P0(string) == null || k6.P0(string).q()) {
                     string = "Blue";
                 }
                 String str2 = "Dark Blue";
                 String string2 = sharedPreferences.getString("lastDarkTheme", "Dark Blue");
-                if (h6.O0(string2) == null || !h6.O0(string2).q()) {
+                if (k6.P0(string2) == null || !k6.P0(string2).q()) {
                     string2 = "Dark Blue";
                 }
-                org.telegram.ui.ActionBar.g6 g6Var = h6.I;
+                j6 j6Var = k6.I;
                 if (string.equals(string2)) {
-                    if (g6Var.q() || string.equals("Dark Blue") || string.equals("Night")) {
+                    if (j6Var.q() || string.equals("Dark Blue") || string.equals("Night")) {
                         str2 = string2;
-                        AndroidUtilities.runOnUIThread(new ki.u(h6.I.q() ? h6.O0(str2) : h6.O0(str), 9), 200L);
+                        AndroidUtilities.runOnUIThread(new ki.u(k6.I.q() ? k6.P0(str2) : k6.P0(str), 9), 200L);
                         break;
                     }
                 } else {
                     str2 = string2;
                 }
                 str = string;
-                AndroidUtilities.runOnUIThread(new ki.u(h6.I.q() ? h6.O0(str2) : h6.O0(str), 9), 200L);
+                AndroidUtilities.runOnUIThread(new ki.u(k6.I.q() ? k6.P0(str2) : k6.P0(str), 9), 200L);
                 break;
             case 21:
-                h6.E(false);
+                k6.E(false);
                 break;
             case 22:
-                int i13 = qn.Ic;
+                int i13 = sn.Vc;
                 break;
             case 23:
                 break;
@@ -180,20 +181,20 @@ public final /* synthetic */ class j implements Runnable {
                 Pattern pattern = f5.a;
                 break;
             case 27:
-                n2 U3 = LaunchActivity.U();
+                o2 U3 = LaunchActivity.U();
                 if (U3 != null) {
-                    l2 l2Var = new l2();
-                    l2Var.a = true;
-                    U3.showAsSheet(new PremiumPreviewFragment(0, "schedule_repeat"), l2Var);
+                    m2 m2Var = new m2();
+                    m2Var.a = true;
+                    U3.showAsSheet(new PremiumPreviewFragment(0, "schedule_repeat"), m2Var);
                     break;
                 }
                 break;
             case 28:
-                AndroidUtilities.cancelRunOnUIThread(r5.v);
+                AndroidUtilities.cancelRunOnUIThread(r5.w);
                 try {
-                    if (r5.q != null) {
-                        for (int i15 = 0; i15 < r5.q.size(); i15++) {
-                            LongSparseArray longSparseArray = (LongSparseArray) r5.q.valueAt(i15);
+                    if (r5.r != null) {
+                        for (int i15 = 0; i15 < r5.r.size(); i15++) {
+                            LongSparseArray longSparseArray = (LongSparseArray) r5.r.valueAt(i15);
                             int i16 = 0;
                             while (i16 < longSparseArray.size()) {
                                 if (!((r5) longSparseArray.valueAt(i16)).a) {
@@ -214,7 +215,7 @@ public final /* synthetic */ class j implements Runnable {
                 }
                 break;
             default:
-                k8 k8Var = k8.T0;
+                k8 k8Var = k8.Y0;
                 break;
         }
     }

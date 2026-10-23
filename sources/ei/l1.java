@@ -3,10 +3,10 @@ package ei;
 import android.content.Context;
 import org.telegram.ui.Components.rx;
 import org.telegram.ui.Components.tz;
-import org.telegram.ui.l41;
-import org.telegram.ui.x51;
+import org.telegram.ui.b61;
+import org.telegram.ui.p41;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class l1 extends li.n {
     public final /* synthetic */ int q;
@@ -23,13 +23,13 @@ public final class l1 extends li.n {
     public void e() {
         switch (this.q) {
             case 0:
-                ((o1) this.r).Z2 = true;
+                ((o1) this.r).c3 = true;
                 break;
             case 1:
                 ((tz) this.r).f0 = true;
                 break;
             case 4:
-                ((x51) this.r).w1 = true;
+                ((b61) this.r).x1 = true;
                 break;
         }
     }
@@ -38,7 +38,7 @@ public final class l1 extends li.n {
     public final void i() {
         switch (this.q) {
             case 0:
-                ((o1) this.r).Z2 = false;
+                ((o1) this.r).c3 = false;
                 break;
             case 1:
                 ((tz) this.r).f0 = false;
@@ -47,13 +47,13 @@ public final class l1 extends li.n {
                 ((rx) this.r).Q.f0 = false;
                 break;
             case 3:
-                ((l41) this.r).R.w1 = false;
+                ((p41) this.r).R.x1 = false;
                 break;
             case 4:
-                ((x51) this.r).w1 = false;
+                ((b61) this.r).x1 = false;
                 break;
             default:
-                ((l41) this.r).R.w1 = false;
+                ((p41) this.r).R.x1 = false;
                 break;
         }
     }

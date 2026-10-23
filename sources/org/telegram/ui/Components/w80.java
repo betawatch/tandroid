@@ -1,39 +1,30 @@
 package org.telegram.ui.Components;
 
-import android.content.DialogInterface;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class w80 implements DialogInterface.OnDismissListener {
+public final /* synthetic */ class w80 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ boolean c;
+    public final /* synthetic */ b90 b;
+    public final /* synthetic */ TLRPC.TL_chatInviteJoinResultWebView c;
+    public final /* synthetic */ long d;
 
-    public /* synthetic */ w80(int i10, Object obj, boolean z10) {
+    public /* synthetic */ w80(b90 b90Var, TLRPC.TL_chatInviteJoinResultWebView tL_chatInviteJoinResultWebView, long j10, int i10) {
         this.a = i10;
-        this.b = obj;
-        this.c = z10;
+        this.b = b90Var;
+        this.c = tL_chatInviteJoinResultWebView;
+        this.d = j10;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                a90 a90Var = (a90) this.b;
-                a90.y(a90Var.getContext(), a90Var.c, a90Var.n, this.c);
-                break;
-            case 1:
-                a90 a90Var2 = (a90) this.b;
-                a90.y(a90Var2.getContext(), a90Var2.c, a90Var2.n, this.c);
+                b90.q(this.b, this.c, this.d);
                 break;
             default:
-                ei.vb vbVar = (ei.vb) this.b;
-                vbVar.z2 = false;
-                vbVar.X0.x(7, true);
-                if (this.c) {
-                    vbVar.p(true);
-                    break;
-                }
+                b90.p(this.b, this.c, this.d);
                 break;
         }
     }

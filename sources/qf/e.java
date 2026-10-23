@@ -6,6 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.accessibility.AccessibilityManager;
 import androidx.recyclerview.widget.RecyclerView;
+import com.google.android.gms.internal.play_billing.k3;
+import i2.o1;
 import j$.util.DesugarCollections;
 import java.io.Serializable;
 import java.lang.ref.WeakReference;
@@ -24,7 +26,7 @@ import s4.s0;
 import s4.t0;
 import s4.y0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class e {
     public int a;
@@ -55,7 +57,7 @@ public final class e {
                 g0Var.A(b1Var);
             }
             if (recyclerView.u0 != null) {
-                recyclerView.f.p0(b1Var);
+                recyclerView.f.T(b1Var);
             }
         }
         b1Var.t = null;
@@ -75,10 +77,10 @@ public final class e {
         if (i10 >= 0 && i10 < recyclerView.u0.b()) {
             return !recyclerView.u0.g ? i10 : recyclerView.d.g(i10, 0);
         }
-        StringBuilder l4 = i2.e.l(i10, "invalid position ", ". State item count is ");
-        l4.append(recyclerView.u0.b());
-        l4.append(recyclerView.C());
-        throw new IndexOutOfBoundsException(l4.toString());
+        StringBuilder n10 = o1.n(i10, "invalid position ", ". State item count is ");
+        n10.append(recyclerView.u0.b());
+        n10.append(recyclerView.C());
+        throw new IndexOutOfBoundsException(n10.toString());
     }
 
     public t0 c() {
@@ -228,7 +230,7 @@ public final class e {
                     }
                     r5 = z11;
                 }
-                recyclerView.f.p0(b1Var);
+                recyclerView.f.T(b1Var);
                 if (r5 && !z12 && z10) {
                     b1Var.t = null;
                     return;
@@ -239,7 +241,7 @@ public final class e {
         z10 = false;
         if (b1Var.i()) {
         }
-        recyclerView.f.p0(b1Var);
+        recyclerView.f.T(b1Var);
         if (r5) {
         }
     }
@@ -300,10 +302,10 @@ public final class e {
         RecyclerView recyclerView = (RecyclerView) this.h;
         y0 y0Var = recyclerView.u0;
         if (i10 < 0 || i10 >= y0Var.b()) {
-            StringBuilder m10 = i2.e.m("Invalid item position ", i10, "(", i10, "). Item count:");
-            m10.append(y0Var.b());
-            m10.append(recyclerView.C());
-            throw new IndexOutOfBoundsException(m10.toString());
+            StringBuilder k10 = k3.k("Invalid item position ", i10, "(", i10, "). Item count:");
+            k10.append(y0Var.b());
+            k10.append(recyclerView.C());
+            throw new IndexOutOfBoundsException(k10.toString());
         }
         if (y0Var.g) {
             ArrayList arrayList3 = (ArrayList) this.d;
@@ -387,19 +389,19 @@ public final class e {
                 if (indexOfChild < 0) {
                     throw new IllegalArgumentException("view is not a child, cannot hide " + view);
                 }
-                if (!dVar.D(indexOfChild)) {
+                if (!dVar.E(indexOfChild)) {
                     throw new RuntimeException("trying to unhide a view that was not hidden" + view);
                 }
-                dVar.z(indexOfChild);
+                dVar.x(indexOfChild);
                 g3Var.X(view);
                 g3 g3Var2 = recyclerView.e;
                 ad.d dVar2 = (ad.d) g3Var2.c;
                 int indexOfChild2 = ((RecyclerView) ((t1) g3Var2.b).b).indexOfChild(view);
-                int A = (indexOfChild2 == -1 || dVar2.D(indexOfChild2)) ? -1 : indexOfChild2 - dVar2.A(indexOfChild2);
-                if (A == -1) {
+                int y3 = (indexOfChild2 == -1 || dVar2.E(indexOfChild2)) ? -1 : indexOfChild2 - dVar2.y(indexOfChild2);
+                if (y3 == -1) {
                     throw new IllegalStateException("layout index should not be -1 after unhiding a view:" + U2 + recyclerView.C());
                 }
-                recyclerView.e.y(A);
+                recyclerView.e.y(y3);
                 i(view);
                 U2.a(8224);
                 b1Var3 = U2;
@@ -442,10 +444,10 @@ public final class e {
             j11 = 3;
             int g11 = recyclerView.d.g(i10, 0);
             if (g11 < 0 || g11 >= recyclerView.w.h()) {
-                StringBuilder m11 = i2.e.m("Inconsistency detected. Invalid item position ", i10, "(offset:", g11, ").state:");
-                m11.append(y0Var.b());
-                m11.append(recyclerView.C());
-                throw new IndexOutOfBoundsException(m11.toString());
+                StringBuilder k11 = k3.k("Inconsistency detected. Invalid item position ", i10, "(offset:", g11, ").state:");
+                k11.append(y0Var.b());
+                k11.append(recyclerView.C());
+                throw new IndexOutOfBoundsException(k11.toString());
             }
             int j13 = recyclerView.w.j(g11);
             j12 = 4;
@@ -530,7 +532,7 @@ public final class e {
                     }
                 }
                 bVar = null;
-                b1Var = recyclerView.w.d(recyclerView, j13);
+                b1Var = recyclerView.w.g(recyclerView, j13);
                 int[] iArr2 = RecyclerView.Q0;
                 RecyclerView J = RecyclerView.J(b1Var.a);
                 if (J != null) {

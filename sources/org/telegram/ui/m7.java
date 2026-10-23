@@ -11,7 +11,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class m7 extends i7 {
     public final ArrayList f;
@@ -24,7 +24,7 @@ public final class m7 extends i7 {
         this.f = new ArrayList();
     }
 
-    @Override // org.telegram.ui.Components.im0
+    @Override // org.telegram.ui.Components.lm0
     public final boolean D(s4.b1 b1Var) {
         return true;
     }
@@ -37,9 +37,9 @@ public final class m7 extends i7 {
         arrayList.addAll(arrayList2);
         arrayList2.clear();
         v7 v7Var = this.h;
-        if (v7Var.f != null) {
-            for (int i10 = 0; i10 < v7Var.f.b.size(); i10++) {
-                v6 v6Var = (v6) v7Var.f.b.get(i10);
+        if (v7Var.h != null) {
+            for (int i10 = 0; i10 < v7Var.h.b.size(); i10++) {
+                v6 v6Var = (v6) v7Var.h.b.get(i10);
                 p7 p7Var = new p7(1, true);
                 p7Var.c = v6Var;
                 arrayList2.add(p7Var);
@@ -58,7 +58,7 @@ public final class m7 extends i7 {
         ArrayList arrayList = this.e;
         v6 v6Var = ((p7) arrayList.get(i10)).c;
         v7 v7Var = this.h;
-        TLObject userOrChat = v7Var.d.getMessagesController().getUserOrChat(v6Var.a);
+        TLObject userOrChat = v7Var.e.getMessagesController().getUserOrChat(v6Var.a);
         v6 v6Var2 = b7Var.a;
         boolean z10 = v6Var2 != null && v6Var2.a == v6Var.a;
         if (v6Var.a == Long.MAX_VALUE) {
@@ -84,13 +84,13 @@ public final class m7 extends i7 {
         b7Var.f = z11;
         b7Var.setWillNotDraw(!z11);
         b7Var.requestLayout();
-        boolean contains = v7Var.f.l.contains(Long.valueOf(v6Var.a));
+        boolean contains = v7Var.h.l.contains(Long.valueOf(v6Var.a));
         org.telegram.ui.Components.xp xpVar = b7Var.n;
         if (xpVar != null || contains) {
             if (xpVar == null) {
                 org.telegram.ui.Components.xp xpVar2 = new org.telegram.ui.Components.xp(b7Var.getContext(), 21, b7Var.b);
                 b7Var.n = xpVar2;
-                xpVar2.b(-1, org.telegram.ui.ActionBar.h6.d6, org.telegram.ui.ActionBar.h6.k7);
+                xpVar2.b(-1, org.telegram.ui.ActionBar.k6.d6, org.telegram.ui.ActionBar.k6.k7);
                 b7Var.n.setDrawUnchecked(false);
                 b7Var.n.setDrawBackgroundAsArc(3);
                 b7Var.addView(b7Var.n, w7.z5.d(24, 24.0f, (LocaleController.isRTL ? 5 : 3) | 48, 38.0f, 25.0f, 38.0f, 0.0f));
@@ -104,9 +104,9 @@ public final class m7 extends i7 {
         b7 b7Var = null;
         if (i10 == 1) {
             b7 b7Var2 = new b7(this.h.getContext(), null);
-            b7Var2.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false));
+            org.telegram.ui.ActionBar.r6.i(org.telegram.ui.ActionBar.k6.d6, b7Var2, null);
             b7Var = b7Var2;
         }
-        return new org.telegram.ui.Components.tl0(b7Var);
+        return new org.telegram.ui.Components.wl0(b7Var);
     }
 }

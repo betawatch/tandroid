@@ -4,7 +4,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class uc implements Utilities.Callback {
     public final /* synthetic */ int a = 2;
@@ -28,7 +28,7 @@ public final /* synthetic */ class uc implements Utilities.Callback {
     public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                this.b.lambda$openByUserName$458((pf.c) this.e, (org.telegram.ui.ActionBar.b2[]) this.f, (org.telegram.ui.ActionBar.n2) this.g, (boolean[]) this.c, this.d, (Long) obj);
+                this.b.lambda$openByUserName$458((pf.c) this.e, (org.telegram.ui.ActionBar.c2[]) this.f, (org.telegram.ui.ActionBar.o2) this.g, (boolean[]) this.c, this.d, (Long) obj);
                 break;
             case 1:
                 this.b.lambda$openApp$503((boolean[]) this.c, (TL_bots.BotInfo[]) this.e, (TLRPC.User) this.f, this.d, (h3) this.g, (TL_bots.BotInfo) obj);
@@ -39,11 +39,11 @@ public final /* synthetic */ class uc implements Utilities.Callback {
         }
     }
 
-    public /* synthetic */ uc(MessagesController messagesController, pf.c cVar, org.telegram.ui.ActionBar.b2[] b2VarArr, org.telegram.ui.ActionBar.n2 n2Var, boolean[] zArr, int i10) {
+    public /* synthetic */ uc(MessagesController messagesController, pf.c cVar, org.telegram.ui.ActionBar.c2[] c2VarArr, org.telegram.ui.ActionBar.o2 o2Var, boolean[] zArr, int i10) {
         this.b = messagesController;
         this.e = cVar;
-        this.f = b2VarArr;
-        this.g = n2Var;
+        this.f = c2VarArr;
+        this.g = o2Var;
         this.c = zArr;
         this.d = i10;
     }

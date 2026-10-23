@@ -6,14 +6,14 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.camera.CameraController;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Cells.c2;
-import org.telegram.ui.Cells.f2;
-import org.telegram.ui.Components.r2;
-import org.telegram.ui.Wallet.q0;
-import org.telegram.ui.Wallet.s2;
-import org.telegram.ui.na0;
+import org.telegram.ui.Cells.b2;
+import org.telegram.ui.Cells.e2;
+import org.telegram.ui.Components.q2;
+import org.telegram.ui.Wallet.p0;
+import org.telegram.ui.Wallet.r2;
+import org.telegram.ui.ta0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class o0 implements Runnable {
     public final /* synthetic */ int a;
@@ -39,30 +39,30 @@ public final /* synthetic */ class o0 implements Runnable {
                 AtomicBoolean atomicBoolean = (AtomicBoolean) this.e;
                 aVar.getClass();
                 atomicBoolean.set(false);
-                qf.b.y((qf.b) aVar.c, this.b, this.c);
+                qf.b.o((qf.b) aVar.c, this.b, this.c);
                 break;
             case 1:
                 ((CameraController) this.d).lambda$stopVideoRecording$17(this.e, this.b, this.c);
                 break;
             case 2:
-                c2 c2Var = (c2) this.d;
+                b2 b2Var = (b2) this.d;
                 String str = (String) this.e;
-                f2 f2Var = c2Var.b;
-                f2Var.d0 = false;
-                f2Var.e0 = str;
+                e2 e2Var = b2Var.b;
+                e2Var.d0 = false;
+                e2Var.e0 = str;
                 if (str == null) {
-                    f2Var.e0 = "";
+                    e2Var.e0 = "";
                 }
-                f2Var.f0 = this.b;
-                f2Var.f(this.c, true);
+                e2Var.f0 = this.b;
+                e2Var.f(this.c, true);
                 break;
             case 3:
-                org.telegram.ui.Wallet.m0 m0Var = (org.telegram.ui.Wallet.m0) this.d;
+                org.telegram.ui.Wallet.l0 l0Var = (org.telegram.ui.Wallet.l0) this.d;
                 Utilities.Callback callback = (Utilities.Callback) this.e;
-                TL_wallet.TL_walletState tL_walletState = (TL_wallet.TL_walletState) m0Var.e;
-                q0 q0Var = m0Var.c;
-                if (q0Var == null || !TextUtils.equals(q0Var.c, tL_walletState.address) || !m0Var.c.f(tL_walletState.public_key)) {
-                    m0Var.y(new org.telegram.ui.Wallet.k((Object) m0Var, (Object) callback, (Object) tL_walletState, 4), this.b, this.c);
+                TL_wallet.TL_walletState tL_walletState = (TL_wallet.TL_walletState) l0Var.e;
+                p0 p0Var = l0Var.c;
+                if (p0Var == null || !TextUtils.equals(p0Var.c, tL_walletState.address) || !l0Var.c.f(tL_walletState.public_key)) {
+                    l0Var.y(new org.telegram.ui.Wallet.j((Object) l0Var, (Object) callback, (Object) tL_walletState, 4), this.b, this.c);
                     break;
                 } else {
                     callback.run(null);
@@ -70,42 +70,42 @@ public final /* synthetic */ class o0 implements Runnable {
                 }
                 break;
             default:
-                org.telegram.ui.Wallet.m0 m0Var2 = (org.telegram.ui.Wallet.m0) this.d;
+                org.telegram.ui.Wallet.l0 l0Var2 = (org.telegram.ui.Wallet.l0) this.d;
                 Utilities.Callback2 callback2 = (Utilities.Callback2) this.e;
-                org.telegram.ui.Wallet.m0.F("getSecretPhrase: ready!");
-                TL_wallet.TL_walletState tL_walletState2 = (TL_wallet.TL_walletState) m0Var2.e;
-                if (!m0Var2.c.f(tL_walletState2.public_key)) {
+                org.telegram.ui.Wallet.l0.F("getSecretPhrase: ready!");
+                TL_wallet.TL_walletState tL_walletState2 = (TL_wallet.TL_walletState) l0Var2.e;
+                if (!l0Var2.c.f(tL_walletState2.public_key)) {
                     Object obj = null;
                     if (!tL_walletState2.backup_enabled) {
-                        org.telegram.ui.Wallet.m0.i("getSecretPhrase: no server backup!");
+                        org.telegram.ui.Wallet.l0.i("getSecretPhrase: no server backup!");
                         callback2.run(null, "NO_LOCAL_BACKUP");
                         break;
                     } else {
-                        org.telegram.ui.Wallet.m0.F("getSecretPhrase: exportSecretPhrase through password request");
-                        s2.a(m0Var2.a, new gi.c(8), null, null, null, new ci.c0(4, m0Var2, callback2), this.b, this.c, new na0(obj, 1));
+                        org.telegram.ui.Wallet.l0.F("getSecretPhrase: exportSecretPhrase through password request");
+                        r2.a(l0Var2.a, new gi.c(8), null, null, null, new ci.c0(4, l0Var2, callback2), this.b, this.c, new ta0(obj, 1));
                         break;
                     }
                 } else {
-                    org.telegram.ui.Wallet.m0.F("getSecretPhrase: device has secured phrase, requesting");
-                    q0 q0Var2 = m0Var2.c;
+                    org.telegram.ui.Wallet.l0.F("getSecretPhrase: device has secured phrase, requesting");
+                    p0 p0Var2 = l0Var2.c;
                     byte[] bArr = tL_walletState2.public_key;
-                    org.telegram.ui.Wallet.l lVar = new org.telegram.ui.Wallet.l(callback2, 1);
+                    org.telegram.ui.Wallet.k kVar = new org.telegram.ui.Wallet.k(callback2, 1);
                     if (bArr == null) {
                         o10 = "";
                     } else {
-                        q0Var2.getClass();
-                        o10 = q0.o(bArr);
+                        p0Var2.getClass();
+                        o10 = p0.o(bArr);
                     }
                     String str2 = o10;
-                    q0.h.execute(new r2(q0Var2, q0Var2.l(), str2, true, (Utilities.Callback) lVar));
+                    p0.h.execute(new q2(p0Var2, p0Var2.l(), str2, true, (Utilities.Callback) kVar));
                     break;
                 }
         }
     }
 
-    public /* synthetic */ o0(c2 c2Var, String str, File file, boolean z10, boolean z11) {
+    public /* synthetic */ o0(b2 b2Var, String str, File file, boolean z10, boolean z11) {
         this.a = 2;
-        this.d = c2Var;
+        this.d = b2Var;
         this.e = str;
         this.b = z10;
         this.c = z11;

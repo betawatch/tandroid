@@ -1,44 +1,17 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class be0 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ me0 b;
-
-    public /* synthetic */ be0(me0 me0Var, int i10) {
-        this.a = i10;
-        this.b = me0Var;
+public final class be0 extends rg.b {
+    @Override // org.telegram.ui.Components.ku, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        return false;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                me0 me0Var = this.b;
-                ci.i4 i4Var = me0Var.e;
-                i4Var.setScaleX(AndroidUtilities.lerp(0.8f, 1.0f, floatValue));
-                i4Var.setScaleY(AndroidUtilities.lerp(0.8f, 1.0f, floatValue));
-                i4Var.setAlpha(AndroidUtilities.lerp(0.0f, 1.0f, floatValue));
-                TextView textView = me0Var.w;
-                textView.setScaleX(AndroidUtilities.lerp(1.0f, 0.9f, floatValue));
-                textView.setScaleY(AndroidUtilities.lerp(1.0f, 0.9f, floatValue));
-                textView.setAlpha(AndroidUtilities.lerp(1.0f, 0.0f, floatValue));
-                me0Var.s.setAlpha(AndroidUtilities.lerp(0.0f, 1.0f, floatValue));
-                break;
-            default:
-                me0 me0Var2 = this.b;
-                me0Var2.getClass();
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                me0Var2.a0 = floatValue2;
-                me0Var2.h(floatValue2);
-                me0Var2.setAlpha(me0Var2.a0);
-                break;
-        }
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        return false;
     }
 }

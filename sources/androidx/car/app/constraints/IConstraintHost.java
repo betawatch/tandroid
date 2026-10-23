@@ -5,12 +5,12 @@ import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcel;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public interface IConstraintHost extends IInterface {
     public static final String DESCRIPTOR = "androidx$car$app$constraints$IConstraintHost".replace('$', '.');
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public static class Default implements IConstraintHost {
         @Override // android.os.IInterface
         public IBinder asBinder() {
@@ -32,12 +32,12 @@ public interface IConstraintHost extends IInterface {
 
     boolean isAppDrivenRefreshEnabled();
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public static abstract class Stub extends Binder implements IConstraintHost {
         static final int TRANSACTION_getContentLimit = 2;
         static final int TRANSACTION_isAppDrivenRefreshEnabled = 3;
 
-        /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+        /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
         public static class Proxy implements IConstraintHost {
             private IBinder mRemote;
 

@@ -3,6 +3,7 @@ package org.telegram.ui.Cells;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.graphics.drawable.ShapeDrawable;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.accessibility.AccessibilityNodeInfo;
@@ -27,7 +28,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.bs;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public class e8 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, pg.c {
     public static final AccelerateInterpolator N = new AccelerateInterpolator(0.5f);
@@ -39,7 +40,7 @@ public class e8 extends FrameLayout implements NotificationCenter.NotificationCe
     public final ImageView J;
     public int K;
     public boolean L;
-    public final org.telegram.ui.ActionBar.d6 M;
+    public final org.telegram.ui.ActionBar.g6 M;
     public final d8 a;
     public final sg.c1 b;
     public TLRPC.Document c;
@@ -55,14 +56,14 @@ public class e8 extends FrameLayout implements NotificationCenter.NotificationCe
     public long x;
     public boolean y;
 
-    public e8(Context context, org.telegram.ui.ActionBar.d6 d6Var, boolean z10) {
+    public e8(Context context, org.telegram.ui.ActionBar.g6 g6Var, boolean z10) {
         super(context);
         this.n = 1.0f;
         this.E = UserConfig.selectedAccount;
         this.H = 1.0f;
-        this.M = d6Var;
+        this.M = g6Var;
         this.F = z10;
-        d8 d8Var = new d8(this, d6Var);
+        d8 d8Var = new d8(this, g6Var);
         this.a = d8Var;
         d8Var.setAspectFit(true);
         d8Var.setAllowLoadingOnAttachedOnly(true);
@@ -70,7 +71,7 @@ public class e8 extends FrameLayout implements NotificationCenter.NotificationCe
         TextView textView = new TextView(context);
         this.h = textView;
         textView.setTextSize(1, 16.0f);
-        new Paint(1).setColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Oh, false));
+        new Paint(1).setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Oh, false));
         sg.c1 c1Var = new sg.c1(context, 1, null);
         this.b = c1Var;
         c1Var.setImageReceiver(d8Var);
@@ -81,7 +82,12 @@ public class e8 extends FrameLayout implements NotificationCenter.NotificationCe
         this.J = imageView;
         imageView.setImageResource(R.drawable.mini_more_dots);
         imageView.setPadding(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f));
-        imageView.setBackground(org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(12.0f), org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.q5, d6Var)));
+        int dp = AndroidUtilities.dp(12.0f);
+        int i10 = org.telegram.ui.ActionBar.k6.q5;
+        ShapeDrawable c02 = org.telegram.ui.ActionBar.k6.c0(dp, org.telegram.ui.ActionBar.k6.w0(i10, g6Var));
+        org.telegram.ui.ActionBar.n6 O = org.telegram.ui.ActionBar.r6.O(i10);
+        imageView.setBackground(c02);
+        org.telegram.ui.ActionBar.r6.k(imageView, c02, O, null, g6Var);
         imageView.setAlpha(0.0f);
         addView(imageView, w7.z5.e(-2, -2, 5));
         setFocusable(true);
@@ -179,14 +185,16 @@ public class e8 extends FrameLayout implements NotificationCenter.NotificationCe
         d8 d8Var = this.a;
         d8Var.setColorFilter(null);
         this.K = 0;
-        this.J.setBackground(org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(12.0f), org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.q5, false)));
+        int dp = AndroidUtilities.dp(12.0f);
+        int i11 = org.telegram.ui.ActionBar.k6.q5;
+        org.telegram.ui.ActionBar.r6.D(this.J, org.telegram.ui.ActionBar.k6.c0(dp, org.telegram.ui.ActionBar.k6.x0(null, i11, false)), org.telegram.ui.ActionBar.r6.O(i11), null);
         if (z11) {
             c(false);
         } else {
             a(false);
         }
         if (this.G) {
-            int x02 = org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false);
+            int x02 = org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.d6, false);
             sg.c1 c1Var = this.b;
             c1Var.setColor(x02);
             c1Var.H = true;
@@ -200,12 +208,12 @@ public class e8 extends FrameLayout implements NotificationCenter.NotificationCe
                 i10 = 4;
                 z12 = true;
                 textView = textView2;
-                d8Var.setImage(ImageLocation.getForPath(importingSticker.path), "80_80", null, null, DocumentObject.getSvgRectThumb(org.telegram.ui.ActionBar.h6.i5, 1.0f), 0L, importingSticker.animated ? "tgs" : null, 0, 1);
+                d8Var.setImage(ImageLocation.getForPath(importingSticker.path), "80_80", null, null, DocumentObject.getSvgRectThumb(org.telegram.ui.ActionBar.k6.i5, 1.0f), 0L, importingSticker.animated ? "tgs" : null, 0, 1);
             } else {
                 i10 = 4;
                 textView = textView2;
                 z12 = true;
-                d8Var.setImage(null, null, null, null, DocumentObject.getSvgRectThumb(org.telegram.ui.ActionBar.h6.i5, 1.0f), 0L, importingSticker.animated ? "tgs" : null, 0, 1);
+                d8Var.setImage(null, null, null, null, DocumentObject.getSvgRectThumb(org.telegram.ui.ActionBar.k6.i5, 1.0f), 0L, importingSticker.animated ? "tgs" : null, 0, 1);
             }
             if (str != null) {
                 TextView textView3 = textView;
@@ -221,13 +229,13 @@ public class e8 extends FrameLayout implements NotificationCenter.NotificationCe
                 this.e = obj;
                 TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 90);
                 boolean z13 = this.F;
-                int i11 = z13 ? org.telegram.ui.ActionBar.h6.c7 : org.telegram.ui.ActionBar.h6.a7;
+                int i12 = z13 ? org.telegram.ui.ActionBar.k6.c7 : org.telegram.ui.ActionBar.k6.a7;
                 float f7 = z13 ? 0.2f : 1.0f;
-                org.telegram.ui.ActionBar.d6 d6Var = this.M;
-                SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(document, i11, f7, 1.0f, d6Var);
+                org.telegram.ui.ActionBar.g6 g6Var = this.M;
+                SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(document, i12, f7, 1.0f, g6Var);
                 String str2 = z13 ? "66_66_pcache_compress" : "66_66";
                 if (MessageObject.isTextColorEmoji(document)) {
-                    d8Var.setColorFilter(org.telegram.ui.ActionBar.h6.o0(d6Var));
+                    d8Var.setColorFilter(org.telegram.ui.ActionBar.k6.o0(g6Var));
                 }
                 if (MessageObject.canAutoplayAnimatedSticker(document)) {
                     if (z13) {
@@ -255,19 +263,19 @@ public class e8 extends FrameLayout implements NotificationCenter.NotificationCe
                     textView2.setText(Emoji.replaceEmoji(str, textView2.getPaint().getFontMetricsInt(), false));
                     textView2.setVisibility(0);
                 } else if (z10) {
-                    int i12 = 0;
+                    int i13 = 0;
                     while (true) {
-                        if (i12 >= document.attributes.size()) {
+                        if (i13 >= document.attributes.size()) {
                             break;
                         }
-                        TLRPC.DocumentAttribute documentAttribute = document.attributes.get(i12);
+                        TLRPC.DocumentAttribute documentAttribute = document.attributes.get(i13);
                         if (documentAttribute instanceof TLRPC.TL_documentAttributeSticker) {
                             String str3 = documentAttribute.alt;
                             if (str3 != null && str3.length() > 0) {
                                 textView2.setText(Emoji.replaceEmoji(documentAttribute.alt, textView2.getPaint().getFontMetricsInt(), false));
                             }
                         } else {
-                            i12++;
+                            i13++;
                         }
                     }
                     textView2.setText(Emoji.replaceEmoji(MediaDataController.getInstance(this.E).getEmojiForSticker(this.c.id), textView2.getPaint().getFontMetricsInt(), false));

@@ -2,36 +2,35 @@ package i2;
 
 import android.util.Pair;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c1 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ f1 b;
+    public final /* synthetic */ e1 b;
     public final /* synthetic */ Pair c;
-    public final /* synthetic */ u2.c0 d;
+    public final /* synthetic */ u2.v d;
+    public final /* synthetic */ u2.d0 e;
 
-    public /* synthetic */ c1(f1 f1Var, Pair pair, u2.c0 c0Var, int i10) {
+    public /* synthetic */ c1(e1 e1Var, Pair pair, u2.v vVar, u2.d0 d0Var, int i10) {
         this.a = i10;
-        this.b = f1Var;
+        this.b = e1Var;
         this.c = pair;
-        this.d = c0Var;
+        this.d = vVar;
+        this.e = d0Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                j2.f fVar = this.b.b.h;
+                j2.e eVar = this.b.b.h;
                 Pair pair = this.c;
-                int intValue = ((Integer) pair.first).intValue();
-                u2.g0 g0Var = (u2.g0) pair.second;
-                g0Var.getClass();
-                fVar.d(intValue, g0Var, this.d);
+                eVar.k(((Integer) pair.first).intValue(), (u2.h0) pair.second, this.d, this.e);
                 break;
             default:
-                j2.f fVar2 = this.b.b.h;
+                j2.e eVar2 = this.b.b.h;
                 Pair pair2 = this.c;
-                fVar2.e(((Integer) pair2.first).intValue(), (u2.g0) pair2.second, this.d);
+                eVar2.f(((Integer) pair2.first).intValue(), (u2.h0) pair2.second, this.d, this.e);
                 break;
         }
     }

@@ -4,7 +4,7 @@ import java.io.EOFException;
 import k2.w0;
 import m.g3;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class f {
     public final String a;
@@ -52,15 +52,15 @@ public final class f {
         }
         byte b13 = 8;
         if (i11 == 2) {
-            this.c = ((w0Var.m() & 255) << 16) | ((w0Var.m() & 255) << 8) | (w0Var.m() & 255);
+            this.c = ((w0Var.n() & 255) << 16) | ((w0Var.n() & 255) << 8) | (w0Var.n() & 255);
         } else if (i11 == 3) {
-            this.c = w0Var.p();
+            this.c = w0Var.q();
         } else {
-            this.c = w0Var.u();
+            this.c = w0Var.r();
         }
         if (i11 > 2) {
-            w0Var.m();
-            byte m10 = w0Var.m();
+            w0Var.n();
+            byte n10 = w0Var.n();
             byte b14 = 64;
             if (i11 == 3) {
                 b13 = 128;
@@ -72,35 +72,35 @@ public final class f {
                 b11 = 1;
                 b14 = 4;
             }
-            boolean z10 = (b13 & m10) != 0;
+            boolean z10 = (b13 & n10) != 0;
             this.e = z10;
-            this.d = (b12 & m10) != 0;
-            boolean z11 = (m10 & b14) != 0;
+            this.d = (b12 & n10) != 0;
+            boolean z11 = (n10 & b14) != 0;
             this.f = z11;
             if (i11 == 3) {
                 if (z10) {
-                    this.g = w0Var.p();
+                    this.g = w0Var.q();
                     this.c -= 4;
                 }
                 if (z11) {
-                    w0Var.m();
+                    w0Var.n();
                     this.c--;
                 }
-                if ((m10 & b10) != 0) {
-                    w0Var.m();
+                if ((n10 & b10) != 0) {
+                    w0Var.n();
                     this.c--;
                 }
             } else {
-                if ((m10 & b10) != 0) {
-                    w0Var.m();
+                if ((n10 & b10) != 0) {
+                    w0Var.n();
                     this.c--;
                 }
                 if (z11) {
-                    w0Var.m();
+                    w0Var.n();
                     this.c--;
                 }
-                if ((m10 & b11) != 0) {
-                    this.g = w0Var.u();
+                if ((n10 & b11) != 0) {
+                    this.g = w0Var.r();
                     this.c -= 4;
                 }
             }

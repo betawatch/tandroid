@@ -25,7 +25,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class h implements c6.f {
     public static final g6.b k = new g6.b("RemoteMediaClient", null);
@@ -52,7 +52,7 @@ public final class h implements c6.f {
         androidx.biometric.e eVar = new androidx.biometric.e(this);
         this.d = eVar;
         this.c = mVar;
-        mVar.h = new ya.d(this, 14);
+        mVar.h = new ya.c(this, 14);
         mVar.c = eVar;
         this.e = new c(this);
     }
@@ -258,7 +258,7 @@ public final class h implements c6.f {
                                         JSONArray jSONArray = jSONObject.getJSONArray("items");
                                         c6.o[] oVarArr = new c6.o[jSONArray.length()];
                                         for (int i12 = 0; i12 < jSONArray.length(); i12++) {
-                                            oVarArr[i12] = new a6.i(jSONArray.getJSONObject(i12)).i();
+                                            oVarArr[i12] = new a6.i(jSONArray.getJSONObject(i12)).v();
                                         }
                                         Iterator it = ((h) mVar.h.b).i.iterator();
                                         while (it.hasNext()) {
@@ -417,9 +417,9 @@ public final class h implements c6.f {
                                                 }
                                                 if ((i11 & 32) != 0) {
                                                     mVar.e = SystemClock.elapsedRealtime();
-                                                    ya.d dVar = mVar.h;
-                                                    if (dVar != null) {
-                                                        h hVar = (h) dVar.b;
+                                                    ya.c cVar = mVar.h;
+                                                    if (cVar != null) {
+                                                        h hVar = (h) cVar.b;
                                                         Iterator it11 = hVar.h.iterator();
                                                         if (it11.hasNext()) {
                                                             throw a1.g.j(it11);

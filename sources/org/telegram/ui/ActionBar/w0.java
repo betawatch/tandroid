@@ -10,7 +10,7 @@ import android.graphics.Shader;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w0 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -28,7 +28,7 @@ public final /* synthetic */ class w0 implements Utilities.Callback {
                 b1 b1Var = (b1) this.b;
                 Bitmap bitmap = (Bitmap) obj;
                 Paint paint = b1Var.F;
-                b1Var.U = false;
+                b1Var.W = false;
                 b1Var.f = bitmap;
                 Shader.TileMode tileMode = Shader.TileMode.CLAMP;
                 b1Var.h = new BitmapShader(bitmap, tileMode, tileMode);
@@ -50,29 +50,29 @@ public final /* synthetic */ class w0 implements Utilities.Callback {
                 b1Var.invalidate();
                 break;
             default:
-                b2 b2Var = (b2) this.b;
+                c2 c2Var = (c2) this.b;
                 Bitmap bitmap2 = (Bitmap) obj;
                 if (bitmap2 != null) {
-                    if (b2Var.F0 == null) {
-                        b2Var.F0 = new Paint(1);
+                    if (c2Var.H0 == null) {
+                        c2Var.H0 = new Paint(1);
                     }
-                    b2Var.C0 = bitmap2;
-                    Bitmap bitmap3 = b2Var.C0;
+                    c2Var.E0 = bitmap2;
+                    Bitmap bitmap3 = c2Var.E0;
                     Shader.TileMode tileMode2 = Shader.TileMode.CLAMP;
                     BitmapShader bitmapShader = new BitmapShader(bitmap3, tileMode2, tileMode2);
-                    b2Var.E0 = bitmapShader;
-                    b2Var.F0.setShader(bitmapShader);
+                    c2Var.G0 = bitmapShader;
+                    c2Var.H0.setShader(bitmapShader);
                     Matrix matrix3 = new Matrix();
-                    b2Var.D0 = matrix3;
+                    c2Var.F0 = matrix3;
                     matrix3.postScale(8.0f, 8.0f);
-                    Matrix matrix4 = b2Var.D0;
-                    int[] iArr2 = b2Var.x0;
+                    Matrix matrix4 = c2Var.F0;
+                    int[] iArr2 = c2Var.z0;
                     matrix4.postTranslate(-iArr2[0], -iArr2[1]);
-                    b2Var.E0.setLocalMatrix(b2Var.D0);
-                    b2Var.a1.invalidate();
+                    c2Var.G0.setLocalMatrix(c2Var.F0);
+                    c2Var.c1.invalidate();
                     break;
                 } else {
-                    b2Var.getClass();
+                    c2Var.getClass();
                     break;
                 }
         }

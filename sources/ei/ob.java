@@ -1,8 +1,8 @@
 package ei;
 
-import org.telegram.ui.oz0;
+import org.telegram.ui.sz0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class ob extends qb {
     public final /* synthetic */ int g;
@@ -17,14 +17,14 @@ public final class ob extends qb {
     public final void e() {
         switch (this.g) {
             case 0:
-                oz0 oz0Var = (oz0) this.h;
-                oz0Var.Q = false;
-                oz0Var.invalidate();
+                sz0 sz0Var = (sz0) this.h;
+                sz0Var.Q = false;
+                sz0Var.invalidate();
                 break;
             case 1:
-                ci.q4 t10 = ((ci.aa) this.h).t();
+                ci.p4 t10 = ((ci.z9) this.h).t();
                 if (t10 != null) {
-                    t10.m0(true);
+                    t10.l0(true);
                     break;
                 }
                 break;
@@ -39,18 +39,18 @@ public final class ob extends qb {
     public final void f(boolean z10) {
         switch (this.g) {
             case 0:
-                oz0 oz0Var = (oz0) this.h;
-                oz0Var.Q = true;
-                oz0Var.invalidate();
+                sz0 sz0Var = (sz0) this.h;
+                sz0Var.Q = true;
+                sz0Var.invalidate();
                 break;
             case 1:
-                ci.q4 t10 = ((ci.aa) this.h).t();
+                ci.p4 t10 = ((ci.z9) this.h).t();
                 if (t10 != null) {
-                    t10.m0(false);
+                    t10.l0(false);
                 }
-                ci.r3 r3Var = this.f;
-                if (r3Var != null) {
-                    r3Var.setTranslationX(0.0f);
+                ci.q3 q3Var = this.f;
+                if (q3Var != null) {
+                    q3Var.setTranslationX(0.0f);
                     this.f.setTranslationY(0.0f);
                     break;
                 }

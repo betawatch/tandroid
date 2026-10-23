@@ -21,7 +21,7 @@ import java.util.Arrays;
 import v7.q7;
 import w7.w7;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class x0 {
     public final TextView a;
@@ -478,7 +478,7 @@ public final class x0 {
                 return;
             }
             if (i10 != 1) {
-                throw new IllegalArgumentException(i2.e.j(i10, "Unknown auto-size text type: "));
+                throw new IllegalArgumentException(i2.o1.k(i10, "Unknown auto-size text type: "));
             }
             DisplayMetrics displayMetrics = h1Var.j.getResources().getDisplayMetrics();
             h1Var.k(TypedValue.applyDimension(2, 12.0f, displayMetrics), TypedValue.applyDimension(2, 112.0f, displayMetrics), 1.0f);

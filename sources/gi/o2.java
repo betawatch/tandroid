@@ -9,7 +9,7 @@ import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.messenger.BotFullscreenButtons;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class o2 implements View.OnLayoutChangeListener {
     public final /* synthetic */ int a;
@@ -28,19 +28,19 @@ public final class o2 implements View.OnLayoutChangeListener {
             case 0:
                 view.removeOnLayoutChangeListener(this);
                 d3 d3Var = (d3) obj;
-                BotFullscreenButtons botFullscreenButtons = d3Var.m0;
-                u2 u2Var = d3Var.v;
+                BotFullscreenButtons botFullscreenButtons = d3Var.n0;
+                u2 u2Var = d3Var.w;
                 u2Var.setSwipeOffsetY(u2Var.getHeight());
-                d3Var.e.setAlpha(1.0f);
-                if (d3Var.G0 != Float.MAX_VALUE) {
+                d3Var.f.setAlpha(1.0f);
+                if (d3Var.H0 != Float.MAX_VALUE) {
                     u2Var.setSwipeOffsetAnimationDisallowed(true);
-                    u2Var.setOffsetY(d3Var.G0);
+                    u2Var.setOffsetY(d3Var.H0);
                     u2Var.setSwipeOffsetAnimationDisallowed(false);
                 }
-                d3Var.x.n(true, true);
+                d3Var.y.n(true, true);
                 final AnimationNotificationsLocker animationNotificationsLocker = new AnimationNotificationsLocker();
                 animationNotificationsLocker.lock();
-                if (d3Var.F0 || d3Var.n()) {
+                if (d3Var.G0 || d3Var.n()) {
                     u2Var.f(u2Var.getTopActionBarOffsetY() + (-u2Var.getOffsetY()), false, new bc(animationNotificationsLocker, 10));
                 } else {
                     o1.k kVar = new o1.k(u2Var, e4.b0, 0.0f);
@@ -57,7 +57,7 @@ public final class o2 implements View.OnLayoutChangeListener {
                     kVar.h();
                 }
                 u2Var.K = true;
-                if (d3Var.d0 && botFullscreenButtons != null) {
+                if (d3Var.e0 && botFullscreenButtons != null) {
                     botFullscreenButtons.setAlpha(0.0f);
                     botFullscreenButtons.animate().alpha(1.0f).setDuration(220L).start();
                     break;

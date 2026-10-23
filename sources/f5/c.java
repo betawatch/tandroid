@@ -2,7 +2,7 @@ package f5;
 
 import com.google.android.gms.internal.play_billing.k3;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public abstract class c extends com.googlecode.mp4parser.c {
     public static final /* synthetic */ te.b e;
@@ -19,7 +19,7 @@ public abstract class c extends com.googlecode.mp4parser.c {
         StringBuilder sb2 = new StringBuilder(getClass().getSimpleName());
         sb2.append("[entryCount=");
         t tVar = (t) this;
-        k3.p(te.a.b(t.h, tVar, tVar));
+        k3.o(te.a.b(t.h, tVar, tVar));
         return a1.g.n(tVar.f.length, "]", sb2);
     }
 }

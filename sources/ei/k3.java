@@ -4,15 +4,15 @@ import android.content.Context;
 import android.view.ViewGroup;
 import org.telegram.ui.Components.xp;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class k3 extends xp {
     public final /* synthetic */ int d;
     public final /* synthetic */ ViewGroup e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ k3(ViewGroup viewGroup, Context context, org.telegram.ui.ActionBar.d6 d6Var, int i10) {
-        super(context, 21, d6Var);
+    public /* synthetic */ k3(ViewGroup viewGroup, Context context, org.telegram.ui.ActionBar.g6 g6Var, int i10) {
+        super(context, 21, g6Var);
         this.d = i10;
         this.e = viewGroup;
     }
@@ -26,18 +26,18 @@ public final class k3 extends xp {
                 break;
             case 1:
                 super.invalidate();
-                ((org.telegram.ui.Cells.r2) this.e).invalidate();
+                ((org.telegram.ui.Cells.q2) this.e).invalidate();
                 break;
             default:
                 super.invalidate();
-                ((org.telegram.ui.web.h) this.e).invalidate();
+                ((org.telegram.ui.web.i) this.e).invalidate();
                 break;
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k3(m3 m3Var, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, 24, d6Var);
+    public k3(m3 m3Var, Context context, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(context, 24, g6Var);
         this.d = 0;
         this.e = m3Var;
     }

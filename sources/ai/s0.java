@@ -15,7 +15,7 @@ import org.telegram.tgnet.tl.TL_aicompose;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.web.BotWebViewContainer$BotWebViewProxy;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s0 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -36,7 +36,7 @@ public final /* synthetic */ class s0 implements Utilities.Callback2 {
         org.telegram.ui.Components.ad adVar2;
         switch (this.a) {
             case 0:
-                b1.S((b1) this.b, (pf.c) this.c, (org.telegram.ui.ActionBar.b2) this.d, (TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
+                b1.R((b1) this.b, (pf.c) this.c, (org.telegram.ui.ActionBar.c2) this.d, (TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
                 break;
             case 1:
                 l7 l7Var = (l7) this.b;
@@ -81,30 +81,30 @@ public final /* synthetic */ class s0 implements Utilities.Callback2 {
                 ((ConnectionsManager) this.b).lambda$sendRequestTypedAndProcessUpdates$5((Executor) this.c, (Utilities.Callback2) this.d, (TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
                 break;
             case 3:
-                org.telegram.ui.Components.e0.X((org.telegram.ui.Components.e0) this.b, (pf.c) this.c, (TL_aicompose.TL_aiComposeTone) this.d);
+                org.telegram.ui.Components.e0.W((org.telegram.ui.Components.e0) this.b, (pf.c) this.c, (TL_aicompose.TL_aiComposeTone) this.d);
                 break;
             case 4:
-                org.telegram.ui.Components.q.T((org.telegram.ui.Components.q) this.b, (org.telegram.ui.ActionBar.d6) this.c, (TL_aicompose.AiComposeTone) this.d, (TLRPC.TL_error) obj2);
+                org.telegram.ui.Components.q.S((org.telegram.ui.Components.q) this.b, (org.telegram.ui.ActionBar.g6) this.c, (TL_aicompose.AiComposeTone) this.d, (TLRPC.TL_error) obj2);
                 break;
             case 5:
-                org.telegram.ui.Components.y.Q((org.telegram.ui.Components.y) this.b, (pf.c) this.c, (org.telegram.ui.ActionBar.b2) this.d);
+                org.telegram.ui.Components.y.P((org.telegram.ui.Components.y) this.b, (pf.c) this.c, (org.telegram.ui.ActionBar.c2) this.d);
                 break;
             case 6:
-                org.telegram.ui.web.a1 a1Var = (org.telegram.ui.web.a1) this.b;
-                ci.z7 z7Var = (ci.z7) this.c;
+                org.telegram.ui.web.b1 b1Var = (org.telegram.ui.web.b1) this.b;
+                ci.y7 y7Var = (ci.y7) this.c;
                 BotWebViewContainer$BotWebViewProxy botWebViewContainer$BotWebViewProxy = (BotWebViewContainer$BotWebViewProxy) this.d;
                 String str = (String) obj;
                 ArrayList arrayList = (ArrayList) obj2;
                 if (!TextUtils.isEmpty(str)) {
-                    a1Var.x(z7Var, "prepared_message_failed", org.telegram.ui.web.a1.A(str, "error"));
+                    b1Var.x(y7Var, "prepared_message_failed", org.telegram.ui.web.b1.A(str, "error"));
                     break;
                 } else {
-                    a1Var.x(z7Var, "prepared_message_sent", null);
-                    org.telegram.ui.web.g0 g0Var = a1Var.c;
-                    if (g0Var != null) {
-                        g0Var.c();
+                    b1Var.x(y7Var, "prepared_message_sent", null);
+                    org.telegram.ui.web.h0 h0Var = b1Var.c;
+                    if (h0Var != null) {
+                        h0Var.c();
                     }
-                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Wallet.z3(22, botWebViewContainer$BotWebViewProxy, arrayList), 500L);
+                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Wallet.y3(22, botWebViewContainer$BotWebViewProxy, arrayList), 500L);
                     break;
                 }
             case 7:

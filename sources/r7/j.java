@@ -3,12 +3,13 @@ package r7;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.Process;
+import i2.o1;
 import java.util.Arrays;
 import java.util.List;
 import w7.f0;
 import w7.v6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class j extends o6.a {
     public static final Parcelable.Creator<j> CREATOR = new m(3);
@@ -56,7 +57,7 @@ public final class j extends o6.a {
             int length2 = array2.length;
             for (int i13 = 0; i13 < length2; i13++) {
                 if (array2[i13] == null) {
-                    throw new NullPointerException(i2.e.j(i13, "at index "));
+                    throw new NullPointerException(o1.k(i13, "at index "));
                 }
             }
             if (length2 == 0) {

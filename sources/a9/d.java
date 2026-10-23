@@ -18,7 +18,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class d implements ServiceConnection {
     public final /* synthetic */ int a;
@@ -35,15 +35,15 @@ public final class d implements ServiceConnection {
     /* JADX WARN: Type inference failed for: r2v3, types: [com.google.android.gms.internal.play_billing.g] */
     @Override // android.content.ServiceConnection
     public final void onServiceConnected(ComponentName componentName, IBinder iBinder) {
-        xf.c cVar;
+        mi.q qVar;
         int i10 = 2;
         ?? r22 = 0;
-        xf.f fVar = null;
+        xf.e eVar = null;
         switch (this.a) {
             case 0:
-                e eVar = (e) this.b;
-                eVar.b.b("ServiceConnectionImpl.onServiceConnected(%s)", componentName);
-                eVar.a().post(new b(this, iBinder));
+                e eVar2 = (e) this.b;
+                eVar2.b.b("ServiceConnectionImpl.onServiceConnected(%s)", componentName);
+                eVar2.a().post(new b(this, iBinder));
                 break;
             case 1:
                 StringBuilder sb2 = new StringBuilder("Connected to SessionLifecycleService. Queue size ");
@@ -79,23 +79,23 @@ public final class d implements ServiceConnection {
                     return;
                 }
             default:
-                int i13 = xf.e.a;
+                int i13 = xf.d.a;
                 if (iBinder != null) {
                     IInterface queryLocalInterface2 = iBinder.queryLocalInterface("android.support.customtabs.ICustomTabsService");
-                    if (queryLocalInterface2 == null || !(queryLocalInterface2 instanceof xf.f)) {
-                        xf.d dVar = new xf.d();
-                        dVar.a = iBinder;
-                        fVar = dVar;
+                    if (queryLocalInterface2 == null || !(queryLocalInterface2 instanceof xf.e)) {
+                        xf.c cVar = new xf.c();
+                        cVar.a = iBinder;
+                        eVar = cVar;
                     } else {
-                        fVar = (xf.f) queryLocalInterface2;
+                        eVar = (xf.e) queryLocalInterface2;
                     }
                 }
-                xf.c cVar2 = new xf.c(fVar, componentName);
+                mi.q qVar2 = new mi.q(29, eVar, componentName);
                 if (((pf.b) ((WeakReference) this.b).get()) != null) {
-                    pf.d.b = cVar2;
-                    if (MessagesController.getInstance(UserConfig.selectedAccount).isWebBrowserUseCustomTabs() && (cVar = pf.d.b) != null) {
+                    pf.d.b = qVar2;
+                    if (MessagesController.getInstance(UserConfig.selectedAccount).isWebBrowserUseCustomTabs() && (qVar = pf.d.b) != null) {
                         try {
-                            ((xf.d) ((xf.f) cVar.a)).G0();
+                            ((xf.c) ((xf.e) qVar.b)).G0();
                             break;
                         } catch (RemoteException unused) {
                             return;

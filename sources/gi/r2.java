@@ -4,7 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class r2 extends AnimatorListenerAdapter {
     public final /* synthetic */ boolean a;
@@ -22,10 +22,10 @@ public final class r2 extends AnimatorListenerAdapter {
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
         d3 d3Var = this.d;
-        v2 v2Var = d3Var.x;
-        a3 a3Var = d3Var.W;
-        u2 u2Var = d3Var.v;
-        d3Var.h0 = false;
+        v2 v2Var = d3Var.y;
+        a3 a3Var = d3Var.X;
+        u2 u2Var = d3Var.w;
+        d3Var.i0 = false;
         boolean z10 = this.a;
         if (z10) {
             u2Var.setForceOffsetY(-AndroidUtilities.dp(24.0f));
@@ -40,18 +40,18 @@ public final class r2 extends AnimatorListenerAdapter {
             u2Var.setTopActionBarOffsetY(f7 - AndroidUtilities.dp(24.0f));
             u2Var.setSwipeOffsetY(0.0f);
         }
-        float f10 = z10 ? d3Var.g0 : 1.0f - d3Var.g0;
-        d3Var.f0 = f10;
+        float f10 = z10 ? d3Var.h0 : 1.0f - d3Var.h0;
+        d3Var.g0 = f10;
         a3Var.setAlpha(1.0f - f10);
-        a3Var.setTranslationY((-org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) * d3Var.f0);
-        d3Var.m0.setAlpha(d3Var.f0);
+        a3Var.setTranslationY((-org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) * d3Var.g0);
+        d3Var.n0.setAlpha(d3Var.g0);
         if (z10) {
             a3Var.setVisibility(8);
         }
         u2Var.setSwipeOffsetAnimationDisallowed(false);
-        u2Var.setTranslationX(AndroidUtilities.lerp(this.c, 0.0f, d3Var.g0));
-        d3Var.l0.setTranslationX(0.0f);
-        d3Var.e.invalidate();
+        u2Var.setTranslationX(AndroidUtilities.lerp(this.c, 0.0f, d3Var.h0));
+        d3Var.m0.setTranslationX(0.0f);
+        d3Var.f.invalidate();
         v2Var.setViewPortHeightOffset(0.0f);
         v2Var.n(true, true);
         d3Var.D();

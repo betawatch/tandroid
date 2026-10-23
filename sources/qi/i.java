@@ -30,15 +30,15 @@ import org.json.JSONObject;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
-import org.telegram.ui.Components.cy0;
-import org.telegram.ui.Components.hg0;
+import org.telegram.ui.Components.fy0;
+import org.telegram.ui.Components.lg0;
 import org.telegram.ui.Components.n10;
 import org.telegram.ui.Components.o10;
 import org.telegram.ui.web.a2;
-import org.telegram.ui.web.z1;
-import qg.h0;
+import org.telegram.ui.web.b2;
+import qg.g0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class i implements n10 {
     public static i A;
@@ -83,7 +83,7 @@ public final class i implements n10 {
         new SecureRandom().nextBytes(bArr2);
         String encodeToString = Base64.encodeToString(bArr2, 11);
         this.h = encodeToString;
-        String concat2 = str3.isEmpty() ? "tdesktop-web-proxy-bridge-v1\n".concat(str2) : k3.k("tdesktop-web-proxy-bridge-v2\n", str2, "\n", str3);
+        String concat2 = str3.isEmpty() ? "tdesktop-web-proxy-bridge-v1\n".concat(str2) : k3.j("tdesktop-web-proxy-bridge-v2\n", str2, "\n", str3);
         Mac mac = Mac.getInstance("HmacSHA256");
         mac.init(new SecretKeySpec(bArr, "HmacSHA256"));
         this.g = concat + p5 + "?bridge=" + Base64.encodeToString(mac.doFinal(concat2.getBytes(StandardCharsets.UTF_8)), 11) + "#android=" + encodeToString;
@@ -122,10 +122,10 @@ public final class i implements n10 {
                         if (Build.VERSION.SDK_INT >= 26) {
                             settings.setSafeBrowsingEnabled(true);
                         }
-                        webView.setWebViewClient(new hg0(iVar, 2));
+                        webView.setWebViewClient(new lg0(iVar, 2));
                         HashSet hashSet = new HashSet();
                         hashSet.add(iVar.f);
-                        a5.c.a(webView, "TelegramWebProxy", hashSet, new h0(iVar, 1));
+                        a5.c.a(webView, "TelegramWebProxy", hashSet, new g0(iVar, 1));
                         webView.loadUrl(iVar.g);
                     } catch (Exception e) {
                         FileLog.e(e);
@@ -242,7 +242,7 @@ public final class i implements n10 {
         }
         String trim = str.trim();
         if (trim.endsWith(".")) {
-            trim = k3.j(1, 0, trim);
+            trim = k3.i(1, 0, trim);
         }
         try {
             String lowerCase = IDN.toASCII(trim, 2).toLowerCase(Locale.US);
@@ -408,12 +408,12 @@ public final class i implements n10 {
                         return;
                     }
                     WebView webView = this.o;
-                    cy0 cy0Var = new cy0(this, webView, hVar, 15);
-                    AndroidUtilities.runOnUIThread(cy0Var, 5000L);
+                    fy0 fy0Var = new fy0(this, webView, hVar, 15);
+                    AndroidUtilities.runOnUIThread(fy0Var, 5000L);
                     try {
-                        webView.evaluateJavascript("(function(){\n'use strict';\ntry {\n var bridge=window.TelegramWebProxy;\n if(!bridge||typeof bridge.postMessage!=='function'||typeof bridge.onmessage!=='function')return false;\n var nativePost=bridge.postMessage;\n var receive=bridge.onmessage;\n var prefix='tproxy-base64:';\n var maxBytes=1048584;\n var maxChars=1398112;\n function post(value){\n  if(value instanceof ArrayBuffer){\n   if(value.byteLength>maxBytes)throw new Error('WEB proxy frame too large');\n   var bytes=new Uint8Array(value),parts=[];\n   for(var i=0;i<bytes.length;i+=8192){\n    parts.push(String.fromCharCode.apply(null,bytes.subarray(i,Math.min(i+8192,bytes.length))));\n   }\n   nativePost.call(bridge,prefix+btoa(parts.join('')));\n  }else nativePost.call(bridge,value);\n }\n function onmessage(event){\n  var data=event.data;\n  if(typeof data==='string'&&data.indexOf(prefix)===0){\n   try {\n    var encoded=data.substring(prefix.length);\n    if(encoded.length>maxChars)throw new Error('WEB proxy frame too large');\n    var binary=atob(encoded);\n    if(binary.length>maxBytes)throw new Error('WEB proxy frame too large');\n    var bytes=new Uint8Array(binary.length);\n    for(var i=0;i<binary.length;i++)bytes[i]=binary.charCodeAt(i);\n    receive.call(bridge,{data:bytes.buffer});\n   }catch(error){nativePost.call(bridge,'{\"t\":\"close\"}');}\n  }else receive.call(bridge,event);\n }\n bridge.postMessage=post;\n bridge.onmessage=onmessage;\n return bridge.postMessage===post&&bridge.onmessage===onmessage;\n}catch(error){return false;}\n})()\n", new a2(this, cy0Var, webView, hVar));
+                        webView.evaluateJavascript("(function(){\n'use strict';\ntry {\n var bridge=window.TelegramWebProxy;\n if(!bridge||typeof bridge.postMessage!=='function'||typeof bridge.onmessage!=='function')return false;\n var nativePost=bridge.postMessage;\n var receive=bridge.onmessage;\n var prefix='tproxy-base64:';\n var maxBytes=1048584;\n var maxChars=1398112;\n function post(value){\n  if(value instanceof ArrayBuffer){\n   if(value.byteLength>maxBytes)throw new Error('WEB proxy frame too large');\n   var bytes=new Uint8Array(value),parts=[];\n   for(var i=0;i<bytes.length;i+=8192){\n    parts.push(String.fromCharCode.apply(null,bytes.subarray(i,Math.min(i+8192,bytes.length))));\n   }\n   nativePost.call(bridge,prefix+btoa(parts.join('')));\n  }else nativePost.call(bridge,value);\n }\n function onmessage(event){\n  var data=event.data;\n  if(typeof data==='string'&&data.indexOf(prefix)===0){\n   try {\n    var encoded=data.substring(prefix.length);\n    if(encoded.length>maxChars)throw new Error('WEB proxy frame too large');\n    var binary=atob(encoded);\n    if(binary.length>maxBytes)throw new Error('WEB proxy frame too large');\n    var bytes=new Uint8Array(binary.length);\n    for(var i=0;i<binary.length;i++)bytes[i]=binary.charCodeAt(i);\n    receive.call(bridge,{data:bytes.buffer});\n   }catch(error){nativePost.call(bridge,'{\"t\":\"close\"}');}\n  }else receive.call(bridge,event);\n }\n bridge.postMessage=post;\n bridge.onmessage=onmessage;\n return bridge.postMessage===post&&bridge.onmessage===onmessage;\n}catch(error){return false;}\n})()\n", new b2(this, fy0Var, webView, hVar));
                     } catch (Exception e) {
-                        AndroidUtilities.cancelRunOnUIThread(cy0Var);
+                        AndroidUtilities.cancelRunOnUIThread(fy0Var);
                         FileLog.e(e);
                         FileLog.e("WEB proxy: Base64 bridge installation threw an exception; transport stopped");
                         o();
@@ -534,7 +534,7 @@ public final class i implements n10 {
                             c cVar = this.x;
                             this.a.notifyAll();
                             if (cVar != null) {
-                                AndroidUtilities.runOnUIThread(new z1(cVar, 9));
+                                AndroidUtilities.runOnUIThread(new a2(cVar, 9));
                             }
                         }
                     } finally {

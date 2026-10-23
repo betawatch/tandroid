@@ -9,7 +9,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q9 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -23,8 +23,8 @@ public final /* synthetic */ class q9 implements Runnable {
     public final /* synthetic */ Object r;
     public final /* synthetic */ Object s;
 
-    public /* synthetic */ q9(ga gaVar, TLObject tLObject, Runnable runnable, TLRPC.TL_error tL_error, boolean z10, long j10, int i10, MessageObject messageObject, long j11) {
-        this.f = gaVar;
+    public /* synthetic */ q9(ha haVar, TLObject tLObject, Runnable runnable, TLRPC.TL_error tL_error, boolean z10, long j10, int i10, MessageObject messageObject, long j11) {
+        this.f = haVar;
         this.h = tLObject;
         this.n = runnable;
         this.r = tL_error;
@@ -39,7 +39,7 @@ public final /* synthetic */ class q9 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                ga gaVar = (ga) this.f;
+                ha haVar = (ha) this.f;
                 TLObject tLObject = (TLObject) this.h;
                 Runnable runnable = (Runnable) this.n;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) this.r;
@@ -51,16 +51,16 @@ public final /* synthetic */ class q9 implements Runnable {
                 if (!(tLObject instanceof TLRPC.Updates)) {
                     if (tL_error != null && FileRefController.isFileRefError(tL_error.text) && !z10) {
                         TLRPC.TL_messages_getScheduledMessages tL_messages_getScheduledMessages = new TLRPC.TL_messages_getScheduledMessages();
-                        tL_messages_getScheduledMessages.peer = MessagesController.getInstance(gaVar.a).getInputPeer(j10);
+                        tL_messages_getScheduledMessages.peer = MessagesController.getInstance(haVar.a).getInputPeer(j10);
                         tL_messages_getScheduledMessages.id.add(Integer.valueOf(i10));
-                        ConnectionsManager.getInstance(gaVar.a).sendRequest(tL_messages_getScheduledMessages, new d0(gaVar, messageObject, j11, runnable, 2));
+                        ConnectionsManager.getInstance(haVar.a).sendRequest(tL_messages_getScheduledMessages, new d0(haVar, messageObject, j11, runnable, 2));
                         break;
                     } else {
                         runnable.run();
                         break;
                     }
                 } else {
-                    Utilities.stageQueue.postRunnable(new c9(gaVar, tLObject, 5));
+                    Utilities.stageQueue.postRunnable(new c9(haVar, tLObject, 5));
                     runnable.run();
                     break;
                 }

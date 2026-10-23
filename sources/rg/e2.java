@@ -1,47 +1,156 @@
 package rg;
 
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.MediaController;
-import org.telegram.ui.Components.v11;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.os.Build;
+import android.text.SpannableStringBuilder;
+import android.view.ContextThemeWrapper;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.Components.ja;
+import org.telegram.ui.Components.na;
+import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class e2 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ n2 b;
+public abstract class e2 extends ei.d {
+    public final na k0;
+    public final RectF l0;
+    public int m0;
+    public final o2 n0;
+    public final g6 o0;
+    public int p0;
+    public boolean q0;
 
-    public /* synthetic */ e2(n2 n2Var, int i10) {
-        this.a = i10;
-        this.b = n2Var;
+    public e2(o2 o2Var, ContextThemeWrapper contextThemeWrapper, g6 g6Var, ja jaVar) {
+        super(contextThemeWrapper, g6Var, false);
+        this.l0 = new RectF();
+        this.p0 = 8;
+        this.o0 = g6Var;
+        this.n0 = o2Var;
+        this.k0 = new na(jaVar, this, 0, true);
+        setWillNotDraw(false);
+        setTextColor(-1);
+        setFlickeringLoading(true);
+        this.d.x(AndroidUtilities.bold());
+        removeView(this.r);
+        setForeground(k6.Z(k6.o1(0.08f, -1), 8, 8));
+        setPadding(AndroidUtilities.dp(24.0f), 0, AndroidUtilities.dp(24.0f), 0);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                n2 n2Var = this.b;
-                l2 l2Var = n2Var.W;
-                if (l2Var != null) {
-                    if (l2Var.r != null) {
-                        MediaController.getInstance().cancelVideoConvert(n2Var.W.r);
-                        FileLoader.getInstance(n2Var.a).cancelFileUpload(n2Var.W.b, false);
-                        n2Var.W.getClass();
-                    }
-                    n2Var.W.a();
-                    n2Var.W = null;
-                }
-                n2Var.d0.a();
-                n2Var.d0 = null;
-                break;
-            default:
-                n2 n2Var2 = this.b;
-                v11 v11Var = n2Var2.S;
-                if (v11Var != null) {
-                    n2Var2.S = null;
-                    n2Var2.removeView(v11Var);
-                    break;
-                }
-                break;
+    @Override // ei.d, android.view.View
+    public void onDraw(Canvas canvas) {
+        boolean z10 = this.g0;
+        RectF rectF = this.l0;
+        if (z10) {
+            float c10 = this.d.c() + getPaddingLeft() + getPaddingRight();
+            rectF.set((getMeasuredWidth() - c10) / 2.0f, 0.0f, (getMeasuredWidth() + c10) / 2.0f, getMeasuredHeight());
+        } else {
+            rectF.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+        }
+        super.onDraw(canvas);
+    }
+
+    @Override // ei.d, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        if (this.q0) {
+            i10 = View.MeasureSpec.makeMeasureSpec(getPaddingRight() + getPaddingLeft() + ((int) this.d.c()), TLObject.FLAG_30);
+        }
+        super.onMeasure(i10, i11);
+    }
+
+    @Override // android.view.View
+    public void setAlpha(float f7) {
+        l2[] l2VarArr;
+        o2 o2Var = this.n0;
+        if (!o2Var.y || (l2VarArr = o2Var.H) == null || l2VarArr.length <= 0) {
+            f7 = 0.0f;
+        }
+        super.setAlpha(f7);
+    }
+
+    public void setCancelState(boolean z10) {
+        this.m0 = 2;
+        i(LocaleController.getString(R.string.Cancel), z10, true);
+    }
+
+    public void setCutOutState(boolean z10) {
+        this.m0 = 0;
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("d");
+        xq xqVar = new xq(R.drawable.media_magic_cut, 0);
+        xqVar.setSize(AndroidUtilities.dp(22.0f));
+        xqVar.setTranslateX(AndroidUtilities.dp(1.0f));
+        xqVar.setTranslateY(AndroidUtilities.dp(2.0f));
+        xqVar.spaceScaleX = 1.2f;
+        spannableStringBuilder.setSpan(xqVar, 0, 1, 0);
+        spannableStringBuilder.append((CharSequence) " ").append((CharSequence) LocaleController.getString(R.string.SegmentationCutObject));
+        i(spannableStringBuilder, z10, true);
+    }
+
+    public void setEraseState(boolean z10) {
+        this.m0 = 3;
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("d");
+        xq xqVar = new xq(R.drawable.media_button_erase, 0);
+        xqVar.setSize(AndroidUtilities.dp(20.0f));
+        xqVar.setTranslateX(AndroidUtilities.dp(-3.0f));
+        spannableStringBuilder.setSpan(xqVar, 0, 1, 0);
+        spannableStringBuilder.append((CharSequence) " ").append((CharSequence) LocaleController.getString(R.string.SegmentationErase));
+        i(spannableStringBuilder, z10, true);
+    }
+
+    public void setOutlineState(boolean z10) {
+        this.m0 = 6;
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("d");
+        xq xqVar = new xq(R.drawable.media_sticker_stroke, 0);
+        xqVar.setSize(AndroidUtilities.dp(20.0f));
+        xqVar.setTranslateX(AndroidUtilities.dp(-3.0f));
+        spannableStringBuilder.setSpan(xqVar, 0, 1, 0);
+        spannableStringBuilder.append((CharSequence) " ").append((CharSequence) LocaleController.getString(R.string.SegmentationOutline));
+        i(spannableStringBuilder, z10, true);
+    }
+
+    public void setRad(int i10) {
+        this.p0 = i10;
+        setForeground(k6.Z(k6.w0(k6.i6, this.o0), i10, i10));
+    }
+
+    public void setRestoreState(boolean z10) {
+        this.m0 = 4;
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("d");
+        xq xqVar = new xq(R.drawable.media_button_restore, 0);
+        xqVar.setSize(AndroidUtilities.dp(20.0f));
+        xqVar.setTranslateX(AndroidUtilities.dp(-3.0f));
+        spannableStringBuilder.setSpan(xqVar, 0, 1, 0);
+        spannableStringBuilder.append((CharSequence) " ").append((CharSequence) LocaleController.getString(R.string.SegmentationRestore));
+        i(spannableStringBuilder, z10, true);
+    }
+
+    public void setUndoCutState(boolean z10) {
+        this.m0 = 1;
+    }
+
+    public void setUndoState(boolean z10) {
+        this.m0 = 5;
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("d");
+        xq xqVar = new xq(R.drawable.photo_undo2, 0);
+        xqVar.setSize(AndroidUtilities.dp(20.0f));
+        xqVar.setTranslateX(AndroidUtilities.dp(-3.0f));
+        spannableStringBuilder.setSpan(xqVar, 0, 1, 0);
+        spannableStringBuilder.append((CharSequence) " ").append((CharSequence) LocaleController.getString(R.string.SegmentationUndo));
+        i(spannableStringBuilder, z10, true);
+    }
+
+    @Override // android.view.View
+    public void setVisibility(int i10) {
+        if (Build.VERSION.SDK_INT < 24) {
+            super.setVisibility(8);
+        } else {
+            super.setVisibility(i10);
         }
     }
 }

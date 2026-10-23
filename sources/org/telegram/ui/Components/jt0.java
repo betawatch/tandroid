@@ -1,31 +1,21 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import android.content.Context;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class jt0 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ nu0 b;
-    public final /* synthetic */ uv0 c;
+public final class jt0 extends FragmentContextView {
+    public final /* synthetic */ xv0 X0;
 
-    public /* synthetic */ jt0(uv0 uv0Var, nu0 nu0Var, int i10) {
-        this.a = i10;
-        this.c = uv0Var;
-        this.b = nu0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public jt0(xv0 xv0Var, Context context, org.telegram.ui.ActionBar.o2 o2Var, xv0 xv0Var2, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(context, o2Var, xv0Var2, false, g6Var);
+        this.X0 = xv0Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                this.c.n1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                this.b.h.invalidate();
-                break;
-            default:
-                this.c.n1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                this.b.h.invalidate();
-                break;
-        }
+    @Override // org.telegram.ui.Components.FragmentContextView, android.view.View
+    public final void setVisibility(int i10) {
+        xv0 xv0Var = this.X0;
+        xv0Var.P0.i(xv0Var.Q0, i10 == 0, true);
     }
 }

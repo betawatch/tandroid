@@ -16,7 +16,7 @@ import org.telegram.messenger.beta.R;
 import r0.i0;
 import w7.r6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public abstract class t extends androidx.activity.n {
     public r d;
@@ -56,7 +56,7 @@ public abstract class t extends androidx.activity.n {
     @Override // androidx.activity.n, android.app.Dialog
     public final void addContentView(View view, ViewGroup.LayoutParams layoutParams) {
         r rVar = (r) c();
-        rVar.k();
+        rVar.l();
         ((ViewGroup) rVar.J.findViewById(android.R.id.content)).addView(view, layoutParams);
         rVar.h.a(rVar.f.getCallback());
     }
@@ -104,7 +104,7 @@ public abstract class t extends androidx.activity.n {
     @Override // android.app.Dialog
     public final View findViewById(int i10) {
         r rVar = (r) c();
-        rVar.k();
+        rVar.l();
         return rVar.f.findViewById(i10);
     }
 
@@ -144,7 +144,7 @@ public abstract class t extends androidx.activity.n {
     @Override // androidx.activity.n, android.app.Dialog
     public final void setContentView(int i10) {
         r rVar = (r) c();
-        rVar.k();
+        rVar.l();
         ViewGroup viewGroup = (ViewGroup) rVar.J.findViewById(android.R.id.content);
         viewGroup.removeAllViews();
         LayoutInflater.from(rVar.e).inflate(i10, viewGroup);
@@ -187,7 +187,7 @@ public abstract class t extends androidx.activity.n {
     @Override // androidx.activity.n, android.app.Dialog
     public final void setContentView(View view) {
         r rVar = (r) c();
-        rVar.k();
+        rVar.l();
         ViewGroup viewGroup = (ViewGroup) rVar.J.findViewById(android.R.id.content);
         viewGroup.removeAllViews();
         viewGroup.addView(view);
@@ -197,7 +197,7 @@ public abstract class t extends androidx.activity.n {
     @Override // androidx.activity.n, android.app.Dialog
     public final void setContentView(View view, ViewGroup.LayoutParams layoutParams) {
         r rVar = (r) c();
-        rVar.k();
+        rVar.l();
         ViewGroup viewGroup = (ViewGroup) rVar.J.findViewById(android.R.id.content);
         viewGroup.removeAllViews();
         viewGroup.addView(view, layoutParams);

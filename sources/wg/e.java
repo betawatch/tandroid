@@ -1,16 +1,17 @@
 package wg;
 
-import ci.l4;
+import ci.k4;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.r6;
 import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.w9;
 import w7.z5;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class e extends d {
     @Override // wg.d, wg.c
@@ -23,17 +24,17 @@ public final class e extends d {
     }
 
     public void setGiveaway(TL_stories.PrepaidGiveaway prepaidGiveaway) {
-        this.e.setTextColor(h6.w0(h6.r5, this.a));
+        r6.Z(this.e, k6.r5, this.a);
         boolean z10 = prepaidGiveaway instanceof TL_stories.TL_prepaidStarsGiveaway;
-        l4 l4Var = this.d;
+        k4 k4Var = this.d;
         h9 h9Var = this.b;
         if (z10) {
             TL_stories.TL_prepaidStarsGiveaway tL_prepaidStarsGiveaway = (TL_stories.TL_prepaidStarsGiveaway) prepaidGiveaway;
             h9Var.g(26);
-            l4Var.k(LocaleController.formatPluralStringComma("BoostingStarsPreparedGiveawaySubscriptionsPlural", (int) tL_prepaidStarsGiveaway.stars));
+            k4Var.k(LocaleController.formatPluralStringComma("BoostingStarsPreparedGiveawaySubscriptionsPlural", (int) tL_prepaidStarsGiveaway.stars));
             setSubtitle(LocaleController.formatPluralString("AmongWinners", tL_prepaidStarsGiveaway.quantity, new Object[0]));
         } else if (prepaidGiveaway instanceof TL_stories.TL_prepaidGiveaway) {
-            l4Var.k(LocaleController.getString(R.string.BoostingPreparedGiveawayOne));
+            k4Var.k(LocaleController.getString(R.string.BoostingPreparedGiveawayOne));
             h9Var.g(16);
             TL_stories.TL_prepaidGiveaway tL_prepaidGiveaway = (TL_stories.TL_prepaidGiveaway) prepaidGiveaway;
             int i10 = tL_prepaidGiveaway.months;

@@ -5,10 +5,10 @@ import android.os.SystemClock;
 import e2.m0;
 import java.io.IOException;
 import java.util.concurrent.Executors;
-import sg.y;
+import org.telegram.ui.Wallet.m4;
 import v7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class l implements m {
     public static final k4.d d = new k4.d(0, -9223372036854775807L, false);
@@ -23,7 +23,7 @@ public final class l implements m {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public l(String str) {
-        this(new z2.a(Executors.newSingleThreadExecutor(new androidx.emoji2.text.a(r3, 1)), new y(29)));
+        this(new z2.a(Executors.newSingleThreadExecutor(new androidx.emoji2.text.a(r3, 1)), new v0.k(11)));
         String concat = "ExoPlayer:Loader:".concat(str);
         String str2 = m0.a;
     }
@@ -65,7 +65,7 @@ public final class l implements m {
         }
         z2.a aVar = this.a;
         if (jVar != null) {
-            aVar.execute(new p8.b(jVar, 11));
+            aVar.execute(new m4(jVar, 15));
         }
         aVar.b.accept(aVar.a);
     }

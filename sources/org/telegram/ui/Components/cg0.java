@@ -1,160 +1,80 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Paint;
-import android.text.TextUtils;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.graphics.Matrix;
+import android.graphics.SurfaceTexture;
+import android.view.TextureView;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class cg0 extends im0 {
-    public final Context c;
-    public final /* synthetic */ dg0 d;
+public final class cg0 implements TextureView.SurfaceTextureListener {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ ja b;
+    public final /* synthetic */ hg0 c;
 
-    public cg0(dg0 dg0Var, Context context) {
-        this.d = dg0Var;
-        this.c = context;
+    public cg0(hg0 hg0Var, boolean z10, ja jaVar) {
+        this.c = hg0Var;
+        this.a = z10;
+        this.b = jaVar;
     }
 
-    @Override // org.telegram.ui.Components.im0
-    public final boolean D(s4.b1 b1Var) {
-        return false;
-    }
-
-    @Override // s4.g0
-    public final int h() {
-        return this.d.F;
-    }
-
-    @Override // s4.g0
-    public final long i(int i10) {
-        return i10;
-    }
-
-    @Override // s4.g0
-    public final int j(int i10) {
-        dg0 dg0Var = this.d;
-        return (i10 == dg0Var.y || i10 == dg0Var.E) ? 1 : 0;
-    }
-
-    @Override // s4.g0
-    public final void v(s4.b1 b1Var, int i10) {
-        int i11 = b1Var.f;
-        View view = b1Var.a;
-        dg0 dg0Var = this.d;
-        if (i11 != 0) {
-            if (i11 != 1) {
-                return;
-            }
-            org.telegram.ui.Cells.t5 t5Var = (org.telegram.ui.Cells.t5) view;
-            t5Var.setTag(Integer.valueOf(i10));
-            if (i10 == dg0Var.y) {
-                t5Var.a(dg0Var.N, LocaleController.getString(R.string.TintShadows));
-                return;
-            } else {
-                if (i10 == dg0Var.E) {
-                    t5Var.a(dg0Var.O, LocaleController.getString(R.string.TintHighlights));
-                    return;
-                }
-                return;
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i10, int i11) {
+        hg0 hg0Var = this.c;
+        TextureView textureView = hg0Var.i0;
+        if (hg0Var.l0 != null || surfaceTexture == null) {
+            return;
+        }
+        e00 e00Var = new e00(surfaceTexture, hg0Var.C0, hg0Var.H0, hg0Var.w0, this.a, this.b, i10, i11);
+        hg0Var.l0 = e00Var;
+        if (!this.a) {
+            e00Var.i(hg0Var.J0, hg0Var.K0);
+            e00 e00Var2 = hg0Var.l0;
+            Matrix transform = textureView.getTransform(null);
+            int width = textureView.getWidth();
+            int height = textureView.getHeight();
+            pa paVar = e00Var2.I;
+            if (paVar != null) {
+                Matrix matrix = paVar.v;
+                transform.invert(matrix);
+                float f7 = width;
+                float f10 = height;
+                matrix.preScale(f7, f10);
+                matrix.postScale(1.0f / f7, 1.0f / f10);
+                paVar.c(matrix);
+                e00Var2.d(false, false, false);
             }
         }
-        org.telegram.ui.Cells.u5 u5Var = (org.telegram.ui.Cells.u5) view;
-        u5Var.setTag(Integer.valueOf(i10));
-        if (i10 == dg0Var.b) {
-            u5Var.a(LocaleController.getString(R.string.Enhance), 0, dg0Var.G);
-            return;
+        hg0Var.l0.f(hg0Var);
+        e00 e00Var3 = hg0Var.l0;
+        e00Var3.getClass();
+        e00Var3.postRunnable(new a00(e00Var3, i10, i11, 1));
+        hg0Var.l0.d(true, true, false);
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
+        hg0 hg0Var = this.c;
+        e00 e00Var = hg0Var.l0;
+        if (e00Var == null) {
+            return true;
         }
-        if (i10 == dg0Var.r) {
-            u5Var.a(LocaleController.getString(R.string.Highlights), -100, dg0Var.P);
-            return;
-        }
-        if (i10 == dg0Var.d) {
-            u5Var.a(LocaleController.getString(R.string.Contrast), -100, dg0Var.I);
-            return;
-        }
-        if (i10 == dg0Var.c) {
-            u5Var.a(LocaleController.getString(R.string.Exposure), -100, dg0Var.H);
-            return;
-        }
-        if (i10 == dg0Var.f) {
-            u5Var.a(LocaleController.getString(R.string.Warmth), -100, dg0Var.J);
-            return;
-        }
-        if (i10 == dg0Var.e) {
-            u5Var.a(LocaleController.getString(R.string.Saturation), -100, dg0Var.K);
-            return;
-        }
-        if (i10 == dg0Var.v) {
-            u5Var.a(LocaleController.getString(R.string.Vignette), 0, dg0Var.R);
-            return;
-        }
-        if (i10 == dg0Var.s) {
-            u5Var.a(LocaleController.getString(R.string.Shadows), -100, dg0Var.Q);
-            return;
-        }
-        if (i10 == dg0Var.w) {
-            u5Var.a(LocaleController.getString(R.string.Grain), 0, dg0Var.S);
-            return;
-        }
-        if (i10 == dg0Var.x) {
-            u5Var.a(LocaleController.getString(R.string.Sharpen), 0, dg0Var.U);
-        } else if (i10 == dg0Var.h) {
-            u5Var.a(LocaleController.getString(R.string.Fade), 0, dg0Var.L);
-        } else if (i10 == dg0Var.n) {
-            u5Var.a(LocaleController.getString(R.string.SoftenSkin), 0, dg0Var.M);
+        e00Var.postRunnable(new b00(e00Var, 0));
+        hg0Var.l0 = null;
+        return true;
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureSizeChanged(SurfaceTexture surfaceTexture, int i10, int i11) {
+        hg0 hg0Var = this.c;
+        e00 e00Var = hg0Var.l0;
+        if (e00Var != null) {
+            e00Var.postRunnable(new a00(e00Var, i10, i11, 1));
+            hg0Var.l0.d(false, true, false);
+            hg0Var.l0.postRunnable(new yb0(this, 7));
         }
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // s4.g0
-    public final s4.b1 x(ViewGroup viewGroup, int i10) {
-        org.telegram.ui.Cells.t5 t5Var;
-        Context context = this.c;
-        if (i10 == 0) {
-            org.telegram.ui.ActionBar.d6 d6Var = this.d.I0;
-            org.telegram.ui.Cells.u5 u5Var = new org.telegram.ui.Cells.u5(context);
-            u5Var.e = new androidx.activity.i(u5Var, 28);
-            TextView textView = new TextView(context);
-            u5Var.a = textView;
-            textView.setGravity(5);
-            textView.setTextColor(-1);
-            textView.setTextSize(1, 12.0f);
-            textView.setMaxLines(1);
-            textView.setSingleLine(true);
-            textView.setEllipsize(TextUtils.TruncateAt.END);
-            u5Var.addView(textView, w7.z5.d(80, -2.0f, 19, 0.0f, 0.0f, 0.0f, 0.0f));
-            TextView textView2 = new TextView(context);
-            u5Var.b = textView2;
-            org.telegram.messenger.nk.o(org.telegram.ui.ActionBar.h6.zf, d6Var, textView2, 1, 12.0f);
-            textView2.setGravity(5);
-            textView2.setSingleLine(true);
-            u5Var.addView(textView2, w7.z5.d(80, -2.0f, 19, 0.0f, 0.0f, 0.0f, 0.0f));
-            qf0 qf0Var = new qf0(context);
-            Paint paint = new Paint();
-            qf0Var.a = paint;
-            Paint paint2 = new Paint(1);
-            qf0Var.b = paint2;
-            qf0Var.c = AndroidUtilities.dp(16.0f);
-            qf0Var.d = 0;
-            qf0Var.e = 0.0f;
-            qf0Var.f = false;
-            paint.setColor(-11711155);
-            paint2.setColor(-1);
-            u5Var.c = qf0Var;
-            u5Var.addView(qf0Var, w7.z5.d(-1, 40.0f, 19, 96.0f, 0.0f, 24.0f, 0.0f));
-            u5Var.setSeekBarDelegate(new tv(this, 11));
-            t5Var = u5Var;
-        } else {
-            org.telegram.ui.Cells.t5 t5Var2 = new org.telegram.ui.Cells.t5(context);
-            t5Var2.setOnClickListener(new u80(this, 5));
-            t5Var = t5Var2;
-        }
-        return new tl0(t5Var);
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
     }
 }

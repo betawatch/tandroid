@@ -1,63 +1,38 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import android.os.SystemClock;
-import java.util.HashSet;
+import android.content.Context;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class kh0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ Object c;
+public final class kh0 implements org.telegram.ui.Components.q90 {
+    public final /* synthetic */ org.telegram.ui.Components.r90 a;
+    public final /* synthetic */ lh0 b;
 
-    public /* synthetic */ kh0(Object obj, long j10, int i10) {
-        this.a = i10;
-        this.c = obj;
-        this.b = j10;
+    public kh0(lh0 lh0Var, org.telegram.ui.Components.r90 r90Var) {
+        this.b = lh0Var;
+        this.a = r90Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        ri.m mVar;
-        switch (this.a) {
-            case 0:
-                qn qnVar = ((di) this.c).e;
-                qnVar.D7(true);
-                Bundle bundle = new Bundle();
-                long j10 = this.b;
-                bundle.putLong("user_id", j10);
-                if (j10 == qnVar.getUserConfig().getClientUserId()) {
-                    bundle.putBoolean("my_profile", true);
-                }
-                qnVar.presentFragment(new ProfileActivity(bundle, null));
-                break;
-            case 1:
-                ((org.telegram.ui.ActionBar.j3) this.c).run(Long.valueOf(this.b));
-                break;
-            case 2:
-                org.telegram.ui.web.e0 e0Var = (org.telegram.ui.web.e0) this.c;
-                e0Var.getClass();
-                e0Var.presentFragment(qn.W9(this.b));
-                break;
-            case 3:
-                ri.o oVar = (ri.o) ((cc.e) this.c).c;
-                if (this.b == oVar.p && (mVar = oVar.n) != ri.m.r && mVar != ri.m.s && mVar != ri.m.n) {
-                    SystemClock.elapsedRealtime();
-                    oVar.x = false;
-                    oVar.r(ri.m.c);
-                    oVar.i.removeCallbacks(oVar.E);
-                    oVar.h.b("recording started: retainedDurationMs=" + ri.o.q(oVar.q));
-                    break;
-                }
-                break;
-            default:
-                ug.y0 y0Var = (ug.y0) this.c;
-                HashSet hashSet = y0Var.e0;
-                hashSet.remove(Long.valueOf(this.b));
-                y0Var.Y.b(true, hashSet, new ug.s0(y0Var, 5), null);
-                y0Var.c0(true, false);
-                break;
-        }
+    @Override // org.telegram.ui.Components.q90
+    public final void c() {
+        mh0.W(this.b.d);
+    }
+
+    @Override // org.telegram.ui.Components.q90
+    public final void j() {
+        lh0 lh0Var = this.b;
+        mh0 mh0Var = lh0Var.d;
+        Context context = this.a.getContext();
+        mh0 mh0Var2 = lh0Var.d;
+        mh0Var.l0 = new org.telegram.ui.Components.m70(context, mh0Var2.e, mh0Var2.d, mh0Var2.k0, mh0Var2, mh0Var2.n, true, mh0Var2.h);
+        lh0Var.d.l0.show();
+    }
+
+    @Override // org.telegram.ui.Components.q90
+    public final /* synthetic */ void a() {
+    }
+
+    @Override // org.telegram.ui.Components.q90
+    public final /* synthetic */ void k() {
     }
 }

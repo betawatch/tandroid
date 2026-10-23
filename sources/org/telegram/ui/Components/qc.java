@@ -9,7 +9,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public class qc {
     public static qc w;
@@ -19,7 +19,7 @@ public class qc {
     public o1.k d;
     public final ub e;
     public final ib f;
-    public final org.telegram.ui.ActionBar.n2 g;
+    public final org.telegram.ui.ActionBar.o2 g;
     public final FrameLayout h;
     public final Runnable i;
     public int j;
@@ -85,16 +85,16 @@ public class qc {
         return frameLayout == null ? new pb() : new qc(null, frameLayout, ubVar, i10);
     }
 
-    public static qc g(org.telegram.ui.ActionBar.n2 n2Var, nb nbVar, int i10) {
-        if (n2Var == null) {
+    public static qc g(org.telegram.ui.ActionBar.o2 o2Var, nb nbVar, int i10) {
+        if (o2Var == null) {
             return new pb();
         }
-        if (n2Var instanceof org.telegram.ui.qn) {
+        if (o2Var instanceof org.telegram.ui.sn) {
             ub.access$000(nbVar, -2, 1);
-        } else if (n2Var instanceof org.telegram.ui.cy) {
+        } else if (o2Var instanceof org.telegram.ui.ey) {
             ub.access$000(nbVar, -1, 0);
         }
-        return new qc(n2Var, n2Var.getBulletinLayoutContainer(), nbVar, i10);
+        return new qc(o2Var, o2Var.getBulletinLayoutContainer(), nbVar, i10);
     }
 
     public static void h(FrameLayout frameLayout) {
@@ -124,15 +124,15 @@ public class qc {
                     ubVar.delegate = this.p;
                     ubVar.invalidate();
                     if (j10 >= 0) {
-                        c3.s sVar = new c3.s();
-                        sVar.a = j10;
-                        this.q = sVar;
+                        c3.u uVar = new c3.u();
+                        uVar.a = j10;
+                        this.q = uVar;
                     } else if (ubVar != null && this.q == null) {
                         this.q = ubVar.createTransition();
                     }
                     tb tbVar = this.q;
                     Objects.requireNonNull(ubVar);
-                    tbVar.d(ubVar, new fb(ubVar, i10), new db(this, i11), new gb(this, i10));
+                    tbVar.c(ubVar, new fb(ubVar, i10), new db(this, i11), new gb(this, i10));
                     return;
                 }
             }
@@ -248,14 +248,14 @@ public class qc {
         }
     }
 
-    public qc(org.telegram.ui.ActionBar.n2 n2Var, FrameLayout frameLayout, ub ubVar, int i10) {
+    public qc(org.telegram.ui.ActionBar.o2 o2Var, FrameLayout frameLayout, ub ubVar, int i10) {
         this.i = new db(this, 0);
         this.r = true;
         this.u = true;
         this.e = ubVar;
         this.n = true ^ (ubVar instanceof vb);
         this.f = new ib(this, ubVar, frameLayout);
-        this.g = n2Var;
+        this.g = o2Var;
         this.h = frameLayout;
         this.j = i10;
     }

@@ -29,11 +29,11 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.dq;
+import org.telegram.ui.Components.eq;
 import org.telegram.ui.Components.yc;
-import org.telegram.ui.Components.zq;
+import org.telegram.ui.Components.yq;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class z6 extends View implements r2 {
     public boolean A0;
@@ -83,7 +83,7 @@ public final class z6 extends View implements r2 {
     public boolean a0;
     public final ImageReceiver b;
     public boolean b0;
-    public final zq c;
+    public final yq c;
     public boolean c0;
     public final Drawable d;
     public boolean d0;
@@ -220,13 +220,13 @@ public final class z6 extends View implements r2 {
         Drawable mutate = activity.getResources().getDrawable(R.drawable.msg_media_gallery).mutate();
         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
         mutate.setColorFilter(new PorterDuffColorFilter(1308622847, mode));
-        zq zqVar = new zq(org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(6.0f), -13750737), mutate);
-        this.c = zqVar;
-        zqVar.w = false;
+        yq yqVar = new yq(org.telegram.ui.ActionBar.k6.c0(AndroidUtilities.dp(6.0f), -13750737), mutate);
+        this.c = yqVar;
+        yqVar.w = false;
         int dp = AndroidUtilities.dp(24.0f);
         int dp2 = AndroidUtilities.dp(24.0f);
-        zqVar.e = dp;
-        zqVar.f = dp2;
+        yqVar.e = dp;
+        yqVar.f = dp2;
         Drawable mutate2 = activity.getResources().getDrawable(R.drawable.msg_photo_switch2).mutate();
         this.d = mutate2;
         mutate2.setColorFilter(new PorterDuffColorFilter(-1, mode));
@@ -564,7 +564,7 @@ public final class z6 extends View implements r2 {
             canvas3 = canvas;
             canvas3.drawArc(rectF3, -90.0f, min, false, paint7);
         } else {
-            dq.a(this.s0, (SystemClock.elapsedRealtime() - this.v0) % 5400);
+            eq.a(this.s0, (SystemClock.elapsedRealtime() - this.v0) % 5400);
             invalidate();
             float[] fArr = this.s0;
             float f53 = fArr[0];
@@ -630,8 +630,8 @@ public final class z6 extends View implements r2 {
         if (d18 < 1.0f) {
             canvas3.save();
             f26 = f16;
-            float z12 = org.telegram.messenger.g0.z(1.0f, d18, ycVar4.a(0.2f), f26);
-            canvas3.scale(z12, z12, this.l0, this.j0);
+            float A = org.telegram.messenger.v0.A(1.0f, d18, ycVar4.a(0.2f), f26);
+            canvas3.scale(A, A, this.l0, this.j0);
             canvas3.rotate(f6Var2.d(this.M, false) - getRotation(), this.l0, this.j0);
             canvas3.drawCircle(this.l0, this.j0, AndroidUtilities.dp(22.0f), this.w);
             this.d.draw(canvas3);
@@ -773,12 +773,12 @@ public final class z6 extends View implements r2 {
                     return;
                 }
                 boolean b10 = b();
-                boolean z13 = this.a0;
-                boolean z14 = this.r0;
-                if (z13 == z14 && this.b0 == b10 && this.c0 == this.O && this.d0 == this.o0 && this.e0 == this.u0 && this.f0 == this.A0) {
+                boolean z12 = this.a0;
+                boolean z13 = this.r0;
+                if (z12 == z13 && this.b0 == b10 && this.c0 == this.O && this.d0 == this.o0 && this.e0 == this.u0 && this.f0 == this.A0) {
                     return;
                 }
-                this.a0 = z14;
+                this.a0 = z13;
                 this.b0 = b10;
                 this.c0 = this.O;
                 this.d0 = this.o0;

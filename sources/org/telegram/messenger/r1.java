@@ -2,14 +2,14 @@ package org.telegram.messenger;
 
 import android.app.Activity;
 import java.util.HashMap;
+import org.telegram.ui.Components.af0;
 import org.telegram.ui.Components.nn;
 import org.telegram.ui.Components.qy;
-import org.telegram.ui.Components.xe0;
-import org.telegram.ui.cy;
-import org.telegram.ui.kv;
-import org.telegram.ui.pj0;
+import org.telegram.ui.ey;
+import org.telegram.ui.mv;
+import org.telegram.ui.uj0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class r1 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -34,34 +34,34 @@ public final /* synthetic */ class r1 implements Runnable {
                 ((ContactsController) this.e).lambda$syncPhoneBookByAlert$7((HashMap) this.f, this.b, this.c, this.d);
                 break;
             default:
-                cy cyVar = (cy) this.e;
+                ey eyVar = (ey) this.e;
                 Activity activity = (Activity) this.f;
-                if (cyVar.getParentActivity() != null) {
-                    cyVar.t2 = false;
+                if (eyVar.getParentActivity() != null) {
+                    eyVar.t2 = false;
                     boolean z10 = this.b;
                     boolean z11 = this.c;
                     boolean z12 = this.d;
                     if (z10 || z11 || z12) {
-                        cyVar.A0 = true;
-                        if (!z10 || !pj0.o(activity)) {
-                            if (!z11 || !cyVar.U1 || !cyVar.getUserConfig().syncContacts || !activity.shouldShowRequestPermissionRationale("android.permission.READ_CONTACTS")) {
+                        eyVar.A0 = true;
+                        if (!z10 || !uj0.n(activity)) {
+                            if (!z11 || !eyVar.U1 || !eyVar.getUserConfig().syncContacts || !activity.shouldShowRequestPermissionRationale("android.permission.READ_CONTACTS")) {
                                 if (!z12 || !activity.shouldShowRequestPermissionRationale("android.permission.WRITE_EXTERNAL_STORAGE")) {
-                                    cyVar.h3(true);
+                                    eyVar.g3(true);
                                     break;
-                                } else if (activity instanceof org.telegram.ui.m5) {
-                                    org.telegram.ui.ActionBar.b2 v = ((org.telegram.ui.m5) activity).v(R.raw.permission_request_folder, LocaleController.getString(R.string.PermissionStorageWithHint));
-                                    cyVar.T1 = v;
-                                    cyVar.showDialog(v);
+                                } else if (activity instanceof org.telegram.ui.l5) {
+                                    org.telegram.ui.ActionBar.c2 v = ((org.telegram.ui.l5) activity).v(R.raw.permission_request_folder, LocaleController.getString(R.string.PermissionStorageWithHint));
+                                    eyVar.T1 = v;
+                                    eyVar.showDialog(v);
                                     break;
                                 }
                             } else {
-                                org.telegram.ui.ActionBar.b2 b2Var = org.telegram.ui.Components.f5.v(activity, new kv(cyVar, 0)).a;
-                                cyVar.T1 = b2Var;
-                                cyVar.showDialog(b2Var);
+                                org.telegram.ui.ActionBar.c2 c2Var = org.telegram.ui.Components.f5.w(activity, new mv(eyVar, 0)).a;
+                                eyVar.T1 = c2Var;
+                                eyVar.showDialog(c2Var);
                                 break;
                             }
                         } else {
-                            xe0.e(new String[]{"android.permission.POST_NOTIFICATIONS"}, new nn(1, new qy(8, cyVar, activity)));
+                            af0.e(new String[]{"android.permission.POST_NOTIFICATIONS"}, new nn(1, new qy(8, eyVar, activity)));
                             break;
                         }
                     }
@@ -70,8 +70,8 @@ public final /* synthetic */ class r1 implements Runnable {
         }
     }
 
-    public /* synthetic */ r1(cy cyVar, boolean z10, boolean z11, boolean z12, Activity activity) {
-        this.e = cyVar;
+    public /* synthetic */ r1(ey eyVar, boolean z10, boolean z11, boolean z12, Activity activity) {
+        this.e = eyVar;
         this.b = z10;
         this.c = z11;
         this.d = z12;

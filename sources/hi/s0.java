@@ -1,6 +1,6 @@
 package hi;
 
-import ai.td;
+import ai.ud;
 import ai.v3;
 import android.content.Context;
 import android.text.SpannableStringBuilder;
@@ -19,42 +19,43 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_communities;
-import org.telegram.ui.ActionBar.b2;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.c71;
+import org.telegram.ui.ActionBar.c2;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.r6;
 import org.telegram.ui.Components.f5;
-import org.telegram.ui.Components.h61;
+import org.telegram.ui.Components.j71;
 import org.telegram.ui.Components.k9;
+import org.telegram.ui.Components.m61;
 import org.telegram.ui.Components.oc;
-import org.telegram.ui.Components.x90;
 import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.y90;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final class s0 implements ii.d {
+public final class s0 implements ii.e {
     public final Context a;
-    public final d6 b;
+    public final g6 b;
     public final xc c;
     public final int d;
     public final long e;
     public final TLRPC.Chat f;
     public r0 h;
-    public td i;
+    public ud i;
     public String k;
     public int l;
     public boolean m;
     public boolean n;
     public long o;
     public int p;
-    public b2 q;
+    public c2 q;
     public int r;
     public final a0.h g = new a0.h();
     public ArrayList j = new ArrayList();
 
-    public s0(Context context, d6 d6Var, xc xcVar, int i10, long j10) {
+    public s0(Context context, g6 g6Var, xc xcVar, int i10, long j10) {
         this.a = context;
-        this.b = d6Var;
+        this.b = g6Var;
         this.c = xcVar;
         this.d = i10;
         this.e = j10;
@@ -80,8 +81,8 @@ public final class s0 implements ii.d {
         }
     }
 
-    public final void b(c71 c71Var) {
-        if (this.m || this.n || c71Var.V2.N0() + 10 <= c71Var.W2.x.size()) {
+    public final void b(j71 j71Var) {
+        if (this.m || this.n || j71Var.Y2.N0() + 10 <= j71Var.Z2.y.size()) {
             return;
         }
         d();
@@ -104,9 +105,9 @@ public final class s0 implements ii.d {
                     TLRPC.User user = MessagesController.getInstance(this.d).getUser(Long.valueOf(communityPeerRequest.requested_by));
                     boolean z10 = !communityPeerRequest.visible;
                     boolean z11 = i10 < size + (-1);
-                    int i11 = ii.f.a;
-                    h61 J = h61.J(ii.f.class);
-                    J.G = new ii.e(peerDialogId, user, z10);
+                    int i11 = ii.g.a;
+                    m61 J = m61.J(ii.g.class);
+                    J.G = new ii.f(peerDialogId, user, z10);
                     J.H = this;
                     J.j = !z11;
                     arrayList.add(J);
@@ -117,7 +118,7 @@ public final class s0 implements ii.d {
         if (this.n) {
             return;
         }
-        arrayList.add(h61.n(29));
+        arrayList.add(m61.n(29));
     }
 
     public final void d() {
@@ -140,22 +141,22 @@ public final class s0 implements ii.d {
         TextView textView;
         if (this.q == null && this.r == 0) {
             if (z11) {
-                b2 O = f5.O(this.a, this.b, LocaleController.getString(z10 ? R.string.CommunityAddAllChatsTitle : R.string.CommunityDeclineAllTitle), AndroidUtilities.replaceTags(LocaleController.formatPluralString(z10 ? "CommunityAddAllChatsMessage" : "CommunityDeclineAllMessage", this.l, new Object[0])), LocaleController.getString(z10 ? R.string.Add : R.string.Decline), new ah.t(11, this, z10));
-                O.show();
-                if (z10 || (textView = (TextView) O.d(-1)) == null) {
+                c2 P = f5.P(this.a, this.b, LocaleController.getString(z10 ? R.string.CommunityAddAllChatsTitle : R.string.CommunityDeclineAllTitle), AndroidUtilities.replaceTags(LocaleController.formatPluralString(z10 ? "CommunityAddAllChatsMessage" : "CommunityDeclineAllMessage", this.l, new Object[0])), LocaleController.getString(z10 ? R.string.Add : R.string.Decline), new ah.t(11, this, z10));
+                P.show();
+                if (z10 || (textView = (TextView) P.d(-1)) == null) {
                     return;
                 }
-                textView.setTextColor(h6.x0(null, h6.q7, false));
+                r6.W(textView, k6.q7, null);
                 return;
             }
-            td tdVar = this.i;
-            if (tdVar != null) {
-                tdVar.run();
+            ud udVar = this.i;
+            if (udVar != null) {
+                udVar.run();
             }
             this.i = null;
-            b2 b2Var = new b2(this.a, 3, this.b);
-            this.q = b2Var;
-            b2Var.setOnCancelListener(new pc(this, 3));
+            c2 c2Var = new c2(this.a, 3, this.b);
+            this.q = c2Var;
+            c2Var.setOnCancelListener(new pc(this, 3));
             this.q.r(500L);
             this.r = MessagesController.getInstance(this.d).resolveCommunityAllJoinPendingRequests(this.e, !z10, new q0(this, 0));
         }
@@ -168,19 +169,19 @@ public final class s0 implements ii.d {
         a();
         r0 r0Var = this.h;
         if (r0Var != null) {
-            r0Var.l();
+            r0Var.q();
         }
         int i11 = z10 ? R.string.CommunityRequestApprovedToast : R.string.CommunityRequestDeclinedToast;
         int i12 = this.d;
         SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString(i11, DialogObject.getShortName(i12, j10)));
-        td tdVar = this.i;
-        if (tdVar != null) {
-            tdVar.run();
+        ud udVar = this.i;
+        if (udVar != null) {
+            udVar.run();
         }
-        this.i = new td(this, j10, z10, 2);
+        this.i = new ud(this, j10, z10, 2);
         Context context = this.a;
-        d6 d6Var = this.b;
-        org.telegram.ui.Components.pc pcVar = new org.telegram.ui.Components.pc(context, d6Var, false);
+        g6 g6Var = this.b;
+        org.telegram.ui.Components.pc pcVar = new org.telegram.ui.Components.pc(context, g6Var, false);
         TLObject userOrChat = MessagesController.getInstance(i12).getUserOrChat(j10);
         k9 k9Var = pcVar.a;
         if (userOrChat != null) {
@@ -194,27 +195,27 @@ public final class s0 implements ii.d {
         k9Var.setScaleX(1.333f);
         k9Var.setScaleY(1.333f);
         k9Var.a(false);
-        x90 x90Var = pcVar.b;
-        x90Var.setSingleLine(false);
-        x90Var.setMaxLines(2);
-        x90Var.setTextSize(1, 14.0f);
-        x90Var.setText(replaceTags);
+        y90 y90Var = pcVar.b;
+        y90Var.setSingleLine(false);
+        y90Var.setMaxLines(2);
+        y90Var.setTextSize(1, 14.0f);
+        y90Var.setText(replaceTags);
         int i13 = 12;
-        if (x90Var.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
+        if (y90Var.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
             int dp = AndroidUtilities.dp(74 - ((3 - i10) * 12));
             if (LocaleController.isRTL) {
-                ((ViewGroup.MarginLayoutParams) x90Var.getLayoutParams()).rightMargin = dp;
+                ((ViewGroup.MarginLayoutParams) y90Var.getLayoutParams()).rightMargin = dp;
             } else {
-                ((ViewGroup.MarginLayoutParams) x90Var.getLayoutParams()).leftMargin = dp;
+                ((ViewGroup.MarginLayoutParams) y90Var.getLayoutParams()).leftMargin = dp;
             }
         }
         if (LocaleController.isRTL) {
             k9Var.setTranslationX(AndroidUtilities.dp(32 - ((i10 - 1) * 12)));
         }
-        oc ocVar = new oc(context, d6Var, true, true);
+        oc ocVar = new oc(context, g6Var, true, true);
         ocVar.e(LocaleController.getString(R.string.UndoNoCaps));
-        ocVar.a = new v3(this, j10, i13);
-        ocVar.b = this.i;
+        ocVar.b = new v3(this, j10, i13);
+        ocVar.c = this.i;
         pcVar.setButton(ocVar);
         this.c.b(pcVar, 5000).j();
     }

@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class h2 {
     public final k2.w0 a;
@@ -206,18 +206,18 @@ public final class h2 {
         e2 e2Var = g2Var.b;
         k2.w0 w0Var = this.a;
         w3 w3Var = (w3) w0Var.b;
-        w3Var.l3.f(false);
-        ArrayList arrayList3 = w3Var.j3;
+        w3Var.o3.f(false);
+        ArrayList arrayList3 = w3Var.m3;
         arrayList3.clear();
         arrayList3.addAll(arrayList2);
-        w3Var.t4();
-        w3Var.W2.N(false);
+        w3Var.y4();
+        w3Var.Z2.N(false);
         if (e2Var.a >= 0) {
             w3Var.post(new hi.t(23, w3Var, e2Var));
         }
-        w3Var.f3.onContentChanged();
+        w3Var.i3.onContentChanged();
         this.f = false;
-        ((w3) w0Var.b).f3.P();
+        ((w3) w0Var.b).i3.P();
         return;
         pageBlock = new TL_iv.pageBlockParagraph();
         pageBlock.text = new TL_iv.textEmpty();
@@ -244,7 +244,7 @@ public final class h2 {
         e2 e2Var;
         l0 l0Var;
         k2.w0 w0Var = this.a;
-        ArrayList arrayList = ((w3) w0Var.b).j3;
+        ArrayList arrayList = ((w3) w0Var.b).m3;
         HashMap hashMap = new HashMap();
         g2 g2Var = this.d;
         if (g2Var != null) {
@@ -286,8 +286,8 @@ public final class h2 {
             ?? r12 = (h1) findFocus;
             int selectionStart = r12.getSelectionStart();
             int selectionEnd = r12.getSelectionEnd();
-            ?? V2 = w3.V2(r12);
-            if (V2 == 0 || V2.getRow() == null) {
+            ?? a32 = w3.a3(r12);
+            if (a32 == 0 || a32.getRow() == null) {
                 if (!(r12 instanceof l0)) {
                     ViewParent parent = r12.getParent();
                     while (true) {
@@ -318,11 +318,11 @@ public final class h2 {
                 } else {
                     e2Var = new e2(l0Var.getRow().a, -1, selectionStart, selectionEnd);
                 }
-            } else if (r12 == V2.getTitleEditText()) {
-                e2Var = new e2(V2.getRow().a, 0, selectionStart, selectionEnd);
+            } else if (r12 == a32.getTitleEditText()) {
+                e2Var = new e2(a32.getRow().a, 0, selectionStart, selectionEnd);
             } else {
-                r5 o10 = V2.o(r12);
-                e2Var = new e2(V2.getRow().a, o10 != null ? V2.k(o10.b) : -1, selectionStart, selectionEnd);
+                r5 n10 = a32.n(r12);
+                e2Var = new e2(a32.getRow().a, n10 != null ? a32.j(n10.b) : -1, selectionStart, selectionEnd);
             }
             return new g2(f2VarArr, e2Var);
         }
@@ -357,7 +357,7 @@ public final class h2 {
         }
         this.c.clear();
         this.d = b10;
-        ((w3) this.a.b).f3.P();
+        ((w3) this.a.b).i3.P();
     }
 
     public final void d() {
@@ -382,7 +382,7 @@ public final class h2 {
         u uVar = this.g;
         AndroidUtilities.cancelRunOnUIThread(uVar);
         AndroidUtilities.runOnUIThread(uVar, 800L);
-        ((w3) this.a.b).f3.P();
+        ((w3) this.a.b).i3.P();
     }
 
     public final void h() {
@@ -412,7 +412,7 @@ public final class h2 {
         this.c.clear();
         this.d = b();
         this.e = false;
-        ((w3) this.a.b).f3.P();
+        ((w3) this.a.b).i3.P();
     }
 
     public final void k() {

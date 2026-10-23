@@ -1,62 +1,41 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.PointF;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
-
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public class uw0 extends s4.c0 {
-    public final bs r;
-    public int s;
-    public float t;
+public final /* synthetic */ class uw0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ww0 b;
 
-    public uw0(Context context) {
-        super(context);
-        this.r = bs.f;
-        this.t = 1.0f;
+    public /* synthetic */ uw0(ww0 ww0Var, int i10) {
+        this.a = i10;
+        this.b = ww0Var;
     }
 
-    @Override // s4.c0, s4.x0
-    public final void g(View view, s4.w0 w0Var) {
-        int j10 = j(o(), view);
-        int k10 = k(p(), view);
-        int m10 = m((int) Math.sqrt((k10 * k10) + (j10 * j10)));
-        if (m10 > 0) {
-            w0Var.b(-j10, -k10, m10, this.r);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ww0 ww0Var = this.b;
+                ww0Var.V0 = false;
+                if (!ww0Var.Y0 && ww0Var.W0) {
+                    ww0Var.C(true);
+                    break;
+                }
+                break;
+            case 1:
+                this.b.V0 = false;
+                break;
+            case 2:
+                ww0 ww0Var2 = this.b;
+                ww0Var2.Y0 = false;
+                if (!ww0Var2.V0 && ww0Var2.W0) {
+                    ww0Var2.C(true);
+                    break;
+                }
+                break;
+            default:
+                this.b.Y0 = false;
+                break;
         }
-        AndroidUtilities.runOnUIThread(new hr0(this, 8), Math.max(0, m10));
-    }
-
-    @Override // s4.c0
-    public final int k(int i10, View view) {
-        return super.k(i10, view) - this.s;
-    }
-
-    @Override // s4.c0
-    public final int m(int i10) {
-        return Math.round(Math.min(super.m(i10), 500) * this.t);
-    }
-
-    @Override // s4.c0
-    public final int n(int i10) {
-        return Math.round(Math.min(super.n(i10), ImageReceiver.DEFAULT_CROSSFADE_DURATION) * this.t);
-    }
-
-    @Override // s4.c0
-    public final void q(s4.w0 w0Var) {
-        PointF a2 = a(this.a);
-        if (a2 == null || (a2.x == 0.0f && a2.y == 0.0f)) {
-            w0Var.d = this.a;
-            h();
-            return;
-        }
-        s4.x0.b(a2);
-        this.k = a2;
-        this.o = (int) (a2.x * 10000.0f);
-        this.p = (int) (a2.y * 10000.0f);
-        w0Var.b((int) (this.o * 1.2f), (int) (this.p * 1.2f), (int) (n(10000) * 1.2f), this.r);
     }
 }

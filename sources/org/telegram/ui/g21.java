@@ -1,37 +1,42 @@
 package org.telegram.ui;
 
-import android.app.Activity;
+import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class g21 implements k21 {
-    public final /* synthetic */ qn a;
-    public final /* synthetic */ Activity b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.d6 c;
-    public final /* synthetic */ MessageObject d;
+public final /* synthetic */ class g21 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.o2 b;
+    public final /* synthetic */ Context c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.g6 d;
+    public final /* synthetic */ org.telegram.ui.Components.ko0 e;
 
-    public g21(qn qnVar, Activity activity, org.telegram.ui.ActionBar.d6 d6Var, MessageObject messageObject) {
-        this.a = qnVar;
-        this.b = activity;
-        this.c = d6Var;
-        this.d = messageObject;
+    public /* synthetic */ g21(org.telegram.ui.ActionBar.o2 o2Var, Context context, org.telegram.ui.ActionBar.g6 g6Var, org.telegram.ui.Components.ko0 ko0Var, int i10) {
+        this.a = i10;
+        this.b = o2Var;
+        this.c = context;
+        this.d = g6Var;
+        this.e = ko0Var;
     }
 
-    @Override // org.telegram.ui.k21
-    public final void a() {
-        AndroidUtilities.runOnUIThread(new a21(this.a, this.b, this.c, this.d, 2), 200L);
-    }
-
-    @Override // org.telegram.ui.k21
-    public final void b() {
-        AndroidUtilities.runOnUIThread(new se(this.a, this.d, 8), 200L);
-    }
-
-    @Override // org.telegram.ui.k21
-    public final void c() {
-        qn qnVar = this.a;
-        qnVar.showDialog(new sg.y0((org.telegram.ui.ActionBar.n2) qnVar, 3, true));
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                org.telegram.ui.Components.xc.a0(this.b).c(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.AdReported), -1, 2, new dv(this.c, 4), this.d)).j();
+                AndroidUtilities.runOnUIThread(this.e);
+                break;
+            case 1:
+                org.telegram.ui.Components.xc.a0(this.b).c(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.AdReported), -1, 2, new dv(this.c, 3), this.d)).j();
+                AndroidUtilities.runOnUIThread(this.e);
+                break;
+            default:
+                org.telegram.ui.Components.xc.a0(this.b).c(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.AdReported), -1, 2, new dv(this.c, 7), this.d)).j();
+                AndroidUtilities.runOnUIThread(this.e);
+                break;
+        }
     }
 }

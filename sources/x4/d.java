@@ -20,14 +20,14 @@ import android.util.AttributeSet;
 import android.util.Xml;
 import java.io.IOException;
 import java.util.ArrayList;
-import org.telegram.ui.Components.br;
+import org.telegram.ui.Components.ar;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import v7.j8;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public final class d extends br implements Animatable {
+public final class d extends ar implements Animatable {
     public final Context d;
     public final f1 e = new f1(this, 8);
     public final b c = new b();
@@ -36,7 +36,7 @@ public final class d extends br implements Animatable {
         this.d = context;
     }
 
-    @Override // org.telegram.ui.Components.br, android.graphics.drawable.Drawable
+    @Override // org.telegram.ui.Components.ar, android.graphics.drawable.Drawable
     public final void applyTheme(Resources.Theme theme) {
         Drawable drawable = (Drawable) this.b;
         if (drawable != null) {
@@ -110,7 +110,7 @@ public final class d extends br implements Animatable {
         return drawable != null ? drawable.getIntrinsicWidth() : this.c.a.getIntrinsicWidth();
     }
 
-    @Override // org.telegram.ui.Components.br, android.graphics.drawable.Drawable
+    @Override // org.telegram.ui.Components.ar, android.graphics.drawable.Drawable
     public final int getOpacity() {
         Drawable drawable = (Drawable) this.b;
         return drawable != null ? drawable.getOpacity() : this.c.a.getOpacity();
@@ -272,7 +272,7 @@ public final class d extends br implements Animatable {
         }
     }
 
-    @Override // org.telegram.ui.Components.br, android.graphics.drawable.Drawable
+    @Override // org.telegram.ui.Components.ar, android.graphics.drawable.Drawable
     public final boolean onLevelChange(int i10) {
         Drawable drawable = (Drawable) this.b;
         return drawable != null ? drawable.setLevel(i10) : this.c.a.setLevel(i10);
@@ -284,7 +284,7 @@ public final class d extends br implements Animatable {
         return drawable != null ? drawable.setState(iArr) : this.c.a.setState(iArr);
     }
 
-    @Override // org.telegram.ui.Components.br, android.graphics.drawable.Drawable
+    @Override // org.telegram.ui.Components.ar, android.graphics.drawable.Drawable
     public final void setAlpha(int i10) {
         Drawable drawable = (Drawable) this.b;
         if (drawable != null) {
@@ -304,7 +304,7 @@ public final class d extends br implements Animatable {
         }
     }
 
-    @Override // org.telegram.ui.Components.br, android.graphics.drawable.Drawable
+    @Override // org.telegram.ui.Components.ar, android.graphics.drawable.Drawable
     public final void setColorFilter(ColorFilter colorFilter) {
         Drawable drawable = (Drawable) this.b;
         if (drawable != null) {

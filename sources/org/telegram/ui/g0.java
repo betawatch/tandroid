@@ -1,40 +1,51 @@
 package org.telegram.ui;
 
+import android.content.Context;
 import android.net.Uri;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class g0 implements Utilities.Callback0Return {
-    public final /* synthetic */ l4 a;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ boolean[] c;
-    public final /* synthetic */ pf.c d;
+public final /* synthetic */ class g0 implements RequestDelegate {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object g;
 
-    public /* synthetic */ g0(l4 l4Var, String str, boolean[] zArr, pf.c cVar) {
-        this.a = l4Var;
-        this.b = str;
-        this.c = zArr;
-        this.d = cVar;
+    public /* synthetic */ g0(k4 k4Var, int i10, TLRPC.WebPage webPage, MessageObject messageObject, boolean z10, String str) {
+        this.d = k4Var;
+        this.b = i10;
+        this.e = webPage;
+        this.f = messageObject;
+        this.c = z10;
+        this.g = str;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback0Return
-    public final Object run() {
-        String str = this.b;
-        if (!pf.d.e(Uri.parse(str), false, this.c)) {
-            return Boolean.FALSE;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                AndroidUtilities.runOnUIThread(new w((k4) this.d, tLObject, this.b, (TLRPC.WebPage) this.e, (MessageObject) this.f, this.c, (String) this.g));
+                break;
+            default:
+                AndroidUtilities.runOnUIThread(new w((pf.c) this.d, (org.telegram.ui.ActionBar.c2[]) this.e, tLObject, this.b, (Uri) this.f, (Context) this.g, this.c));
+                break;
         }
-        l4 l4Var = this.a;
-        pf.c cVar = this.d;
-        if (cVar != null) {
-            cVar.c = new i0(0, l4Var, cVar);
-        } else {
-            x3 x3Var = l4Var.K;
-            if (x3Var != null) {
-                x3Var.dismiss(true);
-            }
-        }
-        pf.d.q(l4Var.L, Uri.parse(str), true, true, false, cVar, null, true, true, false);
-        return Boolean.TRUE;
+    }
+
+    public /* synthetic */ g0(pf.c cVar, org.telegram.ui.ActionBar.c2[] c2VarArr, int i10, Uri uri, Context context, boolean z10) {
+        this.d = cVar;
+        this.e = c2VarArr;
+        this.b = i10;
+        this.f = uri;
+        this.g = context;
+        this.c = z10;
     }
 }

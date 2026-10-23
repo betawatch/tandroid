@@ -5,41 +5,41 @@ import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.StickersActivity;
 import org.telegram.ui.ThemeActivity;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class sd implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.n2 b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.o2 b;
 
-    public /* synthetic */ sd(int i10, org.telegram.ui.ActionBar.n2 n2Var) {
+    public /* synthetic */ sd(int i10, org.telegram.ui.ActionBar.o2 o2Var) {
         this.a = i10;
-        this.b = n2Var;
+        this.b = o2Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         int i10 = this.a;
-        org.telegram.ui.ActionBar.n2 n2Var = this.b;
+        org.telegram.ui.ActionBar.o2 o2Var = this.b;
         switch (i10) {
             case 0:
-                int i11 = ChatActivityEnterView.n5;
-                if (n2Var == null) {
-                    if (n2Var.getContext() instanceof LaunchActivity) {
-                        ((LaunchActivity) n2Var.getContext()).t0(new PremiumPreviewFragment(0, null));
+                int i11 = ChatActivityEnterView.r5;
+                if (o2Var == null) {
+                    if (o2Var.getContext() instanceof LaunchActivity) {
+                        ((LaunchActivity) o2Var.getContext()).u0(new PremiumPreviewFragment(0, null));
                         break;
                     }
                 } else {
-                    new sg.y0(n2Var, 11, false).show();
+                    new sg.y0(o2Var, 11, false).show();
                     break;
                 }
                 break;
             case 1:
-                n2Var.presentFragment(new StickersActivity(0, null));
+                o2Var.presentFragment(new StickersActivity(0, null));
                 break;
             default:
                 ThemeActivity themeActivity = new ThemeActivity(0);
                 themeActivity.T0 = true;
-                n2Var.presentFragment(themeActivity);
+                o2Var.presentFragment(themeActivity);
                 break;
         }
     }

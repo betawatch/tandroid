@@ -1,79 +1,237 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import org.telegram.messenger.MessageObject;
+import android.content.Context;
+import android.view.ViewConfiguration;
+import android.view.animation.AnimationUtils;
+import android.view.animation.DecelerateInterpolator;
+import android.view.animation.Interpolator;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class pn0 extends s4.o {
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ int f;
-    public final /* synthetic */ ArrayList g;
-    public final /* synthetic */ int h;
-    public final /* synthetic */ int i;
-    public final /* synthetic */ ArrayList j;
-    public final /* synthetic */ un0 k;
+public final class pn0 {
+    public static final float A;
+    public static final float v = (float) (Math.log(0.75d) / Math.log(0.9d));
+    public static final float w = 0.4f;
+    public static final float x = 1.0f - 0.4f;
+    public static final float[] y = new float[101];
+    public static final float z;
+    public int a;
+    public int b;
+    public int c;
+    public int d;
+    public int e;
+    public int f;
+    public int g;
+    public int h;
+    public int i;
+    public int j;
+    public int k;
+    public long l;
+    public int m;
+    public float n;
+    public float o;
+    public float p;
+    public final Interpolator r;
+    public float t;
+    public final float u;
+    public boolean q = true;
+    public final boolean s = true;
 
-    public pn0(un0 un0Var, int i10, int i11, int i12, int i13, int i14, ArrayList arrayList, int i15, int i16, ArrayList arrayList2) {
-        this.k = un0Var;
+    static {
+        float f7;
+        float f10;
+        float f11 = 0.0f;
+        for (int i10 = 0; i10 <= 100; i10++) {
+            float f12 = i10 / 100.0f;
+            float f13 = 1.0f;
+            while (true) {
+                float z10 = com.google.android.gms.internal.play_billing.k3.z(f13, f11, 2.0f, f11);
+                float f14 = 1.0f - z10;
+                f7 = 3.0f * z10 * f14;
+                f10 = z10 * z10 * z10;
+                float A2 = com.google.android.gms.internal.play_billing.k3.A(z10, x, f14 * w, f7) + f10;
+                if (Math.abs(A2 - f12) < 1.0E-5d) {
+                    break;
+                } else if (A2 > f12) {
+                    f13 = z10;
+                } else {
+                    f11 = z10;
+                }
+            }
+            y[i10] = f7 + f10;
+        }
+        y[100] = 1.0f;
+        z = 8.0f;
+        A = 1.0f;
+        A = 1.0f / e(1.0f);
+    }
+
+    public pn0(Context context, DecelerateInterpolator decelerateInterpolator) {
+        this.r = decelerateInterpolator;
+        this.u = context.getResources().getDisplayMetrics().density * 160.0f * 386.0878f * ViewConfiguration.getScrollFriction();
+    }
+
+    public static float e(float f7) {
+        float f10 = f7 * z;
+        return (f10 < 1.0f ? f10 - (1.0f - ((float) Math.exp(-f10))) : com.google.android.gms.internal.play_billing.k3.y(1.0f, (float) Math.exp(1.0f - f10), 0.63212055f, 0.36787945f)) * A;
+    }
+
+    public final void a() {
+        this.j = this.d;
+        this.k = this.e;
+        this.q = true;
+    }
+
+    public final boolean b() {
+        if (this.q) {
+            return false;
+        }
+        int currentAnimationTimeMillis = (int) (AnimationUtils.currentAnimationTimeMillis() - this.l);
+        int i10 = this.m;
+        if (currentAnimationTimeMillis >= i10) {
+            this.j = this.d;
+            this.k = this.e;
+            this.q = true;
+            return true;
+        }
+        int i11 = this.a;
+        if (i11 == 0) {
+            float f7 = currentAnimationTimeMillis * this.n;
+            Interpolator interpolator = this.r;
+            float e = interpolator == null ? e(f7) : interpolator.getInterpolation(f7);
+            this.j = Math.round(this.o * e) + this.b;
+            this.k = Math.round(e * this.p) + this.c;
+            return true;
+        }
+        if (i11 == 1) {
+            float f10 = currentAnimationTimeMillis / i10;
+            int i12 = (int) (f10 * 100.0f);
+            float f11 = i12 / 100.0f;
+            int i13 = i12 + 1;
+            float[] fArr = y;
+            float f12 = fArr[i12];
+            float y3 = com.google.android.gms.internal.play_billing.k3.y(fArr[i13], f12, (f10 - f11) / ((i13 / 100.0f) - f11), f12);
+            int round = Math.round((this.d - r1) * y3) + this.b;
+            this.j = round;
+            int min = Math.min(round, this.g);
+            this.j = min;
+            this.j = Math.max(min, this.f);
+            int round2 = Math.round(y3 * (this.e - r1)) + this.c;
+            this.k = round2;
+            int min2 = Math.min(round2, this.i);
+            this.k = min2;
+            int max = Math.max(min2, this.h);
+            this.k = max;
+            if (this.j == this.d && max == this.e) {
+                this.q = true;
+            }
+        }
+        return true;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:12:0x00ab  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x00b2  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x00ad  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void c(int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17) {
+        int i18;
+        int i19;
+        if (!this.s || this.q) {
+            i18 = i12;
+        } else {
+            float currentAnimationTimeMillis = this.t - ((this.u * ((int) (AnimationUtils.currentAnimationTimeMillis() - this.l))) / 2000.0f);
+            float f7 = this.d - this.b;
+            float f10 = this.e - this.c;
+            float sqrt = (float) Math.sqrt((f10 * f10) + (f7 * f7));
+            float f11 = (f7 / sqrt) * currentAnimationTimeMillis;
+            float f12 = (f10 / sqrt) * currentAnimationTimeMillis;
+            i18 = i12;
+            float f13 = i18;
+            if (Math.signum(f13) == Math.signum(f11)) {
+                i19 = i13;
+                float f14 = i19;
+                if (Math.signum(f14) == Math.signum(f12)) {
+                    i18 = (int) (f13 + f11);
+                    i19 = (int) (f14 + f12);
+                }
+                this.a = 1;
+                this.q = false;
+                float sqrt2 = (float) Math.sqrt((i19 * i19) + (i18 * i18));
+                this.t = sqrt2;
+                double log = Math.log((w * sqrt2) / 800.0f);
+                double d = v;
+                double d10 = d - 1.0d;
+                this.m = (int) (Math.exp(log / d10) * 1000.0d);
+                this.l = AnimationUtils.currentAnimationTimeMillis();
+                this.b = i10;
+                this.c = i11;
+                float f15 = sqrt2 != 0.0f ? 1.0f : i18 / sqrt2;
+                float f16 = sqrt2 != 0.0f ? i19 / sqrt2 : 1.0f;
+                double exp = Math.exp((d / d10) * log);
+                this.f = i14;
+                this.g = i15;
+                this.h = i16;
+                this.i = i17;
+                float f17 = (int) (exp * 800.0f);
+                int round = Math.round(f15 * f17) + i10;
+                this.d = round;
+                int min = Math.min(round, this.g);
+                this.d = min;
+                this.d = Math.max(min, this.f);
+                int round2 = Math.round(f17 * f16) + i11;
+                this.e = round2;
+                int min2 = Math.min(round2, this.i);
+                this.e = min2;
+                this.e = Math.max(min2, this.h);
+            }
+        }
+        i19 = i13;
+        this.a = 1;
+        this.q = false;
+        float sqrt22 = (float) Math.sqrt((i19 * i19) + (i18 * i18));
+        this.t = sqrt22;
+        double log2 = Math.log((w * sqrt22) / 800.0f);
+        double d11 = v;
+        double d102 = d11 - 1.0d;
+        this.m = (int) (Math.exp(log2 / d102) * 1000.0d);
+        this.l = AnimationUtils.currentAnimationTimeMillis();
         this.b = i10;
         this.c = i11;
-        this.d = i12;
-        this.e = i13;
+        if (sqrt22 != 0.0f) {
+        }
+        if (sqrt22 != 0.0f) {
+        }
+        double exp2 = Math.exp((d11 / d102) * log2);
         this.f = i14;
-        this.g = arrayList;
-        this.h = i15;
-        this.i = i16;
-        this.j = arrayList2;
+        this.g = i15;
+        this.h = i16;
+        this.i = i17;
+        float f172 = (int) (exp2 * 800.0f);
+        int round3 = Math.round(f15 * f172) + i10;
+        this.d = round3;
+        int min3 = Math.min(round3, this.g);
+        this.d = min3;
+        this.d = Math.max(min3, this.f);
+        int round22 = Math.round(f172 * f16) + i11;
+        this.e = round22;
+        int min22 = Math.min(round22, this.i);
+        this.e = min22;
+        this.e = Math.max(min22, this.h);
     }
 
-    @Override // s4.o
-    public final boolean a(int i10, int i11) {
-        return b(i10, i11);
-    }
-
-    @Override // s4.o
-    public final boolean b(int i10, int i11) {
-        MessageObject messageObject;
-        un0 un0Var = this.k;
-        if (i10 >= 0 && i11 >= 0) {
-            if (i10 == this.c && i11 == un0Var.s) {
-                return true;
-            }
-            if (i10 == this.d && i11 == un0Var.x) {
-                return true;
-            }
-        }
-        MessageObject messageObject2 = null;
-        int i12 = this.e;
-        if (i10 < i12 || i10 >= this.f) {
-            int i13 = this.h;
-            messageObject = (i10 < i13 || i10 >= this.i) ? null : (MessageObject) this.j.get(i10 - i13);
-        } else {
-            messageObject = (MessageObject) this.g.get(i10 - i12);
-        }
-        int i14 = un0Var.v;
-        if (i11 < i14 || i11 >= un0Var.w) {
-            int i15 = un0Var.y;
-            if (i11 >= i15 && i11 < un0Var.E) {
-                messageObject2 = (MessageObject) un0Var.f.get(i11 - i15);
-            }
-        } else {
-            messageObject2 = (MessageObject) un0Var.e.get(i11 - i14);
-        }
-        return (messageObject2 == null || messageObject == null || messageObject2.getDocument() == null || messageObject.getDocument() == null || messageObject2.getDocument().id != messageObject.getDocument().id) ? false : true;
-    }
-
-    @Override // s4.o
-    public final int d() {
-        return this.k.r;
-    }
-
-    @Override // s4.o
-    public final int e() {
-        return this.b;
+    public final void d(int i10, int i11) {
+        this.a = 0;
+        this.q = false;
+        this.m = i11;
+        this.l = AnimationUtils.currentAnimationTimeMillis();
+        this.b = 0;
+        this.c = 0;
+        this.d = 0;
+        this.e = i10;
+        this.o = 0;
+        this.p = i10;
+        this.n = 1.0f / this.m;
     }
 }

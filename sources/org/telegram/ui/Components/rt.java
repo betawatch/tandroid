@@ -15,7 +15,7 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.ui.PhotoViewer;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class rt implements SensorEventListener {
     public int E;
@@ -33,7 +33,7 @@ public final class rt implements SensorEventListener {
     public final PowerManager.WakeLock h;
     public boolean n;
     public boolean r;
-    public c81 s;
+    public j81 s;
     public boolean v;
     public long w;
     public int x;
@@ -65,11 +65,11 @@ public final class rt implements SensorEventListener {
     }
 
     public final void a() {
-        c81 c81Var = this.s;
-        if (c81Var == null) {
+        j81 j81Var = this.s;
+        if (j81Var == null) {
             return;
         }
-        c81Var.S(this.r ? 0 : 3);
+        j81Var.S(this.r ? 0 : 3);
     }
 
     /* JADX WARN: Multi-variable type inference failed */

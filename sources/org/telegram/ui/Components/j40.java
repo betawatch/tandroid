@@ -4,7 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class j40 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -19,7 +19,7 @@ public final class j40 extends AnimatorListenerAdapter {
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
-        org.telegram.ui.rn rnVar;
+        org.telegram.ui.tn tnVar;
         ai.u1 u1Var;
         switch (this.a) {
             case 0:
@@ -36,10 +36,10 @@ public final class j40 extends AnimatorListenerAdapter {
                 k40Var2.E = f10;
                 k40Var2.n.setScaleX(AndroidUtilities.lerp(0.95f, 1.0f, f10));
                 k40Var2.n.setScaleY(AndroidUtilities.lerp(0.95f, 1.0f, k40Var2.E));
-                org.telegram.ui.ak akVar = k40Var2.f;
-                if (akVar != null && (rnVar = akVar.a) != null && (u1Var = rnVar.L3) != null) {
+                org.telegram.ui.bk bkVar = k40Var2.f;
+                if (bkVar != null && (tnVar = bkVar.a) != null && (u1Var = tnVar.X3) != null) {
                     u1Var.setScaleX(AndroidUtilities.lerp(1.0f, 0.95f, k40Var2.E));
-                    k40Var2.f.a.L3.setScaleY(AndroidUtilities.lerp(1.0f, 0.95f, k40Var2.E));
+                    k40Var2.f.a.X3.setScaleY(AndroidUtilities.lerp(1.0f, 0.95f, k40Var2.E));
                 }
                 k40Var2.h.setAlpha(k40Var2.E);
                 if (!z10) {

@@ -11,13 +11,14 @@ import android.widget.ImageView;
 import ei.bc;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.messenger.sl;
+import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.dq;
+import org.telegram.ui.Components.eq;
 import org.telegram.ui.Components.f6;
-import org.telegram.ui.Components.vj0;
+import org.telegram.ui.Components.yj0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class g0 extends Drawable {
     public final ImageView a;
@@ -31,7 +32,7 @@ public final class g0 extends Drawable {
     public final f6 i;
     public final f6 j;
     public final f6 k;
-    public vj0 l;
+    public yj0 l;
 
     public g0(Context context, ImageView imageView) {
         Paint paint = new Paint(1);
@@ -56,7 +57,7 @@ public final class g0 extends Drawable {
     public final void draw(Canvas canvas) {
         float f7;
         float f10;
-        vj0 vj0Var;
+        yj0 yj0Var;
         Canvas canvas2 = canvas;
         Rect bounds = getBounds();
         int centerX = bounds.centerX();
@@ -72,16 +73,16 @@ public final class g0 extends Drawable {
             float f15 = centerY;
             canvas2.scale(f13, f13, f14, f15);
             Drawable drawable = this.e;
-            drawable.setBounds(org.telegram.ui.Cells.c1.w(2, centerX, drawable), org.telegram.ui.Cells.c1.f(2, centerY, drawable), org.telegram.ui.Cells.c1.B(2, centerX, drawable), org.telegram.ui.Cells.c1.A(2, centerY, drawable));
+            drawable.setBounds(org.telegram.ui.Cells.b1.f(2, centerX, drawable), sl.d(2, centerY, drawable), org.telegram.ui.Cells.b1.y(2, centerX, drawable), org.telegram.ui.Cells.b1.u(2, centerY, drawable));
             drawable.setAlpha((int) (f12 * 255.0f));
             drawable.draw(canvas2);
             float dp = AndroidUtilities.dp(14.0f);
-            int m12 = h6.m1(0.2f * f12, -1);
+            int o12 = k6.o1(0.2f * f12, -1);
             Paint paint = this.b;
-            paint.setColor(m12);
+            paint.setColor(o12);
             canvas2.drawCircle(f14, f15, dp, paint);
             float f16 = f12 * 1.0f;
-            paint.setColor(h6.m1(f16, -1));
+            paint.setColor(k6.o1(f16, -1));
             float f17 = f14 - dp;
             f10 = 255.0f;
             float f18 = f15 - dp;
@@ -90,7 +91,7 @@ public final class g0 extends Drawable {
             RectF rectF = this.c;
             rectF.set(f17, f18, f19, f20);
             float e7 = this.i.e(this.f);
-            paint.setColor(h6.m1((1.0f - e7) * f12 * 0.15f, -1));
+            paint.setColor(k6.o1((1.0f - e7) * f12 * 0.15f, -1));
             long currentTimeMillis = System.currentTimeMillis();
             long j10 = this.d;
             canvas2.drawArc(rectF, (-(((((currentTimeMillis - j10) % 600) / 600.0f) - 1.0f) * 360.0f)) - 90.0f, -90.0f, false, paint);
@@ -98,7 +99,7 @@ public final class g0 extends Drawable {
             float max = Math.max(0.0f, ((1520.0f * currentTimeMillis2) / 5400.0f) - 20.0f);
             int i10 = 0;
             while (i10 < 4) {
-                u1.a aVar = dq.h;
+                u1.a aVar = eq.h;
                 float f21 = f11;
                 aVar.getInterpolation((currentTimeMillis2 - (i10 * 1350)) / 667.0f);
                 max += aVar.getInterpolation((currentTimeMillis2 - (r10 + 667)) / 667.0f) * 250.0f;
@@ -107,7 +108,7 @@ public final class g0 extends Drawable {
                 c10 = c10;
             }
             f7 = f11;
-            paint.setColor(h6.m1(f16, -1));
+            paint.setColor(k6.o1(f16, -1));
             canvas2 = canvas;
             canvas2.drawArc(rectF, (-90.0f) - max, Math.max(0.02f, this.j.d(this.g, false)) * (-360.0f) * e7, false, paint);
             invalidateSelf();
@@ -116,12 +117,12 @@ public final class g0 extends Drawable {
             f7 = 0.0f;
             f10 = 255.0f;
         }
-        if (e <= f7 || (vj0Var = this.l) == null) {
+        if (e <= f7 || (yj0Var = this.l) == null) {
             return;
         }
-        int i11 = vj0Var.b / 2;
-        int i12 = vj0Var.c / 2;
-        vj0Var.setBounds(centerX - i11, centerY - i12, i11 + centerX, i12 + centerY);
+        int i11 = yj0Var.b / 2;
+        int i12 = yj0Var.c / 2;
+        yj0Var.setBounds(centerX - i11, centerY - i12, i11 + centerX, i12 + centerY);
         this.l.setAlpha((int) (e * f10));
         this.l.draw(canvas2);
     }

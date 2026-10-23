@@ -9,6 +9,7 @@ import android.util.SparseArray;
 import android.view.View;
 import android.view.ViewGroup;
 import com.google.android.gms.internal.play_billing.k3;
+import i2.o1;
 import j$.util.DesugarCollections;
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
@@ -26,7 +27,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import m.g3;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public abstract class j0 {
     public final c0 A;
@@ -1295,11 +1296,11 @@ public abstract class j0 {
                 }
                 aVar.c(1);
                 if (K(2)) {
-                    StringBuilder l4 = i2.e.l(i15, "restoreAllState: back stack #", " (index ");
-                    l4.append(aVar.s);
-                    l4.append("): ");
-                    l4.append(aVar);
-                    Log.v("FragmentManager", l4.toString());
+                    StringBuilder n10 = o1.n(i15, "restoreAllState: back stack #", " (index ");
+                    n10.append(aVar.s);
+                    n10.append("): ");
+                    n10.append(aVar);
+                    Log.v("FragmentManager", n10.toString());
                     PrintWriter printWriter = new PrintWriter(new s0());
                     aVar.g("  ", printWriter, false);
                     printWriter.close();
@@ -1425,9 +1426,9 @@ public abstract class j0 {
                 for (i10 = 0; i10 < size2; i10++) {
                     bVarArr[i10] = new b((a) this.d.get(i10));
                     if (K(2)) {
-                        StringBuilder l4 = i2.e.l(i10, "saveAllState: adding back stack #", ": ");
-                        l4.append(this.d.get(i10));
-                        Log.v("FragmentManager", l4.toString());
+                        StringBuilder n10 = o1.n(i10, "saveAllState: adding back stack #", ": ");
+                        n10.append(this.d.get(i10));
+                        Log.v("FragmentManager", n10.toString());
                     }
                 }
             } else {
@@ -1452,10 +1453,10 @@ public abstract class j0 {
             l0Var.n = new ArrayList(this.F);
             bundle2.putParcelable("state", l0Var);
             for (String str2 : this.m.keySet()) {
-                bundle2.putBundle(r4.c.h("result_", str2), (Bundle) this.m.get(str2));
+                bundle2.putBundle(si.o0.h("result_", str2), (Bundle) this.m.get(str2));
             }
             for (String str3 : hashMap2.keySet()) {
-                bundle2.putBundle(r4.c.h("fragment_", str3), (Bundle) hashMap2.get(str3));
+                bundle2.putBundle(si.o0.h("fragment_", str3), (Bundle) hashMap2.get(str3));
             }
         } else if (K(2)) {
             Log.v("FragmentManager", "saveAllState: no fragments!");
@@ -1559,10 +1560,10 @@ public abstract class j0 {
         u uVar3 = this.w;
         if (uVar3 != null) {
             androidx.activity.h hVar = uVar3.e.w;
-            String h = r4.c.h("FragmentManager:", sVar != 0 ? a1.g.s(new StringBuilder(), sVar.e, ":") : "");
-            this.C = hVar.d(r4.c.u(h, "StartActivityForResult"), new e0(2), new a4.l(this, 4));
-            this.D = hVar.d(r4.c.u(h, "StartIntentSenderForResult"), new e0(0), new qb.c(this, 8));
-            this.E = hVar.d(r4.c.u(h, "RequestPermissions"), new e0(1), new a6.i(this, 6));
+            String h = si.o0.h("FragmentManager:", sVar != 0 ? a1.g.s(new StringBuilder(), sVar.e, ":") : "");
+            this.C = hVar.d(si.o0.u(h, "StartActivityForResult"), new e0(2), new a4.l(this, 4));
+            this.D = hVar.d(si.o0.u(h, "StartIntentSenderForResult"), new e0(0), new qb.c(this, 8));
+            this.E = hVar.d(si.o0.u(h, "RequestPermissions"), new e0(1), new a6.i(this, 6));
         }
         u uVar4 = this.w;
         if (uVar4 != null) {
@@ -2117,10 +2118,10 @@ public abstract class j0 {
 
     public final void w(String str, FileDescriptor fileDescriptor, PrintWriter printWriter, String[] strArr) {
         int size;
-        String u10 = r4.c.u(str, "    ");
+        String u10 = si.o0.u(str, "    ");
         com.google.firebase.messaging.r rVar = this.c;
         ArrayList arrayList = (ArrayList) rVar.b;
-        String u11 = r4.c.u(str, "    ");
+        String u11 = si.o0.u(str, "    ");
         HashMap hashMap = (HashMap) rVar.c;
         if (!hashMap.isEmpty()) {
             printWriter.print(str);

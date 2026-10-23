@@ -3,22 +3,22 @@ package org.telegram.ui;
 import android.app.Activity;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class ai extends org.telegram.ui.Components.aw {
-    public final /* synthetic */ qn W;
+    public final /* synthetic */ sn W;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ai(qn qnVar, org.telegram.ui.ActionBar.n2 n2Var, Activity activity, org.telegram.ui.ActionBar.d6 d6Var, ArrayList arrayList) {
-        super(n2Var, activity, d6Var, arrayList);
-        this.W = qnVar;
+    public ai(sn snVar, org.telegram.ui.ActionBar.o2 o2Var, Activity activity, org.telegram.ui.ActionBar.g6 g6Var, ArrayList arrayList) {
+        super(o2Var, activity, g6Var, arrayList);
+        this.W = snVar;
     }
 
-    @Override // org.telegram.ui.Components.aw, org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
+    @Override // org.telegram.ui.Components.aw, org.telegram.ui.ActionBar.h3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.k2
     public final void dismiss() {
         super.dismiss();
-        qn qnVar = this.W;
-        qnVar.getClass();
-        qnVar.j8(false, true, 0.0f);
+        sn snVar = this.W;
+        snVar.getClass();
+        snVar.j8(false, true, 0.0f);
     }
 }

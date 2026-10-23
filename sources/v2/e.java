@@ -2,18 +2,18 @@ package v2;
 
 import android.util.SparseArray;
 import b2.w;
-import c3.c0;
-import c3.j0;
-import c3.o;
+import c3.e0;
+import c3.l0;
 import c3.q;
 import c3.s;
+import c3.u;
 import v7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public final class e implements q {
-    public static final s v = new s();
-    public final o a;
+public final class e implements s {
+    public static final u v = new u();
+    public final q a;
     public final int b;
     public final w c;
     public final SparseArray d = new SparseArray();
@@ -21,17 +21,17 @@ public final class e implements q {
     public boolean f;
     public n2.e h;
     public long n;
-    public c0 r;
+    public e0 r;
     public w[] s;
 
-    public e(o oVar, int i10, w wVar) {
-        this.a = oVar;
+    public e(q qVar, int i10, w wVar) {
+        this.a = qVar;
         this.b = i10;
         this.c = wVar;
     }
 
-    @Override // c3.q
-    public final void H() {
+    @Override // c3.s
+    public final void C() {
         SparseArray sparseArray = this.d;
         w[] wVarArr = new w[sparseArray.size()];
         for (int i10 = 0; i10 < sparseArray.size(); i10++) {
@@ -43,12 +43,12 @@ public final class e implements q {
     }
 
     public final c3.j a() {
-        c0 c0Var = this.r;
-        if (c0Var instanceof c3.j) {
-            return (c3.j) c0Var;
+        e0 e0Var = this.r;
+        if (e0Var instanceof c3.j) {
+            return (c3.j) e0Var;
         }
-        if (c0Var instanceof u3.d) {
-            return ((u3.d) c0Var).a;
+        if (e0Var instanceof u3.d) {
+            return ((u3.d) e0Var).a;
         }
         return null;
     }
@@ -57,11 +57,11 @@ public final class e implements q {
         this.h = eVar;
         this.n = j11;
         boolean z10 = this.f;
-        o oVar = this.a;
+        q qVar = this.a;
         if (!z10) {
-            oVar.c(this);
+            qVar.c(this);
             if (j10 != -9223372036854775807L) {
-                oVar.d(0L, j10);
+                qVar.d(0L, j10);
             }
             this.f = true;
             return;
@@ -69,7 +69,7 @@ public final class e implements q {
         if (j10 == -9223372036854775807L) {
             j10 = 0;
         }
-        oVar.d(0L, j10);
+        qVar.d(0L, j10);
         int i10 = 0;
         while (true) {
             SparseArray sparseArray = this.d;
@@ -81,24 +81,24 @@ public final class e implements q {
                 cVar.f = cVar.c;
             } else {
                 cVar.g = j11;
-                j0 r02 = eVar.r0(cVar.a);
-                cVar.f = r02;
+                l0 V = eVar.V(cVar.a);
+                cVar.f = V;
                 w wVar = cVar.e;
                 if (wVar != null) {
-                    r02.b(wVar);
+                    V.b(wVar);
                 }
             }
             i10++;
         }
     }
 
-    @Override // c3.q
-    public final void g0(c0 c0Var) {
-        this.r = c0Var;
+    @Override // c3.s
+    public final void g0(e0 e0Var) {
+        this.r = e0Var;
     }
 
-    @Override // c3.q
-    public final j0 j0(int i10, int i11) {
+    @Override // c3.s
+    public final l0 j0(int i10, int i11) {
         SparseArray sparseArray = this.d;
         c cVar = (c) sparseArray.get(i10);
         if (cVar == null) {
@@ -110,11 +110,11 @@ public final class e implements q {
                 cVar.f = cVar.c;
             } else {
                 cVar.g = j10;
-                j0 r02 = eVar.r0(i11);
-                cVar.f = r02;
+                l0 V = eVar.V(i11);
+                cVar.f = V;
                 w wVar = cVar.e;
                 if (wVar != null) {
-                    r02.b(wVar);
+                    V.b(wVar);
                 }
             }
             sparseArray.put(i10, cVar);

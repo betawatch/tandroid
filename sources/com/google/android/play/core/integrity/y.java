@@ -6,9 +6,9 @@ import android.os.Bundle;
 import android.util.Log;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
-import org.telegram.ui.Cells.c1;
+import org.telegram.ui.Cells.b1;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 abstract class y {
     private final String b;
@@ -35,7 +35,7 @@ abstract class y {
                 if (Log.isLoggable("PlayCore", 3)) {
                     Log.d("PlayCore", j0.d(j0Var.a, "checkAndShowDialog(%s)", objArr));
                 }
-                Bundle i11 = c1.i(i10, "dialog.intent.type");
+                Bundle i11 = b1.i(i10, "dialog.intent.type");
                 i11.putString("package.name", this.b);
                 i11.putInt("playcore.integrity.version.major", 1);
                 i11.putInt("playcore.integrity.version.minor", 4);

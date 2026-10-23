@@ -2,22 +2,22 @@ package j4;
 
 import android.util.Pair;
 import b2.v0;
-import c3.j0;
+import c3.l0;
 import e2.m0;
-import i2.o0;
+import i2.n0;
 import java.util.Arrays;
 import java.util.Collections;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class k implements i {
     public static final double[] r = {23.976023976023978d, 24.0d, 25.0d, 29.97002997002997d, 30.0d, 50.0d, 59.94005994005994d, 60.0d};
     public String a;
-    public j0 b;
+    public l0 b;
     public final c0 c;
     public final String d;
     public final e2.x e;
-    public final o0 f;
+    public final n0 f;
     public final boolean[] g = new boolean[4];
     public final j h;
     public long i;
@@ -37,7 +37,7 @@ public final class k implements i {
         jVar.d = new byte[128];
         this.h = jVar;
         if (c0Var != null) {
-            this.f = new o0(178);
+            this.f = new n0(178);
             this.e = new e2.x();
         } else {
             this.f = null;
@@ -58,7 +58,7 @@ public final class k implements i {
     */
     public final void a(e2.x xVar) {
         j jVar;
-        o0 o0Var;
+        n0 n0Var;
         int i10;
         boolean z10;
         long j10;
@@ -81,7 +81,7 @@ public final class k implements i {
         while (true) {
             int c10 = f2.q.c(bArr, i14, i15, this.g);
             jVar = this.h;
-            o0Var = this.f;
+            n0Var = this.f;
             if (c10 == i15) {
                 break;
             }
@@ -176,17 +176,17 @@ public final class k implements i {
                 }
                 jVar.a(0, 3, j.e);
             }
-            if (o0Var != null) {
+            if (n0Var != null) {
                 if (i18 > 0) {
-                    o0Var.a(i14, c10, bArr);
+                    n0Var.a(i14, c10, bArr);
                     i11 = 0;
                 } else {
                     i11 = -i18;
                 }
-                if (o0Var.e(i11)) {
-                    int p5 = f2.q.p(o0Var.e, (byte[]) o0Var.f);
+                if (n0Var.e(i11)) {
+                    int p5 = f2.q.p(n0Var.e, (byte[]) n0Var.f);
                     String str2 = m0.a;
-                    byte[] bArr2 = (byte[]) o0Var.f;
+                    byte[] bArr2 = (byte[]) n0Var.f;
                     e2.x xVar2 = this.e;
                     xVar2.L(p5, bArr2);
                     this.c.a(this.o, xVar2);
@@ -194,7 +194,7 @@ public final class k implements i {
                 if (i17 == 178) {
                     z10 = true;
                     if (xVar.a[c10 + 2] == 1) {
-                        o0Var.h(i17);
+                        n0Var.h(i17);
                     }
                     if (i17 != 0 || i17 == 179) {
                         int i26 = i10 - c10;
@@ -273,8 +273,8 @@ public final class k implements i {
         if (!this.k) {
             jVar.a(i14, i15, bArr);
         }
-        if (o0Var != null) {
-            o0Var.a(i14, i15, bArr);
+        if (n0Var != null) {
+            n0Var.a(i14, i15, bArr);
         }
     }
 
@@ -285,9 +285,9 @@ public final class k implements i {
         jVar.a = false;
         jVar.b = 0;
         jVar.c = 0;
-        o0 o0Var = this.f;
-        if (o0Var != null) {
-            o0Var.g();
+        n0 n0Var = this.f;
+        if (n0Var != null) {
+            n0Var.g();
         }
         this.i = 0L;
         this.j = false;
@@ -296,15 +296,15 @@ public final class k implements i {
     }
 
     @Override // j4.i
-    public final void d(c3.q qVar, f0 f0Var) {
+    public final void d(c3.s sVar, f0 f0Var) {
         f0Var.b();
         f0Var.c();
         this.a = (String) f0Var.e;
         f0Var.c();
-        this.b = qVar.j0(f0Var.c, 2);
+        this.b = sVar.j0(f0Var.c, 2);
         c0 c0Var = this.c;
         if (c0Var != null) {
-            c0Var.b(qVar, f0Var);
+            c0Var.b(sVar, f0Var);
         }
     }
 

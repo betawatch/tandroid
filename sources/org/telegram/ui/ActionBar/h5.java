@@ -1,67 +1,64 @@
 package org.telegram.ui.ActionBar;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.AndroidUtilities;
+import android.app.Activity;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.widget.FrameLayout;
+import java.util.List;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class h5 extends Drawable {
-    public final /* synthetic */ int a;
-    public Paint b;
+public interface h5 {
+    o2 getBackgroundFragment();
 
-    public h5(int i10) {
-        this.a = i10;
-        switch (i10) {
-            case 1:
-                this.b = new Paint(1);
-                break;
-        }
-    }
+    h3 getBottomSheet();
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        switch (this.a) {
-            case 0:
-                canvas.drawCircle(getBounds().centerX(), getBounds().centerY() - AndroidUtilities.dp(1.0f), (getBounds().width() - AndroidUtilities.dp(8.0f)) / 2.0f, this.b);
-                break;
-            default:
-                Paint paint = this.b;
-                paint.setColor(h6.x0(null, h6.hl, false));
-                canvas.drawRoundRect(getBounds().left, getBounds().exactCenterY() - AndroidUtilities.dp(14.0f), getBounds().right, AndroidUtilities.dp(14.0f) + getBounds().exactCenterY(), AndroidUtilities.dp(14.0f), AndroidUtilities.dp(14.0f), paint);
-                break;
-        }
-    }
+    List getFragmentStack();
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        switch (this.a) {
-        }
-        return 0;
-    }
+    o2 getLastFragment();
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        switch (this.a) {
-            case 0:
-                this.b.setAlpha(i10);
-                break;
-        }
-    }
+    j5 getMessageDrawableOutMediaStart();
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        int i10 = this.a;
-    }
+    j5 getMessageDrawableOutStart();
 
-    private final void a(int i10) {
-    }
+    FrameLayout getOverlayContainerView();
 
-    private final void b(ColorFilter colorFilter) {
-    }
+    Activity getParentActivity();
 
-    private final void c(ColorFilter colorFilter) {
-    }
+    List getPulledDialogs();
+
+    o2 getSafeLastFragment();
+
+    float getThemeAnimationValue();
+
+    ViewGroup getView();
+
+    Window getWindow();
+
+    void setBackgroundView(View view);
+
+    void setDelegate(d5 d5Var);
+
+    void setDrawerLayoutContainer(b4 b4Var);
+
+    void setFragmentPanTranslationOffset(int i10);
+
+    void setFragmentStack(List list);
+
+    void setHighlightActionButtons(boolean z10);
+
+    void setInBubbleMode(boolean z10);
+
+    void setIsSheet(boolean z10);
+
+    void setNavigationBarColor(int i10);
+
+    void setPulledDialogs(List list);
+
+    void setRemoveActionBarExtraHeight(boolean z10);
+
+    void setUseAlphaAnimations(boolean z10);
+
+    void setWindow(Window window);
 }

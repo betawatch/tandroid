@@ -1,18 +1,18 @@
 package s4;
 
-import ai.be;
+import ai.ce;
 import android.graphics.Canvas;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.WeakHashMap;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.jy;
+import org.telegram.ui.ly;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public abstract class v {
-    public static final be b = new be(2);
-    public static final be c = new be(3);
+    public static final ce b = new ce(2);
+    public static final ce c = new ce(3);
     public int a = -1;
 
     public static int c(int i10, int i11) {
@@ -91,7 +91,7 @@ public abstract class v {
     }
 
     public boolean k() {
-        return !(this instanceof jy);
+        return !(this instanceof ly);
     }
 
     public void m(Canvas canvas, RecyclerView recyclerView, b1 b1Var, float f7, float f10, int i10, boolean z10) {

@@ -4,9 +4,9 @@ import java.util.regex.Pattern;
 import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class gf implements org.telegram.ui.ActionBar.a2, MessagesController.ErrorDelegate, do0 {
+public final /* synthetic */ class gf implements org.telegram.ui.ActionBar.z1, MessagesController.ErrorDelegate, ho0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Runnable b;
 
@@ -15,13 +15,13 @@ public final /* synthetic */ class gf implements org.telegram.ui.ActionBar.a2, M
         this.b = runnable;
     }
 
-    @Override // org.telegram.ui.do0
-    public void c(int i10) {
+    @Override // org.telegram.ui.ho0
+    public void a(int i10) {
         int i11 = this.a;
         Runnable runnable = this.b;
         switch (i11) {
             case 9:
-                Pattern pattern = LaunchActivity.C1;
+                Pattern pattern = LaunchActivity.E1;
                 if (i10 == 1) {
                     runnable.run();
                     break;
@@ -36,8 +36,8 @@ public final /* synthetic */ class gf implements org.telegram.ui.ActionBar.a2, M
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    @Override // org.telegram.ui.ActionBar.z1
+    public void g(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
         switch (this.a) {
             case 0:
                 this.b.run();

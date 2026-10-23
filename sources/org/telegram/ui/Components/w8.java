@@ -12,11 +12,11 @@ import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.qa1;
+import org.telegram.ui.va1;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class w8 extends lw0 {
+public final class w8 extends ow0 {
     public float A0;
     public float B0;
     public final /* synthetic */ e9 C0;
@@ -33,7 +33,7 @@ public final class w8 extends lw0 {
         this.w0 = new b2.u0();
     }
 
-    @Override // org.telegram.ui.Components.lw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.ow0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         Canvas canvas2;
         int save = canvas.save();
@@ -95,11 +95,11 @@ public final class w8 extends lw0 {
         if (view == e9Var.H) {
             return true;
         }
-        kVar = ((org.telegram.ui.ActionBar.n2) e9Var).actionBar;
+        kVar = ((org.telegram.ui.ActionBar.o2) e9Var).actionBar;
         if (view != kVar || e9Var.N <= 0.0f) {
             canvas2 = canvas;
         } else {
-            paint.setColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false));
+            paint.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.d6, false));
             paint.setAlpha((int) (e9Var.N * 255.0f));
             canvas2 = canvas;
             canvas2.drawRect(0.0f, 0.0f, view.getMeasuredWidth(), view.getMeasuredHeight(), paint);
@@ -125,7 +125,7 @@ public final class w8 extends lw0 {
     public final void onMeasure(int i10, int i11) {
         int i12;
         org.telegram.ui.ActionBar.k kVar;
-        R();
+        Q();
         boolean z10 = View.MeasureSpec.getSize(i10) > View.MeasureSpec.getSize(i11) + this.f;
         e9 e9Var = this.C0;
         float f7 = 0.0f;
@@ -165,13 +165,13 @@ public final class w8 extends lw0 {
             super.onMeasure(i10, i11);
             if (e9Var.L) {
                 int i13 = -e9Var.b.getTop();
-                kVar = ((org.telegram.ui.ActionBar.n2) e9Var).actionBar;
+                kVar = ((org.telegram.ui.ActionBar.o2) e9Var).actionBar;
                 i12 = AndroidUtilities.dp(8.0f) + kVar.getMeasuredHeight() + i13;
             } else {
                 i12 = 0;
             }
-            qa1 qa1Var = e9Var.r;
-            qa1Var.setTranslationY((qa1Var.getTranslationY() + ((ViewGroup.MarginLayoutParams) e9Var.r.getLayoutParams()).topMargin) - i12);
+            va1 va1Var = e9Var.r;
+            va1Var.setTranslationY((va1Var.getTranslationY() + ((ViewGroup.MarginLayoutParams) e9Var.r.getLayoutParams()).topMargin) - i12);
             ((ViewGroup.MarginLayoutParams) e9Var.r.getLayoutParams()).topMargin = i12;
             boolean z13 = e9Var.L;
             if (!e9Var.U) {

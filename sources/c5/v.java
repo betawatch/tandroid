@@ -7,6 +7,7 @@ import android.os.Parcel;
 import android.text.TextUtils;
 import com.android.billingclient.api.Purchase;
 import com.google.android.gms.internal.play_billing.t1;
+import i2.o1;
 import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +16,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class v implements Callable {
     public final /* synthetic */ int a;
@@ -52,7 +53,7 @@ public final /* synthetic */ class v implements Callable {
             cVar2.y(2, 7, iVar2);
             com.google.android.gms.internal.play_billing.p pVar = com.google.android.gms.internal.play_billing.r.b;
             com.google.android.gms.internal.play_billing.v vVar = com.google.android.gms.internal.play_billing.v.e;
-            d0Var.a(iVar2, new t(vVar, vVar));
+            d0Var.c(iVar2, new t(vVar, vVar));
             return null;
         }
         if (!cVar2.r) {
@@ -61,7 +62,7 @@ public final /* synthetic */ class v implements Callable {
             cVar2.y(20, 7, iVar3);
             com.google.android.gms.internal.play_billing.p pVar2 = com.google.android.gms.internal.play_billing.r.b;
             com.google.android.gms.internal.play_billing.v vVar2 = com.google.android.gms.internal.play_billing.v.e;
-            d0Var.a(iVar3, new t(vVar2, vVar2));
+            d0Var.c(iVar3, new t(vVar2, vVar2));
             return null;
         }
         ArrayList arrayList = new ArrayList();
@@ -198,17 +199,17 @@ public final /* synthetic */ class v implements Callable {
                     } else {
                         int a2 = com.google.android.gms.internal.play_billing.u.a("BillingClient", b12);
                         String f7 = com.google.android.gms.internal.play_billing.u.f("BillingClient", b12);
-                        lVar = a2 != 0 ? cVar2.s(h0.a(a2, f7), 23, i2.e.j(a2, "getSkuDetails() failed for queryProductDetailsAsync. Response code: "), null) : cVar2.s(h0.a(6, f7), 45, "getSkuDetails() returned a bundle with neither an error nor a product detail list for queryProductDetailsAsync.", null);
+                        lVar = a2 != 0 ? cVar2.s(h0.a(a2, f7), 23, o1.k(a2, "getSkuDetails() failed for queryProductDetailsAsync. Response code: "), null) : cVar2.s(h0.a(6, f7), 45, "getSkuDetails() returned a bundle with neither an error nor a product detail list for queryProductDetailsAsync.", null);
                     }
                 } catch (DeadObjectException e10) {
                     e = e10;
                     lVar = cVar2.s(h0.h, i10, "queryProductDetailsAsync got a remote exception (try to reconnect).", e);
-                    d0Var.a(h0.a(lVar.a, (String) lVar.d), new t((ArrayList) lVar.b, (ArrayList) lVar.c));
+                    d0Var.c(h0.a(lVar.a, (String) lVar.d), new t((ArrayList) lVar.b, (ArrayList) lVar.c));
                     return null;
                 } catch (Exception e11) {
                     e = e11;
                     lVar = cVar2.s(h0.f, i10, "queryProductDetailsAsync got a remote exception (try to reconnect).", e);
-                    d0Var.a(h0.a(lVar.a, (String) lVar.d), new t((ArrayList) lVar.b, (ArrayList) lVar.c));
+                    d0Var.c(h0.a(lVar.a, (String) lVar.d), new t((ArrayList) lVar.b, (ArrayList) lVar.c));
                     return null;
                 }
             } catch (DeadObjectException e12) {
@@ -219,7 +220,7 @@ public final /* synthetic */ class v implements Callable {
                 i10 = 43;
             }
         }
-        d0Var.a(h0.a(lVar.a, (String) lVar.d), new t((ArrayList) lVar.b, (ArrayList) lVar.c));
+        d0Var.c(h0.a(lVar.a, (String) lVar.d), new t((ArrayList) lVar.b, (ArrayList) lVar.c));
         return null;
     }
 
@@ -249,7 +250,7 @@ public final /* synthetic */ class v implements Callable {
             cVar2.y(2, 9, iVar);
             q qVar = (q) this.c;
             com.google.android.gms.internal.play_billing.p pVar = com.google.android.gms.internal.play_billing.r.b;
-            qVar.b(iVar, com.google.android.gms.internal.play_billing.v.e);
+            qVar.a(iVar, com.google.android.gms.internal.play_billing.v.e);
             return null;
         }
         String str = (String) this.d;
@@ -259,7 +260,7 @@ public final /* synthetic */ class v implements Callable {
             cVar2.y(50, 9, iVar2);
             q qVar2 = (q) this.c;
             com.google.android.gms.internal.play_billing.p pVar2 = com.google.android.gms.internal.play_billing.r.b;
-            qVar2.b(iVar2, com.google.android.gms.internal.play_billing.v.e);
+            qVar2.a(iVar2, com.google.android.gms.internal.play_billing.v.e);
             return null;
         }
         com.google.android.gms.internal.play_billing.u.g("BillingClient", "Querying owned items, item type: ".concat(String.valueOf(str)));
@@ -400,12 +401,12 @@ public final /* synthetic */ class v implements Callable {
         exc = exc2;
         list = (List) x10.b;
         if (list != null) {
-            ((q) this.c).b((i) x10.c, list);
+            ((q) this.c).a((i) x10.c, list);
         } else {
             q qVar3 = (q) this.c;
             i iVar4 = (i) x10.c;
             com.google.android.gms.internal.play_billing.p pVar3 = com.google.android.gms.internal.play_billing.r.b;
-            qVar3.b(iVar4, com.google.android.gms.internal.play_billing.v.e);
+            qVar3.a(iVar4, com.google.android.gms.internal.play_billing.v.e);
         }
         return exc;
     }

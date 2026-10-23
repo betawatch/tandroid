@@ -8,10 +8,11 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
-import ci.p4;
+import ci.o4;
 import e9.x1;
 import ei.bc;
-import ig.e2;
+import i2.o1;
+import ig.d2;
 import java.math.RoundingMode;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -21,9 +22,9 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import v7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public final class t0 implements z {
+public final class t0 implements a0 {
     public static final AtomicInteger c0 = new AtomicInteger();
     public long A;
     public long B;
@@ -65,12 +66,12 @@ public final class t0 implements z {
     public p0 j;
     public final s0 k;
     public final s0 l;
-    public j2.k m;
-    public x n;
+    public j2.j m;
+    public y n;
     public q0 o;
     public q0 p;
     public c2.j q;
-    public p r;
+    public q r;
     public o0 s;
     public i0 t;
     public b2.f u;
@@ -80,14 +81,14 @@ public final class t0 implements z {
     public boolean y;
     public long z;
 
-    public t0(p4 p4Var) {
+    public t0(o4 o4Var) {
         int deviceId;
-        Context context = (Context) p4Var.b;
+        Context context = (Context) o4Var.b;
         this.a = context == null ? null : context.getApplicationContext();
         this.u = b2.f.i;
-        this.b = (androidx.biometric.e) p4Var.d;
+        this.b = (androidx.biometric.e) o4Var.d;
         this.i = 0;
-        this.r = (k0) p4Var.f;
+        this.r = (k0) o4Var.f;
         m0 m0Var = new m0();
         this.c = m0Var;
         d1 d1Var = new d1();
@@ -231,7 +232,7 @@ public final class t0 implements z {
                         case 18:
                             break;
                         default:
-                            throw new IllegalStateException(i2.e.j(i10, "Unexpected audio encoding: "));
+                            throw new IllegalStateException(o1.k(i10, "Unexpected audio encoding: "));
                     }
             }
             if (((byteBuffer.get(byteBuffer.position() + 5) & 248) >> 3) > 10) {
@@ -294,12 +295,12 @@ public final class t0 implements z {
         u6.p(this.K == null);
         if (byteBuffer.hasRemaining()) {
             if (q0.a(this.p)) {
-                int a02 = (int) e2.m0.a0(e2.m0.S(20L), ((o) this.p.e).b, 1000000L, RoundingMode.UP);
+                int a02 = (int) e2.m0.a0(e2.m0.S(20L), ((p) this.p.e).b, 1000000L, RoundingMode.UP);
                 long l4 = l();
                 long j10 = a02;
                 if (l4 < j10) {
                     q0 q0Var = this.p;
-                    int i13 = ((o) q0Var.e).a;
+                    int i13 = ((p) q0Var.e).a;
                     int i14 = q0Var.b;
                     int i15 = (int) l4;
                     byteBuffer2 = ByteBuffer.allocateDirect(byteBuffer.remaining()).order(ByteOrder.nativeOrder());
@@ -423,7 +424,7 @@ public final class t0 implements z {
 
     public final boolean D() {
         q0 q0Var = this.p;
-        return q0Var != null && ((o) q0Var.e).j;
+        return q0Var != null && ((p) q0Var.e).j;
     }
 
     public final void a(long j10) {
@@ -463,27 +464,27 @@ public final class t0 implements z {
             ((z0) eVar.c).o = z10;
         }
         this.y = z10;
-        this.h.add(new r0(z0Var2, Math.max(0L, j10), e2.m0.Y(((o) this.p.e).b, l())));
+        this.h.add(new r0(z0Var2, Math.max(0L, j10), e2.m0.Y(((p) this.p.e).b, l())));
         c2.j jVar = (c2.j) this.p.f;
         this.q = jVar;
         jVar.a();
-        x xVar = this.n;
-        if (xVar != null) {
-            xVar.onSkipSilenceEnabledChanged(this.y);
+        y yVar = this.n;
+        if (yVar != null) {
+            yVar.onSkipSilenceEnabledChanged(this.y);
         }
     }
 
-    public final i0 b(o oVar) {
+    public final i0 b(p pVar) {
         try {
-            return ((k0) this.r).a(oVar);
-        } catch (m e) {
-            w wVar = new w(oVar.b, oVar.c, oVar.a, oVar.f, (b2.w) this.p.c, oVar.e, e);
-            x xVar = this.n;
-            if (xVar == null) {
-                throw wVar;
+            return ((k0) this.r).a(pVar);
+        } catch (n e) {
+            x xVar = new x(pVar.b, pVar.c, pVar.a, pVar.f, (b2.w) this.p.c, pVar.e, e);
+            y yVar = this.n;
+            if (yVar == null) {
+                throw xVar;
             }
-            xVar.I(wVar);
-            throw wVar;
+            yVar.I(xVar);
+            throw xVar;
         }
     }
 
@@ -551,7 +552,7 @@ public final class t0 implements z {
                 i10 = u10;
                 i11 = e2.m0.u(i18) * i17;
             } catch (c2.m e7) {
-                throw new v(e7, wVar);
+                throw new w(e7, wVar);
             }
         } else {
             jVar = new c2.j(x1.e);
@@ -560,16 +561,16 @@ public final class t0 implements z {
             i11 = -1;
         }
         c2.j jVar2 = jVar;
-        j i19 = i(wVar2);
+        k i19 = i(wVar2);
         b2.w wVar3 = i19.a;
         try {
-            o c10 = ((k0) this.r).c(i19);
+            p c10 = ((k0) this.r).c(i19);
             boolean z10 = c10.e;
             if (c10.a == 0) {
-                throw new v("Invalid output encoding (isOffload=" + z10 + ")", wVar3);
+                throw new w("Invalid output encoding (isOffload=" + z10 + ")", wVar3);
             }
             if (c10.c == 0) {
-                throw new v("Invalid output channel config (isOffload=" + z10 + ")", wVar3);
+                throw new w("Invalid output channel config (isOffload=" + z10 + ")", wVar3);
             }
             this.X = false;
             q0 q0Var = new q0(wVar, wVar2, i10, i11, c10, jVar2);
@@ -578,8 +579,8 @@ public final class t0 implements z {
             } else {
                 this.p = q0Var;
             }
-        } catch (i e10) {
-            throw new v(e10, wVar);
+        } catch (j e10) {
+            throw new w(e10, wVar);
         }
     }
 
@@ -590,8 +591,8 @@ public final class t0 implements z {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void d(long j10) {
-        x xVar;
-        x xVar2;
+        y yVar;
+        y yVar2;
         if (this.K == null) {
             return;
         }
@@ -610,8 +611,8 @@ public final class t0 implements z {
                 if (this.C > 0) {
                     this.Y = false;
                 }
-                if (this.O && (xVar2 = this.n) != null && !g10 && !this.Y) {
-                    xVar2.l();
+                if (this.O && (yVar2 = this.n) != null && !g10 && !this.Y) {
+                    yVar2.l();
                 }
             }
             if (q0.a(this.p)) {
@@ -624,31 +625,31 @@ public final class t0 implements z {
                 }
                 this.K = null;
             }
-        } catch (h e) {
+        } catch (i e) {
             boolean z10 = e.b;
             if (z10) {
                 if (l() <= 0) {
                     if (this.t.c()) {
-                        if (((o) this.p.e).e) {
+                        if (((p) this.p.e).e) {
                             this.X = true;
                         }
                     }
                 }
-                y yVar = new y(e.a, (b2.w) this.p.c, r4);
-                xVar = this.n;
-                if (xVar != null) {
-                    xVar.I(yVar);
+                z zVar = new z(e.a, (b2.w) this.p.c, r4);
+                yVar = this.n;
+                if (yVar != null) {
+                    yVar.I(zVar);
                 }
                 if (!z10) {
-                    throw yVar;
+                    throw zVar;
                 }
-                s0Var.a(yVar);
+                s0Var.a(zVar);
                 return;
             }
             r4 = false;
-            y yVar2 = new y(e.a, (b2.w) this.p.c, r4);
-            xVar = this.n;
-            if (xVar != null) {
+            z zVar2 = new z(e.a, (b2.w) this.p.c, r4);
+            yVar = this.n;
+            if (yVar != null) {
             }
             if (!z10) {
             }
@@ -677,7 +678,7 @@ public final class t0 implements z {
     }
 
     public final void f() {
-        d0 d0Var;
+        e0 e0Var;
         if (p()) {
             this.z = 0L;
             this.A = 0L;
@@ -716,8 +717,8 @@ public final class t0 implements z {
                 h0Var.getClass();
                 h0.a(h0Var);
             }
-            if (i10 >= 24 && (d0Var = i0Var.e) != null) {
-                d0.b(d0Var);
+            if (i10 >= 24 && (e0Var = i0Var.e) != null) {
+                e0.b(e0Var);
                 i0Var.e = null;
             }
             AudioTrack audioTrack = i0Var.a;
@@ -729,7 +730,7 @@ public final class t0 implements z {
                         i0.u = Executors.newSingleThreadScheduledExecutor(new e2.l0(0));
                     }
                     i0.v++;
-                    i0.u.schedule(new e2(audioTrack, q6, rVar, 2), 20L, TimeUnit.MILLISECONDS);
+                    i0.u.schedule(new d2(audioTrack, q6, rVar, 2), 20L, TimeUnit.MILLISECONDS);
                 } catch (Throwable th2) {
                     throw th2;
                 }
@@ -757,10 +758,10 @@ public final class t0 implements z {
             return -9223372036854775807L;
         }
         if (q0.a(this.p)) {
-            return e2.m0.Y(((o) this.p.e).b, this.t.a.getBufferSizeInFrames());
+            return e2.m0.Y(((p) this.p.e).b, this.t.a.getBufferSizeInFrames());
         }
         long bufferSizeInFrames = this.t.a.getBufferSizeInFrames();
-        int j10 = c3.b.j(((o) this.p.e).a);
+        int j10 = c3.b.j(((p) this.p.e).a);
         u6.p(j10 != -2147483647);
         return e2.m0.a0(bufferSizeInFrames, 1000000L, j10, RoundingMode.DOWN);
     }
@@ -771,7 +772,7 @@ public final class t0 implements z {
         if (!p() || this.F) {
             return Long.MIN_VALUE;
         }
-        long min = Math.min(this.t.a(), e2.m0.Y(((o) this.p.e).b, l()));
+        long min = Math.min(this.t.a(), e2.m0.Y(((p) this.p.e).b, l()));
         while (true) {
             arrayDeque = this.h;
             if (arrayDeque.isEmpty() || min < ((r0) arrayDeque.getFirst()).c) {
@@ -806,10 +807,10 @@ public final class t0 implements z {
             j10 = r0Var3.b + B + r0Var3.d;
         }
         long j13 = ((z0) eVar.c).q;
-        long Y = e2.m0.Y(((o) this.p.e).b, j13) + j10;
+        long Y = e2.m0.Y(((p) this.p.e).b, j13) + j10;
         long j14 = this.Z;
         if (j13 > j14) {
-            long Y2 = e2.m0.Y(((o) this.p.e).b, j13 - j14);
+            long Y2 = e2.m0.Y(((p) this.p.e).b, j13 - j14);
             this.Z = j13;
             this.a0 += Y2;
             if (this.b0 == null) {
@@ -821,16 +822,16 @@ public final class t0 implements z {
         return Y;
     }
 
-    public final j i(b2.w wVar) {
-        j jVar = new j(wVar);
-        jVar.b = this.u;
-        jVar.d = this.i != 0;
-        jVar.c = this.T;
-        jVar.e = this.Q;
-        jVar.g = this.V;
-        jVar.h = -1;
-        jVar.f = this.U;
-        return new j(jVar);
+    public final k i(b2.w wVar) {
+        k kVar = new k(wVar);
+        kVar.b = this.u;
+        kVar.d = this.i != 0;
+        kVar.c = this.T;
+        kVar.e = this.Q;
+        kVar.g = this.V;
+        kVar.h = -1;
+        kVar.f = this.U;
+        return new k(kVar);
     }
 
     public final int j(b2.w wVar) {
@@ -884,9 +885,9 @@ public final class t0 implements z {
         if (this.o != null) {
             if (e()) {
                 if (this.t != null) {
-                    o oVar = (o) this.p.e;
+                    p pVar = (p) this.p.e;
                     i((b2.w) this.o.d);
-                    if (!((o) this.o.e).equals(oVar)) {
+                    if (!((p) this.o.e).equals(pVar)) {
                         s();
                         if (!n()) {
                             f();
@@ -897,7 +898,7 @@ public final class t0 implements z {
                 this.p = this.o;
                 this.o = null;
                 i0 i0Var = this.t;
-                if (i0Var != null && i0Var.c() && ((o) this.p.e).k) {
+                if (i0Var != null && i0Var.c() && ((p) this.p.e).k) {
                     this.t.e();
                     i0 i0Var2 = this.t;
                     b2.w wVar = (b2.w) this.p.c;
@@ -912,7 +913,7 @@ public final class t0 implements z {
         s0 s0Var = this.k;
         if (!p5) {
             try {
-            } catch (w e) {
+            } catch (x e) {
                 if (e.a) {
                     throw e;
                 }
@@ -939,7 +940,7 @@ public final class t0 implements z {
             u6.g(byteBuffer.order() == ByteOrder.LITTLE_ENDIAN);
             if (byteBuffer.hasRemaining()) {
                 if (!q0.a(this.p) && this.D == 0) {
-                    int k10 = k(((o) this.p.e).a, byteBuffer);
+                    int k10 = k(((p) this.p.e).a, byteBuffer);
                     this.D = k10;
                 }
                 if (this.v != null) {
@@ -962,11 +963,11 @@ public final class t0 implements z {
                 }
                 long Y = e2.m0.Y(((b2.w) q0Var.c).L, j13 - this.d.o) + j14;
                 if (!this.E && Math.abs(Y - j10) > 200000) {
-                    x xVar = this.n;
-                    if (xVar != null) {
+                    y yVar = this.n;
+                    if (yVar != null) {
                         StringBuilder t10 = a1.g.t(Y, "Unexpected audio track timestamp discontinuity: expected ", ", got ");
                         t10.append(j10);
-                        xVar.I(new com.google.firebase.messaging.q(t10.toString()));
+                        yVar.I(new com.google.firebase.messaging.q(t10.toString()));
                     }
                     this.E = true;
                 }
@@ -976,9 +977,9 @@ public final class t0 implements z {
                         this.G += j15;
                         this.E = false;
                         a(j10);
-                        x xVar2 = this.n;
-                        if (xVar2 != null && j15 != j12) {
-                            xVar2.L();
+                        y yVar2 = this.n;
+                        if (yVar2 != null && j15 != j12) {
+                            yVar2.L();
                         }
                     }
                     return false;
@@ -1036,9 +1037,9 @@ public final class t0 implements z {
             return false;
         }
         try {
-            b10 = b((o) this.p.e);
-        } catch (w e) {
-            int i10 = ((o) this.p.e).f;
+            b10 = b((p) this.p.e);
+        } catch (x e) {
+            int i10 = ((p) this.p.e).f;
             while (i10 > 1000000) {
                 int i11 = i10 / 2;
                 q0 q0Var = this.p;
@@ -1048,39 +1049,39 @@ public final class t0 implements z {
                 }
                 int i13 = i11 % i12;
                 int i14 = i13 != 0 ? (i12 - i13) + i11 : i11;
-                n a2 = ((o) q0Var.e).a();
+                o a2 = ((p) q0Var.e).a();
                 a2.f = i14;
-                o oVar = new o(a2);
+                p pVar = new p(a2);
                 try {
-                    b10 = b(oVar);
+                    b10 = b(pVar);
                     q0 q0Var2 = this.p;
-                    this.p = new q0((b2.w) q0Var2.c, (b2.w) q0Var2.d, q0Var2.a, q0Var2.b, oVar, (c2.j) q0Var2.f);
-                } catch (w e7) {
+                    this.p = new q0((b2.w) q0Var2.c, (b2.w) q0Var2.d, q0Var2.a, q0Var2.b, pVar, (c2.j) q0Var2.f);
+                } catch (x e7) {
                     e.addSuppressed(e7);
                     i10 = i14;
                 }
             }
-            if (!((o) this.p.e).e) {
+            if (!((p) this.p.e).e) {
                 throw e;
             }
             this.X = true;
             throw e;
         }
         this.t = b10;
-        p0 p0Var = new p0(this, (o) this.p.e);
+        p0 p0Var = new p0(this, (p) this.p.e);
         this.j = p0Var;
         b10.j.a(p0Var);
         if (this.t.c()) {
             q0 q0Var3 = this.p;
-            if (((o) q0Var3.e).k) {
+            if (((p) q0Var3.e).k) {
                 i0 i0Var = this.t;
                 b2.w wVar = (b2.w) q0Var3.c;
                 i0Var.d(wVar.N, wVar.O);
             }
         }
-        j2.k kVar = this.m;
-        if (kVar != null) {
-            this.t.f(kVar);
+        j2.j jVar = this.m;
+        if (jVar != null) {
+            this.t.f(jVar);
         }
         if (p()) {
             this.t.a.setVolume(this.H);
@@ -1094,21 +1095,21 @@ public final class t0 implements z {
         int audioSessionId = this.t.a.getAudioSessionId();
         boolean z10 = audioSessionId != this.Q;
         this.Q = audioSessionId;
-        x xVar = this.n;
-        if (xVar != null) {
-            int i15 = ((o) this.p.e).a;
-            xVar.Q(new u0());
+        y yVar = this.n;
+        if (yVar != null) {
+            int i15 = ((p) this.p.e).a;
+            yVar.Q(new u0());
             if (z10) {
                 this.R = true;
                 q0 q0Var4 = this.p;
-                n a10 = ((o) q0Var4.e).a();
+                o a10 = ((p) q0Var4.e).a();
                 a10.h = this.Q;
-                this.p = new q0((b2.w) q0Var4.c, (b2.w) q0Var4.d, q0Var4.a, q0Var4.b, new o(a10), (c2.j) q0Var4.f);
+                this.p = new q0((b2.w) q0Var4.c, (b2.w) q0Var4.d, q0Var4.a, q0Var4.b, new p(a10), (c2.j) q0Var4.f);
                 q0 q0Var5 = this.o;
                 if (q0Var5 != null) {
-                    n a11 = ((o) q0Var5.e).a();
+                    o a11 = ((p) q0Var5.e).a();
                     a11.h = this.Q;
-                    this.o = new q0((b2.w) q0Var5.c, (b2.w) q0Var5.d, q0Var5.a, q0Var5.b, new o(a11), (c2.j) q0Var5.f);
+                    this.o = new q0((b2.w) q0Var5.c, (b2.w) q0Var5.d, q0Var5.a, q0Var5.b, new p(a11), (c2.j) q0Var5.f);
                 }
                 this.n.onAudioSessionIdChanged(this.Q);
             }
@@ -1244,11 +1245,11 @@ public final class t0 implements z {
                 this.o = null;
             }
             try {
-                o c10 = ((k0) this.r).c(i((b2.w) this.p.d));
+                p c10 = ((k0) this.r).c(i((b2.w) this.p.d));
                 q0 q0Var2 = this.p;
                 this.p = new q0((b2.w) q0Var2.c, (b2.w) q0Var2.d, q0Var2.a, q0Var2.b, c10, (c2.j) q0Var2.f);
-            } catch (i e) {
-                throw new IllegalStateException(new v(e, (b2.w) this.p.c));
+            } catch (j e) {
+                throw new IllegalStateException(new w(e, (b2.w) this.p.c));
             }
         }
         f();
@@ -1303,15 +1304,15 @@ public final class t0 implements z {
         }
     }
 
-    public final void y(p pVar) {
-        if (pVar.equals(this.r)) {
+    public final void y(q qVar) {
+        if (qVar.equals(this.r)) {
             return;
         }
         ((k0) this.r).d();
-        this.r = pVar;
+        this.r = qVar;
         o0 o0Var = this.s;
         if (o0Var != null) {
-            k0 k0Var = (k0) pVar;
+            k0 k0Var = (k0) qVar;
             k0Var.f();
             if (k0Var.f == null) {
                 k0Var.f = new e2.r(Thread.currentThread());

@@ -20,14 +20,14 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Cells.u1;
-import org.telegram.ui.Cells.w0;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.Cells.t1;
+import org.telegram.ui.Cells.v0;
 import org.telegram.ui.nj;
 import w7.r;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+/* loaded from: classes4.dex */
 public final class e extends View implements ViewTreeObserver.OnPreDrawListener, ViewTreeObserver.OnScrollChangedListener, ViewTreeObserver.OnGlobalLayoutListener {
     public static final RectF H = new RectF();
     public ViewTreeObserver E;
@@ -131,11 +131,11 @@ public final class e extends View implements ViewTreeObserver.OnPreDrawListener,
             long j15 = j13;
             ViewGroup viewGroup = this.f;
             RectF rectF3 = H;
-            if (j.c(childAt, viewGroup, rectF3)) {
-                if (childAt instanceof u1) {
-                    messageObject = ((u1) childAt).getMessageObject();
-                } else if (childAt instanceof w0) {
-                    messageObject = ((w0) childAt).getMessageObject();
+            if (k.c(childAt, viewGroup, rectF3)) {
+                if (childAt instanceof t1) {
+                    messageObject = ((t1) childAt).getMessageObject();
+                } else if (childAt instanceof v0) {
+                    messageObject = ((v0) childAt).getMessageObject();
                 }
                 if (messageObject != null) {
                     long dialogId = messageObject.getDialogId();
@@ -355,7 +355,7 @@ public final class e extends View implements ViewTreeObserver.OnPreDrawListener,
                 this.G.setTextSize(AndroidUtilities.dp(10.0f));
             }
             super.onDraw(canvas);
-            Paint paint = h6.Ol;
+            Paint paint = k6.Pl;
             RectF rectF = this.c;
             canvas.drawRect(rectF, paint);
             LongSparseArray longSparseArray = this.w;
@@ -363,10 +363,10 @@ public final class e extends View implements ViewTreeObserver.OnPreDrawListener,
             for (int i10 = 0; i10 < size; i10++) {
                 d dVar = (d) longSparseArray.valueAt(i10);
                 RectF rectF2 = dVar.c;
-                canvas.drawRect(rectF2, h6.Pl);
+                canvas.drawRect(rectF2, k6.Ql);
                 canvas.save();
                 canvas.translate(rectF2.left, r.a(r.a(rectF2.centerY() - AndroidUtilities.dp(20.0f), rectF.top - AndroidUtilities.dp(40.0f), rectF.bottom), rectF2.top, rectF2.bottom - AndroidUtilities.dp(40.0f)));
-                canvas.drawRect(0.0f, 0.0f, rectF2.width(), AndroidUtilities.dp(40.0f), h6.Nl);
+                canvas.drawRect(0.0f, 0.0f, rectF2.width(), AndroidUtilities.dp(40.0f), k6.Ol);
                 canvas.translate(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(16.0f));
                 canvas.save();
                 canvas.drawText("time_in_view_ms: " + dVar.g, 0.0f, 0.0f, this.G);

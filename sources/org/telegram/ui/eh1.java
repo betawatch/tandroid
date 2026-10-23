@@ -1,11 +1,29 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+import org.telegram.messenger.AndroidUtilities;
+import org.webrtc.RendererCommon;
+
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class eh1 extends org.telegram.ui.Components.voip.t2 {
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchSetPressed(boolean z10) {
-        super.dispatchSetPressed(z10);
-        setPressedBtn(z10);
+public final class eh1 implements RendererCommon.RendererEvents {
+    public final /* synthetic */ oh1 a;
+
+    public eh1(oh1 oh1Var) {
+        this.a = oh1Var;
+    }
+
+    @Override // org.webrtc.RendererCommon.RendererEvents
+    public final void onFirstFrameRendered() {
+        oh1 oh1Var = this.a;
+        com.google.android.gms.internal.cast.p pVar = oh1Var.l1;
+        if (pVar != null) {
+            pVar.run();
+            oh1Var.l1 = null;
+        }
+        AndroidUtilities.runOnUIThread(new my0(this, 24));
+    }
+
+    @Override // org.webrtc.RendererCommon.RendererEvents
+    public final void onFrameResolutionChanged(int i10, int i11, int i12) {
     }
 }

@@ -3,12 +3,12 @@ package di;
 import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
 import org.telegram.ui.Cells.t7;
-import org.telegram.ui.Components.c71;
-import org.telegram.ui.Components.fw0;
+import org.telegram.ui.Components.iw0;
+import org.telegram.ui.Components.j71;
 import org.telegram.ui.Components.wz;
 import s4.y0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class h extends wz {
     public final /* synthetic */ int X = 0;
@@ -16,7 +16,7 @@ public final class h extends wz {
 
     public h() {
         super(100, false);
-        this.Y = new fw0();
+        this.Y = new iw0();
     }
 
     @Override // s4.n0
@@ -30,28 +30,28 @@ public final class h extends wz {
     }
 
     @Override // org.telegram.ui.Components.wz
-    public fw0 D1(int i10) {
+    public iw0 D1(int i10) {
         switch (this.X) {
             case 0:
-                fw0 fw0Var = (fw0) this.Y;
-                fw0Var.b = 100.0f;
-                fw0Var.a = 100.0f;
-                return fw0Var;
+                iw0 iw0Var = (iw0) this.Y;
+                iw0Var.b = 100.0f;
+                iw0Var.a = 100.0f;
+                return iw0Var;
             default:
                 return super.D1(i10);
         }
     }
 
     @Override // s4.s, s4.n0
-    public void U(qf.e eVar, y0 y0Var, View view, s0.c cVar) {
+    public void U(qf.e eVar, y0 y0Var, View view, s0.d dVar) {
         switch (this.X) {
             case 0:
-                super.U(eVar, y0Var, view, cVar);
-                AccessibilityNodeInfo accessibilityNodeInfo = cVar.a;
+                super.U(eVar, y0Var, view, dVar);
+                AccessibilityNodeInfo accessibilityNodeInfo = dVar.a;
                 AccessibilityNodeInfo.CollectionItemInfo collectionItemInfo = accessibilityNodeInfo.getCollectionItemInfo();
-                n5.c cVar2 = collectionItemInfo != null ? new n5.c(collectionItemInfo) : null;
-                if (cVar2 != null) {
-                    Object obj = cVar2.a;
+                n5.c cVar = collectionItemInfo != null ? new n5.c(collectionItemInfo) : null;
+                if (cVar != null) {
+                    Object obj = cVar.a;
                     if (((AccessibilityNodeInfo.CollectionItemInfo) obj).isHeading()) {
                         accessibilityNodeInfo.setCollectionItemInfo(AccessibilityNodeInfo.CollectionItemInfo.obtain(((AccessibilityNodeInfo.CollectionItemInfo) obj).getRowIndex(), ((AccessibilityNodeInfo.CollectionItemInfo) obj).getRowSpan(), ((AccessibilityNodeInfo.CollectionItemInfo) obj).getColumnIndex(), ((AccessibilityNodeInfo.CollectionItemInfo) obj).getColumnSpan(), false));
                         break;
@@ -59,7 +59,7 @@ public final class h extends wz {
                 }
                 break;
             default:
-                super.U(eVar, y0Var, view, cVar);
+                super.U(eVar, y0Var, view, dVar);
                 break;
         }
     }
@@ -68,7 +68,7 @@ public final class h extends wz {
     public int W0(y0 y0Var) {
         switch (this.X) {
             case 1:
-                if (!((c71) this.Y).Y2) {
+                if (!((j71) this.Y).b3) {
                     break;
                 } else {
                     break;
@@ -91,8 +91,8 @@ public final class h extends wz {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h(c71 c71Var, int i10) {
+    public h(j71 j71Var, int i10) {
         super(i10, false);
-        this.Y = c71Var;
+        this.Y = j71Var;
     }
 }

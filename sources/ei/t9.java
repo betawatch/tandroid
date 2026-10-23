@@ -17,7 +17,7 @@ import org.telegram.messenger.camera.CameraController;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t9 implements Runnable {
     public final /* synthetic */ int a;
@@ -173,7 +173,7 @@ public final /* synthetic */ class t9 implements Runnable {
                     ai.v3 v3Var = new ai.v3(vbVar, j15, 8);
                     mb mbVar = vbVar.x;
                     if (mbVar != null) {
-                        mbVar.c(j15, v3Var);
+                        mbVar.b(j15, v3Var);
                     } else {
                         v3Var.run();
                     }
@@ -196,8 +196,8 @@ public final /* synthetic */ class t9 implements Runnable {
                     if (xaVar != null && xaVar.R0 != null) {
                         while (r9 < vbVar.v1.R0.getChildCount()) {
                             View childAt = vbVar.v1.R0.getChildAt(r9);
-                            if (childAt instanceof rg.e1) {
-                                ((rg.e1) childAt).setupTheme(vbVar.K1);
+                            if (childAt instanceof rg.f1) {
+                                ((rg.f1) childAt).setupTheme(vbVar.K1);
                             }
                             r9++;
                         }
@@ -312,9 +312,9 @@ public final /* synthetic */ class t9 implements Runnable {
                                 vbVar.k0(0, false, true);
                                 xa xaVar2 = vbVar.v1;
                                 if (xaVar2 != null) {
-                                    xaVar2.Q0(2);
+                                    xaVar2.P0(2);
                                     xaVar2.l2 = true;
-                                    xaVar2.n0(true);
+                                    xaVar2.m0(true);
                                     vbVar.v1.M0 = true;
                                     break;
                                 }
@@ -325,7 +325,7 @@ public final /* synthetic */ class t9 implements Runnable {
                                 gcVar.G = true;
                                 zb zbVar = gcVar.a;
                                 if (zbVar != null) {
-                                    zbVar.D(true);
+                                    zbVar.t(true);
                                     break;
                                 }
                             }
@@ -346,7 +346,7 @@ public final /* synthetic */ class t9 implements Runnable {
             case 19:
                 ub ubVar2 = vbVar.n;
                 ci.b bVar = vbVar.a;
-                new xc(ubVar2, bVar).Q(R.raw.voip_invite, 36, AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.StoryPremiumFormatting), org.telegram.ui.ActionBar.h6.gc, 0, new t9(vbVar, 27), bVar)).k(true);
+                new xc(ubVar2, bVar).Q(R.raw.voip_invite, 36, AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.StoryPremiumFormatting), org.telegram.ui.ActionBar.k6.gc, 0, new t9(vbVar, 27), bVar)).k(true);
                 break;
             case 20:
                 r9 r9Var = vbVar.q0;

@@ -16,7 +16,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class l extends o6.a {
     public static final androidx.biometric.e e;
@@ -72,7 +72,7 @@ public final class l extends o6.a {
         Integer num = (Integer) ((HashMap) e.d).get(str);
         int intValue = num != null ? num.intValue() : 0;
         if (intValue != i10 && intValue != 0) {
-            throw new IllegalArgumentException(k3.k("Value for ", str, " must be a ", d[i10]));
+            throw new IllegalArgumentException(k3.j("Value for ", str, " must be a ", d[i10]));
         }
     }
 

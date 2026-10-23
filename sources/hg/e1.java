@@ -1,12 +1,12 @@
 package hg;
 
-import ai.sb;
+import ai.tb;
 import java.util.ArrayList;
 import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class e1 implements Runnable {
     public final /* synthetic */ TLRPC.Chat a;
@@ -49,6 +49,6 @@ public final class e1 implements Runnable {
         tL_channels_getParticipants.filter = tL_channelParticipantsMentions;
         int i11 = j1Var.i0 + 1;
         j1Var.i0 = i11;
-        j1Var.j0 = ConnectionsManager.getInstance(j1Var.f).sendRequest(tL_channels_getParticipants, new sb(this, i11, this.d, this.e, this.f, 3));
+        j1Var.j0 = ConnectionsManager.getInstance(j1Var.f).sendRequest(tL_channels_getParticipants, new tb(this, i11, this.d, this.e, this.f, 3));
     }
 }

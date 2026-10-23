@@ -4,7 +4,7 @@ import android.view.KeyEvent;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class y4 implements org.telegram.ui.ActionBar.k1, Utilities.Callback3Return {
     public final /* synthetic */ f6 a;
@@ -14,7 +14,7 @@ public final /* synthetic */ class y4 implements org.telegram.ui.ActionBar.k1, U
     }
 
     @Override // org.telegram.ui.ActionBar.k1
-    public void n(KeyEvent keyEvent) {
+    public void j(KeyEvent keyEvent) {
         org.telegram.ui.ActionBar.m1 m1Var;
         f6 f6Var = this.a;
         f6Var.getClass();
@@ -27,11 +27,11 @@ public final /* synthetic */ class y4 implements org.telegram.ui.ActionBar.k1, U
     public Object run(Object obj, Object obj2, Object obj3) {
         f6 f6Var = this.a;
         f6Var.l2 = true;
-        s5 m0 = f6Var.m0(obj, (TLRPC.Document) obj2);
+        s5 l02 = f6Var.l0(obj, (TLRPC.Document) obj2);
         if (((Boolean) obj3).booleanValue()) {
-            m0.setScale(1.5f);
+            l02.setScale(1.5f);
         }
-        f6Var.d0(m0);
+        f6Var.c0(l02);
         return Boolean.TRUE;
     }
 }

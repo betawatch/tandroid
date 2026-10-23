@@ -1,26 +1,26 @@
 package ah;
 
 import android.widget.FrameLayout;
-import ci.aa;
-import ci.f6;
-import ci.j4;
-import ci.r3;
-import ci.r9;
-import ci.u5;
+import ci.e6;
+import ci.i4;
+import ci.q3;
+import ci.q9;
+import ci.t5;
+import ci.z9;
 import ei.vb;
 import gi.e4;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.f3;
-import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.h3;
+import org.telegram.ui.ActionBar.o2;
 import org.telegram.ui.Components.ob;
 import org.telegram.ui.Components.om;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.qy0;
+import org.telegram.ui.Components.ty0;
 import org.telegram.ui.Components.ub;
 import org.telegram.ui.Components.y7;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class m0 implements ob {
     public final /* synthetic */ int a;
@@ -40,16 +40,16 @@ public final class m0 implements ob {
 
     @Override // org.telegram.ui.Components.ob
     public final void b(qc qcVar) {
-        j4 j4Var;
-        d6 d6Var;
+        i4 i4Var;
+        g6 g6Var;
         switch (this.a) {
             case 0:
                 break;
             case 1:
-                if (qcVar.a == 2 && (j4Var = ((r3) this.b).x.Q1) != null) {
-                    aa aaVar = ((r9) j4Var).d;
-                    aaVar.Y0 = true;
-                    aaVar.P();
+                if (qcVar.a == 2 && (i4Var = ((q3) this.b).x.Q1) != null) {
+                    z9 z9Var = ((q9) i4Var).d;
+                    z9Var.Y0 = true;
+                    z9Var.P();
                     break;
                 }
                 break;
@@ -67,9 +67,9 @@ public final class m0 implements ob {
                 ub ubVar = qcVar.e;
                 yh.i0 i0Var = (yh.i0) this.b;
                 dh.d c10 = i0Var.e.c(ubVar, null, true);
-                d6Var = ((f3) i0Var).resourcesProvider;
-                eh.e eVar = new eh.e(d6Var);
-                eVar.e = new ci.i1(20);
+                g6Var = ((h3) i0Var).resourcesProvider;
+                eh.e eVar = new eh.e(g6Var);
+                eVar.e = new c3.m(22);
                 float dpf2 = AndroidUtilities.dpf2(0.5f);
                 float dpf22 = AndroidUtilities.dpf2(0.5f);
                 eVar.f = dpf2;
@@ -88,13 +88,13 @@ public final class m0 implements ob {
 
     @Override // org.telegram.ui.Components.ob
     public final void d(qc qcVar) {
-        j4 j4Var;
+        i4 i4Var;
         switch (this.a) {
             case 1:
-                if (qcVar.a == 2 && (j4Var = ((r3) this.b).x.Q1) != null) {
-                    aa aaVar = ((r9) j4Var).d;
-                    aaVar.Y0 = false;
-                    aaVar.P();
+                if (qcVar.a == 2 && (i4Var = ((q3) this.b).x.Q1) != null) {
+                    z9 z9Var = ((q9) i4Var).d;
+                    z9Var.Y0 = false;
+                    z9Var.P();
                     break;
                 }
                 break;
@@ -116,12 +116,12 @@ public final class m0 implements ob {
             case 0:
                 return (int) ((t0) ((v) this.b).c).u;
             case 1:
-                if (((r3) this.b).x.x2) {
+                if (((q3) this.b).x.x2) {
                     return 0;
                 }
                 return AndroidUtilities.dp(64.0f);
             case 2:
-                return ((u5) this.b).r.getPaddingBottom();
+                return ((t5) this.b).r.getPaddingBottom();
             case 3:
                 return 0;
             case 4:
@@ -129,9 +129,9 @@ public final class m0 implements ob {
                 dp = AndroidUtilities.dp(12.0f);
                 break;
             case 5:
-                return ((y7) this.b).e.E.getHeight();
+                return ((y7) this.b).e.y.getHeight();
             case 6:
-                return ((n2) this.b).getBottomInset();
+                return ((o2) this.b).getBottomInset();
             case 7:
                 ob obVar = (ob) this.b;
                 if (obVar == null) {
@@ -143,17 +143,17 @@ public final class m0 implements ob {
                 dp = ((om) this.b).c.b.getBottomInset();
                 break;
             case 9:
-                FrameLayout frameLayout = ((qy0) this.b).w;
+                FrameLayout frameLayout = ((ty0) this.b).w;
                 if (frameLayout != null) {
                     return frameLayout.getHeight();
                 }
                 return 0;
             case 10:
-                org.telegram.ui.web.a1 a1Var = (org.telegram.ui.web.a1) this.b;
-                if (!(a1Var.getParent() instanceof e4)) {
+                org.telegram.ui.web.b1 b1Var = (org.telegram.ui.web.b1) this.b;
+                if (!(b1Var.getParent() instanceof e4)) {
                     return 0;
                 }
-                e4 e4Var = (e4) a1Var.getParent();
+                e4 e4Var = (e4) b1Var.getParent();
                 return (int) ((e4Var.getSwipeOffsetY() + e4Var.getOffsetY()) - e4Var.getTopActionBarOffsetY());
             default:
                 return 0;
@@ -187,7 +187,7 @@ public final class m0 implements ob {
             case 2:
                 return 0;
             case 3:
-                return (int) (((f6) this.b).a + AndroidUtilities.dp(58.0f));
+                return (int) (((e6) this.b).a + AndroidUtilities.dp(58.0f));
             case 4:
                 return 0;
             case 5:

@@ -1,6 +1,6 @@
 package v7;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public abstract class k8 {
     /* JADX WARN: Code restructure failed: missing block: B:23:0x006b, code lost:
@@ -47,14 +47,14 @@ public abstract class k8 {
                 if (!z10) {
                     break;
                 }
-                lVar.v(i11 - 4, false);
+                lVar.u(i11 - 4, false);
                 z11 = false;
             } else {
                 if (m10 == 1836086884) {
                     break;
                 }
                 if (i11 != 0) {
-                    lVar.v(i11, false);
+                    lVar.u(i11, false);
                 }
             }
         }

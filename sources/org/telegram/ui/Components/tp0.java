@@ -1,158 +1,43 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
+import android.content.Context;
+import android.view.MotionEvent;
 import android.view.View;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class tp0 extends View {
-    public static final ew0 v;
-    public ImageReceiver a;
-    public h9 b;
-    public org.telegram.ui.Cells.z c;
-    public Paint d;
-    public Paint e;
-    public o1.k f;
-    public ValueAnimator h;
-    public float n;
-    public boolean r;
-    public boolean s;
+public final class tp0 extends FrameLayout {
+    public final /* synthetic */ ef a;
 
-    static {
-        ew0 ew0Var = new ew0(new ug0(5), new ug0(6));
-        ew0Var.c = 100.0f;
-        v = ew0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public tp0(ef efVar, Context context) {
+        super(context);
+        this.a = efVar;
     }
 
-    public final void a(boolean z10, boolean z11, float f7) {
-        if (!z10) {
-            this.n = f7;
-            invalidate();
-            return;
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        ef efVar = this.a;
+        View contentView = efVar.getContentView();
+        int[] iArr = new int[2];
+        contentView.getLocationInWindow(iArr);
+        iArr[0] = iArr[0] + efVar.E;
+        iArr[1] = iArr[1] + efVar.F;
+        getLocationInWindow(new int[2]);
+        if (motionEvent.getAction() != 0 || motionEvent.getX() > iArr[0]) {
+            if (motionEvent.getX() < contentView.getWidth() + iArr[0] && motionEvent.getY() > iArr[1]) {
+                if (motionEvent.getY() < contentView.getHeight() + iArr[1]) {
+                    motionEvent.offsetLocation(r2[0] - iArr[0], (AndroidUtilities.statusBarHeight + r2[1]) - iArr[1]);
+                    return contentView.dispatchTouchEvent(motionEvent);
+                }
+            }
         }
-        o1.k kVar = this.f;
-        if (kVar != null) {
-            kVar.c();
+        if (!efVar.A && !efVar.D) {
+            efVar.D = true;
+            efVar.l(new o1.k[0]);
         }
-        ValueAnimator valueAnimator = this.h;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-        }
-        this.s = false;
-        this.r = false;
-        if (!z11) {
-            ValueAnimator duration = ValueAnimator.ofFloat(this.n, f7).setDuration(200L);
-            this.h = duration;
-            duration.setInterpolator(bs.f);
-            this.h.addUpdateListener(new b80(this, 17));
-            this.h.addListener(new c80(this, 17));
-            this.h.start();
-            return;
-        }
-        float f10 = this.n * 100.0f;
-        o1.k kVar2 = new o1.k(this, v);
-        kVar2.b = f10;
-        kVar2.c = true;
-        this.f = kVar2;
-        boolean z12 = f7 < this.n;
-        float f11 = f7 * 100.0f;
-        this.s = z12;
-        this.r = !z12;
-        o1.l lVar = new o1.l(f11);
-        lVar.i = f11;
-        lVar.b(450.0f);
-        lVar.a(1.0f);
-        kVar2.u = lVar;
-        this.f.b(new nh(this, z12, f10, f11));
-        this.f.a(new hb(this, 4));
-        this.f.h();
-    }
-
-    @Override // android.view.View
-    public final void drawableStateChanged() {
-        super.drawableStateChanged();
-        this.c.setState(getDrawableState());
-    }
-
-    public float getProgress() {
-        return this.n;
-    }
-
-    @Override // android.view.View
-    public final void jumpDrawablesToCurrentState() {
-        super.jumpDrawablesToCurrentState();
-        this.c.jumpToCurrentState();
-    }
-
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.a.onAttachedToWindow();
-    }
-
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.a.onDetachedFromWindow();
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        Paint paint = this.d;
-        Paint paint2 = this.e;
-        canvas.save();
-        float f7 = 1.0f;
-        if (this.r) {
-            f7 = 1.0f - this.n;
-        } else if (this.s) {
-            f7 = this.n;
-        }
-        canvas.scale(f7, f7, getWidth() / 2.0f, getHeight() / 2.0f);
-        super.onDraw(canvas);
-        this.a.draw(canvas);
-        int i10 = (int) (this.n * 255.0f);
-        paint.setAlpha(i10);
-        canvas.drawCircle(getWidth() / 2.0f, getHeight() / 2.0f, Math.min(getWidth(), getHeight()) / 2.0f, paint);
-        canvas.save();
-        paint2.setAlpha(i10);
-        float strokeWidth = paint2.getStrokeWidth() + AndroidUtilities.dp(10.0f);
-        canvas.drawLine(strokeWidth, strokeWidth, getWidth() - strokeWidth, getHeight() - strokeWidth, paint2);
-        canvas.drawLine(strokeWidth, getHeight() - strokeWidth, getWidth() - strokeWidth, strokeWidth, paint2);
-        canvas.restore();
-        this.c.setBounds(0, 0, getWidth(), getHeight());
-        this.c.draw(canvas);
-        canvas.restore();
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(getLayoutParams().width, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(getLayoutParams().height, TLObject.FLAG_30));
-        this.a.setImageCoords(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-    }
-
-    public void setAvatar(TLObject tLObject) {
-        h9 h9Var = this.b;
-        setContentDescription(LocaleController.formatString("AccDescrSendAsPeer", R.string.AccDescrSendAsPeer, tLObject instanceof TLRPC.User ? UserObject.getFirstName((TLRPC.User) tLObject) : tLObject instanceof TLRPC.Chat ? ((TLRPC.Chat) tLObject).title : tLObject instanceof TLRPC.ChatInvite ? ((TLRPC.ChatInvite) tLObject).title : ""));
-        h9Var.p(tLObject);
-        this.a.setForUserOrChat(tLObject, h9Var);
-    }
-
-    public void setProgress(float f7) {
-        a(true, f7 != 0.0f, f7);
-    }
-
-    @Override // android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return super.verifyDrawable(drawable) || this.c == drawable;
+        return true;
     }
 }

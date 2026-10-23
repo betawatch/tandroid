@@ -4,7 +4,7 @@ import android.content.Context;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class ni extends oi {
     public int b;
@@ -13,23 +13,23 @@ public final class ni extends oi {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public ni(ti tiVar, Context context) {
         super(context);
-        org.telegram.ui.ActionBar.d6 d6Var;
+        org.telegram.ui.ActionBar.g6 g6Var;
         this.c = tiVar;
         setWillNotDraw(false);
         setFocusable(true);
-        d6Var = ((org.telegram.ui.ActionBar.f3) tiVar).resourcesProvider;
+        g6Var = ((org.telegram.ui.ActionBar.h3) tiVar).resourcesProvider;
         ph.b bVar = new ph.b(context);
-        bVar.d = d6Var;
+        bVar.d = g6Var;
         bVar.Q = true;
         TextView textView = bVar.a;
         textView.setTextSize(1, 11.0f);
         textView.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), 0);
-        bVar.a(false);
+        bVar.b(false);
         bVar.b.setLayoutParams(w7.z5.d(24, 24.0f, 49, 0.0f, 4.0f, 0.0f, 0.0f));
-        bVar.w = org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.cl, d6Var);
-        bVar.s = org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.al, d6Var);
-        bVar.v = org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.bl, d6Var);
-        bVar.f();
+        bVar.w = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.cl, g6Var);
+        bVar.s = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.al, g6Var);
+        bVar.v = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.bl, g6Var);
+        bVar.a();
         this.a = bVar;
         addView(bVar, w7.z5.c(-1.0f, -1));
     }
@@ -48,6 +48,6 @@ public final class ni extends oi {
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        this.a.e(((long) this.b) == this.c.Z0, false);
+        this.a.f(((long) this.b) == this.c.Z0, false);
     }
 }

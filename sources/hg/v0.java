@@ -2,11 +2,11 @@ package hg;
 
 import java.util.ArrayList;
 import org.telegram.messenger.MediaDataController;
-import org.telegram.ui.Components.db0;
+import org.telegram.ui.Components.eb0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class v0 implements MediaDataController.KeywordResultCallback, org.telegram.ui.Cells.e2 {
+public final /* synthetic */ class v0 implements MediaDataController.KeywordResultCallback, org.telegram.ui.Cells.d2 {
     public final /* synthetic */ j1 a;
 
     public /* synthetic */ v0(j1 j1Var) {
@@ -27,8 +27,8 @@ public final /* synthetic */ class v0 implements MediaDataController.KeywordResu
         j1Var.K = null;
         j1Var.P = null;
         j1Var.l();
-        db0 db0Var = j1Var.V;
+        eb0 eb0Var = j1Var.V;
         ArrayList arrayList2 = j1Var.N;
-        db0Var.a((arrayList2 == null || arrayList2.isEmpty()) ? false : true);
+        eb0Var.a((arrayList2 == null || arrayList2.isEmpty()) ? false : true);
     }
 }

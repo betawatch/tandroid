@@ -1,60 +1,30 @@
 package u2;
 
-import java.util.concurrent.atomic.AtomicReference;
-
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public final class t0 implements c3.j0 {
-    public final d1 a;
-    public final d1 b;
-    public final c3.n c = new c3.n();
-    public final AtomicReference d = new AtomicReference(s0.a);
+public final class t0 {
+    public static final t0 a;
+    public static final t0 b;
+    public static final t0 c;
+    public static final /* synthetic */ t0[] d;
 
-    public t0(d1 d1Var) {
-        this.a = d1Var;
-        this.b = d1Var;
+    static {
+        t0 t0Var = new t0("PASS_THROUGH", 0);
+        a = t0Var;
+        t0 t0Var2 = new t0("DISCARD_AFTER_NEXT_SAMPLE_METADATA", 1);
+        b = t0Var2;
+        t0 t0Var3 = new t0("DISCARDING", 2);
+        c = t0Var3;
+        d = new t0[]{t0Var, t0Var2, t0Var3};
     }
 
-    @Override // c3.j0
-    public final int a(b2.o oVar, int i10, boolean z10) {
-        return h().a(oVar, i10, z10);
+    public static t0 valueOf(String str) {
+        return (t0) Enum.valueOf(t0.class, str);
     }
 
-    @Override // c3.j0
-    public final void b(b2.w wVar) {
-        this.a.b(wVar);
-    }
-
-    @Override // c3.j0
-    public final void c(long j10, int i10, int i11, int i12, c3.i0 i0Var) {
-        h().c(j10, i10, i11, i12, i0Var);
-        AtomicReference atomicReference = this.d;
-        if (atomicReference.get() == s0.b) {
-            this.b.G(false);
-            atomicReference.set(s0.c);
-        }
-    }
-
-    @Override // c3.j0
-    public final void d(int i10, e2.x xVar) {
-        h().d(i10, xVar);
-    }
-
-    @Override // c3.j0
-    public final int f(b2.o oVar, int i10, boolean z10) {
-        return h().f(oVar, i10, z10);
-    }
-
-    @Override // c3.j0
-    public final void g(e2.x xVar, int i10, int i11) {
-        h().g(xVar, i10, i11);
-    }
-
-    public final c3.j0 h() {
-        return this.d.get() == s0.c ? this.c : this.b;
-    }
-
-    @Override // c3.j0
-    public final void e(long j10) {
+    public static t0[] values() {
+        return (t0[]) d.clone();
     }
 }

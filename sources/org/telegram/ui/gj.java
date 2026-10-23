@@ -8,7 +8,7 @@ import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class gj implements View.OnTouchListener {
     public View a;
@@ -22,12 +22,12 @@ public final class gj implements View.OnTouchListener {
     public float r;
     public float s;
     public final /* synthetic */ View v;
-    public final /* synthetic */ qn w;
+    public final /* synthetic */ sn w;
 
-    public gj(qn qnVar, ImageView imageView) {
-        this.w = qnVar;
+    public gj(sn snVar, ImageView imageView) {
+        this.w = snVar;
         this.v = imageView;
-        org.telegram.ui.Components.s20 s20Var = new org.telegram.ui.Components.s20((Context) null, new g(this, 24));
+        org.telegram.ui.Components.s20 s20Var = new org.telegram.ui.Components.s20((Context) null, new f(this, 24));
         this.f = s20Var;
         this.h = new int[2];
         s20Var.v = true;

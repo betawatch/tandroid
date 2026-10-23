@@ -8,28 +8,28 @@ import e9.x1;
 import java.util.List;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public final class z implements c3.o {
+public final class z implements c3.q {
     public boolean e;
     public boolean f;
     public boolean g;
     public long h;
     public h3.a i;
-    public c3.q j;
+    public c3.s j;
     public boolean k;
     public final k0 a = new k0(0);
     public final e2.x c = new e2.x(4096);
     public final SparseArray b = new SparseArray();
     public final x d = new x(0);
 
-    @Override // c3.o
-    public final boolean a(c3.p pVar) {
+    @Override // c3.q
+    public final boolean a(c3.r rVar) {
         byte[] bArr = new byte[14];
-        c3.l lVar = (c3.l) pVar;
+        c3.l lVar = (c3.l) rVar;
         lVar.j(bArr, 0, 14, false);
         if (442 == (((bArr[0] & 255) << 24) | ((bArr[1] & 255) << 16) | ((bArr[2] & 255) << 8) | (bArr[3] & 255)) && (bArr[4] & 196) == 68 && (bArr[6] & 4) == 4 && (bArr[8] & 4) == 4 && (bArr[9] & 1) == 1 && (bArr[12] & 3) == 3) {
-            lVar.v(bArr[13] & 7, false);
+            lVar.u(bArr[13] & 7, false);
             lVar.j(bArr, 0, 3, false);
             if (1 == (((bArr[0] & 255) << 16) | ((bArr[1] & 255) << 8) | (bArr[2] & 255))) {
                 return true;
@@ -38,12 +38,12 @@ public final class z implements c3.o {
         return false;
     }
 
-    @Override // c3.o
-    public final void c(c3.q qVar) {
-        this.j = qVar;
+    @Override // c3.q
+    public final void c(c3.s sVar) {
+        this.j = sVar;
     }
 
-    @Override // c3.o
+    @Override // c3.q
     public final void d(long j10, long j11) {
         k0 k0Var = this.a;
         boolean z10 = k0Var.e() == -9223372036854775807L;
@@ -71,21 +71,21 @@ public final class z implements c3.o {
         }
     }
 
-    @Override // c3.o
+    @Override // c3.q
     public final List e() {
         l0 l0Var = n0.b;
         return x1.e;
     }
 
-    @Override // c3.o
-    public final int f(c3.p pVar, c3.s sVar) {
+    @Override // c3.q
+    public final int f(c3.r rVar, c3.u uVar) {
         int i10;
         int i11;
         long j10;
         i iVar;
         long j11;
         this.j.getClass();
-        long length = pVar.getLength();
+        long length = rVar.getLength();
         int i12 = (length > (-1L) ? 1 : (length == (-1L) ? 0 : -1));
         long j12 = -9223372036854775807L;
         x xVar = this.d;
@@ -93,16 +93,16 @@ public final class z implements c3.o {
             k0 k0Var = xVar.b;
             e2.x xVar2 = xVar.c;
             if (!xVar.f) {
-                long length2 = pVar.getLength();
+                long length2 = rVar.getLength();
                 int min = (int) Math.min(20000L, length2);
                 long j13 = length2 - min;
-                if (pVar.getPosition() != j13) {
-                    sVar.a = j13;
+                if (rVar.getPosition() != j13) {
+                    uVar.a = j13;
                     return 1;
                 }
                 xVar2.K(min);
-                pVar.q();
-                pVar.b(0, min, xVar2.a);
+                rVar.q();
+                rVar.a(0, min, xVar2.a);
                 int i13 = xVar2.b;
                 int i14 = xVar2.c - 4;
                 while (true) {
@@ -124,28 +124,28 @@ public final class z implements c3.o {
                 return 0;
             }
             if (xVar.h == -9223372036854775807L) {
-                xVar.a(pVar);
+                xVar.a(rVar);
                 return 0;
             }
             if (xVar.e) {
                 long j14 = xVar.g;
                 if (j14 == -9223372036854775807L) {
-                    xVar.a(pVar);
+                    xVar.a(rVar);
                     return 0;
                 }
                 xVar.i = k0Var.c(xVar.h) - k0Var.b(j14);
-                xVar.a(pVar);
+                xVar.a(rVar);
                 return 0;
             }
-            int min2 = (int) Math.min(20000L, pVar.getLength());
+            int min2 = (int) Math.min(20000L, rVar.getLength());
             long j15 = 0;
-            if (pVar.getPosition() != j15) {
-                sVar.a = j15;
+            if (rVar.getPosition() != j15) {
+                uVar.a = j15;
                 return 1;
             }
             xVar2.K(min2);
-            pVar.q();
-            pVar.b(0, min2, xVar2.a);
+            rVar.q();
+            rVar.a(0, min2, xVar2.a);
             int i15 = xVar2.b;
             int i16 = xVar2.c;
             while (true) {
@@ -182,20 +182,20 @@ public final class z implements c3.o {
             } else {
                 i10 = i12;
                 i11 = 4;
-                this.j.g0(new c3.t(j16));
+                this.j.g0(new c3.v(j16));
             }
         }
         h3.a aVar2 = this.i;
         if (aVar2 != null && aVar2.c != null) {
-            return aVar2.b(pVar, sVar);
+            return aVar2.b(rVar, uVar);
         }
-        pVar.q();
-        long k10 = i10 != 0 ? length - pVar.k() : -1L;
+        rVar.q();
+        long k10 = i10 != 0 ? length - rVar.k() : -1L;
         if (k10 != -1 && k10 < 4) {
             return -1;
         }
         e2.x xVar3 = this.c;
-        if (!pVar.j(xVar3.a, 0, i11, true)) {
+        if (!rVar.j(xVar3.a, 0, i11, true)) {
             return -1;
         }
         xVar3.N(0);
@@ -204,19 +204,19 @@ public final class z implements c3.o {
             return -1;
         }
         if (m10 == 442) {
-            pVar.b(0, 10, xVar3.a);
+            rVar.a(0, 10, xVar3.a);
             xVar3.N(9);
-            pVar.r((xVar3.A() & 7) + 14);
+            rVar.r((xVar3.A() & 7) + 14);
             return 0;
         }
         if (m10 == 443) {
-            pVar.b(0, 2, xVar3.a);
+            rVar.a(0, 2, xVar3.a);
             xVar3.N(0);
-            pVar.r(xVar3.H() + 6);
+            rVar.r(xVar3.H() + 6);
             return 0;
         }
         if (((m10 & (-256)) >> 8) != 1) {
-            pVar.r(1);
+            rVar.r(1);
             return 0;
         }
         int i17 = m10 & 255;
@@ -227,15 +227,15 @@ public final class z implements c3.o {
                 if (i17 == 189) {
                     iVar = new b("video/mp2p");
                     this.f = true;
-                    this.h = pVar.getPosition();
+                    this.h = rVar.getPosition();
                 } else if ((m10 & 224) == 192) {
                     iVar = new u(null, 0, "video/mp2p");
                     this.f = true;
-                    this.h = pVar.getPosition();
+                    this.h = rVar.getPosition();
                 } else if ((m10 & 240) == 224) {
                     iVar = new k(null, "video/mp2p");
                     this.g = true;
-                    this.h = pVar.getPosition();
+                    this.h = rVar.getPosition();
                 } else {
                     iVar = null;
                 }
@@ -245,20 +245,20 @@ public final class z implements c3.o {
                     sparseArray.put(i17, yVar);
                 }
             }
-            if (pVar.getPosition() > ((this.f && this.g) ? this.h + 8192 : 1048576L)) {
+            if (rVar.getPosition() > ((this.f && this.g) ? this.h + 8192 : 1048576L)) {
                 this.e = true;
-                this.j.H();
+                this.j.C();
             }
         }
-        pVar.b(0, 2, xVar3.a);
+        rVar.a(0, 2, xVar3.a);
         xVar3.N(0);
         int H = xVar3.H() + 6;
         if (yVar == null) {
-            pVar.r(H);
+            rVar.r(H);
             return 0;
         }
         xVar3.K(H);
-        pVar.readFully(xVar3.a, 0, H);
+        rVar.readFully(xVar3.a, 0, H);
         xVar3.N(6);
         i iVar2 = yVar.a;
         a4.g gVar = yVar.c;
@@ -298,12 +298,12 @@ public final class z implements c3.o {
         return 0;
     }
 
-    @Override // c3.o
-    public final c3.o b() {
+    @Override // c3.q
+    public final c3.q b() {
         return this;
     }
 
-    @Override // c3.o
+    @Override // c3.q
     public final void release() {
     }
 }

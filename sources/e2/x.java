@@ -1,6 +1,7 @@
 package e2;
 
 import e9.y0;
+import i2.o1;
 import java.nio.ByteOrder;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
@@ -10,7 +11,7 @@ import v7.b8;
 import v7.f8;
 import v7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class x {
     public static final char[] d = {'\r', '\n'};
@@ -92,7 +93,7 @@ public final class x {
         if (m10 >= 0) {
             return m10;
         }
-        throw new IllegalStateException(i2.e.j(m10, "Top bit not zero: "));
+        throw new IllegalStateException(o1.k(m10, "Top bit not zero: "));
     }
 
     public final int F() {
@@ -231,9 +232,9 @@ public final class x {
         if (!g.get() || a() >= i10) {
             return;
         }
-        StringBuilder l4 = i2.e.l(i10, "bytesNeeded= ", ", bytesLeft=");
-        l4.append(a());
-        throw new IndexOutOfBoundsException(l4.toString());
+        StringBuilder n10 = o1.n(i10, "bytesNeeded= ", ", bytesLeft=");
+        n10.append(a());
+        throw new IndexOutOfBoundsException(n10.toString());
     }
 
     public final char g(int i10, ByteOrder byteOrder) {
@@ -479,7 +480,7 @@ public final class x {
         if (o10 >= 0) {
             return o10;
         }
-        throw new IllegalStateException(i2.e.j(o10, "Top bit not zero: "));
+        throw new IllegalStateException(o1.k(o10, "Top bit not zero: "));
     }
 
     public final int t() {

@@ -12,18 +12,20 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import java.util.HashSet;
 import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class z20 extends FrameLayout implements org.telegram.ui.Components.voip.n0 {
+public final class z20 extends FrameLayout implements org.telegram.ui.ActionBar.b6, org.telegram.ui.Components.voip.n0 {
     public final TextPaint E;
     public final org.telegram.ui.jd F;
     public float G;
@@ -55,7 +57,7 @@ public final class z20 extends FrameLayout implements org.telegram.ui.Components
     public z20(a30 a30Var, Context context) {
         super(context);
         this.P = a30Var;
-        h9 h9Var = new h9((org.telegram.ui.ActionBar.d6) null);
+        h9 h9Var = new h9((org.telegram.ui.ActionBar.g6) null);
         this.a = h9Var;
         Paint paint = new Paint(1);
         this.n = paint;
@@ -71,8 +73,8 @@ public final class z20 extends FrameLayout implements org.telegram.ui.Components
         w9Var.setRoundRadius(AndroidUtilities.dp(20.0f));
         addView(w9Var, w7.z5.d(40, 40.0f, 1, 0.0f, 9.0f, 0.0f, 9.0f));
         setWillNotDraw(false);
-        paint.setColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.tg, false));
-        paint2.setColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.qg, false));
+        paint.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.tg, false));
+        paint2.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.qg, false));
         paint2.setStyle(Paint.Style.STROKE);
         paint2.setStrokeWidth(AndroidUtilities.dp(2.0f));
         textPaint.setColor(-1);
@@ -117,7 +119,7 @@ public final class z20 extends FrameLayout implements org.telegram.ui.Components
     public final void c(Canvas canvas) {
         if (this.w != null) {
             canvas.save();
-            int A = org.telegram.messenger.nk.A(24.0f, getMeasuredWidth() - this.y, 2);
+            int A = org.telegram.messenger.sl.A(24.0f, getMeasuredWidth() - this.y, 2);
             int alpha = (int) (getAlpha() * this.s * 255.0f);
             TextPaint textPaint = this.E;
             textPaint.setAlpha(alpha);
@@ -283,17 +285,17 @@ public final class z20 extends FrameLayout implements org.telegram.ui.Components
         o0Var.c(z10);
         org.telegram.ui.Components.voip.o0 o0Var2 = this.I;
         if (o0Var2.k) {
-            x04 = org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.sg, false);
+            x04 = org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.sg, false);
         } else {
             if (!o0Var2.e) {
-                x02 = org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.ng, false);
-                x03 = org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.pg, false);
+                x02 = org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.ng, false);
+                x03 = org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.pg, false);
                 if (!z10) {
                     int i10 = this.L;
                     int i11 = this.M;
                     ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
                     this.N = ofFloat;
-                    ofFloat.addUpdateListener(new ai.fe(this, i10, x02, i11, x03, 1));
+                    ofFloat.addUpdateListener(new ai.ge(this, i10, x02, i11, x03, 1));
                     this.N.addListener(new gi.s2(this, x02, x03, 1));
                     this.N.start();
                     return;
@@ -312,7 +314,7 @@ public final class z20 extends FrameLayout implements org.telegram.ui.Components
                 invalidate();
                 return;
             }
-            x04 = org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.qg, false);
+            x04 = org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.qg, false);
         }
         x02 = x04;
         x03 = x02;
@@ -364,13 +366,13 @@ public final class z20 extends FrameLayout implements org.telegram.ui.Components
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         a30 a30Var = this.P;
-        org.telegram.ui.q50 q50Var = a30Var.r;
+        org.telegram.ui.u50 u50Var = a30Var.r;
         if (a30Var.s && this.f != null) {
             b(true);
         }
         this.K = true;
-        if (q50Var.t2.size() > 0) {
-            this.I = (org.telegram.ui.Components.voip.o0) i2.e.A(1, q50Var.t2);
+        if (u50Var.t2.size() > 0) {
+            this.I = (org.telegram.ui.Components.voip.o0) i2.o1.A(1, u50Var.t2);
         } else {
             this.I = new org.telegram.ui.Components.voip.o0();
         }
@@ -468,5 +470,19 @@ public final class z20 extends FrameLayout implements org.telegram.ui.Components
 
     public void setRenderer(org.telegram.ui.Components.voip.t tVar) {
         this.v = tVar;
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void updateColors() {
+        try {
+            this.n.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.tg, false));
+            invalidate();
+        } catch (Exception e) {
+            FileLog.e(e);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

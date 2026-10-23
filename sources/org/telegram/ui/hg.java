@@ -1,41 +1,61 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
-
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class hg implements DialogInterface.OnCancelListener {
+public final /* synthetic */ class hg implements q0.a {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ sn b;
 
-    public /* synthetic */ hg(Object obj, int i10) {
+    public /* synthetic */ hg(sn snVar, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.b = snVar;
     }
 
-    @Override // android.content.DialogInterface.OnCancelListener
-    public final void onCancel(DialogInterface dialogInterface) {
+    @Override // q0.a
+    public final void accept(Object obj) {
         switch (this.a) {
             case 0:
-                qn qnVar = (qn) this.b;
-                qnVar.b9 = true;
-                qnVar.Z8 = 0;
-                qnVar.qb = 0;
-                qnVar.N4 = 0;
-                qnVar.w9();
-                qnVar.Sb(false);
-                break;
+                Integer num = (Integer) obj;
+                sn snVar = this.b;
+                snVar.getClass();
+                if (num.intValue() != 0) {
+                    snVar.Ic(true);
+                    snVar.j(num.intValue(), 0, false, 0, true, 0);
+                    break;
+                } else {
+                    snVar.x1 = 0;
+                    snVar.Ic(true);
+                    snVar.getMessagesController().markReactionsAsRead(snVar.f6, snVar.d());
+                    break;
+                }
             case 1:
-                io ioVar = (io) this.b;
-                ioVar.M0 = false;
-                ioVar.b = null;
-                ioVar.N0 = false;
-                break;
-            case 2:
-                ((ip) this.b).n = null;
-                break;
+                Integer num2 = (Integer) obj;
+                sn snVar2 = this.b;
+                snVar2.getClass();
+                if (num2.intValue() != 0) {
+                    int i10 = snVar2.y1 - 1;
+                    snVar2.y1 = i10;
+                    if (i10 <= 0) {
+                        snVar2.getMessagesController().markPollVotesAsRead(snVar2.f6, snVar2.d());
+                    }
+                    snVar2.Hc(true);
+                    snVar2.j(num2.intValue(), 0, false, 0, true, 0);
+                    break;
+                } else {
+                    snVar2.y1 = 0;
+                    snVar2.Hc(true);
+                    snVar2.getMessagesController().markPollVotesAsRead(snVar2.f6, snVar2.d());
+                    break;
+                }
             default:
-                ((ib0) this.b).b();
+                sn snVar3 = this.b;
+                snVar3.getClass();
+                boolean booleanValue = ((Boolean) obj).booleanValue();
+                snVar3.r7 = booleanValue;
+                if (!booleanValue) {
+                    snVar3.v8();
+                    break;
+                }
                 break;
         }
     }

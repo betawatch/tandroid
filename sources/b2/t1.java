@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import v7.b8;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public class t1 {
     public static final t1 J = new t1(new s1());
@@ -261,7 +261,7 @@ public class t1 {
         s1Var.F = bundle.getBoolean(e0, t1Var.F);
         s1Var.G = bundle.getBoolean(f0, t1Var.G);
         ArrayList parcelableArrayList = bundle.getParcelableArrayList(g0);
-        e9.x1 b10 = parcelableArrayList == null ? e9.x1.e : e2.e.b(new aa.a(24), parcelableArrayList);
+        e9.x1 b10 = parcelableArrayList == null ? e9.x1.e : e2.e.b(new aa.a(26), parcelableArrayList);
         s1Var.H = new HashMap();
         for (int i11 = 0; i11 < b10.d; i11++) {
             q1 q1Var = (q1) b10.get(i11);

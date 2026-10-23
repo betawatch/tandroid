@@ -2,22 +2,19 @@ package si;
 
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class m0 {
     public static final m0 a;
     public static final m0 b;
-    public static final m0 c;
-    public static final /* synthetic */ m0[] d;
+    public static final /* synthetic */ m0[] c;
 
     static {
-        m0 m0Var = new m0("HIGH", 0);
+        m0 m0Var = new m0("FRONT", 0);
         a = m0Var;
-        m0 m0Var2 = new m0("MEDIUM", 1);
+        m0 m0Var2 = new m0("BACK", 1);
         b = m0Var2;
-        m0 m0Var3 = new m0("LOW", 2);
-        c = m0Var3;
-        d = new m0[]{m0Var, m0Var2, m0Var3};
+        c = new m0[]{m0Var, m0Var2};
     }
 
     public static m0 valueOf(String str) {
@@ -25,6 +22,6 @@ public final class m0 {
     }
 
     public static m0[] values() {
-        return (m0[]) d.clone();
+        return (m0[]) c.clone();
     }
 }

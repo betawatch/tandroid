@@ -8,7 +8,6 @@ import b2.a0;
 import b2.p1;
 import b2.q1;
 import b2.r1;
-import b2.t1;
 import b2.w;
 import e2.m0;
 import e9.b0;
@@ -16,7 +15,8 @@ import e9.n0;
 import e9.v1;
 import e9.x1;
 import e9.y;
-import i2.r0;
+import i2.o1;
+import i2.q0;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -26,15 +26,15 @@ import java.util.Map;
 import java.util.RandomAccess;
 import org.telegram.messenger.TranslateController;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.jg0;
-import u2.s1;
+import org.telegram.ui.o70;
+import u2.t1;
 import v7.b8;
 import v7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class n extends s {
-    public static final v1 l = new y(new jg0(18));
+    public static final v1 l = new y(new o70(19));
     public final Object d;
     public final Context e;
     public final oa.d f;
@@ -77,11 +77,11 @@ public final class n extends s {
     public static void d(r rVar, i iVar, o[] oVarArr) {
         int i10 = rVar.a;
         for (int i11 = 0; i11 < i10; i11++) {
-            s1 s1Var = rVar.c[i11];
+            t1 t1Var = rVar.c[i11];
             Map map = (Map) iVar.D0.get(i11);
-            if (map != null && map.containsKey(s1Var)) {
+            if (map != null && map.containsKey(t1Var)) {
                 Map map2 = (Map) iVar.D0.get(i11);
-                if (map2 != null && map2.get(s1Var) != null) {
+                if (map2 != null && map2.get(t1Var) != null) {
                     throw new ClassCastException();
                 }
                 oVarArr[i11] = null;
@@ -100,10 +100,10 @@ public final class n extends s {
 
     public static void f(r rVar, i iVar, o[] oVarArr) {
         int i10 = rVar.a;
-        s1[] s1VarArr = rVar.c;
+        t1[] t1VarArr = rVar.c;
         HashMap hashMap = new HashMap();
         for (int i11 = 0; i11 < i10; i11++) {
-            g(s1VarArr[i11], iVar, hashMap);
+            g(t1VarArr[i11], iVar, hashMap);
         }
         g(rVar.f, iVar, hashMap);
         for (int i12 = 0; i12 < i10; i12++) {
@@ -111,14 +111,14 @@ public final class n extends s {
             if (q1Var != null) {
                 p1 p1Var = q1Var.a;
                 n0 n0Var = q1Var.b;
-                oVarArr[i12] = (n0Var.isEmpty() || s1VarArr[i12].b(p1Var) == -1) ? null : new o(p1Var, b8.f(n0Var));
+                oVarArr[i12] = (n0Var.isEmpty() || t1VarArr[i12].b(p1Var) == -1) ? null : new o(p1Var, b8.f(n0Var));
             }
         }
     }
 
-    public static void g(s1 s1Var, t1 t1Var, HashMap hashMap) {
-        for (int i10 = 0; i10 < s1Var.a; i10++) {
-            q1 q1Var = (q1) t1Var.H.get(s1Var.a(i10));
+    public static void g(t1 t1Var, b2.t1 t1Var2, HashMap hashMap) {
+        for (int i10 = 0; i10 < t1Var.a; i10++) {
+            q1 q1Var = (q1) t1Var2.H.get(t1Var.a(i10));
             if (q1Var != null) {
                 p1 p1Var = q1Var.a;
                 q1 q1Var2 = (q1) hashMap.get(Integer.valueOf(p1Var.c));
@@ -180,16 +180,16 @@ public final class n extends s {
         return true;
     }
 
-    public static o o(s1 s1Var, int[][] iArr, i iVar) {
+    public static o o(t1 t1Var, int[][] iArr, i iVar) {
         if (iVar.w.a != 2) {
             int i10 = 0;
             p1 p1Var = null;
             g gVar = null;
-            for (int i11 = 0; i11 < s1Var.a; i11++) {
-                p1 a2 = s1Var.a(i11);
+            for (int i11 = 0; i11 < t1Var.a; i11++) {
+                p1 a2 = t1Var.a(i11);
                 int[] iArr2 = iArr[i11];
                 for (int i12 = 0; i12 < a2.a; i12++) {
-                    if (i2.e.e(iArr2[i12], iVar.B0)) {
+                    if (o1.e(iArr2[i12], iVar.B0)) {
                         g gVar2 = new g(a2.d[i12], iArr2[i12]);
                         if (gVar != null) {
                             if (b0.a.c(gVar2.b, gVar.b).c(gVar2.a, gVar.a).e() <= 0) {
@@ -217,9 +217,9 @@ public final class n extends s {
         int i13 = 0;
         while (i13 < i12) {
             if (i10 == rVar2.b[i13]) {
-                s1 s1Var = rVar2.c[i13];
-                for (int i14 = 0; i14 < s1Var.a; i14++) {
-                    p1 a2 = s1Var.a(i14);
+                t1 t1Var = rVar2.c[i13];
+                for (int i14 = 0; i14 < t1Var.a; i14++) {
+                    p1 a2 = t1Var.a(i14);
                     x1 b10 = kVar.b(i13, a2, iArr[i13][i14]);
                     int i15 = a2.a;
                     boolean[] zArr = new boolean[i15];
@@ -294,7 +294,7 @@ public final class n extends s {
     }
 
     @Override // x2.s
-    public final void b(t1 t1Var) {
+    public final void b(b2.t1 t1Var) {
         if (t1Var instanceof i) {
             q((i) t1Var);
         }
@@ -313,7 +313,7 @@ public final class n extends s {
 
     public final void k() {
         boolean z10;
-        r0 r0Var;
+        q0 q0Var;
         z2.e eVar;
         synchronized (this.d) {
             try {
@@ -322,10 +322,10 @@ public final class n extends s {
                 throw th2;
             }
         }
-        if (!z10 || (r0Var = this.a) == null) {
+        if (!z10 || (q0Var = this.a) == null) {
             return;
         }
-        r0Var.n.f(10);
+        q0Var.n.f(10);
     }
 
     public final void m() {
@@ -347,9 +347,9 @@ public final class n extends s {
         if (iVar.A0 && this.e == null) {
             e2.a.l("DefaultTrackSelector", "Audio channel count constraints cannot be applied without reference to Context. Build the track selector instance with one of the non-deprecated constructors that take a Context argument.");
         }
-        r0 r0Var = this.a;
-        if (r0Var != null) {
-            r0Var.n.f(10);
+        q0 q0Var = this.a;
+        if (q0Var != null) {
+            q0Var.n.f(10);
         }
     }
 }

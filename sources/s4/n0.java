@@ -17,7 +17,7 @@ import ki.t1;
 import m.g3;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public abstract class n0 {
     public g3 a;
@@ -236,7 +236,7 @@ public abstract class n0 {
         }
         b1 U = RecyclerView.U(view);
         U.a(128);
-        this.b.f.p0(U);
+        this.b.f.T(U);
     }
 
     public void P(View view) {
@@ -253,20 +253,20 @@ public abstract class n0 {
 
     public abstract View R(View view, int i10, qf.e eVar, y0 y0Var);
 
-    public void S(qf.e eVar, y0 y0Var, s0.c cVar) {
-        AccessibilityNodeInfo accessibilityNodeInfo = cVar.a;
+    public void S(qf.e eVar, y0 y0Var, s0.d dVar) {
+        AccessibilityNodeInfo accessibilityNodeInfo = dVar.a;
         if (this.b.canScrollVertically(-1) || this.b.canScrollHorizontally(-1)) {
-            cVar.a(8192);
+            dVar.a(8192);
             accessibilityNodeInfo.setScrollable(true);
         }
         if (this.b.canScrollVertically(1) || this.b.canScrollHorizontally(1)) {
-            cVar.a(4096);
+            dVar.a(4096);
             accessibilityNodeInfo.setScrollable(true);
         }
         accessibilityNodeInfo.setCollectionInfo(AccessibilityNodeInfo.CollectionInfo.obtain(I(eVar, y0Var), u(eVar, y0Var), false, 0));
     }
 
-    public final void T(View view, s0.c cVar) {
+    public final void T(View view, s0.d dVar) {
         b1 U = RecyclerView.U(view);
         if (U == null || U.j()) {
             return;
@@ -276,11 +276,11 @@ public abstract class n0 {
             return;
         }
         RecyclerView recyclerView = this.b;
-        U(recyclerView.b, recyclerView.u0, view, cVar);
+        U(recyclerView.b, recyclerView.u0, view, dVar);
     }
 
-    public void U(qf.e eVar, y0 y0Var, View view, s0.c cVar) {
-        cVar.a.setCollectionItemInfo(AccessibilityNodeInfo.CollectionItemInfo.obtain(e() ? H(view) : 0, 1, d() ? H(view) : 0, 1, false, false));
+    public void U(qf.e eVar, y0 y0Var, View view, s0.d dVar) {
+        dVar.a.setCollectionItemInfo(AccessibilityNodeInfo.CollectionItemInfo.obtain(e() ? H(view) : 0, 1, d() ? H(view) : 0, 1, false, false));
     }
 
     public final void a(View view, int i10, boolean z10) {
@@ -294,7 +294,7 @@ public abstract class n0 {
             }
             i1Var.a |= 1;
         } else {
-            this.b.f.m0(U);
+            this.b.f.S(U);
         }
         o0 o0Var = (o0) view.getLayoutParams();
         if (U.s() || U.k()) {
@@ -303,26 +303,26 @@ public abstract class n0 {
             } else {
                 U.l &= -33;
             }
-            this.a.r(view, i10, view.getLayoutParams(), false);
+            this.a.q(view, i10, view.getLayoutParams(), false);
         } else if (view.getParent() == this.b) {
             g3 g3Var = this.a;
             ad.d dVar = (ad.d) g3Var.c;
             int indexOfChild = ((RecyclerView) ((t1) g3Var.b).b).indexOfChild(view);
-            int A = (indexOfChild == -1 || dVar.D(indexOfChild)) ? -1 : indexOfChild - dVar.A(indexOfChild);
+            int y3 = (indexOfChild == -1 || dVar.E(indexOfChild)) ? -1 : indexOfChild - dVar.y(indexOfChild);
             if (i10 == -1) {
                 i10 = this.a.D();
             }
-            if (A == -1) {
+            if (y3 == -1) {
                 throw new IllegalStateException("Added View has RecyclerView as parent but view is not a real child. Unfiltered index:" + this.b.indexOfChild(view) + this.b.C());
             }
-            if (A != i10) {
+            if (y3 != i10) {
                 n0 n0Var = this.b.x;
-                View q6 = n0Var.q(A);
+                View q6 = n0Var.q(y3);
                 if (q6 == null) {
-                    throw new IllegalArgumentException("Cannot move a child from non-existing index:" + A + n0Var.b.toString());
+                    throw new IllegalArgumentException("Cannot move a child from non-existing index:" + y3 + n0Var.b.toString());
                 }
-                n0Var.q(A);
-                n0Var.a.y(A);
+                n0Var.q(y3);
+                n0Var.a.y(y3);
                 o0 o0Var2 = (o0) q6.getLayoutParams();
                 b1 U2 = RecyclerView.U(q6);
                 if (U2.j()) {
@@ -334,12 +334,12 @@ public abstract class n0 {
                     }
                     i1Var2.a = 1 | i1Var2.a;
                 } else {
-                    n0Var.b.f.m0(U2);
+                    n0Var.b.f.S(U2);
                 }
-                n0Var.a.r(q6, i10, o0Var2, U2.j());
+                n0Var.a.q(q6, i10, o0Var2, U2.j());
             }
         } else {
-            this.a.n(view, i10, false);
+            this.a.o(view, i10, false);
             o0Var.c = true;
             x0 x0Var = this.e;
             if (x0Var != null && x0Var.e) {
@@ -454,7 +454,7 @@ public abstract class n0 {
             if (childAt == null) {
                 return;
             }
-            if (((ad.d) g3Var.c).F(J)) {
+            if (((ad.d) g3Var.c).G(J)) {
                 g3Var.X(childAt);
             }
             t1Var.Y(J);

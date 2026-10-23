@@ -1,25 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import org.telegram.tgnet.TLRPC;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class k41 extends t41 {
-    public final /* synthetic */ Runnable T;
+public final class k41 extends s4.k {
+    public final /* synthetic */ y41 F;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k41(Context context, String str, String str2, CharSequence charSequence, TLRPC.InputPeer inputPeer, int i10, boolean z10, Runnable runnable) {
-        super(context, str, str2, charSequence, inputPeer, i10, z10, null);
-        this.T = runnable;
+    public k41(y41 y41Var) {
+        this.F = y41Var;
     }
 
-    @Override // org.telegram.ui.Components.t41, org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
-    public final void dismiss() {
-        super.dismiss();
-        Runnable runnable = this.T;
-        if (runnable != null) {
-            runnable.run();
-        }
+    @Override // s4.k
+    public final void O() {
+        ViewGroup viewGroup;
+        viewGroup = ((org.telegram.ui.ActionBar.h3) this.F).containerView;
+        viewGroup.invalidate();
+    }
+
+    @Override // s4.k
+    public final void P(s4.b1 b1Var) {
+        ViewGroup viewGroup;
+        viewGroup = ((org.telegram.ui.ActionBar.h3) this.F).containerView;
+        viewGroup.invalidate();
     }
 }

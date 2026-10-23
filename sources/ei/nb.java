@@ -12,10 +12,10 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.dg0;
-import org.telegram.ui.Components.g80;
+import org.telegram.ui.Components.h80;
+import org.telegram.ui.Components.hg0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class nb extends FrameLayout {
     public float a;
@@ -43,7 +43,7 @@ public final class nb extends FrameLayout {
 
     public final void c() {
         if (this.e.J == 0) {
-            setBackground(org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(12.0f), -16777216));
+            setBackground(org.telegram.ui.ActionBar.k6.c0(AndroidUtilities.dp(12.0f), -16777216));
         } else {
             setBackground(null);
         }
@@ -94,9 +94,9 @@ public final class nb extends FrameLayout {
         int i15 = vbVar.T;
         frameLayout3.layout(0, i15, vbVar.S, frameLayout3.getMeasuredHeight() + i15);
         vbVar.l0.layout(0, 0, vbVar.S, vbVar.T);
-        ai.ic icVar = vbVar.t0;
-        if (icVar != null) {
-            icVar.layout(0, 0, measuredWidth, measuredHeight);
+        ai.jc jcVar = vbVar.t0;
+        if (jcVar != null) {
+            jcVar.layout(0, 0, measuredWidth, measuredHeight);
         }
         vbVar.s.c.layout(0, 0, measuredWidth, measuredHeight);
         i iVar = vbVar.c1.M;
@@ -104,9 +104,9 @@ public final class nb extends FrameLayout {
             iVar.layout(0, 0, vbVar.S, vbVar.T);
             vbVar.c1.y();
         }
-        dg0 dg0Var = vbVar.B1;
-        if (dg0Var != null) {
-            dg0Var.layout(0, 0, dg0Var.getMeasuredWidth(), vbVar.B1.getMeasuredHeight());
+        hg0 hg0Var = vbVar.B1;
+        if (hg0Var != null) {
+            hg0Var.layout(0, 0, hg0Var.getMeasuredWidth(), vbVar.B1.getMeasuredHeight());
         }
         xa xaVar = vbVar.v1;
         if (xaVar != null) {
@@ -114,7 +114,7 @@ public final class nb extends FrameLayout {
         }
         for (int i16 = 0; i16 < getChildCount(); i16++) {
             View childAt = getChildAt(i16);
-            if (childAt instanceof g80) {
+            if (childAt instanceof h80) {
                 childAt.layout(0, 0, measuredWidth, measuredHeight);
             }
         }
@@ -134,17 +134,17 @@ public final class nb extends FrameLayout {
         a(vbVar.m0, vbVar.S, vbVar.U);
         a(vbVar.l0, vbVar.S, vbVar.T);
         a(vbVar.s.c, size, size2);
-        ai.ic icVar = vbVar.t0;
-        if (icVar != null) {
-            a(icVar, size, size2);
+        ai.jc jcVar = vbVar.t0;
+        if (jcVar != null) {
+            a(jcVar, size, size2);
         }
         i iVar = vbVar.c1.M;
         if (iVar != null) {
             a(iVar, vbVar.S, vbVar.T);
         }
-        dg0 dg0Var = vbVar.B1;
-        if (dg0Var != null) {
-            a(dg0Var, size, size2);
+        hg0 hg0Var = vbVar.B1;
+        if (hg0Var != null) {
+            a(hg0Var, size, size2);
         }
         xa xaVar = vbVar.v1;
         if (xaVar != null) {
@@ -152,7 +152,7 @@ public final class nb extends FrameLayout {
         }
         for (int i12 = 0; i12 < getChildCount(); i12++) {
             View childAt = getChildAt(i12);
-            if (childAt instanceof g80) {
+            if (childAt instanceof h80) {
                 a(childAt, size, size2);
             }
         }

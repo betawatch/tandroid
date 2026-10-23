@@ -1,25 +1,10 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class f51 extends sg.c1 {
-    public final /* synthetic */ g51 M;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f51(g51 g51Var, Context context) {
-        super(context, 2, null);
-        this.M = g51Var;
-    }
-
-    @Override // android.view.View
-    public final void invalidate() {
-        super.invalidate();
-        g51 g51Var = this.M;
-        if (g51Var.getParent() instanceof View) {
-            ((View) g51Var.getParent()).invalidate();
-        }
-    }
+public final class f51 extends FrameLayout {
+    public TextView a;
 }

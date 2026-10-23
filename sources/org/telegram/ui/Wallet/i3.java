@@ -1,35 +1,30 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.Components.w61;
+import android.view.View;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class i3 implements NotificationCenter.NotificationCenterDelegate {
+public final /* synthetic */ class i3 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ m3 b;
 
-    public /* synthetic */ i3(Object obj, int i10) {
+    public /* synthetic */ i3(m3 m3Var, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.b = m3Var;
     }
 
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object[] objArr) {
-        w61 w61Var;
-        int i12 = this.a;
-        Object obj = this.b;
-        switch (i12) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
             case 0:
-                ((n3) obj).getClass();
-                int i13 = NotificationCenter.didReceiveNewMessages;
-                break;
-            default:
-                r9 r9Var = (r9) obj;
-                if (!r9Var.n && (w61Var = r9Var.a) != null) {
-                    w61Var.W2.N(true);
+                org.telegram.ui.Cells.v0 v0Var = this.b.a;
+                if (v0Var.getParent() instanceof View) {
+                    ((View) v0Var.getParent()).invalidate();
                     break;
                 }
+                break;
+            default:
+                this.b.p();
                 break;
         }
     }

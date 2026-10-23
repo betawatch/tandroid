@@ -1,29 +1,100 @@
 package si;
 
-import android.content.Context;
-import android.view.TextureView;
+import android.os.SystemClock;
 import java.io.File;
-import org.telegram.ui.Components.i60;
-import org.telegram.ui.Components.tv;
+import java.io.IOException;
+import org.telegram.ui.Components.fy0;
+import w7.m7;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final class j0 {
-    public final Context a;
-    public final TextureView b;
-    public File c;
-    public l0 d;
-    public q0 e;
-    public m0 f;
-    public n0 g;
-    public int h;
-    public boolean i = true;
-    public l2.f j;
-    public p0 k;
-    public tv l;
+public final /* synthetic */ class j0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ u0 b;
 
-    public j0(Context context, i60 i60Var) {
-        this.a = context;
-        this.b = i60Var;
+    public /* synthetic */ j0(u0 u0Var, int i10) {
+        this.a = i10;
+        this.b = u0Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                u0 u0Var = this.b;
+                if (u0Var.W == 3) {
+                    u0Var.p();
+                    return;
+                }
+                return;
+            case 1:
+                u0 u0Var2 = this.b;
+                w wVar = u0Var2.Q;
+                File file = u0Var2.R;
+                if (wVar != null) {
+                    try {
+                        synchronized (wVar) {
+                            wVar.v = true;
+                            try {
+                                wVar.g();
+                            } finally {
+                                wVar.v = false;
+                            }
+                        }
+                    } catch (IOException unused) {
+                    }
+                    m7.c(wVar.a);
+                }
+                if (file != null) {
+                    m7.c(file);
+                    return;
+                }
+                return;
+            case 2:
+                u0 u0Var3 = this.b;
+                int i10 = u0Var3.W;
+                if (i10 == 2 || i10 == 6) {
+                    u0Var3.F = SystemClock.elapsedRealtime();
+                    u0Var3.m.b("recording started: retainedDurationMs=" + u0Var3.E);
+                    u0Var3.v(3);
+                    long j10 = u0Var3.o - u0Var3.E;
+                    if (j10 <= 0) {
+                        u0Var3.p();
+                        return;
+                    } else {
+                        u0Var3.i.postDelayed(u0Var3.T, j10);
+                        return;
+                    }
+                }
+                return;
+            default:
+                u0 u0Var4 = this.b;
+                u0Var4.B = false;
+                u0Var4.m.b("recording segment stopped: state=" + o0.w(u0Var4.W) + ", retainedDurationMs=" + u0Var4.E);
+                if (u0Var4.A) {
+                    u0Var4.A = false;
+                    u0Var4.i();
+                    return;
+                }
+                if (u0Var4.y) {
+                    u0Var4.y = false;
+                    u0Var4.j.execute(new i0(u0Var4, u0Var4.Q, u0Var4.z, u0Var4.P));
+                    return;
+                }
+                if (u0Var4.W != 4) {
+                    return;
+                }
+                try {
+                    File d = u0Var4.d("round_video_preview_");
+                    u0Var4.R = d;
+                    u0Var4.J = System.nanoTime();
+                    u0Var4.m.b("preview snapshot started: file=" + d.getName());
+                    u0Var4.j.execute(new fy0(u0Var4, u0Var4.Q, d, 21));
+                    return;
+                } catch (IOException e) {
+                    u0Var4.h(e);
+                    return;
+                }
+        }
     }
 }

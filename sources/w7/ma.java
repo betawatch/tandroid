@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class ma implements ja {
     public final r9.n a;
@@ -55,7 +55,7 @@ public final class ma implements ja {
                 throw new ja.b("No encoder for ".concat(String.valueOf(k7.class)));
             }
             dVar.a(k7Var, fVar);
-            sVar.a(new i5.a(null, byteArrayOutputStream.toByteArray(), i5.d.b, null), new k2.f0(4));
+            sVar.a(new i5.a(null, byteArrayOutputStream.toByteArray(), i5.d.b, null), new k2.f(8));
         } catch (UnsupportedEncodingException e) {
             throw new UnsupportedOperationException("Failed to covert logging to UTF-8 byte array", e);
         }

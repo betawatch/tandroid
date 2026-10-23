@@ -15,9 +15,9 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.vj0;
+import org.telegram.ui.Components.yj0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class o7 implements Runnable {
     public final /* synthetic */ t7 a;
@@ -64,7 +64,7 @@ public final class o7 implements Runnable {
         g7 g7Var2;
         g7 g7Var3;
         boolean z10;
-        n2.e eVar;
+        mi.q qVar;
         boolean z11;
         org.telegram.ui.Components.w9 w9Var;
         float[] D;
@@ -142,7 +142,7 @@ public final class o7 implements Runnable {
                 String str = s7Var2.a;
                 boolean z16 = z13;
                 r7 r7Var18 = s7Var2.j;
-                ci.g3 g3Var = s7Var2.c;
+                ci.f3 f3Var = s7Var2.c;
                 x5 x5Var2 = x5Var;
                 r7 r7Var19 = s7Var2.g;
                 r7 r7Var20 = r7Var12;
@@ -280,7 +280,7 @@ public final class o7 implements Runnable {
                             while (i13 < 14) {
                                 q7 q7Var = new q7();
                                 ArrayList arrayList7 = arrayList6;
-                                float d = org.telegram.ui.Cells.c1.d(random, 0.35f, (float) ((i13 / 14.0f) * 3.141592653589793d * 2.0d));
+                                float d = org.telegram.ui.Cells.b1.d(random, 0.35f, (float) ((i13 / 14.0f) * 3.141592653589793d * 2.0d));
                                 float nextFloat = (random.nextFloat() * AndroidUtilities.dp(180.0f)) + AndroidUtilities.dp(265.0f);
                                 q7Var.a = f25;
                                 q7Var.b = f27;
@@ -288,7 +288,7 @@ public final class o7 implements Runnable {
                                 q7Var.c = ((float) Math.cos(d10)) * nextFloat;
                                 q7Var.d = ((float) Math.sin(d10)) * nextFloat;
                                 q7Var.e = (random.nextFloat() * AndroidUtilities.dp(1.1f)) + AndroidUtilities.dp(0.8f);
-                                q7Var.f = org.telegram.ui.Cells.c1.d(random, 0.35f, 0.7f);
+                                q7Var.f = org.telegram.ui.Cells.b1.d(random, 0.35f, 0.7f);
                                 q7Var.g = random.nextFloat() * 360.0f;
                                 arrayList.add(q7Var);
                                 i13++;
@@ -330,7 +330,7 @@ public final class o7 implements Runnable {
                     arrayList2 = arrayList6;
                     ArrayList arrayList8 = arrayList;
                     if (i12 == 4) {
-                        float c10 = org.telegram.ui.Cells.c1.c(min, s7Var2.b0, s7Var2.W, 1.0f);
+                        float c10 = org.telegram.ui.Cells.b1.c(min, s7Var2.b0, s7Var2.W, 1.0f);
                         s7Var2.W = c10;
                         float f28 = 1.0f - c10;
                         float f29 = 1.0f - (f28 * f28);
@@ -397,18 +397,18 @@ public final class o7 implements Runnable {
                         } else if (s7Var2.H == 0) {
                             s7Var2.R = false;
                         }
-                        if (g3Var.isLottieRunning()) {
+                        if (f3Var.isLottieRunning()) {
                             z13 = z16;
                         } else {
-                            vj0 lottieAnimation = g3Var.getLottieAnimation();
+                            yj0 lottieAnimation = f3Var.getLottieAnimation();
                             int i14 = lottieAnimation == null ? 0 : lottieAnimation.a0;
                             if (i14 >= 2) {
                                 s7Var2.T = true;
                             }
                             boolean z18 = s7Var2.S && !s7Var2.T && s7Var2.H == 2;
                             if (s7Var2.l.b == 0.0f && !z18 && lottieAnimation != null && i14 < 2) {
-                                g3Var.stopAnimation();
-                                g3Var.setAllowStartLottieAnimation(false);
+                                f3Var.stopAnimation();
+                                f3Var.setAllowStartLottieAnimation(false);
                                 s7Var2.S = false;
                             }
                             z13 = true;
@@ -429,7 +429,7 @@ public final class o7 implements Runnable {
                 z16 = true;
                 if (!s7Var2.b()) {
                 }
-                if (g3Var.isLottieRunning()) {
+                if (f3Var.isLottieRunning()) {
                 }
                 z12 = z15;
                 it2 = it3;
@@ -473,7 +473,7 @@ public final class o7 implements Runnable {
                             i15++;
                             g7 g7Var5 = (g7) obj;
                             LinkedHashMap linkedHashMap5 = linkedHashMap4;
-                            s7 s7Var5 = (s7) linkedHashMap5.get(g7Var5.o0.address);
+                            s7 s7Var5 = (s7) linkedHashMap5.get(g7Var5.w0.address);
                             if (s7Var5 != null && s7Var5.H == 0 && t7.b(s7Var5) && g7Var5.isAttachedToWindow() && t7Var.z(g7Var5) && (Z = t7Var.Z(s7Var5)) != null) {
                                 if (s7Var4 != null) {
                                     float f34 = Z.top;
@@ -580,7 +580,7 @@ public final class o7 implements Runnable {
                                             x3Var3.e(true);
                                         }
                                     }
-                                    if (t7Var.i1 && r7Var35.a > 0.5f && (eVar = t7Var.d) != null && eVar.O() && t7Var.C()) {
+                                    if (t7Var.i1 && r7Var35.a > 0.5f && (qVar = t7Var.d) != null && qVar.O() && t7Var.C()) {
                                         if (t7Var.x1 == null) {
                                             t7Var.x1 = t7Var.B(R.string.WalletGiftDragHere, false);
                                         }
@@ -649,7 +649,7 @@ public final class o7 implements Runnable {
                                     ArrayList arrayList14 = arrayList10;
                                     f10 = t7Var.U0;
                                     if (f10 < 1.0f) {
-                                        t7Var.U0 = org.telegram.ui.Cells.c1.c(f7, t7Var.X0 ? 0.45f : 1.2f, f10, 1.0f);
+                                        t7Var.U0 = org.telegram.ui.Cells.b1.c(f7, t7Var.X0 ? 0.45f : 1.2f, f10, 1.0f);
                                         t7Var.e();
                                         z23 = true;
                                     }
@@ -708,9 +708,9 @@ public final class o7 implements Runnable {
                                         Object obj2 = arrayList15.get(i11);
                                         i11++;
                                         g7 g7Var6 = (g7) obj2;
-                                        s7 s7Var7 = (s7) linkedHashMap.get(g7Var6.o0.address);
+                                        s7 s7Var7 = (s7) linkedHashMap.get(g7Var6.w0.address);
                                         if (s7Var7 != null) {
-                                            g7Var6.j(s7Var7.R, true, s7Var7.H == 0 ? 0.0f : 1.0f);
+                                            g7Var6.k(s7Var7.R, true, s7Var7.H == 0 ? 0.0f : 1.0f);
                                         }
                                     }
                                     t7Var.invalidate();

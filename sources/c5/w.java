@@ -19,6 +19,7 @@ import java.util.Locale;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.Components.ng;
+import si.o0;
 import v7.d8;
 import w7.j7;
 import w7.l9;
@@ -29,7 +30,7 @@ import w7.sa;
 import w7.ua;
 import y8.k0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class w implements Runnable {
     public final /* synthetic */ int a;
@@ -252,7 +253,7 @@ public final /* synthetic */ class w implements Runnable {
                     }
                 } catch (IOException | OutOfMemoryError | RuntimeException e7) {
                     Log.wtf("ShortcutInfoCompatSaver", "Unable to write bitmap to file", e7);
-                    throw new RuntimeException(r4.c.h("Unable to write bitmap to file ", str3), e7);
+                    throw new RuntimeException(o0.h("Unable to write bitmap to file ", str3), e7);
                 }
             case 11:
                 b();

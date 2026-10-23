@@ -19,17 +19,17 @@ import org.telegram.messenger.voip.VoIPGroupNotification;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.bc0;
-import org.telegram.ui.Components.ic0;
+import org.telegram.ui.ActionBar.o2;
+import org.telegram.ui.Components.ec0;
+import org.telegram.ui.Components.lc0;
 import org.telegram.ui.Components.uo;
 import org.telegram.ui.Components.yo;
-import org.telegram.ui.qn;
+import org.telegram.ui.sn;
 import org.webrtc.SurfaceTextureHelper;
 import org.webrtc.SurfaceViewRenderer;
 import org.webrtc.TextureViewRenderer;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n implements Runnable {
     public final /* synthetic */ int a;
@@ -144,15 +144,15 @@ public final /* synthetic */ class n implements Runnable {
                 }
                 break;
             case 1:
-                i2.i0 i0Var = (i2.i0) this.d;
-                e2.r rVar = i0Var.m;
+                i2.h0 h0Var = (i2.h0) this.d;
+                e2.r rVar = h0Var.m;
                 int i15 = this.b;
                 int i16 = this.c;
                 rVar.e(24, new eh.c(i15, i16, 2));
-                i0Var.t1(2, 14, new e2.y(i15, i16));
+                h0Var.t1(2, 14, new e2.y(i15, i16));
                 break;
             case 2:
-                ((i2.c0) this.d).a.q1(this.b, this.c);
+                ((i2.b0) this.d).a.q1(this.b, this.c);
                 break;
             case 3:
                 VoIPGroupNotification.decline((Context) this.d, this.b, this.c);
@@ -164,17 +164,17 @@ public final /* synthetic */ class n implements Runnable {
                 ((ConnectionsManager) this.d).lambda$discardConnection$0(this.b, this.c);
                 break;
             case 6:
-                org.telegram.ui.web.x0 x0Var = (org.telegram.ui.web.x0) this.d;
+                org.telegram.ui.web.y0 y0Var = (org.telegram.ui.web.y0) this.d;
                 for (int i17 = 0; i17 < this.b - this.c; i17++) {
-                    x0Var.goBack();
+                    y0Var.goBack();
                 }
                 break;
             case 7:
-                n2 n2Var = (n2) this.d;
+                o2 o2Var = (o2) this.d;
                 Bundle bundle = new Bundle();
                 bundle.putLong("user_id", UserConfig.getInstance(this.b).getClientUserId());
                 bundle.putInt("message_id", this.c);
-                n2Var.presentFragment(new qn(bundle));
+                o2Var.presentFragment(new sn(bundle));
                 break;
             case 8:
                 yo yoVar = (yo) this.d;
@@ -183,7 +183,7 @@ public final /* synthetic */ class n implements Runnable {
                     SharedPreferences notificationsSettings = MessagesController.getNotificationsSettings(this.c);
                     notificationsSettings.edit().putInt("last_selected_mute_until_time", i18).putInt("last_selected_mute_until_time2", notificationsSettings.getInt("last_selected_mute_until_time", 0)).apply();
                 }
-                yoVar.x(i18);
+                yoVar.v(i18);
                 break;
             case 9:
                 uo uoVar = (uo) this.d;
@@ -195,22 +195,22 @@ public final /* synthetic */ class n implements Runnable {
                 uoVar.run(Integer.valueOf(i19));
                 break;
             case 10:
-                ic0 ic0Var = ((bc0) this.d).V2;
-                View d = ic0Var.d();
-                bc0 bc0Var = ic0Var.f;
+                lc0 lc0Var = ((ec0) this.d).Y2;
+                View d = lc0Var.d();
+                ec0 ec0Var = lc0Var.f;
                 if (d != null) {
                     int top = d.getTop() + this.b;
                     int top2 = d.getTop() + this.c;
                     int i20 = top2 - top;
-                    int paddingTop = bc0Var.getPaddingTop();
-                    int height = bc0Var.getHeight() - bc0Var.getPaddingBottom();
+                    int paddingTop = ec0Var.getPaddingTop();
+                    int height = ec0Var.getHeight() - ec0Var.getPaddingBottom();
                     if (i20 <= height - paddingTop) {
                         top = (top + top2) / 2;
                         paddingTop = (paddingTop + height) / 2;
                     }
                     int i21 = top - paddingTop;
                     if (i21 < 0) {
-                        bc0Var.scrollBy(0, i21);
+                        ec0Var.scrollBy(0, i21);
                         break;
                     }
                 }
@@ -235,9 +235,9 @@ public final /* synthetic */ class n implements Runnable {
         }
     }
 
-    public /* synthetic */ n(i2.c0 c0Var, SurfaceTexture surfaceTexture, int i10, int i11) {
+    public /* synthetic */ n(i2.b0 b0Var, SurfaceTexture surfaceTexture, int i10, int i11) {
         this.a = 2;
-        this.d = c0Var;
+        this.d = b0Var;
         this.b = i10;
         this.c = i11;
     }

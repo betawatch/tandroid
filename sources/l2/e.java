@@ -9,7 +9,7 @@ import e2.m0;
 import java.util.List;
 import v7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class e extends o1 {
     public final long e;
@@ -76,7 +76,7 @@ public final class e extends o1 {
         long j11;
         boolean z11;
         long j12;
-        i c10;
+        i d;
         u6.j(i10, 1);
         m2.c cVar = this.l;
         boolean z12 = cVar.d;
@@ -95,12 +95,12 @@ public final class e extends o1 {
                 }
             }
             long j15 = this.i + j13;
-            long d = cVar.d(0);
+            long d10 = cVar.d(0);
             int i11 = 0;
-            while (i11 < cVar.m.size() - 1 && j15 >= d) {
-                j15 -= d;
+            while (i11 < cVar.m.size() - 1 && j15 >= d10) {
+                j15 -= d10;
                 i11++;
-                d = cVar.d(i11);
+                d10 = cVar.d(i11);
             }
             m2.h b10 = cVar.b(i11);
             List list = b10.c;
@@ -121,8 +121,8 @@ public final class e extends o1 {
                 i12++;
                 j14 = j12;
             }
-            if (i12 != -1 && (c10 = ((m2.m) ((m2.a) b10.c.get(i12)).c.get(0)).c()) != null && c10.w(d) != j12) {
-                j13 = (c10.a(c10.p(j15, d)) + j13) - j15;
+            if (i12 != -1 && (d = ((m2.m) ((m2.a) b10.c.get(i12)).c.get(0)).d()) != null && d.A(d10) != j12) {
+                j13 = (d.b(d.n(j15, d10)) + j13) - j15;
             }
         } else {
             z10 = true;

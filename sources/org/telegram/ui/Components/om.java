@@ -6,7 +6,7 @@ import android.graphics.RectF;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.camera.CameraView;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class om extends CameraView {
     public final ah.m0 a;
@@ -32,7 +32,7 @@ public final class om extends CameraView {
             return;
         }
         float translationY = (tiVar.getContainerView().getTranslationY() + (tiVar.J0[1] + chatAttachAlertPhotoLayout.W0)) - chatAttachAlertPhotoLayout.P.getTranslationY();
-        ei.i iVar = tiVar.E2;
+        ei.i iVar = tiVar.H2;
         int min = (int) Math.min(translationY - (iVar != null ? iVar.d() + AndroidUtilities.dp(8.0f) : 0.0f), getMeasuredHeight());
         boolean z10 = chatAttachAlertPhotoLayout.d0;
         if (z10) {

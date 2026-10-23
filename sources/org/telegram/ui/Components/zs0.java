@@ -1,44 +1,39 @@
 package org.telegram.ui.Components;
 
+import android.graphics.Rect;
+import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class zs0 extends s4.r0 {
-    public final /* synthetic */ qs0 a;
-    public final /* synthetic */ rs0 b;
-    public final /* synthetic */ uv0 c;
+public final class zs0 extends s4.m0 {
+    public final /* synthetic */ ts0 a;
 
-    public zs0(uv0 uv0Var, qs0 qs0Var, rs0 rs0Var) {
-        this.c = uv0Var;
-        this.a = qs0Var;
-        this.b = rs0Var;
+    public zs0(ts0 ts0Var) {
+        this.a = ts0Var;
     }
 
-    @Override // s4.r0
-    public final void a(RecyclerView recyclerView, int i10) {
-        this.c.b1 = i10 != 0;
-    }
-
-    @Override // s4.r0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        int i12;
-        int i13;
-        uv0 uv0Var = this.c;
-        jv0[] jv0VarArr = uv0Var.t1;
-        rs0 rs0Var = this.b;
-        qs0 qs0Var = this.a;
-        uv0Var.G(qs0Var, (jm0) recyclerView, rs0Var);
-        if (i11 != 0 && ((i13 = uv0Var.k0[0].F) == 0 || i13 == 5)) {
-            jv0VarArr[0].a.isEmpty();
+    @Override // s4.m0
+    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.y0 y0Var) {
+        if (!(view instanceof org.telegram.ui.Cells.s7)) {
+            rect.left = 0;
+            rect.top = 0;
+            rect.bottom = 0;
+            rect.right = 0;
+            return;
         }
-        if (i11 != 0 && ((i12 = qs0Var.F) == 0 || uv0.q0(i12))) {
-            uv0.r(qs0Var, jv0VarArr, true);
-        }
-        qs0Var.h.L0(true);
-        if (qs0Var.G != null) {
-            qs0Var.invalidate();
-        }
-        uv0Var.p0();
+        org.telegram.ui.Cells.s7 s7Var = (org.telegram.ui.Cells.s7) view;
+        ts0 ts0Var = this.a;
+        ts0Var.r.getClass();
+        int R = RecyclerView.R(s7Var);
+        int i10 = ts0Var.s.J;
+        s7Var.a0 = R < i10;
+        int i11 = R % i10;
+        s7Var.V = i11 == 0;
+        s7Var.W = i11 == i10 - 1;
+        rect.left = 0;
+        rect.top = 0;
+        rect.bottom = 0;
+        rect.right = 0;
     }
 }

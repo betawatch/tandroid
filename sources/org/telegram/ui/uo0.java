@@ -1,73 +1,68 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.tl.TL_stars;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class uo0 implements Utilities.Callback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ vo0 b;
+public final class uo0 extends Drawable {
+    public final org.telegram.ui.Components.i11 a;
+    public final Drawable b;
+    public final sg.a1 c;
 
-    public /* synthetic */ uo0(vo0 vo0Var, int i10) {
-        this.a = i10;
-        this.b = vo0Var;
+    public uo0(int i10, Context context, org.telegram.ui.ActionBar.g6 g6Var, boolean z10) {
+        this.a = new org.telegram.ui.Components.i11(LocaleController.formatPluralString(z10 ? "BoostLevelPlus" : "BoostLevel", i10, new Object[0]), 12.0f, AndroidUtilities.bold());
+        Drawable mutate = context.getResources().getDrawable(R.drawable.mini_switch_lock).mutate();
+        this.b = mutate;
+        mutate.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+        this.c = new sg.a1(org.telegram.ui.ActionBar.k6.Lj, org.telegram.ui.ActionBar.k6.Mj, -1, -1, g6Var);
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        int i10;
-        gp0 gp0Var;
-        cp0 cp0Var;
-        switch (this.a) {
-            case 0:
-                Integer num = (Integer) obj;
-                vo0 vo0Var = this.b;
-                cp0 cp0Var2 = vo0Var.e;
-                TL_stars.StarGift starGift = num.intValue() == 0 ? null : (TL_stars.StarGift) cp0Var2.M.get(num);
-                cp0Var2.K = starGift;
-                ip0 ip0Var = cp0Var2.p0;
-                if (starGift == null) {
-                    yh.s3 s3Var = cp0Var2.J;
-                    if (s3Var != null) {
-                        s3Var.f();
-                        cp0Var2.J = null;
-                    }
-                } else {
-                    yh.s3 s3Var2 = cp0Var2.J;
-                    if (s3Var2 == null || s3Var2.b != starGift.id) {
-                        i10 = ((org.telegram.ui.ActionBar.n2) ip0Var).currentAccount;
-                        yh.s3 s3Var3 = new yh.s3(cp0Var2.K.id, i10, new uo0(vo0Var, 2));
-                        cp0Var2.J = s3Var3;
-                        s3Var3.g(false);
-                    }
-                }
-                cp0.a(cp0Var2);
-                (ip0Var.I.getCurrentPosition() == 1 ? ip0Var.n : ip0Var.h).e();
-                break;
-            case 1:
-                cp0 cp0Var3 = this.b.e;
-                cp0Var3.h = ((Integer) obj).intValue();
-                cp0Var3.r = null;
-                cp0Var3.s = null;
-                cp0Var3.I = null;
-                cp0Var3.j(true);
-                cp0Var3.i();
-                cp0Var3.f(true);
-                bp0 bp0Var = cp0Var3.y;
-                if (bp0Var != null) {
-                    bp0Var.invalidate();
-                }
-                ip0 ip0Var2 = cp0Var3.p0;
-                cp0 cp0Var4 = ip0Var2.n;
-                if (cp0Var4 != null && (gp0Var = cp0Var4.a) != null && (cp0Var = ip0Var2.h) != null) {
-                    gp0Var.a(cp0Var.h);
-                    break;
-                }
-                break;
-            default:
-                this.b.e.e();
-                break;
-        }
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        int i10 = getBounds().left;
+        int centerY = getBounds().centerY();
+        RectF rectF = AndroidUtilities.rectTmp;
+        float f7 = centerY;
+        rectF.set(i10, f7 - (AndroidUtilities.dp(18.33f) / 2.0f), getIntrinsicWidth() + i10, (AndroidUtilities.dp(18.33f) / 2.0f) + f7);
+        sg.a1 a1Var = this.c;
+        a1Var.e(rectF);
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), a1Var.f);
+        int dp = AndroidUtilities.dp(3.33f) + i10;
+        Drawable drawable = this.b;
+        drawable.setBounds(dp, (int) (f7 - ((drawable.getIntrinsicHeight() * 0.875f) / 2.0f)), (int) ((drawable.getIntrinsicWidth() * 0.875f) + AndroidUtilities.dp(3.33f) + i10), (int) a1.g.B(drawable.getIntrinsicHeight(), 0.875f, 2.0f, f7));
+        drawable.draw(canvas);
+        this.a.c((drawable.getIntrinsicWidth() * 0.875f) + AndroidUtilities.dp(3.66f) + i10, f7, 1.0f, -1, canvas);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return AndroidUtilities.dp(18.33f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return (int) (this.a.l() + (this.b.getIntrinsicWidth() * 0.875f) + AndroidUtilities.dp(9.66f));
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

@@ -4,15 +4,15 @@ import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d10 implements Utilities.Callback {
     public final /* synthetic */ int a = 1;
-    public final /* synthetic */ org.telegram.ui.ActionBar.d5 b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.h5 b;
     public final /* synthetic */ qy c;
 
-    public /* synthetic */ d10(org.telegram.ui.ActionBar.d5 d5Var, qy qyVar) {
-        this.b = d5Var;
+    public /* synthetic */ d10(org.telegram.ui.ActionBar.h5 h5Var, qy qyVar) {
+        this.b = h5Var;
         this.c = qyVar;
     }
 
@@ -34,35 +34,35 @@ public final /* synthetic */ class d10 implements Utilities.Callback {
                 Integer num = (Integer) obj;
                 List fragmentStack = this.b.getFragmentStack();
                 boolean z11 = true;
-                org.telegram.ui.ActionBar.n2 n2Var = null;
+                org.telegram.ui.ActionBar.o2 o2Var = null;
                 for (int size = fragmentStack.size() - 1; size >= 0; size--) {
-                    n2Var = (org.telegram.ui.ActionBar.n2) fragmentStack.get(size);
-                    if (!(n2Var instanceof org.telegram.ui.cy) && !(n2Var instanceof org.telegram.ui.ng0)) {
+                    o2Var = (org.telegram.ui.ActionBar.o2) fragmentStack.get(size);
+                    if (!(o2Var instanceof org.telegram.ui.ey) && !(o2Var instanceof org.telegram.ui.rg0)) {
                         if (z11) {
-                            n2Var.finishFragment();
+                            o2Var.finishFragment();
                             z11 = false;
                         } else {
-                            n2Var.removeSelfFromStack();
+                            o2Var.removeSelfFromStack();
                         }
                     }
-                    org.telegram.ui.ActionBar.n2 n2Var2 = n2Var;
-                    org.telegram.ui.ActionBar.n2 n2Var3 = !(n2Var2 instanceof org.telegram.ui.ng0) ? ((org.telegram.ui.ng0) n2Var2).J : n2Var2;
-                    z10 = n2Var3 instanceof org.telegram.ui.cy;
+                    org.telegram.ui.ActionBar.o2 o2Var2 = o2Var;
+                    org.telegram.ui.ActionBar.o2 o2Var3 = !(o2Var2 instanceof org.telegram.ui.rg0) ? ((org.telegram.ui.rg0) o2Var2).J : o2Var2;
+                    z10 = o2Var3 instanceof org.telegram.ui.ey;
                     qy qyVar = this.c;
                     if (z10) {
-                        qyVar.run(n2Var2);
+                        qyVar.run(o2Var2);
                         break;
                     } else {
-                        org.telegram.ui.cy cyVar = (org.telegram.ui.cy) n2Var3;
-                        cyVar.I3();
-                        AndroidUtilities.runOnUIThread(new org.telegram.messenger.camera.i(cyVar, num, qyVar, n2Var2, 27), 80L);
+                        org.telegram.ui.ey eyVar = (org.telegram.ui.ey) o2Var3;
+                        eyVar.I3();
+                        AndroidUtilities.runOnUIThread(new org.telegram.messenger.camera.i(eyVar, num, qyVar, o2Var2, 27), 80L);
                         break;
                     }
                 }
-                org.telegram.ui.ActionBar.n2 n2Var22 = n2Var;
-                if (!(n2Var22 instanceof org.telegram.ui.ng0)) {
+                org.telegram.ui.ActionBar.o2 o2Var22 = o2Var;
+                if (!(o2Var22 instanceof org.telegram.ui.rg0)) {
                 }
-                z10 = n2Var3 instanceof org.telegram.ui.cy;
+                z10 = o2Var3 instanceof org.telegram.ui.ey;
                 qy qyVar2 = this.c;
                 if (z10) {
                 }
@@ -70,8 +70,8 @@ public final /* synthetic */ class d10 implements Utilities.Callback {
         }
     }
 
-    public /* synthetic */ d10(qy qyVar, org.telegram.ui.ActionBar.d5 d5Var) {
+    public /* synthetic */ d10(qy qyVar, org.telegram.ui.ActionBar.h5 h5Var) {
         this.c = qyVar;
-        this.b = d5Var;
+        this.b = h5Var;
     }
 }

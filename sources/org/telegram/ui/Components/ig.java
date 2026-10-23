@@ -8,7 +8,7 @@ import org.telegram.messenger.camera.CameraController;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class ig implements Runnable {
     public final /* synthetic */ ChatActivityEnterView a;
@@ -52,8 +52,8 @@ public final class ig implements Runnable {
             MessageObject messageObject = chatActivityEnterView.T2;
             threadMessage = chatActivityEnterView.getThreadMessage();
             int i11 = chatActivityEnterView.G2;
-            org.telegram.ui.qn qnVar = chatActivityEnterView.P2;
-            mediaController.startRecording(i10, j10, messageObject, threadMessage, a12, i11, true, qnVar != null ? qnVar.H8() : null, chatActivityEnterView.getSendMonoForumPeerId(), chatActivityEnterView.getSendMessageSuggestionParams());
+            org.telegram.ui.sn snVar = chatActivityEnterView.P2;
+            mediaController.startRecording(i10, j10, messageObject, threadMessage, a12, i11, true, snVar != null ? snVar.H8() : null, chatActivityEnterView.getSendMonoForumPeerId(), chatActivityEnterView.getSendMessageSuggestionParams());
             chatActivityEnterView.F2 = true;
             chatActivityEnterView.I1(0, true);
             xg xgVar = chatActivityEnterView.Y0;

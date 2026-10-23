@@ -6,82 +6,82 @@ import android.view.MotionEvent;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserObject;
-import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.g6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final class v2 extends org.telegram.ui.web.a1 {
-    public final /* synthetic */ int S0;
-    public final /* synthetic */ Object T0;
+public final class v2 extends org.telegram.ui.web.b1 {
+    public final /* synthetic */ int T0;
+    public final /* synthetic */ Object U0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ v2(int i10, int i11, Context context, Object obj, d6 d6Var) {
-        super(i10, context, d6Var, true);
-        this.S0 = i11;
-        this.T0 = obj;
+    public /* synthetic */ v2(int i10, int i11, Context context, Object obj, g6 g6Var) {
+        super(i10, context, g6Var, true);
+        this.T0 = i11;
+        this.U0 = obj;
     }
 
-    @Override // org.telegram.ui.web.a1
+    @Override // org.telegram.ui.web.b1
     public void D(boolean z10, String str) {
-        switch (this.S0) {
+        switch (this.T0) {
             case 0:
-                d3 d3Var = (d3) this.T0;
-                Paint paint = d3Var.P;
+                d3 d3Var = (d3) this.U0;
+                Paint paint = d3Var.Q;
                 if (z10) {
                     d3Var.i();
-                    d3Var.U0.a(d3Var.m() ? d3Var.v0.e : UserObject.getUserName(MessagesController.getInstance(d3Var.G).getUser(Long.valueOf(d3Var.H))), str);
-                    d3Var.U0.b(AndroidUtilities.computePerceivedBrightness(paint.getColor()) <= 0.721f, false);
-                    d3Var.U0.setBackgroundColor(paint.getColor());
-                    d3Var.T0 = str;
+                    d3Var.Y0.a(d3Var.m() ? d3Var.w0.e : UserObject.getUserName(MessagesController.getInstance(d3Var.H).getUser(Long.valueOf(d3Var.I))), str);
+                    d3Var.Y0.b(AndroidUtilities.computePerceivedBrightness(paint.getColor()) <= 0.721f, false);
+                    d3Var.Y0.setBackgroundColor(paint.getColor());
+                    d3Var.X0 = str;
                 }
-                org.telegram.ui.f3 f3Var = d3Var.U0;
-                d3Var.S0 = z10;
-                AndroidUtilities.updateViewVisibilityAnimated(f3Var, z10, 1.0f, false);
+                org.telegram.ui.e3 e3Var = d3Var.Y0;
+                d3Var.W0 = z10;
+                AndroidUtilities.updateViewVisibilityAnimated(e3Var, z10, 1.0f, false);
                 invalidate();
                 break;
         }
     }
 
-    @Override // org.telegram.ui.web.a1
-    public final void J(org.telegram.ui.web.x0 x0Var) {
-        switch (this.S0) {
+    @Override // org.telegram.ui.web.b1
+    public final void J(org.telegram.ui.web.y0 y0Var) {
+        switch (this.T0) {
             case 0:
-                d3 d3Var = (d3) this.T0;
-                d3Var.v.setWebView(x0Var);
-                y0 y0Var = d3Var.B0;
-                if (y0Var != null) {
-                    y0Var.k = x0Var;
+                d3 d3Var = (d3) this.U0;
+                d3Var.w.setWebView(y0Var);
+                y0 y0Var2 = d3Var.C0;
+                if (y0Var2 != null) {
+                    y0Var2.k = y0Var;
                 }
-                d3Var.m0.setWebView(x0Var);
+                d3Var.n0.setWebView(y0Var);
                 d3Var.G();
                 break;
             default:
-                ((f4) this.T0).J.setWebView(x0Var);
+                ((f4) this.U0).J.setWebView(y0Var);
                 break;
         }
     }
 
-    @Override // org.telegram.ui.web.a1
-    public void K(org.telegram.ui.web.x0 x0Var) {
-        switch (this.S0) {
+    @Override // org.telegram.ui.web.b1
+    public void K(org.telegram.ui.web.y0 y0Var) {
+        switch (this.T0) {
             case 0:
-                d3 d3Var = (d3) this.T0;
-                y0 y0Var = d3Var.B0;
-                if (y0Var != null && y0Var.k == x0Var) {
-                    y0Var.k = null;
-                    y0Var.b();
+                d3 d3Var = (d3) this.U0;
+                y0 y0Var2 = d3Var.C0;
+                if (y0Var2 != null && y0Var2.k == y0Var) {
+                    y0Var2.k = null;
+                    y0Var2.b();
                 }
-                d3Var.m0.setWebView(null);
+                d3Var.n0.setWebView(null);
                 break;
         }
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        switch (this.S0) {
+        switch (this.T0) {
             case 1:
                 if (motionEvent.getAction() == 0) {
-                    f4 f4Var = (f4) this.T0;
+                    f4 f4Var = (f4) this.U0;
                     if (!f4Var.P) {
                         f4Var.P = true;
                         f4Var.n.Q();

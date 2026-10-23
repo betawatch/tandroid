@@ -1,34 +1,73 @@
 package ai;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.animation.ValueAnimator;
 import android.graphics.LinearGradient;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.graphics.Shader;
+import android.view.View;
+import org.telegram.ui.Components.z20;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final class ge extends AnimatorListenerAdapter {
+public final /* synthetic */ class ge implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
     public final /* synthetic */ int c;
     public final /* synthetic */ int d;
-    public final /* synthetic */ ie e;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ View f;
 
-    public ge(ie ieVar, int i10, int i11, int i12, int i13) {
-        this.e = ieVar;
-        this.a = i10;
-        this.b = i11;
-        this.c = i12;
-        this.d = i13;
+    public /* synthetic */ ge(View view, int i10, int i11, int i12, int i13, int i14) {
+        this.a = i14;
+        this.f = view;
+        this.b = i10;
+        this.c = i11;
+        this.d = i12;
+        this.e = i13;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        int f7 = i0.a.f(1.0f, this.a, this.b);
-        ie ieVar = this.e;
-        ieVar.r = f7;
-        ieVar.s = i0.a.f(1.0f, this.c, this.d);
-        ieVar.y = new LinearGradient(0.0f, 0.0f, 255.0f, 0.0f, new int[]{ieVar.r, ieVar.s}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
-        ieVar.invalidate();
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        int i10 = this.a;
+        int i11 = this.e;
+        int i12 = this.d;
+        int i13 = this.c;
+        int i14 = this.b;
+        View view = this.f;
+        switch (i10) {
+            case 0:
+                je jeVar = (je) view;
+                jeVar.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                jeVar.r = i0.a.f(floatValue, i14, i13);
+                jeVar.s = i0.a.f(floatValue, i12, i11);
+                jeVar.y = new LinearGradient(0.0f, 0.0f, 255.0f, 0.0f, new int[]{jeVar.r, jeVar.s}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
+                jeVar.invalidate();
+                break;
+            case 1:
+                z20 z20Var = (z20) view;
+                z20Var.L = i0.a.f(((Float) valueAnimator.getAnimatedValue()).floatValue(), i14, i13);
+                z20Var.M = i0.a.f(((Float) valueAnimator.getAnimatedValue()).floatValue(), i12, i11);
+                z20Var.F.setColorFilter(new PorterDuffColorFilter(z20Var.L, PorterDuff.Mode.MULTIPLY));
+                z20Var.E.setColor(z20Var.L);
+                z20Var.r.setColor(z20Var.M);
+                z20Var.J.d(i0.a.o(z20Var.M, 38));
+                z20Var.invalidate();
+                break;
+            default:
+                org.telegram.ui.Components.voip.t tVar = (org.telegram.ui.Components.voip.t) view;
+                tVar.getClass();
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                tVar.D0 = i0.a.f(floatValue2, i14, i13);
+                int f7 = i0.a.f(floatValue2, i12, i11);
+                tVar.F0 = f7;
+                tVar.T.setColor(f7);
+                if (tVar.S > 0.0f) {
+                    tVar.invalidate();
+                    break;
+                }
+                break;
+        }
     }
 }

@@ -2,31 +2,32 @@ package wg;
 
 import android.content.Context;
 import org.telegram.messenger.LocaleController;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.j5;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.n5;
+import org.telegram.ui.ActionBar.r6;
 import w7.z5;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class i extends c {
-    public final j5 s;
+    public final n5 s;
     public Object v;
 
-    public i(Context context, d6 d6Var) {
-        super(context, d6Var);
+    public i(Context context, g6 g6Var) {
+        super(context, g6Var);
         this.c.setVisibility(8);
-        j5 j5Var = this.e;
-        int i10 = h6.B6;
-        j5Var.setTextColor(h6.w0(i10, d6Var));
-        j5 j5Var2 = new j5(context);
-        this.s = j5Var2;
-        j5Var2.setTextSize(16);
-        j5Var2.setTextColor(h6.w0(i10, d6Var));
-        j5Var2.setGravity(LocaleController.isRTL ? 3 : 5);
-        addView(j5Var2);
+        n5 n5Var = this.e;
+        int i10 = k6.B6;
+        r6.Z(n5Var, i10, g6Var);
+        n5 n5Var2 = new n5(context);
+        this.s = n5Var2;
+        n5Var2.setTextSize(16);
+        r6.Z(n5Var2, i10, g6Var);
+        n5Var2.setGravity(LocaleController.isRTL ? 3 : 5);
+        addView(n5Var2);
         boolean z10 = LocaleController.isRTL;
-        j5Var2.setLayoutParams(z5.d(-1, -2.0f, (z10 ? 3 : 5) | 16, z10 ? 20.0f : 0.0f, 0.0f, z10 ? 0.0f : 20.0f, 0.0f));
+        n5Var2.setLayoutParams(z5.d(-1, -2.0f, (z10 ? 3 : 5) | 16, z10 ? 20.0f : 0.0f, 0.0f, z10 ? 0.0f : 20.0f, 0.0f));
     }
 
     @Override // wg.c

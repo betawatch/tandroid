@@ -12,7 +12,7 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import m.s3;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class l0 implements w0, com.google.android.gms.common.api.k {
     public final Lock a;
@@ -46,7 +46,7 @@ public final class l0 implements w0, com.google.android.gms.common.api.k {
         }
         this.e = new g0(this, looper, 1);
         this.b = lock.newCondition();
-        this.m = new ya.d(this, 10);
+        this.m = new ya.c(this, 10);
     }
 
     @Override // com.google.android.gms.common.api.internal.w0
@@ -72,7 +72,7 @@ public final class l0 implements w0, com.google.android.gms.common.api.k {
 
     @Override // com.google.android.gms.common.api.internal.w0
     public final void f() {
-        if (this.m.B()) {
+        if (this.m.A()) {
             this.i.clear();
         }
     }
@@ -92,7 +92,7 @@ public final class l0 implements w0, com.google.android.gms.common.api.k {
     public final void h() {
         this.a.lock();
         try {
-            this.m = new ya.d(this, 10);
+            this.m = new ya.c(this, 10);
             this.m.y();
             this.b.signalAll();
         } finally {

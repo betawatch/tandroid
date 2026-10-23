@@ -1,62 +1,43 @@
 package org.telegram.ui;
 
-import java.util.Collections;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
+import java.util.ArrayList;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class rv implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ cy b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ boolean d;
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ ey b;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ boolean e;
+    public final /* synthetic */ HashSet f;
 
-    public /* synthetic */ rv(cy cyVar, long j10, boolean z10, int i10) {
-        this.a = i10;
-        this.b = cyVar;
-        this.c = j10;
-        this.d = z10;
+    public /* synthetic */ rv(ey eyVar, int i10, ArrayList arrayList, boolean z10, HashSet hashSet) {
+        this.b = eyVar;
+        this.d = i10;
+        this.c = arrayList;
+        this.e = z10;
+        this.f = hashSet;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        String str;
-        TLRPC.Chat chat;
-        int i10 = this.a;
-        boolean z10 = this.d;
-        long j10 = this.c;
-        cy cyVar = this.b;
-        switch (i10) {
+        switch (this.a) {
             case 0:
-                cy cyVar2 = this.b;
-                ci.i7 storiesController = cyVar2.getMessagesController().getStoriesController();
-                long j11 = this.c;
-                boolean z11 = this.d;
-                storiesController.i0(j11, z11, false);
-                n2.e eVar = new n2.e(7, false);
-                eVar.b = new rv(cyVar2, j11, z11, 1);
-                eVar.c = new rv(cyVar2, j11, z11, 2);
-                if (j11 >= 0) {
-                    TLRPC.User user = cyVar2.getMessagesController().getUser(Long.valueOf(j11));
-                    str = ContactsController.formatName(user.first_name, null, 15);
-                    chat = user;
-                } else {
-                    TLRPC.Chat chat2 = cyVar2.getMessagesController().getChat(Long.valueOf(-j11));
-                    str = chat2.title;
-                    chat = chat2;
-                }
-                cyVar2.S = org.telegram.ui.Components.xc.X().V(Collections.singletonList(chat), cyVar2.c4() ? AndroidUtilities.replaceTags(LocaleController.formatString("StoriesMovedToDialogs", R.string.StoriesMovedToDialogs, str)) : AndroidUtilities.replaceTags(LocaleController.formatString("StoriesMovedToContacts", R.string.StoriesMovedToContacts, ContactsController.formatName(str, null, 15))), null, eVar).j();
-                break;
-            case 1:
-                cyVar.getMessagesController().getStoriesController().i0(j10, !z10, false);
+                ey.n0(this.b, this.d, this.c, this.e, this.f);
                 break;
             default:
-                cyVar.getMessagesController().getStoriesController().i0(j10, z10, true);
+                this.b.p4(this.c, this.d, false, this.e, this.f);
                 break;
         }
+    }
+
+    public /* synthetic */ rv(ey eyVar, ArrayList arrayList, int i10, boolean z10, HashSet hashSet) {
+        this.b = eyVar;
+        this.c = arrayList;
+        this.d = i10;
+        this.e = z10;
+        this.f = hashSet;
     }
 }

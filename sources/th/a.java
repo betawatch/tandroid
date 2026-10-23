@@ -13,12 +13,12 @@ import android.text.TextPaint;
 import ne.e;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.bs;
 import zf.p;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class a extends c implements ne.d {
     public final ne.b d;
@@ -29,15 +29,15 @@ public final class a extends c implements ne.d {
     public int r;
     public int s;
 
-    public a(Context context, d6 d6Var) {
-        super(d6Var);
+    public a(Context context, g6 g6Var) {
+        super(g6Var);
         this.d = new ne.b(0, this, bs.h, 320L, false);
         this.e = new int[]{R.attr.state_enabled, R.attr.state_pressed};
         this.f = context.getResources().getDrawable(org.telegram.messenger.R.drawable.outline_poll_add_24).mutate();
-        this.h = new TextPaint(h6.P2);
-        int w02 = h6.w0(h6.i6, d6Var);
+        this.h = new TextPaint(k6.P2);
+        int w02 = k6.w0(k6.i6, g6Var);
         if (this.b != w02) {
-            h6.C1(this.a, w02, false);
+            k6.E1(this.a, w02, false);
             this.b = w02;
         }
         b();
@@ -85,6 +85,13 @@ public final class a extends c implements ne.d {
         }
     }
 
+    @Override // ne.d
+    public final void o(int i10, float f7, float f10, e eVar) {
+        b();
+        c();
+        invalidateSelf();
+    }
+
     @Override // th.c, android.graphics.drawable.Drawable
     public final void onBoundsChange(Rect rect) {
         super.onBoundsChange(rect);
@@ -98,13 +105,6 @@ public final class a extends c implements ne.d {
             this.r = width;
             this.n = new StaticLayout(LocaleController.getString(org.telegram.messenger.R.string.PollAddAnOption), this.h, width, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
         }
-    }
-
-    @Override // ne.d
-    public final void r(int i10, float f7, float f10, e eVar) {
-        b();
-        c();
-        invalidateSelf();
     }
 
     @Override // ne.d

@@ -2,11 +2,11 @@ package ei;
 
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.ui.Components.am0;
-import org.telegram.ui.Components.xl0;
-import org.telegram.ui.Components.yl0;
-import org.telegram.ui.Components.zl0;
+import org.telegram.ui.Components.bm0;
+import org.telegram.ui.Components.cm0;
+import org.telegram.ui.Components.dm0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i3 implements Runnable {
     public final /* synthetic */ int a;
@@ -28,15 +28,15 @@ public final /* synthetic */ class i3 implements Runnable {
                 m3 m3Var = this.c;
                 int R = RecyclerView.R(m3Var);
                 if (R != -1) {
-                    xl0 xl0Var = z2Var.T0;
-                    if (xl0Var == null) {
-                        yl0 yl0Var = z2Var.U0;
-                        if (yl0Var != null) {
-                            yl0Var.d(0.0f, 0.0f, R, m3Var);
+                    am0 am0Var = z2Var.T0;
+                    if (am0Var == null) {
+                        bm0 bm0Var = z2Var.U0;
+                        if (bm0Var != null) {
+                            bm0Var.c(0.0f, 0.0f, R, m3Var);
                             break;
                         }
                     } else {
-                        xl0Var.a(R, m3Var);
+                        am0Var.d(R, m3Var);
                         break;
                     }
                 }
@@ -47,15 +47,15 @@ public final /* synthetic */ class i3 implements Runnable {
                 m3 m3Var2 = this.c;
                 int R2 = RecyclerView.R(m3Var2);
                 if (R2 != -1) {
-                    zl0 zl0Var = z2Var2.V0;
-                    if (zl0Var == null) {
-                        am0 am0Var = z2Var2.W0;
-                        if (am0Var != null) {
-                            am0Var.d(0.0f, 0.0f, R2, m3Var2);
+                    cm0 cm0Var = z2Var2.V0;
+                    if (cm0Var == null) {
+                        dm0 dm0Var = z2Var2.W0;
+                        if (dm0Var != null) {
+                            dm0Var.c(0.0f, 0.0f, R2, m3Var2);
                             break;
                         }
                     } else {
-                        zl0Var.a(R2, m3Var2);
+                        cm0Var.d(R2, m3Var2);
                         break;
                     }
                 }

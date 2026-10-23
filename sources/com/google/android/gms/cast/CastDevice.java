@@ -16,10 +16,10 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 import o6.a;
-import org.telegram.ui.Cells.c1;
+import org.telegram.ui.Cells.b1;
 import w7.f0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public class CastDevice extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<CastDevice> CREATOR = new v(22);
@@ -135,7 +135,7 @@ public class CastDevice extends a implements ReflectedParcelable {
             int length = str.length();
             str = length <= 2 ? length == 2 ? "xx" : "x" : String.format(locale, "%c%d%c", Character.valueOf(str.charAt(0)), Integer.valueOf(length - 2), Character.valueOf(str.charAt(length - 1)));
         }
-        return c1.k("\"", str, "\" (", this.a, ")");
+        return b1.l("\"", str, "\" (", this.a, ")");
     }
 
     @Override // android.os.Parcelable

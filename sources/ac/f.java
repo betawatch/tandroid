@@ -29,7 +29,7 @@ import x7.o7;
 import x7.r0;
 import x7.s;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class f extends rb.e {
     public boolean d = true;
@@ -54,7 +54,7 @@ public final class f extends rb.e {
         fa faVar = this.g;
         com.google.firebase.messaging.l lVar = new com.google.firebase.messaging.l();
         lVar.c = m7.b;
-        n2.e eVar = new n2.e(25, false);
+        n2.e eVar = new n2.e(24, false);
         eVar.b = this.e;
         m mVar = o.b;
         Object[] objArr = {n7.b};
@@ -128,7 +128,7 @@ public final class f extends rb.e {
                 }
                 i10 = 0;
             }
-            q qVar = new q(27, b10);
+            q qVar = new q(26, b10);
             qVar.b = i11 != -1 ? i11 != 35 ? i11 != 842094169 ? i11 != 16 ? i11 != 17 ? d7.b : d7.d : d7.c : d7.e : d7.f : d7.h;
             qVar.c = Integer.valueOf(i10 & ConnectionsManager.DEFAULT_DATACENTER_ID);
             cVar.d = new e7(qVar);

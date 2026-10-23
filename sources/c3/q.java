@@ -1,13 +1,21 @@
 package c3;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+import java.util.List;
+
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public interface q {
-    public static final oa.d i = new oa.d(4);
+    boolean a(r rVar);
 
-    void H();
+    q b();
 
-    void g0(c0 c0Var);
+    void c(s sVar);
 
-    j0 j0(int i10, int i11);
+    void d(long j10, long j11);
+
+    List e();
+
+    int f(r rVar, u uVar);
+
+    void release();
 }

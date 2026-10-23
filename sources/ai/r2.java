@@ -7,9 +7,9 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.qn;
+import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class r2 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -35,26 +35,26 @@ public final /* synthetic */ class r2 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                l7.w0((l7) this.d, (TLObject) this.e, this.b, (TLRPC.Document) this.f, this.c, (TLRPC.TL_error) this.h, (TL_stars.saveStarGift) this.n);
+                l7.v0((l7) this.d, (TLObject) this.e, this.b, (TLRPC.Document) this.f, this.c, (TLRPC.TL_error) this.h, (TL_stars.saveStarGift) this.n);
                 break;
             case 1:
-                qn qnVar = (qn) this.d;
+                sn snVar = (sn) this.d;
                 String str = (String) this.e;
                 CharacterStyle characterStyle = (CharacterStyle) this.f;
                 MessageObject messageObject = (MessageObject) this.h;
-                org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) this.n;
+                org.telegram.ui.Cells.t1 t1Var = (org.telegram.ui.Cells.t1) this.n;
                 if (!str.startsWith("video?")) {
                     if (this.b && !this.c) {
-                        qnVar.getParentActivity();
+                        snVar.getParentActivity();
                         pf.d.m(str);
                         break;
                     } else {
-                        qnVar.O9(messageObject, false, false);
-                        qnVar.ea(characterStyle, str, false, u1Var, messageObject);
+                        snVar.O9(messageObject, false, false);
+                        snVar.ea(characterStyle, str, false, t1Var, messageObject);
                         break;
                     }
                 } else {
-                    qnVar.X7(characterStyle, false, messageObject, u1Var);
+                    snVar.X7(characterStyle, false, messageObject, t1Var);
                     break;
                 }
                 break;
@@ -79,12 +79,12 @@ public final /* synthetic */ class r2 implements Runnable {
         }
     }
 
-    public /* synthetic */ r2(qn qnVar, String str, CharacterStyle characterStyle, MessageObject messageObject, org.telegram.ui.Cells.u1 u1Var, boolean z10, boolean z11) {
-        this.d = qnVar;
+    public /* synthetic */ r2(sn snVar, String str, CharacterStyle characterStyle, MessageObject messageObject, org.telegram.ui.Cells.t1 t1Var, boolean z10, boolean z11) {
+        this.d = snVar;
         this.e = str;
         this.f = characterStyle;
         this.h = messageObject;
-        this.n = u1Var;
+        this.n = t1Var;
         this.b = z10;
         this.c = z11;
     }

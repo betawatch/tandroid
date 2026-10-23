@@ -7,7 +7,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class ea implements Runnable {
     public boolean a;
@@ -49,7 +49,7 @@ public final class ea implements Runnable {
                 }
             }
             if (i11 == 1) {
-                faVar.f[i11].eraseColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.d6, faVar.y));
+                faVar.f[i11].eraseColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.d6, faVar.y));
             } else {
                 faVar.f[i11].eraseColor(0);
             }
@@ -65,6 +65,6 @@ public final class ea implements Runnable {
                 i11++;
             }
         }
-        AndroidUtilities.runOnUIThread(new pg(this, 12));
+        AndroidUtilities.runOnUIThread(new pg(this, 13));
     }
 }

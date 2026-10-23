@@ -1,65 +1,79 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.SurfaceView;
-import android.view.TextureView;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.R;
+import android.net.Uri;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class ys0 extends o4 {
-    public final /* synthetic */ PhotoViewer h;
+public final /* synthetic */ class ys0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ zs0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ys0(Context context, PhotoViewer photoViewer) {
-        super(context);
-        this.h = photoViewer;
+    public /* synthetic */ ys0(zs0 zs0Var, int i10) {
+        this.a = i10;
+        this.b = zs0Var;
     }
 
-    @Override // android.view.View
-    public final void draw(Canvas canvas) {
-        if (this.h.T8) {
-            return;
+    /* JADX WARN: Code restructure failed: missing block: B:38:0x0057, code lost:
+    
+        if (r2 != 7) goto L31;
+     */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        b2.n nVar;
+        switch (this.a) {
+            case 0:
+                PhotoViewer photoViewer = this.b.b;
+                du0 du0Var = photoViewer.E2;
+                if (du0Var != null) {
+                    org.telegram.ui.Components.j81 j81Var = photoViewer.F2;
+                    if (du0Var.e != j81Var) {
+                        du0Var.c = false;
+                        du0Var.d = false;
+                        if (du0Var.b) {
+                            du0Var.a++;
+                            du0Var.b = false;
+                        }
+                        du0Var.setImageResource(R.color.transparent);
+                    }
+                    if (j81Var != null) {
+                        i2.h0 h0Var = j81Var.d;
+                        if (h0Var != null) {
+                            try {
+                                h0Var.F1();
+                                b2.w wVar = h0Var.S;
+                                if (wVar != null && (nVar = wVar.I) != null) {
+                                    int i10 = nVar.c;
+                                    if (i10 != 6) {
+                                        break;
+                                    }
+                                }
+                            } catch (Exception unused) {
+                            }
+                        }
+                        long p5 = j81Var.p() - j81Var.n();
+                        if (!du0Var.c && !du0Var.d && !du0Var.b && p5 < 5250.0f) {
+                            Uri uri = j81Var.F;
+                            int i11 = du0Var.a + 1;
+                            du0Var.a = i11;
+                            Utilities.globalQueue.postRunnable(new org.telegram.ui.Components.c41(du0Var, uri, i11, 8));
+                            du0Var.b = true;
+                        }
+                    }
+                    du0Var.e = j81Var;
+                    break;
+                }
+                break;
+            case 1:
+                du0.a(this.b.b.E2);
+                break;
+            default:
+                du0.a(this.b.b.E2);
+                break;
         }
-        super.draw(canvas);
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j10) {
-        PhotoViewer photoViewer = this.h;
-        if (view == photoViewer.E3 && photoViewer.g4) {
-            return true;
-        }
-        return super.drawChild(canvas, view, j10);
-    }
-
-    @Override // org.telegram.ui.o4, android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        PhotoViewer photoViewer = this.h;
-        ImageView imageView = photoViewer.x3;
-        if (imageView != null) {
-            ViewGroup.LayoutParams layoutParams = imageView.getLayoutParams();
-            layoutParams.width = getMeasuredWidth();
-            layoutParams.height = getMeasuredHeight();
-        }
-        TextureView textureView = photoViewer.B2;
-        if (textureView instanceof org.telegram.ui.Components.r71) {
-            textureView.setPivotX(textureView.getMeasuredWidth() / 2);
-            photoViewer.E2.setPivotX(photoViewer.B2.getMeasuredWidth() / 2);
-        } else {
-            if (textureView != null) {
-                textureView.setPivotX(0.0f);
-            }
-            SurfaceView surfaceView = photoViewer.C2;
-            if (surfaceView != null) {
-                surfaceView.setPivotX(0.0f);
-            }
-            photoViewer.E2.setPivotX(0.0f);
-        }
-        photoViewer.A0();
     }
 }

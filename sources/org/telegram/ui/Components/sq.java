@@ -12,7 +12,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class sq extends EditTextBoldCursor {
     public final /* synthetic */ int b;
@@ -189,7 +189,7 @@ public final class sq extends EditTextBoldCursor {
                                     }
                                     tzVar.M0.setDuration(220L);
                                     tzVar.M0.setInterpolator(bs.f);
-                                    tzVar.M0.addListener(new ai.me(25, tzVar, view2));
+                                    tzVar.M0.addListener(new ai.ne(25, tzVar, view2));
                                     tzVar.M0.start();
                                     z10 = r16;
                                     i11 = 2;
@@ -202,13 +202,13 @@ public final class sq extends EditTextBoldCursor {
                                     }
                                     if (view2 == view3) {
                                         int i18 = r16;
-                                        view2.setPadding(i18, i18, i18, tzVar.p2);
+                                        view2.setPadding(i18, i18, i18, tzVar.q2);
                                     } else {
                                         int i19 = r16;
                                         if (view2 == view4) {
-                                            view2.setPadding(AndroidUtilities.dp(5.0f), i19, AndroidUtilities.dp(5.0f), tzVar.p2);
+                                            view2.setPadding(AndroidUtilities.dp(5.0f), i19, AndroidUtilities.dp(5.0f), tzVar.q2);
                                         } else if (view2 == uwVar) {
-                                            view2.setPadding(i19, tzVar.b1, i19, tzVar.p2);
+                                            view2.setPadding(i19, tzVar.b1, i19, tzVar.q2);
                                         }
                                     }
                                     if (view2 == uwVar) {

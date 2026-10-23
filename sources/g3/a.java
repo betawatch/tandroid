@@ -1,59 +1,59 @@
 package g3;
 
-import c3.e0;
-import c3.o;
-import c3.p;
+import c3.g0;
 import c3.q;
+import c3.r;
 import c3.s;
+import c3.u;
 import e9.l0;
 import e9.n0;
 import e9.x1;
 import java.util.List;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public final class a implements o {
+public final class a implements q {
     public final /* synthetic */ int a;
-    public final e0 b;
+    public final g0 b;
 
     public a(int i10) {
         this.a = i10;
         switch (i10) {
             case 1:
-                this.b = new e0(35152, 2, "image/png");
+                this.b = new g0(35152, 2, "image/png");
                 break;
             default:
-                this.b = new e0(16973, 2, "image/bmp");
+                this.b = new g0(16973, 2, "image/bmp");
                 break;
         }
     }
 
-    @Override // c3.o
-    public final boolean a(p pVar) {
+    @Override // c3.q
+    public final boolean a(r rVar) {
         switch (this.a) {
         }
-        return this.b.a(pVar);
+        return this.b.a(rVar);
     }
 
-    @Override // c3.o
-    public final o b() {
+    @Override // c3.q
+    public final q b() {
         int i10 = this.a;
         return this;
     }
 
-    @Override // c3.o
-    public final void c(q qVar) {
+    @Override // c3.q
+    public final void c(s sVar) {
         switch (this.a) {
             case 0:
-                this.b.c(qVar);
+                this.b.c(sVar);
                 break;
             default:
-                this.b.c(qVar);
+                this.b.c(sVar);
                 break;
         }
     }
 
-    @Override // c3.o
+    @Override // c3.q
     public final void d(long j10, long j11) {
         switch (this.a) {
             case 0:
@@ -66,7 +66,7 @@ public final class a implements o {
     }
 
     /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
-    @Override // c3.o
+    @Override // c3.q
     public final List e() {
         switch (this.a) {
         }
@@ -74,14 +74,14 @@ public final class a implements o {
         return x1.e;
     }
 
-    @Override // c3.o
-    public final int f(p pVar, s sVar) {
+    @Override // c3.q
+    public final int f(r rVar, u uVar) {
         switch (this.a) {
         }
-        return this.b.f(pVar, sVar);
+        return this.b.f(rVar, uVar);
     }
 
-    @Override // c3.o
+    @Override // c3.q
     public final void release() {
         int i10 = this.a;
     }

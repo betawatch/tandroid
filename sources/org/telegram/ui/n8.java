@@ -3,9 +3,9 @@ package org.telegram.ui;
 import android.view.View;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n8 implements r0.n, Utilities.Callback5, Utilities.Callback5Return, org.telegram.ui.Components.ll0 {
+public final /* synthetic */ class n8 implements r0.n, Utilities.Callback5, Utilities.Callback5Return, org.telegram.ui.Components.ol0 {
     public final /* synthetic */ m9 a;
 
     public /* synthetic */ n8(m9 m9Var) {
@@ -17,9 +17,9 @@ public final /* synthetic */ class n8 implements r0.n, Utilities.Callback5, Util
         return this.a.onInsetsInternal(view, k1Var);
     }
 
-    @Override // org.telegram.ui.Components.ll0
-    public void b() {
-        this.a.f0();
+    @Override // org.telegram.ui.Components.ol0
+    public void a() {
+        this.a.e0();
     }
 
     @Override // org.telegram.messenger.Utilities.Callback5
@@ -27,7 +27,7 @@ public final /* synthetic */ class n8 implements r0.n, Utilities.Callback5, Util
         ((Integer) obj3).getClass();
         ((Float) obj4).getClass();
         ((Float) obj5).getClass();
-        m9.X(this.a, (org.telegram.ui.Components.h61) obj, (View) obj2);
+        m9.W(this.a, (org.telegram.ui.Components.m61) obj, (View) obj2);
     }
 
     @Override // org.telegram.messenger.Utilities.Callback5Return
@@ -37,9 +37,9 @@ public final /* synthetic */ class n8 implements r0.n, Utilities.Callback5, Util
         ((Integer) obj3).getClass();
         ((Float) obj4).getClass();
         ((Float) obj5).getClass();
-        Object obj6 = ((org.telegram.ui.Components.h61) obj).G;
+        Object obj6 = ((org.telegram.ui.Components.m61) obj).G;
         if (obj6 instanceof i9) {
-            this.a.e0(((i9) obj6).c, (h9) view);
+            this.a.d0(((i9) obj6).c, (h9) view);
             z10 = true;
         } else {
             z10 = false;

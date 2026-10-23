@@ -1,14 +1,17 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class cp extends FrameLayout {
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
+public final class cp implements v60 {
+    public final /* synthetic */ kp a;
+
+    public cp(kp kpVar) {
+        this.a = kpVar;
+    }
+
+    @Override // org.telegram.ui.v60
+    public final void a(w60 w60Var, long j10) {
+        kp kpVar = this.a;
+        kpVar.Y(kpVar.getMessagesController().getChat(Long.valueOf(j10)), w60Var);
     }
 }

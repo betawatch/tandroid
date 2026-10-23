@@ -17,9 +17,9 @@ import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.ui.Components.p31;
 import org.telegram.ui.Components.yr;
-import org.telegram.ui.q50;
+import org.telegram.ui.u50;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class o extends q2 {
     public float g0;
@@ -31,13 +31,13 @@ public final class o extends q2 {
     public final /* synthetic */ String m0;
     public final /* synthetic */ float n0;
     public final /* synthetic */ StaticLayout o0;
-    public final /* synthetic */ q50 p0;
+    public final /* synthetic */ u50 p0;
     public final /* synthetic */ String q0;
     public final /* synthetic */ float r0;
     public final /* synthetic */ t s0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o(t tVar, Context context, ChatObject.Call call, l0 l0Var, TextPaint textPaint, StaticLayout staticLayout, TextPaint textPaint2, String str, float f7, StaticLayout staticLayout2, q50 q50Var, String str2, float f10) {
+    public o(t tVar, Context context, ChatObject.Call call, l0 l0Var, TextPaint textPaint, StaticLayout staticLayout, TextPaint textPaint2, String str, float f7, StaticLayout staticLayout2, u50 u50Var, String str2, float f10) {
         super(context, false, false, true, true);
         this.s0 = tVar;
         this.h0 = call;
@@ -48,7 +48,7 @@ public final class o extends q2 {
         this.m0 = str;
         this.n0 = f7;
         this.o0 = staticLayout2;
-        this.p0 = q50Var;
+        this.p0 = u50Var;
         this.q0 = str2;
         this.r0 = f10;
     }
@@ -88,7 +88,7 @@ public final class o extends q2 {
         ImageView imageView = tVar.x0;
         if (imageView != null && imageView.getParent() != null) {
             if (tVar.x0.getAlpha() == 1.0f) {
-                tVar.x0.animate().alpha(0.0f).setDuration(300L).setListener(new p31(this, 9)).start();
+                tVar.x0.animate().alpha(0.0f).setDuration(300L).setListener(new p31(this, 10)).start();
             } else if (tVar.x0.getParent() != null) {
                 oVar.removeView(tVar.x0);
             }
@@ -183,7 +183,7 @@ public final class o extends q2 {
                 int dp2 = AndroidUtilities.dp(33.0f);
                 if (tVar.r || tVar.b) {
                     f10 = 10.0f;
-                    c10 = (int) r4.c.c(AndroidUtilities.dp(39.0f), l0Var.c, AndroidUtilities.dp(10.0f), dp2);
+                    c10 = (int) si.o0.c(AndroidUtilities.dp(39.0f), l0Var.c, AndroidUtilities.dp(10.0f), dp2);
                 } else {
                     f10 = 10.0f;
                     c10 = (int) ((Math.max(1.0f - l0Var.c, (tVar.h || tVar.f) ? l0Var.n : f7) * AndroidUtilities.dp(10.0f)) + dp2);
@@ -246,9 +246,9 @@ public final class o extends q2 {
                         hVar.g = f23;
                         if (f23 > 4.0f) {
                             hVar.g = 0.0f;
-                            org.telegram.ui.web.z1 z1Var = hVar.p;
-                            if (z1Var != null) {
-                                z1Var.run();
+                            org.telegram.ui.web.a2 a2Var = hVar.p;
+                            if (a2Var != null) {
+                                a2Var.run();
                             }
                         }
                         hVar.h = currentTimeMillis;
@@ -289,7 +289,7 @@ public final class o extends q2 {
         float measuredHeight = (getMeasuredHeight() - this.N) - AndroidUtilities.dp(80.0f);
         if (tVar.w != call.videoNotAvailableParticipant) {
             canvas.save();
-            if ((tVar.b || tVar.r) && !q50.F3 && !q50.G3) {
+            if ((tVar.b || tVar.r) && !u50.F3 && !u50.G3) {
                 measuredHeight = com.google.android.gms.internal.play_billing.k3.D(1.0f, l0Var.W, AndroidUtilities.dp(90.0f) * l0Var.c, measuredHeight);
             }
             f12 = 0.0f;

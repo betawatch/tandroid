@@ -1,33 +1,63 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.MessagesController;
+import android.content.Context;
+import android.graphics.Rect;
+import android.view.KeyEvent;
+import android.view.MotionEvent;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.AnimatedPhoneNumberEditText;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class eg0 implements org.telegram.ui.Components.yl0, org.telegram.ui.ActionBar.a2 {
-    public final /* synthetic */ gg0 a;
+public final class eg0 extends AnimatedPhoneNumberEditText {
+    public final /* synthetic */ hg0 G;
 
-    public /* synthetic */ eg0(gg0 gg0Var) {
-        this.a = gg0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public eg0(hg0 hg0Var, Context context) {
+        super(context);
+        this.G = hg0Var;
     }
 
-    @Override // org.telegram.ui.Components.yl0
-    public /* synthetic */ boolean P0(View view) {
-        return false;
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public final void onFocusChanged(boolean z10, int i10, Rect rect) {
+        super.onFocusChanged(z10, i10, rect);
+        hg0 hg0Var = this.G;
+        ig0 ig0Var = hg0Var.a0;
+        org.telegram.ui.Components.vd0 vd0Var = hg0Var.f;
+        float f7 = (z10 || hg0Var.a.isFocused()) ? 1.0f : 0.0f;
+        vd0Var.b(f7, f7, true);
+        if (!z10) {
+            if (hg0Var.E == 2) {
+                hg0Var.setCountryButtonText(null);
+            }
+        } else {
+            ig0Var.c.setEditText(this);
+            ig0Var.c.setDispatchBackWhenEmpty(true);
+            if (hg0Var.E == 2) {
+                hg0Var.setCountryButtonText(LocaleController.getString(R.string.WrongCountry));
+            }
+        }
     }
 
-    @Override // org.telegram.ui.Components.yl0
-    public void d(float f7, float f10, int i10, View view) {
-        gg0.W(this.a, i10);
+    @Override // android.widget.TextView, android.view.View, android.view.KeyEvent.Callback
+    public final boolean onKeyDown(int i10, KeyEvent keyEvent) {
+        hg0 hg0Var = this.G;
+        pj0 pj0Var = hg0Var.a;
+        if (i10 == 67 && hg0Var.b.length() == 0) {
+            pj0Var.requestFocus();
+            pj0Var.setSelection(pj0Var.length());
+            pj0Var.dispatchKeyEvent(keyEvent);
+        }
+        return super.onKeyDown(i10, keyEvent);
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        MessagesController.getInstance(this.a.currentAccount).performLogout(1);
-    }
-
-    @Override // org.telegram.ui.Components.yl0
-    public /* synthetic */ void a0(View view, float f7, float f10) {
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        if (motionEvent.getAction() == 0 && !ig0.V0(this.G.a0, this)) {
+            clearFocus();
+            requestFocus();
+        }
+        return super.onTouchEvent(motionEvent);
     }
 }

@@ -10,23 +10,25 @@ import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.text.TextUtils;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class b extends Drawable {
     public final TextPaint a;
     public final TextPaint b;
     public RadialProgress2 c;
-    public StaticLayout f;
+    public boolean d;
     public StaticLayout g;
-    public CharSequence d = "";
+    public StaticLayout h;
     public CharSequence e = "";
-    public int l = -1;
-    public final int h = AndroidUtilities.dp(64.0f);
-    public final int i = AndroidUtilities.dp(10.66f);
-    public final int j = AndroidUtilities.dp(12.0f);
-    public final int k = AndroidUtilities.dp(4.0f);
+    public CharSequence f = "";
+    public int m = -1;
+    public final int i = AndroidUtilities.dp(64.0f);
+    public final int j = AndroidUtilities.dp(10.66f);
+    public final int k = AndroidUtilities.dp(12.0f);
+    public final int l = AndroidUtilities.dp(4.0f);
 
     public b() {
         TextPaint textPaint = new TextPaint(1);
@@ -40,43 +42,48 @@ public final class b extends Drawable {
 
     @Override // android.graphics.drawable.Drawable
     public final void draw(Canvas canvas) {
+        boolean z10 = this.d;
+        TextPaint textPaint = this.b;
+        TextPaint textPaint2 = this.a;
+        if (z10) {
+            int alpha = textPaint2.getAlpha();
+            int alpha2 = textPaint.getAlpha();
+            textPaint2.setColor(k6.x0(null, k6.G6, false));
+            textPaint2.setAlpha(alpha);
+            textPaint.setColor(k6.x0(null, k6.y6, false));
+            textPaint.setAlpha(alpha2);
+        }
         int width = getBounds().width();
-        int i10 = this.h;
-        if (width > 0 && (width != this.l || this.f == null || this.g == null)) {
-            this.l = width;
-            int i11 = (width - i10) - this.j;
+        int i10 = this.i;
+        if (width > 0 && (width != this.m || this.g == null || this.h == null)) {
+            this.m = width;
+            int i11 = (width - i10) - this.k;
             if (i11 <= 0) {
-                this.f = null;
                 this.g = null;
+                this.h = null;
             } else {
-                CharSequence charSequence = this.d;
                 float f7 = i11;
-                TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.MIDDLE;
-                TextPaint textPaint = this.a;
-                CharSequence ellipsize = TextUtils.ellipsize(charSequence, textPaint, f7, truncateAt);
-                CharSequence charSequence2 = this.e;
-                TextUtils.TruncateAt truncateAt2 = TextUtils.TruncateAt.END;
-                TextPaint textPaint2 = this.b;
-                CharSequence ellipsize2 = TextUtils.ellipsize(charSequence2, textPaint2, f7, truncateAt2);
+                CharSequence ellipsize = TextUtils.ellipsize(this.e, textPaint2, f7, TextUtils.TruncateAt.MIDDLE);
+                CharSequence ellipsize2 = TextUtils.ellipsize(this.f, textPaint, f7, TextUtils.TruncateAt.END);
                 Layout.Alignment alignment = Layout.Alignment.ALIGN_NORMAL;
-                this.f = new StaticLayout(ellipsize, textPaint, i11, alignment, 1.0f, 0.0f, false);
-                this.g = new StaticLayout(ellipsize2, textPaint2, i11, alignment, 1.0f, 0.0f, false);
+                this.g = new StaticLayout(ellipsize, textPaint2, i11, alignment, 1.0f, 0.0f, false);
+                this.h = new StaticLayout(ellipsize2, textPaint, i11, alignment, 1.0f, 0.0f, false);
             }
         }
-        if (this.f == null || this.g == null) {
+        if (this.g == null || this.h == null) {
             return;
         }
         Rect bounds = getBounds();
         float f10 = bounds.left + i10;
-        float f11 = bounds.top + this.i;
-        this.c.q(AndroidUtilities.dp(10.0f) + bounds.left, AndroidUtilities.dp(9.0f) + bounds.top, AndroidUtilities.dp(42.0f) + AndroidUtilities.dp(10.0f) + bounds.left, AndroidUtilities.dp(42.0f) + AndroidUtilities.dp(9.0f) + bounds.top);
+        float f11 = bounds.top + this.j;
+        this.c.r(AndroidUtilities.dp(10.0f) + bounds.left, AndroidUtilities.dp(9.0f) + bounds.top, AndroidUtilities.dp(42.0f) + AndroidUtilities.dp(10.0f) + bounds.left, AndroidUtilities.dp(42.0f) + AndroidUtilities.dp(9.0f) + bounds.top);
         canvas.save();
         canvas.translate(f10, f11);
-        this.f.draw(canvas);
+        this.g.draw(canvas);
         canvas.restore();
         canvas.save();
-        canvas.translate(f10, this.f.getHeight() + f11 + this.k);
-        this.g.draw(canvas);
+        canvas.translate(f10, this.g.getHeight() + f11 + this.l);
+        this.h.draw(canvas);
         canvas.restore();
         this.c.draw(canvas);
     }
@@ -85,8 +92,8 @@ public final class b extends Drawable {
     public final int getIntrinsicHeight() {
         Paint.FontMetricsInt fontMetricsInt = this.a.getFontMetricsInt();
         int i10 = fontMetricsInt.descent - fontMetricsInt.ascent;
-        int i11 = this.i;
-        int i12 = i10 + i11 + this.k;
+        int i11 = this.j;
+        int i12 = i10 + i11 + this.l;
         Paint.FontMetricsInt fontMetricsInt2 = this.b.getFontMetricsInt();
         return (fontMetricsInt2.descent - fontMetricsInt2.ascent) + i12 + i11;
     }
@@ -99,9 +106,9 @@ public final class b extends Drawable {
     @Override // android.graphics.drawable.Drawable
     public final void onBoundsChange(Rect rect) {
         super.onBoundsChange(rect);
-        this.l = -1;
-        this.f = null;
+        this.m = -1;
         this.g = null;
+        this.h = null;
     }
 
     @Override // android.graphics.drawable.Drawable

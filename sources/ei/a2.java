@@ -2,7 +2,6 @@ package ei;
 
 import android.content.Context;
 import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.ShapeDrawable;
 import android.util.SparseIntArray;
@@ -23,11 +22,11 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.fy;
-import org.telegram.ui.Components.tl0;
-import org.telegram.ui.Components.zq;
-import org.telegram.ui.x51;
+import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.yq;
+import org.telegram.ui.b61;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class a2 extends s4.g0 {
     public final TLRPC.TL_inputStickerSetShortName E;
@@ -95,7 +94,7 @@ public final class a2 extends s4.g0 {
         }
         y1Var.n(true);
         AndroidUtilities.cancelRunOnUIThread(sVar);
-        i10 = ((org.telegram.ui.ActionBar.f3) n2Var).currentAccount;
+        i10 = ((org.telegram.ui.ActionBar.h3) n2Var).currentAccount;
         MediaDataController mediaDataController = MediaDataController.getInstance(i10);
         this.x = 0;
         ArrayList arrayList3 = this.s;
@@ -115,7 +114,7 @@ public final class a2 extends s4.g0 {
         ArrayList arrayList6 = this.r;
         arrayList6.clear();
         if (b2Var4.a == 1) {
-            if (n2Var.F != null && (n2Var.n0(0) || n2Var.n0(1) || n2Var.n0(2) || n2Var.n0(3) || n2Var.n0(4))) {
+            if (n2Var.G != null && (n2Var.o0(0) || n2Var.o0(1) || n2Var.o0(2) || n2Var.o0(3) || n2Var.o0(4))) {
                 arrayList3.add(n2Var.d);
                 this.x++;
             }
@@ -136,7 +135,7 @@ public final class a2 extends s4.g0 {
                     this.G = new TLRPC.TL_messages_stickerSet();
                 }
                 this.G.documents = recentStickers2;
-                if (n2Var.E != null) {
+                if (n2Var.F != null) {
                     recentStickers2.add(0, n2Var.e);
                 }
                 this.G.set = new TLRPC.TL_stickerSet();
@@ -192,7 +191,7 @@ public final class a2 extends s4.g0 {
                 while (i19 < featuredEmojiSets.size()) {
                     TLRPC.StickerSetCovered stickerSetCovered = featuredEmojiSets.get(i19);
                     if (stickerSetCovered instanceof TLRPC.TL_stickerSetNoCovered) {
-                        i15 = ((org.telegram.ui.ActionBar.f3) n2Var3).currentAccount;
+                        i15 = ((org.telegram.ui.ActionBar.h3) n2Var3).currentAccount;
                         tL_messages_stickerSet = MediaDataController.getInstance(i15).getStickerSet(MediaDataController.getInputStickerSet(stickerSetCovered.set), false);
                         if (tL_messages_stickerSet != null) {
                             b2Var2 = b2Var4;
@@ -396,6 +395,8 @@ public final class a2 extends s4.g0 {
 
     @Override // s4.g0
     public final void v(s4.b1 b1Var, int i10) {
+        org.telegram.ui.ActionBar.g6 g6Var;
+        org.telegram.ui.ActionBar.g6 g6Var2;
         TLRPC.StickerSet stickerSet;
         b2 b2Var = this.N;
         n2 n2Var = b2Var.s;
@@ -415,17 +416,17 @@ public final class a2 extends s4.g0 {
                 }
                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) arrayList.get(i12);
                 String str = (tL_messages_stickerSet == null || (stickerSet = tL_messages_stickerSet.set) == null) ? "" : stickerSet.title;
-                org.telegram.ui.Cells.n8 n8Var = (org.telegram.ui.Cells.n8) view;
+                org.telegram.ui.Cells.o8 o8Var = (org.telegram.ui.Cells.o8) view;
                 if (this.I == null) {
-                    n8Var.b(0, str);
+                    o8Var.a(0, str);
                     return;
                 }
                 int indexOf = str.toLowerCase().indexOf(this.I.toLowerCase());
                 if (indexOf < 0) {
-                    n8Var.b(0, str);
+                    o8Var.a(0, str);
                     return;
                 } else {
-                    n8Var.c(str, 0, null, indexOf, this.I.length());
+                    o8Var.b(str, 0, null, indexOf, this.I.length());
                     return;
                 }
             }
@@ -437,7 +438,7 @@ public final class a2 extends s4.g0 {
                 int i13 = this.K;
                 if (x1Var.b != i13) {
                     x1Var.b = i13;
-                    x51.D(UserConfig.selectedAccount, x1Var.a);
+                    b61.D(UserConfig.selectedAccount, x1Var.a);
                     return;
                 }
                 return;
@@ -449,22 +450,28 @@ public final class a2 extends s4.g0 {
         n1 n1Var = (n1) view;
         if (document == n2Var.e) {
             n1Var.setSticker(null);
-            int dp = AndroidUtilities.dp(28.0f);
-            int i14 = org.telegram.ui.ActionBar.h6.Me;
-            ShapeDrawable c02 = org.telegram.ui.ActionBar.h6.c0(dp, org.telegram.ui.ActionBar.h6.m1(0.12f, n2Var.getThemedColor(i14)));
-            Drawable mutate = b2Var.getResources().getDrawable(R.drawable.filled_add_sticker).mutate();
-            mutate.setColorFilter(new PorterDuffColorFilter(n2Var.getThemedColor(i14), PorterDuff.Mode.MULTIPLY));
-            zq zqVar = new zq(c02, mutate);
-            int dp2 = AndroidUtilities.dp(56.0f);
-            int dp3 = AndroidUtilities.dp(56.0f);
-            zqVar.h = dp2;
-            zqVar.n = dp3;
-            int dp4 = AndroidUtilities.dp(24.0f);
-            int dp5 = AndroidUtilities.dp(24.0f);
-            zqVar.e = dp4;
-            zqVar.f = dp5;
-            zqVar.r = true;
-            n1Var.setDrawable(zqVar);
+            if (n1Var.a == null) {
+                ShapeDrawable c02 = org.telegram.ui.ActionBar.k6.c0(AndroidUtilities.dp(28.0f), -1);
+                int i14 = org.telegram.ui.ActionBar.k6.Me;
+                org.telegram.ui.ActionBar.n6 M = org.telegram.ui.ActionBar.r6.M(0.12f, i14);
+                g6Var = ((org.telegram.ui.ActionBar.h3) n2Var).resourcesProvider;
+                org.telegram.ui.ActionBar.r6.l(n1Var, c02, M.a, -1, 2, M.d, g6Var, PorterDuff.Mode.SRC_IN);
+                Drawable mutate = b2Var.getResources().getDrawable(R.drawable.filled_add_sticker).mutate();
+                g6Var2 = ((org.telegram.ui.ActionBar.h3) n2Var).resourcesProvider;
+                org.telegram.ui.ActionBar.r6.z(n1Var, mutate, i14, g6Var2, PorterDuff.Mode.MULTIPLY);
+                yq yqVar = new yq(c02, mutate);
+                int dp = AndroidUtilities.dp(56.0f);
+                int dp2 = AndroidUtilities.dp(56.0f);
+                yqVar.h = dp;
+                yqVar.n = dp2;
+                int dp3 = AndroidUtilities.dp(24.0f);
+                int dp4 = AndroidUtilities.dp(24.0f);
+                yqVar.e = dp3;
+                yqVar.f = dp4;
+                yqVar.r = true;
+                n1Var.a = yqVar;
+            }
+            n1Var.setDrawable(n1Var.a);
             return;
         }
         ArrayList arrayList3 = this.v;
@@ -485,40 +492,40 @@ public final class a2 extends s4.g0 {
         }
         n1Var.setSticker(null);
         boolean z10 = b2Var.a == 1;
-        if (n1Var.f == longValue) {
+        if (n1Var.h == longValue) {
             return;
         }
-        org.telegram.ui.Components.r5 r5Var = n1Var.c;
+        org.telegram.ui.Components.r5 r5Var = n1Var.d;
         if (r5Var != null) {
             r5Var.o(n1Var);
         }
         if (longValue == 0) {
-            n1Var.a = false;
-            n1Var.f = 0L;
-            n1Var.c = null;
+            n1Var.b = false;
+            n1Var.h = 0L;
+            n1Var.d = null;
             return;
         }
-        n1Var.a = true;
-        n1Var.f = longValue;
-        org.telegram.ui.Components.r5 n10 = org.telegram.ui.Components.r5.n(n1Var.b, longValue, null, LiteMode.isEnabled(z10 ? 1 : LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD) ? 3 : 13);
-        n1Var.c = n10;
-        if (n1Var.s) {
+        n1Var.b = true;
+        n1Var.h = longValue;
+        org.telegram.ui.Components.r5 n10 = org.telegram.ui.Components.r5.n(n1Var.c, longValue, null, LiteMode.isEnabled(z10 ? 1 : LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD) ? 3 : 13);
+        n1Var.d = n10;
+        if (n1Var.v) {
             n10.a(n1Var);
         }
     }
 
     @Override // s4.g0
     public final s4.b1 x(ViewGroup viewGroup, int i10) {
-        org.telegram.ui.ActionBar.d6 d6Var;
-        View n8Var;
+        org.telegram.ui.ActionBar.g6 g6Var;
+        View o8Var;
         b2 b2Var = this.N;
         n2 n2Var = b2Var.s;
         if (i10 == 0) {
-            n8Var = new View(b2Var.getContext());
+            o8Var = new View(b2Var.getContext());
         } else if (i10 == 1) {
             Context context = b2Var.getContext();
-            d6Var = ((org.telegram.ui.ActionBar.f3) n2Var).resourcesProvider;
-            n8Var = new org.telegram.ui.Cells.n8(context, true, false, d6Var, false);
+            g6Var = ((org.telegram.ui.ActionBar.h3) n2Var).resourcesProvider;
+            o8Var = new org.telegram.ui.Cells.o8(context, true, false, g6Var, false);
         } else if (i10 == 3) {
             Context context2 = b2Var.getContext();
             boolean z10 = b2Var.a == 0;
@@ -532,14 +539,14 @@ public final class a2 extends s4.g0 {
             textView.setTextColor(-8553090);
             textView.setText(LocaleController.getString(z10 ? R.string.NoEmojiFound : R.string.NoStickersFound));
             x1Var.addView(textView, w7.z5.d(-2, -2.0f, 17, 0.0f, 34.0f, 0.0f, 0.0f));
-            n8Var = x1Var;
+            o8Var = x1Var;
         } else if (i10 == 4) {
             l2 l2Var = new l2(n2Var, b2Var.getContext());
             l2Var.e = new d1(n2Var, 2);
-            n8Var = l2Var;
+            o8Var = l2Var;
         } else {
-            n8Var = new n1(b2Var.getContext(), b2Var.b);
+            o8Var = new n1(b2Var.getContext(), b2Var.b);
         }
-        return new tl0(n8Var);
+        return new wl0(o8Var);
     }
 }

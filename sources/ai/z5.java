@@ -8,7 +8,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.bs;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class z5 extends View {
     public final Paint a;
@@ -40,12 +40,12 @@ public final class z5 extends View {
         float f7 = this.e;
         RectF rectF = AndroidUtilities.rectTmp;
         rectF.set(width - f7, height - f7, width + f7, height + f7);
-        int m12 = org.telegram.ui.ActionBar.h6.m1(0.25f, -1);
+        int o12 = org.telegram.ui.ActionBar.k6.o1(0.25f, -1);
         Paint paint = this.a;
-        paint.setColor(m12);
+        paint.setColor(o12);
         canvas.drawArc(rectF, 135.0f, 270.0f, false, paint);
         if (e > 0.0f) {
-            paint.setColor(org.telegram.ui.ActionBar.h6.m1(e, -1));
+            paint.setColor(org.telegram.ui.ActionBar.k6.o1(e, -1));
             canvas.drawArc(rectF, 135.0f, d * 270.0f, false, paint);
         }
     }

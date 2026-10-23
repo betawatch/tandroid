@@ -1,46 +1,45 @@
 package org.telegram.ui.Components;
 
-import android.text.TextPaint;
-import android.text.style.ClickableSpan;
-import android.text.style.URLSpan;
 import android.view.View;
-import org.telegram.messenger.Utilities;
+import android.view.ViewGroup;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class j41 extends ClickableSpan {
-    public final /* synthetic */ URLSpan a;
-    public final /* synthetic */ t41 b;
+public final class j41 extends s4.r0 {
+    public final /* synthetic */ y41 a;
 
-    public j41(t41 t41Var, URLSpan uRLSpan) {
-        this.b = t41Var;
-        this.a = uRLSpan;
+    public j41(y41 y41Var) {
+        this.a = y41Var;
     }
 
-    @Override // android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        t41 t41Var = this.b;
-        Utilities.CallbackReturn callbackReturn = t41Var.N;
-        URLSpan uRLSpan = this.a;
-        if (callbackReturn != null) {
-            if (((Boolean) callbackReturn.run(uRLSpan)).booleanValue()) {
-                t41Var.dismiss();
-            }
-        } else {
-            org.telegram.ui.ActionBar.n2 n2Var = t41Var.M;
-            if (n2Var != null) {
-                f5.p0(n2Var, uRLSpan.getURL(), false, false);
-            }
+    @Override // s4.r0
+    public final void a(RecyclerView recyclerView, int i10) {
+        y41 y41Var = this.a;
+        i41 i41Var = y41Var.M;
+        if (i10 == 0) {
+            y41Var.L = false;
+        }
+        if ((i10 == 0 || i10 == 2) && y41Var.K(false) > 0.0f && y41Var.K(false) < AndroidUtilities.dp(96.0f) && i41Var.canScrollVertically(1) && y41.E(y41Var)) {
+            y41Var.L = true;
+            i41Var.v0(0, (int) y41Var.K(false), null);
         }
     }
 
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        int min = Math.min(textPaint.getAlpha(), (textPaint.getColor() >> 24) & 255);
-        if (!(this.a instanceof l61)) {
-            textPaint.setUnderlineText(true);
+    @Override // s4.r0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        ViewGroup viewGroup;
+        y41 y41Var = this.a;
+        viewGroup = ((org.telegram.ui.ActionBar.h3) y41Var).containerView;
+        viewGroup.invalidate();
+        boolean canScrollVertically = y41Var.M.canScrollVertically(1);
+        View view = y41Var.Q;
+        Boolean bool = y41Var.W;
+        if (bool == null || bool.booleanValue() != canScrollVertically) {
+            y41Var.W = Boolean.valueOf(canScrollVertically);
+            view.animate().cancel();
+            org.telegram.messenger.sl.t(view.animate().alpha(canScrollVertically ? 1.0f : 0.0f), bs.h, 320L);
         }
-        textPaint.setColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.k5, false));
-        textPaint.setAlpha(min);
     }
 }

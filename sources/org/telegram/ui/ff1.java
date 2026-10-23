@@ -2,19 +2,37 @@ package org.telegram.ui;
 
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class ff1 extends vf1 {
-    public final /* synthetic */ TwoStepVerificationActivity k0;
+public final /* synthetic */ class ff1 implements org.telegram.ui.ActionBar.z1 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ TwoStepVerificationActivity b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ff1(TwoStepVerificationActivity twoStepVerificationActivity, int i10, TL_account.Password password) {
-        super(i10, 4, password);
-        this.k0 = twoStepVerificationActivity;
+    public /* synthetic */ ff1(TwoStepVerificationActivity twoStepVerificationActivity, int i10) {
+        this.a = i10;
+        this.b = twoStepVerificationActivity;
     }
 
-    @Override // org.telegram.ui.vf1
-    public final void B0() {
-        this.k0.N = true;
+    @Override // org.telegram.ui.ActionBar.z1
+    public final void g(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
+        switch (this.a) {
+            case 0:
+                this.b.finishFragment();
+                break;
+            case 1:
+                TL_account.declinePasswordReset declinepasswordreset = new TL_account.declinePasswordReset();
+                TwoStepVerificationActivity twoStepVerificationActivity = this.b;
+                twoStepVerificationActivity.getConnectionsManager().sendRequest(declinepasswordreset, new gf1(twoStepVerificationActivity, 2));
+                break;
+            case 2:
+                this.b.k0();
+                break;
+            case 3:
+                this.b.u0();
+                break;
+            default:
+                this.b.u0();
+                break;
+        }
     }
 }

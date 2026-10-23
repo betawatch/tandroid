@@ -7,7 +7,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j9 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -17,8 +17,8 @@ public final /* synthetic */ class j9 implements Runnable {
     public final /* synthetic */ Object e;
     public final /* synthetic */ TLObject f;
 
-    public /* synthetic */ j9(ga gaVar, TLObject tLObject, long j10, long j11, boolean z10) {
-        this.e = gaVar;
+    public /* synthetic */ j9(ha haVar, TLObject tLObject, long j10, long j11, boolean z10) {
+        this.e = haVar;
         this.f = tLObject;
         this.b = j10;
         this.d = j11;
@@ -33,8 +33,8 @@ public final /* synthetic */ class j9 implements Runnable {
         Object obj = this.e;
         switch (i10) {
             case 0:
-                ga gaVar = (ga) obj;
-                int i11 = gaVar.a;
+                ha haVar = (ha) obj;
+                int i11 = haVar.a;
                 if (tLObject instanceof TLRPC.TL_boolTrue) {
                     long j10 = this.b;
                     long j11 = this.d;
@@ -50,7 +50,7 @@ public final /* synthetic */ class j9 implements Runnable {
                         NotificationCenter.getInstance(i11).lambda$postNotificationNameOnUIThread$1(NotificationCenter.messagesFeeUpdated, Long.valueOf(j11));
                         break;
                     } else {
-                        gaVar.b0(-j10, j11, this.c);
+                        haVar.b0(-j10, j11, this.c);
                         break;
                     }
                 }

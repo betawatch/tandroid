@@ -6,7 +6,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.ui.Components.bs;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class b2 extends w1 {
     public final o1 b;
@@ -22,8 +22,8 @@ public final class b2 extends w1 {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public b2(n2 n2Var, Context context) {
         super(context);
-        org.telegram.ui.ActionBar.d6 d6Var;
-        org.telegram.ui.ActionBar.d6 d6Var2;
+        org.telegram.ui.ActionBar.g6 g6Var;
+        org.telegram.ui.ActionBar.g6 g6Var2;
         this.s = n2Var;
         this.h = 8;
         this.n = -1.0f;
@@ -39,7 +39,7 @@ public final class b2 extends w1 {
         o1Var.setClipToPadding(true);
         o1Var.setVerticalScrollBarEnabled(false);
         sVar.O = new ai.q1(this, 2);
-        o1Var.setOnItemClickListener(new ai.wa(this, 8));
+        o1Var.setOnItemClickListener(new ai.xa(this, 8));
         o1Var.setOnScrollListener(new ah.d0(this, 7));
         s4.k kVar = new s4.k();
         kVar.c = 220L;
@@ -49,13 +49,13 @@ public final class b2 extends w1 {
         kVar.i = bs.g;
         o1Var.setItemAnimator(kVar);
         addView(o1Var, w7.z5.c(-1.0f, -1));
-        d6Var = ((org.telegram.ui.ActionBar.f3) n2Var).resourcesProvider;
-        h2 h2Var = new h2(context, d6Var);
+        g6Var = ((org.telegram.ui.ActionBar.h3) n2Var).resourcesProvider;
+        h2 h2Var = new h2(context, g6Var);
         this.f = h2Var;
-        h2Var.v = new ai.q(this, 14);
+        h2Var.w = new ai.q(this, 14);
         addView(h2Var, w7.z5.e(-1, -2, 48));
-        d6Var2 = ((org.telegram.ui.ActionBar.f3) n2Var).resourcesProvider;
-        y1 y1Var = new y1(this, context, d6Var2);
+        g6Var2 = ((org.telegram.ui.ActionBar.h3) n2Var).resourcesProvider;
+        y1 y1Var = new y1(this, context, g6Var2);
         this.e = y1Var;
         addView(y1Var, w7.z5.c(36.0f, -1));
     }
@@ -64,7 +64,7 @@ public final class b2 extends w1 {
     public final void a(int i10) {
         int i11;
         this.a = i10;
-        this.b.W2 = i10 == 0;
+        this.b.Z2 = i10 == 0;
         int i12 = i10 == 0 ? 8 : 5;
         this.h = i12;
         this.d.y1(i12);
@@ -77,15 +77,15 @@ public final class b2 extends w1 {
         int i13 = n2Var.c;
         h2 h2Var = this.f;
         if (i13 >= 0) {
-            h2Var.r = true;
-            h2Var.d.setText("");
-            h2Var.r = false;
-            g2 g2Var = h2Var.f;
+            h2Var.s = true;
+            h2Var.e.setText("");
+            h2Var.s = false;
+            g2 g2Var = h2Var.h;
             if (g2Var != null) {
-                g2Var.F1(n2Var.c);
-                h2Var.f.D1();
-                if (h2Var.f.getSelectedCategory() != null) {
-                    a2Var.H = h2Var.f.getSelectedCategory().a;
+                g2Var.K1(n2Var.c);
+                h2Var.h.I1();
+                if (h2Var.h.getSelectedCategory() != null) {
+                    a2Var.H = h2Var.h.getSelectedCategory().a;
                     com.google.firebase.messaging.s sVar = a2Var.M;
                     AndroidUtilities.cancelRunOnUIThread(sVar);
                     AndroidUtilities.runOnUIThread(sVar);
@@ -94,17 +94,17 @@ public final class b2 extends w1 {
         } else if (TextUtils.isEmpty(n2Var.b)) {
             h2Var.b();
         } else {
-            h2Var.d.setText(n2Var.b);
-            g2 g2Var2 = h2Var.f;
+            h2Var.e.setText(n2Var.b);
+            g2 g2Var2 = h2Var.h;
             if (g2Var2 != null) {
-                g2Var2.G1(null);
-                h2Var.f.E1();
+                g2Var2.L1(null);
+                h2Var.h.J1();
             }
             AndroidUtilities.cancelRunOnUIThread(a2Var.M);
             AndroidUtilities.runOnUIThread(a2Var.M);
         }
         h2Var.a(i10, n2Var.s);
-        i11 = ((org.telegram.ui.ActionBar.f3) n2Var).currentAccount;
+        i11 = ((org.telegram.ui.ActionBar.h3) n2Var).currentAccount;
         MediaDataController.getInstance(i11).checkStickers(i10 == 0 ? 5 : 0);
     }
 
@@ -122,7 +122,7 @@ public final class b2 extends w1 {
             }
             Object tag = o1Var.getChildAt(i10).getTag();
             if ((tag instanceof Integer) && ((Integer) tag).intValue() == 34) {
-                return org.telegram.messenger.g0.b(102.0f, r3.getBottom(), 0);
+                return i2.o1.g(102.0f, r3.getBottom(), 0);
             }
             i10++;
         }
@@ -135,8 +135,8 @@ public final class b2 extends w1 {
         this.f.setTranslationY(AndroidUtilities.dp(52.0f) + max);
         o1 o1Var = this.b;
         float height = o1Var.getHeight() - o1Var.getPaddingBottom();
-        o1Var.X2 = max + o1Var.getPaddingTop();
-        o1Var.Y2 = height;
+        o1Var.a3 = max + o1Var.getPaddingTop();
+        o1Var.b3 = height;
     }
 
     @Override // android.widget.FrameLayout, android.view.View
@@ -144,8 +144,8 @@ public final class b2 extends w1 {
         int i12;
         int i13;
         n2 n2Var = this.s;
-        i12 = ((org.telegram.ui.ActionBar.f3) n2Var).backgroundPaddingLeft;
-        i13 = ((org.telegram.ui.ActionBar.f3) n2Var).backgroundPaddingLeft;
+        i12 = ((org.telegram.ui.ActionBar.h3) n2Var).backgroundPaddingLeft;
+        i13 = ((org.telegram.ui.ActionBar.h3) n2Var).backgroundPaddingLeft;
         setPadding(i12, 0, i13, 0);
         this.e.setTranslationY(AndroidUtilities.dp(16.0f));
         this.f.setTranslationY(AndroidUtilities.dp(52.0f));

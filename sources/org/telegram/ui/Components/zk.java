@@ -7,15 +7,15 @@ import android.widget.TextView;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class zk implements TextWatcher {
     public boolean a;
     public final /* synthetic */ TextView b;
 
-    public zk(ig.a1 a1Var, TextView textView) {
+    public zk(ig.z0 z0Var, TextView textView) {
         this.b = textView;
-        this.a = TextUtils.isEmpty(a1Var.getText());
+        this.a = TextUtils.isEmpty(z0Var.getText());
     }
 
     @Override // android.text.TextWatcher

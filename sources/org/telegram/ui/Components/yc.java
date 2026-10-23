@@ -4,7 +4,7 @@ import android.animation.ValueAnimator;
 import android.view.View;
 import android.view.animation.OvershootInterpolator;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public class yc {
     public View a;
@@ -48,7 +48,7 @@ public class yc {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.j, z10 ? 1.0f : 0.0f);
             this.g = ofFloat;
             ofFloat.addUpdateListener(new l6(this, 7));
-            this.g.addListener(new org.telegram.ui.fo(2, this, z10));
+            this.g.addListener(new org.telegram.ui.ho(2, this, z10));
             if (this.i) {
                 this.g.setInterpolator(bs.f);
                 this.g.setDuration((long) (this.b * 60.0f));

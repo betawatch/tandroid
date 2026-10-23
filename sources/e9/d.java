@@ -9,11 +9,11 @@ import java.util.ListIterator;
 import java.util.Map;
 import java.util.RandomAccess;
 import v7.u6;
-import z7.ee;
-import z7.fd;
+import z7.de;
+import z7.ed;
 import z7.mg;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public class d implements Iterator {
     public final /* synthetic */ int a;
@@ -122,7 +122,7 @@ public class d implements Iterator {
                 mg mgVar = (mg) ((e) this.d).e;
                 mgVar.getClass();
                 List list2 = (List) collection2;
-                return new z7.f(key2, list2 instanceof RandomAccess ? new ee(mgVar, key2, list2, null) : new m(mgVar, key2, list2, (m) null));
+                return new z7.f(key2, list2 instanceof RandomAccess ? new de(mgVar, key2, list2, null) : new m(mgVar, key2, list2, (m) null));
             case 7:
                 Map.Entry entry6 = (Map.Entry) this.b.next();
                 this.c = entry6;
@@ -202,7 +202,7 @@ public class d implements Iterator {
                 }
                 Collection collection3 = (Collection) entry2.getValue();
                 this.b.remove();
-                ((fd) this.d).c.getClass();
+                ((ed) this.d).c.getClass();
                 collection3.size();
                 collection3.clear();
                 this.c = null;

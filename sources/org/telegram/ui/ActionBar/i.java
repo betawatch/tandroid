@@ -12,7 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.ui.Components.p31;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class i extends ChangeBounds {
     public final /* synthetic */ int a;
@@ -27,8 +27,8 @@ public final class i extends ChangeBounds {
             case 0:
                 super.captureEndValues(transitionValues);
                 View view = transitionValues.view;
-                if (view instanceof j5) {
-                    transitionValues.values.put("text_size", Float.valueOf(((j5) view).getTextPaint().getTextSize()));
+                if (view instanceof n5) {
+                    transitionValues.values.put("text_size", Float.valueOf(((n5) view).getTextPaint().getTextSize()));
                     break;
                 }
                 break;
@@ -56,8 +56,8 @@ public final class i extends ChangeBounds {
             case 0:
                 super.captureStartValues(transitionValues);
                 View view = transitionValues.view;
-                if (view instanceof j5) {
-                    transitionValues.values.put("text_size", Float.valueOf(((j5) view).getTextPaint().getTextSize()));
+                if (view instanceof n5) {
+                    transitionValues.values.put("text_size", Float.valueOf(((n5) view).getTextPaint().getTextSize()));
                     break;
                 }
                 break;
@@ -85,7 +85,7 @@ public final class i extends ChangeBounds {
         final int i11 = 0;
         switch (this.a) {
             case 0:
-                if (transitionValues != null && (transitionValues.view instanceof j5)) {
+                if (transitionValues != null && (transitionValues.view instanceof n5)) {
                     AnimatorSet animatorSet = new AnimatorSet();
                     if (transitionValues2 != null) {
                         Animator createAnimator = super.createAnimator(viewGroup, transitionValues, transitionValues2);
@@ -207,7 +207,7 @@ public final class i extends ChangeBounds {
                         }
                     });
                     animatorSet2.playTogether(ofInt3);
-                    animatorSet2.addListener(new p31(transitionValues, 8));
+                    animatorSet2.addListener(new p31(transitionValues, 9));
                     break;
                 } else {
                     break;

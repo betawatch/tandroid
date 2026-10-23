@@ -1,45 +1,35 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Rect;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class rb1 extends AnimatorListenerAdapter {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ kc1 e;
+public final class rb1 extends FrameLayout {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Rect b;
+    public final /* synthetic */ qc1 c;
 
-    public rb1(kc1 kc1Var, boolean z10, int i10, int i11, boolean z11) {
-        this.e = kc1Var;
-        this.a = z10;
-        this.b = i10;
-        this.c = i11;
-        this.d = z11;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public rb1(qc1 qc1Var, Context context, int i10, Rect rect) {
+        super(context);
+        this.c = qc1Var;
+        this.a = i10;
+        this.b = rect;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        kc1 kc1Var = this.e;
-        FrameLayout[] frameLayoutArr = kc1Var.L0;
-        kc1Var.r1 = null;
-        int i10 = this.c;
-        int i11 = this.b;
-        boolean z10 = this.a;
-        if (z10 && frameLayoutArr[i11].getVisibility() == 0) {
-            frameLayoutArr[i11].setAlpha(1.0f);
-            frameLayoutArr[i11].setVisibility(4);
-        } else if (!z10) {
-            frameLayoutArr[i10].setVisibility(4);
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        int i10 = this.a;
+        Rect rect = this.b;
+        qc1 qc1Var = this.c;
+        if (i10 == 0) {
+            qc1Var.r.setBounds(qc1Var.W.getLeft() - rect.left, 0, qc1Var.W.getRight() + rect.right, getMeasuredHeight());
+        } else {
+            qc1Var.r.setBounds(-rect.left, 0, getMeasuredWidth() + rect.right, getMeasuredHeight());
         }
-        int i12 = kc1Var.b;
-        if (i12 == 1 || i12 == 2) {
-            kc1Var.J0[this.d ? (char) 0 : (char) 2].setVisibility(4);
-        } else if (i10 == 1) {
-            frameLayoutArr[i11].setAlpha(0.0f);
-        }
+        qc1Var.r.draw(canvas);
     }
 }

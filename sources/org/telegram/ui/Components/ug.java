@@ -7,7 +7,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class ug extends View {
     public float a;
@@ -15,7 +15,7 @@ public final class ug extends View {
     public boolean c;
     public boolean d;
     public boolean e;
-    public final vj0 f;
+    public final yj0 f;
     public boolean h;
     public boolean n;
     public long r;
@@ -26,34 +26,34 @@ public final class ug extends View {
         super(context);
         this.s = chatActivityEnterView;
         this.r = -1L;
-        vj0 vj0Var = new vj0(R.raw.chat_audio_record_delete_2, AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), false, null);
-        this.f = vj0Var;
-        vj0Var.o0 = true;
+        yj0 yj0Var = new yj0(R.raw.chat_audio_record_delete_2, AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), false, null);
+        this.f = yj0Var;
+        yj0Var.o0 = true;
         a();
     }
 
     public final void a() {
-        int i10 = org.telegram.ui.ActionBar.h6.jf;
-        int i11 = ChatActivityEnterView.n5;
+        int i10 = org.telegram.ui.ActionBar.k6.jf;
+        int i11 = ChatActivityEnterView.r5;
         ChatActivityEnterView chatActivityEnterView = this.s;
-        int g02 = chatActivityEnterView.g0(i10);
-        int g03 = chatActivityEnterView.g0(org.telegram.ui.ActionBar.h6.Sd);
-        int g04 = chatActivityEnterView.g0(org.telegram.ui.ActionBar.h6.df);
-        chatActivityEnterView.w3.setColor(g02);
-        vj0 vj0Var = this.f;
-        vj0Var.Z = true;
-        vj0Var.Q(g02, "Cup Red");
-        vj0Var.Q(g02, "Box Red");
-        vj0Var.Q(g04, "Cup Grey");
-        vj0Var.Q(g04, "Box Grey");
-        vj0Var.Q(g04, "Box_Grey 2");
-        vj0Var.Q(g04, "Line 1");
-        vj0Var.Q(g04, "Line 2");
-        vj0Var.Q(g04, "Line 3");
-        vj0Var.Q(g03, "Line 1 Dup");
-        vj0Var.Q(g03, "Line 2 Dup");
-        vj0Var.Q(g03, "Line 3 Dup");
-        vj0Var.o();
+        int f02 = chatActivityEnterView.f0(i10);
+        int f03 = chatActivityEnterView.f0(org.telegram.ui.ActionBar.k6.Sd);
+        int f04 = chatActivityEnterView.f0(org.telegram.ui.ActionBar.k6.df);
+        chatActivityEnterView.w3.setColor(f02);
+        yj0 yj0Var = this.f;
+        yj0Var.Z = true;
+        yj0Var.Q(f02, "Cup Red");
+        yj0Var.Q(f02, "Box Red");
+        yj0Var.Q(f04, "Cup Grey");
+        yj0Var.Q(f04, "Box Grey");
+        yj0Var.Q(f04, "Box_Grey 2");
+        yj0Var.Q(f04, "Line 1");
+        yj0Var.Q(f04, "Line 2");
+        yj0Var.Q(f04, "Line 3");
+        yj0Var.Q(f03, "Line 1 Dup");
+        yj0Var.Q(f03, "Line 2 Dup");
+        yj0Var.Q(f03, "Line 3 Dup");
+        yj0Var.o();
     }
 
     @Override // android.view.View
@@ -61,29 +61,29 @@ public final class ug extends View {
         super.onAttachedToWindow();
         this.d = true;
         boolean z10 = this.e;
-        vj0 vj0Var = this.f;
+        yj0 yj0Var = this.f;
         if (z10) {
-            vj0Var.start();
+            yj0Var.start();
         }
-        vj0Var.R(this);
+        yj0Var.R(this);
     }
 
     @Override // android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.d = false;
-        vj0 vj0Var = this.f;
-        vj0Var.stop();
-        vj0Var.R(null);
+        yj0 yj0Var = this.f;
+        yj0Var.stop();
+        yj0Var.R(null);
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         Paint paint = this.s.w3;
         boolean z10 = this.e;
-        vj0 vj0Var = this.f;
+        yj0 yj0Var = this.f;
         if (z10) {
-            vj0Var.setAlpha((int) (this.a * 255.0f));
+            yj0Var.setAlpha((int) (this.a * 255.0f));
         }
         paint.setAlpha((int) (this.a * 255.0f));
         if (!this.n) {
@@ -109,9 +109,9 @@ public final class ug extends View {
             this.b = currentTimeMillis;
         }
         if (this.e) {
-            vj0Var.draw(canvas);
+            yj0Var.draw(canvas);
         }
-        if (!this.e || !vj0Var.u()) {
+        if (!this.e || !yj0Var.u()) {
             canvas.drawCircle(getMeasuredWidth() >> 1, getMeasuredHeight() >> 1, AndroidUtilities.dp(5.0f), paint);
         }
         if (this.n) {

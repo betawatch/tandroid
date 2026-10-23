@@ -1,45 +1,36 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class db0 {
-    public final /* synthetic */ org.telegram.ui.ActionBar.n2 a;
-    public final /* synthetic */ ib0 b;
+public final class db0 extends g.o {
+    public final /* synthetic */ jb0 c;
 
-    public db0(ib0 ib0Var, org.telegram.ui.ActionBar.n2 n2Var) {
-        this.b = ib0Var;
-        this.a = n2Var;
+    public db0(jb0 jb0Var) {
+        this.c = jb0Var;
     }
 
-    public final void a(boolean z10) {
-        ib0 ib0Var = this.b;
-        if (ib0Var.getNeededLayoutManager() != ib0Var.getCurrentLayoutManager() && ib0Var.a()) {
-            if (ib0Var.f.M0 > 0) {
-                ib0Var.N = true;
-                ib0Var.o(false);
-                return;
-            }
-            ib0Var.b.setLayoutManager(ib0Var.getNeededLayoutManager());
+    @Override // g.o
+    public final int i(int i10) {
+        jb0 jb0Var = this.c;
+        hg.j1 j1Var = jb0Var.f;
+        if (i10 == 0) {
+            return 100;
         }
-        if (z10 && !ib0Var.a()) {
-            z10 = false;
+        int i11 = i10 - 1;
+        Object J = j1Var.J(i11);
+        if (J instanceof TLRPC.TL_inlineBotSwitchPM) {
+            return 100;
         }
-        ib0Var.o((!z10 || ib0Var.f.K() > 0) ? z10 : false);
-    }
-
-    public final void b(boolean z10) {
-        this.b.l(z10);
-    }
-
-    public final void c() {
-        ib0 ib0Var = this.b;
-        hq hqVar = ib0Var.J;
-        if (ib0Var.b.getLayoutManager() == ib0Var.d || !ib0Var.I) {
-            return;
+        if (J instanceof TLRPC.Document) {
+            return 20;
         }
-        AndroidUtilities.cancelRunOnUIThread(hqVar);
-        AndroidUtilities.runOnUIThread(hqVar, this.a.getFragmentBeginToShow() ? 0L : 100L);
+        if (j1Var.I() != null || j1Var.U != null) {
+            i10 = i11;
+        }
+        cb0 cb0Var = jb0Var.d;
+        cb0Var.B1();
+        return cb0Var.R.get(i10);
     }
 }

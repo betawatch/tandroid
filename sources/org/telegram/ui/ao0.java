@@ -1,68 +1,94 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
+import android.text.Editable;
+import android.text.TextWatcher;
+import java.util.HashMap;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class ao0 extends FrameLayout {
-    public final Paint a;
-    public float b;
-    public o1.k c;
-    public final /* synthetic */ eo0 d;
+public final class ao0 implements TextWatcher {
+    public final /* synthetic */ io0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ao0(eo0 eo0Var, Context context) {
-        super(context);
-        this.d = eo0Var;
-        this.a = new Paint(1);
-        setWillNotDraw(false);
+    public ao0(io0 io0Var) {
+        this.a = io0Var;
     }
 
-    public final void a(boolean z10, boolean z11) {
-        o1.k kVar = this.c;
-        if (kVar != null) {
-            kVar.c();
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        boolean z10;
+        String str;
+        String str2;
+        io0 io0Var = this.a;
+        HashMap hashMap = io0Var.c;
+        if (io0Var.m0) {
+            return;
         }
-        float f7 = z10 ? 1.0f : 0.0f;
-        if (!z11) {
-            this.b = f7;
-            TextView textView = this.d.U;
-            if (textView != null) {
-                textView.setAlpha((f7 * 0.2f) + 0.8f);
+        io0Var.m0 = true;
+        String d = jf.b.d(io0Var.f[8].getText().toString(), false);
+        io0Var.f[8].setText(d);
+        org.telegram.ui.Components.o40 o40Var = (org.telegram.ui.Components.o40) io0Var.f[9];
+        if (d.length() == 0) {
+            o40Var.setHintText((String) null);
+            o40Var.setHint(LocaleController.getString(R.string.PaymentShippingPhoneNumber));
+        } else {
+            int i10 = 4;
+            if (d.length() > 4) {
+                while (true) {
+                    if (i10 < 1) {
+                        z10 = false;
+                        str = null;
+                        break;
+                    }
+                    String substring = d.substring(0, i10);
+                    if (((String) hashMap.get(substring)) != null) {
+                        String str3 = d.substring(i10) + io0Var.f[9].getText().toString();
+                        io0Var.f[8].setText(substring);
+                        str = str3;
+                        d = substring;
+                        z10 = true;
+                        break;
+                    }
+                    i10--;
+                }
+                if (!z10) {
+                    str = d.substring(1) + io0Var.f[9].getText().toString();
+                    EditTextBoldCursor editTextBoldCursor = io0Var.f[8];
+                    d = d.substring(0, 1);
+                    editTextBoldCursor.setText(d);
+                }
+            } else {
+                z10 = false;
+                str = null;
             }
-            invalidate();
-            return;
+            String str4 = (String) hashMap.get(d);
+            if (str4 == null || io0Var.a.indexOf(str4) == -1 || (str2 = (String) io0Var.d.get(d)) == null) {
+                o40Var.setHintText((String) null);
+                o40Var.setHint(LocaleController.getString(R.string.PaymentShippingPhoneNumber));
+            } else {
+                o40Var.setHintText(str2.replace('X', (char) 8211));
+                o40Var.setHint((CharSequence) null);
+            }
+            if (!z10) {
+                EditTextBoldCursor editTextBoldCursor2 = io0Var.f[8];
+                editTextBoldCursor2.setSelection(editTextBoldCursor2.getText().length());
+            }
+            if (str != null) {
+                o40Var.requestFocus();
+                o40Var.setText(str);
+                o40Var.setSelection(o40Var.length());
+            }
         }
-        float f10 = this.b;
-        if (f10 == f7) {
-            return;
-        }
-        o1.k kVar2 = new o1.k(new o1.j(f10 * 100.0f));
-        o1.l lVar = new o1.l(f7 * 100.0f);
-        lVar.b(z10 ? 500.0f : 650.0f);
-        lVar.a(1.0f);
-        kVar2.u = lVar;
-        this.c = kVar2;
-        kVar2.b(new yc0(this, 1));
-        this.c.a(new p9(this, 1));
-        this.c.h();
+        io0Var.m0 = false;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        int i10 = org.telegram.ui.ActionBar.h6.O6;
-        eo0 eo0Var = this.d;
-        canvas.drawColor(eo0Var.getThemedColor(i10));
-        int themedColor = eo0Var.getThemedColor(org.telegram.ui.ActionBar.h6.ei);
-        Paint paint = this.a;
-        paint.setColor(themedColor);
-        canvas.drawCircle(LocaleController.isRTL ? getWidth() - AndroidUtilities.dp(28.0f) : AndroidUtilities.dp(28.0f), -AndroidUtilities.dp(28.0f), Math.max(getWidth(), getHeight()) * this.b, paint);
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

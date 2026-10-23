@@ -18,7 +18,7 @@ import org.telegram.tgnet.tl.TL_ephemeral;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public class FileRefController extends BaseController {
     private static volatile FileRefController[] Instance = new FileRefController[4];
@@ -32,7 +32,7 @@ public class FileRefController extends BaseController {
     private ArrayList<Waiter> savedGifsWaiters;
     private ArrayList<Waiter> wallpaperWaiters;
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public static class CachedResult {
         private long firstQueryTime;
         private TLObject response;
@@ -41,7 +41,7 @@ public class FileRefController extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public static class Requester {
         private Object[] args;
         private boolean completed;
@@ -52,7 +52,7 @@ public class FileRefController extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public static class Waiter {
         private String locationKey;
         private String parentKey;
@@ -321,7 +321,7 @@ public class FileRefController extends BaseController {
                 if (obj != null && inputFileLocationArr != null) {
                     inputFileLocationArr[0] = (TLRPC.InputFileLocation) obj;
                 }
-                if (tLObject2 instanceof ci.s6) {
+                if (tLObject2 instanceof ci.r6) {
                     fileRefController = this;
                     TLRPC.InputFileLocation inputFileLocation5 = inputFileLocation;
                     inputFileLocationArr2 = inputFileLocationArr;
@@ -701,7 +701,7 @@ public class FileRefController extends BaseController {
                         }
                     }
                 } else {
-                    TLRPC.MessageMedia messageMedia4 = ((ci.s6) tLObject2).media;
+                    TLRPC.MessageMedia messageMedia4 = ((ci.r6) tLObject2).media;
                     TLRPC.Document document6 = messageMedia4.document;
                     if (document6 != null) {
                         fileRefController2 = this;
@@ -727,7 +727,7 @@ public class FileRefController extends BaseController {
             tLObject2 = tLObject;
         }
         bArr = null;
-        if (tLObject2 instanceof ci.s6) {
+        if (tLObject2 instanceof ci.r6) {
         }
         inputFileLocationArr3 = inputFileLocationArr2;
         if (bArr == null) {
@@ -760,20 +760,20 @@ public class FileRefController extends BaseController {
         TLRPC.Message message;
         TLRPC.MessageFwdHeader messageFwdHeader;
         TLRPC.Peer peer;
-        if (obj instanceof ci.s6) {
-            ci.s6 s6Var = (ci.s6) obj;
-            if (s6Var.a == null) {
+        if (obj instanceof ci.r6) {
+            ci.r6 r6Var = (ci.r6) obj;
+            if (r6Var.a == null) {
                 FileLog.d("failed request reference can't find list in botpreview");
                 return null;
             }
-            TLRPC.MessageMedia messageMedia = s6Var.media;
+            TLRPC.MessageMedia messageMedia = r6Var.media;
             if (messageMedia.document != null) {
-                return "botstory_doc_" + s6Var.media.document.id;
+                return "botstory_doc_" + r6Var.media.document.id;
             }
             if (messageMedia.photo != null) {
-                return "botstory_photo_" + s6Var.media.photo.id;
+                return "botstory_photo_" + r6Var.media.photo.id;
             }
-            return "botstory_" + s6Var.id;
+            return "botstory_" + r6Var.id;
         }
         if (obj instanceof TL_stories.StoryItem) {
             TL_stories.StoryItem storyItem = (TL_stories.StoryItem) obj;
@@ -925,17 +925,17 @@ public class FileRefController extends BaseController {
     /* JADX INFO: Access modifiers changed from: private */
     public static void lambda$onRequestComplete$46(TLRPC.TL_theme tL_theme) {
         TLRPC.Document document;
-        ArrayList arrayList = org.telegram.ui.ActionBar.h6.F;
+        ArrayList arrayList = org.telegram.ui.ActionBar.k6.F;
         int size = arrayList.size();
         for (int i10 = 0; i10 < size; i10++) {
-            TLRPC.TL_theme tL_theme2 = ((org.telegram.ui.ActionBar.g6) arrayList.get(i10)).F;
+            TLRPC.TL_theme tL_theme2 = ((org.telegram.ui.ActionBar.j6) arrayList.get(i10)).F;
             if (tL_theme2 != null && tL_theme2.id == tL_theme.id) {
                 TLRPC.Document document2 = tL_theme2.document;
                 if (document2 == null || (document = tL_theme.document) == null) {
                     return;
                 }
                 document2.file_reference = document.file_reference;
-                org.telegram.ui.ActionBar.h6.t1(true, false);
+                org.telegram.ui.ActionBar.k6.v1(true, false);
                 return;
             }
         }
@@ -997,13 +997,13 @@ public class FileRefController extends BaseController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$requestReferenceFromServer$0(String str, String str2, ci.s6 s6Var) {
-        onRequestComplete(str, str2, s6Var, null, true, false);
+    public /* synthetic */ void lambda$requestReferenceFromServer$0(String str, String str2, ci.r6 r6Var) {
+        onRequestComplete(str, str2, r6Var, null, true, false);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$requestReferenceFromServer$1(String str, String str2, ci.s6 s6Var) {
-        Utilities.stageQueue.postRunnable(new ok(this, str, str2, s6Var, 7));
+    public /* synthetic */ void lambda$requestReferenceFromServer$1(String str, String str2, ci.r6 r6Var) {
+        Utilities.stageQueue.postRunnable(new nk(this, str, str2, r6Var, 7));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1281,8 +1281,8 @@ public class FileRefController extends BaseController {
                         TLRPC.InputFileLocation[] inputFileLocationArr2 = inputFileLocationArr;
                         boolean[] zArr4 = zArr3;
                         requester4.completed = i15;
-                        if (tLObject2 instanceof ci.s6) {
-                            TLRPC.MessageMedia messageMedia2 = ((ci.s6) tLObject2).media;
+                        if (tLObject2 instanceof ci.r6) {
+                            TLRPC.MessageMedia messageMedia2 = ((ci.r6) tLObject2).media;
                             requester = requester4;
                             zArr = zArr4;
                             TLRPC.Document document3 = messageMedia2.document;
@@ -1929,7 +1929,7 @@ public class FileRefController extends BaseController {
             StringBuilder sb2 = new StringBuilder("fileref updated for ");
             sb2.append(requester.args[0]);
             sb2.append(" ");
-            i2.e.v(requester.locationKey, sb2);
+            i2.o1.w(requester.locationKey, sb2);
         }
         if (requester.args[0] instanceof TL_stories.TL_storyItem) {
             ((TL_stories.TL_storyItem) requester.args[0]).media.document.file_reference = bArr;
@@ -2451,21 +2451,21 @@ public class FileRefController extends BaseController {
     }
 
     private void requestReferenceFromServer(Object obj, final String str, final String str2, Object[] objArr) {
-        if (obj instanceof ci.s6) {
-            ci.s6 s6Var = (ci.s6) obj;
-            ci.t6 t6Var = s6Var.a;
-            if (t6Var == null) {
+        if (obj instanceof ci.r6) {
+            ci.r6 r6Var = (ci.r6) obj;
+            ci.s6 s6Var = r6Var.a;
+            if (s6Var == null) {
                 sendErrorToObject(objArr, 0);
                 return;
             }
-            a3.l0 l0Var = new a3.l0(t6Var, s6Var, new k2(this, str, str2, 2), 23);
-            if (t6Var.F != 0) {
-                ConnectionsManager.getInstance(t6Var.c).cancelRequest(t6Var.F, true);
-                t6Var.F = 0;
+            a3.l0 l0Var = new a3.l0(s6Var, r6Var, new k2(this, str, str2, 2), 23);
+            if (s6Var.F != 0) {
+                ConnectionsManager.getInstance(s6Var.c).cancelRequest(s6Var.F, true);
+                s6Var.F = 0;
             }
-            t6Var.C = false;
-            t6Var.D = false;
-            t6Var.H(l0Var);
+            s6Var.C = false;
+            s6Var.D = false;
+            s6Var.H(l0Var);
             return;
         }
         if (obj instanceof TL_stories.StoryItem) {
@@ -5213,20 +5213,20 @@ public class FileRefController extends BaseController {
         if ((obj2 instanceof TL_ephemeral.TL_sendMessage) && (((TL_ephemeral.TL_sendMessage) obj2).media instanceof TLRPC.TL_inputMediaPoll) && (obj instanceof ArrayList)) {
             return null;
         }
-        if (obj2 instanceof ci.s6) {
-            ci.s6 s6Var = (ci.s6) obj2;
-            TLRPC.MessageMedia messageMedia = s6Var.media;
+        if (obj2 instanceof ci.r6) {
+            ci.r6 r6Var = (ci.r6) obj2;
+            TLRPC.MessageMedia messageMedia = r6Var.media;
             if (messageMedia.document != null) {
                 TLRPC.TL_inputDocumentFileLocation tL_inputDocumentFileLocation = new TLRPC.TL_inputDocumentFileLocation();
-                tL_inputDocumentFileLocation.id = s6Var.media.document.id;
-                return new Pair<>(tL_inputDocumentFileLocation, "botstory_doc_" + s6Var.media.document.id);
+                tL_inputDocumentFileLocation.id = r6Var.media.document.id;
+                return new Pair<>(tL_inputDocumentFileLocation, "botstory_doc_" + r6Var.media.document.id);
             }
             if (messageMedia.photo == null) {
-                return new Pair<>(new TLRPC.TL_inputDocumentFileLocation(), "botstory_" + s6Var.id);
+                return new Pair<>(new TLRPC.TL_inputDocumentFileLocation(), "botstory_" + r6Var.id);
             }
             TLRPC.TL_inputPhotoFileLocation tL_inputPhotoFileLocation = new TLRPC.TL_inputPhotoFileLocation();
-            tL_inputPhotoFileLocation.id = s6Var.media.photo.id;
-            return new Pair<>(tL_inputPhotoFileLocation, "botstory_photo_" + s6Var.media.photo.id);
+            tL_inputPhotoFileLocation.id = r6Var.media.photo.id;
+            return new Pair<>(tL_inputPhotoFileLocation, "botstory_photo_" + r6Var.media.photo.id);
         }
         if (obj2 instanceof TL_stories.TL_storyItem) {
             TL_stories.TL_storyItem tL_storyItem = (TL_stories.TL_storyItem) obj2;

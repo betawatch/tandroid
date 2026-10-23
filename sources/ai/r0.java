@@ -26,16 +26,16 @@ import org.telegram.messenger.voip.NativeInstance;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.bh0;
-import org.telegram.ui.Components.c71;
-import org.telegram.ui.Components.h61;
-import org.telegram.ui.Components.po0;
-import org.telegram.ui.Components.r71;
-import org.telegram.ui.Components.u61;
-import org.telegram.ui.cy;
-import org.telegram.ui.lx;
+import org.telegram.ui.Components.b71;
+import org.telegram.ui.Components.eh0;
+import org.telegram.ui.Components.j71;
+import org.telegram.ui.Components.m61;
+import org.telegram.ui.Components.so0;
+import org.telegram.ui.Components.z71;
+import org.telegram.ui.ey;
+import org.telegram.ui.nx;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class r0 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -51,19 +51,19 @@ public final /* synthetic */ class r0 implements Utilities.Callback {
         String str;
         String str2;
         int i10;
-        u61 u61Var;
+        b71 b71Var;
         int i11 = 3;
         int i12 = 0;
         int i13 = 0;
         switch (this.a) {
             case 0:
                 b1 b1Var = (b1) this.b;
-                int i14 = b1.w0[((Integer) obj).intValue()];
-                if (b1Var.n0 != i14) {
-                    b1Var.n0 = i14;
-                    b1Var.f0.setText(LocaleController.formatPluralString("GiftOfferHours", i14 / 3600, new Object[0]));
+                int i14 = b1.x0[((Integer) obj).intValue()];
+                if (b1Var.o0 != i14) {
+                    b1Var.o0 = i14;
+                    b1Var.g0.setText(LocaleController.formatPluralString("GiftOfferHours", i14 / 3600, new Object[0]));
                 }
-                b1Var.U(true);
+                b1Var.T(true);
                 break;
             case 1:
                 a2 a2Var = (a2) this.b;
@@ -85,10 +85,10 @@ public final /* synthetic */ class r0 implements Utilities.Callback {
                 paint.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
                 break;
             case 3:
-                ga.a((ga) this.b, (TL_stars.StarGifts) obj);
+                ha.a((ha) this.b, (TL_stars.StarGifts) obj);
                 break;
             case 4:
-                ((org.telegram.ui.ActionBar.f3) this.b).dismiss(((Boolean) obj).booleanValue());
+                ((org.telegram.ui.ActionBar.h3) this.b).dismiss(((Boolean) obj).booleanValue());
                 break;
             case 5:
                 TextView textView = (TextView) this.b;
@@ -132,37 +132,37 @@ public final /* synthetic */ class r0 implements Utilities.Callback {
                 }
                 break;
             case 7:
-                ci.aa aaVar = (ci.aa) this.b;
-                aaVar.k1 = false;
-                aaVar.P();
+                ci.z9 z9Var = (ci.z9) this.b;
+                z9Var.k1 = false;
+                z9Var.P();
                 break;
             case 8:
-                ci.u5 u5Var = (ci.u5) obj;
-                ci.c6 c6Var = ((ci.z5) this.b).e;
+                ci.t5 t5Var = (ci.t5) obj;
+                ci.b6 b6Var = ((ci.y5) this.b).e;
                 while (true) {
-                    ArrayList arrayList = c6Var.G;
+                    ArrayList arrayList = b6Var.G;
                     if (i12 >= arrayList.size()) {
                         break;
                     } else {
-                        if (u5Var != arrayList.get(i12)) {
-                            ((ci.u5) arrayList.get(i12)).getClass();
+                        if (t5Var != arrayList.get(i12)) {
+                            ((ci.t5) arrayList.get(i12)).getClass();
                         }
                         i12++;
                     }
                 }
             case 9:
-                ci.n8 n8Var = (ci.n8) this.b;
+                ci.m8 m8Var = (ci.m8) this.b;
                 TL_stories.StoryItem storyItem = (TL_stories.StoryItem) obj;
-                n8Var.p = true;
+                m8Var.p = true;
                 if (storyItem != null && (str2 = storyItem.caption) != null) {
-                    n8Var.m = true;
-                    n8Var.l = str2;
-                    n8Var.f = TextUtils.isEmpty(str2);
-                    View view = n8Var.r;
+                    m8Var.m = true;
+                    m8Var.l = str2;
+                    m8Var.f = TextUtils.isEmpty(str2);
+                    View view = m8Var.r;
                     if (view != null) {
                         view.invalidate();
                     }
-                    Runnable runnable = n8Var.s;
+                    Runnable runnable = m8Var.s;
                     if (runnable != null) {
                         runnable.run();
                         break;
@@ -177,7 +177,7 @@ public final /* synthetic */ class r0 implements Utilities.Callback {
                     arrayList2.add(str3);
                     vVar.i(true);
                 }
-                AndroidUtilities.runOnUIThread(new ci.v7(12, vVar, str3), 120L);
+                AndroidUtilities.runOnUIThread(new ci.u7(12, vVar, str3), 120L);
                 break;
             case 11:
                 ((ei.m) this.b).x(((Integer) obj).intValue());
@@ -205,7 +205,7 @@ public final /* synthetic */ class r0 implements Utilities.Callback {
             case 14:
                 ei.s2 s2Var = (ei.s2) this.b;
                 s2Var.h(-1.0f);
-                AndroidUtilities.runOnUIThread(new ci.v7(25, s2Var, (Runnable) obj), 80L);
+                AndroidUtilities.runOnUIThread(new ci.u7(25, s2Var, (Runnable) obj), 80L);
                 break;
             case 15:
                 ((ei.q3) this.b).s.animate().translationY(((-((Integer) obj).intValue()) / 2.0f) + AndroidUtilities.dp(80.0f)).setDuration(250L).setInterpolator(org.telegram.ui.ActionBar.o1.w).start();
@@ -217,14 +217,14 @@ public final /* synthetic */ class r0 implements Utilities.Callback {
                 if (view2 instanceof ei.k4) {
                     g4Var.getClass();
                     int R = RecyclerView.R(view2);
-                    h61 G = g4Var.W2.G(R);
+                    m61 G = g4Var.Z2.G(R);
                     if (G != null) {
                         ei.k4 k4Var = (ei.k4) view2;
                         k4Var.setPosition(l4Var.b(R));
                         k4Var.b(l4Var.f == G.d, true);
                         boolean contains = l4Var.e.contains(Integer.valueOf(G.d));
-                        if (k4Var.f != contains) {
-                            k4Var.f = contains;
+                        if (k4Var.h != contains) {
+                            k4Var.h = contains;
                             k4Var.invalidate();
                         }
                         view2.setPressed(false);
@@ -236,7 +236,7 @@ public final /* synthetic */ class r0 implements Utilities.Callback {
                 ei.g4 g4Var2 = (ei.g4) this.b;
                 View view3 = (View) obj;
                 if (view3 instanceof ei.k4) {
-                    ei.ma maVar = g4Var2.d3;
+                    ei.ma maVar = g4Var2.g3;
                     maVar.b.getClass();
                     ((ei.k4) view3).setPosition(maVar.b(RecyclerView.R(view3)));
                     view3.setPressed(false);
@@ -251,7 +251,7 @@ public final /* synthetic */ class r0 implements Utilities.Callback {
                 if (a8Var != null && vbVar.O1 != 1) {
                     boolean isEmpty = TextUtils.isEmpty(a8Var.y);
                     boolean z10 = !isEmpty;
-                    ((bh0) vbVar.j1.c).a(!vbVar.X0.k(), false);
+                    ((eh0) vbVar.j1.c).a(!vbVar.X0.k(), false);
                     vbVar.j1.setVisibility(0);
                     vbVar.j1.animate().alpha(!isEmpty ? 1.0f : 0.0f).withEndAction(new ah.t(9, xaVar, z10)).start();
                 }
@@ -273,14 +273,14 @@ public final /* synthetic */ class r0 implements Utilities.Callback {
                 break;
             case 19:
                 ei.z7 z7Var = (ei.z7) obj;
-                r71 r71Var = ((ei.r6) this.b).n;
-                if (r71Var != null) {
-                    r71Var.setHDRInfo(z7Var);
+                z71 z71Var = ((ei.r6) this.b).n;
+                if (z71Var != null) {
+                    z71Var.setHDRInfo(z7Var);
                     break;
                 }
                 break;
             case 20:
-                ei.s7.T((ei.s7) this.b, (Long) obj);
+                ei.s7.S((ei.s7) this.b, (Long) obj);
                 break;
             case 21:
                 ei.j8 j8Var = (ei.j8) this.b;
@@ -290,7 +290,7 @@ public final /* synthetic */ class r0 implements Utilities.Callback {
                     j8Var.n0 = n0Var.f;
                     break;
                 } else {
-                    j8Var.V();
+                    j8Var.U();
                     break;
                 }
             case 22:
@@ -304,46 +304,46 @@ public final /* synthetic */ class r0 implements Utilities.Callback {
                 ArrayList arrayList4 = tVar.b;
                 arrayList4.clear();
                 arrayList4.addAll((ArrayList) obj);
-                c71 c71Var = tVar.a;
-                if (c71Var != null && (u61Var = c71Var.W2) != null) {
-                    u61Var.N(true);
+                j71 j71Var = tVar.a;
+                if (j71Var != null && (b71Var = j71Var.Z2) != null) {
+                    b71Var.N(true);
                     break;
                 }
                 break;
             case 25:
-                ((hg.m) this.b).L((TLRPC.User) obj);
+                ((hg.m) this.b).M((TLRPC.User) obj);
                 break;
             case 26:
                 TLRPC.User user = (TLRPC.User) obj;
-                po0 po0Var = (po0) ((hg.h0) this.b);
-                lx lxVar = po0Var.K0;
+                so0 so0Var = (so0) ((hg.h0) this.b);
+                nx nxVar = so0Var.K0;
                 if (user != null) {
-                    cy cyVar = lxVar.J0;
-                    if (cyVar != null) {
-                        cyVar.I3();
+                    ey eyVar = nxVar.J0;
+                    if (eyVar != null) {
+                        eyVar.I3();
                     }
-                    MessagesController.getInstance(lxVar.H0).openApp(user, 0);
-                    po0Var.R(user.id, user);
+                    MessagesController.getInstance(nxVar.H0).openApp(user, 0);
+                    so0Var.Q(user.id, user);
                     break;
                 }
                 break;
             case 27:
                 hi.f fVar = (hi.f) this.b;
                 ArrayList arrayList5 = (ArrayList) obj;
-                ArrayList arrayList6 = fVar.h;
+                ArrayList arrayList6 = fVar.n;
                 boolean z11 = arrayList6 == null || arrayList6.isEmpty();
-                fVar.h = arrayList5;
-                c71 c71Var2 = fVar.e;
-                if (c71Var2 != null) {
-                    c71Var2.W2.N(z11);
+                fVar.n = arrayList5;
+                j71 j71Var2 = fVar.f;
+                if (j71Var2 != null) {
+                    j71Var2.Z2.N(z11);
                     break;
                 }
                 break;
             case 28:
                 ig.m mVar = (ig.m) this.b;
                 boolean z12 = ((Integer) obj).intValue() > AndroidUtilities.dp(20.0f);
-                if (mVar.F != z12) {
-                    mVar.F = z12;
+                if (mVar.I != z12) {
+                    mVar.I = z12;
                     if (!z12) {
                         mVar.a.x0(0);
                         break;
@@ -351,7 +351,7 @@ public final /* synthetic */ class r0 implements Utilities.Callback {
                 }
                 break;
             default:
-                AndroidUtilities.forEachViews((RecyclerView) ((ig.i0) this.b).s, (Utilities.Callback<View>) new ci.e(i11));
+                AndroidUtilities.forEachViews((RecyclerView) ((ig.h0) this.b).s, (Utilities.Callback<View>) new ci.e(i11));
                 break;
         }
     }

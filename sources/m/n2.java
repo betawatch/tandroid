@@ -18,7 +18,7 @@ import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
 import org.xmlpull.v1.XmlPullParserException;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class n2 {
     public static n2 i;
@@ -111,11 +111,11 @@ public final class n2 {
             if (i10 == R.drawable.abc_cab_background_top_material) {
                 layerDrawable = new LayerDrawable(new Drawable[]{g(context, R.drawable.abc_cab_background_internal_bg), g(context, R.drawable.abc_cab_background_top_mtrl_alpha)});
             } else if (i10 == R.drawable.abc_ratingbar_material) {
-                layerDrawable = com.google.firebase.messaging.l.v(this, context, R.dimen.abc_star_big);
+                layerDrawable = com.google.firebase.messaging.l.p(this, context, R.dimen.abc_star_big);
             } else if (i10 == R.drawable.abc_ratingbar_indicator_material) {
-                layerDrawable = com.google.firebase.messaging.l.v(this, context, R.dimen.abc_star_medium);
+                layerDrawable = com.google.firebase.messaging.l.p(this, context, R.dimen.abc_star_medium);
             } else if (i10 == R.drawable.abc_ratingbar_small_material) {
-                layerDrawable = com.google.firebase.messaging.l.v(this, context, R.dimen.abc_star_small);
+                layerDrawable = com.google.firebase.messaging.l.p(this, context, R.dimen.abc_star_small);
             }
         }
         if (layerDrawable != null) {
@@ -184,7 +184,7 @@ public final class n2 {
         if (colorStateList == null) {
             com.google.firebase.messaging.l lVar = this.g;
             if (lVar != null) {
-                colorStateList2 = lVar.y(context, i10);
+                colorStateList2 = lVar.r(context, i10);
             }
             if (colorStateList2 != null) {
                 if (this.a == null) {
@@ -299,9 +299,9 @@ public final class n2 {
                 Drawable findDrawableByLayerId = layerDrawable.findDrawableByLayerId(android.R.id.background);
                 int c10 = c3.c(context, R.attr.colorControlNormal);
                 PorterDuff.Mode mode2 = r.b;
-                com.google.firebase.messaging.l.I(findDrawableByLayerId, c10, mode2);
-                com.google.firebase.messaging.l.I(layerDrawable.findDrawableByLayerId(android.R.id.secondaryProgress), c3.c(context, R.attr.colorControlNormal), mode2);
-                com.google.firebase.messaging.l.I(layerDrawable.findDrawableByLayerId(android.R.id.progress), c3.c(context, R.attr.colorControlActivated), mode2);
+                com.google.firebase.messaging.l.z(findDrawableByLayerId, c10, mode2);
+                com.google.firebase.messaging.l.z(layerDrawable.findDrawableByLayerId(android.R.id.secondaryProgress), c3.c(context, R.attr.colorControlNormal), mode2);
+                com.google.firebase.messaging.l.z(layerDrawable.findDrawableByLayerId(android.R.id.progress), c3.c(context, R.attr.colorControlActivated), mode2);
                 return drawable;
             }
             if (i10 == R.drawable.abc_ratingbar_material || i10 == R.drawable.abc_ratingbar_indicator_material || i10 == R.drawable.abc_ratingbar_small_material) {
@@ -309,9 +309,9 @@ public final class n2 {
                 Drawable findDrawableByLayerId2 = layerDrawable2.findDrawableByLayerId(android.R.id.background);
                 int b10 = c3.b(context, R.attr.colorControlNormal);
                 PorterDuff.Mode mode3 = r.b;
-                com.google.firebase.messaging.l.I(findDrawableByLayerId2, b10, mode3);
-                com.google.firebase.messaging.l.I(layerDrawable2.findDrawableByLayerId(android.R.id.secondaryProgress), c3.c(context, R.attr.colorControlActivated), mode3);
-                com.google.firebase.messaging.l.I(layerDrawable2.findDrawableByLayerId(android.R.id.progress), c3.c(context, R.attr.colorControlActivated), mode3);
+                com.google.firebase.messaging.l.z(findDrawableByLayerId2, b10, mode3);
+                com.google.firebase.messaging.l.z(layerDrawable2.findDrawableByLayerId(android.R.id.secondaryProgress), c3.c(context, R.attr.colorControlActivated), mode3);
+                com.google.firebase.messaging.l.z(layerDrawable2.findDrawableByLayerId(android.R.id.progress), c3.c(context, R.attr.colorControlActivated), mode3);
                 return drawable;
             }
         }
@@ -319,13 +319,13 @@ public final class n2 {
         boolean z12 = false;
         if (lVar2 != null) {
             PorterDuff.Mode mode4 = r.b;
-            if (!com.google.firebase.messaging.l.g(i10, (int[]) lVar2.a)) {
-                if (com.google.firebase.messaging.l.g(i10, (int[]) lVar2.c)) {
+            if (!com.google.firebase.messaging.l.e(i10, (int[]) lVar2.a)) {
+                if (com.google.firebase.messaging.l.e(i10, (int[]) lVar2.c)) {
                     i12 = R.attr.colorControlActivated;
                 } else {
-                    boolean g10 = com.google.firebase.messaging.l.g(i10, (int[]) lVar2.d);
+                    boolean e = com.google.firebase.messaging.l.e(i10, (int[]) lVar2.d);
                     i12 = android.R.attr.colorBackground;
-                    if (g10) {
+                    if (e) {
                         mode4 = PorterDuff.Mode.MULTIPLY;
                     } else if (i10 == R.drawable.abc_list_divider_mtrl_alpha) {
                         round = Math.round(40.8f);

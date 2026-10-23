@@ -7,28 +7,34 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import java.util.ArrayList;
+import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class h20 extends FrameLayout implements ne.d {
+public final class h20 extends FrameLayout implements ne.d, org.telegram.ui.ActionBar.b6 {
+    public int E;
+    public float F;
+    public float G;
+    public boolean H;
     public final ne.b a;
     public final ne.b b;
-    public final yj0 c;
+    public final bk0 c;
     public final RadialProgressView d;
-    public final org.telegram.ui.ActionBar.d6 e;
+    public final org.telegram.ui.ActionBar.g6 e;
     public ArrayList f;
     public final boolean h;
     public final gh.c n;
     public final dh.f r;
     public final ei.f s;
-    public float v;
-    public float w;
+    public org.telegram.ui.Cells.y v;
+    public int w;
     public boolean x;
+    public int y;
 
-    public h20(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
-        this(context, d6Var, false);
+    public h20(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
+        this(context, g6Var, false);
     }
 
     public static FrameLayout.LayoutParams b() {
@@ -50,11 +56,11 @@ public final class h20 extends FrameLayout implements ne.d {
     }
 
     private void setAdditionalTranslationY(float f7) {
-        if (this.v != f7) {
-            this.x = true;
-            super.setTranslationY(this.w + f7);
-            this.x = false;
-            this.v = f7;
+        if (this.F != f7) {
+            this.H = true;
+            super.setTranslationY(this.G + f7);
+            this.H = false;
+            this.F = f7;
         }
     }
 
@@ -83,31 +89,6 @@ public final class h20 extends FrameLayout implements ne.d {
         this.b.a(z10, z11);
     }
 
-    public final void g() {
-        boolean z10 = this.h;
-        RadialProgressView radialProgressView = this.d;
-        yj0 yj0Var = this.c;
-        org.telegram.ui.ActionBar.d6 d6Var = this.e;
-        if (!z10) {
-            int i10 = org.telegram.ui.ActionBar.h6.O9;
-            yj0Var.setColorFilter(org.telegram.ui.ActionBar.h6.w0(i10, d6Var), PorterDuff.Mode.SRC_IN);
-            radialProgressView.setProgressColor(org.telegram.ui.ActionBar.h6.w0(i10, d6Var));
-            setBackground(org.telegram.ui.ActionBar.h6.i0(AndroidUtilities.dp(48.0f), org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Oh, d6Var), org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Qh, d6Var)));
-            return;
-        }
-        int i11 = org.telegram.ui.ActionBar.h6.v8;
-        yj0Var.setColorFilter(org.telegram.ui.ActionBar.h6.w0(i11, d6Var), PorterDuff.Mode.SRC_IN);
-        radialProgressView.setProgressColor(org.telegram.ui.ActionBar.h6.w0(i11, d6Var));
-        this.n.a(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false));
-        this.s.b();
-        this.r.v();
-        invalidate();
-        int dp = AndroidUtilities.dp(18.0f);
-        int w02 = org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.i6, d6Var);
-        int dp2 = AndroidUtilities.dp(6.0f);
-        setBackground(org.telegram.ui.ActionBar.h6.X(dp, w02, dp2, dp2, dp2, dp2));
-    }
-
     public boolean getButtonVisible() {
         return this.a.f;
     }
@@ -118,20 +99,11 @@ public final class h20 extends FrameLayout implements ne.d {
 
     @Override // android.view.View
     public float getTranslationY() {
-        return this.x ? super.getTranslationY() : this.w;
-    }
-
-    @Override // android.view.View
-    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
-        super.onSizeChanged(i10, i11, i12, i13);
-        dh.f fVar = this.r;
-        if (fVar != null) {
-            fVar.setBounds(0, 0, i10, i11);
-        }
+        return this.H ? super.getTranslationY() : this.G;
     }
 
     @Override // ne.d
-    public final void r(int i10, float f7, float f10, ne.e eVar) {
+    public final void o(int i10, float f7, float f10, ne.e eVar) {
         int i11 = 0;
         if (i10 == 0) {
             d(this, f7);
@@ -153,31 +125,117 @@ public final class h20 extends FrameLayout implements ne.d {
         }
     }
 
+    @Override // android.view.View
+    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
+        super.onSizeChanged(i10, i11, i12, i13);
+        dh.f fVar = this.r;
+        if (fVar != null) {
+            fVar.setBounds(0, 0, i10, i11);
+        }
+    }
+
     public void setImageResource(int i10) {
         this.c.setImageResource(i10);
     }
 
     @Override // android.view.View
     public void setTranslationY(float f7) {
-        if (this.w != f7) {
-            this.x = true;
-            super.setTranslationY(this.v + f7);
-            this.x = false;
-            this.w = f7;
+        if (this.G != f7) {
+            this.H = true;
+            super.setTranslationY(this.F + f7);
+            this.H = false;
+            this.G = f7;
         }
     }
 
-    public h20(Context context, org.telegram.ui.ActionBar.d6 d6Var, boolean z10) {
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void updateColors() {
+        RadialProgressView radialProgressView;
+        bk0 bk0Var = this.c;
+        if (bk0Var == null || (radialProgressView = this.d) == null) {
+            return;
+        }
+        boolean z10 = this.v != null && getBackground() == this.v;
+        boolean z11 = this.h;
+        org.telegram.ui.ActionBar.g6 g6Var = this.e;
+        if (!z11) {
+            int i10 = org.telegram.ui.ActionBar.k6.O9;
+            int w02 = org.telegram.ui.ActionBar.k6.w0(i10, g6Var);
+            if (w02 != this.w || !this.x) {
+                this.w = w02;
+                this.x = true;
+                bk0Var.setColorFilter(w02, PorterDuff.Mode.SRC_IN);
+            }
+            radialProgressView.setProgressColor(org.telegram.ui.ActionBar.k6.w0(i10, g6Var));
+            int w03 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Oh, g6Var);
+            int w04 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Qh, g6Var);
+            if (!z10) {
+                this.y = w03;
+                this.E = w04;
+                org.telegram.ui.Cells.y i02 = org.telegram.ui.ActionBar.k6.i0(AndroidUtilities.dp(48.0f), w03, w04);
+                this.v = i02;
+                setBackground(i02);
+                return;
+            }
+            if (w03 == this.y && w04 == this.E) {
+                return;
+            }
+            this.y = w03;
+            this.E = w04;
+            org.telegram.ui.ActionBar.k6.E1(this.v, w03, false);
+            org.telegram.ui.ActionBar.k6.E1(this.v, w04, true);
+            this.v.invalidateSelf();
+            return;
+        }
+        int i11 = org.telegram.ui.ActionBar.k6.v8;
+        int w05 = org.telegram.ui.ActionBar.k6.w0(i11, g6Var);
+        if (w05 != this.w || !this.x) {
+            this.w = w05;
+            this.x = true;
+            bk0Var.setColorFilter(w05, PorterDuff.Mode.SRC_IN);
+        }
+        radialProgressView.setProgressColor(org.telegram.ui.ActionBar.k6.w0(i11, g6Var));
+        gh.c cVar = this.n;
+        if (cVar != null) {
+            cVar.a(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.d6, false));
+        }
+        ei.f fVar = this.s;
+        if (fVar != null) {
+            fVar.c();
+        }
+        dh.f fVar2 = this.r;
+        if (fVar2 != null) {
+            fVar2.updateColors();
+        }
+        invalidate();
+        int dp = AndroidUtilities.dp(18.0f);
+        int w06 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.i6, g6Var);
+        if (z10) {
+            if (w06 != this.E) {
+                this.E = w06;
+                org.telegram.ui.ActionBar.k6.E1(this.v, w06, true);
+                return;
+            }
+            return;
+        }
+        this.E = w06;
+        int dp2 = AndroidUtilities.dp(6.0f);
+        org.telegram.ui.Cells.y X = org.telegram.ui.ActionBar.k6.X(dp, w06, dp2, dp2, dp2, dp2);
+        this.v = X;
+        setBackground(X);
+    }
+
+    public h20(Context context, org.telegram.ui.ActionBar.g6 g6Var, boolean z10) {
         super(context);
         bs bsVar = bs.h;
         this.a = new ne.b(0, this, bsVar, 380L, true);
         this.b = new ne.b(1, this, bsVar, 380L, false);
-        this.e = d6Var;
+        this.e = g6Var;
         this.h = z10;
-        yj0 yj0Var = new yj0(context);
-        this.c = yj0Var;
-        yj0Var.setScaleType(ImageView.ScaleType.CENTER);
-        addView(yj0Var, w7.z5.c(-1.0f, -1));
+        bk0 bk0Var = new bk0(context);
+        this.c = bk0Var;
+        bk0Var.setScaleType(ImageView.ScaleType.CENTER);
+        addView(bk0Var, w7.z5.c(-1.0f, -1));
         RadialProgressView radialProgressView = new RadialProgressView(context, null);
         this.d = radialProgressView;
         radialProgressView.setSize(AndroidUtilities.dp(18.0f));
@@ -190,7 +248,7 @@ public final class h20 extends FrameLayout implements ne.d {
             setTranslationZ(AndroidUtilities.dpf2(0.5f));
         }
         if (z10) {
-            ei.f fVar = new ei.f(org.telegram.ui.ActionBar.h6.h5, null);
+            ei.f fVar = new ei.f(org.telegram.ui.ActionBar.k6.h5, null);
             this.s = fVar;
             gh.c cVar = new gh.c();
             this.n = cVar;
@@ -199,13 +257,17 @@ public final class h20 extends FrameLayout implements ne.d {
             fVar2.o(fVar);
             float dpf2 = AndroidUtilities.dpf2(0.4f);
             float dpf22 = AndroidUtilities.dpf2(0.4f);
-            dh.c cVar2 = fVar2.j;
+            dh.c cVar2 = fVar2.v;
             cVar2.i = dpf2;
             cVar2.j = dpf22;
             fVar2.q(AndroidUtilities.dp(18.0f));
             fVar2.p(AndroidUtilities.dp(5.66f));
         }
-        g();
+        updateColors();
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 
     @Override // ne.d

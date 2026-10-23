@@ -5,11 +5,11 @@ import android.view.ViewGroup;
 import com.google.android.gms.common.api.internal.o0;
 import java.util.ArrayList;
 import java.util.List;
-import org.telegram.ui.Cells.a0;
-import org.telegram.ui.Cells.m7;
+import org.telegram.ui.Cells.n7;
+import org.telegram.ui.Cells.z;
 import w7.k6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class j implements Runnable {
     public final /* synthetic */ int a;
@@ -48,35 +48,35 @@ public final class j implements Runnable {
                 ((g6.v) this.c).W.b(this.b);
                 break;
             case 3:
-                a0 a0Var = (a0) this.c;
-                if (a0Var.a && a0Var.getParent() != null && this.b == a0Var.c) {
-                    a0Var.a = false;
-                    if (a0Var.m()) {
+                z zVar = (z) this.c;
+                if (zVar.a && zVar.getParent() != null && this.b == zVar.c) {
+                    zVar.a = false;
+                    if (zVar.l()) {
                         try {
-                            a0Var.performHapticFeedback(0);
+                            zVar.performHapticFeedback(0);
                         } catch (Exception unused) {
                         }
                         MotionEvent obtain = MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0);
-                        a0Var.onTouchEvent(obtain);
+                        zVar.onTouchEvent(obtain);
                         obtain.recycle();
                         break;
                     }
                 }
                 break;
             default:
-                m7 m7Var = (m7) this.c;
-                if (m7Var.a && m7Var.getParent() != null && this.b == m7Var.c) {
-                    m7Var.a = false;
+                n7 n7Var = (n7) this.c;
+                if (n7Var.a && n7Var.getParent() != null && this.b == n7Var.c) {
+                    n7Var.a = false;
                     try {
-                        m7Var.performHapticFeedback(0);
+                        n7Var.performHapticFeedback(0);
                     } catch (Exception unused2) {
                     }
-                    int i11 = m7Var.h;
+                    int i11 = n7Var.h;
                     if (i11 >= 0) {
-                        m7Var.x.a(((CharSequence) m7Var.E.get(i11)).toString(), true);
+                        n7Var.x.a(((CharSequence) n7Var.E.get(i11)).toString(), true);
                     }
                     MotionEvent obtain2 = MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0);
-                    m7Var.onTouchEvent(obtain2);
+                    n7Var.onTouchEvent(obtain2);
                     obtain2.recycle();
                     break;
                 }

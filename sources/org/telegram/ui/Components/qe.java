@@ -1,8 +1,8 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class qe implements e5 {
+public final class qe implements d5 {
     public final /* synthetic */ int a;
     public final /* synthetic */ ChatActivityEnterView b;
 
@@ -11,7 +11,7 @@ public final class qe implements e5 {
         this.b = chatActivityEnterView;
     }
 
-    @Override // org.telegram.ui.Components.e5
+    @Override // org.telegram.ui.Components.d5
     public final void C(int i10, int i11, boolean z10) {
         switch (this.a) {
             case 0:

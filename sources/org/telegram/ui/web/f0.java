@@ -1,39 +1,38 @@
 package org.telegram.ui.web;
 
 import android.os.Bundle;
-import ci.z7;
-import org.json.JSONObject;
-import org.telegram.ui.cy;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.xc;
+import org.telegram.ui.oh0;
+import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final class f0 extends cy {
-    public final /* synthetic */ boolean[] B4;
-    public final /* synthetic */ z7 C4;
-    public final /* synthetic */ a1 D4;
+public final class f0 extends sn {
+    public boolean ed;
+    public final /* synthetic */ TLRPC.User fd;
+    public final /* synthetic */ long gd;
+    public final /* synthetic */ b1 hd;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f0(a1 a1Var, Bundle bundle, boolean[] zArr, z7 z7Var) {
+    public f0(b1 b1Var, Bundle bundle, TLRPC.User user, long j10) {
         super(bundle);
-        this.D4 = a1Var;
-        this.B4 = zArr;
-        this.C4 = z7Var;
+        this.hd = b1Var;
+        this.fd = user;
+        this.gd = j10;
     }
 
-    @Override // org.telegram.ui.cy, org.telegram.ui.ActionBar.n2
-    public final void onFragmentDestroy() {
-        JSONObject jSONObject;
-        super.onFragmentDestroy();
-        boolean[] zArr = this.B4;
-        if (zArr[0]) {
+    @Override // org.telegram.ui.sn, org.telegram.ui.ActionBar.o2
+    public final void onBecomeFullyVisible() {
+        super.onBecomeFullyVisible();
+        if (this.ed) {
             return;
         }
-        zArr[0] = true;
-        try {
-            jSONObject = new JSONObject();
-        } catch (Exception unused) {
-            jSONObject = null;
-        }
-        this.D4.x(this.C4, "requested_chat_failed", jSONObject);
+        this.ed = true;
+        xc.a0(this).M(LocaleController.formatString(R.string.CreateManagedBotCreatedTitle, UserObject.getUserName(this.fd)), AndroidUtilities.replaceSingleTag(LocaleController.formatString(R.string.CreateManagedBotCreatedText, UserObject.getUserName(this.hd.U)), new oh0(this, this.gd, 2)), R.raw.contact_check).j();
     }
 }

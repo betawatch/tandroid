@@ -1,36 +1,51 @@
 package org.telegram.ui;
 
-import android.graphics.Outline;
-import android.graphics.Rect;
-import android.view.View;
-import android.view.ViewOutlineProvider;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.RectF;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class s41 extends ViewOutlineProvider {
-    public final Rect a = new Rect();
-    public final /* synthetic */ Integer b;
-    public final /* synthetic */ x51 c;
+public final class s41 extends q51 {
+    public final /* synthetic */ b61 G;
 
-    public s41(x51 x51Var, Integer num) {
-        this.c = x51Var;
-        this.b = num;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public s41(b61 b61Var, Context context, boolean z10) {
+        super(b61Var, context, z10);
+        this.G = b61Var;
     }
 
-    @Override // android.view.ViewOutlineProvider
-    public final void getOutline(View view, Outline outline) {
-        float width = (this.b == null ? view.getWidth() / 2.0f : r0.intValue()) + AndroidUtilities.dp(20.0f);
-        float width2 = (view.getWidth() - view.getPaddingLeft()) - view.getPaddingRight();
-        float height = (view.getHeight() - view.getPaddingBottom()) - view.getPaddingTop();
-        x51 x51Var = this.c;
-        boolean n10 = x51Var.n();
-        Rect rect = this.a;
-        if (n10) {
-            rect.set((int) ((width - (x51Var.a1 * width)) + view.getPaddingLeft()), (int) com.google.android.gms.internal.play_billing.k3.y(1.0f, x51Var.b1, AndroidUtilities.dp(x51Var.d1), com.google.android.gms.internal.play_billing.k3.y(1.0f, x51Var.b1, height, view.getPaddingTop())), (int) (((width2 - width) * x51Var.a1) + view.getPaddingLeft() + width), (int) com.google.android.gms.internal.play_billing.k3.y(1.0f, x51Var.b1, AndroidUtilities.dp(x51Var.d1), view.getPaddingTop() + height));
-        } else {
-            rect.set((int) ((width - (x51Var.a1 * width)) + view.getPaddingLeft()), view.getPaddingTop(), (int) (((width2 - width) * x51Var.a1) + view.getPaddingLeft() + width), (int) ((height * x51Var.b1) + view.getPaddingTop()));
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        b61 b61Var = this.G;
+        n41 n41Var = b61Var.g0;
+        s41 s41Var = b61Var.f0;
+        b51 b51Var = b61Var.U;
+        if (b51Var != null) {
+            int measuredWidth = getMeasuredWidth();
+            int measuredHeight = getMeasuredHeight();
+            float x10 = n41Var.getX() + s41Var.getX();
+            float y3 = n41Var.getY() + s41Var.getY();
+            ah.h0 h0Var = (ah.h0) b51Var;
+            ah.t0 t0Var = (ah.t0) h0Var.b;
+            ah.s0 s0Var = t0Var.a;
+            org.telegram.ui.Components.gl0 gl0Var = (org.telegram.ui.Components.gl0) h0Var.c;
+            RectF rectF = AndroidUtilities.rectTmp;
+            float f7 = 0;
+            rectF.set(f7, f7, measuredWidth, measuredHeight);
+            gl0Var.getDelegate().s(canvas, rectF, 0.0f, s0Var.getX() + x10, (t0Var.y == 1 ? s0Var.getY() - AndroidUtilities.statusBarHeight : s0Var.getY() + t0Var.c.getY()) + y3, 255, true);
         }
-        outline.setRoundRect(rect, AndroidUtilities.dp(12.0f));
+        super.dispatchDraw(canvas);
+    }
+
+    @Override // android.view.View
+    public final void setTranslationY(float f7) {
+        if (f7 != getTranslationY()) {
+            super.setTranslationY(f7);
+            if (this.G.U != null) {
+                invalidate();
+            }
+        }
     }
 }

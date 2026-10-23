@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class x7 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -18,7 +18,7 @@ public final class x7 extends AnimatorListenerAdapter {
     public void onAnimationCancel(Animator animator) {
         switch (this.a) {
             case 2:
-                this.b.C0 = null;
+                this.b.B0 = null;
                 break;
             default:
                 super.onAnimationCancel(animator);
@@ -30,13 +30,13 @@ public final class x7 extends AnimatorListenerAdapter {
     public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                this.b.m0 = false;
+                this.b.l0 = false;
                 break;
             case 1:
                 k8 k8Var = this.b;
-                k8Var.i0.setVisibility(4);
-                k8Var.j0.setImageBitmap(null);
-                k8Var.m0 = false;
+                k8Var.h0.setVisibility(4);
+                k8Var.i0.setImageBitmap(null);
+                k8Var.l0 = false;
                 break;
         }
     }

@@ -1,27 +1,41 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.tgnet.tl.TL_stars;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class m41 extends t51 {
-    public final /* synthetic */ View Q;
-    public final /* synthetic */ TL_stars.TL_starGiftUnique R;
-    public final /* synthetic */ n41 S;
+public final class m41 extends g.o {
+    public final /* synthetic */ int c;
+    public final /* synthetic */ b61 d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m41(n41 n41Var, Context context, Runnable runnable, View view, g51 g51Var, org.telegram.ui.ActionBar.d6 d6Var, View view2, TL_stars.TL_starGiftUnique tL_starGiftUnique) {
-        super(n41Var.e, context, runnable, view, g51Var, d6Var);
-        this.S = n41Var;
-        this.Q = view2;
-        this.R = tL_starGiftUnique;
+    public /* synthetic */ m41(b61 b61Var, int i10) {
+        this.c = i10;
+        this.d = b61Var;
     }
 
-    @Override // org.telegram.ui.t51, android.app.Dialog, android.content.DialogInterface
-    public final void dismiss() {
-        super.dismiss();
-        this.S.e.X0 = null;
+    @Override // g.o
+    public final int i(int i10) {
+        int i11;
+        ArrayList arrayList;
+        int i12;
+        switch (this.c) {
+            case 0:
+                b61 b61Var = this.d;
+                return (b61Var.w0.indexOfKey(i10) >= 0 || b61Var.z0.indexOfKey(i10) >= 0 || i10 == b61Var.f || i10 == b61Var.y || i10 == b61Var.n || i10 == b61Var.h || i10 == b61Var.v || i10 == b61Var.a || i10 == b61Var.x) ? b61Var.r0.J : ((i10 < b61Var.E || i10 >= b61Var.F) && !b61Var.Q) ? 5 : 8;
+            default:
+                b61 b61Var2 = this.d;
+                l51 l51Var = b61Var2.q0;
+                int j10 = l51Var.j(i10);
+                if (j10 == 6) {
+                    return b61Var2.r0.J;
+                }
+                if (j10 != 5) {
+                    b61 b61Var3 = l51Var.s;
+                    if (b61Var3.W != 14 ? i10 <= (i11 = l51Var.c) || (i10 - i11) - 1 >= b61Var3.D1.size() : (arrayList = b61Var3.C1) == null || i10 < (i12 = l51Var.c) || i10 - i12 >= arrayList.size()) {
+                        return 5;
+                    }
+                }
+                return 8;
+        }
     }
 }

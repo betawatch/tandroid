@@ -4,7 +4,7 @@ import android.graphics.Rect;
 import android.view.MotionEvent;
 import android.view.View;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class ei implements View.OnTouchListener {
     public final /* synthetic */ int a;
@@ -12,28 +12,28 @@ public final class ei implements View.OnTouchListener {
     public final /* synthetic */ Rect c;
     public final /* synthetic */ Object d;
 
-    public ei(q50 q50Var, Rect rect) {
+    public ei(u50 u50Var, Rect rect) {
         this.a = 1;
-        this.d = q50Var;
+        this.d = u50Var;
         this.c = rect;
         this.b = new int[2];
     }
 
     @Override // android.view.View.OnTouchListener
     public final boolean onTouch(View view, MotionEvent motionEvent) {
-        q40 q40Var;
+        t40 t40Var;
         switch (this.a) {
             case 0:
-                qn qnVar = (qn) this.d;
+                sn snVar = (sn) this.d;
                 if (motionEvent.getActionMasked() != 0) {
                     if (motionEvent.getActionMasked() == 4) {
-                        qnVar.D7(true);
+                        snVar.D7(true);
                         break;
                     }
                 } else {
-                    org.telegram.ui.ActionBar.m1 m1Var = qnVar.Q8;
+                    org.telegram.ui.ActionBar.m1 m1Var = snVar.c9;
                     if (m1Var != null && m1Var.isShowing()) {
-                        View contentView = qnVar.Q8.getContentView();
+                        View contentView = snVar.c9.getContentView();
                         int[] iArr = this.b;
                         contentView.getLocationInWindow(iArr);
                         int i10 = iArr[0];
@@ -43,23 +43,23 @@ public final class ei implements View.OnTouchListener {
                         Rect rect = this.c;
                         rect.set(i10, i11, measuredWidth, measuredHeight);
                         if (!rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                            qnVar.D7(true);
+                            snVar.D7(true);
                             break;
                         }
                     }
                 }
                 break;
             default:
-                q50 q50Var = (q50) this.d;
+                u50 u50Var = (u50) this.d;
                 if (motionEvent.getActionMasked() != 0) {
-                    if (motionEvent.getActionMasked() == 4 && (q40Var = q50Var.f3) != null && q40Var.isShowing()) {
-                        q50Var.f3.dismiss();
+                    if (motionEvent.getActionMasked() == 4 && (t40Var = u50Var.f3) != null && t40Var.isShowing()) {
+                        u50Var.f3.dismiss();
                         break;
                     }
                 } else {
-                    q40 q40Var2 = q50Var.f3;
-                    if (q40Var2 != null && q40Var2.isShowing()) {
-                        View contentView2 = q50Var.f3.getContentView();
+                    t40 t40Var2 = u50Var.f3;
+                    if (t40Var2 != null && t40Var2.isShowing()) {
+                        View contentView2 = u50Var.f3.getContentView();
                         int[] iArr2 = this.b;
                         contentView2.getLocationInWindow(iArr2);
                         int i12 = iArr2[0];
@@ -69,7 +69,7 @@ public final class ei implements View.OnTouchListener {
                         Rect rect2 = this.c;
                         rect2.set(i12, i13, measuredWidth2, measuredHeight2);
                         if (!rect2.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                            q50Var.f3.dismiss();
+                            u50Var.f3.dismiss();
                             break;
                         }
                     }
@@ -79,9 +79,9 @@ public final class ei implements View.OnTouchListener {
         return false;
     }
 
-    public ei(qn qnVar, Rect rect) {
+    public ei(sn snVar, Rect rect) {
         this.a = 0;
-        this.d = qnVar;
+        this.d = snVar;
         this.c = rect;
         this.b = new int[2];
     }

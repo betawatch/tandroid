@@ -1,23 +1,23 @@
 package ai;
 
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.h61;
-import org.telegram.ui.vf1;
+import org.telegram.ui.Components.m61;
+import org.telegram.ui.bg1;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class k implements org.telegram.ui.ActionBar.a2, Utilities.Callback5, Utilities.Callback5Return {
+public final /* synthetic */ class k implements org.telegram.ui.ActionBar.z1, Utilities.Callback5, Utilities.Callback5Return {
     public final /* synthetic */ x a;
 
     public /* synthetic */ k(x xVar) {
         this.a = xVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    @Override // org.telegram.ui.ActionBar.z1
+    public void g(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
         x xVar = this.a;
         xVar.getClass();
-        xVar.presentFragment(new vf1(6, null));
+        xVar.presentFragment(new bg1(6, null));
     }
 
     @Override // org.telegram.messenger.Utilities.Callback5Return
@@ -34,6 +34,6 @@ public final /* synthetic */ class k implements org.telegram.ui.ActionBar.a2, Ut
         ((Integer) obj3).getClass();
         ((Float) obj4).getClass();
         ((Float) obj5).getClass();
-        x.W(this.a, (h61) obj);
+        x.W(this.a, (m61) obj);
     }
 }

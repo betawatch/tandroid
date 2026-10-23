@@ -1,46 +1,28 @@
 package org.telegram.ui;
 
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class af1 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ TwoStepVerificationActivity b;
+public final class af1 implements c11 {
+    public final /* synthetic */ TLRPC.TL_forumTopic a;
+    public final /* synthetic */ bf1 b;
 
-    public /* synthetic */ af1(TwoStepVerificationActivity twoStepVerificationActivity, int i10) {
-        this.a = i10;
-        this.b = twoStepVerificationActivity;
+    public af1(bf1 bf1Var, TLRPC.TL_forumTopic tL_forumTopic) {
+        this.b = bf1Var;
+        this.a = tL_forumTopic;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        EditTextBoldCursor editTextBoldCursor;
-        switch (this.a) {
-            case 0:
-                TwoStepVerificationActivity twoStepVerificationActivity = this.b;
-                if (!twoStepVerificationActivity.isFinishing() && !twoStepVerificationActivity.H && (editTextBoldCursor = twoStepVerificationActivity.s) != null) {
-                    editTextBoldCursor.requestFocus();
-                    AndroidUtilities.showKeyboard(twoStepVerificationActivity.s);
-                    break;
-                }
-                break;
-            case 1:
-                TwoStepVerificationActivity twoStepVerificationActivity2 = this.b;
-                twoStepVerificationActivity2.U = false;
-                twoStepVerificationActivity2.v.a(0.0f);
-                break;
-            case 2:
-                this.b.y0();
-                break;
-            default:
-                TwoStepVerificationActivity twoStepVerificationActivity3 = this.b;
-                af1 af1Var = twoStepVerificationActivity3.V;
-                AndroidUtilities.cancelRunOnUIThread(af1Var);
-                AndroidUtilities.runOnUIThread(af1Var, 1500L);
-                twoStepVerificationActivity3.U = true;
-                break;
-        }
+    @Override // org.telegram.ui.c11
+    public final void O() {
+        ef1 ef1Var = this.b.a;
+        TLRPC.TL_forumTopic tL_forumTopic = this.a;
+        ef1.U(ef1Var, tL_forumTopic.id);
+        AndroidUtilities.runOnUIThread(new o71(14, this, tL_forumTopic), 300L);
+    }
+
+    @Override // org.telegram.ui.c11
+    public final void r(ik0 ik0Var) {
     }
 }

@@ -1,39 +1,17 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import org.telegram.messenger.AndroidUtilities;
+
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class kz0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ lz0 b;
-
-    public /* synthetic */ kz0(lz0 lz0Var, int i10) {
-        this.a = i10;
-        this.b = lz0Var;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ProfileActivity profileActivity = this.b.D0;
-                yy0 yy0Var = profileActivity.D5;
-                if (yy0Var != null) {
-                    yy0Var.dismiss();
-                    profileActivity.D5 = null;
-                    break;
-                }
-                break;
-            default:
-                try {
-                    org.telegram.ui.Components.jm0 currentListView = this.b.x0.O.getCurrentListView();
-                    if (currentListView != null && currentListView.getAdapter() != null) {
-                        currentListView.getAdapter().l();
-                        break;
-                    }
-                } catch (Throwable unused) {
-                    return;
-                }
-                break;
-        }
+public final class kz0 extends o00 {
+    @Override // org.telegram.ui.o00, android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+        canvas.save();
+        canvas.translate(AndroidUtilities.dp(2.0f), 0.0f);
+        super.draw(canvas, charSequence, i10, i11, f7, i12, i13, i14, paint);
+        canvas.restore();
     }
 }

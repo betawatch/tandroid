@@ -19,7 +19,7 @@ import x9.m;
 import x9.o;
 import x9.r;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class f implements Callable {
     public final /* synthetic */ int a;
@@ -58,7 +58,7 @@ public final class f implements Callable {
                     }
                     rVar.h.trySetResult(null);
                     Executor executor = (Executor) mVar.e.b;
-                    return ((Task) eVar.b).onSuccessTask(executor, new q(this, executor, z10, 28));
+                    return ((Task) eVar.b).onSuccessTask(executor, new q(this, executor, z10, 27));
                 }
                 if (Log.isLoggable("FirebaseCrashlytics", 2)) {
                     Log.v("FirebaseCrashlytics", "Deleting cached crash reports...", null);

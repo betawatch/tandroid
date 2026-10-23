@@ -36,6 +36,7 @@ import com.google.android.gms.internal.play_billing.k3;
 import com.google.android.gms.internal.vision.t2;
 import com.google.android.gms.internal.vision.x1;
 import ei.i6;
+import i2.o1;
 import m.g3;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
@@ -48,16 +49,16 @@ import org.telegram.messenger.camera.CameraSessionWrapper;
 import org.telegram.messenger.camera.CameraView;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.ActionBar.d5;
-import org.telegram.ui.ActionBar.g2;
-import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.ActionBar.h2;
+import org.telegram.ui.ActionBar.h5;
+import org.telegram.ui.ActionBar.o2;
 import org.telegram.ui.Components.bs;
+import org.telegram.ui.Components.c41;
+import org.telegram.ui.Components.e71;
 import org.telegram.ui.Components.q10;
-import org.telegram.ui.Components.x61;
-import org.telegram.ui.Components.y31;
 import w7.z5;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class b0 extends FrameLayout {
     public final Paint E;
@@ -65,7 +66,7 @@ public final class b0 extends FrameLayout {
     public final Drawable G;
     public final Drawable H;
     public final Drawable I;
-    public final g2 J;
+    public final h2 J;
     public final TextPaint K;
     public String L;
     public final TextPaint M;
@@ -140,8 +141,8 @@ public final class b0 extends FrameLayout {
         Paint paint2 = new Paint(1);
         this.E = paint2;
         this.F = new q10(2);
-        g2 g2Var = new g2(true);
-        this.J = g2Var;
+        h2 h2Var = new h2(true);
+        this.J = h2Var;
         TextPaint textPaint = new TextPaint(1);
         this.K = textPaint;
         this.M = new TextPaint(1);
@@ -166,8 +167,8 @@ public final class b0 extends FrameLayout {
         this.G = o(activity, R.drawable.msg_qr_scan);
         this.H = o(activity, R.drawable.qr_flashlight);
         this.I = o(activity, R.drawable.qr_gallery);
-        g2Var.a(-1);
-        g2Var.b(-1);
+        h2Var.a(-1);
+        h2Var.b(-1);
         textPaint.setColor(-1);
         textPaint.setTextSize(AndroidUtilities.dp(22.0f));
         textPaint.setTypeface(AndroidUtilities.bold());
@@ -221,12 +222,10 @@ public final class b0 extends FrameLayout {
     /* JADX WARN: Removed duplicated region for block: B:45:0x00da  */
     /* JADX WARN: Removed duplicated region for block: B:46:0x00db A[Catch: all -> 0x0105, Exception -> 0x0108, TryCatch #4 {Exception -> 0x0108, blocks: (B:38:0x009d, B:40:0x00b9, B:41:0x00bf, B:46:0x00db, B:48:0x00e1, B:51:0x00e7, B:53:0x00eb, B:55:0x00ff, B:64:0x00d4, B:60:0x00c7), top: B:37:0x009d, inners: #0 }] */
     /* JADX WARN: Removed duplicated region for block: B:53:0x00eb A[Catch: all -> 0x0105, Exception -> 0x0108, LOOP:2: B:52:0x00e9->B:53:0x00eb, LOOP_END, TryCatch #4 {Exception -> 0x0108, blocks: (B:38:0x009d, B:40:0x00b9, B:41:0x00bf, B:46:0x00db, B:48:0x00e1, B:51:0x00e7, B:53:0x00eb, B:55:0x00ff, B:64:0x00d4, B:60:0x00c7), top: B:37:0x009d, inners: #0 }] */
-    /* JADX WARN: Type inference failed for: r11v10, types: [android.graphics.PointF[], java.lang.Cloneable] */
-    /* JADX WARN: Type inference failed for: r12v6, types: [android.graphics.PointF[], java.lang.Cloneable] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static xf.c f(Bitmap bitmap, r8.n nVar, a6.i iVar, Utilities.CallbackReturn callbackReturn) {
+    public static z4.b f(Bitmap bitmap, r8.n nVar, a6.i iVar, Utilities.CallbackReturn callbackReturn) {
         boolean equals;
         int i10;
         boolean equals2;
@@ -255,13 +254,13 @@ public final class b0 extends FrameLayout {
                     }
                     if (!equals2) {
                         int length = pointArr != null ? pointArr.length : 0;
-                        ?? r11 = new PointF[length];
+                        PointF[] pointFArr = new PointF[length];
                         while (i11 < length) {
                             Point point = pointArr[i11];
-                            r11[i11] = new PointF(point.x / width, point.y / height);
+                            pointFArr[i11] = new PointF(point.x / width, point.y / height);
                             i11++;
                         }
-                        return new xf.c(trim, r11);
+                        return new z4.b(trim, pointFArr);
                     }
                 }
                 equals2 = false;
@@ -272,8 +271,8 @@ public final class b0 extends FrameLayout {
             int[] iArr = new int[width * height];
             bitmap.getPixels(iArr, 0, width, 0, 0, width, height);
             try {
-                androidx.biometric.e j10 = iVar.j(new n4.s(15, (Object) new ec.f(new dc.g(width, height, iArr)), false));
-                String str2 = (String) j10.b;
+                androidx.biometric.e y3 = iVar.y(new n4.s(15, (Object) new ec.f(new dc.g(width, height, iArr)), false));
+                String str2 = (String) y3.b;
                 String trim2 = str2 != null ? str2.trim() : null;
                 if (!TextUtils.isEmpty(trim2)) {
                     try {
@@ -282,24 +281,24 @@ public final class b0 extends FrameLayout {
                         FileLog.e(th3);
                     }
                     if (!equals) {
-                        dc.j[] jVarArr = (dc.j[]) j10.c;
+                        dc.j[] jVarArr = (dc.j[]) y3.c;
                         if (jVarArr != null) {
                             i10 = 4;
                             if (jVarArr.length == 4) {
-                                ?? r12 = new PointF[i10];
+                                PointF[] pointFArr2 = new PointF[i10];
                                 while (i11 < i10) {
                                     dc.j jVar = jVarArr[i11];
-                                    r12[i11] = new PointF(jVar.a / width, jVar.b / height);
+                                    pointFArr2[i11] = new PointF(jVar.a / width, jVar.b / height);
                                     i11++;
                                 }
-                                return new xf.c(trim2, r12);
+                                return new z4.b(trim2, pointFArr2);
                             }
                         }
                         i10 = 0;
-                        ?? r122 = new PointF[i10];
+                        PointF[] pointFArr22 = new PointF[i10];
                         while (i11 < i10) {
                         }
-                        return new xf.c(trim2, r122);
+                        return new z4.b(trim2, pointFArr22);
                     }
                 }
                 equals = false;
@@ -315,10 +314,10 @@ public final class b0 extends FrameLayout {
         return f7 >= rectF.left - ((float) AndroidUtilities.dp(8.0f)) && f7 <= rectF.right + ((float) AndroidUtilities.dp(8.0f)) && f10 >= rectF.top - ((float) AndroidUtilities.dp(8.0f)) && f10 <= rectF.bottom + ((float) AndroidUtilities.dp(8.0f));
     }
 
-    public static b0 k(x61 x61Var, View view, Utilities.CallbackReturn callbackReturn, Utilities.Callback callback, Runnable runnable) {
-        d5 parentLayout = x61Var.getParentLayout();
+    public static b0 k(e71 e71Var, View view, Utilities.CallbackReturn callbackReturn, Utilities.Callback callback, Runnable runnable) {
+        h5 parentLayout = e71Var.getParentLayout();
         FrameLayout overlayContainerView = parentLayout != null ? parentLayout.getOverlayContainerView() : null;
-        if (overlayContainerView == null || x61Var.getParentActivity() == null) {
+        if (overlayContainerView == null || e71Var.getParentActivity() == null) {
             return null;
         }
         overlayContainerView.getLocationInWindow(new int[2]);
@@ -327,10 +326,10 @@ public final class b0 extends FrameLayout {
         float width = (view.getWidth() / 2.0f) + (r1[0] - r2[0]);
         float height = (view.getHeight() / 2.0f) + (r1[1] - r2[1]);
         float f7 = min / 2.0f;
-        b0 b0Var = new b0(x61Var.getParentActivity(), new RectF(width - f7, height - f7, width + f7, height + f7), new RectF(), new w(callback, runnable));
+        b0 b0Var = new b0(e71Var.getParentActivity(), new RectF(width - f7, height - f7, width + f7, height + f7), new RectF(), new w(callback, runnable));
         b0Var.setPlainButton(true);
         b0Var.setAccept(callbackReturn);
-        b0Var.setOnGallery(new si.o(x61Var, b0Var, callbackReturn, callback, 3));
+        b0Var.setOnGallery(new si.o(e71Var, b0Var, callbackReturn, callback, 3));
         overlayContainerView.addView(b0Var, z5.c(-1.0f, -1));
         return b0Var;
     }
@@ -347,7 +346,7 @@ public final class b0 extends FrameLayout {
             nVar = null;
         }
         try {
-            xf.c f7 = f(bitmap, nVar, new a6.i(23), callbackReturn);
+            z4.b f7 = f(bitmap, nVar, new a6.i(23), callbackReturn);
             return f7 != null ? (String) f7.a : null;
         } finally {
             if (nVar != null) {
@@ -362,15 +361,15 @@ public final class b0 extends FrameLayout {
         return mutate;
     }
 
-    public static void p(n2 n2Var, int i10, x xVar) {
-        if (n2Var.isFinished) {
+    public static void p(o2 o2Var, int i10, x xVar) {
+        if (o2Var.isFinished) {
             return;
         }
-        d5 parentLayout = n2Var.getParentLayout();
-        if (parentLayout == null || ((parentLayout.getLastFragment() == n2Var && !((ActionBarLayout) parentLayout).A()) || i10 >= 40)) {
+        h5 parentLayout = o2Var.getParentLayout();
+        if (parentLayout == null || ((parentLayout.getLastFragment() == o2Var && !((ActionBarLayout) parentLayout).A()) || i10 >= 40)) {
             xVar.run();
         } else {
-            AndroidUtilities.runOnUIThread(new y31(n2Var, i10, xVar, 27), 50L);
+            AndroidUtilities.runOnUIThread(new c41(o2Var, i10, xVar, 27), 50L);
         }
     }
 
@@ -810,11 +809,11 @@ public final class b0 extends FrameLayout {
             drawable.setAlpha((int) (f10 * 255.0f));
             drawable.draw(canvas);
         } else {
-            g2 g2Var = this.J;
-            g2Var.setAlpha((int) (f10 * 255.0f));
+            h2 h2Var = this.J;
+            h2Var.setAlpha((int) (f10 * 255.0f));
             canvas.save();
             canvas.translate(rectF.centerX() - (AndroidUtilities.dp(24.0f) / 2.0f), rectF.centerY() - (AndroidUtilities.dp(24.0f) / 2.0f));
-            g2Var.draw(canvas);
+            h2Var.draw(canvas);
             canvas.restore();
         }
         canvas.restore();
@@ -923,7 +922,7 @@ public final class b0 extends FrameLayout {
         this.h.set(f7 - f16, dp3, f7 + f16, f17);
         float dp4 = (f10 - AndroidUtilities.dp(35.0f)) - f16;
         this.n.set(dp4 - f16, dp3, dp4 + f16, f17);
-        this.Q = new StaticLayout(LocaleController.getString(R.string.ScanQrCode), this.K, org.telegram.messenger.g0.b(72.0f, i14, 1), Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
+        this.Q = new StaticLayout(LocaleController.getString(R.string.ScanQrCode), this.K, o1.g(72.0f, i14, 1), Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
         RectF rectF2 = this.f;
         if (!rectF2.isEmpty()) {
             return;

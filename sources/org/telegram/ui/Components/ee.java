@@ -25,7 +25,7 @@ import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ee implements Runnable {
     public final /* synthetic */ int a;
@@ -45,21 +45,21 @@ public final /* synthetic */ class ee implements Runnable {
             case 0:
                 ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.b;
                 CharSequence charSequence = (CharSequence) this.c;
-                int i10 = ChatActivityEnterView.n5;
+                int i10 = ChatActivityEnterView.r5;
                 chatActivityEnterView.setFieldText(charSequence);
                 chatActivityEnterView.W = null;
                 break;
             case 1:
                 ChatActivityEnterView chatActivityEnterView2 = (ChatActivityEnterView) this.b;
                 rd rdVar = (rd) this.c;
-                int i11 = ChatActivityEnterView.n5;
+                int i11 = ChatActivityEnterView.r5;
                 rdVar.run();
                 SharedPrefsHelper.setWebViewConfirmShown(chatActivityEnterView2.Q, chatActivityEnterView2.Q2, true);
                 break;
             case 2:
                 sg sgVar = (sg) this.b;
                 pg pgVar = (pg) this.c;
-                ChatActivityEnterView chatActivityEnterView3 = sgVar.V;
+                ChatActivityEnterView chatActivityEnterView3 = sgVar.b0;
                 chatActivityEnterView3.i1 = chatActivityEnterView3.h1.getAudioRightMs() - chatActivityEnterView3.h1.getAudioLeftMs();
                 MediaController.getInstance().trimCurrentRecording(chatActivityEnterView3.h1.getAudioLeftMs(), chatActivityEnterView3.h1.getAudioRightMs(), pgVar);
                 break;
@@ -68,10 +68,10 @@ public final /* synthetic */ class ee implements Runnable {
                 break;
             case 4:
                 ti tiVar = (ti) this.b;
-                org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) this.c;
+                org.telegram.ui.ActionBar.o2 o2Var = (org.telegram.ui.ActionBar.o2) this.c;
                 tiVar.dismiss(true);
-                if (n2Var != null) {
-                    n2Var.presentFragment(new PremiumPreviewFragment(0, "caption_limit"));
+                if (o2Var != null) {
+                    o2Var.presentFragment(new PremiumPreviewFragment(0, "caption_limit"));
                     break;
                 }
                 break;
@@ -88,7 +88,7 @@ public final /* synthetic */ class ee implements Runnable {
                 TLRPC.TL_attachMenuBot tL_attachMenuBot = ((mi) this.c).c;
                 tL_attachMenuBot.side_menu_disclaimer_needed = false;
                 tL_attachMenuBot.inactive = false;
-                tiVar3.R1(tL_attachMenuBot.bot_id, null, false, true);
+                tiVar3.V1(tL_attachMenuBot.bot_id, null, false, true);
                 MediaDataController.getInstance(tiVar3.M1).updateAttachMenuBotsInCache();
                 break;
             case 7:
@@ -96,7 +96,7 @@ public final /* synthetic */ class ee implements Runnable {
                 TLRPC.TL_attachMenuBot tL_attachMenuBot2 = (TLRPC.TL_attachMenuBot) this.c;
                 MediaDataController.getInstance(tiVar4.M1).loadAttachMenuBots(false, true);
                 if (tiVar4.B0 == tiVar4.A0.get(tL_attachMenuBot2.bot_id)) {
-                    tiVar4.U1(tiVar4.j0);
+                    tiVar4.Y1(tiVar4.j0);
                     break;
                 }
                 break;
@@ -109,9 +109,9 @@ public final /* synthetic */ class ee implements Runnable {
                 break;
             case 9:
                 fj fjVar2 = (fj) this.b;
-                ((ti) this.c).b1();
+                ((ti) this.c).e1();
                 fjVar2.O();
-                fjVar2.b.b2(fjVar2, 0);
+                fjVar2.b.f2(fjVar2, 0);
                 break;
             case 10:
                 AndroidUtilities.runOnUIThread(new ee(11, (wj) this.b, ((vj) this.c).run()));
@@ -127,7 +127,7 @@ public final /* synthetic */ class ee implements Runnable {
                 if (mkVar.X.v.d.isEmpty()) {
                     arrayList2.addAll(0, mkVar.X.v.e);
                 }
-                Utilities.searchQueue.postRunnable(new ai.x9(mkVar, str2, !mkVar.R.isEmpty(), arrayList2, 17));
+                Utilities.searchQueue.postRunnable(new ai.x9(mkVar, str2, !mkVar.R.isEmpty(), arrayList2, 18));
                 break;
             case 13:
                 mk mkVar2 = (mk) this.b;
@@ -150,16 +150,16 @@ public final /* synthetic */ class ee implements Runnable {
                 TLRPC.User user = (TLRPC.User) this.c;
                 ti tiVar5 = alVar.b;
                 tiVar5.dismiss();
-                tiVar5.f0.presentFragment(org.telegram.ui.qn.W9(user.id));
+                tiVar5.f0.presentFragment(org.telegram.ui.sn.W9(user.id));
                 break;
             case 15:
-                org.telegram.messenger.g0.q(R.string.WalletAddressCopiedBulletin, new xc((al) this.b, (org.telegram.ui.ActionBar.d6) this.c), R.raw.copy, 36);
+                org.telegram.messenger.v0.p(R.string.WalletAddressCopiedBulletin, new xc((al) this.b, (org.telegram.ui.ActionBar.g6) this.c), R.raw.copy, 36);
                 break;
             case 16:
                 rl rlVar = (rl) this.b;
                 float[] fArr = (float[]) this.c;
                 rlVar.getClass();
-                rlVar.e0(fArr[0], fArr[1]);
+                rlVar.f0(fArr[0], fArr[1]);
                 break;
             case 17:
                 ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = (ChatAttachAlertPhotoLayout) this.b;
@@ -200,27 +200,27 @@ public final /* synthetic */ class ee implements Runnable {
                 gVar.run();
                 break;
             case 21:
-                ((rp) this.b).b.z((List) this.c);
+                ((sp) this.b).b.C((List) this.c);
                 break;
             case 22:
-                ((sp) this.b).b.z((List) this.c);
+                ((tp) this.b).b.C((List) this.c);
                 break;
             case 23:
-                org.telegram.ui.ActionBar.f3 f3Var = (org.telegram.ui.ActionBar.f3) this.b;
+                org.telegram.ui.ActionBar.h3 h3Var = (org.telegram.ui.ActionBar.h3) this.b;
                 Context context = (Context) this.c;
-                f3Var.dismiss();
+                h3Var.dismiss();
                 pf.d.r(context, "https://t.me/BotFather?start=deletebot");
                 break;
             case 24:
-                org.telegram.ui.Cells.i3 i3Var = (org.telegram.ui.Cells.i3) this.b;
+                org.telegram.ui.Cells.h3 h3Var2 = (org.telegram.ui.Cells.h3) this.b;
                 TreeSet treeSet = (TreeSet) this.c;
-                String charSequence2 = i3Var.getText().toString();
+                String charSequence2 = h3Var2.getText().toString();
                 if (!nr.a(charSequence2, "bot") && nr.c(charSequence2, treeSet) == null) {
                     str = "bot";
                 }
-                org.telegram.ui.Cells.g3 g3Var = i3Var.b;
-                g3Var.setRightText(str);
-                g3Var.setPadding(0, AndroidUtilities.dp(15.0f), AndroidUtilities.dp(TextUtils.isEmpty(str) ? 21.0f : 63.0f), AndroidUtilities.dp(15.0f));
+                org.telegram.ui.Cells.f3 f3Var = h3Var2.d;
+                f3Var.setRightText(str);
+                f3Var.setPadding(0, AndroidUtilities.dp(15.0f), AndroidUtilities.dp(TextUtils.isEmpty(str) ? 21.0f : 63.0f), AndroidUtilities.dp(15.0f));
                 break;
             case 25:
                 xr xrVar = (xr) this.b;
@@ -238,11 +238,11 @@ public final /* synthetic */ class ee implements Runnable {
                     xrVar2.c0 = groupcallstreamrtmpurl.key;
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(xrVar2.c0);
                     xrVar2.d0 = spannableStringBuilder;
-                    n11 n11Var = new n11();
-                    n11Var.a |= 256;
-                    n11Var.b = 0;
-                    n11Var.c = spannableStringBuilder.length();
-                    xrVar2.d0.setSpan(new o11(n11Var, 0), 0, xrVar2.d0.length(), 0);
+                    q11 q11Var = new q11();
+                    q11Var.a |= 256;
+                    q11Var.b = 0;
+                    q11Var.c = spannableStringBuilder.length();
+                    xrVar2.d0.setSpan(new r11(q11Var, 0), 0, xrVar2.d0.length(), 0);
                     xrVar2.e0.N(false);
                     break;
                 }

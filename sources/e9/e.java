@@ -12,12 +12,12 @@ import java.util.Map;
 import java.util.RandomAccess;
 import java.util.Set;
 import x7.qa;
-import z7.ee;
-import z7.fd;
+import z7.de;
+import z7.ed;
 import z7.l9;
 import z7.mg;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public class e extends AbstractMap {
     public final /* synthetic */ int a;
@@ -225,7 +225,7 @@ public class e extends AbstractMap {
                 mg mgVar = (mg) this.e;
                 mgVar.getClass();
                 List list3 = (List) collection3;
-                return list3 instanceof RandomAccess ? new ee(mgVar, obj, list3, null) : new m(mgVar, obj, list3, (m) null);
+                return list3 instanceof RandomAccess ? new de(mgVar, obj, list3, null) : new m(mgVar, obj, list3, (m) null);
         }
     }
 
@@ -252,13 +252,13 @@ public class e extends AbstractMap {
                 return aVar2;
             default:
                 mg mgVar = (mg) this.e;
-                fd fdVar = mgVar.a;
-                if (fdVar != null) {
-                    return fdVar;
+                ed edVar = mgVar.a;
+                if (edVar != null) {
+                    return edVar;
                 }
-                fd fdVar2 = new fd(mgVar, mgVar.c);
-                mgVar.a = fdVar2;
-                return fdVar2;
+                ed edVar2 = new ed(mgVar, mgVar.c);
+                mgVar.a = edVar2;
+                return edVar2;
         }
     }
 

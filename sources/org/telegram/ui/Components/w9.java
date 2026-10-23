@@ -17,7 +17,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public class w9 extends View {
     public Path E;
@@ -35,7 +35,7 @@ public class w9 extends View {
     public boolean v;
     public boolean w;
     public ValueAnimator x;
-    public f11 y;
+    public i11 y;
 
     public w9(Context context) {
         super(context);
@@ -81,7 +81,7 @@ public class w9 extends View {
         d();
     }
 
-    public final void f(String str, String str2, Drawable drawable) {
+    public final void g(String str, String str2, Drawable drawable) {
         m(ImageLocation.getForPath(str), str2, null, null, drawable, null, 0, null);
     }
 
@@ -91,7 +91,7 @@ public class w9 extends View {
 
     public h9 getAvatarDrawable() {
         if (this.h == null) {
-            this.h = new h9((org.telegram.ui.ActionBar.d6) null);
+            this.h = new h9((org.telegram.ui.ActionBar.g6) null);
         }
         return this.h;
     }
@@ -135,9 +135,9 @@ public class w9 extends View {
         m(imageLocation, str, null, null, drawable, null, 0, obj);
     }
 
-    public final void o(n71 n71Var, ImageLocation imageLocation, String str, ImageLocation imageLocation2, ImageLocation imageLocation3, String str2, int i10, String str3) {
-        if (n71Var != null) {
-            this.a.setImageBitmap(n71Var);
+    public final void o(u71 u71Var, ImageLocation imageLocation, String str, ImageLocation imageLocation2, ImageLocation imageLocation3, String str2, int i10, String str3) {
+        if (u71Var != null) {
+            this.a.setImageBitmap(u71Var);
         } else {
             this.a.setImage(imageLocation, str, imageLocation2, null, imageLocation3, str2, null, i10, null, str3, 1);
         }
@@ -272,7 +272,7 @@ public class w9 extends View {
             this.y = null;
             return;
         }
-        this.y = new f11(charSequence, 16.5f, AndroidUtilities.bold());
+        this.y = new i11(charSequence, 16.5f, AndroidUtilities.bold());
         if (this.F == null) {
             ColorMatrix colorMatrix = new ColorMatrix();
             colorMatrix.setSaturation(1.2f);

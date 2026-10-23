@@ -16,7 +16,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessagesController;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class pf extends ng {
     public boolean e;
@@ -26,8 +26,8 @@ public final class pf extends ng {
     public final /* synthetic */ ChatActivityEnterView r;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public pf(ChatActivityEnterView chatActivityEnterView, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(chatActivityEnterView, context, d6Var);
+    public pf(ChatActivityEnterView chatActivityEnterView, Context context, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(chatActivityEnterView, context, g6Var);
         this.r = chatActivityEnterView;
         this.e = true;
     }
@@ -41,8 +41,8 @@ public final class pf extends ng {
             setWindowView(view);
             return;
         }
-        org.telegram.ui.qn qnVar = chatActivityEnterView.P2;
-        if (qnVar == null || qnVar.getParentLayout() == null || !((ActionBarLayout) chatActivityEnterView.P2.getParentLayout()).b) {
+        org.telegram.ui.sn snVar = chatActivityEnterView.P2;
+        if (snVar == null || snVar.getParentLayout() == null || !((ActionBarLayout) chatActivityEnterView.P2.getParentLayout()).b) {
             setWindowView(chatActivityEnterView.O2.getWindow().getDecorView());
         } else {
             setWindowView(chatActivityEnterView.P2.getParentLayout().getWindow().getDecorView());
@@ -56,7 +56,7 @@ public final class pf extends ng {
             return;
         }
         this.e = false;
-        this.r.I(true);
+        this.r.F(true);
     }
 
     @Override // org.telegram.ui.Components.ng, org.telegram.ui.Components.iu, org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
@@ -98,14 +98,14 @@ public final class pf extends ng {
                                     }
                                     int max = Math.max(0, chatActivityEnterView.E0.getSelectionStart());
                                     int min = Math.min(chatActivityEnterView.E0.getText().length(), chatActivityEnterView.E0.getSelectionEnd());
-                                    pj0[] pj0VarArr = (pj0[]) chatActivityEnterView.E0.getText().getSpans(max, min, pj0.class);
-                                    if (pj0VarArr == null || pj0VarArr.length <= 0) {
-                                        qj0.a(spannableStringBuilder);
+                                    sj0[] sj0VarArr = (sj0[]) chatActivityEnterView.E0.getText().getSpans(max, min, sj0.class);
+                                    if (sj0VarArr == null || sj0VarArr.length <= 0) {
+                                        tj0.a(spannableStringBuilder);
                                     } else {
-                                        pj0[] pj0VarArr2 = (pj0[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), pj0.class);
-                                        for (int i11 = 0; i11 < pj0VarArr2.length; i11++) {
-                                            spannableStringBuilder.removeSpan(pj0VarArr2[i11]);
-                                            spannableStringBuilder.removeSpan(pj0VarArr2[i11].a);
+                                        sj0[] sj0VarArr2 = (sj0[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), sj0.class);
+                                        for (int i11 = 0; i11 < sj0VarArr2.length; i11++) {
+                                            spannableStringBuilder.removeSpan(sj0VarArr2[i11]);
+                                            spannableStringBuilder.removeSpan(sj0VarArr2[i11].a);
                                         }
                                     }
                                     pf pfVar = chatActivityEnterView.E0;
@@ -133,11 +133,9 @@ public final class pf extends ng {
     @Override // org.telegram.ui.Components.ng, org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         ChatActivityEnterView chatActivityEnterView = this.r;
-        if (!chatActivityEnterView.u()) {
+        if (!chatActivityEnterView.t()) {
             if (motionEvent.getAction() == 0 && chatActivityEnterView.Z2 != null) {
-                int i10 = org.telegram.ui.ActionBar.h6.vf;
-                int i11 = ChatActivityEnterView.n5;
-                setHandlesColor(chatActivityEnterView.g0(i10));
+                org.telegram.ui.ActionBar.r6.m(this, 36, org.telegram.ui.ActionBar.k6.vf, chatActivityEnterView.W3);
                 chatActivityEnterView.Z2.m1();
             }
             return super.onTouchEvent(motionEvent);
@@ -152,9 +150,7 @@ public final class pf extends ng {
             }
         } else if (this.n) {
             if (chatActivityEnterView.Z2 != null) {
-                int i12 = org.telegram.ui.ActionBar.h6.vf;
-                int i13 = ChatActivityEnterView.n5;
-                setHandlesColor(chatActivityEnterView.g0(i12));
+                org.telegram.ui.ActionBar.r6.m(this, 36, org.telegram.ui.ActionBar.k6.vf, chatActivityEnterView.W3);
                 chatActivityEnterView.Z2.m1();
             }
             pf pfVar = chatActivityEnterView.E0;

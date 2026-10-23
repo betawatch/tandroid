@@ -5,11 +5,11 @@ import m.b3;
 import m.e2;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.e01;
-import org.telegram.ui.qy0;
-import z4.g;
+import org.telegram.ui.i01;
+import org.telegram.ui.my0;
+import z4.h;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class a extends DataSetObserver {
     public final /* synthetic */ int a;
@@ -36,26 +36,26 @@ public final class a extends DataSetObserver {
                 }
                 break;
             case 2:
-                e01 e01Var = (e01) this.b;
-                ProfileActivity profileActivity = e01Var.n;
+                i01 i01Var = (i01) this.b;
+                ProfileActivity profileActivity = i01Var.n;
                 int realCount = profileActivity.o0.getRealCount();
                 if (profileActivity.B0 == 0 && realCount > 1 && realCount <= 20 && profileActivity.N.E) {
                     profileActivity.B0 = 1;
                 }
-                e01Var.a(false);
-                e01Var.b(1.0f);
+                i01Var.a(false);
+                i01Var.b(1.0f);
                 if (profileActivity.r0 != null) {
                     if (!profileActivity.U0.t()) {
-                        e01Var.c();
+                        i01Var.c();
                         break;
                     } else {
-                        AndroidUtilities.runOnUIThread(new qy0(e01Var, 3), 500L);
+                        AndroidUtilities.runOnUIThread(new my0(i01Var, 4), 500L);
                         break;
                     }
                 }
                 break;
             default:
-                ((g) this.b).f();
+                ((h) this.b).f();
                 break;
         }
     }
@@ -76,7 +76,7 @@ public final class a extends DataSetObserver {
                 super.onInvalidated();
                 break;
             case 3:
-                ((g) this.b).f();
+                ((h) this.b).f();
                 break;
         }
     }

@@ -8,13 +8,13 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.xp;
 import tg.p;
 import w7.z5;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class b extends wg.c {
     public final xp s;
@@ -22,17 +22,17 @@ public final class b extends wg.c {
     public final TextPaint w;
     public final p x;
 
-    public b(Context context, d6 d6Var) {
-        super(context, d6Var);
+    public b(Context context, g6 g6Var) {
+        super(context, g6Var);
         TextPaint textPaint = new TextPaint();
         this.w = textPaint;
         this.x = new p(this, 12);
         textPaint.setTextSize(AndroidUtilities.dp(20.0f));
         this.f.setVisibility(8);
         this.c.setVisibility(8);
-        xp xpVar = new xp(context, 21, d6Var);
+        xp xpVar = new xp(context, 21, g6Var);
         this.s = xpVar;
-        xpVar.b(h6.B5, h6.j7, h6.C5);
+        xpVar.b(k6.B5, k6.j7, k6.C5);
         xpVar.setDrawUnchecked(true);
         xpVar.setDrawBackgroundAsArc(10);
         addView(xpVar);

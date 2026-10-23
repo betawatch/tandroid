@@ -1,36 +1,39 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.os.Bundle;
+import org.telegram.ui.Components.FragmentContextView;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class ak extends sn {
-    public final /* synthetic */ int f;
-    public boolean h;
+public final class ak extends FragmentContextView {
+    public final /* synthetic */ int X0;
+    public final /* synthetic */ sn Y0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ ak(Context context, org.telegram.ui.ActionBar.d5 d5Var, Bundle bundle, int i10) {
-        super(context, d5Var, bundle);
-        this.f = i10;
-    }
-
-    @Override // org.telegram.ui.sn
-    public final void a() {
-        switch (this.f) {
-            case 0:
-                if (!this.h) {
-                    this.h = true;
-                    super.a();
-                    break;
-                }
+    public ak(sn snVar, Context context, sn snVar2, org.telegram.ui.ActionBar.g6 g6Var, int i10) {
+        super(context, snVar2, null, true, g6Var);
+        this.X0 = i10;
+        switch (i10) {
+            case 1:
+                this.Y0 = snVar;
+                super(context, snVar2, null, false, g6Var);
                 break;
             default:
-                if (!this.h) {
-                    this.h = true;
-                    super.a();
-                    break;
-                }
+                this.Y0 = snVar;
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.FragmentContextView, android.view.View
+    public final void setVisibility(int i10) {
+        switch (this.X0) {
+            case 0:
+                sn snVar = this.Y0;
+                snVar.Y0.i(snVar.m2, i10 == 0, true);
+                break;
+            default:
+                sn snVar2 = this.Y0;
+                snVar2.Y0.i(snVar2.k2, i10 == 0, true);
                 break;
         }
     }

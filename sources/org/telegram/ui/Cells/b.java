@@ -5,9 +5,9 @@ import android.widget.FrameLayout;
 import android.widget.HorizontalScrollView;
 import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.ok0;
+import org.telegram.ui.Components.rk0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a = 1;
@@ -17,12 +17,12 @@ public final /* synthetic */ class b implements ValueAnimator.AnimatorUpdateList
     public final /* synthetic */ Object e;
     public final /* synthetic */ Object f;
 
-    public /* synthetic */ b(HorizontalScrollView horizontalScrollView, float f7, float f10, ok0 ok0Var, ok0 ok0Var2) {
+    public /* synthetic */ b(HorizontalScrollView horizontalScrollView, float f7, float f10, rk0 rk0Var, rk0 rk0Var2) {
         this.d = horizontalScrollView;
         this.b = f7;
         this.c = f10;
-        this.e = ok0Var;
-        this.f = ok0Var2;
+        this.e = rk0Var;
+        this.f = rk0Var2;
     }
 
     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
@@ -50,25 +50,25 @@ public final /* synthetic */ class b implements ValueAnimator.AnimatorUpdateList
                     min -= min2;
                 }
                 float lerp = AndroidUtilities.lerp(f10, f11, eVar.a);
-                jVar.T = lerp;
+                jVar.V = lerp;
                 if (lerp > 0.8f && frameLayout.getBackground() == null) {
                     frameLayout.setBackground(jVar.K);
                 }
-                jVar.r.setAlpha(1.0f - jVar.T);
-                jVar.s.setAlpha((float) Math.pow(1.0f - jVar.T, 2.0d));
+                jVar.r.setAlpha(1.0f - jVar.V);
+                jVar.s.setAlpha((float) Math.pow(1.0f - jVar.V, 2.0d));
                 jVar.i();
                 frameLayout.invalidate();
                 break;
             default:
                 HorizontalScrollView horizontalScrollView = (HorizontalScrollView) this.d;
-                ok0 ok0Var = (ok0) this.e;
-                ok0 ok0Var2 = (ok0) this.f;
+                rk0 rk0Var = (rk0) this.e;
+                rk0 rk0Var2 = (rk0) this.f;
                 float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 float f15 = this.c;
                 float f16 = this.b;
                 horizontalScrollView.setScrollX((int) com.google.android.gms.internal.play_billing.k3.y(f15, f16, floatValue3, f16));
-                ok0Var.setOutlineProgress(1.0f - floatValue3);
-                ok0Var2.setOutlineProgress(floatValue3);
+                rk0Var.setOutlineProgress(1.0f - floatValue3);
+                rk0Var2.setOutlineProgress(floatValue3);
                 break;
         }
     }

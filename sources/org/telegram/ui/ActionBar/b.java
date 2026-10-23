@@ -2,7 +2,7 @@ package org.telegram.ui.ActionBar;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -27,7 +27,7 @@ public final /* synthetic */ class b implements View.OnClickListener {
             default:
                 k kVar2 = this.b;
                 if (!kVar2.J && kVar2.n0) {
-                    kVar2.h(true);
+                    kVar2.g(true);
                     break;
                 } else {
                     j jVar = kVar2.u0;

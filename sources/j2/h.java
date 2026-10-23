@@ -1,252 +1,919 @@
 package j2;
 
-import a3.s;
+import android.content.Context;
+import android.media.DeniedByServerException;
+import android.media.MediaCodec;
+import android.media.MediaDrm;
+import android.media.MediaDrmResetException;
+import android.media.NotProvisionedException;
+import android.media.metrics.LogSessionId;
+import android.media.metrics.MediaMetricsManager;
+import android.media.metrics.NetworkEvent;
+import android.media.metrics.PlaybackErrorEvent;
+import android.media.metrics.PlaybackMetrics;
+import android.media.metrics.PlaybackSession;
+import android.media.metrics.PlaybackStateEvent;
+import android.media.metrics.TrackChangeEvent;
+import android.os.SystemClock;
+import android.system.ErrnoException;
+import android.system.OsConstants;
+import android.util.Pair;
+import android.util.SparseArray;
+import b2.a2;
+import b2.f1;
+import b2.j0;
 import b2.l1;
+import b2.m;
 import b2.n1;
 import b2.o1;
+import b2.s;
+import b2.u;
+import b2.u0;
+import b2.u1;
+import b2.v;
+import b2.v1;
+import b2.w;
+import b2.w0;
+import b2.y0;
 import e2.m0;
+import e9.l0;
+import hi.t;
+import j$.util.Objects;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.net.SocketTimeoutException;
+import java.net.UnknownHostException;
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.Random;
-import u2.g0;
+import java.util.UUID;
+import java.util.concurrent.Executor;
+import k2.x;
+import k2.z;
+import n2.y;
+import r2.n;
+import r2.p;
+import u2.d0;
+import u2.h0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public final class h {
-    public static final s h = new s(4);
-    public static final Random i = new Random();
-    public i d;
-    public String f;
-    public final n1 a = new n1();
-    public final l1 b = new l1();
-    public final HashMap c = new HashMap();
-    public o1 e = o1.a;
-    public long g = -1;
+public final class h implements b {
+    public y0 E;
+    public a5.a F;
+    public a5.a G;
+    public a5.a H;
+    public w I;
+    public w J;
+    public w K;
+    public boolean L;
+    public int M;
+    public boolean N;
+    public int O;
+    public int P;
+    public int Q;
+    public boolean R;
+    public final Context a;
+    public final g c;
+    public final PlaybackSession d;
+    public String s;
+    public PlaybackMetrics.Builder v;
+    public int w;
+    public final Executor b = e2.a.e();
+    public final n1 f = new n1();
+    public final l1 h = new l1();
+    public final HashMap r = new HashMap();
+    public final HashMap n = new HashMap();
+    public final long e = SystemClock.elapsedRealtime();
+    public int x = 0;
+    public int y = 0;
 
-    public final void a(g gVar) {
-        long j10 = gVar.c;
-        if (j10 != -1 && gVar.e) {
-            this.g = j10;
-        }
-        this.f = null;
+    public h(Context context, PlaybackSession playbackSession) {
+        this.a = context.getApplicationContext();
+        this.d = playbackSession;
+        g gVar = new g();
+        this.c = gVar;
+        gVar.d = this;
     }
 
-    public final synchronized void b(a aVar) {
-        i iVar;
-        try {
-            String str = this.f;
-            if (str != null) {
-                g gVar = (g) this.c.get(str);
-                gVar.getClass();
-                a(gVar);
+    public static h o(Context context) {
+        MediaMetricsManager mediaMetricsManager = (MediaMetricsManager) context.getSystemService("media_metrics");
+        if (mediaMetricsManager == null) {
+            return null;
+        }
+        return new h(context, mediaMetricsManager.createPlaybackSession());
+    }
+
+    @Override // j2.b
+    public final void a(i2.e eVar) {
+        this.O += eVar.g;
+        this.P += eVar.e;
+    }
+
+    @Override // j2.b
+    public final void b(d0 d0Var) {
+        this.M = d0Var.a;
+    }
+
+    @Override // j2.b
+    public final void c(a2 a2Var) {
+        a5.a aVar = this.F;
+        if (aVar != null) {
+            w wVar = (w) aVar.d;
+            if (wVar.A == -1) {
+                v a2 = wVar.a();
+                a2.y = a2Var.a;
+                a2.z = a2Var.b;
+                this.F = new a5.a(new w(a2), aVar.b, (String) aVar.c, 9);
             }
-            Iterator it = this.c.values().iterator();
-            while (it.hasNext()) {
-                g gVar2 = (g) it.next();
-                it.remove();
-                if (gVar2.e && (iVar = this.d) != null) {
-                    iVar.t(aVar, gVar2.a);
-                }
-            }
-        } catch (Throwable th2) {
-            throw th2;
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:12:0x0048, code lost:
-    
-        if (r12 != (-1)) goto L16;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x008e  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x00a0 A[ADDED_TO_REGION, SYNTHETIC] */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:119:0x042b  */
+    /* JADX WARN: Removed duplicated region for block: B:121:0x042d  */
+    /* JADX WARN: Removed duplicated region for block: B:127:0x0443  */
+    /* JADX WARN: Removed duplicated region for block: B:129:0x0445  */
+    /* JADX WARN: Removed duplicated region for block: B:133:0x0455  */
+    /* JADX WARN: Removed duplicated region for block: B:146:0x0484  */
+    /* JADX WARN: Removed duplicated region for block: B:157:0x04ae  */
+    /* JADX WARN: Removed duplicated region for block: B:168:0x04dd  */
+    /* JADX WARN: Removed duplicated region for block: B:171:0x04f7  */
+    /* JADX WARN: Removed duplicated region for block: B:174:0x0524  */
+    /* JADX WARN: Removed duplicated region for block: B:177:0x052c  */
+    /* JADX WARN: Removed duplicated region for block: B:180:0x0540  */
+    /* JADX WARN: Removed duplicated region for block: B:184:0x0594  */
+    /* JADX WARN: Removed duplicated region for block: B:187:0x05c2  */
+    /* JADX WARN: Removed duplicated region for block: B:189:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:190:0x0543  */
+    /* JADX WARN: Removed duplicated region for block: B:223:0x052f  */
+    /* JADX WARN: Removed duplicated region for block: B:226:0x051b  */
+    /* JADX WARN: Removed duplicated region for block: B:227:0x04df  */
+    /* JADX WARN: Removed duplicated region for block: B:228:0x04e2  */
+    /* JADX WARN: Removed duplicated region for block: B:229:0x04e5  */
+    /* JADX WARN: Removed duplicated region for block: B:230:0x04e7  */
+    /* JADX WARN: Removed duplicated region for block: B:231:0x04ea  */
+    /* JADX WARN: Removed duplicated region for block: B:232:0x04ec  */
+    /* JADX WARN: Removed duplicated region for block: B:233:0x04ee  */
+    /* JADX WARN: Removed duplicated region for block: B:234:0x04f0  */
+    /* JADX WARN: Removed duplicated region for block: B:235:0x04f2  */
+    /* JADX WARN: Type inference failed for: r8v22 */
+    /* JADX WARN: Type inference failed for: r8v23, types: [a5.a] */
+    /* JADX WARN: Type inference failed for: r8v52 */
+    @Override // j2.b
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final g c(int i10, g0 g0Var) {
-        long j10;
-        long j11;
-        long j12;
-        HashMap hashMap = this.c;
-        g gVar = null;
-        long j13 = Long.MAX_VALUE;
-        for (g gVar2 : hashMap.values()) {
-            long j14 = gVar2.c;
-            g0 g0Var2 = gVar2.d;
-            if (j14 == -1 && i10 == gVar2.b && g0Var != null) {
-                long j15 = g0Var.d;
-                h hVar = gVar2.g;
-                j10 = -1;
-                g gVar3 = (g) hVar.c.get(hVar.f);
-                if (gVar3 != null) {
-                    j12 = gVar3.c;
+    public final void d(f1 f1Var, qf.b bVar) {
+        boolean z10;
+        int i10;
+        int i11;
+        int i12;
+        int i13;
+        int i14;
+        int i15;
+        u0 u0Var;
+        int i16;
+        int i17;
+        int i18;
+        int i19;
+        int i20;
+        ?? r82;
+        int i21;
+        int i22;
+        int i23;
+        boolean z11;
+        w wVar;
+        s sVar;
+        int i24;
+        if (((u) bVar.b).a.size() == 0) {
+            return;
+        }
+        for (int i25 = 0; i25 < ((u) bVar.b).a.size(); i25++) {
+            int a2 = ((u) bVar.b).a(i25);
+            a aVar = (a) ((SparseArray) bVar.c).get(a2);
+            aVar.getClass();
+            if (a2 == 0) {
+                g gVar = this.c;
+                synchronized (gVar) {
+                    try {
+                        gVar.d.getClass();
+                        o1 o1Var = gVar.e;
+                        gVar.e = aVar.b;
+                        Iterator it = gVar.c.values().iterator();
+                        while (it.hasNext()) {
+                            f fVar = (f) it.next();
+                            if (fVar.b(o1Var, gVar.e) && !fVar.a(aVar)) {
+                            }
+                            it.remove();
+                            if (fVar.a.equals(gVar.f)) {
+                                gVar.a(fVar);
+                            }
+                            if (fVar.e) {
+                                gVar.d.t(aVar, fVar.a);
+                            }
+                        }
+                        gVar.e(aVar);
+                    } catch (Throwable th2) {
+                        throw th2;
+                    }
                 }
-                j12 = hVar.g + 1;
-                if (j15 >= j12) {
-                    gVar2.c = j15;
-                }
+            } else if (a2 == 11) {
+                this.c.g(aVar, this.w);
             } else {
-                j10 = -1;
+                this.c.f(aVar);
             }
-            if (g0Var != null) {
-                long j16 = g0Var.d;
-                if (j16 != j10) {
-                    if (g0Var2 == null) {
-                        if (!g0Var.b() && j16 == gVar2.c) {
-                            j11 = gVar2.c;
-                            if (j11 == j10 || j11 < j13) {
-                                gVar = gVar2;
-                                j13 = j11;
-                            } else if (j11 == j13) {
-                                String str = m0.a;
-                                if (gVar.d != null && g0Var2 != null) {
-                                    gVar = gVar2;
+        }
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        if (bVar.B(0)) {
+            a aVar2 = (a) ((SparseArray) bVar.c).get(0);
+            aVar2.getClass();
+            if (this.v != null) {
+                r(aVar2.b, aVar2.d);
+            }
+        }
+        if (bVar.B(2) && this.v != null) {
+            l0 listIterator = f1Var.h0().a.listIterator(0);
+            loop2: while (true) {
+                if (!listIterator.hasNext()) {
+                    sVar = null;
+                    break;
+                }
+                u1 u1Var = (u1) listIterator.next();
+                for (int i26 = 0; i26 < u1Var.a; i26++) {
+                    if (u1Var.e[i26] && (sVar = u1Var.b.d[i26].w) != null) {
+                        break loop2;
+                    }
+                }
+            }
+            if (sVar != null) {
+                PlaybackMetrics.Builder builder = this.v;
+                String str = m0.a;
+                int i27 = 0;
+                while (true) {
+                    if (i27 >= sVar.d) {
+                        i24 = 1;
+                        break;
+                    }
+                    UUID uuid = sVar.a[i27].b;
+                    if (uuid.equals(m.e)) {
+                        i24 = 3;
+                        break;
+                    } else if (uuid.equals(m.f)) {
+                        i24 = 2;
+                        break;
+                    } else {
+                        if (uuid.equals(m.d)) {
+                            i24 = 6;
+                            break;
+                        }
+                        i27++;
+                    }
+                }
+                builder.setDrmType(i24);
+            }
+        }
+        if (bVar.B(1011)) {
+            this.Q++;
+        }
+        y0 y0Var = this.E;
+        if (y0Var == null) {
+            i20 = 2;
+            i19 = 1;
+            i11 = 9;
+            i15 = 13;
+            i12 = 8;
+            i13 = 7;
+            i14 = 6;
+        } else {
+            int i28 = y0Var.a;
+            Context context = this.a;
+            boolean z12 = this.M == 4;
+            if (i28 == 1001) {
+                u0Var = new u0(20, 0);
+            } else {
+                if (y0Var instanceof i2.m) {
+                    i2.m mVar = (i2.m) y0Var;
+                    z10 = mVar.s == 1;
+                    i10 = mVar.y;
+                } else {
+                    z10 = false;
+                    i10 = 0;
+                }
+                Throwable cause = y0Var.getCause();
+                cause.getClass();
+                int i29 = 27;
+                if (!(cause instanceof IOException)) {
+                    i11 = 9;
+                    i12 = 8;
+                    i13 = 7;
+                    i14 = 6;
+                    if (z10 && (i10 == 0 || i10 == 1)) {
+                        u0Var = new u0(35, 0);
+                    } else if (z10 && i10 == 3) {
+                        u0Var = new u0(15, 0);
+                    } else if (z10 && i10 == 2) {
+                        u0Var = new u0(23, 0);
+                    } else {
+                        if (cause instanceof p) {
+                            i15 = 13;
+                            u0Var = new u0(13, m0.A(((p) cause).d));
+                        } else {
+                            i15 = 13;
+                            if (cause instanceof n) {
+                                u0Var = new u0(14, ((n) cause).a);
+                            } else if (cause instanceof OutOfMemoryError) {
+                                u0Var = new u0(14, 0);
+                            } else if (cause instanceof x) {
+                                u0Var = new u0(17, 0);
+                            } else if (cause instanceof z) {
+                                u0Var = new u0(18, ((z) cause).a);
+                            } else if (cause instanceof MediaCodec.CryptoException) {
+                                int errorCode = ((MediaCodec.CryptoException) cause).getErrorCode();
+                                switch (m0.z(errorCode)) {
+                                    case 6002:
+                                        i29 = 24;
+                                        break;
+                                    case 6003:
+                                        i29 = 28;
+                                        break;
+                                    case 6004:
+                                        i29 = 25;
+                                        break;
+                                    case 6005:
+                                        i29 = 26;
+                                        break;
+                                }
+                                u0Var = new u0(i29, errorCode);
+                            } else {
+                                u0Var = new u0(22, 0);
+                            }
+                        }
+                        this.b.execute(new t(12, this, new PlaybackErrorEvent.Builder().setTimeSinceCreatedMillis(elapsedRealtime - this.e).setErrorCode(u0Var.a).setSubErrorCode(u0Var.b).setException(y0Var).build()));
+                        i19 = 1;
+                        this.R = true;
+                        this.E = null;
+                        i20 = 2;
+                    }
+                    i15 = 13;
+                    this.b.execute(new t(12, this, new PlaybackErrorEvent.Builder().setTimeSinceCreatedMillis(elapsedRealtime - this.e).setErrorCode(u0Var.a).setSubErrorCode(u0Var.b).setException(y0Var).build()));
+                    i19 = 1;
+                    this.R = true;
+                    this.E = null;
+                    i20 = 2;
+                } else if (cause instanceof g2.x) {
+                    u0Var = new u0(5, ((g2.x) cause).c);
+                } else {
+                    if ((cause instanceof g2.w) || (cause instanceof w0)) {
+                        i16 = 8;
+                        i17 = 6;
+                        i11 = 9;
+                        i18 = 7;
+                        u0Var = new u0(z12 ? 10 : 11, 0);
+                    } else {
+                        boolean z13 = cause instanceof g2.v;
+                        if (z13 || (cause instanceof g2.d0)) {
+                            i11 = 9;
+                            if (e2.w.a(context).b() == 1) {
+                                u0Var = new u0(3, 0);
+                            } else {
+                                Throwable cause2 = cause.getCause();
+                                if (cause2 instanceof UnknownHostException) {
+                                    u0Var = new u0(6, 0);
+                                    i14 = 6;
+                                    i15 = 13;
+                                    i12 = 8;
+                                    i13 = 7;
+                                } else {
+                                    i17 = 6;
+                                    if (cause2 instanceof SocketTimeoutException) {
+                                        i18 = 7;
+                                        u0Var = new u0(7, 0);
+                                    } else {
+                                        i18 = 7;
+                                        if (z13 && ((g2.v) cause).b == 1) {
+                                            u0Var = new u0(4, 0);
+                                        } else {
+                                            i16 = 8;
+                                            u0Var = new u0(8, 0);
+                                        }
+                                    }
+                                    i14 = 6;
+                                    i13 = i18;
+                                    i15 = 13;
+                                    i12 = 8;
+                                }
+                                this.b.execute(new t(12, this, new PlaybackErrorEvent.Builder().setTimeSinceCreatedMillis(elapsedRealtime - this.e).setErrorCode(u0Var.a).setSubErrorCode(u0Var.b).setException(y0Var).build()));
+                                i19 = 1;
+                                this.R = true;
+                                this.E = null;
+                                i20 = 2;
+                            }
+                        } else if (i28 == 1002) {
+                            u0Var = new u0(21, 0);
+                        } else if (cause instanceof n2.g) {
+                            Throwable cause3 = cause.getCause();
+                            cause3.getClass();
+                            if (cause3 instanceof MediaDrm.MediaDrmStateException) {
+                                int A = m0.A(((MediaDrm.MediaDrmStateException) cause3).getDiagnosticInfo());
+                                switch (m0.z(A)) {
+                                    case 6002:
+                                        i29 = 24;
+                                        break;
+                                    case 6003:
+                                        i29 = 28;
+                                        break;
+                                    case 6004:
+                                        i29 = 25;
+                                        break;
+                                    case 6005:
+                                        i29 = 26;
+                                        break;
+                                }
+                                u0Var = new u0(i29, A);
+                            } else {
+                                u0Var = cause3 instanceof MediaDrmResetException ? new u0(27, 0) : cause3 instanceof NotProvisionedException ? new u0(24, 0) : cause3 instanceof DeniedByServerException ? new u0(29, 0) : cause3 instanceof y ? new u0(23, 0) : cause3 instanceof n2.c ? new u0(28, 0) : new u0(30, 0);
+                            }
+                        } else if ((cause instanceof g2.s) && (cause.getCause() instanceof FileNotFoundException)) {
+                            Throwable cause4 = cause.getCause();
+                            cause4.getClass();
+                            Throwable cause5 = cause4.getCause();
+                            u0Var = ((cause5 instanceof ErrnoException) && ((ErrnoException) cause5).errno == OsConstants.EACCES) ? new u0(32, 0) : new u0(31, 0);
+                        } else {
+                            i11 = 9;
+                            u0Var = new u0(9, 0);
+                        }
+                        i15 = 13;
+                        i12 = 8;
+                        i13 = 7;
+                        i14 = 6;
+                        this.b.execute(new t(12, this, new PlaybackErrorEvent.Builder().setTimeSinceCreatedMillis(elapsedRealtime - this.e).setErrorCode(u0Var.a).setSubErrorCode(u0Var.b).setException(y0Var).build()));
+                        i19 = 1;
+                        this.R = true;
+                        this.E = null;
+                        i20 = 2;
+                    }
+                    i12 = i16;
+                    i14 = i17;
+                    i13 = i18;
+                    i15 = 13;
+                    this.b.execute(new t(12, this, new PlaybackErrorEvent.Builder().setTimeSinceCreatedMillis(elapsedRealtime - this.e).setErrorCode(u0Var.a).setSubErrorCode(u0Var.b).setException(y0Var).build()));
+                    i19 = 1;
+                    this.R = true;
+                    this.E = null;
+                    i20 = 2;
+                }
+            }
+            i11 = 9;
+            i15 = 13;
+            i12 = 8;
+            i13 = 7;
+            i14 = 6;
+            this.b.execute(new t(12, this, new PlaybackErrorEvent.Builder().setTimeSinceCreatedMillis(elapsedRealtime - this.e).setErrorCode(u0Var.a).setSubErrorCode(u0Var.b).setException(y0Var).build()));
+            i19 = 1;
+            this.R = true;
+            this.E = null;
+            i20 = 2;
+        }
+        if (bVar.B(i20)) {
+            v1 h02 = f1Var.h0();
+            boolean a10 = h02.a(i20);
+            boolean a11 = h02.a(i19);
+            boolean a12 = h02.a(3);
+            if (a10 || a11 || a12) {
+                if (a10) {
+                    wVar = null;
+                } else {
+                    wVar = null;
+                    if (!Objects.equals(this.I, null)) {
+                        int i30 = this.I == null ? 1 : 0;
+                        this.I = null;
+                        i21 = 10;
+                        u(1, elapsedRealtime, null, i30);
+                        if (!a11 && !Objects.equals(this.J, wVar)) {
+                            int i31 = this.J != null ? 1 : 0;
+                            this.J = wVar;
+                            u(0, elapsedRealtime, wVar, i31);
+                        }
+                        if (!a12 && !Objects.equals(this.K, wVar)) {
+                            int i32 = this.K != null ? 1 : 0;
+                            this.K = wVar;
+                            u(2, elapsedRealtime, wVar, i32);
+                        }
+                        r82 = wVar;
+                        if (n(this.F)) {
+                            a5.a aVar3 = this.F;
+                            w wVar2 = (w) aVar3.d;
+                            if (wVar2.A != -1) {
+                                int i33 = aVar3.b;
+                                if (!Objects.equals(this.I, wVar2)) {
+                                    int i34 = (this.I == null && i33 == 0) ? 1 : i33;
+                                    this.I = wVar2;
+                                    u(1, elapsedRealtime, wVar2, i34);
+                                }
+                                this.F = r82;
+                            }
+                        }
+                        if (n(this.G)) {
+                            a5.a aVar4 = this.G;
+                            w wVar3 = (w) aVar4.d;
+                            int i35 = aVar4.b;
+                            if (!Objects.equals(this.J, wVar3)) {
+                                int i36 = (this.J == null && i35 == 0) ? 1 : i35;
+                                this.J = wVar3;
+                                u(0, elapsedRealtime, wVar3, i36);
+                            }
+                            this.G = r82;
+                        }
+                        if (n(this.H)) {
+                            a5.a aVar5 = this.H;
+                            w wVar4 = (w) aVar5.d;
+                            int i37 = aVar5.b;
+                            if (!Objects.equals(this.K, wVar4)) {
+                                int i38 = (this.K == null && i37 == 0) ? 1 : i37;
+                                this.K = wVar4;
+                                u(2, elapsedRealtime, wVar4, i38);
+                            }
+                            this.H = r82;
+                        }
+                        switch (e2.w.a(this.a).b()) {
+                            case 0:
+                                i22 = 0;
+                                break;
+                            case 1:
+                                i22 = i11;
+                                break;
+                            case 2:
+                                i22 = 2;
+                                break;
+                            case 3:
+                                i22 = 4;
+                                break;
+                            case 4:
+                                i22 = 5;
+                                break;
+                            case 5:
+                                i22 = i14;
+                                break;
+                            case 6:
+                            case 8:
+                            default:
+                                i22 = 1;
+                                break;
+                            case 7:
+                                i22 = 3;
+                                break;
+                            case 9:
+                                i22 = i12;
+                                break;
+                            case 10:
+                                i22 = i13;
+                                break;
+                        }
+                        if (i22 != this.y) {
+                            this.y = i22;
+                            NetworkEvent build = new NetworkEvent.Builder().setNetworkType(i22).setTimeSinceCreatedMillis(elapsedRealtime - this.e).build();
+                            i23 = 11;
+                            this.b.execute(new t(i23, this, build));
+                        } else {
+                            i23 = 11;
+                        }
+                        if (f1Var.d() != 2) {
+                            this.L = false;
+                        }
+                        if (f1Var.W() == null) {
+                            this.N = false;
+                        } else if (bVar.B(i21)) {
+                            this.N = true;
+                        }
+                        int d = f1Var.d();
+                        if (this.L) {
+                            i23 = 5;
+                        } else if (this.N) {
+                            i23 = i15;
+                        } else if (d != 4) {
+                            int i39 = 2;
+                            if (d == 2) {
+                                int i40 = this.x;
+                                if (i40 != 0 && i40 != 2 && i40 != 12) {
+                                    i23 = !f1Var.t() ? i13 : f1Var.w0() != 0 ? i21 : i14;
+                                }
+                                i23 = i39;
+                            } else {
+                                i39 = 3;
+                                i23 = 12;
+                                if (d != 3) {
+                                    z11 = true;
+                                    if (d != 1 || this.x == 0) {
+                                        i23 = this.x;
+                                    }
+                                    if (this.x != i23) {
+                                        this.x = i23;
+                                        this.R = z11;
+                                        this.b.execute(new t(14, this, new PlaybackStateEvent.Builder().setState(this.x).setTimeSinceCreatedMillis(elapsedRealtime - this.e).build()));
+                                    }
+                                    if (bVar.B(1028)) {
+                                        return;
+                                    }
+                                    g gVar2 = this.c;
+                                    a aVar6 = (a) ((SparseArray) bVar.c).get(1028);
+                                    aVar6.getClass();
+                                    gVar2.b(aVar6);
+                                    return;
+                                }
+                                if (f1Var.t()) {
+                                    if (f1Var.w0() != 0) {
+                                        i23 = i11;
+                                    }
+                                    i23 = i39;
+                                } else {
+                                    i23 = 4;
                                 }
                             }
                         }
-                    } else if (j16 == g0Var2.d && g0Var.b == g0Var2.b && g0Var.c == g0Var2.c) {
-                        j11 = gVar2.c;
-                        if (j11 == j10) {
+                        z11 = true;
+                        if (this.x != i23) {
                         }
-                        gVar = gVar2;
-                        j13 = j11;
+                        if (bVar.B(1028)) {
+                        }
                     }
                 }
-            }
-            if (i10 == gVar2.b) {
-                j11 = gVar2.c;
-                if (j11 == j10) {
+                i21 = 10;
+                if (!a11) {
+                    if (this.J != null) {
+                    }
+                    this.J = wVar;
+                    u(0, elapsedRealtime, wVar, i31);
                 }
-                gVar = gVar2;
-                j13 = j11;
+                if (!a12) {
+                    if (this.K != null) {
+                    }
+                    this.K = wVar;
+                    u(2, elapsedRealtime, wVar, i32);
+                }
+                r82 = wVar;
+                if (n(this.F)) {
+                }
+                if (n(this.G)) {
+                }
+                if (n(this.H)) {
+                }
+                switch (e2.w.a(this.a).b()) {
+                }
+                if (i22 != this.y) {
+                }
+                if (f1Var.d() != 2) {
+                }
+                if (f1Var.W() == null) {
+                }
+                int d10 = f1Var.d();
+                if (this.L) {
+                }
+                z11 = true;
+                if (this.x != i23) {
+                }
+                if (bVar.B(1028)) {
+                }
             }
         }
-        if (gVar != null) {
-            return gVar;
+        r82 = 0;
+        i21 = 10;
+        if (n(this.F)) {
         }
-        String str2 = (String) h.get();
-        g gVar4 = new g(this, str2, i10, g0Var);
-        hashMap.put(str2, gVar4);
-        return gVar4;
+        if (n(this.G)) {
+        }
+        if (n(this.H)) {
+        }
+        switch (e2.w.a(this.a).b()) {
+        }
+        if (i22 != this.y) {
+        }
+        if (f1Var.d() != 2) {
+        }
+        if (f1Var.W() == null) {
+        }
+        int d102 = f1Var.d();
+        if (this.L) {
+        }
+        z11 = true;
+        if (this.x != i23) {
+        }
+        if (bVar.B(1028)) {
+        }
     }
 
-    public final synchronized String d(o1 o1Var, g0 g0Var) {
-        return c(o1Var.g(g0Var.a, this.b).c, g0Var).a;
-    }
-
-    public final void e(a aVar) {
-        g0 g0Var;
-        o1 o1Var = aVar.b;
-        int i10 = aVar.c;
-        g0 g0Var2 = aVar.d;
-        boolean p5 = o1Var.p();
-        HashMap hashMap = this.c;
-        if (p5) {
-            String str = this.f;
-            if (str != null) {
-                g gVar = (g) hashMap.get(str);
-                gVar.getClass();
-                a(gVar);
-                return;
-            }
+    @Override // j2.b
+    public final void e(a aVar, d0 d0Var) {
+        h0 h0Var = aVar.d;
+        if (h0Var == null) {
             return;
         }
-        g gVar2 = (g) hashMap.get(this.f);
-        this.f = c(i10, g0Var2).a;
-        f(aVar);
-        if (g0Var2 != null) {
-            long j10 = g0Var2.d;
-            if (g0Var2.b()) {
-                if (gVar2 != null && gVar2.c == j10 && (g0Var = gVar2.d) != null && g0Var.b == g0Var2.b && g0Var.c == g0Var2.c) {
+        w wVar = d0Var.c;
+        wVar.getClass();
+        int i10 = d0Var.d;
+        o1 o1Var = aVar.b;
+        h0Var.getClass();
+        a5.a aVar2 = new a5.a(wVar, i10, this.c.d(o1Var, h0Var), 9);
+        int i11 = d0Var.b;
+        if (i11 != 0) {
+            if (i11 == 1) {
+                this.G = aVar2;
+                return;
+            } else if (i11 != 2) {
+                if (i11 != 3) {
                     return;
                 }
-                c(i10, new g0(g0Var2.a, j10));
-                this.d.getClass();
-            }
-        }
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:19:0x0038 A[DONT_GENERATE] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final synchronized void f(a aVar) {
-        long j10;
-        this.d.getClass();
-        if (aVar.b.p()) {
-            return;
-        }
-        g0 g0Var = aVar.d;
-        if (g0Var != null) {
-            long j11 = g0Var.d;
-            if (j11 != -1) {
-                g gVar = (g) this.c.get(this.f);
-                if (gVar != null) {
-                    j10 = gVar.c;
-                    if (j10 != -1) {
-                        if (j11 < j10) {
-                            return;
-                        }
-                    }
-                }
-                j10 = this.g + 1;
-                if (j11 < j10) {
-                }
-            }
-            g gVar2 = (g) this.c.get(this.f);
-            if (gVar2 != null && gVar2.c == -1 && gVar2.b != aVar.c) {
+                this.H = aVar2;
                 return;
             }
         }
-        g c10 = c(aVar.c, aVar.d);
-        if (this.f == null) {
-            this.f = c10.a;
-        }
-        g0 g0Var2 = aVar.d;
-        if (g0Var2 != null && g0Var2.b()) {
-            g0 g0Var3 = aVar.d;
-            g c11 = c(aVar.c, new g0(g0Var3.a, g0Var3.d, g0Var3.b));
-            if (!c11.e) {
-                c11.e = true;
-                aVar.b.g(aVar.d.a, this.b);
-                this.b.d(aVar.d.b);
-                Math.max(0L, m0.h0(0L) + m0.h0(this.b.e));
-                this.d.getClass();
-            }
-        }
-        if (!c10.e) {
-            c10.e = true;
-            this.d.getClass();
-        }
-        if (c10.a.equals(this.f) && !c10.f) {
-            c10.f = true;
-            this.d.s(aVar, c10.a);
+        this.F = aVar2;
+    }
+
+    @Override // j2.b
+    public final void f(a aVar, int i10, long j10) {
+        h0 h0Var = aVar.d;
+        if (h0Var != null) {
+            String d = this.c.d(aVar.b, h0Var);
+            HashMap hashMap = this.r;
+            Long l4 = (Long) hashMap.get(d);
+            HashMap hashMap2 = this.n;
+            Long l10 = (Long) hashMap2.get(d);
+            hashMap.put(d, Long.valueOf((l4 == null ? 0L : l4.longValue()) + j10));
+            hashMap2.put(d, Long.valueOf((l10 != null ? l10.longValue() : 0L) + i10));
         }
     }
 
-    public final synchronized void g(a aVar, int i10) {
-        try {
-            this.d.getClass();
-            boolean z10 = i10 == 0;
-            Iterator it = this.c.values().iterator();
-            while (it.hasNext()) {
-                g gVar = (g) it.next();
-                if (gVar.a(aVar)) {
-                    it.remove();
-                    boolean equals = gVar.a.equals(this.f);
-                    if (equals) {
-                        a(gVar);
-                    }
-                    if (gVar.e) {
-                        if (z10 && equals) {
-                            boolean z11 = gVar.f;
-                        }
-                        this.d.t(aVar, gVar.a);
-                    }
+    @Override // j2.b
+    public final void g(a aVar, int i10) {
+        if (i10 == 1) {
+            this.L = true;
+        }
+        this.w = i10;
+    }
+
+    @Override // j2.b
+    public final void h(y0 y0Var) {
+        this.E = y0Var;
+    }
+
+    public final boolean n(a5.a aVar) {
+        String str;
+        if (aVar == null) {
+            return false;
+        }
+        String str2 = (String) aVar.c;
+        g gVar = this.c;
+        synchronized (gVar) {
+            str = gVar.f;
+        }
+        return str2.equals(str);
+    }
+
+    public final void p() {
+        PlaybackMetrics.Builder builder = this.v;
+        if (builder != null && this.R) {
+            builder.setAudioUnderrunCount(this.Q);
+            this.v.setVideoFramesDropped(this.O);
+            this.v.setVideoFramesPlayed(this.P);
+            Long l4 = (Long) this.n.get(this.s);
+            this.v.setNetworkTransferDurationMillis(l4 == null ? 0L : l4.longValue());
+            Long l10 = (Long) this.r.get(this.s);
+            this.v.setNetworkBytesRead(l10 == null ? 0L : l10.longValue());
+            this.v.setStreamSource((l10 == null || l10.longValue() <= 0) ? 0 : 1);
+            this.b.execute(new t(13, this, this.v.build()));
+        }
+        this.v = null;
+        this.s = null;
+        this.Q = 0;
+        this.O = 0;
+        this.P = 0;
+        this.I = null;
+        this.J = null;
+        this.K = null;
+        this.R = false;
+    }
+
+    public final LogSessionId q() {
+        return this.d.getSessionId();
+    }
+
+    public final void r(o1 o1Var, h0 h0Var) {
+        int b10;
+        PlaybackMetrics.Builder builder = this.v;
+        if (h0Var == null || (b10 = o1Var.b(h0Var.a)) == -1) {
+            return;
+        }
+        l1 l1Var = this.h;
+        int i10 = 0;
+        o1Var.f(b10, l1Var, false);
+        int i11 = l1Var.c;
+        n1 n1Var = this.f;
+        o1Var.n(i11, n1Var);
+        j0 j0Var = n1Var.c.b;
+        if (j0Var != null) {
+            int K = m0.K(j0Var.a, j0Var.b);
+            i10 = K != 0 ? K != 1 ? K != 2 ? 1 : 4 : 5 : 3;
+        }
+        builder.setStreamType(i10);
+        if (n1Var.m != -9223372036854775807L && !n1Var.k && !n1Var.i && !n1Var.a()) {
+            builder.setMediaDurationMillis(m0.h0(n1Var.m));
+        }
+        builder.setPlaybackType(n1Var.a() ? 2 : 1);
+        this.R = true;
+    }
+
+    public final void s(a aVar, String str) {
+        h0 h0Var = aVar.d;
+        if (h0Var == null || !h0Var.b()) {
+            p();
+            this.s = str;
+            this.v = new PlaybackMetrics.Builder().setPlayerName("AndroidXMedia3").setPlayerVersion("1.10.1");
+            r(aVar.b, h0Var);
+        }
+    }
+
+    public final void t(a aVar, String str) {
+        h0 h0Var = aVar.d;
+        if ((h0Var == null || !h0Var.b()) && str.equals(this.s)) {
+            p();
+        }
+        this.n.remove(str);
+        this.r.remove(str);
+    }
+
+    public final void u(int i10, long j10, w wVar, int i11) {
+        int i12;
+        TrackChangeEvent.Builder timeSinceCreatedMillis = new TrackChangeEvent.Builder(i10).setTimeSinceCreatedMillis(j10 - this.e);
+        if (wVar != null) {
+            timeSinceCreatedMillis.setTrackState(1);
+            if (i11 != 1) {
+                i12 = 3;
+                if (i11 != 2) {
+                    i12 = i11 != 3 ? 1 : 4;
+                }
+            } else {
+                i12 = 2;
+            }
+            timeSinceCreatedMillis.setTrackChangeReason(i12);
+            String str = wVar.r;
+            if (str != null) {
+                timeSinceCreatedMillis.setContainerMimeType(str);
+            }
+            String str2 = wVar.s;
+            if (str2 != null) {
+                timeSinceCreatedMillis.setSampleMimeType(str2);
+            }
+            String str3 = wVar.k;
+            if (str3 != null) {
+                timeSinceCreatedMillis.setCodecName(str3);
+            }
+            int i13 = wVar.j;
+            if (i13 != -1) {
+                timeSinceCreatedMillis.setBitrate(i13);
+            }
+            int i14 = wVar.z;
+            if (i14 != -1) {
+                timeSinceCreatedMillis.setWidth(i14);
+            }
+            int i15 = wVar.A;
+            if (i15 != -1) {
+                timeSinceCreatedMillis.setHeight(i15);
+            }
+            int i16 = wVar.K;
+            if (i16 != -1) {
+                timeSinceCreatedMillis.setChannelCount(i16);
+            }
+            int i17 = wVar.L;
+            if (i17 != -1) {
+                timeSinceCreatedMillis.setAudioSampleRate(i17);
+            }
+            String str4 = wVar.d;
+            if (str4 != null) {
+                String str5 = m0.a;
+                String[] split = str4.split("-", -1);
+                Pair create = Pair.create(split[0], split.length >= 2 ? split[1] : null);
+                timeSinceCreatedMillis.setLanguage((String) create.first);
+                Object obj = create.second;
+                if (obj != null) {
+                    timeSinceCreatedMillis.setLanguageRegion((String) obj);
                 }
             }
-            e(aVar);
-        } catch (Throwable th2) {
-            throw th2;
+            float f7 = wVar.D;
+            if (f7 != -1.0f) {
+                timeSinceCreatedMillis.setVideoFrameRate(f7);
+            }
+        } else {
+            timeSinceCreatedMillis.setTrackState(0);
         }
+        this.R = true;
+        this.b.execute(new t(10, this, timeSinceCreatedMillis.build()));
+    }
+
+    @Override // j2.b
+    public final /* synthetic */ void onRenderedFirstFrame(a aVar) {
+    }
+
+    @Override // j2.b
+    public final /* synthetic */ void onSeekStarted(a aVar) {
     }
 }

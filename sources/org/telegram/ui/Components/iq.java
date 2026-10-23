@@ -9,7 +9,7 @@ import androidx.core.widget.NestedScrollView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class iq extends NestedScrollView {
     public boolean W;
@@ -26,13 +26,13 @@ public final class iq extends NestedScrollView {
         int i10;
         int i11;
         mq mqVar = this.a0;
-        int i12 = mqVar.f;
-        i10 = ((org.telegram.ui.ActionBar.f3) mqVar).backgroundPaddingTop;
+        int i12 = mqVar.h;
+        i10 = ((org.telegram.ui.ActionBar.h3) mqVar).backgroundPaddingTop;
         int scrollY = (int) ((getScrollY() + (i12 - i10)) - getTranslationY());
         Drawable drawable = mqVar.b;
         int measuredWidth = getMeasuredWidth();
-        int measuredHeight = mqVar.c.getMeasuredHeight() + scrollY;
-        i11 = ((org.telegram.ui.ActionBar.f3) mqVar).backgroundPaddingTop;
+        int measuredHeight = mqVar.d.getMeasuredHeight() + scrollY;
+        i11 = ((org.telegram.ui.ActionBar.h3) mqVar).backgroundPaddingTop;
         drawable.setBounds(0, scrollY, measuredWidth, AndroidUtilities.dp(19.0f) + i11 + measuredHeight);
         drawable.draw(canvas);
     }
@@ -41,7 +41,7 @@ public final class iq extends NestedScrollView {
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         if (motionEvent.getAction() == 0) {
             mq mqVar = this.a0;
-            if (mqVar.f != 0 && motionEvent.getY() < mqVar.f) {
+            if (mqVar.h != 0 && motionEvent.getY() < mqVar.h) {
                 mqVar.dismiss();
                 return true;
             }
@@ -52,7 +52,7 @@ public final class iq extends NestedScrollView {
     @Override // androidx.core.widget.NestedScrollView, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         super.onLayout(z10, i10, i11, i12, i13);
-        mq.n(this.a0);
+        mq.m(this.a0);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:12:0x004a  */
@@ -63,11 +63,11 @@ public final class iq extends NestedScrollView {
     public final void onMeasure(int i10, int i11) {
         int size = View.MeasureSpec.getSize(i11);
         mq mqVar = this.a0;
-        measureChildWithMargins(mqVar.c, i10, 0, i11, 0);
-        int measuredHeight = mqVar.c.getMeasuredHeight();
+        measureChildWithMargins(mqVar.d, i10, 0, i11, 0);
+        int measuredHeight = mqVar.d.getMeasuredHeight();
         int i12 = (size / 5) * 3;
         int i13 = size - i12;
-        if (!mqVar.e && measuredHeight - i13 >= AndroidUtilities.dp(90.0f)) {
+        if (!mqVar.f && measuredHeight - i13 >= AndroidUtilities.dp(90.0f)) {
             if (measuredHeight >= AndroidUtilities.dp(90.0f) + (size / 2)) {
                 int dp = AndroidUtilities.dp(108.0f) + (measuredHeight / 2);
                 if (i13 < dp) {
@@ -90,7 +90,7 @@ public final class iq extends NestedScrollView {
     @Override // androidx.core.widget.NestedScrollView, android.view.View
     public final void onScrollChanged(int i10, int i11, int i12, int i13) {
         super.onScrollChanged(i10, i11, i12, i13);
-        mq.n(this.a0);
+        mq.m(this.a0);
     }
 
     @Override // androidx.core.widget.NestedScrollView, android.view.View
@@ -109,6 +109,6 @@ public final class iq extends NestedScrollView {
     @Override // android.view.View
     public final void setTranslationY(float f7) {
         super.setTranslationY(f7);
-        mq.n(this.a0);
+        mq.m(this.a0);
     }
 }

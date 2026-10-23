@@ -9,12 +9,12 @@ import java.util.LinkedHashMap;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.ActionBar.o2;
 import org.telegram.ui.Components.a6;
 import org.telegram.ui.Components.r5;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public abstract class l1 {
     public static void a(TLRPC.TL_availableReaction tL_availableReaction, LinkedHashMap linkedHashMap, ArrayList arrayList, SpannableStringBuilder spannableStringBuilder, y yVar, Paint.FontMetricsInt fontMetricsInt) {
@@ -94,15 +94,15 @@ public abstract class l1 {
     }
 
     public static void f(long j10, int i10, TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus) {
-        n2 R = LaunchActivity.R();
+        o2 R = LaunchActivity.R();
         if (R == null || tL_premium_boostsStatus == null) {
             return;
         }
-        sg.k0 k0Var = new sg.k0(21, UserConfig.selectedAccount, R.getContext(), R, R.getResourceProvider());
-        k0Var.R0 = i10;
-        k0Var.G1(tL_premium_boostsStatus, true);
-        k0Var.I1(j10);
-        k0Var.Q0 = new k1(R, j10);
-        k0Var.show();
+        sg.j0 j0Var = new sg.j0(21, UserConfig.selectedAccount, R.getContext(), R, R.getResourceProvider());
+        j0Var.R0 = i10;
+        j0Var.J1(tL_premium_boostsStatus, true);
+        j0Var.L1(j10);
+        j0Var.Q0 = new k1(R, j10);
+        j0Var.show();
     }
 }

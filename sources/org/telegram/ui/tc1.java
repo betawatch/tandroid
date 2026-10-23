@@ -1,74 +1,51 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import android.view.View;
-import android.widget.LinearLayout;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
+import android.text.Editable;
+import android.text.SpannableStringBuilder;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class tc1 implements View.OnClickListener {
-    public final /* synthetic */ qh0 a;
-    public final /* synthetic */ qn b;
-    public final /* synthetic */ org.telegram.ui.Components.jm0 c;
-    public final /* synthetic */ LinearLayout d;
-    public final /* synthetic */ org.telegram.ui.Components.i80 e;
-    public final /* synthetic */ org.telegram.ui.Components.i80 f;
-    public final /* synthetic */ yc1 h;
+public final class tc1 implements TextWatcher {
+    public final /* synthetic */ uc1 a;
 
-    public tc1(yc1 yc1Var, qh0 qh0Var, qn qnVar, org.telegram.ui.Components.jm0 jm0Var, LinearLayout linearLayout, org.telegram.ui.Components.i80 i80Var, org.telegram.ui.Components.i80 i80Var2) {
-        this.h = yc1Var;
-        this.a = qh0Var;
-        this.b = qnVar;
-        this.c = jm0Var;
-        this.d = linearLayout;
-        this.e = i80Var;
-        this.f = i80Var2;
+    public tc1(uc1 uc1Var) {
+        this.a = uc1Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        qh0 qh0Var = this.a;
-        ArrayList arrayList = qh0Var.b;
-        ArrayList arrayList2 = qh0Var.c;
-        if (arrayList2.isEmpty()) {
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        uc1 uc1Var = this.a;
+        if (uc1Var.H) {
             return;
         }
-        int size = arrayList2.size();
-        yc1 yc1Var = this.h;
-        qn qnVar = this.b;
-        if (size == 1 && (arrayList.size() <= 0 || ((Integer) arrayList.get(0)).intValue() <= 0)) {
-            TLObject tLObject = (TLObject) arrayList2.get(0);
-            if (tLObject == null) {
-                return;
-            }
-            Bundle bundle = new Bundle();
-            if (tLObject instanceof TLRPC.User) {
-                bundle.putLong("user_id", ((TLRPC.User) tLObject).id);
-            } else if (tLObject instanceof TLRPC.Chat) {
-                bundle.putLong("chat_id", ((TLRPC.Chat) tLObject).id);
-            }
-            qnVar.presentFragment(new ProfileActivity(bundle, null));
-            yc1Var.c(false);
+        if (uc1Var.a.length() <= 0) {
+            uc1Var.d.setText(uc1Var.G);
             return;
         }
-        if (SharedConfig.messageSeenHintCount > 0 && qnVar.X0.getKeyboardHeight() < AndroidUtilities.dp(20.0f)) {
-            org.telegram.ui.Components.qc t10 = new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(yc1Var.getContext()), yc1Var.a).t(AndroidUtilities.replaceTags(LocaleController.getString(R.string.MessageSeenTooltipMessage)), null);
-            qnVar.n1 = t10;
-            t10.j = 4000;
-            t10.j();
-            SharedConfig.updateMessageSeenHintCount(SharedConfig.messageSeenHintCount - 1);
+        String str = "https://" + uc1Var.getMessagesController().linkPrefix + "/addtheme/" + ((Object) uc1Var.a.getText());
+        String formatString = LocaleController.formatString("ThemeHelpLink", R.string.ThemeHelpLink, str);
+        int indexOf = formatString.indexOf(str);
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(formatString);
+        if (indexOf >= 0) {
+            spannableStringBuilder.setSpan(new org.telegram.ui.Cells.i(str, uc1Var, 8), indexOf, str.length() + indexOf, 33);
         }
-        org.telegram.ui.Components.jm0 jm0Var = this.c;
-        jm0Var.requestLayout();
-        this.d.requestLayout();
-        jm0Var.getAdapter().l();
-        this.e.K(this.f);
+        uc1Var.d.setText(TextUtils.concat(uc1Var.G, "\n\n", spannableStringBuilder));
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        uc1 uc1Var = this.a;
+        if (uc1Var.F) {
+            return;
+        }
+        uc1Var.Z(uc1Var.a.getText().toString(), false);
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

@@ -1,299 +1,55 @@
 package org.telegram.ui.Components;
 
-import android.content.res.Resources;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.Rect;
-import android.graphics.Region;
-import android.graphics.drawable.Drawable;
-import android.view.View;
+import android.content.Context;
+import android.text.SpannableStringBuilder;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public abstract class br extends Drawable {
-    public final /* synthetic */ int a;
-    public Object b;
+public final class br extends LinearLayout {
+    public final w9 a;
 
-    public /* synthetic */ br() {
-        this.a = 1;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public void applyTheme(Resources.Theme theme) {
-        switch (this.a) {
-            case 1:
-                Drawable drawable = (Drawable) this.b;
-                if (drawable != null) {
-                    drawable.applyTheme(theme);
-                    break;
-                }
-                break;
-            default:
-                super.applyTheme(theme);
-                break;
+    public br(Context context) {
+        super(context);
+        setOrientation(1);
+        w9 w9Var = new w9(context);
+        this.a = w9Var;
+        w9Var.setImageDrawable(new ea0(w9Var, "m418 282.6c13.4-21.1 20.2-44.9 20.2-70.8 0-88.3-79.8-175.3-178.9-175.3-100.1 0-178.9 88-178.9 175.3 0 46.6 16.9 73.1 29.1 86.1-19.3 23.4-30.9 52.3-34.6 86.1-2.5 22.7 3.2 41.4 17.4 57.3 14.3 16 51.7 35 148.1 35 41.2 0 119.9-5.3 156.7-18.3 49.5-17.4 59.2-41.1 59.2-76.2 0-41.5-12.9-74.8-38.3-99.2z", AndroidUtilities.dp(110.0f), AndroidUtilities.dp(110.0f)));
+        if (!AndroidUtilities.isTablet()) {
+            addView(w9Var, w7.z5.q(110, 110, 49));
         }
+        TextView g10 = org.telegram.messenger.v0.g(context, 1, 20.0f);
+        org.telegram.ui.ActionBar.r6.W(g10, org.telegram.ui.ActionBar.k6.G6, null);
+        g10.setGravity(1);
+        g10.setText(LocaleController.getString(R.string.NoContactsYet3));
+        g10.setTypeface(AndroidUtilities.bold());
+        addView(g10, w7.z5.t(-2, -2, 49, 0, 15, 0, 7));
+        TextView textView = new TextView(context);
+        textView.setTextSize(1, 14.0f);
+        org.telegram.ui.ActionBar.r6.W(textView, org.telegram.ui.ActionBar.k6.c7, null);
+        textView.setGravity(1);
+        textView.setText(LocaleController.getString(R.string.NoContactsYet3Sub));
+        textView.setMaxWidth(AndroidUtilities.dp(260.0f));
+        textView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
+        addView(textView, w7.z5.t(-2, -2, 49, 0, 0, 0, 19));
+        ei.d dVar = new ei.d(context, null, true);
+        dVar.setUseWrapContent(true);
+        dVar.f();
+        dVar.setPadding(AndroidUtilities.dp(28.0f), 0, AndroidUtilities.dp(28.0f), 0);
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("c");
+        spannableStringBuilder.setSpan(new xq(R.drawable.filled_new_contact_24, 0), 0, 1, 33);
+        spannableStringBuilder.append((CharSequence) "  ").append((CharSequence) LocaleController.getString(R.string.NewContact));
+        dVar.i(spannableStringBuilder, false, true);
+        addView(dVar, w7.z5.q(-2, 44, 49));
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public void clearColorFilter() {
-        switch (this.a) {
-            case 1:
-                Drawable drawable = (Drawable) this.b;
-                if (drawable == null) {
-                    super.clearColorFilter();
-                    break;
-                } else {
-                    drawable.clearColorFilter();
-                    break;
-                }
-            default:
-                super.clearColorFilter();
-                break;
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public Drawable getCurrent() {
-        switch (this.a) {
-            case 1:
-                Drawable drawable = (Drawable) this.b;
-                if (drawable == null) {
-                    break;
-                } else {
-                    break;
-                }
-        }
-        return super.getCurrent();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public int getMinimumHeight() {
-        switch (this.a) {
-            case 1:
-                Drawable drawable = (Drawable) this.b;
-                if (drawable == null) {
-                    break;
-                } else {
-                    break;
-                }
-        }
-        return super.getMinimumHeight();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public int getMinimumWidth() {
-        switch (this.a) {
-            case 1:
-                Drawable drawable = (Drawable) this.b;
-                if (drawable == null) {
-                    break;
-                } else {
-                    break;
-                }
-        }
-        return super.getMinimumWidth();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public boolean getPadding(Rect rect) {
-        switch (this.a) {
-            case 1:
-                Drawable drawable = (Drawable) this.b;
-                if (drawable == null) {
-                    break;
-                } else {
-                    break;
-                }
-        }
-        return super.getPadding(rect);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public int[] getState() {
-        switch (this.a) {
-            case 1:
-                Drawable drawable = (Drawable) this.b;
-                if (drawable == null) {
-                    break;
-                } else {
-                    break;
-                }
-        }
-        return super.getState();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public Region getTransparentRegion() {
-        switch (this.a) {
-            case 1:
-                Drawable drawable = (Drawable) this.b;
-                if (drawable == null) {
-                    break;
-                } else {
-                    break;
-                }
-        }
-        return super.getTransparentRegion();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public void jumpToCurrentState() {
-        switch (this.a) {
-            case 1:
-                Drawable drawable = (Drawable) this.b;
-                if (drawable != null) {
-                    drawable.jumpToCurrentState();
-                    break;
-                }
-                break;
-            default:
-                super.jumpToCurrentState();
-                break;
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public boolean onLevelChange(int i10) {
-        switch (this.a) {
-            case 1:
-                Drawable drawable = (Drawable) this.b;
-                if (drawable == null) {
-                    break;
-                } else {
-                    break;
-                }
-        }
-        return super.onLevelChange(i10);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public void setAlpha(int i10) {
-        ((Paint) this.b).setAlpha(i10);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public void setChangingConfigurations(int i10) {
-        switch (this.a) {
-            case 1:
-                Drawable drawable = (Drawable) this.b;
-                if (drawable == null) {
-                    super.setChangingConfigurations(i10);
-                    break;
-                } else {
-                    drawable.setChangingConfigurations(i10);
-                    break;
-                }
-            default:
-                super.setChangingConfigurations(i10);
-                break;
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public void setColorFilter(int i10, PorterDuff.Mode mode) {
-        switch (this.a) {
-            case 1:
-                Drawable drawable = (Drawable) this.b;
-                if (drawable == null) {
-                    super.setColorFilter(i10, mode);
-                    break;
-                } else {
-                    drawable.setColorFilter(i10, mode);
-                    break;
-                }
-            default:
-                super.setColorFilter(i10, mode);
-                break;
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public void setFilterBitmap(boolean z10) {
-        switch (this.a) {
-            case 1:
-                Drawable drawable = (Drawable) this.b;
-                if (drawable != null) {
-                    drawable.setFilterBitmap(z10);
-                    break;
-                }
-                break;
-            default:
-                super.setFilterBitmap(z10);
-                break;
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public void setHotspot(float f7, float f10) {
-        switch (this.a) {
-            case 1:
-                Drawable drawable = (Drawable) this.b;
-                if (drawable != null) {
-                    drawable.setHotspot(f7, f10);
-                    break;
-                }
-                break;
-            default:
-                super.setHotspot(f7, f10);
-                break;
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public void setHotspotBounds(int i10, int i11, int i12, int i13) {
-        switch (this.a) {
-            case 1:
-                Drawable drawable = (Drawable) this.b;
-                if (drawable != null) {
-                    drawable.setHotspotBounds(i10, i11, i12, i13);
-                    break;
-                }
-                break;
-            default:
-                super.setHotspotBounds(i10, i11, i12, i13);
-                break;
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public boolean setState(int[] iArr) {
-        switch (this.a) {
-            case 1:
-                Drawable drawable = (Drawable) this.b;
-                if (drawable == null) {
-                    break;
-                } else {
-                    break;
-                }
-        }
-        return super.setState(iArr);
-    }
-
-    public br(View view) {
-        this.a = 0;
-        this.b = new Paint(1);
-        if (view != null) {
-            view.addOnAttachStateChangeListener(new ai.n6(this, 8));
-            if (view.isAttachedToWindow()) {
-                view.post(new hq(this, 1));
-            }
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public void setColorFilter(ColorFilter colorFilter) {
-        ((Paint) this.b).setColorFilter(colorFilter);
-    }
-
-    public void a() {
-    }
-
-    public void b() {
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.a.setImageDrawable(new yj0(R.raw.utyan_empty, AndroidUtilities.dp(110.0f), AndroidUtilities.dp(110.0f)));
     }
 }

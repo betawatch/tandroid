@@ -1,159 +1,81 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.content.SharedPreferences;
-import android.text.TextUtils;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.view.View;
-import java.util.ArrayList;
+import android.view.ViewGroup;
+import java.util.WeakHashMap;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class dg1 extends org.telegram.ui.Components.x61 {
-    public bg1 d;
-    public long e;
-    public zf1 f;
-    public String h;
-    public org.telegram.ui.ActionBar.u0 n;
-    public boolean r;
+public final class dg1 extends ViewGroup {
+    public final Paint a;
+    public View b;
+    public boolean c;
 
-    /* JADX WARN: Removed duplicated region for block: B:29:0x00aa  */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x00ac  */
-    @Override // org.telegram.ui.Components.x61
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void U(ArrayList arrayList, org.telegram.ui.Components.u61 u61Var) {
-        CharSequence charSequence;
-        long j10 = this.e;
-        CharSequence charSequence2 = null;
-        if (TextUtils.isEmpty(this.h) && j10 != 0) {
-            org.telegram.ui.Components.h61 c10 = org.telegram.ui.Components.h61.c(1, R.drawable.msg_archive_hide, LocaleController.getString(R.string.EditProfileChannelHide));
-            c10.r = true;
-            arrayList.add(c10);
-            arrayList.add(org.telegram.ui.Components.h61.B(null));
-        }
-        if (TextUtils.isEmpty(this.h)) {
-            i2.e.p(R.string.EditProfileChannelSelect, arrayList);
-        }
-        ArrayList arrayList2 = this.d.e;
-        int size = arrayList2.size();
-        int i10 = 0;
-        int i11 = 0;
-        while (i11 < size) {
-            Object obj = arrayList2.get(i11);
-            i11++;
-            TLRPC.Chat chat = (TLRPC.Chat) obj;
-            if (chat == null || ChatObject.isMegagroup(chat)) {
-                charSequence = charSequence2;
-            } else {
-                i10++;
-                if (!TextUtils.isEmpty(this.h)) {
-                    String lowerCase = this.h.toLowerCase();
-                    String translitSafe = AndroidUtilities.translitSafe(lowerCase);
-                    String lowerCase2 = chat.title.toLowerCase();
-                    String translitSafe2 = AndroidUtilities.translitSafe(lowerCase2);
-                    if (!lowerCase2.startsWith(lowerCase)) {
-                        charSequence = charSequence2;
-                        if (!org.telegram.messenger.g0.w(" ", lowerCase, lowerCase2) && !translitSafe2.startsWith(translitSafe) && !org.telegram.messenger.g0.w(" ", translitSafe, translitSafe2)) {
-                        }
-                        long j11 = chat.id;
-                        org.telegram.ui.Components.h61 h61Var = new org.telegram.ui.Components.h61(11);
-                        h61Var.w = true;
-                        h61Var.x = -j11;
-                        h61Var.K(j10 != j11);
-                        arrayList.add(h61Var);
-                    }
-                }
-                charSequence = charSequence2;
-                long j112 = chat.id;
-                org.telegram.ui.Components.h61 h61Var2 = new org.telegram.ui.Components.h61(11);
-                h61Var2.w = true;
-                h61Var2.x = -j112;
-                h61Var2.K(j10 != j112);
-                arrayList.add(h61Var2);
-            }
-            charSequence2 = charSequence;
-        }
-        CharSequence charSequence3 = charSequence2;
-        if (TextUtils.isEmpty(this.h) && i10 == 0) {
-            org.telegram.ui.Components.h61 c11 = org.telegram.ui.Components.h61.c(2, R.drawable.msg_channel_create, LocaleController.getString(R.string.EditProfileChannelStartNew));
-            c11.q = true;
-            arrayList.add(c11);
-        }
-        arrayList.add(org.telegram.ui.Components.h61.B(charSequence3));
-        org.telegram.ui.ActionBar.u0 u0Var = this.n;
-        if (u0Var != null) {
-            u0Var.setVisibility(i10 <= 5 ? 8 : 0);
+    public dg1(Context context) {
+        super(context);
+        this.a = new Paint(1);
+        setClipToPadding(false);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        float navigationBarThirdButtonsFactor = AndroidUtilities.getNavigationBarThirdButtonsFactor(0.1f, 0.75f, getPaddingBottom());
+        int x02 = org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Oh, false);
+        int k10 = i0.a.k(org.telegram.ui.ActionBar.k6.o1(navigationBarThirdButtonsFactor, org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.d6, false)), x02);
+        Paint paint = this.a;
+        paint.setColor(x02);
+        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight() - r0, paint);
+        paint.setColor(k10);
+        canvas.drawRect(0.0f, getMeasuredHeight() - r0, getMeasuredWidth(), getMeasuredHeight(), paint);
+        super.dispatchDraw(canvas);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        int childCount = getChildCount();
+        for (int i14 = 0; i14 < childCount; i14++) {
+            View childAt = getChildAt(i14);
+            childAt.layout(0, 0, childAt.getMeasuredWidth(), childAt.getMeasuredHeight());
         }
     }
 
-    @Override // org.telegram.ui.Components.x61
-    public final CharSequence V() {
-        return LocaleController.getString(R.string.EditProfileChannelTitle);
-    }
-
-    @Override // org.telegram.ui.Components.x61
-    public final void W(org.telegram.ui.Components.h61 h61Var, View view) {
-        zf1 zf1Var = this.f;
-        int i10 = h61Var.d;
-        if (i10 == 1) {
-            zf1Var.run(null);
-            finishFragment();
-            return;
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        View view = this.b;
+        boolean z10 = view != null && view.getVisibility() == 0;
+        int size = View.MeasureSpec.getSize(i10);
+        int paddingBottom = z10 ? getPaddingBottom() + AndroidUtilities.dp(44.0f) : 0;
+        setMeasuredDimension(size, paddingBottom);
+        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30);
+        int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(paddingBottom, TLObject.FLAG_30);
+        int childCount = getChildCount();
+        for (int i12 = 0; i12 < childCount; i12++) {
+            getChildAt(i12).measure(makeMeasureSpec, makeMeasureSpec2);
         }
-        if (i10 != 2) {
-            if (h61Var.a == 12) {
-                finishFragment();
-                zf1Var.run(getMessagesController().getChat(Long.valueOf(-h61Var.x)));
-                return;
-            }
-            return;
-        }
-        this.r = true;
-        SharedPreferences globalMainSettings = MessagesController.getGlobalMainSettings();
-        if (!BuildVars.DEBUG_VERSION && globalMainSettings.getBoolean("channel_intro", false)) {
-            presentFragment(new md(org.telegram.ui.Cells.c1.i(0, "step")));
-        } else {
-            presentFragment(new h(0));
-            globalMainSettings.edit().putBoolean("channel_intro", true).apply();
+        if (this.c != z10) {
+            this.c = z10;
+            WeakHashMap weakHashMap = r0.i0.a;
+            r0.y.c(this);
         }
     }
 
-    @Override // org.telegram.ui.Components.x61
-    public final boolean X(org.telegram.ui.Components.h61 h61Var, View view) {
-        return false;
+    @Override // android.view.ViewGroup
+    public final void onViewAdded(View view) {
+        super.onViewAdded(view);
+        this.b = view;
     }
 
-    @Override // org.telegram.ui.Components.x61, org.telegram.ui.ActionBar.n2
-    public final View createView(Context context) {
-        org.telegram.ui.ActionBar.u0 c10 = this.actionBar.n().c(0, R.drawable.outline_header_search, getResourceProvider());
-        c10.F();
-        c10.H = new ig.c2(this, 19);
-        this.n = c10;
-        c10.setSearchFieldHint(LocaleController.getString(R.string.Search));
-        this.n.setContentDescription(LocaleController.getString(R.string.Search));
-        this.n.setVisibility(8);
-        super.createView(context);
-        this.a.p1();
-        this.actionBar.setAdaptiveBackground(this.a);
-        return this.fragmentView;
-    }
-
-    @Override // org.telegram.ui.ActionBar.n2
-    public final void onResume() {
-        super.onResume();
-        if (this.r) {
-            bg1 bg1Var = this.d;
-            bg1Var.c = false;
-            bg1Var.f.add(new cg1(this, 0));
-            this.r = false;
+    @Override // android.view.View
+    public final void setPadding(int i10, int i11, int i12, int i13) {
+        super.setPadding(i10, i11, i12, i13);
+        int childCount = getChildCount();
+        for (int i14 = 0; i14 < childCount; i14++) {
+            getChildAt(i14).setPadding(i10, i11, i12, i13);
         }
     }
 }

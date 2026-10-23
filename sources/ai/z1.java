@@ -6,30 +6,32 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.bs;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class z1 extends ph.c implements ne.d {
-    public static final /* synthetic */ int s = 0;
+    public static final /* synthetic */ int v = 0;
     public final ne.e f;
     public final r0 h;
     public final ph.b[] n;
-    public int r;
+    public final org.telegram.ui.ActionBar.g6 r;
+    public int s;
 
-    public z1(Context context, org.telegram.ui.ActionBar.d6 d6Var, r0 r0Var) {
+    public z1(Context context, org.telegram.ui.ActionBar.g6 g6Var, r0 r0Var) {
         super(context);
         this.f = new ne.e(0, this, bs.h, 1600L);
         this.h = r0Var;
-        int i10 = org.telegram.ui.ActionBar.h6.Wk;
-        int m12 = org.telegram.ui.ActionBar.h6.m1(0.09411765f, org.telegram.ui.ActionBar.h6.w0(i10, d6Var));
-        org.telegram.ui.ActionBar.h6.m1(0.1254902f, org.telegram.ui.ActionBar.h6.w0(i10, d6Var));
-        this.e.setColor(m12);
+        this.r = g6Var;
+        int i10 = org.telegram.ui.ActionBar.k6.Wk;
+        int o12 = org.telegram.ui.ActionBar.k6.o1(0.09411765f, org.telegram.ui.ActionBar.k6.w0(i10, g6Var));
+        org.telegram.ui.ActionBar.k6.o1(0.1254902f, org.telegram.ui.ActionBar.k6.w0(i10, g6Var));
+        this.e.setColor(o12);
         int i11 = 1;
-        this.n = new ph.b[]{ph.b.b(context, d6Var, ph.a.G, R.string.GiftPreviewModels), ph.b.b(context, d6Var, ph.a.v, R.string.GiftPreviewBackdrops), ph.b.b(context, d6Var, ph.a.J, R.string.GiftPreviewSymbols)};
+        this.n = new ph.b[]{ph.b.c(context, g6Var, ph.a.G, R.string.GiftPreviewModels), ph.b.c(context, g6Var, ph.a.v, R.string.GiftPreviewBackdrops), ph.b.c(context, g6Var, ph.a.J, R.string.GiftPreviewSymbols)};
         int i12 = 0;
         while (true) {
             ph.b[] bVarArr = this.n;
             if (i12 >= bVarArr.length) {
-                bVarArr[0].e(true, false);
+                bVarArr[0].f(true, false);
                 return;
             } else {
                 this.a.addView(bVarArr[i12], w7.z5.l(1.0f, 0, -1));
@@ -40,12 +42,12 @@ public final class z1 extends ph.c implements ne.d {
     }
 
     public final void a(int i10) {
-        int i11 = this.r;
+        int i11 = this.s;
         if (i11 != i10) {
             ph.b[] bVarArr = this.n;
-            bVarArr[i11].e(false, true);
-            bVarArr[i10].e(true, true);
-            this.r = i10;
+            bVarArr[i11].f(false, true);
+            bVarArr[i10].f(true, true);
+            this.s = i10;
             this.f.a(i10);
             this.h.run(Integer.valueOf(i10));
         }
@@ -66,16 +68,16 @@ public final class z1 extends ph.c implements ne.d {
         Math.abs(f7 - 1.0f);
     }
 
+    @Override // ne.d
+    public final void o(int i10, float f7, float f10, ne.e eVar) {
+        b();
+        invalidate();
+    }
+
     @Override // android.view.View
     public final void onSizeChanged(int i10, int i11, int i12, int i13) {
         super.onSizeChanged(i10, i11, i12, i13);
         b();
-    }
-
-    @Override // ne.d
-    public final void r(int i10, float f7, float f10, ne.e eVar) {
-        b();
-        invalidate();
     }
 
     @Override // ne.d

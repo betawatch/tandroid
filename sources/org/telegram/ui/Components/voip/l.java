@@ -5,16 +5,16 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.nk;
+import org.telegram.messenger.sl;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.q50;
-import org.telegram.ui.w50;
+import org.telegram.ui.a60;
+import org.telegram.ui.u50;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public abstract class l extends FrameLayout {
     public int a;
-    public w50 b;
+    public a60 b;
     public t c;
     public ChatObject.VideoParticipant d;
     public boolean e;
@@ -55,9 +55,9 @@ public abstract class l extends FrameLayout {
             ((View) getParent()).getMeasuredWidth();
             super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(this.b.F(), TLObject.FLAG_30));
         } else {
-            float f7 = q50.F3 ? 3.0f : 2.0f;
-            float B = nk.B(14.0f, 2, AndroidUtilities.displaySize.x) + (q50.F3 ? -AndroidUtilities.dp(90.0f) : 0);
-            super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec((int) ((q50.G3 ? B / 2.0f : B / f7) + AndroidUtilities.dp(4.0f)), TLObject.FLAG_30));
+            float f7 = u50.F3 ? 3.0f : 2.0f;
+            float B = sl.B(14.0f, 2, AndroidUtilities.displaySize.x) + (u50.F3 ? -AndroidUtilities.dp(90.0f) : 0);
+            super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec((int) ((u50.G3 ? B / 2.0f : B / f7) + AndroidUtilities.dp(4.0f)), TLObject.FLAG_30));
         }
     }
 

@@ -12,14 +12,14 @@ import android.view.View;
 import android.view.ViewParent;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.OvershootInterpolator;
-import ci.k2;
+import ci.j2;
 import ei.i6;
 import ei.ja;
 import java.util.ArrayList;
-import org.telegram.ui.tf1;
+import org.telegram.ui.ve1;
 import sg.x1;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public abstract class f extends GLSurfaceView implements Choreographer.FrameCallback {
     public static final /* synthetic */ int K = 0;
@@ -121,7 +121,7 @@ public abstract class f extends GLSurfaceView implements Choreographer.FrameCall
         ofFloat.setDuration(600L);
         this.d.setInterpolator(new OvershootInterpolator());
         this.d.addUpdateListener(new ja(this, f7, f10, 7));
-        this.d.addListener(new tf1(this, 18));
+        this.d.addListener(new ve1(this, 19));
         this.d.start();
         x1 x1Var = this.c;
         if (x1Var != null) {
@@ -285,7 +285,7 @@ public abstract class f extends GLSurfaceView implements Choreographer.FrameCall
     public final void surfaceRedrawNeededAsync(SurfaceHolder surfaceHolder, Runnable runnable) {
         ArrayList arrayList;
         synchronized (this.H) {
-            this.H.add(new k2(4, runnable));
+            this.H.add(new j2(4, runnable));
             arrayList = new ArrayList(this.H);
         }
         super.surfaceRedrawNeededAsync(surfaceHolder, new p2.b(28, this, arrayList));

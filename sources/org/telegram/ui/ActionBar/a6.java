@@ -1,77 +1,99 @@
 package org.telegram.ui.ActionBar;
 
-import android.content.SharedPreferences;
-import java.io.File;
-import java.util.ArrayList;
-import org.json.JSONObject;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.tgnet.TLRPC;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.ShapeDrawable;
+import android.graphics.drawable.shapes.RectShape;
+import android.graphics.drawable.shapes.RoundRectShape;
+import android.util.StateSet;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class a6 {
-    public String a = "";
-    public String b = "";
-    public String c = "";
-    public int d;
-    public int e;
-    public int f;
-    public int g;
-    public int h;
-    public boolean i;
-    public boolean j;
-    public float k;
-    public long l;
-    public long m;
-    public long n;
-    public boolean o;
-    public g6 p;
-    public f6 q;
-    public float r;
-    public ArrayList s;
-    public TLRPC.WallPaper t;
+public abstract class a6 {
+    public static final int a = k6.d6;
+    public static float[] b;
 
-    public static void a(a6 a6Var) {
-        ApplicationLoader.applicationContext.getSharedPreferences("themeconfig", 0).edit().remove(a6Var.b()).commit();
-        new File(ApplicationLoader.getFilesDirFixed(), a6Var.a).delete();
-        new File(ApplicationLoader.getFilesDirFixed(), a6Var.b).delete();
+    public static float[] a(float... fArr) {
+        return fArr.length == 0 ? new float[]{0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f} : fArr.length == 1 ? new float[]{AndroidUtilities.dp(fArr[0]), AndroidUtilities.dp(fArr[0]), AndroidUtilities.dp(fArr[0]), AndroidUtilities.dp(fArr[0]), AndroidUtilities.dp(fArr[0]), AndroidUtilities.dp(fArr[0]), AndroidUtilities.dp(fArr[0]), AndroidUtilities.dp(fArr[0])} : fArr.length == 2 ? new float[]{AndroidUtilities.dp(fArr[0]), AndroidUtilities.dp(fArr[0]), AndroidUtilities.dp(fArr[0]), AndroidUtilities.dp(fArr[0]), AndroidUtilities.dp(fArr[1]), AndroidUtilities.dp(fArr[1]), AndroidUtilities.dp(fArr[1]), AndroidUtilities.dp(fArr[1])} : fArr.length == 3 ? new float[]{AndroidUtilities.dp(fArr[0]), AndroidUtilities.dp(fArr[0]), AndroidUtilities.dp(fArr[1]), AndroidUtilities.dp(fArr[1]), AndroidUtilities.dp(fArr[2]), AndroidUtilities.dp(fArr[2]), AndroidUtilities.dp(fArr[2]), AndroidUtilities.dp(fArr[2])} : fArr.length < 8 ? new float[]{AndroidUtilities.dp(fArr[0]), AndroidUtilities.dp(fArr[0]), AndroidUtilities.dp(fArr[1]), AndroidUtilities.dp(fArr[1]), AndroidUtilities.dp(fArr[2]), AndroidUtilities.dp(fArr[2]), AndroidUtilities.dp(fArr[3]), AndroidUtilities.dp(fArr[3])} : new float[]{AndroidUtilities.dp(fArr[0]), AndroidUtilities.dp(fArr[1]), AndroidUtilities.dp(fArr[2]), AndroidUtilities.dp(fArr[3]), AndroidUtilities.dp(fArr[4]), AndroidUtilities.dp(fArr[5]), AndroidUtilities.dp(fArr[6]), AndroidUtilities.dp(fArr[7])};
     }
 
-    public final String b() {
-        if (this.q == null) {
-            return a1.g.s(new StringBuilder(), this.p.a, "_owp");
+    public static int b(int i10) {
+        if (b == null) {
+            b = new float[3];
         }
-        StringBuilder sb2 = new StringBuilder();
-        sb2.append(this.p.a);
-        sb2.append("_");
-        return a1.g.n(this.q.a, "_owp", sb2);
+        Color.colorToHSV(i10, b);
+        float[] fArr = b;
+        float f7 = fArr[1];
+        if (f7 > 0.01f) {
+            fArr[1] = Math.min(1.0f, Math.max(0.0f, f7 + (k6.I.q() ? 0.25f : -0.25f)));
+            float[] fArr2 = b;
+            fArr2[2] = Math.min(1.0f, Math.max(0.0f, fArr2[2] + (k6.I.q() ? 0.05f : -0.05f)));
+        } else {
+            fArr[2] = Math.min(1.0f, Math.max(0.0f, fArr[2] + (k6.I.q() ? 0.1f : -0.1f)));
+        }
+        return Color.HSVToColor(127, b);
     }
 
-    public final void c() {
-        try {
-            String b10 = b();
-            SharedPreferences.Editor edit = ApplicationLoader.applicationContext.getSharedPreferences("themeconfig", 0).edit();
-            JSONObject jSONObject = new JSONObject();
-            jSONObject.put("wall", this.a);
-            jSONObject.put("owall", this.b);
-            jSONObject.put("pColor", this.d);
-            jSONObject.put("pGrColor", this.e);
-            jSONObject.put("pGrColor2", this.f);
-            jSONObject.put("pGrColor3", this.g);
-            jSONObject.put("pGrAngle", this.h);
-            String str = this.c;
-            if (str == null) {
-                str = "";
+    public static org.telegram.ui.Cells.y c(z5 z5Var, int i10) {
+        ColorStateList colorStateList = new ColorStateList(new int[][]{StateSet.WILD_CARD}, new int[]{i10});
+        z5 z5Var2 = new z5();
+        z5Var2.b = -1.0f;
+        if (z5.c == null) {
+            Paint paint = new Paint(1);
+            z5.c = paint;
+            paint.setColor(-1);
+        }
+        z5Var2.a = z5.c;
+        return new org.telegram.ui.Cells.y(colorStateList, z5Var, z5Var2);
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public static org.telegram.ui.Cells.y d(float[] fArr, int i10, int i11) {
+        ColorDrawable colorDrawable;
+        ShapeDrawable shapeDrawable;
+        if (i10 != 0) {
+            int i12 = 0;
+            while (true) {
+                if (i12 >= Math.min(8, fArr.length)) {
+                    colorDrawable = new ColorDrawable(i10);
+                    break;
+                }
+                if (fArr[i12] > 0.0f) {
+                    ShapeDrawable shapeDrawable2 = new ShapeDrawable(new RoundRectShape(a(fArr), null, null));
+                    shapeDrawable2.getPaint().setColor(i10);
+                    colorDrawable = shapeDrawable2;
+                    break;
+                }
+                i12++;
             }
-            jSONObject.put("wallSlug", str);
-            jSONObject.put("wBlur", this.i);
-            jSONObject.put("wMotion", this.j);
-            jSONObject.put("pIntensity", this.k);
-            edit.putString(b10, jSONObject.toString());
-            edit.commit();
-        } catch (Throwable th2) {
-            FileLog.e(th2);
+        } else {
+            colorDrawable = null;
         }
+        int i13 = 0;
+        while (true) {
+            if (i13 >= Math.min(8, fArr.length)) {
+                shapeDrawable = new ShapeDrawable(new RectShape());
+                shapeDrawable.getPaint().setColor(-1);
+                break;
+            }
+            if (fArr[i13] > 0.0f) {
+                shapeDrawable = new ShapeDrawable(new RoundRectShape(a(fArr), null, null));
+                shapeDrawable.getPaint().setColor(-1);
+                break;
+            }
+            i13++;
+        }
+        return new org.telegram.ui.Cells.y(new ColorStateList(new int[][]{StateSet.WILD_CARD}, new int[]{i11}), colorDrawable, shapeDrawable);
+    }
+
+    public static org.telegram.ui.Cells.y e(float[] fArr, int i10) {
+        return d(fArr, i10, b(i10));
+    }
+
+    public static org.telegram.ui.Cells.y f(float[] fArr, int i10) {
+        return e(fArr, k6.x0(null, i10, false));
     }
 }

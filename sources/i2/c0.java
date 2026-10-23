@@ -1,108 +1,43 @@
 package i2;
 
-import android.graphics.SurfaceTexture;
-import android.view.Surface;
-import android.view.SurfaceHolder;
-import android.view.TextureView;
-import b2.z1;
-import ei.bc;
-import java.util.ArrayList;
-import org.telegram.ui.Components.c81;
+import android.media.MediaFormat;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public final class c0 implements a3.m0, k2.u, SurfaceHolder.Callback, TextureView.SurfaceTextureListener {
-    public final /* synthetic */ i0 a;
+public final class c0 implements a3.y, k1 {
+    public a3.y a;
+    public c0 b;
 
-    public c0(i0 i0Var) {
-        this.a = i0Var;
-    }
-
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i10, int i11) {
-        i0 i0Var = this.a;
-        org.telegram.messenger.g1 g1Var = i0Var.s0;
-        if (g1Var != null) {
-            g1Var.execute(new a0(this, surfaceTexture, i10, i11, 0));
-            return;
-        }
-        Surface surface = new Surface(surfaceTexture);
-        i0Var.x1(surface);
-        i0Var.U = surface;
-        i0Var.q1(i10, i11);
-    }
-
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
-        i0 i0Var = this.a;
-        ArrayList arrayList = i0Var.t0;
-        int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            if (((c81) ((z1) obj)).J.onSurfaceDestroyed(surfaceTexture)) {
-                return false;
-            }
-        }
-        org.telegram.messenger.g1 g1Var = i0Var.s0;
-        if (g1Var != null) {
-            g1Var.execute(new bc(this, surfaceTexture));
-            return true;
-        }
-        i0Var.x1(null);
-        i0Var.q1(0, 0);
-        return true;
-    }
-
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureSizeChanged(SurfaceTexture surfaceTexture, int i10, int i11) {
-        i0 i0Var = this.a;
-        org.telegram.messenger.g1 g1Var = i0Var.s0;
-        if (g1Var != null) {
-            g1Var.execute(new hg.n(this, surfaceTexture, i10, i11));
-        } else {
-            i0Var.q1(i10, i11);
+    public final void a() {
+        c0 c0Var = this.b;
+        if (c0Var != null) {
+            c0Var.a();
         }
     }
 
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
-        i0 i0Var = this.a;
-        org.telegram.messenger.g1 g1Var = i0Var.s0;
-        if (g1Var != null) {
-            g1Var.execute(new hi.t(2, this, surfaceTexture));
-            return;
-        }
-        ArrayList arrayList = i0Var.t0;
-        int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            ((c81) ((z1) obj)).J.onSurfaceTextureUpdated(surfaceTexture);
+    public final void b() {
+        c0 c0Var = this.b;
+        if (c0Var != null) {
+            c0Var.b();
         }
     }
 
-    @Override // android.view.SurfaceHolder.Callback
-    public final void surfaceChanged(SurfaceHolder surfaceHolder, int i10, int i11, int i12) {
-        this.a.q1(i11, i12);
-    }
-
-    @Override // android.view.SurfaceHolder.Callback
-    public final void surfaceCreated(SurfaceHolder surfaceHolder) {
-        i0 i0Var = this.a;
-        if (i0Var.W) {
-            i0Var.x1(surfaceHolder.getSurface());
+    @Override // a3.y
+    public final void c(long j10, long j11, b2.w wVar, MediaFormat mediaFormat) {
+        a3.y yVar = this.a;
+        if (yVar != null) {
+            yVar.c(j10, j11, wVar, mediaFormat);
         }
     }
 
-    @Override // android.view.SurfaceHolder.Callback
-    public final void surfaceDestroyed(SurfaceHolder surfaceHolder) {
-        i0 i0Var = this.a;
-        if (i0Var.W) {
-            i0Var.x1(null);
+    @Override // i2.k1
+    public final void d(int i10, Object obj) {
+        if (i10 == 7) {
+            this.a = (a3.y) obj;
+        } else if (i10 == 8) {
+            this.b = (c0) obj;
+        } else if (i10 == 10000 && obj != null) {
+            throw new ClassCastException();
         }
-        i0Var.q1(0, 0);
     }
 }

@@ -4,10 +4,10 @@ import android.media.MediaCodec;
 import android.media.MediaFormat;
 import android.os.Handler;
 import android.os.HandlerThread;
-import i2.l0;
+import i2.k0;
 import java.util.ArrayDeque;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class f extends MediaCodec.Callback {
     public final HandlerThread b;
@@ -84,19 +84,19 @@ public final class f extends MediaCodec.Callback {
 
     @Override // android.media.MediaCodec.Callback
     public final void onInputBufferAvailable(MediaCodec mediaCodec, int i10) {
-        l0 l0Var;
+        k0 k0Var;
         synchronized (this.a) {
             this.d.a(i10);
             l2.f fVar = this.o;
-            if (fVar != null && (l0Var = ((r) fVar.b).Y) != null) {
-                l0Var.a();
+            if (fVar != null && (k0Var = ((r) fVar.b).Y) != null) {
+                k0Var.a();
             }
         }
     }
 
     @Override // android.media.MediaCodec.Callback
     public final void onOutputBufferAvailable(MediaCodec mediaCodec, int i10, MediaCodec.BufferInfo bufferInfo) {
-        l0 l0Var;
+        k0 k0Var;
         synchronized (this.a) {
             try {
                 MediaFormat mediaFormat = this.i;
@@ -108,8 +108,8 @@ public final class f extends MediaCodec.Callback {
                 this.e.a(i10);
                 this.f.add(bufferInfo);
                 l2.f fVar = this.o;
-                if (fVar != null && (l0Var = ((r) fVar.b).Y) != null) {
-                    l0Var.a();
+                if (fVar != null && (k0Var = ((r) fVar.b).Y) != null) {
+                    k0Var.a();
                 }
             } catch (Throwable th2) {
                 throw th2;

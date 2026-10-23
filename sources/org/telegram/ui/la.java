@@ -7,7 +7,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class la implements TextWatcher {
     public final /* synthetic */ ma a;
@@ -25,7 +25,7 @@ public final class la implements TextWatcher {
         }
         if (saVar.r.length() > 0) {
             StringBuilder sb2 = new StringBuilder("https://");
-            i10 = ((org.telegram.ui.ActionBar.n2) saVar).currentAccount;
+            i10 = ((org.telegram.ui.ActionBar.o2) saVar).currentAccount;
             sb2.append(MessagesController.getInstance(i10).linkPrefix);
             sb2.append("/");
             sb2.append(saVar.r);

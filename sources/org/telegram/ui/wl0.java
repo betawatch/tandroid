@@ -1,11 +1,113 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import j$.util.Objects;
+import java.util.regex.Pattern;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class wl0 {
-    public TLRPC.TL_secureValue a;
-    public boolean b;
-    public boolean c;
+public final class wl0 implements TextWatcher {
+    public final /* synthetic */ int a;
+    public final Object b;
+    public String c;
+    public final /* synthetic */ Object d;
+
+    public /* synthetic */ wl0(an0 an0Var, EditTextBoldCursor editTextBoldCursor, String str, int i10) {
+        this.a = i10;
+        this.d = an0Var;
+        this.b = editTextBoldCursor;
+        this.c = str;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:27:0x00bc  */
+    @Override // android.text.TextWatcher
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void afterTextChanged(Editable editable) {
+        long parseLong;
+        int i10;
+        switch (this.a) {
+            case 0:
+                an0.I0((an0) this.d, (EditTextBoldCursor) this.b, this.c, editable, false);
+                break;
+            case 1:
+                an0.I0((an0) this.d, (EditTextBoldCursor) this.b, this.c, editable, false);
+                break;
+            default:
+                qg.x xVar = (qg.x) this.d;
+                qg.y yVar = xVar.f;
+                EditTextBoldCursor editTextBoldCursor = xVar.d;
+                if (!xVar.e && this.c != null && editable != null && !TextUtils.isEmpty(editable) && !Objects.equals(this.c.toString(), editable.toString())) {
+                    String obj = editable.toString();
+                    if (obj.length() > 8) {
+                        editTextBoldCursor.setText(obj.substring(2, 8).toUpperCase());
+                        editTextBoldCursor.setSelection(8);
+                        break;
+                    } else if (((Pattern) this.b).matcher(editable).find()) {
+                        int length = obj.length();
+                        if (length != 3) {
+                            if (length == 6) {
+                                i10 = ((int) Long.parseLong(obj, 16)) - 16777216;
+                            } else if (length != 8) {
+                                i10 = yVar.f;
+                            } else {
+                                parseLong = Long.parseLong(obj, 16);
+                            }
+                            if (i10 == yVar.f) {
+                                yVar.m(i10, 5);
+                                break;
+                            }
+                        } else {
+                            parseLong = Long.parseLong("FF" + obj.charAt(0) + obj.charAt(0) + obj.charAt(1) + obj.charAt(1) + obj.charAt(2) + obj.charAt(2), 16);
+                        }
+                        i10 = (int) parseLong;
+                        if (i10 == yVar.f) {
+                        }
+                    }
+                }
+                break;
+        }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        switch (this.a) {
+            case 0:
+            case 1:
+                break;
+            default:
+                this.c = charSequence.toString();
+                break;
+        }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        int i13 = this.a;
+    }
+
+    public wl0(qg.x xVar) {
+        this.a = 2;
+        this.d = xVar;
+        this.b = Pattern.compile("^[0-9a-fA-F]*$");
+    }
+
+    private final void a(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void b(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void c(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void d(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void e(int i10, int i11, int i12, CharSequence charSequence) {
+    }
 }

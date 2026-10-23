@@ -1,73 +1,11 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class am0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ vm0 c;
-
-    public /* synthetic */ am0(vm0 vm0Var, boolean z10, int i10) {
-        this.a = i10;
-        this.c = vm0Var;
-        this.b = z10;
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 0:
-                vm0 vm0Var = this.c;
-                AnimatorSet animatorSet = vm0Var.M;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    vm0Var.M = null;
-                    break;
-                }
-                break;
-            default:
-                vm0 vm0Var2 = this.c;
-                AnimatorSet animatorSet2 = vm0Var2.M;
-                if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    vm0Var2.M = null;
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                vm0 vm0Var = this.c;
-                AnimatorSet animatorSet = vm0Var.M;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    if (!this.b) {
-                        vm0Var.N.setVisibility(4);
-                        break;
-                    } else {
-                        vm0Var.L.getContentView().setVisibility(4);
-                        break;
-                    }
-                }
-                break;
-            default:
-                vm0 vm0Var2 = this.c;
-                AnimatorSet animatorSet2 = vm0Var2.M;
-                if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    if (!this.b) {
-                        vm0Var2.P.setVisibility(4);
-                        break;
-                    } else {
-                        vm0Var2.O.setVisibility(4);
-                        break;
-                    }
-                }
-                break;
-        }
-    }
+public final class am0 {
+    public TLRPC.TL_secureValue a;
+    public boolean b;
+    public boolean c;
 }

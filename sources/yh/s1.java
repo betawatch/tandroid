@@ -1,6 +1,6 @@
 package yh;
 
-import ai.ga;
+import ai.ha;
 import ai.l7;
 import android.graphics.Bitmap;
 import android.text.TextUtils;
@@ -16,11 +16,11 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.i80;
-import org.telegram.ui.Components.ks0;
+import org.telegram.ui.Components.j80;
+import org.telegram.ui.Components.ns0;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s1 implements Runnable {
     public final /* synthetic */ int a;
@@ -60,23 +60,23 @@ public final /* synthetic */ class s1 implements Runnable {
         switch (i13) {
             case 0:
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
-                org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) obj;
-                ((ks0) obj3).H = -1;
+                org.telegram.ui.ActionBar.o2 o2Var = (org.telegram.ui.ActionBar.o2) obj;
+                ((ns0) obj3).H = -1;
                 if (tL_error != null) {
-                    xc.a0(n2Var).f0(tL_error, false);
+                    xc.a0(o2Var).f0(tL_error, false);
                     break;
                 }
                 break;
             case 1:
                 l2 l2Var = (l2) obj3;
                 TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj2;
-                ks0 ks0Var = l2Var.a;
-                ks0Var.e.k(l2Var.e.d, savedStarGift);
-                ((i80) obj).u();
-                ks0Var.n();
-                TL_stars.TL_starGiftCollection c10 = ks0Var.e.c(l2Var.e.d);
+                ns0 ns0Var = l2Var.a;
+                ns0Var.e.k(l2Var.e.d, savedStarGift);
+                ((j80) obj).u();
+                ns0Var.n();
+                TL_stars.TL_starGiftCollection c10 = ns0Var.e.c(l2Var.e.d);
                 if (c10 != null) {
-                    xc.a0(ks0Var.a).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2RemovedFromCollection, l7.Y1(savedStarGift.gift), c10.title))).j();
+                    xc.a0(ns0Var.a).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2RemovedFromCollection, l7.X1(savedStarGift.gift), c10.title))).j();
                     break;
                 }
                 break;
@@ -88,11 +88,11 @@ public final /* synthetic */ class s1 implements Runnable {
                     z10 = true;
                 } else {
                     z10 = true;
-                    g1Var.c(false, true);
+                    g1Var.d(false, true);
                     l2Var2.e.o(savedStarGift2, false, false);
                 }
                 savedStarGift2.unsaved ^= z10;
-                g1Var.h(savedStarGift2, z10, l2Var2.d);
+                g1Var.i(savedStarGift2, z10, l2Var2.d);
                 l2Var2.a.e.m(savedStarGift2, savedStarGift2.unsaved);
                 TL_stars.saveStarGift savestargift = new TL_stars.saveStarGift();
                 savestargift.stargift = l2Var2.e.h(savedStarGift2);
@@ -142,9 +142,9 @@ public final /* synthetic */ class s1 implements Runnable {
                         arrayList3.clear();
                         arrayList2.clear();
                         arrayList.clear();
-                        arrayList3.addAll(ga.m(resalestargifts.attributes, TL_stars.starGiftAttributeModel.class));
-                        arrayList2.addAll(ga.m(resalestargifts.attributes, TL_stars.starGiftAttributeBackdrop.class));
-                        arrayList.addAll(ga.m(resalestargifts.attributes, TL_stars.starGiftAttributePattern.class));
+                        arrayList3.addAll(ha.m(resalestargifts.attributes, TL_stars.starGiftAttributeModel.class));
+                        arrayList2.addAll(ha.m(resalestargifts.attributes, TL_stars.starGiftAttributeBackdrop.class));
+                        arrayList.addAll(ha.m(resalestargifts.attributes, TL_stars.starGiftAttributePattern.class));
                         s3Var.i = resalestargifts.attributes_hash;
                     }
                     if (!resalestargifts.counters.isEmpty()) {

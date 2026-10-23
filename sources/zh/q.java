@@ -13,14 +13,15 @@ import android.widget.LinearLayout;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.qa1;
+import org.telegram.ui.Wallet.e8;
+import org.telegram.ui.va1;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class q extends HorizontalScrollView {
-    public org.telegram.ui.web.m a;
+    public e8 a;
     public c0 b;
-    public final qa1 c;
+    public final va1 c;
     public final Paint d;
     public int e;
     public float f;
@@ -38,12 +39,12 @@ public final class q extends HorizontalScrollView {
         setOverScrollMode(2);
         setFillViewport(true);
         setWillNotDraw(false);
-        qa1 qa1Var = new qa1(this, context, 22);
-        this.c = qa1Var;
-        qa1Var.setOrientation(0);
-        qa1Var.setGravity(16);
-        qa1Var.setPadding(AndroidUtilities.dp(3.0f), 0, AndroidUtilities.dp(3.0f), 0);
-        addView(qa1Var, new FrameLayout.LayoutParams(-2, -1));
+        va1 va1Var = new va1(this, context, 22);
+        this.c = va1Var;
+        va1Var.setOrientation(0);
+        va1Var.setGravity(16);
+        va1Var.setPadding(AndroidUtilities.dp(3.0f), 0, AndroidUtilities.dp(3.0f), 0);
+        addView(va1Var, new FrameLayout.LayoutParams(-2, -1));
         paint.setColor(1560281087);
     }
 
@@ -51,15 +52,15 @@ public final class q extends HorizontalScrollView {
         if (i10 == this.e || i10 < 0) {
             return;
         }
-        qa1 qa1Var = this.c;
-        if (i10 >= qa1Var.getChildCount()) {
+        va1 va1Var = this.c;
+        if (i10 >= va1Var.getChildCount()) {
             return;
         }
         this.e = i10;
         if (!z10) {
             this.f = Float.NaN;
         }
-        View childAt = qa1Var.getChildAt(i10);
+        View childAt = va1Var.getChildAt(i10);
         int left = childAt.getLeft() - AndroidUtilities.dp(30.0f);
         int dp = AndroidUtilities.dp(30.0f) + childAt.getRight();
         if (left >= getScrollX()) {
@@ -75,7 +76,7 @@ public final class q extends HorizontalScrollView {
         } else {
             scrollTo(left, 0);
         }
-        qa1Var.invalidate();
+        va1Var.invalidate();
     }
 
     /* JADX WARN: Removed duplicated region for block: B:16:0x00e7  */
@@ -87,13 +88,13 @@ public final class q extends HorizontalScrollView {
     public final void draw(Canvas canvas) {
         float f7;
         c0 c0Var;
-        org.telegram.ui.web.m mVar = this.a;
-        if (mVar != null) {
+        e8 e8Var = this.a;
+        if (e8Var != null) {
             float scrollX = getScrollX();
             float width = getWidth() + getScrollX();
             float height = getHeight();
-            n0 n0Var = (n0) mVar.b;
-            q qVar = (q) mVar.c;
+            n0 n0Var = (n0) e8Var.b;
+            q qVar = (q) e8Var.c;
             RectF rectF = n0Var.m0;
             int[] iArr = n0Var.k0;
             int[] iArr2 = n0Var.i0;
@@ -154,8 +155,8 @@ public final class q extends HorizontalScrollView {
     }
 
     public void setSections(ArrayList<o> arrayList) {
-        qa1 qa1Var = this.c;
-        qa1Var.removeAllViews();
+        va1 va1Var = this.c;
+        va1Var.removeAllViews();
         for (int i10 = 0; i10 < arrayList.size(); i10++) {
             o oVar = arrayList.get(i10);
             Context context = getContext();
@@ -163,7 +164,7 @@ public final class q extends HorizontalScrollView {
             p pVar = new p(this.h, context, i11, i11 == 2 ? (TLRPC.Document) oVar.c.get(0) : null);
             pVar.setOnClickListener(new n1(this, i10, 29));
             pVar.setContentDescription(oVar.b);
-            qa1Var.addView(pVar, new LinearLayout.LayoutParams(AndroidUtilities.dp(34.0f), AndroidUtilities.dp(30.0f)));
+            va1Var.addView(pVar, new LinearLayout.LayoutParams(AndroidUtilities.dp(34.0f), AndroidUtilities.dp(30.0f)));
         }
         this.e = -1;
         this.f = Float.NaN;

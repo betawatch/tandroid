@@ -1,24 +1,29 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLRPC;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class rl extends zt0 {
-    public final /* synthetic */ qn a;
+public final class rl extends AnimatorListenerAdapter {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ sn d;
 
-    public rl(qn qnVar) {
-        this.a = qnVar;
+    public rl(sn snVar, boolean z10, boolean z11, boolean z12) {
+        this.d = snVar;
+        this.a = z10;
+        this.b = z11;
+        this.c = z12;
     }
 
-    @Override // org.telegram.ui.zt0, org.telegram.ui.hu0
-    public final ju0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
-        return qn.E1(this.a, messageObject, fileLocation, i10, z10, false);
-    }
-
-    @Override // org.telegram.ui.zt0, org.telegram.ui.hu0
-    public final boolean L() {
-        return true;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        sn snVar = this.d;
+        snVar.Y2 = null;
+        snVar.V2.setVisibility(this.a ? 0 : 4);
+        snVar.X2.setVisibility(this.b ? 0 : 4);
+        snVar.W2.setVisibility(this.c ? 0 : 4);
     }
 }

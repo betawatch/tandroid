@@ -5,15 +5,15 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u8 implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ga b;
+    public final /* synthetic */ ha b;
 
-    public /* synthetic */ u8(ga gaVar, int i10) {
+    public /* synthetic */ u8(ha haVar, int i10) {
         this.a = i10;
-        this.b = gaVar;
+        this.b = haVar;
     }
 
     @Override // org.telegram.tgnet.RequestDelegate

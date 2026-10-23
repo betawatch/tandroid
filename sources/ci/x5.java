@@ -1,149 +1,15 @@
 package ci;
 
-import android.animation.ValueAnimator;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.ci0;
-import org.telegram.ui.Components.xd0;
+import android.content.Context;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final class x5 implements z4.e {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class x5 extends t5 {
+    public final /* synthetic */ y5 b0;
 
-    public /* synthetic */ x5(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
-    }
-
-    @Override // z4.e
-    public final void a(float f7, int i10, int i11) {
-        float f10;
-        switch (this.a) {
-            case 0:
-                c6 c6Var = (c6) this.b;
-                if (c6Var.w) {
-                    v5 v5Var = c6Var.h;
-                    v5Var.d.abortAnimation();
-                    if (Math.abs(f7) <= 1.0f) {
-                        ValueAnimator valueAnimator = v5Var.M;
-                        if (valueAnimator != null) {
-                            valueAnimator.cancel();
-                            v5Var.M = null;
-                        }
-                        float f11 = (v5Var.s / 2.0f) + ((-v5Var.getMeasuredWidth()) / 2.0f) + ((r2 + v5Var.n) * i10);
-                        if (f7 > 0.0f) {
-                            f10 = (v5Var.s / 2.0f) + ((-v5Var.getMeasuredWidth()) / 2.0f) + ((i10 + 1) * (r4 + v5Var.n));
-                        } else {
-                            f10 = (v5Var.s / 2.0f) + ((-v5Var.getMeasuredWidth()) / 2.0f) + ((i10 - 1) * (r4 + v5Var.n));
-                            f7 = -f7;
-                        }
-                        if (f7 == 0.0f) {
-                            v5Var.e = f11;
-                        } else {
-                            v5Var.e = AndroidUtilities.lerp(f11, f10, f7);
-                        }
-                        v5Var.L = false;
-                        v5Var.invalidate();
-                        break;
-                    }
-                }
-                break;
-            case 1:
-                ((ni.e) this.b).f++;
-                break;
-            case 2:
-                xd0 xd0Var = (xd0) this.b;
-                xd0Var.h = i10;
-                xd0Var.n = f7;
-                if (xd0Var.d.getChildAt(i10) != null) {
-                    xd0.a(xd0Var, i10, (int) (xd0Var.d.getChildAt(i10).getWidth() * f7));
-                    xd0Var.invalidate();
-                    z4.e eVar = xd0Var.c;
-                    if (eVar != null) {
-                        eVar.a(f7, i10, i11);
-                        break;
-                    }
-                }
-                break;
-            default:
-                ci0 ci0Var = (ci0) this.b;
-                if (!ci0Var.a && Math.abs(i10 - ci0Var.w) == 1) {
-                    int i12 = ci0Var.w;
-                    if (i10 > i12) {
-                        ci0.a(ci0Var, 0, 1, 1);
-                    } else if (i10 < i12) {
-                        ci0.a(ci0Var, 1, 0, 0);
-                        ci0.a(ci0Var, 2, 0, -1);
-                    }
-                }
-                int i13 = ci0Var.w;
-                int i14 = ci0Var.x;
-                ci0Var.w = i10;
-                ci0Var.x = i11;
-                if (i13 != i10 || i14 != i11) {
-                    ci0Var.H = true;
-                    ci0Var.postInvalidateOnAnimation();
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // z4.e
-    public final void b(int i10) {
-        switch (this.a) {
-            case 2:
-                xd0 xd0Var = (xd0) this.b;
-                z4.e eVar = xd0Var.c;
-                if (eVar != null) {
-                    eVar.b(i10);
-                }
-                int i11 = 0;
-                while (i11 < xd0Var.d.getChildCount()) {
-                    xd0Var.d.getChildAt(i11).setSelected(i11 == i10);
-                    i11++;
-                }
-                break;
-        }
-    }
-
-    @Override // z4.e
-    public final void c(int i10) {
-        switch (this.a) {
-            case 0:
-                c6 c6Var = (c6) this.b;
-                if (i10 == 1) {
-                    c6Var.w = true;
-                    break;
-                }
-                break;
-            case 2:
-                xd0 xd0Var = (xd0) this.b;
-                if (i10 == 0) {
-                    xd0.a(xd0Var, xd0Var.e.getCurrentItem(), 0);
-                }
-                z4.e eVar = xd0Var.c;
-                if (eVar != null) {
-                    eVar.c(i10);
-                    break;
-                }
-                break;
-        }
-    }
-
-    private final void d(int i10) {
-    }
-
-    private final void e(int i10) {
-    }
-
-    private final void f(int i10) {
-    }
-
-    private final void g(int i10) {
-    }
-
-    private final void h(int i10) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public x5(y5 y5Var, z9 z9Var, Context context, e5 e5Var, ai.r0 r0Var) {
+        super(z9Var, context, e5Var, r0Var);
+        this.b0 = y5Var;
     }
 }

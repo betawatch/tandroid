@@ -23,7 +23,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public abstract class c1 extends CameraView {
     public static final int[] a0 = {1893745684, -215458996, -862041025, -1258375037, -1320049076, -215749424, 1901578030, -215451421, 1908491424, -1321491332, -1155551678, 1908524435, 976847578, -1489198134, 1910814392, -713271737, -2010722764, 1407170066, -821405251, -1394190955, -1394190055, 1407170066, 1407159934, 1407172057, 1231389747, -2076538925, 41497626, 846150482, -1198092731, -251277614, -2073158771, 1273004781};
@@ -150,7 +150,7 @@ public abstract class c1 extends CameraView {
                 tL_inputAppEvent.data = tL_jsonObject;
                 tL_inputAppEvent.peer = (z10 ? 1 : 0) | (p5 ? 2 : 0);
                 tL_help_saveAppLog.events.add(tL_inputAppEvent);
-                ConnectionsManager.getInstance(UserConfig.selectedAccount).sendRequest(tL_help_saveAppLog, new ci.e6(4));
+                ConnectionsManager.getInstance(UserConfig.selectedAccount).sendRequest(tL_help_saveAppLog, new ci.d6(4));
             } catch (Exception unused) {
             }
         }
@@ -188,7 +188,7 @@ public abstract class c1 extends CameraView {
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getContext());
                 alertDialog$Builder.a.R = LocaleController.getString(R.string.DualErrorTitle);
                 alertDialog$Builder.a.T = LocaleController.getString(R.string.DualErrorMessage);
-                org.telegram.messenger.g0.p(R.string.OK, alertDialog$Builder, null);
+                org.telegram.messenger.v0.o(R.string.OK, alertDialog$Builder, null);
             }
             t(false);
             toggleDual();

@@ -1,14 +1,31 @@
 package k2;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public final class h extends Exception {
-    public final int a;
+public final class h {
+    public static final h d = new bc.d().a();
+    public final boolean a;
     public final boolean b;
+    public final boolean c;
 
-    public h(int i10, boolean z10) {
-        super(i2.e.j(i10, "AudioOutput write failed: "));
-        this.b = z10;
-        this.a = i10;
+    public h(bc.d dVar) {
+        this.a = dVar.a;
+        this.b = dVar.b;
+        this.c = dVar.c;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || h.class != obj.getClass()) {
+            return false;
+        }
+        h hVar = (h) obj;
+        return this.a == hVar.a && this.b == hVar.b && this.c == hVar.c;
+    }
+
+    public final int hashCode() {
+        return ((this.a ? 1 : 0) << 2) + ((this.b ? 1 : 0) << 1) + (this.c ? 1 : 0);
     }
 }

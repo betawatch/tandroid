@@ -1,30 +1,92 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
-/* loaded from: classes3.dex */
-public final class w00 {
-    public long a;
-    public int b;
+import android.text.TextUtils;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
 
-    public w00(int i10, long j10) {
-        this.a = j10;
-        this.b = i10;
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+/* loaded from: classes3.dex */
+public final class w00 extends s4.r0 {
+    public final /* synthetic */ i10 a;
+
+    public w00(i10 i10Var) {
+        this.a = i10Var;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // s4.r0
+    public final void a(RecyclerView recyclerView, int i10) {
+        if (i10 == 1) {
+            AndroidUtilities.hideKeyboard(this.a.K.getCurrentFocus());
         }
-        if (obj != null && w00.class == obj.getClass()) {
-            w00 w00Var = (w00) obj;
-            if (this.a == w00Var.a && this.b == w00Var.b) {
-                return true;
+    }
+
+    @Override // s4.r0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        i10 i10Var = this.a;
+        z00 z00Var = i10Var.m0;
+        s4.b0 b0Var = i10Var.j0;
+        ne.b bVar = i10Var.a;
+        fz fzVar = i10Var.n0;
+        if (recyclerView.getAdapter() == null || i10Var.d == null) {
+            return;
+        }
+        int L0 = b0Var.L0();
+        int N0 = b0Var.N0();
+        int abs = Math.abs(N0 - L0) + 1;
+        int h = recyclerView.getAdapter().h();
+        if (!i10Var.M && abs > 0 && N0 >= h - 10 && !i10Var.N) {
+            AndroidUtilities.runOnUIThread(new fz(this, 2));
+        }
+        if (i10Var.d != i10Var.U) {
+            View pinnedHeader = i10Var.b.getPinnedHeader();
+            if (pinnedHeader instanceof org.telegram.ui.Cells.u3) {
+                org.telegram.ui.Cells.u3 u3Var = (org.telegram.ui.Cells.u3) pinnedHeader;
+                CharSequence text = u3Var.getText();
+                if (!TextUtils.isEmpty(text) && u3Var.getAlpha() > 0.0f) {
+                    String charSequence = text.toString();
+                    if (!TextUtils.equals(z00Var.c, charSequence)) {
+                        z00Var.c = charSequence;
+                        z00Var.a.t(charSequence, true, true);
+                    }
+                    if (i11 != 0) {
+                        AndroidUtilities.cancelRunOnUIThread(fzVar);
+                        AndroidUtilities.runOnUIThread(fzVar, 1650L);
+                        bVar.a(true, true);
+                        return;
+                    }
+                    return;
+                }
+            }
+            AndroidUtilities.cancelRunOnUIThread(fzVar);
+            bVar.a(false, true);
+            return;
+        }
+        if (i11 != 0 && !i10Var.f.isEmpty() && TextUtils.isEmpty(i10Var.Q)) {
+            AndroidUtilities.cancelRunOnUIThread(fzVar);
+            AndroidUtilities.runOnUIThread(fzVar, 1650L);
+            bVar.a(true, true);
+        }
+        s4.b1 K = recyclerView.K(L0);
+        if (K == null || K.f != 0) {
+            return;
+        }
+        View view = K.a;
+        if (view instanceof org.telegram.ui.Cells.t7) {
+            org.telegram.ui.Cells.t7 t7Var = (org.telegram.ui.Cells.t7) view;
+            MessageObject messageObject = t7Var.e <= 0 ? null : t7Var.b[0];
+            if (messageObject != null) {
+                int i12 = messageObject.messageOwner.date;
+                z00Var.getClass();
+                String formatDateChat = LocaleController.formatDateChat(i12);
+                if (TextUtils.equals(z00Var.c, formatDateChat)) {
+                    return;
+                }
+                z00Var.c = formatDateChat;
+                z00Var.a.t(formatDateChat, true, true);
             }
         }
-        return false;
-    }
-
-    public final int hashCode() {
-        return this.b;
     }
 }

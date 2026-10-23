@@ -9,7 +9,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class qc extends View {
     public final Paint a;
@@ -42,18 +42,18 @@ public final class qc extends View {
     }
 
     public final void a(MessagesController.PeerColor peerColor) {
-        org.telegram.ui.ActionBar.d6 d6Var = this.w.a;
-        boolean a2 = d6Var != null ? d6Var.a() : org.telegram.ui.ActionBar.h6.I.q();
+        org.telegram.ui.ActionBar.g6 g6Var = this.w.a;
+        boolean a2 = g6Var != null ? g6Var.a() : org.telegram.ui.ActionBar.k6.I.q();
         Paint paint = this.c;
         Paint paint2 = this.b;
         if (a2 && peerColor.hasColor2() && !peerColor.hasColor3()) {
-            paint2.setColor(peerColor.getColor(1, d6Var));
-            paint.setColor(peerColor.getColor(0, d6Var));
+            paint2.setColor(peerColor.getColor(1, g6Var));
+            paint.setColor(peerColor.getColor(0, g6Var));
         } else {
-            paint2.setColor(peerColor.getColor(0, d6Var));
-            paint.setColor(peerColor.getColor(1, d6Var));
+            paint2.setColor(peerColor.getColor(0, g6Var));
+            paint.setColor(peerColor.getColor(1, g6Var));
         }
-        this.d.setColor(peerColor.getColor(2, d6Var));
+        this.d.setColor(peerColor.getColor(2, g6Var));
         this.h = peerColor.hasColor2();
         this.n = peerColor.hasColor3();
     }

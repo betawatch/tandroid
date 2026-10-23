@@ -3,7 +3,7 @@ package androidx.recyclerview.widget;
 import a0.h;
 import a1.g;
 import ad.d;
-import ai.be;
+import ai.ce;
 import android.R;
 import android.animation.LayoutTransition;
 import android.content.Context;
@@ -78,11 +78,11 @@ import s4.y;
 import s4.y0;
 import s4.z0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public class RecyclerView extends ViewGroup {
     public static final int[] Q0 = {R.attr.clipToPadding};
-    public static final be R0 = new be(4);
+    public static final ce R0 = new ce(4);
     public boolean A0;
     public d1 B0;
     public final int[] C0;
@@ -1117,6 +1117,14 @@ public class RecyclerView extends ViewGroup {
         return this.U;
     }
 
+    public int getGlowColor() {
+        Integer num = this.I0;
+        if (num != null) {
+            return num.intValue();
+        }
+        return 0;
+    }
+
     public int getHiddenChildCount() {
         return ((ArrayList) this.e.d).size();
     }
@@ -1170,11 +1178,11 @@ public class RecyclerView extends ViewGroup {
         boolean z10 = view.getParent() == this;
         this.b.k(T(view));
         if (b1Var.l()) {
-            this.e.r(view, -1, view.getLayoutParams(), true);
+            this.e.q(view, -1, view.getLayoutParams(), true);
             return;
         }
         if (!z10) {
-            this.e.n(view, -1, true);
+            this.e.o(view, -1, true);
             return;
         }
         g3 g3Var = this.e;
@@ -1850,10 +1858,10 @@ public class RecyclerView extends ViewGroup {
                                                 a1Var.b = 0;
                                                 a1Var.a = 0;
                                                 Interpolator interpolator = a1Var.d;
-                                                be beVar = R0;
-                                                if (interpolator != beVar) {
-                                                    a1Var.d = beVar;
-                                                    a1Var.c = new OverScroller(recyclerView.getContext(), beVar);
+                                                ce ceVar = R0;
+                                                if (interpolator != ceVar) {
+                                                    a1Var.d = ceVar;
+                                                    a1Var.c = new OverScroller(recyclerView.getContext(), ceVar);
                                                 }
                                                 a1Var.c.fling(0, 0, max, max2, TLObject.FLAG_31, ConnectionsManager.DEFAULT_DATACENTER_ID, TLObject.FLAG_31, ConnectionsManager.DEFAULT_DATACENTER_ID);
                                                 a1Var.a();
@@ -2238,7 +2246,7 @@ public class RecyclerView extends ViewGroup {
                         b1 b1Var2 = (b1) hVar.f(Q);
                         if (b1Var2 == null || b1Var2.r()) {
                             i12 = i15;
-                            eVar2.k(U, u0Var);
+                            eVar2.l(U, u0Var);
                         } else {
                             i1 i1Var2 = (i1) fVar.get(b1Var2);
                             int i16 = (i1Var2 == null || (i1Var2.a & i15) == 0) ? 0 : i15;
@@ -2247,10 +2255,10 @@ public class RecyclerView extends ViewGroup {
                             if (i16 == 0 || b1Var2 != U) {
                                 i12 = i15;
                                 try {
-                                    u0 b02 = eVar2.b0(b1Var2, 4);
-                                    eVar2.k(U, u0Var);
-                                    u0 b03 = eVar2.b0(U, 8);
-                                    if (b02 == null) {
+                                    u0 O = eVar2.O(b1Var2, 4);
+                                    eVar2.l(U, u0Var);
+                                    u0 O2 = eVar2.O(U, 8);
+                                    if (O == null) {
                                         Y(Q, U, b1Var2);
                                     } else {
                                         b1Var2.q(false);
@@ -2269,16 +2277,16 @@ public class RecyclerView extends ViewGroup {
                                         }
                                         e1 e1Var = (e1) this.c0;
                                         e1Var.getClass();
-                                        int i18 = b02.a;
-                                        int i19 = b02.b;
+                                        int i18 = O.a;
+                                        int i19 = O.b;
                                         if (U.r()) {
-                                            i13 = b02.a;
-                                            i14 = b02.b;
+                                            i13 = O.a;
+                                            i14 = O.b;
                                         } else {
-                                            i13 = b03.a;
-                                            i14 = b03.b;
+                                            i13 = O2.a;
+                                            i14 = O2.b;
                                         }
-                                        if (e1Var.q(b1Var2, U, b02, i18, i19, i13, i14)) {
+                                        if (e1Var.q(b1Var2, U, O, i18, i19, i13, i14)) {
                                             l0();
                                         }
                                     }
@@ -2294,7 +2302,7 @@ public class RecyclerView extends ViewGroup {
                                     throw new RuntimeException(sb2.toString(), e);
                                 }
                             } else {
-                                eVar2.k(U, u0Var);
+                                eVar2.l(U, u0Var);
                             }
                         }
                         D--;
@@ -3271,7 +3279,7 @@ public class RecyclerView extends ViewGroup {
         float a10;
         this.a = new o1(this, 2);
         this.b = new e(this);
-        this.f = new n2.e(18);
+        this.f = new n2.e(17);
         this.n = new f0(this, 0);
         this.r = new Rect();
         this.s = new Rect();

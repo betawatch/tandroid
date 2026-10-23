@@ -4,48 +4,48 @@ import android.graphics.drawable.Drawable;
 import ei.i6;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.ft0;
+import org.telegram.ui.it0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class v0 implements qg.e1 {
+public final class v0 implements qg.d1 {
     public final /* synthetic */ w0 a;
 
     public v0(w0 w0Var) {
         this.a = w0Var;
     }
 
-    @Override // qg.e1
+    @Override // qg.d1
     public final void a() {
         w0 w0Var = this.a;
         w0Var.e.animate().alpha(1.0f).setDuration(320L).setUpdateListener(new i6(w0Var, 16)).setInterpolator(bs.h);
     }
 
-    @Override // qg.e1
+    @Override // qg.d1
     public final boolean d() {
         return true;
     }
 
-    @Override // qg.e1
+    @Override // qg.d1
     public final void e() {
         w0 w0Var = this.a;
         w0Var.b.a.e();
         w0Var.w.setViewHidden(false);
-        PhotoViewer photoViewer = ((ft0) w0Var).K;
+        PhotoViewer photoViewer = ((it0) w0Var).K;
         Drawable[] drawableArr = PhotoViewer.U8;
         photoViewer.Z2(true, true);
     }
 
-    @Override // qg.e1
+    @Override // qg.d1
     public final void f() {
         this.a.w.setViewHidden(true);
     }
 
-    @Override // qg.e1
+    @Override // qg.d1
     public final /* synthetic */ void b() {
     }
 
-    @Override // qg.e1
+    @Override // qg.d1
     public final void c() {
     }
 }

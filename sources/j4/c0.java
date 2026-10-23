@@ -1,16 +1,17 @@
 package j4;
 
 import b2.v0;
-import c3.j0;
+import c3.l0;
+import i2.o1;
 import java.util.List;
 import v7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class c0 {
     public final /* synthetic */ int a;
     public final List b;
-    public final j0[] c;
+    public final l0[] c;
     public final e2.c d;
 
     public c0(int i10, List list) {
@@ -18,14 +19,14 @@ public final class c0 {
         switch (i10) {
             case 1:
                 this.b = list;
-                this.c = new j0[list.size()];
+                this.c = new l0[list.size()];
                 e2.c cVar = new e2.c(new e1.c(this, 29));
                 this.d = cVar;
                 cVar.k(3);
                 break;
             default:
                 this.b = list;
-                this.c = new j0[list.size()];
+                this.c = new l0[list.size()];
                 this.d = new e2.c(new e1.c(this, 28));
                 break;
         }
@@ -43,18 +44,18 @@ public final class c0 {
         }
     }
 
-    public final void b(c3.q qVar, f0 f0Var) {
+    public final void b(c3.s sVar, f0 f0Var) {
         switch (this.a) {
             case 0:
                 int i10 = 0;
                 while (true) {
-                    j0[] j0VarArr = this.c;
-                    if (i10 >= j0VarArr.length) {
+                    l0[] l0VarArr = this.c;
+                    if (i10 >= l0VarArr.length) {
                         break;
                     } else {
                         f0Var.b();
                         f0Var.c();
-                        j0 j02 = qVar.j0(f0Var.c, 3);
+                        l0 j02 = sVar.j0(f0Var.c, 3);
                         b2.w wVar = (b2.w) this.b.get(i10);
                         String str = wVar.s;
                         u6.h("application/cea-608".equals(str) || "application/cea-708".equals(str), "Invalid closed caption MIME type provided: %s", str);
@@ -71,8 +72,8 @@ public final class c0 {
                         vVar.d = wVar.d;
                         vVar.O = wVar.P;
                         vVar.u = wVar.v;
-                        i2.e.u(vVar, j02);
-                        j0VarArr[i10] = j02;
+                        o1.v(vVar, j02);
+                        l0VarArr[i10] = j02;
                         i10++;
                     }
                 }
@@ -80,13 +81,13 @@ public final class c0 {
             default:
                 int i11 = 0;
                 while (true) {
-                    j0[] j0VarArr2 = this.c;
-                    if (i11 >= j0VarArr2.length) {
+                    l0[] l0VarArr2 = this.c;
+                    if (i11 >= l0VarArr2.length) {
                         break;
                     } else {
                         f0Var.b();
                         f0Var.c();
-                        j0 j03 = qVar.j0(f0Var.c, 3);
+                        l0 j03 = sVar.j0(f0Var.c, 3);
                         b2.w wVar2 = (b2.w) this.b.get(i11);
                         String str3 = wVar2.s;
                         u6.h("application/cea-608".equals(str3) || "application/cea-708".equals(str3), "Invalid closed caption MIME type provided: %s", str3);
@@ -99,8 +100,8 @@ public final class c0 {
                         vVar2.d = wVar2.d;
                         vVar2.O = wVar2.P;
                         vVar2.u = wVar2.v;
-                        i2.e.u(vVar2, j03);
-                        j0VarArr2[i11] = j03;
+                        o1.v(vVar2, j03);
+                        l0VarArr2[i11] = j03;
                         i11++;
                     }
                 }

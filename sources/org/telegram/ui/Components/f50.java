@@ -7,12 +7,12 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class f50 extends FrameLayout {
     public View a;
     public TextView b;
-    public yj0 c;
+    public bk0 c;
     public LinearLayout d;
 
     @Override // android.widget.FrameLayout, android.view.View
@@ -29,6 +29,8 @@ public final class f50 extends FrameLayout {
     }
 
     public void setTextColor(int i10) {
-        this.b.setTextColor(i10);
+        TextView textView = this.b;
+        org.telegram.ui.ActionBar.r6.r(textView);
+        textView.setTextColor(i10);
     }
 }

@@ -32,18 +32,18 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.kk;
-import org.telegram.ui.v10;
+import org.telegram.ui.e50;
+import org.telegram.ui.lk;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public class x5 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static Typeface j0;
     public static Typeface k0;
     public final FrameLayout E;
     public View.OnClickListener F;
-    public final kk G;
-    public final v10 H;
+    public final lk G;
+    public final e50 H;
     public final Paint I;
     public float J;
     public final org.telegram.ui.Components.f6 K;
@@ -58,7 +58,7 @@ public class x5 extends FrameLayout implements NotificationCenter.NotificationCe
     public float T;
     public float U;
     public int V;
-    public m0 W;
+    public l0 W;
     public boolean a;
     public float[] a0;
     public float b;
@@ -112,7 +112,7 @@ public class x5 extends FrameLayout implements NotificationCenter.NotificationCe
         canvas.save();
         canvas.translate(f10 * 1527.738f, 0.5002976f * height);
         canvas.rotate(90.0f);
-        x5Var.c(f7, new o2(x5Var, 2), new Runnable() { // from class: org.telegram.ui.Wallet.u5
+        x5Var.c(f7, new n2(x5Var, 2), new Runnable() { // from class: org.telegram.ui.Wallet.u5
             @Override // java.lang.Runnable
             public final void run() {
                 x5 x5Var2 = x5.this;
@@ -144,7 +144,7 @@ public class x5 extends FrameLayout implements NotificationCenter.NotificationCe
     }
 
     public static SpannableStringBuilder e(long j10) {
-        return m0.p(new DecimalFormat("#,##0.#########", new DecimalFormatSymbols(Locale.US)).format(new BigDecimal(m0.o(j10, false))), 0.8f);
+        return l0.p(new DecimalFormat("#,##0.#########", new DecimalFormatSymbols(Locale.US)).format(new BigDecimal(l0.o(j10, false))), 0.8f);
     }
 
     public static String f(String str) {
@@ -184,13 +184,13 @@ public class x5 extends FrameLayout implements NotificationCenter.NotificationCe
         return 1.0f;
     }
 
-    public final void c(float f7, o2 o2Var, Runnable runnable) {
-        o2Var.a(f7 > 0.0f ? AndroidUtilities.dp(5.0f) : 0.0f, AndroidUtilities.dp(1.0f), Color.argb((int) (89.0f * f7), 0, 0, 0));
+    public final void c(float f7, n2 n2Var, Runnable runnable) {
+        n2Var.a(f7 > 0.0f ? AndroidUtilities.dp(5.0f) : 0.0f, AndroidUtilities.dp(1.0f), Color.argb((int) (89.0f * f7), 0, 0, 0));
         runnable.run();
         if (f7 <= 0.0f) {
             return;
         }
-        o2Var.a(AndroidUtilities.dpf2(1.5f), 0.0f, Color.argb((int) (f7 * 140.0f), 0, 0, 0));
+        n2Var.a(AndroidUtilities.dpf2(1.5f), 0.0f, Color.argb((int) (f7 * 140.0f), 0, 0, 0));
         this.i0 = true;
         runnable.run();
         this.i0 = false;
@@ -200,9 +200,9 @@ public class x5 extends FrameLayout implements NotificationCenter.NotificationCe
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
         if (i10 == NotificationCenter.walletUpdate) {
             Object obj = objArr[0];
-            m0 m0Var = this.W;
-            if (obj == m0Var) {
-                l(m0Var);
+            l0 l0Var = this.W;
+            if (obj == l0Var) {
+                l(l0Var);
             }
         }
     }
@@ -216,8 +216,8 @@ public class x5 extends FrameLayout implements NotificationCenter.NotificationCe
         Matrix matrix2 = (Matrix) s5Var.e.c;
         Matrix matrix3 = this.v;
         matrix3.set(matrix2);
-        ci.m1 m1Var = s5Var.f;
-        matrix3.preTranslate(m1Var.getLeft(), m1Var.getTop());
+        ci.l1 l1Var = s5Var.f;
+        matrix3.preTranslate(l1Var.getLeft(), l1Var.getTop());
         k(view2, matrix);
         matrix.preConcat(matrix3);
         matrix.preTranslate(this.E.getLeft() - r0.getScrollX(), this.E.getTop() - r0.getScrollY());
@@ -278,8 +278,8 @@ public class x5 extends FrameLayout implements NotificationCenter.NotificationCe
         float bottom = ((r3.getBottom() + r3.getTop()) / 2.0f) + f10;
         float height = (r3.getHeight() * b10) / 2.0f;
         arrayList.add(new RectF(f7, bottom - height, c10 + f7, bottom + height));
-        kk kkVar = this.G;
-        arrayList.add(new RectF(kkVar.getLeft(), kkVar.getTop(), kkVar.getLeft() + Math.min(kkVar.getWidth(), kkVar.getPaint().measureText(kkVar.getText().toString())), kkVar.getBottom()));
+        lk lkVar = this.G;
+        arrayList.add(new RectF(lkVar.getLeft(), lkVar.getTop(), lkVar.getLeft() + Math.min(lkVar.getWidth(), lkVar.getPaint().measureText(lkVar.getText().toString())), lkVar.getBottom()));
         arrayList.add(new RectF(this.E.getWidth() - (34.0f * width), 18.0f * width, this.E.getWidth() - (12.0f * width), width * 187.0f));
         Path path = new Path();
         h(path, this.E.getWidth(), this.E.getHeight());
@@ -333,17 +333,17 @@ public class x5 extends FrameLayout implements NotificationCenter.NotificationCe
         this.O.setText(BillingController.getInstance().formatCurrency(round, "USD", 2, round % 100 == 0));
     }
 
-    public final void l(m0 m0Var) {
-        if (m0Var == null) {
+    public final void l(l0 l0Var) {
+        if (l0Var == null) {
             return;
         }
-        int i10 = m0Var.a;
+        int i10 = l0Var.a;
         setCardHolder(UserObject.getUserName(UserConfig.getInstance(i10).getCurrentUser()).toUpperCase());
-        if (m0Var.s() != null) {
-            setCardNumber(d(m0Var.s().toUpperCase()));
+        if (l0Var.s() != null) {
+            setCardNumber(d(l0Var.s().toUpperCase()));
         }
-        if (m0Var.E()) {
-            j(i10, m0Var.u());
+        if (l0Var.E()) {
+            j(i10, l0Var.u());
         }
     }
 
@@ -696,8 +696,8 @@ public class x5 extends FrameLayout implements NotificationCenter.NotificationCe
         setUseGyroscope(this.s);
         this.y.setOnClickListener(this.F);
         addView(this.y, 0, w7.z5.c(-2.0f, -1));
-        kk kkVar = new kk(this, context, 6);
-        this.G = kkVar;
+        lk lkVar = new lk(this, context, 6);
+        this.G = lkVar;
         if (k0 == null) {
             if (Build.VERSION.SDK_INT >= 26) {
                 k0 = new Typeface.Builder(context.getAssets(), "fonts/rmono_var.ttf").setFontVariationSettings("'wght' 500").setWeight(500).build();
@@ -705,16 +705,16 @@ public class x5 extends FrameLayout implements NotificationCenter.NotificationCe
                 k0 = AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MONO);
             }
         }
-        kkVar.setTypeface(k0);
-        kkVar.setTextColor(-1);
-        kkVar.setTextSize(1, 13.0f);
-        kkVar.setEllipsize(TextUtils.TruncateAt.END);
-        kkVar.setMaxLines(1);
-        kkVar.setSingleLine();
-        this.E.addView(kkVar, w7.z5.d(-1, -2.0f, 83, 24.0f, 0.0f, 64.0f, 17.2f));
-        v10 v10Var = new v10(this, context, 11);
-        this.H = v10Var;
-        this.E.addView(v10Var, w7.z5.c(-1.0f, -1));
+        lkVar.setTypeface(k0);
+        lkVar.setTextColor(-1);
+        lkVar.setTextSize(1, 13.0f);
+        lkVar.setEllipsize(TextUtils.TruncateAt.END);
+        lkVar.setMaxLines(1);
+        lkVar.setSingleLine();
+        this.E.addView(lkVar, w7.z5.d(-1, -2.0f, 83, 24.0f, 0.0f, 64.0f, 17.2f));
+        e50 e50Var = new e50(this, context, 10);
+        this.H = e50Var;
+        this.E.addView(e50Var, w7.z5.c(-1.0f, -1));
         View view = new View(context);
         this.L = view;
         this.E.addView(view, w7.z5.d(1, 1.0f, 19, 24.0f, 0.0f, 0.0f, 0.0f));

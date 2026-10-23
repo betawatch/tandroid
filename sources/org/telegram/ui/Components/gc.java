@@ -7,7 +7,7 @@ import android.graphics.RectF;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class gc extends FrameLayout {
     public final f6 a;
@@ -51,13 +51,13 @@ public final class gc extends FrameLayout {
         float currentTimeMillis = ((System.currentTimeMillis() - this.e) * 0.45f) % 5400.0f;
         float max = Math.max(0.0f, ((1520.0f * currentTimeMillis) / 5400.0f) - 20.0f);
         for (int i10 = 0; i10 < 4; i10++) {
-            u1.a aVar = dq.h;
+            u1.a aVar = eq.h;
             aVar.getInterpolation((currentTimeMillis - (i10 * 1350)) / 667.0f);
             max += aVar.getInterpolation((currentTimeMillis - (r8 + 667)) / 667.0f) * 250.0f;
         }
-        int m12 = org.telegram.ui.ActionBar.h6.m1((1.0f - e) * 1.0f, -1);
+        int o12 = org.telegram.ui.ActionBar.k6.o1((1.0f - e) * 1.0f, -1);
         Paint paint = this.c;
-        paint.setColor(m12);
+        paint.setColor(o12);
         canvas.drawArc(rectF, (-90.0f) - max, Math.max(0.02f, d) * (-360.0f), false, paint);
         if (d < 1.0f && e < 1.0f) {
             invalidate();

@@ -1,71 +1,71 @@
 package org.telegram.ui.web;
 
-import ci.z7;
+import ci.y7;
 import org.json.JSONObject;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class r implements Utilities.Callback2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ a1 b;
-    public final /* synthetic */ z7 c;
+    public final /* synthetic */ b1 b;
+    public final /* synthetic */ y7 c;
 
-    public /* synthetic */ r(a1 a1Var, z7 z7Var, int i10) {
+    public /* synthetic */ r(b1 b1Var, y7 y7Var, int i10) {
         this.a = i10;
-        this.b = a1Var;
-        this.c = z7Var;
+        this.b = b1Var;
+        this.c = y7Var;
     }
 
     @Override // org.telegram.messenger.Utilities.Callback2
     public final void run(Object obj, Object obj2) {
-        g0 g0Var;
+        h0 h0Var;
         switch (this.a) {
             case 0:
                 String str = (String) obj2;
-                JSONObject A = a1.A(str, "status");
-                a1 a1Var = this.b;
-                a1Var.x(this.c, "emoji_status_access_requested", A);
-                if (((Boolean) obj).booleanValue() && "allowed".equalsIgnoreCase(str) && (g0Var = a1Var.c) != null) {
-                    g0Var.a();
+                JSONObject A = b1.A(str, "status");
+                b1 b1Var = this.b;
+                b1Var.x(this.c, "emoji_status_access_requested", A);
+                if (((Boolean) obj).booleanValue() && "allowed".equalsIgnoreCase(str) && (h0Var = b1Var.c) != null) {
+                    h0Var.a();
                     break;
                 }
                 break;
             case 1:
                 Boolean bool = (Boolean) obj;
                 Boolean bool2 = (Boolean) obj2;
-                a1 a1Var2 = this.b;
-                if (a1Var2.c != null && bool.booleanValue()) {
-                    a1Var2.c.w(bool2.booleanValue());
+                b1 b1Var2 = this.b;
+                if (b1Var2.c != null && bool.booleanValue()) {
+                    b1Var2.c.w(bool2.booleanValue());
                 }
-                a1Var2.k0.j(new s(a1Var2, this.c, 1));
+                b1Var2.k0.j(new s(b1Var2, this.c, 1));
                 break;
             case 2:
-                a1 a1Var3 = this.b;
-                a1Var3.getClass();
+                b1 b1Var3 = this.b;
+                b1Var3.getClass();
                 if (((Boolean) obj).booleanValue()) {
-                    gi.r rVar = a1Var3.j0;
+                    gi.r rVar = b1Var3.j0;
                     rVar.e = true;
                     rVar.k();
                 }
-                a1Var3.v(this.c);
+                b1Var3.v(this.c);
                 break;
             case 3:
-                z7 z7Var = this.c;
+                y7 y7Var = this.c;
                 Boolean bool3 = (Boolean) obj;
                 String str2 = (String) obj2;
-                a1 a1Var4 = this.b;
-                a1Var4.getClass();
+                b1 b1Var4 = this.b;
+                b1Var4.getClass();
                 if (bool3.booleanValue()) {
-                    a1Var4.j0.e = true;
+                    b1Var4.j0.e = true;
                 }
                 try {
                     JSONObject jSONObject = new JSONObject();
                     jSONObject.put("status", bool3.booleanValue() ? "authorized" : "failed");
                     jSONObject.put("token", str2);
-                    a1Var4.x(z7Var, "biometry_auth_requested", jSONObject);
+                    b1Var4.x(y7Var, "biometry_auth_requested", jSONObject);
                     break;
                 } catch (Exception e) {
                     FileLog.e(e);
@@ -74,16 +74,16 @@ public final /* synthetic */ class r implements Utilities.Callback2 {
             default:
                 String str3 = (String) obj;
                 TLRPC.Document document = (TLRPC.Document) obj2;
-                a1 a1Var5 = this.b;
-                z7 z7Var2 = this.c;
+                b1 b1Var5 = this.b;
+                y7 y7Var2 = this.c;
                 if (str3 != null) {
-                    a1Var5.x(z7Var2, "emoji_status_failed", a1.A(str3, "error"));
+                    b1Var5.x(y7Var2, "emoji_status_failed", b1.A(str3, "error"));
                     break;
                 } else {
-                    a1Var5.x(z7Var2, "emoji_status_set", null);
-                    g0 g0Var2 = a1Var5.c;
-                    if (g0Var2 != null) {
-                        g0Var2.d(document);
+                    b1Var5.x(y7Var2, "emoji_status_set", null);
+                    h0 h0Var2 = b1Var5.c;
+                    if (h0Var2 != null) {
+                        h0Var2.d(document);
                         break;
                     }
                 }

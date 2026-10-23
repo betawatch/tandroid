@@ -1,38 +1,26 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.animation.ValueAnimator;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class e51 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ g51 b;
+public final class e51 extends FrameLayout {
+    public FrameLayout a;
+    public org.telegram.ui.Cells.t3 b;
+    public sg.p0 c;
+    public String d;
+    public ValueAnimator e;
+    public float f;
+    public Boolean h;
+    public ValueAnimator n;
 
-    public /* synthetic */ e51(g51 g51Var, int i10) {
-        this.a = i10;
-        this.b = g51Var;
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                super.onAnimationEnd(animator);
-                this.b.I = null;
-                break;
-            case 1:
-                super.onAnimationEnd(animator);
-                this.b.I = null;
-                break;
-            default:
-                super.onAnimationEnd(animator);
-                g51 g51Var = this.b;
-                g51Var.N = 0.0f;
-                g51Var.I = null;
-                g51Var.M = false;
-                g51Var.d(true, false);
-                break;
-        }
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        setPadding(AndroidUtilities.dp(5.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(8.0f));
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(getPaddingBottom() + getPaddingTop() + AndroidUtilities.dp(44.0f), TLObject.FLAG_30));
     }
 }

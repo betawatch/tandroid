@@ -4,11 +4,12 @@ import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.text.TextUtils;
+import android.view.ActionMode;
 import android.view.Menu;
 import android.view.MotionEvent;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class zh extends qu {
     public boolean V;
@@ -18,8 +19,8 @@ public final class zh extends qu {
     public final /* synthetic */ ti c0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zh(ti tiVar, Context context, ji jiVar, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, jiVar, null, 1, true, d6Var);
+    public zh(ti tiVar, Context context, ji jiVar, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(context, jiVar, null, 1, true, g6Var);
         this.c0 = tiVar;
     }
 
@@ -30,8 +31,8 @@ public final class zh extends qu {
         wh whVar = tiVar.G0;
         whVar.setTranslationY(f7);
         whVar.invalidate();
-        tiVar.i1();
-        tiVar.b2(tiVar.B0, 0);
+        tiVar.l1();
+        tiVar.f2(tiVar.B0, 0);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -56,7 +57,7 @@ public final class zh extends qu {
 
     @Override // org.telegram.ui.Components.qu
     public final void e() {
-        super/*org.telegram.ui.ActionBar.f3*/.dismiss();
+        super/*org.telegram.ui.ActionBar.h3*/.dismiss();
     }
 
     @Override // org.telegram.ui.Components.qu
@@ -65,17 +66,17 @@ public final class zh extends qu {
         tz emojiView = getEmojiView();
         if (emojiView != null) {
             emojiView.w0 = false;
-            emojiView.w2 = false;
+            emojiView.x2 = false;
             emojiView.setShouldDrawBackground(false);
             emojiView.setBottomInset(AndroidUtilities.navigationBarHeight);
         }
     }
 
     @Override // org.telegram.ui.Components.qu
-    public final void i(Menu menu) {
-        org.telegram.ui.ActionBar.n2 n2Var = this.c0.f0;
-        if (n2Var instanceof org.telegram.ui.qn) {
-            org.telegram.ui.qn.n8(menu, ((org.telegram.ui.qn) n2Var).h, true, true, true, true);
+    public final void i(ActionMode actionMode, Menu menu) {
+        org.telegram.ui.ActionBar.o2 o2Var = this.c0.f0;
+        if (o2Var instanceof org.telegram.ui.sn) {
+            org.telegram.ui.sn.n8(menu, ((org.telegram.ui.sn) o2Var).h, true, true, true, true);
         }
     }
 
@@ -85,9 +86,9 @@ public final class zh extends qu {
         zh zhVar = tiVar.H0;
         if (!tiVar.x1) {
             if (motionEvent.getX() <= zhVar.getEditText().getLeft() || motionEvent.getX() >= zhVar.getEditText().getRight() || motionEvent.getY() <= zhVar.getEditText().getTop() || motionEvent.getY() >= zhVar.getEditText().getBottom()) {
-                tiVar.w1(zhVar.getEditText(), false);
+                tiVar.z1(zhVar.getEditText(), false);
             } else {
-                tiVar.w1(zhVar.getEditText(), true);
+                tiVar.z1(zhVar.getEditText(), true);
             }
         }
         return super.onInterceptTouchEvent(motionEvent);
@@ -96,7 +97,7 @@ public final class zh extends qu {
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         super.onLayout(z10, i10, i11, i12, i13);
-        this.c0.Y1();
+        this.c0.c2();
     }
 
     @Override // org.telegram.ui.Components.qu
@@ -118,10 +119,10 @@ public final class zh extends qu {
             if (i11 > 2 && !TextUtils.isEmpty(getEditText().getText().toString().trim())) {
                 z10 = true;
             }
-            tiVar.Q1(z10);
+            tiVar.U1(z10);
         }
         tiVar.Z1 = whVar.getTop() + tiVar.Y1;
         whVar.invalidate();
-        tiVar.Y1();
+        tiVar.c2();
     }
 }

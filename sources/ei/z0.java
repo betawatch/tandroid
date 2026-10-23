@@ -14,7 +14,7 @@ import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class z0 {
     public final long A;
@@ -202,12 +202,12 @@ public final class z0 {
         String str4 = this.v;
         if (str4 != null) {
             SpannableString spannableString = new SpannableString(str4);
-            if (org.telegram.ui.ActionBar.h6.o2 == null) {
-                org.telegram.ui.ActionBar.h6.P();
+            if (org.telegram.ui.ActionBar.k6.o2 == null) {
+                org.telegram.ui.ActionBar.k6.P();
             }
-            CharSequence replaceEmoji = Emoji.replaceEmoji(spannableString, org.telegram.ui.ActionBar.h6.o2.getFontMetricsInt(), true);
+            CharSequence replaceEmoji = Emoji.replaceEmoji(spannableString, org.telegram.ui.ActionBar.k6.o2.getFontMetricsInt(), true);
             MessageObject.addEntitiesToText(replaceEmoji, this.w, true, false, true, false);
-            a8Var.C0 = MessageObject.replaceAnimatedEmoji(replaceEmoji, this.w, org.telegram.ui.ActionBar.h6.o2.getFontMetricsInt());
+            a8Var.C0 = MessageObject.replaceAnimatedEmoji(replaceEmoji, this.w, org.telegram.ui.ActionBar.k6.o2.getFontMetricsInt());
         } else {
             a8Var.C0 = "";
         }

@@ -3,41 +3,52 @@ package eh;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LiteMode;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.r6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+/* loaded from: classes4.dex */
 public class b implements a {
-    public final d6 a;
+    public final g6 a;
     public final int b;
     public final float c;
     public int d;
     public int e;
     public int f;
     public int h;
+    public int n;
 
-    public b(int i10, d6 d6Var) {
-        this(d6Var, i10, LiteMode.isEnabled(262144) ? 0.85f : 0.76f);
+    public b(int i10, g6 g6Var) {
+        this(g6Var, i10, LiteMode.isEnabled(262144) ? 0.85f : 0.76f);
     }
 
     @Override // eh.a
-    public int E() {
+    public int H() {
+        a();
         return this.e;
     }
 
-    public boolean a() {
-        return AndroidUtilities.computePerceivedBrightness(h6.w0(this.b, this.a)) < 0.721f;
+    public final void a() {
+        if (this.n != r6.b) {
+            c();
+        }
     }
 
     @Override // eh.a
     public int a0() {
+        a();
         return this.d;
     }
 
-    public final void b() {
-        this.d = h6.m1(this.c, h6.w0(this.b, this.a));
-        if (a()) {
+    public boolean b() {
+        return AndroidUtilities.computePerceivedBrightness(k6.w0(this.b, this.a)) < 0.721f;
+    }
+
+    public final void c() {
+        this.n = r6.b;
+        this.d = k6.o1(this.c, k6.w0(this.b, this.a));
+        if (b()) {
             this.f = 687865855;
             this.h = 352321535;
             this.e = 0;
@@ -50,18 +61,21 @@ public class b implements a {
 
     @Override // eh.a
     public int h() {
+        a();
         return this.f;
     }
 
     @Override // eh.a
     public int u() {
+        a();
         return this.h;
     }
 
-    public b(d6 d6Var, int i10, float f7) {
-        this.a = d6Var;
+    public b(g6 g6Var, int i10, float f7) {
+        this.n = r6.b;
+        this.a = g6Var;
         this.b = i10;
         this.c = f7;
-        b();
+        c();
     }
 }

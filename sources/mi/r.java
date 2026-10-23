@@ -16,7 +16,7 @@ import m4.v0;
 import m4.z;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class r implements AutoCloseable {
     public final v0 b;
@@ -78,10 +78,10 @@ public final class r implements AutoCloseable {
                     try {
                         try {
                             this.b.getClass();
-                            b a2 = v0.a();
+                            b c10 = v0.c();
                             try {
                                 LinkedHashSet linkedHashSet = new LinkedHashSet();
-                                Collections.addAll(linkedHashSet, a2.a.a());
+                                Collections.addAll(linkedHashSet, c10.a.a());
                                 if (linkedHashSet.contains("func")) {
                                     linkedHashSet.add("fc");
                                 }
@@ -92,15 +92,15 @@ public final class r implements AutoCloseable {
                                     linkedHashSet.add("tl-b");
                                 }
                                 this.x = DesugarCollections.unmodifiableSet(linkedHashSet);
-                                this.v = a2;
+                                this.v = c10;
                                 return true;
                             } catch (Error e) {
                                 e = e;
-                                a2.close();
+                                c10.close();
                                 throw e;
                             } catch (RuntimeException e7) {
                                 e = e7;
-                                a2.close();
+                                c10.close();
                                 throw e;
                             }
                         } catch (Exception e10) {

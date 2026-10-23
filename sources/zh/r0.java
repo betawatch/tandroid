@@ -17,10 +17,10 @@ import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.a3;
-import org.telegram.ui.gq;
+import org.telegram.ui.Components.z2;
+import org.telegram.ui.iq;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class r0 implements NotificationCenter.NotificationCenterDelegate {
     public static final LongSparseArray[] I = new LongSparseArray[4];
@@ -420,7 +420,7 @@ public final class r0 implements NotificationCenter.NotificationCenterDelegate {
         TLRPC.TL_contacts_exportNoPaidMessagesToken tL_contacts_exportNoPaidMessagesToken = new TLRPC.TL_contacts_exportNoPaidMessagesToken();
         tL_contacts_exportNoPaidMessagesToken.revoke = z10;
         tL_contacts_exportNoPaidMessagesToken.temporary = z11;
-        int sendRequestTyped = ConnectionsManager.getInstance(i11).sendRequestTyped(tL_contacts_exportNoPaidMessagesToken, new org.telegram.messenger.a(), new gq(this, r6, z11, 1));
+        int sendRequestTyped = ConnectionsManager.getInstance(i11).sendRequestTyped(tL_contacts_exportNoPaidMessagesToken, new org.telegram.messenger.a(), new iq(this, r6, z11, 1));
         this.n = sendRequestTyped;
         int[] iArr = {sendRequestTyped};
     }
@@ -447,7 +447,7 @@ public final class r0 implements NotificationCenter.NotificationCenterDelegate {
         q0 q0Var = (q0) g10.get(p0Var.f);
         long j10 = p0Var.f;
         int i12 = this.a;
-        int sendRequestTyped = ConnectionsManager.getInstance(i12).sendRequestTyped(tL_messages_setShareTheme, new org.telegram.messenger.a(), new a3(this, r7, q0Var, i12, j10));
+        int sendRequestTyped = ConnectionsManager.getInstance(i12).sendRequestTyped(tL_messages_setShareTheme, new org.telegram.messenger.a(), new z2(this, r7, q0Var, i12, j10));
         this.w = sendRequestTyped;
         int[] iArr = {sendRequestTyped};
     }

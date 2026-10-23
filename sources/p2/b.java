@@ -31,29 +31,28 @@ import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.q2;
-import org.telegram.ui.Components.aa0;
+import org.telegram.ui.ActionBar.r2;
+import org.telegram.ui.Components.ba0;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.jm0;
-import org.telegram.ui.Components.l60;
-import org.telegram.ui.el;
-import qg.a1;
-import qg.d1;
-import qg.f1;
-import qg.t0;
-import rg.k2;
+import org.telegram.ui.Components.m60;
+import org.telegram.ui.Components.mm0;
+import org.telegram.ui.fl;
+import qg.c1;
+import qg.e1;
+import qg.s0;
+import qg.z0;
+import rg.l2;
 import rg.m0;
-import rg.n2;
-import rg.y1;
+import rg.o2;
+import rg.z1;
 import s4.b0;
 import sg.a2;
+import sg.h0;
 import sg.i0;
 import sg.j0;
-import sg.k0;
-import si.l0;
-import si.s0;
+import si.u0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a;
@@ -69,7 +68,7 @@ public final /* synthetic */ class b implements Runnable {
     private final void a() {
         r2.c cVar = (r2.c) this.b;
         b bVar = (b) this.c;
-        cVar.c.n();
+        cVar.c.p();
         r2.f fVar = cVar.b;
         synchronized (fVar.a) {
             fVar.b();
@@ -149,24 +148,24 @@ public final /* synthetic */ class b implements Runnable {
                 cVar.b(uri);
                 return;
             case 1:
-                t0 t0Var = (t0) this.b;
-                a1 a1Var = (a1) this.c;
-                t0Var.v = true;
-                ByteBuffer byteBuffer = (ByteBuffer) t0Var.h(t0Var.f(), true, false, false).c;
-                RectF f7 = t0Var.f();
-                Object obj = t0Var.a.b;
-                t0Var.w = new a5.a(byteBuffer, 0, f7);
-                t0Var.a(false);
-                a1Var.run();
+                s0 s0Var = (s0) this.b;
+                z0 z0Var = (z0) this.c;
+                s0Var.v = true;
+                ByteBuffer byteBuffer = (ByteBuffer) s0Var.h(s0Var.f(), true, false, false).c;
+                RectF f7 = s0Var.f();
+                Object obj = s0Var.a.b;
+                s0Var.w = new a5.a(byteBuffer, 0, f7);
+                s0Var.a(false);
+                z0Var.run();
                 return;
             case 2:
-                f1 f1Var = (f1) this.b;
+                e1 e1Var = (e1) this.b;
                 Runnable runnable = (Runnable) this.c;
-                d1 d1Var = f1Var.d;
-                if (d1Var == null || !d1Var.f) {
+                c1 c1Var = e1Var.d;
+                if (c1Var == null || !c1Var.f) {
                     return;
                 }
-                d1.b(d1Var);
+                c1.b(c1Var);
                 runnable.run();
                 return;
             case 3:
@@ -255,24 +254,24 @@ public final /* synthetic */ class b implements Runnable {
                 return;
             case 12:
                 m0 m0Var = (m0) this.b;
-                y1 y1Var = (y1) this.c;
-                y1Var.m();
-                m0Var.s0(y1Var, true);
+                z1 z1Var = (z1) this.c;
+                z1Var.m();
+                m0Var.r0(z1Var, true);
                 return;
             case 13:
-                ((y1) this.b).s((Bitmap) this.c);
+                ((z1) this.b).s((Bitmap) this.c);
                 return;
             case 14:
-                n2 n2Var = (n2) this.b;
+                o2 o2Var = (o2) this.b;
                 ArrayList arrayList = (ArrayList) this.c;
-                n2Var.G = false;
-                k2[] k2VarArr = (k2[]) arrayList.toArray(new k2[0]);
-                n2Var.H = k2VarArr;
-                if (k2VarArr.length > 0) {
-                    n2Var.b0.setScaleX(0.3f);
-                    n2Var.b0.setScaleY(0.3f);
-                    n2Var.b0.setAlpha(0.0f);
-                    n2Var.b0.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(250L).setInterpolator(bs.f).start();
+                o2Var.G = false;
+                l2[] l2VarArr = (l2[]) arrayList.toArray(new l2[0]);
+                o2Var.H = l2VarArr;
+                if (l2VarArr.length > 0) {
+                    o2Var.b0.setScaleX(0.3f);
+                    o2Var.b0.setScaleY(0.3f);
+                    o2Var.b0.setAlpha(0.0f);
+                    o2Var.b0.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(250L).setInterpolator(bs.f).start();
                     return;
                 }
                 return;
@@ -306,39 +305,39 @@ public final /* synthetic */ class b implements Runnable {
                     return;
                 }
             case 19:
-                k0 k0Var = (k0) this.b;
+                j0 j0Var = (j0) this.b;
                 TLObject tLObject = (TLObject) this.c;
-                ArrayList arrayList2 = k0Var.i0;
-                jm0 jm0Var = k0Var.d;
+                ArrayList arrayList2 = j0Var.i0;
+                mm0 mm0Var = j0Var.d;
                 if (tLObject != null) {
                     arrayList2.clear();
                     arrayList2.addAll(((TLRPC.TL_messages_chats) tLObject).chats);
-                    k0Var.I0 = false;
-                    k0Var.J0.b(k0Var.n0 + 4);
+                    j0Var.I0 = false;
+                    j0Var.J0.b(j0Var.n0 + 4);
                     int i14 = 0;
                     while (true) {
-                        if (i14 >= jm0Var.getChildCount()) {
+                        if (i14 >= mm0Var.getChildCount()) {
                             i10 = 0;
-                        } else if (jm0Var.getChildAt(i14) instanceof j0) {
-                            i10 = jm0Var.getChildAt(i14).getTop();
+                        } else if (mm0Var.getChildAt(i14) instanceof i0) {
+                            i10 = mm0Var.getChildAt(i14).getTop();
                         } else {
                             i14++;
                         }
                     }
-                    k0Var.N1();
-                    if (k0Var.l0 >= 0 && i10 != 0) {
-                        ((b0) jm0Var.getLayoutManager()).h1(k0Var.l0 + 1, i10);
+                    j0Var.Q1();
+                    if (j0Var.l0 >= 0 && i10 != 0) {
+                        ((b0) mm0Var.getLayoutManager()).h1(j0Var.l0 + 1, i10);
                     }
                 }
-                int max = Math.max(arrayList2.size(), k0Var.M0.b);
-                k0Var.x0.g(max, false);
-                k0Var.x0.setBagePosition(max / k0Var.M0.c);
-                i0 i0Var = k0Var.x0;
-                i0Var.H = true;
-                i0Var.requestLayout();
+                int max = Math.max(arrayList2.size(), j0Var.M0.b);
+                j0Var.x0.i(max, false);
+                j0Var.x0.setBagePosition(max / j0Var.M0.c);
+                h0 h0Var = j0Var.x0;
+                h0Var.H = true;
+                h0Var.requestLayout();
                 return;
             case 20:
-                ((k0) this.b).n1((aa0) this.c, true);
+                ((j0) this.b).q1((ba0) this.c, true);
                 return;
             case 21:
                 a2 a2Var = (a2) this.b;
@@ -350,7 +349,7 @@ public final /* synthetic */ class b implements Runnable {
                 a2Var2.a();
                 return;
             case 23:
-                ((si.j) this.b).a0((l0) this.c);
+                ((si.j) this.b).a0((si.m0) this.c);
                 return;
             case 24:
                 si.j jVar = (si.j) this.b;
@@ -394,51 +393,51 @@ public final /* synthetic */ class b implements Runnable {
                 }
             case 26:
                 w0 w0Var = (w0) this.b;
-                l0 l0Var = (l0) this.c;
-                s0 s0Var = (s0) w0Var.b;
-                s0Var.N++;
-                s0Var.w = true;
-                s0Var.m.b("camera switch started: target=" + l0Var);
-                l60 l60Var = (l60) s0Var.d.b;
-                FrameLayout frameLayout = l60Var.x;
-                l60Var.s0++;
-                ValueAnimator valueAnimator = l60Var.b0;
+                si.m0 m0Var2 = (si.m0) this.c;
+                u0 u0Var = (u0) w0Var.b;
+                u0Var.N++;
+                u0Var.w = true;
+                u0Var.m.b("camera switch started: target=" + m0Var2);
+                m60 m60Var = (m60) u0Var.d.b;
+                FrameLayout frameLayout = m60Var.x;
+                m60Var.s0++;
+                ValueAnimator valueAnimator = m60Var.b0;
                 if (valueAnimator != null) {
                     valueAnimator.removeAllListeners();
-                    l60Var.b0.cancel();
-                    l60Var.b0 = null;
+                    m60Var.b0.cancel();
+                    m60Var.b0 = null;
                 }
-                l60Var.n0 = true;
-                l60Var.o0 = false;
-                l60Var.p0 = false;
-                l60Var.q0 = false;
-                l60Var.r0 = SystemClock.elapsedRealtime();
-                el elVar = l60Var.E;
-                l60Var.v(false);
-                Bitmap bitmap = l60Var.t0;
+                m60Var.n0 = true;
+                m60Var.o0 = false;
+                m60Var.p0 = false;
+                m60Var.q0 = false;
+                m60Var.r0 = SystemClock.elapsedRealtime();
+                fl flVar = m60Var.E;
+                m60Var.v(false);
+                Bitmap bitmap = m60Var.t0;
                 if (bitmap != null) {
-                    elVar.setImageBitmap(bitmap);
-                    l60Var.m0 = true;
-                    elVar.animate().cancel();
-                    elVar.setAlpha(1.0f);
+                    flVar.setImageBitmap(bitmap);
+                    m60Var.m0 = true;
+                    flVar.animate().cancel();
+                    flVar.setAlpha(1.0f);
                 }
                 frameLayout.animate().cancel();
                 frameLayout.setRotationY(0.0f);
                 frameLayout.setCameraDistance(frameLayout.getMeasuredHeight() * 8.0f);
-                int i15 = l60Var.s0;
+                int i15 = m60Var.s0;
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                l60Var.b0 = ofFloat;
+                m60Var.b0 = ofFloat;
                 ofFloat.setDuration(580L);
-                l60Var.b0.setInterpolator(bs.h);
-                l60Var.b0.addUpdateListener(new q2(l60Var, i15, i12));
-                l60Var.b0.addListener(new p2(l60Var, i15, i11));
-                l60Var.b0.start();
-                FileLog.d("RoundVideo camera flip started: facing=" + l0Var + ", minimumDurationMs=580");
-                l60Var.y();
-                s0Var.o();
+                m60Var.b0.setInterpolator(bs.h);
+                m60Var.b0.addUpdateListener(new r2(m60Var, i15, i12));
+                m60Var.b0.addListener(new p2(m60Var, i15, i11));
+                m60Var.b0.start();
+                FileLog.d("RoundVideo camera flip started: facing=" + m0Var2 + ", minimumDurationMs=580");
+                m60Var.y();
+                u0Var.o();
                 return;
             case 27:
-                ((s0) ((w0) this.b).b).h((Exception) this.c);
+                ((u0) ((w0) this.b).b).h((Exception) this.c);
                 return;
             case 28:
                 ((tg.f) this.b).c((ArrayList) this.c);

@@ -1,69 +1,58 @@
 package org.telegram.ui;
 
+import android.app.Activity;
 import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class ws implements View.OnClickListener {
-    public final /* synthetic */ ArrayList a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ at c;
+public final /* synthetic */ class ws implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ht b;
 
-    public ws(at atVar, ArrayList arrayList, boolean z10) {
-        this.c = atVar;
-        this.a = arrayList;
-        this.b = z10;
+    public /* synthetic */ ws(ht htVar, int i10) {
+        this.a = i10;
+        this.b = htVar;
     }
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
-        et etVar = this.c.a;
-        if (etVar.w == null) {
-            return;
-        }
-        int intValue = ((Integer) view.getTag()).intValue();
-        ArrayList arrayList = this.a;
-        if (((Integer) arrayList.get(intValue)).intValue() == 0 || ((Integer) arrayList.get(intValue)).intValue() == 6) {
-            ct ctVar = etVar.l;
-            if (ctVar != null) {
-                TLRPC.Document document = etVar.W;
-                String str = etVar.Y;
-                boolean z10 = true;
-                Object obj = etVar.b0;
-                if (((Integer) arrayList.get(intValue)).intValue() != 0) {
-                    z10 = false;
+        switch (this.a) {
+            case 0:
+                ht htVar = this.b;
+                htVar.K = false;
+                htVar.z.invalidate();
+                htVar.l();
+                break;
+            case 1:
+                ht htVar2 = this.b;
+                Activity activity = htVar2.w;
+                if (activity instanceof LaunchActivity) {
+                    LaunchActivity launchActivity = (LaunchActivity) activity;
+                    if (launchActivity.O() != null && launchActivity.O().getLastFragment() != null) {
+                        launchActivity.O().getLastFragment().dismissCurrentDialog();
+                    }
+                    launchActivity.u0(new PremiumPreviewFragment(0, PremiumPreviewFragment.l0(5)));
                 }
-                ctVar.l(document, str, obj, z10, 0, 0);
-            }
-        } else if (((Integer) arrayList.get(intValue)).intValue() == 1) {
-            ct ctVar2 = etVar.l;
-            if (ctVar2 != null) {
-                ctVar2.M(etVar.a0, etVar.i);
-            }
-        } else if (((Integer) arrayList.get(intValue)).intValue() == 2) {
-            MediaDataController.getInstance(etVar.r).addRecentSticker(2, etVar.b0, etVar.W, (int) (System.currentTimeMillis() / 1000), this.b);
-        } else if (((Integer) arrayList.get(intValue)).intValue() == 3) {
-            TLRPC.Document document2 = etVar.W;
-            Object obj2 = etVar.b0;
-            String str2 = etVar.Y;
-            ct ctVar3 = etVar.l;
-            if (ctVar3 == null) {
-                return;
-            } else {
-                org.telegram.ui.Components.f5.K(etVar.w, ctVar3.a(), new a1.d(ctVar3, document2, str2, obj2, 12));
-            }
-        } else if (((Integer) arrayList.get(intValue)).intValue() == 4) {
-            MediaDataController.getInstance(etVar.r).addRecentSticker(0, etVar.b0, etVar.W, (int) (System.currentTimeMillis() / 1000), true);
-        } else if (((Integer) arrayList.get(intValue)).intValue() == 5) {
-            etVar.l.i(etVar.X);
-        } else if (((Integer) arrayList.get(intValue)).intValue() == 7) {
-            etVar.l.n(etVar.W);
-        } else if (((Integer) arrayList.get(intValue)).intValue() == 8) {
-            etVar.l.F(etVar.W);
+                htVar2.K = false;
+                htVar2.z.invalidate();
+                htVar2.l();
+                break;
+            case 2:
+                ht htVar3 = this.b;
+                ft ftVar = htVar3.l;
+                if (ftVar != null) {
+                    ftVar.K();
+                }
+                htVar3.n();
+                break;
+            default:
+                ht htVar4 = this.b;
+                ft ftVar2 = htVar4.l;
+                if (ftVar2 != null) {
+                    ftVar2.q();
+                }
+                htVar4.n();
+                break;
         }
-        etVar.p();
     }
 }

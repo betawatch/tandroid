@@ -1,24 +1,54 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
+import android.content.Intent;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class mh1 implements org.telegram.ui.ActionBar.a2, jc1 {
-    public final /* synthetic */ WallpapersListActivity a;
+public final class mh1 implements org.telegram.ui.Components.voip.d {
+    public final /* synthetic */ oh1 a;
 
-    public /* synthetic */ mh1(WallpapersListActivity wallpapersListActivity) {
-        this.a = wallpapersListActivity;
+    public mh1(oh1 oh1Var) {
+        this.a = oh1Var;
     }
 
-    @Override // org.telegram.ui.jc1
-    public void a(TLRPC.TL_wallPaper tL_wallPaper) {
-        int[][] iArr = WallpapersListActivity.k0;
-        this.a.removeSelfFromStack();
+    public final void a() {
+        oh1 oh1Var = this.a;
+        if (oh1Var.p0 != 17) {
+            if (oh1Var.b.checkSelfPermission("android.permission.RECORD_AUDIO") != 0) {
+                oh1Var.b.requestPermissions(new String[]{"android.permission.RECORD_AUDIO"}, 101);
+                return;
+            } else {
+                if (VoIPService.getSharedState() != null) {
+                    oh1Var.q(new my0(this, 26));
+                    return;
+                }
+                return;
+            }
+        }
+        Intent intent = new Intent(oh1Var.b, (Class<?>) VoIPService.class);
+        intent.putExtra("user_id", oh1Var.d.id);
+        intent.putExtra("is_outgoing", true);
+        intent.putExtra("start_incall_activity", false);
+        intent.putExtra("video_call", oh1Var.U0);
+        intent.putExtra("can_video_call", oh1Var.U0);
+        intent.putExtra("account", oh1Var.a);
+        try {
+            oh1Var.b.startService(intent);
+        } catch (Throwable th2) {
+            FileLog.e(th2);
+        }
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        WallpapersListActivity.U(this.a);
+    public final void b() {
+        oh1 oh1Var = this.a;
+        if (oh1Var.p0 == 17) {
+            oh1Var.u0.b();
+        } else if (VoIPService.getSharedState() != null) {
+            VoIPService.getSharedState().declineIncomingCall();
+        } else {
+            oh1Var.u0.b();
+        }
     }
 }

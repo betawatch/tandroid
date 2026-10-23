@@ -6,20 +6,20 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public abstract class li extends FrameLayout {
-    public final org.telegram.ui.ActionBar.d6 a;
+    public final org.telegram.ui.ActionBar.g6 a;
     public final ti b;
-    public jm0 c;
-    public jm0 d;
+    public mm0 c;
+    public mm0 d;
     public int e;
     public boolean f;
     public boolean h;
 
-    public li(Context context, org.telegram.ui.ActionBar.d6 d6Var, ti tiVar) {
+    public li(Context context, org.telegram.ui.ActionBar.g6 g6Var, ti tiVar) {
         super(context);
-        this.a = d6Var;
+        this.a = g6Var;
         this.b = tiVar;
     }
 
@@ -93,7 +93,7 @@ public abstract class li extends FrameLayout {
         return 0;
     }
 
-    public ArrayList<org.telegram.ui.ActionBar.j6> getThemeDescriptions() {
+    public ArrayList<org.telegram.ui.ActionBar.t6> getThemeDescriptions() {
         return null;
     }
 
@@ -117,7 +117,7 @@ public abstract class li extends FrameLayout {
         return false;
     }
 
-    public boolean p() {
+    public boolean q() {
         return false;
     }
 
@@ -155,10 +155,10 @@ public abstract class li extends FrameLayout {
     public void l(float f7) {
     }
 
-    public void o() {
+    public void p() {
     }
 
-    public void q(int i10) {
+    public void r(int i10) {
     }
 
     public void t() {

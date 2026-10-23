@@ -1,64 +1,54 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class eb0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ib0 b;
-    public final /* synthetic */ String c;
+import android.content.Context;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.widget.TextView;
+import org.telegram.messenger.BillingController;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
 
-    public /* synthetic */ eb0(ib0 ib0Var, String str, int i10) {
-        this.a = i10;
-        this.b = ib0Var;
-        this.c = str;
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+/* loaded from: classes3.dex */
+public final class eb0 extends org.telegram.ui.Cells.h3 {
+    public boolean E;
+    public final /* synthetic */ gb0 F;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public eb0(gb0 gb0Var, Context context, String str, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(context, str, false, false, -1, g6Var);
+        this.F = gb0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ib0 ib0Var = this.b;
-                if (ib0Var.a()) {
-                    ib0Var.w(this.c);
-                    break;
-                }
-                break;
-            case 1:
-                this.b.w(this.c);
-                break;
-            case 2:
-                ib0 ib0Var2 = this.b;
-                ib0Var2.getClass();
-                String str = this.c;
-                if ("disable".equalsIgnoreCase(str)) {
-                    ib0Var2.x("turnPasswordOffRow");
-                }
-                if ("change".equalsIgnoreCase(str)) {
-                    ib0Var2.x("changePasswordRow");
-                }
-                if ("change-email".equalsIgnoreCase(str)) {
-                    ib0Var2.x("emailRow");
-                    break;
-                }
-                break;
-            default:
-                ib0 ib0Var3 = this.b;
-                ib0Var3.getClass();
-                String str2 = this.c;
-                if ("disable".equalsIgnoreCase(str2)) {
-                    ib0Var3.x("disablePasscodeRow");
-                }
-                if ("change".equalsIgnoreCase(str2)) {
-                    ib0Var3.x("changePasscodeRow");
-                }
-                if ("auto-lock".equalsIgnoreCase(str2)) {
-                    ib0Var3.x("autoLockRow");
-                }
-                if ("fingerprint".equalsIgnoreCase(str2)) {
-                    ib0Var3.x("fingerprintRow");
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.Cells.h3
+    public final void b(Editable editable) {
+        int i10;
+        if (this.E) {
+            return;
+        }
+        boolean isEmpty = TextUtils.isEmpty(editable);
+        gb0 gb0Var = this.F;
+        if (isEmpty) {
+            gb0Var.s.setText("");
+            return;
+        }
+        try {
+            long parseLong = Long.parseLong(editable.toString());
+            if (parseLong > gb0Var.getMessagesController().starsSubscriptionAmountMax) {
+                this.E = true;
+                parseLong = gb0Var.getMessagesController().starsSubscriptionAmountMax;
+                setText(Long.toString(parseLong));
+                this.E = false;
+            }
+            TextView textView = gb0Var.s;
+            int i11 = gb0Var.getConnectionsManager().isTestBackend() ? R.string.RequireMonthlyFeePriceTest5Minutes : R.string.RequireMonthlyFeePrice;
+            BillingController billingController = BillingController.getInstance();
+            i10 = ((org.telegram.ui.ActionBar.o2) gb0Var).currentAccount;
+            textView.setText(LocaleController.formatString(i11, billingController.formatCurrency((long) ((parseLong / 1000.0d) * MessagesController.getInstance(i10).starsUsdWithdrawRate1000), "USD")));
+        } catch (Exception e) {
+            FileLog.e(e);
         }
     }
 }

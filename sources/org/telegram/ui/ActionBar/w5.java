@@ -1,44 +1,8 @@
 package org.telegram.ui.ActionBar;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.AndroidUtilities;
+import android.graphics.drawable.StateListDrawable;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class w5 extends Drawable {
-    public static Paint c;
-    public Paint a;
-    public float b;
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        int dp;
-        Rect bounds = getBounds();
-        float f7 = this.b;
-        if (Math.abs(f7 - (-1.0f)) < 0.01f) {
-            dp = Math.max(bounds.width(), bounds.height()) / 2;
-        } else if (Math.abs(f7 - (-2.0f)) < 0.01f) {
-            dp = (int) Math.ceil(Math.sqrt(((bounds.top - bounds.centerY()) * (bounds.top - bounds.centerY())) + ((bounds.left - bounds.centerX()) * (bounds.left - bounds.centerX()))));
-        } else {
-            dp = AndroidUtilities.dp(f7);
-        }
-        canvas.drawCircle(bounds.centerX(), bounds.centerY(), dp, this.a);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-    }
+public final class w5 extends StateListDrawable {
 }

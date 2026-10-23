@@ -1,107 +1,32 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import java.util.ArrayList;
+import android.animation.ValueAnimator;
 import java.util.regex.Pattern;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.messenger.UserObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class o80 implements vx {
-    public final /* synthetic */ int a = 0;
+public final /* synthetic */ class o80 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
     public final /* synthetic */ LaunchActivity b;
-    public final /* synthetic */ TLRPC.User c;
-    public final /* synthetic */ String d;
-    public final /* synthetic */ int e;
 
-    public /* synthetic */ o80(LaunchActivity launchActivity, String str, int i10, TLRPC.User user) {
+    public /* synthetic */ o80(LaunchActivity launchActivity, int i10) {
+        this.a = i10;
         this.b = launchActivity;
-        this.d = str;
-        this.e = i10;
-        this.c = user;
     }
 
-    @Override // org.telegram.ui.vx
-    public final /* synthetic */ boolean D() {
-        switch (this.a) {
-        }
-        return false;
-    }
-
-    @Override // org.telegram.ui.vx
-    public final /* synthetic */ boolean J(cy cyVar) {
-        switch (this.a) {
-        }
-        return false;
-    }
-
-    @Override // org.telegram.ui.vx
-    public final boolean w(cy cyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, re1 re1Var) {
-        int i12 = this.a;
-        int i13 = this.e;
-        String str = this.d;
-        TLRPC.User user = this.c;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        int i10 = this.a;
         LaunchActivity launchActivity = this.b;
-        switch (i12) {
+        switch (i10) {
             case 0:
-                Pattern pattern = LaunchActivity.C1;
-                long j10 = ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId;
-                TLRPC.TL_inputMediaGame tL_inputMediaGame = new TLRPC.TL_inputMediaGame();
-                TLRPC.TL_inputGameShortName tL_inputGameShortName = new TLRPC.TL_inputGameShortName();
-                tL_inputMediaGame.id = tL_inputGameShortName;
-                tL_inputGameShortName.short_name = str;
-                tL_inputGameShortName.bot_id = MessagesController.getInstance(i13).getInputUser(user);
-                SendMessagesHelper.getInstance(i13).sendGame(MessagesController.getInstance(i13).getInputPeer(j10), tL_inputMediaGame, 0L, 0L);
-                Bundle h = a1.g.h("scrollToTopOnResume", true);
-                if (DialogObject.isEncryptedDialog(j10)) {
-                    h.putInt("enc_id", DialogObject.getEncryptedChatId(j10));
-                } else if (DialogObject.isUserDialog(j10)) {
-                    h.putLong("user_id", j10);
-                } else {
-                    h.putLong("chat_id", -j10);
-                }
-                if (MessagesController.getInstance(i13).checkCanOpenChat(h, cyVar)) {
-                    NotificationCenter.getInstance(i13).lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeChats, new Object[0]);
-                    ((ActionBarLayout) launchActivity.O()).S(new qn(h), true, false);
-                    break;
-                }
+                launchActivity.w0.invalidate();
                 break;
             default:
-                Pattern pattern2 = LaunchActivity.C1;
-                long j11 = ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId;
-                Bundle h10 = a1.g.h("scrollToTopOnResume", true);
-                if (DialogObject.isEncryptedDialog(j11)) {
-                    h10.putInt("enc_id", DialogObject.getEncryptedChatId(j11));
-                } else if (DialogObject.isUserDialog(j11)) {
-                    h10.putLong("user_id", j11);
-                } else {
-                    h10.putLong("chat_id", -j11);
-                }
-                h10.putString("attach_bot", UserObject.getPublicUsername(user));
-                if (str != null) {
-                    h10.putString("attach_bot_start_command", str);
-                }
-                if (MessagesController.getInstance(i13).checkCanOpenChat(h10, cyVar)) {
-                    NotificationCenter.getInstance(i13).lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeChats, new Object[0]);
-                    ((ActionBarLayout) launchActivity.O()).S(new qn(h10), true, false);
-                    break;
-                }
+                Pattern pattern = LaunchActivity.E1;
+                launchActivity.getClass();
+                launchActivity.E0(((Integer) valueAnimator.getAnimatedValue()).intValue());
                 break;
         }
-        return true;
-    }
-
-    public /* synthetic */ o80(LaunchActivity launchActivity, TLRPC.User user, String str, int i10) {
-        this.b = launchActivity;
-        this.c = user;
-        this.d = str;
-        this.e = i10;
     }
 }

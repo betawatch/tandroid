@@ -1,7 +1,20 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public interface ld0 {
-    void l(int i10);
+public final class ld0 implements Runnable {
+    public boolean a;
+    public final /* synthetic */ qd0 b;
+
+    public ld0(qd0 qd0Var) {
+        this.b = qd0Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        boolean z10 = this.a;
+        qd0 qd0Var = this.b;
+        qd0Var.a(z10);
+        qd0Var.postDelayed(this, qd0Var.M);
+    }
 }

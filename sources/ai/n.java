@@ -5,7 +5,7 @@ import android.view.KeyEvent;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class n implements TextView.OnEditorActionListener {
     public final /* synthetic */ int a;
@@ -29,21 +29,21 @@ public final /* synthetic */ class n implements TextView.OnEditorActionListener 
                 xVar.getClass();
                 return false;
             case 1:
-                ig.t0 t0Var = (ig.t0) this.b;
-                ig.n0 n0Var = t0Var.F;
+                ig.s0 s0Var = (ig.s0) this.b;
+                ig.m0 m0Var = s0Var.H;
                 boolean z10 = false;
                 if (i10 == 6) {
-                    t0Var.x = false;
-                    AndroidUtilities.cancelRunOnUIThread(n0Var);
+                    s0Var.E = false;
+                    AndroidUtilities.cancelRunOnUIThread(m0Var);
                     z10 = true;
-                    if (TextUtils.isEmpty(t0Var.f.getText())) {
-                        t0Var.y = null;
-                        t0Var.d.b();
-                        t0Var.c.W2.N(true);
+                    if (TextUtils.isEmpty(s0Var.n.getText())) {
+                        s0Var.F = null;
+                        s0Var.f.b();
+                        s0Var.e.Z2.N(true);
                     } else {
-                        AndroidUtilities.runOnUIThread(n0Var);
+                        AndroidUtilities.runOnUIThread(m0Var);
                     }
-                    t0Var.b0();
+                    s0Var.b0();
                 }
                 return z10;
             default:

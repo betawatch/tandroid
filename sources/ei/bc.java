@@ -1,6 +1,6 @@
 package ei;
 
-import ai.wc;
+import ai.xc;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -14,27 +14,27 @@ import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.jm0;
-import org.telegram.ui.Components.u61;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.b71;
+import org.telegram.ui.Components.mm0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class bc implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
-    public /* synthetic */ bc(i2.c0 c0Var, SurfaceTexture surfaceTexture) {
+    public /* synthetic */ bc(i2.b0 b0Var, SurfaceTexture surfaceTexture) {
         this.a = 15;
-        this.b = c0Var;
+        this.b = b0Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         Object obj;
         Bitmap bitmap = null;
-        int i10 = 0;
+        int i10 = 2;
+        int i11 = 0;
         switch (this.a) {
             case 0:
                 ec ecVar = (ec) this.b;
@@ -68,10 +68,10 @@ public final /* synthetic */ class bc implements Runnable {
                 AndroidUtilities.runOnUIThread(new p6(12, ecVar, bitmap));
                 return;
             case 1:
-                wc wcVar = (wc) this.b;
-                wcVar.getClass();
+                xc xcVar = (xc) this.b;
+                xcVar.getClass();
                 try {
-                    jm0 currentListView = ((fi.g) wcVar.M0).R.getCurrentListView();
+                    mm0 currentListView = ((fi.g) xcVar.M0).T.getCurrentListView();
                     if (currentListView == null || currentListView.getAdapter() == null) {
                         return;
                     }
@@ -115,16 +115,16 @@ public final /* synthetic */ class bc implements Runnable {
                 ((e2.j0) this.b).getClass();
                 return;
             case 13:
-                ci.u6 u6Var = ((hg.n1) this.b).y;
-                if (u6Var != null) {
-                    u6Var.p(3, true);
+                ci.t6 t6Var = ((hg.n1) this.b).y;
+                if (t6Var != null) {
+                    t6Var.p(3, true);
                     return;
                 }
                 return;
             case 14:
-                i2.i0 i0Var = (i2.i0) this.b;
-                e2.c cVar = i0Var.C;
-                Context context = i0Var.e;
+                i2.h0 h0Var = (i2.h0) this.b;
+                e2.c cVar = h0Var.C;
+                Context context = h0Var.e;
                 String str = e2.m0.a;
                 int generateAudioSessionId = c2.i.e(context).generateAudioSessionId();
                 if (generateAudioSessionId == -1) {
@@ -141,72 +141,72 @@ public final /* synthetic */ class bc implements Runnable {
                 if (((Integer) obj).intValue() != generateAudioSessionId) {
                     Integer valueOf = Integer.valueOf(generateAudioSessionId);
                     cVar.f = valueOf;
-                    e2.b bVar = new e2.b(cVar, valueOf, i10);
-                    e2.i0 i0Var2 = (e2.i0) cVar.c;
-                    if (i0Var2.a.getLooper().getThread().isAlive()) {
-                        i0Var2.d(bVar);
+                    e2.b bVar = new e2.b(cVar, valueOf, i11);
+                    e2.i0 i0Var = (e2.i0) cVar.c;
+                    if (i0Var.a.getLooper().getThread().isAlive()) {
+                        i0Var.d(bVar);
                     }
-                    i0Var.t1(1, 10, Integer.valueOf(generateAudioSessionId));
-                    i0Var.t1(2, 10, Integer.valueOf(generateAudioSessionId));
+                    h0Var.t1(1, 10, Integer.valueOf(generateAudioSessionId));
+                    h0Var.t1(2, 10, Integer.valueOf(generateAudioSessionId));
                     return;
                 }
                 return;
             case 15:
-                i2.i0 i0Var3 = ((i2.c0) this.b).a;
-                i0Var3.x1(null);
-                i0Var3.q1(0, 0);
+                i2.h0 h0Var2 = ((i2.b0) this.b).a;
+                h0Var2.x1(null);
+                h0Var2.q1(0, 0);
                 return;
             case 16:
                 try {
-                    i2.r0.g((i2.m1) this.b);
+                    i2.q0.h((i2.l1) this.b);
                     return;
-                } catch (i2.n e7) {
+                } catch (i2.m e7) {
                     e2.a.d("ExoPlayerImplInternal", "Unexpected error delivering message on external thread.", e7);
                     throw new RuntimeException(e7);
                 }
             case 17:
                 ig.c cVar2 = (ig.c) this.b;
-                cVar2.c.W2.N(true);
+                cVar2.d.Z2.N(true);
                 cVar2.V(true);
                 return;
             case 18:
                 AndroidUtilities.addToClipboard(((TL_account.TL_businessChatLink) this.b).link);
-                xc.a0(LaunchActivity.R()).k(false).j();
+                org.telegram.ui.Components.xc.a0(LaunchActivity.R()).k(false).j();
                 return;
             case 19:
-                ig.k0 k0Var = (ig.k0) this.b;
-                u61 u61Var = k0Var.d0;
-                if (u61Var != null) {
-                    u61Var.N(true);
+                ig.j0 j0Var = (ig.j0) this.b;
+                b71 b71Var = j0Var.e0;
+                if (b71Var != null) {
+                    b71Var.N(true);
                 }
-                k0Var.U(true);
+                j0Var.T(true);
                 return;
             case 20:
-                ig.t0 t0Var = (ig.t0) ((a6.i) this.b).b;
-                t0Var.c.W2.N(true);
-                t0Var.b0();
+                ig.s0 s0Var = (ig.s0) ((a6.i) this.b).b;
+                s0Var.e.Z2.N(true);
+                s0Var.b0();
                 return;
             case 21:
-                ig.v0 v0Var = (ig.v0) this.b;
-                v0Var.c.W2.N(true);
-                v0Var.V(true);
+                ig.u0 u0Var = (ig.u0) this.b;
+                u0Var.d.Z2.N(true);
+                u0Var.V(true);
                 return;
             case 22:
-                ig.f1 f1Var = (ig.f1) this.b;
-                f1Var.a.W2.N(true);
-                f1Var.Y(true);
+                ig.e1 e1Var = (ig.e1) this.b;
+                e1Var.a.Z2.N(true);
+                e1Var.Y(true);
                 return;
             case 23:
-                ((ci.z2) this.b).run(Boolean.FALSE);
+                ((ci.y2) this.b).run(Boolean.FALSE);
                 return;
             case 24:
-                NotificationCenter.getInstance(((ig.a2) this.b).a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.quickRepliesUpdated, new Object[0]);
+                NotificationCenter.getInstance(((ig.z1) this.b).a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.quickRepliesUpdated, new Object[0]);
                 return;
             case 25:
-                j2.f fVar = (j2.f) this.b;
-                j2.a l4 = fVar.l();
-                fVar.q(l4, 1028, new j2.c(l4));
-                fVar.f.d();
+                j2.e eVar = (j2.e) this.b;
+                j2.a l4 = eVar.l();
+                eVar.q(l4, 1028, new ih.l(l4));
+                eVar.f.d();
                 return;
             case 26:
                 ((k2.e) this.b).c();
@@ -215,29 +215,29 @@ public final /* synthetic */ class bc implements Runnable {
                 e2.r rVar = (e2.r) this.b;
                 rVar.getClass();
                 if (Thread.currentThread() == rVar.a) {
-                    rVar.e(-1, new j2.e(28));
+                    rVar.e(-1, new k2.f(i10));
                     return;
                 }
                 return;
             case 28:
-                k2.t0 t0Var2 = (k2.t0) this.b;
-                if (t0Var2.a0 >= 300000) {
-                    t0Var2.n.j();
-                    t0Var2.a0 = 0L;
+                k2.t0 t0Var = (k2.t0) this.b;
+                if (t0Var.a0 >= 300000) {
+                    t0Var.n.j();
+                    t0Var.a0 = 0L;
                     return;
                 }
                 return;
             default:
-                org.telegram.ui.Cells.g3 g3Var = ((org.telegram.ui.Cells.i3) this.b).b;
-                g3Var.requestFocus();
-                AndroidUtilities.showKeyboard(g3Var);
+                org.telegram.ui.Cells.f3 f3Var = ((org.telegram.ui.Cells.h3) this.b).d;
+                f3Var.requestFocus();
+                AndroidUtilities.showKeyboard(f3Var);
                 return;
         }
     }
 
-    public /* synthetic */ bc(i2.r0 r0Var, i2.m1 m1Var) {
+    public /* synthetic */ bc(i2.q0 q0Var, i2.l1 l1Var) {
         this.a = 16;
-        this.b = m1Var;
+        this.b = l1Var;
     }
 
     public /* synthetic */ bc(Object obj, int i10) {

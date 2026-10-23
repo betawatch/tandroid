@@ -1,49 +1,81 @@
 package org.telegram.ui;
 
-import android.os.Build;
-import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class o81 extends s4.r0 {
+public final /* synthetic */ class o81 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ p91 b;
+    public final /* synthetic */ u91 b;
+    public final /* synthetic */ ArrayList c;
 
-    public /* synthetic */ o81(p91 p91Var, int i10) {
+    public /* synthetic */ o81(u91 u91Var, ArrayList arrayList, int i10) {
         this.a = i10;
-        this.b = p91Var;
+        this.b = u91Var;
+        this.c = arrayList;
     }
 
-    @Override // s4.r0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        bh.f fVar;
-        p91 p91Var;
-        bh.f fVar2;
-        p91 p91Var2;
-        bh.f fVar3;
+    @Override // java.lang.Runnable
+    public final void run() {
+        boolean z10;
         switch (this.a) {
             case 0:
-                p91 p91Var3 = this.b;
-                if (p91Var3.r0.size() != p91Var3.s0.size() && !p91Var3.w0 && p91Var3.U.N0() > p91Var3.X.c0 - 20) {
-                    p91Var3.h0();
-                }
-                if (Build.VERSION.SDK_INT >= 31 && (fVar = p91Var3.C0) != null) {
-                    fVar.f(i10, i11);
-                    p91.W(p91Var3);
-                    break;
-                }
-                break;
-            case 1:
-                if (Build.VERSION.SDK_INT >= 31 && (fVar2 = (p91Var = this.b).C0) != null) {
-                    fVar2.f(i10, i11);
-                    p91.W(p91Var);
+                u91 u91Var = this.b;
+                ArrayList arrayList = u91Var.s0;
+                ArrayList arrayList2 = u91Var.r0;
+                int i10 = 0;
+                u91Var.w0 = false;
+                ArrayList arrayList3 = this.c;
+                if (!arrayList3.isEmpty()) {
+                    int size = arrayList3.size();
+                    for (int i11 = 0; i11 < size; i11++) {
+                        MessageObject messageObject = (MessageObject) arrayList3.get(i11);
+                        int i12 = u91Var.p0.get(messageObject.getId(), -1);
+                        if (i12 >= 0 && ((r91) arrayList2.get(i12)).b() == messageObject.getId()) {
+                            ((r91) arrayList2.get(i12)).b = messageObject;
+                        }
+                    }
+                    arrayList.clear();
+                    int size2 = arrayList2.size();
+                    while (true) {
+                        if (i10 < size2) {
+                            r91 r91Var = (r91) arrayList2.get(i10);
+                            if (r91Var.b == null) {
+                                u91Var.o0 = r91Var.b();
+                            } else {
+                                arrayList.add(r91Var);
+                                i10++;
+                            }
+                        }
+                    }
+                    u91Var.o0();
+                    u91Var.S.setItemAnimator(null);
+                    u91Var.y0.f();
                     break;
                 }
                 break;
             default:
-                if (Build.VERSION.SDK_INT >= 31 && (fVar3 = (p91Var2 = this.b).C0) != null) {
-                    fVar3.f(i10, i11);
-                    p91.W(p91Var2);
+                u91 u91Var2 = this.b;
+                ci.z6 z6Var = u91Var2.z0;
+                z6Var.getClass();
+                ArrayList arrayList4 = this.c;
+                int size3 = arrayList4.size();
+                int i13 = 0;
+                while (true) {
+                    if (i13 < size3) {
+                        Object obj = arrayList4.get(i13);
+                        i13++;
+                        if (!z6Var.j.containsKey((Integer) obj)) {
+                            z10 = true;
+                        }
+                    } else {
+                        z10 = false;
+                    }
+                }
+                if (!z6Var.q(0, arrayList4, z10)) {
+                    u91Var2.j0();
+                    u91Var2.o0();
                     break;
                 }
                 break;

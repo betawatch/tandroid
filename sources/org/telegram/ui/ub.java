@@ -4,7 +4,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class ub extends w7.a6 {
     public MessageObject a;
@@ -33,7 +33,7 @@ public final class ub extends w7.a6 {
         this.a = null;
         vbVar.V = true;
         vbVar.d1();
-        AndroidUtilities.runOnUIThread(new st0(this, 21));
+        AndroidUtilities.runOnUIThread(new vt0(this, 21));
     }
 
     @Override // w7.a6
@@ -44,8 +44,8 @@ public final class ub extends w7.a6 {
 
     @Override // w7.a6
     public final void d(View view) {
-        if (view instanceof org.telegram.ui.Cells.u1) {
-            this.f.h.add((org.telegram.ui.Cells.u1) view);
+        if (view instanceof org.telegram.ui.Cells.t1) {
+            this.f.h.add((org.telegram.ui.Cells.t1) view);
         }
     }
 }

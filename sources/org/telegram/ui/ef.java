@@ -4,37 +4,37 @@ import android.animation.ValueAnimator;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ef implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ qn b;
+    public final /* synthetic */ sn b;
     public final /* synthetic */ View c;
 
-    public /* synthetic */ ef(qn qnVar, org.telegram.ui.Cells.w0 w0Var, int i10) {
+    public /* synthetic */ ef(sn snVar, org.telegram.ui.Cells.v0 v0Var, int i10) {
         this.a = i10;
-        this.b = qnVar;
-        this.c = w0Var;
+        this.b = snVar;
+        this.c = v0Var;
     }
 
     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                qn qnVar = this.b;
-                qnVar.getClass();
+                sn snVar = this.b;
+                snVar.getClass();
                 float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                qnVar.A9 = AndroidUtilities.dp(30.0f) * floatValue;
-                qnVar.t9();
+                snVar.M9 = AndroidUtilities.dp(30.0f) * floatValue;
+                snVar.t9();
                 this.c.setAlpha(floatValue);
                 break;
             default:
-                qn qnVar2 = this.b;
-                qnVar2.getClass();
+                sn snVar2 = this.b;
+                snVar2.getClass();
                 float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                qnVar2.A9 = AndroidUtilities.dp(30.0f) * floatValue2;
-                qnVar2.t9();
-                qnVar2.w9();
+                snVar2.M9 = AndroidUtilities.dp(30.0f) * floatValue2;
+                snVar2.t9();
+                snVar2.w9();
                 this.c.setAlpha(floatValue2);
                 break;
         }

@@ -4,14 +4,14 @@ import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.kw;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class y1 extends kw {
     public final /* synthetic */ b2 g0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y1(b2 b2Var, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, d6Var, false, false, false, true, 0, null, org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.v6, d6Var), false);
+    public y1(b2 b2Var, Context context, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(context, g6Var, false, false, false, true, 0, null, org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.v6, g6Var), false);
         this.g0 = b2Var;
     }
 
@@ -28,12 +28,12 @@ public final class y1 extends kw {
         if (this.d) {
             return false;
         }
-        if (h2Var != null && (g2Var = h2Var.f) != null) {
+        if (h2Var != null && (g2Var = h2Var.h) != null) {
             if (g2Var.getSelectedCategory() != null) {
-                o1.x1(o1Var, 0, 0);
-                h2Var.f.G1(null);
+                o1.C1(o1Var, 0, 0);
+                h2Var.h.L1(null);
             }
-            h2Var.f.E1();
+            h2Var.h.J1();
             h2Var.b();
         }
         if (a2Var != null) {
@@ -59,7 +59,7 @@ public final class y1 extends kw {
                 b2Var.n = f7;
                 paddingTop = o1Var.getPaddingTop();
             }
-            o1.x1(o1Var, i11, ((int) (f7 + paddingTop)) - AndroidUtilities.dp(102.0f));
+            o1.C1(o1Var, i11, ((int) (f7 + paddingTop)) - AndroidUtilities.dp(102.0f));
         }
         return true;
     }

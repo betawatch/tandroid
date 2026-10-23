@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o31 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -17,17 +17,16 @@ public final /* synthetic */ class o31 implements ValueAnimator.AnimatorUpdateLi
     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                r31 r31Var = this.b;
-                r31Var.getClass();
-                r31Var.Q = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                r31Var.h();
-                r31Var.g();
+                ci.h3 h3Var = this.b.f;
+                h3Var.setScaleX(Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
+                h3Var.setScaleY(Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
+                h3Var.invalidate();
                 break;
             default:
-                float max = Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue());
-                r31 r31Var2 = this.b;
-                r31Var2.K = max;
-                r31Var2.h.invalidate();
+                r31 r31Var = this.b;
+                r31Var.getClass();
+                r31Var.F = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                r31Var.h();
                 break;
         }
     }

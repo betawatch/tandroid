@@ -6,7 +6,7 @@ import android.util.Log;
 import android.widget.ListAdapter;
 import androidx.appcompat.app.AlertController$RecycleListView;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class j0 implements p0, DialogInterface.OnClickListener {
     public g.f a;
@@ -38,6 +38,11 @@ public final class j0 implements p0, DialogInterface.OnClickListener {
     }
 
     @Override // m.p0
+    public final CharSequence d() {
+        return this.c;
+    }
+
+    @Override // m.p0
     public final void dismiss() {
         g.f fVar = this.a;
         if (fVar != null) {
@@ -47,32 +52,27 @@ public final class j0 implements p0, DialogInterface.OnClickListener {
     }
 
     @Override // m.p0
-    public final CharSequence e() {
-        return this.c;
-    }
-
-    @Override // m.p0
-    public final Drawable h() {
+    public final Drawable e() {
         return null;
     }
 
     @Override // m.p0
-    public final void i(CharSequence charSequence) {
+    public final void h(CharSequence charSequence) {
         this.c = charSequence;
     }
 
     @Override // m.p0
-    public final void j(Drawable drawable) {
+    public final void i(Drawable drawable) {
         Log.e("AppCompatSpinner", "Cannot set popup background for MODE_DIALOG, ignoring");
     }
 
     @Override // m.p0
-    public final void k(int i10) {
+    public final void j(int i10) {
         Log.e("AppCompatSpinner", "Cannot set vertical offset for MODE_DIALOG, ignoring");
     }
 
     @Override // m.p0
-    public final void l(int i10) {
+    public final void k(int i10) {
         Log.e("AppCompatSpinner", "Cannot set horizontal (original) offset for MODE_DIALOG, ignoring");
     }
 

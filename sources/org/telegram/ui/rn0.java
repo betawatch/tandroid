@@ -1,34 +1,19 @@
 package org.telegram.ui;
 
-import org.json.JSONObject;
-import org.scilab.forge.jlatexmath.TeXSymbolParser;
+import android.content.Context;
+import android.view.MotionEvent;
+import android.webkit.WebView;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class rn0 extends JSONObject {
-    public rn0(eo0 eo0Var, int i10) {
-        switch (i10) {
-            case 3:
-                put(TeXSymbolParser.TYPE_ATTR, "PAYMENT_GATEWAY");
-                Object obj = eo0Var.M0;
-                if (obj == null) {
-                    rn0 rn0Var = new rn0();
-                    rn0Var.put("gateway", "stripe");
-                    rn0Var.put("stripe:publishableKey", eo0Var.j0);
-                    rn0Var.put("stripe:version", "3.5.0");
-                    put("parameters", rn0Var);
-                    break;
-                } else {
-                    put("parameters", obj);
-                    break;
-                }
-            default:
-                put(TeXSymbolParser.TYPE_ATTR, "DIRECT");
-                rn0 rn0Var2 = new rn0();
-                rn0Var2.put("protocolVersion", "ECv2");
-                rn0Var2.put("publicKey", eo0Var.K0);
-                put("parameters", rn0Var2);
-                break;
-        }
+public final class rn0 extends WebView {
+    public rn0(Context context) {
+        super(context);
+    }
+
+    @Override // android.webkit.WebView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        getParent().requestDisallowInterceptTouchEvent(true);
+        return super.onTouchEvent(motionEvent);
     }
 }

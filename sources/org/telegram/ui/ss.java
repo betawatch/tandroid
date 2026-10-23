@@ -1,74 +1,54 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import android.text.Editable;
+import android.text.TextWatcher;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ss implements r0.n, org.telegram.ui.Components.cl0 {
-    public final /* synthetic */ et a;
+public final class ss implements TextWatcher {
+    public final /* synthetic */ EditTextBoldCursor a;
 
-    public /* synthetic */ ss(et etVar) {
-        this.a = etVar;
+    public ss(EditTextBoldCursor editTextBoldCursor) {
+        this.a = editTextBoldCursor;
     }
 
-    @Override // r0.n
-    public r0.k1 B0(View view, r0.k1 k1Var) {
-        this.a.q = AndroidUtilities.getDefaultWindowInsets(k1Var, false);
-        return k1Var;
-    }
-
-    @Override // org.telegram.ui.Components.cl0
-    public /* synthetic */ boolean i() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.cl0
-    public /* synthetic */ boolean m() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.cl0
-    public void o(View view, ah.i1 i1Var, boolean z10, boolean z11) {
-        if (i1Var == null) {
-            return;
-        }
-        et etVar = this.a;
-        ah.t0 reactionsWindow = etVar.P.getReactionsWindow();
-        if (!etVar.o.contains(i1Var.f)) {
-            etVar.o.add(i1Var.f);
-            if (etVar.o.size() > 7) {
-                etVar.o.remove(0);
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        try {
+            String obj = editable.toString();
+            if (obj.isEmpty()) {
+                return;
             }
-        } else if (etVar.o.size() <= 1) {
-            return;
-        } else {
-            etVar.o.remove(i1Var.f);
-        }
-        etVar.P.setSelectedEmojis(etVar.o);
-        if (reactionsWindow != null) {
-            ah.n0 n0Var = reactionsWindow.m;
-            etVar.P.p(null, null, false);
-            if (n0Var != null) {
-                n0Var.setSelectedReactions(etVar.o);
-                n0Var.setRecentReactions(etVar.P.V);
+            int intValue = Utilities.parseInt((CharSequence) obj).intValue();
+            EditTextBoldCursor editTextBoldCursor = this.a;
+            if (intValue < 0) {
+                editTextBoldCursor.setText("0");
+                editTextBoldCursor.setSelection(editTextBoldCursor.length());
+                return;
             }
-            reactionsWindow.d();
+            if (intValue > 300) {
+                editTextBoldCursor.setText("300");
+                editTextBoldCursor.setSelection(editTextBoldCursor.length());
+                return;
+            }
+            if (obj.equals("" + intValue)) {
+                return;
+            }
+            editTextBoldCursor.setText("" + intValue);
+            editTextBoldCursor.setSelection(editTextBoldCursor.length());
+        } catch (Exception e) {
+            FileLog.e(e);
         }
     }
 
-    @Override // org.telegram.ui.Components.cl0
-    public /* synthetic */ boolean w() {
-        return false;
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 
-    @Override // org.telegram.ui.Components.cl0
-    public /* synthetic */ void v() {
-    }
-
-    @Override // org.telegram.ui.Components.cl0
-    public /* synthetic */ void q(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

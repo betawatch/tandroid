@@ -12,9 +12,9 @@ import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.vj0;
+import org.telegram.ui.Components.yj0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class s7 {
     public int[] A;
@@ -47,7 +47,7 @@ public final class s7 {
     public float a0;
     public TL_wallet.nftItem b;
     public float b0;
-    public final ci.g3 c;
+    public final ci.f3 c;
     public float c0;
     public final ImageReceiver d;
     public final /* synthetic */ t7 d0;
@@ -75,9 +75,9 @@ public final class s7 {
     public int[] z;
 
     public s7(t7 t7Var, TL_wallet.nftItem nftitem) {
-        org.telegram.ui.ActionBar.n2 n2Var = t7Var.a;
+        org.telegram.ui.ActionBar.o2 o2Var = t7Var.a;
         this.d0 = t7Var;
-        this.c = new ci.g3(this, t7Var, 6);
+        this.c = new ci.f3(this, t7Var, 6);
         this.d = new ImageReceiver(t7Var.M);
         r7 r7Var = new r7(0.0f, 900.0f, 0.86f);
         this.e = r7Var;
@@ -128,11 +128,11 @@ public final class s7 {
                 this.d.setImage(ImageLocation.getForDocument(((TL_stars.starGiftAttributePattern) starGiftAttribute2).document), "60_60_firstframe", null, null, nftitem.gift, 1);
             }
         }
-        o2 o2Var = new o2(this, i10);
-        this.c.setDelegate(o2Var);
-        this.d.setDelegate(o2Var);
-        this.c.setCurrentAccount(n2Var.getCurrentAccount());
-        this.d.setCurrentAccount(n2Var.getCurrentAccount());
+        n2 n2Var = new n2(this, i10);
+        this.c.setDelegate(n2Var);
+        this.d.setDelegate(n2Var);
+        this.c.setCurrentAccount(o2Var.getCurrentAccount());
+        this.d.setCurrentAccount(o2Var.getCurrentAccount());
         this.c.setAllowStartLottieAnimation(false);
         this.c.setAutoRepeat(1);
         this.c.setImage(ImageLocation.getForDocument(nftitem.gift.getDocument()), "120_120_nolimit", null, null, nftitem.gift, 1);
@@ -145,12 +145,12 @@ public final class s7 {
     public final Bitmap a() {
         t7 t7Var = this.d0;
         RectF rectF = t7Var.E;
-        ci.g3 g3Var = this.c;
-        Bitmap bitmap = g3Var.getBitmap();
+        ci.f3 f3Var = this.c;
+        Bitmap bitmap = f3Var.getBitmap();
         if (bitmap == null || bitmap.isRecycled()) {
             return this.u;
         }
-        vj0 lottieAnimation = g3Var.getLottieAnimation();
+        yj0 lottieAnimation = f3Var.getLottieAnimation();
         int i10 = lottieAnimation == null ? 0 : lottieAnimation.a0;
         Bitmap bitmap2 = this.v;
         if (bitmap2 != null && this.G == bitmap && this.E == i10) {
@@ -184,7 +184,7 @@ public final class s7 {
             this.y = new int[82944];
             this.z = new int[82944];
             this.A = new int[82944];
-            DispatchQueue dispatchQueue = w9.a;
+            DispatchQueue dispatchQueue = x9.a;
             this.B = new int[288];
         }
         this.v.getPixels(this.y, 0, 288, 0, 0, 288, 288);
@@ -195,9 +195,9 @@ public final class s7 {
         int[] iArr2 = this.z;
         int[] iArr3 = this.A;
         ?? r82 = this.B;
-        if (w9.a == null) {
-            w9.a = new DispatchQueue("walletStickerOutline");
+        if (x9.a == null) {
+            x9.a = new DispatchQueue("walletStickerOutline");
         }
-        w9.a.postRunnable(new ai.p4(this, iArr, iArr2, iArr3, (Serializable) r82, z10, 13));
+        x9.a.postRunnable(new ai.p4(this, iArr, iArr2, iArr3, (Serializable) r82, z10, 13));
     }
 }

@@ -9,9 +9,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.x51;
+import org.telegram.ui.b61;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class hk implements Utilities.Callback {
     public final /* synthetic */ int a = 0;
@@ -49,20 +49,20 @@ public final /* synthetic */ class hk implements Utilities.Callback {
                 profileActivity.getClass();
                 boolean z10 = this.b;
                 if (channelParticipant != null) {
-                    profileActivity.A4(num.intValue(), user, chatParticipant, channelParticipant.admin_rights, channelParticipant.banned_rights, channelParticipant.rank, z10);
+                    profileActivity.C4(num.intValue(), user, chatParticipant, channelParticipant.admin_rights, channelParticipant.banned_rights, channelParticipant.rank, z10);
                     break;
                 } else {
-                    profileActivity.A4(num.intValue(), user, chatParticipant, null, null, str, z10);
+                    profileActivity.C4(num.intValue(), user, chatParticipant, null, null, str, z10);
                     break;
                 }
             default:
-                x51 x51Var = (x51) this.c;
+                b61 b61Var = (b61) this.c;
                 LinkedHashSet linkedHashSet = (LinkedHashSet) this.e;
                 String str2 = (String) this.f;
                 HashMap hashMap = (HashMap) this.g;
                 ArrayList arrayList3 = (ArrayList) this.d;
                 Runnable runnable = (Runnable) obj;
-                int i10 = x51Var.V;
+                int i10 = b61Var.V;
                 if (this.b) {
                     ArrayList<TLRPC.TL_messages_stickerSet> stickerSets = MediaDataController.getInstance(i10).getStickerSets(5);
                     for (int i11 = 0; i11 < stickerSets.size(); i11++) {
@@ -91,7 +91,7 @@ public final /* synthetic */ class hk implements Utilities.Callback {
                     runnable.run();
                     break;
                 } else {
-                    MediaDataController.getInstance(i10).getEmojiSuggestions(x51.a2, str2, false, new ai.t7(x51Var, linkedHashSet, hashMap, arrayList3, runnable), null, true, x51Var.W == 3, false, 30);
+                    MediaDataController.getInstance(i10).getEmojiSuggestions(b61.b2, str2, false, new ai.t7(b61Var, linkedHashSet, hashMap, arrayList3, runnable), null, true, b61Var.W == 3, false, 30);
                     break;
                 }
                 break;
@@ -107,8 +107,8 @@ public final /* synthetic */ class hk implements Utilities.Callback {
         this.g = str;
     }
 
-    public /* synthetic */ hk(x51 x51Var, boolean z10, LinkedHashSet linkedHashSet, String str, HashMap hashMap, ArrayList arrayList) {
-        this.c = x51Var;
+    public /* synthetic */ hk(b61 b61Var, boolean z10, LinkedHashSet linkedHashSet, String str, HashMap hashMap, ArrayList arrayList) {
+        this.c = b61Var;
         this.b = z10;
         this.e = linkedHashSet;
         this.f = str;

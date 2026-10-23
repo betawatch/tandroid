@@ -4,27 +4,27 @@ import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
 import sg.x1;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class o extends x1 {
-    public final /* synthetic */ r n;
+    public final /* synthetic */ r r;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public o(r rVar, Context context) {
         super(context);
-        this.n = rVar;
+        this.r = rVar;
     }
 
     @Override // sg.x1, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        this.n.b.setPaused(false);
+        this.r.b.setPaused(false);
     }
 
     @Override // sg.x1, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        this.n.b.setPaused(true);
+        this.r.b.setPaused(true);
     }
 
     @Override // sg.x1, android.view.View

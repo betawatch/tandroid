@@ -9,12 +9,12 @@ import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class r7 extends j7 {
     public org.telegram.ui.Cells.r7 n;
     public final ArrayList r;
-    public org.telegram.ui.Components.zq s;
+    public org.telegram.ui.Components.yq s;
     public final /* synthetic */ v7 v;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -43,9 +43,9 @@ public final class r7 extends j7 {
     @Override // s4.g0
     public final void v(s4.b1 b1Var, int i10) {
         if (this.s == null) {
-            org.telegram.ui.Components.zq zqVar = new org.telegram.ui.Components.zq(new ColorDrawable(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.X9, false)), org.telegram.ui.ActionBar.h6.R4);
-            this.s = zqVar;
-            zqVar.w = true;
+            org.telegram.ui.Components.yq yqVar = new org.telegram.ui.Components.yq(new ColorDrawable(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.X9, false)), org.telegram.ui.ActionBar.k6.R4);
+            this.s = yqVar;
+            yqVar.w = true;
         }
         org.telegram.ui.Cells.s7 s7Var = (org.telegram.ui.Cells.s7) b1Var.a;
         bi.b bVar = ((p7) this.e.get(i10)).d;
@@ -63,7 +63,7 @@ public final class r7 extends j7 {
             imageReceiver.setImage(ImageLocation.getForPath("thumb://0:" + file.getAbsolutePath()), a1.g.k(max, max, "_"), this.s, null, null, 0);
             s7Var.m(AndroidUtilities.formatFileSize(bVar.c), false);
         }
-        s7Var.i(this.v.f.j.contains(bVar), z10);
+        s7Var.i(this.v.h.j.contains(bVar), z10);
     }
 
     @Override // s4.g0
@@ -71,8 +71,8 @@ public final class r7 extends j7 {
         if (this.n == null) {
             this.n = new org.telegram.ui.Cells.r7(viewGroup.getContext(), null);
         }
-        q7 q7Var = new q7(this, viewGroup.getContext(), this.n, this.v.d.getCurrentAccount());
+        q7 q7Var = new q7(this, viewGroup.getContext(), this.n, this.v.e.getCurrentAccount());
         q7Var.setStyle(1);
-        return new org.telegram.ui.Components.tl0(q7Var);
+        return new org.telegram.ui.Components.wl0(q7Var);
     }
 }

@@ -1,31 +1,28 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLObject;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class sz0 extends wz0 {
-    public int d;
+public final class sz0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Switch b;
 
-    @Override // org.telegram.ui.Components.wz0
-    public final int a(f01 f01Var, yz0 yz0Var, rz0 rz0Var, int i10, boolean z10) {
-        return Math.max(0, this.a - rz0Var.a(yz0Var, i10));
+    public /* synthetic */ sz0(Switch r12, int i10) {
+        this.a = i10;
+        this.b = r12;
     }
 
-    @Override // org.telegram.ui.Components.wz0
-    public final void b(int i10, int i11) {
-        super.b(i10, i11);
-        this.d = Math.max(this.d, i10 + i11);
-    }
-
-    @Override // org.telegram.ui.Components.wz0
-    public final void c() {
-        super.c();
-        this.d = TLObject.FLAG_31;
-    }
-
-    @Override // org.telegram.ui.Components.wz0
-    public final int d(boolean z10) {
-        return Math.max(super.d(z10), this.d);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                this.b.d = null;
+                break;
+            default:
+                this.b.e = null;
+                break;
+        }
     }
 }

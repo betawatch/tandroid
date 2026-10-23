@@ -1,8 +1,8 @@
 package u3;
 
-import c3.p;
+import c3.r;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class g {
     public static final long[] d = {128, 64, 32, 16, 8, 4, 2, 1};
@@ -21,12 +21,12 @@ public final class g {
         return j10;
     }
 
-    public final long b(p pVar, boolean z10, boolean z11, int i10) {
+    public final long b(r rVar, boolean z10, boolean z11, int i10) {
         int i11;
         int i12 = this.b;
         byte[] bArr = this.a;
         if (i12 == 0) {
-            if (!pVar.c(bArr, 0, 1, z10)) {
+            if (!rVar.d(bArr, 0, 1, z10)) {
                 return -1L;
             }
             int i13 = bArr[0] & 255;
@@ -54,7 +54,7 @@ public final class g {
             return -2L;
         }
         if (i15 != 1) {
-            pVar.readFully(bArr, 1, i15 - 1);
+            rVar.readFully(bArr, 1, i15 - 1);
         }
         this.b = 0;
         return a(this.c, z11, bArr);

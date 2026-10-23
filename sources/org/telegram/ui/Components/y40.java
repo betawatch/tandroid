@@ -6,9 +6,9 @@ import java.util.HashMap;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.SendMessagesHelper;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class y40 implements org.telegram.ui.iq0 {
+public final class y40 implements org.telegram.ui.lq0 {
     public boolean a;
     public final /* synthetic */ HashMap b;
     public final /* synthetic */ ArrayList c;
@@ -20,12 +20,12 @@ public final class y40 implements org.telegram.ui.iq0 {
         this.c = arrayList;
     }
 
-    @Override // org.telegram.ui.iq0
+    @Override // org.telegram.ui.lq0
     public final boolean e() {
         return this.d.b.e();
     }
 
-    @Override // org.telegram.ui.iq0
+    @Override // org.telegram.ui.lq0
     public final void h(int i10, boolean z10, boolean z11) {
         HashMap hashMap = this.b;
         if (hashMap.isEmpty()) {
@@ -67,15 +67,15 @@ public final class y40 implements org.telegram.ui.iq0 {
         }
     }
 
-    @Override // org.telegram.ui.iq0
+    @Override // org.telegram.ui.lq0
     public final void a() {
     }
 
-    @Override // org.telegram.ui.iq0
+    @Override // org.telegram.ui.lq0
     public final void b(Editable editable) {
     }
 
-    @Override // org.telegram.ui.iq0
+    @Override // org.telegram.ui.lq0
     public final /* synthetic */ void g() {
     }
 }

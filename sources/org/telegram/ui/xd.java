@@ -4,18 +4,18 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class xd implements org.telegram.ui.ActionBar.a2, Utilities.Callback5, Utilities.Callback5Return {
+public final /* synthetic */ class xd implements org.telegram.ui.ActionBar.z1, Utilities.Callback5, Utilities.Callback5Return {
     public final /* synthetic */ ie a;
 
     public /* synthetic */ xd(ie ieVar) {
         this.a = ieVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        this.a.w0.presentFragment(new vf1(6, null));
+    @Override // org.telegram.ui.ActionBar.z1
+    public void g(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
+        this.a.w0.presentFragment(new bg1(6, null));
     }
 
     @Override // org.telegram.messenger.Utilities.Callback5Return
@@ -36,7 +36,7 @@ public final /* synthetic */ class xd implements org.telegram.ui.ActionBar.a2, U
         od odVar = ieVar.v1;
         int i10 = ieVar.y0;
         long j10 = ieVar.z0;
-        int i11 = ((org.telegram.ui.Components.h61) obj).d;
+        int i11 = ((org.telegram.ui.Components.m61) obj).d;
         if (i11 != 1) {
             if (i11 == 4) {
                 ieVar.w0.presentFragment(new gi.u3(j10));
@@ -46,16 +46,16 @@ public final /* synthetic */ class xd implements org.telegram.ui.ActionBar.a2, U
                 ieVar.m1 = !ieVar.m1;
                 AndroidUtilities.cancelRunOnUIThread(odVar);
                 AndroidUtilities.runOnUIThread(odVar, 1000L);
-                ieVar.a1.W2.N(true);
+                ieVar.a1.Z2.N(true);
                 return;
             }
             if (ieVar.A0 == null) {
                 return;
             }
-            sg.k0 k0Var = new sg.k0(30, ieVar.y0, ieVar.getContext(), ieVar.w0, ieVar.x0);
-            k0Var.I1(j10);
-            k0Var.G1(ieVar.A0, true);
-            MessagesController.getInstance(i10).getBoostsController().userCanBoostChannel(j10, ieVar.A0, new org.telegram.ui.ActionBar.j3(7, ieVar, k0Var));
+            sg.j0 j0Var = new sg.j0(30, ieVar.y0, ieVar.getContext(), ieVar.w0, ieVar.x0);
+            j0Var.L1(j10);
+            j0Var.J1(ieVar.A0, true);
+            MessagesController.getInstance(i10).getBoostsController().userCanBoostChannel(j10, ieVar.A0, new org.telegram.ui.ActionBar.m3(7, ieVar, j0Var));
         }
     }
 }

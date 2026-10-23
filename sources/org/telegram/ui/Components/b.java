@@ -4,7 +4,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -23,22 +23,22 @@ public final /* synthetic */ class b implements View.OnClickListener {
                 break;
             case 1:
                 e0 e0Var = this.b;
-                org.telegram.ui.Cells.i3 i3Var = e0Var.A0;
-                AndroidUtilities.hideKeyboard(i3Var.b);
-                e0Var.I0 = i3Var.getText().toString();
-                e0Var.r0();
-                e0Var.q0(true);
-                e0Var.l0();
+                org.telegram.ui.Cells.h3 h3Var = e0Var.A0;
+                AndroidUtilities.hideKeyboard(h3Var.d);
+                e0Var.I0 = h3Var.getText().toString();
+                e0Var.q0();
+                e0Var.p0(true);
+                e0Var.k0();
                 break;
             case 2:
                 e0 e0Var2 = this.b;
                 if (e0Var2.k0 != null) {
-                    TL_iv.RichMessage h02 = e0Var2.h0();
-                    if (h02 != null) {
-                        e0Var2.k0.run(h02);
+                    TL_iv.RichMessage g02 = e0Var2.g0();
+                    if (g02 != null) {
+                        e0Var2.k0.run(g02);
                     }
-                } else if (e0Var2.j0 != null && e0Var2.i0() != null) {
-                    e0Var2.j0.run(e0Var2.i0());
+                } else if (e0Var2.j0 != null && e0Var2.h0() != null) {
+                    e0Var2.j0.run(e0Var2.h0());
                 }
                 e0Var2.dismiss();
                 break;
@@ -48,20 +48,20 @@ public final /* synthetic */ class b implements View.OnClickListener {
             case 4:
                 e0 e0Var3 = this.b;
                 e0Var3.P0 = false;
-                e0Var3.K();
+                e0Var3.J();
                 e0Var3.O0.N(true);
-                e0Var3.u();
+                e0Var3.t();
                 break;
             case 5:
-                e0.Z(this.b, view);
+                e0.Y(this.b, view);
                 break;
             case 6:
-                e0.S(this.b, view);
+                e0.R(this.b, view);
                 break;
             case 7:
                 e0 e0Var4 = this.b;
                 if (!e0Var4.R0) {
-                    AndroidUtilities.addToClipboard(e0Var4.i0());
+                    AndroidUtilities.addToClipboard(e0Var4.h0());
                     break;
                 }
                 break;
@@ -70,7 +70,7 @@ public final /* synthetic */ class b implements View.OnClickListener {
                 break;
             default:
                 e0 e0Var5 = this.b;
-                e0Var5.m0(0, 0, true);
+                e0Var5.l0(0, 0, true);
                 e0Var5.dismiss();
                 break;
         }

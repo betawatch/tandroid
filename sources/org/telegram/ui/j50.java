@@ -1,30 +1,80 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.LinearGradient;
+import android.graphics.Paint;
+import android.graphics.Shader;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class j50 extends org.telegram.ui.Components.voip.l {
-    public final /* synthetic */ k50 h;
+public final class j50 extends View {
+    public int[] a;
+    public int b;
+    public final Paint c;
+    public float d;
+    public final /* synthetic */ u50 e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j50(k50 k50Var, Context context) {
-        super(context, false);
-        this.h = k50Var;
+    public j50(u50 u50Var, LaunchActivity launchActivity) {
+        super(launchActivity);
+        this.e = u50Var;
+        Paint paint = new Paint(1);
+        this.c = paint;
+        paint.setStyle(Paint.Style.FILL);
+        paint.setAlpha(0);
     }
 
-    @Override // org.telegram.ui.Components.voip.l, android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        q50 q50Var = this.h.M;
-        if (q50Var.Q.getVisibility() == 0 && q50Var.P2) {
-            q50.O(q50Var, this, true);
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        if (!this.e.z2 || r0.a2.c >= 0.1d) {
+            return;
         }
+        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), this.c);
     }
 
-    @Override // org.telegram.ui.Components.voip.l, android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        q50.O(this.h.M, this, false);
+    public void setNewColors(int[] iArr) {
+        int[] iArr2 = this.a;
+        Paint paint = this.c;
+        boolean z10 = true;
+        u50 u50Var = this.e;
+        boolean z11 = false;
+        if (iArr2 == null || iArr[0] != iArr2[0] || iArr[1] != iArr2[1]) {
+            if (iArr2 == null) {
+                paint.setAlpha(255);
+            }
+            this.a = iArr;
+            if (u50Var.h1 != null) {
+                float f7 = u50Var.i1;
+                if (f7 != 1.0f) {
+                    iArr[0] = i0.a.o(iArr[0], (int) (f7 * 255.0f));
+                    int[] iArr3 = this.a;
+                    iArr3[1] = i0.a.o(iArr3[1], (int) (u50Var.i1 * 255.0f));
+                }
+            }
+            paint.setShader(new LinearGradient(0.0f, 0.0f, 0.0f, u50Var.U0.getMeasuredHeight(), this.a, (float[]) null, Shader.TileMode.CLAMP));
+            z11 = true;
+        }
+        if (this.b != u50Var.V1) {
+            paint.setShadowLayer(AndroidUtilities.dp(36.0f), 0.0f, this.d, u50Var.V1);
+            this.b = u50Var.V1;
+        } else {
+            z10 = z11;
+        }
+        if (z10) {
+            invalidate();
+        }
+        u50Var.z1();
+    }
+
+    public void setShadowOffset(int i10) {
+        float f7 = i10;
+        if (this.d != f7) {
+            this.c.setShadowLayer(AndroidUtilities.dp(36.0f), 0.0f, this.d, this.e.V1);
+            this.d = f7;
+            invalidate();
+        }
     }
 }

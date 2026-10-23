@@ -1,49 +1,65 @@
 package org.telegram.ui.Cells;
 
-import android.util.Property;
-import android.view.View;
-import org.telegram.ui.Components.dl0;
-import org.telegram.ui.qu0;
+import android.graphics.RectF;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextUtils;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class d1 extends Property {
+public final class d1 implements Runnable {
     public final /* synthetic */ int a;
+    public final /* synthetic */ t1 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ d1(Class cls, String str, int i10) {
-        super(cls, str);
+    public /* synthetic */ d1(int i10, t1 t1Var) {
         this.a = i10;
+        this.b = t1Var;
     }
 
-    @Override // android.util.Property
-    public final Object get(Object obj) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        boolean d32;
         switch (this.a) {
             case 0:
-                return Float.valueOf(((u1) obj).Ae);
-            case 1:
-                return Integer.valueOf(Math.round(((View) obj).getTranslationY()));
-            case 2:
-                return Float.valueOf(((dl0) obj).v);
-            default:
-                return Float.valueOf(((qu0) obj).a);
-        }
-    }
-
-    @Override // android.util.Property
-    public final void set(Object obj, Object obj2) {
-        switch (this.a) {
-            case 0:
-                ((u1) obj).setAnimationOffsetX(((Float) obj2).floatValue());
-                break;
-            case 1:
-                ((View) obj).setTranslationY(((Integer) obj2).intValue());
-                break;
-            case 2:
-                ((dl0) obj).setTransitionProgress(((Float) obj2).floatValue());
+                k1 k1Var = this.b.Jc;
+                if (k1Var != null) {
+                    k1Var.q();
+                    break;
+                }
                 break;
             default:
-                ((qu0) obj).b(((Float) obj2).floatValue());
+                t1 t1Var = this.b;
+                d1 d1Var = t1Var.od;
+                MessageObject messageObject = t1Var.y7;
+                if (messageObject != null && (d32 = t1Var.d3(messageObject)) != t1Var.W3) {
+                    t1Var.W3 = d32;
+                    if (d32) {
+                        MessageObject messageObject2 = t1Var.y7;
+                        t1Var.y7 = null;
+                        t1Var.W3(messageObject2, t1Var.K, t1Var.F, t1Var.E, t1Var.G, false);
+                    } else {
+                        AndroidUtilities.runOnUIThread(d1Var, 1000L);
+                        t1Var.Wc = true;
+                        int dp = t1Var.J8 - AndroidUtilities.dp(91.0f);
+                        t1Var.T3 = new StaticLayout(TextUtils.ellipsize(LocaleController.getString(R.string.AttachLiveLocation), org.telegram.ui.ActionBar.k6.H2, dp, TextUtils.TruncateAt.END), org.telegram.ui.ActionBar.k6.H2, dp, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+                    }
+                }
+                if (!t1Var.W3) {
+                    RectF rectF = t1Var.c5;
+                    t1Var.invalidate(((int) rectF.left) - 5, ((int) rectF.top) - 5, ((int) rectF.right) + 5, ((int) rectF.bottom) + 5);
+                    if (t1Var.Wc) {
+                        AndroidUtilities.runOnUIThread(d1Var, 1000L);
+                        break;
+                    }
+                } else {
+                    t1Var.invalidate();
+                    t1Var.Wc = false;
+                    break;
+                }
                 break;
         }
     }

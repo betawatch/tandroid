@@ -5,6 +5,7 @@ import android.hardware.Camera;
 import android.os.Handler;
 import android.os.SystemClock;
 import ci.h1;
+import i2.o1;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.List;
@@ -12,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 import org.webrtc.CameraEnumerationAndroid;
 import org.webrtc.CameraSession;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 class Camera1Session implements CameraSession {
     private static final int NUMBER_OF_CAPTURE_BUFFERS = 3;
@@ -34,7 +35,7 @@ class Camera1Session implements CameraSession {
     private static final Histogram camera1StopTimeMsHistogram = Histogram.createCounts("WebRTC.Android.Camera1.StopTimeMs", 1, 10000, 50);
     private static final Histogram camera1ResolutionHistogram = Histogram.createEnumeration("WebRTC.Android.Camera1.Resolution", CameraEnumerationAndroid.COMMON_RESOLUTIONS.size());
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public class 2 implements Camera.PreviewCallback {
         public 2() {
         }
@@ -73,7 +74,7 @@ class Camera1Session implements CameraSession {
         }
     }
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public enum SessionState {
         RUNNING,
         STOPPED
@@ -207,13 +208,13 @@ class Camera1Session implements CameraSession {
         this.camera.setErrorCallback(new Camera.ErrorCallback() { // from class: org.webrtc.Camera1Session.1
             @Override // android.hardware.Camera.ErrorCallback
             public void onError(int i10, Camera camera) {
-                String j10 = i10 == 100 ? "Camera server died!" : i2.e.j(i10, "Camera error: ");
-                Logging.e(Camera1Session.TAG, j10);
+                String k10 = i10 == 100 ? "Camera server died!" : o1.k(i10, "Camera error: ");
+                Logging.e(Camera1Session.TAG, k10);
                 Camera1Session.this.stopInternal();
                 if (i10 == 2) {
                     Camera1Session.this.events.onCameraDisconnected(Camera1Session.this);
                 } else {
-                    Camera1Session.this.events.onCameraError(Camera1Session.this, j10);
+                    Camera1Session.this.events.onCameraError(Camera1Session.this, k10);
                 }
             }
         });

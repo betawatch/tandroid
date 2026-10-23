@@ -3,21 +3,21 @@ package zh;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.ActionBar.o2;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x implements Runnable {
     public final /* synthetic */ int a = 1;
     public final /* synthetic */ String b;
     public final /* synthetic */ Utilities.Callback c;
-    public final /* synthetic */ n2 d;
+    public final /* synthetic */ o2 d;
 
-    public /* synthetic */ x(String str, Utilities.Callback callback, n2 n2Var) {
+    public /* synthetic */ x(String str, Utilities.Callback callback, o2 o2Var) {
         this.b = str;
         this.c = callback;
-        this.d = n2Var;
+        this.d = o2Var;
     }
 
     @Override // java.lang.Runnable
@@ -26,8 +26,8 @@ public final /* synthetic */ class x implements Runnable {
             case 0:
                 String str = this.b;
                 Utilities.Callback callback = this.c;
-                n2 n2Var = this.d;
-                b0.p(n2Var, 0, new x(str, callback, n2Var));
+                o2 o2Var = this.d;
+                b0.p(o2Var, 0, new x(str, callback, o2Var));
                 break;
             default:
                 String str2 = this.b;
@@ -41,8 +41,8 @@ public final /* synthetic */ class x implements Runnable {
         }
     }
 
-    public /* synthetic */ x(n2 n2Var, String str, Utilities.Callback callback) {
-        this.d = n2Var;
+    public /* synthetic */ x(o2 o2Var, String str, Utilities.Callback callback) {
+        this.d = o2Var;
         this.b = str;
         this.c = callback;
     }

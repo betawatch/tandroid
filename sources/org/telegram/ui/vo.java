@@ -1,153 +1,44 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
+import android.widget.ScrollView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class vo extends org.telegram.ui.Components.jm0 {
-    public static final /* synthetic */ int Z2 = 0;
-    public final uo V2;
-    public boolean W2;
-    public final Paint X2;
-    public final /* synthetic */ wo Y2;
+public final class vo implements org.telegram.ui.Components.am0 {
+    public final /* synthetic */ xo a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public vo(wo woVar, Context context) {
-        super(context, null);
-        this.Y2 = woVar;
-        this.W2 = false;
-        this.X2 = new Paint(1);
-        uo uoVar = new uo(this);
-        this.V2 = uoVar;
-        setAdapter(uoVar);
-        setLayoutManager(new s4.b0());
-        setOnItemClickListener(new to(this));
-        new s4.y(new di.f(this, 1)).d(this);
+    public vo(xo xoVar) {
+        this.a = xoVar;
     }
 
-    @Override // org.telegram.ui.Components.jm0, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        Canvas canvas2;
-        int R;
-        int size = this.Y2.N.size();
-        int i10 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-        int i11 = TLObject.FLAG_31;
-        for (int i12 = 0; i12 < getChildCount(); i12++) {
-            View childAt = getChildAt(i12);
-            if (childAt != null && (R = RecyclerView.R(childAt)) >= 1 && R <= size) {
-                i10 = Math.min(childAt.getTop(), i10);
-                i11 = Math.max(childAt.getBottom(), i11);
+    @Override // org.telegram.ui.Components.am0
+    public final void d(int i10, View view) {
+        TLRPC.TL_username tL_username;
+        xo xoVar = this.a;
+        yo yoVar = xoVar.b3;
+        if (!(view instanceof pa) || (tL_username = ((pa) view).v) == null) {
+            return;
+        }
+        if (tL_username.editable) {
+            View view2 = yoVar.fragmentView;
+            if (view2 instanceof ScrollView) {
+                ((ScrollView) view2).smoothScrollTo(0, yoVar.E.getTop() - AndroidUtilities.dp(128.0f));
             }
+            yoVar.a.requestFocus();
+            AndroidUtilities.showKeyboard(yoVar.a);
+            return;
         }
-        if (i10 < i11) {
-            int w02 = org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.d6, this.n2);
-            Paint paint = this.X2;
-            paint.setColor(w02);
-            canvas2 = canvas;
-            canvas2.drawRect(0.0f, i10, getWidth(), i11, paint);
-        } else {
-            canvas2 = canvas;
-        }
-        super.dispatchDraw(canvas2);
-    }
-
-    @Override // org.telegram.ui.Components.jm0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(9999999, TLObject.FLAG_31));
-    }
-
-    public final void x1(TLRPC.TL_username tL_username, boolean z10, boolean z11) {
-        TLRPC.TL_username tL_username2;
-        int min;
-        wo woVar = this.Y2;
-        ArrayList arrayList = woVar.N;
-        int i10 = 0;
-        for (int i11 = 0; i11 < arrayList.size(); i11++) {
-            if (arrayList.get(i11) == tL_username) {
-                int i12 = i11 + 1;
-                if (i11 < 0 || i11 >= arrayList.size() || (tL_username2 = (TLRPC.TL_username) arrayList.get(i11)) == null) {
-                    return;
-                }
-                int i13 = -1;
-                if (tL_username2.active != z10) {
-                    tL_username2.active = z10;
-                    if (z10) {
-                        int i14 = 0;
-                        while (true) {
-                            if (i14 >= arrayList.size()) {
-                                i14 = -1;
-                                break;
-                            } else if (!((TLRPC.TL_username) arrayList.get(i14)).active) {
-                                break;
-                            } else {
-                                i14++;
-                            }
-                        }
-                        if (i14 >= 0) {
-                            min = Math.max(0, i14 - 1);
-                            i13 = min + 1;
-                        }
-                    } else {
-                        int i15 = -1;
-                        for (int i16 = 0; i16 < arrayList.size(); i16++) {
-                            if (((TLRPC.TL_username) arrayList.get(i16)).active) {
-                                i15 = i16;
-                            }
-                        }
-                        if (i15 >= 0) {
-                            min = Math.min(arrayList.size() - 1, i15 + 1);
-                            i13 = min + 1;
-                        }
-                    }
-                }
-                int i17 = 0;
-                while (true) {
-                    if (i17 >= getChildCount()) {
-                        break;
-                    }
-                    View childAt = getChildAt(i17);
-                    if (RecyclerView.R(childAt) == i12) {
-                        if (z11) {
-                            AndroidUtilities.shakeView(childAt);
-                        }
-                        if (childAt instanceof pa) {
-                            pa paVar = (pa) childAt;
-                            paVar.setLoading(woVar.P.contains(tL_username2.username));
-                            TLRPC.TL_username tL_username3 = paVar.v;
-                            if (tL_username3 != null) {
-                                paVar.a(tL_username3, paVar.w, true, paVar.x);
-                            }
-                        }
-                    } else {
-                        i17++;
-                    }
-                }
-                if (i13 < 0 || i12 == i13) {
-                    return;
-                }
-                int i18 = i13 - 1;
-                uo uoVar = this.V2;
-                ArrayList arrayList2 = uoVar.c.Y2.N;
-                if (i11 >= arrayList2.size() || i18 >= arrayList2.size()) {
-                    return;
-                }
-                arrayList2.add(i18, (TLRPC.TL_username) arrayList2.remove(i11));
-                uoVar.p(i12, i13);
-                while (i10 < arrayList2.size()) {
-                    i10++;
-                    uoVar.m(i10);
-                }
-                return;
-            }
-        }
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(xoVar.getContext(), 0, yoVar.getResourceProvider());
+        alertDialog$Builder.a.R = LocaleController.getString(tL_username.active ? R.string.UsernameDeactivateLink : R.string.UsernameActivateLink);
+        alertDialog$Builder.a.T = LocaleController.getString(tL_username.active ? R.string.UsernameDeactivateLinkChannelMessage : R.string.UsernameActivateLinkChannelMessage);
+        alertDialog$Builder.k(LocaleController.getString(tL_username.active ? R.string.Hide : R.string.Show), new e7(this, tL_username, view, 8));
+        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new m4.v0(28));
+        alertDialog$Builder.p();
     }
 }

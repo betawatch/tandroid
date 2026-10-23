@@ -1,51 +1,29 @@
 package org.telegram.ui;
 
-import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.ChannelBoostsController;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class q5 implements Runnable {
+public final /* synthetic */ class q5 implements Utilities.Callback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ z5 b;
+    public final /* synthetic */ y5 b;
 
-    public /* synthetic */ q5(z5 z5Var, int i10) {
+    public /* synthetic */ q5(y5 y5Var, int i10) {
         this.a = i10;
-        this.b = z5Var;
+        this.b = y5Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                z5 z5Var = this.b;
-                z5Var.e0 = false;
-                z5Var.H0(true);
-                break;
-            case 1:
-                CountDownLatch countDownLatch = new CountDownLatch(2);
-                z5 z5Var2 = this.b;
-                z5Var2.D0(countDownLatch, null);
-                z5Var2.E0(countDownLatch, null);
-                try {
-                    countDownLatch.await();
-                } catch (InterruptedException unused) {
-                }
-                NotificationCenter.getInstance(z5Var2.Q).doOnIdle(new q5(z5Var2, 4));
-                break;
-            case 2:
-                z5 z5Var3 = this.b;
-                z5Var3.e0 = false;
-                z5Var3.H0(true);
-                break;
-            case 3:
-                z5 z5Var4 = this.b;
-                z5Var4.e0 = false;
-                z5Var4.H0(true);
+                this.b.U = (ChannelBoostsController.CanApplyBoost) obj;
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new q5(this.b, 0));
+                AndroidUtilities.runOnUIThread(new h0(3, this.b, (TL_stories.TL_premium_boostsStatus) obj));
                 break;
         }
     }

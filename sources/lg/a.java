@@ -1,22 +1,22 @@
 package lg;
 
 import android.graphics.Paint;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.k6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class a extends f {
-    public final d6 q;
+    public final g6 q;
     public final Paint r;
     public int s;
 
-    public a(kg.a aVar, d6 d6Var) {
+    public a(kg.a aVar, g6 g6Var) {
         super(aVar, false, null);
         Paint paint = new Paint();
         this.r = paint;
         this.s = 0;
-        this.q = d6Var;
+        this.q = g6Var;
         Paint paint2 = this.c;
         Paint.Style style = Paint.Style.STROKE;
         paint2.setStyle(style);
@@ -27,6 +27,6 @@ public final class a extends f {
     @Override // lg.f
     public final void a() {
         super.a();
-        this.s = i0.a.f(0.3f, h6.w0(h6.d6, this.q), this.m);
+        this.s = i0.a.f(0.3f, k6.w0(k6.d6, this.q), this.m);
     }
 }

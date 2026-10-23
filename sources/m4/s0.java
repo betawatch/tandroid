@@ -2,14 +2,14 @@ package m4;
 
 import android.view.Surface;
 import android.view.View;
-import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.Components.bm0;
 import org.telegram.ui.Components.hu;
 import org.telegram.ui.Components.iu;
-import org.telegram.ui.Components.yl0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class s0 implements e2.j, hu, yl0 {
+public final /* synthetic */ class s0 implements e2.j, hu, bm0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
     public final /* synthetic */ Object c;
@@ -22,7 +22,7 @@ public final /* synthetic */ class s0 implements e2.j, hu, yl0 {
         this.b = i11;
     }
 
-    @Override // org.telegram.ui.Components.yl0
+    @Override // org.telegram.ui.Components.bm0
     public /* synthetic */ boolean P0(View view) {
         return false;
     }
@@ -43,9 +43,9 @@ public final /* synthetic */ class s0 implements e2.j, hu, yl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.yl0
-    public void d(float f7, float f10, int i10, View view) {
-        ug.m1.R((ug.m1) this.c, this.a, (d6) this.d, this.b, view, i10);
+    @Override // org.telegram.ui.Components.bm0
+    public void c(float f7, float f10, int i10, View view) {
+        ug.l1.Q((ug.l1) this.c, this.a, (g6) this.d, this.b, view, i10);
     }
 
     @Override // org.telegram.ui.Components.hu
@@ -60,14 +60,14 @@ public final /* synthetic */ class s0 implements e2.j, hu, yl0 {
         this.d = runnable;
     }
 
-    public /* synthetic */ s0(ug.m1 m1Var, int i10, d6 d6Var, int i11) {
-        this.c = m1Var;
+    public /* synthetic */ s0(ug.l1 l1Var, int i10, g6 g6Var, int i11) {
+        this.c = l1Var;
         this.a = i10;
-        this.d = d6Var;
+        this.d = g6Var;
         this.b = i11;
     }
 
-    @Override // org.telegram.ui.Components.yl0
+    @Override // org.telegram.ui.Components.bm0
     public /* synthetic */ void a0(View view, float f7, float f10) {
     }
 }

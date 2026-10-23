@@ -16,9 +16,9 @@ import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Cells.c1;
+import org.telegram.ui.Cells.b1;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class i {
     public static i q;
@@ -36,7 +36,7 @@ public final class i {
     public final q[] c = new q[2];
     public int d = 0;
     public final Rect m = new Rect();
-    public final r4.f n = new r4.f(this, 2);
+    public final r4.e n = new r4.e(this, 2);
     public final Rect o = new Rect();
 
     public i() {
@@ -163,8 +163,8 @@ public final class i {
                                 c cVar2 = !stack.isEmpty() ? (c) stack.pop() : new c();
                                 int i24 = 0;
                                 while (true) {
-                                    cVar2.a = c1.d(Utilities.fastRandom, width, f11);
-                                    float d = c1.d(Utilities.fastRandom, height, f31);
+                                    cVar2.a = b1.d(Utilities.fastRandom, width, f11);
+                                    float d = b1.d(Utilities.fastRandom, height, f31);
                                     cVar2.b = d;
                                     int i25 = i24 + 1;
                                     f10 = width;

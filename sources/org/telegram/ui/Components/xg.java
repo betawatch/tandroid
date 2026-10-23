@@ -11,7 +11,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class xg extends View {
     public float E;
@@ -82,9 +82,9 @@ public final class xg extends View {
             textPaint2.setTextSize(AndroidUtilities.dp(15.0f));
             this.F.setTypeface(AndroidUtilities.bold());
             TextPaint textPaint3 = this.F;
-            int i10 = org.telegram.ui.ActionBar.h6.nf;
-            int i11 = ChatActivityEnterView.n5;
-            textPaint3.setColor(chatActivityEnterView.g0(i10));
+            int i10 = org.telegram.ui.ActionBar.k6.nf;
+            int i11 = ChatActivityEnterView.r5;
+            textPaint3.setColor(chatActivityEnterView.f0(i10));
         }
         long currentTimeMillis = System.currentTimeMillis();
         long j11 = this.a ? this.r ? this.h : currentTimeMillis - this.d : this.e - this.d;

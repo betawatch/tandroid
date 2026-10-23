@@ -7,7 +7,7 @@ import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import nc.c;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class a extends com.googlecode.mp4parser.a {
     public static final /* synthetic */ te.b b;
@@ -121,18 +121,18 @@ public final class a extends com.googlecode.mp4parser.a {
     }
 
     public final void d(int i10) {
-        k3.p(te.a.c(e, this, this, new Integer(i10)));
+        k3.o(te.a.c(e, this, this, new Integer(i10)));
         this.a.d = i10;
     }
 
     public final void e(int i10) {
-        k3.p(te.a.c(c, this, this, new Integer(i10)));
+        k3.o(te.a.c(c, this, this, new Integer(i10)));
         this.a.b = i10;
     }
 
     @Override // com.googlecode.mp4parser.a
     public final void getContent(ByteBuffer byteBuffer) {
-        k3.p(te.a.c(x, this, this, byteBuffer));
+        k3.o(te.a.c(x, this, this, byteBuffer));
         b bVar = this.a;
         e5.b.r(bVar.a, byteBuffer);
         byteBuffer.put((byte) (bVar.b & 255));
@@ -191,7 +191,7 @@ public final class a extends com.googlecode.mp4parser.a {
     @Override // com.googlecode.mp4parser.a
     public final long getContentSize() {
         int i10;
-        k3.p(te.a.b(w, this, this));
+        k3.o(te.a.b(w, this, this));
         b bVar = this.a;
         ArrayList arrayList = bVar.f;
         int size = arrayList.size();

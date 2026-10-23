@@ -5,7 +5,7 @@ import java.util.HashMap;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class fi implements oj {
     public final /* synthetic */ ti a;
@@ -15,23 +15,23 @@ public final class fi implements oj {
     }
 
     @Override // org.telegram.ui.Components.oj
-    public final void b(TLRPC.User user, boolean z10, int i10, long j10) {
-        org.telegram.ui.qn qnVar = (org.telegram.ui.qn) this.a.f0;
-        if (qnVar.i7()) {
-            SendMessagesHelper.SendMessageParams of2 = SendMessagesHelper.SendMessageParams.of(user, qnVar.T5, qnVar.n5, qnVar.X3, (TLRPC.ReplyMarkup) null, (HashMap<String, String>) null, z10, i10, 0);
-            of2.sendMessageChatArguments = qnVar.H8();
+    public final void a(TLRPC.User user, boolean z10, int i10, long j10) {
+        org.telegram.ui.sn snVar = (org.telegram.ui.sn) this.a.f0;
+        if (snVar.i7()) {
+            SendMessagesHelper.SendMessageParams of2 = SendMessagesHelper.SendMessageParams.of(user, snVar.f6, snVar.z5, snVar.j4, (TLRPC.ReplyMarkup) null, (HashMap<String, String>) null, z10, i10, 0);
+            of2.sendMessageChatArguments = snVar.H8();
             of2.effect_id = 0L;
             of2.invert_media = false;
             of2.payStars = j10;
-            of2.monoForumPeer = qnVar.S8();
-            of2.suggestionParams = qnVar.g5;
-            qnVar.getSendMessagesHelper().sendMessage(of2);
-            qnVar.B6();
+            of2.monoForumPeer = snVar.S8();
+            of2.suggestionParams = snVar.s5;
+            snVar.getSendMessagesHelper().sendMessage(of2);
+            snVar.B6();
         }
     }
 
     @Override // org.telegram.ui.Components.oj
-    public final void c(ArrayList arrayList, String str, boolean z10, int i10, long j10, boolean z11) {
-        ((org.telegram.ui.qn) this.a.f0).ib(arrayList, str, z10, i10, j10, z11);
+    public final void b(ArrayList arrayList, String str, boolean z10, int i10, long j10, boolean z11) {
+        ((org.telegram.ui.sn) this.a.f0).jb(arrayList, str, z10, i10, j10, z11);
     }
 }

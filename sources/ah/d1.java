@@ -1,5 +1,6 @@
 package ah;
 
+import ai.u1;
 import android.content.Context;
 import android.graphics.Point;
 import android.graphics.PorterDuff;
@@ -18,18 +19,18 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Cells.u1;
-import org.telegram.ui.Components.bl0;
-import org.telegram.ui.Components.dl0;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.o2;
+import org.telegram.ui.Cells.t1;
+import org.telegram.ui.Components.el0;
+import org.telegram.ui.Components.gl0;
 import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.r5;
-import org.telegram.ui.g51;
-import org.telegram.ui.qn;
+import org.telegram.ui.k51;
+import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class d1 {
     public static d1 B;
@@ -55,7 +56,7 @@ public final class d1 {
     public float q;
     public float r;
     public boolean s;
-    public final bl0 t;
+    public final el0 t;
     public boolean u;
     public final View v;
     public boolean w;
@@ -96,23 +97,23 @@ public final class d1 {
     /* JADX WARN: Type inference failed for: r15v3, types: [boolean] */
     /* JADX WARN: Type inference failed for: r5v38, types: [org.telegram.messenger.ImageReceiver] */
     /* JADX WARN: Type inference failed for: r5v39, types: [org.telegram.messenger.ImageReceiver] */
-    /* JADX WARN: Type inference failed for: r5v46, types: [org.telegram.ui.Components.vj0] */
-    /* JADX WARN: Type inference failed for: r5v50, types: [org.telegram.ui.Components.vj0] */
+    /* JADX WARN: Type inference failed for: r5v46, types: [org.telegram.ui.Components.yj0] */
+    /* JADX WARN: Type inference failed for: r5v50, types: [org.telegram.ui.Components.yj0] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public d1(Context context, n2 n2Var, dl0 dl0Var, View view, View view2, float f7, float f10, i1 i1Var, int i10, int i11, boolean z10) {
+    public d1(Context context, o2 o2Var, gl0 gl0Var, View view, View view2, float f7, float f10, i1 i1Var, int i10, int i11, boolean z10) {
         MessageObject messageObject;
         Context context2;
         View view3;
         g1 g1Var;
         long j10;
         MessageObject messageObject2;
-        dl0 dl0Var2;
+        gl0 gl0Var2;
         int i12;
         View view4;
-        n2 n2Var2;
-        qn qnVar;
+        o2 o2Var2;
+        sn snVar;
         int i13;
         float f11;
         float f12;
@@ -137,17 +138,17 @@ public final class d1 {
         int i18;
         int i19;
         boolean z11;
-        qn qnVar2;
+        sn snVar2;
         TLRPC.TL_messageReactions tL_messageReactions;
         this.t = null;
         this.z = z10;
-        boolean z12 = view instanceof u1;
+        boolean z12 = view instanceof t1;
         if (z12) {
-            messageObject = ((u1) view).getMessageObject();
+            messageObject = ((t1) view).getMessageObject();
             this.n = messageObject.getId();
             this.o = messageObject.getGroupId();
-        } else if (view instanceof org.telegram.ui.Cells.w0) {
-            messageObject = ((org.telegram.ui.Cells.w0) view).getMessageObject();
+        } else if (view instanceof org.telegram.ui.Cells.v0) {
+            messageObject = ((org.telegram.ui.Cells.v0) view).getMessageObject();
             this.n = messageObject.getId();
             this.o = 0L;
         } else {
@@ -158,16 +159,16 @@ public final class d1 {
         this.p = i1Var;
         this.a = i11;
         this.v = view;
-        g1 l4 = z12 ? ((u1) view).N.l(i1Var) : view instanceof org.telegram.ui.Cells.w0 ? ((org.telegram.ui.Cells.w0) view).E0.l(i1Var) : null;
+        g1 l4 = z12 ? ((t1) view).N.l(i1Var) : view instanceof org.telegram.ui.Cells.v0 ? ((org.telegram.ui.Cells.v0) view).E0.l(i1Var) : null;
         if (z10 && i11 == 2) {
             view3 = view2;
             g1Var = l4;
             j10 = 0;
             messageObject2 = messageObject;
-            dl0Var2 = dl0Var;
+            gl0Var2 = gl0Var;
             view4 = view;
-            n2Var2 = n2Var;
-            d1 d1Var = new d1(context, n2Var2, dl0Var2, view4, view3, f7, f10, i1Var, i10, 1, true);
+            o2Var2 = o2Var;
+            d1 d1Var = new d1(context, o2Var2, gl0Var2, view4, view3, f7, f10, i1Var, i10, 1, true);
             context2 = context;
             i12 = i10;
             this.f = d1Var;
@@ -178,21 +179,21 @@ public final class d1 {
             g1Var = l4;
             j10 = 0;
             messageObject2 = messageObject;
-            dl0Var2 = dl0Var;
+            gl0Var2 = gl0Var;
             i12 = i10;
             view4 = view;
-            n2Var2 = n2Var;
+            o2Var2 = o2Var;
         }
-        qn qnVar3 = n2Var2 instanceof qn ? (qn) n2Var2 : null;
-        if (dl0Var2 != null) {
-            ai.u1 u1Var = dl0Var2.b;
+        sn snVar3 = o2Var2 instanceof sn ? (sn) o2Var2 : null;
+        if (gl0Var2 != null) {
+            u1 u1Var = gl0Var2.b;
             int i20 = 0;
             while (true) {
                 if (i20 >= u1Var.getChildCount()) {
                     break;
                 }
-                if ((u1Var.getChildAt(i20) instanceof bl0) && ((bl0) u1Var.getChildAt(i20)).e.equals(this.p)) {
-                    this.t = (bl0) u1Var.getChildAt(i20);
+                if ((u1Var.getChildAt(i20) instanceof el0) && ((el0) u1Var.getChildAt(i20)).e.equals(this.p)) {
+                    this.t = (el0) u1Var.getChildAt(i20);
                     break;
                 }
                 i20++;
@@ -202,28 +203,28 @@ public final class d1 {
         if (i11 == 1) {
             Random random = new Random();
             ArrayList<TLRPC.MessagePeerReaction> arrayList = (messageObject2 == null || (tL_messageReactions = messageObject2.messageOwner.reactions) == null) ? null : tL_messageReactions.recent_reactions;
-            if (arrayList != null && qnVar3 != null && qnVar3.a() < j10) {
+            if (arrayList != null && snVar3 != null && snVar3.a() < j10) {
                 f11 = 0.0f;
                 int i22 = 0;
                 while (i22 < arrayList.size()) {
                     int i23 = i21;
                     if (this.p.equals(arrayList.get(i22).reaction) && arrayList.get(i22).unread) {
-                        h9 h9Var = new h9((d6) null);
+                        h9 h9Var = new h9((g6) null);
                         ImageReceiver imageReceiver = new ImageReceiver();
                         long peerId = MessageObject.getPeerId(arrayList.get(i22).peer_id);
                         if (peerId < j10) {
-                            qnVar2 = qnVar3;
+                            snVar2 = snVar3;
                             TLRPC.Chat chat = MessagesController.getInstance(i12).getChat(Long.valueOf(-peerId));
                             if (chat != null) {
                                 h9Var.k(i12, chat);
                                 imageReceiver.setForUserOrChat(chat, h9Var);
                                 c1 c1Var = new c1();
                                 c1Var.a = imageReceiver;
-                                c1Var.e = a1.g.d(org.telegram.ui.Cells.c1.g(random, 100), 100.0f, 0.1f, 0.3f);
-                                c1Var.h = a1.g.d(org.telegram.ui.Cells.c1.g(random, 100), 100.0f, 0.4f, 0.8f);
+                                c1Var.e = a1.g.d(org.telegram.ui.Cells.b1.g(random, 100), 100.0f, 0.1f, 0.3f);
+                                c1Var.h = a1.g.d(org.telegram.ui.Cells.b1.g(random, 100), 100.0f, 0.4f, 0.8f);
                                 c1Var.i = (Math.abs(random.nextInt() % 100) * 60) / 100.0f;
                                 float f17 = 0.4f;
-                                c1Var.b = (int) a1.g.d(org.telegram.ui.Cells.c1.g(random, 100), 100.0f, 200.0f, 400.0f);
+                                c1Var.b = (int) a1.g.d(org.telegram.ui.Cells.b1.g(random, 100), 100.0f, 200.0f, 400.0f);
                                 float f18 = 0.6f;
                                 float f19 = 0.2f;
                                 if (this.x.isEmpty()) {
@@ -233,8 +234,8 @@ public final class d1 {
                                     int i24 = 0;
                                     while (i24 < 10) {
                                         int i25 = i24;
-                                        float B2 = a1.g.B(org.telegram.ui.Cells.c1.g(random, 100), f18, 100.0f, f19);
-                                        float B3 = a1.g.B(org.telegram.ui.Cells.c1.g(random, 100), f17, 100.0f, f19);
+                                        float B2 = a1.g.B(org.telegram.ui.Cells.b1.g(random, 100), f18, 100.0f, f19);
+                                        float B3 = a1.g.B(org.telegram.ui.Cells.b1.g(random, 100), f17, 100.0f, f19);
                                         float f23 = 2.14748365E9f;
                                         for (int i26 = 0; i26 < this.x.size(); i26++) {
                                             float f24 = ((c1) this.x.get(i26)).f - B2;
@@ -257,24 +258,24 @@ public final class d1 {
                                     c1Var.f = f21;
                                     c1Var.g = f22;
                                 } else {
-                                    c1Var.f = a1.g.B(org.telegram.ui.Cells.c1.g(random, 100), 0.6f, 100.0f, 0.2f);
-                                    c1Var.g = (org.telegram.ui.Cells.c1.g(random, 100) * 0.4f) / 100.0f;
+                                    c1Var.f = a1.g.B(org.telegram.ui.Cells.b1.g(random, 100), 0.6f, 100.0f, 0.2f);
+                                    c1Var.g = (org.telegram.ui.Cells.b1.g(random, 100) * 0.4f) / 100.0f;
                                 }
                                 this.x.add(c1Var);
                             }
                         } else {
-                            qnVar2 = qnVar3;
+                            snVar2 = snVar3;
                             TLRPC.User user = MessagesController.getInstance(i12).getUser(Long.valueOf(peerId));
                             if (user != null) {
                                 h9Var.m(i12, user);
                                 imageReceiver.setForUserOrChat(user, h9Var);
                                 c1 c1Var2 = new c1();
                                 c1Var2.a = imageReceiver;
-                                c1Var2.e = a1.g.d(org.telegram.ui.Cells.c1.g(random, 100), 100.0f, 0.1f, 0.3f);
-                                c1Var2.h = a1.g.d(org.telegram.ui.Cells.c1.g(random, 100), 100.0f, 0.4f, 0.8f);
+                                c1Var2.e = a1.g.d(org.telegram.ui.Cells.b1.g(random, 100), 100.0f, 0.1f, 0.3f);
+                                c1Var2.h = a1.g.d(org.telegram.ui.Cells.b1.g(random, 100), 100.0f, 0.4f, 0.8f);
                                 c1Var2.i = (Math.abs(random.nextInt() % 100) * 60) / 100.0f;
                                 float f172 = 0.4f;
-                                c1Var2.b = (int) a1.g.d(org.telegram.ui.Cells.c1.g(random, 100), 100.0f, 200.0f, 400.0f);
+                                c1Var2.b = (int) a1.g.d(org.telegram.ui.Cells.b1.g(random, 100), 100.0f, 200.0f, 400.0f);
                                 float f182 = 0.6f;
                                 float f192 = 0.2f;
                                 if (this.x.isEmpty()) {
@@ -283,20 +284,20 @@ public final class d1 {
                             }
                         }
                     } else {
-                        qnVar2 = qnVar3;
+                        snVar2 = snVar3;
                     }
                     i22++;
                     i12 = i10;
-                    qnVar3 = qnVar2;
+                    snVar3 = snVar2;
                     i21 = i23;
                 }
-                qnVar = qnVar3;
+                snVar = snVar3;
                 i13 = i21;
-                bl0 bl0Var = this.t;
-                ?? r10 = (bl0Var == null || !(f7 == f11 || f10 == f11)) ? i13 : 0;
+                el0 el0Var = this.t;
+                ?? r10 = (el0Var == null || !(f7 == f11 || f10 == f11)) ? i13 : 0;
                 if (view3 != null) {
-                    if (bl0Var != null) {
-                        bl0Var.getLocationOnScreen(this.j);
+                    if (el0Var != null) {
+                        el0Var.getLocationOnScreen(this.j);
                         float x10 = this.j[0] + this.t.b.getX();
                         float y3 = this.j[i13] + this.t.b.getY();
                         f12 = this.t.getScaleX() * this.t.b.getWidth();
@@ -314,7 +315,7 @@ public final class d1 {
                         ((View) view4.getParent()).getLocationInWindow(this.j);
                         int[] iArr = this.j;
                         f15 = iArr[0] + f7;
-                        f16 = iArr[i13] + f10 + (view4 instanceof u1 ? ((u1) view4).V : 0);
+                        f16 = iArr[i13] + f10 + (view4 instanceof t1 ? ((t1) view4).V : 0);
                         f12 = f11;
                     } else {
                         f12 = f11;
@@ -357,7 +358,7 @@ public final class d1 {
                     int i29 = i15;
                     MessageObject messageObject4 = messageObject2;
                     r15 = i14;
-                    a1Var = new a1(this, context2, n2Var, view5, z10, messageObject4, qnVar, i16, i11, r10, f27, f13, f14, i1Var);
+                    a1Var = new a1(this, context2, o2Var, view5, z10, messageObject4, snVar, i16, i11, r10, f27, f13, f14, i1Var);
                     this.i = a1Var;
                     b1Var = new b1(this, context2);
                     this.b = b1Var;
@@ -451,7 +452,7 @@ public final class d1 {
                                 }
                                 if (i11 != 0 || i11 == r15) {
                                     r5 r5Var3 = new r5(2, i17, i1Var.g);
-                                    r5Var3.setColorFilter(new PorterDuffColorFilter(messageObject3 == null ? h6.w0(messageObject3.shouldDrawWithoutBackground() ? messageObject3.isOutOwner() ? h6.Sb : h6.Cj : messageObject3.isOutOwner() ? h6.Gj : h6.Fj, n2Var != null ? n2Var.getResourceProvider() : null) : -1, PorterDuff.Mode.SRC_IN));
+                                    r5Var3.setColorFilter(new PorterDuffColorFilter(messageObject3 == null ? k6.w0(messageObject3.shouldDrawWithoutBackground() ? messageObject3.isOutOwner() ? k6.Sb : k6.Cj : messageObject3.isOutOwner() ? k6.Gj : k6.Fj, o2Var != null ? o2Var.getResourceProvider() : null) : -1, PorterDuff.Mode.SRC_IN));
                                     boolean z13 = i11 != 0 ? r15 == true ? 1 : 0 : false;
                                     b1Var.I = e.a(r5Var3, z13, !z13);
                                     a1Var.setClipChildren(false);
@@ -465,7 +466,7 @@ public final class d1 {
                         r5 r5Var32 = new r5(2, i17, i1Var.g);
                         if (messageObject3 == null) {
                         }
-                        r5Var32.setColorFilter(new PorterDuffColorFilter(messageObject3 == null ? h6.w0(messageObject3.shouldDrawWithoutBackground() ? messageObject3.isOutOwner() ? h6.Sb : h6.Cj : messageObject3.isOutOwner() ? h6.Gj : h6.Fj, n2Var != null ? n2Var.getResourceProvider() : null) : -1, PorterDuff.Mode.SRC_IN));
+                        r5Var32.setColorFilter(new PorterDuffColorFilter(messageObject3 == null ? k6.w0(messageObject3.shouldDrawWithoutBackground() ? messageObject3.isOutOwner() ? k6.Sb : k6.Cj : messageObject3.isOutOwner() ? k6.Gj : k6.Fj, o2Var != null ? o2Var.getResourceProvider() : null) : -1, PorterDuff.Mode.SRC_IN));
                         if (i11 != 0) {
                         }
                         b1Var.I = e.a(r5Var32, z13, !z13);
@@ -521,11 +522,11 @@ public final class d1 {
                 f15 = iArr2[0];
                 f16 = iArr2[i13];
                 f12 = view3.getScaleX() * view3.getWidth();
-                if (view3 instanceof g51) {
-                    float f29 = ((g51) view3).G;
+                if (view3 instanceof k51) {
+                    float f29 = ((k51) view3).G;
                     if (f29 > f11) {
                         f12 = view3.getWidth() * ((f29 * 2.0f) + 1.0f);
-                        f15 = org.telegram.messenger.g0.x(f12, view3.getWidth(), 2.0f, f15);
+                        f15 = org.telegram.messenger.v0.y(f12, view3.getWidth(), 2.0f, f15);
                         f16 -= f12 - view3.getWidth();
                     }
                 }
@@ -546,7 +547,7 @@ public final class d1 {
                 int i292 = i15;
                 MessageObject messageObject42 = messageObject2;
                 r15 = i14;
-                a1Var = new a1(this, context2, n2Var, view52, z10, messageObject42, qnVar, i16, i11, r10, f272, f13, f14, i1Var);
+                a1Var = new a1(this, context2, o2Var, view52, z10, messageObject42, snVar, i16, i11, r10, f272, f13, f14, i1Var);
                 this.i = a1Var;
                 b1Var = new b1(this, context2);
                 this.b = b1Var;
@@ -600,11 +601,11 @@ public final class d1 {
                 frameLayout.setPivotY(i19);
             }
         }
-        qnVar = qnVar3;
+        snVar = snVar3;
         i13 = 1;
         f11 = 0.0f;
-        bl0 bl0Var2 = this.t;
-        if (bl0Var2 == null) {
+        el0 el0Var2 = this.t;
+        if (el0Var2 == null) {
         }
         if (view3 != null) {
         }
@@ -625,7 +626,7 @@ public final class d1 {
         int i2922 = i15;
         MessageObject messageObject422 = messageObject2;
         r15 = i14;
-        a1Var = new a1(this, context2, n2Var, view522, z10, messageObject422, qnVar, i16, i11, r10, f2722, f13, f14, i1Var);
+        a1Var = new a1(this, context2, o2Var, view522, z10, messageObject422, snVar, i16, i11, r10, f2722, f13, f14, i1Var);
         this.i = a1Var;
         b1Var = new b1(this, context2);
         this.b = b1Var;
@@ -704,26 +705,26 @@ public final class d1 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static void d(n2 n2Var, dl0 dl0Var, View view, View view2, float f7, float f10, i1 i1Var, int i10, int i11) {
-        if (view == null || i1Var == null || n2Var == null || n2Var.getParentActivity() == null) {
+    public static void d(o2 o2Var, gl0 gl0Var, View view, View view2, float f7, float f10, i1 i1Var, int i10, int i11) {
+        if (view == null || i1Var == null || o2Var == null || o2Var.getParentActivity() == null) {
             return;
         }
         boolean z10 = true;
         if (MessagesController.getGlobalMainSettings().getBoolean("view_animations", true)) {
             if (i11 == 2 || i11 == 0) {
-                d(n2Var, null, view, view2, 0.0f, 0.0f, i1Var, i10, 1);
+                d(o2Var, null, view, view2, 0.0f, 0.0f, i1Var, i10, 1);
             }
-            d1 d1Var = new d1(n2Var.getParentActivity(), n2Var, dl0Var, view, view2, f7, f10, i1Var, i10, i11, false);
+            d1 d1Var = new d1(o2Var.getParentActivity(), o2Var, gl0Var, view, view2, f7, f10, i1Var, i10, i11, false);
             if (i11 == 1) {
                 C = d1Var;
             } else {
                 B = d1Var;
             }
-            if (n2Var instanceof qn) {
-                qn qnVar = (qn) n2Var;
+            if (o2Var instanceof sn) {
+                sn snVar = (sn) o2Var;
                 if (i11 != 0) {
                 }
-                org.telegram.ui.ActionBar.m1 m1Var = qnVar.Q8;
+                org.telegram.ui.ActionBar.m1 m1Var = snVar.c9;
                 if (m1Var != null) {
                 }
             }
@@ -736,15 +737,15 @@ public final class d1 {
                 layoutParams.type = MediaDataController.MAX_STYLE_RUNS_COUNT;
                 layoutParams.flags = 65816;
                 layoutParams.format = -3;
-                WindowManager windowManager = n2Var.getParentActivity().getWindowManager();
+                WindowManager windowManager = o2Var.getParentActivity().getWindowManager();
                 d1Var.k = windowManager;
                 AndroidUtilities.setPreferredMaxRefreshRate(windowManager, d1Var.i, layoutParams);
                 d1Var.k.addView(d1Var.i, layoutParams);
             } else {
-                ((FrameLayout) n2Var.getParentActivity().getWindow().getDecorView()).addView(d1Var.i);
+                ((FrameLayout) o2Var.getParentActivity().getWindow().getDecorView()).addView(d1Var.i);
             }
             view.invalidate();
-            if (!(view instanceof u1) || ((u1) view).getCurrentMessagesGroup() == null || view.getParent() == null) {
+            if (!(view instanceof t1) || ((t1) view).getCurrentMessagesGroup() == null || view.getParent() == null) {
                 return;
             }
             ((View) view.getParent()).invalidate();
@@ -771,10 +772,10 @@ public final class d1 {
         d1 d1Var2 = C;
         if (d1Var2 != null) {
             View view = d1Var2.v;
-            if (view instanceof u1) {
-                ((u1) view).N.b(d1Var2.p);
-            } else if (view instanceof org.telegram.ui.Cells.w0) {
-                ((org.telegram.ui.Cells.w0) view).E0.b(d1Var2.p);
+            if (view instanceof t1) {
+                ((t1) view).N.b(d1Var2.p);
+            } else if (view instanceof org.telegram.ui.Cells.v0) {
+                ((org.telegram.ui.Cells.v0) view).E0.b(d1Var2.p);
             }
         }
     }

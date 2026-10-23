@@ -3,9 +3,9 @@ package m;
 import android.graphics.Path;
 import android.graphics.Rect;
 import android.os.Handler;
-import ci.j6;
+import ci.i6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class e3 implements j9.t {
     public boolean a;
@@ -28,7 +28,7 @@ public final class e3 implements j9.t {
         m4.f0 f0Var = ((m4.p0) this.d).g;
         Handler handler = f0Var.l;
         m4.v vVar = (m4.v) this.c;
-        e2.m0.W(handler, new hi.t(f0Var, vVar, new j6(this, wVar, this.a, this.b, vVar, 2)));
+        e2.m0.W(handler, new hi.t(f0Var, vVar, new i6(this, wVar, this.a, this.b, vVar, 2)));
     }
 
     @Override // j9.t

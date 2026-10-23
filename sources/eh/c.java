@@ -6,10 +6,10 @@ import e2.o;
 import m4.e0;
 import m4.m1;
 import m4.u;
-import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.g6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+/* loaded from: classes4.dex */
 public final /* synthetic */ class c implements d, o, e0, j {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
@@ -34,12 +34,12 @@ public final /* synthetic */ class c implements d, o, e0, j {
     }
 
     @Override // m4.e0
-    public void b(u uVar, int i10) {
+    public void e(u uVar, int i10) {
         uVar.d(i10, this.b, this.c);
     }
 
     @Override // eh.d
-    public int f(d6 d6Var, boolean z10) {
+    public int i(g6 g6Var, boolean z10) {
         return z10 ? this.b : this.c;
     }
 

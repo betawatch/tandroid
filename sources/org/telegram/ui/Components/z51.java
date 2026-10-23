@@ -1,45 +1,69 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class z51 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Object d;
+public final class z51 extends xz {
+    public final /* synthetic */ i61 Y;
 
-    public z51(org.telegram.ui.pu puVar, int i10, int i11) {
-        this.a = 1;
-        this.d = puVar;
-        this.b = i10;
-        this.c = i11;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public z51(i61 i61Var, int i10, y51 y51Var) {
+        super(5, i10, y51Var);
+        this.Y = i61Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                int floatValue = (int) (((Float) valueAnimator.getAnimatedValue()).floatValue() * this.c);
-                d61 d61Var = (d61) this.d;
-                d61Var.N = true;
-                d61Var.n.scrollBy(0, floatValue - this.b);
-                d61Var.N = false;
-                this.b = floatValue;
-                break;
-            default:
-                ((org.telegram.ui.pu) this.d).c.d.setColorFilter(new PorterDuffColorFilter(i0.a.f(((Float) valueAnimator.getAnimatedValue()).floatValue(), this.b, this.c), PorterDuff.Mode.SRC_IN));
-                break;
+    @Override // org.telegram.ui.Components.xz
+    public final boolean D1() {
+        i61 i61Var = this.Y;
+        return i61Var.n.getAdapter() == i61Var.v;
+    }
+
+    @Override // s4.b0
+    public final boolean Y0() {
+        return LocaleController.isRTL;
+    }
+
+    @Override // s4.s, s4.b0, s4.n0
+    public final int o0(int i10, qf.e eVar, s4.y0 y0Var) {
+        int i11;
+        View m10;
+        i61 i61Var = this.Y;
+        if (i61Var.N) {
+            return super.o0(i10, eVar, y0Var);
         }
+        int i12 = 0;
+        if (i61Var.L != null) {
+            return 0;
+        }
+        if (i61Var.M) {
+            while (true) {
+                i11 = 1;
+                if (i12 >= r()) {
+                    break;
+                }
+                y51 y51Var = i61Var.n;
+                View q6 = q(i12);
+                y51Var.getClass();
+                int R = RecyclerView.R(q6);
+                if (R < 1) {
+                    i11 = R;
+                    break;
+                }
+                i12++;
+            }
+            if (i11 == 0 && (m10 = i61Var.r.m(i11)) != null && m10.getTop() - i10 > AndroidUtilities.dp(58.0f)) {
+                i10 = m10.getTop() - AndroidUtilities.dp(58.0f);
+            }
+        }
+        return super.o0(i10, eVar, y0Var);
     }
 
-    public z51(d61 d61Var, int i10) {
-        this.a = 0;
-        this.d = d61Var;
-        this.c = i10;
-        this.b = 0;
+    @Override // s4.s, s4.b0, s4.n0
+    public final boolean y0() {
+        return false;
     }
 }

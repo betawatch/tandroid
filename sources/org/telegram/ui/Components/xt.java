@@ -18,10 +18,10 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public class xt extends View {
-    public final f11 a;
+    public final i11 a;
     public final Drawable b;
     public final ImageReceiver c;
     public final Rect d;
@@ -35,7 +35,7 @@ public class xt extends View {
         ImageReceiver imageReceiver = new ImageReceiver(this);
         this.c = imageReceiver;
         imageReceiver.setRoundRadius(AndroidUtilities.dp(22.66f));
-        this.a = new f11(charSequence, 14.0f, AndroidUtilities.bold());
+        this.a = new i11(charSequence, 14.0f, AndroidUtilities.bold());
         Drawable mutate = context.getResources().getDrawable(R.drawable.arrow_newchat).mutate();
         this.b = mutate;
         mutate.setColorFilter(new PorterDuffColorFilter(-1711276033, PorterDuff.Mode.SRC_IN));

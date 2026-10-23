@@ -8,7 +8,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.VideoEditedInfo;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class w4 implements NotificationCenter.NotificationCenterDelegate {
     public final int a;
@@ -73,12 +73,12 @@ public final class w4 implements NotificationCenter.NotificationCenterDelegate {
         d();
         h3 h3Var = this.b;
         w3 w3Var = h3Var.c;
-        IdentityHashMap identityHashMap = w3Var.Y3;
+        IdentityHashMap identityHashMap = w3Var.b4;
         t tVar = h3Var.a;
         identityHashMap.remove(tVar);
         tVar.a = 3;
-        w3Var.r4(h3Var.b, tVar);
-        w3Var.f3.onContentChanged();
+        w3Var.w4(h3Var.b, tVar);
+        w3Var.i3.onContentChanged();
     }
 
     public final void d() {
@@ -106,10 +106,10 @@ public final class w4 implements NotificationCenter.NotificationCenterDelegate {
         }
         long longValue = ((Long) objArr[3]).longValue();
         tVar.f = ((Float) objArr[4]).floatValue();
-        View A1 = w3Var.A1(aVar);
-        if (A1 instanceof u4) {
-            A1.requestLayout();
-            A1.invalidate();
+        View F1 = w3Var.F1(aVar);
+        if (F1 instanceof u4) {
+            F1.requestLayout();
+            F1.invalidate();
         }
         if (longValue > 0) {
             this.n = true;
@@ -119,7 +119,7 @@ public final class w4 implements NotificationCenter.NotificationCenterDelegate {
             int i12 = videoEditedInfo.resultWidth;
             int i13 = videoEditedInfo.resultHeight;
             int ceil = (int) Math.ceil(videoEditedInfo.estimatedDuration / 1000.0d);
-            w3Var.Y3.remove(tVar);
+            w3Var.b4.remove(tVar);
             tVar.b = true;
             tVar.e = str;
             if (i12 > 0) {
@@ -131,8 +131,8 @@ public final class w4 implements NotificationCenter.NotificationCenterDelegate {
             tVar.l = 0;
             tVar.m = 0;
             tVar.f = 0.0f;
-            w3Var.o4(aVar);
-            w3Var.M4(h3Var.b, tVar, str, true, tVar.j, tVar.k, ceil);
+            w3Var.t4(aVar);
+            w3Var.R4(h3Var.b, tVar, str, true, tVar.j, tVar.k, ceil);
         }
     }
 }

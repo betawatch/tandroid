@@ -17,7 +17,7 @@ import v7.b8;
 import v7.t6;
 import v7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public abstract class s {
     public final /* synthetic */ int a = 2;
@@ -33,7 +33,7 @@ public abstract class s {
     public static void d(int i10, Object[] objArr) {
         for (int i11 = 0; i11 < i10; i11++) {
             if (objArr[i11] == null) {
-                throw new NullPointerException(i2.e.j(i11, "at index "));
+                throw new NullPointerException(i2.o1.k(i11, "at index "));
             }
         }
     }
@@ -57,7 +57,7 @@ public abstract class s {
 
     public static Object g(int i10) {
         if (i10 < 2 || i10 > 1073741824 || Integer.highestOneBit(i10) != i10) {
-            throw new IllegalArgumentException(i2.e.j(i10, "must be power of 2 between 2^1 and 2^30: "));
+            throw new IllegalArgumentException(i2.o1.k(i10, "must be power of 2 between 2^1 and 2^30: "));
         }
         return i10 <= 256 ? new byte[i10] : i10 <= 65536 ? new short[i10] : new int[i10];
     }
@@ -123,7 +123,7 @@ public abstract class s {
             if (list.isEmpty()) {
                 throw new NoSuchElementException();
             }
-            return r4.c.f(1, list);
+            return si.o0.g(1, list);
         }
         Iterator it = iterable.iterator();
         do {

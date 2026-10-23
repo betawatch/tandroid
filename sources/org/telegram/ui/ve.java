@@ -17,15 +17,15 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.TopicsController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ve implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ qn b;
+    public final /* synthetic */ sn b;
 
-    public /* synthetic */ ve(qn qnVar, int i10) {
+    public /* synthetic */ ve(sn snVar, int i10) {
         this.a = i10;
-        this.b = qnVar;
+        this.b = snVar;
     }
 
     @Override // android.view.View.OnClickListener
@@ -36,43 +36,43 @@ public final /* synthetic */ class ve implements View.OnClickListener {
         MessageObject messageObject = null;
         final int i13 = 0;
         final int i14 = 1;
-        qn qnVar = this.b;
+        sn snVar = this.b;
         switch (i11) {
             case 0:
-                qn qnVar2 = this.b;
-                sg.k0.D1(qnVar2, qnVar2.D1, qnVar2.E1, qnVar2.T5, false);
+                sn snVar2 = this.b;
+                sg.j0.G1(snVar2, snVar2.P1, snVar2.Q1, snVar2.f6, false);
                 break;
             case 1:
-                qnVar.getClass();
+                snVar.getClass();
                 Bundle bundle = new Bundle();
-                bundle.putLong("user_id", qnVar.r);
-                qnVar.presentFragment(new ProfileActivity(bundle, null));
+                bundle.putLong("user_id", snVar.r);
+                snVar.presentFragment(new ProfileActivity(bundle, null));
                 break;
             case 2:
-                if (qnVar.K3 != null) {
-                    qnVar.Qb(!qnVar.zc.f);
+                if (snVar.W3 != null) {
+                    snVar.Rb(!snVar.Mc.f);
                     break;
                 }
                 break;
             case 3:
-                qnVar.pb(!qnVar.A0.N);
+                snVar.qb(!snVar.A0.N);
                 break;
             case 4:
-                xj xjVar = qnVar.I1;
-                if (xjVar != null) {
-                    xjVar.setReversed(true);
-                    qnVar.I1.getAdapter().k0 = true;
-                    qnVar.p7();
+                yj yjVar = snVar.U1;
+                if (yjVar != null) {
+                    yjVar.setReversed(true);
+                    snVar.U1.getAdapter().k0 = true;
+                    snVar.p7();
                 }
-                qnVar.S2.setVisibility(8);
-                qnVar.T2.setVisibility(8);
-                qnVar.n3 = true;
-                qnVar.o3 = null;
-                qnVar.p3 = null;
-                qnVar.j0.setSearchFieldHint(LocaleController.getString(R.string.SearchMembers));
-                qnVar.j0.setSearchFieldCaption(LocaleController.getString(R.string.SearchFrom));
-                AndroidUtilities.showKeyboard(qnVar.j0.getSearchField());
-                org.telegram.ui.ActionBar.u0 u0Var = qnVar.j0;
+                snVar.e3.setVisibility(8);
+                snVar.f3.setVisibility(8);
+                snVar.z3 = true;
+                snVar.A3 = null;
+                snVar.B3 = null;
+                snVar.j0.setSearchFieldHint(LocaleController.getString(R.string.SearchMembers));
+                snVar.j0.setSearchFieldCaption(LocaleController.getString(R.string.SearchFrom));
+                AndroidUtilities.showKeyboard(snVar.j0.getSearchField());
+                org.telegram.ui.ActionBar.u0 u0Var = snVar.j0;
                 u0Var.r = null;
                 ei.e2 e2Var = u0Var.e;
                 if (e2Var != null) {
@@ -81,275 +81,280 @@ public final /* synthetic */ class ve implements View.OnClickListener {
                 }
                 break;
             case 5:
-                if (qnVar.getParentActivity() != null) {
-                    org.telegram.ui.ActionBar.u0 u0Var2 = qnVar.j0;
+                if (snVar.getParentActivity() != null) {
+                    org.telegram.ui.ActionBar.u0 u0Var2 = snVar.j0;
                     if (u0Var2 != null) {
                         AndroidUtilities.hideKeyboard(u0Var2.getSearchField());
                     }
-                    qnVar.showDialog(org.telegram.ui.Components.f5.o(qnVar.getParentActivity(), new yk(qnVar), qnVar.ea).a);
+                    snVar.showDialog(org.telegram.ui.Components.f5.p(snVar.getParentActivity(), new zk(snVar), snVar.qa).a);
                     break;
                 }
                 break;
             case 6:
-                qnVar.D7(true);
+                snVar.D7(true);
                 break;
             case 7:
-                MessageObject messageObject2 = qnVar.d5;
+                MessageObject messageObject2 = snVar.p5;
                 if (messageObject2 != null) {
-                    qnVar.O9(messageObject2, false, false);
-                    pf.d.q(qnVar.getParentActivity(), Uri.parse(qnVar.d5.sponsoredUrl), true, false, false, null, null, false, qnVar.getMessagesController().sponsoredLinksInappAllow, false);
+                    snVar.O9(messageObject2, false, false);
+                    pf.d.q(snVar.getParentActivity(), Uri.parse(snVar.p5.sponsoredUrl), true, false, false, null, null, false, snVar.getMessagesController().sponsoredLinksInappAllow, false);
                     break;
                 }
                 break;
             case 8:
-                if (AndroidUtilities.addToClipboard(qnVar.d5.sponsoredInfo)) {
-                    org.telegram.messenger.nk.p(R.string.TextCopied, new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(qnVar.getParentActivity()), qnVar.ea));
+                if (AndroidUtilities.addToClipboard(snVar.p5.sponsoredInfo)) {
+                    org.telegram.messenger.sl.p(R.string.TextCopied, new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(snVar.getParentActivity()), snVar.qa));
                     break;
                 }
                 break;
             case 9:
-                if (AndroidUtilities.addToClipboard(qnVar.d5.sponsoredAdditionalInfo)) {
-                    org.telegram.messenger.nk.p(R.string.TextCopied, new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(qnVar.getParentActivity()), qnVar.ea));
+                if (AndroidUtilities.addToClipboard(snVar.p5.sponsoredAdditionalInfo)) {
+                    org.telegram.messenger.sl.p(R.string.TextCopied, new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(snVar.getParentActivity()), snVar.qa));
                     break;
                 }
                 break;
             case 10:
-                if (qnVar.X0 != null && qnVar.getParentActivity() != null) {
-                    org.telegram.ui.ActionBar.f3 i15 = org.telegram.messenger.nk.i(1, qnVar.X0.getContext(), null, false);
-                    Activity parentActivity = qnVar.getParentActivity();
-                    on onVar = qnVar.ea;
-                    final c81 c81Var = new c81(parentActivity);
-                    LinearLayout e = org.telegram.messenger.g0.e(parentActivity, 1);
+                if (snVar.j1 != null && snVar.getParentActivity() != null) {
+                    org.telegram.ui.ActionBar.h3 j10 = org.telegram.messenger.sl.j(1, snVar.j1.getContext(), null, false);
+                    Activity parentActivity = snVar.getParentActivity();
+                    qn qnVar = snVar.qa;
+                    final h81 h81Var = new h81(parentActivity);
+                    LinearLayout f7 = org.telegram.messenger.v0.f(parentActivity, 1);
                     TextView textView = new TextView(parentActivity);
                     textView.setText(LocaleController.getString(R.string.SponsoredMessageInfo));
                     textView.setTypeface(AndroidUtilities.bold());
-                    int i16 = org.telegram.ui.ActionBar.h6.G6;
-                    textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(i16, onVar));
+                    int i15 = org.telegram.ui.ActionBar.k6.G6;
+                    org.telegram.ui.ActionBar.r6.W(textView, i15, qnVar);
                     textView.setTextSize(1, 20.0f);
-                    org.telegram.ui.Components.x90 x90Var = new org.telegram.ui.Components.x90(parentActivity, onVar);
-                    x90Var.setText(AndroidUtilities.replaceLinks(LocaleController.getString("SponsoredMessageInfo2Description1"), onVar));
-                    x90Var.setLinkTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.gc, onVar));
-                    x90Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(i16, onVar));
-                    x90Var.setTextSize(1, 14.0f);
-                    x90Var.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-                    x90Var.setOnLinkPressListener(new org.telegram.ui.Components.w90() { // from class: org.telegram.ui.a81
-                        @Override // org.telegram.ui.Components.w90
+                    org.telegram.ui.Components.y90 y90Var = new org.telegram.ui.Components.y90(parentActivity, qnVar);
+                    y90Var.setText(AndroidUtilities.replaceLinks(LocaleController.getString("SponsoredMessageInfo2Description1"), qnVar));
+                    org.telegram.ui.ActionBar.r6.I(y90Var, org.telegram.ui.ActionBar.k6.gc, qnVar);
+                    org.telegram.ui.ActionBar.r6.W(y90Var, i15, qnVar);
+                    y90Var.setTextSize(1, 14.0f);
+                    y90Var.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
+                    y90Var.setOnLinkPressListener(new org.telegram.ui.Components.x90() { // from class: org.telegram.ui.f81
+                        @Override // org.telegram.ui.Components.x90
                         public final void a(ClickableSpan clickableSpan) {
                             switch (i13) {
                                 case 0:
-                                    clickableSpan.onClick(c81Var);
+                                    clickableSpan.onClick(h81Var);
                                     break;
                                 case 1:
-                                    clickableSpan.onClick(c81Var);
+                                    clickableSpan.onClick(h81Var);
                                     break;
                                 default:
-                                    clickableSpan.onClick(c81Var);
+                                    clickableSpan.onClick(h81Var);
                                     break;
                             }
                         }
                     });
-                    org.telegram.ui.Components.x90 x90Var2 = new org.telegram.ui.Components.x90(parentActivity, null);
-                    x90Var2.setText(AndroidUtilities.replaceLinks(LocaleController.getString("SponsoredMessageInfo2Description2"), onVar));
-                    x90Var2.setTextColor(org.telegram.ui.ActionBar.h6.w0(i16, onVar));
-                    x90Var2.setTextSize(1, 14.0f);
-                    x90Var2.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-                    x90Var2.setOnLinkPressListener(new org.telegram.ui.Components.w90() { // from class: org.telegram.ui.a81
-                        @Override // org.telegram.ui.Components.w90
+                    org.telegram.ui.Components.y90 y90Var2 = new org.telegram.ui.Components.y90(parentActivity, null);
+                    y90Var2.setText(AndroidUtilities.replaceLinks(LocaleController.getString("SponsoredMessageInfo2Description2"), qnVar));
+                    org.telegram.ui.ActionBar.r6.W(y90Var2, i15, qnVar);
+                    y90Var2.setTextSize(1, 14.0f);
+                    y90Var2.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
+                    y90Var2.setOnLinkPressListener(new org.telegram.ui.Components.x90() { // from class: org.telegram.ui.f81
+                        @Override // org.telegram.ui.Components.x90
                         public final void a(ClickableSpan clickableSpan) {
                             switch (i14) {
                                 case 0:
-                                    clickableSpan.onClick(c81Var);
+                                    clickableSpan.onClick(h81Var);
                                     break;
                                 case 1:
-                                    clickableSpan.onClick(c81Var);
+                                    clickableSpan.onClick(h81Var);
                                     break;
                                 default:
-                                    clickableSpan.onClick(c81Var);
+                                    clickableSpan.onClick(h81Var);
                                     break;
                             }
                         }
                     });
-                    org.telegram.ui.Components.x90 x90Var3 = new org.telegram.ui.Components.x90(parentActivity, null);
-                    x90Var3.setText(AndroidUtilities.replaceLinks(LocaleController.getString("SponsoredMessageInfo2Description3"), onVar));
-                    x90Var3.setTextColor(org.telegram.ui.ActionBar.h6.w0(i16, onVar));
-                    x90Var3.setTextSize(1, 14.0f);
-                    x90Var3.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-                    x90Var3.setOnLinkPressListener(new org.telegram.ui.Components.w90() { // from class: org.telegram.ui.a81
-                        @Override // org.telegram.ui.Components.w90
+                    org.telegram.ui.Components.y90 y90Var3 = new org.telegram.ui.Components.y90(parentActivity, null);
+                    y90Var3.setText(AndroidUtilities.replaceLinks(LocaleController.getString("SponsoredMessageInfo2Description3"), qnVar));
+                    org.telegram.ui.ActionBar.r6.W(y90Var3, i15, qnVar);
+                    y90Var3.setTextSize(1, 14.0f);
+                    y90Var3.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
+                    y90Var3.setOnLinkPressListener(new org.telegram.ui.Components.x90() { // from class: org.telegram.ui.f81
+                        @Override // org.telegram.ui.Components.x90
                         public final void a(ClickableSpan clickableSpan) {
                             switch (i12) {
                                 case 0:
-                                    clickableSpan.onClick(c81Var);
+                                    clickableSpan.onClick(h81Var);
                                     break;
                                 case 1:
-                                    clickableSpan.onClick(c81Var);
+                                    clickableSpan.onClick(h81Var);
                                     break;
                                 default:
-                                    clickableSpan.onClick(c81Var);
+                                    clickableSpan.onClick(h81Var);
                                     break;
                             }
                         }
                     });
                     Paint paint = new Paint(1);
                     paint.setStyle(Paint.Style.STROKE);
-                    int i17 = org.telegram.ui.ActionBar.h6.Oh;
-                    paint.setColor(org.telegram.ui.ActionBar.h6.w0(i17, onVar));
+                    int i16 = org.telegram.ui.ActionBar.k6.Oh;
+                    paint.setColor(org.telegram.ui.ActionBar.k6.w0(i16, qnVar));
                     paint.setStrokeWidth(AndroidUtilities.dp(1.0f));
-                    kk kkVar = new kk(parentActivity, paint);
-                    kkVar.setOnClickListener(new b81(parentActivity));
-                    kkVar.setPadding(AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), 0);
-                    kkVar.setText(LocaleController.getString(R.string.SponsoredMessageAlertLearnMoreUrl));
-                    kkVar.setTextColor(org.telegram.ui.ActionBar.h6.w0(i17, onVar));
-                    kkVar.setBackground(org.telegram.ui.ActionBar.x5.e(new float[]{4.0f}, org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.h5, onVar)));
-                    kkVar.setTextSize(1, 14.0f);
-                    kkVar.setGravity(16);
-                    org.telegram.ui.Components.x90 x90Var4 = new org.telegram.ui.Components.x90(parentActivity, null);
-                    x90Var4.setText(AndroidUtilities.replaceLinks(LocaleController.getString("SponsoredMessageInfo2Description4"), onVar));
-                    x90Var4.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-                    x90Var4.setTextColor(org.telegram.ui.ActionBar.h6.w0(i16, onVar));
-                    x90Var4.setTextSize(1, 14.0f);
+                    lk lkVar = new lk(parentActivity, paint);
+                    lkVar.setOnClickListener(new g81(parentActivity));
+                    lkVar.setPadding(AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), 0);
+                    lkVar.setText(LocaleController.getString(R.string.SponsoredMessageAlertLearnMoreUrl));
+                    org.telegram.ui.ActionBar.r6.W(lkVar, i16, qnVar);
+                    int i17 = org.telegram.ui.ActionBar.k6.h5;
+                    org.telegram.ui.Cells.y e = org.telegram.ui.ActionBar.a6.e(new float[]{4.0f}, org.telegram.ui.ActionBar.k6.w0(i17, qnVar));
+                    org.telegram.ui.ActionBar.n6 O = org.telegram.ui.ActionBar.r6.O(i17);
+                    org.telegram.ui.ActionBar.n6 f10 = org.telegram.ui.ActionBar.r6.f(i17);
+                    lkVar.setBackground(e);
+                    org.telegram.ui.ActionBar.r6.k(lkVar, e, O, f10, qnVar);
+                    lkVar.setTextSize(1, 14.0f);
+                    lkVar.setGravity(16);
+                    org.telegram.ui.Components.y90 y90Var4 = new org.telegram.ui.Components.y90(parentActivity, null);
+                    y90Var4.setText(AndroidUtilities.replaceLinks(LocaleController.getString("SponsoredMessageInfo2Description4"), qnVar));
+                    y90Var4.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
+                    org.telegram.ui.ActionBar.r6.W(y90Var4, i15, qnVar);
+                    y90Var4.setTextSize(1, 14.0f);
                     textView.setPadding(AndroidUtilities.dp(22.0f), 0, AndroidUtilities.dp(22.0f), 0);
-                    e.addView(textView);
-                    x90Var.setPadding(AndroidUtilities.dp(22.0f), 0, AndroidUtilities.dp(22.0f), 0);
-                    e.addView(x90Var, w7.z5.t(-1, -2, 0, 0, 18, 0, 0));
-                    x90Var2.setPadding(AndroidUtilities.dp(22.0f), 0, AndroidUtilities.dp(22.0f), 0);
-                    e.addView(x90Var2, w7.z5.t(-1, -2, 0, 0, 24, 0, 0));
-                    x90Var3.setPadding(AndroidUtilities.dp(22.0f), 0, AndroidUtilities.dp(22.0f), 0);
-                    e.addView(x90Var3, w7.z5.t(-1, -2, 0, 0, 24, 0, 0));
-                    e.addView(kkVar, w7.z5.t(-2, 34, 1, 22, 14, 22, 0));
-                    x90Var4.setPadding(AndroidUtilities.dp(22.0f), 0, AndroidUtilities.dp(22.0f), 0);
-                    e.addView(x90Var4, w7.z5.t(-1, -2, 0, 0, 14, 0, 0));
-                    ScrollView scrollView = new ScrollView(c81Var.getContext());
-                    scrollView.addView(e);
-                    c81Var.addView(scrollView, w7.z5.d(-1, -2.0f, 0, 0.0f, 12.0f, 0.0f, 22.0f));
-                    i15.customView = c81Var;
-                    i15.show();
+                    f7.addView(textView);
+                    y90Var.setPadding(AndroidUtilities.dp(22.0f), 0, AndroidUtilities.dp(22.0f), 0);
+                    f7.addView(y90Var, w7.z5.t(-1, -2, 0, 0, 18, 0, 0));
+                    y90Var2.setPadding(AndroidUtilities.dp(22.0f), 0, AndroidUtilities.dp(22.0f), 0);
+                    f7.addView(y90Var2, w7.z5.t(-1, -2, 0, 0, 24, 0, 0));
+                    y90Var3.setPadding(AndroidUtilities.dp(22.0f), 0, AndroidUtilities.dp(22.0f), 0);
+                    f7.addView(y90Var3, w7.z5.t(-1, -2, 0, 0, 24, 0, 0));
+                    f7.addView(lkVar, w7.z5.t(-2, 34, 1, 22, 14, 22, 0));
+                    y90Var4.setPadding(AndroidUtilities.dp(22.0f), 0, AndroidUtilities.dp(22.0f), 0);
+                    f7.addView(y90Var4, w7.z5.t(-1, -2, 0, 0, 14, 0, 0));
+                    ScrollView scrollView = new ScrollView(h81Var.getContext());
+                    scrollView.addView(f7);
+                    h81Var.addView(scrollView, w7.z5.d(-1, -2.0f, 0, 0.0f, 12.0f, 0.0f, 22.0f));
+                    j10.customView = h81Var;
+                    j10.show();
                     break;
                 }
                 break;
             case 11:
-                qnVar.finishPreviewFragment();
+                snVar.finishPreviewFragment();
                 break;
             case 12:
-                qnVar.getClass();
-                qnVar.showDialog(new sg.y0((org.telegram.ui.ActionBar.n2) qnVar, 28, true));
+                snVar.getClass();
+                snVar.showDialog(new sg.y0((org.telegram.ui.ActionBar.o2) snVar, 28, true));
                 break;
             case 13:
-                qn qnVar3 = this.b;
-                org.telegram.ui.Components.f5.i0(qnVar3, qnVar3.T5, qnVar3.f, qnVar3.e, qnVar3.h, qnVar3.N1.getTag(R.id.object_tag) != null, qnVar3.Z7, new sg(qnVar3, i12), qnVar3.ea);
+                sn snVar3 = this.b;
+                org.telegram.ui.Components.f5.j0(snVar3, snVar3.f6, snVar3.f, snVar3.e, snVar3.h, snVar3.Z1.getTag(R.id.object_tag) != null, snVar3.l8, new rg(snVar3, i12), snVar3.qa);
                 break;
             case 14:
-                qn.k0(qnVar);
+                sn.j0(snVar);
                 break;
             case 15:
-                if (qnVar.c4 != null) {
-                    TopicsController topicsController = qnVar.getMessagesController().getTopicsController();
-                    long j10 = qnVar.e.id;
-                    TLRPC.TL_forumTopic tL_forumTopic = qnVar.c4;
+                if (snVar.o4 != null) {
+                    TopicsController topicsController = snVar.getMessagesController().getTopicsController();
+                    long j11 = snVar.e.id;
+                    TLRPC.TL_forumTopic tL_forumTopic = snVar.o4;
                     int i18 = tL_forumTopic.id;
                     tL_forumTopic.closed = false;
-                    topicsController.toggleCloseTopic(j10, i18, false);
+                    topicsController.toggleCloseTopic(j11, i18, false);
                 }
-                qnVar.Wc();
-                qnVar.mc(false);
-                qnVar.Vc(true);
+                snVar.Yc();
+                snVar.oc(false);
+                snVar.Xc(true);
                 break;
             case 16:
-                long j11 = qnVar.T5;
-                if (qnVar.h != null) {
-                    j11 = qnVar.f.id;
+                long j12 = snVar.f6;
+                if (snVar.h != null) {
+                    j12 = snVar.f.id;
                 }
-                qnVar.Yb = false;
-                qnVar.getMessagesController().hidePeerSettingsBar(j11, qnVar.f, qnVar.e);
-                qnVar.Vc(true);
-                qnVar.tc(true);
+                snVar.lc = false;
+                snVar.getMessagesController().hidePeerSettingsBar(j12, snVar.f, snVar.e);
+                snVar.Xc(true);
+                snVar.vc(true);
                 break;
             case 17:
-                qn qnVar4 = this.b;
-                qnVar4.D4 = true;
-                if (!qnVar4.K9() || qnVar4.h4) {
-                    int i19 = qnVar4.L4;
+                sn snVar4 = this.b;
+                snVar4.P4 = true;
+                if (!snVar4.K9() || snVar4.t4) {
+                    int i19 = snVar4.X4;
                     if (i19 != 0) {
-                        if (!qnVar4.H4.isEmpty()) {
-                            if (i19 == ((Integer) i2.e.h(1, qnVar4.H4)).intValue()) {
-                                i13 = ((Integer) qnVar4.H4.get(0)).intValue() + 1;
-                                qnVar4.O4 = true;
+                        if (!snVar4.T4.isEmpty()) {
+                            if (i19 == ((Integer) i2.o1.i(1, snVar4.T4)).intValue()) {
+                                i13 = ((Integer) snVar4.T4.get(0)).intValue() + 1;
+                                snVar4.a5 = true;
                             } else {
-                                qnVar4.O4 = false;
+                                snVar4.a5 = false;
                                 i13 = i19 - 1;
                             }
                         }
-                        qnVar4.N4 = i13;
-                        if (!qnVar4.O4) {
+                        snVar4.Z4 = i13;
+                        if (!snVar4.a5) {
                             i13 = -i13;
                         }
-                        qnVar4.j(i19, 0, true, 0, true, i13);
-                        qnVar4.zc();
+                        snVar4.j(i19, 0, true, 0, true, i13);
+                        snVar4.Bc();
                         break;
                     }
                 } else {
-                    qnVar4.j((int) qnVar4.d4, 0, true, 0, true, 0);
+                    snVar4.j((int) snVar4.p4, 0, true, 0, true, 0);
                     break;
                 }
                 break;
             case 18:
-                qnVar.na(false);
+                snVar.na(false);
                 break;
             case 19:
-                qn.b1(qnVar);
+                sn.f1(snVar);
                 break;
             case 20:
                 Bundle bundle2 = new Bundle();
-                bundle2.putLong("user_id", qnVar.a());
-                qnVar.presentFragment(new sk(bundle2));
+                bundle2.putLong("user_id", snVar.a());
+                snVar.presentFragment(new tk(bundle2));
                 break;
             case 21:
-                qn.m0(qnVar);
+                sn.l0(snVar);
                 break;
             case 22:
-                qn.Y0(qnVar);
+                sn.d1(snVar);
                 break;
             case 23:
-                qn.i0(qnVar);
+                sn.h0(snVar);
                 break;
             case 24:
-                qnVar.ga(false);
+                snVar.ga(false);
                 break;
             case 25:
-                SparseArray[] sparseArrayArr = qnVar.W5;
+                SparseArray[] sparseArrayArr = snVar.i6;
                 for (int i20 = 1; i20 >= 0; i20--) {
                     if (messageObject == null && sparseArrayArr[i20].size() != 0) {
-                        messageObject = (MessageObject) qnVar.o6[i20].get(sparseArrayArr[i20].keyAt(0));
+                        messageObject = (MessageObject) snVar.A6[i20].get(sparseArrayArr[i20].keyAt(0));
                     }
                     sparseArrayArr[i20].clear();
-                    qnVar.X5[i20].clear();
-                    qnVar.Y5[i20].clear();
+                    snVar.j6[i20].clear();
+                    snVar.k6[i20].clear();
                 }
-                qnVar.h9();
-                if (messageObject != null && ((i10 = messageObject.messageOwner.id) > 0 || (i10 < 0 && qnVar.h != null))) {
-                    qnVar.Gb(messageObject);
+                snVar.h9();
+                if (messageObject != null && ((i10 = messageObject.messageOwner.id) > 0 || (i10 < 0 && snVar.h != null))) {
+                    snVar.Hb(messageObject);
                 }
-                qnVar.Dc(0, true);
-                qnVar.bd(false);
-                qnVar.Qc();
+                snVar.Fc(0, true);
+                snVar.dd(false);
+                snVar.Sc();
                 break;
             case 26:
-                qn.c1(qnVar);
+                sn.g1(snVar);
                 break;
             case 27:
-                qn qnVar5 = this.b;
-                MessageObject messageObject3 = qnVar5.p5;
+                sn snVar5 = this.b;
+                MessageObject messageObject3 = snVar5.B5;
                 if (messageObject3 != null) {
-                    qnVar5.j(messageObject3.getId(), 0, true, 0, true, 0);
+                    snVar5.j(messageObject3.getId(), 0, true, 0, true, 0);
                     break;
                 }
                 break;
             case 28:
-                qnVar.qa(qnVar.J9() ? "" : null);
+                snVar.qa(snVar.J9() ? "" : null);
                 break;
             default:
-                qnVar.T7();
-                qnVar.y3.m(qnVar.T5, LocaleController.getString(R.string.BroadcastGroupInfo), 18);
+                snVar.T7();
+                snVar.K3.m(snVar.f6, LocaleController.getString(R.string.BroadcastGroupInfo), 18);
                 break;
         }
     }

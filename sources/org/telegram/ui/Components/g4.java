@@ -1,15 +1,12 @@
 package org.telegram.ui.Components;
 
-import android.view.inputmethod.EditorInfo;
-import android.view.inputmethod.InputConnection;
+import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class g4 extends EditTextBoldCursor {
-    @Override // android.widget.TextView, android.view.View
-    public final InputConnection onCreateInputConnection(EditorInfo editorInfo) {
-        InputConnection onCreateInputConnection = super.onCreateInputConnection(editorInfo);
-        editorInfo.imeOptions &= -1073741825;
-        return onCreateInputConnection;
+public final class g4 extends qd0 {
+    @Override // org.telegram.ui.Components.qd0
+    public final CharSequence d(int i10) {
+        return LocaleController.formatPluralString("Hours", i10, new Object[0]);
     }
 }

@@ -2,29 +2,27 @@ package j3;
 
 import ad.d;
 import b2.t0;
-import b2.v;
 import b2.v0;
-import c3.j0;
-import c3.o;
-import c3.p;
 import c3.q;
+import c3.r;
 import c3.s;
-import c3.t;
+import c3.u;
+import c3.v;
 import e2.x;
 import e9.l0;
 import e9.n0;
 import e9.x1;
-import i2.e;
+import i2.o1;
 import java.util.List;
 import v7.k8;
 import w3.l;
 import z3.k;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public final class a implements o {
-    public q b;
-    public p c;
+public final class a implements q {
+    public s b;
+    public r c;
     public d d;
     public l e;
     public int g;
@@ -34,17 +32,17 @@ public final class a implements o {
     public long j = -1;
     public int f = 0;
 
-    @Override // c3.o
-    public final boolean a(p pVar) {
-        return k8.a((c3.l) pVar, true);
+    @Override // c3.q
+    public final boolean a(r rVar) {
+        return k8.a((c3.l) rVar, true);
     }
 
-    @Override // c3.o
-    public final void c(q qVar) {
-        this.b = qVar;
+    @Override // c3.q
+    public final void c(s sVar) {
+        this.b = sVar;
     }
 
-    @Override // c3.o
+    @Override // c3.q
     public final void d(long j10, long j11) {
         if (j10 != 0) {
             if (this.f == 3) {
@@ -63,25 +61,25 @@ public final class a implements o {
         }
     }
 
-    @Override // c3.o
+    @Override // c3.q
     public final List e() {
         l0 l0Var = n0.b;
         return x1.e;
     }
 
-    @Override // c3.o
-    public final int f(p pVar, s sVar) {
+    @Override // c3.q
+    public final int f(r rVar, u uVar) {
         while (true) {
             int i10 = this.f;
             if (i10 == 0) {
                 int i11 = this.i;
                 x xVar = this.a;
                 if (i11 == 0) {
-                    if (!pVar.c(xVar.a, 0, 8, true)) {
-                        q qVar = this.b;
-                        qVar.getClass();
-                        qVar.H();
-                        this.b.g0(new t(-9223372036854775807L));
+                    if (!rVar.d(xVar.a, 0, 8, true)) {
+                        s sVar = this.b;
+                        sVar.getClass();
+                        sVar.C();
+                        this.b.g0(new v(-9223372036854775807L));
                         this.f = 4;
                         return -1;
                     }
@@ -91,28 +89,28 @@ public final class a implements o {
                     this.g = xVar.m();
                 }
                 if (this.h == 1) {
-                    pVar.readFully(xVar.a, 8, 8);
+                    rVar.readFully(xVar.a, 8, 8);
                     this.i += 8;
                     this.h = xVar.G();
                 }
                 if (this.g == 1836086884) {
-                    long position = pVar.getPosition();
+                    long position = rVar.getPosition();
                     this.j = position;
                     long j10 = this.i;
                     l3.b bVar = new l3.b(0L, position - j10, -9223372036854775807L, position, this.h - j10);
-                    q qVar2 = this.b;
-                    qVar2.getClass();
-                    j0 j02 = qVar2.j0(1024, 4);
-                    v vVar = new v();
+                    s sVar2 = this.b;
+                    sVar2.getClass();
+                    c3.l0 j02 = sVar2.j0(1024, 4);
+                    b2.v vVar = new b2.v();
                     vVar.q = v0.n("image/heic");
                     vVar.k = new t0(bVar);
-                    e.u(vVar, j02);
+                    o1.v(vVar, j02);
                     this.f = 2;
                 } else {
                     this.f = 1;
                 }
             } else if (i10 == 1) {
-                pVar.r((int) (this.h - this.i));
+                rVar.r((int) (this.h - this.i));
                 this.i = 0;
                 this.f = 0;
             } else {
@@ -123,42 +121,42 @@ public final class a implements o {
                         }
                         throw new IllegalStateException();
                     }
-                    if (this.d == null || pVar != this.c) {
-                        this.c = pVar;
-                        this.d = new d(pVar, this.j);
+                    if (this.d == null || rVar != this.c) {
+                        this.c = rVar;
+                        this.d = new d(rVar, this.j);
                     }
                     l lVar = this.e;
                     lVar.getClass();
-                    int f7 = lVar.f(this.d, sVar);
+                    int f7 = lVar.f(this.d, uVar);
                     if (f7 == 1) {
-                        sVar.a += this.j;
+                        uVar.a += this.j;
                     }
                     return f7;
                 }
                 if (this.e == null) {
                     this.e = new l(k.D, 8);
                 }
-                d dVar = new d(pVar, this.j);
+                d dVar = new d(rVar, this.j);
                 this.d = dVar;
                 if (this.e.a(dVar)) {
                     l lVar2 = this.e;
                     long j11 = this.j;
-                    q qVar3 = this.b;
-                    qVar3.getClass();
-                    lVar2.c(new d(j11, qVar3, 2));
+                    s sVar3 = this.b;
+                    sVar3.getClass();
+                    lVar2.c(new d(j11, sVar3, 2));
                     this.f = 3;
                 } else {
-                    q qVar4 = this.b;
-                    qVar4.getClass();
-                    qVar4.H();
-                    this.b.g0(new t(-9223372036854775807L));
+                    s sVar4 = this.b;
+                    sVar4.getClass();
+                    sVar4.C();
+                    this.b.g0(new v(-9223372036854775807L));
                     this.f = 4;
                 }
             }
         }
     }
 
-    @Override // c3.o
+    @Override // c3.q
     public final void release() {
         l lVar = this.e;
         if (lVar != null) {
@@ -167,8 +165,8 @@ public final class a implements o {
         }
     }
 
-    @Override // c3.o
-    public final o b() {
+    @Override // c3.q
+    public final q b() {
         return this;
     }
 }

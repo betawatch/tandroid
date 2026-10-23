@@ -51,7 +51,7 @@ import r0.i0;
 import v7.q7;
 import w7.q;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public class Toolbar extends ViewGroup {
     public final int E;
@@ -1575,7 +1575,7 @@ public class Toolbar extends ViewGroup {
         this.W = new g3(new h3(this, i11));
         this.a0 = new ArrayList();
         this.b0 = new le.b(this, i11);
-        this.j0 = new androidx.activity.i(this, 25);
+        this.j0 = new androidx.activity.i(this, 27);
         Context context2 = getContext();
         int[] iArr = f.a.x;
         g3 P = g3.P(context2, attributeSet, iArr, i10);

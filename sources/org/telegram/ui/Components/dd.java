@@ -19,15 +19,17 @@ import android.text.SpannableStringBuilder;
 import android.view.MotionEvent;
 import android.view.View;
 import java.util.Arrays;
+import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public abstract class dd extends View {
+public abstract class dd extends View implements org.telegram.ui.ActionBar.b6 {
     public static final int[] W;
     public static final int[] a0;
     public static long b0;
@@ -67,15 +69,15 @@ public abstract class dd extends View {
     public final Paint y;
 
     static {
-        int i10 = org.telegram.ui.ActionBar.h6.lj;
-        int i11 = org.telegram.ui.ActionBar.h6.hj;
-        int i12 = org.telegram.ui.ActionBar.h6.ij;
-        int i13 = org.telegram.ui.ActionBar.h6.pj;
-        int i14 = org.telegram.ui.ActionBar.h6.mj;
-        int i15 = org.telegram.ui.ActionBar.h6.jj;
-        int i16 = org.telegram.ui.ActionBar.h6.nj;
-        int i17 = org.telegram.ui.ActionBar.h6.qj;
-        int i18 = org.telegram.ui.ActionBar.h6.kj;
+        int i10 = org.telegram.ui.ActionBar.k6.lj;
+        int i11 = org.telegram.ui.ActionBar.k6.hj;
+        int i12 = org.telegram.ui.ActionBar.k6.ij;
+        int i13 = org.telegram.ui.ActionBar.k6.pj;
+        int i14 = org.telegram.ui.ActionBar.k6.mj;
+        int i15 = org.telegram.ui.ActionBar.k6.jj;
+        int i16 = org.telegram.ui.ActionBar.k6.nj;
+        int i17 = org.telegram.ui.ActionBar.k6.qj;
+        int i18 = org.telegram.ui.ActionBar.k6.kj;
         W = new int[]{i10, i11, i12, i13, i14, i15, i16, i17, i13, i18, i18};
         int i19 = R.raw.cache_photos;
         int i20 = R.raw.cache_videos;
@@ -124,7 +126,7 @@ public abstract class dd extends View {
         this.v = new bd[i10];
         Paint.Style style = Paint.Style.STROKE;
         paint.setStyle(style);
-        paint.setColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.i6, false));
+        paint.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.i6, false));
         paint3.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
         Shader.TileMode tileMode = Shader.TileMode.CLAMP;
         LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, 0.0f, AndroidUtilities.dp(200.0f), new int[]{7263574, -9513642, -12469647, 4307569}, new float[]{0.0f, 0.07f, 0.93f, 1.0f}, tileMode);
@@ -140,13 +142,13 @@ public abstract class dd extends View {
         paint2.setStrokeJoin(Paint.Join.ROUND);
         p6Var.n(0.2f, 450L, bsVar);
         p6Var.A = 0.6f;
-        p6Var.u(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false));
+        p6Var.u(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.G6, false));
         p6Var.x(AndroidUtilities.bold());
         p6Var.w(AndroidUtilities.dp(32.0f));
         p6Var.b = 17;
         p6Var2.n(0.6f, 450L, bsVar);
         p6Var2.A = 0.6f;
-        p6Var2.u(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.y6, false));
+        p6Var2.u(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.y6, false));
         p6Var2.w(AndroidUtilities.dp(12.0f));
         p6Var2.b = 17;
         p6Var3.n(0.2f, 450L, bsVar);
@@ -169,8 +171,8 @@ public abstract class dd extends View {
             }
             bd bdVar = new bd(this);
             bdVarArr[i12] = bdVar;
-            int v = org.telegram.ui.ActionBar.h6.v(org.telegram.ui.ActionBar.h6.x0(null, iArr[i12], false), ConnectionsManager.FileTypeAudio);
-            int v10 = org.telegram.ui.ActionBar.h6.v(org.telegram.ui.ActionBar.h6.x0(null, iArr[i12], false), 822083583);
+            int v = org.telegram.ui.ActionBar.k6.v(org.telegram.ui.ActionBar.k6.x0(null, iArr[i12], false), ConnectionsManager.FileTypeAudio);
+            int v10 = org.telegram.ui.ActionBar.k6.v(org.telegram.ui.ActionBar.k6.x0(null, iArr[i12], false), 822083583);
             AndroidUtilities.dp(50.0f);
             RadialGradient radialGradient = new RadialGradient(0.0f, 0.0f, AndroidUtilities.dp(86.0f), new int[]{v10, v}, new float[]{0.3f, 1.0f}, Shader.TileMode.CLAMP);
             bdVar.v = radialGradient;
@@ -271,7 +273,7 @@ public abstract class dd extends View {
         }
         float currentTimeMillis = ((d0 == null ? System.currentTimeMillis() : r9.longValue()) - c0.longValue()) * 0.6f;
         float[] fArr2 = this.w;
-        dq.a(fArr2, currentTimeMillis % 5400.0f);
+        eq.a(fArr2, currentTimeMillis % 5400.0f);
         float f25 = fArr2[0];
         float f26 = fArr2[1];
         if (d > 0.0f) {
@@ -301,7 +303,7 @@ public abstract class dd extends View {
                 break;
             }
             bd bdVar2 = bdVarArr[i15];
-            dq.a(fArr2, (currentTimeMillis + (i15 * 80)) % 5400.0f);
+            eq.a(fArr2, (currentTimeMillis + (i15 * 80)) % 5400.0f);
             float min = Math.min(Math.max(fArr2[i11], f25), f26);
             float min2 = Math.min(Math.max(fArr2[i10], f25), f26);
             if (d < f11 || min < min2) {
@@ -399,7 +401,7 @@ public abstract class dd extends View {
                                 f18 = f31;
                                 double d15 = width6;
                                 float f34 = f30 + width4;
-                                double f35 = i2.e.f(a(f34), d15, rectF12.centerX());
+                                double f35 = i2.o1.f(a(f34), d15, rectF12.centerX());
                                 z11 = z15;
                                 i12 = i15;
                                 f19 = abs;
@@ -417,12 +419,12 @@ public abstract class dd extends View {
                             path.arcTo(rectF12, f30 + width4, f33 - (width4 * 2.0f));
                             if (z11) {
                                 double d16 = width6;
-                                float f38 = (float) i2.e.f(a(r4), d16, rectF12.centerX());
+                                float f38 = (float) i2.o1.f(a(r4), d16, rectF12.centerX());
                                 float sin2 = (float) ((Math.sin(a(r4)) * d16) + rectF12.centerY());
                                 rectF11.set(f38 - min3, sin2 - min3, f38 + min3, sin2 + min3);
                                 path.arcTo(rectF11, f18 - width4, 90.0f);
                                 double d17 = width7;
-                                float f39 = (float) i2.e.f(a(r4), d17, rectF2.centerX());
+                                float f39 = (float) i2.o1.f(a(r4), d17, rectF2.centerX());
                                 float sin3 = (float) ((Math.sin(a(r4)) * d17) + rectF2.centerY());
                                 rectF11.set(f39 - min3, sin3 - min3, f39 + min3, sin3 + min3);
                                 path.arcTo(rectF11, (f18 - width5) + 90.0f, 90.0f);
@@ -432,7 +434,7 @@ public abstract class dd extends View {
                             if (z11) {
                                 double d18 = width7;
                                 float f40 = f30 + width5;
-                                double f41 = i2.e.f(a(f40), d18, rectF5.centerX());
+                                double f41 = i2.o1.f(a(f40), d18, rectF5.centerX());
                                 double sin4 = (Math.sin(a(f40)) * d18) + rectF5.centerY();
                                 float f42 = (float) f41;
                                 float f43 = (float) sin4;
@@ -900,7 +902,7 @@ public abstract class dd extends View {
         bd[] bdVarArr4 = bdVarArr3;
         AndroidUtilities.roundPercents(this.V, this.U);
         if (this.d == 0) {
-            Arrays.sort(cdVarArr2, new org.telegram.ui.ActionBar.i4(15));
+            Arrays.sort(cdVarArr2, new org.telegram.ui.ActionBar.l4(15));
             int i17 = 0;
             while (true) {
                 if (i17 > cdVarArr2.length) {
@@ -1143,5 +1145,31 @@ public abstract class dd extends View {
             bdVarArr[i11].n = i10 == i11;
             i11++;
         }
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void updateColors() {
+        try {
+            this.y.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.i6, false));
+            try {
+                p6 p6Var = this.M;
+                if (p6Var != null) {
+                    p6Var.u(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.G6, false));
+                }
+                p6 p6Var2 = this.N;
+                if (p6Var2 != null) {
+                    p6Var2.u(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.y6, false));
+                }
+            } catch (Exception e) {
+                FileLog.e(e);
+            }
+            invalidate();
+        } catch (Exception e7) {
+            FileLog.e(e7);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

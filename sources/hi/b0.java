@@ -1,17 +1,17 @@
 package hi;
 
-import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.qn;
+import org.telegram.ui.ActionBar.o2;
+import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class b0 implements r0 {
-    public final /* synthetic */ n2 a;
+    public final /* synthetic */ o2 a;
     public final /* synthetic */ k0 b;
 
-    public b0(k0 k0Var, n2 n2Var) {
+    public b0(k0 k0Var, o2 o2Var) {
         this.b = k0Var;
-        this.a = n2Var;
+        this.a = o2Var;
     }
 
     @Override // hi.r0
@@ -21,14 +21,14 @@ public final class b0 implements r0 {
 
     @Override // hi.r0
     public final void j(long j10) {
-        this.a.presentFragment(qn.W9(j10));
+        this.a.presentFragment(sn.W9(j10));
         this.b.dismiss();
     }
 
     @Override // hi.r0
-    public final void l() {
+    public final void q() {
         k0 k0Var = this.b;
-        k0Var.w.d.W2.N(true);
-        k0Var.v.d.W2.N(true);
+        k0Var.w.d.Z2.N(true);
+        k0Var.v.d.Z2.N(true);
     }
 }

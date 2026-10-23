@@ -6,7 +6,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x2 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -23,7 +23,7 @@ public final /* synthetic */ class x2 implements RequestDelegate {
             case 0:
                 d3 d3Var = this.b.d;
                 if (tLObject instanceof TLRPC.TL_updates) {
-                    MessagesController.getInstance(d3Var.G).lambda$processUpdates$377((TLRPC.TL_updates) tLObject, false);
+                    MessagesController.getInstance(d3Var.H).lambda$processUpdates$377((TLRPC.TL_updates) tLObject, false);
                 }
                 AndroidUtilities.runOnUIThread(new y1(d3Var, 16));
                 break;

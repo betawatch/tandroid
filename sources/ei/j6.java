@@ -20,11 +20,11 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.nk;
+import org.telegram.messenger.sl;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.bs;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class j6 extends View {
     public final Paint a;
@@ -147,7 +147,7 @@ public final class j6 extends View {
                 this.w = ofFloat;
                 ofFloat.addUpdateListener(new i6(this, 0));
                 this.w.addListener(new ah.b(this, 21));
-                nk.l(1.5f, this.w);
+                sl.l(1.5f, this.w);
                 this.w.setDuration(350L);
                 this.w.start();
             }

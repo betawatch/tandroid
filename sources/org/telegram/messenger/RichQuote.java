@@ -13,14 +13,14 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public class RichQuote {
     public static final int MAX_FRAGMENTS = 32;
     public final ArrayList<TL_iv.RichText> fragments;
     public final int offset;
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public static class Position {
         final int offset;
         final RichMessageLayout.QuoteRootSpan root;
@@ -35,7 +35,7 @@ public class RichQuote {
         }
     }
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public static class Range {
         final Sliced first;
         final int fromIndex;
@@ -327,7 +327,7 @@ public class RichQuote {
                     RichMessageLayout.RichBlock richBlock = arrayList3.get(i13);
                     i13++;
                     RichMessageLayout.RichBlock richBlock2 = richBlock;
-                    org.telegram.ui.Cells.y9[] text = richBlock2.getText();
+                    org.telegram.ui.Cells.z9[] text = richBlock2.getText();
                     if (text != null) {
                         int length2 = text.length;
                         int i14 = i11;
@@ -535,8 +535,8 @@ public class RichQuote {
         return null;
     }
 
-    private static CharSequence getText(org.telegram.ui.Cells.y9 y9Var) {
-        Layout layout = y9Var == null ? null : y9Var.getLayout();
+    private static CharSequence getText(org.telegram.ui.Cells.z9 z9Var) {
+        Layout layout = z9Var == null ? null : z9Var.getLayout();
         if (layout == null) {
             return null;
         }
@@ -822,7 +822,7 @@ public class RichQuote {
         add(pageBlock.text, arrayList);
     }
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public static class Sliced {
         final int flags;
         final int length;

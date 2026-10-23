@@ -7,7 +7,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class nd implements Runnable {
     public final /* synthetic */ int a;
@@ -53,25 +53,25 @@ public final /* synthetic */ class nd implements Runnable {
                 zd zdVar = ieVar.Q0;
                 zdVar.setEnabled(ieVar.X0 > 0 || ieVar.L0 > currentTime);
                 if (currentTime >= ieVar.L0) {
-                    zdVar.f(null, true);
-                    zdVar.g(ai.md.W0(false, ieVar.W0 ? LocaleController.getString(R.string.MonetizationStarsWithdrawAll) : LocaleController.formatPluralStringSpaced("MonetizationStarsWithdraw", (int) ieVar.X0), ieVar.R0), true, true);
+                    zdVar.g(null, true);
+                    zdVar.i(ai.nd.W0(false, ieVar.W0 ? LocaleController.getString(R.string.MonetizationStarsWithdrawAll) : LocaleController.formatPluralStringSpaced("MonetizationStarsWithdraw", (int) ieVar.X0), ieVar.R0), true, true);
                     break;
                 } else {
-                    zdVar.g(LocaleController.getString(R.string.MonetizationStarsWithdrawUntil), true, true);
+                    zdVar.i(LocaleController.getString(R.string.MonetizationStarsWithdrawUntil), true, true);
                     if (ieVar.h1 == null) {
                         ieVar.h1 = new SpannableStringBuilder("l");
-                        org.telegram.ui.Components.yq yqVar = new org.telegram.ui.Components.yq(R.drawable.mini_switch_lock, 0);
-                        yqVar.setTopOffset(1);
-                        ieVar.h1.setSpan(yqVar, 0, 1, 33);
+                        org.telegram.ui.Components.xq xqVar = new org.telegram.ui.Components.xq(R.drawable.mini_switch_lock, 0);
+                        xqVar.setTopOffset(1);
+                        ieVar.h1.setSpan(xqVar, 0, 1, 33);
                     }
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                     spannableStringBuilder.append((CharSequence) ieVar.h1).append((CharSequence) ai.x.j0(ieVar.L0 - currentTime));
-                    zdVar.f(spannableStringBuilder, true);
+                    zdVar.g(spannableStringBuilder, true);
                     org.telegram.ui.Components.qc qcVar = ieVar.Z0;
                     if (qcVar != null) {
                         org.telegram.ui.Components.ub ubVar = qcVar.e;
                         if ((ubVar instanceof org.telegram.ui.Components.yb) && ubVar.isAttachedToWindow()) {
-                            org.telegram.messenger.nk.r(R.string.BotStarsWithdrawalToast, new Object[]{ai.x.j0(ieVar.L0 - currentTime)}, ((org.telegram.ui.Components.yb) ieVar.Z0.e).b);
+                            org.telegram.messenger.sl.r(R.string.BotStarsWithdrawalToast, new Object[]{ai.x.j0(ieVar.L0 - currentTime)}, ((org.telegram.ui.Components.yb) ieVar.Z0.e).b);
                         }
                     }
                     AndroidUtilities.cancelRunOnUIThread(ndVar2);

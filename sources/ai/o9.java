@@ -5,27 +5,27 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o9 implements Utilities.Callback {
-    public final /* synthetic */ ga a;
+    public final /* synthetic */ ha a;
     public final /* synthetic */ long b;
     public final /* synthetic */ int c;
     public final /* synthetic */ boolean[] d;
     public final /* synthetic */ Utilities.Callback2 e;
     public final /* synthetic */ Context f;
-    public final /* synthetic */ org.telegram.ui.ActionBar.d6 g;
+    public final /* synthetic */ org.telegram.ui.ActionBar.g6 g;
     public final /* synthetic */ TLRPC.ChatInvite h;
     public final /* synthetic */ String i;
 
-    public /* synthetic */ o9(ga gaVar, long j10, int i10, boolean[] zArr, Utilities.Callback2 callback2, Context context, org.telegram.ui.ActionBar.d6 d6Var, TLRPC.ChatInvite chatInvite, String str) {
-        this.a = gaVar;
+    public /* synthetic */ o9(ha haVar, long j10, int i10, boolean[] zArr, Utilities.Callback2 callback2, Context context, org.telegram.ui.ActionBar.g6 g6Var, TLRPC.ChatInvite chatInvite, String str) {
+        this.a = haVar;
         this.b = j10;
         this.c = i10;
         this.d = zArr;
         this.e = callback2;
         this.f = context;
-        this.g = d6Var;
+        this.g = g6Var;
         this.h = chatInvite;
         this.i = str;
     }
@@ -33,25 +33,25 @@ public final /* synthetic */ class o9 implements Utilities.Callback {
     @Override // org.telegram.messenger.Utilities.Callback
     public final void run(Object obj) {
         Utilities.Callback callback = (Utilities.Callback) obj;
-        ga gaVar = this.a;
-        long j10 = gaVar.f.amount;
+        ha haVar = this.a;
+        long j10 = haVar.f.amount;
         long j11 = this.b;
         boolean[] zArr = this.d;
         Utilities.Callback2 callback2 = this.e;
         TLRPC.ChatInvite chatInvite = this.h;
         String str = this.i;
         if (j10 >= j11) {
-            gaVar.Z(str, chatInvite, new x7(callback, zArr, callback2));
+            haVar.Z(str, chatInvite, new x7(callback, zArr, callback2));
             return;
         }
         boolean starsPurchaseAvailable = MessagesController.getInstance(this.c).starsPurchaseAvailable();
         Context context = this.f;
-        org.telegram.ui.ActionBar.d6 d6Var = this.g;
+        org.telegram.ui.ActionBar.g6 g6Var = this.g;
         if (starsPurchaseAvailable) {
             boolean[] zArr2 = {false};
-            cd cdVar = new cd(context, d6Var, j11, 1, chatInvite.title, new v7(gaVar, zArr2, str, chatInvite, zArr, callback2, callback), 0L);
-            cdVar.setOnDismissListener(new w7(gaVar, callback, zArr2, zArr, callback2, 0));
-            cdVar.show();
+            dd ddVar = new dd(context, g6Var, j11, 1, chatInvite.title, new v7(haVar, zArr2, str, chatInvite, zArr, callback2, callback), 0L);
+            ddVar.setOnDismissListener(new w7(haVar, callback, zArr2, zArr, callback2, 0));
+            ddVar.show();
             return;
         }
         if (callback != null) {
@@ -61,6 +61,6 @@ public final /* synthetic */ class o9 implements Utilities.Callback {
             callback2.run("cancelled", 0L);
             zArr[0] = true;
         }
-        ga.e0(context, d6Var);
+        ha.e0(context, g6Var);
     }
 }

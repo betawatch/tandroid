@@ -1,57 +1,117 @@
 package org.telegram.ui.Components;
 
-import org.telegram.ui.PhotoViewer;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class f81 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ j81 b;
+public final class f81 {
+    public final boolean a;
+    public final int b;
+    public final int c;
+    public final ArrayList d;
 
-    public /* synthetic */ f81(j81 j81Var, int i10) {
-        this.a = i10;
-        this.b = j81Var;
+    public f81(h81 h81Var) {
+        ArrayList arrayList = new ArrayList();
+        this.d = arrayList;
+        this.a = h81Var.b;
+        this.b = h81Var.i;
+        this.c = h81Var.j;
+        arrayList.add(h81Var);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                j81 j81Var = this.b;
-                j81Var.h = 0.0f;
-                e6 e6Var = j81Var.b;
-                if (e6Var != null) {
-                    e6Var.u();
-                    j81Var.b = null;
-                    break;
-                }
-                break;
-            case 1:
-                j81 j81Var2 = this.b;
-                j81Var2.a = true;
-                j81Var2.e = null;
-                if (j81Var2.b != null) {
-                    j81Var2.s = true;
-                    PhotoViewer photoViewer = j81Var2.M.a;
-                    if (photoViewer.u3) {
-                        photoViewer.d3(true);
-                        break;
-                    }
-                }
-                break;
-            default:
-                j81 j81Var3 = this.b;
-                j81Var3.a = true;
-                j81Var3.e = null;
-                if (j81Var3.b != null) {
-                    j81Var3.s = true;
-                    PhotoViewer photoViewer2 = j81Var3.M.a;
-                    if (photoViewer2.u3) {
-                        photoViewer2.d3(true);
-                        break;
-                    }
-                }
-                break;
+    public final h81 a() {
+        ArrayList arrayList = this.d;
+        h81 h81Var = null;
+        if (arrayList.isEmpty()) {
+            return null;
         }
+        int size = arrayList.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            h81 h81Var2 = (h81) obj;
+            if (h81Var2.b()) {
+                return h81Var2;
+            }
+        }
+        long j10 = Long.MAX_VALUE;
+        for (int i11 = 0; i11 < arrayList.size(); i11++) {
+            h81 h81Var3 = (h81) arrayList.get(i11);
+            if (h81Var3.k < j10 && j81.Y(h81Var3.m)) {
+                j10 = h81Var3.k;
+                h81Var = h81Var3;
+            }
+        }
+        return h81Var != null ? h81Var : (h81) arrayList.get(0);
+    }
+
+    public final int b() {
+        int min = Math.min(this.b, this.c);
+        if (Math.abs(min - 2160) < 55) {
+            return 2160;
+        }
+        if (Math.abs(min - 1440) < 55) {
+            return 1440;
+        }
+        if (Math.abs(min - 1080) < 55) {
+            return 1080;
+        }
+        if (Math.abs(min - 720) < 55) {
+            return 720;
+        }
+        if (Math.abs(min - 480) < 55) {
+            return 480;
+        }
+        if (Math.abs(min - 360) < 55) {
+            return 360;
+        }
+        if (Math.abs(min - 240) < 55) {
+            return 240;
+        }
+        if (Math.abs(min - 144) < 55) {
+            return 144;
+        }
+        return min;
+    }
+
+    public final String toString() {
+        String str;
+        boolean z10 = SharedConfig.debugVideoQualities;
+        boolean z11 = this.a;
+        String str2 = "";
+        if (!z10) {
+            StringBuilder sb2 = new StringBuilder();
+            sb2.append(b());
+            sb2.append("p");
+            if (z11) {
+                str2 = " (" + LocaleController.getString(R.string.QualitySource) + ")";
+            }
+            sb2.append(str2);
+            return sb2.toString();
+        }
+        StringBuilder sb3 = new StringBuilder();
+        sb3.append(this.b);
+        sb3.append("x");
+        sb3.append(this.c);
+        if (z11) {
+            str = " (" + LocaleController.getString(R.string.QualitySource) + ")";
+        } else {
+            str = "";
+        }
+        sb3.append(str);
+        sb3.append("\n");
+        ArrayList arrayList = this.d;
+        sb3.append(AndroidUtilities.formatFileSize((long) ((h81) arrayList.get(0)).l).replace(" ", ""));
+        sb3.append("/s");
+        if (((h81) arrayList.get(0)).m != null) {
+            str2 = ", " + ((h81) arrayList.get(0)).m;
+        }
+        sb3.append(str2);
+        return sb3.toString();
     }
 }

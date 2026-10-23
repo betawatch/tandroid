@@ -8,12 +8,12 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.d91;
-import org.telegram.ui.Components.ks0;
+import org.telegram.ui.Components.k91;
+import org.telegram.ui.Components.ns0;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d2 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -38,23 +38,23 @@ public final /* synthetic */ class d2 implements Utilities.Callback {
                 break;
             default:
                 TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) obj;
-                ks0 ks0Var = l2Var.a;
-                v9 v9Var = ks0Var.e;
+                ns0 ns0Var = l2Var.a;
+                v9 v9Var = ns0Var.e;
                 int i12 = tL_starGiftCollection.collection_id;
                 v9Var.getClass();
                 ArrayList arrayList = new ArrayList();
                 arrayList.add(savedStarGift);
                 v9Var.a(i12, arrayList);
-                ks0Var.f(true);
-                d91 d91Var = ks0Var.n;
+                ns0Var.f(true);
+                k91 k91Var = ns0Var.n;
                 int i13 = tL_starGiftCollection.collection_id;
-                d91Var.d(i13, ks0Var.e.f(i13) + 1);
-                org.telegram.ui.ActionBar.n2 n2Var = ks0Var.a;
-                if (n2Var instanceof ProfileActivity) {
-                    ((ProfileActivity) n2Var).G4(true);
+                k91Var.d(i13, ns0Var.e.f(i13) + 1);
+                org.telegram.ui.ActionBar.o2 o2Var = ns0Var.a;
+                if (o2Var instanceof ProfileActivity) {
+                    ((ProfileActivity) o2Var).I4(true);
                 }
-                ks0Var.n();
-                xc.a0(n2Var).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2AddedToCollection, l7.Y1(savedStarGift.gift), tL_starGiftCollection.title))).j();
+                ns0Var.n();
+                xc.a0(o2Var).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2AddedToCollection, l7.X1(savedStarGift.gift), tL_starGiftCollection.title))).j();
                 break;
         }
     }

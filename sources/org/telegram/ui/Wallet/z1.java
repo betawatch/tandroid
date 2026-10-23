@@ -1,47 +1,22 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final class z1 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean[] b;
-    public final /* synthetic */ b2 c;
-    public final /* synthetic */ j2 d;
+public final class z1 {
+    public final String a;
+    public final String b;
+    public final String c;
+    public final String d;
+    public TL_wallet.tonConnectSession e;
+    public boolean f;
 
-    public /* synthetic */ z1(boolean[] zArr, b2 b2Var, j2 j2Var, int i10) {
-        this.a = i10;
-        this.b = zArr;
-        this.c = b2Var;
-        this.d = j2Var;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                if (!this.b[0]) {
-                    if (!this.c.m) {
-                        this.d.dismiss();
-                        break;
-                    } else {
-                        AndroidUtilities.runOnUIThread(this, 1000L);
-                        break;
-                    }
-                }
-                break;
-            default:
-                if (!this.b[0]) {
-                    if (!this.c.m) {
-                        this.d.dismiss();
-                        break;
-                    } else {
-                        AndroidUtilities.runOnUIThread(this, 1000L);
-                        break;
-                    }
-                }
-                break;
-        }
+    public z1(TL_wallet.tonConnectSession tonconnectsession, String str, String str2, String str3, String str4) {
+        this.e = tonconnectsession;
+        this.a = str;
+        this.b = str2;
+        this.c = str3;
+        this.d = str4;
     }
 }

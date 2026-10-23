@@ -7,28 +7,28 @@ import java.util.ArrayList;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Cells.t4;
 import org.telegram.ui.Cells.u3;
 import org.telegram.ui.Components.b10;
-import org.telegram.ui.Components.tl0;
+import org.telegram.ui.Components.wl0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public abstract class t0 extends c {
     public final Context K;
-    public final d6 L;
+    public final g6 L;
     public boolean M;
 
-    public t0(Context context, d6 d6Var, boolean z10, boolean z11) {
+    public t0(Context context, g6 g6Var, boolean z10, boolean z11) {
         super(z10, z11);
         this.M = false;
         this.K = context;
-        this.L = d6Var;
+        this.L = g6Var;
         new b10(context, null).setIsSingleCell(true);
     }
 
-    @Override // org.telegram.ui.Components.im0
+    @Override // org.telegram.ui.Components.lm0
     public final boolean D(s4.b1 b1Var) {
         return true;
     }
@@ -132,8 +132,8 @@ public abstract class t0 extends c {
 
     @Override // s4.g0
     public final s4.b1 x(ViewGroup viewGroup, int i10) {
-        d6 d6Var = this.L;
+        g6 g6Var = this.L;
         Context context = this.K;
-        return new tl0(i10 == 0 ? new t4(context, d6Var) : new u3(context, d6Var));
+        return new wl0(i10 == 0 ? new t4(context, g6Var) : new u3(context, g6Var));
     }
 }

@@ -27,10 +27,11 @@ import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import m.g3;
+import si.o0;
 import v7.u6;
 import v7.v6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class t implements y2.n {
     public final q a;
@@ -1133,23 +1134,23 @@ public final class t implements y2.n {
                                                                                     break;
                                                                                 default:
                                                                                     matcher = a2;
-                                                                                    String j58 = k3.j(1, 0, group2);
-                                                                                    String u10 = r4.c.u(j58, "=");
+                                                                                    String i53 = k3.i(1, 0, group2);
+                                                                                    String u10 = o0.u(i53, "=");
                                                                                     int length4 = u10.length() + substring.indexOf(u10);
                                                                                     z10 = f12;
                                                                                     String substring2 = substring.substring(length4, (substring.length() == length4 + 1 ? 1 : 2) + length4);
                                                                                     if (substring2.startsWith("\"")) {
-                                                                                        fVar = new f(0, j58, j(substring, Pattern.compile(j58 + "=\"((?:.|\f)+?)\""), hashMap3, dVar));
+                                                                                        fVar = new f(0, i53, j(substring, Pattern.compile(i53 + "=\"((?:.|\f)+?)\""), hashMap3, dVar));
                                                                                         arrayList11 = arrayList12;
                                                                                         arrayList10 = arrayList29;
                                                                                     } else if (substring2.equals("0x") || substring2.equals("0X")) {
                                                                                         arrayList11 = arrayList12;
                                                                                         arrayList10 = arrayList29;
-                                                                                        fVar = new f(1, j58, j(substring, Pattern.compile(j58 + "=(0[xX][A-F0-9]+)"), hashMap3, dVar));
+                                                                                        fVar = new f(1, i53, j(substring, Pattern.compile(i53 + "=(0[xX][A-F0-9]+)"), hashMap3, dVar));
                                                                                     } else {
                                                                                         arrayList11 = arrayList12;
                                                                                         arrayList10 = arrayList29;
-                                                                                        fVar = new f(j58, Double.parseDouble(j(substring, Pattern.compile(j58 + "=([\\d\\.]+)\\b"), Collections.EMPTY_MAP, dVar)));
+                                                                                        fVar = new f(i53, Double.parseDouble(j(substring, Pattern.compile(i53 + "=([\\d\\.]+)\\b"), Collections.EMPTY_MAP, dVar)));
                                                                                     }
                                                                                     arrayList32.add(fVar);
                                                                                     break;
@@ -1184,30 +1185,30 @@ public final class t implements y2.n {
                                                                                 gVar2.d = parse2;
                                                                             }
                                                                             if (S2 != -9223372036854775807L) {
-                                                                                long j59 = gVar2.e;
-                                                                                if (j59 != -9223372036854775807L) {
-                                                                                    u6.e("Can't change startDateUnixUs from %s to %s", j59, S2, j59 == S2);
+                                                                                long j58 = gVar2.e;
+                                                                                if (j58 != -9223372036854775807L) {
+                                                                                    u6.e("Can't change startDateUnixUs from %s to %s", j58, S2, j58 == S2);
                                                                                 }
                                                                                 gVar2.e = S2;
                                                                             }
                                                                             if (S3 != -9223372036854775807L) {
-                                                                                long j60 = gVar2.f;
-                                                                                if (j60 != -9223372036854775807L) {
-                                                                                    u6.e("Can't change endDateUnixUs from %s to %s", j60, S3, j60 == S3);
+                                                                                long j59 = gVar2.f;
+                                                                                if (j59 != -9223372036854775807L) {
+                                                                                    u6.e("Can't change endDateUnixUs from %s to %s", j59, S3, j59 == S3);
                                                                                 }
                                                                                 gVar2.f = S3;
                                                                             }
                                                                             if (j52 != -9223372036854775807L) {
-                                                                                long j61 = gVar2.g;
-                                                                                if (j61 != -9223372036854775807L) {
-                                                                                    u6.e("Can't change durationUs from %s to %s", j61, j52, j61 == j52);
+                                                                                long j60 = gVar2.g;
+                                                                                if (j60 != -9223372036854775807L) {
+                                                                                    u6.e("Can't change durationUs from %s to %s", j60, j52, j60 == j52);
                                                                                 }
                                                                                 gVar2.g = j52;
                                                                             }
                                                                             if (j53 != -9223372036854775807L) {
-                                                                                long j62 = gVar2.h;
-                                                                                if (j62 != -9223372036854775807L) {
-                                                                                    u6.e("Can't change plannedDurationUs from %s to %s", j62, j53, j62 == j53);
+                                                                                long j61 = gVar2.h;
+                                                                                if (j61 != -9223372036854775807L) {
+                                                                                    u6.e("Can't change plannedDurationUs from %s to %s", j61, j53, j61 == j53);
                                                                                 }
                                                                                 gVar2.h = j53;
                                                                             }
@@ -1260,16 +1261,16 @@ public final class t implements y2.n {
                                                                                 gVar2.j = true;
                                                                             }
                                                                             if (j54 != -9223372036854775807L) {
-                                                                                long j63 = gVar2.k;
-                                                                                if (j63 != -9223372036854775807L) {
-                                                                                    u6.e("Can't change resumeOffsetUs from %s to %s", j63, j54, j63 == j54);
+                                                                                long j62 = gVar2.k;
+                                                                                if (j62 != -9223372036854775807L) {
+                                                                                    u6.e("Can't change resumeOffsetUs from %s to %s", j62, j54, j62 == j54);
                                                                                 }
                                                                                 gVar2.k = j54;
                                                                             }
                                                                             if (j55 != -9223372036854775807L) {
-                                                                                long j64 = gVar2.l;
-                                                                                if (j64 != -9223372036854775807L) {
-                                                                                    u6.e("Can't change playoutLimitUs from %s to %s", j64, j55, j64 == j55);
+                                                                                long j63 = gVar2.l;
+                                                                                if (j63 != -9223372036854775807L) {
+                                                                                    u6.e("Can't change playoutLimitUs from %s to %s", j63, j55, j63 == j55);
                                                                                 }
                                                                                 gVar2.l = j55;
                                                                             }
@@ -1352,9 +1353,9 @@ public final class t implements y2.n {
                                                                             }
                                                                             HashMap hashMap8 = gVar2.b;
                                                                             if (!arrayList32.isEmpty()) {
-                                                                                int i53 = 0;
-                                                                                while (i53 < arrayList32.size()) {
-                                                                                    f fVar2 = (f) arrayList32.get(i53);
+                                                                                int i54 = 0;
+                                                                                while (i54 < arrayList32.size()) {
+                                                                                    f fVar2 = (f) arrayList32.get(i54);
                                                                                     String str38 = fVar2.a;
                                                                                     f fVar3 = (f) hashMap8.get(str38);
                                                                                     if (fVar3 != null) {
@@ -1368,7 +1369,7 @@ public final class t implements y2.n {
                                                                                         arrayList7 = arrayList32;
                                                                                     }
                                                                                     hashMap8.put(str38, fVar2);
-                                                                                    i53++;
+                                                                                    i54++;
                                                                                     arrayList32 = arrayList7;
                                                                                 }
                                                                             }
@@ -1394,16 +1395,16 @@ public final class t implements y2.n {
                                                                                 gVar2.q = str10;
                                                                             }
                                                                             if (j56 != -9223372036854775807L) {
-                                                                                long j65 = gVar2.r;
-                                                                                if (j65 != -9223372036854775807L) {
-                                                                                    u6.e("Can't change skipControlOffsetUs from %s to %s", j65, j56, j65 == j56);
+                                                                                long j64 = gVar2.r;
+                                                                                if (j64 != -9223372036854775807L) {
+                                                                                    u6.e("Can't change skipControlOffsetUs from %s to %s", j64, j56, j64 == j56);
                                                                                 }
                                                                                 gVar2.r = j56;
                                                                             }
                                                                             if (j57 != -9223372036854775807L) {
-                                                                                long j66 = gVar2.s;
-                                                                                if (j66 != -9223372036854775807L) {
-                                                                                    u6.e("Can't change skipControlDurationUs from %s to %s", j66, j57, j66 == j57);
+                                                                                long j65 = gVar2.s;
+                                                                                if (j65 != -9223372036854775807L) {
+                                                                                    u6.e("Can't change skipControlDurationUs from %s to %s", j65, j57, j65 == j57);
                                                                                 }
                                                                                 gVar2.s = j57;
                                                                             }
@@ -1546,7 +1547,7 @@ public final class t implements y2.n {
                                                         str14 = str2;
                                                     } else {
                                                         String hexString3 = str == null ? null : str26 != null ? str26 : Long.toHexString(j21);
-                                                        long j67 = j21 + 1;
+                                                        long j66 = j21 + 1;
                                                         String k10 = k(O2, hashMap3, dVar);
                                                         k kVar6 = (k) hashMap7.get(k10);
                                                         if (j14 == -1) {
@@ -1573,20 +1574,20 @@ public final class t implements y2.n {
                                                             sVar3 = sVar13;
                                                         }
                                                         String str42 = hexString3;
-                                                        long j68 = j14;
-                                                        long j69 = j23;
-                                                        long j70 = j24;
-                                                        arrayList5.add(new k(k10, kVar2 != null ? kVar2 : kVar6, str15, j70, i10, j69, sVar3, str, str42, j12, j68, i21, arrayList4));
-                                                        long j71 = j69 + j70;
+                                                        long j67 = j14;
+                                                        long j68 = j23;
+                                                        long j69 = j24;
+                                                        arrayList5.add(new k(k10, kVar2 != null ? kVar2 : kVar6, str15, j69, i10, j68, sVar3, str, str42, j12, j67, i21, arrayList4));
+                                                        long j70 = j68 + j69;
                                                         ArrayList arrayList38 = new ArrayList();
                                                         if (j14 != -1) {
-                                                            j12 += j68;
+                                                            j12 += j67;
                                                         }
                                                         j22 = j12;
                                                         linkedHashMap3 = linkedHashMap2;
-                                                        j21 = j67;
+                                                        j21 = j66;
                                                         hashMap4 = hashMap7;
-                                                        j23 = j71;
+                                                        j23 = j70;
                                                         i18 = i15;
                                                         i21 = i18;
                                                         i19 = i10;
@@ -1814,7 +1815,7 @@ public final class t implements y2.n {
                     String i20 = i(str7, L, null, hashMap5, dVar);
                     b2.v vVar = new b2.v();
                     b2.w wVar3 = wVar2;
-                    vVar.a = a1.g.C(j10, ":", j11);
+                    vVar.a = a1.g.D(j10, ":", j11);
                     vVar.b = j11;
                     vVar.q = v0.n("application/x-mpegURL");
                     boolean f7 = f(str7, w0, dVar);
@@ -2150,7 +2151,7 @@ public final class t implements y2.n {
                                 nVar2 = x10;
                                 if (sb3.length() > 0) {
                                     sb2 = sb3.toString();
-                                    i31 = sb2 != null ? a1.g.C(str4, ",", sb2) : str4;
+                                    i31 = sb2 != null ? a1.g.D(str4, ",", sb2) : str4;
                                     nVar = nVar2;
                                 }
                             }

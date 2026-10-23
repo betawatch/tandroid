@@ -47,6 +47,7 @@ import h7.d;
 import h7.e;
 import h7.f;
 import hg.z1;
+import i2.o1;
 import java.io.File;
 import java.io.FileInputStream;
 import java.lang.reflect.Constructor;
@@ -73,21 +74,20 @@ import org.json.JSONObject;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.cl0;
+import org.telegram.ui.Components.fl0;
 import org.telegram.ui.LaunchActivity;
 import qg.m;
-import qg.t1;
-import qg.v0;
-import rg.v1;
+import qg.s1;
+import rg.w1;
 import v7.c8;
 import v7.i8;
 import v7.j5;
 import v7.r8;
 import v7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public final class c implements cl0, a0, androidx.activity.result.b, WebMessageListenerBoundaryInterface, u0, OnSuccessListener, n, ee.b, v1, j1, r, gb.n, z1 {
+public final class c implements fl0, a0, androidx.activity.result.b, WebMessageListenerBoundaryInterface, u0, OnSuccessListener, n, ee.b, w1, j1, r, gb.n, z1 {
     public final /* synthetic */ int a;
     public Object b;
 
@@ -121,17 +121,17 @@ public final class c implements cl0, a0, androidx.activity.result.b, WebMessageL
         }
     }
 
-    @Override // rg.v1
+    @Override // rg.w1
     public void U(float f7) {
         xa xaVar = (xa) this.b;
-        v0.e(xaVar.F1).k(String.valueOf(m.a.indexOf(xaVar.O0.getCurrentBrush())), f7);
-        t1 t1Var = xaVar.A1;
-        t1Var.c = f7;
-        xaVar.D0(t1Var, null, false);
+        qg.u0.e(xaVar.F1).k(String.valueOf(m.a.indexOf(xaVar.O0.getCurrentBrush())), f7);
+        s1 s1Var = xaVar.A1;
+        s1Var.c = f7;
+        xaVar.C0(s1Var, null, false);
     }
 
     @Override // androidx.lifecycle.a0
-    public void Y(Object obj) {
+    public void Z(Object obj) {
         switch (this.a) {
             case 5:
                 q qVar = (q) this.b;
@@ -300,7 +300,7 @@ public final class c implements cl0, a0, androidx.activity.result.b, WebMessageL
         int i14 = 0;
         for (int i15 = 0; i15 < i13; i15++) {
             for (int i16 = 0; i16 < i13; i16++) {
-                if (i2.e.a(i12, i15, i16)) {
+                if (o1.a(i12, i15, i16)) {
                     bVar2.a(i16, i15);
                 }
             }
@@ -460,7 +460,7 @@ public final class c implements cl0, a0, androidx.activity.result.b, WebMessageL
                 iArr2[i61] = bArr3[i61] & 255;
             }
             try {
-                int H = ((ya.d) this.b).H(bArr3.length - i60, iArr2);
+                int H = ((ya.c) this.b).H(bArr3.length - i60, iArr2);
                 for (int i62 = 0; i62 < i60; i62++) {
                     bArr3[i62] = (byte) iArr2[i62];
                 }
@@ -663,12 +663,12 @@ public final class c implements cl0, a0, androidx.activity.result.b, WebMessageL
         }
     }
 
-    @Override // rg.v1
+    @Override // rg.w1
     public float get() {
         xa xaVar = (xa) this.b;
         int i10 = xaVar.F1;
         m currentBrush = xaVar.O0.getCurrentBrush();
-        return currentBrush == null ? v0.e(i10).i : v0.e(i10).f(String.valueOf(m.a.indexOf(currentBrush)), currentBrush.d());
+        return currentBrush == null ? qg.u0.e(i10).i : qg.u0.e(i10).f(String.valueOf(m.a.indexOf(currentBrush)), currentBrush.d());
     }
 
     @Override // org.chromium.support_lib_boundary.FeatureFlagHolderBoundaryInterface
@@ -717,7 +717,7 @@ public final class c implements cl0, a0, androidx.activity.result.b, WebMessageL
         }
     }
 
-    @Override // org.telegram.ui.Components.cl0
+    @Override // org.telegram.ui.Components.fl0
     public /* synthetic */ boolean i() {
         return true;
     }
@@ -745,13 +745,117 @@ public final class c implements cl0, a0, androidx.activity.result.b, WebMessageL
         return null;
     }
 
+    @Override // org.telegram.ui.Components.fl0
+    public /* synthetic */ boolean l() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.fl0
+    public void m(View view, i1 i1Var, boolean z10, boolean z11) {
+        ah.f0 f0Var = (ah.f0) this.b;
+        f0Var.a.eb(null, f0Var.e, f0Var.b, view, 0.0f, 0.0f, i1Var, false, z10, z11, false);
+        AndroidUtilities.runOnUIThread(new a3.d(this, 3));
+    }
+
+    @Override // com.google.android.gms.common.api.internal.u0
+    public void n(int i10) {
+        k6.a aVar;
+        w wVar = (w) this.b;
+        Lock lock = wVar.o;
+        lock.lock();
+        try {
+            if (!wVar.n && (aVar = wVar.m) != null && aVar.c()) {
+                wVar.n = true;
+                wVar.e.onConnectionSuspended(i10);
+                lock.unlock();
+            }
+            wVar.n = false;
+            w.k(wVar, i10);
+            lock.unlock();
+        } catch (Throwable th2) {
+            lock.unlock();
+            throw th2;
+        }
+    }
+
+    public void o(e0 e0Var) {
+        ((l5.r) ((i5.f) ((qa.b) this.b).get())).a("FIREBASE_APPQUALITY_SESSION", new i5.c("json"), new a1.c(this, 2)).a(new i5.a(null, e0Var, i5.d.a, null), new k2.f(8));
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:14:0x006b  */
+    /* JADX WARN: Removed duplicated region for block: B:17:? A[RETURN, SYNTHETIC] */
+    @Override // org.chromium.support_lib_boundary.WebMessageListenerBoundaryInterface
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public void onPostMessage(WebView webView, InvocationHandler invocationHandler, Uri uri, boolean z10, InvocationHandler invocationHandler2) {
+        a5.a aVar;
+        a5.a aVar2;
+        WebMessageBoundaryInterface webMessageBoundaryInterface = (WebMessageBoundaryInterface) androidx.activity.result.c.a(WebMessageBoundaryInterface.class, invocationHandler);
+        InvocationHandler[] ports = webMessageBoundaryInterface.getPorts();
+        ya.c[] cVarArr = new ya.c[ports.length];
+        for (int i10 = 0; i10 < ports.length; i10++) {
+            InvocationHandler invocationHandler3 = ports[i10];
+            ya.c cVar = new ya.c(6);
+            cVar.b = (WebMessagePortBoundaryInterface) androidx.activity.result.c.a(WebMessagePortBoundaryInterface.class, invocationHandler3);
+            cVarArr[i10] = cVar;
+        }
+        if (b5.m.a.b()) {
+            WebMessagePayloadBoundaryInterface webMessagePayloadBoundaryInterface = (WebMessagePayloadBoundaryInterface) androidx.activity.result.c.a(WebMessagePayloadBoundaryInterface.class, webMessageBoundaryInterface.getMessagePayload());
+            int type = webMessagePayloadBoundaryInterface.getType();
+            if (type == 0) {
+                aVar = new a5.a(webMessagePayloadBoundaryInterface.getAsString());
+            } else {
+                if (type != 1) {
+                    aVar2 = null;
+                    if (aVar2 == null) {
+                        JsReplyProxyBoundaryInterface jsReplyProxyBoundaryInterface = (JsReplyProxyBoundaryInterface) androidx.activity.result.c.a(JsReplyProxyBoundaryInterface.class, invocationHandler2);
+                        ((a5.b) this.b).d(webView, aVar2, uri, z10, (b5.h) jsReplyProxyBoundaryInterface.getOrCreatePeer(new b5.g(jsReplyProxyBoundaryInterface, 0)));
+                        return;
+                    }
+                    return;
+                }
+                aVar = new a5.a(webMessagePayloadBoundaryInterface.getAsArrayBuffer());
+            }
+        } else {
+            aVar = new a5.a(webMessageBoundaryInterface.getData());
+        }
+        aVar2 = aVar;
+        if (aVar2 == null) {
+        }
+    }
+
+    @Override // com.google.android.gms.tasks.OnSuccessListener
+    public void onSuccess(Object obj) {
+        ((d6.a) this.b).getClass();
+        j5.a("com.google.android.gms.cast.MAP_CAST_STATUS_CODES_TO_CAST_REASON_CODES", (Bundle) obj);
+    }
+
+    @Override // com.google.android.gms.common.api.internal.u0
+    public void p(Bundle bundle) {
+        w wVar = (w) this.b;
+        wVar.o.lock();
+        try {
+            Bundle bundle2 = wVar.k;
+            if (bundle2 == null) {
+                wVar.k = bundle;
+            } else if (bundle != null) {
+                bundle2.putAll(bundle);
+            }
+            wVar.l = k6.a.e;
+            w.l(wVar);
+        } finally {
+            wVar.o.unlock();
+        }
+    }
+
     /* JADX WARN: Removed duplicated region for block: B:21:0x0035  */
     /* JADX WARN: Removed duplicated region for block: B:8:0x0023  */
     @Override // ee.b
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public Object l(ee.c cVar, md.c cVar2) {
+    public Object q(ee.c cVar, md.c cVar2) {
         ee.a aVar;
         int i10;
         Throwable th2;
@@ -813,111 +917,7 @@ public final class c implements cl0, a0, androidx.activity.result.b, WebMessageL
         return iVar2;
     }
 
-    @Override // org.telegram.ui.Components.cl0
-    public /* synthetic */ boolean m() {
-        return false;
-    }
-
-    @Override // com.google.android.gms.common.api.internal.u0
-    public void n(int i10) {
-        k6.a aVar;
-        w wVar = (w) this.b;
-        Lock lock = wVar.o;
-        lock.lock();
-        try {
-            if (!wVar.n && (aVar = wVar.m) != null && aVar.c()) {
-                wVar.n = true;
-                wVar.e.onConnectionSuspended(i10);
-                lock.unlock();
-            }
-            wVar.n = false;
-            w.k(wVar, i10);
-            lock.unlock();
-        } catch (Throwable th2) {
-            lock.unlock();
-            throw th2;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.cl0
-    public void o(View view, i1 i1Var, boolean z10, boolean z11) {
-        ah.f0 f0Var = (ah.f0) this.b;
-        f0Var.a.eb(null, f0Var.e, f0Var.b, view, 0.0f, 0.0f, i1Var, false, z10, z11, false);
-        AndroidUtilities.runOnUIThread(new a3.d(this, 3));
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:14:0x006b  */
-    /* JADX WARN: Removed duplicated region for block: B:17:? A[RETURN, SYNTHETIC] */
-    @Override // org.chromium.support_lib_boundary.WebMessageListenerBoundaryInterface
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public void onPostMessage(WebView webView, InvocationHandler invocationHandler, Uri uri, boolean z10, InvocationHandler invocationHandler2) {
-        a5.a aVar;
-        a5.a aVar2;
-        WebMessageBoundaryInterface webMessageBoundaryInterface = (WebMessageBoundaryInterface) androidx.activity.result.c.a(WebMessageBoundaryInterface.class, invocationHandler);
-        InvocationHandler[] ports = webMessageBoundaryInterface.getPorts();
-        ya.d[] dVarArr = new ya.d[ports.length];
-        for (int i10 = 0; i10 < ports.length; i10++) {
-            InvocationHandler invocationHandler3 = ports[i10];
-            ya.d dVar = new ya.d(6);
-            dVar.b = (WebMessagePortBoundaryInterface) androidx.activity.result.c.a(WebMessagePortBoundaryInterface.class, invocationHandler3);
-            dVarArr[i10] = dVar;
-        }
-        if (b5.m.a.b()) {
-            WebMessagePayloadBoundaryInterface webMessagePayloadBoundaryInterface = (WebMessagePayloadBoundaryInterface) androidx.activity.result.c.a(WebMessagePayloadBoundaryInterface.class, webMessageBoundaryInterface.getMessagePayload());
-            int type = webMessagePayloadBoundaryInterface.getType();
-            if (type == 0) {
-                aVar = new a5.a(webMessagePayloadBoundaryInterface.getAsString());
-            } else {
-                if (type != 1) {
-                    aVar2 = null;
-                    if (aVar2 == null) {
-                        JsReplyProxyBoundaryInterface jsReplyProxyBoundaryInterface = (JsReplyProxyBoundaryInterface) androidx.activity.result.c.a(JsReplyProxyBoundaryInterface.class, invocationHandler2);
-                        ((a5.b) this.b).c(webView, aVar2, uri, z10, (b5.h) jsReplyProxyBoundaryInterface.getOrCreatePeer(new b5.g(jsReplyProxyBoundaryInterface, 0)));
-                        return;
-                    }
-                    return;
-                }
-                aVar = new a5.a(webMessagePayloadBoundaryInterface.getAsArrayBuffer());
-            }
-        } else {
-            aVar = new a5.a(webMessageBoundaryInterface.getData());
-        }
-        aVar2 = aVar;
-        if (aVar2 == null) {
-        }
-    }
-
-    @Override // com.google.android.gms.tasks.OnSuccessListener
-    public void onSuccess(Object obj) {
-        ((d6.a) this.b).getClass();
-        j5.a("com.google.android.gms.cast.MAP_CAST_STATUS_CODES_TO_CAST_REASON_CODES", (Bundle) obj);
-    }
-
-    @Override // com.google.android.gms.common.api.internal.u0
-    public void p(Bundle bundle) {
-        w wVar = (w) this.b;
-        wVar.o.lock();
-        try {
-            Bundle bundle2 = wVar.k;
-            if (bundle2 == null) {
-                wVar.k = bundle;
-            } else if (bundle != null) {
-                bundle2.putAll(bundle);
-            }
-            wVar.l = k6.a.e;
-            w.l(wVar);
-        } finally {
-            wVar.o.unlock();
-        }
-    }
-
-    public void r(e0 e0Var) {
-        ((l5.r) ((i5.f) ((qa.b) this.b).get())).a("FIREBASE_APPQUALITY_SESSION", new i5.c("json"), new a1.c(this, 2)).a(new i5.a(null, e0Var, i5.d.a, null), new k2.f0(4));
-    }
-
-    public j s() {
+    public j r() {
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList();
         ArrayList arrayList3 = new ArrayList();
@@ -982,7 +982,7 @@ public final class c implements cl0, a0, androidx.activity.result.b, WebMessageL
         }
     }
 
-    public JSONObject u() {
+    public JSONObject v() {
         FileInputStream fileInputStream;
         JSONObject jSONObject;
         FileInputStream fileInputStream2 = null;
@@ -1027,13 +1027,13 @@ public final class c implements cl0, a0, androidx.activity.result.b, WebMessageL
         }
     }
 
-    @Override // org.telegram.ui.Components.cl0
+    @Override // org.telegram.ui.Components.fl0
     public /* synthetic */ boolean w() {
         return false;
     }
 
     @Override // hg.z1
-    public /* synthetic */ h y() {
+    public /* synthetic */ h x() {
         return null;
     }
 
@@ -1075,7 +1075,7 @@ public final class c implements cl0, a0, androidx.activity.result.b, WebMessageL
             case 27:
                 break;
             case 28:
-                this.b = new ya.d(gc.a.h, 21);
+                this.b = new ya.c(gc.a.h, 21);
                 break;
             default:
                 this.b = new LinkedHashMap();
@@ -1099,11 +1099,11 @@ public final class c implements cl0, a0, androidx.activity.result.b, WebMessageL
         throw new IllegalArgumentException("Executor must not be null.");
     }
 
-    @Override // org.telegram.ui.Components.cl0
-    public /* synthetic */ void v() {
+    @Override // org.telegram.ui.Components.fl0
+    public /* synthetic */ void u() {
     }
 
-    @Override // org.telegram.ui.Components.cl0
-    public /* synthetic */ void q(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
+    @Override // org.telegram.ui.Components.fl0
+    public /* synthetic */ void s(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
     }
 }

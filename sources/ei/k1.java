@@ -1,9 +1,9 @@
 package ei;
 
 import android.view.ViewGroup;
-import org.telegram.ui.x51;
+import org.telegram.ui.b61;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class k1 extends w7.a6 {
     public final /* synthetic */ int a;
@@ -18,10 +18,10 @@ public final class k1 extends w7.a6 {
     public final void a() {
         switch (this.a) {
             case 0:
-                ((o1) this.b).Z2 = false;
+                ((o1) this.b).c3 = false;
                 break;
             case 1:
-                ((x51) this.b).w1 = false;
+                ((b61) this.b).x1 = false;
                 break;
             default:
                 ((zh.k0) this.b).v = false;
@@ -33,10 +33,10 @@ public final class k1 extends w7.a6 {
     public void b() {
         switch (this.a) {
             case 0:
-                ((o1) this.b).Z2 = true;
+                ((o1) this.b).c3 = true;
                 break;
             case 1:
-                ((x51) this.b).w1 = true;
+                ((b61) this.b).x1 = true;
                 break;
         }
     }

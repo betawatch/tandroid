@@ -8,15 +8,15 @@ import org.telegram.messenger.Emoji;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class r5 extends FrameLayout {
     public final h1 a;
     public TL_iv.pageTableCell b;
 
-    public r5(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+    public r5(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
         super(context);
-        h1 h1Var = new h1(context, d6Var);
+        h1 h1Var = new h1(context, g6Var);
         this.a = h1Var;
         h1Var.setTextSize(1, Math.max(8, SharedConfig.fontSize - 2));
         h1Var.setAllowNewlines(true);

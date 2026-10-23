@@ -4,7 +4,7 @@ import android.os.Parcel;
 import androidx.car.app.navigation.model.Maneuver;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public abstract class a extends b8.b implements f0 {
     public a() {
@@ -20,48 +20,48 @@ public abstract class a extends b8.b implements f0 {
     public final boolean I0(int i10, Parcel parcel, Parcel parcel2) {
         switch (i10) {
             case 2:
-                throw r4.c.j(parcel);
+                throw si.o0.j(parcel);
             case 3:
-                throw r4.c.j(parcel);
+                throw si.o0.j(parcel);
             case 4:
-                throw r4.c.j(parcel);
+                throw si.o0.j(parcel);
             case 5:
-                throw r4.c.j(parcel);
+                throw si.o0.j(parcel);
             case 6:
-                throw r4.c.j(parcel);
+                throw si.o0.j(parcel);
             case 7:
                 t0 t0Var = (t0) f8.a.a(parcel, t0.CREATOR);
                 f8.a.b(parcel);
                 q0(t0Var);
                 break;
             case 8:
-                throw r4.c.j(parcel);
+                throw si.o0.j(parcel);
             case 9:
-                throw r4.c.j(parcel);
+                throw si.o0.j(parcel);
             case 10:
-                throw r4.c.j(parcel);
+                throw si.o0.j(parcel);
             case 11:
                 f8.a.b(parcel);
                 D();
                 break;
             case 12:
-                throw r4.c.j(parcel);
+                throw si.o0.j(parcel);
             case 13:
-                throw r4.c.j(parcel);
+                throw si.o0.j(parcel);
             case 14:
-                throw r4.c.j(parcel);
+                throw si.o0.j(parcel);
             case 15:
-                throw r4.c.j(parcel);
+                throw si.o0.j(parcel);
             case 16:
-                throw r4.c.j(parcel);
+                throw si.o0.j(parcel);
             case 17:
-                throw r4.c.j(parcel);
+                throw si.o0.j(parcel);
             case 18:
-                throw r4.c.j(parcel);
+                throw si.o0.j(parcel);
             case 19:
-                throw r4.c.j(parcel);
+                throw si.o0.j(parcel);
             case 20:
-                throw r4.c.j(parcel);
+                throw si.o0.j(parcel);
             case 21:
             case 24:
             case 25:
@@ -71,33 +71,33 @@ public abstract class a extends b8.b implements f0 {
             default:
                 return false;
             case 22:
-                throw r4.c.j(parcel);
+                throw si.o0.j(parcel);
             case 23:
-                throw r4.c.j(parcel);
+                throw si.o0.j(parcel);
             case 26:
-                throw r4.c.j(parcel);
+                throw si.o0.j(parcel);
             case 27:
-                throw r4.c.j(parcel);
+                throw si.o0.j(parcel);
             case 28:
-                throw r4.c.j(parcel);
+                throw si.o0.j(parcel);
             case 29:
-                throw r4.c.j(parcel);
+                throw si.o0.j(parcel);
             case MessageObject.TYPE_GIFT_STARS /* 30 */:
-                throw r4.c.j(parcel);
+                throw si.o0.j(parcel);
             case 34:
-                throw r4.c.j(parcel);
+                throw si.o0.j(parcel);
             case 35:
-                throw r4.c.j(parcel);
+                throw si.o0.j(parcel);
             case 36:
-                throw r4.c.j(parcel);
+                throw si.o0.j(parcel);
             case 37:
-                throw r4.c.j(parcel);
+                throw si.o0.j(parcel);
             case 38:
-                throw r4.c.j(parcel);
+                throw si.o0.j(parcel);
             case Maneuver.TYPE_DESTINATION /* 39 */:
-                throw r4.c.j(parcel);
+                throw si.o0.j(parcel);
             case Maneuver.TYPE_DESTINATION_STRAIGHT /* 40 */:
-                throw r4.c.j(parcel);
+                throw si.o0.j(parcel);
         }
         parcel2.writeNoException();
         return true;

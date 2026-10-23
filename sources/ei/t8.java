@@ -12,43 +12,42 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.nk;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.jm0;
-import org.telegram.ui.Components.xl0;
+import org.telegram.ui.Components.am0;
+import org.telegram.ui.Components.mm0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final class t8 extends org.telegram.ui.ActionBar.f3 implements NotificationCenter.NotificationCenterDelegate {
+public final class t8 extends org.telegram.ui.ActionBar.h3 implements NotificationCenter.NotificationCenterDelegate {
     public final int b;
     public ArrayList c;
     public final TLRPC.InputPeer d;
     public final Utilities.Callback e;
-    public final jm0 f;
+    public final mm0 f;
     public final s8 h;
     public final TextView n;
 
-    public t8(Context context, final int i10, boolean z10, TLRPC.InputPeer inputPeer, final Utilities.Callback callback, final org.telegram.ui.ActionBar.d6 d6Var) {
-        super(1, context, d6Var, false);
+    public t8(Context context, final int i10, boolean z10, TLRPC.InputPeer inputPeer, final Utilities.Callback callback, final org.telegram.ui.ActionBar.g6 g6Var) {
+        super(1, context, g6Var, false);
         fixNavigationBar();
         MessagesController.getInstance(i10).getStoriesController().R();
         this.b = i10;
         this.c = MessagesController.getInstance(i10).getStoriesController().T;
         this.d = inputPeer;
         this.e = callback;
-        this.containerView = new q8(this, context, d6Var);
-        jm0 jm0Var = new jm0(context, d6Var);
-        this.f = jm0Var;
+        this.containerView = new q8(this, context, g6Var);
+        mm0 mm0Var = new mm0(context, g6Var);
+        this.f = mm0Var;
         int i11 = this.backgroundPaddingLeft;
-        jm0Var.setPadding(i11, 0, i11, 0);
+        mm0Var.setPadding(i11, 0, i11, 0);
         s8 s8Var = new s8(this);
         this.h = s8Var;
-        jm0Var.setAdapter(s8Var);
-        jm0Var.setLayoutManager(new s4.b0());
-        this.containerView.addView(jm0Var, w7.z5.e(-1, -1, 119));
-        jm0Var.setOnItemClickListener(new xl0() { // from class: ei.p8
-            @Override // org.telegram.ui.Components.xl0
-            public final void a(int i12, View view) {
+        mm0Var.setAdapter(s8Var);
+        mm0Var.setLayoutManager(new s4.b0());
+        this.containerView.addView(mm0Var, w7.z5.e(-1, -1, 119));
+        mm0Var.setOnItemClickListener(new am0() { // from class: ei.p8
+            @Override // org.telegram.ui.Components.am0
+            public final void d(int i12, View view) {
                 if (i12 <= 1) {
                     return;
                 }
@@ -62,27 +61,28 @@ public final class t8 extends org.telegram.ui.ActionBar.f3 implements Notificati
                     return;
                 }
                 Context context2 = t8Var.getContext();
-                org.telegram.ui.ActionBar.d6 d6Var2 = d6Var;
-                org.telegram.ui.ActionBar.b2 b2Var = new org.telegram.ui.ActionBar.b2(context2, 3, d6Var2);
-                b2Var.r(200L);
-                MessagesController.getInstance(i10).getStoriesController().k(DialogObject.getPeerDialogId(inputPeer2), new ai.a4(b2Var, callback2, inputPeer2, 5), true, d6Var2);
+                org.telegram.ui.ActionBar.g6 g6Var2 = g6Var;
+                org.telegram.ui.ActionBar.c2 c2Var = new org.telegram.ui.ActionBar.c2(context2, 3, g6Var2);
+                c2Var.r(200L);
+                MessagesController.getInstance(i10).getStoriesController().k(DialogObject.getPeerDialogId(inputPeer2), new ai.a4(c2Var, callback2, inputPeer2, 5), true, g6Var2);
                 t8Var.dismiss();
             }
         });
-        jm0Var.setOnScrollListener(new r8(this));
+        mm0Var.setOnScrollListener(new r8(this));
         TextView textView = new TextView(getContext());
         this.n = textView;
-        nk.o(org.telegram.ui.ActionBar.h6.G6, d6Var, textView, 1, 20.0f);
+        org.telegram.ui.ActionBar.r6.W(textView, org.telegram.ui.ActionBar.k6.G6, g6Var);
+        textView.setTextSize(1, 20.0f);
         textView.setPadding(AndroidUtilities.dp(22.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(22.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(14.0f));
-        textView.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.h5, d6Var));
+        org.telegram.ui.ActionBar.r6.i(org.telegram.ui.ActionBar.k6.h5, textView, g6Var);
         textView.setTypeface(AndroidUtilities.bold());
         textView.setText(LocaleController.getString(z10 ? R.string.StoryPrivacyPublishLiveAs : R.string.StoryPrivacyPublishAs));
         this.containerView.addView(textView, w7.z5.c(-2.0f, -1));
     }
 
-    @Override // org.telegram.ui.ActionBar.f3
+    @Override // org.telegram.ui.ActionBar.h3
     public final boolean canDismissWithSwipe() {
-        return u() > ((float) ((int) (((float) AndroidUtilities.displaySize.y) * 0.5f)));
+        return t() > ((float) ((int) (((float) AndroidUtilities.displaySize.y) * 0.5f)));
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
@@ -105,16 +105,16 @@ public final class t8 extends org.telegram.ui.ActionBar.f3 implements Notificati
         NotificationCenter.getInstance(this.b).removeObserver(this, NotificationCenter.storiesSendAsUpdate);
     }
 
-    public final float u() {
+    public final float t() {
         int R;
         float measuredHeight = this.containerView.getMeasuredHeight();
         int i10 = 0;
         while (true) {
-            jm0 jm0Var = this.f;
-            if (i10 >= jm0Var.getChildCount()) {
+            mm0 mm0Var = this.f;
+            if (i10 >= mm0Var.getChildCount()) {
                 return measuredHeight;
             }
-            View childAt = jm0Var.getChildAt(i10);
+            View childAt = mm0Var.getChildAt(i10);
             if (childAt != null && (R = RecyclerView.R(childAt)) != -1 && R > 0) {
                 measuredHeight = Math.min(AndroidUtilities.lerp(measuredHeight, childAt.getY(), childAt.getAlpha()), measuredHeight);
             }

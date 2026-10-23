@@ -4,7 +4,7 @@ import com.google.android.gms.internal.play_billing.k3;
 import java.nio.ByteBuffer;
 import w7.b7;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class o extends com.googlecode.mp4parser.c {
     public static final /* synthetic */ te.b n;
@@ -64,10 +64,10 @@ public final class o extends com.googlecode.mp4parser.c {
         com.googlecode.mp4parser.g.a().getClass();
         com.googlecode.mp4parser.g.b(b10);
         StringBuilder sb2 = new StringBuilder("SampleSizeBox[sampleSize=");
-        k3.p(te.a.b(n, this, this));
+        k3.o(te.a.b(n, this, this));
         sb2.append(this.e);
         sb2.append(";sampleCount=");
-        k3.p(te.a.b(r, this, this));
+        k3.o(te.a.b(r, this, this));
         return a1.g.r(sb2, this.e > 0 ? this.h : this.f.length, "]");
     }
 }

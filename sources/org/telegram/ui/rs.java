@@ -1,38 +1,54 @@
 package org.telegram.ui;
 
-import android.graphics.Bitmap;
+import android.os.Build;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class rs implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ et b;
+public final class rs extends s4.r0 {
+    public boolean a;
+    public boolean b;
+    public final /* synthetic */ ContactsActivity c;
 
-    public /* synthetic */ rs(et etVar, int i10) {
-        this.a = i10;
-        this.b = etVar;
+    public rs(ContactsActivity contactsActivity) {
+        this.c = contactsActivity;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.c0 = null;
-                break;
-            case 1:
-                et etVar = this.b;
-                etVar.A.setImageBitmap((Bitmap) null);
-                org.telegram.ui.Components.zd0 zd0Var = etVar.C;
-                if (zd0Var != null) {
-                    zd0Var.a();
-                    etVar.z.removeView(etVar.C);
-                    etVar.C = null;
-                    break;
-                }
-                break;
-            default:
-                this.b.Q.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(420L).setInterpolator(org.telegram.ui.Components.bs.h).start();
-                break;
+    @Override // s4.r0
+    public final void a(RecyclerView recyclerView, int i10) {
+        if (i10 != 1) {
+            this.b = false;
+            return;
         }
+        ContactsActivity contactsActivity = this.c;
+        if ((contactsActivity.F && contactsActivity.E) || contactsActivity.Z.r.isFocused()) {
+            AndroidUtilities.hideKeyboard(contactsActivity.getParentActivity().getCurrentFocus());
+        }
+        this.b = true;
+    }
+
+    @Override // s4.r0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        bh.f fVar;
+        ContactsActivity contactsActivity = this.c;
+        int L0 = contactsActivity.n.L0();
+        View childAt = recyclerView.getChildAt(0);
+        int top = childAt != null ? childAt.getTop() : 0;
+        if (contactsActivity.w != null && !contactsActivity.F) {
+            boolean z10 = i11 > 0;
+            if (i11 != 0 && this.a && (z10 || this.b)) {
+                contactsActivity.x = !z10;
+                ContactsActivity.d0(contactsActivity);
+            }
+            this.a = true;
+        }
+        contactsActivity.Y.b(L0 != 0 || top < contactsActivity.f.getPaddingTop(), true);
+        if (Build.VERSION.SDK_INT >= 31 && (fVar = contactsActivity.t0) != null) {
+            fVar.f(i10, i11);
+            contactsActivity.f0();
+        }
+        ContactsActivity.c0(contactsActivity);
     }
 }

@@ -6,13 +6,13 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class t7 extends yj0 {
+public final class t7 extends bk0 {
     public float r;
     public float s;
     public boolean v;
-    public final org.telegram.ui.Cells.k7 w;
+    public final org.telegram.ui.Cells.u5 w;
     public final /* synthetic */ float x;
     public final /* synthetic */ k8 y;
 
@@ -21,7 +21,7 @@ public final class t7 extends yj0 {
         super(context);
         this.y = k8Var;
         this.x = f7;
-        this.w = new org.telegram.ui.Cells.k7(this, 2);
+        this.w = new org.telegram.ui.Cells.u5(this, 4);
     }
 
     @Override // android.view.View
@@ -40,19 +40,19 @@ public final class t7 extends yj0 {
     */
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         k8 k8Var = this.y;
-        t7 t7Var = k8Var.L;
-        if (k8Var.T.v || k8Var.H0 == -1) {
+        t7 t7Var = k8Var.K;
+        if (k8Var.S.w || k8Var.G0 == -1) {
             return false;
         }
         float rawX = motionEvent.getRawX();
         float rawY = motionEvent.getRawY();
         int action = motionEvent.getAction();
-        org.telegram.ui.Cells.k7 k7Var = this.w;
+        org.telegram.ui.Cells.u5 u5Var = this.w;
         if (action == 0) {
             this.v = false;
             this.r = rawX;
             this.s = rawY;
-            AndroidUtilities.runOnUIThread(k7Var, 300L);
+            AndroidUtilities.runOnUIThread(u5Var, 300L);
             if (getBackground() != null) {
                 getBackground().setHotspot(this.r, this.s);
             }
@@ -66,7 +66,7 @@ public final class t7 extends yj0 {
                 float f11 = (f10 * f10) + (f7 * f7);
                 float f12 = this.x;
                 if (f11 > f12 * f12 && !this.v) {
-                    AndroidUtilities.cancelRunOnUIThread(k7Var);
+                    AndroidUtilities.cancelRunOnUIThread(u5Var);
                     setPressed(false);
                 }
             }
@@ -77,18 +77,18 @@ public final class t7 extends yj0 {
             t7Var.setProgress(0.0f);
             t7Var.d();
         }
-        AndroidUtilities.cancelRunOnUIThread(k7Var);
-        if (k8Var.J0 > 0) {
+        AndroidUtilities.cancelRunOnUIThread(u5Var);
+        if (k8Var.I0 > 0) {
             MediaController.getInstance().setPlaybackSpeed(true, 1.0f);
             if (MediaController.getInstance().isMessagePaused()) {
-                k8Var.L0 = 0L;
+                k8Var.K0 = 0L;
                 k8Var.N0.run();
             }
         }
-        k8Var.H0 = 0;
+        k8Var.G0 = 0;
         setPressed(false);
-        k8Var.J0 = 0;
-        k8Var.I0 = -1.0f;
+        k8Var.I0 = 0;
+        k8Var.H0 = -1.0f;
         return true;
     }
 }

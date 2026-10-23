@@ -5,7 +5,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class fe implements Utilities.Callback {
     public final /* synthetic */ int a = 0;
@@ -39,7 +39,7 @@ public final /* synthetic */ class fe implements Utilities.Callback {
         switch (i10) {
             case 0:
                 ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) obj3;
-                int i11 = ChatActivityEnterView.n5;
+                int i11 = ChatActivityEnterView.r5;
                 qd qdVar = new qd(chatActivityEnterView, (TLRPC.Document) obj2, this.g, (MessageObject.SendAnimationData) this.j, this.c, this.d, this.e, this.b, (Long) obj, this.f);
                 if (!chatActivityEnterView.o1(qdVar)) {
                     qdVar.run();

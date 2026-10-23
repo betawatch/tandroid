@@ -8,23 +8,23 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.g6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class z extends g1 {
-    public final RectF o0;
-    public final RectF p0;
-    public final Path q0;
-    public final /* synthetic */ c0 r0;
+    public final RectF w0;
+    public final RectF x0;
+    public final Path y0;
+    public final /* synthetic */ c0 z0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z(c0 c0Var, Context context, int i10, d6 d6Var) {
-        super(context, i10, d6Var);
-        this.r0 = c0Var;
-        this.o0 = new RectF();
-        this.p0 = new RectF();
-        this.q0 = new Path();
+    public z(c0 c0Var, Context context, int i10, g6 g6Var) {
+        super(context, i10, g6Var);
+        this.z0 = c0Var;
+        this.w0 = new RectF();
+        this.x0 = new RectF();
+        this.y0 = new Path();
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -34,26 +34,26 @@ public final class z extends g1 {
 
     @Override // android.view.ViewGroup
     public final boolean drawChild(Canvas canvas, View view, long j10) {
-        c0 c0Var = this.r0;
+        c0 c0Var = this.z0;
         x xVar = c0Var.a0;
         boolean drawChild = super.drawChild(canvas, view, j10);
         FrameLayout frameLayout = this.d;
         if (view == frameLayout) {
             FrameLayout frameLayout2 = xVar.b;
             w wVar = c0Var.Y;
-            RectF rectF = this.o0;
-            if (!ih.j.c(frameLayout2, wVar, rectF)) {
+            RectF rectF = this.w0;
+            if (!ih.k.c(frameLayout2, wVar, rectF)) {
                 return true;
             }
-            RectF rectF2 = this.p0;
-            if (!ih.j.c(frameLayout, this, rectF2)) {
+            RectF rectF2 = this.x0;
+            if (!ih.k.c(frameLayout, this, rectF2)) {
                 return true;
             }
             float centerX = rectF2.centerX() - AndroidUtilities.dp(40.0f);
             float centerY = rectF2.centerY() - AndroidUtilities.dp(40.0f);
             if (!rectF.isEmpty()) {
                 canvas.save();
-                canvas.clipPath(this.q0);
+                canvas.clipPath(this.y0);
                 canvas.scale(0.6f, 0.6f, rectF2.centerX(), rectF2.centerY());
                 canvas.translate(rectF2.centerX() - (xVar.getWidth() / 2.0f), rectF2.centerY() - (xVar.getHeight() / 2.0f));
                 xVar.b(canvas, xVar.getWidth() / 2.0f, AndroidUtilities.dp(104.0f), xVar.getWidth(), xVar.getHeight());
@@ -72,9 +72,9 @@ public final class z extends g1 {
     @Override // android.view.View
     public final void onSizeChanged(int i10, int i11, int i12, int i13) {
         super.onSizeChanged(i10, i11, i12, i13);
-        Path path = this.q0;
+        Path path = this.y0;
         path.rewind();
-        RectF rectF = this.o0;
+        RectF rectF = this.w0;
         rectF.set(0.0f, 0.0f, i10, i11);
         rectF.inset(AndroidUtilities.dp(3.33f), AndroidUtilities.dp(4.0f));
         path.addRoundRect(rectF, AndroidUtilities.dp(11.0f), AndroidUtilities.dp(11.0f), Path.Direction.CW);

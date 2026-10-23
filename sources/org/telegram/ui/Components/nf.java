@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.content.Context;
 import android.graphics.Paint;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class nf extends gi.x {
     public boolean s;
@@ -25,10 +25,10 @@ public final class nf extends gi.x {
         u1Var.setClipToOutline(true);
         u1Var.j(new ah.d0(this, 8));
         addView(u1Var);
-        paint.setColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Ii, false));
+        paint.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Ii, false));
         dh.d dVar = this.r;
         if (dVar != null) {
-            dVar.v();
+            dVar.updateColors();
         }
         invalidate();
         setClipChildren(false);

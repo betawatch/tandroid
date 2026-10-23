@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 import v7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public class c implements ka.a {
     public final /* synthetic */ int a;
@@ -65,13 +65,13 @@ public class c implements ka.a {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void c(g2.h hVar, Uri uri, Map map, long j10, long j11, x0 x0Var) {
+    public void c(g2.h hVar, Uri uri, Map map, long j10, long j11, y0 y0Var) {
         c3.l lVar = new c3.l(hVar, j10, j11);
         this.d = lVar;
-        if (((c3.o) this.c) != null) {
+        if (((c3.q) this.c) != null) {
             return;
         }
-        c3.o[] e = ((c3.r) this.b).e(uri, map);
+        c3.q[] e = ((c3.t) this.b).e(uri, map);
         int length = e.length;
         e9.l0 l0Var = e9.n0.b;
         e9.s.f(length, "expectedSize");
@@ -86,39 +86,39 @@ public class c implements ka.a {
                 if (i10 >= length2) {
                     break;
                 }
-                c3.o oVar = e[i10];
+                c3.q qVar = e[i10];
                 try {
                 } catch (EOFException unused) {
-                    if (((c3.o) this.c) == null) {
+                    if (((c3.q) this.c) == null) {
                     }
                 } catch (Throwable th2) {
-                    if (((c3.o) this.c) == null && lVar.d != j10) {
+                    if (((c3.q) this.c) == null && lVar.d != j10) {
                         z10 = false;
                     }
                     u6.p(z10);
                     lVar.f = 0;
                     throw th2;
                 }
-                if (oVar.a(lVar)) {
-                    this.c = oVar;
+                if (qVar.a(lVar)) {
+                    this.c = qVar;
                     lVar.f = 0;
                     break;
                 }
-                k0Var.d(oVar.e());
-                if (((c3.o) this.c) == null) {
+                k0Var.d(qVar.e());
+                if (((c3.q) this.c) == null) {
                 }
                 boolean z11 = true;
                 u6.p(z11);
                 lVar.f = 0;
                 i10++;
             }
-            if (((c3.o) this.c) == null) {
-                String str = "None of the available extractors (" + new d9.l(", ", 0).e(e9.s.x(e9.n0.v(e), new sg.y(7))) + ") could read the stream.";
+            if (((c3.q) this.c) == null) {
+                String str = "None of the available extractors (" + new d9.l(", ", 0).e(e9.s.x(e9.n0.v(e), new s0.b(19))) + ") could read the stream.";
                 uri.getClass();
-                throw new t1(str, k0Var.f());
+                throw new u1(str, k0Var.f());
             }
         }
-        ((c3.o) this.c).c(x0Var);
+        ((c3.q) this.c).c(y0Var);
     }
 
     public String toString() {
@@ -226,8 +226,8 @@ public class c implements ka.a {
         this.d = aVar;
     }
 
-    public c(c3.r rVar) {
+    public c(c3.t tVar) {
         this.a = 0;
-        this.b = rVar;
+        this.b = tVar;
     }
 }

@@ -4,15 +4,10 @@ import android.webkit.WebView;
 import org.chromium.support_lib_boundary.StaticsBoundaryInterface;
 import org.chromium.support_lib_boundary.WebViewProviderBoundaryInterface;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class f implements p {
     public static final String[] a = new String[0];
-
-    @Override // b5.p
-    public final String[] a() {
-        return a;
-    }
 
     @Override // b5.p
     public final WebViewProviderBoundaryInterface createWebView(WebView webView) {
@@ -22,5 +17,10 @@ public final class f implements p {
     @Override // b5.p
     public final StaticsBoundaryInterface getStatics() {
         throw new UnsupportedOperationException("This should never happen, if this method was called it means we're trying to reach into WebView APK code on an incompatible device. This most likely means the current method is being called too early, or is being called on start-up rather than lazily");
+    }
+
+    @Override // b5.p
+    public final String[] r() {
+        return a;
     }
 }

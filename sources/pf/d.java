@@ -15,6 +15,7 @@ import android.os.Bundle;
 import android.os.Parcelable;
 import android.os.RemoteException;
 import android.text.TextUtils;
+import i2.o1;
 import java.lang.ref.WeakReference;
 import java.net.IDN;
 import java.net.URLEncoder;
@@ -22,6 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import mi.q;
 import n2.e;
 import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
@@ -38,26 +40,25 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.ActionBar.b2;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m3;
-import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.ActionBar.n3;
+import org.telegram.ui.ActionBar.c2;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.o2;
+import org.telegram.ui.ActionBar.p3;
+import org.telegram.ui.ActionBar.q3;
 import org.telegram.ui.BubbleActivity;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.Wallet.j;
-import org.telegram.ui.b3;
-import org.telegram.ui.h0;
-import org.telegram.ui.l4;
-import org.telegram.ui.o3;
-import org.telegram.ui.web.x0;
-import xf.f;
+import org.telegram.ui.a3;
+import org.telegram.ui.g0;
+import org.telegram.ui.k4;
+import org.telegram.ui.n3;
+import org.telegram.ui.web.y0;
+import org.telegram.ui.wg1;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public abstract class d {
     public static e a;
-    public static xf.c b;
+    public static q b;
     public static a9.d c;
     public static String d;
     public static WeakReference e;
@@ -109,7 +110,7 @@ public abstract class d {
             if (str.startsWith("https://t.me/")) {
                 return str.substring(13);
             }
-            Matcher matcher = LaunchActivity.C1.matcher(str);
+            Matcher matcher = LaunchActivity.E1.matcher(str);
             if (matcher.find()) {
                 return matcher.group(1);
             }
@@ -118,17 +119,17 @@ public abstract class d {
     }
 
     public static e c() {
-        xf.c cVar = b;
+        q qVar = b;
         e eVar = null;
-        if (cVar == null) {
+        if (qVar == null) {
             a = null;
         } else if (a == null) {
             rb.b bVar = new rb.b(19);
-            f fVar = (f) cVar.a;
+            xf.e eVar2 = (xf.e) qVar.b;
             xf.b bVar2 = new xf.b(bVar);
             try {
-                if (((xf.d) fVar).F0(bVar2)) {
-                    eVar = new e(29, bVar2, (ComponentName) cVar.b);
+                if (((xf.c) eVar2).F0(bVar2)) {
+                    eVar = new e(28, bVar2, (ComponentName) qVar.c);
                 }
             } catch (RemoteException unused) {
             }
@@ -220,7 +221,7 @@ public abstract class d {
         String hostAuthority = AndroidUtilities.getHostAuthority(uri);
         String lowerCase = hostAuthority != null ? hostAuthority.toLowerCase() : "";
         if (!MessagesController.getInstance(UserConfig.selectedAccount).authDomains.contains(lowerCase)) {
-            Matcher matcher = LaunchActivity.C1.matcher(lowerCase);
+            Matcher matcher = LaunchActivity.E1.matcher(lowerCase);
             if (matcher.find()) {
                 StringBuilder sb2 = new StringBuilder("https://t.me/");
                 sb2.append(matcher.group(1));
@@ -343,7 +344,7 @@ public abstract class d {
         if (AndroidUtilities.findActivity(context) instanceof LaunchActivity) {
             launchActivity = (LaunchActivity) AndroidUtilities.findActivity(context);
         } else {
-            launchActivity = LaunchActivity.H1;
+            launchActivity = LaunchActivity.J1;
             if (launchActivity == null) {
                 return false;
             }
@@ -357,7 +358,7 @@ public abstract class d {
         intent.putExtra("com.android.browser.application_id", context.getPackageName());
         intent.putExtra("force_not_internal_apps", z10);
         intent.putExtra("force_request", z11);
-        launchActivity.f0(intent, cVar);
+        launchActivity.g0(intent, cVar);
         return true;
     }
 
@@ -434,27 +435,27 @@ public abstract class d {
     }
 
     public static void m(String str) {
-        n3 P;
-        m3 m3Var;
-        o3[] o3VarArr;
-        o3 o3Var;
-        LaunchActivity launchActivity = LaunchActivity.H1;
+        q3 P;
+        p3 p3Var;
+        n3[] n3VarArr;
+        n3 n3Var;
+        LaunchActivity launchActivity = LaunchActivity.J1;
         if (launchActivity != null && (P = launchActivity.P()) != null) {
             if (!TextUtils.isEmpty(str)) {
-                ArrayList<m3> tabs = P.getTabs();
+                ArrayList<p3> tabs = P.getTabs();
                 for (int i10 = 0; i10 < tabs.size(); i10++) {
-                    m3Var = tabs.get(i10);
-                    l4 l4Var = m3Var.J;
-                    if (l4Var != null && !l4Var.d0.isEmpty()) {
-                        Object h = i2.e.h(1, m3Var.J.d0);
-                        if (h instanceof b3) {
-                            x0 x0Var = ((b3) h).b;
-                            if (x0Var == null && (o3VarArr = m3Var.J.u0) != null && (o3Var = o3VarArr[0]) != null) {
-                                x0Var = o3Var.getWebView();
+                    p3Var = tabs.get(i10);
+                    k4 k4Var = p3Var.J;
+                    if (k4Var != null && !k4Var.d0.isEmpty()) {
+                        Object i11 = o1.i(1, p3Var.J.d0);
+                        if (i11 instanceof a3) {
+                            y0 y0Var = ((a3) i11).b;
+                            if (y0Var == null && (n3VarArr = p3Var.J.u0) != null && (n3Var = n3VarArr[0]) != null) {
+                                y0Var = n3Var.getWebView();
                             }
-                            if (x0Var != null) {
-                                if (TextUtils.equals(n3.p(x0Var.canGoBack() ? x0Var.getUrl() : x0Var.getOpenURL()), n3.p(str))) {
-                                    P.e(m3Var);
+                            if (y0Var != null) {
+                                if (TextUtils.equals(q3.p(y0Var.canGoBack() ? y0Var.getUrl() : y0Var.getOpenURL()), q3.p(str))) {
+                                    P.e(p3Var);
                                     break;
                                 }
                             } else {
@@ -466,12 +467,12 @@ public abstract class d {
                     }
                 }
             }
-            m3Var = null;
-            if (m3Var != null) {
+            p3Var = null;
+            if (p3Var != null) {
                 return;
             }
         }
-        n2 U = LaunchActivity.U();
+        o2 U = LaunchActivity.U();
         if (U != null && U.getArticleViewer() != null) {
             U.getArticleViewer().N(null, null, null, str);
             return;
@@ -593,7 +594,7 @@ public abstract class d {
         int i11 = UserConfig.selectedAccount;
         boolean[] zArr = {false};
         boolean e7 = e(uri, false, zArr);
-        int i12 = 6;
+        int i12 = 7;
         if (str != null) {
             switch (str) {
                 case "brave-browser":
@@ -767,7 +768,7 @@ public abstract class d {
                                                                 if (uri2.getScheme() != null) {
                                                                     uri2.getScheme().equalsIgnoreCase("intent");
                                                                 }
-                                                                if (!e7 && (launchActivity = LaunchActivity.H1) != null) {
+                                                                if (!e7 && (launchActivity = LaunchActivity.J1) != null) {
                                                                     j(launchActivity, uri2.toString(), z12, z15, cVar2);
                                                                     return;
                                                                 }
@@ -839,7 +840,7 @@ public abstract class d {
                                     bundle2.putParcelable("android.support.customtabs.customaction.PENDING_INTENT", broadcast);
                                     arrayList.add(bundle2);
                                     z22 = false;
-                                    intent.putExtra("android.support.customtabs.extra.TOOLBAR_COLOR", h6.x0(null, h6.S8, false));
+                                    intent.putExtra("android.support.customtabs.extra.TOOLBAR_COLOR", k6.x0(null, k6.S8, false));
                                     intent.putExtra("android.support.customtabs.extra.TITLE_VISIBILITY", 1);
                                     decodeResource = BitmapFactory.decodeResource(context.getResources(), R.drawable.msg_filled_shareout);
                                     string = LocaleController.getString(R.string.ShareFile);
@@ -893,22 +894,22 @@ public abstract class d {
                         if (z21) {
                         }
                     }
-                    b2[] b2VarArr = new b2[1];
-                    b2VarArr[z18 == true ? 1 : 0] = new b2(context, 3, null);
+                    c2[] c2VarArr = new c2[1];
+                    c2VarArr[z18 == true ? 1 : 0] = new c2(context, 3, null);
                     TL_account.getWebPagePreview getwebpagepreview = new TL_account.getWebPagePreview();
                     getwebpagepreview.message = uri.toString();
                     cVar2 = cVar;
                     str4 = str3;
                     z19 = z16;
                     try {
-                        int sendRequest = ConnectionsManager.getInstance(UserConfig.selectedAccount).sendRequest(getwebpagepreview, new h0(cVar2, b2VarArr, i11, uri, context, z19));
+                        int sendRequest = ConnectionsManager.getInstance(UserConfig.selectedAccount).sendRequest(getwebpagepreview, new g0(cVar2, c2VarArr, i11, uri, context, z19));
                         if (cVar2 != null) {
                             cVar2.d();
                             return;
                         } else {
                             i10 = i11;
                             try {
-                                AndroidUtilities.runOnUIThread(new j(b2VarArr, sendRequest, i12), 1000L);
+                                AndroidUtilities.runOnUIThread(new wg1(c2VarArr, sendRequest, i12), 1000L);
                                 return;
                             } catch (Exception unused3) {
                             }

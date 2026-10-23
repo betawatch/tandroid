@@ -1,57 +1,47 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class sf0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ cg0 b;
+import android.animation.ValueAnimator;
+import android.widget.FrameLayout;
 
-    public /* synthetic */ sf0(cg0 cg0Var, int i10) {
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class sf0 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ wf0 b;
+
+    public /* synthetic */ sf0(wf0 wf0Var, int i10) {
         this.a = i10;
-        this.b = cg0Var;
+        this.b = wf0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                cg0 cg0Var = this.b;
-                kj0 kj0Var = cg0Var.a;
-                dg0 dg0Var = cg0Var.V;
-                zf0 zf0Var = cg0Var.b;
-                if (zf0Var != null) {
-                    if (dg0Var.c0) {
-                        kj0Var.clearFocus();
-                        zf0Var.clearFocus();
-                    } else if (kj0Var.length() != 0) {
-                        zf0Var.requestFocus();
-                        if (!cg0Var.R) {
-                            zf0Var.setSelection(zf0Var.length());
-                        }
-                        dg0.T0(dg0Var, zf0Var);
-                    } else {
-                        kj0Var.requestFocus();
-                        dg0.T0(dg0Var, kj0Var);
-                    }
-                }
-                if (dg0Var.F == 0) {
-                    cg0Var.s(false);
-                    break;
-                }
-                break;
-            case 1:
-                cg0 cg0Var2 = this.b;
-                cg0Var2.postDelayed(new sf0(cg0Var2, 2), 200L);
-                break;
-            case 2:
-                this.b.h(null);
-                break;
-            case 3:
-                this.b.s(true);
+                wf0 wf0Var = this.b;
+                wf0Var.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                wf0Var.d.setAlpha(floatValue);
+                wf0Var.e.setAlpha(floatValue);
+                wf0Var.f.setProgress(floatValue);
+                FrameLayout frameLayout = wf0Var.w;
+                frameLayout.setAlpha(floatValue);
+                float f7 = (floatValue * 0.5f) + 0.5f;
+                frameLayout.setScaleX(f7);
+                frameLayout.setScaleY(f7);
                 break;
             default:
-                cg0 cg0Var3 = this.b;
-                dg0.T0(cg0Var3.V, cg0Var3.b);
+                wf0 wf0Var2 = this.b;
+                wf0Var2.getClass();
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                wf0Var2.f.setProgress(floatValue2);
+                wf0Var2.d.setAlpha(floatValue2);
+                wf0Var2.e.setAlpha(floatValue2);
+                FrameLayout frameLayout2 = wf0Var2.w;
+                frameLayout2.setAlpha(floatValue2);
+                float f10 = (floatValue2 * 0.5f) + 0.5f;
+                frameLayout2.setScaleX(f10);
+                frameLayout2.setScaleY(f10);
                 break;
         }
     }

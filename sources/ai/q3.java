@@ -10,7 +10,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.nk;
+import org.telegram.messenger.sl;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.RequestDelegateTimestamp;
@@ -19,13 +19,13 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.i80;
-import org.telegram.ui.Components.zm0;
-import org.telegram.ui.a00;
+import org.telegram.ui.Components.cn0;
+import org.telegram.ui.Components.j80;
+import org.telegram.ui.d00;
 import org.telegram.ui.qe;
-import org.telegram.ui.qn;
+import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q3 implements Runnable {
     public final /* synthetic */ int a;
@@ -65,46 +65,46 @@ public final /* synthetic */ class q3 implements Runnable {
         Object obj5 = this.d;
         switch (i10) {
             case 0:
-                l7.O0((l7) obj5, (TLObject) obj4, (String) obj3, (TL_stars.InputSavedStarGift) obj, (TLRPC.TL_error) obj2, this.b);
+                l7.N0((l7) obj5, (TLObject) obj4, (String) obj3, (TL_stars.InputSavedStarGift) obj, (TLRPC.TL_error) obj2, this.b);
                 break;
             case 1:
                 ((boolean[]) obj3)[0] = true;
-                ((ga) obj5).g(this.b, (TLObject) obj4, (TLRPC.TL_textWithEntities) obj, (Utilities.Callback2) obj2);
+                ((ha) obj5).g(this.b, (TLObject) obj4, (TLRPC.TL_textWithEntities) obj, (Utilities.Callback2) obj2);
                 break;
             case 2:
                 ((boolean[]) obj4)[0] = true;
-                ((ga) obj5).h((TLRPC.TL_payments_paymentFormStarGift) obj3, (TL_stars.StarGift) obj, this.b, null, true, (Utilities.Callback2) obj2);
+                ((ha) obj5).h((TLRPC.TL_payments_paymentFormStarGift) obj3, (TL_stars.StarGift) obj, this.b, null, true, (Utilities.Callback2) obj2);
                 break;
             case 3:
-                ci.c8 c8Var = (ci.c8) obj5;
+                ci.b8 b8Var = (ci.b8) obj5;
                 TLObject tLObject = (TLObject) obj4;
                 View view = (View) obj3;
-                ci.y7 y7Var = (ci.y7) obj;
+                ci.x7 x7Var = (ci.x7) obj;
                 MessagesController messagesController = (MessagesController) obj2;
                 long j11 = this.b;
                 if (tLObject != null) {
                     TL_stories.TL_stories_peerStories tL_stories_peerStories = (TL_stories.TL_stories_peerStories) tLObject;
-                    MessagesController.getInstance(c8Var.a).putUsers(tL_stories_peerStories.users, false);
-                    MessagesController.getInstance(c8Var.a).putChats(tL_stories_peerStories.chats, false);
+                    MessagesController.getInstance(b8Var.a).putUsers(tL_stories_peerStories.users, false);
+                    MessagesController.getInstance(b8Var.a).putChats(tL_stories_peerStories.chats, false);
                     TL_stories.PeerStories peerStories = tL_stories_peerStories.stories;
                     if (!peerStories.stories.isEmpty()) {
-                        MessagesController.getInstance(c8Var.a).getStoriesController().a0(j11, peerStories);
+                        MessagesController.getInstance(b8Var.a).getStoriesController().a0(j11, peerStories);
                         j10 = j11;
-                        ci.d8.n(peerStories, new c3(c8Var, view, j11, y7Var, 11));
+                        ci.c8.n(peerStories, new c3(b8Var, view, j11, x7Var, 11));
                         z10 = false;
                         if (j10 > 0 && (user = messagesController.getUser(Long.valueOf(j10))) != null) {
                             user.stories_unavailable = true;
-                            MessagesStorage.getInstance(c8Var.a).putUsersAndChats(Collections.singletonList(user), null, false, true);
+                            MessagesStorage.getInstance(b8Var.a).putUsersAndChats(Collections.singletonList(user), null, false, true);
                             messagesController.putUser(user, false);
                         }
                         if (j10 < 0 && (chat = messagesController.getChat(Long.valueOf(-j10))) != null) {
                             chat.stories_unavailable = true;
-                            MessagesStorage.getInstance(c8Var.a).putUsersAndChats(null, Collections.singletonList(chat), false, true);
+                            MessagesStorage.getInstance(b8Var.a).putUsersAndChats(null, Collections.singletonList(chat), false, true);
                             messagesController.putChat(chat, false);
                         }
                         if (!z10) {
                             view.invalidate();
-                            MessagesController.getInstance(c8Var.a).getStoriesController().e0(j10, false);
+                            MessagesController.getInstance(b8Var.a).getStoriesController().e0(j10, false);
                             break;
                         }
                     }
@@ -113,12 +113,12 @@ public final /* synthetic */ class q3 implements Runnable {
                 z10 = true;
                 if (j10 > 0) {
                     user.stories_unavailable = true;
-                    MessagesStorage.getInstance(c8Var.a).putUsersAndChats(Collections.singletonList(user), null, false, true);
+                    MessagesStorage.getInstance(b8Var.a).putUsersAndChats(Collections.singletonList(user), null, false, true);
                     messagesController.putUser(user, false);
                 }
                 if (j10 < 0) {
                     chat.stories_unavailable = true;
-                    MessagesStorage.getInstance(c8Var.a).putUsersAndChats(null, Collections.singletonList(chat), false, true);
+                    MessagesStorage.getInstance(b8Var.a).putUsersAndChats(null, Collections.singletonList(chat), false, true);
                     messagesController.putChat(chat, false);
                 }
                 if (!z10) {
@@ -128,33 +128,33 @@ public final /* synthetic */ class q3 implements Runnable {
                 ((ConnectionsManager) obj5).lambda$sendRequestInternal$7((RequestDelegate) obj3, (TLObject) obj4, (TLRPC.TL_error) obj2, (RequestDelegateTimestamp) obj, this.b);
                 break;
             case 5:
-                qn qnVar = (qn) obj5;
-                zm0 zm0Var = (zm0) obj2;
-                ((i80) obj4).n0 = true;
-                Activity parentActivity = qnVar.getParentActivity();
+                sn snVar = (sn) obj5;
+                cn0 cn0Var = (cn0) obj2;
+                ((j80) obj4).n0 = true;
+                Activity parentActivity = snVar.getParentActivity();
                 long j12 = ((TLRPC.TL_messageEntityFormattedDate) obj3).date;
                 long j13 = this.b;
-                y3 y3Var = new y3(qnVar, (ArrayList) obj, j13, zm0Var, 2);
-                qe qeVar = new qe(zm0Var, i11);
+                y3 y3Var = new y3(snVar, (ArrayList) obj, j13, cn0Var, 2);
+                qe qeVar = new qe(cn0Var, i11);
                 Pattern pattern = org.telegram.ui.Components.f5.a;
-                org.telegram.ui.Components.f5.J(parentActivity, j13, j12, 0, true, y3Var, qeVar, new org.telegram.ui.Components.d5(null), null);
+                org.telegram.ui.Components.f5.K(parentActivity, j13, j12, 0, true, y3Var, qeVar, new org.telegram.ui.Components.c5(null), null);
                 break;
             default:
-                org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) obj5;
+                org.telegram.ui.ActionBar.o2 o2Var = (org.telegram.ui.ActionBar.o2) obj5;
                 TLObject tLObject2 = (TLObject) obj4;
                 MessagesController.DialogFilter dialogFilter = (MessagesController.DialogFilter) obj3;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
                 Runnable runnable = (Runnable) obj;
-                if (n2Var.getContext() != null) {
+                if (o2Var.getContext() != null) {
                     if (tLObject2 instanceof TL_chatlists.TL_chatlists_exportedInvites) {
                         TL_chatlists.TL_chatlists_exportedInvites tL_chatlists_exportedInvites = (TL_chatlists.TL_chatlists_exportedInvites) tLObject2;
-                        n2Var.getMessagesController().putChats(tL_chatlists_exportedInvites.chats, false);
-                        n2Var.getMessagesController().putUsers(tL_chatlists_exportedInvites.users, false);
-                        new a00(n2Var, dialogFilter, tL_chatlists_exportedInvites.invites).show();
+                        o2Var.getMessagesController().putChats(tL_chatlists_exportedInvites.chats, false);
+                        o2Var.getMessagesController().putUsers(tL_chatlists_exportedInvites.users, false);
+                        new d00(o2Var, dialogFilter, tL_chatlists_exportedInvites.invites).show();
                     } else if (tL_error == null || !"FILTER_ID_INVALID".equals(tL_error.text) || dialogFilter.isDefault()) {
-                        nk.q(R.string.UnknownError, org.telegram.ui.Components.xc.a0(n2Var), null);
+                        sl.q(R.string.UnknownError, org.telegram.ui.Components.xc.a0(o2Var), null);
                     } else {
-                        new a00(n2Var, dialogFilter, null).show();
+                        new d00(o2Var, dialogFilter, null).show();
                     }
                     if (runnable != null) {
                         AndroidUtilities.runOnUIThread(runnable, Math.max(0L, 200 - (System.currentTimeMillis() - this.b)));
@@ -165,9 +165,9 @@ public final /* synthetic */ class q3 implements Runnable {
         }
     }
 
-    public /* synthetic */ q3(ga gaVar, boolean[] zArr, long j10, TLObject tLObject, TLRPC.TL_textWithEntities tL_textWithEntities, Utilities.Callback2 callback2) {
+    public /* synthetic */ q3(ha haVar, boolean[] zArr, long j10, TLObject tLObject, TLRPC.TL_textWithEntities tL_textWithEntities, Utilities.Callback2 callback2) {
         this.a = 1;
-        this.d = gaVar;
+        this.d = haVar;
         this.e = zArr;
         this.b = j10;
         this.c = tLObject;
@@ -175,9 +175,9 @@ public final /* synthetic */ class q3 implements Runnable {
         this.h = callback2;
     }
 
-    public /* synthetic */ q3(ga gaVar, boolean[] zArr, TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift, TL_stars.StarGift starGift, long j10, Utilities.Callback2 callback2) {
+    public /* synthetic */ q3(ha haVar, boolean[] zArr, TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift, TL_stars.StarGift starGift, long j10, Utilities.Callback2 callback2) {
         this.a = 2;
-        this.d = gaVar;
+        this.d = haVar;
         this.c = zArr;
         this.e = tL_payments_paymentFormStarGift;
         this.f = starGift;
@@ -205,9 +205,9 @@ public final /* synthetic */ class q3 implements Runnable {
         this.b = j10;
     }
 
-    public /* synthetic */ q3(org.telegram.ui.ActionBar.n2 n2Var, TLObject tLObject, MessagesController.DialogFilter dialogFilter, TLRPC.TL_error tL_error, Runnable runnable, long j10) {
+    public /* synthetic */ q3(org.telegram.ui.ActionBar.o2 o2Var, TLObject tLObject, MessagesController.DialogFilter dialogFilter, TLRPC.TL_error tL_error, Runnable runnable, long j10) {
         this.a = 6;
-        this.d = n2Var;
+        this.d = o2Var;
         this.c = tLObject;
         this.e = dialogFilter;
         this.h = tL_error;

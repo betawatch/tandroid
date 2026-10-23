@@ -4,7 +4,7 @@ import android.os.Handler;
 import android.os.Message;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class n implements Handler.Callback {
     public final /* synthetic */ int a;
@@ -29,7 +29,7 @@ public final /* synthetic */ class n implements Handler.Callback {
                         b2.u d = qVar.b.d();
                         qVar.b = new b2.t();
                         qVar.c = false;
-                        pVar.c(qVar.a, d);
+                        pVar.a(qVar.a, d);
                     }
                     i0 i0Var = rVar.b;
                     i0Var.getClass();

@@ -1,0 +1,220 @@
+package ci;
+
+import android.graphics.drawable.ColorDrawable;
+import android.text.TextUtils;
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.messenger.ContactsController;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.Components.cm0;
+import org.telegram.ui.Components.j80;
+import org.telegram.ui.Components.pb0;
+import org.telegram.ui.Components.xc;
+
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+/* loaded from: classes4.dex */
+public final class c5 implements cm0 {
+    public final /* synthetic */ z9 a;
+    public final /* synthetic */ t5 b;
+
+    public c5(t5 t5Var, z9 z9Var) {
+        this.b = t5Var;
+        this.a = z9Var;
+    }
+
+    @Override // org.telegram.ui.Components.cm0
+    public final boolean d(int i10, View view) {
+        final TL_stories.StoryView storyView;
+        final MessagesController messagesController;
+        final TLRPC.User user;
+        boolean z10;
+        TLRPC.InputStickerSet c10;
+        t5 t5Var = this.b;
+        b bVar = t5Var.s;
+        int i11 = t5Var.v;
+        if (view instanceof org.telegram.ui.Cells.o6) {
+            final org.telegram.ui.Cells.o6 o6Var = (org.telegram.ui.Cells.o6) view;
+            z9 z9Var = this.a;
+            if (z9Var.v != null && (storyView = ((j5) t5Var.w.c.get(i10)).b) != null && (user = (messagesController = MessagesController.getInstance(i11)).getUser(Long.valueOf(storyView.user_id))) != null) {
+                boolean z11 = messagesController.blockePeers.indexOfKey(user.id) >= 0;
+                boolean z12 = user.contact || ContactsController.getInstance(i11).contactsDict.get(Long.valueOf(user.id)) != null;
+                boolean d = t5Var.d(storyView);
+                boolean L = messagesController.getStoriesController().L(storyView);
+                boolean isUserSelf = UserObject.isUserSelf(user);
+                String str = TextUtils.isEmpty(user.first_name) ? TextUtils.isEmpty(user.last_name) ? "" : user.last_name : user.first_name;
+                int indexOf = str.indexOf(" ");
+                if (indexOf > 2) {
+                    str = str.substring(0, indexOf);
+                }
+                if (isUserSelf) {
+                    return false;
+                }
+                j80 F = j80.F(z9Var.v, bVar, view);
+                F.i = 3;
+                F.j = true;
+                F.W(new ColorDrawable(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.h5, bVar)));
+                F.s = 133;
+                boolean z13 = (!d || L || z11 || isUserSelf) ? false : true;
+                final int i12 = 0;
+                final String str2 = str;
+                F.l(R.drawable.msg_stories_myhide, LocaleController.formatString(R.string.StoryHideFrom, str), new Runnable(this) { // from class: ci.a5
+                    public final /* synthetic */ c5 b;
+
+                    {
+                        this.b = this;
+                    }
+
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        int i13 = i12;
+                        TL_stories.StoryView storyView2 = storyView;
+                        org.telegram.ui.Cells.o6 o6Var2 = o6Var;
+                        String str3 = str2;
+                        TLRPC.User user2 = user;
+                        MessagesController messagesController2 = messagesController;
+                        c5 c5Var = this.b;
+                        switch (i13) {
+                            case 0:
+                                messagesController2.getStoriesController().j0(user2.id, true, true);
+                                t5 t5Var2 = c5Var.b;
+                                i2.o1.t(R.string.StoryHidFromToast, new Object[]{str3}, new xc(t5Var2, t5Var2.s), R.raw.ic_ban, 36);
+                                o6Var2.a(t5Var2.d(storyView2) ? 1.0f : 0.5f, true);
+                                break;
+                            default:
+                                messagesController2.getStoriesController().j0(user2.id, false, true);
+                                t5 t5Var3 = c5Var.b;
+                                i2.o1.t(R.string.StoryShownBackToToast, new Object[]{str3}, new xc(t5Var3, t5Var3.s), R.raw.contact_check, 36);
+                                o6Var2.a(t5Var3.d(storyView2) ? 1.0f : 0.5f, true);
+                                break;
+                        }
+                    }
+                }, z13);
+                F.E();
+                F.t();
+                final int i13 = 1;
+                F.l(R.drawable.msg_menu_stories, LocaleController.formatString(R.string.StoryShowBackTo, str2), new Runnable(this) { // from class: ci.a5
+                    public final /* synthetic */ c5 b;
+
+                    {
+                        this.b = this;
+                    }
+
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        int i132 = i13;
+                        TL_stories.StoryView storyView2 = storyView;
+                        org.telegram.ui.Cells.o6 o6Var2 = o6Var;
+                        String str3 = str2;
+                        TLRPC.User user2 = user;
+                        MessagesController messagesController2 = messagesController;
+                        c5 c5Var = this.b;
+                        switch (i132) {
+                            case 0:
+                                messagesController2.getStoriesController().j0(user2.id, true, true);
+                                t5 t5Var2 = c5Var.b;
+                                i2.o1.t(R.string.StoryHidFromToast, new Object[]{str3}, new xc(t5Var2, t5Var2.s), R.raw.ic_ban, 36);
+                                o6Var2.a(t5Var2.d(storyView2) ? 1.0f : 0.5f, true);
+                                break;
+                            default:
+                                messagesController2.getStoriesController().j0(user2.id, false, true);
+                                t5 t5Var3 = c5Var.b;
+                                i2.o1.t(R.string.StoryShownBackToToast, new Object[]{str3}, new xc(t5Var3, t5Var3.s), R.raw.contact_check, 36);
+                                o6Var2.a(t5Var3.d(storyView2) ? 1.0f : 0.5f, true);
+                                break;
+                        }
+                    }
+                }, (!L || z11 || isUserSelf) ? false : true);
+                F.E();
+                F.t();
+                final int i14 = 0;
+                F.m((z12 || z11 || isUserSelf) ? false : true, R.drawable.msg_user_remove, LocaleController.getString(R.string.BlockUser), true, new Runnable(this) { // from class: ci.b5
+                    public final /* synthetic */ c5 b;
+
+                    {
+                        this.b = this;
+                    }
+
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i14) {
+                            case 0:
+                                messagesController.blockPeer(user.id);
+                                t5 t5Var2 = this.b.b;
+                                new xc(t5Var2, t5Var2.s).e(true).j();
+                                o6Var.a(t5Var2.d(storyView) ? 1.0f : 0.5f, true);
+                                break;
+                            default:
+                                MessagesController messagesController2 = messagesController;
+                                h7 storiesController = messagesController2.getStoriesController();
+                                TLRPC.User user2 = user;
+                                storiesController.j0(user2.id, false, true);
+                                messagesController2.unblockPeer(user2.id);
+                                t5 t5Var3 = this.b.b;
+                                new xc(t5Var3, t5Var3.s).e(false).j();
+                                o6Var.a(t5Var3.d(storyView) ? 1.0f : 0.5f, true);
+                                break;
+                        }
+                    }
+                });
+                final int i15 = 1;
+                F.l(R.drawable.msg_block, LocaleController.getString(R.string.Unblock), new Runnable(this) { // from class: ci.b5
+                    public final /* synthetic */ c5 b;
+
+                    {
+                        this.b = this;
+                    }
+
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i15) {
+                            case 0:
+                                messagesController.blockPeer(user.id);
+                                t5 t5Var2 = this.b.b;
+                                new xc(t5Var2, t5Var2.s).e(true).j();
+                                o6Var.a(t5Var2.d(storyView) ? 1.0f : 0.5f, true);
+                                break;
+                            default:
+                                MessagesController messagesController2 = messagesController;
+                                h7 storiesController = messagesController2.getStoriesController();
+                                TLRPC.User user2 = user;
+                                storiesController.j0(user2.id, false, true);
+                                messagesController2.unblockPeer(user2.id);
+                                t5 t5Var3 = this.b.b;
+                                new xc(t5Var3, t5Var3.s).e(false).j();
+                                o6Var.a(t5Var3.d(storyView) ? 1.0f : 0.5f, true);
+                                break;
+                        }
+                    }
+                }, (z12 || !z11 || isUserSelf) ? false : true);
+                F.m(z12 && !isUserSelf, R.drawable.msg_user_remove, LocaleController.getString(R.string.StoryDeleteContact), true, new ai.t0(this, user, str2, o6Var, storyView, 11));
+                TLRPC.Reaction reaction = storyView.reaction;
+                if (!(reaction instanceof TLRPC.TL_reactionCustomEmoji) || (c10 = org.telegram.ui.Components.r5.h(i11).c(((TLRPC.TL_reactionCustomEmoji) reaction).document_id)) == null) {
+                    z10 = false;
+                } else {
+                    F.k();
+                    ArrayList arrayList = new ArrayList();
+                    arrayList.add(c10);
+                    pb0 pb0Var = new pb0(t5Var.v, 3, t5Var.getContext(), arrayList, bVar);
+                    pb0Var.setOnClickListener(new ai.v0(this, arrayList, F, 6));
+                    F.q(pb0Var);
+                    z10 = true;
+                }
+                if (F.x() <= 0 && !z10) {
+                    return false;
+                }
+                F.Z();
+                try {
+                    t5Var.performHapticFeedback(0, 1);
+                } catch (Exception unused) {
+                }
+                return true;
+            }
+        }
+        return false;
+    }
+}

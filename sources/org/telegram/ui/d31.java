@@ -1,69 +1,112 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.SaveToGallerySettingsHelper;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class d31 implements org.telegram.ui.Components.cp0 {
-    public final /* synthetic */ org.telegram.ui.Components.dp0 a;
-    public final /* synthetic */ g31 b;
-    public final /* synthetic */ g31 c;
-    public final /* synthetic */ g31 d;
-    public final /* synthetic */ e31 e;
+public final class d31 extends org.telegram.ui.Components.lm0 {
+    public final Context c;
 
-    public d31(e31 e31Var, org.telegram.ui.Components.dp0 dp0Var, g31 g31Var, g31 g31Var2, g31 g31Var3) {
-        this.e = e31Var;
-        this.a = dp0Var;
-        this.b = g31Var;
-        this.c = g31Var2;
-        this.d = g31Var3;
+    public d31(Context context) {
+        this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.cp0
-    public final void L(float f7, boolean z10) {
-        SaveToGallerySettingsActivity saveToGallerySettingsActivity = this.e.d;
-        boolean isAttachedToWindow = this.a.isAttachedToWindow();
-        long j10 = f7 > 0.7f ? (long) ((4089446400L * ((f7 - 0.7f) / 0.3f)) + SaveToGallerySettingsHelper.DEFAULT_VIDEO_LIMIT) : (long) ((104333312 * (f7 / 0.7f)) + 524288.0f);
-        g31 g31Var = this.d;
-        g31 g31Var2 = this.b;
-        g31 g31Var3 = this.c;
-        if (f7 >= 1.0f) {
-            g31Var2.e(false, isAttachedToWindow);
-            g31Var3.e(false, isAttachedToWindow);
-            g31Var.e(true, isAttachedToWindow);
-            AndroidUtilities.updateViewVisibilityAnimated(g31Var3, false, 0.8f, isAttachedToWindow);
-        } else if (f7 == 0.0f) {
-            g31Var2.e(true, isAttachedToWindow);
-            g31Var3.e(false, isAttachedToWindow);
-            g31Var.e(false, isAttachedToWindow);
-            AndroidUtilities.updateViewVisibilityAnimated(g31Var3, false, 0.8f, isAttachedToWindow);
+    @Override // org.telegram.ui.Components.lm0
+    public final boolean D(s4.b1 b1Var) {
+        int b10 = b1Var.b();
+        if (b10 != 1) {
+            ti.a aVar = ti.e.d;
+            aVar.a();
+            if (!aVar.d) {
+                return false;
+            }
+            if (b10 != 2 && b10 != 3 && b10 != 4 && b10 != 5 && b10 != 8) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    @Override // s4.g0
+    public final int h() {
+        return 7;
+    }
+
+    @Override // s4.g0
+    public final int j(int i10) {
+        if (i10 == 0 || i10 == 7) {
+            return 0;
+        }
+        if (i10 == 1 || i10 == 8) {
+            return 1;
+        }
+        return (i10 == 6 || i10 == 9) ? 3 : 2;
+    }
+
+    @Override // s4.g0
+    public final void v(s4.b1 b1Var, int i10) {
+        ti.a aVar = ti.e.d;
+        aVar.a();
+        boolean z10 = aVar.d;
+        int i11 = b1Var.f;
+        if (i11 == 0) {
+            ((org.telegram.ui.Cells.l4) b1Var.a).setText(i10 == 0 ? LocaleController.getString(R.string.RoundVideoGeneral) : LocaleController.getString(R.string.RoundVideoComposition));
+            return;
+        }
+        if (i11 == 1) {
+            org.telegram.ui.Cells.w8 w8Var = (org.telegram.ui.Cells.w8) b1Var.a;
+            w8Var.setEnabled(i10 == 1 || z10);
+            if (i10 == 1) {
+                w8Var.f(LocaleController.getString(R.string.RoundVideoUseNewRecorder), z10, false);
+                return;
+            }
+            String string = LocaleController.getString(R.string.RoundVideoCompositionEnabled);
+            ti.a aVar2 = ti.e.i;
+            aVar2.a();
+            w8Var.f(string, aVar2.d, false);
+            return;
+        }
+        if (i11 != 2) {
+            ((org.telegram.ui.Cells.e9) b1Var.a).setText(i10 == 6 ? LocaleController.getString(R.string.RoundVideoGeneralInfo) : LocaleController.getString(R.string.RoundVideoCompositionInfo));
+            return;
+        }
+        org.telegram.ui.Cells.ca caVar = (org.telegram.ui.Cells.ca) b1Var.a;
+        caVar.setEnabled(z10);
+        if (i10 == 2) {
+            caVar.c(LocaleController.getString(R.string.RoundVideoOutputResolution), a1.g.n(((si.s0) ti.e.e.a()).a, "p", new StringBuilder()), false, true);
+            return;
+        }
+        if (i10 == 3) {
+            String string2 = LocaleController.getString(R.string.RoundVideoCameraResolution);
+            si.n0 n0Var = (si.n0) ti.e.f.a();
+            caVar.c(string2, n0Var == si.n0.a ? LocaleController.getString(R.string.RoundVideoCameraResolutionHigh) : n0Var == si.n0.b ? LocaleController.getString(R.string.RoundVideoCameraResolutionMedium) : LocaleController.getString(R.string.RoundVideoCameraResolutionLow), false, true);
+        } else if (i10 == 4) {
+            caVar.c(LocaleController.getString(R.string.RoundVideoFrameRate), a1.g.n(((si.p0) ti.e.g.a()).a, " FPS", new StringBuilder()), false, true);
         } else {
-            g31Var3.c(LocaleController.formatString("UpToFileSize", R.string.UpToFileSize, AndroidUtilities.formatFileSize(j10, true, false)), false, true);
-            g31Var2.e(false, isAttachedToWindow);
-            g31Var3.e(true, isAttachedToWindow);
-            g31Var.e(false, isAttachedToWindow);
-            AndroidUtilities.updateViewVisibilityAnimated(g31Var3, true, 0.8f, isAttachedToWindow);
-        }
-        if (z10) {
-            saveToGallerySettingsActivity.X().limitVideo = j10;
-            saveToGallerySettingsActivity.Y();
+            caVar.c(LocaleController.getString(R.string.RoundVideoBitrate), e31.U(ti.e.h.a()), false, false);
         }
     }
 
-    @Override // org.telegram.ui.Components.cp0
-    public final /* synthetic */ int Y() {
-        return 0;
-    }
-
-    @Override // org.telegram.ui.Components.cp0
-    public final /* synthetic */ CharSequence getContentDescription() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.cp0
-    public final void v() {
+    @Override // s4.g0
+    public final s4.b1 x(ViewGroup viewGroup, int i10) {
+        FrameLayout frameLayout;
+        Context context = this.c;
+        if (i10 == 0) {
+            frameLayout = new org.telegram.ui.Cells.l4(context);
+        } else if (i10 == 1) {
+            frameLayout = new org.telegram.ui.Cells.w8(context);
+        } else if (i10 == 2) {
+            org.telegram.ui.Cells.ca caVar = new org.telegram.ui.Cells.ca(context);
+            caVar.setCanDisable(true);
+            frameLayout = caVar;
+        } else {
+            frameLayout = new org.telegram.ui.Cells.e9(context);
+        }
+        frameLayout.setLayoutParams(new s4.o0(-1, -2));
+        return new org.telegram.ui.Components.wl0(frameLayout);
     }
 }

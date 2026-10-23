@@ -13,6 +13,7 @@ import android.util.Log;
 import android.util.Pair;
 import c6.l;
 import g2.h;
+import i2.o1;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -31,16 +32,16 @@ import java.util.logging.Level;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.secretmedia.ExtendedDefaultDataSourceFactory;
-import org.telegram.ui.fk0;
+import org.telegram.ui.web.d0;
 import t7.u;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class d extends m {
     public static final f l;
     public static final HashMap m;
     public final ExtendedDefaultDataSourceFactory e;
-    public final fk0 f;
+    public final d0 f;
     public final u g;
     public final HashMap h;
     public Pair i;
@@ -63,7 +64,7 @@ public final class d extends m {
         this.i = null;
         this.j = false;
         this.k = new AtomicInteger();
-        this.f = new fk0(24);
+        this.f = new d0(6);
         this.g = new u(8);
         this.e = new ExtendedDefaultDataSourceFactory(ApplicationLoader.applicationContext, "Mozilla/5.0 (X11; Linux x86_64; rv:10.0) Gecko/20150101 Firefox/47.0 (Chrome)");
     }
@@ -101,7 +102,7 @@ public final class d extends m {
     public final j e(ad.f fVar) {
         String str;
         int incrementAndGet = this.k.incrementAndGet();
-        StringBuilder l4 = i2.e.l(incrementAndGet, "Request ", " ");
+        StringBuilder n10 = o1.n(incrementAndGet, "Request ", " ");
         switch (fVar.g) {
             case 1:
                 str = "GET";
@@ -155,12 +156,12 @@ public final class d extends m {
                 str = "null";
                 break;
         }
-        l4.append(str);
-        l4.append(" ");
-        l4.append(fVar.f);
-        l4.append(" ");
-        l4.append((String) fVar.i.get("range"));
-        Log.d("CAST_SERVER", l4.toString());
+        n10.append(str);
+        n10.append(" ");
+        n10.append(fVar.f);
+        n10.append(" ");
+        n10.append((String) fVar.i.get("range"));
+        Log.d("CAST_SERVER", n10.toString());
         try {
             j k10 = k(fVar);
             ad.g gVar = k10.e;

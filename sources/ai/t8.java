@@ -1,9 +1,9 @@
 package ai;
 
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.nz0;
+import org.telegram.ui.rz0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t8 implements Runnable {
     public final /* synthetic */ int a;
@@ -19,18 +19,18 @@ public final /* synthetic */ class t8 implements Runnable {
         switch (this.a) {
             case 0:
                 ProfileActivity profileActivity = this.b;
-                nz0 nz0Var = profileActivity.O;
-                if (nz0Var != null) {
-                    nz0Var.a1(14);
-                    profileActivity.G4(false);
+                rz0 rz0Var = profileActivity.O;
+                if (rz0Var != null) {
+                    rz0Var.b1(14);
+                    profileActivity.I4(false);
                     break;
                 }
                 break;
             case 1:
-                this.b.G4(true);
+                this.b.I4(true);
                 break;
             default:
-                this.b.G4(true);
+                this.b.I4(true);
                 break;
         }
     }

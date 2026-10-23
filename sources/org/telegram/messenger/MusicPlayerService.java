@@ -30,7 +30,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public class MusicPlayerService extends Service implements NotificationCenter.NotificationCenterDelegate {
     private static final int ID_NOTIFICATION = 5;
@@ -438,7 +438,7 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
         if (z10) {
             return null;
         }
-        org.telegram.ui.ActionBar.h6.S(this);
+        org.telegram.ui.ActionBar.k6.S(this);
         org.telegram.ui.Components.h9 h9Var = tLObject instanceof TLRPC.User ? new org.telegram.ui.Components.h9(0, (TLRPC.User) tLObject) : new org.telegram.ui.Components.h9((TLRPC.Chat) tLObject);
         h9Var.r = 1;
         float f11 = i10;
@@ -634,9 +634,9 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
                 if (MusicPlayerService.NOTIFY_REPEAT.equals(str)) {
                     SharedConfig.setRepeatMode((SharedConfig.repeatMode + 1) % 3);
                     MusicPlayerService.this.updateRepeatMode();
-                    org.telegram.ui.Components.k8 k8Var = org.telegram.ui.Components.k8.T0;
+                    org.telegram.ui.Components.k8 k8Var = org.telegram.ui.Components.k8.Y0;
                     if (k8Var != null) {
-                        k8Var.H0();
+                        k8Var.N0();
                     }
                 } else if (MusicPlayerService.NOTIFY_SHUFFLE.equals(str)) {
                     if (SharedConfig.shuffleMusic) {
@@ -645,9 +645,9 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
                         MediaController.getInstance().setPlaybackOrderType(2);
                     }
                     MusicPlayerService.this.updateShuffleMode();
-                    org.telegram.ui.Components.k8 k8Var2 = org.telegram.ui.Components.k8.T0;
+                    org.telegram.ui.Components.k8 k8Var2 = org.telegram.ui.Components.k8.Y0;
                     if (k8Var2 != null) {
-                        k8Var2.H0();
+                        k8Var2.N0();
                     }
                 }
                 MessageObject playingMessageObject = MediaController.getInstance().getPlayingMessageObject();

@@ -13,7 +13,7 @@ import java.util.Map;
 import java.util.UUID;
 import v7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class o0 {
     public static final o0 g;
@@ -218,7 +218,7 @@ public final class o0 {
                 e9.l0 l0Var2 = e9.n0.b;
                 b10 = e9.x1.e;
             } else {
-                b10 = e2.e.b(new aa.a(22), parcelableArrayList2);
+                b10 = e2.e.b(new aa.a(24), parcelableArrayList2);
             }
             e9.x1 x1Var2 = b10;
             long j15 = bundle6.getLong(j0.p, -9223372036854775807L);
@@ -380,14 +380,14 @@ public final class o0 {
                 bundle5.putBundle(str6, bundle8);
             }
             if (!list.isEmpty()) {
-                bundle5.putParcelableArrayList(j0.m, e2.e.h(list, new aa.a(20)));
+                bundle5.putParcelableArrayList(j0.m, e2.e.h(list, new aa.a(22)));
             }
             String str7 = j0Var.f;
             if (str7 != null) {
                 bundle5.putString(j0.n, str7);
             }
             if (!n0Var.isEmpty()) {
-                bundle5.putParcelableArrayList(j0.o, e2.e.h(n0Var, new aa.a(21)));
+                bundle5.putParcelableArrayList(j0.o, e2.e.h(n0Var, new aa.a(23)));
             }
             long j14 = j0Var.h;
             if (j14 != -9223372036854775807L) {

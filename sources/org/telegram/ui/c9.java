@@ -7,24 +7,24 @@ import android.text.Layout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class c9 extends TextView {
     public final Paint a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.d6 b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.g6 b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c9(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+    public c9(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
         super(context);
-        this.b = d6Var;
+        this.b = g6Var;
         this.a = new Paint(1);
     }
 
     @Override // android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        int m12 = org.telegram.ui.ActionBar.h6.m1(0.8f, org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.z6, this.b));
+        int o12 = org.telegram.ui.ActionBar.k6.o1(0.8f, org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.z6, this.b));
         Paint paint = this.a;
-        paint.setColor(m12);
+        paint.setColor(o12);
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(1.0f);
         float height = getHeight() / 2.0f;

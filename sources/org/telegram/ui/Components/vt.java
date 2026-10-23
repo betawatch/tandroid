@@ -5,18 +5,18 @@ import android.os.Build;
 import android.widget.EdgeEffect;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class vt extends EdgeEffect {
     public final int a;
     public final tt b;
     public final RecyclerView c;
-    public final hq d;
+    public final zp d;
     public boolean e;
 
     public vt(RecyclerView recyclerView, int i10, tt ttVar) {
         super(recyclerView.getContext());
-        this.d = new hq(this, 7);
+        this.d = new zp(this, 8);
         this.c = recyclerView;
         this.a = i10;
         this.b = ttVar;

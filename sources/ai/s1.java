@@ -8,7 +8,7 @@ import android.graphics.drawable.Drawable;
 import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class s1 extends f7 {
     public final float[] D0;
@@ -17,8 +17,8 @@ public final class s1 extends f7 {
     public final /* synthetic */ a2 G0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public s1(a2 a2Var, Context context, org.telegram.ui.ActionBar.d6 d6Var, p1 p1Var, ah.f fVar, ah.f fVar2, ah.f fVar3, ah.f fVar4, ah.f fVar5, ah.f fVar6) {
-        super(context, d6Var, p1Var, fVar, null, fVar2, fVar3, fVar4, fVar5, fVar6);
+    public s1(a2 a2Var, Context context, org.telegram.ui.ActionBar.g6 g6Var, p1 p1Var, ah.f fVar, ah.f fVar2, ah.f fVar3, ah.f fVar4, ah.f fVar5, ah.f fVar6) {
+        super(context, g6Var, p1Var, fVar, null, fVar2, fVar3, fVar4, fVar5, fVar6);
         this.G0 = a2Var;
         this.D0 = new float[3];
         this.E0 = new Path();
@@ -53,17 +53,17 @@ public final class s1 extends f7 {
     public final void k(int i10) {
         a2 a2Var = this.G0;
         ImageView imageView = a2Var.m0;
-        if (imageView != null && org.telegram.ui.ActionBar.h6.C1(imageView.getBackground(), i10, false)) {
+        if (imageView != null && org.telegram.ui.ActionBar.k6.E1(imageView.getBackground(), i10, false)) {
             a2Var.m0.invalidate();
         }
         ImageView imageView2 = a2Var.n0;
-        if (imageView2 != null && org.telegram.ui.ActionBar.h6.C1(imageView2.getBackground(), i10, false)) {
+        if (imageView2 != null && org.telegram.ui.ActionBar.k6.E1(imageView2.getBackground(), i10, false)) {
             a2Var.n0.invalidate();
         }
         for (w1 w1Var : a2Var.Z) {
             Drawable background = w1Var.getBackground();
             org.telegram.ui.Components.q6 q6Var = (org.telegram.ui.Components.q6) w1Var.d;
-            if (org.telegram.ui.ActionBar.h6.C1(background, i10, false)) {
+            if (org.telegram.ui.ActionBar.k6.E1(background, i10, false)) {
                 w1Var.invalidate();
             }
             int f7 = i0.a.f(0.33f, i10, -1);
@@ -75,7 +75,7 @@ public final class s1 extends f7 {
             if (q6Var.getSizeableBackground() instanceof u6) {
                 ((u6) q6Var.getSizeableBackground()).b.setColor(HSVToColor);
                 q6Var.invalidate();
-            } else if (org.telegram.ui.ActionBar.h6.C1(q6Var.getSizeableBackground(), HSVToColor, false)) {
+            } else if (org.telegram.ui.ActionBar.k6.E1(q6Var.getSizeableBackground(), HSVToColor, false)) {
                 q6Var.invalidate();
             }
         }

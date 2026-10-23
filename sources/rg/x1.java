@@ -1,240 +1,310 @@
 package rg;
 
-import ai.zd;
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.graphics.Rect;
-import android.view.KeyEvent;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.FrameLayout;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MediaController;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.f3;
-import org.telegram.ui.Components.fw0;
+import com.google.android.gms.internal.play_billing.k3;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.bs;
+import org.telegram.ui.Components.f6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class x1 extends FrameLayout {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class x1 extends View {
+    public qg.e1 E;
+    public float F;
+    public float G;
+    public qg.s1 H;
+    public Runnable I;
+    public boolean J;
+    public w1 K;
+    public final Paint a;
+    public final Paint b;
+    public final Path c;
+    public final le.b d;
+    public final RectF e;
+    public boolean f;
+    public boolean h;
+    public float n;
+    public float r;
+    public long s;
+    public boolean v;
+    public final f6 w;
+    public final f6 x;
+    public final f6 y;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ x1(Object obj, Context context, int i10) {
+    public x1(Context context) {
         super(context);
-        this.a = i10;
-        this.b = obj;
+        Paint paint = new Paint(1);
+        this.a = paint;
+        Paint paint2 = new Paint(1);
+        this.b = paint2;
+        this.c = new Path();
+        this.e = new RectF();
+        this.v = true;
+        this.w = new f6(this);
+        this.x = new f6(this);
+        this.y = new f6(this);
+        this.H = new qg.s1(1.0f, 0.016773745f, -1);
+        this.J = true;
+        this.d = new le.b(context, new v1(this));
+        paint2.setColor(-1);
+        paint2.setShadowLayer(AndroidUtilities.dp(4.0f), 0.0f, AndroidUtilities.dp(2.0f), 1342177280);
+        paint.setColor(1090519039);
+        paint.setShadowLayer(AndroidUtilities.dp(3.0f), 0.0f, AndroidUtilities.dp(1.0f), 637534208);
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public void dispatchDraw(Canvas canvas) {
-        Canvas canvas2;
-        switch (this.a) {
-            case 2:
-                t2 t2Var = (t2) this.b;
-                if (t2Var.y <= 0.0f || t2Var.s == null) {
-                    canvas2 = canvas;
-                } else {
-                    t2Var.v.reset();
-                    float width = getWidth() / t2Var.n.getWidth();
-                    t2Var.v.postScale(width, width);
-                    t2Var.r.setLocalMatrix(t2Var.v);
-                    t2Var.s.setAlpha((int) (t2Var.y * 255.0f));
-                    canvas2 = canvas;
-                    canvas2.drawRect(0.0f, 0.0f, getWidth(), getHeight(), t2Var.s);
-                }
-                super.dispatchDraw(canvas2);
-                break;
-            default:
-                super.dispatchDraw(canvas);
-                break;
+    public final void a(float f7, float f10, float f11, Canvas canvas, boolean z10) {
+        if (z10) {
+            RectF rectF = AndroidUtilities.rectTmp;
+            rectF.set((f7 - f11) - AndroidUtilities.dp(6.0f), (f10 - f11) - AndroidUtilities.dp(6.0f), f7 + f11 + AndroidUtilities.dp(6.0f), f10 + f11 + AndroidUtilities.dp(6.0f));
+            canvas.saveLayerAlpha(rectF, (int) (this.r * 255.0f), 31);
+        }
+        canvas.drawCircle(f7, f10, f11, this.b);
+        if (z10) {
+            canvas.restore();
         }
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public boolean dispatchKeyEventPreIme(KeyEvent keyEvent) {
-        switch (this.a) {
-            case 2:
-                if (keyEvent == null || keyEvent.getKeyCode() != 4 || keyEvent.getAction() != 1) {
-                    return super.dispatchKeyEventPreIme(keyEvent);
-                }
-                ((t2) this.b).onBackPressed();
-                return true;
-            default:
-                return super.dispatchKeyEventPreIme(keyEvent);
-        }
+    public final void b(float f7, float f10) {
+        this.F = f7;
+        this.G = f10;
+        invalidate();
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:11:0x006e  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0130  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x01b7  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x0209  */
+    /* JADX WARN: Removed duplicated region for block: B:31:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x0081  */
     @Override // android.view.View
-    public void onDraw(Canvas canvas) {
-        switch (this.a) {
-            case 0:
-                y1 y1Var = (y1) this.b;
-                Rect rect = y1Var.E0;
-                Rect rect2 = y1Var.D0;
-                Paint paint = y1Var.F0;
-                fw0 fw0Var = y1Var.v0;
-                Bitmap bitmap = y1Var.A0;
-                if (y1Var.z0 != null) {
-                    canvas.save();
-                    float e = y1Var.u0.e(y1Var.t0);
-                    canvas.scale(1.0f - (e * 2.0f), 1.0f, fw0Var.a / 2.0f, 0.0f);
-                    canvas.skew(0.0f, org.telegram.messenger.g0.z(1.0f, e, 4.0f * e, 0.25f));
-                    float e7 = y1Var.y0.e(y1Var.x0);
-                    if (!y1Var.x0) {
-                        canvas.save();
-                        paint.setAlpha((int) ((1.0f - e7) * 255.0f));
-                        if (bitmap != null) {
-                            canvas.translate(r6.getWidth() / 2.0f, r6.getHeight() / 2.0f);
-                            canvas.rotate(y1Var.w0);
-                            float max = Math.max(fw0Var.a / bitmap.getWidth(), fw0Var.b / bitmap.getHeight());
-                            canvas.scale(max, max);
-                            if (y1Var.G0 != null) {
-                                canvas.rotate(-y1Var.getOrientation());
-                                int contentWidth = y1Var.getContentWidth();
-                                int contentHeight = y1Var.getContentHeight();
-                                if (((y1Var.getOrientation() + y1Var.G0.transformRotation) / 90) % 2 == 1) {
-                                    contentWidth = y1Var.getContentHeight();
-                                    contentHeight = y1Var.getContentWidth();
-                                }
-                                MediaController.CropState cropState = y1Var.G0;
-                                float f7 = cropState.cropPw;
-                                float f10 = cropState.cropPh;
-                                float f11 = contentWidth;
-                                float f12 = contentHeight;
-                                canvas.clipRect(((-contentWidth) * f7) / 2.0f, ((-contentHeight) * f10) / 2.0f, (f7 * f11) / 2.0f, (f10 * f12) / 2.0f);
-                                float f13 = y1Var.G0.cropScale;
-                                canvas.scale(f13, f13);
-                                MediaController.CropState cropState2 = y1Var.G0;
-                                canvas.translate(cropState2.cropPx * f11, cropState2.cropPy * f12);
-                                canvas.rotate(y1Var.G0.cropRotate + r4.transformRotation);
-                                if (y1Var.G0.mirrored) {
-                                    canvas.scale(-1.0f, 1.0f);
-                                }
-                                canvas.rotate(y1Var.getOrientation());
-                            }
-                            canvas.translate((-bitmap.getWidth()) / 2.0f, (-bitmap.getHeight()) / 2.0f);
-                            rect2.set(0, 0, bitmap.getWidth(), bitmap.getHeight());
-                            rect.set(0, 0, bitmap.getWidth(), bitmap.getHeight());
-                            canvas.drawBitmap(bitmap, rect2, rect, paint);
-                        }
-                        canvas.restore();
-                    }
-                    canvas.restore();
-                    break;
-                }
-                break;
-            case 1:
-                o2 o2Var = (o2) this.b;
-                ImageReceiver imageReceiver = o2Var.x0;
-                fw0 fw0Var2 = o2Var.v0;
-                if (o2Var.w0 != null) {
-                    canvas.save();
-                    float e10 = o2Var.u0.e(o2Var.t0);
-                    canvas.scale(1.0f - (e10 * 2.0f), 1.0f, fw0Var2.a / 2.0f, 0.0f);
-                    canvas.skew(0.0f, org.telegram.messenger.g0.z(1.0f, e10, 4.0f * e10, 0.25f));
-                    imageReceiver.setImageCoords(0.0f, 0.0f, (int) fw0Var2.a, (int) fw0Var2.b);
-                    imageReceiver.draw(canvas);
-                    canvas.restore();
-                    break;
-                }
-                break;
-            default:
-                super.onDraw(canvas);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        sg.p0 p0Var;
-        sg.p0 p0Var2;
-        switch (this.a) {
-            case 3:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                accessibilityNodeInfo.setClassName("android.widget.Button");
-                sg.q0 q0Var = (sg.q0) this.b;
-                CharSequence text = (!q0Var.h || (p0Var2 = q0Var.e) == null) ? null : p0Var2.getText();
-                if (text == null && (p0Var = q0Var.d) != null) {
-                    text = p0Var.getText();
-                }
-                if (text != null) {
-                    accessibilityNodeInfo.setText(text);
-                    if (getContentDescription() == null) {
-                        accessibilityNodeInfo.setContentDescription(text);
-                        break;
-                    }
-                }
-                break;
-            default:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                break;
-        }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i10, int i11) {
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void onDraw(Canvas canvas) {
         boolean z10;
-        float f7;
-        float top;
-        int measuredHeight;
-        switch (this.a) {
-            case 4:
-                sg.y0 y0Var = (sg.y0) this.b;
-                z10 = ((f3) y0Var).isPortrait;
+        super.onDraw(canvas);
+        long min = Math.min(16L, System.currentTimeMillis() - this.s);
+        this.s = System.currentTimeMillis();
+        w1 w1Var = this.K;
+        float d = this.w.d(w1Var != null ? w1Var.get() : this.H.c, false);
+        float d10 = this.x.d(this.F, false);
+        float d11 = this.y.d(this.G, false);
+        boolean z11 = this.h;
+        if (z11) {
+            float f7 = this.n;
+            if (f7 != 1.0f) {
+                this.n = org.telegram.ui.Cells.b1.c(min, 200.0f, f7, 1.0f);
+                invalidate();
+                z10 = this.f;
                 if (z10) {
-                    y0Var.s = View.MeasureSpec.getSize(i10);
-                } else {
-                    y0Var.s = (int) (Math.min(View.MeasureSpec.getSize(i10), View.MeasureSpec.getSize(i11)) * 0.8f);
-                }
-                super.onMeasure(i10, i11);
-                break;
-            case 5:
-                super.onMeasure(i10, i11);
-                sg.m1 m1Var = ((sg.l1) this.b).c;
-                zd zdVar = m1Var.r0;
-                if (zdVar == null) {
-                    View view = m1Var.B0;
-                    if (view == null) {
-                        f7 = 0.0f;
-                        m1Var.q0.setTranslationY(f7 - (r4.getMeasuredHeight() / 2.0f));
-                        break;
-                    } else {
-                        top = view.getTop();
-                        measuredHeight = m1Var.B0.getMeasuredHeight();
+                    float f10 = this.r;
+                    if (f10 != 1.0f) {
+                        this.r = org.telegram.ui.Cells.b1.c(min, 200.0f, f10, 1.0f);
+                        invalidate();
+                        RectF rectF = this.e;
+                        float height = rectF.height();
+                        int dp = AndroidUtilities.dp(16.0f);
+                        int dp2 = AndroidUtilities.dp(3.0f);
+                        int dp3 = AndroidUtilities.dp(3.0f);
+                        Path path = this.c;
+                        path.rewind();
+                        path.moveTo(0.0f, 0.0f);
+                        RectF rectF2 = AndroidUtilities.rectTmp;
+                        int i10 = -dp3;
+                        int i11 = -dp;
+                        rectF2.set(AndroidUtilities.lerp(i10, i11, this.r), 0.0f, AndroidUtilities.lerp(dp3, dp, this.r), AndroidUtilities.lerp(dp3, dp, this.r) * 2);
+                        path.arcTo(rectF2, -90.0f, 90.0f);
+                        path.lineTo(AndroidUtilities.lerp(dp3, dp2, this.r), height);
+                        rectF2.set(AndroidUtilities.lerp(i10, -dp2, this.r), height - (dp2 * 2), AndroidUtilities.lerp(dp3, dp2, this.r), height);
+                        path.arcTo(rectF2, 0.0f, 180.0f);
+                        float f11 = dp;
+                        path.lineTo(AndroidUtilities.lerp(i10, i11, this.r), f11);
+                        rectF2.set(AndroidUtilities.lerp(i10, i11, this.r), 0.0f, AndroidUtilities.lerp(dp3, dp, this.r), dp * 2);
+                        path.arcTo(rectF2, -180.0f, 90.0f);
+                        path.close();
+                        if (this.n != 0.0f) {
+                            rectF2.set(0.0f, 0.0f, getWidth(), getHeight());
+                            canvas.saveLayerAlpha(rectF2, (int) ((1.0f - this.n) * 255.0f), 31);
+                        }
+                        canvas.save();
+                        float dp4 = AndroidUtilities.dp(32.0f);
+                        bs bsVar = bs.f;
+                        canvas.translate(bsVar.getInterpolation(this.r) * dp4, rectF.top);
+                        canvas.drawPath(path, this.a);
+                        canvas.restore();
+                        float f12 = (d - d10) / (d11 - d10);
+                        float f13 = dp2 * 1.5f;
+                        a(bsVar.getInterpolation(this.r) * AndroidUtilities.dp(32.0f), w7.r.a(k3.y(1.0f, f12, rectF.height(), rectF.top), rectF.top + f11, rectF.bottom - Math.min(f13, f11)), AndroidUtilities.lerp(AndroidUtilities.dp(12.0f), AndroidUtilities.lerp(Math.min(f13, f11), f11, f12), this.r), canvas, false);
+                        if (this.J && this.r != 0.0f && this.v && this.E != null) {
+                            qg.e1 e1Var = this.E;
+                            float f14 = e1Var.c.g.a;
+                            a(getWidth() / 2.0f, getHeight() / 2.0f, e1Var.getCurrentBrush().h() * k3.t(f14, 0.043945312f, d, 0.00390625f * f14) * this.E.getCurrentBrush().g(), canvas, true);
+                        }
+                        if (this.n != 0.0f) {
+                            canvas.restore();
+                            return;
+                        }
+                        return;
                     }
-                } else {
-                    top = zdVar.getTop();
-                    measuredHeight = m1Var.r0.getMeasuredHeight();
                 }
-                f7 = (measuredHeight / 2.0f) + top;
-                m1Var.q0.setTranslationY(f7 - (r4.getMeasuredHeight() / 2.0f));
-            case 6:
-                super.onMeasure(i10, i11);
-                ((yh.g1) this.b).K.measure(View.MeasureSpec.makeMeasureSpec(getMeasuredWidth(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30));
-                break;
-            default:
-                super.onMeasure(i10, i11);
-                break;
+                if (!z10) {
+                    float f15 = this.r;
+                    if (f15 != 0.0f) {
+                        this.r = org.telegram.ui.Cells.b1.t(min, 200.0f, f15, 0.0f);
+                        invalidate();
+                    }
+                }
+                RectF rectF3 = this.e;
+                float height2 = rectF3.height();
+                int dp5 = AndroidUtilities.dp(16.0f);
+                int dp22 = AndroidUtilities.dp(3.0f);
+                int dp32 = AndroidUtilities.dp(3.0f);
+                Path path2 = this.c;
+                path2.rewind();
+                path2.moveTo(0.0f, 0.0f);
+                RectF rectF22 = AndroidUtilities.rectTmp;
+                int i102 = -dp32;
+                int i112 = -dp5;
+                rectF22.set(AndroidUtilities.lerp(i102, i112, this.r), 0.0f, AndroidUtilities.lerp(dp32, dp5, this.r), AndroidUtilities.lerp(dp32, dp5, this.r) * 2);
+                path2.arcTo(rectF22, -90.0f, 90.0f);
+                path2.lineTo(AndroidUtilities.lerp(dp32, dp22, this.r), height2);
+                rectF22.set(AndroidUtilities.lerp(i102, -dp22, this.r), height2 - (dp22 * 2), AndroidUtilities.lerp(dp32, dp22, this.r), height2);
+                path2.arcTo(rectF22, 0.0f, 180.0f);
+                float f112 = dp5;
+                path2.lineTo(AndroidUtilities.lerp(i102, i112, this.r), f112);
+                rectF22.set(AndroidUtilities.lerp(i102, i112, this.r), 0.0f, AndroidUtilities.lerp(dp32, dp5, this.r), dp5 * 2);
+                path2.arcTo(rectF22, -180.0f, 90.0f);
+                path2.close();
+                if (this.n != 0.0f) {
+                }
+                canvas.save();
+                float dp42 = AndroidUtilities.dp(32.0f);
+                bs bsVar2 = bs.f;
+                canvas.translate(bsVar2.getInterpolation(this.r) * dp42, rectF3.top);
+                canvas.drawPath(path2, this.a);
+                canvas.restore();
+                float f122 = (d - d10) / (d11 - d10);
+                float f132 = dp22 * 1.5f;
+                a(bsVar2.getInterpolation(this.r) * AndroidUtilities.dp(32.0f), w7.r.a(k3.y(1.0f, f122, rectF3.height(), rectF3.top), rectF3.top + f112, rectF3.bottom - Math.min(f132, f112)), AndroidUtilities.lerp(AndroidUtilities.dp(12.0f), AndroidUtilities.lerp(Math.min(f132, f112), f112, f122), this.r), canvas, false);
+                if (this.J) {
+                    qg.e1 e1Var2 = this.E;
+                    float f142 = e1Var2.c.g.a;
+                    a(getWidth() / 2.0f, getHeight() / 2.0f, e1Var2.getCurrentBrush().h() * k3.t(f142, 0.043945312f, d, 0.00390625f * f142) * this.E.getCurrentBrush().g(), canvas, true);
+                }
+                if (this.n != 0.0f) {
+                }
+            }
+        }
+        if (!z11) {
+            float f16 = this.n;
+            if (f16 != 0.0f) {
+                this.n = org.telegram.ui.Cells.b1.t(min, 200.0f, f16, 0.0f);
+                invalidate();
+            }
+        }
+        z10 = this.f;
+        if (z10) {
+        }
+        if (!z10) {
+        }
+        RectF rectF32 = this.e;
+        float height22 = rectF32.height();
+        int dp52 = AndroidUtilities.dp(16.0f);
+        int dp222 = AndroidUtilities.dp(3.0f);
+        int dp322 = AndroidUtilities.dp(3.0f);
+        Path path22 = this.c;
+        path22.rewind();
+        path22.moveTo(0.0f, 0.0f);
+        RectF rectF222 = AndroidUtilities.rectTmp;
+        int i1022 = -dp322;
+        int i1122 = -dp52;
+        rectF222.set(AndroidUtilities.lerp(i1022, i1122, this.r), 0.0f, AndroidUtilities.lerp(dp322, dp52, this.r), AndroidUtilities.lerp(dp322, dp52, this.r) * 2);
+        path22.arcTo(rectF222, -90.0f, 90.0f);
+        path22.lineTo(AndroidUtilities.lerp(dp322, dp222, this.r), height22);
+        rectF222.set(AndroidUtilities.lerp(i1022, -dp222, this.r), height22 - (dp222 * 2), AndroidUtilities.lerp(dp322, dp222, this.r), height22);
+        path22.arcTo(rectF222, 0.0f, 180.0f);
+        float f1122 = dp52;
+        path22.lineTo(AndroidUtilities.lerp(i1022, i1122, this.r), f1122);
+        rectF222.set(AndroidUtilities.lerp(i1022, i1122, this.r), 0.0f, AndroidUtilities.lerp(dp322, dp52, this.r), dp52 * 2);
+        path22.arcTo(rectF222, -180.0f, 90.0f);
+        path22.close();
+        if (this.n != 0.0f) {
+        }
+        canvas.save();
+        float dp422 = AndroidUtilities.dp(32.0f);
+        bs bsVar22 = bs.f;
+        canvas.translate(bsVar22.getInterpolation(this.r) * dp422, rectF32.top);
+        canvas.drawPath(path22, this.a);
+        canvas.restore();
+        float f1222 = (d - d10) / (d11 - d10);
+        float f1322 = dp222 * 1.5f;
+        a(bsVar22.getInterpolation(this.r) * AndroidUtilities.dp(32.0f), w7.r.a(k3.y(1.0f, f1222, rectF32.height(), rectF32.top), rectF32.top + f1122, rectF32.bottom - Math.min(f1322, f1122)), AndroidUtilities.lerp(AndroidUtilities.dp(12.0f), AndroidUtilities.lerp(Math.min(f1322, f1122), f1122, f1222), this.r), canvas, false);
+        if (this.J) {
+        }
+        if (this.n != 0.0f) {
         }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x1(o2 o2Var, Context context) {
-        super(context);
-        this.a = 1;
-        this.b = o2Var;
-        setWillNotDraw(false);
+    @Override // android.view.View
+    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
+        super.onSizeChanged(i10, i11, i12, i13);
+        int height = (int) (getHeight() * 0.3f);
+        this.e.set(0.0f, (getHeight() - height) / 2.0f, AndroidUtilities.dp(32.0f), (getHeight() + height) / 2.0f);
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x1(y1 y1Var, Context context) {
-        super(context);
-        this.a = 0;
-        this.b = y1Var;
-        setWillNotDraw(false);
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        boolean onTouchEvent = ((GestureDetector) this.d.b).onTouchEvent(motionEvent);
+        if (motionEvent.getActionMasked() != 1 && motionEvent.getActionMasked() != 3) {
+            return onTouchEvent;
+        }
+        this.f = false;
+        invalidate();
+        return onTouchEvent;
+    }
+
+    public void setBrushWeight(float f7) {
+        this.H.c = f7;
+        invalidate();
+    }
+
+    public void setColorSwatch(qg.s1 s1Var) {
+        this.H = s1Var;
+        invalidate();
+    }
+
+    public void setDrawCenter(boolean z10) {
+        this.J = z10;
+        invalidate();
+    }
+
+    public void setOnUpdate(Runnable runnable) {
+        this.I = runnable;
+    }
+
+    public void setRenderView(qg.e1 e1Var) {
+        this.E = e1Var;
+    }
+
+    public void setShowPreview(boolean z10) {
+        this.v = z10;
+        invalidate();
+    }
+
+    public void setValueOverride(w1 w1Var) {
+        this.K = w1Var;
+        invalidate();
+    }
+
+    public void setViewHidden(boolean z10) {
+        this.h = z10;
+        invalidate();
     }
 }

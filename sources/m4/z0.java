@@ -2,7 +2,7 @@ package m4;
 
 import hg.b2;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class z0 implements g1 {
     public final /* synthetic */ int a;
@@ -14,13 +14,13 @@ public final /* synthetic */ class z0 implements g1 {
     }
 
     @Override // m4.g1
-    public final Object e(f0 f0Var, v vVar, int i10) {
+    public final Object a(f0 f0Var, v vVar, int i10) {
         switch (this.a) {
             case 0:
                 if (f0Var != null) {
                     throw new ClassCastException();
                 }
-                i1.I0(null, vVar, i10, this.b, new i2.s(vVar, i10, 3));
+                i1.I0(null, vVar, i10, this.b, new i2.r(vVar, i10, 3));
                 throw null;
             default:
                 return i1.I0(f0Var, vVar, i10, this.b, new b2(f0Var, vVar, i10, 4));

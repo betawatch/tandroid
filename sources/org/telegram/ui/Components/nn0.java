@@ -1,96 +1,15 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.R;
+import android.view.View;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class nn0 implements Runnable {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ un0 b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ ArrayList d;
-    public final /* synthetic */ ArrayList e;
+public interface nn0 {
+    boolean b1(int i10, View view);
 
-    public /* synthetic */ nn0(un0 un0Var, String str, ArrayList arrayList, ArrayList arrayList2) {
-        this.b = un0Var;
-        this.c = str;
-        this.d = arrayList;
-        this.e = arrayList2;
-    }
+    void d(int i10, boolean z10);
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                un0 un0Var = this.b;
-                int i10 = un0Var.d;
-                ArrayList arrayList = new ArrayList();
-                ArrayList arrayList2 = new ArrayList();
-                int i11 = 0;
-                while (true) {
-                    ArrayList arrayList3 = this.d;
-                    int size = arrayList3.size();
-                    String str = this.c;
-                    if (i11 >= size) {
-                        int i12 = 0;
-                        while (true) {
-                            ArrayList arrayList4 = this.e;
-                            if (i12 >= arrayList4.size()) {
-                                AndroidUtilities.runOnUIThread(new nn0(un0Var, str, arrayList, arrayList2));
-                                break;
-                            } else {
-                                String documentFileName = FileLoader.getDocumentFileName(((MessageObject) arrayList4.get(i12)).getDocument());
-                                if (documentFileName != null && documentFileName.toLowerCase().contains(str)) {
-                                    MessageObject messageObject = new MessageObject(i10, ((MessageObject) arrayList4.get(i12)).messageOwner, false, false);
-                                    messageObject.mediaExists = ((MessageObject) arrayList4.get(i12)).mediaExists;
-                                    messageObject.setQuery(un0Var.K);
-                                    arrayList2.add(messageObject);
-                                }
-                                i12++;
-                            }
-                        }
-                    } else {
-                        String documentFileName2 = FileLoader.getDocumentFileName(((MessageObject) arrayList3.get(i11)).getDocument());
-                        if (documentFileName2 != null && documentFileName2.toLowerCase().contains(str)) {
-                            MessageObject messageObject2 = new MessageObject(i10, ((MessageObject) arrayList3.get(i11)).messageOwner, false, false);
-                            messageObject2.mediaExists = ((MessageObject) arrayList3.get(i11)).mediaExists;
-                            messageObject2.setQuery(un0Var.K);
-                            arrayList.add(messageObject2);
-                        }
-                        i11++;
-                    }
-                }
-                break;
-            default:
-                un0 un0Var2 = this.b;
-                tx0 tx0Var = un0Var2.a;
-                if (this.c.equals(un0Var2.L)) {
-                    if (un0Var2.r == 0) {
-                        un0Var2.N.b(0);
-                    }
-                    un0Var2.e(this.d, this.e, true);
-                    if (un0Var2.r == 0) {
-                        tx0Var.e(false, true);
-                        x90 x90Var = tx0Var.e;
-                        tx0Var.d.setText(LocaleController.getString(R.string.SearchEmptyViewTitle2));
-                        x90Var.setVisibility(0);
-                        x90Var.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
-                        break;
-                    }
-                }
-                break;
-        }
-    }
+    void k0(float f7);
 
-    public /* synthetic */ nn0(un0 un0Var, ArrayList arrayList, String str, ArrayList arrayList2) {
-        this.b = un0Var;
-        this.d = arrayList;
-        this.c = str;
-        this.e = arrayList2;
-    }
+    void x();
 }

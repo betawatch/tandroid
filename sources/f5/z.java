@@ -3,7 +3,7 @@ package f5;
 import com.google.android.gms.internal.play_billing.k3;
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class z extends a {
     public static final /* synthetic */ te.b h;
@@ -50,17 +50,17 @@ public final class z extends a {
         com.googlecode.mp4parser.g.a().getClass();
         com.googlecode.mp4parser.g.b(b10);
         StringBuilder sb2 = new StringBuilder("VideoMediaHeaderBox[graphicsmode=");
-        k3.p(te.a.b(h, this, this));
+        k3.o(te.a.b(h, this, this));
         sb2.append(this.e);
         sb2.append(";opcolor0=");
         te.b bVar = n;
-        k3.p(te.a.b(bVar, this, this));
+        k3.o(te.a.b(bVar, this, this));
         sb2.append(this.f[0]);
         sb2.append(";opcolor1=");
-        k3.p(te.a.b(bVar, this, this));
+        k3.o(te.a.b(bVar, this, this));
         sb2.append(this.f[1]);
         sb2.append(";opcolor2=");
-        k3.p(te.a.b(bVar, this, this));
+        k3.o(te.a.b(bVar, this, this));
         return a1.g.n(this.f[2], "]", sb2);
     }
 }

@@ -9,13 +9,13 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.ao;
-import org.telegram.ui.Components.t2;
+import org.telegram.ui.Components.s2;
 import w7.z5;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class w extends FrameLayout {
     public final TextView a;
@@ -31,7 +31,9 @@ public final class w extends FrameLayout {
         this.f = yVar;
         TextView textView = new TextView(context);
         this.a = textView;
-        org.telegram.messenger.g0.m(14.0f, -1711276033, 1, textView);
+        textView.setTextColor(-1711276033);
+        textView.setTextSize(1, 14.0f);
+        textView.setTypeface(AndroidUtilities.bold());
         addView(textView, z5.d(-2, -2.0f, 3, 8.0f, 0.0f, 8.0f, 0.0f));
         s sVar = new s(yVar, context);
         this.b = sVar;
@@ -39,7 +41,7 @@ public final class w extends FrameLayout {
         EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
         this.c = editTextBoldCursor;
         editTextBoldCursor.setTextSize(1, 16.0f);
-        editTextBoldCursor.setBackground(h6.c0(AndroidUtilities.dp(10.0f), 436207615));
+        editTextBoldCursor.setBackground(k6.c0(AndroidUtilities.dp(10.0f), 436207615));
         editTextBoldCursor.setPadding(0, 0, 0, 0);
         editTextBoldCursor.setTextColor(-1);
         editTextBoldCursor.setGravity(17);
@@ -50,7 +52,7 @@ public final class w extends FrameLayout {
         editTextBoldCursor.setTypeface(AndroidUtilities.bold());
         editTextBoldCursor.addTextChangedListener(new ao(this));
         editTextBoldCursor.setOnFocusChangeListener(new ah.u0(this, 6));
-        editTextBoldCursor.setOnEditorActionListener(new t2(4));
+        editTextBoldCursor.setOnEditorActionListener(new s2(4));
         addView(editTextBoldCursor, z5.e(72, 36, 85));
     }
 

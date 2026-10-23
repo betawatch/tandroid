@@ -1,174 +1,27 @@
 package org.telegram.ui.ActionBar;
 
-import ai.y7;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Point;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
-import android.util.SparseIntArray;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.SvgHelper;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.v9;
-import org.telegram.ui.Components.wc0;
-
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class c6 implements NotificationCenter.NotificationCenterDelegate {
-    public static c6 c;
-    public int a;
-    public HashMap b;
+public enum c6 {
+    h(k6.Af, k6.Bf, k6.Cf, k6.Pf, k6.Qf, k6.Rf),
+    n(k6.Df, k6.Ef, k6.Ff, k6.Sf, k6.Tf, k6.Uf),
+    r(k6.Gf, k6.Hf, k6.If, k6.Vf, k6.Wf, k6.Xf),
+    s(k6.Jf, k6.Kf, k6.Lf, k6.Yf, k6.Zf, k6.ag),
+    v(k6.Mf, k6.Nf, k6.Of, k6.bg, k6.cg, k6.dg);
 
-    public static void a(boolean z10) {
-        ArrayList arrayList;
-        if (c == null || z10) {
-            ArrayList arrayList2 = null;
-            int i10 = 0;
-            while (i10 < 5) {
-                g6 g6Var = (g6) h6.H.get(i10 != 0 ? i10 != 1 ? i10 != 2 ? i10 != 3 ? "Night" : "Day" : "Arctic Blue" : "Dark Blue" : "Blue");
-                if (g6Var != null && (arrayList = g6Var.b0) != null && !arrayList.isEmpty()) {
-                    int size = g6Var.b0.size();
-                    for (int i11 = 0; i11 < size; i11++) {
-                        f6 f6Var = (f6) g6Var.b0.get(i11);
-                        if (f6Var.a != h6.n && !TextUtils.isEmpty(f6Var.o)) {
-                            if (arrayList2 == null) {
-                                arrayList2 = new ArrayList();
-                            }
-                            arrayList2.add(f6Var);
-                        }
-                    }
-                }
-                i10++;
-            }
-            c6 c6Var = new c6();
-            c6Var.a = UserConfig.selectedAccount;
-            if (arrayList2 != null) {
-                Utilities.globalQueue.postRunnable(new m4.z(26, c6Var, arrayList2));
-            }
-            c = c6Var;
-        }
-    }
+    public final int a;
+    public final int b;
+    public final int c;
+    public final int d;
+    public final int e;
+    public final int f;
 
-    public static Bitmap b(Bitmap bitmap, boolean z10, File file, f6 f6Var) {
-        Bitmap bitmap2;
-        int patternColor;
-        int i10;
-        int i11;
-        int i12;
-        try {
-            File d = f6Var.d();
-            Drawable drawable = null;
-            if (d == null) {
-                return null;
-            }
-            g6 g6Var = f6Var.b;
-            SparseIntArray R0 = h6.R0(null, g6Var.d, null);
-            h6.G(R0, g6Var);
-            int i13 = f6Var.c;
-            int i14 = (int) f6Var.j;
-            long j10 = f6Var.k;
-            int i15 = (int) j10;
-            if (i15 == 0 && j10 == 0) {
-                if (i14 != 0) {
-                    i13 = i14;
-                }
-                int i16 = R0.get(h6.Od);
-                if (i16 != 0) {
-                    i15 = h6.B(g6Var, i13, i16);
-                }
-            } else {
-                i13 = 0;
-            }
-            long j11 = f6Var.l;
-            int i17 = (int) j11;
-            if (i17 == 0 && j11 == 0 && (i12 = R0.get(h6.Pd)) != 0) {
-                i17 = h6.B(g6Var, i13, i12);
-            }
-            long j12 = f6Var.m;
-            int i18 = (int) j12;
-            if (i18 == 0 && j12 == 0 && (i11 = R0.get(h6.Qd)) != 0) {
-                i18 = h6.B(g6Var, i13, i11);
-            }
-            if (i14 == 0 && (i10 = R0.get(h6.Nd)) != 0) {
-                i14 = h6.B(g6Var, i13, i10);
-            }
-            if (i17 != 0) {
-                patternColor = wc0.g(i14, i15, i17, i18);
-            } else if (i15 != 0) {
-                Drawable v9Var = new v9(v9.d(f6Var.n), new int[]{i14, i15});
-                patternColor = AndroidUtilities.getPatternColor(AndroidUtilities.getAverageColor(i14, i15));
-                drawable = v9Var;
-            } else {
-                drawable = new ColorDrawable(i14);
-                patternColor = AndroidUtilities.getPatternColor(i14);
-            }
-            if (bitmap == null) {
-                Point point = AndroidUtilities.displaySize;
-                int min = Math.min(point.x, point.y);
-                Point point2 = AndroidUtilities.displaySize;
-                bitmap2 = z10 ? SvgHelper.getBitmap(file, min, Math.max(point2.x, point2.y), false, SvgHelper.ScaleMode.ByWidth) : h6.j1(new FileInputStream(file), 0);
-            } else {
-                bitmap2 = bitmap;
-            }
-            try {
-                if (drawable == null) {
-                    FileOutputStream fileOutputStream = new FileOutputStream(d);
-                    bitmap2.compress(Bitmap.CompressFormat.PNG, 87, fileOutputStream);
-                    fileOutputStream.close();
-                    return bitmap2;
-                }
-                Bitmap createBitmap = Bitmap.createBitmap(bitmap2.getWidth(), bitmap2.getHeight(), Bitmap.Config.ARGB_8888);
-                Canvas canvas = new Canvas(createBitmap);
-                drawable.setBounds(0, 0, bitmap2.getWidth(), bitmap2.getHeight());
-                drawable.draw(canvas);
-                Paint paint = new Paint(2);
-                paint.setColorFilter(new PorterDuffColorFilter(patternColor, PorterDuff.Mode.SRC_IN));
-                paint.setAlpha((int) (Math.abs(f6Var.p) * 255.0f));
-                canvas.drawBitmap(bitmap2, 0.0f, 0.0f, paint);
-                createBitmap.compress(Bitmap.CompressFormat.JPEG, 87, new FileOutputStream(d));
-                return bitmap2;
-            } catch (Throwable th2) {
-                th = th2;
-                FileLog.e(th);
-                return bitmap2;
-            }
-        } catch (Throwable th3) {
-            th = th3;
-            bitmap2 = bitmap;
-        }
-    }
-
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        HashMap hashMap = this.b;
-        if (hashMap == null) {
-            return;
-        }
-        boolean z10 = false;
-        if (i10 == NotificationCenter.fileLoaded) {
-            b6 b6Var = (b6) hashMap.remove((String) objArr[0]);
-            if (b6Var != null) {
-                Utilities.globalQueue.postRunnable(new m4.z(27, this, b6Var));
-                return;
-            }
-            return;
-        }
-        if (i10 != NotificationCenter.fileLoadFailed || hashMap.remove((String) objArr[0]) == null) {
-            return;
-        }
-        AndroidUtilities.runOnUIThread(new y7(this, (Object) null, z10, 13));
+    c6(int i10, int i11, int i12, int i13, int i14, int i15) {
+        this.a = i10;
+        this.b = i11;
+        this.c = i12;
+        this.d = i13;
+        this.e = i14;
+        this.f = i15;
     }
 }

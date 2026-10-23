@@ -7,21 +7,21 @@ import android.text.TextPaint;
 import java.util.ArrayList;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class i6 {
-    public static final org.telegram.ui.Cells.s8 h = new org.telegram.ui.Cells.s8("progress", 3);
+    public static final org.telegram.ui.Cells.t8 h = new org.telegram.ui.Cells.t8("progress", 3);
     public final TextPaint c;
     public ObjectAnimator d;
-    public final org.telegram.ui.Cells.u1 g;
+    public final org.telegram.ui.Cells.t1 g;
     public final ArrayList a = new ArrayList();
     public final ArrayList b = new ArrayList();
     public float e = 0.0f;
     public int f = 1;
 
-    public i6(org.telegram.ui.Cells.u1 u1Var, TextPaint textPaint) {
+    public i6(org.telegram.ui.Cells.t1 t1Var, TextPaint textPaint) {
         this.c = textPaint;
-        this.g = u1Var;
+        this.g = t1Var;
     }
 
     public final int a() {
@@ -86,7 +86,7 @@ public final class i6 {
                 ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, h, z11 ? -1.0f : 1.0f, f11);
                 this.d = ofFloat;
                 ofFloat.setDuration(150L);
-                this.d.addListener(new org.telegram.ui.nq(this, 1));
+                this.d.addListener(new org.telegram.ui.pq(this, 1));
                 this.d.start();
             }
             this.g.invalidate();

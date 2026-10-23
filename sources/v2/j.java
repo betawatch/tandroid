@@ -2,14 +2,14 @@ package v2;
 
 import b2.v0;
 import b2.w;
-import c3.j0;
+import c3.l0;
 import e2.x;
 import g2.b0;
-import u2.d1;
+import u2.e1;
 import v7.k7;
 import v7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class j extends a {
     public final int E;
@@ -37,10 +37,10 @@ public final class j extends a {
         eVar.getClass();
         if (this.H == 0) {
             long j10 = this.F;
-            for (d1 d1Var : (d1[]) eVar.c) {
-                if (d1Var.H != j10) {
-                    d1Var.H = j10;
-                    d1Var.B = true;
+            for (e1 e1Var : (e1[]) eVar.c) {
+                if (e1Var.H != j10) {
+                    e1Var.H = j10;
+                    e1Var.B = true;
                 }
             }
             e eVar2 = this.G;
@@ -69,12 +69,12 @@ public final class j extends a {
             int i10 = wVar.R;
             int i11 = wVar.S;
             if (v0.k(str) && ((i10 > 1 || i11 > 1) && i10 != -1 && i11 != -1)) {
-                j0 r02 = eVar.r0(4);
+                l0 V = eVar.V(4);
                 int i12 = i10 * i11;
                 long j14 = (this.n - this.h) / i12;
                 for (int i13 = 1; i13 < i12; i13++) {
-                    r02.d(0, new x());
-                    r02.c(i13 * j14, 0, 0, 0, null);
+                    V.d(0, new x());
+                    V.c(i13 * j14, 0, 0, 0, null);
                 }
             }
             k7.a(this.r);

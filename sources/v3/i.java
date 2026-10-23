@@ -1,10 +1,10 @@
 package v3;
 
-import c3.b0;
 import c3.d0;
+import c3.f0;
 import e2.m0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class i implements h {
     public final long[] a;
@@ -24,13 +24,13 @@ public final class i implements h {
     }
 
     @Override // v3.h
-    public final long a(long j10) {
-        return this.a[m0.f(this.b, j10, true)];
+    public final long a() {
+        return this.e;
     }
 
     @Override // v3.h
-    public final long b() {
-        return this.e;
+    public final long b(long j10) {
+        return this.a[m0.f(this.b, j10, true)];
     }
 
     @Override // v3.h
@@ -38,28 +38,28 @@ public final class i implements h {
         return this.d;
     }
 
-    @Override // c3.c0
+    @Override // c3.e0
     public final boolean d() {
         return true;
     }
 
-    @Override // c3.c0
+    @Override // c3.e0
     public final /* synthetic */ boolean e() {
         return false;
     }
 
-    @Override // c3.c0
-    public final b0 f(long j10) {
+    @Override // c3.e0
+    public final d0 f(long j10) {
         long[] jArr = this.a;
         int f7 = m0.f(jArr, j10, true);
         long j11 = jArr[f7];
         long[] jArr2 = this.b;
-        d0 d0Var = new d0(j11, jArr2[f7]);
+        f0 f0Var = new f0(j11, jArr2[f7]);
         if (j11 >= j10 || f7 == jArr.length - 1) {
-            return new b0(d0Var, d0Var);
+            return new d0(f0Var, f0Var);
         }
         int i10 = f7 + 1;
-        return new b0(d0Var, new d0(jArr[i10], jArr2[i10]));
+        return new d0(f0Var, new f0(jArr[i10], jArr2[i10]));
     }
 
     @Override // v3.h
@@ -67,7 +67,7 @@ public final class i implements h {
         return this.f;
     }
 
-    @Override // c3.c0
+    @Override // c3.e0
     public final long h() {
         return this.c;
     }

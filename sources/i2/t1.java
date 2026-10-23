@@ -3,23 +3,23 @@ package i2;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
-import org.telegram.ui.web.z1;
+import org.telegram.ui.web.a2;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public final class t1 implements w0 {
+public final class t1 implements v0 {
     public long a;
     public long b;
     public boolean c;
     public final Object d;
     public Object e;
 
-    public t1(z1 z1Var) {
+    public t1(a2 a2Var) {
         this.d = new Handler(Looper.getMainLooper());
-        this.e = z1Var;
+        this.e = a2Var;
     }
 
-    @Override // i2.w0
+    @Override // i2.v0
     public long a() {
         long j10 = this.a;
         if (!this.c) {
@@ -30,7 +30,7 @@ public final class t1 implements w0 {
         return (((b2.z0) this.e).a == 1.0f ? e2.m0.S(elapsedRealtime) : elapsedRealtime * r4.c) + j10;
     }
 
-    @Override // i2.w0
+    @Override // i2.v0
     public /* synthetic */ boolean b() {
         return false;
     }
@@ -52,7 +52,7 @@ public final class t1 implements w0 {
         this.c = true;
     }
 
-    @Override // i2.w0
+    @Override // i2.v0
     public void f(b2.z0 z0Var) {
         if (this.c) {
             c(a());
@@ -60,7 +60,7 @@ public final class t1 implements w0 {
         this.e = z0Var;
     }
 
-    @Override // i2.w0
+    @Override // i2.v0
     public b2.z0 h() {
         return (b2.z0) this.e;
     }

@@ -8,10 +8,10 @@ import org.telegram.messenger.voip.VoIPPreNotificationService;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.m5;
+import org.telegram.ui.ActionBar.p5;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class k2 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -38,7 +38,7 @@ public final /* synthetic */ class k2 implements RequestDelegate {
                 VoIPPreNotificationService.lambda$decline$4(i12, tLObject, tL_error);
                 break;
             case 3:
-                AndroidUtilities.runOnUIThread(new m5(i12, tLObject));
+                AndroidUtilities.runOnUIThread(new p5(i12, tLObject));
                 break;
             case 4:
                 if (tLObject instanceof TLRPC.TL_updates) {
@@ -47,12 +47,12 @@ public final /* synthetic */ class k2 implements RequestDelegate {
                 }
                 break;
             case 5:
-                Pattern pattern = LaunchActivity.C1;
-                AndroidUtilities.runOnUIThread(new m5(i12, tLObject, 2));
+                Pattern pattern = LaunchActivity.E1;
+                AndroidUtilities.runOnUIThread(new p5(i12, tLObject, 2));
                 break;
             default:
-                Pattern pattern2 = LaunchActivity.C1;
-                AndroidUtilities.runOnUIThread(new m5(i12, tLObject, 1));
+                Pattern pattern2 = LaunchActivity.E1;
+                AndroidUtilities.runOnUIThread(new p5(i12, tLObject, 1));
                 break;
         }
     }

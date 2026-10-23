@@ -5,7 +5,7 @@ import org.telegram.messenger.DocumentObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public class ImageLocation {
     public static final int TYPE_BIG = 0;
@@ -20,7 +20,7 @@ public class ImageLocation {
     public long documentId;
     public byte[] file_reference;
     public int imageType;
-    public org.telegram.ui.web.g2 instantFile;
+    public org.telegram.ui.web.h2 instantFile;
     public byte[] iv;
     public byte[] key;
     public TLRPC.TL_fileLocationToBeDeprecated location;
@@ -53,12 +53,12 @@ public class ImageLocation {
         return imageLocation;
     }
 
-    public static ImageLocation getForInstantFile(org.telegram.ui.web.g2 g2Var) {
-        if (g2Var == null) {
+    public static ImageLocation getForInstantFile(org.telegram.ui.web.h2 h2Var) {
+        if (h2Var == null) {
             return null;
         }
         ImageLocation imageLocation = new ImageLocation();
-        imageLocation.instantFile = g2Var;
+        imageLocation.instantFile = h2Var;
         return imageLocation;
     }
 
@@ -210,7 +210,7 @@ public class ImageLocation {
             StringBuilder v = a1.g.v("[richmedia] strippedKey=", strippedKeyInternal, " fullObject=");
             v.append(obj2 == null ? "null" : obj2.getClass().getSimpleName());
             v.append(" stripped=");
-            i2.e.v(obj3 != null ? obj3.getClass().getSimpleName() : "null", v);
+            i2.o1.w(obj3 != null ? obj3.getClass().getSimpleName() : "null", v);
         }
         return strippedKeyInternal;
     }
@@ -290,9 +290,9 @@ public class ImageLocation {
         if (webFile != null) {
             return Utilities.MD5(webFile.url);
         }
-        org.telegram.ui.web.g2 g2Var = this.instantFile;
-        if (g2Var != null) {
-            return Utilities.MD5(g2Var.b);
+        org.telegram.ui.web.h2 h2Var = this.instantFile;
+        if (h2Var != null) {
+            return Utilities.MD5(h2Var.b);
         }
         TLRPC.Document document = this.document;
         if (document == null) {
@@ -314,7 +314,7 @@ public class ImageLocation {
         sb2.append("_");
         sb2.append(this.document.id);
         sb2.append("_");
-        sb2.append(org.telegram.ui.ActionBar.h6.r0(themeDocument.themeSettings));
+        sb2.append(org.telegram.ui.ActionBar.k6.r0(themeDocument.themeSettings));
         sb2.append("_");
         sb2.append(themeDocument.themeSettings.accent_color);
         sb2.append("_");

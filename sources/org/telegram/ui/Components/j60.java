@@ -1,59 +1,55 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.widget.FrameLayout;
-import org.telegram.messenger.ImageReceiver;
+import android.os.SystemClock;
+import android.view.TextureView;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class j60 extends o60 {
-    public ImageReceiver a;
-    public float b;
-    public final /* synthetic */ l60 c;
+public final class j60 extends TextureView {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j60(l60 l60Var, Context context) {
+    public /* synthetic */ j60(Object obj, Context context, int i10) {
         super(context);
-        this.c = l60Var;
-        setWillNotDraw(false);
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        l60 l60Var = this.c;
-        FrameLayout frameLayout = l60Var.x;
-        vm0 vm0Var = l60Var.w;
-        i60 i60Var = l60Var.y;
-        super.dispatchDraw(canvas);
-        if (this.a == null) {
-            return;
+    @Override // android.view.View
+    public void invalidate() {
+        si.t0 t0Var;
+        switch (this.a) {
+            case 0:
+                m60 m60Var = (m60) this.b;
+                if (!m60Var.H0 && (t0Var = m60Var.R) != null && t0Var.a == 3) {
+                    m60Var.H0 = true;
+                    try {
+                        m60Var.F0 = SystemClock.elapsedRealtimeNanos();
+                        m60Var.A();
+                    } finally {
+                        m60Var.H0 = false;
+                    }
+                }
+                super.invalidate();
+                return;
+            default:
+                super.invalidate();
+                return;
         }
-        float f7 = this.b;
-        if (f7 < 1.0f) {
-            this.b = Math.min(1.0f, f7 + 0.064f);
-            invalidate();
-        }
-        canvas.save();
-        canvas.translate(i60Var.getLeft() + frameLayout.getLeft() + vm0Var.getLeft(), i60Var.getTop() + frameLayout.getTop() + vm0Var.getTop());
-        if (this.a.getImageWidth() != i60Var.getWidth()) {
-            float width = i60Var.getWidth() / this.a.getImageWidth();
-            canvas.scale(width, width);
-        }
-        canvas.translate(-this.a.getImageX(), -this.a.getImageY());
-        float alpha = this.a.getAlpha();
-        this.a.setAlpha(this.b);
-        this.a.draw(canvas);
-        this.a.setAlpha(alpha);
-        canvas.restore();
     }
 
-    @Override // org.telegram.ui.Components.o60
-    public final void setImageReceiver(ImageReceiver imageReceiver) {
-        if (this.a == null) {
-            this.b = 0.0f;
+    @Override // android.view.View
+    public void onMeasure(int i10, int i11) {
+        switch (this.a) {
+            case 1:
+                wh.f fVar = (wh.f) this.b;
+                setMeasuredDimension(fVar.g, fVar.h);
+                break;
+            default:
+                super.onMeasure(i10, i11);
+                break;
         }
-        this.a = imageReceiver;
-        invalidate();
     }
 }

@@ -10,22 +10,13 @@ import java.util.Iterator;
 import java.util.List;
 import m.j3;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.fp;
-import org.telegram.ui.Components.np;
-import org.telegram.ui.Components.q6;
-import org.telegram.ui.Components.q90;
-import org.telegram.ui.Components.ti;
+import org.telegram.ui.Components.r90;
 import org.telegram.ui.Components.v30;
-import org.telegram.ui.Components.v70;
 import org.telegram.ui.Components.wp;
-import org.telegram.ui.qn;
+import org.telegram.ui.Components.x70;
 import s4.b1;
-import w7.z5;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class w implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -211,56 +202,28 @@ public final class w implements View.OnClickListener {
                 }
                 return;
             case 8:
-                wp wpVar = (wp) this.b;
-                qn qnVar = wpVar.v;
-                ti tiVar = new ti(qnVar.getParentActivity(), qnVar, false, false, false, qnVar.getResourceProvider());
-                wpVar.Y = tiVar;
-                tiVar.drawNavigationBar = true;
-                tiVar.P1(LocaleController.getString(R.string.ChooseBackground));
-                ti tiVar2 = wpVar.Y;
-                tiVar2.c2 = new np(wpVar);
-                tiVar2.N1(1, false);
-                wpVar.Y.t1();
-                wpVar.Y.j0.f0();
-                wpVar.Y.show();
-                wpVar.Z = new ah.v(wpVar, wpVar.getContext());
-                q6 q6Var = new q6(wpVar.getContext(), true, true, true);
-                wpVar.a0 = q6Var;
-                q6Var.setTextSize(AndroidUtilities.dp(14.0f));
-                wpVar.a0.setText(LocaleController.getString(R.string.SetColorAsBackground));
-                wpVar.a0.setGravity(17);
-                q6 q6Var2 = wpVar.a0;
-                int i10 = h6.Oh;
-                q6Var2.setTextColor(wpVar.getThemedColor(i10));
-                wpVar.Z.addView(wpVar.a0, z5.e(-1, -2, 17));
-                ah.v vVar6 = wpVar.Z;
-                int dp = AndroidUtilities.dp(0.0f);
-                int themedColor = wpVar.getThemedColor(h6.d6);
-                int o10 = i0.a.o(wpVar.getThemedColor(i10), 76);
-                vVar6.setBackground(h6.j0(dp, dp, dp, dp, themedColor, o10, o10));
-                wpVar.Z.setOnClickListener(new fp(wpVar, 0));
-                wpVar.Y.u1.addView(wpVar.Z, z5.e(-1, -2, 80));
+                wp.s((wp) this.b);
                 return;
             case 9:
-                v70 v70Var = (v70) this.b;
+                x70 x70Var = (x70) this.b;
                 v30 v30Var = (v30) view;
                 if (v30Var.y) {
-                    v70Var.j0 = null;
-                    v70Var.f0.l(v30Var.getUid());
-                    v70Var.U.b(v30Var);
-                    v70Var.b0(true);
-                    AndroidUtilities.updateVisibleRows(v70Var.d);
+                    x70Var.j0 = null;
+                    x70Var.f0.l(v30Var.getUid());
+                    x70Var.U.b(v30Var);
+                    x70Var.a0(true);
+                    AndroidUtilities.updateVisibleRows(x70Var.d);
                     return;
                 }
-                v30 v30Var2 = v70Var.j0;
+                v30 v30Var2 = x70Var.j0;
                 if (v30Var2 != null) {
                     v30Var2.a();
                 }
-                v70Var.j0 = v30Var;
+                x70Var.j0 = v30Var;
                 v30Var.b();
                 return;
             default:
-                ((q90) this.b).e.callOnClick();
+                ((r90) this.b).e.callOnClick();
                 return;
         }
     }

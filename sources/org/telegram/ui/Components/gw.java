@@ -9,7 +9,9 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.accessibility.AccessibilityNodeInfo;
+import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
@@ -19,20 +21,24 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public class gw extends ViewGroup {
+public class gw extends ViewGroup implements org.telegram.ui.ActionBar.b6 {
     public Boolean E;
     public float F;
     public float G;
     public boolean H;
     public ValueAnimator I;
-    public final /* synthetic */ kw J;
+    public int J;
+    public int K;
+    public int L;
+    public float M;
+    public final /* synthetic */ kw N;
     public Long a;
     public boolean b;
     public final boolean c;
     public final w9 d;
-    public final vj0 e;
+    public final yj0 e;
     public final sg.c1 f;
     public final boolean h;
     public final boolean n;
@@ -46,22 +52,23 @@ public class gw extends ViewGroup {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public gw(kw kwVar, Context context, int i10) {
         super(context);
-        this.J = kwVar;
+        this.N = kwVar;
         setFocusable(true);
+        this.M = -1.0f;
         this.h = true;
         this.n = false;
-        setBackground(org.telegram.ui.ActionBar.h6.N(kwVar.k(), 0, 0));
-        vj0 vj0Var = new vj0(i10, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f), false, null);
-        this.e = vj0Var;
-        vj0Var.setBounds(AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), AndroidUtilities.dp(27.0f), AndroidUtilities.dp(27.0f));
-        vj0Var.R(this);
-        vj0Var.J(true);
-        vj0Var.start();
+        setBackground(org.telegram.ui.ActionBar.k6.N(kwVar.k(), 0, 0));
+        yj0 yj0Var = new yj0(i10, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f), false, null);
+        this.e = yj0Var;
+        yj0Var.setBounds(AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), AndroidUtilities.dp(27.0f), AndroidUtilities.dp(27.0f));
+        yj0Var.R(this);
+        yj0Var.J(true);
+        yj0Var.start();
         d();
     }
 
     private void setColor(int i10) {
-        kw kwVar = this.J;
+        kw kwVar = this.N;
         int i11 = kwVar.T;
         if (i11 == 5 || i11 == 7) {
             i10 = kwVar.Q;
@@ -72,9 +79,9 @@ public class gw extends ViewGroup {
             w9Var.setColorFilter(porterDuffColorFilter);
             w9Var.invalidate();
         }
-        vj0 vj0Var = this.e;
-        if (vj0Var != null) {
-            vj0Var.setColorFilter(porterDuffColorFilter);
+        yj0 yj0Var = this.e;
+        if (yj0Var != null) {
+            yj0Var.setColorFilter(porterDuffColorFilter);
             invalidate();
         }
     }
@@ -99,17 +106,24 @@ public class gw extends ViewGroup {
         c1Var.setImageDrawable(mutate);
     }
 
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void addColorKeys(HashSet hashSet) {
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.k6.Me));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.k6.Oe));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.k6.Wk));
+    }
+
     public final void b() {
-        ci.g3 g3Var;
+        ci.f3 f3Var;
         r5 r5Var = this.w;
-        if (r5Var == null || (g3Var = r5Var.k) == null) {
+        if (r5Var == null || (f3Var = r5Var.k) == null) {
             return;
         }
-        if (g3Var.getLottieAnimation() != null) {
-            g3Var.getLottieAnimation().M(0);
-            g3Var.getLottieAnimation().stop();
-        } else if (g3Var.getAnimation() != null) {
-            g3Var.getAnimation().stop();
+        if (f3Var.getLottieAnimation() != null) {
+            f3Var.getLottieAnimation().M(0);
+            f3Var.getLottieAnimation().stop();
+        } else if (f3Var.getAnimation() != null) {
+            f3Var.getAnimation().stop();
         }
     }
 
@@ -137,7 +151,7 @@ public class gw extends ViewGroup {
             } else {
                 w9Var.b();
                 TLRPC.Document document = this.s;
-                kw kwVar = this.J;
+                kw kwVar = this.N;
                 if (document != null) {
                     this.w = r5.m(UserConfig.selectedAccount, kwVar.S, document);
                 } else {
@@ -164,25 +178,25 @@ public class gw extends ViewGroup {
 
     public final void d() {
         Drawable background = getBackground();
-        kw kwVar = this.J;
+        kw kwVar = this.N;
         int k10 = kwVar.k();
-        org.telegram.ui.ActionBar.d6 d6Var = kwVar.v;
-        org.telegram.ui.ActionBar.h6.C1(background, k10, false);
+        org.telegram.ui.ActionBar.g6 g6Var = kwVar.v;
+        org.telegram.ui.ActionBar.k6.E1(background, k10, false);
         if (kwVar.P) {
-            setColor(i0.a.o(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Wk, d6Var), (int) (AndroidUtilities.lerp(0.4f, 0.8f, this.G) * 255.0f)));
+            setColor(i0.a.o(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Wk, g6Var), (int) (AndroidUtilities.lerp(0.4f, 0.8f, this.G) * 255.0f)));
         } else {
-            setColor(i0.a.f(this.G, org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Me, d6Var), org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Oe, d6Var)));
+            setColor(i0.a.f(this.G, org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Me, g6Var), org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Oe, g6Var)));
         }
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
-        vj0 vj0Var = this.e;
-        if (vj0Var == null || !this.y) {
+        yj0 yj0Var = this.e;
+        if (yj0Var == null || !this.y) {
             return;
         }
-        vj0Var.draw(canvas);
+        yj0Var.draw(canvas);
     }
 
     @Override // android.view.ViewGroup
@@ -213,19 +227,19 @@ public class gw extends ViewGroup {
         }
         if (((r5) getDrawable()).c()) {
             c1Var.setImageReceiver(null);
-            c1Var.setColor(this.J.Q);
+            c1Var.setColor(this.N.Q);
             return;
         }
-        ci.g3 g3Var = ((r5) getDrawable()).k;
-        if (g3Var != null) {
-            c1Var.setImageReceiver(g3Var);
+        ci.f3 f3Var = ((r5) getDrawable()).k;
+        if (f3Var != null) {
+            c1Var.setImageReceiver(f3Var);
             c1Var.invalidate();
         }
     }
 
     public final void g(boolean z10, boolean z11) {
         w9 w9Var = this.d;
-        if ((w9Var == null || w9Var.getImageReceiver().getImageDrawable() != null || this.J.P) && this.H != z10) {
+        if ((w9Var == null || w9Var.getImageReceiver().getImageDrawable() != null || this.N.P) && this.H != z10) {
             this.H = z10;
             ValueAnimator valueAnimator = this.I;
             if (valueAnimator != null) {
@@ -243,7 +257,7 @@ public class gw extends ViewGroup {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.G, z10 ? 1.0f : 0.0f);
             this.I = ofFloat;
             ofFloat.addUpdateListener(new l6(this, 20));
-            this.I.addListener(new org.telegram.ui.fo(8, this, z10));
+            this.I.addListener(new org.telegram.ui.ho(8, this, z10));
             this.I.setDuration(ah.x0.d() ? 0L : 350L);
             this.I.setInterpolator(bs.h);
             this.I.start();
@@ -356,13 +370,13 @@ public class gw extends ViewGroup {
 
     @Override // android.view.View
     public final boolean performClick() {
-        ci.g3 g3Var;
+        ci.f3 f3Var;
         r5 r5Var = this.w;
-        if (r5Var != null && (g3Var = r5Var.k) != null) {
-            if (g3Var.getAnimation() != null) {
-                g3Var.getAnimation().y(0L, true, false);
+        if (r5Var != null && (f3Var = r5Var.k) != null) {
+            if (f3Var.getAnimation() != null) {
+                f3Var.getAnimation().y(0L, true, false);
             }
-            g3Var.startAnimation();
+            f3Var.startAnimation();
         }
         return super.performClick();
     }
@@ -431,6 +445,26 @@ public class gw extends ViewGroup {
         }
     }
 
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void updateColors() {
+        kw kwVar = this.N;
+        try {
+            int w02 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Me, kwVar.v);
+            int w03 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Oe, kwVar.v);
+            int k10 = kwVar.k();
+            if (w02 == this.J && w03 == this.K && k10 == this.L && this.M == this.G) {
+                return;
+            }
+            this.J = w02;
+            this.K = w03;
+            this.L = k10;
+            this.M = this.G;
+            d();
+        } catch (Exception e) {
+            FileLog.e(e);
+        }
+    }
+
     @Override // android.view.View
     public final void invalidate(int i10, int i11, int i12, int i13) {
         if (ah.x0.b(this)) {
@@ -442,12 +476,13 @@ public class gw extends ViewGroup {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public gw(kw kwVar, Context context, int i10, boolean z10) {
         super(context);
-        this.J = kwVar;
+        this.N = kwVar;
         setFocusable(true);
+        this.M = -1.0f;
         this.h = false;
         this.n = z10;
         if (z10) {
-            setBackground(org.telegram.ui.ActionBar.h6.Z(kwVar.k(), 8, 8));
+            setBackground(org.telegram.ui.ActionBar.k6.Z(kwVar.k(), 8, 8));
         }
         w9 w9Var = new w9(context);
         this.d = w9Var;
@@ -460,8 +495,9 @@ public class gw extends ViewGroup {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public gw(kw kwVar, Context context, TLRPC.Document document) {
         super(context);
-        this.J = kwVar;
+        this.N = kwVar;
         setFocusable(true);
+        this.M = -1.0f;
         this.b = true;
         this.h = false;
         this.n = false;
@@ -486,18 +522,19 @@ public class gw extends ViewGroup {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public gw(kw kwVar, Context context, long j10) {
         super(context);
-        this.J = kwVar;
+        this.N = kwVar;
         setFocusable(true);
+        this.M = -1.0f;
         this.b = true;
         this.h = false;
         this.n = false;
-        ci.k4 k4Var = new ci.k4(this, context, 8);
-        this.d = k4Var;
-        k4Var.w = false;
+        ci.j4 j4Var = new ci.j4(this, context, 8);
+        this.d = j4Var;
+        j4Var.w = false;
         this.r = Long.valueOf(j10);
         this.c = true;
-        k4Var.setColorFilter(kwVar.getEmojiColorFilter());
-        addView(k4Var);
+        j4Var.setColorFilter(kwVar.getEmojiColorFilter());
+        addView(j4Var);
         int i10 = sg.c1.L;
         fw fwVar = new fw(context, 1, kwVar.v);
         this.f = fwVar;

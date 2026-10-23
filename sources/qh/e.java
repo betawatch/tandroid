@@ -8,7 +8,7 @@ import android.os.Build;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.PathInterpolator;
-import ih.j;
+import ih.k;
 import java.util.Iterator;
 import java.util.List;
 import java.util.WeakHashMap;
@@ -21,8 +21,8 @@ import r0.t0;
 import r0.v0;
 import w7.j6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+/* loaded from: classes4.dex */
 public final class e extends c1 {
     public static final RectF e;
     public static final Rect f;
@@ -56,7 +56,7 @@ public final class e extends c1 {
             return null;
         }
         RectF rectF = e;
-        if (!j.c(view, view2, rectF)) {
+        if (!k.c(view, view2, rectF)) {
             return null;
         }
         Rect rect = f;

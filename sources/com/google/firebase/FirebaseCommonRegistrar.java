@@ -8,19 +8,19 @@ import com.google.firebase.components.ComponentRegistrar;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Executor;
-import k2.f0;
 import l9.h;
+import oa.c;
 import oa.d;
 import oa.e;
 import oa.f;
 import r9.a;
 import r9.j;
 import r9.r;
+import v0.k;
 import w7.w8;
 import ya.b;
-import ya.c;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public class FirebaseCommonRegistrar implements ComponentRegistrar {
     public static /* synthetic */ String a(Context context) {
@@ -36,16 +36,17 @@ public class FirebaseCommonRegistrar implements ComponentRegistrar {
     public final List getComponents() {
         String str;
         ArrayList arrayList = new ArrayList();
-        m0 a2 = a.a(c.class);
+        m0 a2 = a.a(b.class);
         a2.a(new j(2, 0, ya.a.class));
-        a2.f = new b(0);
+        int i10 = 12;
+        a2.f = new k(i10);
         arrayList.add(a2.b());
         r rVar = new r(n9.a.class, Executor.class);
-        m0 m0Var = new m0(oa.c.class, new Class[]{e.class, f.class});
+        m0 m0Var = new m0(c.class, new Class[]{e.class, f.class});
         m0Var.a(j.a(Context.class));
         m0Var.a(j.a(h.class));
         m0Var.a(new j(2, 0, d.class));
-        m0Var.a(new j(1, 1, c.class));
+        m0Var.a(new j(1, 1, b.class));
         m0Var.a(new j(rVar, 1, 0));
         m0Var.f = new j5.b(rVar, 21);
         arrayList.add(m0Var.b());
@@ -54,10 +55,10 @@ public class FirebaseCommonRegistrar implements ComponentRegistrar {
         arrayList.add(w8.a("device-name", b(Build.PRODUCT)));
         arrayList.add(w8.a("device-model", b(Build.DEVICE)));
         arrayList.add(w8.a("device-brand", b(Build.BRAND)));
-        arrayList.add(w8.b("android-target-sdk", new f0(5)));
-        arrayList.add(w8.b("android-min-sdk", new f0(6)));
-        arrayList.add(w8.b("android-platform", new f0(7)));
-        arrayList.add(w8.b("android-installer", new f0(8)));
+        arrayList.add(w8.b("android-target-sdk", new k2.f(9)));
+        arrayList.add(w8.b("android-min-sdk", new k2.f(10)));
+        arrayList.add(w8.b("android-platform", new k2.f(11)));
+        arrayList.add(w8.b("android-installer", new k2.f(i10)));
         try {
             id.b.b.getClass();
             str = "2.1.20";

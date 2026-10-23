@@ -1,97 +1,119 @@
 package org.telegram.ui;
 
-import android.content.Context;
 import android.view.View;
-import android.widget.FrameLayout;
+import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
-import java.util.HashSet;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.TopicsController;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class xe1 extends org.telegram.ui.ActionBar.n2 {
-    public ve1 a;
-    public org.telegram.ui.Components.jm0 b;
-    public long c;
-    public ArrayList d;
-    public HashSet e;
+public final class xe1 extends s4.v {
+    public boolean d;
+    public final /* synthetic */ ye1 e;
 
-    public static void U(xe1 xe1Var, int i10) {
-        xe1Var.getNotificationsController().getNotificationsSettingsFacade().clearPreference(xe1Var.c, i10);
-        TL_account.updateNotifySettings updatenotifysettings = new TL_account.updateNotifySettings();
-        updatenotifysettings.settings = new TLRPC.TL_inputPeerNotifySettings();
-        TLRPC.TL_inputNotifyForumTopic tL_inputNotifyForumTopic = new TLRPC.TL_inputNotifyForumTopic();
-        tL_inputNotifyForumTopic.peer = xe1Var.getMessagesController().getInputPeer(xe1Var.c);
-        tL_inputNotifyForumTopic.top_msg_id = i10;
-        updatenotifysettings.peer = tL_inputNotifyForumTopic;
-        xe1Var.getConnectionsManager().sendRequest(updatenotifysettings, new ci.e6(8));
+    public xe1(ye1 ye1Var) {
+        this.e = ye1Var;
     }
 
-    public final void V() {
-        ArrayList arrayList;
-        ArrayList arrayList2 = this.d;
-        if (this.isPaused || this.a == null) {
-            arrayList = null;
-        } else {
-            arrayList = new ArrayList();
-            arrayList.addAll(arrayList2);
-        }
-        arrayList2.clear();
-        arrayList2.add(new we1(1, null));
-        ArrayList<TLRPC.TL_forumTopic> topics = getMessagesController().getTopicsController().getTopics(-this.c);
-        int i10 = 0;
-        if (topics != null) {
-            int i11 = 0;
-            while (i10 < topics.size()) {
-                if (this.e.contains(Integer.valueOf(topics.get(i10).id))) {
-                    arrayList2.add(new we1(2, topics.get(i10)));
-                    i11 = 1;
+    @Override // s4.v
+    public final void a(RecyclerView recyclerView, s4.b1 b1Var) {
+        super.a(recyclerView, b1Var);
+        b1Var.a.setPressed(false);
+    }
+
+    @Override // s4.v
+    public final int e(RecyclerView recyclerView, s4.b1 b1Var) {
+        int l4 = s4.v.l(0, 0);
+        int b10 = b1Var.b();
+        if (b10 >= 0) {
+            ye1 ye1Var = this.e;
+            if (b10 < ye1Var.b.size() && ((oe1) ye1Var.b.get(b10)).c != null && ChatObject.canManageTopics(ye1Var.g())) {
+                TLRPC.TL_forumTopic tL_forumTopic = ((oe1) ye1Var.b.get(b10)).c;
+                if (ye1Var.a0.isEmpty()) {
+                    View view = b1Var.a;
+                    if ((view instanceof ue1) && tL_forumTopic.id == 1) {
+                        this.d = true;
+                        ((ue1) view).setSliding(true);
+                        return s4.v.l(0, 4);
+                    }
                 }
-                i10++;
+                return !tL_forumTopic.pinned ? l4 : s4.v.l(3, 0);
             }
-            i10 = i11;
         }
+        return l4;
+    }
+
+    @Override // s4.v
+    public final boolean k() {
+        return !this.e.a0.isEmpty();
+    }
+
+    @Override // s4.v
+    public final boolean n(RecyclerView recyclerView, s4.b1 b1Var, s4.b1 b1Var2) {
+        int b10;
+        ye1 ye1Var = this.e;
+        ArrayList arrayList = ye1Var.b;
+        if (b1Var.f != b1Var2.f || (b10 = b1Var2.b()) < 0 || b10 >= arrayList.size() || ((oe1) arrayList.get(b10)).c == null || !((oe1) arrayList.get(b10)).c.pinned) {
+            return false;
+        }
+        me1 me1Var = ye1Var.r;
+        int b11 = b1Var.b();
+        int b12 = b1Var2.b();
+        ye1 ye1Var2 = me1Var.d;
+        ArrayList arrayList2 = ye1Var2.b;
+        arrayList2.add(b12, (oe1) arrayList2.remove(b11));
+        s4.l0 itemAnimator = ye1Var2.N.getItemAnimator();
+        ke1 ke1Var = ye1Var2.I0;
+        if (itemAnimator != ke1Var) {
+            ye1Var2.N.setItemAnimator(ke1Var);
+        }
+        me1Var.p(b11, b12);
+        return true;
+    }
+
+    @Override // s4.v
+    public final void p(s4.b1 b1Var, int i10) {
+        ye1 ye1Var = this.e;
         if (i10 != 0) {
-            arrayList2.add(new we1(3, null));
-            arrayList2.add(new we1(4, null));
+            ye1Var.N.I0(false);
+            b1Var.a.setPressed(true);
+            return;
         }
-        arrayList2.add(new we1(3, null));
-        ve1 ve1Var = this.a;
-        if (ve1Var != null) {
-            ve1Var.E(arrayList, arrayList2);
+        ArrayList arrayList = ye1Var.b;
+        ArrayList<Integer> arrayList2 = new ArrayList<>();
+        for (int i11 = 0; i11 < arrayList.size(); i11++) {
+            TLRPC.TL_forumTopic tL_forumTopic = ((oe1) arrayList.get(i11)).c;
+            if (tL_forumTopic != null && tL_forumTopic.pinned) {
+                arrayList2.add(Integer.valueOf(tL_forumTopic.id));
+            }
         }
+        ye1Var.getMessagesController().getTopicsController().reorderPinnedTopics(ye1Var.a, arrayList2);
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
-    public final View createView(Context context) {
-        FrameLayout frameLayout = new FrameLayout(context);
-        this.fragmentView = frameLayout;
-        i2.e.y(false, this.actionBar);
-        this.actionBar.setActionBarMenuOnItemClick(new y21(this, 9));
-        this.actionBar.setTitle(LocaleController.getString(R.string.NotificationsExceptions));
-        this.b = new org.telegram.ui.Components.jm0(context, null);
-        s4.k kVar = new s4.k();
-        kVar.C = false;
-        kVar.m = false;
-        this.b.setItemAnimator(kVar);
-        this.b.setLayoutManager(new s4.b0());
-        org.telegram.ui.Components.jm0 jm0Var = this.b;
-        ve1 ve1Var = new ve1(this);
-        this.a = ve1Var;
-        jm0Var.setAdapter(ve1Var);
-        this.b.setOnItemClickListener(new ue1(this));
-        frameLayout.addView(this.b);
-        frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.a7, false));
-        return this.fragmentView;
-    }
-
-    @Override // org.telegram.ui.ActionBar.n2
-    public final boolean onFragmentCreate() {
-        this.c = this.arguments.getLong("dialog_id");
-        V();
-        return super.onFragmentCreate();
+    @Override // s4.v
+    public final void q(s4.b1 b1Var) {
+        if (b1Var != null) {
+            ue1 ue1Var = (ue1) b1Var.a;
+            TLRPC.TL_forumTopic tL_forumTopic = ue1Var.N;
+            ye1 ye1Var = this.e;
+            if (tL_forumTopic != null) {
+                TopicsController topicsController = ye1Var.getMessagesController().getTopicsController();
+                long j10 = ye1Var.a;
+                TLRPC.TL_forumTopic tL_forumTopic2 = ue1Var.N;
+                topicsController.toggleShowTopic(j10, tL_forumTopic2.id, tL_forumTopic2.hidden);
+            }
+            ye1Var.c1 = ue1Var;
+            ie1 ie1Var = ye1Var.N;
+            boolean z10 = !ue1Var.N.hidden;
+            int i10 = we1.i3;
+            ie1Var.F1(z10, ue1Var);
+            ye1Var.U0(true, true);
+            TLRPC.TL_forumTopic tL_forumTopic3 = ue1Var.c5;
+            if (tL_forumTopic3 != null) {
+                ue1Var.setTopicIcon(tL_forumTopic3);
+            }
+        }
     }
 }

@@ -1,16 +1,16 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class px extends org.telegram.ui.qn {
-    @Override // org.telegram.ui.qn, org.telegram.ui.ActionBar.n2
+public final class px extends org.telegram.ui.sn {
+    @Override // org.telegram.ui.sn, org.telegram.ui.ActionBar.o2
     public final void onTransitionAnimationEnd(boolean z10, boolean z11) {
-        org.telegram.ui.fk fkVar;
+        org.telegram.ui.gk gkVar;
         super.onTransitionAnimationEnd(z10, z11);
-        if (!z10 || (fkVar = this.Y) == null) {
+        if (!z10 || (gkVar = this.Y) == null) {
             return;
         }
-        fkVar.p1();
-        this.Y.postDelayed(new hq(this, 13), 100L);
+        gkVar.p1();
+        this.Y.postDelayed(new zp(this, 14), 100L);
     }
 }

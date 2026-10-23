@@ -1,14 +1,16 @@
 package org.telegram.ui;
 
-import android.view.TextureView;
-import org.telegram.messenger.MessageObject;
-
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public interface ru0 {
-    TextureView U();
+public final class ru0 extends s4.k {
+    public final /* synthetic */ su0 F;
 
-    void m0(MessageObject messageObject);
+    public ru0(su0 su0Var) {
+        this.F = su0Var;
+    }
 
-    void z(MessageObject messageObject);
+    @Override // s4.k
+    public final void P(s4.b1 b1Var) {
+        this.F.invalidate();
+    }
 }

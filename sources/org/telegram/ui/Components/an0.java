@@ -1,36 +1,34 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.messenger.R;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class an0 implements View.OnClickListener {
+public final /* synthetic */ class an0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ hn0 b;
+    public final /* synthetic */ cn0 b;
 
-    public /* synthetic */ an0(hn0 hn0Var, int i10) {
+    public /* synthetic */ an0(cn0 cn0Var, int i10) {
         this.a = i10;
-        this.b = hn0Var;
+        this.b = cn0Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.f.b(((Integer) view.getTag(R.id.index_tag)).intValue());
+                cn0 cn0Var = this.b;
+                cn0Var.getClass();
+                AndroidUtilities.runOnUIThread(new an0(cn0Var, 2));
                 break;
             case 1:
-                this.b.f.b(((Integer) view.getTag(R.id.index_tag)).intValue());
+                AndroidUtilities.runOnUIThread(new an0(this.b, 3));
                 break;
             case 2:
-                this.b.f.b(((Integer) view.getTag(R.id.index_tag)).intValue());
-                break;
-            case 3:
-                this.b.f.b(((Integer) view.getTag(R.id.index_tag)).intValue());
+                super/*android.app.Dialog*/.dismiss();
                 break;
             default:
-                this.b.f.b(((Integer) view.getTag(R.id.index_tag)).intValue());
+                super/*android.app.Dialog*/.dismiss();
                 break;
         }
     }

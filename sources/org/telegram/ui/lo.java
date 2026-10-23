@@ -1,45 +1,136 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class lo implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ wo b;
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ lo(wo woVar, int i10) {
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class lo implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ yo b;
+
+    public /* synthetic */ lo(yo yoVar, int i10) {
         this.a = i10;
-        this.b = woVar;
+        this.b = yoVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(final TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                wo woVar = this.b;
-                woVar.c0 = true;
-                woVar.b0();
+                if (tLObject instanceof TLRPC.TL_boolTrue) {
+                    AndroidUtilities.runOnUIThread(new no(this.b, 3));
+                    break;
+                }
                 break;
             case 1:
-                wo woVar2 = this.b;
-                woVar2.X = woVar2.getMessagesController().getChat(Long.valueOf(woVar2.Z));
-                woVar2.Y();
+                final int i10 = 0;
+                final yo yoVar = this.b;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.oo
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i10) {
+                            case 0:
+                                boolean z10 = tLObject instanceof TLRPC.TL_boolTrue;
+                                yo yoVar2 = yoVar;
+                                if (z10) {
+                                    for (int i11 = 0; i11 < yoVar2.Y.usernames.size(); i11++) {
+                                        TLRPC.TL_username tL_username = yoVar2.Y.usernames.get(i11);
+                                        if (tL_username != null && tL_username.active && !tL_username.editable) {
+                                            tL_username.active = false;
+                                        }
+                                    }
+                                }
+                                yoVar2.u0 = false;
+                                AndroidUtilities.runOnUIThread(new no(yoVar2, 4));
+                                break;
+                            default:
+                                yo yoVar3 = yoVar;
+                                ArrayList arrayList = yoVar3.g0;
+                                yoVar3.e0 = false;
+                                TLObject tLObject2 = tLObject;
+                                if (tLObject2 != null && yoVar3.getParentActivity() != null) {
+                                    for (int i12 = 0; i12 < arrayList.size(); i12++) {
+                                        yoVar3.h.removeView((View) arrayList.get(i12));
+                                    }
+                                    arrayList.clear();
+                                    TLRPC.TL_messages_chats tL_messages_chats = (TLRPC.TL_messages_chats) tLObject2;
+                                    for (int i13 = 0; i13 < tL_messages_chats.chats.size(); i13++) {
+                                        org.telegram.ui.Cells.n nVar = new org.telegram.ui.Cells.n(yoVar3.getParentActivity(), new po(yoVar3, 0), false, 0);
+                                        TLRPC.Chat chat = tL_messages_chats.chats.get(i13);
+                                        boolean z11 = true;
+                                        if (i13 != tL_messages_chats.chats.size() - 1) {
+                                            z11 = false;
+                                        }
+                                        nVar.a(chat, z11);
+                                        arrayList.add(nVar);
+                                        yoVar3.y.addView(nVar, w7.z5.n(-1, 72));
+                                    }
+                                    yoVar3.c0();
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                });
                 break;
             case 2:
-                this.b.a0(false);
-                break;
-            case 3:
-                wo woVar3 = this.b;
-                woVar3.c0 = true;
-                if (woVar3.a.length() > 0) {
-                    woVar3.W(woVar3.a.getText().toString());
-                }
-                woVar3.b0();
-                break;
-            case 4:
-                this.b.Y();
+                final int i11 = 1;
+                final yo yoVar2 = this.b;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.oo
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i11) {
+                            case 0:
+                                boolean z10 = tLObject instanceof TLRPC.TL_boolTrue;
+                                yo yoVar22 = yoVar2;
+                                if (z10) {
+                                    for (int i112 = 0; i112 < yoVar22.Y.usernames.size(); i112++) {
+                                        TLRPC.TL_username tL_username = yoVar22.Y.usernames.get(i112);
+                                        if (tL_username != null && tL_username.active && !tL_username.editable) {
+                                            tL_username.active = false;
+                                        }
+                                    }
+                                }
+                                yoVar22.u0 = false;
+                                AndroidUtilities.runOnUIThread(new no(yoVar22, 4));
+                                break;
+                            default:
+                                yo yoVar3 = yoVar2;
+                                ArrayList arrayList = yoVar3.g0;
+                                yoVar3.e0 = false;
+                                TLObject tLObject2 = tLObject;
+                                if (tLObject2 != null && yoVar3.getParentActivity() != null) {
+                                    for (int i12 = 0; i12 < arrayList.size(); i12++) {
+                                        yoVar3.h.removeView((View) arrayList.get(i12));
+                                    }
+                                    arrayList.clear();
+                                    TLRPC.TL_messages_chats tL_messages_chats = (TLRPC.TL_messages_chats) tLObject2;
+                                    for (int i13 = 0; i13 < tL_messages_chats.chats.size(); i13++) {
+                                        org.telegram.ui.Cells.n nVar = new org.telegram.ui.Cells.n(yoVar3.getParentActivity(), new po(yoVar3, 0), false, 0);
+                                        TLRPC.Chat chat = tL_messages_chats.chats.get(i13);
+                                        boolean z11 = true;
+                                        if (i13 != tL_messages_chats.chats.size() - 1) {
+                                            z11 = false;
+                                        }
+                                        nVar.a(chat, z11);
+                                        arrayList.add(nVar);
+                                        yoVar3.y.addView(nVar, w7.z5.n(-1, 72));
+                                    }
+                                    yoVar3.c0();
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                });
                 break;
             default:
-                this.b.a0(true);
+                AndroidUtilities.runOnUIThread(new eh(12, this.b, tL_error));
                 break;
         }
     }

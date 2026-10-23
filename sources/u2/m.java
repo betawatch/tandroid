@@ -6,7 +6,7 @@ import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 import v7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public abstract class m extends a {
     public final HashMap h = new HashMap();
@@ -48,17 +48,17 @@ public abstract class m extends a {
         hashMap.clear();
     }
 
-    public abstract g0 u(Object obj, g0 g0Var);
+    public abstract h0 u(Object obj, h0 h0Var);
 
     public abstract void x(Object obj, a aVar, b2.o1 o1Var);
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r1v2, types: [u2.h0, u2.j] */
+    /* JADX WARN: Type inference failed for: r1v2, types: [u2.i0, u2.j] */
     public final void y(final Integer num, a aVar) {
         HashMap hashMap = this.h;
         u6.g(!hashMap.containsKey(num));
-        ?? r12 = new h0() { // from class: u2.j
-            @Override // u2.h0
+        ?? r12 = new i0() { // from class: u2.j
+            @Override // u2.i0
             public final void a(a aVar2, b2.o1 o1Var) {
                 m.this.x(num, aVar2, o1Var);
             }
@@ -71,10 +71,10 @@ public abstract class m extends a {
         a5.a aVar2 = aVar.c;
         aVar2.getClass();
         CopyOnWriteArrayList copyOnWriteArrayList = (CopyOnWriteArrayList) aVar2.d;
-        k0 k0Var = new k0();
-        k0Var.a = handler;
-        k0Var.b = kVar;
-        copyOnWriteArrayList.add(k0Var);
+        l0 l0Var = new l0();
+        l0Var.a = handler;
+        l0Var.b = kVar;
+        copyOnWriteArrayList.add(l0Var);
         Handler handler2 = this.i;
         handler2.getClass();
         n2.k kVar2 = aVar.d;
@@ -85,9 +85,9 @@ public abstract class m extends a {
         jVar.b = kVar;
         copyOnWriteArrayList2.add(jVar);
         g2.c0 c0Var = this.j;
-        j2.k kVar3 = this.g;
-        kVar3.getClass();
-        aVar.l(r12, c0Var, kVar3);
+        j2.j jVar2 = this.g;
+        jVar2.getClass();
+        aVar.l(r12, c0Var, jVar2);
         if (this.b.isEmpty()) {
             aVar.d(r12);
         }

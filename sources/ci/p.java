@@ -1,9 +1,9 @@
 package ci;
 
 import android.animation.ValueAnimator;
-import org.telegram.ui.tw;
+import org.telegram.ui.vw;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p implements Runnable {
     public final /* synthetic */ int a;
@@ -18,12 +18,12 @@ public final /* synthetic */ class p implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                tw twVar = this.b.b0;
-                ValueAnimator valueAnimator = twVar.j0;
+                vw vwVar = this.b.b0;
+                ValueAnimator valueAnimator = vwVar.j0;
                 if (valueAnimator != null) {
                     valueAnimator.start();
                 }
-                twVar.k0 = null;
+                vwVar.k0 = null;
                 break;
             default:
                 q qVar = this.b;

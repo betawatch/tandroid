@@ -1,16 +1,71 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.LocaleController;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.os.Build;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class u30 extends org.telegram.ui.Components.od0 {
-    public u30(LaunchActivity launchActivity) {
-        super(launchActivity, null);
+public final class u30 extends FrameLayout {
+    public final RectF a;
+    public final RectF b;
+    public final RectF c;
+    public final Paint d;
+    public final /* synthetic */ u50 e;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public u30(u50 u50Var, LaunchActivity launchActivity) {
+        super(launchActivity);
+        this.e = u50Var;
+        this.a = new RectF();
+        this.b = new RectF();
+        this.c = new RectF();
+        this.d = new Paint(1);
     }
 
-    @Override // org.telegram.ui.Components.od0
-    public final CharSequence d(int i10) {
-        return LocaleController.formatPluralString("Hours", i10, new Object[0]);
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        u50 u50Var = this.e;
+        v30 v30Var = u50Var.F;
+        float y3 = v30Var.getY() + v30Var.getMeasuredHeight();
+        ne.e eVar = u50Var.B3;
+        float f7 = y3 - eVar.e;
+        float measuredWidth = getMeasuredWidth();
+        float measuredHeight = getMeasuredHeight();
+        RectF rectF = this.a;
+        rectF.set(0.0f, f7, measuredWidth, measuredHeight);
+        float y10 = v30Var.getY() + v30Var.getMeasuredHeight();
+        float measuredWidth2 = getMeasuredWidth();
+        float measuredHeight2 = getMeasuredHeight();
+        RectF rectF2 = this.b;
+        rectF2.set(0.0f, y10, measuredWidth2, measuredHeight2);
+        float y11 = (v30Var.getY() + v30Var.getMeasuredHeight()) - eVar.e;
+        float measuredWidth3 = getMeasuredWidth();
+        float y12 = v30Var.getY() + v30Var.getMeasuredHeight();
+        RectF rectF3 = this.c;
+        rectF3.set(0.0f, y11, measuredWidth3, y12);
+        int i10 = Build.VERSION.SDK_INT;
+        Paint paint = this.d;
+        if (i10 < 29 || u50Var.Q2 == null || !canvas.isHardwareAccelerated()) {
+            paint.setColor(-14933463);
+            canvas.drawRect(rectF3, paint);
+            paint.setColor(i0.a.k(234881023, -14933463));
+            canvas.drawRect(rectF2, paint);
+        } else {
+            paint.setColor(-14933463);
+            canvas.drawRect(rectF, paint);
+            canvas.save();
+            canvas.clipRect(rectF);
+            canvas.translate(-getX(), -getY());
+            float f10 = u50Var.R2;
+            canvas.scale(f10, f10);
+            canvas.drawRenderNode(u50Var.Q2);
+            canvas.restore();
+            paint.setColor(234881023);
+            canvas.drawRect(rectF2, paint);
+        }
+        super.dispatchDraw(canvas);
     }
 }

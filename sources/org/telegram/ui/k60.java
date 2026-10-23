@@ -1,13 +1,12 @@
 package org.telegram.ui;
 
+import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class k60 extends TLRPC.TL_contact {
-    public final String a;
+public interface k60 {
+    void h(TLRPC.User user);
 
-    public k60(String str) {
-        this.a = str;
-    }
+    void i(int i10, ArrayList arrayList);
 }

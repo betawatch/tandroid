@@ -1,15 +1,66 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
+import java.util.ArrayList;
+import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class xa0 extends org.telegram.ui.Cells.v8 {
-    @Override // org.telegram.ui.Cells.v8, android.view.View
-    public final void onDraw(Canvas canvas) {
-        canvas.save();
-        canvas.clipRect(0, 0, getWidth(), getHeight());
-        super.onDraw(canvas);
-        canvas.restore();
+public final /* synthetic */ class xa0 implements org.telegram.ui.Components.d5, org.telegram.ui.ActionBar.z1, org.telegram.ui.Components.rw0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ gb0 b;
+
+    public /* synthetic */ xa0(gb0 gb0Var, int i10) {
+        this.a = i10;
+        this.b = gb0Var;
+    }
+
+    @Override // org.telegram.ui.Components.d5
+    public void C(int i10, int i11, boolean z10) {
+        this.b.V(i10);
+    }
+
+    @Override // org.telegram.ui.ActionBar.z1
+    public void g(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
+        gb0 gb0Var = this.b;
+        gb0Var.T.a(gb0Var.e);
+        gb0Var.finishFragment();
+    }
+
+    @Override // org.telegram.ui.Components.rw0
+    public void i(int i10) {
+        switch (this.a) {
+            case 2:
+                gb0 gb0Var = this.b;
+                if (i10 >= gb0Var.P.size()) {
+                    gb0Var.w.setText("");
+                    break;
+                } else {
+                    gb0Var.w.setText(LocaleController.formatDateAudio(gb0Var.getConnectionsManager().getCurrentTime() + ((Integer) r1.get(i10)).intValue(), false));
+                    break;
+                }
+            default:
+                gb0 gb0Var2 = this.b;
+                gb0Var2.F.clearFocus();
+                gb0Var2.O = true;
+                ArrayList arrayList = gb0Var2.R;
+                if (i10 < arrayList.size()) {
+                    gb0Var2.F.setText(((Integer) arrayList.get(i10)).toString());
+                } else {
+                    gb0Var2.F.setText("");
+                }
+                gb0Var2.O = false;
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.rw0
+    public /* synthetic */ void m() {
+        int i10 = this.a;
+    }
+
+    private final /* synthetic */ void a() {
+    }
+
+    private final /* synthetic */ void b() {
     }
 }

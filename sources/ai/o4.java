@@ -3,9 +3,9 @@ package ai;
 import android.os.Bundle;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.qn;
+import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o4 implements Runnable {
     public final /* synthetic */ int a;
@@ -20,7 +20,7 @@ public final /* synthetic */ class o4 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
+                org.telegram.ui.ActionBar.o2 U = LaunchActivity.U();
                 if (U != null) {
                     Bundle bundle = new Bundle();
                     bundle.putLong("user_id", this.b);
@@ -31,23 +31,23 @@ public final /* synthetic */ class o4 implements Runnable {
                 }
                 break;
             case 1:
-                org.telegram.ui.ActionBar.n2 U2 = LaunchActivity.U();
+                org.telegram.ui.ActionBar.o2 U2 = LaunchActivity.U();
                 if (U2 != null) {
-                    U2.presentFragment(qn.W9(this.b));
+                    U2.presentFragment(sn.W9(this.b));
                     break;
                 }
                 break;
             case 2:
-                org.telegram.ui.ActionBar.n2 U3 = LaunchActivity.U();
+                org.telegram.ui.ActionBar.o2 U3 = LaunchActivity.U();
                 if (U3 != null) {
-                    U3.presentFragment(qn.W9(this.b));
+                    U3.presentFragment(sn.W9(this.b));
                     break;
                 }
                 break;
             default:
-                org.telegram.ui.ActionBar.n2 U4 = LaunchActivity.U();
+                org.telegram.ui.ActionBar.o2 U4 = LaunchActivity.U();
                 if (U4 != null) {
-                    U4.presentFragment(qn.W9(this.b));
+                    U4.presentFragment(sn.W9(this.b));
                     break;
                 }
                 break;

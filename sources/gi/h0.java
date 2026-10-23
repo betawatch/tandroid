@@ -8,25 +8,28 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.io.File;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.sl;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.r6;
 import org.telegram.ui.Components.f6;
 import org.telegram.ui.Components.mb;
 import org.telegram.ui.Components.nb;
 import org.telegram.ui.Components.oc;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.vj0;
+import org.telegram.ui.Components.yj0;
 import org.telegram.ui.LaunchActivity;
 import w7.z5;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class h0 extends nb {
-    public final d6 a;
+    public final g6 a;
     public final f0 b;
     public final g0 c;
     public final TextView d;
@@ -34,12 +37,12 @@ public final class h0 extends nb {
     public i0 f;
     public int h;
 
-    public h0(Context context, d6 d6Var) {
-        super(context, d6Var);
+    public h0(Context context, g6 g6Var) {
+        super(context, g6Var);
         this.h = 0;
-        this.a = d6Var;
+        this.a = g6Var;
         f0 f0Var = new f0(AndroidUtilities.dp(10.0f));
-        f0Var.a.setColor(h6.w0(h6.Fi, d6Var));
+        f0Var.a.setColor(k6.w0(k6.Fi, g6Var));
         this.b = f0Var;
         setBackground(f0Var);
         ImageView imageView = new ImageView(context);
@@ -54,14 +57,14 @@ public final class h0 extends nb {
         TextView textView = new TextView(context);
         this.d = textView;
         textView.setTextSize(1, 14.0f);
-        int i10 = h6.Hi;
-        textView.setTextColor(h6.w0(i10, d6Var));
+        int i10 = k6.Hi;
+        r6.W(textView, i10, g6Var);
         textView.setTypeface(AndroidUtilities.bold());
-        TextView i11 = com.google.android.gms.internal.play_billing.k3.i(linearLayout, textView, z5.t(-1, -2, 55, 0, 0, 0, 2), context);
-        this.e = i11;
-        i11.setTextSize(1, 13.0f);
-        i11.setTextColor(h6.w0(i10, d6Var));
-        linearLayout.addView(i11, z5.t(-1, -2, 55, 0, 0, 0, 0));
+        TextView f7 = sl.f(linearLayout, textView, z5.t(-1, -2, 55, 0, 0, 0, 2), context);
+        this.e = f7;
+        f7.setTextSize(1, 13.0f);
+        r6.W(f7, i10, g6Var);
+        linearLayout.addView(f7, z5.t(-1, -2, 55, 0, 0, 0, 0));
     }
 
     private void setButton(int i10) {
@@ -73,12 +76,12 @@ public final class h0 extends nb {
             setButton((mb) null);
             return;
         }
-        d6 d6Var = this.a;
+        g6 g6Var = this.a;
         if (i10 == 1) {
-            oc ocVar = new oc(getContext(), d6Var, true);
+            oc ocVar = new oc(getContext(), g6Var, true);
             ocVar.e(LocaleController.getString(R.string.BotFileDownloadCancel));
             final int i11 = 0;
-            ocVar.a = new Runnable(this) { // from class: gi.e0
+            ocVar.b = new Runnable(this) { // from class: gi.e0
                 public final /* synthetic */ h0 b;
 
                 {
@@ -111,7 +114,7 @@ public final class h0 extends nb {
                             i0 i0Var2 = h0Var2.f;
                             if (i0Var2 != null && (file = i0Var2.d) != null && file.exists()) {
                                 File file2 = i0Var2.d;
-                                AndroidUtilities.openForView(file2, file2.getName(), null, LaunchActivity.H1, null, true);
+                                AndroidUtilities.openForView(file2, file2.getName(), null, LaunchActivity.J1, null, true);
                                 break;
                             }
                             break;
@@ -119,16 +122,16 @@ public final class h0 extends nb {
                 }
             };
             if (getBulletin() != null) {
-                ocVar.c = getBulletin();
+                ocVar.d = getBulletin();
             }
             setButton(ocVar);
             return;
         }
         if (i10 == 2) {
-            oc ocVar2 = new oc(getContext(), d6Var, true);
+            oc ocVar2 = new oc(getContext(), g6Var, true);
             ocVar2.e(LocaleController.getString(R.string.BotFileDownloadOpen));
             final int i12 = 1;
-            ocVar2.a = new Runnable(this) { // from class: gi.e0
+            ocVar2.b = new Runnable(this) { // from class: gi.e0
                 public final /* synthetic */ h0 b;
 
                 {
@@ -161,7 +164,7 @@ public final class h0 extends nb {
                             i0 i0Var2 = h0Var2.f;
                             if (i0Var2 != null && (file = i0Var2.d) != null && file.exists()) {
                                 File file2 = i0Var2.d;
-                                AndroidUtilities.openForView(file2, file2.getName(), null, LaunchActivity.H1, null, true);
+                                AndroidUtilities.openForView(file2, file2.getName(), null, LaunchActivity.J1, null, true);
                                 break;
                             }
                             break;
@@ -169,7 +172,7 @@ public final class h0 extends nb {
                 }
             };
             if (getBulletin() != null) {
-                ocVar2.c = getBulletin();
+                ocVar2.d = getBulletin();
             }
             setButton(ocVar2);
         }
@@ -183,9 +186,9 @@ public final class h0 extends nb {
             g0Var.h = false;
             f6Var.getClass();
             f6Var.d(0.0f, true);
-            vj0 vj0Var = g0Var.l;
-            if (vj0Var != null) {
-                vj0Var.C(true);
+            yj0 yj0Var = g0Var.l;
+            if (yj0Var != null) {
+                yj0Var.C(true);
                 g0Var.l = null;
             }
             f6 f6Var2 = g0Var.i;
@@ -228,9 +231,9 @@ public final class h0 extends nb {
             setButton(2);
             if (!g0Var.h) {
                 g0Var.h = true;
-                vj0 vj0Var2 = new vj0(R.raw.contact_check, AndroidUtilities.dp(40.0f), AndroidUtilities.dp(40.0f));
-                g0Var.l = vj0Var2;
-                vj0Var2.R(g0Var.a);
+                yj0 yj0Var2 = new yj0(R.raw.contact_check, AndroidUtilities.dp(40.0f), AndroidUtilities.dp(40.0f));
+                g0Var.l = yj0Var2;
+                yj0Var2.R(g0Var.a);
                 g0Var.l.J(true);
                 g0Var.l.start();
                 g0Var.g = 1.0f;
@@ -259,5 +262,19 @@ public final class h0 extends nb {
             f0Var.f = i10;
         }
         f0Var.invalidateSelf();
+    }
+
+    @Override // org.telegram.ui.Components.ub, org.telegram.ui.ActionBar.b6
+    public final void updateColors() {
+        super.updateColors();
+        f0 f0Var = this.b;
+        if (f0Var != null) {
+            try {
+                f0Var.a.setColor(k6.w0(k6.Fi, this.a));
+                f0Var.invalidateSelf();
+            } catch (Exception e) {
+                FileLog.e(e);
+            }
+        }
     }
 }

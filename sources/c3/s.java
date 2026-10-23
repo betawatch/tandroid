@@ -1,44 +1,13 @@
 package c3;
 
-import ai.me;
-import android.animation.ObjectAnimator;
-import org.telegram.ui.Components.db;
-import org.telegram.ui.Components.fb;
-import org.telegram.ui.Components.gb;
-import org.telegram.ui.Components.pg;
-import org.telegram.ui.Components.st;
-import org.telegram.ui.Components.tb;
-import org.telegram.ui.Components.ub;
-import org.telegram.ui.Components.xl;
-
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public final class s implements tb {
-    public long a;
+public interface s {
+    public static final oa.d i = new oa.d(4);
 
-    @Override // org.telegram.ui.Components.tb
-    public void D0(ub ubVar, fb fbVar, pg pgVar, xl xlVar) {
-        ubVar.setInOutOffset(ubVar.getMeasuredHeight());
-        xlVar.accept(Float.valueOf(ubVar.getTranslationY()));
-        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(ubVar, ub.IN_OUT_OFFSET_Y2, 0.0f);
-        ofFloat.setDuration(this.a);
-        ofFloat.setInterpolator(st.d);
-        ofFloat.addListener(new me(fbVar, pgVar, 17));
-        ofFloat.addUpdateListener(new ah.l0(15, xlVar, ubVar));
-        ofFloat.start();
-    }
+    void C();
 
-    public boolean a(nf.m mVar) {
-        return mVar.b == this.a && nf.a.c(mVar);
-    }
+    void g0(e0 e0Var);
 
-    @Override // org.telegram.ui.Components.tb
-    public void d(ub ubVar, fb fbVar, db dbVar, gb gbVar) {
-        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(ubVar, ub.IN_OUT_OFFSET_Y2, ubVar.getHeight());
-        ofFloat.setDuration(175L);
-        ofFloat.setInterpolator(st.c);
-        ofFloat.addListener(new me(fbVar, dbVar, 18));
-        ofFloat.addUpdateListener(new ah.l0(14, gbVar, ubVar));
-        ofFloat.start();
-    }
+    l0 j0(int i10, int i11);
 }

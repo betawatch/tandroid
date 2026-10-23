@@ -9,6 +9,7 @@ import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import j$.util.concurrent.ConcurrentHashMap;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -19,6 +20,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.MessagesStorage;
@@ -29,11 +31,11 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.e61;
+import org.telegram.ui.Components.j61;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final class r9 extends org.telegram.ui.ActionBar.f3 implements NotificationCenter.NotificationCenterDelegate {
+public final class r9 extends org.telegram.ui.ActionBar.h3 implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int d0 = 0;
     public boolean E;
     public boolean F;
@@ -84,8 +86,8 @@ public final class r9 extends org.telegram.ui.ActionBar.f3 implements Notificati
     /* JADX WARN: Type inference failed for: r5v15 */
     /* JADX WARN: Type inference failed for: r5v16, types: [int] */
     /* JADX WARN: Type inference failed for: r5v20 */
-    public r9(Context context, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(1, context, d6Var, true);
+    public r9(Context context, int i10, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(1, context, g6Var, true);
         boolean z10;
         char c10;
         boolean z11 = true;
@@ -317,7 +319,7 @@ public final class r9 extends org.telegram.ui.ActionBar.f3 implements Notificati
         return hashSet;
     }
 
-    @Override // org.telegram.ui.ActionBar.f3
+    @Override // org.telegram.ui.ActionBar.h3
     public final boolean canDismissWithSwipe() {
         View currentView = this.b.getCurrentView();
         if (currentView instanceof k9) {
@@ -326,7 +328,7 @@ public final class r9 extends org.telegram.ui.ActionBar.f3 implements Notificati
         return true;
     }
 
-    @Override // org.telegram.ui.ActionBar.f3
+    @Override // org.telegram.ui.ActionBar.h3
     public final boolean canSwipeToBack(MotionEvent motionEvent) {
         return false;
     }
@@ -384,7 +386,7 @@ public final class r9 extends org.telegram.ui.ActionBar.f3 implements Notificati
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
+    @Override // org.telegram.ui.ActionBar.h3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.k2
     public final void dismiss() {
         p9 p9Var;
         Utilities.Callback callback = this.U;
@@ -440,7 +442,7 @@ public final class r9 extends org.telegram.ui.ActionBar.f3 implements Notificati
         super.dismiss();
     }
 
-    @Override // org.telegram.ui.ActionBar.f3
+    @Override // org.telegram.ui.ActionBar.h3
     public final void dismissInternal() {
         NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.contactsDidLoad);
         NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.storiesBlocklistUpdate);
@@ -464,7 +466,7 @@ public final class r9 extends org.telegram.ui.ActionBar.f3 implements Notificati
         d9 d9Var;
         for (View view : this.b.getViewPages()) {
             if ((view instanceof k9) && (d9Var = ((k9) view).x) != null) {
-                AndroidUtilities.hideKeyboard(d9Var.a);
+                AndroidUtilities.hideKeyboard(d9Var.b);
             }
         }
     }
@@ -509,14 +511,14 @@ public final class r9 extends org.telegram.ui.ActionBar.f3 implements Notificati
                 spannableStringBuilder.append((CharSequence) ", ");
             }
             SpannableString spannableString = new SpannableString("@" + ((String) arrayList.get(i11)));
-            spannableString.setSpan(new e61(AndroidUtilities.bold()), 0, spannableString.length(), 33);
+            spannableString.setSpan(new j61(AndroidUtilities.bold()), 0, spannableString.length(), 33);
             spannableStringBuilder.append((CharSequence) spannableString);
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getContext(), 0, this.resourcesProvider);
         alertDialog$Builder.a.R = LocaleController.getString(R.string.StoryRestrictions);
         alertDialog$Builder.a.T = AndroidUtilities.replaceCharSequence("%s", LocaleController.getString(R.string.StoryRestrictionsInfo), spannableStringBuilder);
         alertDialog$Builder.k(LocaleController.getString(R.string.Proceed), new ai.u2(this, p9Var, runnable, 7));
-        i2.e.r(R.string.Cancel, alertDialog$Builder, null);
+        i2.o1.s(R.string.Cancel, alertDialog$Builder, null);
     }
 
     public final ArrayList i1() {
@@ -538,7 +540,7 @@ public final class r9 extends org.telegram.ui.ActionBar.f3 implements Notificati
         return arrayList;
     }
 
-    public final ci.i7 j1() {
+    public final ci.h7 j1() {
         return MessagesController.getInstance(this.currentAccount).getStoriesController();
     }
 
@@ -547,9 +549,9 @@ public final class r9 extends org.telegram.ui.ActionBar.f3 implements Notificati
         NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.contactsDidLoad);
         NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.storiesBlocklistUpdate);
         NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.storiesSendAsUpdate);
-        int i10 = org.telegram.ui.ActionBar.h6.h5;
-        this.R.setColor(org.telegram.ui.ActionBar.h6.w0(i10, this.resourcesProvider));
-        fixNavigationBar(org.telegram.ui.ActionBar.h6.w0(i10, this.resourcesProvider));
+        int i10 = org.telegram.ui.ActionBar.k6.h5;
+        this.R.setColor(org.telegram.ui.ActionBar.k6.w0(i10, this.resourcesProvider));
+        fixNavigationBarKey(i10);
         this.containerView = new u8(this, context);
         h1 h1Var = new h1(this, context, 1);
         this.b = h1Var;
@@ -598,7 +600,7 @@ public final class r9 extends org.telegram.ui.ActionBar.f3 implements Notificati
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog
+    @Override // org.telegram.ui.ActionBar.h3, android.app.Dialog
     public final void onBackPressed() {
         if (this.b.getCurrentPosition() <= 0) {
             super.onBackPressed();
@@ -606,6 +608,20 @@ public final class r9 extends org.telegram.ui.ActionBar.f3 implements Notificati
         }
         g1();
         this.b.D(r0.getCurrentPosition() - 1);
+    }
+
+    @Override // org.telegram.ui.ActionBar.h3
+    public final void onThemeColorsChanged() {
+        super.onThemeColorsChanged();
+        try {
+            this.R.setColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.h5, this.resourcesProvider));
+            ViewGroup viewGroup = this.containerView;
+            if (viewGroup != null) {
+                viewGroup.invalidate();
+            }
+        } catch (Exception e) {
+            FileLog.e(e);
+        }
     }
 
     public final void p1() {
@@ -689,8 +705,8 @@ public final class r9 extends org.telegram.ui.ActionBar.f3 implements Notificati
         }
     }
 
-    public r9(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(1, context, d6Var, true);
+    public r9(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(1, context, g6Var, true);
         this.d = new ArrayList();
         this.e = new HashMap();
         this.f = 0;

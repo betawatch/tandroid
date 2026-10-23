@@ -1,31 +1,29 @@
 package org.telegram.ui;
 
-import android.view.View;
-
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class t31 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ x31 b;
+public final class t31 extends org.telegram.ui.Components.j81 {
+    public final /* synthetic */ SecretMediaViewer m0;
 
-    public /* synthetic */ t31(x31 x31Var, int i10) {
-        this.a = i10;
-        this.b = x31Var;
+    public t31(SecretMediaViewer secretMediaViewer) {
+        this.m0 = secretMediaViewer;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                x31 x31Var = this.b;
-                if (x31Var.Y == null) {
-                    x31Var.dismiss();
-                    break;
-                }
-                break;
-            default:
-                this.b.dismiss();
-                break;
-        }
+    @Override // org.telegram.ui.Components.j81
+    public final void B() {
+        super.B();
+        this.m0.W.a(false, true);
+    }
+
+    @Override // org.telegram.ui.Components.j81
+    public final void C() {
+        super.C();
+        this.m0.W.a(true, true);
+    }
+
+    @Override // org.telegram.ui.Components.j81
+    public final void P(boolean z10) {
+        super.P(z10);
+        this.m0.W.a(z10, true);
     }
 }

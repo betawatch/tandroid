@@ -7,10 +7,10 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.k6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+/* loaded from: classes4.dex */
 public final class c extends Drawable {
     public final /* synthetic */ int a = 2;
     public final /* synthetic */ int b;
@@ -47,7 +47,7 @@ public final class c extends Drawable {
                     } else {
                         i10 = i12 == 3 ? Math.max(bounds2.width(), bounds2.height()) / 2 : (int) Math.ceil(Math.sqrt(((bounds2.top - bounds2.centerY()) * (bounds2.top - bounds2.centerY())) + ((bounds2.left - bounds2.centerX()) * (bounds2.left - bounds2.centerX()))));
                     }
-                    canvas.drawCircle(bounds2.centerX(), bounds2.centerY(), i10, h6.z);
+                    canvas.drawCircle(bounds2.centerX(), bounds2.centerY(), i10, k6.z);
                     break;
                 } else {
                     if (((RectF) this.d) == null) {
@@ -55,7 +55,7 @@ public final class c extends Drawable {
                     }
                     ((RectF) this.d).set(bounds2);
                     float dp = i11 <= 0 ? AndroidUtilities.dp(6.0f) : i11;
-                    canvas.drawRoundRect((RectF) this.d, dp, dp, h6.z);
+                    canvas.drawRoundRect((RectF) this.d, dp, dp, k6.z);
                     break;
                 }
         }

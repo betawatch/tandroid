@@ -8,22 +8,22 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.fr0;
+import org.telegram.ui.Components.ir0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final class b5 extends fr0 {
-    public final /* synthetic */ l7 c1;
+public final class b5 extends ir0 {
+    public final /* synthetic */ l7 e1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b5(l7 l7Var, Context context, String str, String str2, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, null, null, str, null, false, str2, null, false, false, true, null, d6Var);
-        this.c1 = l7Var;
+    public b5(l7 l7Var, Context context, String str, String str2, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(context, null, null, str, null, false, str2, null, false, false, true, null, g6Var);
+        this.e1 = l7Var;
         this.b0 = true;
     }
 
-    @Override // org.telegram.ui.Components.fr0
-    public final void T0(a0.h hVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
+    @Override // org.telegram.ui.Components.ir0
+    public final void W0(a0.h hVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
         org.telegram.ui.Components.xc bulletinFactory;
         if (z10 && (bulletinFactory = getBulletinFactory()) != null) {
             if (hVar.m() == 1) {
@@ -57,8 +57,8 @@ public final class b5 extends fr0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.fr0
-    public final void U0(View view) {
-        l7.y1(this.c1, view);
+    @Override // org.telegram.ui.Components.ir0
+    public final void X0(View view) {
+        l7.x1(this.e1, view);
     }
 }

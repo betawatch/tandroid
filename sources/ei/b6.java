@@ -11,19 +11,19 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class b6 extends FrameLayout {
     public float a;
     public float b;
-    public final /* synthetic */ qg.v0 c;
+    public final /* synthetic */ qg.u0 c;
     public final /* synthetic */ xa d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b6(xa xaVar, Context context, qg.v0 v0Var) {
+    public b6(xa xaVar, Context context, qg.u0 u0Var) {
         super(context);
         this.d = xaVar;
-        this.c = v0Var;
+        this.c = u0Var;
         new Path();
         setWillNotDraw(false);
         Paint paint = xaVar.x1;
@@ -37,7 +37,7 @@ public final class b6 extends FrameLayout {
         Canvas canvas2 = canvas;
         super.onDraw(canvas);
         xa xaVar = this.d;
-        qg.t1 t1Var = xaVar.A1;
+        qg.s1 s1Var = xaVar.A1;
         Paint paint = xaVar.y1;
         Paint paint2 = xaVar.x1;
         Paint paint3 = xaVar.z1;
@@ -54,8 +54,8 @@ public final class b6 extends FrameLayout {
         canvas2.save();
         canvas2.translate(barView.getLeft(), barView.getTop());
         View childAt = barView.getChildAt(0);
-        if (barView instanceof rg.o1) {
-            childAt = ((rg.o1) barView).getColorClickableView();
+        if (barView instanceof rg.p1) {
+            childAt = ((rg.p1) barView).getColorClickableView();
         }
         if (childAt.getAlpha() != 0.0f) {
             canvas2.scale(childAt.getScaleX(), childAt.getScaleY(), childAt.getPivotX(), childAt.getPivotY());
@@ -64,14 +64,14 @@ public final class b6 extends FrameLayout {
             int height = (childAt.getHeight() - childAt.getPaddingTop()) - childAt.getPaddingBottom();
             float x10 = (width / 2.0f) + childAt.getX() + childAt.getPaddingLeft();
             float y3 = (height / 2.0f) + childAt.getY() + childAt.getPaddingTop();
-            int i10 = t1Var.a;
+            int i10 = s1Var.a;
             int i11 = xaVar.Z0;
             View view = childAt;
             if (i11 != -1) {
                 ViewGroup viewGroup = i11 == 0 ? xaVar.k1 : i11 == 2 ? xaVar.l1 : null;
                 View childAt2 = (viewGroup == null ? barView : viewGroup).getChildAt(0);
-                if (viewGroup instanceof rg.o1) {
-                    childAt2 = ((rg.o1) viewGroup).getColorClickableView();
+                if (viewGroup instanceof rg.p1) {
+                    childAt2 = ((rg.p1) viewGroup).getColorClickableView();
                 }
                 x10 = AndroidUtilities.lerp(x10, (((childAt2.getWidth() - childAt2.getPaddingLeft()) - childAt2.getPaddingRight()) / 2.0f) + childAt2.getX() + childAt2.getPaddingLeft(), xaVar.a1);
                 y3 = AndroidUtilities.lerp(y3, (((childAt2.getHeight() - childAt2.getPaddingTop()) - childAt2.getPaddingBottom()) / 2.0f) + childAt2.getY() + childAt2.getPaddingTop(), xaVar.a1);
@@ -80,7 +80,7 @@ public final class b6 extends FrameLayout {
                 View childAt3 = g5Var.getChildAt(0);
                 x10 = AndroidUtilities.lerp(x10, (childAt3.getWidth() / 2.0f) + childAt3.getX() + (g5Var.getX() - barView.getLeft()), xaVar.D1);
                 y3 = AndroidUtilities.lerp(y3, (childAt3.getHeight() / 2.0f) + childAt3.getY() + (g5Var.getY() - barView.getTop()), xaVar.D1);
-                i10 = i0.a.f(xaVar.D1, t1Var.a, this.c.b(0));
+                i10 = i0.a.f(xaVar.D1, s1Var.a, this.c.b(0));
             }
             float f7 = x10;
             float f10 = y3;
@@ -106,7 +106,7 @@ public final class b6 extends FrameLayout {
             if (g5Var != null && g5Var.getSelectedColorIndex() != 0) {
                 dp = AndroidUtilities.lerp(f11 - AndroidUtilities.dp(3.0f), AndroidUtilities.dp(2.0f) + f11, xaVar.D1);
             }
-            rg.i1.y1(f7, f10, dp, paint.getColor(), canvas2);
+            rg.j1.D1(f7, f10, dp, paint.getColor(), canvas2);
             if (g5Var != null && g5Var.getSelectedColorIndex() == 0) {
                 paint3.setAlpha((int) (view.getAlpha() * paint3.getAlpha() * xaVar.D1));
                 canvas2.drawCircle(f7, f10, com.google.android.gms.internal.play_billing.k3.D(1.0f, xaVar.D1, paint3.getStrokeWidth() + AndroidUtilities.dp(3.0f), f11), paint3);

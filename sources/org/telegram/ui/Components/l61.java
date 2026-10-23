@@ -1,53 +1,87 @@
 package org.telegram.ui.Components;
 
-import android.net.Uri;
-import android.text.TextPaint;
-import android.text.style.URLSpan;
+import android.content.Context;
+import android.util.LongSparseArray;
 import android.view.View;
-import org.telegram.tgnet.TLObject;
+import java.util.ArrayList;
+import java.util.HashMap;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public class l61 extends URLSpan {
-    public final boolean a;
-    public final n11 b;
-    public TLObject c;
-    public String d;
+public abstract class l61 {
+    private ArrayList<View> cache;
+    public final int viewType;
 
-    public l61(String str) {
-        this(str, (n11) null);
+    public l61() {
+        int i10 = m61.J;
+        m61.J = i10 + 1;
+        this.viewType = i10;
     }
 
-    @Override // android.text.style.URLSpan, android.text.style.ClickableSpan
-    public void onClick(View view) {
-        String url = getURL();
-        if (!url.startsWith("@")) {
-            pf.d.r(view.getContext(), url);
+    public static void setup(l61 l61Var) {
+        if (m61.L == null) {
+            m61.L = new HashMap();
+        }
+        if (m61.K == null) {
+            m61.K = new LongSparseArray();
+        }
+        Class<?> cls = l61Var.getClass();
+        if (m61.L.containsKey(cls)) {
             return;
         }
-        pf.d.o(view.getContext(), Uri.parse("https://t.me/" + url.substring(1)), true, true);
+        m61.L.put(cls, l61Var);
+        m61.K.put(l61Var.viewType, l61Var);
     }
 
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public void updateDrawState(TextPaint textPaint) {
-        int i10 = textPaint.linkColor;
-        int color = textPaint.getColor();
-        super.updateDrawState(textPaint);
-        n11 n11Var = this.b;
-        if (n11Var != null) {
-            n11Var.a(textPaint);
+    public boolean contentsEquals(m61 m61Var, m61 m61Var2) {
+        return m61Var.H(m61Var2);
+    }
+
+    public abstract View createView(Context context, mm0 mm0Var, int i10, int i11, org.telegram.ui.ActionBar.g6 g6Var);
+
+    public boolean equals(m61 m61Var, m61 m61Var2) {
+        return m61Var.I(m61Var2);
+    }
+
+    public View getCached() {
+        ArrayList<View> arrayList = this.cache;
+        if (arrayList == null || arrayList.isEmpty()) {
+            return null;
         }
-        textPaint.setUnderlineText(i10 == color && !this.a);
+        return this.cache.remove(0);
     }
 
-    public l61(String str, int i10) {
-        this(str, (n11) null);
-        this.a = true;
+    public boolean isClickable() {
+        return !(this instanceof dj);
     }
 
-    public l61(String str, n11 n11Var) {
-        super(str != null ? str.replace((char) 8238, ' ') : str);
-        this.a = false;
-        this.b = n11Var;
+    public boolean isShadow() {
+        return false;
+    }
+
+    public void precache(org.telegram.ui.ActionBar.o2 o2Var, int i10) {
+        precache(o2Var.getContext(), o2Var.getCurrentAccount(), o2Var.getClassGuid(), o2Var.getResourceProvider(), i10);
+    }
+
+    public void precache(Context context, int i10, int i11, org.telegram.ui.ActionBar.g6 g6Var, int i12) {
+        if (context == null) {
+            return;
+        }
+        if (this.cache == null) {
+            this.cache = new ArrayList<>();
+        }
+        int i13 = 0;
+        while (i13 < this.cache.size() - i12) {
+            Context context2 = context;
+            this.cache.add(createView(context2, null, i10, i11, g6Var));
+            i13++;
+            context = context2;
+        }
+    }
+
+    public void attachedView(mm0 mm0Var, View view, m61 m61Var) {
+    }
+
+    public void bindView(View view, m61 m61Var, boolean z10, b71 b71Var, j71 j71Var) {
     }
 }

@@ -14,7 +14,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public class q6 extends View {
     public boolean a;
@@ -235,6 +235,6 @@ public class q6 extends View {
         p6 p6Var = new p6(z10, z11, z12, z13, z14);
         this.c = p6Var;
         p6Var.setCallback(this);
-        p6Var.I = new pg(this, 8);
+        p6Var.I = new pg(this, 9);
     }
 }

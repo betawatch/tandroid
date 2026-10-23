@@ -4,13 +4,14 @@ import ab.g0;
 import ab.m;
 import ab.r0;
 import ab.t;
+import ai.ga;
 import ai.l7;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
 import b2.a0;
 import b2.i1;
 import b2.m0;
-import b2.n;
 import b2.n0;
 import b2.p1;
 import b2.q1;
@@ -19,7 +20,8 @@ import b2.u1;
 import b2.v;
 import b2.v0;
 import b2.w;
-import c3.o;
+import c3.n;
+import c3.q;
 import cb.h;
 import com.google.android.gms.internal.cast.z5;
 import com.google.firebase.sessions.FirebaseSessionsRegistrar;
@@ -30,32 +32,29 @@ import e9.l0;
 import e9.x1;
 import java.lang.reflect.Constructor;
 import java.util.ArrayList;
-import org.telegram.messenger.voip.NativeInstance;
-import org.telegram.ui.ActionBar.a2;
-import org.telegram.ui.ActionBar.b2;
-import org.telegram.ui.vf1;
+import org.telegram.ui.ActionBar.c2;
+import org.telegram.ui.ActionBar.o6;
+import org.telegram.ui.ActionBar.p6;
+import org.telegram.ui.ActionBar.z1;
+import org.telegram.ui.bg1;
 import r9.d;
 import v7.b8;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class a implements d, a2, k, NativeInstance.AudioLevelsCallback {
+public final /* synthetic */ class a implements d, z1, o6, p6, k, n {
     public final /* synthetic */ int a;
 
     public /* synthetic */ a(int i10) {
         this.a = i10;
     }
 
+    @Override // c3.n
     public Constructor a() {
-        switch (this.a) {
-            case 27:
-                if (Boolean.TRUE.equals(Class.forName("androidx.media3.decoder.flac.FlacLibrary").getMethod("isAvailable", null).invoke(null, null))) {
-                    return Class.forName("androidx.media3.decoder.flac.FlacExtractor").asSubclass(o.class).getConstructor(Integer.TYPE);
-                }
-                return null;
-            default:
-                return Class.forName("androidx.media3.decoder.midi.MidiExtractor").asSubclass(o.class).getConstructor(null);
+        if (Boolean.TRUE.equals(Class.forName("androidx.media3.decoder.flac.FlacLibrary").getMethod("isAvailable", null).invoke(null, null))) {
+            return Class.forName("androidx.media3.decoder.flac.FlacExtractor").asSubclass(q.class).getConstructor(Integer.TYPE);
         }
+        return null;
     }
 
     @Override // d9.k
@@ -64,10 +63,10 @@ public final /* synthetic */ class a implements d, a2, k, NativeInstance.AudioLe
         x1 b10;
         int i10 = 0;
         switch (this.a) {
-            case 19:
+            case 21:
                 a0 a0Var = (a0) obj;
                 return a0Var.a + ": " + a0Var.b;
-            case 20:
+            case 22:
                 i1 i1Var = (i1) obj;
                 i1Var.getClass();
                 Bundle bundle = new Bundle();
@@ -84,7 +83,7 @@ public final /* synthetic */ class a implements d, a2, k, NativeInstance.AudioLe
                     bundle.putInt(i1.f, i13);
                 }
                 return bundle;
-            case 21:
+            case 23:
                 n0 n0Var = (n0) obj;
                 n0Var.getClass();
                 Bundle bundle2 = new Bundle();
@@ -114,7 +113,7 @@ public final /* synthetic */ class a implements d, a2, k, NativeInstance.AudioLe
                     bundle2.putString(n0.n, str4);
                 }
                 return bundle2;
-            case 22:
+            case 24:
                 Bundle bundle3 = (Bundle) obj;
                 Uri uri = (Uri) bundle3.getParcelable(n0.h);
                 uri.getClass();
@@ -133,7 +132,7 @@ public final /* synthetic */ class a implements d, a2, k, NativeInstance.AudioLe
                 m0Var.f = string3;
                 m0Var.g = string4;
                 return new n0(m0Var);
-            case 23:
+            case 25:
                 Bundle bundle4 = (Bundle) obj;
                 w wVar = w.V;
                 v vVar = new v();
@@ -225,7 +224,7 @@ public final /* synthetic */ class a implements d, a2, k, NativeInstance.AudioLe
                         vVar.I = bundle4.getInt(w.D0, wVar.J);
                         Bundle bundle6 = bundle4.getBundle(w.r0);
                         if (bundle6 != null) {
-                            vVar.H = new n(bundle6.getInt(n.i, -1), bundle6.getInt(n.j, -1), bundle6.getInt(n.k, -1), bundle6.getByteArray(n.l), bundle6.getInt(n.m, -1), bundle6.getInt(n.n, -1));
+                            vVar.H = new b2.n(bundle6.getInt(b2.n.i, -1), bundle6.getInt(b2.n.j, -1), bundle6.getInt(b2.n.k, -1), bundle6.getByteArray(b2.n.l), bundle6.getInt(b2.n.m, -1), bundle6.getInt(b2.n.n, -1));
                         }
                         vVar.J = bundle4.getInt(w.s0, wVar.K);
                         vVar.K = bundle4.getInt(w.t0, wVar.L);
@@ -241,7 +240,7 @@ public final /* synthetic */ class a implements d, a2, k, NativeInstance.AudioLe
                     arrayList.add(byteArray);
                     i10++;
                 }
-            case 24:
+            case 26:
                 Bundle bundle7 = (Bundle) obj;
                 Bundle bundle8 = bundle7.getBundle(q1.c);
                 bundle8.getClass();
@@ -250,7 +249,7 @@ public final /* synthetic */ class a implements d, a2, k, NativeInstance.AudioLe
                     l0 l0Var = e9.n0.b;
                     b10 = x1.e;
                 } else {
-                    b10 = e.b(new a(23), parcelableArrayList2);
+                    b10 = e.b(new a(25), parcelableArrayList2);
                 }
                 p1 p1Var = new p1(bundle8.getString(p1.g, ""), (w[]) b10.toArray(new w[0]));
                 int[] intArray = bundle7.getIntArray(q1.d);
@@ -268,14 +267,24 @@ public final /* synthetic */ class a implements d, a2, k, NativeInstance.AudioLe
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public void g(b2 b2Var, int i10) {
+    @Override // org.telegram.ui.ActionBar.p6
+    public void d(int i10, View view) {
+        ((ga) view).setColor(i10);
+    }
+
+    @Override // org.telegram.ui.ActionBar.o6
+    public int f(View view) {
+        return ((ga) view).x;
+    }
+
+    @Override // org.telegram.ui.ActionBar.z1
+    public void g(c2 c2Var, int i10) {
         switch (this.a) {
             case 13:
                 int i11 = l7.A1;
                 break;
             default:
-                l7.E2(new vf1(6, null));
+                l7.D2(new bg1(6, null));
                 break;
         }
     }
@@ -312,9 +321,5 @@ public final /* synthetic */ class a implements d, a2, k, NativeInstance.AudioLe
 
     public /* synthetic */ a(l7 l7Var) {
         this.a = 14;
-    }
-
-    @Override // org.telegram.messenger.voip.NativeInstance.AudioLevelsCallback
-    public void run(int[] iArr, float[] fArr, boolean[] zArr) {
     }
 }

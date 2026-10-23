@@ -1,86 +1,63 @@
 package org.telegram.ui.Cells;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.text.SpannableStringBuilder;
-import android.view.Menu;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.e61;
-import org.telegram.ui.Components.lw0;
-import org.telegram.ui.Components.n11;
-import org.telegram.ui.Components.o11;
-import org.telegram.ui.Components.qu;
+import android.text.Editable;
+import android.text.TextWatcher;
+import org.telegram.ui.Components.iu;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class d3 extends qu {
-    public final /* synthetic */ org.telegram.ui.ActionBar.d6 V;
-    public final /* synthetic */ boolean W;
-    public final /* synthetic */ f3 a0;
+public final class d3 implements TextWatcher {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ iu b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ e3 d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d3(f3 f3Var, Context context, lw0 lw0Var, org.telegram.ui.ActionBar.d6 d6Var, boolean z10) {
-        super(context, lw0Var, null, 4, true, null);
-        this.a0 = f3Var;
-        this.V = d6Var;
-        this.W = z10;
+    public d3(e3 e3Var, int i10, iu iuVar, boolean z10) {
+        this.d = e3Var;
+        this.a = i10;
+        this.b = iuVar;
+        this.c = z10;
     }
 
-    @Override // org.telegram.ui.Components.qu
-    public final boolean a() {
-        return this.a0.n && super.a();
-    }
-
-    @Override // org.telegram.ui.Components.qu
-    public final int h() {
-        return this.a0.a();
-    }
-
-    @Override // org.telegram.ui.Components.qu
-    public final void i(Menu menu) {
-        if (menu.findItem(R.id.menu_bold) != null) {
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        e3 e3Var = this.d;
+        boolean z10 = e3Var.a;
+        int i10 = this.a;
+        if (!z10) {
+            if (i10 > 0 && editable != null && editable.length() > i10) {
+                e3Var.a = true;
+                CharSequence subSequence = editable.subSequence(0, i10);
+                iu iuVar = this.b;
+                iuVar.setText(subSequence);
+                iuVar.setSelection(iuVar.length());
+                e3Var.a = false;
+            }
+            e3Var.b(editable);
+        }
+        if (this.c) {
+            while (true) {
+                int indexOf = editable.toString().indexOf("\n");
+                if (indexOf < 0) {
+                    break;
+                } else {
+                    editable.delete(indexOf, indexOf + 1);
+                }
+            }
+        }
+        org.telegram.ui.Components.p6 p6Var = e3Var.w;
+        if (p6Var == null || i10 <= 0) {
             return;
         }
-        menu.removeItem(android.R.id.shareText);
-        menu.add(R.id.menu_groupbolditalic, R.id.menu_spoiler, 6, LocaleController.getString(R.string.Spoiler));
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(LocaleController.getString(R.string.Bold));
-        spannableStringBuilder.setSpan(new e61(AndroidUtilities.bold()), 0, spannableStringBuilder.length(), 33);
-        menu.add(R.id.menu_groupbolditalic, R.id.menu_bold, 7, spannableStringBuilder);
-        SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(LocaleController.getString(R.string.Italic));
-        spannableStringBuilder2.setSpan(new e61(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM_ITALIC)), 0, spannableStringBuilder2.length(), 33);
-        menu.add(R.id.menu_groupbolditalic, R.id.menu_italic, 8, spannableStringBuilder2);
-        SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder(LocaleController.getString(R.string.Strike));
-        n11 n11Var = new n11();
-        n11Var.a |= 8;
-        spannableStringBuilder3.setSpan(new o11(n11Var, 0), 0, spannableStringBuilder3.length(), 33);
-        menu.add(R.id.menu_groupbolditalic, R.id.menu_strike, 9, spannableStringBuilder3);
-        menu.add(R.id.menu_groupbolditalic, R.id.menu_regular, 10, LocaleController.getString(R.string.Regular));
+        p6Var.a();
+        e3Var.c();
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        canvas.save();
-        canvas.clipRect(getPaddingLeft() + getScrollX(), 0, (getWidth() + getScrollX()) - getPaddingRight(), getHeight());
-        super.onDraw(canvas);
-        canvas.restore();
-        f3 f3Var = this.a0;
-        org.telegram.ui.Components.p6 p6Var = f3Var.v;
-        org.telegram.ui.Components.i5 i5Var = f3Var.r;
-        if (i5Var != null) {
-            p6Var.u(i5Var.a(org.telegram.ui.ActionBar.h6.w0(f3Var.s <= 0 ? org.telegram.ui.ActionBar.h6.p7 : org.telegram.ui.ActionBar.h6.P5, this.V), false));
-        }
-        int min = Math.min(AndroidUtilities.dp(48.0f), getHeight());
-        boolean z10 = this.W;
-        float f7 = z10 ? 0.0f : -AndroidUtilities.dp(1.0f);
-        p6Var.o(getScrollX(), (getHeight() + f7) - min, (getWidth() + getScrollX()) - AndroidUtilities.dp((z10 ? 0 : 44) + 12), f7 + getHeight());
-        p6Var.draw(canvas);
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 
-    @Override // android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return drawable == this.a0.v || super.verifyDrawable(drawable);
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

@@ -4,7 +4,7 @@ import org.telegram.messenger.ChannelBoostsController;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class gp implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -20,13 +20,13 @@ public final /* synthetic */ class gp implements Utilities.Callback {
         switch (this.a) {
             case 0:
                 wp wpVar = this.b;
-                wpVar.f0 = (TL_stories.TL_premium_boostsStatus) obj;
-                wpVar.e0 = true;
-                wpVar.F(true);
-                wpVar.d0 = false;
+                wpVar.e0 = (TL_stories.TL_premium_boostsStatus) obj;
+                wpVar.d0 = true;
+                wpVar.L(true);
+                wpVar.c0 = false;
                 break;
             default:
-                wp.n(this.b, (ChannelBoostsController.CanApplyBoost) obj);
+                wp.m(this.b, (ChannelBoostsController.CanApplyBoost) obj);
                 break;
         }
     }

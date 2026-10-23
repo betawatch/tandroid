@@ -16,7 +16,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class x6 extends View {
     public final ImageReceiver a;
@@ -77,7 +77,7 @@ public final class x6 extends View {
     public void setAttachBot(TLRPC.TL_attachMenuBot tL_attachMenuBot) {
         TLRPC.TL_attachMenuBotIcon staticAttachMenuBotIcon = MediaDataController.getStaticAttachMenuBotIcon(tL_attachMenuBot);
         if (staticAttachMenuBotIcon != null) {
-            this.a.setImage(ImageLocation.getForDocument(staticAttachMenuBotIcon.icon), "42_42", DocumentObject.getSvgThumb(staticAttachMenuBotIcon.icon, org.telegram.ui.ActionBar.h6.q5, 1.0f), "svg", tL_attachMenuBot, 0);
+            this.a.setImage(ImageLocation.getForDocument(staticAttachMenuBotIcon.icon), "42_42", DocumentObject.getSvgThumb(staticAttachMenuBotIcon.icon, org.telegram.ui.ActionBar.k6.q5, 1.0f), "svg", tL_attachMenuBot, 0);
         }
     }
 

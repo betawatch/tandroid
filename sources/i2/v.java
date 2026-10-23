@@ -1,30 +1,81 @@
 package i2;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class v implements e2.o, e2.j {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ float b;
+import j$.time.LocalDate;
+import j$.time.ZoneOffset;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.md0;
+import org.telegram.ui.Components.xl0;
 
-    public /* synthetic */ v(float f7, int i10) {
-        this.a = i10;
-        this.b = f7;
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class v implements e2.o, d9.k, e2.j, xl0, md0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+
+    public /* synthetic */ v(int i10, int i11) {
+        this.a = i11;
+        this.b = i10;
     }
 
     @Override // e2.j
     public void accept(Object obj) {
         switch (this.a) {
-            case 1:
-                ((m4.m1) obj).a(this.b);
+            case 3:
+                ((m4.m1) obj).g0(this.b);
+                break;
+            case 4:
+                ((m4.m1) obj).M(this.b);
+                break;
+            case 5:
+                ((m4.m1) obj).j(this.b);
                 break;
             default:
-                ((m4.m1) obj).U(this.b);
+                ((m4.m1) obj).G0(this.b);
                 break;
+        }
+    }
+
+    @Override // d9.k
+    public Object apply(Object obj) {
+        return Integer.valueOf(this.b);
+    }
+
+    @Override // org.telegram.ui.Components.md0
+    public String e(int i10) {
+        int i11 = this.a;
+        int i12 = this.b;
+        switch (i11) {
+            case 8:
+                if (i10 == 0) {
+                    return LocaleController.getString(R.string.MessageScheduleToday);
+                }
+                LocalDate plusDays = LocalDate.now().plusDays(i10);
+                int year = plusDays.getYear();
+                long epochMilli = plusDays.atStartOfDay().toInstant(ZoneOffset.UTC).toEpochMilli();
+                if (year != i12) {
+                    return LocaleController.getInstance().getFormatterScheduleYear().format(epochMilli);
+                }
+                return LocaleController.getInstance().getFormatterWeek().format(epochMilli) + ", " + LocaleController.getInstance().getFormatterScheduleDay().format(epochMilli);
+            default:
+                return i10 == i12 ? "—" : String.format("%02d", Integer.valueOf(i10));
         }
     }
 
     @Override // e2.o
     public void invoke(Object obj) {
-        ((b2.d1) obj).onVolumeChanged(this.b);
+        switch (this.a) {
+            case 0:
+                ((b2.d1) obj).onRepeatModeChanged(this.b);
+                break;
+            default:
+                ((b2.d1) obj).onAudioSessionIdChanged(this.b);
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.xl0
+    public int run() {
+        return this.b;
     }
 }

@@ -1,30 +1,53 @@
 package org.telegram.ui.Components;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
+
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class n31 {
-    public static final n31 a;
-    public static final n31 b;
-    public static final n31 c;
-    public static final /* synthetic */ n31[] d;
+public final class n31 extends Drawable {
+    public final Drawable a;
+    public final Paint b = new Paint(1);
+    public final RectF c = new RectF();
 
-    static {
-        n31 n31Var = new n31("TOP", 0);
-        a = n31Var;
-        n31 n31Var2 = new n31("LEFT", 1);
-        b = n31Var2;
-        n31 n31Var3 = new n31("BOTTOM", 2);
-        c = n31Var3;
-        d = new n31[]{n31Var, n31Var2, n31Var3};
+    public n31(Context context) {
+        this.a = context.getResources().getDrawable(R.drawable.menu_topic_add).mutate();
     }
 
-    public static n31 valueOf(String str) {
-        return (n31) Enum.valueOf(n31.class, str);
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        canvas.drawRoundRect(this.c, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), this.b);
+        this.a.draw(canvas);
     }
 
-    public static n31[] values() {
-        return (n31[]) d.clone();
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return 0;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void onBoundsChange(Rect rect) {
+        super.onBoundsChange(rect);
+        this.c.set(rect);
+        int centerX = rect.centerX() - AndroidUtilities.dp(12.0f);
+        int centerY = rect.centerY() - AndroidUtilities.dp(12.0f);
+        this.a.setBounds(centerX, centerY, AndroidUtilities.dp(24.0f) + centerX, AndroidUtilities.dp(24.0f) + centerY);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.b.setAlpha(i10);
+        this.a.setAlpha(i10);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

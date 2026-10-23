@@ -1,6 +1,6 @@
 package ki;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class c3 {
     public final /* synthetic */ w3 a;
@@ -11,10 +11,10 @@ public final class c3 {
 
     public final void a() {
         w3 w3Var = this.a;
-        h2 h2Var = w3Var.H3;
+        h2 h2Var = w3Var.K3;
         if (h2Var != null) {
             h2Var.g();
         }
-        w3Var.f3.onContentChanged();
+        w3Var.i3.onContentChanged();
     }
 }

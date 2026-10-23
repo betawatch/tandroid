@@ -16,10 +16,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.mediarouter.app.w;
 import c5.f;
-import i2.e;
+import i2.o1;
 import java.util.WeakHashMap;
 import l.k;
 import l.z;
+import m.e;
 import m.i;
 import m.v3;
 import org.telegram.messenger.beta.R;
@@ -28,7 +29,7 @@ import r0.i0;
 import r0.l0;
 import v7.q7;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public class ActionBarContextView extends ViewGroup {
     public TextView E;
@@ -64,7 +65,7 @@ public class ActionBarContextView extends ViewGroup {
     public static int g(int i10, int i11, int i12, View view, boolean z10) {
         int measuredWidth = view.getMeasuredWidth();
         int measuredHeight = view.getMeasuredHeight();
-        int C = e.C(i12, measuredHeight, 2, i11);
+        int C = o1.C(i12, measuredHeight, 2, i11);
         if (z10) {
             view.layout(i10 - measuredWidth, C, i10, measuredHeight + C);
         } else {
@@ -89,7 +90,7 @@ public class ActionBarContextView extends ViewGroup {
         i iVar = this.d;
         if (iVar != null) {
             iVar.f();
-            m.e eVar = iVar.J;
+            e eVar = iVar.J;
             if (eVar != null && eVar.b()) {
                 eVar.i.dismiss();
             }
@@ -247,7 +248,7 @@ public class ActionBarContextView extends ViewGroup {
         i iVar = this.d;
         if (iVar != null) {
             iVar.f();
-            m.e eVar = this.d.J;
+            e eVar = this.d.J;
             if (eVar == null || !eVar.b()) {
                 return;
             }

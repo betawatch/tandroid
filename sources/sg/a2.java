@@ -31,14 +31,14 @@ import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.df0;
+import org.telegram.ui.if0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class a2 extends FrameLayout implements m0, NotificationCenter.NotificationCenterDelegate {
+public final class a2 extends FrameLayout implements l0, NotificationCenter.NotificationCenterDelegate {
     public static final float[] U = {0.02f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 0.02f};
     public boolean E;
     public boolean F;
@@ -51,7 +51,7 @@ public final class a2 extends FrameLayout implements m0, NotificationCenter.Noti
     public float M;
     public final w1 N;
     public final u1 O;
-    public org.telegram.ui.Cells.u0 P;
+    public org.telegram.ui.Cells.t0 P;
     public final s4.b Q;
     public final TLRPC.Document R;
     public int S;
@@ -64,7 +64,7 @@ public final class a2 extends FrameLayout implements m0, NotificationCenter.Noti
     public float f;
     public final String h;
     public final ImageReceiver n;
-    public org.telegram.ui.web.z1 r;
+    public org.telegram.ui.web.a2 r;
     public final int s;
     public final int v;
     public boolean w;
@@ -78,7 +78,7 @@ public final class a2 extends FrameLayout implements m0, NotificationCenter.Noti
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public a2(Context context, SvgHelper.SvgDrawable svgDrawable, int i10, int i11, d6 d6Var) {
+    public a2(Context context, SvgHelper.SvgDrawable svgDrawable, int i10, int i11, g6 g6Var) {
         super(context);
         boolean[] zArr;
         Paint paint = new Paint(1);
@@ -92,7 +92,7 @@ public final class a2 extends FrameLayout implements m0, NotificationCenter.Noti
         this.v = i11;
         this.a = svgDrawable;
         paint.setColor(-16777216);
-        paint2.setColor(i0.a.f(0.5f, h6.w0(h6.Mj, d6Var), -16777216));
+        paint2.setColor(i0.a.f(0.5f, k6.w0(k6.Mj, g6Var), -16777216));
         imageReceiver.setLayerNum(ConnectionsManager.DEFAULT_DATACENTER_ID);
         TLRPC.TL_help_premiumPromo premiumPromo = MediaDataController.getInstance(i10).getPremiumPromo();
         String l02 = PremiumPreviewFragment.l0(i11);
@@ -143,7 +143,7 @@ public final class a2 extends FrameLayout implements m0, NotificationCenter.Noti
                     TextPaint textPaint = new TextPaint(65);
                     textPaint.setTypeface(AndroidUtilities.getTypeface("fonts/rcondensedbold.ttf"));
                     textPaint.setTextSize(bVar.b);
-                    textPaint.setColor(i0.a.o(h6.x0(zArr, h6.Zj, false), 30));
+                    textPaint.setColor(i0.a.o(k6.x0(zArr, k6.Zj, false), 30));
                     textPaint.setTextAlign(Paint.Align.CENTER);
                     int i14 = 0;
                     while (i14 < 16) {
@@ -174,8 +174,8 @@ public final class a2 extends FrameLayout implements m0, NotificationCenter.Noti
                     w1Var.v = 0.98f;
                     w1Var.u = 0.98f;
                     w1Var.o = 4.0f;
-                    w1Var.P = d6Var;
-                    w1Var.Q = h6.Zj;
+                    w1Var.P = g6Var;
+                    w1Var.Q = k6.Zj;
                     w1Var.c();
                 } else if (i11 == 2) {
                     u1 u1Var = new u1();
@@ -186,25 +186,25 @@ public final class a2 extends FrameLayout implements m0, NotificationCenter.Noti
                             arrayList.add(new t1(u1Var));
                         }
                     }
-                    int o10 = i0.a.o(h6.x0(zArr, h6.Zj, false), 80);
+                    int o10 = i0.a.o(k6.x0(zArr, k6.Zj, false), 80);
                     if (u1Var.i != o10) {
                         u1Var.i = o10;
                         u1Var.c.setColor(o10);
                     }
                 } else if (i11 == 13) {
-                    org.telegram.ui.Cells.u0 u0Var = new org.telegram.ui.Cells.u0();
-                    this.P = u0Var;
-                    ArrayList arrayList2 = u0Var.c;
+                    org.telegram.ui.Cells.t0 t0Var = new org.telegram.ui.Cells.t0();
+                    this.P = t0Var;
+                    ArrayList arrayList2 = t0Var.c;
                     if (arrayList2.isEmpty()) {
-                        for (int i18 = 0; i18 < u0Var.d; i18++) {
-                            arrayList2.add(new l(u0Var));
+                        for (int i18 = 0; i18 < t0Var.d; i18++) {
+                            arrayList2.add(new l(t0Var));
                         }
                     }
                 } else {
                     w1 w1Var2 = new w1(SharedConfig.getDevicePerformanceClass() == 2 ? 800 : SharedConfig.getDevicePerformanceClass() == 1 ? 400 : 100);
                     this.N = w1Var2;
-                    w1Var2.P = d6Var;
-                    w1Var2.Q = h6.Zj;
+                    w1Var2.P = g6Var;
+                    w1Var2.Q = k6.Zj;
                     w1Var2.r = 4;
                     w1Var2.w = 0.98f;
                     w1Var2.v = 0.98f;
@@ -254,13 +254,13 @@ public final class a2 extends FrameLayout implements m0, NotificationCenter.Noti
                 this.f = 0.671f;
             } else {
                 if ((NotificationCenter.getGlobalInstance().getCurrentHeavyOperationFlags() & 512) != 0) {
-                    org.telegram.ui.web.z1 z1Var = this.r;
-                    if (z1Var != null) {
-                        AndroidUtilities.cancelRunOnUIThread(z1Var);
+                    org.telegram.ui.web.a2 a2Var = this.r;
+                    if (a2Var != null) {
+                        AndroidUtilities.cancelRunOnUIThread(a2Var);
                     }
-                    org.telegram.ui.web.z1 z1Var2 = new org.telegram.ui.web.z1(this, 26);
-                    this.r = z1Var2;
-                    AndroidUtilities.runOnUIThread(z1Var2, 300L);
+                    org.telegram.ui.web.a2 a2Var2 = new org.telegram.ui.web.a2(this, 26);
+                    this.r = a2Var2;
+                    AndroidUtilities.runOnUIThread(a2Var2, 300L);
                     return;
                 }
                 try {
@@ -361,25 +361,21 @@ public final class a2 extends FrameLayout implements m0, NotificationCenter.Noti
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:51:0x0075, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:51:0x0078, code lost:
     
-        if (r10.length != (r8 + 1)) goto L25;
+        if (r5.length != (r3 + 1)) goto L25;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:58:0x00db, code lost:
-    
-        if (r2[0].length == (r4 + 1)) goto L35;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:10:0x04ac  */
-    /* JADX WARN: Removed duplicated region for block: B:13:0x051f  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x054c  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x056f  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x0577  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x058a  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x05a1  */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x04c2  */
+    /* JADX WARN: Removed duplicated region for block: B:13:0x0535  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0562  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x0585  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x058d  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x05a0  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x05b7  */
     /* JADX WARN: Removed duplicated region for block: B:37:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x057f  */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x052a  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x04b9  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x0595  */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x0540  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x04cf  */
     @Override // android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -390,268 +386,272 @@ public final class a2 extends FrameLayout implements m0, NotificationCenter.Noti
         float f11;
         float f12;
         int i10;
-        s4.b bVar;
         int i11;
+        s4.b bVar;
         int i12;
-        ArrayList arrayList;
         int i13;
+        ArrayList arrayList;
         boolean z10;
         j0.a aVar;
         org.telegram.ui.Components.voip.g gVar;
         s4.b bVar2 = this.Q;
         u1 u1Var = this.O;
-        float f13 = 2.0f;
         int i14 = 0;
         w1 w1Var = this.N;
         if (w1Var != null || u1Var != null || this.P != null || bVar2 != null) {
             if (this.G < 0.5f) {
-                float f14 = 1.0f;
-                float pow = (float) Math.pow(1.0f - r9, 2.0d);
+                float f13 = 1.0f;
+                float pow = (float) Math.pow(1.0f - r10, 2.0d);
                 canvas.save();
+                f7 = 2.0f;
                 canvas.scale(pow, pow, getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f);
                 if (bVar2 != null) {
                     Rect rect = (Rect) bVar2.e;
                     int width = rect.width() / bVar2.b;
                     int height = rect.height() / bVar2.b;
                     if (width == 0 || height == 0) {
-                        f7 = 2.0f;
                         f10 = 0.9f;
                     } else {
                         long currentTimeMillis = System.currentTimeMillis();
                         ArrayList[] arrayListArr = (ArrayList[]) bVar2.f;
                         int i15 = 4;
                         if (arrayListArr != null) {
-                            f10 = 0.9f;
+                            f12 = 150.0f;
                         } else {
-                            f10 = 0.9f;
+                            f12 = 150.0f;
                         }
                         bVar2.f = new ArrayList[width + 1];
-                        int i16 = 0;
-                        while (i16 <= width) {
+                        for (int i16 = 0; i16 <= width; i16++) {
                             ((ArrayList[]) bVar2.f)[i16] = new ArrayList();
-                            l0 l0Var = new l0();
-                            l0Var.a = org.telegram.ui.Cells.c1.g(Utilities.fastRandom, height);
-                            l0Var.c = currentTimeMillis;
-                            l0Var.b = Math.abs(Utilities.fastRandom.nextInt() % 6) + 4;
-                            ((ArrayList[]) bVar2.f)[i16].add(l0Var);
-                            i16++;
-                            f13 = f13;
+                            k0 k0Var = new k0();
+                            k0Var.a = org.telegram.ui.Cells.b1.g(Utilities.fastRandom, height);
+                            k0Var.c = currentTimeMillis;
+                            k0Var.b = Math.abs(Utilities.fastRandom.nextInt() % 6) + 4;
+                            ((ArrayList[]) bVar2.f)[i16].add(k0Var);
                         }
-                        f7 = f13;
                         com.google.android.gms.internal.play_billing.h1[][] h1VarArr = (com.google.android.gms.internal.play_billing.h1[][]) bVar2.g;
+                        char c10 = 300;
                         int i17 = 16;
-                        if (h1VarArr != null) {
-                            f12 = 0.2f;
-                            if (h1VarArr.length == width + 1) {
-                            }
-                        } else {
-                            f12 = 0.2f;
-                        }
-                        bVar2.g = new com.google.android.gms.internal.play_billing.h1[width + 1][];
-                        int i18 = 0;
-                        while (i18 <= width) {
-                            ((com.google.android.gms.internal.play_billing.h1[][]) bVar2.g)[i18] = new com.google.android.gms.internal.play_billing.h1[height + 1];
-                            int i19 = 0;
-                            while (i19 <= height) {
-                                com.google.android.gms.internal.play_billing.h1[][] h1VarArr2 = (com.google.android.gms.internal.play_billing.h1[][]) bVar2.g;
-                                com.google.android.gms.internal.play_billing.h1[] h1VarArr3 = h1VarArr2[i18];
-                                com.google.android.gms.internal.play_billing.h1 h1Var = new com.google.android.gms.internal.play_billing.h1();
-                                h1Var.d = bVar2;
-                                h1VarArr3[i19] = h1Var;
-                                com.google.android.gms.internal.play_billing.h1 h1Var2 = h1VarArr2[i18][i19];
-                                h1Var2.getClass();
-                                h1Var2.a = org.telegram.ui.Cells.c1.g(Utilities.fastRandom, i17);
-                                h1Var2.b = org.telegram.ui.Cells.c1.g(Utilities.fastRandom, i17);
-                                h1Var2.c = org.telegram.ui.Cells.c1.g(Utilities.fastRandom, 300) + currentTimeMillis + 150;
-                                i19++;
-                                f14 = f14;
+                        f10 = 0.9f;
+                        if (h1VarArr == null || h1VarArr.length != width + 1 || h1VarArr[0].length != height + 1) {
+                            bVar2.g = new com.google.android.gms.internal.play_billing.h1[width + 1][];
+                            int i18 = 0;
+                            while (i18 <= width) {
+                                ((com.google.android.gms.internal.play_billing.h1[][]) bVar2.g)[i18] = new com.google.android.gms.internal.play_billing.h1[height + 1];
+                                int i19 = 0;
+                                while (i19 <= height) {
+                                    com.google.android.gms.internal.play_billing.h1[][] h1VarArr2 = (com.google.android.gms.internal.play_billing.h1[][]) bVar2.g;
+                                    com.google.android.gms.internal.play_billing.h1[] h1VarArr3 = h1VarArr2[i18];
+                                    com.google.android.gms.internal.play_billing.h1 h1Var = new com.google.android.gms.internal.play_billing.h1();
+                                    h1Var.d = bVar2;
+                                    h1VarArr3[i19] = h1Var;
+                                    com.google.android.gms.internal.play_billing.h1 h1Var2 = h1VarArr2[i18][i19];
+                                    h1Var2.getClass();
+                                    h1Var2.a = org.telegram.ui.Cells.b1.g(Utilities.fastRandom, i17);
+                                    h1Var2.b = org.telegram.ui.Cells.b1.g(Utilities.fastRandom, i17);
+                                    h1Var2.c = org.telegram.ui.Cells.b1.g(Utilities.fastRandom, 300) + currentTimeMillis + 150;
+                                    i19++;
+                                    i17 = 16;
+                                }
+                                i18++;
                                 i17 = 16;
                             }
-                            i18++;
-                            i17 = 16;
                         }
-                        float f15 = f14;
                         int i20 = 0;
                         while (i20 <= width) {
                             ArrayList arrayList2 = ((ArrayList[]) bVar2.f)[i20];
                             int i21 = i14;
                             while (i21 < arrayList2.size()) {
-                                l0 l0Var2 = (l0) arrayList2.get(i21);
-                                if (currentTimeMillis - l0Var2.c > 50) {
-                                    int i22 = l0Var2.a + 1;
-                                    l0Var2.a = i22;
-                                    l0Var2.c = currentTimeMillis;
-                                    if (i22 - l0Var2.b >= height) {
+                                k0 k0Var2 = (k0) arrayList2.get(i21);
+                                float f14 = f13;
+                                int i22 = i21;
+                                boolean z11 = true;
+                                if (currentTimeMillis - k0Var2.c > 50) {
+                                    int i23 = k0Var2.a + 1;
+                                    k0Var2.a = i23;
+                                    k0Var2.c = currentTimeMillis;
+                                    if (i23 - k0Var2.b >= height) {
                                         if (arrayList2.size() == 1) {
-                                            l0Var2.a = i14;
-                                            l0Var2.c = currentTimeMillis;
-                                            l0Var2.b = Math.abs(Utilities.fastRandom.nextInt() % 6) + i15;
+                                            k0Var2.a = i14;
+                                            k0Var2.c = currentTimeMillis;
+                                            k0Var2.b = Math.abs(Utilities.fastRandom.nextInt() % 6) + i15;
                                         } else {
-                                            arrayList2.remove(l0Var2);
-                                            i21--;
+                                            arrayList2.remove(k0Var2);
+                                            i22--;
                                         }
                                     }
-                                    if (l0Var2.a > l0Var2.b && i21 == arrayList2.size() - 1 && Math.abs(Utilities.fastRandom.nextInt(i15)) == 0) {
-                                        l0 l0Var3 = new l0();
-                                        l0Var3.a = i14;
-                                        l0Var3.c = currentTimeMillis;
-                                        l0Var3.b = Math.abs(Utilities.fastRandom.nextInt() % 6) + i15;
-                                        arrayList2.add(l0Var3);
+                                    if (k0Var2.a > k0Var2.b && i22 == arrayList2.size() - 1 && Math.abs(Utilities.fastRandom.nextInt(i15)) == 0) {
+                                        k0 k0Var3 = new k0();
+                                        k0Var3.a = i14;
+                                        k0Var3.c = currentTimeMillis;
+                                        k0Var3.b = Math.abs(Utilities.fastRandom.nextInt() % 6) + i15;
+                                        arrayList2.add(k0Var3);
                                     }
                                 }
-                                int min = Math.min(l0Var2.a, height + 1);
-                                int max = Math.max(i14, l0Var2.a - l0Var2.b);
+                                int min = Math.min(k0Var2.a, height + 1);
+                                int max = Math.max(i14, k0Var2.a - k0Var2.b);
                                 while (max < min) {
-                                    int i23 = bVar2.b;
-                                    float f16 = i23 * i20;
-                                    float f17 = i23 * max;
-                                    if (((RectF) bVar2.c).contains(f16, f17)) {
-                                        i10 = i20;
+                                    int i24 = bVar2.b;
+                                    boolean z12 = z11;
+                                    float f15 = i24 * i20;
+                                    float f16 = i24 * max;
+                                    if (((RectF) bVar2.c).contains(f15, f16)) {
+                                        i10 = height;
+                                        i11 = width;
                                         bVar = bVar2;
-                                        i11 = height;
-                                        i12 = min;
+                                        i12 = i20;
+                                        i13 = min;
                                         arrayList = arrayList2;
-                                        i13 = width;
                                     } else {
-                                        i10 = i20;
-                                        i11 = height;
-                                        float clamp = Utilities.clamp(((f15 - ((l0Var2.a - max) / (l0Var2.b - 1))) * 0.8f) + f12, f15, 0.0f);
-                                        com.google.android.gms.internal.play_billing.h1 h1Var3 = ((com.google.android.gms.internal.play_billing.h1[][]) bVar2.g)[i10][max];
+                                        i10 = height;
+                                        i11 = width;
+                                        float clamp = Utilities.clamp(((f14 - ((k0Var2.a - max) / (k0Var2.b - 1))) * 0.8f) + 0.2f, f14, 0.0f);
+                                        com.google.android.gms.internal.play_billing.h1 h1Var3 = ((com.google.android.gms.internal.play_billing.h1[][]) bVar2.g)[i20][max];
                                         s4.b bVar3 = (s4.b) h1Var3.d;
-                                        i12 = min;
-                                        arrayList = arrayList2;
-                                        long j10 = h1Var3.c - currentTimeMillis;
                                         bVar = bVar2;
+                                        i12 = i20;
+                                        long j10 = h1Var3.c - currentTimeMillis;
+                                        i13 = min;
                                         if (j10 < 150) {
-                                            float clamp2 = Utilities.clamp(1.0f - (j10 / 150.0f), 1.0f, 0.0f);
+                                            float clamp2 = Utilities.clamp(1.0f - (j10 / f12), 1.0f, 0.0f);
                                             Paint paint = (Paint) bVar3.h;
                                             Bitmap[] bitmapArr = (Bitmap[]) bVar3.d;
-                                            i13 = width;
-                                            paint.setAlpha((int) org.telegram.messenger.g0.z(1.0f, clamp2, clamp, 255.0f));
-                                            canvas.drawBitmap(bitmapArr[h1Var3.a], f16, f17, paint);
+                                            arrayList = arrayList2;
+                                            paint.setAlpha((int) org.telegram.messenger.v0.A(1.0f, clamp2, clamp, 255.0f));
+                                            canvas.drawBitmap(bitmapArr[h1Var3.a], f15, f16, paint);
                                             paint.setAlpha((int) (clamp * clamp2 * 255.0f));
-                                            canvas.drawBitmap(bitmapArr[h1Var3.b], f16, f17, paint);
+                                            canvas.drawBitmap(bitmapArr[h1Var3.b], f15, f16, paint);
                                             paint.setAlpha(255);
                                             if (clamp2 >= 1.0f) {
                                                 h1Var3.a = h1Var3.b;
-                                                h1Var3.b = org.telegram.ui.Cells.c1.g(Utilities.fastRandom, 16);
-                                                h1Var3.c = org.telegram.ui.Cells.c1.g(Utilities.fastRandom, 300) + currentTimeMillis + 150;
+                                                h1Var3.b = org.telegram.ui.Cells.b1.g(Utilities.fastRandom, 16);
+                                                h1Var3.c = org.telegram.ui.Cells.b1.g(Utilities.fastRandom, 300) + currentTimeMillis + 150;
                                             }
                                         } else {
-                                            i13 = width;
+                                            arrayList = arrayList2;
                                             ((Paint) bVar3.h).setAlpha((int) (clamp * 255.0f));
-                                            canvas.drawBitmap(((Bitmap[]) bVar3.d)[h1Var3.a], f16, f17, (Paint) bVar3.h);
+                                            canvas.drawBitmap(((Bitmap[]) bVar3.d)[h1Var3.a], f15, f16, (Paint) bVar3.h);
                                         }
                                         max++;
-                                        i20 = i10;
-                                        height = i11;
-                                        arrayList2 = arrayList;
-                                        min = i12;
+                                        z11 = z12;
+                                        height = i10;
+                                        width = i11;
                                         bVar2 = bVar;
-                                        width = i13;
-                                        f15 = 1.0f;
+                                        i20 = i12;
+                                        min = i13;
+                                        arrayList2 = arrayList;
+                                        f14 = 1.0f;
                                     }
                                     max++;
-                                    i20 = i10;
-                                    height = i11;
-                                    arrayList2 = arrayList;
-                                    min = i12;
+                                    z11 = z12;
+                                    height = i10;
+                                    width = i11;
                                     bVar2 = bVar;
-                                    width = i13;
-                                    f15 = 1.0f;
+                                    i20 = i12;
+                                    min = i13;
+                                    arrayList2 = arrayList;
+                                    f14 = 1.0f;
                                 }
-                                i21++;
+                                i21 = i22 + 1;
+                                c10 = 300;
                                 bVar2 = bVar2;
+                                i20 = i20;
                                 i14 = 0;
                                 i15 = 4;
-                                f15 = 1.0f;
+                                f13 = 1.0f;
                             }
-                            i20++;
                             bVar2 = bVar2;
                             i14 = 0;
                             i15 = 4;
-                            f15 = 1.0f;
+                            f13 = 1.0f;
+                            i20++;
+                            height = height;
                         }
                     }
                 } else {
-                    f7 = 2.0f;
                     f10 = 0.9f;
                     if (w1Var != null) {
                         w1Var.d(canvas);
                     } else if (u1Var != null) {
+                        Paint paint2 = u1Var.c;
                         if (this.H != null) {
                             float clamp3 = Utilities.clamp(r3.getCurrentPosition() / this.H.getDuration(), 1.0f, 0.0f);
-                            float f18 = 1.0f / 9;
-                            int i24 = (int) (clamp3 / f18);
-                            int i25 = i24 + 1;
-                            float c10 = k3.c(i24, f18, clamp3, f18);
+                            float f17 = 1.0f / 9;
+                            int i25 = (int) (clamp3 / f17);
+                            int i26 = i25 + 1;
+                            float c11 = k3.c(i25, f17, clamp3, f17);
                             float[] fArr = U;
-                            f11 = i25 < 10 ? (fArr[i25] * c10) + ((1.0f - c10) * fArr[i24]) : fArr[i24];
+                            f11 = i26 < 10 ? (fArr[i26] * c11) + ((1.0f - c11) * fArr[i25]) : fArr[i25];
                         } else {
                             f11 = 0.2f;
                         }
                         u1Var.f = (((1.0f - Utilities.clamp(this.G / 0.1f, 1.0f, 0.0f)) * 0.9f) + 0.1f) * 150.0f * f11;
                         ArrayList arrayList3 = u1Var.e;
+                        int o10 = i0.a.o(k6.x0(null, k6.Zj, false), 80);
+                        if (u1Var.i != o10) {
+                            u1Var.i = o10;
+                            paint2.setColor(o10);
+                        }
                         long currentTimeMillis2 = System.currentTimeMillis();
-                        for (int i26 = 0; i26 < arrayList3.size(); i26++) {
-                            t1 t1Var = (t1) arrayList3.get(i26);
+                        for (int i27 = 0; i27 < arrayList3.size(); i27++) {
+                            t1 t1Var = (t1) arrayList3.get(i27);
                             u1 u1Var2 = t1Var.g;
                             float[] fArr2 = u1Var2.d;
-                            int i27 = i26 * 4;
-                            float f19 = t1Var.a;
-                            fArr2[i27] = f19;
-                            fArr2[i27 + 1] = t1Var.b;
-                            fArr2[i27 + 2] = (AndroidUtilities.dp(30.0f) * t1Var.c) + f19;
-                            fArr2[i27 + 3] = (AndroidUtilities.dp(30.0f) * t1Var.d) + t1Var.b;
+                            int i28 = i27 * 4;
+                            float f18 = t1Var.a;
+                            fArr2[i28] = f18;
+                            fArr2[i28 + 1] = t1Var.b;
+                            fArr2[i28 + 2] = (AndroidUtilities.dp(30.0f) * t1Var.c) + f18;
+                            fArr2[i28 + 3] = (AndroidUtilities.dp(30.0f) * t1Var.d) + t1Var.b;
                             float dp = AndroidUtilities.dp(4.0f);
-                            float f20 = u1Var2.j;
-                            float f21 = (f20 / 660.0f) * dp * u1Var2.f;
-                            float f22 = (t1Var.c * f21) + t1Var.a;
-                            t1Var.a = f22;
-                            float f23 = (t1Var.d * f21) + t1Var.b;
-                            t1Var.b = f23;
-                            float f24 = t1Var.f;
-                            if (f24 != 1.0f) {
-                                float f25 = (f20 / 200.0f) + f24;
-                                t1Var.f = f25;
-                                if (f25 > 1.0f) {
+                            float f19 = u1Var2.j;
+                            float f20 = (f19 / 660.0f) * dp * u1Var2.f;
+                            float f21 = (t1Var.c * f20) + t1Var.a;
+                            t1Var.a = f21;
+                            float f22 = (t1Var.d * f20) + t1Var.b;
+                            t1Var.b = f22;
+                            float f23 = t1Var.f;
+                            if (f23 != 1.0f) {
+                                float f24 = (f19 / 200.0f) + f23;
+                                t1Var.f = f24;
+                                if (f24 > 1.0f) {
                                     t1Var.f = 1.0f;
                                 }
                             }
-                            if (currentTimeMillis2 > t1Var.e || !u1Var.b.contains(f22, f23)) {
+                            if (currentTimeMillis2 > t1Var.e || !u1Var.b.contains(f21, f22)) {
                                 t1Var.a(currentTimeMillis2, false);
                             }
                         }
-                        canvas.drawLines(u1Var.d, u1Var.c);
+                        canvas.drawLines(u1Var.d, paint2);
                     } else {
-                        org.telegram.ui.Cells.u0 u0Var = this.P;
-                        if (u0Var != null) {
-                            ArrayList arrayList4 = u0Var.c;
+                        org.telegram.ui.Cells.t0 t0Var = this.P;
+                        if (t0Var != null) {
+                            ArrayList arrayList4 = t0Var.c;
                             System.currentTimeMillis();
-                            for (int i28 = 0; i28 < arrayList4.size(); i28++) {
-                                l lVar = (l) arrayList4.get(i28);
-                                org.telegram.ui.Cells.u0 u0Var2 = lVar.m;
-                                Paint paint2 = (Paint) u0Var2.i;
-                                float f26 = lVar.l;
-                                if (f26 != 1.0f) {
-                                    float f27 = (u0Var2.e / lVar.j) + f26;
-                                    lVar.l = f27;
-                                    if (f27 > 1.0f) {
+                            for (int i29 = 0; i29 < arrayList4.size(); i29++) {
+                                l lVar = (l) arrayList4.get(i29);
+                                org.telegram.ui.Cells.t0 t0Var2 = lVar.m;
+                                Paint paint3 = (Paint) t0Var2.i;
+                                float f25 = lVar.l;
+                                if (f25 != 1.0f) {
+                                    float f26 = (t0Var2.e / lVar.j) + f25;
+                                    lVar.l = f26;
+                                    if (f26 > 1.0f) {
                                         lVar.l = 1.0f;
                                     }
                                 }
                                 if (lVar.f != null) {
                                     canvas.save();
                                     float pow2 = 1.0f - (((float) Math.pow(lVar.l - 0.5f, 2.0d)) * 4.0f);
-                                    float A = k3.A(pow2, 0.4f, 0.7f, lVar.k / u0Var2.b);
+                                    float A = k3.A(pow2, 0.4f, 0.7f, lVar.k / t0Var2.b);
                                     canvas.translate(lVar.b - (lVar.h / 2.0f), lVar.c - (lVar.i / 2.0f));
                                     canvas.scale(A, A, lVar.h / 2.0f, lVar.i / 2.0f);
-                                    paint2.setAlpha((int) (lVar.d * pow2));
-                                    canvas.drawBitmap(lVar.f, 0.0f, 0.0f, paint2);
+                                    paint3.setAlpha((int) (lVar.d * pow2));
+                                    canvas.drawBitmap(lVar.f, 0.0f, 0.0f, paint3);
                                     canvas.restore();
                                 }
                                 if (lVar.l >= 1.0f) {
-                                    lVar.a(i28, false);
+                                    lVar.a(i29, false);
                                 }
                             }
                         }
@@ -661,22 +661,22 @@ public final class a2 extends FrameLayout implements m0, NotificationCenter.Noti
                 invalidate();
                 float min2 = (int) (Math.min(getMeasuredWidth(), getMeasuredHeight()) * f10);
                 float measuredWidth = (getMeasuredWidth() - (0.671f * min2)) / f7;
-                float f28 = 0.0671f * min2;
-                this.M = f28;
+                float f27 = 0.0671f * min2;
+                this.M = f27;
                 z10 = this.d;
                 if (z10) {
                     AndroidUtilities.rectTmp.set(measuredWidth, getMeasuredHeight() - min2, getMeasuredWidth() - measuredWidth, getMeasuredHeight() + this.M);
                 } else {
-                    AndroidUtilities.rectTmp.set(measuredWidth, -f28, getMeasuredWidth() - measuredWidth, min2);
+                    AndroidUtilities.rectTmp.set(measuredWidth, -f27, getMeasuredWidth() - measuredWidth, min2);
                 }
                 RectF rectF = AndroidUtilities.rectTmp;
                 rectF.inset(-AndroidUtilities.dp(3.0f), -AndroidUtilities.dp(3.0f));
                 rectF.inset(-AndroidUtilities.dp(3.0f), -AndroidUtilities.dp(3.0f));
                 canvas.drawRoundRect(rectF, this.M + AndroidUtilities.dp(3.0f), this.M + AndroidUtilities.dp(3.0f), this.c);
                 rectF.inset(AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f));
-                float f29 = this.M;
-                Paint paint3 = this.b;
-                canvas.drawRoundRect(rectF, f29, f29, paint3);
+                float f28 = this.M;
+                Paint paint4 = this.b;
+                canvas.drawRoundRect(rectF, f28, f28, paint4);
                 if (z10) {
                     rectF.set(measuredWidth, getMeasuredHeight() - min2, getMeasuredWidth() - measuredWidth, getMeasuredHeight());
                 } else {
@@ -686,12 +686,12 @@ public final class a2 extends FrameLayout implements m0, NotificationCenter.Noti
                 this.M = dp2;
                 aVar = this.K;
                 if (aVar != null) {
-                    Paint paint4 = aVar.d;
+                    Paint paint5 = aVar.d;
                     if (aVar.g != dp2) {
                         if (dp2 > 0.05f) {
-                            paint4.setShader(aVar.e);
+                            paint5.setShader(aVar.e);
                         } else {
-                            paint4.setShader(null);
+                            paint5.setShader(null);
                         }
                         aVar.g = dp2;
                         aVar.invalidateSelf();
@@ -703,11 +703,11 @@ public final class a2 extends FrameLayout implements m0, NotificationCenter.Noti
                 }
                 ImageReceiver imageReceiver = this.n;
                 if (z10) {
-                    int i29 = (int) this.M;
-                    imageReceiver.setRoundRadius(i29, i29, 0, 0);
-                } else {
                     int i30 = (int) this.M;
-                    imageReceiver.setRoundRadius(0, 0, i30, i30);
+                    imageReceiver.setRoundRadius(i30, i30, 0, 0);
+                } else {
+                    int i31 = (int) this.M;
+                    imageReceiver.setRoundRadius(0, 0, i31, i31);
                 }
                 if (!this.F) {
                     imageReceiver.setImageCoords(rectF.left, rectF.top, rectF.width(), rectF.height());
@@ -715,7 +715,7 @@ public final class a2 extends FrameLayout implements m0, NotificationCenter.Noti
                 }
                 super.dispatchDraw(canvas);
                 if (z10) {
-                    canvas.drawCircle(imageReceiver.getCenterX(), imageReceiver.getImageY() + AndroidUtilities.dp(12.0f), AndroidUtilities.dp(6.0f), paint3);
+                    canvas.drawCircle(imageReceiver.getCenterX(), imageReceiver.getImageY() + AndroidUtilities.dp(12.0f), AndroidUtilities.dp(6.0f), paint4);
                     return;
                 }
                 return;
@@ -725,8 +725,8 @@ public final class a2 extends FrameLayout implements m0, NotificationCenter.Noti
         f10 = 0.9f;
         float min22 = (int) (Math.min(getMeasuredWidth(), getMeasuredHeight()) * f10);
         float measuredWidth2 = (getMeasuredWidth() - (0.671f * min22)) / f7;
-        float f282 = 0.0671f * min22;
-        this.M = f282;
+        float f272 = 0.0671f * min22;
+        this.M = f272;
         z10 = this.d;
         if (z10) {
         }
@@ -735,9 +735,9 @@ public final class a2 extends FrameLayout implements m0, NotificationCenter.Noti
         rectF2.inset(-AndroidUtilities.dp(3.0f), -AndroidUtilities.dp(3.0f));
         canvas.drawRoundRect(rectF2, this.M + AndroidUtilities.dp(3.0f), this.M + AndroidUtilities.dp(3.0f), this.c);
         rectF2.inset(AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f));
-        float f292 = this.M;
-        Paint paint32 = this.b;
-        canvas.drawRoundRect(rectF2, f292, f292, paint32);
+        float f282 = this.M;
+        Paint paint42 = this.b;
+        canvas.drawRoundRect(rectF2, f282, f282, paint42);
         if (z10) {
         }
         float dp22 = this.M - AndroidUtilities.dp(3.0f);
@@ -775,9 +775,9 @@ public final class a2 extends FrameLayout implements m0, NotificationCenter.Noti
         this.x = false;
         c();
         NotificationCenter.getInstance(this.s).removeObserver(this, NotificationCenter.fileLoaded);
-        org.telegram.ui.Cells.u0 u0Var = this.P;
-        if (u0Var != null) {
-            HashMap hashMap = (HashMap) u0Var.f;
+        org.telegram.ui.Cells.t0 t0Var = this.P;
+        if (t0Var != null) {
+            HashMap hashMap = (HashMap) t0Var.f;
             Iterator it = hashMap.values().iterator();
             while (it.hasNext()) {
                 ((Bitmap) it.next()).recycle();
@@ -788,7 +788,7 @@ public final class a2 extends FrameLayout implements m0, NotificationCenter.Noti
         ei.c0 c0Var = this.H;
         if (c0Var != null) {
             this.T = c0Var.getCurrentPosition();
-            this.H.release(new df0(21));
+            this.H.release(new if0(21));
             this.H = null;
         }
     }
@@ -844,9 +844,9 @@ public final class a2 extends FrameLayout implements m0, NotificationCenter.Noti
                     ((t1) arrayList.get(i15)).a(currentTimeMillis, true);
                 }
             }
-            org.telegram.ui.Cells.u0 u0Var = this.P;
-            if (u0Var != null) {
-                ((RectF) u0Var.g).set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+            org.telegram.ui.Cells.t0 t0Var = this.P;
+            if (t0Var != null) {
+                ((RectF) t0Var.g).set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
                 ((RectF) this.P.h).set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
                 ((RectF) this.P.g).inset(AndroidUtilities.dp(0.0f), getMeasuredHeight() * 0.1f);
                 ArrayList arrayList2 = this.P.c;
@@ -883,7 +883,7 @@ public final class a2 extends FrameLayout implements m0, NotificationCenter.Noti
         super.onMeasure(i10, i11);
     }
 
-    @Override // sg.m0
+    @Override // sg.l0
     public void setOffset(float f7) {
         boolean z10;
         boolean z11 = this.d;
@@ -931,7 +931,7 @@ public final class a2 extends FrameLayout implements m0, NotificationCenter.Noti
             ei.c0 c0Var = this.H;
             if (c0Var != null) {
                 this.T = c0Var.getCurrentPosition();
-                this.H.release(new df0(21));
+                this.H.release(new if0(21));
                 this.H = null;
             }
             imageReceiver.stopAnimation();

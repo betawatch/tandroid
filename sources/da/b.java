@@ -7,7 +7,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.text.TextUtils;
 import b2.p1;
-import ci.v7;
+import ci.u7;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import e9.k0;
 import e9.n0;
@@ -29,13 +29,13 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.ActionBar.a2;
-import org.telegram.ui.ActionBar.b2;
-import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.ActionBar.c2;
+import org.telegram.ui.ActionBar.o2;
+import org.telegram.ui.ActionBar.z1;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.ty0;
+import org.telegram.ui.Components.wy0;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.qn;
+import org.telegram.ui.sn;
 import x2.d;
 import x2.e;
 import x2.i;
@@ -43,9 +43,9 @@ import x2.k;
 import x2.n;
 import x9.w;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class b implements g, MessagesStorage.LongCallback, a2, MessagesController.ErrorDelegate, k {
+public final /* synthetic */ class b implements g, MessagesStorage.LongCallback, z1, MessagesController.ErrorDelegate, k {
     public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ Object c;
@@ -87,7 +87,7 @@ public final /* synthetic */ class b implements g, MessagesStorage.LongCallback,
         if (this.b) {
             boolean z10 = true;
             CountDownLatch countDownLatch = new CountDownLatch(1);
-            new Thread(new v7(11, cVar, countDownLatch)).start();
+            new Thread(new u7(11, cVar, countDownLatch)).start();
             TimeUnit timeUnit = TimeUnit.SECONDS;
             ExecutorService executorService = w.a;
             boolean z11 = false;
@@ -122,8 +122,8 @@ public final /* synthetic */ class b implements g, MessagesStorage.LongCallback,
         taskCompletionSource.trySetResult(bVar);
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public void g(b2 b2Var, int i10) {
+    @Override // org.telegram.ui.ActionBar.z1
+    public void g(c2 c2Var, int i10) {
         switch (this.a) {
             case 2:
                 boolean z10 = this.b;
@@ -153,14 +153,14 @@ public final /* synthetic */ class b implements g, MessagesStorage.LongCallback,
                 }
                 break;
             case 3:
-                qn qnVar = (qn) this.c;
+                sn snVar = (sn) this.c;
                 MessagesController messagesController = (MessagesController) this.d;
                 CharSequence charSequence = (CharSequence) this.e;
                 boolean z11 = this.b;
                 messagesController.secretWebpagePreview = 1;
-                MessagesController.getGlobalMainSettings().edit().putInt("secretWebpage2", qnVar.getMessagesController().secretWebpagePreview).commit();
-                qnVar.H5 = null;
-                qnVar.cb(charSequence, z11);
+                MessagesController.getGlobalMainSettings().edit().putInt("secretWebpage2", snVar.getMessagesController().secretWebpagePreview).commit();
+                snVar.T5 = null;
+                snVar.cb(charSequence, z11);
                 break;
             case 4:
                 boolean z12 = this.b;
@@ -183,22 +183,22 @@ public final /* synthetic */ class b implements g, MessagesStorage.LongCallback,
                     }
                 }
             default:
-                ty0 ty0Var = (ty0) this.c;
+                wy0 wy0Var = (wy0) this.c;
                 Utilities.Callback2 callback2 = (Utilities.Callback2) this.d;
                 Context context2 = (Context) this.e;
                 boolean z13 = this.b;
-                String trim2 = ty0Var.getText().toString().trim();
+                String trim2 = wy0Var.getText().toString().trim();
                 if (!TextUtils.isEmpty(trim2) && !TextUtils.isEmpty(AndroidUtilities.translitSafe(trim2.toString()))) {
-                    AndroidUtilities.hideKeyboard(ty0Var);
-                    b2 b2Var2 = new b2(context2, 3, z13 ? null : new ci.b());
-                    b2Var2.r(250L);
-                    callback2.run(trim2, new a4(b2Var2, b2Var, ty0Var, 9));
+                    AndroidUtilities.hideKeyboard(wy0Var);
+                    c2 c2Var2 = new c2(context2, 3, z13 ? null : new ci.b());
+                    c2Var2.r(250L);
+                    callback2.run(trim2, new a4(c2Var2, c2Var, wy0Var, 9));
                     break;
                 } else {
-                    ty0Var.setErrorText(".");
-                    AndroidUtilities.shakeViewSpring(ty0Var, -6.0f);
+                    wy0Var.setErrorText(".");
+                    AndroidUtilities.shakeViewSpring(wy0Var, -6.0f);
                     BotWebViewVibrationEffect.APP_ERROR.vibrate();
-                    AndroidUtilities.showKeyboard(ty0Var);
+                    AndroidUtilities.showKeyboard(wy0Var);
                     break;
                 }
                 break;
@@ -207,7 +207,7 @@ public final /* synthetic */ class b implements g, MessagesStorage.LongCallback,
 
     @Override // org.telegram.messenger.MessagesController.ErrorDelegate
     public boolean run(TLRPC.TL_error tL_error) {
-        return ProfileActivity.j0((ProfileActivity) this.c, (boolean[]) this.d, this.b, (n2) this.e, tL_error);
+        return ProfileActivity.j0((ProfileActivity) this.c, (boolean[]) this.d, this.b, (o2) this.e, tL_error);
     }
 
     public /* synthetic */ b(Object obj, Object obj2, boolean z10, Object obj3, int i10) {
@@ -221,15 +221,15 @@ public final /* synthetic */ class b implements g, MessagesStorage.LongCallback,
     @Override // org.telegram.messenger.MessagesStorage.LongCallback
     public void run(long j10) {
         f fVar = (f) this.c;
-        b2 b2Var = (b2) this.d;
+        c2 c2Var = (c2) this.d;
         String str = (String) this.e;
         fVar.getClass();
-        b2Var.dismiss();
+        c2Var.dismiss();
         if (j10 == 0) {
             return;
         }
-        fVar.a = -j10;
-        fVar.b = fVar.getMessagesController().getChat(Long.valueOf(j10));
+        fVar.b = -j10;
+        fVar.c = fVar.getMessagesController().getChat(Long.valueOf(j10));
         fVar.V(str, this.b);
     }
 

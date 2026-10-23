@@ -5,7 +5,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class tk implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -24,16 +24,16 @@ public final /* synthetic */ class tk implements Utilities.Callback2 {
                 String str = (String) obj2;
                 al alVar = this.b;
                 TLRPC.User user = alVar.r;
-                if (!alVar.H) {
-                    alVar.F = false;
+                if (!alVar.K) {
+                    alVar.I = false;
                     if (TextUtils.equals(str, "WALLET_USER_UNAVAILABLE")) {
-                        alVar.G = true;
+                        alVar.J = true;
                     }
                     if (walletuseraddress != null && walletuseraddress.user_id == user.id) {
-                        alVar.y = walletuseraddress.address;
-                        alVar.E = walletuseraddress.public_key;
+                        alVar.G = walletuseraddress.address;
+                        alVar.H = walletuseraddress.public_key;
                     }
-                    alVar.v.a(alVar.y, user);
+                    alVar.v.a(alVar.G, user);
                     alVar.g0();
                     alVar.Y();
                     break;
@@ -42,8 +42,8 @@ public final /* synthetic */ class tk implements Utilities.Callback2 {
             default:
                 TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) obj;
                 al alVar2 = this.b;
-                if (!alVar2.H && wallettransaction != null) {
-                    alVar2.d0 = wallettransaction.fee;
+                if (!alVar2.K && wallettransaction != null) {
+                    alVar2.g0 = wallettransaction.fee;
                     alVar2.h0();
                     break;
                 }

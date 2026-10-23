@@ -1,8 +1,8 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class uw0 implements org.telegram.ui.ActionBar.a2 {
+public final /* synthetic */ class uw0 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ PrivacyControlActivity b;
 
@@ -11,17 +11,26 @@ public final /* synthetic */ class uw0 implements org.telegram.ui.ActionBar.a2 {
         this.b = privacyControlActivity;
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public final void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.z0();
+                PrivacyControlActivity privacyControlActivity = this.b;
+                privacyControlActivity.getClass();
+                privacyControlActivity.presentFragment(new PremiumPreviewFragment(0, "noncontacts"));
                 break;
             case 1:
-                this.b.finishFragment();
+                PrivacyControlActivity.U(this.b);
+                break;
+            case 2:
+                PrivacyControlActivity privacyControlActivity2 = this.b;
+                privacyControlActivity2.getClass();
+                privacyControlActivity2.presentFragment(new PremiumPreviewFragment(0, "noncontacts"));
                 break;
             default:
-                this.b.finishFragment();
+                PrivacyControlActivity privacyControlActivity3 = this.b;
+                privacyControlActivity3.getClass();
+                privacyControlActivity3.presentFragment(new PremiumPreviewFragment(0, "settings"));
                 break;
         }
     }

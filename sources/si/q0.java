@@ -1,14 +1,18 @@
 package si;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+import java.io.File;
+
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public enum q0 {
-    b(480),
-    c(360);
+public final class q0 {
+    public final long a;
+    public final File b;
+    public volatile long c;
+    public volatile boolean d;
+    public volatile boolean e;
 
-    public final int a;
-
-    q0(int i10) {
-        this.a = i10;
+    public q0(long j10, File file) {
+        this.a = j10;
+        this.b = file;
     }
 }

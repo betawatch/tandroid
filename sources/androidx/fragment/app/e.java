@@ -1,11 +1,11 @@
 package androidx.fragment.app;
 
-import ai.pa;
+import ai.qa;
 import android.util.Log;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class e implements Animation.AnimationListener {
     public final /* synthetic */ ViewGroup a;
@@ -20,7 +20,7 @@ public final class e implements Animation.AnimationListener {
     public final void onAnimationEnd(Animation animation) {
         kotlin.jvm.internal.i.e(animation, "animation");
         ViewGroup viewGroup = this.a;
-        viewGroup.post(new pa(2, viewGroup, this.b));
+        viewGroup.post(new qa(2, viewGroup, this.b));
         if (j0.K(2)) {
             Log.v("FragmentManager", "Animation from operation " + ((Object) null) + " has ended.");
         }

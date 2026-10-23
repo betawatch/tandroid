@@ -13,72 +13,74 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.yq;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class n1 extends View {
-    public boolean a;
-    public final int b;
-    public org.telegram.ui.Components.r5 c;
-    public final o1 d;
-    public ImageReceiver e;
-    public long f;
-    public final ImageReceiver.BackgroundThreadDrawHolder[] h;
-    public ImageReceiver n;
-    public final yc r;
-    public boolean s;
+    public yq a;
+    public boolean b;
+    public final int c;
+    public org.telegram.ui.Components.r5 d;
+    public final o1 e;
+    public ImageReceiver f;
+    public long h;
+    public final ImageReceiver.BackgroundThreadDrawHolder[] n;
+    public ImageReceiver r;
+    public final yc s;
+    public boolean v;
 
     public n1(Context context, o1 o1Var) {
         super(context);
-        this.b = UserConfig.selectedAccount;
-        this.h = new ImageReceiver.BackgroundThreadDrawHolder[2];
-        this.r = new yc(this);
+        this.c = UserConfig.selectedAccount;
+        this.n = new ImageReceiver.BackgroundThreadDrawHolder[2];
+        this.s = new yc(this);
         setPadding(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f));
-        this.d = o1Var;
+        this.e = o1Var;
     }
 
     public final void a(TLRPC.Document document, boolean z10) {
-        if (this.f == (document == null ? 0L : document.id)) {
+        if (this.h == (document == null ? 0L : document.id)) {
             return;
         }
-        org.telegram.ui.Components.r5 r5Var = this.c;
+        org.telegram.ui.Components.r5 r5Var = this.d;
         if (r5Var != null) {
             r5Var.o(this);
         }
         if (document == null) {
-            this.a = false;
-            this.f = 0L;
-            this.c = null;
+            this.b = false;
+            this.h = 0L;
+            this.d = null;
             return;
         }
-        this.a = true;
-        this.f = document.id;
-        int i10 = n2.G;
-        org.telegram.ui.Components.r5 m10 = org.telegram.ui.Components.r5.m(this.b, LiteMode.isEnabled(z10 ? 1 : LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD) ? 3 : 13, document);
-        this.c = m10;
-        if (this.s) {
+        this.b = true;
+        this.h = document.id;
+        int i10 = n2.H;
+        org.telegram.ui.Components.r5 m10 = org.telegram.ui.Components.r5.m(this.c, LiteMode.isEnabled(z10 ? 1 : LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD) ? 3 : 13, document);
+        this.d = m10;
+        if (this.v) {
             m10.a(this);
         }
     }
 
     public float getScale() {
-        return this.r.a(0.15f);
+        return this.s.a(0.15f);
     }
 
     @Override // android.view.View
     public final void invalidate() {
-        this.d.invalidate();
+        this.e.invalidate();
     }
 
     @Override // android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        this.s = true;
-        org.telegram.ui.Components.r5 r5Var = this.c;
+        this.v = true;
+        org.telegram.ui.Components.r5 r5Var = this.d;
         if (r5Var != null) {
             r5Var.a(this);
         }
-        ImageReceiver imageReceiver = this.e;
+        ImageReceiver imageReceiver = this.f;
         if (imageReceiver != null) {
             imageReceiver.onAttachedToWindow();
         }
@@ -87,12 +89,12 @@ public final class n1 extends View {
     @Override // android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        this.s = false;
-        org.telegram.ui.Components.r5 r5Var = this.c;
+        this.v = false;
+        org.telegram.ui.Components.r5 r5Var = this.d;
         if (r5Var != null) {
             r5Var.o(this);
         }
-        ImageReceiver imageReceiver = this.e;
+        ImageReceiver imageReceiver = this.f;
         if (imageReceiver != null) {
             imageReceiver.onDetachedFromWindow();
         }
@@ -100,16 +102,16 @@ public final class n1 extends View {
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        ImageReceiver imageReceiver = this.e;
+        ImageReceiver imageReceiver = this.f;
         if (imageReceiver != null) {
             imageReceiver.setImageCoords(getPaddingLeft(), getPaddingTop(), getWidth() - getPaddingRight(), getHeight() - getPaddingBottom());
-            this.e.draw(canvas);
+            this.f.draw(canvas);
             return;
         }
-        org.telegram.ui.Components.r5 r5Var = this.c;
+        org.telegram.ui.Components.r5 r5Var = this.d;
         if (r5Var != null) {
             r5Var.setBounds(getPaddingLeft(), getPaddingTop(), getWidth() - getPaddingRight(), getHeight() - getPaddingBottom());
-            this.c.draw(canvas);
+            this.d.draw(canvas);
         }
     }
 
@@ -120,63 +122,63 @@ public final class n1 extends View {
     }
 
     public void setDrawable(Drawable drawable) {
-        org.telegram.ui.Components.r5 r5Var = this.c;
+        org.telegram.ui.Components.r5 r5Var = this.d;
         if (r5Var != null) {
             r5Var.o(this);
         }
-        this.c = null;
-        this.f = 0L;
-        this.a = false;
-        if (this.e == null) {
+        this.d = null;
+        this.h = 0L;
+        this.b = false;
+        if (this.f == null) {
             ImageReceiver imageReceiver = new ImageReceiver();
-            this.e = imageReceiver;
+            this.f = imageReceiver;
             imageReceiver.setLayerNum(7);
-            this.e.setAspectFit(true);
-            if (this.s) {
-                this.e.onAttachedToWindow();
+            this.f.setAspectFit(true);
+            if (this.v) {
+                this.f.onAttachedToWindow();
             }
         }
-        this.e.setImageBitmap(drawable);
+        this.f.setImageBitmap(drawable);
     }
 
     @Override // android.view.View
     public void setPressed(boolean z10) {
         super.setPressed(z10);
-        this.r.c(z10);
+        this.s.c(z10);
     }
 
     public void setSticker(TLRPC.Document document) {
-        this.a = false;
+        this.b = false;
         if (document == null) {
-            ImageReceiver imageReceiver = this.e;
+            ImageReceiver imageReceiver = this.f;
             if (imageReceiver != null) {
-                this.f = 0L;
+                this.h = 0L;
                 imageReceiver.clearImage();
                 return;
             }
             return;
         }
-        long j10 = this.f;
+        long j10 = this.h;
         long j11 = document.id;
         if (j10 == j11) {
             return;
         }
-        this.f = j11;
-        if (this.e == null) {
+        this.h = j11;
+        if (this.f == null) {
             ImageReceiver imageReceiver2 = new ImageReceiver();
-            this.e = imageReceiver2;
+            this.f = imageReceiver2;
             imageReceiver2.setLayerNum(7);
-            this.e.setAspectFit(true);
-            if (this.s) {
-                this.e.onAttachedToWindow();
+            this.f.setAspectFit(true);
+            if (this.v) {
+                this.f.onAttachedToWindow();
             }
         }
-        this.e.setParentView(!this.a ? this : this.d);
+        this.f.setParentView(!this.b ? this : this.e);
         TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 90);
         String str = "video/webm".equals(document.mime_type) ? "80_80_g" : "80_80";
         if (!LiteMode.isEnabled(1)) {
             str = str.concat("_firstframe");
         }
-        this.e.setImage(ImageLocation.getForDocument(document), str, ImageLocation.getForDocument(closestPhotoSizeWithSize, document), "80_80", null, 0L, null, document, 0);
+        this.f.setImage(ImageLocation.getForDocument(document), str, ImageLocation.getForDocument(closestPhotoSizeWithSize, document), "80_80", null, 0L, null, document, 0);
     }
 }

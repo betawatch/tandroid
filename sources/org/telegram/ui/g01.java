@@ -1,285 +1,465 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.util.Base64;
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.drawable.GradientDrawable;
+import android.os.SystemClock;
 import android.view.View;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.concurrent.atomic.AtomicBoolean;
-import org.json.JSONObject;
-import org.telegram.messenger.AccountInstance;
+import java.util.Arrays;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BillingController;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Wallet.WalletEngine2;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class g01 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+public final class g01 extends View implements org.telegram.ui.Components.ji0 {
+    public boolean E;
+    public float F;
+    public float G;
+    public float[] H;
+    public long I;
+    public float J;
+    public int K;
+    public float L;
+    public int M;
+    public float N;
+    public int O;
+    public final /* synthetic */ ProfileActivity P;
+    public final int a;
+    public final Rect b;
+    public final Rect c;
+    public final RectF d;
+    public final GradientDrawable e;
+    public final GradientDrawable f;
+    public final ValueAnimator h;
+    public final float[] n;
+    public final Paint r;
+    public final Paint s;
+    public final Paint v;
+    public final GradientDrawable[] w;
+    public final boolean[] x;
+    public final float[] y;
 
-    public /* synthetic */ g01(Object obj, Object obj2, Object obj3, Object obj4, Object obj5, int i10) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0092  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public g01(ProfileActivity profileActivity, Context context) {
+        super(context);
+        org.telegram.ui.ActionBar.k kVar;
+        int i10;
+        int i11;
+        boolean z10;
+        this.P = profileActivity;
+        kVar = ((org.telegram.ui.ActionBar.o2) profileActivity).actionBar;
+        if (kVar.getOccupyStatusBar()) {
+            z10 = ((org.telegram.ui.ActionBar.o2) profileActivity).inBubbleMode;
+            if (!z10) {
+                i10 = AndroidUtilities.statusBarHeight;
+                this.a = i10;
+                this.b = new Rect();
+                this.c = new Rect();
+                this.d = new RectF();
+                this.n = new float[]{0.0f, 1.0f};
+                this.w = new GradientDrawable[2];
+                this.x = new boolean[2];
+                this.y = new float[2];
+                this.G = 0.0f;
+                this.H = null;
+                this.K = -1;
+                this.O = 1;
+                setVisibility(8);
+                Paint paint = new Paint(1);
+                this.s = paint;
+                paint.setColor(1442840575);
+                Paint paint2 = new Paint(1);
+                this.v = paint2;
+                paint2.setColor(-1);
+                GradientDrawable gradientDrawable = new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, new int[]{1107296256, 0});
+                this.e = gradientDrawable;
+                gradientDrawable.setShape(0);
+                GradientDrawable gradientDrawable2 = new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, new int[]{1107296256, 0});
+                this.f = gradientDrawable2;
+                gradientDrawable2.setShape(0);
+                i11 = 0;
+                while (i11 < 2) {
+                    this.w[i11] = new GradientDrawable(i11 == 0 ? GradientDrawable.Orientation.LEFT_RIGHT : GradientDrawable.Orientation.RIGHT_LEFT, new int[]{838860800, 0});
+                    this.w[i11].setShape(0);
+                    i11++;
+                }
+                Paint paint3 = new Paint(1);
+                this.r = paint3;
+                paint3.setColor(-16777216);
+                paint3.setAlpha(66);
+                ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+                this.h = ofFloat;
+                ofFloat.setDuration(250L);
+                ofFloat.setInterpolator(org.telegram.ui.Components.bs.j);
+                ofFloat.addUpdateListener(new d3(this, 28));
+                ofFloat.addListener(new v70(this, 21));
+            }
+        }
+        i10 = 0;
         this.a = i10;
-        this.b = obj;
-        this.c = obj2;
-        this.d = obj3;
-        this.e = obj4;
-        this.f = obj5;
+        this.b = new Rect();
+        this.c = new Rect();
+        this.d = new RectF();
+        this.n = new float[]{0.0f, 1.0f};
+        this.w = new GradientDrawable[2];
+        this.x = new boolean[2];
+        this.y = new float[2];
+        this.G = 0.0f;
+        this.H = null;
+        this.K = -1;
+        this.O = 1;
+        setVisibility(8);
+        Paint paint4 = new Paint(1);
+        this.s = paint4;
+        paint4.setColor(1442840575);
+        Paint paint22 = new Paint(1);
+        this.v = paint22;
+        paint22.setColor(-1);
+        GradientDrawable gradientDrawable3 = new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, new int[]{1107296256, 0});
+        this.e = gradientDrawable3;
+        gradientDrawable3.setShape(0);
+        GradientDrawable gradientDrawable22 = new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, new int[]{1107296256, 0});
+        this.f = gradientDrawable22;
+        gradientDrawable22.setShape(0);
+        i11 = 0;
+        while (i11 < 2) {
+        }
+        Paint paint32 = new Paint(1);
+        this.r = paint32;
+        paint32.setColor(-16777216);
+        paint32.setAlpha(66);
+        ValueAnimator ofFloat2 = ValueAnimator.ofFloat(0.0f, 1.0f);
+        this.h = ofFloat2;
+        ofFloat2.setDuration(250L);
+        ofFloat2.setInterpolator(org.telegram.ui.Components.bs.j);
+        ofFloat2.addUpdateListener(new d3(this, 28));
+        ofFloat2.addListener(new v70(this, 21));
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        org.telegram.ui.Wallet.q0 q0Var;
-        String h;
-        byte[] bArr;
-        String h10;
-        String jSONObject;
-        switch (this.a) {
-            case 0:
-                m01 m01Var = (m01) this.b;
-                String str = (String) this.c;
-                ArrayList arrayList = (ArrayList) this.d;
-                ArrayList arrayList2 = (ArrayList) this.e;
-                ArrayList arrayList3 = (ArrayList) this.f;
-                org.telegram.ui.ActionBar.n2 n2Var = m01Var.e;
-                if (str.equals(m01Var.y)) {
-                    if (!m01Var.w && (n2Var instanceof ProfileActivity)) {
-                        try {
-                            ((ProfileActivity) n2Var).P.b.getImageReceiver().startAnimation();
-                            ((ProfileActivity) n2Var).P.d.setText(LocaleController.getString(R.string.SettingsNoResults));
-                        } catch (Exception e) {
-                            FileLog.e(e);
-                        }
-                    }
-                    m01Var.w = true;
-                    m01Var.r = arrayList;
-                    m01Var.s = arrayList2;
-                    m01Var.n = arrayList3;
-                    m01Var.l();
-                    if (n2Var instanceof ProfileActivity) {
-                        try {
-                            ((ProfileActivity) n2Var).P.b.getImageReceiver().startAnimation();
-                            return;
-                        } catch (Exception e7) {
-                            FileLog.e(e7);
-                            return;
-                        }
-                    }
-                    return;
-                }
-                return;
-            case 1:
-                x51 x51Var = (x51) this.b;
-                View view = (View) this.c;
-                org.telegram.ui.Components.a6 a6Var = (org.telegram.ui.Components.a6) this.d;
-                TLRPC.Document document = (TLRPC.Document) this.e;
-                g51 g51Var = (g51) this.f;
-                x51Var.getClass();
-                x51Var.p(view, Long.valueOf(a6Var.documentId), document, g51Var.v, null);
-                return;
-            case 2:
-                h61 h61Var = (h61) this.b;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) this.c;
-                TLObject tLObject = (TLObject) this.d;
-                TwoStepVerificationActivity twoStepVerificationActivity = (TwoStepVerificationActivity) this.e;
-                TLRPC.User user = (TLRPC.User) this.f;
-                h61Var.getClass();
-                if (tL_error == null) {
-                    TL_account.Password password = (TL_account.Password) tLObject;
-                    twoStepVerificationActivity.I = password;
-                    TwoStepVerificationActivity.m0(password);
-                    h61Var.U(user, twoStepVerificationActivity.l0(), twoStepVerificationActivity);
-                    return;
-                }
-                return;
-            case 3:
-                org.telegram.ui.Wallet.m0 m0Var = (org.telegram.ui.Wallet.m0) this.b;
-                org.telegram.ui.Wallet.j0 j0Var = (org.telegram.ui.Wallet.j0) this.d;
-                org.telegram.ui.ActionBar.b2 b2Var = (org.telegram.ui.ActionBar.b2) this.e;
-                org.telegram.ui.Wallet.d dVar = (org.telegram.ui.Wallet.d) this.f;
-                String str2 = (String) this.c;
-                try {
-                    b2Var.dismiss();
-                    if (j0Var != null && !j0Var.e()) {
-                        TL_wallet.WalletState walletState = m0Var.e;
-                        if ((walletState instanceof TL_wallet.TL_walletState) && (q0Var = m0Var.c) != null && !q0Var.f(((TL_wallet.TL_walletState) walletState).public_key)) {
-                            m0Var.c.p(UserConfig.getInstance(m0Var.a).getClientUserId(), ((TL_wallet.TL_walletState) m0Var.e).public_key, j0Var, null);
-                        }
-                    }
-                    dVar.run(j0Var, str2);
-                    if (j0Var != null) {
-                        return;
-                    } else {
-                        return;
-                    }
-                } finally {
-                    if (j0Var != null) {
-                        j0Var.close();
-                    }
-                }
-            case 4:
-                org.telegram.ui.Wallet.f2 f2Var = (org.telegram.ui.Wallet.f2) this.b;
-                JSONObject jSONObject2 = (JSONObject) this.d;
-                Utilities.Callback callback = (Utilities.Callback) this.e;
-                String str3 = (String) this.c;
-                org.telegram.ui.Wallet.b2 b2Var2 = (org.telegram.ui.Wallet.b2) this.f;
-                f2Var.getClass();
-                if (jSONObject2 == null) {
-                    callback.run(str3);
-                    return;
-                } else {
-                    f2Var.C(b2Var2.a.id, b2Var2.b, jSONObject2, callback);
-                    return;
-                }
-            case 5:
-                org.telegram.ui.Wallet.j0 j0Var2 = (org.telegram.ui.Wallet.j0) this.b;
-                org.telegram.ui.Wallet.b2 b2Var3 = (org.telegram.ui.Wallet.b2) this.c;
-                TL_wallet.tonConnectChallenge tonconnectchallenge = (TL_wallet.tonConnectChallenge) this.d;
-                org.telegram.ui.Wallet.x xVar = (org.telegram.ui.Wallet.x) this.e;
-                ai.r3 r3Var = (ai.r3) this.f;
-                try {
-                    bArr = Base64.decode(WalletEngine2.tonConnectCrypto(j0Var2, b2Var3.a, b2Var3.h, b2Var3.g, new JSONObject().put("challenge", Base64.encodeToString(tonconnectchallenge.challenge, 2))).getString("challengeAnswer"), 2);
-                    h = null;
-                } catch (Exception e10) {
-                    h = org.telegram.ui.Wallet.f2.h("decrypt challenge", e10);
-                    bArr = null;
-                }
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Wallet.w6((Object) bArr, (Object) xVar, h, (Object) r3Var, 8));
-                return;
-            case 6:
-                org.telegram.ui.Wallet.f2 f2Var2 = (org.telegram.ui.Wallet.f2) this.b;
-                TL_wallet.sendTransfer sendtransfer = (TL_wallet.sendTransfer) this.c;
-                org.telegram.ui.Wallet.b2 b2Var4 = (org.telegram.ui.Wallet.b2) this.d;
-                Utilities.Callback callback2 = (Utilities.Callback) this.e;
-                org.telegram.ui.Wallet.j0 j0Var3 = (org.telegram.ui.Wallet.j0) this.f;
-                try {
-                    jSONObject = new JSONObject().put("boc", Base64.encodeToString(sendtransfer.data_normal, 2)).put("randomId", sendtransfer.random_id).toString();
-                } catch (Exception e11) {
-                    h10 = org.telegram.ui.Wallet.f2.h("save transfer", e11);
-                }
-                if (!MessagesController.getMainSettings(f2Var2.a).edit().putString(org.telegram.ui.Wallet.f2.j(b2Var4.a.id, b2Var4.b) + ".transfer", jSONObject).commit()) {
-                    throw new IllegalStateException("Could not save signed transfer");
-                }
-                h10 = null;
-                AndroidUtilities.runOnUIThread(new ai.g3(f2Var2, h10, callback2, b2Var4, j0Var3, sendtransfer, 22));
-                return;
-            case 7:
-                ((WalletEngine2) this.b).lambda$emulateSendNFT$19((AtomicBoolean) this.d, (Utilities.Callback2) this.e, (TL_wallet.walletTransaction) this.f, (String) this.c);
-                return;
-            case 8:
-                ((WalletEngine2) this.b).lambda$prepareSend$49((Utilities.Callback3) this.d, (TL_wallet.sendTransfer) this.e, (String) this.c, (String) this.f);
-                return;
-            case 9:
-                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) this.b;
-                Utilities.Callback callback3 = (Utilities.Callback) this.c;
-                TLObject tLObject2 = (TLObject) this.d;
-                MessagesController messagesController = (MessagesController) this.e;
-                Utilities.Callback callback4 = (Utilities.Callback) this.f;
-                if (tL_error2 != null) {
-                    callback3.run(tL_error2);
-                    return;
-                } else {
-                    if (tLObject2 instanceof TL_stories.TL_premium_myBoosts) {
-                        TL_stories.TL_premium_myBoosts tL_premium_myBoosts = (TL_stories.TL_premium_myBoosts) tLObject2;
-                        messagesController.putUsers(tL_premium_myBoosts.users, false);
-                        messagesController.putChats(tL_premium_myBoosts.chats, false);
-                        callback4.run(tL_premium_myBoosts);
-                        return;
-                    }
-                    return;
-                }
-            case 10:
-                TLRPC.TL_error tL_error3 = (TLRPC.TL_error) this.b;
-                org.telegram.messenger.w wVar = (org.telegram.messenger.w) this.c;
-                TLObject tLObject3 = (TLObject) this.d;
-                MessagesController messagesController2 = (MessagesController) this.e;
-                org.telegram.messenger.k2 k2Var = (org.telegram.messenger.k2) this.f;
-                if (tL_error3 != null) {
-                    wVar.run(tL_error3);
-                    return;
-                } else {
-                    if (tLObject3 instanceof TL_stories.TL_premium_myBoosts) {
-                        TL_stories.TL_premium_myBoosts tL_premium_myBoosts2 = (TL_stories.TL_premium_myBoosts) tLObject3;
-                        messagesController2.putUsers(tL_premium_myBoosts2.users, false);
-                        messagesController2.putChats(tL_premium_myBoosts2.chats, false);
-                        k2Var.run(tL_premium_myBoosts2);
-                        return;
-                    }
-                    return;
-                }
-            case 11:
-                TLObject tLObject4 = (TLObject) this.b;
-                MessagesController messagesController3 = (MessagesController) this.c;
-                ci.z2 z2Var = (ci.z2) this.d;
-                ug.f fVar = (ug.f) this.e;
-                TLRPC.TL_error tL_error4 = (TLRPC.TL_error) this.f;
-                if (tLObject4 instanceof TLRPC.TL_payments_checkedGiftCode) {
-                    TLRPC.TL_payments_checkedGiftCode tL_payments_checkedGiftCode = (TLRPC.TL_payments_checkedGiftCode) tLObject4;
-                    messagesController3.putChats(tL_payments_checkedGiftCode.chats, false);
-                    messagesController3.putUsers(tL_payments_checkedGiftCode.users, false);
-                    z2Var.run(tL_payments_checkedGiftCode);
-                }
-                fVar.run(tL_error4);
-                return;
-            case 12:
-                ug.m1.S((ug.m1) this.b, (TLObject) this.c, (TLRPC.UserFull) this.d, (TL_account.TL_birthday) this.e, (TLRPC.TL_error) this.f);
-                return;
-            default:
-                yh.x4 x4Var = (yh.x4) this.b;
-                TLObject tLObject5 = (TLObject) this.c;
-                TLRPC.TL_inputStorePaymentGiftPremium tL_inputStorePaymentGiftPremium = (TLRPC.TL_inputStorePaymentGiftPremium) this.d;
-                TLRPC.TL_error tL_error5 = (TLRPC.TL_error) this.e;
-                TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore = (TLRPC.TL_payments_canPurchaseStore) this.f;
-                int i10 = x4Var.Y;
-                org.telegram.ui.ActionBar.n2 n2Var2 = x4Var.n;
-                if (!(tLObject5 instanceof TLRPC.TL_boolTrue)) {
-                    if (tL_error5 != null) {
-                        org.telegram.ui.Components.f5.e0(i10, tL_error5, n2Var2, tL_payments_canPurchaseStore, new Object[0]);
-                        return;
-                    }
-                    return;
-                } else {
-                    BillingController billingController = BillingController.getInstance();
-                    Activity parentActivity = n2Var2.getParentActivity();
-                    AccountInstance accountInstance = AccountInstance.getInstance(i10);
-                    n4.s sVar = new n4.s(9, false);
-                    sVar.G(x4Var.e0.h);
-                    billingController.launchBillingFlow(parentActivity, accountInstance, tL_inputStorePaymentGiftPremium, Collections.singletonList(sVar.k()));
-                    return;
-                }
+    @Override // org.telegram.ui.Components.ji0
+    public final void a() {
+        Arrays.fill(this.x, false);
+        postInvalidateOnAnimation();
+    }
+
+    @Override // org.telegram.ui.Components.ji0
+    public final void b(boolean z10) {
+        this.x[!z10 ? 1 : 0] = true;
+        postInvalidateOnAnimation();
+    }
+
+    @Override // org.telegram.ui.Components.ji0
+    public final void c() {
+        this.P.m5(false);
+    }
+
+    @Override // org.telegram.ui.Components.ji0
+    public final void d() {
+        invalidate();
+    }
+
+    public final void e(float f7, boolean z10) {
+        int i10 = (int) (255.0f * f7);
+        this.e.setAlpha(i10);
+        this.f.setAlpha(i10);
+        this.r.setAlpha((int) (66.0f * f7));
+        this.s.setAlpha((int) (85.0f * f7));
+        this.v.setAlpha(i10);
+        this.G = f7;
+        if (!z10) {
+            this.F = f7;
+        }
+        invalidate();
+    }
+
+    public final void f(float f7, boolean z10) {
+        if (z10 != this.E) {
+            this.E = z10;
+            ValueAnimator valueAnimator = this.h;
+            valueAnimator.cancel();
+            float f10 = this.F;
+            float[] fArr = this.n;
+            float lerp = AndroidUtilities.lerp(fArr, f10);
+            if (z10) {
+                valueAnimator.setDuration((long) (((1.0f - lerp) * 250.0f) / f7));
+            } else {
+                valueAnimator.setDuration((long) ((250.0f * lerp) / f7));
+            }
+            fArr[0] = lerp;
+            fArr[1] = z10 ? 1.0f : 0.0f;
+            valueAnimator.start();
         }
     }
 
-    public /* synthetic */ g01(Object obj, Object obj2, Object obj3, Object obj4, String str, int i10) {
-        this.a = i10;
-        this.b = obj;
-        this.d = obj2;
-        this.e = obj3;
-        this.f = obj4;
-        this.c = str;
+    /* JADX WARN: Removed duplicated region for block: B:43:0x01ef  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x0224  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x0227  */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x020f  */
+    @Override // android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void onDraw(Canvas canvas) {
+        float[] fArr;
+        float f7;
+        float[] fArr2;
+        float f10;
+        boolean z10;
+        boolean z11;
+        Paint paint;
+        float[] fArr3;
+        int i10;
+        int i11;
+        long j10;
+        float f11;
+        int i12 = 0;
+        while (true) {
+            fArr = this.y;
+            f7 = 0.0f;
+            if (i12 >= 2) {
+                break;
+            }
+            float f12 = fArr[i12];
+            if (f12 > 0.0f) {
+                GradientDrawable[] gradientDrawableArr = this.w;
+                gradientDrawableArr[i12].setAlpha((int) (f12 * 255.0f));
+                gradientDrawableArr[i12].draw(canvas);
+            }
+            i12++;
+        }
+        this.e.draw(canvas);
+        this.f.draw(canvas);
+        Rect rect = this.b;
+        Paint paint2 = this.r;
+        canvas.drawRect(rect, paint2);
+        canvas.drawRect(this.c, paint2);
+        ProfileActivity profileActivity = this.P;
+        int realCount = profileActivity.o0.getRealCount();
+        this.M = profileActivity.o0.getRealPosition();
+        float[] fArr4 = this.H;
+        if (fArr4 == null || fArr4.length != realCount) {
+            float[] fArr5 = new float[realCount];
+            this.H = fArr5;
+            Arrays.fill(fArr5, 0.0f);
+        }
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        long j11 = elapsedRealtime - this.I;
+        if (j11 < 0 || j11 > 20) {
+            j11 = 17;
+        }
+        this.I = elapsedRealtime;
+        float f13 = 1.0f;
+        if (realCount <= 1 || realCount > 20) {
+            fArr2 = fArr;
+            f10 = 180.0f;
+            z10 = false;
+        } else {
+            int i13 = profileActivity.B0;
+            if (i13 == 0) {
+                this.G = 0.0f;
+                profileActivity.B0 = 3;
+            } else if (i13 == 1) {
+                this.G = 0.0f;
+                profileActivity.B0 = 2;
+            }
+            int i14 = profileActivity.B0;
+            Paint paint3 = this.v;
+            Paint paint4 = this.s;
+            if (i14 == 2) {
+                paint4.setAlpha((int) (this.G * 85.0f));
+                paint3.setAlpha((int) (this.G * 255.0f));
+            }
+            f10 = 180.0f;
+            int A = org.telegram.messenger.sl.A((realCount - 1) * 2, getMeasuredWidth() - AndroidUtilities.dp(10.0f), realCount);
+            int dp = AndroidUtilities.dp(4.0f);
+            z11 = ((org.telegram.ui.ActionBar.o2) profileActivity).inBubbleMode;
+            int i15 = dp + (!z11 ? AndroidUtilities.statusBarHeight : 0);
+            int i16 = 0;
+            z10 = false;
+            while (i16 < realCount) {
+                int dp2 = (A * i16) + AndroidUtilities.dp((i16 * 2) + 5);
+                int i17 = this.K;
+                float f14 = f7;
+                RectF rectF = this.d;
+                if (i16 != i17 || Math.abs(this.J - f13) <= 1.0E-4f) {
+                    paint = paint3;
+                    fArr3 = fArr;
+                    i10 = realCount;
+                    float f15 = f13;
+                    i11 = 85;
+                    if (i16 != this.M) {
+                        j10 = j11;
+                    } else if (profileActivity.o0.I()) {
+                        f11 = profileActivity.o0.getCurrentItemProgress();
+                        this.L = f11;
+                        if ((f11 > f14 || !profileActivity.o0.J()) && this.N <= f14) {
+                            j10 = j11;
+                        } else {
+                            float f16 = this.N;
+                            int i18 = this.O;
+                            j10 = j11;
+                            float f17 = ((i18 * j10) / 500.0f) + f16;
+                            this.N = f17;
+                            if (f17 > f15) {
+                                this.N = f15;
+                                this.O = i18 * (-1);
+                            } else if (f17 <= f14) {
+                                this.N = f14;
+                                this.O = i18 * (-1);
+                            }
+                        }
+                        rectF.set(dp2, i15, dp2 + A, AndroidUtilities.dp(2.0f) + i15);
+                        paint4.setAlpha((int) (((this.N * 48.0f) + 85.0f) * this.G));
+                        canvas.drawRoundRect(rectF, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f), paint4);
+                    } else {
+                        j10 = j11;
+                        this.L = f15;
+                    }
+                    f11 = 1.0f;
+                    float f18 = dp2;
+                    rectF.set(f18, i15, (A * f11) + f18, AndroidUtilities.dp(2.0f) + i15);
+                    if (i16 != this.M) {
+                        this.H[i16] = 0.75f;
+                    } else if (profileActivity.B0 == 3) {
+                        paint4.setAlpha((int) (AndroidUtilities.lerp(i11, 255, org.telegram.ui.Components.bs.j.getInterpolation(this.H[i16])) * this.G));
+                    }
+                    canvas.drawRoundRect(rectF, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f), i16 != this.M ? paint : paint4);
+                    i16++;
+                    paint3 = paint;
+                    fArr = fArr3;
+                    realCount = i10;
+                    j11 = j10;
+                    f7 = 0.0f;
+                    f13 = 1.0f;
+                } else {
+                    float f19 = this.J;
+                    canvas.save();
+                    float f20 = f13;
+                    float f21 = dp2;
+                    paint = paint3;
+                    fArr3 = fArr;
+                    float f22 = i15;
+                    i10 = realCount;
+                    float f23 = dp2 + A;
+                    canvas.clipRect((A * f19) + f21, f22, f23, AndroidUtilities.dp(2.0f) + i15);
+                    rectF.set(f21, f22, f23, AndroidUtilities.dp(2.0f) + i15);
+                    paint4.setAlpha((int) (this.G * 85.0f));
+                    canvas.drawRoundRect(rectF, AndroidUtilities.dp(f20), AndroidUtilities.dp(f20), paint4);
+                    canvas.restore();
+                    j10 = j11;
+                    f11 = f19;
+                }
+                i11 = 80;
+                z10 = true;
+                float f182 = dp2;
+                rectF.set(f182, i15, (A * f11) + f182, AndroidUtilities.dp(2.0f) + i15);
+                if (i16 != this.M) {
+                }
+                canvas.drawRoundRect(rectF, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f), i16 != this.M ? paint : paint4);
+                i16++;
+                paint3 = paint;
+                fArr = fArr3;
+                realCount = i10;
+                j11 = j10;
+                f7 = 0.0f;
+                f13 = 1.0f;
+            }
+            fArr2 = fArr;
+            long j12 = j11;
+            int i19 = profileActivity.B0;
+            if (i19 == 2) {
+                float f24 = this.G;
+                if (f24 < 1.0f) {
+                    j11 = j12;
+                    float f25 = (j11 / 180.0f) + f24;
+                    this.G = f25;
+                    if (f25 > 1.0f) {
+                        this.G = 1.0f;
+                    }
+                    z10 = true;
+                } else {
+                    j11 = j12;
+                    profileActivity.B0 = 3;
+                }
+            } else {
+                j11 = j12;
+                if (i19 == 3) {
+                    int i20 = 0;
+                    while (true) {
+                        float[] fArr6 = this.H;
+                        if (i20 >= fArr6.length) {
+                            break;
+                        }
+                        if (i20 != this.M) {
+                            float f26 = fArr6[i20];
+                            if (f26 > 0.0f) {
+                                float f27 = f26 - (j11 / 500.0f);
+                                fArr6[i20] = f27;
+                                if (f27 <= 0.0f) {
+                                    fArr6[i20] = 0.0f;
+                                    if (i20 == this.K) {
+                                        this.K = -1;
+                                    }
+                                }
+                                z10 = true;
+                                i20++;
+                            }
+                        }
+                        if (i20 == this.K) {
+                            this.K = -1;
+                        }
+                        i20++;
+                    }
+                }
+            }
+        }
+        for (int i21 = 0; i21 < 2; i21++) {
+            if (this.x[i21]) {
+                float f28 = fArr2[i21];
+                if (f28 < 1.0f) {
+                    float f29 = (j11 / f10) + f28;
+                    fArr2[i21] = f29;
+                    if (f29 > 1.0f) {
+                        fArr2[i21] = 1.0f;
+                    }
+                    z10 = true;
+                }
+            } else {
+                float f30 = fArr2[i21];
+                if (f30 > 0.0f) {
+                    float f31 = f30 - (j11 / f10);
+                    fArr2[i21] = f31;
+                    if (f31 < 0.0f) {
+                        fArr2[i21] = 0.0f;
+                    }
+                    z10 = true;
+                }
+            }
+        }
+        if (z10) {
+            postInvalidateOnAnimation();
+        }
     }
 
-    public /* synthetic */ g01(Object obj, Object obj2, Object obj3, String str, Object obj4, int i10) {
-        this.a = i10;
-        this.b = obj;
-        this.d = obj2;
-        this.e = obj3;
-        this.c = str;
-        this.f = obj4;
+    @Override // android.view.View
+    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
+        int currentActionBarHeight = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + this.a;
+        Rect rect = this.b;
+        rect.set(0, 0, i10, (int) (currentActionBarHeight * 0.5f));
+        Rect rect2 = this.c;
+        rect2.set(0, (int) (i11 - (AndroidUtilities.dp(72.0f) * 0.5f)), i10, i11);
+        this.e.setBounds(0, rect.bottom, i10, AndroidUtilities.dp(16.0f) + currentActionBarHeight);
+        this.f.setBounds(0, ((i11 - this.P.Q3()) - AndroidUtilities.dp(72.0f)) - AndroidUtilities.dp(24.0f), i10, rect2.top);
+        GradientDrawable[] gradientDrawableArr = this.w;
+        int i14 = i10 / 5;
+        gradientDrawableArr[0].setBounds(0, 0, i14, i11);
+        gradientDrawableArr[1].setBounds(i10 - i14, 0, i10, i11);
     }
 }

@@ -5,7 +5,7 @@ import java.util.LinkedHashSet;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class sy implements hz {
     public final /* synthetic */ ty a;
@@ -14,17 +14,13 @@ public final class sy implements hz {
         this.a = tyVar;
     }
 
-    public final boolean a() {
-        return this.a.F.V.F;
-    }
-
     @Override // org.telegram.ui.Components.hz
     public final void e() {
-        if (a()) {
+        ty tyVar = this.a;
+        if (tyVar.F.V.F) {
             return;
         }
         ArrayList arrayList = new ArrayList();
-        ty tyVar = this.a;
         tyVar.F.V.e(true);
         ty.E(tyVar, new yt(6, this, arrayList), arrayList, true);
     }
@@ -35,7 +31,7 @@ public final class sy implements hz {
         String str = this.a.v;
         yt ytVar = new yt(5, this, str);
         if (Emoji.fullyConsistsOfEmojis(str)) {
-            rx0.w3.fetch(UserConfig.selectedAccount, str, new org.telegram.ui.ActionBar.j3(28, linkedHashSet, ytVar));
+            ux0.z3.fetch(UserConfig.selectedAccount, str, new org.telegram.ui.ActionBar.m3(28, linkedHashSet, ytVar));
         } else {
             ytVar.run();
         }

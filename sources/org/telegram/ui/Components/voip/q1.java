@@ -5,7 +5,7 @@ import android.view.ViewTreeObserver;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.p31;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class q1 implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ float a;
@@ -43,7 +43,7 @@ public final class q1 implements ViewTreeObserver.OnPreDrawListener {
         s1Var.setScaleX(0.23f);
         s1Var.setScaleY(0.23f);
         s1Var.animate().setListener(null).cancel();
-        s1Var.animate().setListener(new p31(this, 13)).scaleX(1.0f).scaleY(1.0f).translationX(0.0f).translationY(0.0f).alpha(1.0f).setDuration(300L).setStartDelay(0L).setInterpolator(bs.f).start();
+        s1Var.animate().setListener(new p31(this, 14)).scaleX(1.0f).scaleY(1.0f).translationX(0.0f).translationY(0.0f).alpha(1.0f).setDuration(300L).setStartDelay(0L).setInterpolator(bs.f).start();
         return false;
     }
 }

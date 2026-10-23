@@ -12,7 +12,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class hn implements uy {
     public final /* synthetic */ fo a;
@@ -67,8 +67,8 @@ public final class hn implements uy {
     @Override // org.telegram.ui.Components.uy
     public final boolean k() {
         EditTextBoldCursor editField;
-        org.telegram.ui.Cells.c6 c6Var = this.a.g1;
-        if (c6Var == null || (editField = c6Var.getEditField()) == null) {
+        org.telegram.ui.Cells.d6 d6Var = this.a.g1;
+        if (d6Var == null || (editField = d6Var.getEditField()) == null) {
             return false;
         }
         editField.dispatchKeyEvent(new KeyEvent(0, 67));
@@ -78,8 +78,8 @@ public final class hn implements uy {
     @Override // org.telegram.ui.Components.uy
     public final void l(String str) {
         EditTextBoldCursor editField;
-        org.telegram.ui.Cells.c6 c6Var = this.a.g1;
-        if (c6Var == null || (editField = c6Var.getEditField()) == null) {
+        org.telegram.ui.Cells.d6 d6Var = this.a.g1;
+        if (d6Var == null || (editField = d6Var.getEditField()) == null) {
             return;
         }
         int selectionEnd = editField.getSelectionEnd();
@@ -103,7 +103,7 @@ public final class hn implements uy {
         alertDialog$Builder.a.R = LocaleController.getString(R.string.ClearRecentEmojiTitle);
         alertDialog$Builder.a.T = LocaleController.getString(R.string.ClearRecentEmojiText);
         alertDialog$Builder.k(LocaleController.getString(R.string.ClearButton), new s(this, 24));
-        i2.e.r(R.string.Cancel, alertDialog$Builder, null);
+        i2.o1.s(R.string.Cancel, alertDialog$Builder, null);
     }
 
     @Override // org.telegram.ui.Components.uy
@@ -114,8 +114,8 @@ public final class hn implements uy {
     @Override // org.telegram.ui.Components.uy
     public final void x(long j10, TLRPC.Document document, String str, boolean z10) {
         EditTextBoldCursor editField;
-        org.telegram.ui.Cells.c6 c6Var = this.a.g1;
-        if (c6Var == null || (editField = c6Var.getEditField()) == null) {
+        org.telegram.ui.Cells.d6 d6Var = this.a.g1;
+        if (d6Var == null || (editField = d6Var.getEditField()) == null) {
             return;
         }
         int selectionEnd = editField.getSelectionEnd();
@@ -145,7 +145,7 @@ public final class hn implements uy {
     }
 
     @Override // org.telegram.ui.Components.uy
-    public final /* synthetic */ void o(d61 d61Var) {
+    public final /* synthetic */ void o(i61 i61Var) {
     }
 
     @Override // org.telegram.ui.Components.uy

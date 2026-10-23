@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import v7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class c {
     public int a;
@@ -103,9 +103,9 @@ public final class c {
                                 }
                             } else {
                                 if (i20 != 16) {
-                                    StringBuilder l4 = i2.e.l(i18, "unknown flag for pos ", " ");
-                                    l4.append(Long.toBinaryString(i20));
-                                    throw new IllegalStateException(l4.toString());
+                                    StringBuilder n10 = i2.o1.n(i18, "unknown flag for pos ", " ");
+                                    n10.append(Long.toBinaryString(i20));
+                                    throw new IllegalStateException(n10.toString());
                                 }
                                 arrayList2.add(new s4.l(i18, i18, true));
                                 i10 = i17;
@@ -145,9 +145,9 @@ public final class c {
                         if (i28 != 0) {
                             if (i28 != 4 && i28 != 8) {
                                 if (i28 != 16) {
-                                    StringBuilder l10 = i2.e.l(i26, "unknown flag for pos ", " ");
-                                    l10.append(Long.toBinaryString(i28));
-                                    throw new IllegalStateException(l10.toString());
+                                    StringBuilder n11 = i2.o1.n(i26, "unknown flag for pos ", " ");
+                                    n11.append(Long.toBinaryString(i28));
+                                    throw new IllegalStateException(n11.toString());
                                 }
                                 arrayList2.add(new s4.l(i26, i14, false));
                             }

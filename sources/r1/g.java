@@ -5,6 +5,7 @@ import android.media.MediaMetadataRetriever;
 import android.os.Build;
 import android.system.OsConstants;
 import android.util.Log;
+import i2.o1;
 import j$.util.DesugarTimeZone;
 import java.io.BufferedInputStream;
 import java.io.EOFException;
@@ -28,7 +29,7 @@ import java.util.zip.CRC32;
 import org.chromium.support_lib_boundary.WebViewProviderFactoryBoundaryInterface;
 import w7.t6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class g {
     public static final String[] E;
@@ -1157,7 +1158,7 @@ public final class g {
         }
         int readInt = fVar.readInt();
         if (readInt < 8) {
-            throw new IOException(i2.e.j(readInt, "Invalid first Ifd offset: "));
+            throw new IOException(o1.k(readInt, "Invalid first Ifd offset: "));
         }
         int i11 = readInt - 8;
         if (i11 > 0) {
@@ -1172,9 +1173,9 @@ public final class g {
             if (i10 >= hashMapArr.length) {
                 return;
             }
-            StringBuilder l4 = i2.e.l(i10, "The size of tag group[", "]: ");
-            l4.append(hashMapArr[i10].size());
-            Log.d("ExifInterface", l4.toString());
+            StringBuilder n10 = o1.n(i10, "The size of tag group[", "]: ");
+            n10.append(hashMapArr[i10].size());
+            Log.d("ExifInterface", n10.toString());
             for (Map.Entry entry : hashMapArr[i10].entrySet()) {
                 c cVar = (c) entry.getValue();
                 Log.d("ExifInterface", "tagName: " + ((String) entry.getKey()) + ", tagType: " + cVar.toString() + ", tagValue: '" + cVar.f(this.g) + "'");

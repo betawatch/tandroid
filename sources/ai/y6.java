@@ -8,9 +8,9 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.s10;
+import org.telegram.ui.w10;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class y6 extends FrameLayout {
     public final l2 a;
@@ -18,19 +18,19 @@ public final class y6 extends FrameLayout {
     public final x6 c;
     public final x6 d;
     public boolean e;
-    public final s10 f;
+    public final w10 f;
     public final RectF h;
 
-    public y6(Context context, org.telegram.ui.ActionBar.d6 d6Var, l2 l2Var) {
+    public y6(Context context, org.telegram.ui.ActionBar.g6 g6Var, l2 l2Var) {
         super(context);
-        this.f = new s10();
+        this.f = new w10();
         this.h = new RectF();
         this.a = l2Var;
-        x6 x6Var = new x6(context, d6Var);
+        x6 x6Var = new x6(context, g6Var);
         this.b = x6Var;
-        x6 x6Var2 = new x6(context, d6Var);
+        x6 x6Var2 = new x6(context, g6Var);
         this.c = x6Var2;
-        x6 x6Var3 = new x6(context, d6Var);
+        x6 x6Var3 = new x6(context, g6Var);
         this.d = x6Var3;
         addView(x6Var, w7.z5.d(-2, -2.0f, 51, 12.66f, 5.33f, 12.66f, 5.33f));
         addView(x6Var2, w7.z5.d(-2, -2.0f, 51, 12.66f, 5.33f, 12.66f, 5.33f));
@@ -93,10 +93,10 @@ public final class y6 extends FrameLayout {
         float dp = AndroidUtilities.dp(8.0f);
         RectF rectF = this.h;
         rectF.set(0.0f, 0.0f, width, dp);
-        s10 s10Var = this.f;
-        s10Var.b(canvas, rectF, 1, 1.0f);
+        w10 w10Var = this.f;
+        w10Var.b(canvas, rectF, 1, 1.0f);
         rectF.set(0.0f, getHeight() - AndroidUtilities.dp(8.0f), getWidth(), getHeight());
-        s10Var.b(canvas, rectF, 3, 1.0f);
+        w10Var.b(canvas, rectF, 3, 1.0f);
         canvas.restore();
         canvas.restore();
     }

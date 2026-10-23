@@ -8,9 +8,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ContactsController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class tj extends im0 {
+public final class tj extends lm0 {
     public final Context c;
     public ArrayList d = new ArrayList();
     public ArrayList e = new ArrayList();
@@ -23,7 +23,7 @@ public final class tj extends im0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.im0
+    @Override // org.telegram.ui.Components.lm0
     public final boolean D(s4.b1 b1Var) {
         return b1Var.f == 0;
     }
@@ -99,6 +99,6 @@ public final class tj extends im0 {
             wjVar.setLayoutParams(new s4.o0(-1, AndroidUtilities.dp(56.0f)));
             wjVar.setTag(-33024);
         }
-        return new tl0(wjVar);
+        return new wl0(wjVar);
     }
 }

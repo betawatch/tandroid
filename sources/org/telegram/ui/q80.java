@@ -1,50 +1,36 @@
 package org.telegram.ui;
 
+import android.content.DialogInterface;
 import java.util.regex.Pattern;
-import org.telegram.messenger.FileLog;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class q80 implements Runnable {
+public final /* synthetic */ class q80 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ z70 b;
+    public final /* synthetic */ LaunchActivity b;
 
-    public /* synthetic */ q80(z70 z70Var, int i10) {
+    public /* synthetic */ q80(LaunchActivity launchActivity, int i10) {
         this.a = i10;
-        this.b = z70Var;
+        this.b = launchActivity;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
         int i10 = this.a;
-        z70 z70Var = this.b;
+        LaunchActivity launchActivity = this.b;
         switch (i10) {
             case 0:
-                Pattern pattern = LaunchActivity.C1;
-                try {
-                    z70Var.run();
-                    break;
-                } catch (Exception e) {
-                    FileLog.e(e);
-                    return;
-                }
+                launchActivity.y1 = false;
+                break;
             case 1:
-                Pattern pattern2 = LaunchActivity.C1;
-                try {
-                    z70Var.run();
-                    break;
-                } catch (Exception e7) {
-                    FileLog.e(e7);
-                    return;
-                }
+                Pattern pattern = LaunchActivity.E1;
+                AndroidUtilities.runOnUIThread(new p80(launchActivity, 6), 30000L);
+                break;
             default:
-                Pattern pattern3 = LaunchActivity.C1;
-                try {
-                    z70Var.run();
-                    break;
-                } catch (Exception e10) {
-                    FileLog.e(e10);
-                }
+                Pattern pattern2 = LaunchActivity.E1;
+                AndroidUtilities.runOnUIThread(new p80(launchActivity, 7), 30000L);
+                break;
         }
     }
 }

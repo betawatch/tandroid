@@ -21,19 +21,19 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Cells.u8;
+import org.telegram.ui.Cells.v8;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.br;
 import org.telegram.ui.dr;
-import org.telegram.ui.hm;
-import org.telegram.ui.hr;
-import org.telegram.ui.oy;
-import org.telegram.ui.qn;
+import org.telegram.ui.fr;
+import org.telegram.ui.im;
+import org.telegram.ui.jr;
+import org.telegram.ui.qy;
+import org.telegram.ui.sn;
 import s4.b1;
 import s4.l0;
 import v7.q8;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class u implements Runnable {
     public final /* synthetic */ int a;
@@ -141,7 +141,7 @@ public final class u implements Runnable {
                 cVar2.y(24, 7, iVar2);
                 com.google.android.gms.internal.play_billing.p pVar = com.google.android.gms.internal.play_billing.r.b;
                 com.google.android.gms.internal.play_billing.v vVar = com.google.android.gms.internal.play_billing.v.e;
-                d0Var.a(iVar2, new c5.t(vVar, vVar));
+                d0Var.c(iVar2, new c5.t(vVar, vVar));
                 return;
             case 6:
                 c5.c cVar3 = (c5.c) this.b;
@@ -149,7 +149,7 @@ public final class u implements Runnable {
                 c5.i iVar3 = h0.i;
                 cVar3.y(24, 9, iVar3);
                 com.google.android.gms.internal.play_billing.p pVar2 = com.google.android.gms.internal.play_billing.r.b;
-                qVar.b(iVar3, com.google.android.gms.internal.play_billing.v.e);
+                qVar.a(iVar3, com.google.android.gms.internal.play_billing.v.e);
                 return;
             case 7:
                 c6.e0 e0Var = ((c6.d0) this.b).b;
@@ -399,19 +399,19 @@ public final class u implements Runnable {
                 ((c5.a0) this.b).accept(this.c);
                 return;
             case 22:
-                qn qnVar = ((hm) this.c).c;
-                if (this == qnVar.J5) {
-                    qnVar.cb((CharSequence) this.b, false);
-                    qnVar.J5 = null;
+                sn snVar = ((im) this.c).c;
+                if (this == snVar.V5) {
+                    snVar.cb((CharSequence) this.b, false);
+                    snVar.V5 = null;
                     return;
                 }
                 return;
             case 23:
-                u8 u8Var = (u8) this.b;
-                boolean z20 = u8Var.d.h;
-                u8Var.setChecked(!z20);
-                hr hrVar = ((dr) this.c).d;
-                TLRPC.TL_chatBannedRights tL_chatBannedRights = hrVar.E;
+                v8 v8Var = (v8) this.b;
+                boolean z20 = v8Var.d.h;
+                v8Var.setChecked(!z20);
+                jr jrVar = ((fr) this.c).d;
+                TLRPC.TL_chatBannedRights tL_chatBannedRights = jrVar.E;
                 tL_chatBannedRights.send_media = z20;
                 tL_chatBannedRights.send_gifs = z20;
                 tL_chatBannedRights.send_inline = z20;
@@ -426,14 +426,14 @@ public final class u implements Runnable {
                 tL_chatBannedRights.embed_links = z20;
                 tL_chatBannedRights.send_polls = z20;
                 tL_chatBannedRights.send_reactions = z20;
-                AndroidUtilities.updateVisibleRows(hrVar.c);
-                br w02 = hrVar.w0();
-                hrVar.B0();
-                hrVar.A0(w02);
+                AndroidUtilities.updateVisibleRows(jrVar.c);
+                dr w02 = jrVar.w0();
+                jrVar.B0();
+                jrVar.A0(w02);
                 return;
             case 24:
                 ((qc) this.b).j();
-                ((oy) this.c).E = null;
+                ((qy) this.c).E = null;
                 return;
             case 25:
                 ReferenceQueue referenceQueue = (ReferenceQueue) this.b;

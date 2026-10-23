@@ -1,104 +1,44 @@
 package ci;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.media.AudioManager;
-import android.os.Build;
-import android.view.KeyEvent;
-import android.view.View;
+import android.animation.ValueAnimator;
 import org.telegram.messenger.AndroidUtilities;
-import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final class j8 extends View {
-    public Paint a;
-    public boolean b;
-    public androidx.activity.i c;
-    public org.telegram.ui.Components.f6 d;
-    public org.telegram.ui.Components.f6 e;
-    public float f;
+public final /* synthetic */ class j8 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ r8 b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ float d;
 
-    public final void a(boolean z10) {
-        androidx.activity.i iVar = this.c;
-        AudioManager audioManager = (AudioManager) getContext().getSystemService(MediaStreamTrack.AUDIO_TRACK_KIND);
-        int streamMaxVolume = audioManager.getStreamMaxVolume(3);
-        int streamVolume = audioManager.getStreamVolume(3);
-        float f7 = streamMaxVolume;
-        int max = (int) Math.max(1.0f, f7 / 15.0f);
-        if (z10) {
-            int i10 = streamVolume + max;
-            if (i10 <= streamMaxVolume) {
-                streamMaxVolume = i10;
-            }
-        } else {
-            streamMaxVolume = streamVolume - max;
-            if (streamMaxVolume < 0) {
-                streamMaxVolume = 0;
-            }
-        }
-        audioManager.setStreamVolume(3, streamMaxVolume, 0);
-        float f10 = streamMaxVolume / f7;
-        this.f = f10;
-        if (!this.b) {
-            this.e.d(f10, true);
-        }
-        invalidate();
-        this.b = true;
-        AndroidUtilities.cancelRunOnUIThread(iVar);
-        AndroidUtilities.runOnUIThread(iVar, 2000L);
+    public /* synthetic */ j8(r8 r8Var, float f7, float f10, int i10) {
+        this.a = i10;
+        this.b = r8Var;
+        this.c = f7;
+        this.d = f10;
     }
 
-    public final void b() {
-        androidx.activity.i iVar = this.c;
-        AudioManager audioManager = (AudioManager) getContext().getSystemService(MediaStreamTrack.AUDIO_TRACK_KIND);
-        int streamMaxVolume = audioManager.getStreamMaxVolume(3);
-        int streamMinVolume = Build.VERSION.SDK_INT >= 28 ? audioManager.getStreamMinVolume(3) : 0;
-        int streamVolume = audioManager.getStreamVolume(3);
-        if (streamVolume <= streamMinVolume) {
-            a(true);
-            return;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                r8 r8Var = this.b;
+                r8Var.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                r8Var.setScrollY((int) AndroidUtilities.lerp(this.c, 0.0f, floatValue));
+                q8 q8Var = r8Var.b0;
+                q8Var.w = AndroidUtilities.lerp(this.d, 0.0f, floatValue);
+                q8Var.invalidate();
+                break;
+            default:
+                r8 r8Var2 = this.b;
+                r8Var2.getClass();
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                r8Var2.setScrollY((int) AndroidUtilities.lerp(this.c, Math.min((r8Var2.getMeasuredHeight() - r8Var2.u0) - AndroidUtilities.dp(64.0f), r8Var2.r0.getBottom() - r8Var2.getMeasuredHeight()), floatValue2));
+                q8 q8Var2 = r8Var2.b0;
+                q8Var2.w = AndroidUtilities.lerp(this.d, 1.0f, floatValue2);
+                q8Var2.invalidate();
+                break;
         }
-        if (this.b) {
-            return;
-        }
-        float f7 = streamVolume / streamMaxVolume;
-        this.f = f7;
-        this.e.d(f7, true);
-        this.b = true;
-        invalidate();
-        AndroidUtilities.cancelRunOnUIThread(iVar);
-        AndroidUtilities.runOnUIThread(iVar, 2000L);
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        Paint paint = this.a;
-        super.onDraw(canvas);
-        org.telegram.ui.Components.f6 f6Var = this.e;
-        f6Var.d(this.f, false);
-        org.telegram.ui.Components.f6 f6Var2 = this.d;
-        f6Var2.d(this.b ? 1.0f : 0.0f, false);
-        if (f6Var2.c != 0.0f) {
-            float measuredHeight = getMeasuredHeight() / 2.0f;
-            paint.setAlpha((int) (f6Var2.c * 255.0f));
-            RectF rectF = AndroidUtilities.rectTmp;
-            rectF.set(0.0f, 0.0f, getMeasuredWidth() * f6Var.c, getMeasuredHeight());
-            canvas.drawRoundRect(rectF, measuredHeight, measuredHeight, paint);
-        }
-    }
-
-    @Override // android.view.View, android.view.KeyEvent.Callback
-    public final boolean onKeyDown(int i10, KeyEvent keyEvent) {
-        if (keyEvent.getAction() == 0 && i10 == 24) {
-            a(true);
-            return true;
-        }
-        if (keyEvent.getAction() != 0 || i10 != 25) {
-            return super.onKeyDown(i10, keyEvent);
-        }
-        a(false);
-        return true;
     }
 }

@@ -25,7 +25,7 @@ import android.view.animation.LinearInterpolator;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public class p6 extends Drawable {
     public static final LinearInterpolator c0 = new LinearInterpolator();
@@ -458,13 +458,13 @@ public class p6 extends Drawable {
 
     public final void k(n6 n6Var, CharSequence charSequence, int i10, int i11) {
         if (!this.G || charSequence.length() <= 1) {
-            n6Var.d(charSequence);
+            n6Var.b(charSequence);
             return;
         }
         int i12 = 0;
         while (i12 < charSequence.length()) {
             int i13 = i12 + 1;
-            n6Var.d(charSequence.subSequence(i12, i13));
+            n6Var.b(charSequence.subSequence(i12, i13));
             i12 = i13;
         }
     }
@@ -532,7 +532,7 @@ public class p6 extends Drawable {
 
     /* JADX WARN: Code restructure failed: missing block: B:75:0x00f3, code lost:
     
-        r0.d(r12.subSequence(0, r13));
+        r0.b(r12.subSequence(0, r13));
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -640,7 +640,7 @@ public class p6 extends Drawable {
             }
 
             @Override // org.telegram.ui.Components.n6
-            public final void d(CharSequence charSequence3) {
+            public final void b(CharSequence charSequence3) {
                 switch (i12) {
                     case 0:
                         p6 p6Var2 = this.b;
@@ -667,7 +667,7 @@ public class p6 extends Drawable {
             }
 
             @Override // org.telegram.ui.Components.n6
-            public final void d(CharSequence charSequence3) {
+            public final void b(CharSequence charSequence3) {
                 switch (i14) {
                     case 0:
                         p6 p6Var2 = this.b;
@@ -712,7 +712,7 @@ public class p6 extends Drawable {
             if (length < o6Var2.length()) {
                 CharSequence subSequence = o6Var2.subSequence(length, o6Var2.length());
                 o6Var2.length();
-                faVar.d(subSequence);
+                faVar.b(subSequence);
             }
         } else if (this.E) {
             int min2 = Math.min(o6Var2.length(), o6Var.length());
@@ -751,9 +751,9 @@ public class p6 extends Drawable {
                     if ((size % 2 == 0 ? 1 : 0) == i14) {
                         i11 = i14;
                         if (o6Var2.length() > o6Var.length()) {
-                            faVar.d(o6Var2.subSequence(length5, length5 + intValue));
+                            faVar.b(o6Var2.subSequence(length5, length5 + intValue));
                         } else {
-                            faVar.d(o6Var.subSequence(length6, length6 + intValue));
+                            faVar.b(o6Var.subSequence(length6, length6 + intValue));
                         }
                     } else {
                         i11 = i14;
@@ -814,7 +814,7 @@ public class p6 extends Drawable {
                     int i32 = i28 - i30;
                     if (i31 > 0 || i32 > 0) {
                         if (i31 == i32 && z17) {
-                            faVar.d(o6Var2.subSequence(i29, i27));
+                            faVar.b(o6Var2.subSequence(i29, i27));
                         } else {
                             if (i31 > 0) {
                                 k(n6Var, o6Var2.subSequence(i29, i27), i29, i27);
@@ -877,7 +877,7 @@ public class p6 extends Drawable {
             runnable2.run();
         }
         this.t.addUpdateListener(new l6(this, 0));
-        this.t.addListener(new org.telegram.ui.nq(this, 3));
+        this.t.addListener(new org.telegram.ui.pq(this, 3));
         this.t.setStartDelay(0L);
         this.t.setDuration(this.w);
         this.t.setInterpolator(c0);

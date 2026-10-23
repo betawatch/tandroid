@@ -1,41 +1,14 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public class wz0 {
-    public int a;
-    public int b;
-    public int c;
+public final class wz0 {
+    public final c01 a;
+    public final e01 b;
+    public boolean c = true;
 
-    public wz0() {
-        c();
-    }
-
-    public int a(f01 f01Var, yz0 yz0Var, rz0 rz0Var, int i10, boolean z10) {
-        return this.a - rz0Var.a(yz0Var, i10);
-    }
-
-    public void b(int i10, int i11) {
-        this.a = Math.max(this.a, i10);
-        this.b = Math.max(this.b, i11);
-    }
-
-    public void c() {
-        this.a = TLObject.FLAG_31;
-        this.b = TLObject.FLAG_31;
-        this.c = 2;
-    }
-
-    public int d(boolean z10) {
-        if (!z10) {
-            int i10 = this.c;
-            rz0 rz0Var = f01.R;
-            if ((i10 & 2) != 0) {
-                return 100000;
-            }
-        }
-        return this.a + this.b;
+    public wz0(c01 c01Var, e01 e01Var) {
+        this.a = c01Var;
+        this.b = e01Var;
     }
 }

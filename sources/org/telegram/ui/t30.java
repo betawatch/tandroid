@@ -1,32 +1,44 @@
 package org.telegram.ui;
 
-import java.util.concurrent.CountDownLatch;
-import org.telegram.messenger.voip.VoIPService;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import org.telegram.messenger.BotWebViewVibrationEffect;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class t30 implements org.telegram.ui.ActionBar.z2 {
-    public final /* synthetic */ q50 a;
+public final class t30 implements TextWatcher {
+    public final /* synthetic */ u50 a;
 
-    public t30(q50 q50Var) {
-        this.a = q50Var;
+    public t30(u50 u50Var) {
+        this.a = u50Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.z2
-    public final boolean h() {
-        return true;
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        String str;
+        u50 u50Var = this.a;
+        u50Var.A3.a(TextUtils.isEmpty(editable), true);
+        int codePointCount = Character.codePointCount(editable, 0, editable.length());
+        int i10 = u50Var.d0;
+        if (codePointCount + 25 > i10) {
+            str = "" + (i10 - codePointCount);
+        } else {
+            str = null;
+        }
+        u50Var.M.a();
+        u50Var.M.setText(str);
+        u50Var.M.setTextColor(codePointCount >= i10 ? -1280137 : -1);
+        if (codePointCount > i10) {
+            BotWebViewVibrationEffect.APP_ERROR.vibrate();
+        }
     }
 
-    @Override // org.telegram.ui.ActionBar.z2
-    public final void onOpenAnimationEnd() {
-        CountDownLatch groupCallBottomSheetLatch;
-        VoIPService sharedInstance = VoIPService.getSharedInstance();
-        if (sharedInstance != null && (groupCallBottomSheetLatch = sharedInstance.getGroupCallBottomSheetLatch()) != null) {
-            groupCallBottomSheetLatch.countDown();
-        }
-        q50 q50Var = this.a;
-        if (q50Var.F1 == 6) {
-            q50.C0(q50Var);
-        }
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

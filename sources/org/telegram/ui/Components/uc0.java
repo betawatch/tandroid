@@ -1,62 +1,33 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
-import android.text.SpannableStringBuilder;
-import android.text.style.ImageSpan;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class uc0 {
-    public SpannableStringBuilder a;
-    public int b;
-    public Drawable c;
-    public float d;
-    public final int e;
-    public final int f;
-    public int g = -1;
-    public int h = -1;
-    public float i = 4.66f;
+public final class uc0 extends org.telegram.ui.ActionBar.n5 {
+    public final Paint M0;
+    public final /* synthetic */ org.telegram.ui.ActionBar.g6 N0;
 
-    public uc0(int i10, int i11) {
-        this.e = i10;
-        this.f = i11;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public uc0(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(context);
+        this.N0 = g6Var;
+        this.M0 = new Paint(1);
     }
 
-    public final CharSequence a(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
-        SpannableStringBuilder spannableStringBuilder = this.a;
-        int i10 = this.f;
-        if (spannableStringBuilder != null && this.c != null && AndroidUtilities.density == this.d) {
-            if (this.b != org.telegram.ui.ActionBar.h6.w0(i10, d6Var)) {
-                Drawable drawable = this.c;
-                int w02 = org.telegram.ui.ActionBar.h6.w0(i10, d6Var);
-                this.b = w02;
-                drawable.setColorFilter(new PorterDuffColorFilter(w02, PorterDuff.Mode.SRC_IN));
-            }
-            return this.a;
-        }
-        if (context == null) {
-            return null;
-        }
-        SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder("v ");
-        this.d = AndroidUtilities.density;
-        Drawable mutate = context.getResources().getDrawable(this.e).mutate();
-        this.c = mutate;
-        int w03 = org.telegram.ui.ActionBar.h6.w0(i10, d6Var);
-        this.b = w03;
-        mutate.setColorFilter(new PorterDuffColorFilter(w03, PorterDuff.Mode.SRC_IN));
-        int i11 = this.g;
-        int intrinsicWidth = i11 <= 0 ? this.c.getIntrinsicWidth() : AndroidUtilities.dp(i11);
-        int i12 = this.h;
-        int intrinsicHeight = i12 <= 0 ? this.c.getIntrinsicHeight() : AndroidUtilities.dp(i12);
-        int dp = AndroidUtilities.dp(this.i);
-        this.c.setBounds(0, dp, intrinsicWidth, intrinsicHeight + dp);
-        spannableStringBuilder2.setSpan(new ImageSpan(this.c, 2), 0, 1, 33);
-        spannableStringBuilder2.setSpan(new org.telegram.ui.Cells.p2(AndroidUtilities.dp(2.0f)), 1, 2, 33);
-        this.a = spannableStringBuilder2;
-        return spannableStringBuilder2;
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        int w02 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.K5, this.N0);
+        Paint paint = this.M0;
+        paint.setColor(w02);
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeWidth(1.0f);
+        float height = getHeight() / 2.0f;
+        canvas.drawLine(0.0f, height, ((getWidth() / 2.0f) - (getTextWidth() / 2.0f)) - AndroidUtilities.dp(8.0f), height, paint);
+        canvas.drawLine((getTextWidth() / 2.0f) + (getWidth() / 2.0f) + AndroidUtilities.dp(8.0f), height, getWidth(), height, paint);
+        super.dispatchDraw(canvas);
     }
 }

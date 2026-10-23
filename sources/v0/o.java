@@ -1,13 +1,28 @@
 package v0;
 
-import ai.c1;
+import java.util.Collection;
+import java.util.List;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class o {
-    public final c1 a;
+    public final List a;
+    public final boolean b;
 
-    public o(c1 c1Var) {
-        this.a = c1Var;
+    public o(List list, boolean z10) {
+        this.a = list;
+        this.b = z10;
+        if (list.isEmpty()) {
+            throw new IllegalArgumentException("credentialOptions should not be empty");
+        }
+        if (list.size() > 1) {
+            List<q> list2 = list;
+            if (!(list2 instanceof Collection) || !list2.isEmpty()) {
+                for (q qVar : list2) {
+                }
+            }
+            for (q qVar2 : this.a) {
+            }
+        }
     }
 }

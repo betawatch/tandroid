@@ -3,7 +3,7 @@ package ei;
 import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class r8 extends s4.r0 {
     public final /* synthetic */ t8 a;
@@ -15,7 +15,7 @@ public final class r8 extends s4.r0 {
     @Override // s4.r0
     public final void b(RecyclerView recyclerView, int i10, int i11) {
         ViewGroup viewGroup;
-        viewGroup = ((org.telegram.ui.ActionBar.f3) this.a).containerView;
+        viewGroup = ((org.telegram.ui.ActionBar.h3) this.a).containerView;
         viewGroup.invalidate();
     }
 }

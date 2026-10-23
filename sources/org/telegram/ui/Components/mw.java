@@ -13,9 +13,9 @@ import org.telegram.messenger.EmojiData;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class mw implements ni.c, zl0, fn0, ne.d {
+public final /* synthetic */ class mw implements ni.c, cm0, in0, ne.d {
     public final /* synthetic */ int a;
     public final /* synthetic */ tz b;
 
@@ -24,8 +24,135 @@ public final /* synthetic */ class mw implements ni.c, zl0, fn0, ne.d {
         this.b = tzVar;
     }
 
-    @Override // org.telegram.ui.Components.zl0
-    public boolean a(int i10, View view) {
+    @Override // org.telegram.ui.Components.in0
+    public void a(int i10) {
+        int i11;
+        fz fzVar;
+        switch (this.a) {
+            case 2:
+                tz tzVar = this.b;
+                zy zyVar = tzVar.i0;
+                int i12 = tzVar.c1;
+                yy yyVar = tzVar.n0;
+                bz bzVar = tzVar.k0;
+                if (i10 != tzVar.s0 || !yyVar.x.isEmpty()) {
+                    tzVar.h0.B0();
+                    tzVar.p0.k(i10, 0);
+                    if (i10 == tzVar.r0 || i10 == tzVar.s0) {
+                        tzVar.o0.d.setText("");
+                        if (i10 != tzVar.s0 || (i11 = yyVar.I) < 1) {
+                            uy uyVar = tzVar.t1;
+                            zyVar.h1((uyVar == null || !uyVar.A()) ? 1 : 0, 0);
+                        } else {
+                            zyVar.h1(i11, -AndroidUtilities.dp(4.0f));
+                        }
+                        if (i10 == tzVar.s0) {
+                            ArrayList<String> arrayList = MessagesController.getInstance(i12).gifSearchEmojies;
+                            if (!arrayList.isEmpty()) {
+                                bzVar.a(arrayList.get(0), true);
+                            }
+                        }
+                    } else {
+                        ArrayList<String> arrayList2 = MessagesController.getInstance(i12).gifSearchEmojies;
+                        tzVar.j0.H(arrayList2.get(i10 - tzVar.t0));
+                        int i13 = i10 - tzVar.t0;
+                        if (i13 > 0) {
+                            bzVar.a(arrayList2.get(i13 - 1), true);
+                        }
+                        if (i10 - tzVar.t0 < arrayList2.size() - 1) {
+                            bzVar.a(arrayList2.get((i10 - tzVar.t0) + 1), true);
+                        }
+                    }
+                    tzVar.E(2);
+                    break;
+                }
+                break;
+            default:
+                tz tzVar2 = this.b;
+                dx dxVar = tzVar2.G0;
+                ArrayList arrayList3 = tzVar2.d1;
+                ex exVar = tzVar2.B0;
+                kz kzVar = tzVar2.y0;
+                ax axVar = tzVar2.D0;
+                if (!tzVar2.S0) {
+                    if (i10 != tzVar2.H1) {
+                        if (dxVar != null && (fzVar = dxVar.r) != null && fzVar.getSelectedCategory() != null) {
+                            dxVar.c(null, false);
+                            fzVar.L1(null);
+                        }
+                        if (i10 != tzVar2.F1) {
+                            if (i10 != tzVar2.G1) {
+                                if (i10 != tzVar2.I1) {
+                                    int i14 = i10 - tzVar2.E1;
+                                    if (i14 < arrayList3.size()) {
+                                        if (i14 >= arrayList3.size()) {
+                                            i14 = arrayList3.size() - 1;
+                                        }
+                                        tzVar2.I0 = false;
+                                        axVar.B0();
+                                        tzVar2.G(kzVar.E(arrayList3.get(i14)), 0);
+                                        tzVar2.E(0);
+                                        tzVar2.q(0);
+                                        int i15 = tzVar2.G1;
+                                        if (i15 <= 0 && (i15 = tzVar2.F1) <= 0) {
+                                            i15 = tzVar2.E1;
+                                        }
+                                        exVar.k(i10, i15);
+                                        tzVar2.X1 = false;
+                                        tzVar2.Y();
+                                        break;
+                                    }
+                                } else {
+                                    axVar.B0();
+                                    tzVar2.G(kzVar.E("premium"), 0);
+                                    tzVar2.E(0);
+                                    int i16 = tzVar2.I1;
+                                    exVar.k(i16, i16 > 0 ? i16 : tzVar2.E1);
+                                    break;
+                                }
+                            } else {
+                                axVar.B0();
+                                tzVar2.G(kzVar.E("fav"), 0);
+                                tzVar2.E(0);
+                                int i17 = tzVar2.G1;
+                                exVar.k(i17, i17 > 0 ? i17 : tzVar2.E1);
+                                break;
+                            }
+                        } else {
+                            axVar.B0();
+                            tzVar2.G(kzVar.E("recent"), 0);
+                            tzVar2.E(0);
+                            int i18 = tzVar2.F1;
+                            exVar.k(i18, i18 > 0 ? i18 : tzVar2.E1);
+                            break;
+                        }
+                    } else {
+                        tzVar2.t1.o(new i61(tzVar2.getContext(), new mx(tzVar2), tzVar2.x1, tzVar2.y1, tzVar2.z1, null, tzVar2.Z1));
+                        break;
+                    }
+                }
+                break;
+        }
+    }
+
+    @Override // ni.c
+    public void b(int i10) {
+        tz tzVar = this.b;
+        bh.f fVar = tzVar.j2;
+        RectF rectF = tzVar.z2;
+        if (Build.VERSION.SDK_INT < 31 || fVar == null) {
+            return;
+        }
+        ih.k.c(tzVar.w, tzVar, rectF);
+        rectF.inset(LiteMode.isEnabled(262144) ? 0.0f : -AndroidUtilities.dp(48.0f), LiteMode.isEnabled(262144) ? 0.0f : -AndroidUtilities.dp(48.0f));
+        rectF.right = tzVar.getMeasuredWidth();
+        rectF.bottom = Math.min(rectF.bottom, tzVar.getMeasuredHeight());
+        fVar.g(!rectF.isEmpty() ? 1 : 0, tzVar.A2);
+        fVar.e(tzVar.k2, tzVar.getWidth(), tzVar.getHeight());
+    }
+
+    @Override // org.telegram.ui.Components.cm0
+    public boolean d(int i10, View view) {
         String str;
         int i11;
         tz tzVar = this.b;
@@ -41,7 +168,7 @@ public final /* synthetic */ class mw implements ni.c, zl0, fn0, ne.d {
                 if (T != null && T.b() <= tzVar.getRecentEmoji().size()) {
                     tzVar.t1.n();
                 }
-                eyVar.y1(view);
+                eyVar.D1(view);
                 return true;
             }
             if (czVar.getSpan() == null && (str = (String) czVar.getTag()) != null) {
@@ -118,7 +245,7 @@ public final /* synthetic */ class mw implements ni.c, zl0, fn0, ne.d {
                         i11 = AndroidUtilities.dp((r3 * 4) - (AndroidUtilities.isTablet() ? 5 : 1)) + (dvVar2.n[0] * i12);
                     }
                     if (iArr[0] - i11 < AndroidUtilities.dp(5.0f)) {
-                        i11 = org.telegram.messenger.nk.D(5.0f, iArr[0] - i11, i11);
+                        i11 = org.telegram.messenger.sl.D(5.0f, iArr[0] - i11, i11);
                     } else if ((iArr[0] - i11) + dp > AndroidUtilities.displaySize.x - AndroidUtilities.dp(5.0f)) {
                         i11 += ((iArr[0] - i11) + dp) - (AndroidUtilities.displaySize.x - AndroidUtilities.dp(5.0f));
                     }
@@ -128,8 +255,8 @@ public final /* synthetic */ class mw implements ni.c, zl0, fn0, ne.d {
                     evVar.setFocusable(true);
                     evVar.showAsDropDown(view, i15, (((view.getMeasuredHeight() - i12) / 2) + ((-view.getMeasuredHeight()) - dp2)) - top);
                     tzVar.h.requestDisallowInterceptTouchEvent(true);
-                    eyVar.d1(true);
-                    eyVar.y1(view);
+                    eyVar.e1(true);
+                    eyVar.D1(view);
                     return true;
                 }
             }
@@ -137,135 +264,8 @@ public final /* synthetic */ class mw implements ni.c, zl0, fn0, ne.d {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.fn0
-    public void b(int i10) {
-        int i11;
-        fz fzVar;
-        switch (this.a) {
-            case 2:
-                tz tzVar = this.b;
-                zy zyVar = tzVar.i0;
-                int i12 = tzVar.c1;
-                yy yyVar = tzVar.n0;
-                bz bzVar = tzVar.k0;
-                if (i10 != tzVar.s0 || !yyVar.x.isEmpty()) {
-                    tzVar.h0.B0();
-                    tzVar.p0.k(i10, 0);
-                    if (i10 == tzVar.r0 || i10 == tzVar.s0) {
-                        tzVar.o0.d.setText("");
-                        if (i10 != tzVar.s0 || (i11 = yyVar.I) < 1) {
-                            uy uyVar = tzVar.t1;
-                            zyVar.h1((uyVar == null || !uyVar.A()) ? 1 : 0, 0);
-                        } else {
-                            zyVar.h1(i11, -AndroidUtilities.dp(4.0f));
-                        }
-                        if (i10 == tzVar.s0) {
-                            ArrayList<String> arrayList = MessagesController.getInstance(i12).gifSearchEmojies;
-                            if (!arrayList.isEmpty()) {
-                                bzVar.a(arrayList.get(0), true);
-                            }
-                        }
-                    } else {
-                        ArrayList<String> arrayList2 = MessagesController.getInstance(i12).gifSearchEmojies;
-                        tzVar.j0.H(arrayList2.get(i10 - tzVar.t0));
-                        int i13 = i10 - tzVar.t0;
-                        if (i13 > 0) {
-                            bzVar.a(arrayList2.get(i13 - 1), true);
-                        }
-                        if (i10 - tzVar.t0 < arrayList2.size() - 1) {
-                            bzVar.a(arrayList2.get((i10 - tzVar.t0) + 1), true);
-                        }
-                    }
-                    tzVar.E(2);
-                    break;
-                }
-                break;
-            default:
-                tz tzVar2 = this.b;
-                dx dxVar = tzVar2.G0;
-                ArrayList arrayList3 = tzVar2.d1;
-                ex exVar = tzVar2.B0;
-                kz kzVar = tzVar2.y0;
-                ax axVar = tzVar2.D0;
-                if (!tzVar2.S0) {
-                    if (i10 != tzVar2.H1) {
-                        if (dxVar != null && (fzVar = dxVar.r) != null && fzVar.getSelectedCategory() != null) {
-                            dxVar.c(null, false);
-                            fzVar.G1(null);
-                        }
-                        if (i10 != tzVar2.F1) {
-                            if (i10 != tzVar2.G1) {
-                                if (i10 != tzVar2.I1) {
-                                    int i14 = i10 - tzVar2.E1;
-                                    if (i14 < arrayList3.size()) {
-                                        if (i14 >= arrayList3.size()) {
-                                            i14 = arrayList3.size() - 1;
-                                        }
-                                        tzVar2.I0 = false;
-                                        axVar.B0();
-                                        tzVar2.G(kzVar.E(arrayList3.get(i14)), 0);
-                                        tzVar2.E(0);
-                                        tzVar2.p(0);
-                                        int i15 = tzVar2.G1;
-                                        if (i15 <= 0 && (i15 = tzVar2.F1) <= 0) {
-                                            i15 = tzVar2.E1;
-                                        }
-                                        exVar.k(i10, i15);
-                                        tzVar2.X1 = false;
-                                        tzVar2.Y();
-                                        break;
-                                    }
-                                } else {
-                                    axVar.B0();
-                                    tzVar2.G(kzVar.E("premium"), 0);
-                                    tzVar2.E(0);
-                                    int i16 = tzVar2.I1;
-                                    exVar.k(i16, i16 > 0 ? i16 : tzVar2.E1);
-                                    break;
-                                }
-                            } else {
-                                axVar.B0();
-                                tzVar2.G(kzVar.E("fav"), 0);
-                                tzVar2.E(0);
-                                int i17 = tzVar2.G1;
-                                exVar.k(i17, i17 > 0 ? i17 : tzVar2.E1);
-                                break;
-                            }
-                        } else {
-                            axVar.B0();
-                            tzVar2.G(kzVar.E("recent"), 0);
-                            tzVar2.E(0);
-                            int i18 = tzVar2.F1;
-                            exVar.k(i18, i18 > 0 ? i18 : tzVar2.E1);
-                            break;
-                        }
-                    } else {
-                        tzVar2.t1.o(new d61(tzVar2.getContext(), new mx(tzVar2), tzVar2.x1, tzVar2.y1, tzVar2.z1, null, tzVar2.Z1));
-                        break;
-                    }
-                }
-                break;
-        }
-    }
-
-    @Override // ni.c
-    public void c(int i10) {
-        tz tzVar = this.b;
-        bh.f fVar = tzVar.j2;
-        RectF rectF = tzVar.y2;
-        if (Build.VERSION.SDK_INT < 31 || fVar == null) {
-            return;
-        }
-        ih.j.c(tzVar.w, tzVar, rectF);
-        rectF.inset(LiteMode.isEnabled(262144) ? 0.0f : -AndroidUtilities.dp(48.0f), LiteMode.isEnabled(262144) ? 0.0f : -AndroidUtilities.dp(48.0f));
-        rectF.right = tzVar.getMeasuredWidth();
-        rectF.bottom = Math.min(rectF.bottom, tzVar.getMeasuredHeight());
-        fVar.g(!rectF.isEmpty() ? 1 : 0, tzVar.z2);
-        fVar.e(tzVar.k2, tzVar.getWidth(), tzVar.getHeight());
-    }
-
     @Override // ne.d
-    public void r(int i10, float f7, float f10, ne.e eVar) {
+    public void o(int i10, float f7, float f10, ne.e eVar) {
         this.b.R();
     }
 

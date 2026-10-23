@@ -1,32 +1,41 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+import org.telegram.tgnet.TLObject;
+
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class zz0 {
-    public final int a;
-    public final int b;
+public class zz0 {
+    public int a;
+    public int b;
+    public int c;
 
-    public zz0(int i10, int i11) {
-        this.a = i10;
-        this.b = i11;
+    public zz0() {
+        c();
     }
 
-    public final int a() {
-        return this.b - this.a;
+    public int a(i01 i01Var, b01 b01Var, uz0 uz0Var, int i10, boolean z10) {
+        return this.a - uz0Var.a(b01Var, i10);
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    public void b(int i10, int i11) {
+        this.a = Math.max(this.a, i10);
+        this.b = Math.max(this.b, i11);
+    }
+
+    public void c() {
+        this.a = TLObject.FLAG_31;
+        this.b = TLObject.FLAG_31;
+        this.c = 2;
+    }
+
+    public int d(boolean z10) {
+        if (!z10) {
+            int i10 = this.c;
+            uz0 uz0Var = i01.R;
+            if ((i10 & 2) != 0) {
+                return 100000;
+            }
         }
-        if (obj == null || zz0.class != obj.getClass()) {
-            return false;
-        }
-        zz0 zz0Var = (zz0) obj;
-        return this.b == zz0Var.b && this.a == zz0Var.a;
-    }
-
-    public final int hashCode() {
-        return (this.a * 31) + this.b;
+        return this.a + this.b;
     }
 }

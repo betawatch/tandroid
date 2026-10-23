@@ -1,12 +1,12 @@
 package j4;
 
 import android.util.SparseArray;
-import c3.j0;
+import c3.l0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class p {
-    public final j0 a;
+    public final l0 a;
     public final boolean b;
     public final boolean c;
     public final f2.u f;
@@ -26,8 +26,8 @@ public final class p {
     public boolean k = false;
     public boolean o = false;
 
-    public p(j0 j0Var, boolean z10, boolean z11) {
-        this.a = j0Var;
+    public p(l0 l0Var, boolean z10, boolean z11) {
+        this.a = l0Var;
         this.b = z10;
         this.c = z11;
         byte[] bArr = new byte[128];

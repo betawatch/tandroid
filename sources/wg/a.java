@@ -7,27 +7,28 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.r6;
 import w7.z5;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class a extends FrameLayout {
     public final ei.d a;
     public final View b;
-    public final d6 c;
+    public final g6 c;
     public final Paint d;
     public boolean e;
 
-    public a(Context context, d6 d6Var) {
+    public a(Context context, g6 g6Var) {
         super(context);
         this.d = new Paint(1);
-        this.c = d6Var;
+        this.c = g6Var;
         View view = new View(context);
         this.b = view;
         addView(view, z5.n(-1, -1));
-        ei.d dVar = new ei.d(context, d6Var, true);
+        ei.d dVar = new ei.d(context, g6Var, true);
         this.a = dVar;
         addView(dVar, z5.d(-1, 48.0f, 17, 14.0f, 0.0f, 14.0f, 0.0f));
     }
@@ -39,8 +40,8 @@ public final class a extends FrameLayout {
         dVar.setShowZero(true);
         dVar.setEnabled(true);
         dVar.b(i10, z10);
-        dVar.g(LocaleController.getString(R.string.BoostingStartGiveaway), z10, true);
-        this.b.setBackgroundColor(h6.w0(h6.h5, this.c));
+        dVar.i(LocaleController.getString(R.string.BoostingStartGiveaway), z10, true);
+        r6.i(k6.h5, this.b, this.c);
     }
 
     public final void b(boolean z10) {
@@ -51,7 +52,7 @@ public final class a extends FrameLayout {
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
         if (this.e) {
-            int w02 = h6.w0(h6.a7, this.c);
+            int w02 = k6.w0(k6.a7, this.c);
             Paint paint = this.d;
             paint.setColor(w02);
             paint.setAlpha(255);
@@ -64,7 +65,7 @@ public final class a extends FrameLayout {
         ei.d dVar = this.a;
         dVar.setShowZero(false);
         dVar.setEnabled(true);
-        dVar.g(LocaleController.formatString("Close", R.string.Close, new Object[0]), false, true);
+        dVar.i(LocaleController.formatString("Close", R.string.Close, new Object[0]), false, true);
         this.e = z10;
     }
 
@@ -73,7 +74,7 @@ public final class a extends FrameLayout {
         ei.d dVar = this.a;
         dVar.setShowZero(false);
         dVar.setEnabled(true);
-        dVar.g(z10 ? LocaleController.formatString("BoostingUseLink", R.string.BoostingUseLink, new Object[0]) : LocaleController.formatString("OK", R.string.OK, new Object[0]), false, true);
+        dVar.i(z10 ? LocaleController.formatString("BoostingUseLink", R.string.BoostingUseLink, new Object[0]) : LocaleController.formatString("OK", R.string.OK, new Object[0]), false, true);
     }
 
     @Override // android.view.View

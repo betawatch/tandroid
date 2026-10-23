@@ -11,8 +11,9 @@ import java.nio.ByteBuffer;
 import java.util.HashSet;
 import m.g3;
 import n6.l;
+import si.o0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class b extends c1 {
     public final q8.a b;
@@ -62,8 +63,8 @@ public final class b extends c1 {
                 float blue = Color.blue(pixel);
                 I.put(i12, (byte) ((0.114f * blue) + (0.587f * green) + (0.299f * red)));
                 if (i14 % 2 == 0 && i13 % 2 == 0) {
-                    float c10 = r4.c.c(blue, 0.5f, ((-0.331f) * green) + ((-0.169f) * red), 128.0f);
-                    float c11 = r4.c.c(blue, -0.081f, (green * (-0.419f)) + (red * 0.5f), 128.0f);
+                    float c10 = o0.c(blue, 0.5f, ((-0.331f) * green) + ((-0.169f) * red), 128.0f);
+                    float c11 = o0.c(blue, -0.081f, (green * (-0.419f)) + (red * 0.5f), 128.0f);
                     int i15 = i11 + 1;
                     I.put(i11, (byte) c10);
                     i11 += 2;

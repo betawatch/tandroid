@@ -1,87 +1,47 @@
 package org.telegram.ui;
 
-import android.view.KeyEvent;
 import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class e60 implements View.OnKeyListener {
+public final /* synthetic */ class e60 implements org.telegram.ui.Components.l20, org.telegram.ui.ActionBar.z1, r0.n {
     public final /* synthetic */ int a;
-    public boolean b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.n2 c;
+    public final /* synthetic */ p60 b;
 
-    public /* synthetic */ e60(int i10, org.telegram.ui.ActionBar.n2 n2Var) {
+    public /* synthetic */ e60(p60 p60Var, int i10) {
         this.a = i10;
-        this.c = n2Var;
+        this.b = p60Var;
     }
 
-    @Override // android.view.View.OnKeyListener
-    public final boolean onKey(View view, int i10, KeyEvent keyEvent) {
+    @Override // r0.n
+    public r0.k1 B0(View view, r0.k1 k1Var) {
+        int i10 = AndroidUtilities.getDefaultWindowInsets(k1Var, false).d;
+        p60 p60Var = this.b;
+        p60Var.m0 = i10;
+        ai.w1 w1Var = p60Var.F;
+        if (w1Var != null) {
+            w1Var.setPadding(0, 0, 0, i10);
+        }
+        p60Var.j0();
+        p60Var.h0();
+        return r0.k1.b;
+    }
+
+    @Override // org.telegram.ui.Components.l20
+    public void a(int i10) {
+        this.b.b.a(Math.min(i10, r0.c0));
+    }
+
+    @Override // org.telegram.ui.ActionBar.z1
+    public void g(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
         switch (this.a) {
-            case 0:
-                l60 l60Var = (l60) this.c;
-                if (i10 == 67) {
-                    if (keyEvent.getAction() != 0) {
-                        if (keyEvent.getAction() == 1 && this.b && !l60Var.a0.isEmpty()) {
-                            l60Var.h.c((org.telegram.ui.Components.v30) i2.e.h(1, l60Var.a0));
-                            l60Var.s0();
-                            l60Var.k0();
-                            break;
-                        }
-                    } else {
-                        this.b = l60Var.f.r.length() == 0;
-                        break;
-                    }
-                }
+            case 1:
+                this.b.o0();
                 break;
             default:
-                UsersSelectActivity usersSelectActivity = (UsersSelectActivity) this.c;
-                ArrayList arrayList = usersSelectActivity.O;
-                if (i10 == 67) {
-                    if (keyEvent.getAction() != 0) {
-                        if (keyEvent.getAction() == 1 && this.b && !arrayList.isEmpty()) {
-                            org.telegram.ui.Components.v30 v30Var = (org.telegram.ui.Components.v30) i2.e.h(1, arrayList);
-                            usersSelectActivity.b.b(v30Var);
-                            if (usersSelectActivity.x == 2) {
-                                if (v30Var.getUid() == -9223372036854775800L) {
-                                    usersSelectActivity.J &= -2;
-                                } else if (v30Var.getUid() == -9223372036854775799L) {
-                                    usersSelectActivity.J &= -3;
-                                } else if (v30Var.getUid() == Long.MIN_VALUE) {
-                                    usersSelectActivity.J &= -5;
-                                } else if (v30Var.getUid() == -9223372036854775807L) {
-                                    usersSelectActivity.J &= -9;
-                                }
-                            } else if (v30Var.getUid() == Long.MIN_VALUE) {
-                                usersSelectActivity.J = (~MessagesController.DIALOG_FILTER_FLAG_CONTACTS) & usersSelectActivity.J;
-                            } else if (v30Var.getUid() == -9223372036854775807L) {
-                                usersSelectActivity.J = (~MessagesController.DIALOG_FILTER_FLAG_NON_CONTACTS) & usersSelectActivity.J;
-                            } else if (v30Var.getUid() == -9223372036854775806L) {
-                                usersSelectActivity.J = (~MessagesController.DIALOG_FILTER_FLAG_GROUPS) & usersSelectActivity.J;
-                            } else if (v30Var.getUid() == -9223372036854775805L) {
-                                usersSelectActivity.J = (~MessagesController.DIALOG_FILTER_FLAG_CHANNELS) & usersSelectActivity.J;
-                            } else if (v30Var.getUid() == -9223372036854775804L) {
-                                usersSelectActivity.J = (~MessagesController.DIALOG_FILTER_FLAG_BOTS) & usersSelectActivity.J;
-                            } else if (v30Var.getUid() == -9223372036854775803L) {
-                                usersSelectActivity.J = (~MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED) & usersSelectActivity.J;
-                            } else if (v30Var.getUid() == -9223372036854775802L) {
-                                usersSelectActivity.J = (~MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_READ) & usersSelectActivity.J;
-                            } else if (v30Var.getUid() == -9223372036854775801L) {
-                                usersSelectActivity.J = (~MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED) & usersSelectActivity.J;
-                            }
-                            usersSelectActivity.Y();
-                            usersSelectActivity.W();
-                            break;
-                        }
-                    } else {
-                        this.b = usersSelectActivity.c.length() == 0;
-                        break;
-                    }
-                }
+                this.b.finishFragment();
                 break;
         }
-        return true;
     }
 }

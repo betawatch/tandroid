@@ -14,7 +14,7 @@ import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public class ContactsWidgetProvider extends AppWidgetProvider {
     private static int getCellsForSize(int i10) {
@@ -41,7 +41,7 @@ public class ContactsWidgetProvider extends AppWidgetProvider {
             int i13 = sharedPreferences.getInt("account" + i10, -1);
             if (i13 == -1) {
                 SharedPreferences.Editor edit = sharedPreferences.edit();
-                edit.putInt(i2.e.j(i10, "account"), UserConfig.selectedAccount);
+                edit.putInt(i2.o1.k(i10, "account"), UserConfig.selectedAccount);
                 edit.putInt(TeXSymbolParser.TYPE_ATTR + i10, 0).commit();
             }
             ArrayList<Long> arrayList = new ArrayList<>();

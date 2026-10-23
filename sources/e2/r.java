@@ -8,7 +8,7 @@ import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArraySet;
 import v7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class r {
     public final Thread a;
@@ -92,7 +92,7 @@ public final class r {
             qVar.d = true;
             if (pVar != null && qVar.c) {
                 qVar.c = false;
-                pVar.c(qVar.a, qVar.b.d());
+                pVar.a(qVar.a, qVar.b.d());
             }
         }
         this.d.clear();

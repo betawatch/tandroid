@@ -2,11 +2,11 @@ package rg;
 
 import ei.c5;
 import java.util.List;
-import org.telegram.ui.Components.v11;
-import org.telegram.ui.Components.y31;
+import org.telegram.ui.Components.c41;
+import org.telegram.ui.Components.y11;
 import w7.z5;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n implements Runnable {
     public final /* synthetic */ int a;
@@ -22,10 +22,10 @@ public final /* synthetic */ class n implements Runnable {
         switch (this.a) {
             case 0:
                 m0 m0Var = this.b;
-                v11 v11Var = m0Var.a1;
-                if (v11Var != null) {
+                y11 y11Var = m0Var.a1;
+                if (y11Var != null) {
                     m0Var.a1 = null;
-                    m0Var.removeView(v11Var);
+                    m0Var.removeView(y11Var);
                     break;
                 }
                 break;
@@ -37,18 +37,18 @@ public final /* synthetic */ class n implements Runnable {
                 }
                 break;
             case 2:
-                w1 w1Var = this.b.l1;
-                if (w1Var != null) {
-                    w1Var.invalidate();
+                x1 x1Var = this.b.l1;
+                if (x1Var != null) {
+                    x1Var.invalidate();
                     break;
                 }
                 break;
             case 3:
-                m0.a0(this.b);
+                m0.Z(this.b);
                 break;
             default:
                 m0 m0Var3 = this.b;
-                boolean z10 = qg.v0.e(m0Var3.P1).k;
+                boolean z10 = qg.u0.e(m0Var3.P1).k;
                 int i10 = 0;
                 while (true) {
                     List list = qg.l.b;
@@ -58,12 +58,12 @@ public final /* synthetic */ class n implements Runnable {
                         qg.l lVar = (qg.l) list.get(i10);
                         int m10 = z10 ? lVar.m() : lVar.e();
                         String n10 = lVar.n();
-                        y31 y31Var = new y31(m0Var3, lVar, m10, 25);
+                        c41 c41Var = new c41(m0Var3, lVar, m10, 25);
                         l0 l0Var = new l0(m0Var3, m0Var3.getContext());
                         l0Var.setIcon(m10);
                         l0Var.setText(n10);
                         l0Var.setSelected(false);
-                        l0Var.setOnClickListener(new hg.r0(y31Var, 17));
+                        l0Var.setOnClickListener(new hg.r0(c41Var, 17));
                         l0Var.setOnLongClickListener(new c5(m0Var3, 6));
                         m0Var3.S1.a(l0Var, z5.n(-1, 48));
                         i10++;

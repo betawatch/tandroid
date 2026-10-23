@@ -12,7 +12,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import w7.r;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public class LiteMode {
     private static int BATTERY_HIGH = 10;
@@ -55,7 +55,7 @@ public class LiteMode {
     private static int powerSaverLevel;
     private static int value;
 
-    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
     public static class BatteryReceiver extends BroadcastReceiver {
         @Override // android.content.BroadcastReceiver
         public void onReceive(Context context, Intent intent) {
@@ -224,7 +224,7 @@ public class LiteMode {
             SvgHelper.SvgDrawable.updateLiteValues();
         }
         if (i13 > 0) {
-            org.telegram.ui.ActionBar.h6.p1(true);
+            org.telegram.ui.ActionBar.k6.r1(true);
         }
     }
 

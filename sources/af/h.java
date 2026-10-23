@@ -2,6 +2,7 @@ package af;
 
 import androidx.car.app.navigation.model.Maneuver;
 import df.t;
+import i2.o1;
 import j$.util.DesugarCollections;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -14,7 +15,7 @@ import java.util.Map;
 import java.util.regex.Pattern;
 import v7.f5;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class h {
     public static final LinkedHashSet p = new LinkedHashSet(Arrays.asList(df.b.class, df.i.class, df.h.class, df.j.class, t.class, df.n.class, df.l.class));
@@ -176,7 +177,7 @@ public final class h {
     }
 
     public final ff.a h() {
-        return (ff.a) i2.e.h(1, this.n);
+        return (ff.a) o1.i(1, this.n);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:173:0x01a0, code lost:
@@ -214,7 +215,7 @@ public final class h {
         d dVar2;
         j jVar;
         int i13;
-        StringBuilder w9;
+        StringBuilder N;
         d dVar3;
         d dVar4;
         d dVar5;
@@ -446,8 +447,8 @@ public final class h {
                                                         if (charAt10 == '=') {
                                                             if (f5.c(f5.b('=', charSequence3, i36 + 1, charSequence3.length()), charSequence3.length(), charSequence3) >= charSequence3.length()) {
                                                                 i13 = 1;
-                                                                if (i13 > 0 && (w9 = iVar2.w()) != null) {
-                                                                    j jVar2 = new j(i13, w9.toString());
+                                                                if (i13 > 0 && (N = iVar2.N()) != null) {
+                                                                    j jVar2 = new j(i13, N.toString());
                                                                     ff.a[] aVarArr4 = new ff.a[1];
                                                                     aVarArr4[i10] = jVar2;
                                                                     dVar3 = new d(aVarArr4);
@@ -458,7 +459,7 @@ public final class h {
                                                         }
                                                         i13 = i10;
                                                         if (i13 > 0) {
-                                                            j jVar22 = new j(i13, w9.toString());
+                                                            j jVar22 = new j(i13, N.toString());
                                                             ff.a[] aVarArr42 = new ff.a[1];
                                                             aVarArr42[i10] = jVar22;
                                                             dVar3 = new d(aVarArr42);
@@ -543,7 +544,7 @@ public final class h {
                                         if (i43 < 4) {
                                             int i44 = this.e;
                                             int i45 = this.c + i43;
-                                            int i46 = iVar2.w() != null ? 1 : i10;
+                                            int i46 = iVar2.N() != null ? 1 : i10;
                                             CharSequence charSequence5 = this.a;
                                             char charAt11 = charSequence5.charAt(i44);
                                             if (charAt11 == '*' || charAt11 == '+' || charAt11 == '-') {
@@ -755,8 +756,8 @@ public final class h {
                                         break;
                                     default:
                                         CharSequence charSequence9 = this.a;
-                                        StringBuilder w10 = iVar2.w();
-                                        if (w10 != null && w10.toString().contains("|") && !w10.toString().contains("\n")) {
+                                        StringBuilder N2 = iVar2.N();
+                                        if (N2 != null && N2.toString().contains("|") && !N2.toString().contains("\n")) {
                                             CharSequence subSequence = charSequence9.subSequence(this.b, charSequence9.length());
                                             ArrayList arrayList3 = new ArrayList();
                                             int i60 = i10;
@@ -807,7 +808,7 @@ public final class h {
                                             }
                                             arrayList3 = null;
                                             if (arrayList3 != null && !arrayList3.isEmpty()) {
-                                                ArrayList i65 = ze.a.i(w10);
+                                                ArrayList i65 = ze.a.i(N2);
                                                 if (arrayList3.size() >= i65.size()) {
                                                     ze.a aVar5 = new ze.a(arrayList3, i65);
                                                     ff.a[] aVarArr11 = new ff.a[1];

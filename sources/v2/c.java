@@ -2,20 +2,21 @@ package v2;
 
 import b2.o;
 import b2.w;
-import c3.i0;
-import c3.j0;
+import c3.k0;
+import c3.l0;
+import c3.p;
 import e2.m0;
 import e2.x;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public final class c implements j0 {
+public final class c implements l0 {
     public final int a;
     public final w b;
-    public final c3.n c = new c3.n();
+    public final p c = new p();
     public final d d;
     public w e;
-    public j0 f;
+    public l0 f;
     public long g;
 
     public c(int i10, int i11, w wVar, d dVar) {
@@ -24,12 +25,12 @@ public final class c implements j0 {
         this.d = dVar;
     }
 
-    @Override // c3.j0
+    @Override // c3.l0
     public final int a(o oVar, int i10, boolean z10) {
         return f(oVar, i10, z10);
     }
 
-    @Override // c3.j0
+    @Override // c3.l0
     public final void b(w wVar) {
         this.d.getClass();
         w wVar2 = this.b;
@@ -37,42 +38,42 @@ public final class c implements j0 {
             wVar = wVar.d(wVar2);
         }
         this.e = wVar;
-        j0 j0Var = this.f;
+        l0 l0Var = this.f;
         String str = m0.a;
-        j0Var.b(wVar);
+        l0Var.b(wVar);
     }
 
-    @Override // c3.j0
-    public final void c(long j10, int i10, int i11, int i12, i0 i0Var) {
+    @Override // c3.l0
+    public final void c(long j10, int i10, int i11, int i12, k0 k0Var) {
         long j11 = this.g;
         if (j11 != -9223372036854775807L && j10 >= j11) {
             this.f = this.c;
         }
-        j0 j0Var = this.f;
+        l0 l0Var = this.f;
         String str = m0.a;
-        j0Var.c(j10, i10, i11, i12, i0Var);
+        l0Var.c(j10, i10, i11, i12, k0Var);
     }
 
-    @Override // c3.j0
+    @Override // c3.l0
     public final /* synthetic */ void d(int i10, x xVar) {
         a1.g.a(this, xVar, i10);
     }
 
-    @Override // c3.j0
+    @Override // c3.l0
     public final int f(o oVar, int i10, boolean z10) {
-        j0 j0Var = this.f;
+        l0 l0Var = this.f;
         String str = m0.a;
-        return j0Var.a(oVar, i10, z10);
+        return l0Var.a(oVar, i10, z10);
     }
 
-    @Override // c3.j0
+    @Override // c3.l0
     public final void g(x xVar, int i10, int i11) {
-        j0 j0Var = this.f;
+        l0 l0Var = this.f;
         String str = m0.a;
-        j0Var.d(i10, xVar);
+        l0Var.d(i10, xVar);
     }
 
-    @Override // c3.j0
+    @Override // c3.l0
     public final /* synthetic */ void e(long j10) {
     }
 }

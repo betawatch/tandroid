@@ -4,29 +4,29 @@ import android.content.Context;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.Components.dq;
-import org.telegram.ui.Components.gr;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.Components.eq;
+import org.telegram.ui.Components.fr;
 import w7.z5;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+/* loaded from: classes4.dex */
 public final class b extends FrameLayout {
-    public final d6 a;
+    public final g6 a;
     public a b;
-    public gr c;
+    public fr c;
     public boolean d;
 
-    public b(Context context, d6 d6Var) {
+    public b(Context context, g6 g6Var) {
         super(context);
-        this.a = d6Var;
+        this.a = g6Var;
     }
 
     public final void a(int i10, boolean z10) {
         if (this.c == null) {
-            gr grVar = new gr(getContext(), this.a);
-            this.c = grVar;
-            grVar.setReverse(this.d);
+            fr frVar = new fr(getContext(), this.a);
+            this.c = frVar;
+            frVar.setReverse(this.d);
             addView(this.c, z5.e(-1, 28, 48));
         }
         this.c.a.c(i10, z10);
@@ -43,9 +43,9 @@ public final class b extends FrameLayout {
             if (!z10) {
                 return;
             }
-            dq dqVar = new dq(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(1.7f), -9079435);
-            aVar.e = dqVar;
-            dqVar.f = 90.0f;
+            eq eqVar = new eq(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(1.7f), -9079435);
+            aVar.e = eqVar;
+            eqVar.f = 90.0f;
             ImageView imageView = new ImageView(aVar.getContext());
             aVar.d = imageView;
             imageView.setBackground(aVar.e);

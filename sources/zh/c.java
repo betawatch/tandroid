@@ -20,10 +20,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.WeakHashMap;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.nk;
+import org.telegram.messenger.sl;
 import org.telegram.ui.Components.q10;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class c extends View {
     public static final long f0 = System.currentTimeMillis();
@@ -568,11 +568,11 @@ public final class c extends View {
                     f26 = cVar.V;
                     if (f26 >= f25) {
                         f10 = f24;
-                        cVar.V = org.telegram.ui.Cells.c1.c(min, 120.0f, f26, f25);
+                        cVar.V = org.telegram.ui.Cells.b1.c(min, 120.0f, f26, f25);
                     } else {
                         f10 = f24;
                         if (f26 > f25) {
-                            cVar.V = org.telegram.ui.Cells.c1.v(min, 250.0f, f26, f25);
+                            cVar.V = org.telegram.ui.Cells.b1.t(min, 250.0f, f26, f25);
                         }
                     }
                     float f28 = !cVar.c0 ? f10 : 0.45f;
@@ -693,9 +693,9 @@ public final class c extends View {
                 cVar.E = b11;
                 f14 = cVar.x;
                 if (f14 >= f13) {
-                    cVar.x = org.telegram.ui.Cells.c1.c(min3, 260.0f, f14, f13);
+                    cVar.x = org.telegram.ui.Cells.b1.c(min3, 260.0f, f14, f13);
                 } else if (f14 > f13) {
-                    cVar.x = org.telegram.ui.Cells.c1.v(min3, 260.0f, f14, f13);
+                    cVar.x = org.telegram.ui.Cells.b1.t(min3, 260.0f, f14, f13);
                 }
                 if (cVar.x <= 0.003f) {
                     rectF4 = rectF;
@@ -750,7 +750,7 @@ public final class c extends View {
                 while (i10 < arrayList2.size()) {
                     b bVar3 = (b) arrayList2.get(i10);
                     int i19 = i10;
-                    float b12 = nk.b(i18, f27, AndroidUtilities.dp(f17), (width2 - (cVar.w / f7)) + AndroidUtilities.dp(8.0f));
+                    float b12 = sl.b(i18, f27, AndroidUtilities.dp(f17), (width2 - (cVar.w / f7)) + AndroidUtilities.dp(8.0f));
                     if (!bVar3.d) {
                         i18++;
                     }

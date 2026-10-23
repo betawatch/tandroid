@@ -18,7 +18,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import v7.q7;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public abstract class e2 implements l.b0 {
     public static final Method P;
@@ -122,6 +122,10 @@ public abstract class e2 implements l.b0 {
         this.K.removeCallbacks(this.G);
     }
 
+    public final Drawable e() {
+        return this.O.getBackground();
+    }
+
     @Override // l.b0
     public final s1 f() {
         return this.c;
@@ -137,9 +141,9 @@ public abstract class e2 implements l.b0 {
         Context context = this.a;
         y yVar = this.O;
         if (s1Var2 == null) {
-            s1 q6 = q(context, !this.N);
-            this.c = q6;
-            q6.setAdapter(this.b);
+            s1 p5 = p(context, !this.N);
+            this.c = p5;
+            p5.setAdapter(this.b);
             this.c.setOnItemClickListener(this.F);
             this.c.setFocusable(true);
             this.c.setFocusableInTouchMode(true);
@@ -276,15 +280,11 @@ public abstract class e2 implements l.b0 {
         this.K.post(this.J);
     }
 
-    public final Drawable h() {
-        return this.O.getBackground();
-    }
-
-    public final void j(Drawable drawable) {
+    public final void i(Drawable drawable) {
         this.O.setBackgroundDrawable(drawable);
     }
 
-    public final void k(int i10) {
+    public final void j(int i10) {
         this.h = i10;
         this.r = true;
     }
@@ -316,7 +316,7 @@ public abstract class e2 implements l.b0 {
         }
     }
 
-    public s1 q(Context context, boolean z10) {
+    public s1 p(Context context, boolean z10) {
         return new s1(context, z10);
     }
 

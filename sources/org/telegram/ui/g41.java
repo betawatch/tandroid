@@ -1,39 +1,46 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import java.util.LinkedHashSet;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
+import android.animation.ValueAnimator;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class g41 implements Utilities.Callback {
+public final /* synthetic */ class g41 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ LinkedHashSet b;
-    public final /* synthetic */ Runnable c;
+    public final /* synthetic */ b61 b;
+    public final /* synthetic */ boolean c;
 
-    public /* synthetic */ g41(LinkedHashSet linkedHashSet, Runnable runnable, int i10) {
+    public /* synthetic */ g41(b61 b61Var, boolean z10, int i10) {
         this.a = i10;
-        this.b = linkedHashSet;
-        this.c = runnable;
+        this.b = b61Var;
+        this.c = z10;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                ArrayList arrayList = (ArrayList) obj;
-                if (arrayList != null) {
-                    this.b.addAll(arrayList);
+                b61 b61Var = this.b;
+                y41 y41Var = b61Var.h0;
+                o41 o41Var = b61Var.i0;
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                if (!this.c) {
+                    floatValue = 1.0f - floatValue;
                 }
-                this.c.run();
+                float f7 = 1.0f - floatValue;
+                y41Var.setAlpha(f7);
+                y41Var.setTranslationY(AndroidUtilities.dp(8.0f) * floatValue);
+                o41Var.setAlpha(floatValue);
+                o41Var.setTranslationY(AndroidUtilities.dp(8.0f) * f7);
+                b61Var.j0.setAlpha(o41Var.getAlpha() * floatValue);
                 break;
             default:
-                TLRPC.TL_emojiList tL_emojiList = (TLRPC.TL_emojiList) obj;
-                if (tL_emojiList != null) {
-                    this.b.addAll(tL_emojiList.document_id);
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                if (!this.c) {
+                    floatValue2 = 1.0f - floatValue2;
                 }
-                this.c.run();
+                b61 b61Var2 = this.b;
+                b61Var2.j0.setAlpha(b61Var2.i0.getAlpha() * floatValue2);
                 break;
         }
     }

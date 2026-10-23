@@ -7,22 +7,22 @@ import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class d1 extends s4.m0 {
     @Override // s4.m0
     public final void a(Rect rect, View view, RecyclerView recyclerView, s4.y0 y0Var) {
-        org.telegram.ui.Cells.u1 u1Var;
+        org.telegram.ui.Cells.t1 t1Var;
         MessageObject.GroupedMessages currentMessagesGroup;
         MessageObject.GroupedMessagePosition currentPosition;
         int i10 = 0;
         rect.bottom = 0;
-        if (!(view instanceof org.telegram.ui.Cells.u1) || (currentMessagesGroup = (u1Var = (org.telegram.ui.Cells.u1) view).getCurrentMessagesGroup()) == null || (currentPosition = u1Var.getCurrentPosition()) == null || currentPosition.siblingHeights == null) {
+        if (!(view instanceof org.telegram.ui.Cells.t1) || (currentMessagesGroup = (t1Var = (org.telegram.ui.Cells.t1) view).getCurrentMessagesGroup()) == null || (currentPosition = t1Var.getCurrentPosition()) == null || currentPosition.siblingHeights == null) {
             return;
         }
         Point point = AndroidUtilities.displaySize;
         float max = Math.max(point.x, point.y) * 0.5f;
-        int extraInsetHeight = u1Var.getExtraInsetHeight();
+        int extraInsetHeight = t1Var.getExtraInsetHeight();
         int i11 = 0;
         while (true) {
             if (i11 >= currentPosition.siblingHeights.length) {
@@ -39,7 +39,7 @@ public final class d1 extends s4.m0 {
                 byte b10 = groupedMessagePosition.minY;
                 byte b11 = currentPosition.minY;
                 if (b10 == b11 && ((groupedMessagePosition.minX != currentPosition.minX || groupedMessagePosition.maxX != currentPosition.maxX || b10 != b11 || groupedMessagePosition.maxY != currentPosition.maxY) && b10 == b11)) {
-                    round = org.telegram.messenger.g0.A(4.0f, (int) Math.ceil(max * groupedMessagePosition.ph), round);
+                    round = org.telegram.messenger.v0.z(4.0f, (int) Math.ceil(max * groupedMessagePosition.ph), round);
                     break;
                 }
                 i10++;

@@ -1,15 +1,40 @@
 package org.telegram.ui.Cells;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+import android.graphics.Path;
+import android.graphics.RectF;
+import java.util.ArrayList;
+
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public interface v9 {
-    int getBottom();
+public final class v9 extends Path {
+    public static ArrayList d;
+    public float a;
+    public ArrayList b;
+    public int c;
 
-    int getTop();
+    @Override // android.graphics.Path
+    public final void addRect(float f7, float f10, float f11, float f12, Path.Direction direction) {
+        ArrayList arrayList = d;
+        RectF rectF = (arrayList == null || arrayList.size() <= 0) ? new RectF() : (RectF) d.remove(0);
+        rectF.set(f7, f10, f11, f12);
+        this.b.add(rectF);
+        this.c++;
+        super.addRect(f7, f10, f11, f12, direction);
+        if (f12 > this.a) {
+            this.a = f12;
+        }
+    }
 
-    float getX();
-
-    float getY();
-
-    void invalidate();
+    @Override // android.graphics.Path
+    public final void reset() {
+        ArrayList arrayList = this.b;
+        super.reset();
+        if (d == null) {
+            d = new ArrayList(arrayList.size());
+        }
+        d.addAll(arrayList);
+        arrayList.clear();
+        this.c = 0;
+        this.a = 0.0f;
+    }
 }

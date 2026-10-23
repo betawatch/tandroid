@@ -4,11 +4,11 @@ import android.content.Context;
 import android.media.AudioDeviceInfo;
 import android.media.AudioManager;
 import android.os.Build;
-import i2.e;
+import i2.o1;
 import java.util.Arrays;
 import org.webrtc.Logging;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 final class WebRtcAudioUtils {
     private static final String TAG = "WebRtcAudioUtilsExternal";
@@ -34,7 +34,7 @@ final class WebRtcAudioUtils {
             case 9:
                 return "MP3";
             default:
-                return e.j(i10, "Invalid encoding: ");
+                return o1.k(i10, "Invalid encoding: ");
         }
     }
 

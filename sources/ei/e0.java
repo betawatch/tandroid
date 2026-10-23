@@ -29,11 +29,11 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.camera.CameraView;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.h80;
+import org.telegram.ui.Components.i80;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public abstract class e0 extends FrameLayout implements h80 {
+public abstract class e0 extends FrameLayout implements i80 {
     public static final /* synthetic */ int x0 = 0;
     public final LinearGradient E;
     public final Matrix F;
@@ -191,12 +191,12 @@ public abstract class e0 extends FrameLayout implements h80 {
         drawable.setBounds(0, 0, intrinsicWidth, intrinsicHeight);
         drawable.draw(canvas);
         if (f7 > 0.0f) {
-            canvas.drawColor(org.telegram.ui.ActionBar.h6.m1(drawable.getAlpha() * f7, -16777216));
+            canvas.drawColor(org.telegram.ui.ActionBar.k6.o1(drawable.getAlpha() * f7, -16777216));
         }
         canvas.restore();
     }
 
-    @Override // org.telegram.ui.Components.h80
+    @Override // org.telegram.ui.Components.i80
     public final void a(RectF rectF) {
         d0 d0Var = this.j0;
         if (d0Var == null) {
@@ -212,7 +212,7 @@ public abstract class e0 extends FrameLayout implements h80 {
         rectF.set((getMeasuredWidth() / d) * i10, (getMeasuredHeight() / f7) * i11, (getMeasuredWidth() / d) * (i10 + 1), (getMeasuredHeight() / f7) * (i11 + 1));
     }
 
-    @Override // org.telegram.ui.Components.h80
+    @Override // org.telegram.ui.Components.i80
     public final void c(Canvas canvas, float f7) {
         d0 d0Var = this.j0;
         if (d0Var != null) {
@@ -919,7 +919,7 @@ public abstract class e0 extends FrameLayout implements h80 {
             view.draw(canvas);
         }
         if (f7 > 0.0f) {
-            canvas.drawColor(org.telegram.ui.ActionBar.h6.m1(view.getAlpha() * f7, -16777216));
+            canvas.drawColor(org.telegram.ui.ActionBar.k6.o1(view.getAlpha() * f7, -16777216));
         }
         canvas.restore();
         if (view != this.d || (u6Var = this.c) == null) {

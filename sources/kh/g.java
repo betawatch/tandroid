@@ -5,27 +5,27 @@ import android.graphics.PointF;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import ih.j;
+import ih.k;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
-import org.telegram.ui.ActionBar.d5;
-import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.e1;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.h5;
 import org.telegram.ui.ActionBar.m1;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
-import org.telegram.ui.Components.kn0;
-import org.telegram.ui.dy0;
-import org.telegram.ui.f0;
-import org.telegram.ui.jm;
+import org.telegram.ui.Components.nn0;
+import org.telegram.ui.e0;
+import org.telegram.ui.hy0;
 import org.telegram.ui.kf;
+import org.telegram.ui.km;
 import org.telegram.ui.pe;
-import org.telegram.ui.qn;
+import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+/* loaded from: classes4.dex */
 public final /* synthetic */ class g implements View.OnLongClickListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
@@ -41,33 +41,33 @@ public final /* synthetic */ class g implements View.OnLongClickListener {
     public final boolean onLongClick(View view) {
         kf kfVar;
         boolean z10;
-        kn0 kn0Var;
+        nn0 nn0Var;
         switch (this.a) {
             case 0:
                 b bVar = ((h) this.c).n;
                 if (bVar != null) {
-                    qn qnVar = ((pe) bVar).b;
+                    sn snVar = ((pe) bVar).b;
                     int i10 = this.b;
                     if (i10 == 2) {
-                        kfVar = new kf(qnVar, 8);
+                        kfVar = new kf(snVar, 8);
                         z10 = true;
                     } else if (i10 == 3) {
-                        kfVar = new kf(qnVar, 9);
+                        kfVar = new kf(snVar, 9);
                         z10 = false;
                     } else if (i10 == 4) {
-                        kfVar = new kf(qnVar, 10);
+                        kfVar = new kf(snVar, 10);
                         z10 = 2;
                     }
-                    Activity parentActivity = qnVar.getParentActivity();
-                    d5 parentLayout = qnVar.getParentLayout();
-                    jm jmVar = qnVar.X0;
-                    d6 resourceProvider = qnVar.getResourceProvider();
+                    Activity parentActivity = snVar.getParentActivity();
+                    h5 parentLayout = snVar.getParentLayout();
+                    km kmVar = snVar.j1;
+                    g6 resourceProvider = snVar.getResourceProvider();
                     ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(parentActivity, null);
                     actionBarPopupWindow$ActionBarPopupWindowLayout.setMinimumWidth(AndroidUtilities.dp(200.0f));
                     e1 e1Var = new e1(0, parentActivity, resourceProvider, true, true);
                     e1Var.setMinimumWidth(AndroidUtilities.dp(200.0f));
-                    e1Var.g(!z10 ? LocaleController.getString(R.string.ReadAllReactions) : z10 ? LocaleController.getString(R.string.ReadAllMentions) : LocaleController.getString(R.string.ReadAllPollVotes), R.drawable.msg_seen, null);
-                    e1Var.setOnClickListener(new dy0(1, kfVar));
+                    e1Var.j(!z10 ? LocaleController.getString(R.string.ReadAllReactions) : z10 ? LocaleController.getString(R.string.ReadAllMentions) : LocaleController.getString(R.string.ReadAllPollVotes), R.drawable.msg_seen, null);
+                    e1Var.setOnClickListener(new hy0(1, kfVar));
                     actionBarPopupWindow$ActionBarPopupWindowLayout.addView(e1Var);
                     m1 m1Var = new m1(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
                     m1Var.e = true;
@@ -81,7 +81,7 @@ public final /* synthetic */ class g implements View.OnLongClickListener {
                     m1Var.setSoftInputMode(0);
                     m1Var.getContentView().setFocusableInTouchMode(true);
                     PointF pointF = new PointF();
-                    j.b(view, jmVar, pointF);
+                    k.b(view, kmVar, pointF);
                     float width = ((pointF.x + view.getWidth()) - actionBarPopupWindow$ActionBarPopupWindowLayout.getMeasuredWidth()) + AndroidUtilities.dp(8.0f);
                     float measuredHeight = pointF.y - actionBarPopupWindow$ActionBarPopupWindowLayout.getMeasuredHeight();
                     if (AndroidUtilities.isTablet()) {
@@ -89,10 +89,10 @@ public final /* synthetic */ class g implements View.OnLongClickListener {
                         width += view2.getX() + view2.getPaddingLeft();
                         measuredHeight += view2.getY() + view2.getPaddingTop();
                     }
-                    m1Var.showAtLocation(jmVar, 51, (int) width, (int) measuredHeight);
-                    qnVar.Q8 = m1Var;
-                    qnVar.i8(qnVar.j1, false);
-                    qnVar.Q8.setOnDismissListener(new f0(qnVar, 1));
+                    m1Var.showAtLocation(kmVar, 51, (int) width, (int) measuredHeight);
+                    snVar.c9 = m1Var;
+                    snVar.i8(snVar.v1, false);
+                    snVar.c9.setOnDismissListener(new e0(snVar, 1));
                     try {
                         view.performHapticFeedback(0, 2);
                     } catch (Exception unused) {
@@ -102,7 +102,7 @@ public final /* synthetic */ class g implements View.OnLongClickListener {
                 return false;
             default:
                 ScrollSlidingTextTabStrip scrollSlidingTextTabStrip = (ScrollSlidingTextTabStrip) this.c;
-                return (scrollSlidingTextTabStrip.n0 || (kn0Var = scrollSlidingTextTabStrip.b) == null || !kn0Var.b1(this.b, view)) ? false : true;
+                return (scrollSlidingTextTabStrip.n0 || (nn0Var = scrollSlidingTextTabStrip.b) == null || !nn0Var.b1(this.b, view)) ? false : true;
         }
     }
 }

@@ -6,9 +6,9 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.VideoEditedInfo;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class vh extends org.telegram.ui.zt0 {
+public final class vh extends org.telegram.ui.cu0 {
     public final /* synthetic */ MediaController.PhotoEntry a;
     public final /* synthetic */ ti b;
 
@@ -17,16 +17,16 @@ public final class vh extends org.telegram.ui.zt0 {
         this.a = photoEntry;
     }
 
-    @Override // org.telegram.ui.zt0, org.telegram.ui.hu0
+    @Override // org.telegram.ui.cu0, org.telegram.ui.ku0
     public final void o(int i10, VideoEditedInfo videoEditedInfo, final boolean z10, final int i11, int i12, final boolean z11) {
         ti tiVar = this.b;
-        tiVar.v2 = true;
+        tiVar.y2 = true;
         if (tiVar.c2 == null) {
             return;
         }
         final MediaController.PhotoEntry photoEntry = this.a;
         photoEntry.editedInfo = videoEditedInfo;
-        f5.Z(tiVar.M1, tiVar.l1() + 1, 0L, new Utilities.Callback() { // from class: org.telegram.ui.Components.uh
+        f5.a0(tiVar.M1, tiVar.o1() + 1, 0L, new Utilities.Callback() { // from class: org.telegram.ui.Components.uh
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
                 ArrayList arrayList = ChatAttachAlertPhotoLayout.t1;

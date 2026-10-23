@@ -18,9 +18,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.tq0;
+import org.telegram.ui.Components.wq0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public class a2 {
     public z1 a;
@@ -118,8 +118,8 @@ public class a2 {
                 if (obj instanceof g0) {
                     obj = ((g0) obj).a;
                 }
-                if (obj instanceof tq0) {
-                    obj = ((tq0) obj).b;
+                if (obj instanceof wq0) {
+                    obj = ((wq0) obj).b;
                 }
                 boolean z10 = obj instanceof TLRPC.User;
                 ArrayList arrayList3 = this.d;
@@ -336,11 +336,11 @@ public class a2 {
                                                         }
                                                     }
                                                 }
-                                                a0.h y3 = a2Var2.a.y();
-                                                if (y3 != null) {
-                                                    int m11 = y3.m();
+                                                a0.h x10 = a2Var2.a.x();
+                                                if (x10 != null) {
+                                                    int m11 = x10.m();
                                                     for (int i21 = 0; i21 < m11; i21++) {
-                                                        TLRPC.User user3 = (TLRPC.User) hVar4.f(y3.j(i21));
+                                                        TLRPC.User user3 = (TLRPC.User) hVar4.f(x10.j(i21));
                                                         if (user3 != null) {
                                                             arrayList18.remove(user3);
                                                             arrayList17.remove(user3);

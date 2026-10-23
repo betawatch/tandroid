@@ -7,17 +7,17 @@ import android.view.ViewOutlineProvider;
 import ei.i;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.k;
-import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.ActionBar.o2;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
-import org.telegram.ui.Components.ic0;
-import org.telegram.ui.Components.m60;
+import org.telegram.ui.Components.lc0;
+import org.telegram.ui.Components.n60;
 import org.telegram.ui.Components.ti;
 import org.telegram.ui.Components.voip.q2;
 import org.telegram.ui.Components.voip.s1;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+/* loaded from: classes4.dex */
 public final class b extends ViewOutlineProvider {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
@@ -34,14 +34,14 @@ public final class b extends ViewOutlineProvider {
         Object obj = this.b;
         switch (i10) {
             case 0:
-                c cVar = ((d) obj).j;
+                c cVar = ((d) obj).v;
                 d.h(outline, cVar.m, cVar.b);
                 break;
             case 1:
                 ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = (ChatAttachAlertPhotoLayout) obj;
                 ti tiVar = chatAttachAlertPhotoLayout.b;
                 float f7 = tiVar.J0[1];
-                i iVar = tiVar.E2;
+                i iVar = tiVar.H2;
                 int min = (int) Math.min((tiVar.getContainerView().getTranslationY() + ((f7 - (iVar != null ? iVar.d() + AndroidUtilities.dp(16.0f) : 0.0f)) + chatAttachAlertPhotoLayout.W0)) - chatAttachAlertPhotoLayout.P.getTranslationY(), view.getMeasuredHeight());
                 if (chatAttachAlertPhotoLayout.b0) {
                     min = view.getMeasuredHeight();
@@ -69,11 +69,11 @@ public final class b extends ViewOutlineProvider {
                     break;
                 }
             case 2:
-                int i11 = ((m60) obj).X0;
+                int i11 = ((n60) obj).X0;
                 outline.setOval(0, 0, i11, i11);
                 break;
             case 3:
-                outline.setRoundRect(0, ((ic0) obj).T + 1, view.getMeasuredWidth(), view.getMeasuredHeight(), AndroidUtilities.dp(8.0f));
+                outline.setRoundRect(0, ((lc0) obj).T + 1, view.getMeasuredWidth(), view.getMeasuredHeight(), AndroidUtilities.dp(8.0f));
                 break;
             case 4:
                 s1 s1Var = (s1) obj;
@@ -104,7 +104,7 @@ public final class b extends ViewOutlineProvider {
                 }
             default:
                 int dp2 = AndroidUtilities.dp(12.0f);
-                kVar = ((n2) ((PremiumPreviewFragment) obj)).actionBar;
+                kVar = ((o2) ((PremiumPreviewFragment) obj)).actionBar;
                 outline.setRoundRect(dp2, AndroidUtilities.dp(12.0f) + kVar.getBottom(), view.getWidth() - AndroidUtilities.dp(12.0f), AndroidUtilities.dp(16.0f) + view.getMeasuredHeight(), AndroidUtilities.dp(16.0f));
                 break;
         }

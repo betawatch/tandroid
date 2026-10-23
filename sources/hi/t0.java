@@ -16,14 +16,14 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_communities;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.ActionBar.b2;
-import org.telegram.ui.ActionBar.d5;
-import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.ActionBar.c2;
+import org.telegram.ui.ActionBar.h5;
+import org.telegram.ui.ActionBar.o2;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.cy;
-import org.telegram.ui.qn;
+import org.telegram.ui.ey;
+import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public abstract class t0 {
     public static SpannableStringBuilder a(MessageObject messageObject, String str, String str2, boolean z10, boolean z11) {
@@ -110,72 +110,72 @@ public abstract class t0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static void d(n2 n2Var, long j10, int i10) {
-        d5 d5Var;
-        qn qnVar;
+    public static void d(o2 o2Var, long j10, int i10) {
+        h5 h5Var;
+        sn snVar;
         int i11;
         List list = null;
         if (AndroidUtilities.isTablet()) {
-            d5Var = null;
-            qnVar = null;
+            h5Var = null;
+            snVar = null;
         } else {
-            d5Var = n2Var.getParentLayout();
-            if (d5Var != null) {
-                List fragmentStack = d5Var.getFragmentStack();
+            h5Var = o2Var.getParentLayout();
+            if (h5Var != null) {
+                List fragmentStack = h5Var.getFragmentStack();
                 i11 = fragmentStack.size() - 2;
                 while (true) {
                     if (i11 < 0) {
-                        qnVar = null;
+                        snVar = null;
                         i11 = -1;
                         break;
                     }
-                    n2 n2Var2 = (n2) fragmentStack.get(i11);
-                    if (n2Var2 instanceof qn) {
-                        qnVar = (qn) n2Var2;
-                        if (qnVar.a() == j10) {
+                    o2 o2Var2 = (o2) fragmentStack.get(i11);
+                    if (o2Var2 instanceof sn) {
+                        snVar = (sn) o2Var2;
+                        if (snVar.a() == j10) {
                             break;
                         }
                     }
                     i11--;
                 }
                 list = fragmentStack;
-                boolean isChannelAndNotMegaGroup = ChatObject.isChannelAndNotMegaGroup(j10, n2Var.getCurrentAccount());
+                boolean isChannelAndNotMegaGroup = ChatObject.isChannelAndNotMegaGroup(j10, o2Var.getCurrentAccount());
                 if (i11 != -1) {
-                    if (!(n2Var instanceof cy)) {
-                        n2Var.finishFragment();
+                    if (!(o2Var instanceof ey)) {
+                        o2Var.finishFragment();
                     }
                     f(xc.X(), i10, isChannelAndNotMegaGroup);
                     return;
                 }
                 for (int size = list.size() - 2; size > i11; size--) {
-                    ((ActionBarLayout) d5Var).a0((n2) list.get(size), false);
+                    ((ActionBarLayout) h5Var).b0((o2) list.get(size), false);
                 }
-                n2Var.finishFragment();
-                AndroidUtilities.runOnUIThread(new o0(i10, qnVar, isChannelAndNotMegaGroup), 250L);
+                o2Var.finishFragment();
+                AndroidUtilities.runOnUIThread(new o0(i10, snVar, isChannelAndNotMegaGroup), 250L);
                 return;
             }
-            qnVar = null;
+            snVar = null;
         }
         i11 = -1;
-        boolean isChannelAndNotMegaGroup2 = ChatObject.isChannelAndNotMegaGroup(j10, n2Var.getCurrentAccount());
+        boolean isChannelAndNotMegaGroup2 = ChatObject.isChannelAndNotMegaGroup(j10, o2Var.getCurrentAccount());
         if (i11 != -1) {
         }
     }
 
-    public static void e(final b2[] b2VarArr, n2 n2Var, final int i10, TLRPC.Chat chat) {
-        if (b2VarArr[0] != null) {
+    public static void e(final c2[] c2VarArr, o2 o2Var, final int i10, TLRPC.Chat chat) {
+        if (c2VarArr[0] != null) {
             return;
         }
-        final int fetchChatsToAddToCommunity = MessagesController.getInstance(i10).fetchChatsToAddToCommunity(new u0(b2VarArr, n2Var, i10, chat));
-        ConnectionsManager.getInstance(i10).bindRequestToGuid(fetchChatsToAddToCommunity, n2Var.getClassGuid());
-        b2 b2Var = new b2(n2Var.getContext(), 3, null);
-        b2VarArr[0] = b2Var;
-        b2Var.r(500L);
-        b2VarArr[0].setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: hi.l0
+        final int fetchChatsToAddToCommunity = MessagesController.getInstance(i10).fetchChatsToAddToCommunity(new u0(c2VarArr, o2Var, i10, chat));
+        ConnectionsManager.getInstance(i10).bindRequestToGuid(fetchChatsToAddToCommunity, o2Var.getClassGuid());
+        c2 c2Var = new c2(o2Var.getContext(), 3, null);
+        c2VarArr[0] = c2Var;
+        c2Var.r(500L);
+        c2VarArr[0].setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: hi.l0
             @Override // android.content.DialogInterface.OnCancelListener
             public final void onCancel(DialogInterface dialogInterface) {
                 ConnectionsManager.getInstance(i10).cancelRequest(fetchChatsToAddToCommunity, true);
-                b2VarArr[0] = null;
+                c2VarArr[0] = null;
             }
         });
     }

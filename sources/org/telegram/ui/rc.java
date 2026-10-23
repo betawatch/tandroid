@@ -6,33 +6,34 @@ import android.view.View;
 import android.view.ViewParent;
 import android.widget.FrameLayout;
 import androidx.recyclerview.widget.RecyclerView;
+import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class rc extends FrameLayout {
-    public final org.telegram.ui.ActionBar.d6 a;
-    public final sa1 b;
+public final class rc extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
+    public final org.telegram.ui.ActionBar.g6 a;
+    public final xa1 b;
     public final s4.b0 c;
     public final int d;
     public int e;
 
-    public rc(int i10, Activity activity, org.telegram.ui.ActionBar.d6 d6Var) {
+    public rc(int i10, Activity activity, org.telegram.ui.ActionBar.g6 g6Var) {
         super(activity);
         this.d = i10;
-        this.a = d6Var;
-        sa1 sa1Var = new sa1(activity, 3, d6Var);
-        this.b = sa1Var;
-        sa1Var.setPadding(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(6.0f), 0);
-        sa1Var.setClipToPadding(false);
-        sa1Var.setAdapter(new pc(this, activity, d6Var, i10));
+        this.a = g6Var;
+        xa1 xa1Var = new xa1(activity, 3, g6Var);
+        this.b = xa1Var;
+        xa1Var.setPadding(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(6.0f), 0);
+        xa1Var.setClipToPadding(false);
+        xa1Var.setAdapter(new pc(this, activity, g6Var, i10));
         s4.b0 b0Var = new s4.b0();
         this.c = b0Var;
         b0Var.j1(0);
-        sa1Var.setLayoutManager(b0Var);
-        addView(sa1Var, w7.z5.c(-1.0f, -1));
+        xa1Var.setLayoutManager(b0Var);
+        addView(xa1Var, w7.z5.c(-1.0f, -1));
     }
 
     public final void a(int i10, boolean z10) {
@@ -71,5 +72,14 @@ public final class rc extends FrameLayout {
             parent.requestDisallowInterceptTouchEvent(z10);
         }
         return super.onInterceptTouchEvent(motionEvent);
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final void updateColors() {
+        AndroidUtilities.forEachViews((RecyclerView) this.b, (Utilities.Callback<View>) new org.telegram.ui.ActionBar.m3(6, this, MessagesController.getInstance(this.d).peerColors));
+    }
+
+    @Override // org.telegram.ui.ActionBar.b6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

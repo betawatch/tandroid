@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class y9 implements z9 {
     public final int a;
@@ -88,7 +88,7 @@ public final class y9 implements z9 {
 
     @Override // ai.z9
     public final int b(int i10) {
-        if (!l7.j2(this.a, this.b)) {
+        if (!l7.i2(this.a, this.b)) {
             return -1;
         }
         int i11 = i10 + 1;
@@ -253,7 +253,7 @@ public final class y9 implements z9 {
             if (i10 >= arrayList.size()) {
                 return false;
             }
-            if (ga.k((TL_stars.SavedStarGift) arrayList.get(i10), savedStarGift)) {
+            if (ha.k((TL_stars.SavedStarGift) arrayList.get(i10), savedStarGift)) {
                 arrayList.remove(i10);
                 this.n = Math.max(0, this.n - 1);
                 NotificationCenter.getInstance(this.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starUserGiftsLoaded, Long.valueOf(this.b), this);
@@ -292,7 +292,7 @@ public final class y9 implements z9 {
                 i10++;
                 togglestargiftspinnedtotop.stargift.add(h((TL_stars.SavedStarGift) obj));
             }
-            ConnectionsManager.getInstance(i11).sendRequest(togglestargiftspinnedtotop, new ci.e6(8), 64);
+            ConnectionsManager.getInstance(i11).sendRequest(togglestargiftspinnedtotop, new ci.d6(8), 64);
             return;
         }
         TL_stars.updateStarGiftCollection updatestargiftcollection = new TL_stars.updateStarGiftCollection();
@@ -339,7 +339,7 @@ public final class y9 implements z9 {
                         return true;
                     }
                     while (i10.size() > 0 && i10.size() + 1 > MessagesController.getInstance(i11).stargiftsPinnedToTopLimit) {
-                        ((TL_stars.SavedStarGift) i2.e.A(1, i10)).pinned_to_top = false;
+                        ((TL_stars.SavedStarGift) i2.o1.A(1, i10)).pinned_to_top = false;
                     }
                     z12 = true;
                 }
@@ -367,7 +367,7 @@ public final class y9 implements z9 {
             Object obj = arrayList.get(i11);
             i11++;
             TL_stars.SavedStarGift savedStarGift2 = (TL_stars.SavedStarGift) obj;
-            if (ga.k(savedStarGift2, savedStarGift)) {
+            if (ha.k(savedStarGift2, savedStarGift)) {
                 if (!z10) {
                     savedStarGift2.collection_id.remove(Integer.valueOf(i10));
                 } else if (!savedStarGift2.collection_id.contains(Integer.valueOf(i10))) {
@@ -386,7 +386,7 @@ public final class y9 implements z9 {
             Object obj = arrayList.get(i10);
             i10++;
             TL_stars.SavedStarGift savedStarGift2 = (TL_stars.SavedStarGift) obj;
-            if (ga.k(savedStarGift2, savedStarGift) && savedStarGift2.unsaved != z10) {
+            if (ha.k(savedStarGift2, savedStarGift) && savedStarGift2.unsaved != z10) {
                 savedStarGift2.unsaved = z10;
                 z11 = true;
             }

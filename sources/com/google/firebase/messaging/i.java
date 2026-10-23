@@ -5,13 +5,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Base64;
 import android.util.Log;
-import ci.i1;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
 import java.util.concurrent.ExecutorService;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class i {
     public static final Object c = new Object();
@@ -40,7 +39,7 @@ public final class i {
             }
         }
         if (!z10) {
-            return e0Var.b(intent).continueWith(new a3.b(2), new i1(8));
+            return e0Var.b(intent).continueWith(new a3.b(2), new c3.m(10));
         }
         if (r.j().l(context)) {
             b0.c(context, e0Var, intent);

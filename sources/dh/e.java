@@ -10,35 +10,37 @@ import android.graphics.RenderNode;
 import android.os.Build;
 import bh.g;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.messenger.FileLog;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.r6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+/* loaded from: classes4.dex */
 public final class e extends d {
-    public final gh.a G;
-    public final Outline H = new Outline();
-    public final Rect I = new Rect();
-    public final RenderNode J;
-    public final RenderNode K;
-    public final Paint L;
-    public final Paint M;
-    public final Paint N;
-    public boolean O;
-    public g P;
+    public final gh.a X;
+    public final Outline Y = new Outline();
+    public final Rect Z = new Rect();
+    public final RenderNode a0;
+    public final RenderNode b0;
+    public final Paint c0;
+    public final Paint d0;
+    public final Paint e0;
+    public boolean f0;
+    public g g0;
 
     public e(gh.a aVar) {
         Paint paint = new Paint(1);
-        this.L = paint;
+        this.c0 = paint;
         Paint paint2 = new Paint(1);
-        this.M = paint2;
+        this.d0 = paint2;
         Paint paint3 = new Paint(1);
-        this.N = paint3;
+        this.e0 = paint3;
         RenderNode renderNode = new RenderNode("BlurredNode");
-        this.J = renderNode;
-        this.K = new RenderNode("BlurredFill");
+        this.a0 = renderNode;
+        this.b0 = new RenderNode("BlurredFill");
         renderNode.setClipToOutline(true);
         renderNode.setClipToBounds(true);
-        this.G = aVar;
+        this.X = aVar;
         paint.setColor(0);
         Paint.Style style = Paint.Style.STROKE;
         paint2.setStyle(style);
@@ -47,153 +49,162 @@ public final class e extends d {
 
     @Override // android.graphics.drawable.Drawable
     public final void draw(Canvas canvas) {
-        c cVar = this.j;
+        int i10 = r6.b;
+        if (this.s != i10) {
+            this.s = i10;
+            try {
+                updateColors();
+            } catch (Exception e) {
+                FileLog.e(e);
+            }
+        }
+        c cVar = this.v;
         if (cVar.m.isEmpty()) {
             return;
         }
         boolean isHardwareAccelerated = canvas.isHardwareAccelerated();
-        gh.a aVar = this.G;
+        gh.a aVar = this.X;
         if (!isHardwareAccelerated) {
             c(canvas, aVar);
             return;
         }
-        if (!this.J.hasDisplayList()) {
+        if (!this.a0.hasDisplayList()) {
             aVar.b();
-            w();
-        } else if (this.O) {
-            w();
+            v();
+        } else if (this.f0) {
+            v();
         }
-        this.O = false;
-        int m12 = h6.m1(this.J.getAlpha() * this.p, this.d);
-        if (Color.alpha(m12) != 0) {
-            float f7 = this.n;
-            float f10 = this.o;
-            Paint paint = this.L;
-            paint.setShadowLayer(f7, 0.0f, f10, m12);
-            cVar.c(canvas, paint, this.m);
+        this.f0 = false;
+        int o12 = k6.o1(this.a0.getAlpha() * this.G, this.d);
+        if (Color.alpha(o12) != 0) {
+            float f7 = this.E;
+            float f10 = this.F;
+            Paint paint = this.c0;
+            paint.setShadowLayer(f7, 0.0f, f10, o12);
+            cVar.c(canvas, paint, this.y);
         }
         canvas.save();
         Rect rect = cVar.m;
         canvas.translate(rect.left, rect.top);
-        canvas.drawRenderNode(this.J);
+        canvas.drawRenderNode(this.a0);
         canvas.restore();
     }
 
     @Override // dh.d
     public final gh.a i() {
-        return this.G;
+        return this.X;
     }
 
     @Override // dh.d
     public final boolean j() {
-        return this.J.hasDisplayList();
+        return this.a0.hasDisplayList();
     }
 
     @Override // dh.d
     public final void k() {
         b();
-        c cVar = this.j;
-        this.M.setStrokeWidth(cVar.i);
-        this.N.setStrokeWidth(cVar.j);
+        c cVar = this.v;
+        this.d0.setStrokeWidth(cVar.i);
+        this.e0.setStrokeWidth(cVar.j);
         int width = cVar.m.width();
         int height = cVar.m.height();
-        Rect rect = this.I;
+        Rect rect = this.Z;
         rect.set(0, 0, width, height);
         float[] fArr = cVar.b;
-        Outline outline = this.H;
+        Outline outline = this.Y;
         d.h(outline, rect, fArr);
         outline.setAlpha(1.0f);
         if (cVar.m.isEmpty()) {
             return;
         }
-        this.K.setPosition(0, 0, cVar.m.width(), cVar.m.height());
-        this.J.setPosition(0, 0, cVar.m.width(), cVar.m.height());
-        this.J.setOutline(outline);
-        this.O = true;
+        this.b0.setPosition(0, 0, cVar.m.width(), cVar.m.height());
+        this.a0.setPosition(0, 0, cVar.m.width(), cVar.m.height());
+        this.a0.setOutline(outline);
+        this.f0 = true;
     }
 
     @Override // dh.d
     public final void l() {
         b();
-        this.O = true;
+        this.f0 = true;
     }
 
     @Override // dh.d
     public final void m() {
-        this.G.b();
+        this.X.b();
     }
 
     @Override // dh.d
     public final d n() {
-        this.J.setClipToOutline(false);
+        this.a0.setClipToOutline(false);
         return this;
     }
 
     @Override // dh.d, android.graphics.drawable.Drawable
     public final void setAlpha(int i10) {
-        int i11 = this.l;
-        this.l = i10;
-        this.J.setAlpha(i10 / 255.0f);
-        this.O = true;
+        int i11 = this.x;
+        this.x = i10;
+        this.a0.setAlpha(i10 / 255.0f);
+        this.f0 = true;
         if (i11 != 0 || i10 <= 0) {
             return;
         }
-        this.G.b();
+        this.X.b();
+    }
+
+    @Override // dh.d, org.telegram.ui.ActionBar.b6
+    public final void updateColors() {
+        super.updateColors();
+        this.c0.setShadowLayer(this.E, 0.0f, this.F, this.d);
+        this.d0.setColor(this.f);
+        this.e0.setColor(this.h);
+        this.f0 = true;
     }
 
     @Override // dh.d
     public final void v() {
-        super.v();
-        this.L.setShadowLayer(this.n, 0.0f, this.o, this.d);
-        this.M.setColor(this.f);
-        this.N.setColor(this.g);
-        this.O = true;
-    }
-
-    @Override // dh.d
-    public final void w() {
         float f7 = this.a;
         float f10 = this.b;
-        c cVar = this.j;
+        c cVar = this.v;
         Rect rect = cVar.m;
         Rect rect2 = cVar.m;
         float f11 = rect.left + f7;
         float f12 = rect.top + f10;
         float f13 = rect.right + f7;
         float f14 = rect.bottom + f10;
-        RecordingCanvas beginRecording = this.K.beginRecording();
+        RecordingCanvas beginRecording = this.b0.beginRecording();
         beginRecording.save();
         beginRecording.translate(-f11, -f12);
-        if (this.P != null && Build.VERSION.SDK_INT >= 33) {
+        if (this.g0 != null && Build.VERSION.SDK_INT >= 33) {
             int i10 = cVar.f;
             if (i10 <= 0) {
                 i10 = AndroidUtilities.dp(11.0f);
             }
             int max = Math.max(Math.min(i10, Math.min(rect2.width(), rect2.height()) / 5), 1);
-            g gVar = this.P;
+            g gVar = this.g0;
             float width = rect2.width();
             float height = rect2.height();
             float[] fArr = cVar.c;
             gVar.a(width, height, fArr[0], fArr[2], fArr[4], fArr[6], max, cVar.g, cVar.h, this.e);
         }
-        this.G.y(beginRecording, f11, f12, f13, f14);
+        this.X.y(beginRecording, f11, f12, f13, f14);
         beginRecording.save();
-        this.K.endRecording();
-        RecordingCanvas beginRecording2 = this.J.beginRecording();
+        this.b0.endRecording();
+        RecordingCanvas beginRecording2 = this.a0.beginRecording();
         if (Color.alpha(this.e) == 255) {
             beginRecording2.drawColor(this.e);
         } else {
-            beginRecording2.drawRenderNode(this.K);
-            if (this.P == null && Color.alpha(this.e) != 0) {
+            beginRecording2.drawRenderNode(this.b0);
+            if (this.g0 == null && Color.alpha(this.e) != 0) {
                 beginRecording2.drawColor(this.e);
             }
         }
         if (this.f != 0) {
-            d.e(beginRecording2, rect2.width(), rect2.height(), cVar.b, cVar.i, true, this.M);
+            d.e(beginRecording2, rect2.width(), rect2.height(), cVar.b, cVar.i, true, this.d0);
         }
-        if (this.g != 0) {
-            d.e(beginRecording2, rect2.width(), rect2.height(), cVar.b, cVar.j, false, this.N);
+        if (this.h != 0) {
+            d.e(beginRecording2, rect2.width(), rect2.height(), cVar.b, cVar.j, false, this.e0);
         }
-        this.J.endRecording();
+        this.a0.endRecording();
     }
 }

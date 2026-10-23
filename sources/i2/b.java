@@ -2,19 +2,19 @@ package i2;
 
 import v7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
-public abstract class b implements l1 {
+public abstract class b implements k1 {
     public boolean E;
-    public u2.g0 G;
+    public u2.h0 G;
     public x2.n H;
     public final int b;
     public p1 d;
     public int e;
-    public j2.k f;
+    public j2.j f;
     public e2.g0 h;
     public int n;
-    public u2.e1 r;
+    public u2.f1 r;
     public b2.w[] s;
     public long v;
     public long w;
@@ -29,9 +29,9 @@ public abstract class b implements l1 {
     }
 
     public final int B(long j10) {
-        u2.e1 e1Var = this.r;
-        e1Var.getClass();
-        return e1Var.m(j10 - this.v);
+        u2.f1 f1Var = this.r;
+        f1Var.getClass();
+        return f1Var.m(j10 - this.v);
     }
 
     public abstract int C(b2.w wVar);
@@ -49,20 +49,20 @@ public abstract class b implements l1 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final n d(Throwable th2, b2.w wVar, boolean z10, int i10) {
+    public final m c(Throwable th2, b2.w wVar, boolean z10, int i10) {
         int i11;
         if (wVar != null && !this.E) {
             this.E = true;
             try {
                 i11 = C(wVar) & 7;
-            } catch (n unused) {
+            } catch (m unused) {
             } finally {
                 this.E = false;
             }
-            return new n(1, th2, i10, j(), this.e, wVar, wVar != null ? 4 : i11, this.G, z10);
+            return new m(1, th2, i10, j(), this.e, wVar, wVar != null ? 4 : i11, this.G, z10);
         }
         i11 = 4;
-        return new n(1, th2, i10, j(), this.e, wVar, wVar != null ? 4 : i11, this.G, z10);
+        return new m(1, th2, i10, j(), this.e, wVar, wVar != null ? 4 : i11, this.G, z10);
     }
 
     public long g(long j10, long j11) {
@@ -72,7 +72,7 @@ public abstract class b implements l1 {
         return 10000L;
     }
 
-    public w0 i() {
+    public v0 i() {
         return null;
     }
 
@@ -91,9 +91,9 @@ public abstract class b implements l1 {
     public abstract void p(long j10, boolean z10, boolean z11);
 
     public final int w(qf.b bVar, h2.h hVar, int i10) {
-        u2.e1 e1Var = this.r;
-        e1Var.getClass();
-        int g10 = e1Var.g(bVar, hVar, i10);
+        u2.f1 f1Var = this.r;
+        f1Var.getClass();
+        int g10 = f1Var.g(bVar, hVar, i10);
         if (g10 == -4) {
             if (hVar.isEndOfStream()) {
                 this.x = Long.MIN_VALUE;
@@ -119,16 +119,16 @@ public abstract class b implements l1 {
 
     public abstract void x(long j10, long j11);
 
-    public final void y(b2.w[] wVarArr, u2.e1 e1Var, long j10, long j11, u2.g0 g0Var) {
+    public final void y(b2.w[] wVarArr, u2.f1 f1Var, long j10, long j11, u2.h0 h0Var) {
         u6.p(!this.y);
-        this.r = e1Var;
-        this.G = g0Var;
+        this.r = f1Var;
+        this.G = h0Var;
         if (this.x == Long.MIN_VALUE) {
             this.x = j10;
         }
         this.s = wVarArr;
         this.v = j11;
-        u(wVarArr, j10, j11, g0Var);
+        u(wVarArr, j10, j11, h0Var);
     }
 
     public final void z(long j10, boolean z10, boolean z11) {
@@ -162,13 +162,13 @@ public abstract class b implements l1 {
     public void A(float f7, float f10) {
     }
 
-    @Override // i2.l1
-    public void c(int i10, Object obj) {
+    @Override // i2.k1
+    public void d(int i10, Object obj) {
     }
 
     public void o(boolean z10, boolean z11) {
     }
 
-    public void u(b2.w[] wVarArr, long j10, long j11, u2.g0 g0Var) {
+    public void u(b2.w[] wVarArr, long j10, long j11, u2.h0 h0Var) {
     }
 }

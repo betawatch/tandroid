@@ -6,18 +6,18 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.nk;
+import org.telegram.messenger.sl;
 import org.telegram.ui.Components.aw;
 import org.telegram.ui.Components.ey;
-import org.telegram.ui.Components.jm0;
 import org.telegram.ui.Components.jy;
+import org.telegram.ui.Components.mm0;
 import org.telegram.ui.Components.tz;
 import org.telegram.ui.Components.zv;
-import org.telegram.ui.bj0;
-import org.telegram.ui.cp0;
-import org.telegram.ui.qh0;
+import org.telegram.ui.fj0;
+import org.telegram.ui.fp0;
+import org.telegram.ui.uh0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class q1 extends s4.m0 {
     public final /* synthetic */ int a;
@@ -49,7 +49,7 @@ public final class q1 extends s4.m0 {
                         rect.right = AndroidUtilities.dp(24.0f);
                         break;
                     } else {
-                        rect.right = nk.B(58.0f, h, tVar.getWidth() - AndroidUtilities.dp(36.0f)) / (h - 1);
+                        rect.right = sl.B(58.0f, h, tVar.getWidth() - AndroidUtilities.dp(36.0f)) / (h - 1);
                         break;
                     }
                 } else {
@@ -73,8 +73,8 @@ public final class q1 extends s4.m0 {
             case 3:
                 tz tzVar = (tz) this.b;
                 ey eyVar = tzVar.P;
-                if (!(view instanceof org.telegram.ui.Cells.n8)) {
-                    if (!(view instanceof jm0) && !(view instanceof jy)) {
+                if (!(view instanceof org.telegram.ui.Cells.o8)) {
+                    if (!(view instanceof mm0) && !(view instanceof jy)) {
                         if (view instanceof org.telegram.ui.Components.w9) {
                             rect.bottom = AndroidUtilities.dp(12.0f);
                             break;
@@ -106,7 +106,7 @@ public final class q1 extends s4.m0 {
                 break;
             case 5:
                 recyclerView.getClass();
-                if (RecyclerView.R(view) == ((qh0) this.b).c.size() - 1) {
+                if (RecyclerView.R(view) == ((uh0) this.b).c.size() - 1) {
                     rect.bottom = AndroidUtilities.dp(4.0f);
                     break;
                 }
@@ -115,19 +115,19 @@ public final class q1 extends s4.m0 {
                 super.a(rect, view, recyclerView, y0Var);
                 recyclerView.getClass();
                 int R = RecyclerView.R(view);
-                bj0 bj0Var = (bj0) this.b;
-                if (R == bj0Var.c0.size()) {
-                    rect.bottom = bj0Var.l0;
+                fj0 fj0Var = (fj0) this.b;
+                if (R == fj0Var.c0.size()) {
+                    rect.bottom = fj0Var.l0;
                     break;
                 }
                 break;
             case 7:
                 recyclerView.getClass();
                 int R2 = RecyclerView.R(view);
-                cp0 cp0Var = (cp0) this.b;
-                int i10 = cp0Var.b0;
+                fp0 fp0Var = (fp0) this.b;
+                int i10 = fp0Var.b0;
                 if (R2 >= i10) {
-                    int i11 = cp0Var.f0;
+                    int i11 = fp0Var.f0;
                     if (R2 < i10 + i11) {
                         int i12 = R2 - i10;
                         int i13 = i12 / 3;
@@ -148,9 +148,9 @@ public final class q1 extends s4.m0 {
                 super.a(rect, view, recyclerView, y0Var);
                 recyclerView.getClass();
                 int R3 = RecyclerView.R(view);
-                ug.y0 y0Var2 = (ug.y0) this.b;
-                if (R3 == y0Var2.d0.size()) {
-                    rect.bottom = y0Var2.p0;
+                ug.x0 x0Var = (ug.x0) this.b;
+                if (R3 == x0Var.d0.size()) {
+                    rect.bottom = x0Var.p0;
                     break;
                 }
                 break;

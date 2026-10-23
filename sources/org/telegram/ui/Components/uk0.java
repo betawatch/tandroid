@@ -1,31 +1,24 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
-/* loaded from: classes3.dex */
-public final class uk0 extends pg.a {
-    public final ah.i1 c;
+import android.animation.ValueAnimator;
 
-    public uk0(int i10, ah.i1 i1Var) {
-        super(i10, false);
-        this.c = i1Var;
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+/* loaded from: classes3.dex */
+public final class uk0 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ float a;
+    public final /* synthetic */ gl0 b;
+
+    public uk0(gl0 gl0Var, float f7) {
+        this.b = gl0Var;
+        this.a = f7;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && uk0.class == obj.getClass()) {
-            uk0 uk0Var = (uk0) obj;
-            int i10 = this.a;
-            int i11 = uk0Var.a;
-            if (i10 == i11 && (i10 == 0 || i10 == 3)) {
-                ah.i1 i1Var = this.c;
-                return i1Var != null && i1Var.equals(uk0Var.c);
-            }
-            if (i10 == i11) {
-                return true;
-            }
-        }
-        return false;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        gl0 gl0Var = this.b;
+        gl0Var.o0 = floatValue;
+        gl0Var.n0 = (1.0f - gl0Var.o0) * this.a;
+        gl0Var.invalidate();
     }
 }

@@ -16,14 +16,14 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.dl0;
-import org.telegram.ui.Components.lw0;
+import org.telegram.ui.Components.gl0;
+import org.telegram.ui.Components.ow0;
 import org.telegram.ui.Components.tz;
 import org.telegram.ui.Components.u20;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final class ub extends lw0 {
+public final class ub extends ow0 {
     public boolean A0;
     public float B0;
     public float C0;
@@ -43,7 +43,7 @@ public final class ub extends lw0 {
         this.x0 = new ScaleGestureDetector(activity, new tb(this));
     }
 
-    public final void Z(Bitmap bitmap, float f7) {
+    public final void Y(Bitmap bitmap, float f7) {
         Canvas canvas = new Canvas(bitmap);
         canvas.drawColor(-16777216);
         float width = bitmap.getWidth();
@@ -100,7 +100,7 @@ public final class ub extends lw0 {
     /* JADX WARN: Type inference failed for: r11v3, types: [boolean] */
     /* JADX WARN: Type inference failed for: r11v5 */
     /* JADX WARN: Type inference failed for: r11v7 */
-    @Override // org.telegram.ui.Components.lw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.ow0, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -111,7 +111,7 @@ public final class ub extends lw0 {
         xa xaVar;
         float f7;
         float f10;
-        rg.b2 b2Var;
+        rg.c2 c2Var;
         vb vbVar = this.E0;
         RectF rectF = vbVar.H;
         Path path = vbVar.e0;
@@ -145,8 +145,8 @@ public final class ub extends lw0 {
                     float[] fArr = xaVar.j2;
                     if (xaVar.d2) {
                         xaVar.d2 = r11;
-                        if (xaVar.Z1 != null && (b2Var = xaVar.a2) != null) {
-                            fArr[r11] = b2Var.getMeasuredWidth() / 2.0f;
+                        if (xaVar.Z1 != null && (c2Var = xaVar.a2) != null) {
+                            fArr[r11] = c2Var.getMeasuredWidth() / 2.0f;
                             fArr[1] = xaVar.a2.getMeasuredHeight() / 2.0f;
                             xaVar.a2.getMatrix().mapPoints(fArr);
                             f7 = 1.0f;
@@ -196,12 +196,12 @@ public final class ub extends lw0 {
                                         vbVar.F.e.draw(canvas);
                                         vbVar.F.e.setRoundRadius(i11);
                                     } else {
-                                        org.telegram.ui.Cells.d7 d7Var = qbVar.d;
-                                        if (d7Var != null) {
-                                            d7Var.setBounds((int) rectF3.left, (int) rectF3.top, (int) rectF3.right, (int) rectF3.bottom);
-                                            org.telegram.ui.Cells.d7 d7Var2 = vbVar.F.d;
-                                            d7Var2.d = (int) com.google.android.gms.internal.play_billing.k3.C(clamp, 255.0f, clamp, clamp);
-                                            d7Var2.draw(canvas);
+                                        org.telegram.ui.Cells.f7 f7Var = qbVar.d;
+                                        if (f7Var != null) {
+                                            f7Var.setBounds((int) rectF3.left, (int) rectF3.top, (int) rectF3.right, (int) rectF3.bottom);
+                                            org.telegram.ui.Cells.f7 f7Var2 = vbVar.F.d;
+                                            f7Var2.g = (int) com.google.android.gms.internal.play_billing.k3.C(clamp, 255.0f, clamp, clamp);
+                                            f7Var2.draw(canvas);
                                         }
                                     }
                                     vbVar.F.getClass();
@@ -295,7 +295,7 @@ public final class ub extends lw0 {
         return super.dispatchTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.lw0
+    @Override // org.telegram.ui.Components.ow0
     public int getBottomPadding() {
         int height = getHeight();
         vb vbVar = this.E0;
@@ -306,18 +306,13 @@ public final class ub extends lw0 {
         return getHeight() - this.E0.r.getBottom();
     }
 
-    @Override // org.telegram.ui.Components.lw0
-    public /* bridge */ /* synthetic */ int[] getColorKeys() {
-        return null;
-    }
-
     public int getPaddingUnderContainer() {
         int height = getHeight();
         vb vbVar = this.E0;
         return (height - vbVar.b0) - vbVar.r.getBottom();
     }
 
-    @Override // org.telegram.ui.Components.lw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.ow0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         int i14;
         tz emojiView;
@@ -370,10 +365,10 @@ public final class ub extends lw0 {
             if (tzVar != null) {
                 tzVar.layout(vbVar.Y, (measuredHeight - vbVar.b0) - tzVar.getMeasuredHeight(), measuredWidth - vbVar.a0, measuredHeight - vbVar.b0);
             }
-            dl0 dl0Var = vbVar.v1.Z1;
-            if (dl0Var != null) {
+            gl0 gl0Var = vbVar.v1.Z1;
+            if (gl0Var != null) {
                 int i21 = vbVar.Y;
-                dl0Var.layout(i21, vbVar.Z, dl0Var.getMeasuredWidth() + i21, vbVar.v1.Z1.getMeasuredHeight() + vbVar.Z);
+                gl0Var.layout(i21, vbVar.Z, gl0Var.getMeasuredWidth() + i21, vbVar.v1.Z1.getMeasuredHeight() + vbVar.Z);
                 ah.v vVar = vbVar.v1.Z1.getReactionsWindow() != null ? vbVar.v1.Z1.getReactionsWindow().c : null;
                 if (vVar != null) {
                     int i22 = vbVar.Y;
@@ -441,7 +436,7 @@ public final class ub extends lw0 {
         lb lbVar = vbVar.c1;
         if (lbVar != null) {
             tz emojiView = lbVar.f.getEmojiView();
-            R();
+            Q();
             AndroidUtilities.dp(20.0f);
             if (emojiView != null) {
                 emojiView.measure(View.MeasureSpec.makeMeasureSpec(i12, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(emojiView.getLayoutParams().height, TLObject.FLAG_30));
@@ -453,9 +448,9 @@ public final class ub extends lw0 {
             if (tzVar != null) {
                 tzVar.measure(View.MeasureSpec.makeMeasureSpec(i12, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(vbVar.v1.p2.getLayoutParams().height, TLObject.FLAG_30));
             }
-            dl0 dl0Var = vbVar.v1.Z1;
-            if (dl0Var != null) {
-                measureChild(dl0Var, i10, i11);
+            gl0 gl0Var = vbVar.v1.Z1;
+            if (gl0Var != null) {
+                measureChild(gl0Var, i10, i11);
                 if (vbVar.v1.Z1.getReactionsWindow() != null) {
                     measureChild(vbVar.v1.Z1.getReactionsWindow().c, i10, i11);
                 }

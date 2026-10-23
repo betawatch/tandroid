@@ -22,7 +22,7 @@ import android.widget.SpinnerAdapter;
 import android.widget.ThemedSpinnerAdapter;
 import v7.q7;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class q0 extends Spinner {
     public static final int[] r = {R.attr.spinnerMode};
@@ -97,7 +97,7 @@ public final class q0 extends Spinner {
             n0 n0Var = new n0(this, this.b, attributeSet);
             g3 P2 = g3.P(this.b, attributeSet, iArr, org.telegram.messenger.beta.R.attr.spinnerStyle);
             this.h = ((TypedArray) P2.c).getLayoutDimension(3, -2);
-            n0Var.j(P2.F(1));
+            n0Var.i(P2.F(1));
             n0Var.S = typedArray2.getString(2);
             P2.Q();
             this.f = n0Var;
@@ -184,7 +184,7 @@ public final class q0 extends Spinner {
     @Override // android.widget.Spinner
     public Drawable getPopupBackground() {
         p0 p0Var = this.f;
-        return p0Var != null ? p0Var.h() : super.getPopupBackground();
+        return p0Var != null ? p0Var.e() : super.getPopupBackground();
     }
 
     @Override // android.widget.Spinner
@@ -195,7 +195,7 @@ public final class q0 extends Spinner {
     @Override // android.widget.Spinner
     public CharSequence getPrompt() {
         p0 p0Var = this.f;
-        return p0Var != null ? p0Var.e() : super.getPrompt();
+        return p0Var != null ? p0Var.d() : super.getPrompt();
     }
 
     public ColorStateList getSupportBackgroundTintList() {
@@ -298,7 +298,7 @@ public final class q0 extends Spinner {
         if (p0Var == null) {
             super.setDropDownHorizontalOffset(i10);
         } else {
-            p0Var.l(i10);
+            p0Var.k(i10);
             p0Var.c(i10);
         }
     }
@@ -307,7 +307,7 @@ public final class q0 extends Spinner {
     public void setDropDownVerticalOffset(int i10) {
         p0 p0Var = this.f;
         if (p0Var != null) {
-            p0Var.k(i10);
+            p0Var.j(i10);
         } else {
             super.setDropDownVerticalOffset(i10);
         }
@@ -326,7 +326,7 @@ public final class q0 extends Spinner {
     public void setPopupBackgroundDrawable(Drawable drawable) {
         p0 p0Var = this.f;
         if (p0Var != null) {
-            p0Var.j(drawable);
+            p0Var.i(drawable);
         } else {
             super.setPopupBackgroundDrawable(drawable);
         }
@@ -341,7 +341,7 @@ public final class q0 extends Spinner {
     public void setPrompt(CharSequence charSequence) {
         p0 p0Var = this.f;
         if (p0Var != null) {
-            p0Var.i(charSequence);
+            p0Var.h(charSequence);
         } else {
             super.setPrompt(charSequence);
         }

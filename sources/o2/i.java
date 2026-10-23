@@ -12,6 +12,7 @@ import e9.n0;
 import e9.x1;
 import e9.y0;
 import g2.c0;
+import i2.o1;
 import j$.util.DesugarCollections;
 import j$.util.Objects;
 import java.util.ArrayList;
@@ -24,7 +25,7 @@ import p2.x;
 import si.z;
 import v7.b8;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class i {
     public final c a;
@@ -36,7 +37,7 @@ public final class i {
     public final p2.e g;
     public final p1 h;
     public final List i;
-    public final j2.k k;
+    public final j2.j k;
     public boolean l;
     public u2.b n;
     public Uri o;
@@ -47,14 +48,14 @@ public final class i {
     public byte[] m = m0.b;
     public long s = -9223372036854775807L;
 
-    public i(c cVar, p2.e eVar, x[] xVarArr, w[] wVarArr, l2.f fVar, c0 c0Var, w0 w0Var, List list, j2.k kVar) {
+    public i(c cVar, p2.e eVar, x[] xVarArr, w[] wVarArr, l2.f fVar, c0 c0Var, w0 w0Var, List list, j2.j jVar) {
         this.a = cVar;
         this.g = eVar;
         this.e = xVarArr;
         this.f = wVarArr;
         this.d = w0Var;
         this.i = list;
-        this.k = kVar;
+        this.k = jVar;
         g2.h createDataSource = ((g2.g) fVar.b).createDataSource();
         this.b = createDataSource;
         if (c0Var != null) {
@@ -120,7 +121,7 @@ public final class i {
             Uri uri2 = (Uri) it.next();
             p2.d dVar2 = (p2.d) eVar.d.get(uri2);
             if (dVar2 != null) {
-                p2.c cVar = (p2.c) i2.e.i(dVar2.b, uri2, uri2);
+                p2.c cVar = (p2.c) o1.j(dVar2.b, uri2, uri2);
                 cVar.getClass();
                 if (elapsedRealtime <= cVar.r) {
                     i10++;

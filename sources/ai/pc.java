@@ -1,49 +1,66 @@
 package ai;
 
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RadialGradient;
+import android.graphics.RectF;
 import android.widget.LinearLayout;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ju0;
-import org.telegram.ui.zt0;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final class pc extends zt0 {
-    public final /* synthetic */ org.telegram.ui.Components.w9 a;
-    public final /* synthetic */ LinearLayout b;
-    public final /* synthetic */ long c;
+public final class pc extends LinearLayout {
+    public final Path a;
+    public final /* synthetic */ Matrix b;
+    public final /* synthetic */ RadialGradient c;
+    public final /* synthetic */ Paint d;
+    public final /* synthetic */ org.telegram.ui.Components.p5 e;
 
-    public pc(org.telegram.ui.Components.w9 w9Var, LinearLayout linearLayout, long j10) {
-        this.a = w9Var;
-        this.b = linearLayout;
-        this.c = j10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public pc(Context context, Matrix matrix, RadialGradient radialGradient, Paint paint, org.telegram.ui.Components.p5 p5Var) {
+        super(context);
+        this.b = matrix;
+        this.c = radialGradient;
+        this.d = paint;
+        this.e = p5Var;
+        this.a = new Path();
     }
 
-    @Override // org.telegram.ui.zt0, org.telegram.ui.hu0
-    public final ju0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
-        org.telegram.ui.Components.w9 w9Var = this.a;
-        ImageReceiver imageReceiver = w9Var.getImageReceiver();
-        int[] iArr = new int[2];
-        w9Var.getLocationInWindow(iArr);
-        ju0 ju0Var = new ju0();
-        ju0Var.b = iArr[0];
-        ju0Var.c = iArr[1];
-        ju0Var.d = this.b;
-        ju0Var.m = null;
-        ju0Var.a = imageReceiver;
-        if (z10) {
-            ju0Var.e = imageReceiver.getBitmapSafe();
-        }
-        ju0Var.h = imageReceiver.getRoundRadius(true);
-        ju0Var.f = this.c;
-        ju0Var.j = 0;
-        ju0Var.i = 0;
-        return ju0Var;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        float dp = AndroidUtilities.dp(10.0f);
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(0.0f, AndroidUtilities.dp(2.0f) + 1, getWidth(), getHeight() + dp);
+        Path path = this.a;
+        path.rewind();
+        path.addRoundRect(rectF, dp, dp, Path.Direction.CW);
+        canvas.save();
+        canvas.clipPath(path);
+        Matrix matrix = this.b;
+        matrix.reset();
+        matrix.postTranslate(getWidth() / 2.0f, AndroidUtilities.dp(100.0f));
+        this.c.setLocalMatrix(matrix);
+        canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight(), this.d);
+        canvas.save();
+        canvas.translate(getWidth() / 2.0f, AndroidUtilities.dp(100.0f));
+        m1.a(canvas, 0, this.e, getWidth(), AndroidUtilities.dp(180.0f), 1.0f, 1.0f);
+        canvas.restore();
+        super.dispatchDraw(canvas);
+        canvas.restore();
     }
 
-    @Override // org.telegram.ui.zt0, org.telegram.ui.hu0
-    public final boolean L() {
-        return true;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.e.a();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.e.b();
     }
 }

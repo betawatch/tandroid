@@ -35,10 +35,12 @@ import java.util.concurrent.atomic.AtomicLongFieldUpdater;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.ui.Wallet.m4;
+import si.o0;
 import z9.t0;
 import z9.z0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class r {
     public static r f;
@@ -116,10 +118,10 @@ public final class r {
             str = str.concat(" pid");
         }
         if (((Integer) this.e) == null) {
-            str = r4.c.u(str, " importance");
+            str = o0.u(str, " importance");
         }
         if (((Boolean) this.c) == null) {
-            str = r4.c.u(str, " defaultProcess");
+            str = o0.u(str, " defaultProcess");
         }
         if (str.isEmpty()) {
             return new t0((String) this.b, ((Integer) this.d).intValue(), ((Integer) this.e).intValue(), ((Boolean) this.c).booleanValue());
@@ -133,10 +135,10 @@ public final class r {
             str = str.concat(" version");
         }
         if (((String) this.e) == null) {
-            str = r4.c.u(str, " buildVersion");
+            str = o0.u(str, " buildVersion");
         }
         if (((Boolean) this.c) == null) {
-            str = r4.c.u(str, " jailbroken");
+            str = o0.u(str, " jailbroken");
         }
         if (str.isEmpty()) {
             return new z0(((Integer) this.d).intValue(), (String) this.b, (String) this.e, ((Boolean) this.c).booleanValue());
@@ -606,10 +608,10 @@ public final class r {
             hVar.i(str.substring(i10));
         }
         hVar.f(hVar.n);
-        ef.a y3 = hVar.j.y(new qf.b(3, hVar.k, hVar.m));
+        ef.a E = hVar.j.E(new qf.b(3, hVar.k, hVar.m));
         Iterator it = hVar.o.iterator();
         while (it.hasNext()) {
-            ((ff.a) it.next()).g(y3);
+            ((ff.a) it.next()).g(E);
         }
         df.f fVar = (df.f) hVar.l.b;
         Iterator it2 = ((ArrayList) this.e).iterator();
@@ -750,7 +752,7 @@ public final class r {
         this.e = (ArrayList) z5Var.a;
         ArrayList arrayList3 = (ArrayList) z5Var.c;
         this.c = arrayList3;
-        bVar.y(new qf.b(i10, arrayList3, Collections.EMPTY_MAP));
+        bVar.E(new qf.b(i10, arrayList3, Collections.EMPTY_MAP));
     }
 
     public r(kd.h hVar) {
@@ -766,7 +768,7 @@ public final class r {
         this.d = new Object();
         this.e = new ThreadLocal();
         this.b = executorService;
-        executorService.execute(new p8.b(this, 10));
+        executorService.execute(new m4(this, 14));
     }
 
     public r(te.b bVar, Object obj, Object obj2, Object[] objArr) {

@@ -11,7 +11,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final class cy extends qt {
     public int M;
@@ -29,7 +29,7 @@ public final class cy extends qt {
     public final void a(Canvas canvas, long j10, int i10, int i11, float f7) {
         int i12;
         ey eyVar = this.R;
-        tz tzVar = eyVar.d3;
+        tz tzVar = eyVar.g3;
         ArrayList arrayList = this.O;
         if (arrayList == null) {
             return;
@@ -37,10 +37,10 @@ public final class cy extends qt {
         boolean z10 = true;
         boolean z11 = arrayList.size() <= 4 || SharedConfig.getDevicePerformanceClass() == 0 || !LiteMode.isEnabled(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
         if (!z11) {
-            boolean z12 = tzVar.u2 > 0 && SystemClock.elapsedRealtime() - tzVar.u2 < eyVar.x1();
+            boolean z12 = tzVar.v2 > 0 && SystemClock.elapsedRealtime() - tzVar.v2 < eyVar.C1();
             for (int i13 = 0; i13 < this.O.size(); i13++) {
                 cz czVar = (cz) this.O.get(i13);
-                if (czVar.h != 0.0f || czVar.n != null || ((i12 = czVar.a) > tzVar.s2 && i12 < tzVar.t2 && z12)) {
+                if (czVar.h != 0.0f || czVar.n != null || ((i12 = czVar.a) > tzVar.t2 && i12 < tzVar.u2 && z12)) {
                     break;
                 }
             }
@@ -67,9 +67,9 @@ public final class cy extends qt {
             r5 r5Var = czVar.b;
             if (r5Var != null) {
                 ImageReceiver.BackgroundThreadDrawHolder backgroundThreadDrawHolder = czVar.f[this.K];
-                ci.g3 g3Var = r5Var.k;
-                if (g3Var != null) {
-                    g3Var.setAlpha(r5Var.l);
+                ci.f3 f3Var = r5Var.k;
+                if (f3Var != null) {
+                    f3Var.setAlpha(r5Var.l);
                     r5Var.k.draw(canvas, backgroundThreadDrawHolder);
                 }
             }
@@ -91,7 +91,7 @@ public final class cy extends qt {
         float f11;
         float f12;
         ey eyVar = this.R;
-        tz tzVar = eyVar.d3;
+        tz tzVar = eyVar.g3;
         if (this.O != null) {
             canvas.save();
             float f13 = 0.0f;
@@ -109,21 +109,21 @@ public final class cy extends qt {
                     rect.set(czVar.getPaddingLeft() + czVar.getLeft(), height, czVar.getRight() - czVar.getPaddingRight(), ((czVar.getMeasuredHeight() + height) - czVar.getPaddingBottom()) - czVar.getPaddingTop());
                     float f15 = czVar.h;
                     float f16 = f15 != f13 ? (((1.0f - f15) * 0.2f) + 0.8f) * 1.0f : 1.0f;
-                    if (tzVar.u2 > 0) {
+                    if (tzVar.v2 > 0) {
                         i10 = i11;
-                        if (SystemClock.elapsedRealtime() - tzVar.u2 < eyVar.x1()) {
-                            if (tzVar.s2 >= 0 && tzVar.t2 >= 0 && tzVar.u2 > 0) {
+                        if (SystemClock.elapsedRealtime() - tzVar.v2 < eyVar.C1()) {
+                            if (tzVar.t2 >= 0 && tzVar.u2 >= 0 && tzVar.v2 > 0) {
                                 int R = RecyclerView.R(czVar);
-                                int i12 = tzVar.s2;
+                                int i12 = tzVar.t2;
                                 int i13 = R - i12;
-                                int i14 = tzVar.t2 - i12;
+                                int i14 = tzVar.u2 - i12;
                                 if (i13 >= 0 && i13 < i14) {
                                     float max = Math.max(600L, Math.min(55, r7 - i12) * 40);
                                     r5Var2 = r5Var;
                                     f10 = 0.0f;
-                                    float a2 = w7.r.a(com.google.android.gms.internal.play_billing.k3.c(max, 0.45f, SystemClock.elapsedRealtime() - tzVar.u2, Math.max(400L, Math.min(45, tzVar.t2 - tzVar.s2) * 35)), 0.0f, 1.0f);
+                                    float a2 = w7.r.a(com.google.android.gms.internal.play_billing.k3.c(max, 0.45f, SystemClock.elapsedRealtime() - tzVar.v2, Math.max(400L, Math.min(45, tzVar.u2 - tzVar.t2) * 35)), 0.0f, 1.0f);
                                     float f17 = f16;
-                                    float interpolation = bs.g.getInterpolation(w7.r.a((SystemClock.elapsedRealtime() - tzVar.u2) / max, 0.0f, 1.0f));
+                                    float interpolation = bs.g.getInterpolation(w7.r.a((SystemClock.elapsedRealtime() - tzVar.v2) / max, 0.0f, 1.0f));
                                     float f18 = i13;
                                     float f19 = i14;
                                     AndroidUtilities.cascade(a2, f18, f19, f19 / 5.0f);
@@ -183,7 +183,7 @@ public final class cy extends qt {
         while (true) {
             ArrayList arrayList = this.P;
             if (i10 >= arrayList.size()) {
-                this.R.d3.P.invalidate();
+                this.R.g3.P.invalidate();
                 return;
             }
             ImageReceiver.BackgroundThreadDrawHolder[] backgroundThreadDrawHolderArr = ((cz) arrayList.get(i10)).f;
@@ -197,7 +197,7 @@ public final class cy extends qt {
     @Override // org.telegram.ui.Components.qt
     public final void i(long j10) {
         r5 r5Var;
-        tz tzVar = this.R.d3;
+        tz tzVar = this.R.g3;
         ArrayList arrayList = this.P;
         arrayList.clear();
         for (int i10 = 0; i10 < this.O.size(); i10++) {
@@ -206,9 +206,9 @@ public final class cy extends qt {
             ImageReceiver.BackgroundThreadDrawHolder[] backgroundThreadDrawHolderArr = czVar.f;
             if (span != null && (r5Var = (r5) tzVar.d2.get(czVar.d.getDocumentId())) != null && r5Var.k != null) {
                 r5Var.t(j10);
-                ci.g3 g3Var = r5Var.k;
+                ci.f3 f3Var = r5Var.k;
                 int i11 = this.K;
-                ImageReceiver.BackgroundThreadDrawHolder drawInBackgroundThread = g3Var.setDrawInBackgroundThread(backgroundThreadDrawHolderArr[i11], i11);
+                ImageReceiver.BackgroundThreadDrawHolder drawInBackgroundThread = f3Var.setDrawInBackgroundThread(backgroundThreadDrawHolderArr[i11], i11);
                 backgroundThreadDrawHolderArr[i11] = drawInBackgroundThread;
                 drawInBackgroundThread.time = j10;
                 drawInBackgroundThread.overrideAlpha = 1.0f;

@@ -33,11 +33,11 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.bk0;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.yj0;
-import org.telegram.ui.Components.yq;
+import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class e6 extends FrameLayout {
     public final org.telegram.ui.Components.z5 E;
@@ -45,7 +45,7 @@ public final class e6 extends FrameLayout {
     public final LinearLayout G;
     public final org.telegram.ui.Components.q6 H;
     public final org.telegram.ui.Components.q6 I;
-    public final yj0 J;
+    public final bk0 J;
     public final TextView K;
     public final TextView L;
     public final TextView M;
@@ -59,7 +59,7 @@ public final class e6 extends FrameLayout {
     public final int[] U;
     public final int[] V;
     public int W;
-    public final org.telegram.ui.ActionBar.d6 a;
+    public final org.telegram.ui.ActionBar.g6 a;
     public long a0;
     public final d6 b;
     public TLRPC.Document b0;
@@ -77,7 +77,7 @@ public final class e6 extends FrameLayout {
     public boolean i0;
     public boolean j0;
     public Runnable k0;
-    public yj0 l0;
+    public bk0 l0;
     public SpannableStringBuilder m0;
     public final c6[] n;
     public final wh.n r;
@@ -87,31 +87,31 @@ public final class e6 extends FrameLayout {
     public final s5[] x;
     public final s5[] y;
 
-    public e6(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+    public e6(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
         super(context);
         int i10 = 6;
         this.U = new int[]{-14861233, -15787732, -11327734, -14742773, -14527649, -15920861};
-        this.V = new int[]{org.telegram.ui.ActionBar.h6.m1(0.08f, -1), org.telegram.ui.ActionBar.h6.m1(0.08f, -1), -294362, -3914963, -13519030, -12613223};
-        this.a = d6Var;
-        d6 d6Var2 = new d6();
-        this.b = d6Var2;
+        this.V = new int[]{org.telegram.ui.ActionBar.k6.o1(0.08f, -1), org.telegram.ui.ActionBar.k6.o1(0.08f, -1), -294362, -3914963, -13519030, -12613223};
+        this.a = g6Var;
+        d6 d6Var = new d6();
+        this.b = d6Var;
         Drawable mutate = context.getResources().getDrawable(R.drawable.filled_forge).mutate();
         mutate.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.SRC_IN));
-        d6Var2.g = mutate;
-        setBackground(d6Var2);
+        d6Var.g = mutate;
+        setBackground(d6Var);
         FrameLayout frameLayout = new FrameLayout(context);
         this.P = frameLayout;
         addView(frameLayout, w7.z5.e(-1, 60, 55));
         ImageView imageView = new ImageView(context);
         this.c = imageView;
         imageView.setImageResource(R.drawable.outline_question_mark);
-        imageView.setBackground(new u6(AndroidUtilities.dp(24.0f), org.telegram.ui.ActionBar.h6.m1(0.08f, -1)));
+        imageView.setBackground(new u6(AndroidUtilities.dp(24.0f), org.telegram.ui.ActionBar.k6.o1(0.08f, -1)));
         frameLayout.addView(imageView, w7.z5.d(32, 32.0f, 51, 14.0f, 14.0f, 14.0f, 14.0f));
         imageView.setOnClickListener(new p5(this, 0));
         w7.b6.a(imageView);
         ImageView imageView2 = new ImageView(context);
         imageView2.setImageResource(R.drawable.msg_close);
-        imageView2.setBackground(new u6(AndroidUtilities.dp(24.0f), org.telegram.ui.ActionBar.h6.m1(0.08f, -1)));
+        imageView2.setBackground(new u6(AndroidUtilities.dp(24.0f), org.telegram.ui.ActionBar.k6.o1(0.08f, -1)));
         frameLayout.addView(imageView2, w7.z5.d(32, 32.0f, 53, 14.0f, 14.0f, 14.0f, 14.0f));
         int i11 = 1;
         imageView2.setOnClickListener(new p5(this, i11));
@@ -202,7 +202,7 @@ public final class e6 extends FrameLayout {
             int i17 = i16 == 5 ? i11 : 0;
             y5 y5Var = new y5(context);
             FrameLayout frameLayout5 = new FrameLayout(context);
-            frameLayout5.setBackground(new u6(AndroidUtilities.dp(24.0f), org.telegram.ui.ActionBar.h6.m1(0.08f, -1)));
+            frameLayout5.setBackground(new u6(AndroidUtilities.dp(24.0f), org.telegram.ui.ActionBar.k6.o1(0.08f, -1)));
             y5Var.addView(frameLayout5, w7.z5.d(-1, -1.0f, 119, 2.0f, 2.0f, 2.0f, 2.0f));
             org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
             w9Var.setImageResource(R.drawable.large_forge);
@@ -249,10 +249,10 @@ public final class e6 extends FrameLayout {
         z5Var2.setGravity(17);
         z5Var2.setTextColor(-1);
         z5Var2.setAlpha(this.d0 != null ? 1.0f : 0.25f);
-        z5Var2.setBackground(new u6(AndroidUtilities.dp(14.0f), org.telegram.ui.ActionBar.h6.m1(0.08f, -1)));
+        z5Var2.setBackground(new u6(AndroidUtilities.dp(14.0f), org.telegram.ui.ActionBar.k6.o1(0.08f, -1)));
         w7.b6.b(z5Var2, 0.02f, 1.2f);
         this.Q.addView(z5Var2, w7.z5.d(-2, 27.0f, 49, 32.0f, 412.0f, 32.0f, 84.0f));
-        z5Var2.setOnClickListener(new p(i18, this, d6Var));
+        z5Var2.setOnClickListener(new p(i18, this, g6Var));
         this.Q.addView(this.v, w7.z5.d(-2, 54.0f, 49, 32.0f, 340.0f, 32.0f, 84.0f));
         this.Q.addView(this.w, w7.z5.d(-2, 54.0f, 49, 32.0f, 394.0f, 32.0f, 84.0f));
         LinearLayout linearLayout5 = new LinearLayout(context);
@@ -261,7 +261,7 @@ public final class e6 extends FrameLayout {
         t5 t5Var = new t5();
         this.F = t5Var;
         linearLayout5.setBackground(t5Var);
-        t5Var.a(org.telegram.ui.ActionBar.h6.m1(0.08f, -1), org.telegram.ui.ActionBar.h6.m1(0.08f, -1));
+        t5Var.a(org.telegram.ui.ActionBar.k6.o1(0.08f, -1), org.telegram.ui.ActionBar.k6.o1(0.08f, -1));
         w7.b6.b(linearLayout5, 0.02f, 1.2f);
         addView(linearLayout5, w7.z5.d(-1, -2.0f, 87, 20.0f, 0.0f, 20.0f, 18.0f));
         linearLayout5.setOnClickListener(new p5(this, 4));
@@ -269,7 +269,7 @@ public final class e6 extends FrameLayout {
         this.H = q6Var2;
         q6Var2.setTypeface(AndroidUtilities.bold());
         q6Var2.setGravity(17);
-        q6Var2.setTextColor(org.telegram.ui.ActionBar.h6.m1(0.75f, -1));
+        q6Var2.setTextColor(org.telegram.ui.ActionBar.k6.o1(0.75f, -1));
         q6Var2.setText(LocaleController.getString(R.string.GiftCraftButton));
         q6Var2.setTextSize(AndroidUtilities.dp(14.0f));
         linearLayout5.addView(q6Var2, w7.z5.r(-1, 18, 55, 16.0f, 7.33f, 16.0f, 0.0f));
@@ -277,18 +277,18 @@ public final class e6 extends FrameLayout {
         this.I = q6Var3;
         q6Var3.getDrawable().r(true, false);
         q6Var3.setGravity(17);
-        q6Var3.setTextColor(org.telegram.ui.ActionBar.h6.m1(0.75f, -1));
+        q6Var3.setTextColor(org.telegram.ui.ActionBar.k6.o1(0.75f, -1));
         q6Var3.setText(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.GiftCraftSuccessChance, "0%")));
         q6Var3.setTextSize(AndroidUtilities.dp(12.0f));
         linearLayout5.addView(q6Var3, w7.z5.r(-1, 14, 55, 16.0f, 2.66f, 16.0f, 7.66f));
         LinearLayout linearLayout6 = new LinearLayout(context);
         linearLayout6.setOrientation(0);
         linearLayout6.setGravity(17);
-        yj0 yj0Var = new yj0(context);
-        this.J = yj0Var;
-        yj0Var.setAutoRepeat(true);
-        yj0Var.f(R.raw.gift_crafting, 30, 30, null);
-        linearLayout6.addView(yj0Var, w7.z5.t(30, 30, 17, 0, 0, 4, 0));
+        bk0 bk0Var = new bk0(context);
+        this.J = bk0Var;
+        bk0Var.setAutoRepeat(true);
+        bk0Var.f(R.raw.gift_crafting, 30, 30, null);
+        linearLayout6.addView(bk0Var, w7.z5.t(30, 30, 17, 0, 0, 4, 0));
         TextView textView2 = new TextView(context);
         textView2.setTextSize(1, 20.0f);
         textView2.setTextColor(-1);
@@ -300,29 +300,29 @@ public final class e6 extends FrameLayout {
         TextView textView3 = new TextView(context);
         this.K = textView3;
         textView3.setTextSize(1, 13.0f);
-        textView3.setTextColor(org.telegram.ui.ActionBar.h6.m1(0.5f, -1));
+        textView3.setTextColor(org.telegram.ui.ActionBar.k6.o1(0.5f, -1));
         textView3.setTypeface(AndroidUtilities.bold());
         textView3.setGravity(17);
-        TextView j10 = org.telegram.ui.Cells.c1.j(this.R, textView3, w7.z5.d(-1, -2.0f, 49, 0.0f, 383.0f, 0.0f, 0.0f), context);
+        TextView j10 = org.telegram.ui.Cells.b1.j(this.R, textView3, w7.z5.d(-1, -2.0f, 49, 0.0f, 383.0f, 0.0f, 0.0f), context);
         this.L = j10;
         j10.setTextSize(1, 13.0f);
         j10.setTextColor(-1);
         j10.setTypeface(AndroidUtilities.bold());
         j10.setGravity(17);
         j10.setPadding(AndroidUtilities.dp(9.0f), 0, AndroidUtilities.dp(9.0f), 0);
-        j10.setBackground(new u6(AndroidUtilities.dp(14.0f), org.telegram.ui.ActionBar.h6.m1(0.08f, -1)));
-        TextView j11 = org.telegram.ui.Cells.c1.j(this.R, j10, w7.z5.d(-2, 27.0f, 81, 0.0f, 0.0f, 0.0f, 74.0f), context);
+        j10.setBackground(new u6(AndroidUtilities.dp(14.0f), org.telegram.ui.ActionBar.k6.o1(0.08f, -1)));
+        TextView j11 = org.telegram.ui.Cells.b1.j(this.R, j10, w7.z5.d(-2, 27.0f, 81, 0.0f, 0.0f, 0.0f, 74.0f), context);
         j11.setTextSize(1, 13.0f);
-        j11.setTextColor(org.telegram.ui.ActionBar.h6.m1(0.5f, -1));
+        j11.setTextColor(org.telegram.ui.ActionBar.k6.o1(0.5f, -1));
         j11.setGravity(17);
         j11.setText(LocaleController.getString(R.string.GiftCraftProgressText));
-        TextView j12 = org.telegram.ui.Cells.c1.j(this.R, j11, w7.z5.d(-1, -2.0f, 81, 42.0f, 0.0f, 42.0f, 24.0f), context);
+        TextView j12 = org.telegram.ui.Cells.b1.j(this.R, j11, w7.z5.d(-1, -2.0f, 81, 42.0f, 0.0f, 42.0f, 24.0f), context);
         j12.setText(LocaleController.getString(R.string.GiftCraftFailedTitle));
         j12.setTextColor(-505270);
         j12.setTextSize(1, 20.0f);
         j12.setTypeface(AndroidUtilities.bold());
         j12.setGravity(17);
-        TextView j13 = org.telegram.ui.Cells.c1.j(this.S, j12, w7.z5.d(-1, -2.0f, 55, 32.0f, 352.0f, 32.0f, 0.0f), context);
+        TextView j13 = org.telegram.ui.Cells.b1.j(this.S, j12, w7.z5.d(-1, -2.0f, 55, 32.0f, 352.0f, 32.0f, 0.0f), context);
         this.M = j13;
         j13.setTextColor(-17253);
         j13.setTextSize(1, 13.0f);
@@ -508,10 +508,10 @@ public final class e6 extends FrameLayout {
         if (giftsSelectedCount <= 0) {
             if (this.m0 == null) {
                 this.m0 = new SpannableStringBuilder("+");
-                yq yqVar = new yq(R.drawable.filled_add_album, 0);
-                yqVar.setScale(0.65f, 0.65f);
+                xq xqVar = new xq(R.drawable.filled_add_album, 0);
+                xqVar.setScale(0.65f, 0.65f);
                 SpannableStringBuilder spannableStringBuilder = this.m0;
-                spannableStringBuilder.setSpan(yqVar, 0, spannableStringBuilder.length(), 33);
+                spannableStringBuilder.setSpan(xqVar, 0, spannableStringBuilder.length(), 33);
             }
             SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(LocaleController.getString(R.string.GiftCraftButtonEmpty));
             AndroidUtilities.replaceMultipleCharSequence("+", spannableStringBuilder2, this.m0);
@@ -560,8 +560,8 @@ public final class e6 extends FrameLayout {
                 if ((starGift2 != null ? starGift2 : null) != null) {
                     i16++;
                     TL_stars.StarGift starGift3 = starGift2 != null ? starGift2 : null;
-                    TL_stars.starGiftAttributePattern stargiftattributepattern2 = (TL_stars.starGiftAttributePattern) ga.l(starGift3.attributes, TL_stars.starGiftAttributePattern.class);
-                    TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop2 = (TL_stars.starGiftAttributeBackdrop) ga.l(starGift3.attributes, TL_stars.starGiftAttributeBackdrop.class);
+                    TL_stars.starGiftAttributePattern stargiftattributepattern2 = (TL_stars.starGiftAttributePattern) ha.l(starGift3.attributes, TL_stars.starGiftAttributePattern.class);
+                    TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop2 = (TL_stars.starGiftAttributeBackdrop) ha.l(starGift3.attributes, TL_stars.starGiftAttributeBackdrop.class);
                     hashMap3.put(Integer.valueOf(stargiftattributebackdrop2.backdrop_id), Integer.valueOf(((Integer) Map.-EL.getOrDefault(hashMap3, Integer.valueOf(stargiftattributebackdrop2.backdrop_id), 0)).intValue() + 1));
                     hashMap4.put(Long.valueOf(stargiftattributepattern2.document.id), Integer.valueOf(((Integer) Map.-EL.getOrDefault(hashMap4, Long.valueOf(stargiftattributepattern2.document.id), 0)).intValue() + 1));
                 }
@@ -606,7 +606,7 @@ public final class e6 extends FrameLayout {
                             if (starGift4 == null) {
                                 starGift4 = null;
                             }
-                            stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) ga.l(starGift4.attributes, TL_stars.starGiftAttributeBackdrop.class);
+                            stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) ha.l(starGift4.attributes, TL_stars.starGiftAttributeBackdrop.class);
                             if (stargiftattributebackdrop.backdrop_id == intValue) {
                                 break;
                             }
@@ -676,7 +676,7 @@ public final class e6 extends FrameLayout {
                             if (starGift5 == null) {
                                 starGift5 = null;
                             }
-                            TL_stars.starGiftAttributePattern stargiftattributepattern3 = (TL_stars.starGiftAttributePattern) ga.l(starGift5.attributes, TL_stars.starGiftAttributePattern.class);
+                            TL_stars.starGiftAttributePattern stargiftattributepattern3 = (TL_stars.starGiftAttributePattern) ha.l(starGift5.attributes, TL_stars.starGiftAttributePattern.class);
                             if (stargiftattributepattern3 != null) {
                                 s5VarArr = s5VarArr3;
                                 if (stargiftattributepattern3.document.id == longValue) {

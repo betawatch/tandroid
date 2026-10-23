@@ -1,17 +1,17 @@
 package org.telegram.ui.Cells;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class m2 {
-    public String a;
-    public String b;
-    public int c;
-    public int d;
-    public boolean e;
-    public boolean f;
-    public int g;
-    public int h;
-    public boolean i;
-    public boolean j;
-    public int k = -1;
+public interface m2 {
+    void a(q2 q2Var);
+
+    boolean b();
+
+    void c();
+
+    void d(q2 q2Var);
+
+    void e(q2 q2Var);
+
+    void f(q2 q2Var);
 }

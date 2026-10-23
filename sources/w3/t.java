@@ -1,10 +1,11 @@
 package w3;
 
 import e2.m0;
+import i2.o1;
 import org.telegram.tgnet.TLObject;
 import v7.u6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class t {
     public final q a;
@@ -51,7 +52,7 @@ public final class t {
         int length = iArr.length - 1;
         int i11 = -1;
         while (i10 <= length) {
-            int C = i2.e.C(length, i10, 2, i10);
+            int C = o1.C(length, i10, 2, i10);
             if (jArr[iArr[C]] <= j10) {
                 i10 = C + 1;
                 i11 = C;
@@ -84,7 +85,7 @@ public final class t {
         int i10 = 0;
         int i11 = -1;
         while (i10 <= length) {
-            int C = i2.e.C(length, i10, 2, i10);
+            int C = o1.C(length, i10, 2, i10);
             if (jArr[iArr[C]] >= j10) {
                 length = C - 1;
                 i11 = C;

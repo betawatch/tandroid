@@ -1,23 +1,36 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class l41 extends t41 {
-    public final /* synthetic */ org.telegram.ui.kf T;
+public final /* synthetic */ class l41 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Utilities.Callback2 b;
+    public final /* synthetic */ String c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l41(Activity activity, String str, String str2, TLRPC.InputPeer inputPeer, int i10, TL_iv.RichMessage richMessage, org.telegram.ui.kf kfVar) {
-        super(activity, str, str2, null, inputPeer, i10, false, richMessage);
-        this.T = kfVar;
+    public /* synthetic */ l41(String str, int i10, Utilities.Callback2 callback2) {
+        this.a = i10;
+        this.b = callback2;
+        this.c = str;
     }
 
-    @Override // org.telegram.ui.Components.t41, org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
-    public final void dismiss() {
-        super.dismiss();
-        this.T.run();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                Utilities.Callback2 callback2 = this.b;
+                if (callback2 != null) {
+                    callback2.run(this.c, Boolean.FALSE);
+                    break;
+                }
+                break;
+            case 1:
+                this.b.run(null, this.c);
+                break;
+            default:
+                this.b.run(null, this.c);
+                break;
+        }
     }
 }

@@ -1,73 +1,10 @@
 package ai;
 
-import android.animation.ValueAnimator;
-import android.graphics.LinearGradient;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.Shader;
-import android.view.View;
-import org.telegram.ui.Components.z20;
-
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class fe implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ View f;
-
-    public /* synthetic */ fe(View view, int i10, int i11, int i12, int i13, int i14) {
-        this.a = i14;
-        this.f = view;
-        this.b = i10;
-        this.c = i11;
-        this.d = i12;
-        this.e = i13;
-    }
-
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        int i10 = this.a;
-        int i11 = this.e;
-        int i12 = this.d;
-        int i13 = this.c;
-        int i14 = this.b;
-        View view = this.f;
-        switch (i10) {
-            case 0:
-                ie ieVar = (ie) view;
-                ieVar.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ieVar.r = i0.a.f(floatValue, i14, i13);
-                ieVar.s = i0.a.f(floatValue, i12, i11);
-                ieVar.y = new LinearGradient(0.0f, 0.0f, 255.0f, 0.0f, new int[]{ieVar.r, ieVar.s}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
-                ieVar.invalidate();
-                break;
-            case 1:
-                z20 z20Var = (z20) view;
-                z20Var.L = i0.a.f(((Float) valueAnimator.getAnimatedValue()).floatValue(), i14, i13);
-                z20Var.M = i0.a.f(((Float) valueAnimator.getAnimatedValue()).floatValue(), i12, i11);
-                z20Var.F.setColorFilter(new PorterDuffColorFilter(z20Var.L, PorterDuff.Mode.MULTIPLY));
-                z20Var.E.setColor(z20Var.L);
-                z20Var.r.setColor(z20Var.M);
-                z20Var.J.d(i0.a.o(z20Var.M, 38));
-                z20Var.invalidate();
-                break;
-            default:
-                org.telegram.ui.Components.voip.t tVar = (org.telegram.ui.Components.voip.t) view;
-                tVar.getClass();
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                tVar.D0 = i0.a.f(floatValue2, i14, i13);
-                int f7 = i0.a.f(floatValue2, i12, i11);
-                tVar.F0 = f7;
-                tVar.T.setColor(f7);
-                if (tVar.S > 0.0f) {
-                    tVar.invalidate();
-                    break;
-                }
-                break;
-        }
-    }
+public final class fe {
+    public boolean a;
+    public boolean b;
+    public long c;
+    public long d;
 }

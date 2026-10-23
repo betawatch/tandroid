@@ -7,13 +7,13 @@ import android.os.Build;
 import android.os.SystemClock;
 import android.util.Log;
 import android.view.Choreographer;
+import androidx.mediarouter.app.f;
 import com.google.android.gms.internal.play_billing.k3;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.ui.LaunchActivity;
-import r4.f;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class b {
     public final LaunchActivity d;
@@ -29,8 +29,8 @@ public final class b {
     public final uf.a j = new uf.a("enter");
     public final uf.a k = new uf.a("leave");
     public final Choreographer l = Choreographer.getInstance();
-    public final f m = new f(this, 1);
-    public final androidx.mediarouter.app.f o = new androidx.mediarouter.app.f(this, 10);
+    public final r4.e m = new r4.e(this, 1);
+    public final f o = new f(this, 11);
 
     public b(LaunchActivity launchActivity) {
         this.d = launchActivity;
@@ -193,7 +193,7 @@ public final class b {
         this.e = true;
         IntentFilter intentFilter = new IntentFilter("PIP_CUSTOM_EVENT");
         int i10 = Build.VERSION.SDK_INT;
-        androidx.mediarouter.app.f fVar = this.o;
+        f fVar = this.o;
         LaunchActivity launchActivity = this.d;
         if (i10 >= 33) {
             launchActivity.registerReceiver(fVar, intentFilter, 4);

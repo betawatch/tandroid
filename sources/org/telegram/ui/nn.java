@@ -1,20 +1,11 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class nn extends AnimatorListenerAdapter {
-    public final /* synthetic */ org.telegram.ui.Components.wc0 a;
+public final class nn {
+    public final /* synthetic */ qn a;
 
-    public nn(org.telegram.ui.Components.wc0 wc0Var) {
-        this.a = wc0Var;
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        super.onAnimationEnd(animator);
-        this.a.r(1.0f);
+    public nn(qn qnVar) {
+        this.a = qnVar;
     }
 }

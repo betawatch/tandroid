@@ -3,10 +3,10 @@ package ah;
 import ai.c6;
 import ai.d6;
 import ai.e6;
-import ai.ga;
+import ai.ha;
 import ai.u6;
-import ai.ua;
-import ai.ub;
+import ai.va;
+import ai.vb;
 import ai.x5;
 import ai.x6;
 import android.content.Context;
@@ -16,9 +16,9 @@ import android.util.Pair;
 import android.view.View;
 import android.view.ViewPropertyAnimator;
 import android.widget.FrameLayout;
-import ci.aa;
+import ci.p9;
 import ci.q9;
-import ci.r9;
+import ci.z9;
 import ei.f6;
 import ei.yb;
 import gi.f4;
@@ -49,17 +49,17 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.f3;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.h3;
+import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.a6;
+import org.telegram.ui.Components.bk0;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.yj0;
 import org.telegram.ui.Stories.recorder.FfmpegAudioWaveformLoader;
-import org.telegram.ui.l4;
-import rg.r1;
+import org.telegram.ui.k4;
+import rg.s1;
 import w7.z5;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o implements Runnable {
     public final /* synthetic */ int a;
@@ -105,15 +105,15 @@ public final /* synthetic */ class o implements Runnable {
                 int i15 = 2;
                 if (starGift == null) {
                     FrameLayout frameLayout = new FrameLayout(e6Var.getContext());
-                    yj0 yj0Var = new yj0(e6Var.getContext());
-                    yj0Var.f(R.raw.gift_broken, 32, 32, null);
-                    frameLayout.addView(yj0Var, z5.e(32, 32, 17));
-                    yj0Var.setScaleX(0.5f);
-                    yj0Var.setScaleY(0.5f);
-                    yj0Var.setAlpha(0.0f);
-                    yj0Var.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).start();
-                    e6Var.l0 = yj0Var;
-                    frameLayout.setBackground(new u6(AndroidUtilities.dp(12.0f), h6.m1(0.075f, -1)));
+                    bk0 bk0Var = new bk0(e6Var.getContext());
+                    bk0Var.f(R.raw.gift_broken, 32, 32, null);
+                    frameLayout.addView(bk0Var, z5.e(32, 32, 17));
+                    bk0Var.setScaleX(0.5f);
+                    bk0Var.setScaleY(0.5f);
+                    bk0Var.setAlpha(0.0f);
+                    bk0Var.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).start();
+                    e6Var.l0 = bk0Var;
+                    frameLayout.setBackground(new u6(AndroidUtilities.dp(12.0f), k6.o1(0.075f, -1)));
                     x5Var.a[i14].setVisibility(8);
                     frameLayout.setRotation(180.0f);
                     x5Var.f(i14, frameLayout);
@@ -146,24 +146,24 @@ public final /* synthetic */ class o implements Runnable {
                 ((Utilities.Callback3) this.d).run(LocaleController.formatString(R.string.Gift2RarityHint, gi.l.H0(this.b)), (x6) this.c, Boolean.FALSE);
                 break;
             case 3:
-                ga gaVar = (ga) this.c;
+                ha haVar = (ha) this.c;
                 int i16 = this.b;
                 TLObject tLObject = (TLObject) this.d;
-                boolean[] zArr = gaVar.r;
-                ArrayList[] arrayListArr = gaVar.q;
-                int i17 = gaVar.a;
-                gaVar.t[i16] = false;
+                boolean[] zArr = haVar.r;
+                ArrayList[] arrayListArr = haVar.q;
+                int i17 = haVar.a;
+                haVar.t[i16] = false;
                 if (tLObject instanceof TL_stars.StarsStatus) {
                     TL_stars.StarsStatus starsStatus = (TL_stars.StarsStatus) tLObject;
                     MessagesController.getInstance(i17).putUsers(starsStatus.users, false);
                     MessagesController.getInstance(i17).putChats(starsStatus.chats, false);
                     arrayListArr[i16].addAll(starsStatus.history);
                     zArr[i16] = !arrayListArr[i16].isEmpty() || zArr[i16];
-                    boolean[] zArr2 = gaVar.u;
+                    boolean[] zArr2 = haVar.u;
                     boolean z10 = (starsStatus.flags & 1) == 0;
                     zArr2[i16] = z10;
-                    gaVar.s[i16] = z10 ? null : starsStatus.next_offset;
-                    gaVar.k0(starsStatus.balance);
+                    haVar.s[i16] = z10 ? null : starsStatus.next_offset;
+                    haVar.k0(starsStatus.balance);
                     NotificationCenter.getInstance(i17).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starTransactionsLoaded, new Object[0]);
                     break;
                 }
@@ -179,7 +179,7 @@ public final /* synthetic */ class o implements Runnable {
             case 6:
                 TLObject tLObject2 = (TLObject) this.c;
                 int i19 = this.b;
-                ua uaVar = (ua) this.d;
+                va vaVar = (va) this.d;
                 if (tLObject2 instanceof TL_stories.TL_albums) {
                     ArrayList<TL_stories.TL_storyAlbum> arrayList = ((TL_stories.TL_albums) tLObject2).albums;
                     int size = arrayList.size();
@@ -188,26 +188,26 @@ public final /* synthetic */ class o implements Runnable {
                         i11++;
                         TL_stories.TL_storyAlbum tL_storyAlbum2 = tL_storyAlbum;
                         if (tL_storyAlbum2.album_id == i19) {
-                            uaVar.run(tL_storyAlbum2);
+                            vaVar.run(tL_storyAlbum2);
                             break;
                         }
                     }
                 }
-                uaVar.run(null);
+                vaVar.run(null);
                 break;
             case 7:
-                r9 r9Var = (r9) this.c;
+                q9 q9Var = (q9) this.c;
                 ArrayList arrayList2 = (ArrayList) this.d;
                 int i20 = this.b;
-                aa aaVar = r9Var.d;
-                q9 q9Var = aaVar.n0;
-                int i21 = aaVar.h;
-                q9Var.A0 = arrayList2;
-                q9Var.y0 = i21;
-                q9Var.setAdapter(null);
-                q9Var.setAdapter(q9Var.z0);
-                q9Var.setCurrentItem(i20);
-                q9Var.C0 = true;
+                z9 z9Var = q9Var.d;
+                p9 p9Var = z9Var.n0;
+                int i21 = z9Var.h;
+                p9Var.A0 = arrayList2;
+                p9Var.y0 = i21;
+                p9Var.setAdapter(null);
+                p9Var.setAdapter(p9Var.z0);
+                p9Var.setCurrentItem(i20);
+                p9Var.C0 = true;
                 break;
             case 8:
                 CopyOnWriteArraySet copyOnWriteArraySet = (CopyOnWriteArraySet) this.c;
@@ -238,12 +238,12 @@ public final /* synthetic */ class o implements Runnable {
                 if (f6Var.O0.getCurrentBrush() instanceof qg.l) {
                     f6Var.c1 = true;
                 }
-                f6Var.o(lVar);
-                r1 r1Var = f6Var.k1;
-                int i24 = r1Var.d + 1;
-                r1Var.a(i24);
-                AndroidUtilities.updateImageViewImageAnimated(r1Var.a[i24], i23);
-                r1Var.e = true;
+                f6Var.n(lVar);
+                s1 s1Var = f6Var.k1;
+                int i24 = s1Var.d + 1;
+                s1Var.a(i24);
+                AndroidUtilities.updateImageViewImageAnimated(s1Var.a[i24], i23);
+                s1Var.e = true;
                 break;
             case 12:
                 AndroidUtilities.runOnUIThread(new g(this.b, ((MessagesStorage) this.c).getUsers(new ArrayList<>((HashSet) this.d)), i10));
@@ -297,9 +297,9 @@ public final /* synthetic */ class o implements Runnable {
                 }
                 break;
             case 17:
-                i2.f1 f1Var = (i2.f1) this.c;
+                i2.e1 e1Var = (i2.e1) this.c;
                 Pair pair = (Pair) this.d;
-                f1Var.b.h.a(((Integer) pair.first).intValue(), (u2.g0) pair.second, this.b);
+                e1Var.b.h.a(((Integer) pair.first).intValue(), (u2.h0) pair.second, this.b);
                 break;
             case 18:
                 ig.y yVar = (ig.y) this.c;
@@ -324,7 +324,7 @@ public final /* synthetic */ class o implements Runnable {
                 int i30 = this.b;
                 ki.c6 c6Var2 = w5Var.a;
                 if (c6Var2.y != null) {
-                    ki.c6.f(aVar.b, "");
+                    ki.c6.e(aVar.b, "");
                     ((e3) c6Var2.y).c(aVar, i30);
                     break;
                 }
@@ -348,33 +348,33 @@ public final /* synthetic */ class o implements Runnable {
             case 26:
                 int i31 = this.b;
                 Context context2 = (Context) this.c;
-                f3[] f3VarArr = (f3[]) this.d;
+                h3[] h3VarArr = (h3[]) this.d;
                 String str2 = MessagesController.getInstance(i31).freezeAppealUrl;
                 if (!str2.startsWith("http://") && !str2.startsWith("https://")) {
                     str2 = "https://".concat(str2);
                 }
                 pf.d.r(context2, str2);
-                f3VarArr[0].dismiss();
+                h3VarArr[0].dismiss();
                 break;
             case 27:
-                l4 l4Var = (l4) this.c;
+                k4 k4Var = (k4) this.c;
                 String str3 = (String) this.d;
                 int i32 = this.b;
-                HashMap hashMap = new HashMap(l4Var.u0[0].c.w);
-                ArrayList arrayList3 = new ArrayList(l4Var.u0[0].c.x);
-                l4Var.V0 = null;
-                Utilities.searchQueue.postRunnable(new ub(l4Var, arrayList3, hashMap, str3, i32, 15));
+                HashMap hashMap = new HashMap(k4Var.u0[0].c.w);
+                ArrayList arrayList3 = new ArrayList(k4Var.u0[0].c.x);
+                k4Var.W0 = null;
+                Utilities.searchQueue.postRunnable(new vb(k4Var, arrayList3, hashMap, str3, i32, 15));
                 break;
             case 28:
-                l4 l4Var2 = (l4) this.c;
+                k4 k4Var2 = (k4) this.c;
                 int i33 = this.b;
                 pf.c cVar = (pf.c) this.d;
-                if (l4Var2.H0 == i33 && l4Var2.F0 != 0) {
-                    ConnectionsManager.getInstance(l4Var2.X).cancelRequest(l4Var2.F0, false);
-                    l4Var2.F0 = 0;
+                if (k4Var2.I0 == i33 && k4Var2.G0 != 0) {
+                    ConnectionsManager.getInstance(k4Var2.X).cancelRequest(k4Var2.G0, false);
+                    k4Var2.G0 = 0;
                 }
-                if (l4Var2.M0 == cVar) {
-                    l4Var2.M0 = null;
+                if (k4Var2.N0 == cVar) {
+                    k4Var2.N0 = null;
                     break;
                 }
                 break;

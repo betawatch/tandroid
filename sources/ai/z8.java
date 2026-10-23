@@ -5,13 +5,13 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.kg0;
-import org.telegram.ui.Components.mt0;
-import org.telegram.ui.Components.uv0;
-import org.telegram.ui.Components.wn0;
-import org.telegram.ui.n00;
+import org.telegram.ui.Components.og0;
+import org.telegram.ui.Components.pt0;
+import org.telegram.ui.Components.xv0;
+import org.telegram.ui.Components.zn0;
+import org.telegram.ui.q00;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z8 implements Runnable {
     public final /* synthetic */ int a;
@@ -32,15 +32,15 @@ public final /* synthetic */ class z8 implements Runnable {
         TLRPC.TL_account_setMainProfileTab tL_account_setMainProfileTab;
         switch (this.a) {
             case 0:
-                ga gaVar = (ga) this.d;
+                ha haVar = (ha) this.d;
                 if (!this.c) {
-                    gaVar.getClass();
+                    haVar.getClass();
                     break;
                 } else {
-                    Set set = gaVar.Q;
+                    Set set = haVar.Q;
                     int i10 = this.b;
                     set.remove(Integer.valueOf(i10));
-                    Runnable runnable = (Runnable) gaVar.R.remove(Integer.valueOf(i10));
+                    Runnable runnable = (Runnable) haVar.R.remove(Integer.valueOf(i10));
                     if (runnable != null) {
                         runnable.run();
                         break;
@@ -48,56 +48,56 @@ public final /* synthetic */ class z8 implements Runnable {
                 }
                 break;
             case 1:
-                i2.r0 r0Var = (i2.r0) this.d;
-                j2.f fVar = r0Var.M;
-                i2.q1[] q1VarArr = r0Var.a;
+                i2.q0 q0Var = (i2.q0) this.d;
+                j2.e eVar = q0Var.M;
+                i2.q1[] q1VarArr = q0Var.a;
                 int i11 = this.b;
                 int i12 = q1VarArr[i11].a.b;
-                j2.a p5 = fVar.p();
-                fVar.q(p5, 1033, new j2.c(p5, i11, i12, this.c));
+                j2.a p5 = eVar.p();
+                eVar.q(p5, 1033, new ih.l(p5, i11, i12, this.c));
                 break;
             case 2:
-                ((kg0) this.d).a.b.A3(this.b, this.c);
+                ((og0) this.d).a.b.A3(this.b, this.c);
                 break;
             case 3:
-                wn0 wn0Var = (wn0) this.d;
-                wn0Var.o = null;
-                wn0Var.c(this.b, this.c, true);
+                zn0 zn0Var = (zn0) this.d;
+                zn0Var.o = null;
+                zn0Var.c(this.b, this.c, true);
                 break;
             case 4:
-                uv0 uv0Var = ((mt0) this.d).a;
-                org.telegram.ui.ActionBar.n2 n2Var = uv0Var.v1;
-                if (n2Var != null) {
+                xv0 xv0Var = ((pt0) this.d).a;
+                org.telegram.ui.ActionBar.o2 o2Var = xv0Var.v1;
+                if (o2Var != null) {
                     boolean z10 = this.c;
                     int i13 = this.b;
                     if (z10) {
                         TLRPC.TL_channels_setMainProfileTab tL_channels_setMainProfileTab = new TLRPC.TL_channels_setMainProfileTab();
-                        tL_channels_setMainProfileTab.tab = uv0.e0(i13, true);
-                        tL_channels_setMainProfileTab.channel = n2Var.getMessagesController().getInputChannel(uv0Var.d1.id);
-                        TLRPC.ChatFull chatFull = uv0Var.d1;
+                        tL_channels_setMainProfileTab.tab = xv0.f0(i13, true);
+                        tL_channels_setMainProfileTab.channel = o2Var.getMessagesController().getInputChannel(xv0Var.d1.id);
+                        TLRPC.ChatFull chatFull = xv0Var.d1;
                         chatFull.flags2 |= TLObject.FLAG_22;
                         chatFull.main_tab = tL_channels_setMainProfileTab.tab;
                         tL_account_setMainProfileTab = tL_channels_setMainProfileTab;
                     } else {
                         TLRPC.TL_account_setMainProfileTab tL_account_setMainProfileTab2 = new TLRPC.TL_account_setMainProfileTab();
-                        TLRPC.ProfileTab e02 = uv0.e0(i13, true);
-                        tL_account_setMainProfileTab2.tab = e02;
-                        TLRPC.UserFull userFull = uv0Var.e1;
+                        TLRPC.ProfileTab f02 = xv0.f0(i13, true);
+                        tL_account_setMainProfileTab2.tab = f02;
+                        TLRPC.UserFull userFull = xv0Var.e1;
                         tL_account_setMainProfileTab = tL_account_setMainProfileTab2;
                         if (userFull != null) {
                             userFull.flags2 |= 1048576;
-                            userFull.main_tab = e02;
-                            n2Var.getMessagesStorage().updateUserInfo(uv0Var.e1, true);
+                            userFull.main_tab = f02;
+                            o2Var.getMessagesStorage().updateUserInfo(xv0Var.e1, true);
                             tL_account_setMainProfileTab = tL_account_setMainProfileTab2;
                         }
                     }
-                    n2Var.getConnectionsManager().sendRequest(tL_account_setMainProfileTab, null);
-                    uv0Var.y1(true);
+                    o2Var.getConnectionsManager().sendRequest(tL_account_setMainProfileTab, null);
+                    xv0Var.A1(true);
                     break;
                 }
                 break;
             default:
-                org.telegram.ui.Components.xc a02 = org.telegram.ui.Components.xc.a0((n00) this.d);
+                org.telegram.ui.Components.xc a02 = org.telegram.ui.Components.xc.a0((q00) this.d);
                 boolean z11 = this.c;
                 int i14 = z11 ? R.raw.folder_in : R.raw.folder_out;
                 int i15 = this.b;

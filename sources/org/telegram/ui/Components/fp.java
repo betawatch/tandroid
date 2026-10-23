@@ -6,7 +6,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.WallpapersListActivity;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class fp implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -22,17 +22,17 @@ public final /* synthetic */ class fp implements View.OnClickListener {
         switch (this.a) {
             case 0:
                 wp wpVar = this.b;
-                ti tiVar = wpVar.Y;
+                ti tiVar = wpVar.X;
                 if (tiVar.B0 != tiVar.j0) {
-                    wpVar.a0.setText(LocaleController.getString(R.string.SetColorAsBackground));
-                    ti tiVar2 = wpVar.Y;
-                    tiVar2.U1(tiVar2.j0);
+                    wpVar.Z.setText(LocaleController.getString(R.string.SetColorAsBackground));
+                    ti tiVar2 = wpVar.X;
+                    tiVar2.Y1(tiVar2.j0);
                     break;
                 } else {
-                    wpVar.a0.setText(LocaleController.getString(R.string.ChooseBackgroundFromGallery));
-                    wpVar.Y.F1();
-                    ij ijVar = wpVar.Y.r0;
-                    boolean z10 = wpVar.N;
+                    wpVar.Z.setText(LocaleController.getString(R.string.ChooseBackgroundFromGallery));
+                    wpVar.X.I1();
+                    ij ijVar = wpVar.X.r0;
+                    boolean z10 = wpVar.M;
                     za zaVar = ijVar.v;
                     ((ArrayList) zaVar.e).clear();
                     WallpapersListActivity.z0((ArrayList) zaVar.e, z10);
@@ -41,23 +41,23 @@ public final /* synthetic */ class fp implements View.OnClickListener {
                 }
             case 1:
                 wp wpVar2 = this.b;
-                if (!wpVar2.x()) {
+                if (!wpVar2.A()) {
                     wpVar2.dismiss();
                     break;
                 } else {
-                    wpVar2.B(true);
-                    wpVar2.F(true);
+                    wpVar2.E(true);
+                    wpVar2.L(true);
                     break;
                 }
             case 2:
                 wp wpVar3 = this.b;
-                if (wpVar3.T == null) {
-                    wpVar3.D(!wpVar3.N);
+                if (wpVar3.S == null) {
+                    wpVar3.G(!wpVar3.M);
                     break;
                 }
                 break;
             default:
-                this.b.u(false);
+                this.b.v(false);
                 break;
         }
     }

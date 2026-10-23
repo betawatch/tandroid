@@ -4,26 +4,25 @@ import android.animation.ValueAnimator;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import ci.v8;
+import ci.u8;
 import ei.c6;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Cells.o9;
-import org.telegram.ui.Cells.u1;
-import org.telegram.ui.Cells.v9;
-import org.telegram.ui.Cells.z9;
+import org.telegram.ui.Cells.aa;
+import org.telegram.ui.Cells.p9;
+import org.telegram.ui.Cells.t1;
+import org.telegram.ui.Cells.w9;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.e9;
-import org.telegram.ui.Components.gp0;
-import org.telegram.ui.Components.m60;
-import org.telegram.ui.Components.ob0;
+import org.telegram.ui.Components.kp0;
+import org.telegram.ui.Components.n60;
+import org.telegram.ui.Components.pb0;
 import org.telegram.ui.Components.voip.t2;
-import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.x8;
-import org.telegram.ui.mi0;
-import org.telegram.ui.v31;
-import org.telegram.ui.x31;
+import org.telegram.ui.b41;
+import org.telegram.ui.qi0;
+import org.telegram.ui.z31;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -39,7 +38,7 @@ public final /* synthetic */ class k0 implements ValueAnimator.AnimatorUpdateLis
     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         ViewGroup viewGroup;
-        v31 v31Var;
+        z31 z31Var;
         switch (this.a) {
             case 0:
                 t0 t0Var = (t0) this.c;
@@ -56,12 +55,12 @@ public final /* synthetic */ class k0 implements ValueAnimator.AnimatorUpdateLis
                 }
                 break;
             case 1:
-                v8 v8Var = (v8) this.c;
-                v8Var.getClass();
-                v8Var.y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                v8Var.invalidate();
+                u8 u8Var = (u8) this.c;
+                u8Var.getClass();
+                u8Var.y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                u8Var.invalidate();
                 if (this.b) {
-                    v8Var.requestLayout();
+                    u8Var.requestLayout();
                     break;
                 }
                 break;
@@ -75,35 +74,35 @@ public final /* synthetic */ class k0 implements ValueAnimator.AnimatorUpdateLis
                 c6Var.b.invalidate();
                 break;
             case 3:
-                u1 u1Var = (u1) this.c;
-                u1Var.jd = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                u1Var.invalidate();
-                if (this.b && u1Var.getParent() != null) {
-                    ((View) u1Var.getParent()).invalidate();
+                t1 t1Var = (t1) this.c;
+                t1Var.jd = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                t1Var.invalidate();
+                if (this.b && t1Var.getParent() != null) {
+                    ((View) t1Var.getParent()).invalidate();
                     break;
                 }
                 break;
             case 4:
-                o9 o9Var = (o9) this.c;
-                o9Var.getClass();
-                o9Var.U = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                z9 z9Var = o9Var.C;
-                if (z9Var != null) {
-                    z9Var.invalidate();
+                p9 p9Var = (p9) this.c;
+                p9Var.getClass();
+                p9Var.U = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                aa aaVar = p9Var.C;
+                if (aaVar != null) {
+                    aaVar.invalidate();
                 }
-                v9 v9Var = o9Var.W;
-                if (v9Var != null && ((u1) v9Var).getCurrentMessagesGroup() == null && this.b) {
-                    ((u1) o9Var.W).setSelectedBackgroundProgress(1.0f - o9Var.U);
+                w9 w9Var = p9Var.W;
+                if (w9Var != null && ((t1) w9Var).getCurrentMessagesGroup() == null && this.b) {
+                    ((t1) p9Var.W).setSelectedBackgroundProgress(1.0f - p9Var.U);
                     break;
                 }
                 break;
             case 5:
-                w9 w9Var = (w9) this.c;
+                org.telegram.ui.Components.w9 w9Var2 = (org.telegram.ui.Components.w9) this.c;
                 float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                w9Var.setScaleX(floatValue2);
-                w9Var.setScaleY(floatValue2);
+                w9Var2.setScaleX(floatValue2);
+                w9Var2.setScaleY(floatValue2);
                 if (!this.b) {
-                    w9Var.setAlpha(valueAnimator.getAnimatedFraction());
+                    w9Var2.setAlpha(valueAnimator.getAnimatedFraction());
                     break;
                 }
                 break;
@@ -119,17 +118,17 @@ public final /* synthetic */ class k0 implements ValueAnimator.AnimatorUpdateLis
                 }
                 break;
             case 7:
-                m60 m60Var = (m60) this.c;
-                m60Var.E0 = this.b ? 0.0f : ((Float) valueAnimator.getAnimatedValue()).floatValue() * (m60Var.getMeasuredHeight() / 2.0f);
-                m60Var.w();
+                n60 n60Var = (n60) this.c;
+                n60Var.E0 = this.b ? 0.0f : ((Float) valueAnimator.getAnimatedValue()).floatValue() * (n60Var.getMeasuredHeight() / 2.0f);
+                n60Var.w();
                 break;
             case 8:
-                ob0 ob0Var = (ob0) this.c;
-                ob0Var.getClass();
-                ob0Var.M = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ob0Var.invalidate();
+                pb0 pb0Var = (pb0) this.c;
+                pb0Var.getClass();
+                pb0Var.M = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                pb0Var.invalidate();
                 if (this.b) {
-                    ob0Var.requestLayout();
+                    pb0Var.requestLayout();
                     break;
                 }
                 break;
@@ -149,36 +148,36 @@ public final /* synthetic */ class k0 implements ValueAnimator.AnimatorUpdateLis
                 }
                 break;
             case 10:
-                mi0 mi0Var = (mi0) this.c;
+                qi0 qi0Var = (qi0) this.c;
                 float floatValue4 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                mi0Var.y = floatValue4;
-                mi0Var.G.setAlpha(floatValue4);
-                mi0Var.J.setAlpha(mi0Var.y);
-                if (!this.b && (viewGroup = mi0Var.Y) != null) {
-                    viewGroup.setAlpha(mi0Var.y);
+                qi0Var.y = floatValue4;
+                qi0Var.G.setAlpha(floatValue4);
+                qi0Var.J.setAlpha(qi0Var.y);
+                if (!this.b && (viewGroup = qi0Var.Y) != null) {
+                    viewGroup.setAlpha(qi0Var.y);
                 }
-                mi0Var.E.invalidate();
-                mi0Var.F.invalidate();
+                qi0Var.E.invalidate();
+                qi0Var.F.invalidate();
                 break;
             case 11:
-                x31 x31Var = (x31) this.c;
-                x31Var.s = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                x31Var.b.invalidate();
-                x31Var.c.invalidate();
-                if (x31Var.S) {
-                    x31Var.N.invalidate();
+                b41 b41Var = (b41) this.c;
+                b41Var.s = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                b41Var.b.invalidate();
+                b41Var.c.invalidate();
+                if (b41Var.S) {
+                    b41Var.N.invalidate();
                 }
-                x31Var.e();
-                TextView textView = x31Var.y;
+                b41Var.e();
+                TextView textView = b41Var.y;
                 if (textView != null) {
-                    textView.setAlpha(x31Var.s);
+                    textView.setAlpha(b41Var.s);
                 }
-                if (!x31Var.S && (v31Var = x31Var.N) != null && v31Var.getSeekBarWaveform() != null) {
-                    gp0 seekBarWaveform = x31Var.N.getSeekBarWaveform();
-                    seekBarWaveform.L = (this.b ? bs.g : bs.i).getInterpolation(Utilities.clamp(x31Var.s * 1.25f, 1.0f, 0.0f));
-                    u1 u1Var2 = seekBarWaveform.n;
-                    if (u1Var2 != null) {
-                        u1Var2.invalidate();
+                if (!b41Var.S && (z31Var = b41Var.N) != null && z31Var.getSeekBarWaveform() != null) {
+                    kp0 seekBarWaveform = b41Var.N.getSeekBarWaveform();
+                    seekBarWaveform.L = (this.b ? bs.g : bs.i).getInterpolation(Utilities.clamp(b41Var.s * 1.25f, 1.0f, 0.0f));
+                    t1 t1Var2 = seekBarWaveform.n;
+                    if (t1Var2 != null) {
+                        t1Var2.invalidate();
                         break;
                     }
                 }

@@ -1,6 +1,6 @@
 package zh;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public abstract class d1 {
     public static final float[][] a = {new float[]{1.1f, 27.0f, 1.05f, 23.0f, 1.15f, 33.0f, 3.8f, 1.0f, -1.0f, 1.0f, 1.0f, 2.0f, 3.0f}, new float[]{0.83f, 27.0f, 0.79f, 23.0f, 0.86f, 33.0f, 3.8f, 1.0f, -1.0f, 0.6f, 1.0f, 2.0f, 3.0f}, new float[]{1.1f, 27.0f, 1.05f, 23.0f, 1.15f, 18.0f, 3.8f, 1.0f, -1.0f, 1.2f, 1.0f, 2.0f, 3.0f}, new float[]{0.83f, 13.0f, 0.79f, 11.0f, 0.86f, 16.0f, 3.8f, 1.0f, -1.0f, 0.6f, 1.0f, 1.0f, 1.5f}};

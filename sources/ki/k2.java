@@ -1,12 +1,12 @@
 package ki;
 
-import ai.ua;
+import ai.va;
 import android.text.SpannableString;
 import android.text.TextUtils;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class k2 implements Runnable {
     public final /* synthetic */ int a;
@@ -21,7 +21,7 @@ public final /* synthetic */ class k2 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.x();
+                this.b.w();
                 break;
             default:
                 c6 c6Var = this.b;
@@ -36,15 +36,15 @@ public final /* synthetic */ class k2 implements Runnable {
                             String str = ((TL_iv.pageBlockPreformatted) aVar2.b).language;
                             int i10 = c6Var.I + 1;
                             c6Var.I = i10;
-                            ua uaVar = new ua(c6Var, i10, aVar2, obj, 2);
+                            va vaVar = new va(c6Var, i10, aVar2, obj, 2);
                             mi.r rVar = mi.k.a;
                             SpannableString spannableString = new SpannableString(obj);
                             String b10 = mi.r.b(str);
                             if (!b10.isEmpty() && spannableString.length() != 0) {
-                                mi.k.a.d(spannableString.toString(), b10, new m4.w0(3, spannableString, uaVar));
+                                mi.k.a.d(spannableString.toString(), b10, new m4.w0(3, spannableString, vaVar));
                                 break;
                             } else {
-                                AndroidUtilities.runOnUIThread(new m4.z(4, uaVar, spannableString));
+                                AndroidUtilities.runOnUIThread(new m4.z(4, vaVar, spannableString));
                                 break;
                             }
                         }

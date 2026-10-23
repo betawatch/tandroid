@@ -1,38 +1,43 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class p41 extends View {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Integer b;
+public final class p41 extends s4.s {
+    public final /* synthetic */ int Q;
+    public final /* synthetic */ b61 R;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ p41(Context context, Integer num, int i10) {
-        super(context);
-        this.a = i10;
-        this.b = num;
+    public /* synthetic */ p41(b61 b61Var, int i10) {
+        super(40);
+        this.Q = i10;
+        this.R = b61Var;
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        switch (this.a) {
+    @Override // s4.b0, s4.n0
+    public final void v0(RecyclerView recyclerView, s4.y0 y0Var, int i10) {
+        switch (this.Q) {
             case 0:
-                super.onMeasure(i10, i11);
-                if (this.b != null) {
-                    setPivotX(r2.intValue());
+                try {
+                    ei.l1 l1Var = new ei.l1(this, recyclerView.getContext(), 3);
+                    l1Var.a = i10;
+                    w0(l1Var);
                     break;
+                } catch (Exception e) {
+                    FileLog.e(e);
                 }
-                break;
             default:
-                super.onMeasure(i10, i11);
-                if (this.b != null) {
-                    setPivotX(r2.intValue());
+                try {
+                    ei.l1 l1Var2 = new ei.l1(this, recyclerView.getContext(), 5);
+                    l1Var2.a = i10;
+                    w0(l1Var2);
                     break;
+                } catch (Exception e7) {
+                    FileLog.e(e7);
+                    return;
                 }
-                break;
         }
     }
 }

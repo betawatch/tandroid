@@ -25,7 +25,7 @@ import m4.z;
 import v7.u6;
 import w7.a0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class f implements n {
     public int E;
@@ -35,7 +35,7 @@ public final class f implements n {
     public Looper I;
     public Handler J;
     public byte[] K;
-    public j2.k L;
+    public j2.j L;
     public volatile o0 M;
     public final UUID a;
     public final v0 b;
@@ -94,7 +94,7 @@ public final class f implements n {
     }
 
     @Override // n2.n
-    public final void E(Looper looper, j2.k kVar) {
+    public final void E(Looper looper, j2.j jVar) {
         synchronized (this) {
             try {
                 Looper looper2 = this.I;
@@ -109,7 +109,7 @@ public final class f implements n {
                 throw th2;
             }
         }
-        this.L = kVar;
+        this.L = jVar;
     }
 
     @Override // n2.n
@@ -292,9 +292,9 @@ public final class f implements n {
         byte[] bArr = this.K;
         Looper looper = this.I;
         looper.getClass();
-        j2.k kVar2 = this.L;
-        kVar2.getClass();
-        b bVar = new b(this.a, rVar, this.n, this.s, list, z11, z10, bArr, this.d, this.c, looper, this.r, kVar2);
+        j2.j jVar = this.L;
+        jVar.getClass();
+        b bVar = new b(this.a, rVar, this.n, this.s, list, z11, z10, bArr, this.d, this.c, looper, this.r, jVar);
         bVar.b(kVar);
         if (this.v != -9223372036854775807L) {
             bVar.b(null);

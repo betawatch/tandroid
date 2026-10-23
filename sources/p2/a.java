@@ -6,10 +6,11 @@ import c5.c0;
 import e9.l0;
 import e9.m2;
 import e9.y0;
+import i2.o1;
 import java.util.HashMap;
 import si.z;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class a implements v {
     public final /* synthetic */ e a;
@@ -40,7 +41,7 @@ public final class a implements v {
                 Uri uri2 = (Uri) it.next();
                 d dVar3 = (d) hashMap.get(uri2);
                 if (dVar3 != null) {
-                    c cVar = (c) i2.e.i(dVar3.b, uri2, uri2);
+                    c cVar = (c) o1.j(dVar3.b, uri2, uri2);
                     cVar.getClass();
                     if (elapsedRealtime <= cVar.r) {
                         i10++;

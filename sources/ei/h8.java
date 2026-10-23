@@ -5,27 +5,27 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.c71;
-import org.telegram.ui.Components.g61;
-import org.telegram.ui.Components.h61;
-import org.telegram.ui.Components.jm0;
-import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.b71;
+import org.telegram.ui.Components.j71;
+import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.m61;
+import org.telegram.ui.Components.mm0;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public final class h8 extends g61 {
+public final class h8 extends l61 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        g61.setup(new h8());
+        l61.setup(new h8());
     }
 
-    @Override // org.telegram.ui.Components.g61
-    public final void bindView(View view, h61 h61Var, boolean z10, u61 u61Var, c71 c71Var) {
+    @Override // org.telegram.ui.Components.l61
+    public final void bindView(View view, m61 m61Var, boolean z10, b71 b71Var, j71 j71Var) {
         i8 i8Var = (i8) view;
-        Object obj = h61Var.G;
+        Object obj = m61Var.G;
         TLRPC.WebPage webPage = obj instanceof TLRPC.WebPage ? (TLRPC.WebPage) obj : null;
-        View.OnClickListener onClickListener = h61Var.D;
+        View.OnClickListener onClickListener = m61Var.D;
         org.telegram.ui.Components.q6 q6Var = i8Var.e;
         org.telegram.ui.Components.q6 q6Var2 = i8Var.d;
         ImageView imageView = i8Var.c;
@@ -47,8 +47,8 @@ public final class h8 extends g61 {
         i8Var.f.setOnClickListener(onClickListener);
     }
 
-    @Override // org.telegram.ui.Components.g61
-    public final View createView(Context context, jm0 jm0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
+    @Override // org.telegram.ui.Components.l61
+    public final View createView(Context context, mm0 mm0Var, int i10, int i11, org.telegram.ui.ActionBar.g6 g6Var) {
         return new i8(context);
     }
 }

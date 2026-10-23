@@ -1,56 +1,26 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
+import android.view.View;
+import android.view.WindowInsets;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
-public final class o31 extends AnimatorListenerAdapter {
+public final /* synthetic */ class o31 implements View.OnApplyWindowInsetsListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ SecretMediaViewer b;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ o31(SecretMediaViewer secretMediaViewer, int i10) {
+    public /* synthetic */ o31(Object obj, int i10) {
         this.a = i10;
-        this.b = secretMediaViewer;
+        this.b = obj;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // android.view.View.OnApplyWindowInsetsListener
+    public final WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
         switch (this.a) {
             case 0:
-                SecretMediaViewer secretMediaViewer = this.b;
-                Runnable runnable = secretMediaViewer.o0;
-                if (runnable != null) {
-                    runnable.run();
-                    secretMediaViewer.o0 = null;
-                    break;
-                }
-                break;
-            case 1:
-                SecretMediaViewer secretMediaViewer2 = this.b;
-                AnimatorSet animatorSet = secretMediaViewer2.G;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    secretMediaViewer2.F.setVisibility(8);
-                    secretMediaViewer2.G = null;
-                    secretMediaViewer2.a0.scrollTo(0, 0);
-                    break;
-                }
-                break;
-            case 2:
-                SecretMediaViewer secretMediaViewer3 = this.b;
-                Runnable runnable2 = secretMediaViewer3.o0;
-                if (runnable2 != null) {
-                    runnable2.run();
-                    secretMediaViewer3.o0 = null;
-                    break;
-                }
-                break;
+                return SecretMediaViewer.a((SecretMediaViewer) this.b, windowInsets);
             default:
-                SecretMediaViewer secretMediaViewer4 = this.b;
-                secretMediaViewer4.K0 = null;
-                secretMediaViewer4.e.invalidate();
-                break;
+                return x51.b((q41) this.b, view, windowInsets);
         }
     }
 }

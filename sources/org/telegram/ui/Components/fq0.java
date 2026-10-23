@@ -1,32 +1,26 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
-/* loaded from: classes3.dex */
-public final class fq0 extends g.o {
-    public final /* synthetic */ int c;
-    public final /* synthetic */ fr0 d;
+import android.graphics.Canvas;
+import android.view.View;
 
-    public /* synthetic */ fq0(fr0 fr0Var, int i10) {
-        this.c = i10;
-        this.d = fr0Var;
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class fq0 implements bh.k {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ mm0 b;
+
+    public /* synthetic */ fq0(mm0 mm0Var, int i10) {
+        this.a = i10;
+        this.b = mm0Var;
     }
 
-    @Override // g.o
-    public final int i(int i10) {
-        switch (this.c) {
+    @Override // bh.k
+    public final boolean a(Canvas canvas, View view, long j10) {
+        switch (this.a) {
             case 0:
-                if (i10 == 0) {
-                    return this.d.J.J;
-                }
-                return 1;
-            case 1:
-                if (i10 == 0) {
-                    return this.d.I.J;
-                }
-                return 1;
+                return ((lq0) this.b).drawChild(canvas, view, j10);
             default:
-                br0 br0Var = this.d.N;
-                return (i10 == br0Var.w || i10 == br0Var.x || i10 == br0Var.y || i10 == br0Var.F || br0Var.j(i10) == 0) ? 4 : 1;
+                return ((pu0) this.b).drawChild(canvas, view, j10);
         }
     }
 }

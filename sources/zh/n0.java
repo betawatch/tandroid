@@ -1,6 +1,6 @@
 package zh;
 
-import ai.kc;
+import ai.lc;
 import android.animation.AnimatorSet;
 import android.animation.ValueAnimator;
 import android.app.Activity;
@@ -50,22 +50,23 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.o2;
 import org.telegram.ui.Components.kv;
 import org.telegram.ui.Components.q10;
-import org.telegram.ui.Components.x90;
+import org.telegram.ui.Components.y90;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.vk0;
+import org.telegram.ui.Wallet.e8;
 import org.telegram.ui.w9;
+import org.telegram.ui.yk0;
 import w7.z5;
 import yh.o1;
 import yh.s1;
 import yh.t3;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
-public class n0 extends n2 {
+public class n0 extends o2 {
     public boolean E;
     public b0 F;
     public boolean G;
@@ -92,7 +93,7 @@ public class n0 extends n2 {
     public int a0;
     public long b;
     public int b0;
-    public org.telegram.ui.g c;
+    public org.telegram.ui.f c;
     public int c0;
     public c1 d;
     public float d0;
@@ -167,22 +168,22 @@ public class n0 extends n2 {
         o1 o1Var = new o1(n0Var.getParentActivity(), n0Var.currentAccount, n0Var.getUserConfig().getClientUserId(), null, null);
         if (!o1Var.u0) {
             o1Var.u0 = true;
-            kc kcVar = o1Var.w0;
-            if (kcVar != null && (kcVar.getParent() instanceof ViewGroup)) {
+            lc lcVar = o1Var.w0;
+            if (lcVar != null && (lcVar.getParent() instanceof ViewGroup)) {
                 ViewGroup viewGroup = (ViewGroup) o1Var.w0.getParent();
                 int indexOfChild = viewGroup.indexOfChild(o1Var.w0);
                 viewGroup.removeView(o1Var.w0);
-                kc kcVar2 = new kc(o1Var.getContext(), MediaDataController.MAX_LINKS_COUNT, 2);
-                o1Var.w0 = kcVar2;
-                viewGroup.addView(kcVar2, indexOfChild, z5.c(-1.0f, -1));
+                lc lcVar2 = new lc(o1Var.getContext(), MediaDataController.MAX_LINKS_COUNT, 2);
+                o1Var.w0 = lcVar2;
+                viewGroup.addView(lcVar2, indexOfChild, z5.c(-1.0f, -1));
             }
-            x90 x90Var = o1Var.x0;
-            if (x90Var != null) {
+            y90 y90Var = o1Var.x0;
+            if (y90Var != null) {
                 String string = LocaleController.getString(R.string.Gift2BrowseCollectiblesInfo);
                 yh.u0 u0Var = o1Var.l0;
                 u0Var.setText(string);
                 u0Var.setBreakStrategy(2);
-                x90Var.setVisibility(8);
+                y90Var.setVisibility(8);
             }
             o1Var.Y.N(false);
         }
@@ -200,8 +201,8 @@ public class n0 extends n2 {
         }
     }
 
-    public static void Z(n2 n2Var) {
-        w9.e0(n2Var.getParentActivity(), 1, new i0(n2Var.getCurrentAccount(), n2Var));
+    public static void Z(o2 o2Var) {
+        w9.e0(o2Var.getParentActivity(), 1, new i0(o2Var.getCurrentAccount(), o2Var));
     }
 
     public static LinearGradient e0(boolean z10) {
@@ -269,7 +270,7 @@ public class n0 extends n2 {
         this.F = b0Var;
         b0Var.setButtonLabel(LocaleController.getString(R.string.QrScanQr));
         b0 b0Var2 = this.F;
-        b0Var2.setOnGallery(new u2.j0(29, this, b0Var2));
+        b0Var2.setOnGallery(new u2.k0(29, this, b0Var2));
         this.f.addView(this.F, z5.c(-1.0f, -1));
     }
 
@@ -373,16 +374,16 @@ public class n0 extends n2 {
             if (T0 == null) {
                 return;
             }
-            Utilities.globalQueue.postRunnable(new u2.j0(28, this, T0));
+            Utilities.globalQueue.postRunnable(new u2.k0(28, this, T0));
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.o2
     public final boolean canBeginSlide() {
         return false;
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.o2
     public final void clearViews() {
         FrameLayout frameLayout = this.f;
         if (frameLayout != null) {
@@ -410,7 +411,7 @@ public class n0 extends n2 {
         this.Z = null;
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.o2
     public final org.telegram.ui.ActionBar.k createActionBar(Context context) {
         return null;
     }
@@ -421,7 +422,7 @@ public class n0 extends n2 {
      */
     /* JADX WARN: Removed duplicated region for block: B:129:0x01b8  */
     /* JADX WARN: Removed duplicated region for block: B:132:0x01bc  */
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.o2
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -460,12 +461,12 @@ public class n0 extends n2 {
             }
         }
         Activity parentActivity = getParentActivity();
-        vk0 vk0Var = parentActivity instanceof LaunchActivity ? ((LaunchActivity) parentActivity).t1 : null;
-        if (vk0Var != null && this.c == null) {
-            org.telegram.ui.g gVar = new org.telegram.ui.g(vk0Var, 29);
-            vk0Var.b.add(gVar);
-            vk0Var.a();
-            this.c = gVar;
+        yk0 yk0Var = parentActivity instanceof LaunchActivity ? ((LaunchActivity) parentActivity).v1 : null;
+        if (yk0Var != null && this.c == null) {
+            org.telegram.ui.f fVar = new org.telegram.ui.f(yk0Var, 29);
+            yk0Var.b.add(fVar);
+            yk0Var.a();
+            this.c = fVar;
         }
         int i11 = this.currentAccount;
         long j11 = this.a;
@@ -484,7 +485,7 @@ public class n0 extends n2 {
             String publicUsername = user != null ? UserObject.getPublicUsername(user) : null;
             if (publicUsername != null) {
                 j10 = 0;
-                p0Var = new p0(r4.c.u(s10, publicUsername), publicUsername, true, false, z10, j11, z10);
+                p0Var = new p0(si.o0.u(s10, publicUsername), publicUsername, true, false, z10, j11, z10);
             } else if (z10) {
                 if (user != null && user.phone != null && (privacyRules = ContactsController.getInstance(i11).getPrivacyRules(6)) != null) {
                     int size = privacyRules.size();
@@ -531,7 +532,7 @@ public class n0 extends n2 {
                         }
                         String str3 = str2;
                         j10 = 0;
-                        p0Var = new p0(r4.c.u(s10, str3), str3, false, false, true, j11, true);
+                        p0Var = new p0(si.o0.u(s10, str3), str3, false, false, true, j11, true);
                     }
                     if (c10 != 0) {
                     }
@@ -539,7 +540,7 @@ public class n0 extends n2 {
                     }
                     String str32 = str2;
                     j10 = 0;
-                    p0Var = new p0(r4.c.u(s10, str32), str32, false, false, true, j11, true);
+                    p0Var = new p0(si.o0.u(s10, str32), str32, false, false, true, j11, true);
                 }
                 TLRPC.TL_exportedContactToken cachedContactToken = messagesController.getCachedContactToken();
                 String str4 = cachedContactToken != null ? cachedContactToken.url : null;
@@ -554,7 +555,7 @@ public class n0 extends n2 {
             TLRPC.Chat chat = messagesController.getChat(Long.valueOf(j12));
             String publicUsername2 = ChatObject.getPublicUsername(chat);
             if (publicUsername2 != null) {
-                p0Var2 = new p0(r4.c.u(s10, publicUsername2), publicUsername2, true, false, false, -j12, ChatObject.canChangeChatInfo(chat));
+                p0Var2 = new p0(si.o0.u(s10, publicUsername2), publicUsername2, true, false, false, -j12, ChatObject.canChangeChatInfo(chat));
                 j10 = 0;
             } else {
                 String str5 = chat != null ? chat.title : "";
@@ -678,7 +679,7 @@ public class n0 extends n2 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.o2
     public final boolean drawEdgeNavigationBar() {
         return false;
     }
@@ -698,7 +699,7 @@ public class n0 extends n2 {
         this.a0 = Math.max(0, i10);
         this.b0 = Math.max(0, i10);
         this.c0 = Math.max(0, ceil - 4);
-        tabs.a = new org.telegram.ui.web.m(27, this, tabs);
+        tabs.a = new e8(29, this, tabs);
         tabs.b = new c0(this);
         int paddingLeft = tabs.getPaddingLeft();
         int paddingTop = tabs.getPaddingTop();
@@ -722,8 +723,8 @@ public class n0 extends n2 {
         }
         m grid = this.h.getGrid();
         this.q0 = true;
-        grid.W2 = new d0(this, grid, tabs);
-        grid.V2 = new e0(this, grid);
+        grid.Z2 = new d0(this, grid, tabs);
+        grid.Y2 = new e0(this, grid);
         c cVar = this.x;
         if (cVar.T != grid) {
             cVar.T = grid;
@@ -750,7 +751,7 @@ public class n0 extends n2 {
         this.W = -1;
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.o2
     public final int getNavigationBarColor() {
         return -16777216;
     }
@@ -767,22 +768,22 @@ public class n0 extends n2 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.o2
     public final boolean isLightStatusBar() {
         return false;
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.o2
     public final boolean isSupportEdgeToEdge() {
         return true;
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.o2
     public final boolean isSwipeBackEnabled(MotionEvent motionEvent) {
         return false;
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.o2
     public final boolean onBackPressed(boolean z10) {
         b0 b0Var = this.F;
         if (b0Var != null) {
@@ -808,7 +809,7 @@ public class n0 extends n2 {
         return super.onBackPressed(z10);
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.o2
     public final AnimatorSet onCustomTransitionAnimation(boolean z10, Runnable runnable) {
         if (this.d == null || AndroidUtilities.isTablet()) {
             return null;
@@ -822,11 +823,11 @@ public class n0 extends n2 {
         animatorSet.setDuration(z10 ? 860L : 200L);
         animatorSet.setInterpolator(new LinearInterpolator());
         animatorSet.addListener(new ah.q0(this, z10, runnable, 15));
-        AndroidUtilities.runOnUIThread(new u2.j0(27, this, animatorSet));
+        AndroidUtilities.runOnUIThread(new u2.k0(27, this, animatorSet));
         return animatorSet;
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.o2
     public final boolean onFragmentCreate() {
         Bundle bundle = this.arguments;
         this.a = bundle != null ? bundle.getLong("user_id") : 0L;
@@ -840,15 +841,15 @@ public class n0 extends n2 {
         return super.onFragmentCreate();
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.o2
     public final void onFragmentDestroy() {
         super.onFragmentDestroy();
         g0();
-        org.telegram.ui.g gVar = this.c;
-        if (gVar != null) {
-            vk0 vk0Var = (vk0) gVar.b;
-            if (vk0Var.b.remove(gVar)) {
-                vk0Var.a();
+        org.telegram.ui.f fVar = this.c;
+        if (fVar != null) {
+            yk0 yk0Var = (yk0) fVar.b;
+            if (yk0Var.b.remove(fVar)) {
+                yk0Var.a();
             }
             this.c = null;
         }
@@ -872,7 +873,7 @@ public class n0 extends n2 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.o2
     public final void onPause() {
         super.onPause();
         b0 b0Var = this.F;
@@ -899,7 +900,7 @@ public class n0 extends n2 {
         this.r0 = null;
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.o2
     public final void onRequestPermissionsResultFragment(int i10, String[] strArr, int[] iArr) {
         if (i10 == 4) {
             boolean z10 = iArr.length > 0 && iArr[0] == 0;
@@ -921,11 +922,14 @@ public class n0 extends n2 {
         alertDialog$Builder.a.T = AndroidUtilities.replaceTags(LocaleController.getString(R.string.QRCodePermissionNoCameraWithHint));
         alertDialog$Builder.k(LocaleController.getString(R.string.PermissionOpenSettings), new c0(this));
         alertDialog$Builder.h(LocaleController.getString(R.string.ContactsPermissionAlertNotNow), null);
-        alertDialog$Builder.m(R.raw.permission_request_camera, 72, h6.x0(null, h6.L5, false), null);
-        alertDialog$Builder.o();
+        int i11 = R.raw.permission_request_camera;
+        int i12 = k6.L5;
+        alertDialog$Builder.m(i11, 72, k6.x0(null, i12, false), null);
+        alertDialog$Builder.n(i12, null);
+        alertDialog$Builder.p();
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.o2
     public final void onResume() {
         super.onResume();
         W();
@@ -934,7 +938,7 @@ public class n0 extends n2 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.o2
     public final void onTransitionAnimationEnd(boolean z10, boolean z11) {
         c1 c1Var;
         super.onTransitionAnimationEnd(z10, z11);

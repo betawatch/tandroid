@@ -7,7 +7,7 @@ import java.math.RoundingMode;
 import java.util.List;
 import m.g3;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes.dex */
 public final class p extends n {
     public final g3 j;
@@ -28,7 +28,7 @@ public final class p extends n {
             return this.a;
         }
         w wVar = mVar.a;
-        return new j(0L, -1L, g3Var.s(wVar.j, wVar.a, 0L, 0L));
+        return new j(0L, -1L, g3Var.r(wVar.j, wVar.a, 0L, 0L));
     }
 
     @Override // m2.n
@@ -56,6 +56,6 @@ public final class p extends n {
         List list = this.f;
         long j12 = list != null ? ((q) list.get((int) (j10 - j11))).a : (j10 - j11) * this.e;
         w wVar = kVar.a;
-        return new j(0L, -1L, this.k.s(wVar.j, wVar.a, j10, j12));
+        return new j(0L, -1L, this.k.r(wVar.j, wVar.a, j10, j12));
     }
 }

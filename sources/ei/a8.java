@@ -42,7 +42,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.RLottieNative;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class a8 {
     public String A;
@@ -145,7 +145,7 @@ public final class a8 {
     public final Matrix n0 = new Matrix();
     public float t0 = 1.0f;
     public float u0 = 1.0f;
-    public boolean y0 = org.telegram.ui.ActionBar.h6.I.q();
+    public boolean y0 = org.telegram.ui.ActionBar.k6.I.q();
     public long z0 = Long.MIN_VALUE;
     public boolean D0 = true;
     public final ArrayList F0 = new ArrayList();
@@ -397,9 +397,9 @@ public final class a8 {
         arrayList.addAll(arrayList3);
         a8Var.I0 = storyItem.expire_date - storyItem.date;
         try {
-            CharSequence replaceEmoji = Emoji.replaceEmoji(new SpannableString(storyItem.caption), org.telegram.ui.ActionBar.h6.o2.getFontMetricsInt(), true);
+            CharSequence replaceEmoji = Emoji.replaceEmoji(new SpannableString(storyItem.caption), org.telegram.ui.ActionBar.k6.o2.getFontMetricsInt(), true);
             MessageObject.addEntitiesToText(replaceEmoji, storyItem.entities, true, false, true, false);
-            a8Var.C0 = MessageObject.replaceAnimatedEmoji(replaceEmoji, storyItem.entities, org.telegram.ui.ActionBar.h6.o2.getFontMetricsInt());
+            a8Var.C0 = MessageObject.replaceAnimatedEmoji(replaceEmoji, storyItem.entities, org.telegram.ui.ActionBar.k6.o2.getFontMetricsInt());
         } catch (Exception unused) {
         }
         a8Var.A();

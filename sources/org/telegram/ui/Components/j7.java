@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j7 implements Runnable {
     public final /* synthetic */ int a;
@@ -22,13 +22,13 @@ public final /* synthetic */ class j7 implements Runnable {
                 k8.u(this.b, this.c);
                 break;
             case 1:
-                k8.y(this.b, this.c);
+                k8.x(this.b, this.c);
                 break;
             case 2:
-                k8.I(this.b, this.c);
+                k8.C(this.b, this.c);
                 break;
             default:
-                k8.J(this.b, this.c);
+                k8.z(this.b, this.c);
                 break;
         }
     }

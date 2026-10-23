@@ -10,9 +10,9 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.k6;
 
-/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
 /* loaded from: classes4.dex */
 public final class c2 extends Drawable implements Drawable.Callback {
     public final Drawable a;
@@ -21,6 +21,8 @@ public final class c2 extends Drawable implements Drawable.Callback {
     public final RectF d;
     public final Outline e;
     public boolean f;
+    public final boolean h;
+    public boolean n;
 
     public c2(Drawable drawable) {
         Paint paint = new Paint(1);
@@ -32,21 +34,26 @@ public final class c2 extends Drawable implements Drawable.Callback {
         this.a = drawable;
         drawable.setCallback(this);
         paint.setColor(0);
-        if (h6.I.q()) {
-            paint.setShadowLayer(AndroidUtilities.dp(12.0f), 0.0f, AndroidUtilities.dp(4.0f), h6.m1(0.3f, -16777216));
-        } else {
-            paint.setShadowLayer(AndroidUtilities.dp(12.0f), 0.0f, AndroidUtilities.dp(4.0f), h6.m1(0.1f, -16777216));
-        }
+        this.h = true;
+        a(k6.I.q());
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0031  */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x002b  */
+    public final void a(boolean z10) {
+        this.n = z10;
+        this.b.setShadowLayer(AndroidUtilities.dp(12.0f), 0.0f, AndroidUtilities.dp(4.0f), k6.o1(z10 ? 0.3f : 0.1f, -16777216));
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:13:0x0040  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x0046  */
     @Override // android.graphics.drawable.Drawable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void draw(Canvas canvas) {
         float radius;
+        if (this.h && this.n != k6.I.q()) {
+            a(!this.n);
+        }
         boolean z10 = this.f;
         Drawable drawable = this.a;
         Path path = this.c;
