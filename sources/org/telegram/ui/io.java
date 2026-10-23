@@ -50,7 +50,7 @@ import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public class io extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.Components.d50, NotificationCenter.NotificationCenterDelegate {
     public TLRPC.TL_chatBannedRights A0;
@@ -206,7 +206,7 @@ public class io extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
         if (U == null) {
             return;
         }
-        Bundle d = org.telegram.messenger.mk.d(16, "onlySelect", "dialogsType", true);
+        Bundle d = org.telegram.messenger.nk.d(16, "onlySelect", "dialogsType", true);
         d.putBoolean("resetDelegate", false);
         cy cyVar = new cy(d);
         cyVar.setCurrentAccount(i10);

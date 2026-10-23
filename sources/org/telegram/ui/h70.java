@@ -23,7 +23,7 @@ import org.telegram.messenger.GenericProvider;
 import org.telegram.messenger.Intro;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class h70 extends DispatchQueue {
     public static final /* synthetic */ int y = 0;
@@ -125,7 +125,7 @@ public final class h70 extends DispatchQueue {
         boolean z10 = false;
         if (eglGetDisplay == EGL10.EGL_NO_DISPLAY) {
             if (BuildVars.LOGS_ENABLED) {
-                org.telegram.messenger.mk.v(this.b, new StringBuilder("eglGetDisplay failed "));
+                org.telegram.messenger.nk.v(this.b, new StringBuilder("eglGetDisplay failed "));
             }
             finish();
         } else if (this.b.eglInitialize(eglGetDisplay, new int[2])) {
@@ -134,7 +134,7 @@ public final class h70 extends DispatchQueue {
             j70 j70Var = this.x;
             if (!this.b.eglChooseConfig(this.c, EmuDetector.with(j70Var.getParentActivity()).detect() ? new int[]{12324, 8, 12323, 8, 12322, 8, 12321, 8, 12325, 24, 12344} : new int[]{12352, 4, 12324, 8, 12323, 8, 12322, 8, 12321, 8, 12325, 24, 12326, 0, 12338, 1, 12337, 2, 12344}, eGLConfigArr, 1, iArr)) {
                 if (BuildVars.LOGS_ENABLED) {
-                    org.telegram.messenger.mk.v(this.b, new StringBuilder("eglChooseConfig failed "));
+                    org.telegram.messenger.nk.v(this.b, new StringBuilder("eglChooseConfig failed "));
                 }
                 finish();
             } else if (iArr[0] > 0) {
@@ -144,7 +144,7 @@ public final class h70 extends DispatchQueue {
                 this.e = eglCreateContext;
                 if (eglCreateContext == null) {
                     if (BuildVars.LOGS_ENABLED) {
-                        org.telegram.messenger.mk.v(this.b, new StringBuilder("eglCreateContext failed "));
+                        org.telegram.messenger.nk.v(this.b, new StringBuilder("eglCreateContext failed "));
                     }
                     finish();
                 } else {
@@ -154,7 +154,7 @@ public final class h70 extends DispatchQueue {
                         this.f = eglCreateWindowSurface;
                         if (eglCreateWindowSurface == null || eglCreateWindowSurface == EGL10.EGL_NO_SURFACE) {
                             if (BuildVars.LOGS_ENABLED) {
-                                org.telegram.messenger.mk.v(this.b, new StringBuilder("createWindowSurface failed "));
+                                org.telegram.messenger.nk.v(this.b, new StringBuilder("createWindowSurface failed "));
                             }
                             finish();
                         } else if (this.b.eglMakeCurrent(this.c, eglCreateWindowSurface, eglCreateWindowSurface, this.e)) {
@@ -195,7 +195,7 @@ public final class h70 extends DispatchQueue {
                             z10 = true;
                         } else {
                             if (BuildVars.LOGS_ENABLED) {
-                                org.telegram.messenger.mk.v(this.b, new StringBuilder("eglMakeCurrent failed "));
+                                org.telegram.messenger.nk.v(this.b, new StringBuilder("eglMakeCurrent failed "));
                             }
                             finish();
                         }
@@ -211,7 +211,7 @@ public final class h70 extends DispatchQueue {
             }
         } else {
             if (BuildVars.LOGS_ENABLED) {
-                org.telegram.messenger.mk.v(this.b, new StringBuilder("eglInitialize failed "));
+                org.telegram.messenger.nk.v(this.b, new StringBuilder("eglInitialize failed "));
             }
             finish();
         }

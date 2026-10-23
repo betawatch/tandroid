@@ -16,7 +16,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public abstract class xy0 extends View implements NotificationCenter.NotificationCenterDelegate {
     public ValueAnimator E;
@@ -349,7 +349,7 @@ public abstract class xy0 extends View implements NotificationCenter.Notificatio
         Long l4 = this.n;
         if (l4 != null) {
             super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(166.0f), TLObject.FLAG_30));
-            i12 = org.telegram.messenger.mk.A(110.0f, View.MeasureSpec.getSize(i10), 2);
+            i12 = org.telegram.messenger.nk.A(110.0f, View.MeasureSpec.getSize(i10), 2);
             rectF.set(AndroidUtilities.dp(3.0f) + i12, AndroidUtilities.dp(3.0f), AndroidUtilities.dp(107.0f) + i12, AndroidUtilities.dp(107.0f));
         } else {
             super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(110.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(110.0f), TLObject.FLAG_30));
@@ -437,7 +437,7 @@ public abstract class xy0 extends View implements NotificationCenter.Notificatio
                 this.H = ofFloat;
                 ofFloat.addUpdateListener(new b80(this, 26));
                 this.H.addListener(new c80(this, 25));
-                org.telegram.messenger.mk.l(2.0f, this.H);
+                org.telegram.messenger.nk.l(2.0f, this.H);
                 this.H.setDuration(350L);
                 this.H.start();
             }

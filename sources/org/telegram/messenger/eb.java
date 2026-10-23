@@ -1,28 +1,31 @@
 package org.telegram.messenger;
 
-import android.util.SparseArray;
+import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class eb implements Runnable {
+public final /* synthetic */ class eb implements DialogInterface.OnCancelListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ SparseArray c;
+    public final /* synthetic */ BaseController b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ eb(MessagesController messagesController, SparseArray sparseArray, int i10) {
-        this.a = i10;
-        this.b = messagesController;
-        this.c = sparseArray;
+    public /* synthetic */ eb(BaseController baseController, int i10, int i11) {
+        this.a = i11;
+        this.b = baseController;
+        this.c = i10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.content.DialogInterface.OnCancelListener
+    public final void onCancel(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                this.b.lambda$getDifference$351(this.c);
+                ((MessagesController) this.b).lambda$convertToGigaGroup$270(this.c, dialogInterface);
+                break;
+            case 1:
+                ((MessagesController) this.b).lambda$convertToMegaGroup$265(this.c, dialogInterface);
                 break;
             default:
-                this.b.lambda$getChannelDifference$338(this.c);
+                ((SecretChatHelper) this.b).lambda$startSecretChat$31(this.c, dialogInterface);
                 break;
         }
     }

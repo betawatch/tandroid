@@ -5,7 +5,7 @@ import android.graphics.Typeface;
 import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class lc extends nb {
     public final w9 a;
@@ -22,7 +22,7 @@ public final class lc extends nb {
         addView(w9Var, w7.z5.i(32.0f, 32.0f, 8388627, 12.0f, 0.0f, 12.0f, 0.0f));
         int themedColor = getThemedColor(i10);
         int themedColor2 = getThemedColor(org.telegram.ui.ActionBar.h6.Gi);
-        LinearLayout e = org.telegram.messenger.mk.e(context, 1);
+        LinearLayout e = org.telegram.messenger.nk.e(context, 1);
         addView(e, w7.z5.i(-2.0f, -2.0f, 8388627, 52.0f, 8.0f, 8.0f, 8.0f));
         x90 x90Var = new x90(context, null);
         this.b = x90Var;

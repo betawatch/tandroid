@@ -30,7 +30,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public class PasscodeActivity extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public int E;
@@ -185,7 +185,7 @@ public class PasscodeActivity extends org.telegram.ui.ActionBar.n2 implements No
                 if (q0Var == null) {
                     y8Var.run(Boolean.FALSE);
                 } else {
-                    org.telegram.ui.Wallet.q0.h.execute(new org.telegram.messenger.q8(q0Var, q0Var.l(), z11, new org.telegram.ui.Wallet.l(y8Var, i11), 10));
+                    org.telegram.ui.Wallet.q0.h.execute(new org.telegram.messenger.s8(q0Var, q0Var.l(), z11, new org.telegram.ui.Wallet.l(y8Var, i11), 10));
                 }
             }
         }

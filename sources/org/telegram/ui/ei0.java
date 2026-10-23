@@ -9,7 +9,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class ei0 extends org.telegram.ui.Components.lw0 {
     public final s10 A0;
@@ -129,7 +129,7 @@ public final class ei0 extends org.telegram.ui.Components.lw0 {
                 } else if (mi0Var.U != null) {
                     canvas2.save();
                     canvas2.translate(0.0f, mi0Var.R.getY());
-                    canvas2.saveLayerAlpha(mi0Var.R.getX() + mi0Var.R.getPaddingLeft(), 0.0f, ((mi0Var.R.getX() + mi0Var.R.getPaddingLeft()) + mi0Var.R.getWidth()) - mi0Var.R.getPaddingRight(), mi0Var.R.getHeight(), (int) org.telegram.messenger.mk.z(mi0Var.y, 0.1f, 1.0f, f10), 31);
+                    canvas2.saveLayerAlpha(mi0Var.R.getX() + mi0Var.R.getPaddingLeft(), 0.0f, ((mi0Var.R.getX() + mi0Var.R.getPaddingLeft()) + mi0Var.R.getWidth()) - mi0Var.R.getPaddingRight(), mi0Var.R.getHeight(), (int) org.telegram.messenger.nk.z(mi0Var.y, 0.1f, 1.0f, f10), 31);
                     mi0Var.U.run(canvas2);
                     canvas2.restore();
                     canvas2.restore();
@@ -137,7 +137,7 @@ public final class ei0 extends org.telegram.ui.Components.lw0 {
                 } else {
                     f13 = alpha;
                     paint.setColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Sd, this.C0));
-                    paint.setAlpha((int) org.telegram.messenger.mk.z(mi0Var.y, 0.1f, 1.0f, paint.getAlpha()));
+                    paint.setAlpha((int) org.telegram.messenger.nk.z(mi0Var.y, 0.1f, 1.0f, paint.getAlpha()));
                     canvas2.drawRect(mi0Var.R.getPaddingLeft(), mi0Var.R.getY(), ((mi0Var.R.getX() + mi0Var.R.getPaddingLeft()) + mi0Var.R.getWidth()) - mi0Var.R.getPaddingRight(), mi0Var.R.getY() + mi0Var.R.getHeight(), paint);
                 }
                 org.telegram.ui.Components.d dVar = mi0Var.T;

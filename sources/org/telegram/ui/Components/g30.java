@@ -38,7 +38,7 @@ import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.kc1;
 import org.telegram.ui.sh1;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g30 implements Runnable {
     public final /* synthetic */ int a;
@@ -387,7 +387,7 @@ public final /* synthetic */ class g30 implements Runnable {
                         d = org.telegram.ui.ib0.d();
                         i11 = R.string.PaymentInvoiceLinkInvalid;
                     }
-                    org.telegram.messenger.mk.q(i11, d, null);
+                    org.telegram.messenger.nk.q(i11, d, null);
                 } else if (!launchActivity5.isFinishing()) {
                     if (tLObject7 instanceof TLRPC.TL_payments_paymentFormStars) {
                         yh.n4 n4Var = launchActivity5.Y0;
@@ -918,9 +918,9 @@ public final /* synthetic */ class g30 implements Runnable {
                 ProfileActivity profileActivity = (ProfileActivity) obj5;
                 TLRPC.ChatParticipant chatParticipant = (TLRPC.ChatParticipant) obj3;
                 TLRPC.User user2 = (TLRPC.User) obj2;
-                org.telegram.messenger.gk gkVar = (org.telegram.messenger.gk) obj;
+                org.telegram.messenger.hk hkVar = (org.telegram.messenger.hk) obj;
                 if (!(((TLRPC.ChannelParticipant) obj4) instanceof TLRPC.TL_channelParticipantAdmin) && !(chatParticipant instanceof TLRPC.TL_chatParticipantAdmin)) {
-                    gkVar.run(1);
+                    hkVar.run(1);
                     break;
                 } else {
                     AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(profileActivity.getParentActivity(), 0, profileActivity.A0);
@@ -928,7 +928,7 @@ public final /* synthetic */ class g30 implements Runnable {
                     org.telegram.ui.ActionBar.b2 b2Var3 = alertDialog$Builder3.a;
                     b2Var3.R = string2;
                     b2Var3.T = LocaleController.formatString(R.string.AdminWillBeRemoved, ContactsController.formatName(user2.first_name, user2.last_name));
-                    alertDialog$Builder3.k(LocaleController.getString(R.string.OK), new org.telegram.ui.pp0(gkVar, 10));
+                    alertDialog$Builder3.k(LocaleController.getString(R.string.OK), new org.telegram.ui.pp0(hkVar, 10));
                     alertDialog$Builder3.h(LocaleController.getString(R.string.Cancel), null);
                     profileActivity.showDialog(b2Var3);
                     break;

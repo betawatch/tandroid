@@ -26,7 +26,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class f1 extends FrameLayout implements org.telegram.ui.Cells.m9 {
     public TL_iv.pageBlockChannel E;
@@ -57,7 +57,7 @@ public final class f1 extends FrameLayout implements org.telegram.ui.Cells.m9 {
         TextView textView = new TextView(context);
         this.d = textView;
         com.google.android.gms.internal.play_billing.k3.m(14.0f, 1, textView);
-        org.telegram.messenger.mk.m(R.string.ChannelJoin, textView, 19);
+        org.telegram.messenger.nk.m(R.string.ChannelJoin, textView, 19);
         addView(textView, w7.z5.e(-2, 39, 53));
         textView.setOnClickListener(new org.telegram.ui.ActionBar.s1(3, this, b70Var));
         ImageView imageView = new ImageView(context);

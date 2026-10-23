@@ -14,7 +14,7 @@ import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.messenger.mk;
+import org.telegram.messenger.nk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.a6;
@@ -22,7 +22,7 @@ import org.telegram.ui.Components.fl0;
 import org.telegram.ui.rd0;
 import w7.z5;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class v2 extends j {
     public String A0;
@@ -116,7 +116,7 @@ public final class v2 extends j {
         float scaleX = viewGroup.getScaleX();
         float dp = (AndroidUtilities.dp(64.0f) / scaleX) + (getScale() * getMeasuredWidth());
         float dp2 = (AndroidUtilities.dp(52.0f) / scaleX) + (getScale() * getMeasuredHeight());
-        float z10 = mk.z(dp, 2.0f, getPositionX(), scaleX);
+        float z10 = nk.z(dp, 2.0f, getPositionX(), scaleX);
         float positionY = getPositionY();
         u2 u2Var = this.q0;
         return new fl0(z10, (positionY - (((dp2 - u2Var.getExtendedPaddingTop()) - AndroidUtilities.dpf2(4.0f)) / 2.0f)) * scaleX, ((dp * scaleX) + z10) - z10, (dp2 - u2Var.getExtendedPaddingBottom()) * scaleX);

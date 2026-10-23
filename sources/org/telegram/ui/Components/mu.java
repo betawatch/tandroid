@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.content.Context;
 import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class mu extends tz {
     public int P2;
@@ -39,7 +39,7 @@ public final class mu extends tz {
             }
             if (this.R2 && (i14 = this.P2) > 0 && i15 > 0 && i15 != i14) {
                 setTranslationY(i15 - i14);
-                org.telegram.messenger.mk.t(animate().translationY(0.0f), org.telegram.ui.ActionBar.o1.w, 250L);
+                org.telegram.messenger.nk.t(animate().translationY(0.0f), org.telegram.ui.ActionBar.o1.w, 250L);
                 this.R2 = false;
             }
             this.Q2 = quVar.x;

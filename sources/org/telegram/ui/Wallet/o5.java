@@ -51,7 +51,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.mk;
+import org.telegram.messenger.nk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stars;
@@ -85,7 +85,7 @@ import org.telegram.ui.st0;
 import org.telegram.ui.tf1;
 import org.telegram.ui.vf1;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes4.dex */
 public final class o5 extends x61 implements NotificationCenter.NotificationCenterDelegate {
     public static Typeface T0;
@@ -248,7 +248,7 @@ public final class o5 extends x61 implements NotificationCenter.NotificationCent
 
     public static void D0(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
         int i10 = 1;
-        org.telegram.ui.ActionBar.f3 i11 = mk.i(1, context, d6Var, false);
+        org.telegram.ui.ActionBar.f3 i11 = nk.i(1, context, d6Var, false);
         FrameLayout frameLayout = new FrameLayout(context);
         frameLayout.setBackground(org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(16.0f), org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.h5, d6Var)));
         frameLayout.setPadding(AndroidUtilities.dp(36.0f), 0, AndroidUtilities.dp(36.0f), AndroidUtilities.dp(14.0f));
@@ -259,13 +259,13 @@ public final class o5 extends x61 implements NotificationCenter.NotificationCent
         linearLayout.addView(new m6(160, context, false), w7.z5.t(160, 160, 1, 0, -12, 0, -8));
         TextView textView = new TextView(context);
         textView.setText(LocaleController.getString(R.string.WalletHowItWorks));
-        mk.o(org.telegram.ui.ActionBar.h6.j5, d6Var, textView, 1, 17.0f);
+        nk.o(org.telegram.ui.ActionBar.h6.j5, d6Var, textView, 1, 17.0f);
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         textView.setGravity(17);
         TextView i12 = com.google.android.gms.internal.play_billing.k3.i(linearLayout, textView, w7.z5.t(-1, -2, 1, 0, 0, 0, 6), context);
         i12.setText(LocaleController.getString(R.string.WalletHowItWorksInfo));
         int i13 = org.telegram.ui.ActionBar.h6.z6;
-        mk.o(i13, d6Var, i12, 1, 14.0f);
+        nk.o(i13, d6Var, i12, 1, 14.0f);
         i12.setGravity(17);
         i12.setLineSpacing(AndroidUtilities.dp(1.0f), 1.0f);
         linearLayout.addView(i12, w7.z5.t(-1, -2, 1, 0, 0, 0, 24));
@@ -281,7 +281,7 @@ public final class o5 extends x61 implements NotificationCenter.NotificationCent
         g5Var3.setPadding(AndroidUtilities.dp(0.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(0.0f), AndroidUtilities.dp(8.0f));
         g5Var3.a(LocaleController.getString(R.string.WalletBlockchainVerified), LocaleController.getString(R.string.WalletBlockchainVerifiedInfo), R.drawable.wallet_learn_verified);
         linearLayout.addView(g5Var3, w7.z5.k(0.0f, 0.0f, 0.0f, 14.0f, -1, -2));
-        ei.d f7 = mk.f(24, context, d6Var, true);
+        ei.d f7 = nk.f(24, context, d6Var, true);
         f7.setText(LocaleController.getString(R.string.WalletGotIt));
         linearLayout.addView(f7, w7.z5.t(-1, 48, 1, 0, 0, 0, 0));
         w7.b6.b(f7, 0.02f, 1.1f);
@@ -854,7 +854,7 @@ public final class o5 extends x61 implements NotificationCenter.NotificationCent
         t4 t4Var4;
         final org.telegram.ui.ActionBar.d6 d6Var2 = d6Var;
         boolean z11 = callback3 != null;
-        final ?? e = mk.e(context, 1);
+        final ?? e = nk.e(context, 1);
         FrameLayout frameLayout2 = new FrameLayout(context);
         e.addView(frameLayout2, w7.z5.n(-1, 56));
         int i16 = org.telegram.ui.ActionBar.h6.G6;
@@ -991,7 +991,7 @@ public final class o5 extends x61 implements NotificationCenter.NotificationCent
                                     final z3 z3Var = new z3(0, textViewArr2, spannableStringArr2);
                                     final Runnable[] runnableArr = new Runnable[1];
                                     ImageView imageView7 = imageView;
-                                    final org.telegram.messenger.c6 c6Var = new org.telegram.messenger.c6(runnableArr, textViewArr2, i10, d6Var2, wallettransaction, strArr2, zArr2, bArr);
+                                    final org.telegram.messenger.b6 b6Var = new org.telegram.messenger.b6(runnableArr, textViewArr2, i10, d6Var2, wallettransaction, strArr2, zArr2, bArr);
                                     wallettransaction2 = wallettransaction;
                                     textViewArr = textViewArr2;
                                     ?? r4Var = new r4(context, d6Var2);
@@ -1005,7 +1005,7 @@ public final class o5 extends x61 implements NotificationCenter.NotificationCent
                                     r4Var.setHintTextColor(org.telegram.ui.ActionBar.h6.m1(0.65f, org.telegram.ui.ActionBar.h6.w0(i20, d6Var2)));
                                     r4Var.setMaxLines(4);
                                     frameLayout4.addView(r4Var, w7.z5.d(-1, -2.0f, 119, 0.0f, 0.0f, (wallettransaction2.nft != null || bArr == null) ? 0.0f : 44.0f, 0.0f));
-                                    r4Var.addTextChangedListener(new s4(strArr2, z3Var, runnableArr, c6Var));
+                                    r4Var.addTextChangedListener(new s4(strArr2, z3Var, runnableArr, b6Var));
                                     if (wallettransaction2.nft != null || bArr == null) {
                                         frameLayout = frameLayout4;
                                         d6Var2 = d6Var2;
@@ -1105,9 +1105,9 @@ public final class o5 extends x61 implements NotificationCenter.NotificationCent
                                                     runnable2.run();
                                                     runnableArr2[0] = null;
                                                 }
-                                                org.telegram.messenger.c6 c6Var2 = c6Var;
-                                                AndroidUtilities.cancelRunOnUIThread(c6Var2);
-                                                AndroidUtilities.runOnUIThread(c6Var2, 1000L);
+                                                org.telegram.messenger.b6 b6Var2 = b6Var;
+                                                AndroidUtilities.cancelRunOnUIThread(b6Var2);
+                                                AndroidUtilities.runOnUIThread(b6Var2, 1000L);
                                             }
                                         });
                                         frameLayout.addView(frameLayout5, w7.z5.e(44, 44, 85));
@@ -1127,7 +1127,7 @@ public final class o5 extends x61 implements NotificationCenter.NotificationCent
                                     textViewArr = textViewArr2;
                                     t4Var2 = t4Var;
                                 }
-                                ei.d f10 = mk.f(24, context, d6Var2, true);
+                                ei.d f10 = nk.f(24, context, d6Var2, true);
                                 f10.setText(LocaleController.getString(R.string.OK));
                                 linearLayout.addView(f10, w7.z5.k(14.0f, 14.0f, 14.0f, 14.0f, -1, 48));
                                 TL_wallet.walletTransaction[] wallettransactionArr = new TL_wallet.walletTransaction[1];
@@ -1267,7 +1267,7 @@ public final class o5 extends x61 implements NotificationCenter.NotificationCent
                     final boolean[] zArr22 = {(wallettransaction.comment_encrypted || (z11 && bArr == null)) ? false : true};
                     if (callback3 == null) {
                     }
-                    ei.d f102 = mk.f(24, context, d6Var2, true);
+                    ei.d f102 = nk.f(24, context, d6Var2, true);
                     f102.setText(LocaleController.getString(R.string.OK));
                     linearLayout.addView(f102, w7.z5.k(14.0f, 14.0f, 14.0f, 14.0f, -1, 48));
                     TL_wallet.walletTransaction[] wallettransactionArr2 = new TL_wallet.walletTransaction[1];
@@ -1315,7 +1315,7 @@ public final class o5 extends x61 implements NotificationCenter.NotificationCent
             final boolean[] zArr222 = {(wallettransaction.comment_encrypted || (z11 && bArr == null)) ? false : true};
             if (callback3 == null) {
             }
-            ei.d f1022 = mk.f(24, context, d6Var2, true);
+            ei.d f1022 = nk.f(24, context, d6Var2, true);
             f1022.setText(LocaleController.getString(R.string.OK));
             linearLayout.addView(f1022, w7.z5.k(14.0f, 14.0f, 14.0f, 14.0f, -1, 48));
             TL_wallet.walletTransaction[] wallettransactionArr22 = new TL_wallet.walletTransaction[1];
@@ -1365,7 +1365,7 @@ public final class o5 extends x61 implements NotificationCenter.NotificationCent
         final boolean[] zArr2222 = {(wallettransaction.comment_encrypted || (z11 && bArr == null)) ? false : true};
         if (callback3 == null) {
         }
-        ei.d f10222 = mk.f(24, context, d6Var2, true);
+        ei.d f10222 = nk.f(24, context, d6Var2, true);
         f10222.setText(LocaleController.getString(R.string.OK));
         linearLayout.addView(f10222, w7.z5.k(14.0f, 14.0f, 14.0f, 14.0f, -1, 48));
         TL_wallet.walletTransaction[] wallettransactionArr222 = new TL_wallet.walletTransaction[1];
@@ -2338,7 +2338,7 @@ public final class o5 extends x61 implements NotificationCenter.NotificationCent
         imageView.setImageResource(R.drawable.wallet_protect);
         this.c0.addView(imageView, w7.z5.d(28, 28.0f, 19, 14.0f, 11.0f, 16.0f, 11.0f));
         TextView textView4 = new TextView(context);
-        mk.o(org.telegram.ui.ActionBar.h6.q7, this.resourceProvider, textView4, 1, 16.0f);
+        nk.o(org.telegram.ui.ActionBar.h6.q7, this.resourceProvider, textView4, 1, 16.0f);
         textView4.setText(LocaleController.getString(R.string.WalletProtectAccount));
         this.c0.addView(textView4, w7.z5.d(-1, -2.0f, 19, 58.0f, 0.0f, 32.0f, 0.0f));
         FrameLayout frameLayout2 = this.c0;

@@ -25,7 +25,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.mk;
+import org.telegram.messenger.nk;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.ActionBarLayout;
@@ -55,7 +55,7 @@ import org.telegram.ui.y8;
 import w7.b6;
 import w7.z5;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes4.dex */
 public class g4 extends org.telegram.ui.ActionBar.n2 implements ne.d {
     public LinearLayout E;
@@ -362,13 +362,13 @@ public class g4 extends org.telegram.ui.ActionBar.n2 implements ne.d {
         };
         d6 d6Var = this.resourceProvider;
         k3 k3Var = new k3(context);
-        LinearLayout e = mk.e(context, 1);
+        LinearLayout e = nk.e(context, 1);
         k3Var.addView(e, z5.e(-1, -2, 23));
         w9 w9Var = new w9(context);
         w9Var.setImageDrawable(new vj0(R.raw.utyan_empty, AndroidUtilities.dp(130.0f), AndroidUtilities.dp(130.0f)));
         e.addView(w9Var, z5.q(130, 130, 17));
         TextView textView = new TextView(context);
-        mk.o(h6.G6, d6Var, textView, 1, 17.0f);
+        nk.o(h6.G6, d6Var, textView, 1, 17.0f);
         textView.setGravity(17);
         textView.setTypeface(AndroidUtilities.bold());
         textView.setText(LocaleController.getString(R.string.Gift2ResaleFiltersEmptyTitle));
@@ -425,7 +425,7 @@ public class g4 extends org.telegram.ui.ActionBar.n2 implements ne.d {
         xpVar.setScaleY(0.8f);
         linearLayout2.addView(xpVar, z5.q(26, 26, 16));
         TextView textView3 = new TextView(context);
-        mk.o(h6.j5, this.resourceProvider, textView3, 1, 14.0f);
+        nk.o(h6.j5, this.resourceProvider, textView3, 1, 14.0f);
         textView3.setText(LocaleController.getString(R.string.GiftResaleStarsOnly));
         linearLayout2.addView(textView3, z5.t(-2, -2, 16, 9, 0, 0, 0));
         int dp = AndroidUtilities.dp(18.0f);

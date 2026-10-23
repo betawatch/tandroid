@@ -1,31 +1,39 @@
 package org.telegram.messenger;
 
-import android.content.DialogInterface;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class cb implements DialogInterface.OnCancelListener {
+public final /* synthetic */ class cb implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ BaseController b;
+    public final /* synthetic */ MessagesController b;
     public final /* synthetic */ int c;
+    public final /* synthetic */ ArrayList d;
+    public final /* synthetic */ boolean e;
+    public final /* synthetic */ TLRPC.TL_messages_peerDialogs f;
+    public final /* synthetic */ a0.h h;
+    public final /* synthetic */ TLRPC.TL_messages_dialogs n;
 
-    public /* synthetic */ cb(BaseController baseController, int i10, int i11) {
+    public /* synthetic */ cb(MessagesController messagesController, int i10, ArrayList arrayList, boolean z10, TLRPC.TL_messages_peerDialogs tL_messages_peerDialogs, a0.h hVar, TLRPC.TL_messages_dialogs tL_messages_dialogs, int i11) {
         this.a = i11;
-        this.b = baseController;
+        this.b = messagesController;
         this.c = i10;
+        this.d = arrayList;
+        this.e = z10;
+        this.f = tL_messages_peerDialogs;
+        this.h = hVar;
+        this.n = tL_messages_dialogs;
     }
 
-    @Override // android.content.DialogInterface.OnCancelListener
-    public final void onCancel(DialogInterface dialogInterface) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((MessagesController) this.b).lambda$convertToGigaGroup$270(this.c, dialogInterface);
-                break;
-            case 1:
-                ((MessagesController) this.b).lambda$convertToMegaGroup$265(this.c, dialogInterface);
+                this.b.lambda$loadPinnedDialogs$365(this.c, this.d, this.e, this.f, this.h, this.n);
                 break;
             default:
-                ((SecretChatHelper) this.b).lambda$startSecretChat$31(this.c, dialogInterface);
+                this.b.lambda$loadPinnedDialogs$364(this.c, this.d, this.e, this.f, this.h, this.n);
                 break;
         }
     }

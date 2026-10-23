@@ -6,7 +6,7 @@ import android.text.TextUtils;
 import android.widget.TextView;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class tt extends org.telegram.ui.Cells.c5 {
     public final /* synthetic */ int e;
@@ -26,7 +26,7 @@ public final class tt extends org.telegram.ui.Cells.c5 {
         setWillNotDraw(false);
         TextView textView = new TextView(activity);
         this.a = textView;
-        org.telegram.messenger.mk.u(textView, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.j5, false), 1, 16.0f, 1);
+        org.telegram.messenger.nk.u(textView, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.j5, false), 1, 16.0f, 1);
         textView.setMaxLines(1);
         textView.setSingleLine(true);
         textView.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
@@ -35,7 +35,7 @@ public final class tt extends org.telegram.ui.Cells.c5 {
         addView(textView, w7.z5.d(-1, -1.0f, (LocaleController.isRTL ? 5 : 3) | 48, 21.0f, 13.0f, 21.0f, 0.0f));
         TextView textView2 = new TextView(activity);
         this.b = textView2;
-        org.telegram.messenger.mk.u(textView2, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.n5, false), 1, 16.0f, 1);
+        org.telegram.messenger.nk.u(textView2, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.n5, false), 1, 16.0f, 1);
         textView2.setMaxLines(1);
         textView2.setSingleLine(true);
         textView2.setGravity((LocaleController.isRTL ? 3 : 5) | 48);

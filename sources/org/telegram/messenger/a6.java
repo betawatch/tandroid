@@ -1,34 +1,39 @@
 package org.telegram.messenger;
 
-import android.content.DialogInterface;
-import org.telegram.messenger.MediaController;
-
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class a6 implements DialogInterface.OnCancelListener {
+public final /* synthetic */ class a6 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.b2 b;
+    public final /* synthetic */ boolean[] c;
 
-    public /* synthetic */ a6(Object obj, int i10) {
+    public /* synthetic */ a6(org.telegram.ui.ActionBar.b2 b2Var, boolean[] zArr, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.b = b2Var;
+        this.c = zArr;
     }
 
-    @Override // android.content.DialogInterface.OnCancelListener
-    public final void onCancel(DialogInterface dialogInterface) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                MediaController.lambda$saveFile$45((boolean[]) this.b, dialogInterface);
+                MediaController.lambda$saveFile$48(this.c, this.b);
                 break;
             case 1:
-                MediaController.lambda$saveFile$52((boolean[]) this.b, dialogInterface);
+                MediaController.lambda$saveFile$52(this.b, this.c);
                 break;
             case 2:
-                MessagesController.lambda$openByUserName$460((boolean[]) this.b, dialogInterface);
+                MediaController.lambda$saveFile$57(this.b, this.c);
                 break;
             default:
-                ((MediaController.MediaLoader) this.b).lambda$new$0(dialogInterface);
+                MediaController.lambda$saveFile$55(this.c, this.b);
                 break;
         }
+    }
+
+    public /* synthetic */ a6(boolean[] zArr, org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        this.a = i10;
+        this.c = zArr;
+        this.b = b2Var;
     }
 }

@@ -21,7 +21,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a3 implements Utilities.Callback2 {
     public final /* synthetic */ int a = 0;
@@ -123,7 +123,7 @@ public final /* synthetic */ class a3 implements Utilities.Callback2 {
                             chat = MessagesController.getInstance(i14).getChat(Long.valueOf(-peerDialogId));
                         }
                         TLObject user = j13 >= 0 ? MessagesController.getInstance(i14).getUser(Long.valueOf(j13)) : MessagesController.getInstance(i14).getChat(Long.valueOf(-j13));
-                        LinearLayout e = org.telegram.messenger.mk.e(context2, 1);
+                        LinearLayout e = org.telegram.messenger.nk.e(context2, 1);
                         e.addView(new ai.i7(context2, chat, user), w7.z5.t(-1, -2, 48, 0, -4, 0, 0));
                         TextView textView = new TextView(context2);
                         NotificationCenter.listenEmojiLoading(textView);
@@ -133,14 +133,14 @@ public final /* synthetic */ class a3 implements Utilities.Callback2 {
                         textView.setGravity(LocaleController.isRTL ? 5 : 3);
                         e.addView(textView, w7.z5.d(-2, -2.0f, (LocaleController.isRTL ? 5 : 3) | 48, 24.0f, 19.0f, 24.0f, 2.0f));
                         TextView textView2 = new TextView(context2);
-                        org.telegram.messenger.mk.o(i15, d6Var, textView2, 1, 16.0f);
+                        org.telegram.messenger.nk.o(i15, d6Var, textView2, 1, 16.0f);
                         int i16 = R.string.Gift2AuctionsChangeRecipient2;
                         String shortName = DialogObject.getShortName(peerDialogId);
                         String shortName2 = DialogObject.getShortName(j13);
                         Object[] objArr = new Object[2];
                         objArr[i10] = shortName;
                         objArr[1] = shortName2;
-                        org.telegram.messenger.mk.r(i16, objArr, textView2);
+                        org.telegram.messenger.nk.r(i16, objArr, textView2);
                         e.addView(textView2, w7.z5.t(-1, -2, 48, 24, 4, 24, 4));
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context2, i10, d6Var);
                         alertDialog$Builder.n(e);

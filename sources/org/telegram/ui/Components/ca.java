@@ -30,7 +30,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.sa1;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ca implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -432,7 +432,7 @@ public final /* synthetic */ class ca implements View.OnClickListener {
             case 24:
                 ai.y9 y9Var = (ai.y9) obj2;
                 y9Var.e = !y9Var.e;
-                ((org.telegram.messenger.wj) obj).run();
+                ((org.telegram.messenger.xj) obj).run();
                 y9Var.j(true);
                 break;
             case 25:

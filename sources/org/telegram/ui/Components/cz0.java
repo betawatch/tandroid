@@ -46,7 +46,7 @@ import org.telegram.ui.fd1;
 import org.telegram.ui.gd1;
 import org.telegram.ui.yc1;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class cz0 implements Runnable {
     public final /* synthetic */ int a;
@@ -262,7 +262,7 @@ public final /* synthetic */ class cz0 implements Runnable {
                 org.telegram.ui.ActionBar.d6 d6Var2 = (org.telegram.ui.ActionBar.d6) this.c;
                 AndroidUtilities.addToClipboard(str2);
                 if (i17 == 1) {
-                    org.telegram.messenger.mk.p(R.string.PhoneCopied, new xc(f3Var.getContainer(), d6Var2));
+                    org.telegram.messenger.nk.p(R.string.PhoneCopied, new xc(f3Var.getContainer(), d6Var2));
                     return;
                 } else {
                     new xc(f3Var.getContainer(), d6Var2).k(false).j();

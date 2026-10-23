@@ -10,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public class oo0 extends View {
     public boolean E;
@@ -124,7 +124,7 @@ public class oo0 extends View {
     @Override // android.view.View
     public final void onMeasure(int i10, int i11) {
         if (!this.F) {
-            i11 = org.telegram.messenger.mk.C(230.0f, AndroidUtilities.statusBarHeight, TLObject.FLAG_30);
+            i11 = org.telegram.messenger.nk.C(230.0f, AndroidUtilities.statusBarHeight, TLObject.FLAG_30);
         }
         super.onMeasure(i10, i11);
     }

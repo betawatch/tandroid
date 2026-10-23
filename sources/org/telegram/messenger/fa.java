@@ -4,33 +4,100 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class fa implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ BaseController b;
-    public final /* synthetic */ int c;
+    public final /* synthetic */ MessagesController b;
 
-    public /* synthetic */ fa(BaseController baseController, int i10, int i11) {
-        this.a = i11;
-        this.b = baseController;
-        this.c = i10;
+    public /* synthetic */ fa(MessagesController messagesController, int i10) {
+        this.a = i10;
+        this.b = messagesController;
     }
 
     @Override // org.telegram.tgnet.RequestDelegate
     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                ((MessagesController) this.b).lambda$migrateDialogs$215(this.c, tLObject, tL_error);
+                this.b.lambda$updateTimerProc$151(tLObject, tL_error);
                 break;
             case 1:
-                ((MessagesController) this.b).lambda$loadPinnedDialogs$366(this.c, tLObject, tL_error);
+                this.b.lambda$updateTimerProc$152(tLObject, tL_error);
                 break;
             case 2:
-                ((MessagesController) this.b).lambda$loadGlobalNotificationsSettings$200(this.c, tLObject, tL_error);
+                this.b.lambda$processUpdateArray$417(tLObject, tL_error);
+                break;
+            case 3:
+                this.b.lambda$loadCurrentState$324(tLObject, tL_error);
+                break;
+            case 4:
+                this.b.lambda$getContentSettings$505(tLObject, tL_error);
+                break;
+            case 5:
+                this.b.lambda$loadSignUpNotificationsSettings$206(tLObject, tL_error);
+                break;
+            case 6:
+                this.b.lambda$sendBotStart$292(tLObject, tL_error);
+                break;
+            case 7:
+                this.b.lambda$reloadDialogsReadValue$63(tLObject, tL_error);
+                break;
+            case 8:
+                this.b.lambda$completeReadTask$237(tLObject, tL_error);
+                break;
+            case 9:
+                this.b.lambda$markMentionMessageAsRead$233(tLObject, tL_error);
+                break;
+            case 10:
+                this.b.lambda$toggleChannelForum$285(tLObject, tL_error);
+                break;
+            case 11:
+                this.b.lambda$setDialogHistoryTTL$136(tLObject, tL_error);
+                break;
+            case 12:
+                this.b.lambda$loadUnreadDialogs$361(tLObject, tL_error);
+                break;
+            case 13:
+                this.b.lambda$checkTosUpdate$162(tLObject, tL_error);
+                break;
+            case 14:
+                this.b.lambda$reloadReactionsNotifySettings$204(tLObject, tL_error);
+                break;
+            case 15:
+                this.b.lambda$reloadUser$55(tLObject, tL_error);
+                break;
+            case 16:
+                this.b.lambda$loadHintDialogs$195(tLObject, tL_error);
+                break;
+            case 17:
+                this.b.lambda$markMessageContentAsRead$231(tLObject, tL_error);
+                break;
+            case 18:
+                this.b.lambda$loadRemoteFilters$30(tLObject, tL_error);
+                break;
+            case 19:
+                this.b.lambda$didReceivedNotification$42(tLObject, tL_error);
+                break;
+            case 20:
+                this.b.lambda$loadGlobalNotificationsSettings$202(tLObject, tL_error);
+                break;
+            case 21:
+                this.b.lambda$performLogout$321(tLObject, tL_error);
+                break;
+            case 22:
+                this.b.lambda$checkPeerColors$494(tLObject, tL_error);
+                break;
+            case 23:
+                this.b.lambda$checkPeerColors$496(tLObject, tL_error);
+                break;
+            case 24:
+                this.b.lambda$loadSuggestedFilters$25(tLObject, tL_error);
+                break;
+            case 25:
+                this.b.lambda$toggleChannelInvitesHistory$287(tLObject, tL_error);
                 break;
             default:
-                ((ContactsController) this.b).lambda$loadPrivacySettings$65(this.c, tLObject, tL_error);
+                this.b.lambda$toggleChannelSignatures$283(tLObject, tL_error);
                 break;
         }
     }

@@ -81,7 +81,7 @@ import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.gd1;
 import org.telegram.ui.pg1;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public abstract class f5 {
     public static final Pattern a = Pattern.compile("^([a-zA-Z][a-zA-Z0-9+\\-.]*://)?([a-zA-Z0-9\\-]+\\.)+[a-zA-Z]{2,}(:\\d+)?(/[^\\s]*)?$");
@@ -1021,7 +1021,7 @@ public abstract class f5 {
         w4Var.setTextOffset(-AndroidUtilities.dp(34.0f));
         x3 x3Var = new x3(context, od0Var, v4Var, w4Var, 5);
         x3Var.setOrientation(1);
-        LinearLayout e = org.telegram.messenger.mk.e(context, 1);
+        LinearLayout e = org.telegram.messenger.nk.e(context, 1);
         x3Var.addView(e, w7.z5.t(-1, -2, 51, 22, 0, 22, 4));
         TextView textView = new TextView(context);
         textView.setText(LocaleController.getString(i10 == 1 ? R.string.SuggestedPostAcceptTitle : R.string.PostSuggestionsAddTime));
@@ -1031,7 +1031,7 @@ public abstract class f5 {
         e.addView(textView, w7.z5.t(-2, -2, 51, 0, 12, 0, 0));
         textView.setOnTouchListener(new di.d(10));
         TextView textView2 = new TextView(context);
-        org.telegram.messenger.mk.o(org.telegram.ui.ActionBar.h6.z6, d6Var, textView2, 1, 14.0f);
+        org.telegram.messenger.nk.o(org.telegram.ui.ActionBar.h6.z6, d6Var, textView2, 1, 14.0f);
         textView2.setText(LocaleController.getString(R.string.PostSuggestionsAddTimeHint));
         e.addView(textView2, w7.z5.t(-2, -2, 51, 0, 2, 0, 0));
         textView2.setOnTouchListener(new di.d(10));
@@ -3154,8 +3154,8 @@ public abstract class f5 {
     }
 
     public static void k0(Context context, int i10, long j10) {
-        org.telegram.ui.ActionBar.f3 i11 = org.telegram.messenger.mk.i(1, context, null, false);
-        LinearLayout e = org.telegram.messenger.mk.e(context, 1);
+        org.telegram.ui.ActionBar.f3 i11 = org.telegram.messenger.nk.i(1, context, null, false);
+        LinearLayout e = org.telegram.messenger.nk.e(context, 1);
         e.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(8.0f));
         FrameLayout frameLayout = new FrameLayout(context);
         frameLayout.setClipChildren(false);
@@ -3173,7 +3173,7 @@ public abstract class f5 {
         TextView textView = new TextView(context);
         int i12 = org.telegram.ui.ActionBar.h6.G6;
         org.telegram.messenger.g0.m(20.0f, org.telegram.ui.ActionBar.h6.x0(null, i12, false), 1, textView);
-        org.telegram.messenger.mk.m(R.string.CallForbiddenInviteLinkTitle, textView, 17);
+        org.telegram.messenger.nk.m(R.string.CallForbiddenInviteLinkTitle, textView, 17);
         TextView i13 = com.google.android.gms.internal.play_billing.k3.i(e, textView, w7.z5.k(32.0f, 16.0f, 32.0f, 8.0f, -1, -2), context);
         i13.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i12, false));
         i13.setTextSize(1, 14.0f);
@@ -3401,7 +3401,7 @@ public abstract class f5 {
             TextView textView = new TextView(context);
             int x03 = org.telegram.ui.ActionBar.h6.x0(zArr, org.telegram.ui.ActionBar.h6.m5, false);
             int i10 = 1;
-            org.telegram.messenger.mk.u(textView, x03, 1, 14.0f, 1);
+            org.telegram.messenger.nk.u(textView, x03, 1, 14.0f, 1);
             textView.setMaxLines(1);
             textView.setSingleLine(true);
             textView.setGravity((!LocaleController.isRTL ? 5 : 3) | 16);
@@ -3455,7 +3455,7 @@ public abstract class f5 {
         TextView textView2 = new TextView(context);
         int x032 = org.telegram.ui.ActionBar.h6.x0(zArr, org.telegram.ui.ActionBar.h6.m5, false);
         int i102 = 1;
-        org.telegram.messenger.mk.u(textView2, x032, 1, 14.0f, 1);
+        org.telegram.messenger.nk.u(textView2, x032, 1, 14.0f, 1);
         textView2.setMaxLines(1);
         textView2.setSingleLine(true);
         textView2.setGravity((!LocaleController.isRTL ? 5 : 3) | 16);
@@ -3494,11 +3494,11 @@ public abstract class f5 {
 
     public static void m0(Context context, org.telegram.ui.ActionBar.d6 d6Var, int i10, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j10, Runnable runnable) {
         TLObject userOrChat = MessagesController.getInstance(i10).getUserOrChat(j10);
-        LinearLayout e = org.telegram.messenger.mk.e(context, 1);
+        LinearLayout e = org.telegram.messenger.nk.e(context, 1);
         e.addView(new ai.f6(context, tL_starGiftUnique, userOrChat), w7.z5.t(-1, -2, 48, 0, -4, 0, 0));
         TextView textView = new TextView(context);
-        org.telegram.messenger.mk.o(org.telegram.ui.ActionBar.h6.j5, d6Var, textView, 1, 16.0f);
-        org.telegram.messenger.mk.r(R.string.GiftThemesSetInReuseInfo, new Object[]{DialogObject.getDialogTitle(userOrChat)}, textView);
+        org.telegram.messenger.nk.o(org.telegram.ui.ActionBar.h6.j5, d6Var, textView, 1, 16.0f);
+        org.telegram.messenger.nk.r(R.string.GiftThemesSetInReuseInfo, new Object[]{DialogObject.getDialogTitle(userOrChat)}, textView);
         e.addView(textView, w7.z5.t(-1, -2, 48, 24, 0, 24, 4));
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, d6Var);
         alertDialog$Builder.n(e);
@@ -3544,7 +3544,7 @@ public abstract class f5 {
             j5Var.i(new zq(mutate, mutate2));
         }
         TextView textView = new TextView(context);
-        org.telegram.messenger.mk.u(textView, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.m5, false), 1, 14.0f, 1);
+        org.telegram.messenger.nk.u(textView, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.m5, false), 1, 14.0f, 1);
         textView.setMaxLines(1);
         textView.setSingleLine(true);
         textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
@@ -5520,7 +5520,7 @@ public abstract class f5 {
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context);
         alertDialog$Builder.a.R = str;
         alertDialog$Builder.n(linearLayout);
-        alertDialog$Builder.k(LocaleController.getString(R.string.Set), new org.telegram.messenger.jk(z10, od0Var2, od0Var, od0Var3, b2Var));
+        alertDialog$Builder.k(LocaleController.getString(R.string.Set), new org.telegram.messenger.kk(z10, od0Var2, od0Var, od0Var3, b2Var));
         alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
         return alertDialog$Builder;
     }

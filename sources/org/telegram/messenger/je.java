@@ -1,31 +1,13 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import java.util.HashSet;
+import java.util.function.Supplier;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class je implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Utilities.Callback4 b;
-
-    public /* synthetic */ je(Utilities.Callback4 callback4, int i10) {
-        this.a = i10;
-        this.b = callback4;
-    }
-
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                MessagesController.1.lambda$getRemote$0(this.b, tLObject, tL_error);
-                break;
-            default:
-                MessagesController.4.lambda$getRemote$0(this.b, tLObject, tL_error);
-                break;
-        }
+public final /* synthetic */ class je implements Supplier {
+    @Override // java.util.function.Supplier
+    public final Object get() {
+        return new HashSet();
     }
 }

@@ -22,7 +22,7 @@ import org.telegram.ui.cy;
 import org.telegram.ui.re1;
 import org.telegram.ui.vx;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m1 implements org.telegram.ui.ActionBar.a2, vx {
     public final /* synthetic */ int a;
@@ -116,7 +116,7 @@ public final /* synthetic */ class m1 implements org.telegram.ui.ActionBar.a2, v
                 @Override // org.telegram.messenger.MessagesController.IsInChatCheckedCallback
                 public final void run(boolean z12, TLRPC.TL_chatAdminRights tL_chatAdminRights2, String str3) {
                     Pattern pattern2 = LaunchActivity.C1;
-                    AndroidUtilities.runOnUIThread(new org.telegram.messenger.k8(LaunchActivity.this, str, tL_chatAdminRights2, z12, str2, i12, chat, cyVar2, user, j10, str3));
+                    AndroidUtilities.runOnUIThread(new org.telegram.messenger.m8(LaunchActivity.this, str, tL_chatAdminRights2, z12, str2, i12, chat, cyVar2, user, j10, str3));
                 }
             });
         }

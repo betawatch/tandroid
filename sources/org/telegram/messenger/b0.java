@@ -14,7 +14,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b0 implements Runnable {
     public final /* synthetic */ int a;
@@ -45,7 +45,7 @@ public final /* synthetic */ class b0 implements Runnable {
                 LocationController.lambda$fetchLocationAddress$28((LocationController.LocationFetchCallback) this.b, (String) this.c, (String) this.d, (TLRPC.TL_messageMediaVenue) this.e, (TLRPC.TL_messageMediaVenue) this.f, (Location) this.h);
                 break;
             case 2:
-                MediaController.lambda$saveFile$56((File) this.b, (File) this.c, (boolean[]) this.d, (Utilities.Callback) this.e, (org.telegram.ui.ActionBar.b2) this.f, (boolean[]) this.h);
+                MediaController.lambda$saveFile$58((File) this.b, (File) this.c, (boolean[]) this.d, (Utilities.Callback) this.e, (org.telegram.ui.ActionBar.b2) this.f, (boolean[]) this.h);
                 break;
             case 3:
                 ((MessagesController) this.b).lambda$checkCanOpenChat$454((org.telegram.ui.ActionBar.b2) this.c, (pf.c) this.d, (TLObject) this.e, (org.telegram.ui.ActionBar.n2) this.f, (Bundle) this.h);

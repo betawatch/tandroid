@@ -7,11 +7,11 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.mk;
+import org.telegram.messenger.nk;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d5 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -65,7 +65,7 @@ public final /* synthetic */ class d5 implements Utilities.Callback {
                     if (user == null) {
                         org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
                         if (R != null) {
-                            mk.q(R.string.NoUsernameFound, org.telegram.ui.Components.xc.a0(R), null);
+                            nk.q(R.string.NoUsernameFound, org.telegram.ui.Components.xc.a0(R), null);
                             break;
                         }
                     } else {

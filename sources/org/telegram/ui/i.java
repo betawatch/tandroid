@@ -28,7 +28,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i implements org.telegram.ui.Components.xl0 {
     public final /* synthetic */ int a;
@@ -664,7 +664,7 @@ public final /* synthetic */ class i implements org.telegram.ui.Components.xl0 {
                         a02 = org.telegram.ui.Components.xc.a0(n00Var);
                         i11 = R.string.FilterInviteErrorExcluded;
                     }
-                    org.telegram.messenger.mk.q(i11, a02, null);
+                    org.telegram.messenger.nk.q(i11, a02, null);
                     return;
                 }
                 return;

@@ -49,7 +49,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.mk;
+import org.telegram.messenger.nk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
@@ -86,7 +86,7 @@ import org.telegram.ui.k71;
 import org.telegram.ui.p91;
 import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes4.dex */
 public class l7 extends org.telegram.ui.Components.bb implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int A1 = 0;
@@ -312,12 +312,12 @@ public class l7 extends org.telegram.ui.Components.bb implements NotificationCen
         o5Var.addView(k5Var3, w7.z5.e(-1, -1, 55));
         TextView textView3 = new TextView(context);
         this.C0 = textView3;
-        mk.o(i19, d6Var, textView3, 1, 20.0f);
+        nk.o(i19, d6Var, textView3, 1, 20.0f);
         textView3.setGravity(17);
         textView3.setTypeface(AndroidUtilities.bold());
         k5Var3.addView(textView3, w7.z5.t(-1, -2, 7, 20, 0, 20, 0));
         TextView textView4 = new TextView(context);
-        mk.o(i19, d6Var, textView4, 1, 14.0f);
+        nk.o(i19, d6Var, textView4, 1, 14.0f);
         textView4.setGravity(17);
         textView4.setText(LocaleController.getString(R.string.Gift2WearSubtitle));
         k5Var3.addView(textView4, w7.z5.t(-1, -2, 7, 20, 6, 20, 24));
@@ -367,7 +367,7 @@ public class l7 extends org.telegram.ui.Components.bb implements NotificationCen
         view4.setBackgroundColor(getThemedColor(i20));
         view4.setAlpha(0.0f);
         frameLayout.addView(view4, w7.z5.a(-1.0f, 1.0f / AndroidUtilities.density, 55));
-        ei.d f7 = mk.f(24, context, d6Var, true);
+        ei.d f7 = nk.f(24, context, d6Var, true);
         this.k0 = f7;
         f7.g(LocaleController.getString(R.string.OK), false, true);
         f7.f(null, false);
@@ -1049,8 +1049,8 @@ public class l7 extends org.telegram.ui.Components.bb implements NotificationCen
             textView.setText(LocaleController.getString(R.string.Gift2ExportTONFragmentTitle));
             linearLayout.addView(textView, w7.z5.t(-1, -2, 48, 24, 4, 24, 14));
             TextView textView2 = new TextView(l7Var.getContext());
-            mk.o(i16, l7Var.resourcesProvider, textView2, 1, 16.0f);
-            mk.r(R.string.Gift2ExportTONFragmentText, new Object[]{l7Var.X1()}, textView2);
+            nk.o(i16, l7Var.resourcesProvider, textView2, 1, 16.0f);
+            nk.r(R.string.Gift2ExportTONFragmentText, new Object[]{l7Var.X1()}, textView2);
             linearLayout.addView(textView2, w7.z5.t(-1, -2, 48, 24, 0, 24, 4));
             AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(l7Var.getContext(), 0, l7Var.resourcesProvider);
             alertDialog$Builder3.n(linearLayout);
@@ -2150,7 +2150,7 @@ public class l7 extends org.telegram.ui.Components.bb implements NotificationCen
         }
         TL_stars.UniqueStarGiftValueInfo uniqueStarGiftValueInfo = (TL_stars.UniqueStarGiftValueInfo) tLObject;
         int i10 = 1;
-        org.telegram.ui.ActionBar.f3 i11 = mk.i(1, l7Var.getContext(), l7Var.resourcesProvider, false);
+        org.telegram.ui.ActionBar.f3 i11 = nk.i(1, l7Var.getContext(), l7Var.resourcesProvider, false);
         LinearLayout linearLayout2 = new LinearLayout(l7Var.getContext());
         linearLayout2.setOrientation(1);
         linearLayout2.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(20.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(8.0f));
@@ -2173,11 +2173,11 @@ public class l7 extends org.telegram.ui.Components.bb implements NotificationCen
         org.telegram.ui.Cells.c1.q(org.telegram.ui.ActionBar.h6.j5, l7Var.resourcesProvider, textView2, 17);
         linearLayout2.addView(textView2, w7.z5.t(-2, -2, 1, 16, 0, 16, 19));
         if (uniqueStarGiftValueInfo.value_is_average) {
-            mk.r(R.string.GiftValueAverage, new Object[]{str2}, textView2);
+            nk.r(R.string.GiftValueAverage, new Object[]{str2}, textView2);
         } else if (uniqueStarGiftValueInfo.last_sale_on_fragment) {
-            mk.r(R.string.GiftValueLastFragment, new Object[]{str3}, textView2);
+            nk.r(R.string.GiftValueLastFragment, new Object[]{str3}, textView2);
         } else {
-            mk.r(R.string.GiftValueLastTelegram, new Object[]{str3}, textView2);
+            nk.r(R.string.GiftValueLastTelegram, new Object[]{str3}, textView2);
         }
         FrameLayout frameLayout = new FrameLayout(l7Var.getContext());
         frameLayout.setClipChildren(false);
@@ -5396,7 +5396,7 @@ public class l7 extends org.telegram.ui.Components.bb implements NotificationCen
     }
 
     public final void T2(int i10, Context context, boolean z10) {
-        LinearLayout e = mk.e(context, 1);
+        LinearLayout e = nk.e(context, 1);
         FrameLayout frameLayout = new FrameLayout(context);
         frameLayout.setBackground(org.telegram.ui.ActionBar.h6.K(AndroidUtilities.dp(64.0f), org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Oh, this.resourcesProvider)));
         e.addView(frameLayout, w7.z5.t(64, 64, 49, 0, 6, 0, 0));
@@ -6839,7 +6839,7 @@ public class l7 extends org.telegram.ui.Components.bb implements NotificationCen
         linearLayout.setOrientation(1);
         linearLayout.addView(new g6(getContext(), f22, chat), w7.z5.t(-1, -2, 48, 0, -4, 0, 0));
         TextView textView = new TextView(getContext());
-        mk.o(org.telegram.ui.ActionBar.h6.j5, this.resourcesProvider, textView, 1, 16.0f);
+        nk.o(org.telegram.ui.ActionBar.h6.j5, this.resourcesProvider, textView, 1, 16.0f);
         textView.setText(AndroidUtilities.replaceTags(j11 > 0 ? LocaleController.formatPluralStringComma("Gift2TransferPriceText", (int) j11, X1(), DialogObject.getShortName(j10)) : LocaleController.formatString(R.string.Gift2TransferText, X1(), str)));
         linearLayout.addView(textView, w7.z5.t(-1, -2, 48, 24, 4, 24, 4));
         l01 l01Var = new l01(getContext(), this.resourcesProvider);

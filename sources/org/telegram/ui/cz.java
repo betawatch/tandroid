@@ -16,7 +16,7 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class cz implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -35,7 +35,7 @@ public final /* synthetic */ class cz implements View.OnClickListener {
                 String str = jzVar.s;
                 if (str != null) {
                     AndroidUtilities.addToClipboard(str);
-                    org.telegram.messenger.mk.p(R.string.LinkCopied, org.telegram.ui.Components.xc.a0(jzVar.r));
+                    org.telegram.messenger.nk.p(R.string.LinkCopied, org.telegram.ui.Components.xc.a0(jzVar.r));
                     break;
                 }
                 break;
@@ -100,7 +100,7 @@ public final /* synthetic */ class cz implements View.OnClickListener {
                 String str2 = jzVar3.s;
                 if (str2 != null) {
                     AndroidUtilities.addToClipboard(str2);
-                    org.telegram.messenger.mk.p(R.string.LinkCopied, org.telegram.ui.Components.xc.a0(jzVar3.r));
+                    org.telegram.messenger.nk.p(R.string.LinkCopied, org.telegram.ui.Components.xc.a0(jzVar3.r));
                     break;
                 }
                 break;

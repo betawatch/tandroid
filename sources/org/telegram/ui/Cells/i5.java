@@ -12,12 +12,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.mk;
+import org.telegram.messenger.nk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.Switch;
 import org.telegram.ui.Components.bs;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public class i5 extends FrameLayout {
     public final TextView a;
@@ -91,7 +91,7 @@ public class i5 extends FrameLayout {
         }
         if (this.h) {
             int dp2 = LocaleController.isRTL ? AndroidUtilities.dp(76.0f) : org.telegram.messenger.g0.B(76.0f, getMeasuredWidth(), 1);
-            canvas.drawRect(dp2, mk.A(22.0f, getMeasuredHeight(), 2), dp2 + 2, AndroidUtilities.dp(22.0f) + r2, org.telegram.ui.ActionBar.h6.k0);
+            canvas.drawRect(dp2, nk.A(22.0f, getMeasuredHeight(), 2), dp2 + 2, AndroidUtilities.dp(22.0f) + r2, org.telegram.ui.ActionBar.h6.k0);
         }
     }
 
@@ -183,7 +183,7 @@ public class i5 extends FrameLayout {
         }
         TextView textView = new TextView(context);
         this.a = textView;
-        mk.o(org.telegram.ui.ActionBar.h6.G6, d6Var, textView, 1, 16.0f);
+        nk.o(org.telegram.ui.ActionBar.h6.G6, d6Var, textView, 1, 16.0f);
         textView.setLines(1);
         textView.setMaxLines(1);
         textView.setSingleLine(true);
@@ -229,7 +229,7 @@ public class i5 extends FrameLayout {
         addView(q6Var, w7.z5.d(-1, -2.0f, i15, f11, f16, f12, 0.0f));
         TextView textView2 = new TextView(context);
         this.c = textView2;
-        mk.o(i14, d6Var, textView2, 1, 13.0f);
+        nk.o(i14, d6Var, textView2, 1, 13.0f);
         textView2.setGravity(LocaleController.isRTL ? 5 : 3);
         textView2.setLines(0);
         textView2.setMaxLines(0);

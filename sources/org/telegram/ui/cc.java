@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class cc extends FrameLayout {
     public final ac E;
@@ -103,7 +103,7 @@ public final class cc extends FrameLayout {
         int i12 = org.telegram.ui.ActionBar.h6.Pi;
         textView.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i12, false));
         textView.setTag(Integer.valueOf(i12));
-        org.telegram.messenger.mk.m(R.string.LoadingStatsDescription, textView, 1);
+        org.telegram.messenger.nk.m(R.string.LoadingStatsDescription, textView, 1);
         this.I.addView(yj0Var, w7.z5.t(120, 120, 1, 0, 0, 0, 20));
         this.I.addView(f7, w7.z5.t(-2, -2, 1, 0, 0, 0, 10));
         this.I.addView(textView, w7.z5.q(-2, -2, 1));

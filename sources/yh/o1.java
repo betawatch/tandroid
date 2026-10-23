@@ -35,7 +35,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.mk;
+import org.telegram.messenger.nk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -66,7 +66,7 @@ import org.telegram.ui.wh1;
 import w7.b6;
 import w7.z5;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes4.dex */
 public final class o1 extends bb implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int z0 = 0;
@@ -231,8 +231,8 @@ public final class o1 extends bb implements NotificationCenter.NotificationCente
                 if (context == null) {
                     return;
                 }
-                org.telegram.ui.ActionBar.f3 i13 = mk.i(1, context, d6Var, false);
-                LinearLayout e = mk.e(context, 1);
+                org.telegram.ui.ActionBar.f3 i13 = nk.i(1, context, d6Var, false);
+                LinearLayout e = nk.e(context, 1);
                 e.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(20.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(8.0f));
                 e.setClipChildren(false);
                 e.setClipToPadding(false);

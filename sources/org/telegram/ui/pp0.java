@@ -25,7 +25,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.RequestTimeDelegate;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class pp0 implements org.telegram.ui.Cells.w5, org.telegram.ui.Components.q71, org.telegram.ui.ActionBar.a2, org.telegram.ui.ActionBar.l1, r0.n, Utilities.Callback2Return, org.telegram.ui.Cells.z4, LanguageDetector.ExceptionCallback, RequestTimeDelegate, Utilities.Callback5, org.telegram.ui.ActionBar.m2, org.telegram.ui.Components.zl0, jg.e, hg.z1 {
     public final /* synthetic */ int a;
@@ -273,7 +273,7 @@ public final /* synthetic */ class pp0 implements org.telegram.ui.Cells.w5, org.
                     return;
                 }
             case 10:
-                ((org.telegram.messenger.gk) this.b).run(1);
+                ((org.telegram.messenger.hk) this.b).run(1);
                 break;
             case 13:
                 ProxyListActivity proxyListActivity = ((i11) this.b).b;
@@ -410,7 +410,7 @@ public final /* synthetic */ class pp0 implements org.telegram.ui.Cells.w5, org.
 
     @Override // org.telegram.tgnet.RequestTimeDelegate
     public void run(long j10) {
-        AndroidUtilities.runOnUIThread(new org.telegram.messenger.nh((SharedConfig.ProxyInfo) this.b, j10, 1));
+        AndroidUtilities.runOnUIThread(new org.telegram.messenger.oh((SharedConfig.ProxyInfo) this.b, j10, 1));
     }
 
     @Override // org.telegram.messenger.Utilities.Callback2Return

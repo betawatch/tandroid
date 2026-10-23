@@ -21,7 +21,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class no0 extends View {
     public final int a;
@@ -136,19 +136,19 @@ public final class no0 extends View {
         boolean z10 = this.c;
         if (z10 && this.x != null) {
             int dp3 = LocaleController.isRTL ? AndroidUtilities.dp(58.0f) : getMeasuredWidth() - AndroidUtilities.dp(24.0f);
-            this.x.setBounds(dp3 - AndroidUtilities.dp(11.0f), org.telegram.messenger.mk.A(11.0f, getMeasuredHeight(), 2), dp3, (AndroidUtilities.dp(11.0f) + getMeasuredHeight()) / 2);
+            this.x.setBounds(dp3 - AndroidUtilities.dp(11.0f), org.telegram.messenger.nk.A(11.0f, getMeasuredHeight(), 2), dp3, (AndroidUtilities.dp(11.0f) + getMeasuredHeight()) / 2);
             this.x.f(AndroidUtilities.dpf2(3.0f), org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.d6, d6Var));
             this.x.draw(canvas);
         } else if (this.w != null && this.x != null) {
             int dp4 = LocaleController.isRTL ? AndroidUtilities.dp(58.0f) : getMeasuredWidth() - AndroidUtilities.dp(24.0f);
-            this.x.setBounds(dp4 - AndroidUtilities.dp(11.0f), org.telegram.messenger.mk.A(11.0f, getMeasuredHeight(), 2), dp4, (AndroidUtilities.dp(11.0f) + getMeasuredHeight()) / 2);
+            this.x.setBounds(dp4 - AndroidUtilities.dp(11.0f), org.telegram.messenger.nk.A(11.0f, getMeasuredHeight(), 2), dp4, (AndroidUtilities.dp(11.0f) + getMeasuredHeight()) / 2);
             dp0 dp0Var = this.x;
             float dpf2 = AndroidUtilities.dpf2(3.0f);
             int i10 = org.telegram.ui.ActionBar.h6.d6;
             dp0Var.f(dpf2, org.telegram.ui.ActionBar.h6.w0(i10, d6Var));
             this.x.draw(canvas);
             int dp5 = dp4 - AndroidUtilities.dp(18.0f);
-            this.w.setBounds(dp5 - AndroidUtilities.dp(11.0f), org.telegram.messenger.mk.A(11.0f, getMeasuredHeight(), 2), dp5, (AndroidUtilities.dp(11.0f) + getMeasuredHeight()) / 2);
+            this.w.setBounds(dp5 - AndroidUtilities.dp(11.0f), org.telegram.messenger.nk.A(11.0f, getMeasuredHeight(), 2), dp5, (AndroidUtilities.dp(11.0f) + getMeasuredHeight()) / 2);
             this.w.f(AndroidUtilities.dpf2(3.0f), org.telegram.ui.ActionBar.h6.w0(i10, d6Var));
             this.w.draw(canvas);
         } else if (this.r != null && !z10) {

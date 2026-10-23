@@ -94,7 +94,7 @@ import org.telegram.ui.Components.UndoView;
 import org.webrtc.MediaStreamTrack;
 import org.webrtc.voiceengine.WebRtcAudioTrack;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class q50 extends org.telegram.ui.ActionBar.f3 implements NotificationCenter.NotificationCenterDelegate, VoIPService.StateListener, ne.d {
     public static q50 D3;
@@ -1870,7 +1870,7 @@ public final class q50 extends org.telegram.ui.ActionBar.f3 implements Notificat
         }
         sharedInstance.getAccount();
         org.telegram.ui.Cells.a2[] a2VarArr = new org.telegram.ui.Cells.a2[1];
-        LinearLayout e = org.telegram.messenger.mk.e(context, 1);
+        LinearLayout e = org.telegram.messenger.nk.e(context, 1);
         if (!sharedInstance.isConference() || (call != null && (groupCall = call.call) != null && groupCall.creator)) {
             org.telegram.ui.Cells.a2 a2Var = new org.telegram.ui.Cells.a2(context, 1);
             a2VarArr[0] = a2Var;
@@ -5776,16 +5776,16 @@ public final class q50 extends org.telegram.ui.ActionBar.f3 implements Notificat
             String str4 = chat2 != null ? chat2.title : "";
             if (i10 != 2) {
                 textView3.setText(LocaleController.getString(R.string.VoipGroupAddMemberTitle));
-                org.telegram.messenger.mk.r(R.string.VoipGroupAddMemberText, new Object[]{str, str4}, textView2);
+                org.telegram.messenger.nk.r(R.string.VoipGroupAddMemberText, new Object[]{str, str4}, textView2);
             } else if (p1()) {
                 textView3.setText(LocaleController.getString(R.string.VoipConferenceRemoveMemberAlertTitle2));
-                org.telegram.messenger.mk.r(R.string.VoipConferenceRemoveMemberAlertText2, new Object[]{str}, textView2);
+                org.telegram.messenger.nk.r(R.string.VoipConferenceRemoveMemberAlertText2, new Object[]{str}, textView2);
             } else {
                 textView3.setText(LocaleController.getString(R.string.VoipGroupRemoveMemberAlertTitle2));
                 if (ChatObject.isChannelOrGiga(this.Z0)) {
-                    org.telegram.messenger.mk.r(R.string.VoipChannelRemoveMemberAlertText2, new Object[]{str, str4}, textView2);
+                    org.telegram.messenger.nk.r(R.string.VoipChannelRemoveMemberAlertText2, new Object[]{str, str4}, textView2);
                 } else {
-                    org.telegram.messenger.mk.r(R.string.VoipGroupRemoveMemberAlertText2, new Object[]{str, str4}, textView2);
+                    org.telegram.messenger.nk.r(R.string.VoipGroupRemoveMemberAlertText2, new Object[]{str, str4}, textView2);
                 }
             }
             boolean z11 = LocaleController.isRTL;
@@ -5968,7 +5968,7 @@ public final class q50 extends org.telegram.ui.ActionBar.f3 implements Notificat
         String string2 = LocaleController.getString(j10 > 0 ? R.string.VoipEditName : R.string.VoipEditTitle);
         org.telegram.ui.ActionBar.b2 b2Var3 = alertDialog$Builder5.a;
         b2Var3.R = string2;
-        LinearLayout e = org.telegram.messenger.mk.e(context2, 1);
+        LinearLayout e = org.telegram.messenger.nk.e(context2, 1);
         EditText editText3 = new EditText(context2);
         int i20 = org.telegram.ui.ActionBar.h6.hg;
         editText3.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i20, false));
@@ -6120,9 +6120,9 @@ public final class q50 extends org.telegram.ui.ActionBar.f3 implements Notificat
             if (z10) {
                 m30Var.setAlpha(0.0f);
             }
-            org.telegram.messenger.mk.s(m30Var.animate(), z10 ? 1.0f : 0.0f, 220L);
+            org.telegram.messenger.nk.s(m30Var.animate(), z10 ? 1.0f : 0.0f, 220L);
         }
-        org.telegram.messenger.mk.s(i30Var.animate(), z10 ? 1.0f : 0.0f, 220L);
+        org.telegram.messenger.nk.s(i30Var.animate(), z10 ? 1.0f : 0.0f, 220L);
         if (!z10 && (tVar2 = this.Z2) != null) {
             tVar2.h = false;
             tVar2.j(true);

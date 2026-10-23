@@ -50,7 +50,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public abstract class x51 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static String[] a2;
@@ -1577,7 +1577,7 @@ public abstract class x51 extends FrameLayout implements NotificationCenter.Noti
         boolean canScrollVertically = (this.F1 ? this.i0 : this.h0).canScrollVertically(1);
         if (canScrollVertically != this.v1) {
             this.v1 = canScrollVertically;
-            org.telegram.messenger.mk.s(this.o0.animate(), canScrollVertically ? 1.0f : 0.0f, 200L);
+            org.telegram.messenger.nk.s(this.o0.animate(), canScrollVertically ? 1.0f : 0.0f, 200L);
         }
     }
 
@@ -1737,7 +1737,7 @@ public abstract class x51 extends FrameLayout implements NotificationCenter.Noti
                     x51Var.q1 = 1.0f - ((float) Math.pow(floatValue, 10.0d));
                     AndroidUtilities.lerp(rect, x51Var.o1, floatValue, x51Var.s1);
                     float scaleX = g51Var.getScaleX() * Math.max(1.0f, x51Var.t1.getInterpolation(w7.r.a((3.0f * floatValue) - 2.0f, 0.0f, 1.0f)));
-                    x51Var.s1.set((int) org.telegram.messenger.mk.x(x51Var.s1.width(), 2.0f, scaleX, r0.centerX()), (int) org.telegram.messenger.mk.x(x51Var.s1.height(), 2.0f, scaleX, x51Var.s1.centerY()), (int) a1.g.d(x51Var.s1.width(), 2.0f, scaleX, x51Var.s1.centerX()), (int) a1.g.d(x51Var.s1.height(), 2.0f, scaleX, x51Var.s1.centerY()));
+                    x51Var.s1.set((int) org.telegram.messenger.nk.x(x51Var.s1.width(), 2.0f, scaleX, r0.centerX()), (int) org.telegram.messenger.nk.x(x51Var.s1.height(), 2.0f, scaleX, x51Var.s1.centerY()), (int) a1.g.d(x51Var.s1.width(), 2.0f, scaleX, x51Var.s1.centerX()), (int) a1.g.d(x51Var.s1.height(), 2.0f, scaleX, x51Var.s1.centerY()));
                     x51Var.invalidate();
                     if (floatValue > 0.85f) {
                         boolean[] zArr2 = zArr;
@@ -2176,7 +2176,7 @@ public abstract class x51 extends FrameLayout implements NotificationCenter.Noti
         this.E1.setDuration(320L);
         this.E1.setInterpolator(org.telegram.ui.Components.bs.h);
         this.E1.start();
-        org.telegram.messenger.mk.t(((View) u41Var.getParent()).animate().translationY((this.F1 && z11) ? -AndroidUtilities.dp(36.0f) : 0.0f).setUpdateListener(new y31(this, 1)), org.telegram.ui.Components.bs.f, 160L);
+        org.telegram.messenger.nk.t(((View) u41Var.getParent()).animate().translationY((this.F1 && z11) ? -AndroidUtilities.dp(36.0f) : 0.0f).setUpdateListener(new y31(this, 1)), org.telegram.ui.Components.bs.f, 160L);
         if (this.F1 && z11) {
             k41Var.setPadding(AndroidUtilities.dp(5.0f), AndroidUtilities.dp(54.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(38.0f));
         } else {

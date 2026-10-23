@@ -11,7 +11,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Emoji;
-import org.telegram.messenger.mk;
+import org.telegram.messenger.nk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.do0;
@@ -26,7 +26,7 @@ import org.telegram.ui.qh0;
 import org.telegram.ui.rh1;
 import org.telegram.ui.vh1;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes4.dex */
 public final class m5 extends im0 {
     public final /* synthetic */ int c;
@@ -248,11 +248,11 @@ public final class m5 extends im0 {
                     TextView textView = new TextView(context);
                     iVar.a = textView;
                     textView.setTypeface(AndroidUtilities.bold());
-                    mk.o(org.telegram.ui.ActionBar.h6.G6, d6Var, textView, 1, 14.0f);
+                    nk.o(org.telegram.ui.ActionBar.h6.G6, d6Var, textView, 1, 14.0f);
                     iVar.addView(textView, w7.z5.d(-1, -2.0f, 0, 68.0f, 8.0f, 16.0f, 0.0f));
                     TextView textView2 = new TextView(context);
                     iVar.b = textView2;
-                    mk.o(org.telegram.ui.ActionBar.h6.y6, d6Var, textView2, 1, 14.0f);
+                    nk.o(org.telegram.ui.ActionBar.h6.y6, d6Var, textView2, 1, 14.0f);
                     iVar.addView(textView2, w7.z5.d(-1, -2.0f, 0, 68.0f, 28.0f, 16.0f, 8.0f));
                     view = iVar;
                 }

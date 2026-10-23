@@ -8,20 +8,22 @@ import java.io.FileDescriptor;
 import java.io.RandomAccessFile;
 import java.security.MessageDigest;
 import java.util.ArrayList;
+import java.util.Arrays;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes.dex */
 public class FileUploadOperation {
     private static final int initialRequestsCount = 8;
     private static final int initialRequestsSlowNetworkCount = 1;
-    private static final int maxUploadingKBytes = 2048;
+    private static final int maxUploadingKBytes = 8192;
     private static final int maxUploadingSlowNetworkKBytes = 32;
     private static final int minUploadChunkSize = 128;
+    private static final int minUploadChunkSizeBig = 512;
     private static final int minUploadChunkSlowNetworkSize = 32;
     private long availableSize;
     public volatile boolean caughtPremiumFloodWait;
@@ -62,13 +64,15 @@ public class FileUploadOperation {
     private int uploadStartTime;
     private long uploadedBytesCount;
     private String uploadingFilePath;
+    private int uploadConnectionsCount = 4;
+    private final int[] uploadRequestsPerConnection = new int[8];
     private int uploadChunkSize = 65536;
     public final SparseIntArray requestTokens = new SparseIntArray();
     public final ArrayList<Integer> uiRequestTokens = new ArrayList<>();
     private SparseArray<UploadCachedResult> cachedResults = new SparseArray<>();
     private boolean[] recalculatedEstimatedSize = {false, false};
 
-    /* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
     public interface FileUploadOperationDelegate {
         void didChangedUploadProgress(FileUploadOperation fileUploadOperation, long j10, long j11);
 
@@ -77,7 +81,7 @@ public class FileUploadOperation {
         void didFinishUploadingFile(FileUploadOperation fileUploadOperation, TLRPC.InputFile inputFile, TLRPC.InputEncryptedFile inputEncryptedFile, byte[] bArr, byte[] bArr2);
     }
 
-    /* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
     public static class UploadCachedResult {
         private long bytesOffset;
         private byte[] iv;
@@ -209,6 +213,7 @@ public class FileUploadOperation {
             this.iv = null;
             this.ivChange = null;
             this.currentUploadRequetsCount = 0;
+            Arrays.fill(this.uploadRequestsPerConnection, 0);
             this.lastSavedPartNum = 0;
             this.uploadFirstPartLater = false;
             this.cachedResults.clear();
@@ -236,6 +241,7 @@ public class FileUploadOperation {
         for (int i11 = 0; i11 < i10; i11++) {
             startUploadRequest();
         }
+        lambda$startUploadRequest$7();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -244,13 +250,15 @@ public class FileUploadOperation {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$startUploadRequest$6(int i10, int[] iArr, int i11, byte[] bArr, int i12, int i13, int i14, long j10, TLObject tLObject, TLRPC.TL_error tL_error) {
+    public /* synthetic */ void lambda$startUploadRequest$6(int i10, int i11, int[] iArr, int i12, byte[] bArr, int i13, int i14, int i15, long j10, TLObject tLObject, TLRPC.TL_error tL_error) {
         TLRPC.InputEncryptedFile tL_inputEncryptedFileUploaded;
         TLRPC.InputFile tL_inputFile;
         byte[] bArr2 = bArr;
         if (i10 != this.operationGuid) {
             return;
         }
+        int[] iArr2 = this.uploadRequestsPerConnection;
+        iArr2[i11] = iArr2[i11] - 1;
         if (BuildVars.LOGS_ENABLED) {
             StringBuilder sb2 = new StringBuilder("debug_uploading:  response reqId ");
             sb2.append(iArr[0]);
@@ -258,26 +266,26 @@ public class FileUploadOperation {
             i2.e.v(this.uploadingFilePath, sb2);
         }
         int currentNetworkType = tLObject != null ? tLObject.networkType : ApplicationLoader.getCurrentNetworkType();
-        int i15 = this.currentType;
-        if (i15 == 50331648) {
-            StatsController.getInstance(this.currentAccount).incrementSentBytesCount(currentNetworkType, 3, i11);
-        } else if (i15 == 33554432) {
-            StatsController.getInstance(this.currentAccount).incrementSentBytesCount(currentNetworkType, 2, i11);
-        } else if (i15 == 16777216) {
-            StatsController.getInstance(this.currentAccount).incrementSentBytesCount(currentNetworkType, 4, i11);
-        } else if (i15 == 67108864) {
+        int i16 = this.currentType;
+        if (i16 == 50331648) {
+            StatsController.getInstance(this.currentAccount).incrementSentBytesCount(currentNetworkType, 3, i12);
+        } else if (i16 == 33554432) {
+            StatsController.getInstance(this.currentAccount).incrementSentBytesCount(currentNetworkType, 2, i12);
+        } else if (i16 == 16777216) {
+            StatsController.getInstance(this.currentAccount).incrementSentBytesCount(currentNetworkType, 4, i12);
+        } else if (i16 == 67108864) {
             String str = this.uploadingFilePath;
             if (str == null || !(str.toLowerCase().endsWith("mp3") || this.uploadingFilePath.toLowerCase().endsWith("m4a"))) {
-                StatsController.getInstance(this.currentAccount).incrementSentBytesCount(currentNetworkType, 5, i11);
+                StatsController.getInstance(this.currentAccount).incrementSentBytesCount(currentNetworkType, 5, i12);
             } else {
-                StatsController.getInstance(this.currentAccount).incrementSentBytesCount(currentNetworkType, 7, i11);
+                StatsController.getInstance(this.currentAccount).incrementSentBytesCount(currentNetworkType, 7, i12);
             }
         }
         if (bArr2 != null) {
             this.freeRequestIvs.add(bArr2);
         }
-        this.requestTokens.delete(i12);
-        AndroidUtilities.runOnUIThread(new y3(this, iArr, 0));
+        this.requestTokens.delete(i13);
+        AndroidUtilities.runOnUIThread(new z3(this, iArr, 1));
         if (!(tLObject instanceof TLRPC.TL_boolTrue)) {
             this.state = 4;
             this.delegate.didFailedUploadingFile(this);
@@ -287,20 +295,20 @@ public class FileUploadOperation {
         if (this.state != 1) {
             return;
         }
-        this.uploadedBytesCount += i13;
+        this.uploadedBytesCount += i14;
         long j11 = this.estimatedSize;
         this.delegate.didChangedUploadProgress(this, this.uploadedBytesCount, j11 != 0 ? Math.max(this.availableSize, j11) : this.totalFileSize);
-        int i16 = this.currentUploadRequetsCount - 1;
-        this.currentUploadRequetsCount = i16;
-        if (!this.isLastPart || i16 != 0 || this.state != 1) {
-            if (i16 < this.maxRequestsCount) {
+        int i17 = this.currentUploadRequetsCount - 1;
+        this.currentUploadRequetsCount = i17;
+        if (!this.isLastPart || i17 != 0 || this.state != 1) {
+            if (i17 < this.maxRequestsCount) {
                 if (this.estimatedSize == 0 && !this.uploadFirstPartLater && !this.nextPartFirst) {
                     if (this.saveInfoTimes >= 4) {
                         this.saveInfoTimes = 0;
                     }
-                    int i17 = this.lastSavedPartNum;
-                    if (i14 == i17) {
-                        this.lastSavedPartNum = i17 + 1;
+                    int i18 = this.lastSavedPartNum;
+                    if (i15 == i18) {
+                        this.lastSavedPartNum = i18 + 1;
                         long j12 = j10;
                         while (true) {
                             UploadCachedResult uploadCachedResult = this.cachedResults.get(this.lastSavedPartNum);
@@ -328,11 +336,11 @@ public class FileUploadOperation {
                             uploadCachedResult2.iv = new byte[32];
                             System.arraycopy(bArr2, 0, uploadCachedResult2.iv, 0, 32);
                         }
-                        this.cachedResults.put(i14, uploadCachedResult2);
+                        this.cachedResults.put(i15, uploadCachedResult2);
                     }
                     this.saveInfoTimes++;
                 }
-                startUploadRequest();
+                lambda$startUploadRequest$7();
                 return;
             }
             return;
@@ -364,33 +372,26 @@ public class FileUploadOperation {
             this.delegate.didFinishUploadingFile(this, null, tL_inputEncryptedFileUploaded, this.key, this.iv);
             cleanup();
         }
-        int i18 = this.currentType;
-        if (i18 == 50331648) {
+        int i19 = this.currentType;
+        if (i19 == 50331648) {
             StatsController.getInstance(this.currentAccount).incrementSentItemsCount(ApplicationLoader.getCurrentNetworkType(), 3, 1);
             return;
         }
-        if (i18 == 33554432) {
+        if (i19 == 33554432) {
             StatsController.getInstance(this.currentAccount).incrementSentItemsCount(ApplicationLoader.getCurrentNetworkType(), 2, 1);
             return;
         }
-        if (i18 == 16777216) {
+        if (i19 == 16777216) {
             StatsController.getInstance(this.currentAccount).incrementSentItemsCount(ApplicationLoader.getCurrentNetworkType(), 4, 1);
             return;
         }
-        if (i18 == 67108864) {
+        if (i19 == 67108864) {
             String str3 = this.uploadingFilePath;
             if (str3 == null || !(str3.toLowerCase().endsWith("mp3") || this.uploadingFilePath.toLowerCase().endsWith("m4a"))) {
                 StatsController.getInstance(this.currentAccount).incrementSentItemsCount(ApplicationLoader.getCurrentNetworkType(), 5, 1);
             } else {
                 StatsController.getInstance(this.currentAccount).incrementSentItemsCount(ApplicationLoader.getCurrentNetworkType(), 7, 1);
             }
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$startUploadRequest$7() {
-        if (this.currentUploadRequetsCount < this.maxRequestsCount) {
-            startUploadRequest();
         }
     }
 
@@ -405,31 +406,28 @@ public class FileUploadOperation {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:109:0x02fb A[Catch: Exception -> 0x0054, TryCatch #2 {Exception -> 0x0054, blocks: (B:4:0x0009, B:6:0x0016, B:10:0x004b, B:12:0x0051, B:13:0x005d, B:15:0x0061, B:17:0x006a, B:18:0x006c, B:20:0x0085, B:22:0x008e, B:23:0x0097, B:26:0x00a0, B:29:0x00b9, B:31:0x00bd, B:33:0x00c0, B:34:0x00c2, B:37:0x00ca, B:39:0x00d7, B:40:0x00e1, B:42:0x00e5, B:44:0x00ef, B:47:0x0110, B:49:0x0146, B:51:0x014a, B:53:0x0152, B:55:0x0158, B:57:0x01ae, B:60:0x01e6, B:63:0x01f8, B:65:0x01fb, B:67:0x01fe, B:71:0x020e, B:73:0x0212, B:79:0x0234, B:82:0x0241, B:84:0x024e, B:86:0x025a, B:88:0x025e, B:89:0x0264, B:91:0x026f, B:93:0x0278, B:97:0x0285, B:99:0x028c, B:101:0x02a3, B:103:0x0276, B:109:0x02fb, B:111:0x02ff, B:112:0x031f, B:114:0x032b, B:116:0x032f, B:118:0x0337, B:119:0x033a, B:121:0x0371, B:123:0x037d, B:125:0x0381, B:126:0x0396, B:127:0x038f, B:128:0x03a3, B:130:0x03ab, B:135:0x03b8, B:137:0x03bc, B:139:0x03c7, B:140:0x03da, B:143:0x03e9, B:145:0x03ed, B:147:0x03f1, B:148:0x03f7, B:150:0x0402, B:152:0x0406, B:154:0x040e, B:156:0x0421, B:160:0x042e, B:162:0x0435, B:163:0x0461, B:165:0x0465, B:167:0x047a, B:168:0x0481, B:170:0x0497, B:172:0x049b, B:174:0x049f, B:175:0x04ae, B:189:0x047d, B:190:0x0487, B:192:0x0415, B:194:0x0419, B:195:0x041f, B:198:0x03d1, B:199:0x03dd, B:209:0x036e, B:210:0x02ad, B:212:0x02b8, B:214:0x02d4, B:216:0x02dc, B:219:0x02e5, B:221:0x02eb, B:224:0x021e, B:232:0x0057, B:233:0x0399, B:234:0x03a1, B:237:0x0045, B:201:0x033e, B:204:0x0359, B:8:0x0027), top: B:3:0x0009, inners: #0, #1 }] */
-    /* JADX WARN: Removed duplicated region for block: B:123:0x037d A[Catch: Exception -> 0x0054, TryCatch #2 {Exception -> 0x0054, blocks: (B:4:0x0009, B:6:0x0016, B:10:0x004b, B:12:0x0051, B:13:0x005d, B:15:0x0061, B:17:0x006a, B:18:0x006c, B:20:0x0085, B:22:0x008e, B:23:0x0097, B:26:0x00a0, B:29:0x00b9, B:31:0x00bd, B:33:0x00c0, B:34:0x00c2, B:37:0x00ca, B:39:0x00d7, B:40:0x00e1, B:42:0x00e5, B:44:0x00ef, B:47:0x0110, B:49:0x0146, B:51:0x014a, B:53:0x0152, B:55:0x0158, B:57:0x01ae, B:60:0x01e6, B:63:0x01f8, B:65:0x01fb, B:67:0x01fe, B:71:0x020e, B:73:0x0212, B:79:0x0234, B:82:0x0241, B:84:0x024e, B:86:0x025a, B:88:0x025e, B:89:0x0264, B:91:0x026f, B:93:0x0278, B:97:0x0285, B:99:0x028c, B:101:0x02a3, B:103:0x0276, B:109:0x02fb, B:111:0x02ff, B:112:0x031f, B:114:0x032b, B:116:0x032f, B:118:0x0337, B:119:0x033a, B:121:0x0371, B:123:0x037d, B:125:0x0381, B:126:0x0396, B:127:0x038f, B:128:0x03a3, B:130:0x03ab, B:135:0x03b8, B:137:0x03bc, B:139:0x03c7, B:140:0x03da, B:143:0x03e9, B:145:0x03ed, B:147:0x03f1, B:148:0x03f7, B:150:0x0402, B:152:0x0406, B:154:0x040e, B:156:0x0421, B:160:0x042e, B:162:0x0435, B:163:0x0461, B:165:0x0465, B:167:0x047a, B:168:0x0481, B:170:0x0497, B:172:0x049b, B:174:0x049f, B:175:0x04ae, B:189:0x047d, B:190:0x0487, B:192:0x0415, B:194:0x0419, B:195:0x041f, B:198:0x03d1, B:199:0x03dd, B:209:0x036e, B:210:0x02ad, B:212:0x02b8, B:214:0x02d4, B:216:0x02dc, B:219:0x02e5, B:221:0x02eb, B:224:0x021e, B:232:0x0057, B:233:0x0399, B:234:0x03a1, B:237:0x0045, B:201:0x033e, B:204:0x0359, B:8:0x0027), top: B:3:0x0009, inners: #0, #1 }] */
-    /* JADX WARN: Removed duplicated region for block: B:200:0x033e A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:222:0x02f5  */
-    /* JADX WARN: Removed duplicated region for block: B:77:0x022e  */
+    /* JADX WARN: Removed duplicated region for block: B:120:0x02f8 A[Catch: Exception -> 0x0054, TryCatch #2 {Exception -> 0x0054, blocks: (B:4:0x0009, B:6:0x0016, B:10:0x004b, B:12:0x0051, B:13:0x005d, B:15:0x0061, B:17:0x006a, B:18:0x006c, B:20:0x0085, B:22:0x008e, B:23:0x0097, B:26:0x00a7, B:29:0x00c0, B:31:0x00c4, B:33:0x00c7, B:34:0x00c9, B:37:0x00d1, B:40:0x00ee, B:42:0x00f4, B:43:0x00fe, B:45:0x0102, B:47:0x010c, B:50:0x012d, B:52:0x0162, B:54:0x0166, B:56:0x016c, B:58:0x0172, B:60:0x01c4, B:63:0x01fa, B:66:0x020c, B:68:0x020f, B:70:0x0212, B:74:0x0222, B:76:0x0226, B:82:0x0246, B:85:0x0253, B:87:0x025e, B:89:0x026a, B:91:0x026e, B:92:0x0274, B:94:0x027f, B:96:0x0288, B:100:0x0295, B:102:0x029c, B:104:0x02b3, B:106:0x0286, B:109:0x02bb, B:111:0x02c4, B:113:0x02df, B:115:0x02e7, B:117:0x02ea, B:118:0x02f0, B:120:0x02f8, B:122:0x02fc, B:123:0x031c, B:125:0x0328, B:127:0x032c, B:129:0x0332, B:130:0x0335, B:132:0x036c, B:134:0x0378, B:136:0x037c, B:137:0x0393, B:138:0x038a, B:148:0x0369, B:150:0x0232, B:158:0x009e, B:162:0x0057, B:163:0x0396, B:164:0x039e, B:168:0x0045, B:169:0x039f, B:171:0x03a5, B:175:0x03b2, B:177:0x03b6, B:179:0x03bf, B:180:0x03d4, B:184:0x03e5, B:186:0x03e9, B:188:0x03ed, B:189:0x03f3, B:191:0x03fe, B:193:0x0402, B:195:0x0408, B:197:0x041b, B:201:0x0428, B:203:0x042f, B:204:0x045a, B:206:0x045e, B:208:0x0471, B:209:0x0478, B:211:0x048e, B:213:0x0492, B:215:0x0496, B:216:0x04a5, B:240:0x0474, B:241:0x047e, B:242:0x040f, B:244:0x0413, B:245:0x0419, B:248:0x03c9, B:249:0x03d8, B:8:0x0027, B:140:0x0339, B:143:0x0354), top: B:3:0x0009, inners: #0, #1 }] */
+    /* JADX WARN: Removed duplicated region for block: B:134:0x0378 A[Catch: Exception -> 0x0054, TryCatch #2 {Exception -> 0x0054, blocks: (B:4:0x0009, B:6:0x0016, B:10:0x004b, B:12:0x0051, B:13:0x005d, B:15:0x0061, B:17:0x006a, B:18:0x006c, B:20:0x0085, B:22:0x008e, B:23:0x0097, B:26:0x00a7, B:29:0x00c0, B:31:0x00c4, B:33:0x00c7, B:34:0x00c9, B:37:0x00d1, B:40:0x00ee, B:42:0x00f4, B:43:0x00fe, B:45:0x0102, B:47:0x010c, B:50:0x012d, B:52:0x0162, B:54:0x0166, B:56:0x016c, B:58:0x0172, B:60:0x01c4, B:63:0x01fa, B:66:0x020c, B:68:0x020f, B:70:0x0212, B:74:0x0222, B:76:0x0226, B:82:0x0246, B:85:0x0253, B:87:0x025e, B:89:0x026a, B:91:0x026e, B:92:0x0274, B:94:0x027f, B:96:0x0288, B:100:0x0295, B:102:0x029c, B:104:0x02b3, B:106:0x0286, B:109:0x02bb, B:111:0x02c4, B:113:0x02df, B:115:0x02e7, B:117:0x02ea, B:118:0x02f0, B:120:0x02f8, B:122:0x02fc, B:123:0x031c, B:125:0x0328, B:127:0x032c, B:129:0x0332, B:130:0x0335, B:132:0x036c, B:134:0x0378, B:136:0x037c, B:137:0x0393, B:138:0x038a, B:148:0x0369, B:150:0x0232, B:158:0x009e, B:162:0x0057, B:163:0x0396, B:164:0x039e, B:168:0x0045, B:169:0x039f, B:171:0x03a5, B:175:0x03b2, B:177:0x03b6, B:179:0x03bf, B:180:0x03d4, B:184:0x03e5, B:186:0x03e9, B:188:0x03ed, B:189:0x03f3, B:191:0x03fe, B:193:0x0402, B:195:0x0408, B:197:0x041b, B:201:0x0428, B:203:0x042f, B:204:0x045a, B:206:0x045e, B:208:0x0471, B:209:0x0478, B:211:0x048e, B:213:0x0492, B:215:0x0496, B:216:0x04a5, B:240:0x0474, B:241:0x047e, B:242:0x040f, B:244:0x0413, B:245:0x0419, B:248:0x03c9, B:249:0x03d8, B:8:0x0027, B:140:0x0339, B:143:0x0354), top: B:3:0x0009, inners: #0, #1 }] */
+    /* JADX WARN: Removed duplicated region for block: B:139:0x0339 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:80:0x0242  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     private void startUploadRequest() {
-        byte[] bArr;
         int read;
-        byte[] bArr2;
         int i10;
         TLRPC.TL_upload_saveFilePart tL_upload_saveFilePart;
         int i11;
+        int i12;
         boolean z10;
         boolean z11;
         boolean z12;
-        boolean z13;
-        boolean z14;
         if (this.state != 1) {
             return;
         }
         try {
             this.started = true;
+            byte[] bArr = null;
             if (this.stream == null) {
                 File file = new File(this.uploadingFilePath);
                 this.stream = new RandomAccessFile(file, "r");
@@ -456,19 +454,20 @@ public class FileUploadOperation {
                     j11 = MessagesController.getInstance(this.currentAccount).uploadMaxFilePartsPremium;
                 }
                 long j12 = j11 * 1024;
-                int max = (int) Math.max(this.slowNetwork ? 32L : 128L, ((this.totalFileSize + j12) - 1) / j12);
+                int max = (int) Math.max(this.slowNetwork ? 32L : this.isBigFile ? 512L : 128L, ((this.totalFileSize + j12) - 1) / j12);
                 this.uploadChunkSize = max;
                 if (1024 % max != 0) {
-                    int i12 = 64;
-                    while (this.uploadChunkSize > i12) {
-                        i12 *= 2;
+                    int i13 = 64;
+                    while (this.uploadChunkSize > i13) {
+                        i13 *= 2;
                     }
-                    this.uploadChunkSize = i12;
+                    this.uploadChunkSize = i13;
                 }
-                this.maxRequestsCount = Math.max(1, (this.slowNetwork ? 32 : 2048) / this.uploadChunkSize);
+                this.maxRequestsCount = Math.max(1, (this.slowNetwork ? 32 : 8192) / this.uploadChunkSize);
+                this.uploadConnectionsCount = AccountInstance.getInstance(this.currentAccount).getUserConfig().isPremium() ? 8 : 4;
                 if (this.isEncrypted) {
                     this.freeRequestIvs = new ArrayList<>(this.maxRequestsCount);
-                    for (int i13 = 0; i13 < this.maxRequestsCount; i13++) {
+                    for (int i14 = 0; i14 < this.maxRequestsCount; i14++) {
                         this.freeRequestIvs.add(new byte[32]);
                     }
                 }
@@ -483,7 +482,7 @@ public class FileUploadOperation {
                 this.uploadStartTime = (int) (System.currentTimeMillis() / 1000);
                 if (!this.uploadFirstPartLater && !this.nextPartFirst && this.estimatedSize == 0 && j13 == this.totalFileSize) {
                     this.currentFileId = this.preferences.getLong(this.fileKey + "_id", 0L);
-                    int i14 = this.preferences.getInt(this.fileKey + "_time", 0);
+                    int i15 = this.preferences.getInt(this.fileKey + "_time", 0);
                     long j14 = this.preferences.getLong(this.fileKey + "_uploaded", 0L);
                     if (this.isEncrypted) {
                         String string = this.preferences.getString(this.fileKey + "_iv", null);
@@ -492,148 +491,117 @@ public class FileUploadOperation {
                             this.key = Utilities.hexToBytes(string2);
                             byte[] hexToBytes = Utilities.hexToBytes(string);
                             this.iv = hexToBytes;
-                            byte[] bArr3 = this.key;
-                            if (bArr3 != null && hexToBytes != null && bArr3.length == 32 && hexToBytes.length == 32) {
-                                byte[] bArr4 = new byte[32];
-                                this.ivChange = bArr4;
-                                System.arraycopy(hexToBytes, 0, bArr4, 0, 32);
+                            byte[] bArr2 = this.key;
+                            if (bArr2 != null && hexToBytes != null && bArr2.length == 32 && hexToBytes.length == 32) {
+                                byte[] bArr3 = new byte[32];
+                                this.ivChange = bArr3;
+                                System.arraycopy(hexToBytes, 0, bArr3, 0, 32);
                             }
                         }
-                        z12 = true;
-                        if (!z12 && i14 != 0) {
-                            z13 = this.isBigFile;
-                            if (!z13) {
+                        z11 = true;
+                        if (!z11 && i15 != 0) {
+                            z12 = this.isBigFile;
+                            if (!z12) {
                             }
-                            if (!z13 && i14 < this.uploadStartTime - 5400.0f) {
-                                i14 = 0;
+                            if (!z12 && i15 < this.uploadStartTime - 5400.0f) {
+                                i15 = 0;
                             }
-                            if (i14 == 0) {
-                                z14 = z12;
-                            } else if (j14 > 0) {
-                                this.readBytesCount = j14;
-                                this.currentPartNum = (int) (j14 / this.uploadChunkSize);
-                                if (!z13) {
-                                    int i15 = 0;
-                                    while (true) {
-                                        z14 = z12;
-                                        if (i15 >= this.readBytesCount / this.uploadChunkSize) {
-                                            break;
-                                        }
-                                        int read2 = this.stream.read(this.readBuffer);
-                                        int i16 = (!this.isEncrypted || read2 % 16 == 0) ? 0 : 16 - (read2 % 16);
-                                        int i17 = read2 + i16;
-                                        NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(i17);
-                                        if (read2 != this.uploadChunkSize || this.totalPartsCount == this.currentPartNum + 1) {
-                                            this.isLastPart = true;
-                                        }
-                                        int i18 = 0;
-                                        nativeByteBuffer.writeBytes(this.readBuffer, 0, read2);
+                            if (i15 != 0) {
+                                if (j14 > 0) {
+                                    this.readBytesCount = j14;
+                                    this.currentPartNum = (int) (j14 / this.uploadChunkSize);
+                                    if (z12) {
+                                        this.stream.seek(j14);
                                         if (this.isEncrypted) {
-                                            int i19 = 0;
-                                            while (i19 < i16) {
-                                                nativeByteBuffer.writeByte(i18);
-                                                i19++;
-                                                i18 = 0;
-                                            }
-                                            Utilities.aesIgeEncryption(nativeByteBuffer.buffer, this.key, this.ivChange, true, true, 0, i17);
-                                        }
-                                        nativeByteBuffer.reuse();
-                                        i15++;
-                                        z12 = z14;
-                                    }
-                                } else {
-                                    z14 = z12;
-                                    this.stream.seek(j14);
-                                    if (this.isEncrypted) {
-                                        bArr = null;
-                                        String string3 = this.preferences.getString(this.fileKey + "_ivc", null);
-                                        if (string3 != null) {
-                                            byte[] hexToBytes2 = Utilities.hexToBytes(string3);
-                                            this.ivChange = hexToBytes2;
-                                            if (hexToBytes2 == null || hexToBytes2.length != 32) {
+                                            String string3 = this.preferences.getString(this.fileKey + "_ivc", null);
+                                            if (string3 != null) {
+                                                byte[] hexToBytes2 = Utilities.hexToBytes(string3);
+                                                this.ivChange = hexToBytes2;
+                                                if (hexToBytes2 == null || hexToBytes2.length != 32) {
+                                                    this.readBytesCount = 0L;
+                                                    this.currentPartNum = 0;
+                                                }
+                                            } else {
                                                 this.readBytesCount = 0L;
                                                 this.currentPartNum = 0;
                                             }
-                                            z11 = z14;
-                                            if (z11) {
-                                                if (this.isEncrypted) {
-                                                    byte[] bArr5 = new byte[32];
-                                                    this.iv = bArr5;
-                                                    this.key = new byte[32];
-                                                    this.ivChange = new byte[32];
-                                                    Utilities.random.nextBytes(bArr5);
-                                                    Utilities.random.nextBytes(this.key);
-                                                    System.arraycopy(this.iv, 0, this.ivChange, 0, 32);
-                                                }
-                                                this.currentFileId = Utilities.random.nextLong();
-                                                if (!this.nextPartFirst && !this.uploadFirstPartLater && this.estimatedSize == 0) {
-                                                    storeFileUploadInfo();
-                                                }
+                                        }
+                                    } else {
+                                        for (int i16 = 0; i16 < this.readBytesCount / this.uploadChunkSize; i16++) {
+                                            int read2 = this.stream.read(this.readBuffer);
+                                            int i17 = (!this.isEncrypted || read2 % 16 == 0) ? 0 : 16 - (read2 % 16);
+                                            int i18 = read2 + i17;
+                                            NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(i18);
+                                            if (read2 != this.uploadChunkSize || this.totalPartsCount == this.currentPartNum + 1) {
+                                                this.isLastPart = true;
                                             }
+                                            int i19 = 0;
+                                            nativeByteBuffer.writeBytes(this.readBuffer, 0, read2);
                                             if (this.isEncrypted) {
-                                                try {
-                                                    MessageDigest messageDigest = MessageDigest.getInstance("MD5");
-                                                    byte[] bArr6 = new byte[64];
-                                                    System.arraycopy(this.key, 0, bArr6, 0, 32);
-                                                    System.arraycopy(this.iv, 0, bArr6, 32, 32);
-                                                    byte[] digest = messageDigest.digest(bArr6);
-                                                    for (int i20 = 0; i20 < 4; i20++) {
-                                                        this.fingerprint |= ((digest[i20] ^ digest[i20 + 4]) & 255) << (i20 * 8);
-                                                    }
-                                                } catch (Exception e) {
-                                                    FileLog.e(e);
+                                                int i20 = 0;
+                                                while (i20 < i17) {
+                                                    nativeByteBuffer.writeByte(i19);
+                                                    i20++;
+                                                    i19 = 0;
                                                 }
+                                                Utilities.aesIgeEncryption(nativeByteBuffer.buffer, this.key, this.ivChange, true, true, 0, i18);
                                             }
-                                            this.uploadedBytesCount = this.readBytesCount;
-                                            this.lastSavedPartNum = this.currentPartNum;
-                                            if (this.uploadFirstPartLater) {
-                                                if (this.isBigFile) {
-                                                    this.stream.seek(this.uploadChunkSize);
-                                                    this.readBytesCount = this.uploadChunkSize;
-                                                } else {
-                                                    this.stream.seek(1024L);
-                                                    this.readBytesCount = 1024L;
-                                                }
-                                                this.currentPartNum = 1;
-                                            }
-                                        } else {
-                                            this.readBytesCount = 0L;
-                                            this.currentPartNum = 0;
-                                        }
-                                        z11 = true;
-                                        if (z11) {
-                                        }
-                                        if (this.isEncrypted) {
-                                        }
-                                        this.uploadedBytesCount = this.readBytesCount;
-                                        this.lastSavedPartNum = this.currentPartNum;
-                                        if (this.uploadFirstPartLater) {
+                                            nativeByteBuffer.reuse();
                                         }
                                     }
                                 }
                             }
-                            bArr = null;
-                            z11 = z14;
                             if (z11) {
+                                if (this.isEncrypted) {
+                                    byte[] bArr4 = new byte[32];
+                                    this.iv = bArr4;
+                                    this.key = new byte[32];
+                                    this.ivChange = new byte[32];
+                                    Utilities.random.nextBytes(bArr4);
+                                    Utilities.random.nextBytes(this.key);
+                                    System.arraycopy(this.iv, 0, this.ivChange, 0, 32);
+                                }
+                                this.currentFileId = Utilities.random.nextLong();
+                                if (!this.nextPartFirst && !this.uploadFirstPartLater && this.estimatedSize == 0) {
+                                    storeFileUploadInfo();
+                                }
                             }
                             if (this.isEncrypted) {
+                                try {
+                                    MessageDigest messageDigest = MessageDigest.getInstance("MD5");
+                                    byte[] bArr5 = new byte[64];
+                                    System.arraycopy(this.key, 0, bArr5, 0, 32);
+                                    System.arraycopy(this.iv, 0, bArr5, 32, 32);
+                                    byte[] digest = messageDigest.digest(bArr5);
+                                    for (int i21 = 0; i21 < 4; i21++) {
+                                        this.fingerprint |= ((digest[i21] ^ digest[i21 + 4]) & 255) << (i21 * 8);
+                                    }
+                                } catch (Exception e) {
+                                    FileLog.e(e);
+                                }
                             }
                             this.uploadedBytesCount = this.readBytesCount;
                             this.lastSavedPartNum = this.currentPartNum;
                             if (this.uploadFirstPartLater) {
+                                if (this.isBigFile) {
+                                    this.stream.seek(this.uploadChunkSize);
+                                    this.readBytesCount = this.uploadChunkSize;
+                                } else {
+                                    this.stream.seek(1024L);
+                                    this.readBytesCount = 1024L;
+                                }
+                                this.currentPartNum = 1;
                             }
                         }
                     }
-                    z12 = false;
-                    if (!z12) {
-                        z13 = this.isBigFile;
-                        if (!z13 || i14 >= this.uploadStartTime - 86400) {
-                            if (!z13) {
+                    z11 = false;
+                    if (!z11) {
+                        z12 = this.isBigFile;
+                        if (!z12 || i15 >= this.uploadStartTime - 86400) {
+                            if (!z12) {
                             }
-                            if (i14 == 0) {
+                            if (i15 != 0) {
                             }
-                            bArr = null;
-                            z11 = z14;
                             if (z11) {
                             }
                             if (this.isEncrypted) {
@@ -643,11 +611,9 @@ public class FileUploadOperation {
                             if (this.uploadFirstPartLater) {
                             }
                         }
-                        i14 = 0;
-                        if (i14 == 0) {
+                        i15 = 0;
+                        if (i15 != 0) {
                         }
-                        bArr = null;
-                        z11 = z14;
                         if (z11) {
                         }
                         if (this.isEncrypted) {
@@ -658,7 +624,6 @@ public class FileUploadOperation {
                         }
                     }
                 }
-                bArr = null;
                 z11 = true;
                 if (z11) {
                 }
@@ -668,30 +633,29 @@ public class FileUploadOperation {
                 this.lastSavedPartNum = this.currentPartNum;
                 if (this.uploadFirstPartLater) {
                 }
-            } else {
-                bArr = null;
             }
             if (this.estimatedSize == 0 || this.readBytesCount + this.uploadChunkSize <= this.availableSize) {
                 if (this.nextPartFirst) {
                     this.stream.seek(0L);
                     if (this.isBigFile) {
                         read = this.stream.read(this.readBuffer);
-                        i11 = 0;
+                        i12 = 0;
                     } else {
-                        i11 = 0;
+                        i12 = 0;
                         read = this.stream.read(this.readBuffer, 0, 1024);
                     }
-                    this.currentPartNum = i11;
+                    this.currentPartNum = i12;
                 } else {
                     read = this.stream.read(this.readBuffer);
                 }
-                if (read == -1) {
+                final int i22 = read;
+                if (i22 == -1) {
                     return;
                 }
-                int i21 = (!this.isEncrypted || read % 16 == 0) ? 0 : 16 - (read % 16);
-                int i22 = read + i21;
-                NativeByteBuffer nativeByteBuffer2 = new NativeByteBuffer(i22);
-                if (this.nextPartFirst || read != this.uploadChunkSize || (this.estimatedSize == 0 && this.totalPartsCount == this.currentPartNum + 1)) {
+                int i23 = (!this.isEncrypted || i22 % 16 == 0) ? 0 : 16 - (i22 % 16);
+                int i24 = i22 + i23;
+                NativeByteBuffer nativeByteBuffer2 = new NativeByteBuffer(i24);
+                if (this.nextPartFirst || i22 != this.uploadChunkSize || (this.estimatedSize == 0 && this.totalPartsCount == this.currentPartNum + 1)) {
                     if (this.uploadFirstPartLater) {
                         this.nextPartFirst = true;
                         this.uploadFirstPartLater = false;
@@ -699,21 +663,19 @@ public class FileUploadOperation {
                         this.isLastPart = true;
                     }
                 }
-                int i23 = 0;
-                nativeByteBuffer2.writeBytes(this.readBuffer, 0, read);
+                int i25 = 0;
+                nativeByteBuffer2.writeBytes(this.readBuffer, 0, i22);
                 if (this.isEncrypted) {
-                    int i24 = 0;
-                    while (i24 < i21) {
-                        nativeByteBuffer2.writeByte(i23);
-                        i24++;
-                        i23 = 0;
+                    int i26 = 0;
+                    while (i26 < i23) {
+                        nativeByteBuffer2.writeByte(i25);
+                        i26++;
+                        i25 = 0;
                     }
-                    Utilities.aesIgeEncryption(nativeByteBuffer2.buffer, this.key, this.ivChange, true, true, 0, i22);
-                    bArr2 = this.freeRequestIvs.get(0);
-                    System.arraycopy(this.ivChange, 0, bArr2, 0, 32);
+                    Utilities.aesIgeEncryption(nativeByteBuffer2.buffer, this.key, this.ivChange, true, true, 0, i24);
+                    bArr = this.freeRequestIvs.get(0);
+                    System.arraycopy(this.ivChange, 0, bArr, 0, 32);
                     this.freeRequestIvs.remove(0);
-                } else {
-                    bArr2 = bArr;
                 }
                 if (this.isBigFile) {
                     TLRPC.TL_upload_saveBigFilePart tL_upload_saveBigFilePart = new TLRPC.TL_upload_saveBigFilePart();
@@ -736,51 +698,83 @@ public class FileUploadOperation {
                     tL_upload_saveFilePart = tL_upload_saveFilePart2;
                 }
                 TLRPC.TL_upload_saveFilePart tL_upload_saveFilePart3 = tL_upload_saveFilePart;
-                final int i25 = i10;
+                final int i27 = i10;
                 if (this.isLastPart && this.nextPartFirst) {
                     this.nextPartFirst = false;
                     this.currentPartNum = this.totalPartsCount - 1;
                     this.stream.seek(this.totalFileSize);
                 }
-                this.readBytesCount += read;
+                this.readBytesCount += i22;
                 this.currentPartNum++;
                 this.currentUploadRequetsCount++;
-                final int i26 = this.requestNum;
-                this.requestNum = i26 + 1;
-                final long j15 = i25 + read;
+                final int i28 = this.requestNum;
+                this.requestNum = i28 + 1;
+                final long j15 = i27 + i22;
                 final int objectSize = tL_upload_saveFilePart3.getObjectSize() + 4;
-                final int i27 = this.operationGuid;
-                int i28 = this.slowNetwork ? 4 : ((i26 % 4) << 16) | 4;
+                final int i29 = this.operationGuid;
+                if (this.slowNetwork) {
+                    i11 = 4;
+                } else {
+                    int i30 = i28 % this.uploadConnectionsCount;
+                    int i31 = 1;
+                    while (true) {
+                        int i32 = this.uploadConnectionsCount;
+                        if (i31 >= i32) {
+                            break;
+                        }
+                        int i33 = (i28 + i31) % i32;
+                        int[] iArr = this.uploadRequestsPerConnection;
+                        if (iArr[i33] < iArr[i30]) {
+                            i30 = i33;
+                        }
+                        i31++;
+                    }
+                    i11 = (i30 << 16) | 4;
+                }
+                final int i34 = i11 >> 16;
+                int[] iArr2 = this.uploadRequestsPerConnection;
+                iArr2[i34] = iArr2[i34] + 1;
                 System.currentTimeMillis();
-                final int[] iArr = new int[1];
-                final byte[] bArr7 = bArr2;
-                final int i29 = read;
-                iArr[0] = ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_upload_saveFilePart3, new RequestDelegate() { // from class: org.telegram.messenger.z3
+                final int[] iArr3 = new int[1];
+                final byte[] bArr6 = bArr;
+                iArr3[0] = ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_upload_saveFilePart3, new RequestDelegate() { // from class: org.telegram.messenger.y3
                     @Override // org.telegram.tgnet.RequestDelegate
                     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                        FileUploadOperation.this.lambda$startUploadRequest$6(i27, iArr, objectSize, bArr7, i26, i29, i25, j15, tLObject, tL_error);
+                        FileUploadOperation.this.lambda$startUploadRequest$6(i29, i34, iArr3, objectSize, bArr6, i28, i22, i27, j15, tLObject, tL_error);
                     }
-                }, null, new d0(this, 3), this.forceSmallFile ? 4 : 0, ConnectionsManager.DEFAULT_DATACENTER_ID, i28, true);
+                }, null, new d0(this, 3), this.forceSmallFile ? 4 : 0, ConnectionsManager.DEFAULT_DATACENTER_ID, i11, true);
                 if (BuildVars.LOGS_ENABLED) {
                     StringBuilder sb3 = new StringBuilder("debug_uploading:  send reqId ");
-                    sb3.append(iArr[0]);
+                    sb3.append(iArr3[0]);
                     sb3.append(" ");
                     sb3.append(this.uploadingFilePath);
                     sb3.append(" file_part=");
-                    sb3.append(i25);
+                    sb3.append(i27);
                     sb3.append(" isBig=");
                     sb3.append(this.isBigFile);
                     sb3.append(" file_id=");
                     i2.e.x(sb3, this.currentFileId);
                 }
-                this.requestTokens.put(i26, iArr[0]);
-                AndroidUtilities.runOnUIThread(new y3(this, iArr, 1));
+                this.requestTokens.put(i28, iArr3[0]);
+                AndroidUtilities.runOnUIThread(new z3(this, iArr3, 0));
             }
         } catch (Exception e7) {
             FileLog.e(e7);
             this.state = 4;
             this.delegate.didFailedUploadingFile(this);
             cleanup();
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* renamed from: startUploadRequests, reason: merged with bridge method [inline-methods] */
+    public void lambda$startUploadRequest$7() {
+        int i10;
+        while (this.state == 1 && (i10 = this.currentUploadRequetsCount) < this.maxRequestsCount) {
+            startUploadRequest();
+            if (this.currentUploadRequetsCount == i10) {
+                return;
+            }
         }
     }
 

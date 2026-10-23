@@ -41,7 +41,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
-import org.telegram.messenger.mk;
+import org.telegram.messenger.nk;
 import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.messenger.voip.VoIPService;
@@ -59,7 +59,7 @@ import org.telegram.ui.q50;
 import org.webrtc.RendererCommon;
 import w7.z5;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes4.dex */
 public final class t extends FrameLayout implements n0 {
     public final m A0;
@@ -1361,7 +1361,7 @@ public final class t extends FrameLayout implements n0 {
             }
         } else if (this.h) {
             this.w0 = 1.0f;
-            int B2 = mk.B(14.0f, 2, Math.min(View.MeasureSpec.getSize(i10), View.MeasureSpec.getSize(i11)));
+            int B2 = nk.B(14.0f, 2, Math.min(View.MeasureSpec.getSize(i10), View.MeasureSpec.getSize(i11)));
             super.onMeasure(View.MeasureSpec.makeMeasureSpec(B2, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(getPaddingBottom() + B2, TLObject.FLAG_30));
         } else if (this.H) {
             this.w0 = 1.0f;
@@ -1374,7 +1374,7 @@ public final class t extends FrameLayout implements n0 {
             } else if (q50.G3) {
                 dp = AndroidUtilities.dp(320.0f);
             } else {
-                B = mk.B(14.0f, 2, View.MeasureSpec.getSize(i10)) + (q50.F3 ? -AndroidUtilities.dp(90.0f) : 0);
+                B = nk.B(14.0f, 2, View.MeasureSpec.getSize(i10)) + (q50.F3 ? -AndroidUtilities.dp(90.0f) : 0);
                 float f11 = (this.I / i13) * B;
                 lVar = this.e;
                 if (lVar == null) {

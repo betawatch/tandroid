@@ -19,7 +19,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class r31 extends FrameLayout {
     public int E;
@@ -260,7 +260,7 @@ public final class r31 extends FrameLayout {
             this.L = ofFloat;
             ofFloat.addUpdateListener(new o31(this, i12));
             this.L.addListener(new p31(this, i11));
-            org.telegram.messenger.mk.l(2.0f, this.L);
+            org.telegram.messenger.nk.l(2.0f, this.L);
             this.L.setDuration(200L);
             this.L.start();
         }

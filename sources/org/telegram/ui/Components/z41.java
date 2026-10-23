@@ -13,7 +13,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class z41 extends FrameLayout implements org.telegram.ui.ActionBar.y5 {
     public final org.telegram.ui.ActionBar.d6 a;
@@ -33,7 +33,7 @@ public final class z41 extends FrameLayout implements org.telegram.ui.ActionBar.
         this.a = d6Var;
         setClipToPadding(false);
         setPadding(AndroidUtilities.dp(20.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(20.0f), AndroidUtilities.dp(6.0f));
-        LinearLayout e = org.telegram.messenger.mk.e(context, 0);
+        LinearLayout e = org.telegram.messenger.nk.e(context, 0);
         addView(e, w7.z5.e(-2, -2, 19));
         TextView textView = new TextView(context);
         this.c = textView;

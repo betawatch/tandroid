@@ -28,7 +28,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.mk;
+import org.telegram.messenger.nk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
@@ -38,7 +38,7 @@ import org.telegram.ui.Components.tx0;
 import org.telegram.ui.Components.xl0;
 import org.telegram.ui.Components.yq;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes4.dex */
 public abstract class q3 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static final MediaController.AlbumEntry j0 = new MediaController.AlbumEntry(-1, null, null);
@@ -406,7 +406,7 @@ public abstract class q3 extends FrameLayout implements NotificationCenter.Notif
             linearLayout.setAlpha(0.0f);
             linearLayout.setTranslationY(AndroidUtilities.dp(32.0f));
             linearLayout.setVisibility(8);
-            d f11 = mk.f(24, context, d6Var, true);
+            d f11 = nk.f(24, context, d6Var, true);
             this.J = f11;
             f11.g(LocaleController.formatPluralStringComma("StoriesCreate", 1), false, true);
             if (!z12) {
@@ -446,7 +446,7 @@ public abstract class q3 extends FrameLayout implements NotificationCenter.Notif
                     }
                 });
             }
-            d f12 = mk.f(24, context, d6Var, z12);
+            d f12 = nk.f(24, context, d6Var, z12);
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("v");
             yq yqVar = new yq(R.drawable.mini_collage, 0);
             yqVar.translate(-AndroidUtilities.dp(1.33f), AndroidUtilities.dp(0.66f));
@@ -845,7 +845,7 @@ public abstract class q3 extends FrameLayout implements NotificationCenter.Notif
         boolean z10 = !isEmpty;
         ImageView imageView = this.H;
         if (imageView != null) {
-            mk.t(imageView.animate().alpha(!isEmpty ? 1.0f : 0.0f).scaleX(!isEmpty ? 1.0f : 0.7f).scaleY(isEmpty ? 0.7f : 1.0f).translationY(!isEmpty ? -AndroidUtilities.navigationBarHeight : AndroidUtilities.dp(8.0f)), bs.h, 320L);
+            nk.t(imageView.animate().alpha(!isEmpty ? 1.0f : 0.0f).scaleX(!isEmpty ? 1.0f : 0.7f).scaleY(isEmpty ? 0.7f : 1.0f).translationY(!isEmpty ? -AndroidUtilities.navigationBarHeight : AndroidUtilities.dp(8.0f)), bs.h, 320L);
         }
         LinearLayout linearLayout = this.I;
         if (linearLayout != null) {

@@ -13,7 +13,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class p implements Comparator {
     public final /* synthetic */ int a;
@@ -30,7 +30,7 @@ public final /* synthetic */ class p implements Comparator {
         int lambda$getContactsHash$26;
         int lambda$sortEmoji$3;
         int lambda$removePart$2;
-        int lambda$loadGalleryPhotosAlbums$57;
+        int lambda$loadGalleryPhotosAlbums$59;
         int lambda$sortPlaylist$13;
         int lambda$getTextStyleRunsLegacy$181;
         int lambda$static$160;
@@ -74,8 +74,8 @@ public final /* synthetic */ class p implements Comparator {
                 lambda$removePart$2 = FileLoadOperation.lambda$removePart$2((FileLoadOperation.Range) obj, (FileLoadOperation.Range) obj2);
                 return lambda$removePart$2;
             case 6:
-                lambda$loadGalleryPhotosAlbums$57 = MediaController.lambda$loadGalleryPhotosAlbums$57((MediaController.PhotoEntry) obj, (MediaController.PhotoEntry) obj2);
-                return lambda$loadGalleryPhotosAlbums$57;
+                lambda$loadGalleryPhotosAlbums$59 = MediaController.lambda$loadGalleryPhotosAlbums$59((MediaController.PhotoEntry) obj, (MediaController.PhotoEntry) obj2);
+                return lambda$loadGalleryPhotosAlbums$59;
             case 7:
                 lambda$sortPlaylist$13 = MediaController.lambda$sortPlaylist$13((MessageObject) obj, (MessageObject) obj2);
                 return lambda$sortPlaylist$13;

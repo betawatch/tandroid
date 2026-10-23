@@ -1,71 +1,70 @@
 package org.telegram.messenger;
 
-import java.io.File;
+import java.nio.ByteBuffer;
 import java.util.ArrayList;
+import java.util.HashMap;
 import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.MessagesStorage;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class t6 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
+    public final /* synthetic */ boolean b;
     public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ t6(int i10, Object obj, int i11) {
-        this.a = i11;
-        this.b = i10;
+    public /* synthetic */ t6(Object obj, Object obj2, boolean z10, int i10) {
+        this.a = i10;
         this.c = obj;
+        this.d = obj2;
+        this.b = z10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ((MediaController.4) this.c).lambda$onCallStateChanged$0(this.b);
+                ((MediaController.2) this.c).lambda$run$1((ByteBuffer) this.d, this.b);
                 break;
             case 1:
-                MessagesController.1.lambda$setLocal$2(this.b, (TLRPC.TL_help_appConfig) this.c);
+                ((FileLoader) this.c).lambda$cancelFileUpload$2(this.b, (String) this.d);
                 break;
             case 2:
-                MessagesController.4.lambda$setLocal$2(this.b, (TLRPC.messages_AvailableEffects) this.c);
+                ((ImageLoader) this.c).lambda$cancelLoadingForImageReceiver$4(this.b, (ImageReceiver) this.d);
                 break;
             case 3:
-                MessagesController.5.lambda$setLocal$1(this.b, (TL_account.TL_webBrowserSettings) this.c);
+                ((MediaDataController) this.c).lambda$loadBotKeyboard$197((MessagesStorage.TopicKey) this.d, this.b);
                 break;
             case 4:
-                AutoDeleteMediaTask.lambda$run$1(this.b, (File) this.c);
+                ((MediaDataController) this.c).lambda$buildShortcuts$143(this.b, (ArrayList) this.d);
                 break;
             case 5:
-                FileLoader.lambda$deleteFiles$18((ArrayList) this.c, this.b);
+                ((MessagesController) this.c).lambda$processDialogsUpdate$228((TLRPC.messages_Dialogs) this.d, this.b);
                 break;
             case 6:
-                ((FilesMigrationService) this.c).lambda$updateProgress$1(this.b);
+                ((MessagesStorage) this.c).lambda$updateUserInfo$130((TLRPC.UserFull) this.d, this.b);
                 break;
             case 7:
-                MediaController.lambda$saveFile$48((org.telegram.ui.ActionBar.b2) this.c, this.b);
+                ((MessagesStorage) this.c).lambda$putCachedPhoneBook$149((HashMap) this.d, this.b);
                 break;
             case 8:
-                PushListenerController.lambda$sendRegistrationToServer$1((String) this.c, this.b);
+                ((MessagesStorage) this.c).lambda$updateEncryptedChatSeq$171((TLRPC.EncryptedChat) this.d, this.b);
                 break;
             case 9:
-                PushListenerController.lambda$processRemoteMessage$2(this.b, (TLRPC.TL_updates) this.c);
-                break;
-            case 10:
-                SendMessagesHelper.lambda$handleError$122(this.b, (AccountInstance) this.c);
+                ((MessagesStorage) this.c).lambda$updateChatInfo$134((TLRPC.ChatFull) this.d, this.b);
                 break;
             default:
-                Utilities.lambda$doCallbacks$0(this.b, (Utilities.Callback[]) this.c);
+                ((MessagesStorage) this.c).lambda$deleteEphemeralMessages$206((a0.h) this.d, this.b);
                 break;
         }
     }
 
-    public /* synthetic */ t6(Object obj, int i10, int i11) {
-        this.a = i11;
+    public /* synthetic */ t6(Object obj, boolean z10, Object obj2, int i10) {
+        this.a = i10;
         this.c = obj;
-        this.b = i10;
+        this.b = z10;
+        this.d = obj2;
     }
 }

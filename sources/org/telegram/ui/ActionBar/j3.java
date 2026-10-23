@@ -34,7 +34,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.mk;
+import org.telegram.messenger.nk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
@@ -75,7 +75,7 @@ import org.telegram.ui.t21;
 import org.telegram.ui.tn;
 import org.telegram.ui.vc;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j3 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -404,7 +404,7 @@ public final /* synthetic */ class j3 implements Utilities.Callback {
                                     boolean z13 = LocaleController.isRTL;
                                     m0Var.addView(radioButton, w7.z5.d(22, 22.0f, (z13 ? 5 : 3) | 48, z13 ? 0 : 22, 13.0f, z13 ? 22 : 0, 0.0f));
                                     TextView textView = new TextView(activity3);
-                                    mk.u(textView, h6.x0(null, h6.G6, false), 1, 16.0f, 1);
+                                    nk.u(textView, h6.x0(null, h6.G6, false), 1, 16.0f, 1);
                                     textView.setMaxLines(1);
                                     textView.setSingleLine(true);
                                     textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);

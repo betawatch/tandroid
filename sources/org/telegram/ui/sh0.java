@@ -6,7 +6,7 @@ import android.widget.EditText;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class sh0 implements Runnable {
     public final /* synthetic */ int a;
@@ -48,7 +48,7 @@ public final /* synthetic */ class sh0 implements Runnable {
                     int width = mi0Var2.V.getWidth();
                     org.telegram.ui.Components.vg vgVar2 = mi0Var2.V;
                     vgVar2.getHeight();
-                    iArr[0] = org.telegram.messenger.mk.D(6.0f, width - vgVar2.m(), i10);
+                    iArr[0] = org.telegram.messenger.nk.D(6.0f, width - vgVar2.m(), i10);
                     mi0Var2.W.setScaleX(mi0Var2.V.getScaleX());
                     mi0Var2.W.setScaleY(mi0Var2.V.getScaleY());
                     break;

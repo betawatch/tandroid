@@ -13,11 +13,11 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.mk;
+import org.telegram.messenger.nk;
 import org.telegram.ui.ActionBar.f3;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes4.dex */
 public final class k0 implements View.OnLongClickListener {
     public final /* synthetic */ x0 a;
@@ -62,7 +62,7 @@ public final class k0 implements View.OnLongClickListener {
                     switch (i11) {
                         case 0:
                             x0 x0Var = k0Var.a;
-                            f3 i14 = mk.i(1, x0Var.getContext(), null, false);
+                            f3 i14 = nk.i(1, x0Var.getContext(), null, false);
                             try {
                                 parse = Uri.parse(str5);
                             } catch (Exception e) {
@@ -382,7 +382,7 @@ public final class k0 implements View.OnLongClickListener {
                             break;
                         default:
                             x0 x0Var2 = k0Var.a;
-                            f3 i15 = mk.i(1, x0Var2.getContext(), null, false);
+                            f3 i15 = nk.i(1, x0Var2.getContext(), null, false);
                             try {
                                 Uri parse2 = Uri.parse(str5);
                                 str3 = pf.d.u(parse2, null, null, pf.d.a(parse2.getHost()), null);
@@ -741,7 +741,7 @@ public final class k0 implements View.OnLongClickListener {
                 switch (i112) {
                     case 0:
                         x0 x0Var = k0Var.a;
-                        f3 i14 = mk.i(1, x0Var.getContext(), null, false);
+                        f3 i14 = nk.i(1, x0Var.getContext(), null, false);
                         try {
                             parse = Uri.parse(str5);
                         } catch (Exception e) {
@@ -1061,7 +1061,7 @@ public final class k0 implements View.OnLongClickListener {
                         break;
                     default:
                         x0 x0Var2 = k0Var.a;
-                        f3 i15 = mk.i(1, x0Var2.getContext(), null, false);
+                        f3 i15 = nk.i(1, x0Var2.getContext(), null, false);
                         try {
                             Uri parse2 = Uri.parse(str5);
                             str3 = pf.d.u(parse2, null, null, pf.d.a(parse2.getHost()), null);

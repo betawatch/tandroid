@@ -17,10 +17,10 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.mk;
+import org.telegram.messenger.nk;
 import org.telegram.ui.Components.vj0;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes4.dex */
 public final class m7 extends FrameLayout {
     public final ArrayList a;
@@ -48,7 +48,7 @@ public final class m7 extends FrameLayout {
         TextView textView = new TextView(context);
         textView.setTextColor(-1);
         textView.setTypeface(AndroidUtilities.bold());
-        mk.j(20.0f, R.string.StoriesIntroHeader, 1, textView);
+        nk.j(20.0f, R.string.StoriesIntroHeader, 1, textView);
         linearLayout.addView(textView, w7.z5.n(-2, -2));
         TextView textView2 = new TextView(context);
         textView2.setTextColor(-1761607681);
@@ -95,7 +95,7 @@ public final class m7 extends FrameLayout {
         TextView textView3 = new TextView(context);
         textView3.setTextColor(-1);
         textView3.setTypeface(AndroidUtilities.bold());
-        mk.j(14.0f, R.string.StoriesIntroDismiss, 1, textView3);
+        nk.j(14.0f, R.string.StoriesIntroDismiss, 1, textView3);
         linearLayout.addView(textView3, w7.z5.k(0.0f, 73.0f, 0.0f, 0.0f, -2, -2));
         addView(linearLayout, w7.z5.e(-1, -2, 17));
         BitmapDrawable bitmapDrawable = new BitmapDrawable(getContext().getResources(), AndroidUtilities.makeBlurBitmap(o9Var, 12.0f, 10));

@@ -37,7 +37,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.CheckBoxBase;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class z91 implements mh0 {
     public final qn A;
@@ -673,7 +673,7 @@ public final class z91 implements mh0 {
         float f66 = f14;
         float f67 = 1.0f - f66;
         float f68 = (backgroundDrawableTop * f66) + (y13 * f67);
-        float b10 = org.telegram.messenger.mk.b(backgroundDrawableTop, u1Var2.getBackgroundDrawableBottom() - u1Var2.getBackgroundDrawableTop(), f66, (this.x - siVar.getY()) * f67);
+        float b10 = org.telegram.messenger.nk.b(backgroundDrawableTop, u1Var2.getBackgroundDrawableBottom() - u1Var2.getBackgroundDrawableTop(), f66, (this.x - siVar.getY()) * f67);
         int dp = (int) ((AndroidUtilities.dp(4.0f) * f12) + u1Var2.getBackgroundDrawableRight() + f62);
         MessageObject messageObject3 = this.k;
         org.telegram.ui.ActionBar.f5 y22 = !messageObject3.isAnimatedEmojiStickers() ? u1Var2.y2(true) : null;

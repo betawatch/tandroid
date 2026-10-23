@@ -14,13 +14,13 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.mk;
+import org.telegram.messenger.nk;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.yq;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p0 implements Runnable {
     public final /* synthetic */ int a;
@@ -109,7 +109,7 @@ public final /* synthetic */ class p0 implements Runnable {
                                             MessagesController.getInstance(i12).removeSuggestion(j10, "WALLET_FIRST_INCOMING_TRANSFER");
                                             Context context = w0Var2.getContext();
                                             org.telegram.ui.ActionBar.d6 d6Var = w0Var2.g1;
-                                            org.telegram.ui.ActionBar.f3 i14 = mk.i(1, context, d6Var, false);
+                                            org.telegram.ui.ActionBar.f3 i14 = nk.i(1, context, d6Var, false);
                                             FrameLayout frameLayout = new FrameLayout(context);
                                             frameLayout.setBackground(org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(16.0f), org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.h5, d6Var)));
                                             frameLayout.setPadding(AndroidUtilities.dp(36.0f), 0, AndroidUtilities.dp(36.0f), AndroidUtilities.dp(14.0f));
@@ -120,7 +120,7 @@ public final /* synthetic */ class p0 implements Runnable {
                                             linearLayout.addView(new org.telegram.ui.Wallet.m6(120, context, false), w7.z5.t(120, 120, 1, 0, 0, 0, -8));
                                             TextView textView = new TextView(context);
                                             textView.setText(LocaleController.getString(R.string.WalletFirstGrams));
-                                            mk.o(org.telegram.ui.ActionBar.h6.j5, d6Var, textView, 1, 17.0f);
+                                            nk.o(org.telegram.ui.ActionBar.h6.j5, d6Var, textView, 1, 17.0f);
                                             textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
                                             textView.setGravity(17);
                                             TextView i15 = com.google.android.gms.internal.play_billing.k3.i(linearLayout, textView, w7.z5.t(-1, -2, 1, 0, 0, 0, 6), context);
@@ -133,7 +133,7 @@ public final /* synthetic */ class p0 implements Runnable {
                                                 string = LocaleController.formatString(R.string.WalletFirstGramsRate, org.telegram.ui.Wallet.m0.r(1000000000L, false), String.format(LocaleController.getInstance().getCurrentLocale(), "%.2f", Double.valueOf(d)));
                                             }
                                             i15.setText(string);
-                                            mk.o(org.telegram.ui.ActionBar.h6.r5, d6Var, i15, i10, 14.0f);
+                                            nk.o(org.telegram.ui.ActionBar.h6.r5, d6Var, i15, i10, 14.0f);
                                             i15.setGravity(17);
                                             i15.setLineSpacing(AndroidUtilities.dp(1.0f), 1.0f);
                                             linearLayout.addView(i15, w7.z5.t(-1, -2, 1, 0, 0, 0, 24));
@@ -174,7 +174,7 @@ public final /* synthetic */ class p0 implements Runnable {
                                             g5Var3.a(LocaleController.getString(R.string.WalletStore), spannableStringBuilder2, R.drawable.wallet_intro_store);
                                             g5Var3.b.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.n6, d6Var), PorterDuff.Mode.SRC_IN));
                                             linearLayout.addView(g5Var3, w7.z5.k(0.0f, 0.0f, 0.0f, 14.0f, -1, -2));
-                                            ei.d f7 = mk.f(24, context, d6Var, true);
+                                            ei.d f7 = nk.f(24, context, d6Var, true);
                                             f7.setText(LocaleController.getString(R.string.WalletGotIt));
                                             linearLayout.addView(f7, w7.z5.t(-1, 48, 1, 0, 0, 0, 0));
                                             w7.b6.b(f7, 0.02f, 1.1f);

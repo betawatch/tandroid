@@ -9,7 +9,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class fs extends ViewGroup {
     public static final /* synthetic */ int s = 0;
@@ -122,8 +122,8 @@ public final class fs extends ViewGroup {
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        int A = org.telegram.messenger.mk.A(32.0f, getWidth(), 3);
-        int A2 = org.telegram.messenger.mk.A(42.0f, getHeight(), 4);
+        int A = org.telegram.messenger.nk.A(32.0f, getWidth(), 3);
+        int A2 = org.telegram.messenger.nk.A(42.0f, getHeight(), 4);
         int i14 = 0;
         while (true) {
             View[] viewArr = this.c;
@@ -145,8 +145,8 @@ public final class fs extends ViewGroup {
     @Override // android.view.View
     public final void onMeasure(int i10, int i11) {
         setMeasuredDimension(View.MeasureSpec.getSize(i10), View.MeasureSpec.getSize(i11));
-        int A = org.telegram.messenger.mk.A(32.0f, getWidth(), 3);
-        int A2 = org.telegram.messenger.mk.A(42.0f, getHeight(), 4);
+        int A = org.telegram.messenger.nk.A(32.0f, getWidth(), 3);
+        int A2 = org.telegram.messenger.nk.A(42.0f, getHeight(), 4);
         for (View view : this.c) {
             if (view != null) {
                 view.measure(View.MeasureSpec.makeMeasureSpec(A, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(A2, TLObject.FLAG_30));

@@ -5,7 +5,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.gh;
+import org.telegram.messenger.ih;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stars;
@@ -18,7 +18,7 @@ import org.telegram.ui.l80;
 import org.telegram.ui.po0;
 import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s1 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -54,7 +54,7 @@ public final /* synthetic */ class s1 implements Utilities.Callback2 {
                 break;
             case 2:
                 ((j0) obj4).close();
-                ((gh) obj3).run((b2) obj, (String) obj2);
+                ((ih) obj3).run((b2) obj, (String) obj2);
                 break;
             case 3:
                 h8.b0((h8) obj4, (Utilities.Callback) obj3, (j0) obj, (String) obj2);

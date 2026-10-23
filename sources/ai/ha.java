@@ -21,7 +21,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.gh;
+import org.telegram.messenger.ih;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -60,7 +60,7 @@ import org.telegram.ui.w41;
 import org.telegram.ui.x51;
 import org.telegram.ui.yh1;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class ha implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -366,7 +366,7 @@ public final /* synthetic */ class ha implements View.OnClickListener {
                         tL_messages_requestUrlAuth.flags |= 4;
                         tL_messages_requestUrlAuth.url = "https://web.telegram.org/";
                         int i23 = this.b;
-                        ConnectionsManager.getInstance(i23).sendRequestTyped(tL_messages_requestUrlAuth, new org.telegram.messenger.a(), new gh(dVar, f3Var, i23, view, z5Var));
+                        ConnectionsManager.getInstance(i23).sendRequestTyped(tL_messages_requestUrlAuth, new org.telegram.messenger.a(), new ih(dVar, f3Var, i23, view, z5Var));
                         break;
                     } else {
                         FileLog.d("wear-auth: login pressed with no session/key");

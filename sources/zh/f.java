@@ -17,9 +17,9 @@ import java.util.Random;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.TelegramQRCodeWriter;
-import org.telegram.messenger.mk;
+import org.telegram.messenger.nk;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes4.dex */
 public final class f {
     public static final float S;
@@ -152,7 +152,7 @@ public final class f {
                     float f11 = i14 + 0.5f;
                     float f12 = eVar.f;
                     int i15 = (int) ((f11 * f12) + f10);
-                    int b10 = (int) mk.b(i13, 0.5f, f12, f10);
+                    int b10 = (int) nk.b(i13, 0.5f, f12, f10);
                     boolean z10 = false;
                     for (int i16 = -1; i16 <= 1 && !z10; i16++) {
                         z10 = Color.alpha(encode.getPixel(Math.max(0, Math.min(eVar.b - 1, ((int) ((((float) i16) * eVar.f) * 0.3f)) + i15)), b10)) > 40;
@@ -192,7 +192,7 @@ public final class f {
 
     public static float h(e eVar, float f7) {
         float f10 = 1.0f - f7;
-        return mk.b(eVar.e, 6.0f, 1.0f - (((f10 * 0.45f) + 0.55f) * (f10 * f10)), -1.5f);
+        return nk.b(eVar.e, 6.0f, 1.0f - (((f10 * 0.45f) + 0.55f) * (f10 * f10)), -1.5f);
     }
 
     public static boolean i(e eVar, int i10, int i11) {
@@ -303,7 +303,7 @@ public final class f {
                         float f11 = eVar.g;
                         float f12 = eVar.f;
                         fArr[i16] = ((i18 + 0.5f) * f12) + f11;
-                        eVar.o[i16] = mk.b(i17, 0.5f, f12, f11);
+                        eVar.o[i16] = nk.b(i17, 0.5f, f12, f11);
                         float f13 = hypot * 0.5f;
                         eVar.p[i16] = i22 ? f13 * 0.85f : f13 + (floor * 0.06f);
                         eVar.q[i16] = eVar.h[i21];

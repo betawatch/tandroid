@@ -33,7 +33,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.mk;
+import org.telegram.messenger.nk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -64,7 +64,7 @@ import org.telegram.ui.sa1;
 import org.telegram.ui.v00;
 import w7.z5;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public abstract class h0 extends im0 {
     public v00 A0;
@@ -2062,7 +2062,7 @@ public abstract class h0 extends im0 {
             case 8:
                 h6 h6Var2 = (h6) view;
                 ContactsController.Contact contact = (ContactsController.Contact) J(i16);
-                h6Var2.u(contact, null, ContactsController.formatName(contact.first_name, contact.last_name), mk.g(new StringBuilder("+"), contact.shortPhones.get(0), jf.b.c()), false, false);
+                h6Var2.u(contact, null, ContactsController.formatName(contact.first_name, contact.last_name), nk.g(new StringBuilder("+"), contact.shortPhones.get(0), jf.b.c()), false, false);
                 break;
         }
     }
@@ -2141,7 +2141,7 @@ public abstract class h0 extends im0 {
                 int i13 = org.telegram.ui.ActionBar.h6.G6;
                 textView.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i13, false));
                 textView.setTypeface(AndroidUtilities.bold());
-                mk.m(R.string.SearchMessagesFilterEmptyTitle, textView, 17);
+                nk.m(R.string.SearchMessagesFilterEmptyTitle, textView, 17);
                 d0Var.addView(textView, z5.t(-1, -2, 1, 0, 8, 0, 9));
                 TextView textView2 = new TextView(context);
                 d0Var.a = textView2;

@@ -1,27 +1,33 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class d8 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ MediaDataController b;
-    public final /* synthetic */ int c;
+import android.net.Uri;
+import java.util.ArrayList;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.Utilities;
 
-    public /* synthetic */ d8(MediaDataController mediaDataController, int i10, int i11) {
-        this.a = i11;
-        this.b = mediaDataController;
-        this.c = i10;
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class d8 implements MediaDataController.KeywordResultCallback, MessagesStorage.LongCallback {
+    public final /* synthetic */ BaseController a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+
+    public /* synthetic */ d8(BaseController baseController, Object obj, Object obj2, Object obj3) {
+        this.a = baseController;
+        this.b = obj;
+        this.c = obj2;
+        this.d = obj3;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.lambda$fetchEmojiStatuses$232(this.c);
-                break;
-            default:
-                this.b.lambda$processLoadedStickers$103(this.c);
-                break;
-        }
+    @Override // org.telegram.messenger.MessagesStorage.LongCallback
+    public void run(long j10) {
+        ((SendMessagesHelper) this.a).lambda$prepareImportHistory$108((Uri) this.b, (ArrayList) this.c, (MessagesStorage.LongCallback) this.d, j10);
+    }
+
+    @Override // org.telegram.messenger.MediaDataController.KeywordResultCallback
+    public void run(ArrayList arrayList, String str) {
+        ((MediaDataController) this.a).lambda$searchStickers$249((MediaDataController.SearchStickersKey) this.b, (MediaDataController.SearchStickersResult) this.c, (Utilities.Callback) this.d, arrayList, str);
     }
 }

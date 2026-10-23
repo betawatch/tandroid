@@ -2,7 +2,7 @@ package org.telegram.ui.Cells;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public interface t0 {
     void C1(w0 w0Var, TLRPC.TL_premiumGiftOption tL_premiumGiftOption, String str);

@@ -43,7 +43,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public class ThemeActivity extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public int A0;
@@ -144,7 +144,7 @@ public class ThemeActivity extends org.telegram.ui.ActionBar.n2 implements Notif
     public int y0;
     public int z0;
 
-    /* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
     public static class InnerAccentView extends View {
         public final Paint a;
         public ObjectAnimator b;
@@ -254,8 +254,8 @@ public class ThemeActivity extends org.telegram.ui.ActionBar.n2 implements Notif
             callback.run(Boolean.TRUE);
             return;
         }
-        org.telegram.ui.ActionBar.f3 i12 = org.telegram.messenger.mk.i(1, context, d6Var, false);
-        LinearLayout e = org.telegram.messenger.mk.e(context, 1);
+        org.telegram.ui.ActionBar.f3 i12 = org.telegram.messenger.nk.i(1, context, d6Var, false);
+        LinearLayout e = org.telegram.messenger.nk.e(context, 1);
         e.setPadding(AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), 0);
         e.setClipChildren(false);
         e.setClipToPadding(false);
@@ -269,7 +269,7 @@ public class ThemeActivity extends org.telegram.ui.ActionBar.n2 implements Notif
         e.addView(frameLayout, w7.z5.t(80, 80, 1, 0, 20, 0, 8));
         int i13 = org.telegram.ui.ActionBar.h6.j5;
         TextView b10 = w7.d6.b(context, 20.0f, i13, true, d6Var);
-        org.telegram.messenger.mk.m(R.string.AgeVerificationTitle, b10, 17);
+        org.telegram.messenger.nk.m(R.string.AgeVerificationTitle, b10, 17);
         e.addView(b10, w7.z5.t(-1, -2, 7, 24, 8, 24, 8));
         TextView b11 = w7.d6.b(context, 14.0f, i13, false, d6Var);
         b11.setText(AndroidUtilities.replaceTags(LocaleController.getString("AgeVerificationText" + str2)));
@@ -494,7 +494,7 @@ public class ThemeActivity extends org.telegram.ui.ActionBar.n2 implements Notif
                 return;
             }
             final AtomicReference atomicReference = new AtomicReference();
-            LinearLayout e = org.telegram.messenger.mk.e(context, 1);
+            LinearLayout e = org.telegram.messenger.nk.e(context, 1);
             CharSequence[] charSequenceArr = {LocaleController.getString("DistanceUnitsAutomatic", R.string.DistanceUnitsAutomatic), LocaleController.getString("DistanceUnitsKilometers", R.string.DistanceUnitsKilometers), LocaleController.getString("DistanceUnitsMiles", R.string.DistanceUnitsMiles)};
             final int i17 = 0;
             while (i17 < 3) {
@@ -556,7 +556,7 @@ public class ThemeActivity extends org.telegram.ui.ActionBar.n2 implements Notif
                 return;
             }
             final AtomicReference atomicReference2 = new AtomicReference();
-            LinearLayout e7 = org.telegram.messenger.mk.e(context, 1);
+            LinearLayout e7 = org.telegram.messenger.nk.e(context, 1);
             ArrayList b10 = org.telegram.ui.web.m1.b();
             int size = b10.size();
             CharSequence[] charSequenceArr2 = new CharSequence[size];
@@ -623,7 +623,7 @@ public class ThemeActivity extends org.telegram.ui.ActionBar.n2 implements Notif
                 return;
             }
             final AtomicReference atomicReference3 = new AtomicReference();
-            LinearLayout e10 = org.telegram.messenger.mk.e(context, 1);
+            LinearLayout e10 = org.telegram.messenger.nk.e(context, 1);
             org.telegram.ui.Cells.k6 k6Var3 = new org.telegram.ui.Cells.k6(themeActivity.getParentActivity(), null);
             k6Var3.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
             int i19 = org.telegram.ui.ActionBar.h6.g7;

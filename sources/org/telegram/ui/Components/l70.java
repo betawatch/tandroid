@@ -31,7 +31,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class l70 extends org.telegram.ui.ActionBar.f3 {
     public int E;
@@ -224,9 +224,9 @@ public final class l70 extends org.telegram.ui.ActionBar.f3 {
         boolean z10;
         Object obj;
         int i11;
-        org.telegram.ui.ActionBar.f3 i12 = org.telegram.messenger.mk.i(1, context, d6Var, false);
+        org.telegram.ui.ActionBar.f3 i12 = org.telegram.messenger.nk.i(1, context, d6Var, false);
         org.telegram.ui.ActionBar.f3[] f3VarArr = new org.telegram.ui.ActionBar.f3[1];
-        ?? e = org.telegram.messenger.mk.e(context, 1);
+        ?? e = org.telegram.messenger.nk.e(context, 1);
         e.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(20.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(4.0f));
         e.setClipChildren(false);
         e.setClipToPadding(false);

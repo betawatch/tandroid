@@ -23,7 +23,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.mk;
+import org.telegram.messenger.nk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -33,7 +33,7 @@ import org.telegram.ui.Components.AnimatedFileNative;
 import org.telegram.ui.Components.r51;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z1 implements Runnable {
     public final /* synthetic */ int a;
@@ -424,7 +424,7 @@ public final /* synthetic */ class z1 implements Runnable {
                     break;
                 } else if (tLObject5 instanceof TLRPC.TL_boolFalse) {
                     cVar.a.a(0.0f);
-                    mk.q(R.string.UnknownError, xc.a0(cVar), null);
+                    nk.q(R.string.UnknownError, xc.a0(cVar), null);
                     break;
                 } else {
                     cVar.finishFragment();
@@ -440,7 +440,7 @@ public final /* synthetic */ class z1 implements Runnable {
                     break;
                 } else if (tLObject6 instanceof TLRPC.TL_boolFalse) {
                     mVar.e.a(0.0f);
-                    mk.q(R.string.UnknownError, xc.a0(mVar), null);
+                    nk.q(R.string.UnknownError, xc.a0(mVar), null);
                     break;
                 } else {
                     if (mVar.E != null) {
@@ -483,7 +483,7 @@ public final /* synthetic */ class z1 implements Runnable {
                     break;
                 } else if (tLObject7 instanceof TLRPC.TL_boolFalse) {
                     v0Var.a.a(0.0f);
-                    mk.q(R.string.UnknownError, xc.a0(v0Var), null);
+                    nk.q(R.string.UnknownError, xc.a0(v0Var), null);
                     break;
                 } else {
                     v0Var.finishFragment();

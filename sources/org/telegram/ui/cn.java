@@ -97,7 +97,7 @@ import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.SecretMediaViewer;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class cn implements org.telegram.ui.Cells.l1 {
     public final /* synthetic */ qn a;
@@ -363,7 +363,7 @@ public final class cn implements org.telegram.ui.Cells.l1 {
         SpannableString spannableString = new SpannableString(charSequence);
         spannableString.setSpan(new mi.h(false, textLayoutBlock.language, charSequence), 0, spannableString.length(), 33);
         AndroidUtilities.addToClipboard(spannableString);
-        org.telegram.messenger.mk.p(R.string.CodeCopied, org.telegram.ui.Components.xc.a0(this.a));
+        org.telegram.messenger.nk.p(R.string.CodeCopied, org.telegram.ui.Components.xc.a0(this.a));
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -950,7 +950,7 @@ public final class cn implements org.telegram.ui.Cells.l1 {
                     String str5 = MessageObject.getMedia(messageObject.messageOwner).phone_number;
                     b10 = !TextUtils.isEmpty(str5) ? jf.b.c().b(str5) : LocaleController.getString(R.string.NumberUnknown);
                 } else {
-                    b10 = org.telegram.messenger.mk.g(new StringBuilder("+"), user2.phone, jf.b.c());
+                    b10 = org.telegram.messenger.nk.g(new StringBuilder("+"), user2.phone, jf.b.c());
                 }
                 Bundle bundle2 = new Bundle();
                 bundle2.putLong("user_id", user2.id);
@@ -1566,7 +1566,7 @@ public final class cn implements org.telegram.ui.Cells.l1 {
                         w9Var.e(userOrChat, h9Var);
                         frameLayout.addView(w9Var, w7.z5.d(34, 34.0f, 51, 13.0f, 11.0f, 0.0f, 11.0f));
                         TextView textView = new TextView(context2);
-                        org.telegram.messenger.mk.o(org.telegram.ui.ActionBar.h6.j5, d6Var2, textView, 1, 14.0f);
+                        org.telegram.messenger.nk.o(org.telegram.ui.ActionBar.h6.j5, d6Var2, textView, 1, 14.0f);
                         textView.setText(replaceTags);
                         textView.setMaxWidth(AndroidUtilities.dp(150.0f));
                         textView.setLineSpacing(AndroidUtilities.dp(3.0f), 1.0f);
@@ -3486,7 +3486,7 @@ public final class cn implements org.telegram.ui.Cells.l1 {
                 org.telegram.ui.Cells.s1 s1Var = pollButtons.get(i16);
                 float y3 = ((u1Var.getY() + s1Var.b) - AndroidUtilities.dp(4.0f)) - qnVar.s9;
                 qnVar.q2 = AndroidUtilities.dp(13.3f) + s1Var.a;
-                int D = org.telegram.messenger.mk.D(6.0f, s1Var.b, i12);
+                int D = org.telegram.messenger.nk.D(6.0f, s1Var.b, i12);
                 qnVar.r2 = D;
                 if (y3 > 0.0f) {
                     i15 = qnVar.q2;

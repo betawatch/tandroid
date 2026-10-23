@@ -20,7 +20,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class oz extends im0 {
     public int L;
@@ -333,7 +333,7 @@ public final class oz extends im0 {
                 k3Var.setHeight(AndroidUtilities.dp(8.0f));
                 return;
             } else {
-                int B = org.telegram.messenger.mk.B(82.0f, (int) Math.ceil(num.intValue() / tzVar.y0.d), tzVar.h.getHeight());
+                int B = org.telegram.messenger.nk.B(82.0f, (int) Math.ceil(num.intValue() / tzVar.y0.d), tzVar.h.getHeight());
                 k3Var.setHeight(B > 0 ? B : 1);
                 return;
             }
@@ -433,7 +433,7 @@ public final class oz extends im0 {
                 imageView.setTranslationY(-AndroidUtilities.dp(24.0f));
                 xVar.addView(imageView, w7.z5.d(-2, -2.0f, 17, 0.0f, 42.0f, 0.0f, 28.0f));
                 TextView textView = new TextView(context);
-                org.telegram.messenger.mk.j(16.0f, R.string.NoStickersFound, 1, textView);
+                org.telegram.messenger.nk.j(16.0f, R.string.NoStickersFound, 1, textView);
                 textView.setTextColor(tzVar.A(i11));
                 xVar.addView(textView, w7.z5.d(-2, -2.0f, 17, 0.0f, 42.0f, 0.0f, 9.0f));
                 xVar.setLayoutParams(new s4.o0(-1, -2));

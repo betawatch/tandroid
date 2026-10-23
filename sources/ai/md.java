@@ -50,7 +50,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.WebFile;
-import org.telegram.messenger.mk;
+import org.telegram.messenger.nk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
@@ -82,7 +82,7 @@ import org.telegram.ui.v10;
 import org.telegram.ui.x10;
 import org.telegram.ui.y10;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes4.dex */
 public final class md extends y10 implements NotificationCenter.NotificationCenterDelegate {
     public static DecimalFormat h0;
@@ -696,8 +696,8 @@ public final class md extends y10 implements NotificationCenter.NotificationCent
         if (context == null) {
             return;
         }
-        org.telegram.ui.ActionBar.f3 i11 = mk.i(1, context, d6Var, false);
-        LinearLayout e = mk.e(context, 1);
+        org.telegram.ui.ActionBar.f3 i11 = nk.i(1, context, d6Var, false);
+        LinearLayout e = nk.e(context, 1);
         e.setPadding(0, AndroidUtilities.dp(20.0f), 0, AndroidUtilities.dp(4.0f));
         e.setClipChildren(false);
         e.setClipToPadding(false);
@@ -790,7 +790,7 @@ public final class md extends y10 implements NotificationCenter.NotificationCent
         org.telegram.ui.ActionBar.f3[] f3VarArr;
         int i10 = 1;
         Object[] objArr = 0;
-        org.telegram.ui.ActionBar.f3 i11 = mk.i(1, context, d6Var, false);
+        org.telegram.ui.ActionBar.f3 i11 = nk.i(1, context, d6Var, false);
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
         linearLayout.setClipChildren(false);
@@ -798,7 +798,7 @@ public final class md extends y10 implements NotificationCenter.NotificationCent
         linearLayout.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(8.0f));
         TextView textView = new TextView(context);
         textView.setTypeface(AndroidUtilities.bold());
-        mk.j(20.0f, R.string.PaidContentTitle, 1, textView);
+        nk.j(20.0f, R.string.PaidContentTitle, 1, textView);
         int i12 = org.telegram.ui.ActionBar.h6.G6;
         textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(i12, d6Var));
         linearLayout.addView(textView, w7.z5.k(4.0f, 0.0f, 4.0f, 18.0f, -1, -2));
@@ -843,11 +843,11 @@ public final class md extends y10 implements NotificationCenter.NotificationCent
         x90Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.z6, d6Var));
         x90Var.setLinkTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.gc, d6Var));
         linearLayout.addView(x90Var, w7.z5.k(14.0f, 3.0f, 14.0f, 24.0f, -1, -2));
-        final ei.d f7 = mk.f(24, context, d6Var, true);
+        final ei.d f7 = nk.f(24, context, d6Var, true);
         f7.g(LocaleController.getString(j10 > 0 ? R.string.PaidContentUpdateButton : R.string.PaidContentButton), false, true);
         linearLayout.addView(f7, w7.z5.n(-1, 48));
         if (j10 > 0 && z10) {
-            dVar = mk.f(24, context, d6Var, false);
+            dVar = nk.f(24, context, d6Var, false);
             dVar.g(LocaleController.getString(R.string.PaidContentClearButton), false, false);
             linearLayout.addView(dVar, w7.z5.k(0.0f, 4.0f, 0.0f, 0.0f, -1, 48));
         }
@@ -998,7 +998,7 @@ public final class md extends y10 implements NotificationCenter.NotificationCent
         org.telegram.ui.ActionBar.f3 f3Var2 = new org.telegram.ui.ActionBar.f3(context, d6Var, false, false);
         f3Var2.fixNavigationBar();
         org.telegram.ui.ActionBar.f3[] f3VarArr7 = new org.telegram.ui.ActionBar.f3[1];
-        final LinearLayout e = mk.e(context, 1);
+        final LinearLayout e = nk.e(context, 1);
         e.setPadding(0, AndroidUtilities.dp((z16 || starsTransaction.gift || (starsTransaction.stargift_resale && (starsTransaction.stargift instanceof TL_stars.TL_starGiftUnique))) ? 0.0f : 20.0f), 0, AndroidUtilities.dp(8.0f));
         e.setClipChildren(false);
         e.setClipToPadding(false);
@@ -2350,7 +2350,7 @@ public final class md extends y10 implements NotificationCenter.NotificationCent
                     f7 = 16.0f;
                     if (starsTransaction2.description != null && starsTransaction2.extended_media.isEmpty()) {
                         TextView textView2 = new TextView(context2);
-                        mk.o(i12, d6Var2, textView2, 1, 16.0f);
+                        nk.o(i12, d6Var2, textView2, 1, 16.0f);
                         textView2.setGravity(17);
                         textView2.setText(starsTransaction2.description);
                         linearLayout.addView(textView2, w7.z5.t(-1, -2, 17, 36, 0, 36, 4));
@@ -2442,7 +2442,7 @@ public final class md extends y10 implements NotificationCenter.NotificationCent
         f7 = 16.0f;
         if (starsTransaction2.description != null) {
             TextView textView22 = new TextView(context2);
-            mk.o(i12, d6Var2, textView22, 1, 16.0f);
+            nk.o(i12, d6Var2, textView22, 1, 16.0f);
             textView22.setGravity(17);
             textView22.setText(starsTransaction2.description);
             linearLayout.addView(textView22, w7.z5.t(-1, -2, 17, 36, 0, 36, 4));

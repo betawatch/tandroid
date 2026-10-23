@@ -18,7 +18,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class y extends bb {
     public final FrameLayout X;
@@ -125,7 +125,7 @@ public final class y extends bb {
         xpVar.setDrawBackgroundAsArc(10);
         linearLayout.addView(xpVar, w7.z5.t(26, 26, 16, 0, 0, 0, 0));
         TextView textView = new TextView(context);
-        org.telegram.messenger.mk.o(org.telegram.ui.ActionBar.h6.q5, d6Var, textView, 1, 14.0f);
+        org.telegram.messenger.nk.o(org.telegram.ui.ActionBar.h6.q5, d6Var, textView, 1, 14.0f);
         textView.setText(LocaleController.getString(R.string.AIEditorStyleAddLink));
         linearLayout.addView(textView, w7.z5.t(-2, -2, 16, 9, 0, 0, 0));
         final int i13 = 2;
@@ -192,7 +192,7 @@ public final class y extends bb {
         d.leftMargin = i18 + i19;
         d.rightMargin += i19;
         this.containerView.addView(frameLayout5, d);
-        ei.d f7 = org.telegram.messenger.mk.f(24, context, d6Var, true);
+        ei.d f7 = org.telegram.messenger.nk.f(24, context, d6Var, true);
         this.g0 = f7;
         f7.setText(LocaleController.getString(R.string.AIEditorStyleCreate));
         f7.setOnClickListener(new org.telegram.ui.ActionBar.s1(19, this, d6Var));

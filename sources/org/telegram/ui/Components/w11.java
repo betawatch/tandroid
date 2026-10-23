@@ -16,7 +16,7 @@ import org.telegram.ui.Components.ThemeEditorView;
 import org.telegram.ui.Components.ThemeEditorView.EditorAlert;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class w11 extends FrameLayout {
     public static final /* synthetic */ int e = 0;
@@ -134,7 +134,7 @@ public final class w11 extends FrameLayout {
                                             f7 = a1.g.d(i18, i15, 0.5f, 1.0f);
                                         } else {
                                             if (i18 > AndroidUtilities.displaySize.x - layoutParams.width) {
-                                                f7 = org.telegram.messenger.mk.x((i18 - r9) + r8, i15, 0.5f, 1.0f);
+                                                f7 = org.telegram.messenger.nk.x((i18 - r9) + r8, i15, 0.5f, 1.0f);
                                             }
                                         }
                                         if (themeEditorView.a.getAlpha() != f7) {

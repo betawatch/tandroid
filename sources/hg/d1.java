@@ -30,7 +30,7 @@ import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.mk;
+import org.telegram.messenger.nk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -76,7 +76,7 @@ import org.telegram.ui.w8;
 import org.telegram.ui.z70;
 import yh.n4;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d1 implements Runnable {
     public final /* synthetic */ int a;
@@ -173,7 +173,7 @@ public final /* synthetic */ class d1 implements Runnable {
                 j1Var.j0 = 0;
                 break;
             case 1:
-                MediaController.lambda$broadcastNewPhotos$59(this.b, (ArrayList) obj5, (ArrayList) obj6, (Integer) obj4, (MediaController.AlbumEntry) obj3, (MediaController.AlbumEntry) obj2, (MediaController.AlbumEntry) obj);
+                MediaController.lambda$broadcastNewPhotos$61(this.b, (ArrayList) obj5, (ArrayList) obj6, (Integer) obj4, (MediaController.AlbumEntry) obj3, (MediaController.AlbumEntry) obj2, (MediaController.AlbumEntry) obj);
                 break;
             case 2:
                 ((SendMessagesHelper) obj6).lambda$performSendDelayedMessage$56((TLObject) obj2, (TLRPC.InputFile) obj5, (TLRPC.InputMedia) obj4, (SendMessagesHelper.DelayedMessage) obj3, this.b, (String) obj);
@@ -407,7 +407,7 @@ public final /* synthetic */ class d1 implements Runnable {
                     FileLog.e(sb2.toString());
                     n2 R = LaunchActivity.R();
                     if (R != null) {
-                        mk.q(R.string.NoUsernameFound, xc.a0(R), null);
+                        nk.q(R.string.NoUsernameFound, xc.a0(R), null);
                         break;
                     }
                 }
@@ -442,7 +442,7 @@ public final /* synthetic */ class d1 implements Runnable {
                         a02 = xc.a0((n2) i2.e.h(1, arrayList6));
                         i10 = R.string.PaymentInvoiceLinkInvalid;
                     }
-                    mk.q(i10, a02, d6Var);
+                    nk.q(i10, a02, d6Var);
                 } else if (!launchActivity4.isFinishing()) {
                     if (tLObject8 instanceof TLRPC.TL_payments_paymentFormStars) {
                         n4 n4Var = launchActivity4.Y0;

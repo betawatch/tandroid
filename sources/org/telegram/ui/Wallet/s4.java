@@ -4,19 +4,19 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes4.dex */
 public final class s4 implements TextWatcher {
     public final /* synthetic */ String[] a;
     public final /* synthetic */ z3 b;
     public final /* synthetic */ Runnable[] c;
-    public final /* synthetic */ org.telegram.messenger.c6 d;
+    public final /* synthetic */ org.telegram.messenger.b6 d;
 
-    public s4(String[] strArr, z3 z3Var, Runnable[] runnableArr, org.telegram.messenger.c6 c6Var) {
+    public s4(String[] strArr, z3 z3Var, Runnable[] runnableArr, org.telegram.messenger.b6 b6Var) {
         this.a = strArr;
         this.b = z3Var;
         this.c = runnableArr;
-        this.d = c6Var;
+        this.d = b6Var;
     }
 
     @Override // android.text.TextWatcher
@@ -29,9 +29,9 @@ public final class s4 implements TextWatcher {
             runnable.run();
             runnableArr[0] = null;
         }
-        org.telegram.messenger.c6 c6Var = this.d;
-        AndroidUtilities.cancelRunOnUIThread(c6Var);
-        AndroidUtilities.runOnUIThread(c6Var, 1000L);
+        org.telegram.messenger.b6 b6Var = this.d;
+        AndroidUtilities.cancelRunOnUIThread(b6Var);
+        AndroidUtilities.runOnUIThread(b6Var, 1000L);
     }
 
     @Override // android.text.TextWatcher

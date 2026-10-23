@@ -10,7 +10,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.mk;
+import org.telegram.messenger.nk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.RequestDelegateTimestamp;
@@ -25,7 +25,7 @@ import org.telegram.ui.a00;
 import org.telegram.ui.qe;
 import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q3 implements Runnable {
     public final /* synthetic */ int a;
@@ -152,7 +152,7 @@ public final /* synthetic */ class q3 implements Runnable {
                         n2Var.getMessagesController().putUsers(tL_chatlists_exportedInvites.users, false);
                         new a00(n2Var, dialogFilter, tL_chatlists_exportedInvites.invites).show();
                     } else if (tL_error == null || !"FILTER_ID_INVALID".equals(tL_error.text) || dialogFilter.isDefault()) {
-                        mk.q(R.string.UnknownError, org.telegram.ui.Components.xc.a0(n2Var), null);
+                        nk.q(R.string.UnknownError, org.telegram.ui.Components.xc.a0(n2Var), null);
                     } else {
                         new a00(n2Var, dialogFilter, null).show();
                     }

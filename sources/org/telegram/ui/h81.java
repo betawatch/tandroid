@@ -21,7 +21,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class h81 extends org.telegram.ui.Components.bb {
     public static final /* synthetic */ int d0 = 0;
@@ -178,7 +178,7 @@ public final class h81 extends org.telegram.ui.Components.bb {
             long[] jArr = MessagesController.getInstance(i10).tonStakediceStakeSuggestedAmounts;
             int i18 = 0;
             while (i18 < Utilities.divCeil(jArr.length, 3)) {
-                LinearLayout e = org.telegram.messenger.mk.e(context, 0);
+                LinearLayout e = org.telegram.messenger.nk.e(context, 0);
                 int i19 = 0;
                 while (true) {
                     int i20 = i18 * 3;
@@ -265,7 +265,7 @@ public final class h81 extends org.telegram.ui.Components.bb {
             if (cVar != null) {
                 cVar.setEnabled(z10);
                 cVar.setClickable(z10);
-                org.telegram.messenger.mk.s(cVar.animate().scaleX(z10 ? 1.0f : 0.6f).scaleY(z10 ? 1.0f : 0.6f), z10 ? 1.0f : 0.0f, 180L);
+                org.telegram.messenger.nk.s(cVar.animate().scaleX(z10 ? 1.0f : 0.6f).scaleY(z10 ? 1.0f : 0.6f), z10 ? 1.0f : 0.0f, 180L);
             }
         }
     }

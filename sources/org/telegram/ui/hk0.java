@@ -13,7 +13,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class hk0 extends org.telegram.ui.Components.im0 {
     public final /* synthetic */ kk0 c;
@@ -162,7 +162,7 @@ public final class hk0 extends org.telegram.ui.Components.im0 {
             xpVar.a(true, false);
             TextView textView = new TextView(context);
             jk0Var.a = textView;
-            org.telegram.messenger.mk.o(org.telegram.ui.ActionBar.h6.G6, d6Var, textView, 1, 16.0f);
+            org.telegram.messenger.nk.o(org.telegram.ui.ActionBar.h6.G6, d6Var, textView, 1, 16.0f);
             textView.setLines(1);
             textView.setMaxLines(1);
             textView.setSingleLine(true);

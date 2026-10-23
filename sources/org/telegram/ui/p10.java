@@ -23,7 +23,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_fragment;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public abstract class p10 {
     public static void a(Activity activity, int i10, String str, TLObject tLObject, TL_fragment.TL_collectibleInfo tL_collectibleInfo, org.telegram.ui.ActionBar.d6 d6Var) {
@@ -101,7 +101,7 @@ public abstract class p10 {
         linearLayout.addView(frameLayout2, w7.z5.t(-2, 28, 1, 42, 10, 42, 18));
         TextView textView2 = new TextView(activity);
         textView2.setGravity(17);
-        org.telegram.messenger.mk.o(i12, d6Var, textView2, 1, 14.0f);
+        org.telegram.messenger.nk.o(i12, d6Var, textView2, 1, 14.0f);
         textView2.setText(replaceCharSequence);
         linearLayout.addView(textView2, w7.z5.t(-1, -2, 1, 32, 0, 32, 19));
         ei.d dVar = new ei.d(activity, d6Var, true);

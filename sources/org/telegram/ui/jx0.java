@@ -9,7 +9,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class jx0 extends org.telegram.ui.Components.im0 {
     public final Context c;
@@ -75,7 +75,7 @@ public final class jx0 extends org.telegram.ui.Components.im0 {
                     string = LocaleController.getString(R.string.Bot).substring(0, 1).toUpperCase() + LocaleController.getString(R.string.Bot).substring(1);
                 } else {
                     String str = user.phone;
-                    string = (str == null || str.length() == 0) ? LocaleController.getString(R.string.NumberUnknown) : org.telegram.messenger.mk.g(new StringBuilder("+"), user.phone, jf.b.c());
+                    string = (str == null || str.length() == 0) ? LocaleController.getString(R.string.NumberUnknown) : org.telegram.messenger.nk.g(new StringBuilder("+"), user.phone, jf.b.c());
                 }
                 a5Var.b(user, null, string, i10 != kx0Var.s - 1);
                 return;

@@ -17,7 +17,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class mq extends org.telegram.ui.ActionBar.f3 {
     public final Drawable b;
@@ -76,7 +76,7 @@ public final class mq extends org.telegram.ui.ActionBar.f3 {
         yj0Var.d();
         jqVar.addView(yj0Var, w7.z5.t(160, 160, 49, 17, 0, 17, 0));
         TextView textView = new TextView(activity);
-        org.telegram.messenger.mk.k(24.0f, 1, textView);
+        org.telegram.messenger.nk.k(24.0f, 1, textView);
         textView.setTextColor(getThemedColor(org.telegram.ui.ActionBar.h6.j5));
         textView.setText(LocaleController.getString(R.string.AutoDeleteAlertTitle));
         jqVar.addView(textView, w7.z5.t(-2, -2, 49, 17, 18, 17, 0));

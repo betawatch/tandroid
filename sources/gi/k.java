@@ -8,12 +8,12 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.mk;
+import org.telegram.messenger.nk;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import w7.z5;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes4.dex */
 public final class k extends FrameLayout {
     public final ImageView a;
@@ -38,7 +38,7 @@ public final class k extends FrameLayout {
         textView.setTextSize(1, 14.0f);
         TextView i11 = com.google.android.gms.internal.play_billing.k3.i(linearLayout, textView, z5.t(-1, -2, 55, 0, 0, 0, 1), context);
         this.c = i11;
-        mk.o(h6.z6, d6Var, i11, 1, 14.0f);
+        nk.o(h6.z6, d6Var, i11, 1, 14.0f);
         linearLayout.addView(i11, z5.t(-1, -2, 55, 0, 0, 0, 0));
     }
 

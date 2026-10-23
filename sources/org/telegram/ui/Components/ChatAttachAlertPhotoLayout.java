@@ -63,7 +63,7 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public class ChatAttachAlertPhotoLayout extends li implements NotificationCenter.NotificationCenterDelegate {
     public static boolean q1;
@@ -1526,11 +1526,11 @@ public class ChatAttachAlertPhotoLayout extends li implements NotificationCenter
                 return false;
             }
             if (!tiVar.c1()) {
-                org.telegram.messenger.mk.q(R.string.GlobalAttachPhotoRestricted, new xc(tiVar.u1, d6Var), null);
+                org.telegram.messenger.nk.q(R.string.GlobalAttachPhotoRestricted, new xc(tiVar.u1, d6Var), null);
                 return true;
             }
         } else if (!tiVar.c1()) {
-            org.telegram.messenger.mk.q(R.string.GlobalAttachVideoRestricted, new xc(tiVar.u1, d6Var), null);
+            org.telegram.messenger.nk.q(R.string.GlobalAttachVideoRestricted, new xc(tiVar.u1, d6Var), null);
             return true;
         }
         return true;

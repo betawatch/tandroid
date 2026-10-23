@@ -25,7 +25,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class rm0 extends org.telegram.ui.Components.qw0 implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int R = 0;
@@ -416,7 +416,7 @@ public final class rm0 extends org.telegram.ui.Components.qw0 implements Notific
         if (this.a == null) {
             return;
         }
-        String g10 = org.telegram.messenger.mk.g(new StringBuilder("+"), this.a, jf.b.c());
+        String g10 = org.telegram.messenger.nk.g(new StringBuilder("+"), this.a, jf.b.c());
         if (i12 == 2) {
             charSequence = AndroidUtilities.replaceTags(LocaleController.formatString("SentSmsCode", R.string.SentSmsCode, LocaleController.addNbsp(g10)));
         } else if (i12 == 3) {

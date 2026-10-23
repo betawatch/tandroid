@@ -18,12 +18,12 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.mk;
+import org.telegram.messenger.nk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.yj0;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class ba extends FrameLayout {
     public boolean E;
@@ -258,20 +258,20 @@ public final class ba extends FrameLayout {
         if (yj0Var.getVisibility() == 0) {
             yj0Var.measure(View.MeasureSpec.makeMeasureSpec(i12, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_31));
             if (this.H) {
-                i12 = mk.y(8.0f, yj0Var.getMeasuredWidth(), i12);
+                i12 = nk.y(8.0f, yj0Var.getMeasuredWidth(), i12);
             }
         }
         org.telegram.ui.Components.w9 w9Var = this.e;
         if (w9Var != null) {
             w9Var.measure(View.MeasureSpec.makeMeasureSpec(w9Var.getLayoutParams().height, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(this.e.getLayoutParams().width, TLObject.FLAG_30));
             if (this.H) {
-                i12 = mk.y(8.0f, this.e.getMeasuredWidth(), i12);
+                i12 = nk.y(8.0f, this.e.getMeasuredWidth(), i12);
             }
         }
         org.telegram.ui.Components.q6 q6Var = this.c;
         if (q6Var.getVisibility() == 0) {
             q6Var.measure(View.MeasureSpec.makeMeasureSpec(i12, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30));
-            measuredWidth = this.H ? mk.y(8.0f, q6Var.getMeasuredWidth(), i12) : (measuredWidth - q6Var.getMeasuredWidth()) - AndroidUtilities.dp(8.0f);
+            measuredWidth = this.H ? nk.y(8.0f, q6Var.getMeasuredWidth(), i12) : (measuredWidth - q6Var.getMeasuredWidth()) - AndroidUtilities.dp(8.0f);
             if (imageView.getVisibility() == 0) {
                 ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) imageView.getLayoutParams();
                 boolean z10 = LocaleController.isRTL;

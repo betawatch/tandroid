@@ -1,30 +1,40 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import org.telegram.messenger.Utilities;
+import android.content.SharedPreferences;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class j9 implements Utilities.Callback {
+public final /* synthetic */ class j9 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MediaDataController b;
-    public final /* synthetic */ TLRPC.StickerSet c;
+    public final /* synthetic */ TLRPC.TL_error c;
+    public final /* synthetic */ TLObject d;
+    public final /* synthetic */ SharedPreferences e;
+    public final /* synthetic */ boolean[] f;
 
-    public /* synthetic */ j9(MediaDataController mediaDataController, TLRPC.StickerSet stickerSet, int i10) {
+    public /* synthetic */ j9(MediaDataController mediaDataController, TLRPC.TL_error tL_error, TLObject tLObject, SharedPreferences sharedPreferences, boolean[] zArr, int i10) {
         this.a = i10;
         this.b = mediaDataController;
-        this.c = stickerSet;
+        this.c = tL_error;
+        this.d = tLObject;
+        this.e = sharedPreferences;
+        this.f = zArr;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$toggleStickerSetInternal$115(this.c, (ArrayList) obj);
+                SharedPreferences sharedPreferences = this.e;
+                boolean[] zArr = this.f;
+                this.b.lambda$loadRecentAndTopReactions$238(this.c, this.d, sharedPreferences, zArr);
                 break;
             default:
-                this.b.lambda$toggleStickerSetInternal$112(this.c, (ArrayList) obj);
+                SharedPreferences sharedPreferences2 = this.e;
+                boolean[] zArr2 = this.f;
+                this.b.lambda$loadRecentAndTopReactions$236(this.c, this.d, sharedPreferences2, zArr2);
                 break;
         }
     }

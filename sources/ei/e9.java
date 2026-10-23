@@ -6,14 +6,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.mk;
+import org.telegram.messenger.nk;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.em;
 import org.telegram.ui.Components.jm0;
 import org.telegram.ui.Components.ti;
 import org.telegram.ui.Components.tl0;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes4.dex */
 public final class e9 extends s4.r0 {
     public final /* synthetic */ int a;
@@ -144,7 +144,7 @@ public final class e9 extends s4.r0 {
                         boolean z12 = tiVar.R;
                         if (z11 != z12) {
                             this.b = z12;
-                            mk.s(emVar.getFastScroll().animate(), this.b ? 1.0f : 0.0f, 100L);
+                            nk.s(emVar.getFastScroll().animate(), this.b ? 1.0f : 0.0f, 100L);
                         }
                     } else {
                         emVar.getFastScroll().setAlpha(0.0f);

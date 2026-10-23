@@ -17,7 +17,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.TopicsController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ve implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -103,19 +103,19 @@ public final /* synthetic */ class ve implements View.OnClickListener {
                 break;
             case 8:
                 if (AndroidUtilities.addToClipboard(qnVar.d5.sponsoredInfo)) {
-                    org.telegram.messenger.mk.p(R.string.TextCopied, new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(qnVar.getParentActivity()), qnVar.ea));
+                    org.telegram.messenger.nk.p(R.string.TextCopied, new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(qnVar.getParentActivity()), qnVar.ea));
                     break;
                 }
                 break;
             case 9:
                 if (AndroidUtilities.addToClipboard(qnVar.d5.sponsoredAdditionalInfo)) {
-                    org.telegram.messenger.mk.p(R.string.TextCopied, new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(qnVar.getParentActivity()), qnVar.ea));
+                    org.telegram.messenger.nk.p(R.string.TextCopied, new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(qnVar.getParentActivity()), qnVar.ea));
                     break;
                 }
                 break;
             case 10:
                 if (qnVar.X0 != null && qnVar.getParentActivity() != null) {
-                    org.telegram.ui.ActionBar.f3 i15 = org.telegram.messenger.mk.i(1, qnVar.X0.getContext(), null, false);
+                    org.telegram.ui.ActionBar.f3 i15 = org.telegram.messenger.nk.i(1, qnVar.X0.getContext(), null, false);
                     Activity parentActivity = qnVar.getParentActivity();
                     on onVar = qnVar.ea;
                     final c81 c81Var = new c81(parentActivity);

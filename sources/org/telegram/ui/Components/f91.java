@@ -13,7 +13,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class f91 extends View {
     public final View E;
@@ -143,7 +143,7 @@ public final class f91 extends View {
         int w02 = org.telegram.ui.ActionBar.h6.w0(i10, d6Var);
         TextPaint textPaint = this.d;
         textPaint.setColor(w02);
-        int A = org.telegram.messenger.mk.A(28.0f, getMeasuredWidth() - this.h, 2);
+        int A = org.telegram.messenger.nk.A(28.0f, getMeasuredWidth() - this.h, 2);
         canvas2.drawText(this.f, AndroidUtilities.dp(28.0f) + A, AndroidUtilities.dp(21.0f), textPaint);
         canvas2.save();
         canvas2.translate(A, AndroidUtilities.dp(7.0f));
@@ -227,7 +227,7 @@ public final class f91 extends View {
 
     @Override // android.view.View
     public final void onMeasure(int i10, int i11) {
-        super.onMeasure(org.telegram.messenger.mk.C(56.0f, this.n, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLObject.FLAG_30));
+        super.onMeasure(org.telegram.messenger.nk.C(56.0f, this.n, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLObject.FLAG_30));
     }
 
     public void setDimAmount(float f7) {

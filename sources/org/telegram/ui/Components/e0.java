@@ -37,7 +37,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class e0 extends bb implements NotificationCenter.NotificationCenterDelegate {
     public final org.telegram.ui.Cells.i3 A0;
@@ -165,12 +165,12 @@ public final class e0 extends bb implements NotificationCenter.NotificationCente
         dVar.setRoundRadius(24);
         this.E0 = dVar;
         linearLayout.addView(dVar, w7.z5.o(-1, 48, 1.0f, 119));
-        ei.d f7 = org.telegram.messenger.mk.f(24, context, d6Var, true);
+        ei.d f7 = org.telegram.messenger.nk.f(24, context, d6Var, true);
         this.F0 = f7;
         f7.setOnClickListener(new b(this, 9));
         f7.setOnLongClickListener(new i(this, d6Var, context, 0));
         linearLayout.addView(f7, w7.z5.t(48, 48, 5, 10, 0, 0, 0));
-        ei.d f10 = org.telegram.messenger.mk.f(24, context, d6Var, true);
+        ei.d f10 = org.telegram.messenger.nk.f(24, context, d6Var, true);
         this.D0 = f10;
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(LocaleController.getString(R.string.AIEditorLimitButton));
         spannableStringBuilder.append((CharSequence) " ");
@@ -1151,7 +1151,7 @@ public final class e0 extends bb implements NotificationCenter.NotificationCente
         }
         ViewPropertyAnimator animate = i3Var.b.animate();
         this.H0 = z10;
-        org.telegram.messenger.mk.s(animate, !equals ? 1.0f : 0.5f, 320L);
+        org.telegram.messenger.nk.s(animate, !equals ? 1.0f : 0.5f, 320L);
         this.O0.N(true);
     }
 

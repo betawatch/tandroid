@@ -26,11 +26,11 @@ import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.pf;
+import org.telegram.messenger.rf;
 import org.telegram.ui.Components.vj0;
 import org.telegram.ui.df0;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes.dex */
 public final class e {
     public static int A;
@@ -349,7 +349,7 @@ public final class e {
                 this.k = true;
             } else {
                 countDownLatchArr[i11] = new CountDownLatch(1);
-                z.execute(new pf(this, atomicBoolean2, bitmapArr, i11, zVarArr2, i12, randomAccessFile22, arrayList2, countDownLatchArr));
+                z.execute(new rf(this, atomicBoolean2, bitmapArr, i11, zVarArr2, i12, randomAccessFile22, arrayList2, countDownLatchArr));
                 i11++;
                 i12++;
                 if (i11 >= y) {

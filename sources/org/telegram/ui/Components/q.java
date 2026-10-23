@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class q extends bb implements NotificationCenter.NotificationCenterDelegate {
     public final TL_aicompose.AiComposeTone X;
@@ -118,7 +118,7 @@ public final class q extends bb implements NotificationCenter.NotificationCenter
         d.leftMargin = i15 + i16;
         d.rightMargin += i16;
         this.containerView.addView(frameLayout4, d);
-        ei.d f7 = org.telegram.messenger.mk.f(24, context, d6Var, true);
+        ei.d f7 = org.telegram.messenger.nk.f(24, context, d6Var, true);
         this.e0 = f7;
         f7.setText(LocaleController.getString(V() ? R.string.AIEditorStyleDone : R.string.AIEditorAddStyle));
         f7.setOnClickListener(new ai.v0(this, aiComposeTone, d6Var, 14));

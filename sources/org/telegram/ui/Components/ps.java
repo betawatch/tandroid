@@ -27,7 +27,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_communities;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class ps extends bb {
     public static final /* synthetic */ int G0 = 0;
@@ -379,7 +379,7 @@ public final class ps extends bb {
         boolean z11 = false;
         ls lsVar = new ls(psVar, 0 == true ? 1 : 0);
         Pattern pattern = f5.a;
-        LinearLayout e = org.telegram.messenger.mk.e(context2, 1);
+        LinearLayout e = org.telegram.messenger.nk.e(context2, 1);
         org.telegram.ui.ActionBar.b2[] b2VarArr = new org.telegram.ui.ActionBar.b2[1];
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context2, 0, d6Var);
         String string = LocaleController.getString(R.string.CommunityBanUserTitle);
@@ -585,7 +585,7 @@ public final class ps extends bb {
             ls lsVar = new ls(this, i10);
             js jsVar = new js(this, 0);
             Pattern pattern = f5.a;
-            LinearLayout e = org.telegram.messenger.mk.e(context, 1);
+            LinearLayout e = org.telegram.messenger.nk.e(context, 1);
             org.telegram.ui.ActionBar.b2[] b2VarArr = new org.telegram.ui.ActionBar.b2[1];
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, d6Var);
             String string = LocaleController.getString(R.string.CommunityBanWarningTitle);

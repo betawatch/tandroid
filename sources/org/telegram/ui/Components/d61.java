@@ -17,7 +17,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class d61 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public int E;
@@ -110,7 +110,7 @@ public final class d61 extends FrameLayout implements NotificationCenter.Notific
     private void setShadowVisible(boolean z10) {
         if (this.G != z10) {
             this.G = z10;
-            org.telegram.messenger.mk.s(this.f.animate(), z10 ? 1.0f : 0.0f, 200L);
+            org.telegram.messenger.nk.s(this.f.animate(), z10 ? 1.0f : 0.0f, 200L);
         }
     }
 

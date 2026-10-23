@@ -21,7 +21,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class q00 extends View {
     public float E;
@@ -435,7 +435,7 @@ public final class q00 extends View {
                 f26 = (f26 * f28) + ((f14 - f28) * f27);
             }
             float dp3 = (z15 && this.R == null) ? (f13 - this.a0) + f15 + f26 + AndroidUtilities.dp(5.0f) : f13 + f26 + AndroidUtilities.dp(5.0f);
-            int A = org.telegram.messenger.mk.A(17.333f, getMeasuredHeight(), 2);
+            int A = org.telegram.messenger.nk.A(17.333f, getMeasuredHeight(), 2);
             if (z10 || ((!s00Var.n && s00Var.w == f7) || str2 != null)) {
                 paint2.setAlpha(255);
             } else {

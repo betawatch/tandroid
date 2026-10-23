@@ -37,7 +37,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Wallet.WalletEngine2;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class ib0 {
     public static final Pattern k = Pattern.compile("^[a-z0-9_]{1,32}$");
@@ -1706,7 +1706,7 @@ public final class ib0 {
             if (!launchActivity.isFinishing() && !launchActivity.isDestroyed()) {
                 TL_wallet.tonConnectGetPending tonconnectgetpending = new TL_wallet.tonConnectGetPending();
                 tonconnectgetpending.dapp_client_id = str;
-                this.h = ConnectionsManager.getInstance(this.b).sendRequestTyped(tonconnectgetpending, new org.telegram.messenger.a(), new org.telegram.messenger.gh(this, str, str2, str3, i10, 2));
+                this.h = ConnectionsManager.getInstance(this.b).sendRequestTyped(tonconnectgetpending, new org.telegram.messenger.a(), new org.telegram.messenger.ih(this, str, str2, str3, i10, 2));
                 return;
             }
         }

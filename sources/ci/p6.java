@@ -1,14 +1,14 @@
 package ci;
 
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.dd;
+import org.telegram.messenger.fd;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p6 implements RequestDelegate {
     public final /* synthetic */ int a = 0;
@@ -31,7 +31,7 @@ public final /* synthetic */ class p6 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new j6((i7) this.d, this.b, (TL_stories.TL_stories_getAllStories) this.e, tLObject, this.c));
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new dd((TwoStepVerificationActivity) this.d, tL_error, tLObject, this.b, this.c, (Runnable) this.e, 3));
+                AndroidUtilities.runOnUIThread(new fd((TwoStepVerificationActivity) this.d, tL_error, tLObject, this.b, this.c, (Runnable) this.e, 3));
                 break;
         }
     }

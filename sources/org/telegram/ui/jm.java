@@ -31,7 +31,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class jm extends org.telegram.ui.Components.lw0 {
     public final ArrayList A0;
@@ -1875,10 +1875,10 @@ public final class jm extends org.telegram.ui.Components.lw0 {
                                 } else {
                                     fk fkVar = qnVar.Y;
                                     if (fkVar != null && (childAt == fkVar.O1 || childAt == fkVar.N1)) {
-                                        i18 = org.telegram.messenger.mk.y(7.0f, ijVar.e(), i18);
+                                        i18 = org.telegram.messenger.nk.y(7.0f, ijVar.e(), i18);
                                         i15 -= AndroidUtilities.dp(3.0f);
                                     } else if (childAt == qnVar.w2) {
-                                        i18 = org.telegram.messenger.mk.y(7.0f, ijVar.e(), i18);
+                                        i18 = org.telegram.messenger.nk.y(7.0f, ijVar.e(), i18);
                                     } else if (fkVar == null || childAt != fkVar.e1) {
                                         if (childAt == qnVar.e2 || childAt == qnVar.s2 || childAt == qnVar.f2) {
                                             i19 = this.w0;
@@ -1908,7 +1908,7 @@ public final class jm extends org.telegram.ui.Components.lw0 {
                                         }
                                         i18 -= i19;
                                     } else {
-                                        i18 = org.telegram.messenger.mk.y(9.0f, ijVar.e(), i18);
+                                        i18 = org.telegram.messenger.nk.y(9.0f, ijVar.e(), i18);
                                     }
                                 }
                                 i18 = -i20;

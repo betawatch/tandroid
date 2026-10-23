@@ -1,58 +1,41 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class na implements RequestDelegate {
+public final /* synthetic */ class na implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ BaseController b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
+    public final /* synthetic */ MessagesController b;
+    public final /* synthetic */ TLRPC.Chat c;
 
-    public /* synthetic */ na(MessagesController messagesController, long j10, Object obj, TLObject tLObject, int i10) {
+    public /* synthetic */ na(MessagesController messagesController, TLRPC.Chat chat, int i10) {
         this.a = i10;
         this.b = messagesController;
-        this.c = j10;
-        this.d = obj;
-        this.e = tLObject;
+        this.c = chat;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((MessagesController) this.b).lambda$getSavedReactionTags$489(this.c, (TLRPC.messages_SavedReactionTags) this.d, (TLRPC.TL_messages_getSavedReactionTags) this.e, tLObject, tL_error);
+                this.b.lambda$processUpdateArray$416(this.c);
                 break;
             case 1:
-                ((MessagesController) this.b).lambda$deleteSavedDialog$142(this.c, (int[]) this.d, (TLRPC.InputPeer) this.e, tLObject, tL_error);
+                this.b.lambda$processLoadedDialogs$217(this.c);
                 break;
             case 2:
-                ((MessagesController) this.b).lambda$addUsersToChannel$273((org.telegram.ui.ActionBar.n2) this.d, (TLRPC.TL_channels_inviteToChannel) this.e, this.c, tLObject, tL_error);
+                this.b.lambda$addOrRemoveActiveVoiceChat$60(this.c);
+                break;
+            case 3:
+                this.b.lambda$putChat$57(this.c);
+                break;
+            case 4:
+                this.b.lambda$putChat$58(this.c);
                 break;
             default:
-                ((TopicsController) this.b).lambda$pinTopic$20((org.telegram.ui.ActionBar.n2) this.d, this.c, (ArrayList) this.e, tLObject, tL_error);
+                this.b.lambda$putChat$59(this.c);
                 break;
         }
-    }
-
-    public /* synthetic */ na(MessagesController messagesController, org.telegram.ui.ActionBar.n2 n2Var, TLRPC.TL_channels_inviteToChannel tL_channels_inviteToChannel, long j10) {
-        this.a = 2;
-        this.b = messagesController;
-        this.d = n2Var;
-        this.e = tL_channels_inviteToChannel;
-        this.c = j10;
-    }
-
-    public /* synthetic */ na(TopicsController topicsController, org.telegram.ui.ActionBar.n2 n2Var, long j10, ArrayList arrayList) {
-        this.a = 3;
-        this.b = topicsController;
-        this.d = n2Var;
-        this.c = j10;
-        this.e = arrayList;
     }
 }

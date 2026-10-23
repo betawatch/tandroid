@@ -1,31 +1,32 @@
 package org.telegram.messenger;
 
-import java.util.function.Consumer;
+import java.util.Comparator;
+import org.telegram.messenger.support.LongSparseIntArray;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class og implements Runnable {
+public final /* synthetic */ class og implements Comparator {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesStorage b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ Consumer d;
+    public final /* synthetic */ LongSparseIntArray b;
 
-    public /* synthetic */ og(MessagesStorage messagesStorage, long j10, Consumer consumer, int i10) {
+    public /* synthetic */ og(LongSparseIntArray longSparseIntArray, int i10) {
         this.a = i10;
-        this.b = messagesStorage;
-        this.c = j10;
-        this.d = consumer;
+        this.b = longSparseIntArray;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        int lambda$checkLoadedRemoteFilters$68;
+        int lambda$resetDialogs$94;
+        Long l4 = (Long) obj;
+        Long l10 = (Long) obj2;
         switch (this.a) {
             case 0:
-                this.b.lambda$loadStoryAlbumsCache$270(this.c, this.d);
-                break;
+                lambda$checkLoadedRemoteFilters$68 = MessagesStorage.lambda$checkLoadedRemoteFilters$68(this.b, l4, l10);
+                return lambda$checkLoadedRemoteFilters$68;
             default:
-                this.b.lambda$loadTopics$51(this.c, this.d);
-                break;
+                lambda$resetDialogs$94 = MessagesStorage.lambda$resetDialogs$94(this.b, l4, l10);
+                return lambda$resetDialogs$94;
         }
     }
 }

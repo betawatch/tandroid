@@ -42,7 +42,7 @@ import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.NumberTextView;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class m9 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate, mg0 {
     public final ArrayList E;
@@ -419,7 +419,7 @@ public final class m9 extends org.telegram.ui.ActionBar.n2 implements Notificati
         f3Var.setBackgroundColor(w02);
         f3Var.fixNavigationBar(w02);
         final ?? r12 = {str};
-        LinearLayout e = org.telegram.messenger.mk.e(context, 1);
+        LinearLayout e = org.telegram.messenger.nk.e(context, 1);
         e.setPadding(0, 0, 0, AndroidUtilities.dp(8.0f));
         FrameLayout frameLayout = new FrameLayout(context);
         frameLayout.setClipChildren(false);
@@ -472,7 +472,7 @@ public final class m9 extends org.telegram.ui.ActionBar.n2 implements Notificati
         imageView3.setScaleType(scaleType);
         imageView3.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.r5, d6Var), mode));
         frameLayout3.addView(imageView3, w7.z5.e(40, 48, 21));
-        LinearLayout e7 = org.telegram.messenger.mk.e(context, 0);
+        LinearLayout e7 = org.telegram.messenger.nk.e(context, 0);
         e.addView(e7, w7.z5.k(16.0f, 12.0f, 16.0f, 0.0f, -1, -2));
         ei.d dVar = new ei.d(context, d6Var, true);
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("c ");
@@ -527,7 +527,7 @@ public final class m9 extends org.telegram.ui.ActionBar.n2 implements Notificati
                         i16 = R.string.LinkCopied;
                         break;
                 }
-                org.telegram.messenger.mk.p(i16, xcVar);
+                org.telegram.messenger.nk.p(i16, xcVar);
             }
         });
         final int i16 = 1;
@@ -548,7 +548,7 @@ public final class m9 extends org.telegram.ui.ActionBar.n2 implements Notificati
                         i162 = R.string.LinkCopied;
                         break;
                 }
-                org.telegram.messenger.mk.p(i162, xcVar);
+                org.telegram.messenger.nk.p(i162, xcVar);
             }
         });
         final hg.d1 d1Var = new hg.d1(inputGroupCall, i11, r12, frameLayout3, a11, f3Var, d6Var, 4);

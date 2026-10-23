@@ -45,7 +45,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e7 implements org.telegram.ui.Components.am0, org.telegram.ui.Components.lk0, org.telegram.ui.Components.e5, LanguageDetector.StringCallback, a5, org.telegram.ui.ActionBar.a2, MessagesStorage.LongCallback, org.telegram.ui.Components.yl0, MessagesController.NewMessageCallback, vx, hf1, org.telegram.ui.Components.voip.g3, OnSuccessListener {
     public final /* synthetic */ int a;
@@ -370,10 +370,10 @@ public final /* synthetic */ class e7 implements org.telegram.ui.Components.am0,
             f3Var.dismiss();
             yh1.c = null;
         }
-        org.telegram.ui.ActionBar.f3 i12 = org.telegram.messenger.mk.i(1, context, resourceProvider, false);
+        org.telegram.ui.ActionBar.f3 i12 = org.telegram.messenger.nk.i(1, context, resourceProvider, false);
         FrameLayout frameLayout = new FrameLayout(context);
         i12.customView = frameLayout;
-        LinearLayout e = org.telegram.messenger.mk.e(context, 1);
+        LinearLayout e = org.telegram.messenger.nk.e(context, 1);
         frameLayout.addView(e, w7.z5.e(-1, -1, 119));
         TextView b10 = w7.d6.b(context, 20.0f, org.telegram.ui.ActionBar.h6.j5, true, resourceProvider);
         b10.setGravity(17);
@@ -391,7 +391,7 @@ public final /* synthetic */ class e7 implements org.telegram.ui.Components.am0,
             i10++;
         }
         e.addView(linearLayout, w7.z5.t(-2, -2, 49, 32, 12, 32, 12));
-        ei.d f7 = org.telegram.messenger.mk.f(24, context, resourceProvider, true);
+        ei.d f7 = org.telegram.messenger.nk.f(24, context, resourceProvider, true);
         f7.setText(LocaleController.getString(R.string.WearAuthEmojisLogIn));
         e.addView(f7, w7.z5.t(-1, 48, 7, 12, 12, 12, 8));
         int i13 = org.telegram.ui.ActionBar.h6.a7;

@@ -31,7 +31,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
-import org.telegram.messenger.mk;
+import org.telegram.messenger.nk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ba0;
 import org.telegram.ui.Components.fx0;
@@ -41,7 +41,7 @@ import org.telegram.ui.Components.u90;
 import org.telegram.ui.Components.y90;
 import org.telegram.ui.wz0;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public abstract class j extends FrameLayout {
     public static final int a0 = AndroidUtilities.dp(76.0f);
@@ -103,7 +103,7 @@ public abstract class j extends FrameLayout {
         TextView textView = new TextView(context);
         this.h = textView;
         textView.setVisibility(8);
-        mk.o(org.telegram.ui.ActionBar.h6.z6, d6Var, textView, 1, 13.0f);
+        nk.o(org.telegram.ui.ActionBar.h6.z6, d6Var, textView, 1, 13.0f);
         textView.setLines(1);
         textView.setMaxLines(1);
         textView.setSingleLine(true);

@@ -32,7 +32,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.messenger.camera.CameraController;
-import org.telegram.messenger.mk;
+import org.telegram.messenger.nk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -54,7 +54,7 @@ import org.telegram.ui.px;
 import org.telegram.ui.qn;
 import org.telegram.ui.vf1;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s1 implements Runnable {
     public final /* synthetic */ int a;
@@ -257,7 +257,7 @@ public final /* synthetic */ class s1 implements Runnable {
                 TextView textView = (TextView) this.e;
                 ClipboardManager clipboardManager = (ClipboardManager) iuVar.getContext().getSystemService("clipboard");
                 boolean z19 = z18 && (TextUtils.isEmpty(tVar.getText()) || TextUtils.equals(tVar.getText().toString(), str4)) && clipboardManager != null && clipboardManager.hasPrimaryClip();
-                mk.t(textView.animate().alpha(z19 ? 1.0f : 0.0f).scaleX(z19 ? 1.0f : 0.7f).scaleY(z19 ? 1.0f : 0.7f), bs.h, 300L);
+                nk.t(textView.animate().alpha(z19 ? 1.0f : 0.0f).scaleX(z19 ? 1.0f : 0.7f).scaleY(z19 ? 1.0f : 0.7f), bs.h, 300L);
                 return;
             case 17:
                 bz bzVar = (bz) this.c;
@@ -445,7 +445,7 @@ public final /* synthetic */ class s1 implements Runnable {
                     button.setScaleY(0.6f);
                     button.setAlpha(0.0f);
                     button.setVisibility(0);
-                    mk.t(button.animate().scaleX(1.0f).scaleY(1.0f).alpha(1.0f), bs.h, 360L);
+                    nk.t(button.animate().scaleX(1.0f).scaleY(1.0f).alpha(1.0f), bs.h, 360L);
                     org.telegram.ui.Components.qc qcVar2 = cyVar.e4;
                     qcVar2.j = 5000;
                     qcVar2.i(false);

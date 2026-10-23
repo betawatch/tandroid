@@ -80,7 +80,7 @@ import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.mk;
+import org.telegram.messenger.nk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -116,7 +116,7 @@ import org.telegram.ui.tn;
 import org.telegram.ui.vb;
 import org.telegram.ui.wj;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public class w0 extends a0 implements DownloadController.FileDownloadProgressListener, NotificationCenter.NotificationCenterDelegate, n4 {
     public static final HashMap s2;
@@ -3498,9 +3498,9 @@ public class w0 extends a0 implements DownloadController.FileDownloadProgressLis
                                 } else {
                                     MessageObject messageObject2 = this.P0;
                                     if (messageObject2.type == 18 || messageObject2.isStarGiftAction()) {
-                                        this.K1 = mk.D(this.x1 == null ? 0.0f : 10.0f, height2, this.K1);
+                                        this.K1 = nk.D(this.x1 == null ? 0.0f : 10.0f, height2, this.K1);
                                     } else if (this.P0.type == 30) {
-                                        this.K1 = mk.D(20.0f, height2, this.K1);
+                                        this.K1 = nk.D(20.0f, height2, this.K1);
                                     } else if (this.o1) {
                                         this.K1 += height2;
                                     } else if (((StaticLayout) this.s1.f).getLineCount() > 2) {
@@ -4989,10 +4989,10 @@ public class w0 extends a0 implements DownloadController.FileDownloadProgressLis
                                                 context = context2;
                                                 z10 = false;
                                             }
-                                            LinearLayout e = mk.e(context, 1);
+                                            LinearLayout e = nk.e(context, 1);
                                             e.addView(new ai.g6(context, starGift, chat), w7.z5.t(-1, -2, 48, 0, -4, 0, 0));
                                             TextView textView = new TextView(context);
-                                            mk.o(org.telegram.ui.ActionBar.h6.j5, d6Var, textView, 1, 16.0f);
+                                            nk.o(org.telegram.ui.ActionBar.h6.j5, d6Var, textView, 1, 16.0f);
                                             if (bVar == bVar2) {
                                                 int i18 = R.string.GiftOfferTransferInfoTextSellStars;
                                                 String shortName = DialogObject.getShortName(dialogId);

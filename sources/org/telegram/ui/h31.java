@@ -17,7 +17,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class h31 extends org.telegram.ui.Components.bb {
     public final LinearLayout X;
@@ -48,7 +48,7 @@ public final class h31 extends org.telegram.ui.Components.bb {
         textView.setText(LocaleController.getString(R.string.SearchAdsAboutTitle));
         textView.setTypeface(AndroidUtilities.bold());
         int i12 = org.telegram.ui.ActionBar.h6.G6;
-        org.telegram.messenger.mk.o(i12, d6Var, textView, 1, 20.0f);
+        org.telegram.messenger.nk.o(i12, d6Var, textView, 1, 20.0f);
         textView.setGravity(1);
         TextView i13 = com.google.android.gms.internal.play_billing.k3.i(linearLayout, textView, w7.z5.t(-2, -2, 1, 22, 14, 22, 0), context);
         i13.setText(LocaleController.getString(R.string.SearchAdsAboutSubtitle));

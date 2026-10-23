@@ -105,7 +105,7 @@ import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.NumberTextView;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public class cy extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate, ng.b, ne.d, mg0 {
     public static float A4;
@@ -6725,7 +6725,7 @@ public class cy extends org.telegram.ui.ActionBar.n2 implements NotificationCent
                         if (this.R3 == null) {
                             Context context = this.fragmentView.getContext();
                             nu nuVar3 = new nu(context);
-                            LinearLayout e = org.telegram.messenger.mk.e(context, 1);
+                            LinearLayout e = org.telegram.messenger.nk.e(context, 1);
                             org.telegram.ui.Components.yj0 yj0Var = new org.telegram.ui.Components.yj0(context);
                             yj0Var.f(R.raw.db_migration_placeholder, ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION, null);
                             yj0Var.getAnimatedDrawable().K(1);

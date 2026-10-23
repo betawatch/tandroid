@@ -15,7 +15,7 @@ import org.telegram.ui.Components.i80;
 import org.telegram.ui.z01;
 import ug.r;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class x2 implements Runnable {
     public final /* synthetic */ int a;
@@ -55,7 +55,7 @@ public final /* synthetic */ class x2 implements Runnable {
                 ((GiftAuctionController) obj3).lambda$sendBid$6((Utilities.Callback2) obj2, this.b, (yh.l) obj, this.c);
                 break;
             case 2:
-                ((MediaController) obj3).lambda$trimCurrentRecording$27((File) obj2, this.b, this.c, (Runnable) obj);
+                ((MediaController) obj3).lambda$trimCurrentRecording$28((File) obj2, this.b, this.c, (Runnable) obj);
                 break;
             case 3:
                 ((MessagesStorage) obj3).lambda$getMessage$142(this.b, this.c, (AtomicReference) obj2, (CountDownLatch) obj);

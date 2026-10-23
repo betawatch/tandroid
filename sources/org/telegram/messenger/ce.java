@@ -1,43 +1,25 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import java.util.function.IntFunction;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ce implements RequestDelegate {
+public final /* synthetic */ class ce implements IntFunction {
     public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Object d;
 
-    public /* synthetic */ ce(BaseController baseController, long j10, int i10, int i11) {
-        this.a = i11;
-        this.d = baseController;
-        this.b = j10;
-        this.c = i10;
+    public /* synthetic */ ce(int i10) {
+        this.a = i10;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.util.function.IntFunction
+    public final Object apply(int i10) {
+        int[][] lambda$new$16;
         switch (this.a) {
             case 0:
-                ((MessagesController) this.d).lambda$approveOrRejectSuggestedMessageImpl$509(this.b, this.c, tLObject, tL_error);
-                break;
-            case 1:
-                ((TopicsController) this.d).lambda$loadTopics$7(this.b, this.c, tLObject, tL_error);
-                break;
+                return String.valueOf(i10);
             default:
-                AndroidUtilities.runOnUIThread(new ai.xb((org.telegram.ui.l4) this.d, tLObject, this.c, this.b, 13));
-                break;
+                lambda$new$16 = MessagesController.lambda$new$16(i10);
+                return lambda$new$16;
         }
-    }
-
-    public /* synthetic */ ce(org.telegram.ui.l4 l4Var, int i10, long j10) {
-        this.a = 2;
-        this.d = l4Var;
-        this.c = i10;
-        this.b = j10;
     }
 }

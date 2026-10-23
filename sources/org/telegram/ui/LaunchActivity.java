@@ -140,7 +140,7 @@ import org.telegram.ui.Components.UndoView;
 import org.webrtc.MediaStreamTrack;
 import org.webrtc.voiceengine.WebRtcAudioTrack;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, NotificationCenter.NotificationCenterDelegate, vx, sf.a {
     public static final Pattern C1 = Pattern.compile("^(?:http(?:s|)://|)([A-z0-9-]+?)\\.t\\.me");
@@ -983,12 +983,12 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
                         UserNameResolver userNameResolver = MessagesController.getInstance(i10).getUserNameResolver();
                         i17 = i10;
                         Utilities.Callback<Long> callback = new Utilities.Callback() { // from class: org.telegram.ui.y90
-                            /* JADX WARN: Can't wrap try/catch for region: R(8:59|(2:63|(10:66|(2:68|(2:70|(5:72|(2:74|(2:76|77)(1:78))(1:82)|79|80|81)(1:83))(1:331))(1:332)|84|85|(2:87|(2:89|90))(1:330)|(2:92|(1:96))(2:105|(5:(3:127|128|(8:130|(3:132|(1:159)(1:136)|137)(2:160|(1:165)(1:164))|138|(2:149|(2:154|(1:158))(1:153))(1:142)|143|(1:145)|146|(1:148))(4:(3:297|298|(3:320|321|(2:323|324)(1:326))(7:304|(1:306)(1:319)|307|(1:309)(1:318)|310|(2:312|(1:314)(1:316))(1:317)|315))(18:168|(2:170|(1:289)(2:174|(2:176|177)(1:178)))(3:290|(3:292|(1:294)|295)|296)|(1:288)(1:183)|184|(1:186)(1:287)|(3:188|(1:190)|(1:192))|193|(1:195)|196|(1:198)|(1:200)|(1:202)|(1:204)(1:286)|(1:206)(1:285)|207|(1:284)(1:210)|(3:215|(1:283)(1:219)|(1:(2:229|(5:264|265|266|267|(1:279)(5:269|(1:271)(1:278)|(2:273|(1:275))|276|277))(1:(5:257|(1:259)(1:263)|260|261|262)(2:(1:256)(1:237)|(7:243|(1:245)|(1:247)|248|249|250|252)(2:241|242))))(1:228))(2:222|(1:224)(1:225)))|214)|98|99|101))(2:123|(1:126))|125|98|99|101)(3:108|(1:117)(2:112|(1:114)(1:115))|116))|97|98|99|101))|345|346|(4:348|(1:350)|351|(1:353)(1:354))|98|99|101) */
-                            /* JADX WARN: Code restructure failed: missing block: B:355:0x09bb, code lost:
+                            /* JADX WARN: Can't wrap try/catch for region: R(8:59|(2:63|(10:66|(2:68|(2:70|(5:72|(2:74|(2:76|77)(1:78))(1:82)|79|80|81)(1:83))(1:356))(1:357)|84|85|(2:87|(2:89|90))(1:355)|(2:92|(1:96))(2:105|(5:(3:127|128|(8:130|(3:132|(1:159)(1:136)|137)(2:160|(1:165)(1:164))|138|(2:149|(2:154|(1:158))(1:153))(1:142)|143|(1:145)|146|(1:148))(4:(3:322|323|(3:345|346|(2:348|349)(1:351))(7:329|(1:331)(1:344)|332|(1:334)(1:343)|335|(2:337|(1:339)(1:341))(1:342)|340))(18:168|(2:170|(1:314)(2:174|(2:176|177)(1:178)))(3:315|(3:317|(1:319)|320)|321)|(1:313)(1:183)|184|(1:186)(1:312)|(3:188|(1:190)|(1:192))|193|(1:195)|196|(1:198)|(1:200)|(1:202)|(1:204)(1:311)|(1:206)(1:310)|207|(1:309)(1:210)|(3:215|(1:308)(1:219)|(1:(2:254|(5:289|290|291|292|(1:304)(5:294|(1:296)(1:303)|(2:298|(1:300))|301|302))(1:(5:282|(1:284)(1:288)|285|286|287)(2:(1:281)(1:262)|(7:268|(1:270)|(1:272)|273|274|275|277)(2:266|267))))(1:253))(12:222|(1:224)|225|(1:232)|233|(1:235)|236|237|(3:239|(3:241|242|243)(1:245)|244)|246|247|(1:249)(1:250)))|214)|98|99|101))(2:123|(1:126))|125|98|99|101)(3:108|(1:117)(2:112|(1:114)(1:115))|116))|97|98|99|101))|370|371|(4:373|(1:375)|376|(1:378)(1:379))|98|99|101) */
+                            /* JADX WARN: Code restructure failed: missing block: B:380:0x0a15, code lost:
                             
                                 r0 = move-exception;
                              */
-                            /* JADX WARN: Code restructure failed: missing block: B:357:0x09e9, code lost:
+                            /* JADX WARN: Code restructure failed: missing block: B:382:0x0a43, code lost:
                             
                                 org.telegram.messenger.FileLog.e(r0);
                              */
@@ -1030,6 +1030,8 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
                                 boolean z22;
                                 String str45;
                                 String str46;
+                                py w9;
+                                ArrayList<org.telegram.ui.ActionBar.j2> arrayList;
                                 boolean z23;
                                 boolean z24;
                                 org.telegram.ui.ActionBar.d6 d6Var;
@@ -1042,7 +1044,7 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
                                 int i29;
                                 final Long l14 = (Long) obj;
                                 final LaunchActivity launchActivity3 = LaunchActivity.this;
-                                ArrayList arrayList = launchActivity3.d0;
+                                ArrayList arrayList2 = launchActivity3.d0;
                                 z70 z70Var7 = z70Var3;
                                 if (l14 != null && l14.longValue() == Long.MAX_VALUE) {
                                     try {
@@ -1728,10 +1730,35 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
                                                                 } else {
                                                                     str46 = str42;
                                                                 }
-                                                                org.telegram.ui.ActionBar.n2 n2Var = (arrayList.isEmpty() || str44 != null) ? null : (org.telegram.ui.ActionBar.n2) i2.e.h(1, arrayList);
+                                                                org.telegram.ui.ActionBar.n2 n2Var = (arrayList2.isEmpty() || str44 != null) ? null : (org.telegram.ui.ActionBar.n2) i2.e.h(1, arrayList2);
                                                                 if (n2Var == null || MessagesController.getInstance(i27).checkCanOpenChat(bundle, n2Var)) {
                                                                     boolean z36 = (n2Var instanceof qn) && ((qn) n2Var).a() == j10;
                                                                     if (z22 && z36) {
+                                                                        ArrayList arrayList3 = new ArrayList();
+                                                                        ArrayList<org.telegram.ui.ActionBar.j2> arrayList4 = n2Var.sheetsStack;
+                                                                        if (arrayList4 != null) {
+                                                                            arrayList3.addAll(arrayList4);
+                                                                        }
+                                                                        if ((n2Var.getParentLayout() instanceof ActionBarLayout) && (w9 = ((ActionBarLayout) n2Var.getParentLayout()).w()) != null && w9 != n2Var && (arrayList = w9.sheetsStack) != null) {
+                                                                            arrayList3.addAll(arrayList);
+                                                                        }
+                                                                        int size = arrayList3.size();
+                                                                        int i41 = 0;
+                                                                        while (i41 < size) {
+                                                                            Object obj2 = arrayList3.get(i41);
+                                                                            i41++;
+                                                                        }
+                                                                        ArrayList arrayList5 = new ArrayList(gi.d3.W0);
+                                                                        int size2 = arrayList5.size();
+                                                                        int i42 = 0;
+                                                                        while (i42 < size2) {
+                                                                            Object obj3 = arrayList5.get(i42);
+                                                                            i42++;
+                                                                            gi.d3 d3Var = (gi.d3) obj3;
+                                                                            if (d3Var.H == j10) {
+                                                                                d3Var.k(true);
+                                                                            }
+                                                                        }
                                                                         qn qnVar = (qn) n2Var;
                                                                         if (qnVar.f8 != 0) {
                                                                             qnVar.getMessagesController().sendBotStart(qnVar.f, str41);
@@ -1813,17 +1840,17 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
                                                                 TLRPC.User user5 = MessagesController.getInstance(i39).getUser(l11);
                                                                 if (user5 == null || (user5.bot && user5.bot_nochats)) {
                                                                     try {
-                                                                        if (arrayList.isEmpty()) {
+                                                                        if (arrayList2.isEmpty()) {
                                                                             return;
                                                                         }
-                                                                        org.telegram.ui.Components.xc.a0((org.telegram.ui.ActionBar.n2) arrayList.get(arrayList.size() - 1)).t(LocaleController.getString(R.string.BotCantJoinGroups), null).j();
+                                                                        org.telegram.ui.Components.xc.a0((org.telegram.ui.ActionBar.n2) arrayList2.get(arrayList2.size() - 1)).t(LocaleController.getString(R.string.BotCantJoinGroups), null).j();
                                                                         return;
                                                                     } catch (Exception e11) {
                                                                         FileLog.e(e11);
                                                                         return;
                                                                     }
                                                                 }
-                                                                Bundle d = org.telegram.messenger.mk.d(2, "onlySelect", "dialogsType", true);
+                                                                Bundle d = org.telegram.messenger.nk.d(2, "onlySelect", "dialogsType", true);
                                                                 d.putBoolean("resetDelegate", false);
                                                                 d.putBoolean("closeFragment", false);
                                                                 d.putBoolean("allowGroups", str59 != null);
@@ -1884,7 +1911,7 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
                                                 TLRPC.User user6 = MessagesController.getInstance(i23).getUser(l11);
                                                 if (user6 == null || !user6.bot) {
                                                     d6Var = null;
-                                                    a02 = org.telegram.ui.Components.xc.a0((org.telegram.ui.ActionBar.n2) i2.e.h(1, arrayList));
+                                                    a02 = org.telegram.ui.Components.xc.a0((org.telegram.ui.ActionBar.n2) i2.e.h(1, arrayList2));
                                                     i28 = R.string.BotSetAttachLinkNotBot;
                                                 } else if (user6.bot_attach_menu) {
                                                     long longValue4 = l11.longValue();
@@ -1892,11 +1919,11 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
                                                     tL_messages_getAttachMenuBot2.bot = MessagesController.getInstance(i23).getInputUser(longValue4);
                                                     ConnectionsManager.getInstance(i23).sendRequest(tL_messages_getAttachMenuBot2, new gi.z0(launchActivity2, i23, str35, str75, user6, str73, longValue4));
                                                 } else {
-                                                    a02 = org.telegram.ui.Components.xc.a0((org.telegram.ui.ActionBar.n2) i2.e.h(1, arrayList));
+                                                    a02 = org.telegram.ui.Components.xc.a0((org.telegram.ui.ActionBar.n2) i2.e.h(1, arrayList2));
                                                     i28 = R.string.BotCantAddToAttachMenu;
                                                     d6Var = null;
                                                 }
-                                                org.telegram.messenger.mk.q(i28, a02, d6Var);
+                                                org.telegram.messenger.nk.q(i28, a02, d6Var);
                                             }
                                             z70Var8 = z70Var4;
                                             z70Var8.run();
@@ -1973,7 +2000,7 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
                                 return;
                             }
                             if (str9 != null) {
-                                cy cyVar = new cy(org.telegram.messenger.mk.d(3, "onlySelect", "dialogsType", true));
+                                cy cyVar = new cy(org.telegram.messenger.nk.d(3, "onlySelect", "dialogsType", true));
                                 i17 = i10;
                                 cyVar.C2 = new og(this, z10, i17, str9);
                                 i16 = 0;
@@ -14665,7 +14692,7 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
         TLRPC.TL_contacts_importNoPaidMessagesToken tL_contacts_importNoPaidMessagesToken = new TLRPC.TL_contacts_importNoPaidMessagesToken();
         tL_contacts_importNoPaidMessagesToken.user_id = messagesController.getInputUser(user);
         tL_contacts_importNoPaidMessagesToken.token = str;
-        ConnectionsManager.getInstance(i10).sendRequestTyped(tL_contacts_importNoPaidMessagesToken, new org.telegram.messenger.a(), new org.telegram.messenger.gh(this, cVar, messagesController, i10, user));
+        ConnectionsManager.getInstance(i10).sendRequestTyped(tL_contacts_importNoPaidMessagesToken, new org.telegram.messenger.a(), new org.telegram.messenger.ih(this, cVar, messagesController, i10, user));
     }
 
     @Override // org.telegram.ui.ActionBar.a5
@@ -17679,7 +17706,7 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 Pattern pattern = LaunchActivity.C1;
-                AndroidUtilities.runOnUIThread(new org.telegram.messenger.dg(LaunchActivity.this, tLObject, i10, j10, z10));
+                AndroidUtilities.runOnUIThread(new org.telegram.messenger.fg(LaunchActivity.this, tLObject, i10, j10, z10));
             }
         });
     }

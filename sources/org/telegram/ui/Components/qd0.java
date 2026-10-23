@@ -20,7 +20,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class qd0 extends gl0 implements DownloadController.FileDownloadProgressListener {
     public static final Paint H;
@@ -149,8 +149,8 @@ public final class qd0 extends gl0 implements DownloadController.FileDownloadPro
         canvas.save();
         canvas.translate(bounds.left, bounds.top);
         canvas.drawRect(0.0f, 0.0f, width, height, H);
-        int A = org.telegram.messenger.mk.A(240.0f, height, 2);
-        int A2 = org.telegram.messenger.mk.A(48.0f, width, 2);
+        int A = org.telegram.messenger.nk.A(240.0f, height, 2);
+        int A2 = org.telegram.messenger.nk.A(48.0f, width, 2);
         Drawable drawable = this.x;
         drawable.setBounds(A2, A, AndroidUtilities.dp(48.0f) + A2, AndroidUtilities.dp(48.0f) + A);
         drawable.draw(canvas);
@@ -171,7 +171,7 @@ public final class qd0 extends gl0 implements DownloadController.FileDownloadPro
             if (this.G != null) {
                 canvas.drawText(this.G, (width - ((int) Math.ceil(r4.measureText(r3)))) / 2, AndroidUtilities.dp(210.0f) + A, N);
             }
-            int A3 = org.telegram.messenger.mk.A(240.0f, width, 2);
+            int A3 = org.telegram.messenger.nk.A(240.0f, width, 2);
             int dp2 = AndroidUtilities.dp(232.0f) + A;
             Paint paint = I;
             paint.setColor(-10327179);

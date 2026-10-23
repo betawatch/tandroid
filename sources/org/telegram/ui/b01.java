@@ -45,7 +45,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class b01 extends org.telegram.ui.Components.im0 {
     public final Context c;
@@ -589,13 +589,13 @@ public final class b01 extends org.telegram.ui.Components.im0 {
                         j19 = profileActivity.f1;
                         TLRPC.User user3 = messagesController2.getUser(Long.valueOf(j19));
                         if (user3 != null && !TextUtils.isEmpty(profileActivity.f5)) {
-                            string2 = org.telegram.messenger.mk.g(new StringBuilder("+"), profileActivity.f5, jf.b.c());
+                            string2 = org.telegram.messenger.nk.g(new StringBuilder("+"), profileActivity.f5, jf.b.c());
                             str9 = profileActivity.f5;
                         } else if (user3 == null || TextUtils.isEmpty(user3.phone)) {
                             string2 = LocaleController.getString(R.string.PhoneHidden);
                             str9 = null;
                         } else {
-                            String g10 = org.telegram.messenger.mk.g(new StringBuilder("+"), user3.phone, jf.b.c());
+                            String g10 = org.telegram.messenger.nk.g(new StringBuilder("+"), user3.phone, jf.b.c());
                             str9 = user3.phone;
                             string2 = g10;
                         }
@@ -759,7 +759,7 @@ public final class b01 extends org.telegram.ui.Components.im0 {
                                     if (i10 == i22) {
                                         i25 = ((org.telegram.ui.ActionBar.n2) profileActivity).currentAccount;
                                         TLRPC.User currentUser = UserConfig.getInstance(i25).getCurrentUser();
-                                        b9Var.c((currentUser == null || (str2 = currentUser.phone) == null || str2.length() == 0) ? LocaleController.getString(R.string.NumberUnknown) : org.telegram.messenger.mk.g(new StringBuilder("+"), currentUser.phone, jf.b.c()), LocaleController.getString(R.string.TapToChangePhone), true);
+                                        b9Var.c((currentUser == null || (str2 = currentUser.phone) == null || str2.length() == 0) ? LocaleController.getString(R.string.NumberUnknown) : org.telegram.messenger.nk.g(new StringBuilder("+"), currentUser.phone, jf.b.c()), LocaleController.getString(R.string.TapToChangePhone), true);
                                         b9Var.setContentDescriptionValueFirst(false);
                                     } else {
                                         i23 = profileActivity.W2;

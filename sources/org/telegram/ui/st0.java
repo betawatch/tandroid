@@ -22,7 +22,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class st0 implements Runnable {
     public final /* synthetic */ int a;
@@ -57,7 +57,7 @@ public final /* synthetic */ class st0 implements Runnable {
                 iu0 iu0Var = (iu0) this.b;
                 FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) iu0Var.a.N0.getLayoutParams();
                 ((WindowManager) ApplicationLoader.applicationContext.getSystemService("window")).getDefaultDisplay().getRotation();
-                int A = org.telegram.messenger.mk.A(34.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), 2);
+                int A = org.telegram.messenger.nk.A(34.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), 2);
                 PhotoViewer photoViewer = iu0Var.a;
                 int i15 = A + (!photoViewer.s ? AndroidUtilities.statusBarHeight : 0);
                 if (i15 != layoutParams.topMargin) {
@@ -65,7 +65,7 @@ public final /* synthetic */ class st0 implements Runnable {
                     photoViewer.N0.setLayoutParams(layoutParams);
                 }
                 FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) iu0Var.a.O0.getLayoutParams();
-                int A2 = org.telegram.messenger.mk.A(40.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), 2);
+                int A2 = org.telegram.messenger.nk.A(40.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), 2);
                 PhotoViewer photoViewer2 = iu0Var.a;
                 int i16 = A2 + (!photoViewer2.s ? AndroidUtilities.statusBarHeight : 0);
                 if (layoutParams2.topMargin != i16) {

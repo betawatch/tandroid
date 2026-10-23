@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class q70 extends ViewGroup {
     public AnimatorSet a;
@@ -129,7 +129,7 @@ public final class q70 extends ViewGroup {
             A = AndroidUtilities.dp(372.0f) / 3;
         } else {
             Point point = AndroidUtilities.displaySize;
-            A = org.telegram.messenger.mk.A(158.0f, Math.min(point.x, point.y), 3);
+            A = org.telegram.messenger.nk.A(158.0f, Math.min(point.x, point.y), 3);
         }
         int dp5 = i13 > 0 ? AndroidUtilities.dp(34.0f) + i13 : 0;
         r70 r70Var = this.h;
@@ -167,7 +167,7 @@ public final class q70 extends ViewGroup {
             float f12 = 0.0f;
             ViewPropertyAnimator scaleY = p70Var.c.animate().alpha(z12 ? 1.0f : 0.0f).scaleX(z12 ? 1.0f : 0.5f).scaleY(z12 ? 1.0f : 0.5f);
             org.telegram.ui.Components.bs bsVar = org.telegram.ui.Components.bs.h;
-            org.telegram.messenger.mk.t(scaleY, bsVar, 320L);
+            org.telegram.messenger.nk.t(scaleY, bsVar, 320L);
             ViewPropertyAnimator translationY = p70Var.d.animate().translationY(z11 ? ((p70Var.getHeight() - p70Var.getPaddingTop()) - p70Var.getPaddingBottom()) - AndroidUtilities.dp(44.0f) : b10);
             if (z11) {
                 f12 = AndroidUtilities.dp(-36.0f);

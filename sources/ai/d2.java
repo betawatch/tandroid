@@ -5,7 +5,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.mk;
+import org.telegram.messenger.nk;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.vj0;
@@ -13,7 +13,7 @@ import org.telegram.ui.Components.z00;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.cy;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d2 implements Runnable {
     public final /* synthetic */ int a;
@@ -105,7 +105,7 @@ public final /* synthetic */ class d2 implements Runnable {
                 org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
                 TL_stars.TL_starGiftUnique f22 = l7Var.f2();
                 if (U != null && f22 != null) {
-                    cy cyVar = new cy(mk.d(4, "onlySelect", "dialogsType", true));
+                    cy cyVar = new cy(nk.d(4, "onlySelect", "dialogsType", true));
                     cyVar.C2 = new u2(l7Var, f22, cyVar, i11);
                     U.presentFragment(cyVar);
                     break;

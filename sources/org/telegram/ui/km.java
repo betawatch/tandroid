@@ -11,7 +11,7 @@ import org.telegram.messenger.RichQuote;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class km extends org.telegram.ui.Cells.o9 {
     public qn w0;
@@ -57,7 +57,7 @@ public final class km extends org.telegram.ui.Cells.o9 {
             qnVar2.f5 = new MessagePreviewParams(qnVar2.h != null, qnVar2.D9(), ChatObject.isMonoForum(this.w0.e));
             qn qnVar3 = this.w0;
             qnVar3.f5.updateReply(qnVar3.n5, qnVar3.D8(messageObject.getGroupId()), this.w0.a(), this.w0.l5);
-            Bundle d = org.telegram.messenger.mk.d(3, "onlySelect", "dialogsType", true);
+            Bundle d = org.telegram.messenger.nk.d(3, "onlySelect", "dialogsType", true);
             d.putBoolean("quote", true);
             d.putInt("messagesCount", 1);
             d.putBoolean("canSelectTopics", true);

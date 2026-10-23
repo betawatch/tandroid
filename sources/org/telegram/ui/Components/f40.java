@@ -13,7 +13,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class f40 extends bb {
     public final LinearLayout X;
@@ -46,7 +46,7 @@ public final class f40 extends bb {
         TextView textView = new TextView(activity);
         textView.setTypeface(AndroidUtilities.bold());
         textView.setGravity(17);
-        org.telegram.messenger.mk.j(20.0f, R.string.GuardBotReplaceTitle, 1, textView);
+        org.telegram.messenger.nk.j(20.0f, R.string.GuardBotReplaceTitle, 1, textView);
         int i10 = org.telegram.ui.ActionBar.h6.G6;
         textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(i10, d6Var));
         linearLayout.addView(textView, w7.z5.t(-1, -2, 17, 20, 0, 20, 6));

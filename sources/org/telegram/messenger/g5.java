@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g5 implements Runnable {
     public final /* synthetic */ int a;
@@ -57,7 +57,7 @@ public final /* synthetic */ class g5 implements Runnable {
                 ((FactCheckController) this.e).lambda$loadMissing$1((TLObject) this.f, (TLRPC.TL_getFactCheck) this.d, (ArrayList) this.c, (HashMap) this.b);
                 break;
             case 5:
-                ((MediaController) this.e).lambda$prepareResumedRecording$25((File) this.f, (TLRPC.TL_document) this.c, (byte[]) this.d, (MediaDataController.DraftVoice) this.b);
+                ((MediaController) this.e).lambda$prepareResumedRecording$26((File) this.f, (TLRPC.TL_document) this.c, (byte[]) this.d, (MediaDataController.DraftVoice) this.b);
                 break;
             case 6:
                 ((MessagesController) this.e).lambda$loadChannelParticipants$147((TLRPC.TL_error) this.f, (TLObject) this.c, (Long) this.d, (Utilities.Callback) this.b);

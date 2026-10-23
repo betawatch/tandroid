@@ -19,7 +19,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.mk;
+import org.telegram.messenger.nk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
@@ -36,7 +36,7 @@ import org.telegram.ui.yv0;
 import w7.b6;
 import w7.z5;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes4.dex */
 public final class c0 extends bb implements GiftAuctionController.OnAuctionUpdateListener {
     public static final /* synthetic */ int f0 = 0;
@@ -112,7 +112,7 @@ public final class c0 extends bb implements GiftAuctionController.OnAuctionUpdat
         w9Var.e(chat, h9Var);
         TextView textView = new TextView(context);
         this.b0 = textView;
-        mk.k(21.0f, 1, textView);
+        nk.k(21.0f, 1, textView);
         textView.setText(DialogObject.getShortName(j10 != 0 ? j10 : UserConfig.getInstance(this.currentAccount).getClientUserId()));
         textView.setGravity(17);
         textView.setTextColor(-1);
@@ -261,7 +261,7 @@ public final class c0 extends bb implements GiftAuctionController.OnAuctionUpdat
             linearLayout.addView(textView7, z5.t(-1, -2, 17, 20, 14, 20, 6));
             TextView textView8 = new TextView(context);
             textView8.setGravity(17);
-            mk.j(14.0f, R.string.GiftAuctionWearInfoText, 1, textView8);
+            nk.j(14.0f, R.string.GiftAuctionWearInfoText, 1, textView8);
             textView8.setTextColor(h6.w0(i16, d6Var3));
             linearLayout.addView(textView8, z5.t(-1, -2, 17, 20, 0, 20, 16));
             yv0 yv0Var = new yv0(context, d6Var3);

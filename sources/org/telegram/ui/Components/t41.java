@@ -35,7 +35,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public abstract class t41 extends org.telegram.ui.ActionBar.f3 implements NotificationCenter.NotificationCenterDelegate {
     public static final String[] R = {"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36", "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:94.0) Gecko/20100101 Firefox/94.0", "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:95.0) Gecko/20100101 Firefox/95.0", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.93 Safari/537.36", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.55 Safari/537.36"};
@@ -437,7 +437,7 @@ public abstract class t41 extends org.telegram.ui.ActionBar.f3 implements Notifi
             NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.showBulletin, 1, LocaleController.getString(R.string.TranslationFailedAlert2));
             return;
         }
-        org.telegram.messenger.mk.q(R.string.TranslationFailedAlert2, new xc((FrameLayout) t41Var.containerView, t41Var.resourcesProvider), null);
+        org.telegram.messenger.nk.q(R.string.TranslationFailedAlert2, new xc((FrameLayout) t41Var.containerView, t41Var.resourcesProvider), null);
         p41 p41Var = t41Var.x.e;
         String str = t41Var.w;
         t41Var.v = str;
@@ -470,7 +470,7 @@ public abstract class t41 extends org.telegram.ui.ActionBar.f3 implements Notifi
             NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.showBulletin, 1, LocaleController.getString(R.string.TranslationFailedAlert2));
             return;
         }
-        org.telegram.messenger.mk.q(R.string.TranslationFailedAlert2, new xc((FrameLayout) t41Var.containerView, t41Var.resourcesProvider), null);
+        org.telegram.messenger.nk.q(R.string.TranslationFailedAlert2, new xc((FrameLayout) t41Var.containerView, t41Var.resourcesProvider), null);
         p41 p41Var = t41Var.x.e;
         String str = t41Var.w;
         t41Var.v = str;
@@ -499,7 +499,7 @@ public abstract class t41 extends org.telegram.ui.ActionBar.f3 implements Notifi
             NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.showBulletin, 1, LocaleController.getString(R.string.TranslationFailedAlert2));
             return;
         }
-        org.telegram.messenger.mk.q(R.string.TranslationFailedAlert2, new xc((FrameLayout) t41Var.containerView, t41Var.resourcesProvider), null);
+        org.telegram.messenger.nk.q(R.string.TranslationFailedAlert2, new xc((FrameLayout) t41Var.containerView, t41Var.resourcesProvider), null);
         p41 p41Var = t41Var.x.e;
         String str = t41Var.w;
         t41Var.v = str;
@@ -522,7 +522,7 @@ public abstract class t41 extends org.telegram.ui.ActionBar.f3 implements Notifi
                 NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.showBulletin, 1, LocaleController.getString(bool.booleanValue() ? R.string.TranslationFailedAlert1 : R.string.TranslationFailedAlert2));
                 return;
             }
-            org.telegram.messenger.mk.q(bool.booleanValue() ? R.string.TranslationFailedAlert1 : R.string.TranslationFailedAlert2, new xc((FrameLayout) t41Var.containerView, t41Var.resourcesProvider), null);
+            org.telegram.messenger.nk.q(bool.booleanValue() ? R.string.TranslationFailedAlert1 : R.string.TranslationFailedAlert2, new xc((FrameLayout) t41Var.containerView, t41Var.resourcesProvider), null);
             p41 p41Var = t41Var.x.e;
             String str2 = t41Var.w;
             t41Var.v = str2;

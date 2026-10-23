@@ -39,7 +39,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class lg implements Runnable {
     public final /* synthetic */ int a;
@@ -388,7 +388,7 @@ public final /* synthetic */ class lg implements Runnable {
                 }
                 ViewPropertyAnimator alpha2 = tc0Var.d.animate().alpha(1.0f);
                 bs bsVar = bs.h;
-                org.telegram.messenger.mk.t(alpha2, bsVar, 320L);
+                org.telegram.messenger.nk.t(alpha2, bsVar, 320L);
                 tc0Var.h.animate().alpha(0.0f).setInterpolator(bsVar).setDuration(320L).start();
                 if (tc0Var.E) {
                     tc0Var.setBackground(org.telegram.ui.ActionBar.h6.Z(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.i6, d6Var), 6, 0));

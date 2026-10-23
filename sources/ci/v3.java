@@ -20,7 +20,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.mk;
+import org.telegram.messenger.nk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.i80;
@@ -36,7 +36,7 @@ import org.telegram.ui.Components.wa0;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes4.dex */
 public final class v3 extends s8 {
     public final /* synthetic */ aa x0;
@@ -103,7 +103,7 @@ public final class v3 extends s8 {
             } else {
                 k61 k61Var = (k61) characterStyle;
                 AndroidUtilities.addToClipboard(k61Var.a.subSequence(k61Var.b, k61Var.c).toString());
-                mk.p(R.string.TextCopied, new xc(q4Var.c1, this.y0));
+                nk.p(R.string.TextCopied, new xc(q4Var.c1, this.y0));
                 return;
             }
         }

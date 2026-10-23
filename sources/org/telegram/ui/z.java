@@ -40,7 +40,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -350,7 +350,7 @@ public final /* synthetic */ class z implements Utilities.Callback {
                 alertDialog$Builder.a.G = 9;
                 alertDialog$Builder.h(LocaleController.getString(objArr != false ? R.string.MessageShowSensitiveContentMediaTextClosedButton : R.string.Cancel), null);
                 if (objArr == false) {
-                    alertDialog$Builder.k(LocaleController.getString(R.string.MessageShowSensitiveContentButton), new org.telegram.messenger.jk(cnVar2, u1Var, zArr, z10, contentsettings));
+                    alertDialog$Builder.k(LocaleController.getString(R.string.MessageShowSensitiveContentButton), new org.telegram.messenger.kk(cnVar2, u1Var, zArr, z10, contentsettings));
                 }
                 qnVar4.showDialog(alertDialog$Builder.a);
                 break;
@@ -401,7 +401,7 @@ public final /* synthetic */ class z implements Utilities.Callback {
                 userArr[0] = user2;
                 if (user2 == null) {
                     ib0Var.c();
-                    org.telegram.messenger.mk.q(R.string.NoUsernameFound, ib0.d(), null);
+                    org.telegram.messenger.nk.q(R.string.NoUsernameFound, ib0.d(), null);
                     break;
                 } else {
                     i90Var.run();

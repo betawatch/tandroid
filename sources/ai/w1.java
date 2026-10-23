@@ -18,14 +18,14 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.mk;
+import org.telegram.messenger.nk;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.o90;
 import org.telegram.ui.Components.q90;
 import org.telegram.ui.Components.r31;
 import org.telegram.ui.l60;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes4.dex */
 public final class w1 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -275,7 +275,7 @@ public final class w1 extends FrameLayout {
         }
         TextView textView = new TextView(context);
         this.b = textView;
-        mk.k(16.0f, 1, textView);
+        nk.k(16.0f, 1, textView);
         textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.j5, d6Var));
         textView.setSingleLine(true);
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
@@ -380,7 +380,7 @@ public final class w1 extends FrameLayout {
         this.d = q90Var;
         o90 o90Var = new o90(this, context);
         this.c = o90Var;
-        LinearLayout e = mk.e(context, 0);
+        LinearLayout e = nk.e(context, 0);
         addView(e, w7.z5.e(-2, -1, 1));
         TextView textView = new TextView(context);
         this.b = textView;

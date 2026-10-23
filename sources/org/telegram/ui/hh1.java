@@ -74,7 +74,7 @@ import org.webrtc.RendererCommon;
 import org.webrtc.TextureViewRenderer;
 import org.webrtc.VideoSink;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class hh1 implements VoIPService.StateListener, NotificationCenter.NotificationCenterDelegate, tf.a {
     public static hh1 n1;
@@ -971,7 +971,7 @@ public final class hh1 implements VoIPService.StateListener, NotificationCenter.
                         r62[i17].setAlpha(0.0f);
                         r62[i17].setScaleX(0.0f);
                         r62[i17].setScaleY(0.0f);
-                        org.telegram.messenger.mk.t(r62[i17].animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f), org.telegram.ui.Components.bs.k, 250L);
+                        org.telegram.messenger.nk.t(r62[i17].animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f), org.telegram.ui.Components.bs.k, 250L);
                     }
                 }
             }
@@ -1279,7 +1279,7 @@ public final class hh1 implements VoIPService.StateListener, NotificationCenter.
                                 this.E.animate().alpha(0.0f).setDuration(70L).setListener(new yg1(this)).start();
                                 ViewPropertyAnimator alpha = this.K.animate().alpha(0.0f);
                                 org.telegram.ui.Components.bs bsVar2 = org.telegram.ui.Components.bs.f;
-                                org.telegram.messenger.mk.t(alpha, bsVar2, 250L);
+                                org.telegram.messenger.nk.t(alpha, bsVar2, 250L);
                                 this.K.setVisibility(8);
                                 this.F.d(false, true);
                                 this.F.c(false);
@@ -2249,7 +2249,7 @@ public final class hh1 implements VoIPService.StateListener, NotificationCenter.
                 this.O.animate().alpha(1.0f).scaleY(1.0f).scaleX(1.0f).setDuration(340L).setInterpolator(org.telegram.ui.Components.bs.g).start();
                 ViewPropertyAnimator translationY = this.N.animate().scaleX(1.72f).scaleY(1.72f).translationY(AndroidUtilities.dp(140.0f));
                 org.telegram.ui.Components.bs bsVar = org.telegram.ui.Components.bs.f;
-                org.telegram.messenger.mk.t(translationY, bsVar, 400L);
+                org.telegram.messenger.nk.t(translationY, bsVar, 400L);
                 this.R.animate().setListener(null).cancel();
                 this.R.setVisibility(0);
                 this.R.setTranslationY(-AndroidUtilities.dp(120.0f));

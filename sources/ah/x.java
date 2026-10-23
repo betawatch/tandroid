@@ -27,7 +27,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocationController;
-import org.telegram.messenger.mk;
+import org.telegram.messenger.nk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.d6;
@@ -70,7 +70,7 @@ import org.telegram.ui.Wallet.s5;
 import org.telegram.ui.ah1;
 import w7.z5;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class x extends FrameLayout {
     public final /* synthetic */ int a;
@@ -121,7 +121,7 @@ public final class x extends FrameLayout {
         apVarArr[0].setTranslationY(AndroidUtilities.dp(20.0f));
         ViewPropertyAnimator translationY = apVarArr[0].animate().scaleX(1.0f).scaleY(1.0f).alpha(1.0f).translationY(0.0f);
         bs bsVar = bs.h;
-        mk.t(translationY, bsVar, 320L);
+        nk.t(translationY, bsVar, 320L);
         ap apVar3 = apVarArr[1];
         apVar3.n = false;
         apVar3.setVisibility(0);
@@ -689,7 +689,7 @@ public final class x extends FrameLayout {
                 break;
             case 17:
                 tz tzVar = ((oz) this.b).Q;
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec((int) (mk.A(8.0f, tzVar.D0.getMeasuredHeight() - tzVar.b1, 3) * 1.7f), TLObject.FLAG_30));
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec((int) (nk.A(8.0f, tzVar.D0.getMeasuredHeight() - tzVar.b1, 3) * 1.7f), TLObject.FLAG_30));
                 break;
             case 22:
                 yv0 yv0Var = (yv0) this.b;
@@ -940,7 +940,7 @@ public final class x extends FrameLayout {
         int dp = AndroidUtilities.dp(12.0f);
         int i10 = h6.j5;
         setBackground(h6.c0(dp, h6.m1(0.06f, bVar.w(i10))));
-        LinearLayout e = mk.e(context, 1);
+        LinearLayout e = nk.e(context, 1);
         addView(e, z5.d(-1, -2.0f, 17, 6.0f, 0.0f, 6.0f, 0.0f));
         q6 q6Var = new q6(context, false, true, true);
         this.b = q6Var;

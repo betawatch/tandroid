@@ -29,7 +29,7 @@ import android.view.ViewConfiguration;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.mk;
+import org.telegram.messenger.nk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.e61;
@@ -40,7 +40,7 @@ import org.telegram.ui.Components.y90;
 import org.telegram.ui.Components.yc;
 import org.telegram.ui.ck0;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes4.dex */
 public class x3 extends View {
     public boolean A0;
@@ -317,7 +317,7 @@ public class x3 extends View {
         paint.setAlpha(alpha);
         if (this.A0) {
             int dp = AndroidUtilities.dp(64.0f);
-            float b10 = mk.b(this.w0 * 4.0f, dp * 2, ((System.currentTimeMillis() - this.I0) % 4000) / 4000.0f, -dp);
+            float b10 = nk.b(this.w0 * 4.0f, dp * 2, ((System.currentTimeMillis() - this.I0) % 4000) / 4000.0f, -dp);
             this.G0.reset();
             this.G0.postTranslate(this.r0.left + b10, 0.0f);
             this.F0.setLocalMatrix(this.G0);

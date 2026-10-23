@@ -19,7 +19,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.messenger.mk;
+import org.telegram.messenger.nk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_payments;
@@ -35,7 +35,7 @@ import org.telegram.ui.Components.u40;
 import org.telegram.ui.Components.u61;
 import org.telegram.ui.Components.yq;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes4.dex */
 public final class b1 extends org.telegram.ui.Components.bb {
     public static final int[] w0 = {21600, 43200, 86400, 129600, 172800, 259200};
@@ -133,7 +133,7 @@ public final class b1 extends org.telegram.ui.Components.bb {
         } else {
             this.b0 = null;
         }
-        LinearLayout e = mk.e(context, 1);
+        LinearLayout e = nk.e(context, 1);
         linearLayout.addView(e, w7.z5.l(1.0f, -1, -2));
         sd0 sd0Var = new sd0(context, null);
         this.c0 = sd0Var;
@@ -297,7 +297,7 @@ public final class b1 extends org.telegram.ui.Components.bb {
                     org.telegram.ui.Cells.c1.r(i11, b1Var.resourcesProvider, textView, 1, 20.0f);
                     linearLayout.addView(textView, w7.z5.t(-1, -2, 48, 24, 4, 24, 14));
                     TextView textView2 = new TextView(b1Var.getContext());
-                    mk.o(i11, b1Var.resourcesProvider, textView2, 1, 16.0f);
+                    nk.o(i11, b1Var.resourcesProvider, textView2, 1, 16.0f);
                     textView2.setText(AndroidUtilities.replaceTags(b1Var.m0.a == bVar ? LocaleController.formatString(R.string.GiftOfferTransferInfoTextStars, d, DialogObject.getShortName(j12), str) : LocaleController.formatString(R.string.GiftOfferTransferInfoTextTON, d, DialogObject.getShortName(j12), str)));
                     linearLayout.addView(textView2, w7.z5.t(-1, -2, 48, 24, 4, 24, 4));
                     l01 l01Var = new l01(b1Var.getContext(), b1Var.resourcesProvider);
@@ -385,7 +385,7 @@ public final class b1 extends org.telegram.ui.Components.bb {
             if (cVar != null) {
                 cVar.setEnabled(z11);
                 cVar.setClickable(z11);
-                mk.s(cVar.animate().scaleX(z11 ? 1.0f : 0.6f).scaleY(z11 ? 1.0f : 0.6f), z11 ? 1.0f : 0.0f, 180L);
+                nk.s(cVar.animate().scaleX(z11 ? 1.0f : 0.6f).scaleY(z11 ? 1.0f : 0.6f), z11 ? 1.0f : 0.0f, 180L);
             }
         }
     }
@@ -397,7 +397,7 @@ public final class b1 extends org.telegram.ui.Components.bb {
             dVar.setEnabled(z11);
             dVar.setClickable(z11);
             if (z10) {
-                mk.s(dVar.animate(), z11 ? 1.0f : 0.6f, 180L);
+                nk.s(dVar.animate(), z11 ? 1.0f : 0.6f, 180L);
             } else {
                 dVar.setAlpha(z11 ? 1.0f : 0.6f);
             }
@@ -495,19 +495,19 @@ public final class b1 extends org.telegram.ui.Components.bb {
                 Object[] objArr = new Object[2];
                 objArr[r16] = d;
                 objArr[1] = str;
-                mk.r(i13, objArr, textView2);
+                nk.r(i13, objArr, textView2);
             } else if ((i11 & 2) != 0) {
                 int i14 = bVar6 == bVar2 ? R.string.GiftOfferStarsToOfferInfoIsLow : R.string.GiftOfferTONToOfferInfoIsLow;
                 String d10 = ((ag.a) sVarArr2[bVar6.ordinal()].b).d();
                 Object[] objArr2 = new Object[2];
                 objArr2[r16] = d10;
                 objArr2[1] = str;
-                mk.r(i14, objArr2, textView2);
+                nk.r(i14, objArr2, textView2);
             } else {
                 int i15 = bVar6 == bVar2 ? R.string.GiftOfferStarsToOfferInfo : R.string.GiftOfferTONToOfferInfo;
                 Object[] objArr3 = new Object[1];
                 objArr3[r16] = str;
-                mk.r(i15, objArr3, textView2);
+                nk.r(i15, objArr3, textView2);
             }
             textView2.setTextColor(getThemedColor((this.o0 & (-9)) == 0 ? org.telegram.ui.ActionBar.h6.y6 : org.telegram.ui.ActionBar.h6.q7));
         }

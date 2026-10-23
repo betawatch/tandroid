@@ -41,7 +41,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class hf0 extends org.telegram.ui.Components.qw0 implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int t0 = 0;
@@ -157,7 +157,7 @@ public final class hf0 extends org.telegram.ui.Components.qw0 implements Notific
             addView(textView3, w7.z5.t(-1, -2, 49, 36, 16, 36, 0));
             ef0 ef0Var = new ef0(this, context, 0);
             this.f = ef0Var;
-            LinearLayout e = org.telegram.messenger.mk.e(context, 0);
+            LinearLayout e = org.telegram.messenger.nk.e(context, 0);
             TextView textView4 = new TextView(context);
             this.I = textView4;
             textView4.setTextSize(1, 20.0f);

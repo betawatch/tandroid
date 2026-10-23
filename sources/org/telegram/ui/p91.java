@@ -37,7 +37,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stats;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class p91 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public int A0;
@@ -1002,7 +1002,7 @@ public final class p91 extends org.telegram.ui.ActionBar.n2 implements Notificat
         int i12 = org.telegram.ui.ActionBar.h6.Pi;
         textView2.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i12, false));
         textView2.setTag(Integer.valueOf(i12));
-        org.telegram.messenger.mk.m(R.string.LoadingStatsDescription, textView2, 1);
+        org.telegram.messenger.nk.m(R.string.LoadingStatsDescription, textView2, 1);
         p91Var.b0.addView(p91Var.W, w7.z5.t(120, 120, 1, 0, 0, 0, 20));
         p91Var.b0.addView(textView, w7.z5.t(-2, -2, 1, 0, 0, 0, 10));
         p91Var.b0.addView(textView2, w7.z5.q(-2, -2, 1));

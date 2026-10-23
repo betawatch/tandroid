@@ -50,7 +50,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.WebFile;
-import org.telegram.messenger.mk;
+import org.telegram.messenger.nk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
@@ -66,7 +66,7 @@ import org.telegram.ui.ja0;
 import org.telegram.ui.nz0;
 import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes4.dex */
 public final class ga {
     public static volatile ga[][] S = (ga[][]) Array.newInstance((Class<?>) ga.class, 2, 4);
@@ -700,9 +700,9 @@ public final class ga {
         TLRPC.WebDocument webDocument = tL_payments_paymentFormStars.photo;
         w8 w8Var3 = new w8(this, j15, zArr, callback, context2, I, z10, str, messageObject, inputInvoice, tL_payments_paymentFormStars, i16, j14);
         x8 x8Var2 = new x8(this, zArr, callback);
-        org.telegram.ui.ActionBar.f3 i18 = mk.i(1, context2, I, false);
+        org.telegram.ui.ActionBar.f3 i18 = nk.i(1, context2, I, false);
         TLRPC.User user3 = MessagesController.getInstance(i17).getUser(Long.valueOf(j14));
-        LinearLayout e = mk.e(context2, 1);
+        LinearLayout e = nk.e(context2, 1);
         e.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(8.0f));
         FrameLayout frameLayout = new FrameLayout(context2);
         frameLayout.addView(new kc(context2, 40, 0), w7.z5.c(-1.0f, -1));
@@ -755,7 +755,7 @@ public final class ga {
                 f11.setGravity(17);
                 e.addView(f11, w7.z5.t(-2, -2, 1, 0, webDocument == null ? -8 : 8, 0, 0));
                 if (webDocument != null) {
-                    LinearLayout e7 = mk.e(context2, i12);
+                    LinearLayout e7 = nk.e(context2, i12);
                     e7.setBackground(org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(28.0f), org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.a7, I)));
                     org.telegram.ui.Components.w9 w9Var2 = new org.telegram.ui.Components.w9(context2);
                     w9Var2.setRoundRadius(AndroidUtilities.dp(14.0f));
@@ -2102,8 +2102,8 @@ public final class ga {
                 boolean[] zArr = {false};
                 o9 o9Var = new o9(this, j10, i11, zArr, callback2, context2, I, chatInvite, str);
                 a1.f fVar = new a1.f(this, zArr, callback2);
-                org.telegram.ui.ActionBar.f3 i12 = mk.i(1, context2, I, false);
-                LinearLayout e = mk.e(context2, 1);
+                org.telegram.ui.ActionBar.f3 i12 = nk.i(1, context2, I, false);
+                LinearLayout e = nk.e(context2, 1);
                 e.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(8.0f));
                 FrameLayout frameLayout = new FrameLayout(context2);
                 frameLayout.addView(new kc(context2, 40, 0), w7.z5.c(-1.0f, -1));
@@ -2148,7 +2148,7 @@ public final class ga {
                 f7.setTypeface(AndroidUtilities.bold());
                 int i14 = org.telegram.ui.ActionBar.h6.j5;
                 f7.setTextColor(org.telegram.ui.ActionBar.h6.w0(i14, I));
-                mk.m(R.string.StarsSubscribeTitle, f7, 17);
+                nk.m(R.string.StarsSubscribeTitle, f7, 17);
                 TextView i15 = com.google.android.gms.internal.play_billing.k3.i(e, f7, w7.z5.t(-2, -2, 1, 0, 8, 0, 0), context2);
                 i15.setTextSize(1, 14.0f);
                 i15.setTextColor(org.telegram.ui.ActionBar.h6.w0(i14, I));

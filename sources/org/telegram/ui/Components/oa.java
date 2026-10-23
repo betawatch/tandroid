@@ -9,7 +9,7 @@ import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class oa {
     public String a;
@@ -17,7 +17,7 @@ public final class oa {
     public final Paint c;
     public final int d;
     public final Runnable e;
-    public org.telegram.messenger.y7 f;
+    public org.telegram.messenger.a8 f;
 
     public oa(int i10, Runnable runnable) {
         Paint paint = new Paint(1);
@@ -59,9 +59,9 @@ public final class oa {
             }
             this.a = str;
             DispatchQueue dispatchQueue = Utilities.globalQueue;
-            org.telegram.messenger.y7 y7Var = new org.telegram.messenger.y7(this, bitmap, i10, i11, str, z10);
-            this.f = y7Var;
-            dispatchQueue.postRunnable(y7Var);
+            org.telegram.messenger.a8 a8Var = new org.telegram.messenger.a8(this, bitmap, i10, i11, str, z10);
+            this.f = a8Var;
+            dispatchQueue.postRunnable(a8Var);
             return this.b;
         }
         return null;

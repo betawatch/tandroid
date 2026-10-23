@@ -37,8 +37,8 @@ import org.telegram.messenger.TelegramMediaSession;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.mk;
-import org.telegram.messenger.tg;
+import org.telegram.messenger.nk;
+import org.telegram.messenger.vg;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLObject;
@@ -72,7 +72,7 @@ import org.telegram.ui.ri;
 import org.telegram.ui.xm;
 import org.telegram.ui.z70;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class ub implements Runnable {
     public final /* synthetic */ int a;
@@ -393,7 +393,7 @@ public final /* synthetic */ class ub implements Runnable {
                 ((MessagesStorage) obj4).lambda$putSentFile$170((String) obj3, (TLObject) obj, i12, (String) obj2);
                 break;
             case 12:
-                ((NotificationCenter) obj4).lambda$listen$5((View) obj2, (View.OnAttachStateChangeListener) obj, (tg) obj3, i12);
+                ((NotificationCenter) obj4).lambda$listen$5((View) obj2, (View.OnAttachStateChangeListener) obj, (vg) obj3, i12);
                 break;
             case 13:
                 ((TelegramMediaSession) obj4).lambda$loadChats$4(i12, (ArrayList) obj2, (a0.h) obj, (a0.h) obj3);
@@ -823,7 +823,7 @@ public final /* synthetic */ class ub implements Runnable {
                     FileLog.e(e12);
                     return;
                 }
-                mk.q(i10, a02, null);
+                nk.q(i10, a02, null);
                 break;
             case 28:
                 ((ib0) obj4).v((String) obj3, i12 + 1, (String) obj2, (String) obj);

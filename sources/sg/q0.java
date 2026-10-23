@@ -13,7 +13,7 @@ import ci.v4;
 import ei.i6;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.mk;
+import org.telegram.messenger.nk;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.aa0;
@@ -29,7 +29,7 @@ import org.telegram.ui.tf1;
 import w7.b6;
 import w7.z5;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public class q0 extends FrameLayout implements aa0 {
     public boolean E;
@@ -280,7 +280,7 @@ public class q0 extends FrameLayout implements aa0 {
         hVar.n = 1.2f;
         hVar.k = false;
         hVar.m = 4.0f;
-        LinearLayout e = mk.e(context, 0);
+        LinearLayout e = nk.e(context, 0);
         p0 p0Var = new p0(this, context, 0);
         this.d = p0Var;
         p0Var.b(0.35f, 350L, bs.h);

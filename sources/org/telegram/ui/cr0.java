@@ -21,7 +21,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class cr0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -240,14 +240,14 @@ public final /* synthetic */ class cr0 implements View.OnClickListener {
                                         case 0:
                                             PhotoViewer photoViewer2 = photoViewer;
                                             if (AndroidUtilities.addToClipboard(photoViewer2.T4.sponsoredInfo)) {
-                                                org.telegram.messenger.mk.p(R.string.TextCopied, new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(photoViewer2.E), bVar));
+                                                org.telegram.messenger.nk.p(R.string.TextCopied, new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(photoViewer2.E), bVar));
                                                 break;
                                             }
                                             break;
                                         default:
                                             PhotoViewer photoViewer3 = photoViewer;
                                             if (AndroidUtilities.addToClipboard(photoViewer3.T4.sponsoredAdditionalInfo)) {
-                                                org.telegram.messenger.mk.p(R.string.TextCopied, new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(photoViewer3.E), bVar));
+                                                org.telegram.messenger.nk.p(R.string.TextCopied, new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(photoViewer3.E), bVar));
                                                 break;
                                             }
                                             break;
@@ -272,14 +272,14 @@ public final /* synthetic */ class cr0 implements View.OnClickListener {
                                         case 0:
                                             PhotoViewer photoViewer2 = photoViewer;
                                             if (AndroidUtilities.addToClipboard(photoViewer2.T4.sponsoredInfo)) {
-                                                org.telegram.messenger.mk.p(R.string.TextCopied, new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(photoViewer2.E), bVar));
+                                                org.telegram.messenger.nk.p(R.string.TextCopied, new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(photoViewer2.E), bVar));
                                                 break;
                                             }
                                             break;
                                         default:
                                             PhotoViewer photoViewer3 = photoViewer;
                                             if (AndroidUtilities.addToClipboard(photoViewer3.T4.sponsoredAdditionalInfo)) {
-                                                org.telegram.messenger.mk.p(R.string.TextCopied, new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(photoViewer3.E), bVar));
+                                                org.telegram.messenger.nk.p(R.string.TextCopied, new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(photoViewer3.E), bVar));
                                                 break;
                                             }
                                             break;

@@ -10,7 +10,7 @@ import org.telegram.ui.fk;
 import org.telegram.ui.jm;
 import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes4.dex */
 public final class b3 extends ti {
     public final /* synthetic */ int S2;
@@ -69,9 +69,11 @@ public final class b3 extends ti {
         int i10;
         int i11;
         fk fkVar;
-        switch (this.S2) {
+        int i12 = this.S2;
+        NotificationCenter.NotificationCenterDelegate notificationCenterDelegate = this.T2;
+        switch (i12) {
             case 0:
-                q4 q4Var = (q4) this.T2;
+                q4 q4Var = (q4) notificationCenterDelegate;
                 b3 b3Var = q4Var.I2;
                 if (b3Var != null) {
                     b3Var.setFocusable(false);
@@ -83,7 +85,7 @@ public final class b3 extends ti {
                 }
                 break;
             case 1:
-                ig.m mVar = (ig.m) this.T2;
+                ig.m mVar = (ig.m) notificationCenterDelegate;
                 b3 b3Var2 = mVar.L;
                 if (b3Var2 != null) {
                     b3Var2.setFocusable(false);
@@ -97,7 +99,7 @@ public final class b3 extends ti {
                 }
                 break;
             default:
-                qn qnVar = (qn) this.T2;
+                qn qnVar = (qn) notificationCenterDelegate;
                 boolean z10 = this.x0;
                 boolean M = this.B0.M();
                 if (!M) {
@@ -127,7 +129,12 @@ public final class b3 extends ti {
                         AndroidUtilities.requestAdjustResize(parentActivity2, i11);
                     }
                     qnVar.Y9(false, false);
-                    break;
+                    jm jmVar = qnVar.X0;
+                    if (jmVar != null) {
+                        WeakHashMap weakHashMap = r0.i0.a;
+                        r0.y.c(jmVar);
+                        break;
+                    }
                 }
                 break;
         }

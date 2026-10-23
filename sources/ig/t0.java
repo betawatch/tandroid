@@ -19,7 +19,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.mk;
+import org.telegram.messenger.nk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
@@ -37,7 +37,7 @@ import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import w7.z5;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class t0 extends n2 {
     public static final int U = -1;
@@ -114,7 +114,7 @@ public final class t0 extends n2 {
         }
         if (tLObject instanceof TLRPC.TL_boolFalse) {
             t0Var.a.a(0.0f);
-            mk.q(R.string.UnknownError, xc.a0(t0Var), null);
+            nk.q(R.string.UnknownError, xc.a0(t0Var), null);
             return;
         }
         if (tLObject instanceof TLRPC.Updates) {

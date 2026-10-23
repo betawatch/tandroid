@@ -70,7 +70,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.mk;
+import org.telegram.messenger.nk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -105,7 +105,7 @@ import org.telegram.ui.m00;
 import org.telegram.ui.ww;
 import org.telegram.ui.x21;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public class r2 extends a0 implements ci.o7, org.telegram.ui.ActionBar.y5 {
     public boolean A0;
@@ -3510,7 +3510,7 @@ public class r2 extends a0 implements ci.o7, org.telegram.ui.ActionBar.y5 {
                             f11 = measuredWidth;
                         }
                         int measuredWidth2 = (r2Var4.getMeasuredWidth() - AndroidUtilities.dp(43.0f)) - (r2Var4.y1.getIntrinsicWidth() / 2);
-                        int A = mk.A(52.0f, r2Var4.getMeasuredHeight(), 2);
+                        int A = nk.A(52.0f, r2Var4.getMeasuredHeight(), 2);
                         int intrinsicWidth = (r2Var4.y1.getIntrinsicWidth() / 2) + measuredWidth2;
                         int intrinsicHeight = (r2Var4.y1.getIntrinsicHeight() / 2) + A;
                         if (r2Var4.B1 <= f10) {
@@ -3653,7 +3653,7 @@ public class r2 extends a0 implements ci.o7, org.telegram.ui.ActionBar.y5 {
             if (r2Var4.B1 >= f7) {
             }
             int measuredWidth22 = (r2Var4.getMeasuredWidth() - AndroidUtilities.dp(43.0f)) - (r2Var4.y1.getIntrinsicWidth() / 2);
-            int A2 = mk.A(52.0f, r2Var4.getMeasuredHeight(), 2);
+            int A2 = nk.A(52.0f, r2Var4.getMeasuredHeight(), 2);
             int intrinsicWidth2 = (r2Var4.y1.getIntrinsicWidth() / 2) + measuredWidth22;
             int intrinsicHeight2 = (r2Var4.y1.getIntrinsicHeight() / 2) + A2;
             if (r2Var4.B1 <= f10) {
@@ -8029,7 +8029,7 @@ public class r2 extends a0 implements ci.o7, org.telegram.ui.ActionBar.y5 {
                     int dp12 = AndroidUtilities.dp(5.0f) + this.L2 + i18;
                     this.T2 = dp12;
                     this.X2 = AndroidUtilities.dp(5.5f) + dp12;
-                    this.x2 = mk.D(8.0f, org.telegram.ui.ActionBar.h6.W0.getIntrinsicWidth() + dp11, this.x2);
+                    this.x2 = nk.D(8.0f, org.telegram.ui.ActionBar.h6.W0.getIntrinsicWidth() + dp11, this.x2);
                 } else {
                     int i44 = (this.L2 - i19) - dp11;
                     this.X2 = i44;
@@ -8548,7 +8548,7 @@ public class r2 extends a0 implements ci.o7, org.telegram.ui.ActionBar.y5 {
                     this.c3 += dp21;
                     this.r3 += dp21;
                 } else {
-                    this.N3 = mk.y(12.666f, this.O3, getMeasuredWidth() - AndroidUtilities.dp(15.666f));
+                    this.N3 = nk.y(12.666f, this.O3, getMeasuredWidth() - AndroidUtilities.dp(15.666f));
                 }
                 this.G3 = true;
             } else {
@@ -8572,7 +8572,7 @@ public class r2 extends a0 implements ci.o7, org.telegram.ui.ActionBar.y5 {
                     this.c3 += dp22;
                     this.r3 += dp22;
                 } else {
-                    int y3 = mk.y(12.666f, this.h4, getMeasuredWidth()) - AndroidUtilities.dp(15.666f);
+                    int y3 = nk.y(12.666f, this.h4, getMeasuredWidth()) - AndroidUtilities.dp(15.666f);
                     int i47 = this.O3;
                     this.e4 = y3 - (i47 != 0 ? i47 + AndroidUtilities.dp(f7) : 0);
                 }

@@ -15,7 +15,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ck0 implements Runnable {
     public final /* synthetic */ int a;
@@ -279,7 +279,7 @@ public final /* synthetic */ class ck0 implements Runnable {
                 premiumPreviewFragment.showDialog(new t21(premiumPreviewFragment.getParentActivity(), false, premiumPreviewFragment.getResourceProvider(), null));
                 break;
             case 25:
-                ((org.telegram.messenger.gk) obj).run(0);
+                ((org.telegram.messenger.hk) obj).run(0);
                 break;
             case 26:
                 AndroidUtilities.addToClipboard((String) obj);

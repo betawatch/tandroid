@@ -115,7 +115,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public class ProfileActivity extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate, vx, org.telegram.ui.Components.nv0, org.telegram.ui.Components.d50, org.telegram.ui.Components.gu0, mg0 {
     public org.telegram.ui.ActionBar.d6 A0;
@@ -493,7 +493,7 @@ public class ProfileActivity extends org.telegram.ui.ActionBar.n2 implements Not
     public q01 z2;
     public int z3;
     public int z4;
-    public org.telegram.messenger.q8 z5;
+    public org.telegram.messenger.s8 z5;
     public final RectF z6;
 
     public ProfileActivity(Bundle bundle) {
@@ -1533,7 +1533,7 @@ public class ProfileActivity extends org.telegram.ui.ActionBar.n2 implements Not
         TextView textView = new TextView(parentActivity);
         textView.setTypeface(AndroidUtilities.bold());
         textView.setGravity(17);
-        org.telegram.messenger.mk.j(20.0f, R.string.StarRatingTitle, i10, textView);
+        org.telegram.messenger.nk.j(20.0f, R.string.StarRatingTitle, i10, textView);
         int i20 = org.telegram.ui.ActionBar.h6.G6;
         textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(i20, profileActivity.A0));
         linearLayout.addView(textView, w7.z5.t(-1, -2, 17, 20, 0, 20, 6));
@@ -1544,7 +1544,7 @@ public class ProfileActivity extends org.telegram.ui.ActionBar.n2 implements Not
             i11 = 1;
         } else {
             i11 = 1;
-            org.telegram.messenger.mk.r(R.string.StarRatingDescription, new Object[]{DialogObject.getName(profileActivity.a())}, textView2);
+            org.telegram.messenger.nk.r(R.string.StarRatingDescription, new Object[]{DialogObject.getName(profileActivity.a())}, textView2);
         }
         textView2.setTextSize(i11, 14.0f);
         textView2.setTextColor(org.telegram.ui.ActionBar.h6.w0(i20, profileActivity.A0));
@@ -2535,7 +2535,7 @@ public class ProfileActivity extends org.telegram.ui.ActionBar.n2 implements Not
                                 return true;
                             }
                             if (LanguageDetector.hasSupport()) {
-                                LanguageDetector.detectLanguage(str6, new org.telegram.messenger.ek(this, strArr, zArr, C, isContextTranslateEnabled, d1Var), new pp0(d1Var, 11));
+                                LanguageDetector.detectLanguage(str6, new org.telegram.messenger.fk(this, strArr, zArr, C, isContextTranslateEnabled, d1Var), new pp0(d1Var, 11));
                                 return true;
                             }
                             d1Var.run();
@@ -3209,7 +3209,7 @@ public class ProfileActivity extends org.telegram.ui.ActionBar.n2 implements Not
 
     public final void E4(float f7, float f10) {
         float max = Math.max(0.0f, Math.min(1.0f, (this.R1 - T3()) / ((this.a.getMeasuredWidth() - f10) - U3())));
-        float dpf2 = ((AndroidUtilities.dpf2(8.0f) + (AndroidUtilities.dp(42.0f) * ((this.R1 >= ((float) T3()) || max >= 0.33f) ? AndroidUtilities.lerp(2.2857144f, 3.2857144f, Math.min(1.0f, max * 3.0f)) : com.google.android.gms.internal.play_billing.k3.w(f7, 72.0f, 24.0f, 42.0f)))) * f7) + ((float) Math.floor(this.actionBar.getTranslationY() + (org.telegram.messenger.mk.b(f7, 1.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() / 2.0f, this.actionBar.getOccupyStatusBar() ? AndroidUtilities.statusBarHeight : 0) - (AndroidUtilities.density * 21.0f))));
+        float dpf2 = ((AndroidUtilities.dpf2(8.0f) + (AndroidUtilities.dp(42.0f) * ((this.R1 >= ((float) T3()) || max >= 0.33f) ? AndroidUtilities.lerp(2.2857144f, 3.2857144f, Math.min(1.0f, max * 3.0f)) : com.google.android.gms.internal.play_billing.k3.w(f7, 72.0f, 24.0f, 42.0f)))) * f7) + ((float) Math.floor(this.actionBar.getTranslationY() + (org.telegram.messenger.nk.b(f7, 1.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() / 2.0f, this.actionBar.getOccupyStatusBar() ? AndroidUtilities.statusBarHeight : 0) - (AndroidUtilities.density * 21.0f))));
         this.f2 = (AndroidUtilities.dp(7.0f) * f7) + AndroidUtilities.dp(1.3f) + dpf2;
         this.h2 = (((float) Math.floor(AndroidUtilities.density * 11.0f)) * f7) + dpf2 + AndroidUtilities.dp(24.0f);
     }
@@ -4894,7 +4894,7 @@ public class ProfileActivity extends org.telegram.ui.ActionBar.n2 implements Not
         if (bool == null || bool.booleanValue() != z10) {
             ViewPropertyAnimator animate = this.h6.animate();
             this.j6 = Boolean.valueOf(z10);
-            org.telegram.messenger.mk.t(animate.alpha(z10 ? 1.0f : 0.0f), org.telegram.ui.Components.bs.g, 200L);
+            org.telegram.messenger.nk.t(animate.alpha(z10 ? 1.0f : 0.0f), org.telegram.ui.Components.bs.g, 200L);
         }
     }
 
@@ -6974,7 +6974,7 @@ public class ProfileActivity extends org.telegram.ui.ActionBar.n2 implements Not
                         return z31;
                     }
                     TLRPC.ChannelParticipant channelParticipant2 = channelParticipant;
-                    org.telegram.messenger.gk gkVar = new org.telegram.messenger.gk(this, channelParticipant2, user, chatParticipant, z19, str);
+                    org.telegram.messenger.hk hkVar = new org.telegram.messenger.hk(this, channelParticipant2, user, chatParticipant, z19, str);
                     String str4 = str;
                     boolean z32 = z19;
                     Drawable V0 = view.getParent() instanceof org.telegram.ui.Components.jm0 ? ((org.telegram.ui.Components.jm0) view.getParent()).V0(view, false) : null;
@@ -6987,8 +6987,8 @@ public class ProfileActivity extends org.telegram.ui.ActionBar.n2 implements Not
                         H.k();
                     }
                     H.l((z20 || !TextUtils.isEmpty(str4)) ? R.drawable.menu_tag_edit : R.drawable.menu_tag_plus, LocaleController.getString(z20 ? R.string.EditAdminTag : TextUtils.isEmpty(str4) ? R.string.AddMemberTag : R.string.EditMemberTag), new ci.j6(this, user, str4, z20, z18), z22);
-                    H.l(R.drawable.msg_admins, LocaleController.getString(z32 ? R.string.EditAdminRights : R.string.SetAsAdmin), new ck0(gkVar, 25), z13);
-                    H.l(R.drawable.msg_permissions, LocaleController.getString(R.string.ChangePermissions), new org.telegram.ui.Components.g30(this, channelParticipant2, chatParticipant, user, gkVar, 26), z17);
+                    H.l(R.drawable.msg_admins, LocaleController.getString(z32 ? R.string.EditAdminRights : R.string.SetAsAdmin), new ck0(hkVar, 25), z13);
+                    H.l(R.drawable.msg_permissions, LocaleController.getString(R.string.ChangePermissions), new org.telegram.ui.Components.g30(this, channelParticipant2, chatParticipant, user, hkVar, 26), z17);
                     H.m(z23, R.drawable.msg_remove, LocaleController.getString(R.string.KickFromGroup), true, new jv0(8, this, chatParticipant));
                     H.S = 190;
                     H.Z();
@@ -9176,7 +9176,7 @@ public class ProfileActivity extends org.telegram.ui.ActionBar.n2 implements Not
                 this.a0.o(2, (!ChatObject.isChannel(this.F2) || this.F2.megagroup || (chatFull = this.v2) == null || chatFull.linked_chat_id == 0) ? false : true);
             }
             n5(z10);
-            float translationY = this.actionBar.getTranslationY() + (org.telegram.messenger.mk.b(y3, 1.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() / 2.0f, this.actionBar.getOccupyStatusBar() ? AndroidUtilities.statusBarHeight : 0) - AndroidUtilities.dp(21.0f));
+            float translationY = this.actionBar.getTranslationY() + (org.telegram.messenger.nk.b(y3, 1.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() / 2.0f, this.actionBar.getOccupyStatusBar() ? AndroidUtilities.statusBarHeight : 0) - AndroidUtilities.dp(21.0f));
             if (this.H1) {
                 this.b2 = translationY;
             } else {
@@ -9689,7 +9689,7 @@ public class ProfileActivity extends org.telegram.ui.ActionBar.n2 implements Not
                 }
                 int dp2 = dp - AndroidUtilities.dp((((1.0f - this.G5) * i12) + 40.0f) + ((!this.H1 ? 109 : 47) + 8));
                 int i13 = (int) (dp2 / (i10 == 0 ? scaleX : 1.0f));
-                int B = i10 == 0 ? i10 : org.telegram.messenger.mk.B(18.0f, 2, dp);
+                int B = i10 == 0 ? i10 : org.telegram.messenger.nk.B(18.0f, 2, dp);
                 if (i10 == 0) {
                     i10 = (int) (B / f10);
                 }
@@ -10922,10 +10922,10 @@ public class ProfileActivity extends org.telegram.ui.ActionBar.n2 implements Not
             q01Var.b(true);
             this.z2 = null;
         }
-        org.telegram.messenger.q8 q8Var = this.z5;
-        if (q8Var != null) {
+        org.telegram.messenger.s8 s8Var = this.z5;
+        if (s8Var != null) {
             this.z5 = null;
-            AndroidUtilities.runOnUIThread(q8Var);
+            AndroidUtilities.runOnUIThread(s8Var);
         }
         setBulletinDelegate(null);
     }

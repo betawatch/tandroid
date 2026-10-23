@@ -41,7 +41,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.mk;
+import org.telegram.messenger.nk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
@@ -57,7 +57,7 @@ import org.telegram.ui.oz0;
 import org.telegram.ui.uy0;
 import v7.f7;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes4.dex */
 public class ProfileStoriesView extends View implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int s0 = 0;
@@ -1208,7 +1208,7 @@ public class ProfileStoriesView extends View implements NotificationCenter.Notif
             this.a0 = ofFloat;
             ofFloat.addUpdateListener(new l0(3, this, zArr));
             this.a0.addListener(new me(2, this, zArr));
-            mk.l(3.0f, this.a0);
+            nk.l(3.0f, this.a0);
             this.a0.setDuration(400L);
             this.a0.setStartDelay(120L);
             this.a0.start();

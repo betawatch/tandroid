@@ -30,7 +30,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stats;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public class ui0 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public boolean E;
@@ -323,7 +323,7 @@ public class ui0 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
         int i12 = org.telegram.ui.ActionBar.h6.Pi;
         textView2.setTextColor(org.telegram.ui.ActionBar.h6.w0(i12, getResourceProvider()));
         textView2.setTag(Integer.valueOf(i12));
-        org.telegram.messenger.mk.m(R.string.LoadingStatsDescription, textView2, 1);
+        org.telegram.messenger.nk.m(R.string.LoadingStatsDescription, textView2, 1);
         this.T.addView(this.S, w7.z5.t(120, 120, 1, 0, 0, 0, 20));
         this.T.addView(textView, w7.z5.t(-2, -2, 1, 0, 0, 0, 10));
         this.T.addView(textView2, w7.z5.q(-2, -2, 1));

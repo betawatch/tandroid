@@ -79,7 +79,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.mk;
+import org.telegram.messenger.nk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -114,7 +114,7 @@ import org.telegram.ui.vu0;
 import org.webrtc.SurfaceViewRenderer;
 import org.webrtc.TextureViewRenderer;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes4.dex */
 public abstract class q4 extends lw0 implements NotificationCenter.NotificationCenterDelegate {
     public final ImageView A0;
@@ -1271,7 +1271,7 @@ public abstract class q4 extends lw0 implements NotificationCenter.NotificationC
         v0Var.f = textWithEntities;
         v0Var.g = jArr[0];
         final q0 q0Var = new q0(i13, context, true);
-        LinearLayout e = mk.e(context, 0);
+        LinearLayout e = nk.e(context, 0);
         final ah.x xVar = new ah.x(context, LocaleController.getString(R.string.LiveStoryHighlightFeaturePin), bVar);
         e.addView(xVar, w7.z5.p(-1, -1, 1.0f, 112, 0, 0, 5, 0));
         final ah.x xVar2 = new ah.x(context, LocaleController.getString(R.string.LiveStoryHighlightFeatureLength), bVar);
@@ -1358,7 +1358,7 @@ public abstract class q4 extends lw0 implements NotificationCenter.NotificationC
         linearLayout.addView(b10, w7.z5.k(42.0f, 18.0f, 42.0f, 9.0f, -1, -2));
         TextView b11 = w7.d6.b(context, 14.0f, i22, false, bVar);
         b11.setGravity(17);
-        mk.r(R.string.LiveStoryHighlightText, new Object[]{shortName}, b11);
+        nk.r(R.string.LiveStoryHighlightText, new Object[]{shortName}, b11);
         linearLayout.addView(b11, w7.z5.k(42.0f, 0.0f, 42.0f, 0.0f, -1, -2));
         linearLayout.addView(q0Var, w7.z5.t(-2, -2, 17, 42, 22, 42, 20));
         linearLayout.addView(dVar, w7.z5.k(16.0f, 0.0f, 16.0f, 12.0f, -1, 48));
@@ -1838,7 +1838,7 @@ public abstract class q4 extends lw0 implements NotificationCenter.NotificationC
     public final void Z0() {
         r3 r3Var = this.c1;
         org.telegram.ui.ActionBar.d6 d6Var = this.B0;
-        mk.q(R.string.UnsupportedAttachment, new xc(r3Var, d6Var), d6Var);
+        nk.q(R.string.UnsupportedAttachment, new xc(r3Var, d6Var), d6Var);
     }
 
     public final void a1() {

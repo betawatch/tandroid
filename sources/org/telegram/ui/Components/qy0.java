@@ -47,7 +47,7 @@ import org.telegram.tgnet.Vector;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public class qy0 extends org.telegram.ui.ActionBar.f3 implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int u0 = 0;
@@ -258,7 +258,7 @@ public class qy0 extends org.telegram.ui.ActionBar.f3 implements NotificationCen
             qy0Var.dismiss();
             org.telegram.ui.ActionBar.n2 n2Var = qy0Var.L;
             if (n2Var != null) {
-                org.telegram.messenger.mk.q(R.string.AddStickersNotFound, xc.a0(n2Var), null);
+                org.telegram.messenger.nk.q(R.string.AddStickersNotFound, xc.a0(n2Var), null);
                 return;
             }
             return;
@@ -1469,7 +1469,7 @@ public class qy0 extends org.telegram.ui.ActionBar.f3 implements NotificationCen
             marginLayoutParams3.bottomMargin = dp;
             marginLayoutParams4.bottomMargin = dp;
             if (this.s.getAlpha() < 1.0f) {
-                org.telegram.messenger.mk.t(this.s.animate().alpha(1.0f), bs.h, 240L);
+                org.telegram.messenger.nk.t(this.s.animate().alpha(1.0f), bs.h, 240L);
             }
         } else {
             q6 q6Var2 = this.s;
@@ -1488,7 +1488,7 @@ public class qy0 extends org.telegram.ui.ActionBar.f3 implements NotificationCen
             marginLayoutParams3.bottomMargin = dp4;
             marginLayoutParams4.bottomMargin = dp4;
             if (this.s.getAlpha() < 1.0f) {
-                org.telegram.messenger.mk.t(this.s.animate().alpha(1.0f), bs.h, 240L);
+                org.telegram.messenger.nk.t(this.s.animate().alpha(1.0f), bs.h, 240L);
             }
         }
         this.containerView.requestLayout();

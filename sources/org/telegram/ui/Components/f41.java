@@ -5,7 +5,7 @@ import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class f41 extends s4.r0 {
     public final /* synthetic */ t41 a;
@@ -39,7 +39,7 @@ public final class f41 extends s4.r0 {
         if (bool == null || bool.booleanValue() != canScrollVertically) {
             t41Var.Q = Boolean.valueOf(canScrollVertically);
             view.animate().cancel();
-            org.telegram.messenger.mk.t(view.animate().alpha(canScrollVertically ? 1.0f : 0.0f), bs.h, 320L);
+            org.telegram.messenger.nk.t(view.animate().alpha(canScrollVertically ? 1.0f : 0.0f), bs.h, 320L);
         }
     }
 }

@@ -18,7 +18,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class ob0 extends FrameLayout {
     public final org.telegram.ui.Components.y9 a;
@@ -125,7 +125,7 @@ public final class ob0 extends FrameLayout {
         if (z10 != this.r) {
             this.r = z10;
             x1Var2.clearAnimation();
-            org.telegram.messenger.mk.t(x1Var2.animate().alpha(z10 ? 1.0f : 0.0f), org.telegram.ui.Components.bs.h, 220L);
+            org.telegram.messenger.nk.t(x1Var2.animate().alpha(z10 ? 1.0f : 0.0f), org.telegram.ui.Components.bs.h, 220L);
         }
         float f10 = powerSaverLevel >= 100 ? 1.0f : 0.0f;
         if (this.s != f10) {

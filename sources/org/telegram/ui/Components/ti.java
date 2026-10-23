@@ -80,7 +80,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.zh1;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public class ti extends org.telegram.ui.ActionBar.f3 implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.ActionBar.z2, ne.d {
     public static final /* synthetic */ int R2 = 0;
@@ -4159,7 +4159,7 @@ public class ti extends org.telegram.ui.ActionBar.f3 implements NotificationCent
             X1(z11, true);
         }
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) liVar.getLayoutParams();
-        int D = org.telegram.messenger.mk.D(11.0f, layoutParams == null ? 0 : layoutParams.topMargin, currentItemTop);
+        int D = org.telegram.messenger.nk.D(11.0f, layoutParams == null ? 0 : layoutParams.topMargin, currentItemTop);
         li liVar2 = this.B0;
         int i11 = liVar2 == liVar ? 0 : 1;
         if ((liVar2 instanceof bn) || (this.C0 instanceof bn)) {

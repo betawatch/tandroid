@@ -6,12 +6,12 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.mk;
+import org.telegram.messenger.nk;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import w7.z5;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes4.dex */
 public final class o extends LinearLayout {
     public final TextView a;
@@ -26,7 +26,7 @@ public final class o extends LinearLayout {
         TextView textView = new TextView(context);
         this.a = textView;
         int i10 = h6.y6;
-        mk.o(i10, d6Var, textView, 1, 14.0f);
+        nk.o(i10, d6Var, textView, 1, 14.0f);
         textView.setGravity(17);
         textView.setTextAlignment(4);
         addView(textView, z5.k(0.0f, 0.0f, 0.0f, 19.0f, -1, -2));

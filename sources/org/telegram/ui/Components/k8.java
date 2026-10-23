@@ -58,7 +58,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class k8 extends org.telegram.ui.ActionBar.f3 implements NotificationCenter.NotificationCenterDelegate, DownloadController.FileDownloadProgressListener {
     public static k8 T0;
@@ -950,7 +950,7 @@ public final class k8 extends org.telegram.ui.ActionBar.f3 implements Notificati
             k8Var.C0.start();
         }
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) v7Var.getLayoutParams();
-        int D = org.telegram.messenger.mk.D(11.0f, layoutParams.topMargin - AndroidUtilities.statusBarHeight, top);
+        int D = org.telegram.messenger.nk.D(11.0f, layoutParams.topMargin - AndroidUtilities.statusBarHeight, top);
         if (k8Var.A0 != D) {
             k8Var.A0 = D;
             v7Var.setTopGlowOffset((D - layoutParams.topMargin) - AndroidUtilities.statusBarHeight);
@@ -2095,7 +2095,7 @@ public final class k8 extends org.telegram.ui.ActionBar.f3 implements Notificati
         if (i10 != i11) {
             launchActivity.O0(i11);
         }
-        Bundle d = org.telegram.messenger.mk.d(3, "onlySelect", "dialogsType", true);
+        Bundle d = org.telegram.messenger.nk.d(3, "onlySelect", "dialogsType", true);
         d.putBoolean("canSelectTopics", true);
         org.telegram.ui.cy cyVar = new org.telegram.ui.cy(d);
         if (messageObject.getId() >= 0) {

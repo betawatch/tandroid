@@ -1,35 +1,31 @@
 package org.telegram.messenger;
 
-import java.util.concurrent.CountDownLatch;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class uf implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesStorage b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ boolean[] d;
-    public final /* synthetic */ CountDownLatch e;
+    public final /* synthetic */ TLRPC.EncryptedChat c;
 
-    public /* synthetic */ uf(int i10, long j10, CountDownLatch countDownLatch, MessagesStorage messagesStorage, boolean[] zArr) {
+    public /* synthetic */ uf(MessagesStorage messagesStorage, TLRPC.EncryptedChat encryptedChat, int i10) {
         this.a = i10;
         this.b = messagesStorage;
-        this.c = j10;
-        this.d = zArr;
-        this.e = countDownLatch;
+        this.c = encryptedChat;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$checkMessageByRandomId$153(this.c, this.d, this.e);
+                this.b.lambda$updateEncryptedChat$174(this.c);
                 break;
             case 1:
-                this.b.lambda$isMigratedChat$141(this.c, this.d, this.e);
+                this.b.lambda$updateEncryptedChatLayer$173(this.c);
                 break;
             default:
-                this.b.lambda$hasInviteMeMessage$143(this.c, this.d, this.e);
+                this.b.lambda$updateEncryptedChatTTL$172(this.c);
                 break;
         }
     }

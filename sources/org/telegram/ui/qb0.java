@@ -15,7 +15,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class qb0 extends org.telegram.ui.ActionBar.n2 {
     public FrameLayout a;
@@ -148,7 +148,7 @@ public final class qb0 extends org.telegram.ui.ActionBar.n2 {
                                     pb0Var.c(kb0Var, true);
                                     int U = qb0Var.U(i12);
                                     imageView.clearAnimation();
-                                    org.telegram.messenger.mk.t(imageView.animate().rotation((U < 0 || !qb0Var.n[U]) ? 0.0f : 180.0f), org.telegram.ui.Components.bs.h, 240L);
+                                    org.telegram.messenger.nk.t(imageView.animate().rotation((U < 0 || !qb0Var.n[U]) ? 0.0f : 180.0f), org.telegram.ui.Components.bs.h, 240L);
                                 }
                                 pb0Var.f.c(LiteMode.isEnabled(i12), true);
                             } else {

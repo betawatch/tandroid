@@ -14,7 +14,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class pw0 extends View {
     public int E;
@@ -177,7 +177,7 @@ public final class pw0 extends View {
                         i10 = i20;
                         float[] fArr = new float[i22];
                         fArr[z11 ? 1 : 0] = AndroidUtilities.dp(6.0f);
-                        fArr[1] = org.telegram.messenger.mk.B(8.0f, dp4, r12) / (dp4 - 1);
+                        fArr[1] = org.telegram.messenger.nk.B(8.0f, dp4, r12) / (dp4 - 1);
                         paint2.setPathEffect(new DashPathEffect(fArr, 0.0f));
                         this.e = dp4;
                     } else {

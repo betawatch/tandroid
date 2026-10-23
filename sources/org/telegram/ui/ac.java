@@ -17,7 +17,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class ac extends pg.b {
     public int d = -1;
@@ -192,7 +192,7 @@ public final class ac extends pg.b {
             case 8:
                 ci.i4 i4Var = new ci.i4(ccVar.getContext(), 9);
                 TextView textView = new TextView(ccVar.getContext());
-                org.telegram.messenger.mk.j(14.0f, ChatObject.isChannelAndNotMegaGroup(ccVar.J) ? R.string.NoBoostersHint : R.string.NoBoostersGroupHint, 1, textView);
+                org.telegram.messenger.nk.j(14.0f, ChatObject.isChannelAndNotMegaGroup(ccVar.J) ? R.string.NoBoostersHint : R.string.NoBoostersGroupHint, 1, textView);
                 com.google.android.gms.internal.play_billing.k3.o(org.telegram.ui.ActionBar.h6.y6, null, false, textView, 17);
                 i4Var.addView(textView, w7.z5.d(-1, -2.0f, 0, 0.0f, 16.0f, 0.0f, 0.0f));
                 view = i4Var;

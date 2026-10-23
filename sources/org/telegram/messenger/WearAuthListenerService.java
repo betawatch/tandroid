@@ -19,7 +19,7 @@ import org.telegram.ui.cf0;
 import org.telegram.ui.jg0;
 import org.telegram.ui.yh1;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes.dex */
 public class WearAuthListenerService extends x8.k {
     public static final String PATH_CANCEL = "/tg-wear-auth/cancel";
@@ -81,7 +81,7 @@ public class WearAuthListenerService extends x8.k {
             f3Var2.dismiss();
             yh1.c = null;
         }
-        org.telegram.ui.ActionBar.f3 i10 = mk.i(1, context, resourceProvider, false);
+        org.telegram.ui.ActionBar.f3 i10 = nk.i(1, context, resourceProvider, false);
         FrameLayout frameLayout = new FrameLayout(context);
         i10.customView = frameLayout;
         int i11 = UserConfig.selectedAccount;
@@ -124,7 +124,7 @@ public class WearAuthListenerService extends x8.k {
         if (arrayList.size() <= 1) {
             frameLayout2.setVisibility(8);
         }
-        LinearLayout e = mk.e(context, 1);
+        LinearLayout e = nk.e(context, 1);
         frameLayout.addView(e, w7.z5.e(-1, -1, 119));
         org.telegram.ui.Components.w9 w9Var2 = new org.telegram.ui.Components.w9(context);
         e.addView(w9Var2, w7.z5.r(130, 130, 49, 32.0f, 32.0f, 32.0f, 9.66f));
@@ -138,7 +138,7 @@ public class WearAuthListenerService extends x8.k {
         b11.setGravity(17);
         b11.setText(LocaleController.getString(R.string.WearAuthText));
         e.addView(b11, w7.z5.t(-1, -2, 49, 32, 0, 32, 24));
-        ei.d f7 = mk.f(24, context, resourceProvider, true);
+        ei.d f7 = nk.f(24, context, resourceProvider, true);
         f7.setText(LocaleController.getString(R.string.Next));
         e.addView(f7, w7.z5.t(-1, 48, 7, 12, 12, 12, 8));
         int i15 = org.telegram.ui.ActionBar.h6.a7;
@@ -165,6 +165,6 @@ public class WearAuthListenerService extends x8.k {
                 FileLog.e("wear-auth: failed to pop LaunchActivity", e);
             }
         }
-        AndroidUtilities.runOnUIThread(new sl(str, str2, bArr, 1));
+        AndroidUtilities.runOnUIThread(new tl(str, str2, bArr, 1));
     }
 }

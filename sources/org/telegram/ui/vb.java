@@ -69,7 +69,7 @@ import org.telegram.ui.Components.PipRoundVideoView;
 import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class vb extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public static int Q0 = 10;
@@ -464,7 +464,7 @@ public final class vb extends org.telegram.ui.ActionBar.n2 implements Notificati
                 spannableStringBuilder.append(messageObject.messageText);
             }
             AndroidUtilities.addToClipboard(spannableStringBuilder);
-            org.telegram.messenger.mk.p(R.string.MessageCopied, org.telegram.ui.Components.xc.a0(vbVar));
+            org.telegram.messenger.nk.p(R.string.MessageCopied, org.telegram.ui.Components.xc.a0(vbVar));
         } else if (intValue == 4) {
             String str = messageObject.messageOwner.attachPath;
             if (str != null && str.length() > 0 && !r4.c.t(str)) {
@@ -608,7 +608,7 @@ public final class vb extends org.telegram.ui.ActionBar.n2 implements Notificati
                             break;
                         case 16:
                             AndroidUtilities.addToClipboard(messageObject.messageOwner.media.phone_number);
-                            org.telegram.messenger.mk.p(R.string.PhoneCopied, org.telegram.ui.Components.xc.a0(vbVar));
+                            org.telegram.messenger.nk.p(R.string.PhoneCopied, org.telegram.ui.Components.xc.a0(vbVar));
                             break;
                         case 17:
                             try {

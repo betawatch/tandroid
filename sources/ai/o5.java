@@ -26,7 +26,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.mk;
+import org.telegram.messenger.nk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
 import org.telegram.ui.Components.eh0;
@@ -41,7 +41,7 @@ import org.telegram.ui.qa1;
 import org.telegram.ui.s50;
 import org.telegram.ui.zb1;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes4.dex */
 public final class o5 extends FrameLayout {
     public final /* synthetic */ int a = 0;
@@ -345,7 +345,7 @@ public final class o5 extends FrameLayout {
                 drawable = ((org.telegram.ui.ActionBar.f3) y0Var).shadowDrawable;
                 int i16 = y0Var.M;
                 i14 = ((org.telegram.ui.ActionBar.f3) y0Var).backgroundPaddingTop;
-                drawable.setBounds(0, mk.D(2.0f, i14 + i16, 1), getMeasuredWidth(), getMeasuredHeight());
+                drawable.setBounds(0, nk.D(2.0f, i14 + i16, 1), getMeasuredWidth(), getMeasuredHeight());
                 drawable2 = ((org.telegram.ui.ActionBar.f3) y0Var).shadowDrawable;
                 drawable2.draw(canvas);
                 super.dispatchDraw(canvas);
@@ -958,7 +958,7 @@ public final class o5 extends FrameLayout {
         super(context);
         TextView textView = new TextView(context);
         this.c = textView;
-        mk.k(20.0f, 1, textView);
+        nk.k(20.0f, 1, textView);
         textView.setGravity(LocaleController.isRTL ? 5 : 3);
         textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.j5, d6Var));
         addView(textView);

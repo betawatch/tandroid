@@ -1,25 +1,37 @@
 package org.telegram.messenger;
 
-import android.media.SoundPool;
+import android.app.NotificationChannel;
+import org.telegram.tgnet.InputSerializedData;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.Vector;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class wg implements SoundPool.OnLoadCompleteListener {
+public final /* synthetic */ class wg implements Vector.TLDeserializer, org.telegram.ui.ActionBar.a2 {
     public final /* synthetic */ int a;
 
     public /* synthetic */ wg(int i10) {
         this.a = i10;
     }
 
-    @Override // android.media.SoundPool.OnLoadCompleteListener
-    public final void onLoadComplete(SoundPool soundPool, int i10, int i11) {
+    public static /* bridge */ /* synthetic */ NotificationChannel a(Object obj) {
+        return (NotificationChannel) obj;
+    }
+
+    @Override // org.telegram.tgnet.Vector.TLDeserializer
+    public TLObject deserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
         switch (this.a) {
-            case 0:
-                NotificationsController.lambda$playInChatSound$40(soundPool, i10, i11);
-                break;
+            case 2:
+                return TL_iv.RichText.TLdeserialize(inputSerializedData, i10, z10);
             default:
-                NotificationsController.lambda$playOutChatSound$49(soundPool, i10, i11);
-                break;
+                return TLRPC.PollAnswer.TLdeserialize(inputSerializedData, i10, z10);
         }
+    }
+
+    @Override // org.telegram.ui.ActionBar.a2
+    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        SharedConfig.lambda$checkSdCard$1(b2Var, i10);
     }
 }

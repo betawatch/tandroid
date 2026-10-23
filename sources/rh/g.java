@@ -20,7 +20,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.WebFile;
-import org.telegram.messenger.mk;
+import org.telegram.messenger.nk;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
@@ -32,7 +32,7 @@ import org.telegram.ui.Components.oq;
 import org.telegram.ui.Components.yo0;
 import org.telegram.ui.Components.zo0;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes4.dex */
 public final class g extends Drawable implements DownloadController.FileDownloadProgressListener, yo0 {
     public String E;
@@ -188,7 +188,7 @@ public final class g extends Drawable implements DownloadController.FileDownload
                 if (f7 > 0.0f) {
                     zo0 zo0Var = this.K;
                     zo0Var.t = f7;
-                    zo0Var.j(mk.y(56.0f, dp, bounds.right), AndroidUtilities.dp(30.0f));
+                    zo0Var.j(nk.y(56.0f, dp, bounds.right), AndroidUtilities.dp(30.0f));
                     canvas.save();
                     float dp4 = AndroidUtilities.dp(45.0f) + dp;
                     this.L = dp4;

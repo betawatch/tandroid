@@ -19,7 +19,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.mk;
+import org.telegram.messenger.nk;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.h61;
 import org.telegram.ui.Components.u61;
@@ -30,7 +30,7 @@ import org.telegram.ui.Components.x90;
 import org.telegram.ui.Components.y31;
 import org.telegram.ui.k71;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes4.dex */
 public final class h8 extends x61 implements NotificationCenter.NotificationCenterDelegate {
     public final ArrayList d = new ArrayList();
@@ -83,7 +83,7 @@ public final class h8 extends x61 implements NotificationCenter.NotificationCent
     }
 
     public static LinearLayout d0(Context context, org.telegram.ui.ActionBar.d6 d6Var, int i10, String str) {
-        LinearLayout e = mk.e(context, 0);
+        LinearLayout e = nk.e(context, 0);
         e.setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
         ImageView imageView = new ImageView(context);
         imageView.setScaleType(ImageView.ScaleType.CENTER);
@@ -100,7 +100,7 @@ public final class h8 extends x61 implements NotificationCenter.NotificationCent
     }
 
     public static LinearLayout e0(int i10, int i11, Context context, ArrayList arrayList, org.telegram.ui.ActionBar.d6 d6Var) {
-        LinearLayout e = mk.e(context, 1);
+        LinearLayout e = nk.e(context, 1);
         int i12 = i10;
         while (i12 < i11) {
             LinearLayout linearLayout = new LinearLayout(context);

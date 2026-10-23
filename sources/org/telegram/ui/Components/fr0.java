@@ -57,7 +57,7 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public class fr0 extends org.telegram.ui.ActionBar.f3 implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int b1 = 0;
@@ -1939,7 +1939,7 @@ public class fr0 extends org.telegram.ui.ActionBar.f3 implements NotificationCen
                     final MessageObject messageObject3 = (MessageObject) this.O.get(0);
                     if (ChatObject.hasAdminRights(MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-messageObject3.getDialogId()))) && !messageObject3.isForwarded()) {
                         final int i30 = 0;
-                        linearLayout = org.telegram.messenger.mk.e(context, 0);
+                        linearLayout = org.telegram.messenger.nk.e(context, 0);
                         linearLayout.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.eq0
                             public final /* synthetic */ fr0 b;
 

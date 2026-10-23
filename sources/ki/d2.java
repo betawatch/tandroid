@@ -45,7 +45,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.mk;
+import org.telegram.messenger.nk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
@@ -67,7 +67,7 @@ import org.telegram.ui.qa1;
 import org.telegram.ui.qn;
 import org.telegram.ui.st0;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes4.dex */
 public final class d2 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public tz A0;
@@ -659,7 +659,7 @@ public final class d2 extends org.telegram.ui.ActionBar.n2 implements Notificati
 
     public static void p0(Context context, final Runnable runnable, final Runnable runnable2, org.telegram.ui.ActionBar.d6 d6Var) {
         final int i10 = 0;
-        final org.telegram.ui.ActionBar.f3 i11 = mk.i(1, context, d6Var, false);
+        final org.telegram.ui.ActionBar.f3 i11 = nk.i(1, context, d6Var, false);
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
         i11.customView = linearLayout;
@@ -681,10 +681,10 @@ public final class d2 extends org.telegram.ui.ActionBar.n2 implements Notificati
         i13.setGravity(17);
         i13.setTextColor(h6.w0(i12, d6Var));
         linearLayout.addView(i13, w7.z5.t(-1, -2, 49, 25, 11, 25, 0));
-        ei.d f7 = mk.f(24, context, d6Var, true);
+        ei.d f7 = nk.f(24, context, d6Var, true);
         f7.setText(LocaleController.getString(R.string.ArticleConversionSubscribe));
         linearLayout.addView(f7, w7.z5.t(-1, 48, 49, 14, 31, 14, 0));
-        ei.d f10 = mk.f(24, context, d6Var, false);
+        ei.d f10 = nk.f(24, context, d6Var, false);
         f10.setText(LocaleController.getString(R.string.ArticleConversionConvert));
         linearLayout.addView(f10, w7.z5.t(-1, 48, 49, 14, 2, 14, 6));
         i11.show();
@@ -739,7 +739,7 @@ public final class d2 extends org.telegram.ui.ActionBar.n2 implements Notificati
         }
         boolean N3 = this.P.N3();
         this.y0.setEnabled(N3);
-        mk.s(this.y0.animate(), N3 ? 1.0f : 0.5f, 150L);
+        nk.s(this.y0.animate(), N3 ? 1.0f : 0.5f, 150L);
     }
 
     public final void C0() {

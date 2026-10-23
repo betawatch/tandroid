@@ -110,7 +110,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public class ChatActivityEnterView extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, kw0, ny0, gz0, ne.d, org.telegram.ui.ActionBar.y5 {
     public static final /* synthetic */ int n5 = 0;
@@ -421,7 +421,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     public boolean z3;
     public boolean z4;
 
-    /* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
     public class RecordCircle extends View {
         public final float E;
         public float F;
@@ -1025,7 +1025,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         }
     }
 
-    /* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+    /* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
     public class SlideTextView extends View {
         public final int E;
         public final Path F;
@@ -6010,7 +6010,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             }
             if (r02 == true) {
                 chatActivityEnterView = this;
-                if (chatActivityEnterView.o1(new org.telegram.messenger.va(this, z10, i10, i11, j10))) {
+                if (chatActivityEnterView.o1(new org.telegram.messenger.xa(this, z10, i10, i11, j10))) {
                     chatActivityEnterView2 = chatActivityEnterView;
                 }
             } else {
@@ -6338,10 +6338,10 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                                     }
                                 } else {
                                     this.g0 = z12;
-                                    org.telegram.messenger.qf qfVar = new org.telegram.messenger.qf(this, charSequence4, z10, i10, i11, j10);
+                                    org.telegram.messenger.sf sfVar = new org.telegram.messenger.sf(this, charSequence4, z10, i10, i11, j10);
                                     chatActivityEnterView3 = this;
-                                    chatActivityEnterView3.f0 = qfVar;
-                                    AndroidUtilities.runOnUIThread(qfVar, 200L);
+                                    chatActivityEnterView3.f0 = sfVar;
+                                    AndroidUtilities.runOnUIThread(sfVar, 200L);
                                 }
                                 chatActivityEnterView3.C2 = 0L;
                                 chatActivityEnterView3.O1();
@@ -7349,7 +7349,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 if (tL_inlineButtonTypeSwitchInline != null) {
                     if (!qnVar.Ga(tL_inlineButtonTypeSwitchInline)) {
                         if (!tL_inlineButtonTypeSwitchInline.same_peer) {
-                            Bundle d = org.telegram.messenger.mk.d(1, "onlySelect", "dialogsType", true);
+                            Bundle d = org.telegram.messenger.nk.d(1, "onlySelect", "dialogsType", true);
                             if ((tL_inlineButtonTypeSwitchInline.flags & 2) != 0) {
                                 d.putBoolean("allowGroups", false);
                                 d.putBoolean("allowMegagroups", false);
@@ -7421,7 +7421,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                                 org.telegram.ui.bj0.u0 = bj0Var2;
                                 return false;
                             }
-                            Bundle d10 = org.telegram.messenger.mk.d(15, "onlySelect", "dialogsType", true);
+                            Bundle d10 = org.telegram.messenger.nk.d(15, "onlySelect", "dialogsType", true);
                             TLRPC.Message message3 = messageObject2.messageOwner;
                             if (message3 != null) {
                                 TLRPC.Peer peer = message3.from_id;
@@ -8271,7 +8271,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             f5.Z(this.Q, 1, this.Q2, new fe(this, document, str, sendAnimationData, z11, i10, i11, obj, z10));
             return;
         }
-        f5.L(this.O2, qnVar.a(), new org.telegram.messenger.ek(this, document, str, obj, sendAnimationData, z10), this.W3);
+        f5.L(this.O2, qnVar.a(), new org.telegram.messenger.fk(this, document, str, obj, sendAnimationData, z10), this.W3);
     }
 
     public final yf e0(MessageObject messageObject, boolean z10) {
@@ -9558,7 +9558,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         ei.x3 x3Var = this.M;
         if (x3Var != null) {
             x3Var.setTranslationY((x3Var.getTranslationY() + keVar.getMeasuredHeight()) - measuredHeight);
-            org.telegram.messenger.mk.t(this.M.animate().translationY(0.0f), bs.h, 420L);
+            org.telegram.messenger.nk.t(this.M.animate().translationY(0.0f), bs.h, 420L);
         }
     }
 

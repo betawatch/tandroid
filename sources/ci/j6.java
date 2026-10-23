@@ -24,7 +24,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.gk;
+import org.telegram.messenger.hk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
@@ -32,7 +32,7 @@ import org.telegram.ui.Components.fw0;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.x51;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j6 implements Runnable {
     public final /* synthetic */ int a;
@@ -422,7 +422,7 @@ public final /* synthetic */ class j6 implements Runnable {
                                     break;
                             }
                         }
-                    }, new z2(x51Var, strArr, str, linkedHashSet, 12), new gk(x51Var, fullyConsistsOfEmojis, linkedHashSet, str, reactionsMap, arrayList4), new z2((Object) x51Var, str, arrayList6, (Object) hashMap, 13), new org.telegram.ui.z(x51Var, str, arrayList7, 12), callback2);
+                    }, new z2(x51Var, strArr, str, linkedHashSet, 12), new hk(x51Var, fullyConsistsOfEmojis, linkedHashSet, str, reactionsMap, arrayList4), new z2((Object) x51Var, str, arrayList6, (Object) hashMap, 13), new org.telegram.ui.z(x51Var, str, arrayList7, 12), callback2);
                     break;
                 }
             case 5:

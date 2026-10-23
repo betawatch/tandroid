@@ -27,7 +27,7 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class r80 extends org.telegram.ui.ActionBar.f3 {
     public static ArrayList G;
@@ -246,7 +246,7 @@ public final class r80 extends org.telegram.ui.ActionBar.f3 {
         }
         TextView textView = new TextView(context);
         r80Var.e = textView;
-        org.telegram.messenger.mk.k(20.0f, 1, textView);
+        org.telegram.messenger.nk.k(20.0f, 1, textView);
         if (i10 == 2) {
             textView.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.ng, false));
         } else {

@@ -38,7 +38,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stats;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class ie extends org.telegram.ui.Components.lw0 implements r0.m {
     public static ie x1;
@@ -308,7 +308,7 @@ public final class ie extends org.telegram.ui.Components.lw0 implements r0.m {
         int i20 = org.telegram.ui.ActionBar.h6.Pi;
         textView2.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i20, false));
         textView2.setTag(Integer.valueOf(i20));
-        org.telegram.messenger.mk.m(R.string.LoadingStatsDescription, textView2, 1);
+        org.telegram.messenger.nk.m(R.string.LoadingStatsDescription, textView2, 1);
         linearLayout3.addView(yj0Var, w7.z5.t(120, 120, 1, 0, 0, 0, 20));
         linearLayout3.addView(textView, w7.z5.t(-2, -2, 1, 0, 0, 0, 10));
         linearLayout3.addView(textView2, w7.z5.q(-2, -2, 1));
@@ -316,8 +316,8 @@ public final class ie extends org.telegram.ui.Components.lw0 implements r0.m {
     }
 
     public static org.telegram.ui.ActionBar.f3 d0(Context context, org.telegram.ui.ActionBar.d6 d6Var, boolean z10) {
-        org.telegram.ui.ActionBar.f3 i10 = org.telegram.messenger.mk.i(1, context, d6Var, false);
-        LinearLayout e = org.telegram.messenger.mk.e(context, 1);
+        org.telegram.ui.ActionBar.f3 i10 = org.telegram.messenger.nk.i(1, context, d6Var, false);
+        LinearLayout e = org.telegram.messenger.nk.e(context, 1);
         e.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), 0);
         org.telegram.ui.Components.yj0 yj0Var = new org.telegram.ui.Components.yj0(context);
         yj0Var.setScaleType(ImageView.ScaleType.CENTER);
@@ -359,7 +359,7 @@ public final class ie extends org.telegram.ui.Components.lw0 implements r0.m {
         x90Var.setLinkTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.gc, d6Var));
         x90Var.setText(AndroidUtilities.withLearnMore(AndroidUtilities.replaceTags(LocaleController.getString(z10 ? R.string.BotMonetizationInfoTONText : R.string.MonetizationInfoTONText)), new ah.t(23, context, z10)));
         e.addView(x90Var, w7.z5.k(28.0f, 9.0f, 28.0f, 0.0f, -1, -2));
-        ei.d f7 = org.telegram.messenger.mk.f(24, context, d6Var, true);
+        ei.d f7 = org.telegram.messenger.nk.f(24, context, d6Var, true);
         f7.g(LocaleController.getString(R.string.GotIt), false, true);
         f7.setOnClickListener(new rd(i10, 1));
         e.addView(f7, w7.z5.t(-1, 48, 55, 10, 25, 10, 14));
@@ -411,8 +411,8 @@ public final class ie extends org.telegram.ui.Components.lw0 implements r0.m {
         org.telegram.ui.ActionBar.f3 f3Var2;
         String userName;
         TLRPC.User user;
-        org.telegram.ui.ActionBar.f3 i11 = org.telegram.messenger.mk.i(1, context, d6Var, false);
-        LinearLayout e = org.telegram.messenger.mk.e(context, 1);
+        org.telegram.ui.ActionBar.f3 i11 = org.telegram.messenger.nk.i(1, context, d6Var, false);
+        LinearLayout e = org.telegram.messenger.nk.e(context, 1);
         boolean z12 = broadcastRevenueTransaction instanceof TL_stats.TL_broadcastRevenueTransactionWithdrawal;
         if (z12) {
             TL_stats.TL_broadcastRevenueTransactionWithdrawal tL_broadcastRevenueTransactionWithdrawal = (TL_stats.TL_broadcastRevenueTransactionWithdrawal) broadcastRevenueTransaction;
@@ -465,7 +465,7 @@ public final class ie extends org.telegram.ui.Components.lw0 implements r0.m {
         decimalFormat.setGroupingUsed(false);
         TextView textView = new TextView(context);
         textView.setGravity(17);
-        org.telegram.messenger.mk.k(18.0f, 1, textView);
+        org.telegram.messenger.nk.k(18.0f, 1, textView);
         textView.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, c10 < 0 ? org.telegram.ui.ActionBar.h6.q7 : org.telegram.ui.ActionBar.h6.l8, false));
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         spannableStringBuilder.append((CharSequence) (c10 < 0 ? "-" : "+"));
@@ -497,7 +497,7 @@ public final class ie extends org.telegram.ui.Components.lw0 implements r0.m {
         e.addView(textView2, w7.z5.t(-1, -2, 49, 0, 0, 0, 0));
         TextView textView3 = new TextView(context);
         textView3.setGravity(17);
-        org.telegram.messenger.mk.k(14.0f, 1, textView3);
+        org.telegram.messenger.nk.k(14.0f, 1, textView3);
         textView3.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.G6, d6Var));
         textView3.setText(str);
         e.addView(textView3, w7.z5.t(-1, -2, 49, 0, 27, 0, 0));
@@ -532,7 +532,7 @@ public final class ie extends org.telegram.ui.Components.lw0 implements r0.m {
             frameLayout.addView(textView4, w7.z5.d(-2, -2.0f, 19, 37.0f, 0.0f, 10.0f, 0.0f));
             e.addView(frameLayout, w7.z5.t(-2, 28, 1, 42, 10, 42, 0));
         }
-        ei.d f7 = org.telegram.messenger.mk.f(24, context, d6Var, true);
+        ei.d f7 = org.telegram.messenger.nk.f(24, context, d6Var, true);
         if (z12) {
             TL_stats.TL_broadcastRevenueTransactionWithdrawal tL_broadcastRevenueTransactionWithdrawal2 = (TL_stats.TL_broadcastRevenueTransactionWithdrawal) broadcastRevenueTransaction;
             if ((tL_broadcastRevenueTransactionWithdrawal2.flags & 2) != 0) {

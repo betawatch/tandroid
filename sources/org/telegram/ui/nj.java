@@ -43,7 +43,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class nj extends ci.q5 {
     public int X2;
@@ -2714,7 +2714,7 @@ public final class nj extends ci.q5 {
                             T13 = messageObject;
                         }
                         qnVar.n5 = T13;
-                        Bundle d = org.telegram.messenger.mk.d(3, "onlySelect", "dialogsType", true);
+                        Bundle d = org.telegram.messenger.nk.d(3, "onlySelect", "dialogsType", true);
                         d.putBoolean("quote", true);
                         d.putBoolean("reply_to", true);
                         long peerDialogId = DialogObject.getPeerDialogId(T13.getFromPeer());

@@ -8,7 +8,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class ch0 extends hx0 {
     public boolean a = false;
@@ -54,7 +54,7 @@ public final class ch0 extends hx0 {
         rectF.set(0.0f, i10, dp, i10 + dp);
         float f7 = this.g;
         float f10 = 0.5f;
-        int z11 = (int) (f7 < 0.5f ? org.telegram.messenger.mk.z(f7, 0.5f, 1.0f, 35.0f) : ((f7 - 0.5f) * 35.0f) / 0.5f);
+        int z11 = (int) (f7 < 0.5f ? org.telegram.messenger.nk.z(f7, 0.5f, 1.0f, 35.0f) : ((f7 - 0.5f) * 35.0f) / 0.5f);
         int i11 = 0;
         while (i11 < 3) {
             float dp3 = AndroidUtilities.dp(9.2f) + (AndroidUtilities.dp(5.0f) * i11);

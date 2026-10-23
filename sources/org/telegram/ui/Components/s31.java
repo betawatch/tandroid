@@ -34,7 +34,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.nd1;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class s31 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, ne.d {
     public static final /* synthetic */ int f0 = 0;
@@ -1606,13 +1606,13 @@ public final class s31 extends FrameLayout implements NotificationCenter.Notific
             uo uoVar = new uo(i80Var3, currentAccount, j13, j14, qnVar, resourceProvider);
             i80 J = i80Var3.J();
             J.c(R.drawable.msg_arrow_back, LocaleController.getString(R.string.Back), new org.telegram.ui.st0(i80Var3, 26), false);
-            J.c(R.drawable.msg_tone_on, LocaleController.getString(R.string.SoundOn), new org.telegram.messenger.fc(i80Var3, currentAccount, j13, j14, J, qnVar, resourceProvider), false);
+            J.c(R.drawable.msg_tone_on, LocaleController.getString(R.string.SoundOn), new org.telegram.messenger.hc(i80Var3, currentAccount, j13, j14, J, qnVar, resourceProvider), false);
             org.telegram.ui.ActionBar.e1 y10 = J.y();
             J.c(R.drawable.msg_mute_period, LocaleController.getString(R.string.MuteForPopup), new ai.cb(i80Var3, resourceProvider, currentAccount, uoVar, 18), false);
             d6Var = d6Var2;
             J.c(R.drawable.msg_customize, LocaleController.getString(R.string.NotificationsCustomize), new org.telegram.messenger.x2(i80Var3, j13, j14, qnVar, resourceProvider, 7), false);
             J.c(0, "", new ai.ia(i80Var3, currentAccount, j13, j14, qnVar, resourceProvider), false);
-            new org.telegram.messenger.p9(currentAccount, j13, j14, J.y(), y10).run();
+            new org.telegram.messenger.r9(currentAccount, j13, j14, J.y(), y10).run();
             boolean isDialogMuted = messagesController.isDialogMuted(j10, tL_forumTopic.id);
             int i17 = isDialogMuted ? R.drawable.msg_unmute : R.drawable.msg_mute;
             String string2 = LocaleController.getString(isDialogMuted ? R.string.Unmute : R.string.Mute);

@@ -15,14 +15,14 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.mk;
+import org.telegram.messenger.nk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.g90;
 import org.telegram.ui.Components.ru;
 import org.telegram.ui.Components.yj0;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class z1 extends LinearLayout {
     public boolean a;
@@ -191,7 +191,7 @@ public final class z1 extends LinearLayout {
         }
         int paddingTop = (size2 - getPaddingTop()) - getPaddingBottom();
         int paddingLeft = (size - getPaddingLeft()) - getPaddingRight();
-        int c10 = mk.c(48.0f, paddingLeft, TLObject.FLAG_30);
+        int c10 = nk.c(48.0f, paddingLeft, TLObject.FLAG_30);
         int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(paddingLeft, TLObject.FLAG_30);
         ViewGroup viewGroup = b2Var.t0;
         if (viewGroup != null) {
@@ -199,7 +199,7 @@ public final class z1 extends LinearLayout {
             for (int i16 = 0; i16 < childCount; i16++) {
                 View childAt = b2Var.t0.getChildAt(i16);
                 if (childAt instanceof TextView) {
-                    ((TextView) childAt).setMaxWidth(AndroidUtilities.dp(mk.A(24.0f, paddingLeft, 2)));
+                    ((TextView) childAt).setMaxWidth(AndroidUtilities.dp(nk.A(24.0f, paddingLeft, 2)));
                 }
             }
             b2Var.t0.measure(makeMeasureSpec, i11);

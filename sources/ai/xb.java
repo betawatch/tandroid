@@ -16,7 +16,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.TelegramMediaSession;
 import org.telegram.messenger.TranslateController;
-import org.telegram.messenger.gh;
+import org.telegram.messenger.ih;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
@@ -25,7 +25,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class xb implements Runnable {
     public final /* synthetic */ int a;
@@ -151,12 +151,12 @@ public final /* synthetic */ class xb implements Runnable {
                 }
             case 17:
                 org.telegram.ui.Wallet.f2 f2Var = (org.telegram.ui.Wallet.f2) obj2;
-                gh ghVar = (gh) obj;
+                ih ihVar = (ih) obj;
                 f2Var.getClass();
                 TL_wallet.tonConnectGetPending tonconnectgetpending = new TL_wallet.tonConnectGetPending();
                 long j11 = this.b;
                 tonconnectgetpending.session_id = Long.valueOf(j11);
-                f2Var.f.sendRequestTyped(tonconnectgetpending, new org.telegram.messenger.a(), new org.telegram.ui.Wallet.t1(f2Var, ghVar, j11, this.c, 0));
+                f2Var.f.sendRequestTyped(tonconnectgetpending, new org.telegram.messenger.a(), new org.telegram.ui.Wallet.t1(f2Var, ihVar, j11, this.c, 0));
                 break;
             default:
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder((Context) obj2, 0, (org.telegram.ui.ActionBar.d6) obj);

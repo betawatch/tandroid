@@ -21,7 +21,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
-import org.telegram.messenger.mk;
+import org.telegram.messenger.nk;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.d6;
@@ -39,7 +39,7 @@ import org.telegram.ui.z50;
 import w7.b6;
 import w7.z5;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class j0 extends LinearLayout {
     public TextView a;
@@ -311,7 +311,7 @@ public final class j0 extends LinearLayout {
                                 addView(k9Var, z5.t(((min - 1) * 30) + 72, 72, 1, 0, 16, 0, 13));
                                 TextView textView = new TextView(context);
                                 textView.setGravity(17);
-                                mk.k(20.0f, i17, textView);
+                                nk.k(20.0f, i17, textView);
                                 int i55 = h6.j5;
                                 d6Var = ((f3) k0Var).resourcesProvider;
                                 textView.setTextColor(h6.w0(i55, d6Var));
@@ -791,7 +791,7 @@ public final class j0 extends LinearLayout {
                     addView(k9Var2, z5.t(((min - 1) * 30) + 72, 72, 1, 0, 16, 0, 13));
                     TextView textView13 = new TextView(context);
                     textView13.setGravity(17);
-                    mk.k(20.0f, i17, textView13);
+                    nk.k(20.0f, i17, textView13);
                     int i552 = h6.j5;
                     d6Var = ((f3) k0Var).resourcesProvider;
                     textView13.setTextColor(h6.w0(i552, d6Var));

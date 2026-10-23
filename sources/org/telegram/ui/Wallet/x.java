@@ -7,7 +7,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.gh;
+import org.telegram.messenger.ih;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
@@ -16,7 +16,7 @@ import org.telegram.ui.Components.cy0;
 import org.telegram.ui.Components.ks0;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -48,7 +48,7 @@ public final /* synthetic */ class x implements Utilities.Callback {
                 }
             case 1:
                 ((f2) this.b).h = false;
-                ((gh) this.c).run(null, (String) obj);
+                ((ih) this.c).run(null, (String) obj);
                 break;
             case 2:
                 ((j0) this.b).close();

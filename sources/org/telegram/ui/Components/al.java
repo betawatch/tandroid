@@ -38,7 +38,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Wallet.WalletEngine2;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class al extends li implements NotificationCenter.NotificationCenterDelegate {
     public boolean A0;
@@ -468,12 +468,12 @@ public final class al extends li implements NotificationCenter.NotificationCente
         frameLayout4.addView(frameLayout5, w7.z5.c(-1.0f, -1));
         TextView textView3 = new TextView(context);
         this.T = textView3;
-        org.telegram.messenger.mk.o(i16, this.a, textView3, 1, 14.0f);
+        org.telegram.messenger.nk.o(i16, this.a, textView3, 1, 14.0f);
         textView3.setGravity(17);
         frameLayout5.addView(textView3, w7.z5.e(-1, 20, 55));
         TextView textView4 = new TextView(context);
         this.U = textView4;
-        org.telegram.messenger.mk.o(i16, this.a, textView4, 1, 14.0f);
+        org.telegram.messenger.nk.o(i16, this.a, textView4, 1, 14.0f);
         textView4.setGravity(17);
         textView4.setPadding(0, AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f));
         textView4.setVisibility(8);
@@ -481,7 +481,7 @@ public final class al extends li implements NotificationCenter.NotificationCente
         SpannableString spannableString3 = new SpannableString(LocaleController.getString(R.string.Loading));
         this.V = spannableString3;
         spannableString3.setSpan(new ca0(AndroidUtilities.dp(80.0f), textView4), 0, spannableString3.length(), 33);
-        ei.d f7 = org.telegram.messenger.mk.f(24, context, d6Var, true);
+        ei.d f7 = org.telegram.messenger.nk.f(24, context, d6Var, true);
         this.l0 = f7;
         f7.setText(LocaleController.getString(R.string.WalletSendGrams));
         f7.setEnabled(false);

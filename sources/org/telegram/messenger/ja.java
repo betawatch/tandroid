@@ -1,29 +1,51 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.TLRPC;
+import j$.util.function.Function$-CC;
+import java.util.function.Function;
+import org.telegram.messenger.TranslateController;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ja implements Runnable {
+public final /* synthetic */ class ja implements Function {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ TLRPC.User c;
 
-    public /* synthetic */ ja(MessagesController messagesController, TLRPC.User user, int i10) {
+    public /* synthetic */ ja(int i10) {
         this.a = i10;
-        this.b = messagesController;
-        this.c = user;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    public /* synthetic */ Function andThen(Function function) {
+        int i10 = this.a;
+        return Function$-CC.$default$andThen(this, function);
+    }
+
+    @Override // java.util.function.Function
+    public final Object apply(Object obj) {
+        String valueOf;
+        String lambda$applyAppConfig$34;
+        Long lambda$new$14;
+        int[] lambda$new$15;
+        String str;
         switch (this.a) {
             case 0:
-                this.b.lambda$processUpdateArray$411(this.c);
-                break;
+                valueOf = String.valueOf((Long) obj);
+                return valueOf;
+            case 1:
+                lambda$applyAppConfig$34 = MessagesController.lambda$applyAppConfig$34((int[]) obj);
+                return lambda$applyAppConfig$34;
+            case 2:
+                lambda$new$14 = MessagesController.lambda$new$14((String) obj);
+                return lambda$new$14;
+            case 3:
+                lambda$new$15 = MessagesController.lambda$new$15((String) obj);
+                return lambda$new$15;
             default:
-                this.b.lambda$loadFullUser$70(this.c);
-                break;
+                str = ((TranslateController.Language) obj).displayName;
+                return str;
         }
+    }
+
+    public /* synthetic */ Function compose(Function function) {
+        int i10 = this.a;
+        return Function$-CC.$default$compose(this, function);
     }
 }

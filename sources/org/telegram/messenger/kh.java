@@ -1,38 +1,29 @@
 package org.telegram.messenger;
 
-import android.content.Context;
 import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class kh implements Utilities.Callback2 {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+public final /* synthetic */ class kh implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Utilities.Callback2 b;
+    public final /* synthetic */ Exception c;
 
-    public /* synthetic */ kh(Context context, int i10, Utilities.Callback2 callback2) {
-        this.c = callback2;
-        this.d = context;
-        this.b = i10;
+    public /* synthetic */ kh(Utilities.Callback2 callback2, Exception exc, int i10) {
+        this.a = i10;
+        this.b = callback2;
+        this.c = exc;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                PasskeysController.lambda$create$7((Utilities.Callback2) this.c, (Context) this.d, this.b, (v0.c) obj, (Throwable) obj2);
+                PasskeysController.lambda$create$3(this.b, this.c);
                 break;
             default:
-                ((TranslateController) this.c).lambda$pushToSummarize$19(this.b, (Utilities.Callback) this.d, (TLRPC.TL_textWithEntities) obj, (TLRPC.TL_error) obj2);
+                PasskeysController.lambda$create$8(this.b, this.c);
                 break;
         }
-    }
-
-    public /* synthetic */ kh(TranslateController translateController, int i10, Utilities.Callback callback) {
-        this.c = translateController;
-        this.b = i10;
-        this.d = callback;
     }
 }

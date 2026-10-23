@@ -23,7 +23,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class de0 extends org.telegram.ui.Components.qw0 {
     public int E;
@@ -1198,9 +1198,9 @@ public final class de0 extends org.telegram.ui.Components.qw0 {
         String str2 = this.K;
         TextView textView = this.r;
         if (str2 == null) {
-            org.telegram.messenger.mk.r(!z11 ? R.string.SMSWordText : R.string.SMSPhraseText, new Object[]{str}, textView);
+            org.telegram.messenger.nk.r(!z11 ? R.string.SMSWordText : R.string.SMSPhraseText, new Object[]{str}, textView);
         } else {
-            org.telegram.messenger.mk.r(!z11 ? R.string.SMSWordBeginningText : R.string.SMSPhraseBeginningText, new Object[]{str, str2}, textView);
+            org.telegram.messenger.nk.r(!z11 ? R.string.SMSWordBeginningText : R.string.SMSPhraseBeginningText, new Object[]{str, str2}, textView);
         }
         dg0.T0(dg0Var, e2Var);
         e2Var.requestFocus();
@@ -1251,7 +1251,7 @@ public final class de0 extends org.telegram.ui.Components.qw0 {
         float f11 = (f10 * 0.1f) + 0.9f;
         ViewPropertyAnimator translationY = this.e.animate().scaleX(f11).scaleY(f11).alpha(f10).translationY((1.0f - f10) * AndroidUtilities.dp(-5.0f));
         org.telegram.ui.Components.bs bsVar = org.telegram.ui.Components.bs.h;
-        org.telegram.messenger.mk.t(translationY, bsVar, 290L);
+        org.telegram.messenger.nk.t(translationY, bsVar, 290L);
         if (this.w && !this.x) {
             f7 = 1.0f;
         }

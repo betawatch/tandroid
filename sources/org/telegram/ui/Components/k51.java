@@ -25,7 +25,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public abstract class k51 extends FrameLayout implements org.telegram.ui.ActionBar.y5 {
     public final int a;
@@ -174,7 +174,7 @@ public abstract class k51 extends FrameLayout implements org.telegram.ui.ActionB
         f3Var.applyBottomPadding = false;
         f3Var.applyTopPadding = false;
         org.telegram.ui.ActionBar.f3[] f3VarArr = new org.telegram.ui.ActionBar.f3[1];
-        LinearLayout e = org.telegram.messenger.mk.e(context, 1);
+        LinearLayout e = org.telegram.messenger.nk.e(context, 1);
         FrameLayout frameLayout = new FrameLayout(context);
         GradientDrawable gradientDrawable = new GradientDrawable();
         gradientDrawable.setGradientType(1);
@@ -220,7 +220,7 @@ public abstract class k51 extends FrameLayout implements org.telegram.ui.ActionB
         x90Var.setPadding(0, AndroidUtilities.dp(18.0f), 0, AndroidUtilities.dp(18.0f));
         x90Var.setDisablePaddingsOffsetY(true);
         e.addView(x90Var, w7.z5.t(-1, -2, 7, 32, 0, 32, 0));
-        ei.d f7 = org.telegram.messenger.mk.f(24, context, d6Var, true);
+        ei.d f7 = org.telegram.messenger.nk.f(24, context, d6Var, true);
         f7.setText(ai.l7.I2(LocaleController.getString(R.string.Understood)));
         f7.setOnClickListener(new l2(f3VarArr, 3));
         e.addView(f7, w7.z5.t(-1, 48, 7, 16, 0, 16, 16));

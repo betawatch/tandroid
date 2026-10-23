@@ -1,37 +1,24 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
+import android.media.SoundPool;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class yg implements Runnable {
+public final /* synthetic */ class yg implements SoundPool.OnLoadCompleteListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ NotificationsController b;
-    public final /* synthetic */ ArrayList c;
 
-    public /* synthetic */ yg(NotificationsController notificationsController, ArrayList arrayList, int i10) {
+    public /* synthetic */ yg(int i10) {
         this.a = i10;
-        this.b = notificationsController;
-        this.c = arrayList;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.media.SoundPool.OnLoadCompleteListener
+    public final void onLoadComplete(SoundPool soundPool, int i10, int i11) {
         switch (this.a) {
             case 0:
-                this.b.lambda$forceShowPopupForReply$7(this.c);
-                break;
-            case 1:
-                this.b.lambda$processReadMessages$21(this.c);
-                break;
-            case 2:
-                this.b.lambda$processDialogsUpdateRead$29(this.c);
-                break;
-            case 3:
-                this.b.lambda$removeDeletedMessagesFromNotifications$9(this.c);
+                NotificationsController.lambda$playInChatSound$40(soundPool, i10, i11);
                 break;
             default:
-                this.b.lambda$removeDeletedHisoryFromNotifications$12(this.c);
+                NotificationsController.lambda$playOutChatSound$49(soundPool, i10, i11);
                 break;
         }
     }

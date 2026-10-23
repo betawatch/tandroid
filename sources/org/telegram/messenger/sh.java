@@ -1,37 +1,31 @@
 package org.telegram.messenger;
 
-import android.animation.ValueAnimator;
-import android.view.View;
-import android.view.Window;
-import org.telegram.messenger.AndroidUtilities;
+import android.text.Spanned;
+import java.util.Comparator;
 import org.telegram.messenger.RichMessageLayout;
-import org.telegram.ui.Components.c81;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class sh implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class sh implements Comparator {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ Spanned b;
 
-    public /* synthetic */ sh(int i10, Object obj, Object obj2) {
+    public /* synthetic */ sh(Spanned spanned, int i10) {
         this.a = i10;
-        this.b = obj;
-        this.c = obj2;
+        this.b = spanned;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        int lambda$withReplacements$0;
+        int lambda$new$0;
         switch (this.a) {
             case 0:
-                ((RichMessageLayout.SpoilerReveal) this.b).lambda$start$0((View) this.c, valueAnimator);
-                break;
-            case 1:
-                AndroidUtilities.lambda$setNavigationBarColor$23((AndroidUtilities.IntColorCallback) this.b, (Window) this.c, valueAnimator);
-                break;
+                lambda$withReplacements$0 = RichMessageLayout.RichBlock.lambda$withReplacements$0(this.b, (org.telegram.ui.Cells.t9) obj, (org.telegram.ui.Cells.t9) obj2);
+                return lambda$withReplacements$0;
             default:
-                ((MediaController) this.b).lambda$cleanupPlayer$10((c81) this.c, valueAnimator);
-                break;
+                lambda$new$0 = RichMessageLayout.Text.lambda$new$0(this.b, (RichMessageLayout.RichButtonSpan) obj, (RichMessageLayout.RichButtonSpan) obj2);
+                return lambda$new$0;
         }
     }
 }

@@ -110,7 +110,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.WebFile;
-import org.telegram.messenger.mk;
+import org.telegram.messenger.nk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -177,7 +177,7 @@ import org.telegram.ui.qn;
 import org.telegram.ui.s10;
 import org.telegram.ui.vu0;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public class u1 extends a0 implements yo0, ImageReceiver.ImageReceiverDelegate, DownloadController.FileDownloadProgressListener, v9, NotificationCenter.NotificationCenterDelegate, ne.d, n4 {
     public static final float[] Fe = new float[8];
@@ -4316,7 +4316,7 @@ public class u1 extends a0 implements yo0, ImageReceiver.ImageReceiverDelegate, 
                             RectF rectF = AndroidUtilities.rectTmp;
                             float dp11 = AndroidUtilities.dp(3.33f) + org.telegram.messenger.g0.C(7.0f, richUnsupportedBlock.padding.left, dp9);
                             Rect rect = richUnsupportedBlock.padding;
-                            rectF.set(dp11, f12 + rect.top, mk.y(7.0f, rect.right, dp10) - AndroidUtilities.dp(3.33f), height - richUnsupportedBlock.padding.bottom);
+                            rectF.set(dp11, f12 + rect.top, nk.y(7.0f, rect.right, dp10) - AndroidUtilities.dp(3.33f), height - richUnsupportedBlock.padding.bottom);
                             j2(canvas3, rectF, AndroidUtilities.dp(18.0f));
                             i36 = i20 + 1;
                             i33 = i21;
@@ -7033,7 +7033,7 @@ public class u1 extends a0 implements yo0, ImageReceiver.ImageReceiverDelegate, 
                 f10 = f25;
                 i10 = i19;
                 f11 = 18.0f;
-                dp2 = mk.D(9.0f, i21, extraTextX2);
+                dp2 = nk.D(9.0f, i21, extraTextX2);
             }
             TLRPC.Chat chat = this.Zb;
             if (chat != null && chat.signature_profiles) {
@@ -7088,7 +7088,7 @@ public class u1 extends a0 implements yo0, ImageReceiver.ImageReceiverDelegate, 
             }
             f13 = 6.0f;
             int dp6 = dp2 - AndroidUtilities.dp(14.0f);
-            int D = mk.D(i12, this.M8, 1);
+            int D = nk.D(i12, this.M8, 1);
             rect = this.k9;
             rect.set(dp4 - AndroidUtilities.dp(f13), (int) dp5, dp6, D);
             drawableArr = this.v3;
@@ -7579,7 +7579,7 @@ public class u1 extends a0 implements yo0, ImageReceiver.ImageReceiverDelegate, 
         f12 = f10;
         f13 = 0.0f;
         int dp62 = dp2 - AndroidUtilities.dp(14.0f);
-        int D2 = mk.D(i12, this.M8, 1);
+        int D2 = nk.D(i12, this.M8, 1);
         rect = this.k9;
         rect.set(dp4 - AndroidUtilities.dp(f13), (int) dp5, dp62, D2);
         drawableArr = this.v3;
@@ -11695,10 +11695,10 @@ public class u1 extends a0 implements yo0, ImageReceiver.ImageReceiverDelegate, 
                                         }
                                         if (t1Var == null && t1Var.g) {
                                             f21 = 6.0f;
-                                            b10 = mk.b(t1Var.p0, AndroidUtilities.dp(6.0f), f35, i31);
+                                            b10 = nk.b(t1Var.p0, AndroidUtilities.dp(6.0f), f35, i31);
                                         } else {
                                             f21 = 6.0f;
-                                            b10 = mk.b(g3Var3.getImageHeight(), AndroidUtilities.dp(6.0f), f35, i31);
+                                            b10 = nk.b(g3Var3.getImageHeight(), AndroidUtilities.dp(6.0f), f35, i31);
                                         }
                                         i21 = (int) b10;
                                         if (this.y7.isOutOwner()) {
@@ -12177,7 +12177,7 @@ public class u1 extends a0 implements yo0, ImageReceiver.ImageReceiverDelegate, 
                                 if (t1Var == null) {
                                 }
                                 f21 = 6.0f;
-                                b10 = mk.b(g3Var3.getImageHeight(), AndroidUtilities.dp(6.0f), f35, i31);
+                                b10 = nk.b(g3Var3.getImageHeight(), AndroidUtilities.dp(6.0f), f35, i31);
                                 i21 = (int) b10;
                                 if (this.y7.isOutOwner()) {
                                 }
@@ -13102,7 +13102,7 @@ public class u1 extends a0 implements yo0, ImageReceiver.ImageReceiverDelegate, 
                                 }
                                 i11 = i34;
                                 f14 = 6.0f;
-                                backgroundDrawableRight = mk.y((this.o8 ? 48 : 0) + 8, getExtraTextX(), (this.k8 || !this.y7.isOutOwner()) ? this.v8 + i39 : (this.v8 + i39) - AndroidUtilities.dp(6.0f));
+                                backgroundDrawableRight = nk.y((this.o8 ? 48 : 0) + 8, getExtraTextX(), (this.k8 || !this.y7.isOutOwner()) ? this.v8 + i39 : (this.v8 + i39) - AndroidUtilities.dp(6.0f));
                                 float extraTextX = (backgroundDrawableRight - (getExtraTextX() + AndroidUtilities.dp(10 + ((this.y7.isOutOwner() || this.k8 || this.J) ? 0 : 6)))) - f7;
                                 if (f12 != 1.0f) {
                                     f15 = 10.0f;
@@ -14697,7 +14697,7 @@ public class u1 extends a0 implements yo0, ImageReceiver.ImageReceiverDelegate, 
                         } else {
                             rectF2 = rectF;
                             int i39 = (int) f38;
-                            rectF2.set(i39 - AndroidUtilities.dp(7.0f), this.jb - AndroidUtilities.dp(6.0f), mk.D(7.0f, i39, dp16), AndroidUtilities.dp(6.0f) + this.jb + this.kb);
+                            rectF2.set(i39 - AndroidUtilities.dp(7.0f), this.jb - AndroidUtilities.dp(6.0f), nk.D(7.0f, i39, dp16), AndroidUtilities.dp(6.0f) + this.jb + this.kb);
                             i15 = -1;
                             z11 = true;
                         }
@@ -15148,7 +15148,7 @@ public class u1 extends a0 implements yo0, ImageReceiver.ImageReceiverDelegate, 
                         int i41 = (int) f56;
                         f23 = f56;
                         i24 = o11;
-                        rectF2.set(i41 - AndroidUtilities.dp(f18), f58 - AndroidUtilities.dp(3.0f), mk.D(4.0f, i41, Math.max(this.J9, this.L9)), AndroidUtilities.dp(3.0f) + f58 + this.I9);
+                        rectF2.set(i41 - AndroidUtilities.dp(f18), f58 - AndroidUtilities.dp(3.0f), nk.D(4.0f, i41, Math.max(this.J9, this.L9)), AndroidUtilities.dp(3.0f) + f58 + this.I9);
                         canvas2.scale(a12, a12, Utilities.clamp(this.xc, rectF2.right, rectF2.left), Utilities.clamp(this.yc, rectF2.bottom, rectF2.top));
                         p0();
                         int alpha12 = M2("paintChatActionBackground").getAlpha();
@@ -23375,7 +23375,7 @@ public class u1 extends a0 implements yo0, ImageReceiver.ImageReceiverDelegate, 
             this.s0 = AndroidUtilities.dp(60.0f) + this.s0;
             if (z13 != this.W2) {
                 this.W2 = 0;
-                int A = mk.A(75.0f, this.J8, i10);
+                int A = nk.A(75.0f, this.J8, i10);
                 float dpf2 = (this.J8 - AndroidUtilities.dpf2(37.0f)) / i10;
                 ArrayList arrayList = this.X2;
                 if (arrayList == null) {
@@ -29764,7 +29764,7 @@ public class u1 extends a0 implements yo0, ImageReceiver.ImageReceiverDelegate, 
         MessageObject messageObject2 = this.y7;
         int i11 = dp6 - messageObject2.textWidth;
         if (!this.K8) {
-            i11 = mk.y((messageObject2.isOutOwner() ? 20 : 0) + 4, this.pb, i11);
+            i11 = nk.y((messageObject2.isOutOwner() ? 20 : 0) + 4, this.pb, i11);
         }
         if (i11 > 0) {
             this.n0 = (i11 - getExtraTimeX()) + this.n0;
@@ -31745,7 +31745,7 @@ public class u1 extends a0 implements yo0, ImageReceiver.ImageReceiverDelegate, 
                     }
                     i19 = (int) (Math.ceil(((r6.pw + r6.leftSpanOffset) / 1000.0f) * minTabletSide) + i19);
                 }
-                backgroundDrawableRight = mk.y((this.o8 ? 48 : 0) + 8, getExtraTextX(), (this.k8 || !this.y7.isOutOwner()) ? this.v8 + i19 : (this.v8 + i19) - AndroidUtilities.dp(6.0f));
+                backgroundDrawableRight = nk.y((this.o8 ? 48 : 0) + 8, getExtraTextX(), (this.k8 || !this.y7.isOutOwner()) ? this.v8 + i19 : (this.v8 + i19) - AndroidUtilities.dp(6.0f));
                 float extraTextX = (backgroundDrawableRight - (getExtraTextX() + AndroidUtilities.dp(10 + ((this.y7.isOutOwner() || this.k8 || this.J) ? 0 : 6)))) - f7;
                 i11 = i10;
                 while (i11 <= i17 && i11 < arrayList2.size()) {

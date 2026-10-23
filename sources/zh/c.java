@@ -20,10 +20,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.WeakHashMap;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.mk;
+import org.telegram.messenger.nk;
 import org.telegram.ui.Components.q10;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes4.dex */
 public final class c extends View {
     public static final long f0 = System.currentTimeMillis();
@@ -750,7 +750,7 @@ public final class c extends View {
                 while (i10 < arrayList2.size()) {
                     b bVar3 = (b) arrayList2.get(i10);
                     int i19 = i10;
-                    float b12 = mk.b(i18, f27, AndroidUtilities.dp(f17), (width2 - (cVar.w / f7)) + AndroidUtilities.dp(8.0f));
+                    float b12 = nk.b(i18, f27, AndroidUtilities.dp(f17), (width2 - (cVar.w / f7)) + AndroidUtilities.dp(8.0f));
                     if (!bVar3.d) {
                         i18++;
                     }

@@ -30,7 +30,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class xx extends org.telegram.ui.Components.ia implements ci.p7 {
     public static final /* synthetic */ int t3 = 0;
@@ -464,7 +464,7 @@ public final class xx extends org.telegram.ui.Components.ia implements ci.p7 {
             rectF4.set(measuredWidth, i25, f28, i25 + dp);
             float f29 = ud0Var.g;
             float f30 = 35.0f;
-            int z14 = (int) (f29 < 0.5f ? org.telegram.messenger.mk.z(f29, 0.5f, 1.0f, 35.0f) : ((f29 - 0.5f) * 35.0f) / 0.5f);
+            int z14 = (int) (f29 < 0.5f ? org.telegram.messenger.nk.z(f29, 0.5f, 1.0f, 35.0f) : ((f29 - 0.5f) * 35.0f) / 0.5f);
             float f31 = z14;
             float f32 = 360 - (z14 * 2);
             canvas.drawArc(rectF4, f31, f32, true, paint4);
@@ -874,7 +874,7 @@ public final class xx extends org.telegram.ui.Components.ia implements ci.p7 {
                             fArr[1] = 0.0f;
                             ValueAnimator ofFloat = ValueAnimator.ofFloat(fArr);
                             ofFloat.addUpdateListener(new e3(this, 10));
-                            ofFloat.setDuration(Math.max(100L, (long) org.telegram.messenger.mk.x(getViewOffset(), AndroidUtilities.dp(72.0f), 120.0f, 350.0f)));
+                            ofFloat.setDuration(Math.max(100L, (long) org.telegram.messenger.nk.x(getViewOffset(), AndroidUtilities.dp(72.0f), 120.0f, 350.0f)));
                             ofFloat.setInterpolator(org.telegram.ui.Components.bs.h);
                             setScrollEnabled(false);
                             ofFloat.addListener(new org.telegram.ui.Components.p31(this, 25));

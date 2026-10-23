@@ -47,7 +47,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.kc1;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 @Deprecated
 /* loaded from: classes3.dex */
 public class UndoView extends FrameLayout {
@@ -847,7 +847,7 @@ public class UndoView extends FrameLayout {
                                         if (measuredWidth == 0) {
                                             measuredWidth = AndroidUtilities.displaySize.x;
                                         }
-                                        measureChildWithMargins(textView2, org.telegram.messenger.mk.c(16.0f, measuredWidth, TLObject.FLAG_30), 0, View.MeasureSpec.makeMeasureSpec(0, 0), 0);
+                                        measureChildWithMargins(textView2, org.telegram.messenger.nk.c(16.0f, measuredWidth, TLObject.FLAG_30), 0, View.MeasureSpec.makeMeasureSpec(0, 0), 0);
                                         this.r = AndroidUtilities.dp(37.0f) + textView2.getMeasuredHeight();
                                     } else if (d()) {
                                         this.r = AndroidUtilities.dp(52.0f);
@@ -858,7 +858,7 @@ public class UndoView extends FrameLayout {
                                             measuredWidth2 = AndroidUtilities.displaySize.x;
                                         }
                                         View view = y1Var;
-                                        measureChildWithMargins(view, org.telegram.messenger.mk.c(16.0f, measuredWidth2, TLObject.FLAG_30), 0, View.MeasureSpec.makeMeasureSpec(0, 0), 0);
+                                        measureChildWithMargins(view, org.telegram.messenger.nk.c(16.0f, measuredWidth2, TLObject.FLAG_30), 0, View.MeasureSpec.makeMeasureSpec(0, 0), 0);
                                         int measuredHeight = view.getMeasuredHeight();
                                         int i32 = this.K;
                                         int dp2 = AndroidUtilities.dp((i32 == 16 || i32 == 17 || i32 == 18 || i32 == 84 || i32 == 86) ? 14.0f : 28.0f) + measuredHeight;

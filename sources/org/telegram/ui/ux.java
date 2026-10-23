@@ -21,7 +21,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class ux extends org.telegram.ui.Components.lw0 {
     public VelocityTracker A0;
@@ -604,7 +604,7 @@ public final class ux extends org.telegram.ui.Components.lw0 {
                             }
                             twVar = cyVar.E0;
                             if (childAt == twVar && twVar.getPremiumHint() != null) {
-                                cyVar.E0.getPremiumHint().layout(i16, org.telegram.messenger.mk.D(54.0f, i19, measuredHeight2), i16 + measuredWidth2, cyVar.E0.getPremiumHint().getMeasuredHeight() + org.telegram.messenger.mk.D(54.0f, i19, measuredHeight2));
+                                cyVar.E0.getPremiumHint().layout(i16, org.telegram.messenger.nk.D(54.0f, i19, measuredHeight2), i16 + measuredWidth2, cyVar.E0.getPremiumHint().getMeasuredHeight() + org.telegram.messenger.nk.D(54.0f, i19, measuredHeight2));
                             }
                             if (childAt == cyVar.X) {
                                 i19 += AndroidUtilities.dp(2.0f);
@@ -639,7 +639,7 @@ public final class ux extends org.telegram.ui.Components.lw0 {
                     }
                     twVar = cyVar.E0;
                     if (childAt == twVar) {
-                        cyVar.E0.getPremiumHint().layout(i16, org.telegram.messenger.mk.D(54.0f, i19, measuredHeight2), i16 + measuredWidth2, cyVar.E0.getPremiumHint().getMeasuredHeight() + org.telegram.messenger.mk.D(54.0f, i19, measuredHeight2));
+                        cyVar.E0.getPremiumHint().layout(i16, org.telegram.messenger.nk.D(54.0f, i19, measuredHeight2), i16 + measuredWidth2, cyVar.E0.getPremiumHint().getMeasuredHeight() + org.telegram.messenger.nk.D(54.0f, i19, measuredHeight2));
                     }
                     if (childAt == cyVar.X) {
                     }

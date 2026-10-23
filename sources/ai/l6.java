@@ -17,14 +17,14 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.mk;
+import org.telegram.messenger.nk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.l01;
 import org.telegram.ui.Components.u40;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes4.dex */
 public final class l6 {
     public final TL_stars.TL_starGiftUnique a;
@@ -62,14 +62,14 @@ public final class l6 {
         boolean z11 = tL_starGiftUnique.resale_ton_only;
         this.f = !z11;
         TLObject user = j10 >= 0 ? MessagesController.getInstance(i10).getUser(Long.valueOf(j10)) : MessagesController.getInstance(i10).getChat(Long.valueOf(-j10));
-        LinearLayout e = mk.e(context, 1);
+        LinearLayout e = nk.e(context, 1);
         k6 k6Var = new k6(this, context);
         k6Var.addView(e, w7.z5.c(-2.0f, -1));
         if (z11) {
             this.i = null;
             TextView textView = new TextView(context);
-            mk.o(org.telegram.ui.ActionBar.h6.y6, d6Var, textView, 1, 14.0f);
-            mk.m(R.string.Gift2BuyPriceOnlyTON, textView, 17);
+            nk.o(org.telegram.ui.ActionBar.h6.y6, d6Var, textView, 1, 14.0f);
+            nk.m(R.string.Gift2BuyPriceOnlyTON, textView, 17);
             e.addView(textView, w7.z5.t(-2, -2, 17, 24, 4, 24, 4));
         } else {
             u40 u40Var = new u40(context, d6Var);
@@ -83,7 +83,7 @@ public final class l6 {
         e.addView(new g6(context, tL_starGiftUnique, user), w7.z5.t(-1, -2, 48, 0, -4, 0, 0));
         TextView textView2 = new TextView(context);
         this.j = textView2;
-        mk.o(org.telegram.ui.ActionBar.h6.j5, d6Var, textView2, 1, 16.0f);
+        nk.o(org.telegram.ui.ActionBar.h6.j5, d6Var, textView2, 1, 16.0f);
         e.addView(textView2, w7.z5.t(-1, -2, 48, 24, 4, 24, 4));
         if (z10) {
             l01 l01Var = new l01(context, d6Var);

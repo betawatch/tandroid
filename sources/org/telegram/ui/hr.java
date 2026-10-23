@@ -32,7 +32,7 @@ import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.Components.Switch;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class hr extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public int A0;
@@ -704,10 +704,10 @@ public final class hr extends org.telegram.ui.ActionBar.n2 implements Notificati
                             if (isEnabled) {
                                 if (r42.F != null) {
                                     if (ChatObject.isPublic(hrVar.r) && (i10 == hrVar.i0 || i10 == hrVar.g0)) {
-                                        org.telegram.messenger.mk.q(R.string.EditCantEditPermissionsPublic, org.telegram.ui.Components.xc.a0(hrVar), null);
+                                        org.telegram.messenger.nk.q(R.string.EditCantEditPermissionsPublic, org.telegram.ui.Components.xc.a0(hrVar), null);
                                         return;
                                     } else if (ChatObject.isDiscussionGroup(hrVar.currentAccount, hrVar.N) && (i10 == hrVar.i0 || i10 == hrVar.g0)) {
-                                        org.telegram.messenger.mk.q(R.string.EditCantEditPermissionsDiscussion, org.telegram.ui.Components.xc.a0(hrVar), null);
+                                        org.telegram.messenger.nk.q(R.string.EditCantEditPermissionsDiscussion, org.telegram.ui.Components.xc.a0(hrVar), null);
                                         return;
                                     } else {
                                         org.telegram.ui.Components.xc.a0(hrVar).t(LocaleController.getString("EditCantEditPermissions", R.string.EditCantEditPermissions), null).j();

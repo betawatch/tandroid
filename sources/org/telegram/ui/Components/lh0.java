@@ -38,7 +38,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class lh0 extends org.telegram.ui.ActionBar.f3 {
     public static final org.telegram.ui.Cells.s8 O = new org.telegram.ui.Cells.s8("placeholderAlpha", 9);
@@ -415,7 +415,7 @@ public final class lh0 extends org.telegram.ui.ActionBar.f3 {
             lh0Var.h.start();
         }
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) fh0Var.getLayoutParams();
-        int D = org.telegram.messenger.mk.D(11.0f, layoutParams.topMargin, top);
+        int D = org.telegram.messenger.nk.D(11.0f, layoutParams.topMargin, top);
         if (lh0Var.E != D) {
             lh0Var.E = D;
             fh0Var.setTopGlowOffset(D - layoutParams.topMargin);

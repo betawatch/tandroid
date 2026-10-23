@@ -21,7 +21,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class qv0 extends Dialog {
     public float E;
@@ -115,7 +115,7 @@ public final class qv0 extends Dialog {
         this.h = textView;
         textView.setTextSize(1, 13.0f);
         textView.setTextColor(mc0Var.getColor());
-        org.telegram.messenger.mk.m(R.string.PollMenuHint, textView, 17);
+        org.telegram.messenger.nk.m(R.string.PollMenuHint, textView, 17);
         nv0Var2.addView(textView, w7.z5.d(-1, -2.0f, 80, 0.0f, 0.0f, 0.0f, 66.0f));
         ko0 ko0Var = new ko0(this, i10);
         WeakHashMap weakHashMap = r0.i0.a;

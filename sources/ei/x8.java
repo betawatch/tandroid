@@ -14,13 +14,13 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.mk;
+import org.telegram.messenger.nk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.he0;
 import org.telegram.ui.Components.hf;
 import org.telegram.ui.Components.me0;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes4.dex */
 public final class x8 extends FrameLayout {
     public final /* synthetic */ int a = 0;
@@ -289,7 +289,7 @@ public final class x8 extends FrameLayout {
         this.b = d6Var;
         TextView textView = new TextView(context);
         this.d = textView;
-        mk.k(20.0f, 1, textView);
+        nk.k(20.0f, 1, textView);
         textView.setGravity(LocaleController.isRTL ? 5 : 3);
         textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.j5, d6Var));
         boolean z10 = LocaleController.isRTL;

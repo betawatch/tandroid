@@ -23,7 +23,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
-import org.telegram.messenger.mk;
+import org.telegram.messenger.nk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -41,7 +41,7 @@ import org.telegram.ui.Components.x61;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.Components.zq;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes4.dex */
 public final class r9 extends x61 {
     public TextView E;
@@ -223,7 +223,7 @@ public final class r9 extends x61 {
                 frameLayout.addView(imageView, w7.z5.d(46, 46.0f, i12 | 16, z10 ? 0.0f : 11.0f, 0.0f, z10 ? 11.0f : 0.0f, 0.0f));
                 TextView textView = new TextView(getParentActivity());
                 this.E = textView;
-                mk.j(16.0f, R.string.WalletGramWalletAddress, 1, textView);
+                nk.j(16.0f, R.string.WalletGramWalletAddress, 1, textView);
                 textView.setTextColor(getThemedColor(org.telegram.ui.ActionBar.h6.G6));
                 textView.setTypeface(AndroidUtilities.bold());
                 textView.setSingleLine();

@@ -9,7 +9,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class jw0 extends tg.n {
     public final /* synthetic */ Context i0;
@@ -38,7 +38,7 @@ public final class jw0 extends tg.n {
             textView.setText("Spectral top ");
             int i11 = org.telegram.ui.ActionBar.h6.n5;
             int i12 = 0;
-            org.telegram.messenger.mk.u(textView, org.telegram.ui.ActionBar.h6.x0(null, i11, false), 1, 16.0f, 1);
+            org.telegram.messenger.nk.u(textView, org.telegram.ui.ActionBar.h6.x0(null, i11, false), 1, 16.0f, 1);
             textView.setMaxLines(1);
             textView.setSingleLine(true);
             textView.setGravity((LocaleController.isRTL ? 3 : 5) | 48);
@@ -51,7 +51,7 @@ public final class jw0 extends tg.n {
             rVar.addView(dp0Var, w7.z5.d(-1, 38.0f, 0, 5.0f, 4.0f, 5.0f, 0.0f));
             TextView textView2 = new TextView(context);
             textView2.setText("Spectral bottom ");
-            org.telegram.messenger.mk.u(textView2, org.telegram.ui.ActionBar.h6.x0(null, i11, false), 1, 16.0f, 1);
+            org.telegram.messenger.nk.u(textView2, org.telegram.ui.ActionBar.h6.x0(null, i11, false), 1, 16.0f, 1);
             textView2.setMaxLines(1);
             textView2.setSingleLine(true);
             textView2.setGravity((LocaleController.isRTL ? 3 : 5) | 48);
@@ -77,7 +77,7 @@ public final class jw0 extends tg.n {
             rVar.addView(textView3, w7.z5.d(-1, 48.0f, 16, 16.0f, 0.0f, 16.0f, 0.0f));
             TextView textView4 = new TextView(context);
             textView4.setText("Diffuse ");
-            org.telegram.messenger.mk.u(textView4, org.telegram.ui.ActionBar.h6.x0(null, i11, false), 1, 16.0f, 1);
+            org.telegram.messenger.nk.u(textView4, org.telegram.ui.ActionBar.h6.x0(null, i11, false), 1, 16.0f, 1);
             textView4.setMaxLines(1);
             textView4.setSingleLine(true);
             textView4.setGravity((LocaleController.isRTL ? 3 : 5) | 48);
@@ -90,7 +90,7 @@ public final class jw0 extends tg.n {
             rVar.addView(dp0Var3, w7.z5.d(-1, 38.0f, 0, 5.0f, 4.0f, 5.0f, 0.0f));
             TextView textView5 = new TextView(context);
             textView5.setText("Normal map spectral");
-            org.telegram.messenger.mk.u(textView5, org.telegram.ui.ActionBar.h6.x0(null, i11, false), 1, 16.0f, 1);
+            org.telegram.messenger.nk.u(textView5, org.telegram.ui.ActionBar.h6.x0(null, i11, false), 1, 16.0f, 1);
             textView5.setMaxLines(1);
             textView5.setSingleLine(true);
             textView5.setGravity((LocaleController.isRTL ? 3 : 5) | 48);
@@ -114,7 +114,7 @@ public final class jw0 extends tg.n {
             rVar.addView(textView6, w7.z5.d(-1, 48.0f, 16, 16.0f, 0.0f, 16.0f, 0.0f));
             TextView textView7 = new TextView(context);
             textView7.setText("Small starts size");
-            org.telegram.messenger.mk.u(textView7, org.telegram.ui.ActionBar.h6.x0(null, i11, false), 1, 16.0f, 1);
+            org.telegram.messenger.nk.u(textView7, org.telegram.ui.ActionBar.h6.x0(null, i11, false), 1, 16.0f, 1);
             textView7.setMaxLines(1);
             textView7.setSingleLine(true);
             textView7.setGravity((LocaleController.isRTL ? 3 : 5) | 48);

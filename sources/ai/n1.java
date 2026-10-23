@@ -54,7 +54,7 @@ import org.telegram.ui.vl0;
 import org.telegram.ui.vm0;
 import org.telegram.ui.wp0;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class n1 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -355,9 +355,9 @@ public final /* synthetic */ class n1 implements View.OnClickListener {
                 }
                 if (!uv0.y0(profileActivity.O.getClosestTab())) {
                     long clientUserId = profileActivity.getUserConfig().getClientUserId();
-                    org.telegram.messenger.q8 q8Var = profileActivity.z5;
-                    if (q8Var != null) {
-                        q8Var.run();
+                    org.telegram.messenger.s8 s8Var = profileActivity.z5;
+                    if (s8Var != null) {
+                        s8Var.run();
                         profileActivity.z5 = null;
                     }
                     org.telegram.ui.Components.qc.e();
@@ -390,7 +390,7 @@ public final /* synthetic */ class n1 implements View.OnClickListener {
                         profileActivity.getMessagesController().getStoriesController().n0(clientUserId, arrayList6, false);
                         boolean[] zArr3 = {false};
                         boolean z13 = z12;
-                        profileActivity.z5 = new org.telegram.messenger.q8(profileActivity, clientUserId, arrayList6, z13, 9);
+                        profileActivity.z5 = new org.telegram.messenger.s8(profileActivity, clientUserId, arrayList6, z13, 9);
                         z zVar = new z(profileActivity, zArr3, arrayList6, zArr2, clientUserId, 15);
                         (z13 ? org.telegram.ui.Components.xc.a0(profileActivity).K(R.raw.contact_check, LocaleController.formatPluralString("StorySavedTitle", i10, new Object[0]), LocaleController.getString(R.string.StorySavedSubtitle), LocaleController.getString(R.string.UndoNoCaps), zVar).j() : org.telegram.ui.Components.xc.a0(profileActivity).I(R.raw.chats_archived, LocaleController.formatPluralString("StoryArchived", i10, new Object[0]), LocaleController.getString(R.string.UndoNoCaps), 5000, false, zVar).j()).v = new jv0(i18, profileActivity, zArr3);
                         break;
@@ -400,9 +400,9 @@ public final /* synthetic */ class n1 implements View.OnClickListener {
                     nz0 nz0Var3 = profileActivity.O;
                     int j12 = nz0Var3.j1(nz0Var3.getClosestTab());
                     String w9 = profileActivity.getMessagesController().getStoriesController().w(j12, a2);
-                    org.telegram.messenger.q8 q8Var2 = profileActivity.z5;
-                    if (q8Var2 != null) {
-                        q8Var2.run();
+                    org.telegram.messenger.s8 s8Var2 = profileActivity.z5;
+                    if (s8Var2 != null) {
+                        s8Var2.run();
                         profileActivity.z5 = null;
                     }
                     org.telegram.ui.Components.qc.e();

@@ -15,7 +15,7 @@ import org.telegram.messenger.LocationController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class yv0 extends org.telegram.ui.ActionBar.f3 implements NotificationCenter.NotificationCenterDelegate {
     public final ai.u1 b;
@@ -75,7 +75,7 @@ public final class yv0 extends org.telegram.ui.ActionBar.f3 implements Notificat
         linearLayout.setPadding(AndroidUtilities.dp(33.0f), 0, AndroidUtilities.dp(33.0f), 0);
         mg0Var.addView(linearLayout, w7.z5.e(-2, -1, 53));
         TextView textView2 = new TextView(context);
-        org.telegram.messenger.mk.k(13.0f, 1, textView2);
+        org.telegram.messenger.nk.k(13.0f, 1, textView2);
         com.google.android.gms.internal.play_billing.k3.o(org.telegram.ui.ActionBar.h6.li, null, false, textView2, 17);
         textView2.setBackgroundDrawable(org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(11.0f), org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.ki, false)));
         textView2.setMinWidth(AndroidUtilities.dp(23.0f));

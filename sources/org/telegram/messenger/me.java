@@ -1,26 +1,32 @@
 package org.telegram.messenger;
 
 import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class me implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesController.DialogPhotos b;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Utilities.Callback2 c;
 
-    public /* synthetic */ me(MessagesController.DialogPhotos dialogPhotos, int i10) {
-        this.a = i10;
-        this.b = dialogPhotos;
+    public /* synthetic */ me(int i10, int i11, Utilities.Callback2 callback2) {
+        this.a = i11;
+        this.b = i10;
+        this.c = callback2;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$loadCache$5();
+                MessagesController.1.lambda$getLocal$1(this.b, this.c);
+                break;
+            case 1:
+                MessagesController.4.lambda$getLocal$1(this.b, this.c);
                 break;
             default:
-                this.b.lambda$saveCache$6();
+                MessagesController.5.lambda$getLocal$2(this.b, this.c);
                 break;
         }
     }

@@ -16,7 +16,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class bu0 extends org.telegram.ui.Components.mw0 {
     public final Paint A0;
@@ -55,8 +55,8 @@ public final class bu0 extends org.telegram.ui.Components.mw0 {
             if (photoViewer.u4 == 1 || photoViewer.o6 == 1) {
                 int measuredHeight = getMeasuredHeight();
                 int measuredWidth = getMeasuredWidth();
-                this.D0.add(new Rect(0, org.telegram.messenger.mk.A(200.0f, measuredHeight, 2), AndroidUtilities.dp(100.0f), (AndroidUtilities.dp(200.0f) + measuredHeight) / 2));
-                this.D0.add(new Rect(measuredWidth - AndroidUtilities.dp(100.0f), org.telegram.messenger.mk.A(200.0f, measuredHeight, 2), measuredWidth, (AndroidUtilities.dp(200.0f) + measuredHeight) / 2));
+                this.D0.add(new Rect(0, org.telegram.messenger.nk.A(200.0f, measuredHeight, 2), AndroidUtilities.dp(100.0f), (AndroidUtilities.dp(200.0f) + measuredHeight) / 2));
+                this.D0.add(new Rect(measuredWidth - AndroidUtilities.dp(100.0f), org.telegram.messenger.nk.A(200.0f, measuredHeight, 2), measuredWidth, (AndroidUtilities.dp(200.0f) + measuredHeight) / 2));
             }
             setSystemGestureExclusionRects(this.D0);
             invalidate();
@@ -305,7 +305,7 @@ public final class bu0 extends org.telegram.ui.Components.mw0 {
                                             dp = ((paddingBottom - i11) - measuredHeight2) - layoutParams.bottomMargin;
                                             measuredHeight = photoViewer.P0.getHeight();
                                         } else if (childAt == photoViewer.T7) {
-                                            i19 = org.telegram.messenger.mk.y(31.0f, photoViewer.P0.getHeight(), i19);
+                                            i19 = org.telegram.messenger.nk.y(31.0f, photoViewer.P0.getHeight(), i19);
                                         }
                                     } else {
                                         FrameLayout frameLayout3 = photoViewer.R7;

@@ -20,7 +20,7 @@ import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.mk;
+import org.telegram.messenger.nk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -33,7 +33,7 @@ import org.telegram.ui.Components.u61;
 import org.webrtc.MediaStreamTrack;
 import w7.z5;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes4.dex */
 public final class l1 extends bb {
     public final int X;
@@ -297,7 +297,7 @@ public final class l1 extends bb {
         g1 g1Var = new g1(context, i11);
         g1Var.setDelegate(new h1());
         g1Var.X3(k1Var, null, false, false, false, false);
-        LinearLayout e = mk.e(context, r11);
+        LinearLayout e = nk.e(context, r11);
         e.addView(w0Var, z5.n(-1, -2));
         e.addView(g1Var, z5.n(-1, -2));
         i1 i1Var = new i1(context, null);
@@ -305,7 +305,7 @@ public final class l1 extends bb {
         i1Var.V(r6.e(null, i11, j10, h6.I.q()));
         i1Var.addView(e, z5.d(-1, -1.0f, 119, 4.0f, 8.0f, 4.0f, 8.0f));
         FrameLayout frameLayout = new FrameLayout(context);
-        ei.d f7 = mk.f(24, context, d6Var, r11);
+        ei.d f7 = nk.f(24, context, d6Var, r11);
         f7.g(LocaleController.getString(R.string.BotShareMessageShare), false, r11);
         f7.setOnClickListener(new ai.e1(this, tL_messages_preparedInlineMessage, s0Var, i11, j10, tVar));
         frameLayout.addView(f7, z5.d(-1, 48.0f, 119, 10.0f, 10.0f, 10.0f, 10.0f));

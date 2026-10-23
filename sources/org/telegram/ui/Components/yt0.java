@@ -17,7 +17,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class yt0 implements View.OnClickListener {
     public final /* synthetic */ long a;
@@ -238,21 +238,21 @@ public final class yt0 implements View.OnClickListener {
                 e1Var2 = null;
                 e1Var3 = null;
             }
-            org.telegram.messenger.wj wjVar = new org.telegram.messenger.wj(e1Var, y9Var, h, h10, h11, h12, canUserDoAction, e1Var2, e1Var3, 3);
+            org.telegram.messenger.xj xjVar = new org.telegram.messenger.xj(e1Var, y9Var, h, h10, h11, h12, canUserDoAction, e1Var2, e1Var3, 3);
             org.telegram.ui.ActionBar.e1 e1Var5 = e1Var;
             org.telegram.ui.ActionBar.e1 e1Var6 = e1Var2;
             org.telegram.ui.ActionBar.e1 e1Var7 = e1Var3;
-            wjVar.run();
+            xjVar.run();
             if (e1Var5 != null) {
-                e1Var5.setOnClickListener(new ca(24, y9Var, wjVar));
+                e1Var5.setOnClickListener(new ca(24, y9Var, xjVar));
             }
-            yh.p2.j(h, y9Var, wjVar, 1);
-            yh.p2.j(h10, y9Var, wjVar, 2);
-            yh.p2.j(h11, y9Var, wjVar, 4);
-            yh.p2.j(h12, y9Var, wjVar, 8);
+            yh.p2.j(h, y9Var, xjVar, 1);
+            yh.p2.j(h10, y9Var, xjVar, 2);
+            yh.p2.j(h11, y9Var, xjVar, 4);
+            yh.p2.j(h12, y9Var, xjVar, 8);
             if (canUserDoAction) {
-                yh.p2.j(e1Var6, y9Var, wjVar, 256);
-                yh.p2.j(e1Var7, y9Var, wjVar, 512);
+                yh.p2.j(e1Var6, y9Var, xjVar, 256);
+                yh.p2.j(e1Var7, y9Var, xjVar, 512);
             }
             H2.Y = true;
             H2.J = false;

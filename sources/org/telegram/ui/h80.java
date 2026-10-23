@@ -9,7 +9,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h80 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -97,7 +97,7 @@ public final /* synthetic */ class h80 implements Runnable {
                     StringBuilder v = a1.g.v("cant import contact token. token=", str, " err=");
                     v.append(tL_error == null ? null : tL_error.text);
                     FileLog.e(v.toString());
-                    org.telegram.messenger.mk.q(R.string.NoUsernameFound, org.telegram.ui.Components.xc.a0((org.telegram.ui.ActionBar.n2) i2.e.h(1, launchActivity2.d0)), null);
+                    org.telegram.messenger.nk.q(R.string.NoUsernameFound, org.telegram.ui.Components.xc.a0((org.telegram.ui.ActionBar.n2) i2.e.h(1, launchActivity2.d0)), null);
                 }
                 try {
                     z70Var.run();

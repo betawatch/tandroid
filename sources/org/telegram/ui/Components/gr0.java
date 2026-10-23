@@ -7,7 +7,7 @@ import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class gr0 extends Drawable {
     public long a = 0;
@@ -75,7 +75,7 @@ public final class gr0 extends Drawable {
                     int dp6 = AndroidUtilities.dp(fArr[i17] * 6.0f);
                     dp2 = (AndroidUtilities.dp(3.0f) + intrinsicWidth2) - dp6;
                     dp3 = ((intrinsicHeight / 2) + intrinsicHeight2) - AndroidUtilities.dp(2.0f);
-                    D = org.telegram.messenger.mk.D(3.0f, i16, dp6);
+                    D = org.telegram.messenger.nk.D(3.0f, i16, dp6);
                     i10 = dp5;
                 } else if (i14 == i11) {
                     i10 = AndroidUtilities.dp(5.0f * f10);
@@ -83,14 +83,14 @@ public final class gr0 extends Drawable {
                     int dp7 = AndroidUtilities.dp(fArr[i17] * 15.0f);
                     dp2 = (AndroidUtilities.dp(2.0f) + intrinsicWidth2) - dp7;
                     dp3 = ((intrinsicHeight / 2) + intrinsicHeight2) - AndroidUtilities.dp(7.0f);
-                    D = org.telegram.messenger.mk.D(2.0f, i16, dp7);
+                    D = org.telegram.messenger.nk.D(2.0f, i16, dp7);
                 } else if (i14 == 2) {
                     i10 = AndroidUtilities.dp(5.0f * f10);
                     dp = AndroidUtilities.dp(f10 * 18.0f);
                     int dp8 = AndroidUtilities.dp(fArr[i17] * 15.0f);
                     dp2 = (AndroidUtilities.dp(2.0f) + intrinsicWidth2) - dp8;
                     dp3 = (intrinsicHeight / 2) + intrinsicHeight2;
-                    D = org.telegram.messenger.mk.D(2.0f, i16, dp8);
+                    D = org.telegram.messenger.nk.D(2.0f, i16, dp8);
                 } else if (i14 == i13) {
                     int dp9 = AndroidUtilities.dp(2.5f * f10);
                     dp = AndroidUtilities.dp(f10 * 6.5f);
@@ -98,14 +98,14 @@ public final class gr0 extends Drawable {
                     dp2 = (AndroidUtilities.dp(7.0f) + intrinsicWidth2) - dp10;
                     dp3 = (intrinsicHeight / 2) + intrinsicHeight2;
                     i10 = dp9;
-                    D = org.telegram.messenger.mk.D(7.0f, i16, dp10);
+                    D = org.telegram.messenger.nk.D(7.0f, i16, dp10);
                 } else {
                     i10 = AndroidUtilities.dp(5.0f * f10);
                     dp = AndroidUtilities.dp(f10 * 18.0f);
                     int dp11 = AndroidUtilities.dp(fArr[i17] * 15.0f);
                     dp2 = (AndroidUtilities.dp(42.0f) + intrinsicWidth2) - dp11;
                     dp3 = ((intrinsicHeight / 2) + intrinsicHeight2) - AndroidUtilities.dp(7.0f);
-                    D = org.telegram.messenger.mk.D(42.0f, i16, dp11);
+                    D = org.telegram.messenger.nk.D(42.0f, i16, dp11);
                 }
                 float f11 = fArr[i17];
                 int x10 = (int) ((f11 < 0.5f ? f11 / 0.5f : org.telegram.messenger.g0.x(f11, 0.5f, 0.5f, 1.0f)) * 255.0f);

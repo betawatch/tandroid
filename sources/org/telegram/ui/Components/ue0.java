@@ -18,7 +18,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class ue0 extends org.telegram.ui.ActionBar.f3 {
     public final TextView b;
@@ -79,7 +79,7 @@ public final class ue0 extends org.telegram.ui.ActionBar.f3 {
         textView2.setLineSpacing(textView2.getLineSpacingExtra(), textView2.getLineSpacingMultiplier() * 1.1f);
         TextView textView3 = new TextView(context);
         this.d = textView3;
-        org.telegram.messenger.mk.m(R.string.ManageInviteLinks, textView3, 17);
+        org.telegram.messenger.nk.m(R.string.ManageInviteLinks, textView3, 17);
         textView3.setEllipsize(TextUtils.TruncateAt.END);
         textView3.setSingleLine(true);
         textView3.setTypeface(AndroidUtilities.bold());

@@ -166,7 +166,7 @@ import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.Wallet.WalletEngine2;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public class qn extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate, vx, ic0, org.telegram.ui.Components.ek, org.telegram.ui.Components.bh, ng.b, org.telegram.ui.Components.y50, ne.d {
     public static int Ic = 22;
@@ -1855,27 +1855,27 @@ public class qn extends org.telegram.ui.ActionBar.n2 implements NotificationCent
             if (!MediaDataController.canShowAttachMenuBot(tL_attachMenuBot, qnVar.i() != null ? qnVar.i() : qnVar.e)) {
                 TLRPC.User user2 = qnVar.f;
                 if (user2 != null && user2.bot && user.id == tL_attachMenuBot.bot_id) {
-                    org.telegram.messenger.mk.q(R.string.BotCantOpenAttachMenuSameBot, org.telegram.ui.Components.xc.a0(qnVar), null);
+                    org.telegram.messenger.nk.q(R.string.BotCantOpenAttachMenuSameBot, org.telegram.ui.Components.xc.a0(qnVar), null);
                     return;
                 }
                 if (user2 != null && user2.bot && user.id != tL_attachMenuBot.bot_id) {
-                    org.telegram.messenger.mk.q(R.string.BotCantOpenAttachMenuBot, org.telegram.ui.Components.xc.a0(qnVar), null);
+                    org.telegram.messenger.nk.q(R.string.BotCantOpenAttachMenuBot, org.telegram.ui.Components.xc.a0(qnVar), null);
                     return;
                 }
                 if (user2 != null && !user2.bot) {
-                    org.telegram.messenger.mk.q(R.string.BotCantOpenAttachMenuUser, org.telegram.ui.Components.xc.a0(qnVar), null);
+                    org.telegram.messenger.nk.q(R.string.BotCantOpenAttachMenuUser, org.telegram.ui.Components.xc.a0(qnVar), null);
                     return;
                 }
                 TLRPC.Chat chat = qnVar.e;
                 if (chat != null && !ChatObject.isChannelAndNotMegaGroup(chat)) {
-                    org.telegram.messenger.mk.q(R.string.BotCantOpenAttachMenuGroup, org.telegram.ui.Components.xc.a0(qnVar), null);
+                    org.telegram.messenger.nk.q(R.string.BotCantOpenAttachMenuGroup, org.telegram.ui.Components.xc.a0(qnVar), null);
                     return;
                 }
                 TLRPC.Chat chat2 = qnVar.e;
                 if (chat2 == null || !ChatObject.isChannelAndNotMegaGroup(chat2)) {
                     return;
                 }
-                org.telegram.messenger.mk.q(R.string.BotCantOpenAttachMenuChannel, org.telegram.ui.Components.xc.a0(qnVar), null);
+                org.telegram.messenger.nk.q(R.string.BotCantOpenAttachMenuChannel, org.telegram.ui.Components.xc.a0(qnVar), null);
                 return;
             }
             if (!tL_attachMenuBot.inactive) {
@@ -2032,7 +2032,7 @@ public class qn extends org.telegram.ui.ActionBar.n2 implements NotificationCent
         textView2.setTextColor(org.telegram.ui.ActionBar.h6.w0(i13, onVar));
         textView2.setTextSize(1, 14.0f);
         String firstName = j10 > 0 ? UserObject.getFirstName(MessagesController.getInstance(i10).getUser(Long.valueOf(j10))) : "";
-        org.telegram.messenger.mk.r(premiumFeaturesBlocked ? R.string.PremiumMessageTextLocked : R.string.PremiumMessageText, new Object[]{firstName, firstName}, textView2);
+        org.telegram.messenger.nk.r(premiumFeaturesBlocked ? R.string.PremiumMessageTextLocked : R.string.PremiumMessageText, new Object[]{firstName, firstName}, textView2);
         linearLayout.addView(textView2, w7.z5.t(-1, -2, 1, 12, 9, 12, 19));
         if (!premiumFeaturesBlocked) {
             sg.q0 q0Var = new sg.q0(parentActivity, onVar, true);
@@ -2394,7 +2394,7 @@ public class qn extends org.telegram.ui.ActionBar.n2 implements NotificationCent
 
     public static void Y0(qn qnVar) {
         if (AndroidUtilities.addToClipboard(qnVar.Mb.sponsoredInfo)) {
-            org.telegram.messenger.mk.p(R.string.TextCopied, new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(qnVar.getParentActivity()), qnVar.resourceProvider));
+            org.telegram.messenger.nk.p(R.string.TextCopied, new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(qnVar.getParentActivity()), qnVar.resourceProvider));
         }
     }
 
@@ -2964,7 +2964,7 @@ public class qn extends org.telegram.ui.ActionBar.n2 implements NotificationCent
 
     public static void i0(qn qnVar) {
         if (AndroidUtilities.addToClipboard(qnVar.Mb.sponsoredAdditionalInfo)) {
-            org.telegram.messenger.mk.p(R.string.TextCopied, new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(qnVar.getParentActivity()), qnVar.resourceProvider));
+            org.telegram.messenger.nk.p(R.string.TextCopied, new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(qnVar.getParentActivity()), qnVar.resourceProvider));
         }
     }
 
@@ -3251,7 +3251,7 @@ public class qn extends org.telegram.ui.ActionBar.n2 implements NotificationCent
             if (!TextUtils.equals(AndroidUtilities.getHostAuthority(str2), MessagesController.getInstance(qnVar.currentAccount).linkPrefix)) {
                 TextView textView = new TextView(qnVar.getParentActivity());
                 f11 = 10.0f;
-                org.telegram.messenger.mk.o(org.telegram.ui.ActionBar.h6.gc, qnVar.resourceProvider, textView, 1, 14.0f);
+                org.telegram.messenger.nk.o(org.telegram.ui.ActionBar.h6.gc, qnVar.resourceProvider, textView, 1, 14.0f);
                 f7 = 18.0f;
                 textView.setPadding(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(18.0f), AndroidUtilities.dp(10.0f));
                 textView.setMaxWidth(AndroidUtilities.dp(300.0f));
@@ -3263,7 +3263,7 @@ public class qn extends org.telegram.ui.ActionBar.n2 implements NotificationCent
                 arrayList.add(textView);
                 if (qnVar.Mb.sponsoredInfo != null) {
                     TextView textView2 = new TextView(qnVar.getParentActivity());
-                    org.telegram.messenger.mk.o(org.telegram.ui.ActionBar.h6.E8, qnVar.resourceProvider, textView2, 1, 14.0f);
+                    org.telegram.messenger.nk.o(org.telegram.ui.ActionBar.h6.E8, qnVar.resourceProvider, textView2, 1, 14.0f);
                     textView2.setPadding(AndroidUtilities.dp(f7), AndroidUtilities.dp(f11), AndroidUtilities.dp(f7), AndroidUtilities.dp(f11));
                     textView2.setMaxWidth(AndroidUtilities.dp(f10));
                     textView2.setText(qnVar.Mb.sponsoredInfo);
@@ -3273,7 +3273,7 @@ public class qn extends org.telegram.ui.ActionBar.n2 implements NotificationCent
                 }
                 if (qnVar.Mb.sponsoredAdditionalInfo != null) {
                     TextView textView3 = new TextView(qnVar.getParentActivity());
-                    org.telegram.messenger.mk.o(org.telegram.ui.ActionBar.h6.E8, qnVar.resourceProvider, textView3, 1, 14.0f);
+                    org.telegram.messenger.nk.o(org.telegram.ui.ActionBar.h6.E8, qnVar.resourceProvider, textView3, 1, 14.0f);
                     textView3.setPadding(AndroidUtilities.dp(f7), AndroidUtilities.dp(f11), AndroidUtilities.dp(f7), AndroidUtilities.dp(f11));
                     textView3.setMaxWidth(AndroidUtilities.dp(f10));
                     textView3.setText(qnVar.Mb.sponsoredAdditionalInfo);
@@ -11028,7 +11028,7 @@ public class qn extends org.telegram.ui.ActionBar.n2 implements NotificationCent
                     } else {
                         qnVar.h5 = qnVar.d5;
                         qnVar.i5 = qnVar.e5;
-                        Bundle d = org.telegram.messenger.mk.d(3, "onlySelect", "dialogsType", true);
+                        Bundle d = org.telegram.messenger.nk.d(3, "onlySelect", "dialogsType", true);
                         d.putInt("messagesCount", 1);
                         d.putInt("hasPoll", qnVar.h5.isTodo() ? 3 : qnVar.h5.isPoll() ? qnVar.h5.isPublicPoll() ? 2 : 1 : 0);
                         if (ChatObject.isMonoForum(qnVar.e) && ChatObject.canManageMonoForum(qnVar.currentAccount, qnVar.e)) {
@@ -11318,7 +11318,7 @@ public class qn extends org.telegram.ui.ActionBar.n2 implements NotificationCent
                                 messageObject7 = D8.captionMessage;
                             }
                             qnVar.n5 = messageObject7;
-                            Bundle d10 = org.telegram.messenger.mk.d(3, "onlySelect", "dialogsType", true);
+                            Bundle d10 = org.telegram.messenger.nk.d(3, "onlySelect", "dialogsType", true);
                             d10.putBoolean("quote", true);
                             d10.putBoolean("reply_to", true);
                             long peerDialogId = DialogObject.getPeerDialogId(qnVar.d5.getFromPeer());
@@ -12762,7 +12762,7 @@ public class qn extends org.telegram.ui.ActionBar.n2 implements NotificationCent
                 rtVar.setOrientation(1);
                 org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(parentActivity3);
                 TextView textView5 = new TextView(parentActivity3);
-                org.telegram.messenger.mk.k(15.0f, 1, textView5);
+                org.telegram.messenger.nk.k(15.0f, 1, textView5);
                 int i17 = org.telegram.ui.ActionBar.h6.ic;
                 textView5.setTextColor(org.telegram.ui.ActionBar.h6.w0(i17, onVar));
                 textView5.setGravity(1);
@@ -15115,11 +15115,11 @@ public class qn extends org.telegram.ui.ActionBar.n2 implements NotificationCent
                                                                     i17 = qnVar.inBubbleMode ? 0 : AndroidUtilities.statusBarHeight;
                                                                 }
                                                                 ebVar.setMaxHeight((dp7 + dp) - i17);
-                                                                org.telegram.messenger.xi xiVar = new org.telegram.messenger.xi(qnVar, left, i17, z49, dl0Var);
+                                                                org.telegram.messenger.yi yiVar = new org.telegram.messenger.yi(qnVar, left, i17, z49, dl0Var);
                                                                 if (atomicBoolean.get()) {
-                                                                    atomicReference.set(xiVar);
+                                                                    atomicReference.set(yiVar);
                                                                 } else {
-                                                                    xiVar.run();
+                                                                    yiVar.run();
                                                                 }
                                                                 qnVar.x0.B0();
                                                                 qnVar.z0.R = false;
@@ -15204,7 +15204,7 @@ public class qn extends org.telegram.ui.ActionBar.n2 implements NotificationCent
                                                             if (dp < height) {
                                                             }
                                                             ebVar2.setMaxHeight((dp72 + dp) - i17);
-                                                            org.telegram.messenger.xi xiVar2 = new org.telegram.messenger.xi(qnVar, left, i17, z49, dl0Var);
+                                                            org.telegram.messenger.yi yiVar2 = new org.telegram.messenger.yi(qnVar, left, i17, z49, dl0Var);
                                                             if (atomicBoolean.get()) {
                                                             }
                                                             qnVar.x0.B0();
@@ -15292,7 +15292,7 @@ public class qn extends org.telegram.ui.ActionBar.n2 implements NotificationCent
                                                         if (dp < height) {
                                                         }
                                                         ebVar22.setMaxHeight((dp722 + dp) - i17);
-                                                        org.telegram.messenger.xi xiVar22 = new org.telegram.messenger.xi(qnVar, left, i17, z49, dl0Var);
+                                                        org.telegram.messenger.yi yiVar22 = new org.telegram.messenger.yi(qnVar, left, i17, z49, dl0Var);
                                                         if (atomicBoolean.get()) {
                                                         }
                                                         qnVar.x0.B0();
@@ -15370,7 +15370,7 @@ public class qn extends org.telegram.ui.ActionBar.n2 implements NotificationCent
                                                     if (dp < height) {
                                                     }
                                                     ebVar222.setMaxHeight((dp7222 + dp) - i17);
-                                                    org.telegram.messenger.xi xiVar222 = new org.telegram.messenger.xi(qnVar, left, i17, z49, dl0Var);
+                                                    org.telegram.messenger.yi yiVar222 = new org.telegram.messenger.yi(qnVar, left, i17, z49, dl0Var);
                                                     if (atomicBoolean.get()) {
                                                     }
                                                     qnVar.x0.B0();
@@ -15460,7 +15460,7 @@ public class qn extends org.telegram.ui.ActionBar.n2 implements NotificationCent
                                                     if (dp < height) {
                                                     }
                                                     ebVar2222.setMaxHeight((dp72222 + dp) - i17);
-                                                    org.telegram.messenger.xi xiVar2222 = new org.telegram.messenger.xi(qnVar, left, i17, z49, dl0Var);
+                                                    org.telegram.messenger.yi yiVar2222 = new org.telegram.messenger.yi(qnVar, left, i17, z49, dl0Var);
                                                     if (atomicBoolean.get()) {
                                                     }
                                                     qnVar.x0.B0();
@@ -15544,7 +15544,7 @@ public class qn extends org.telegram.ui.ActionBar.n2 implements NotificationCent
                                             if (dp < height) {
                                             }
                                             ebVar22222.setMaxHeight((dp722222 + dp) - i17);
-                                            org.telegram.messenger.xi xiVar22222 = new org.telegram.messenger.xi(qnVar, left, i17, z49, dl0Var);
+                                            org.telegram.messenger.yi yiVar22222 = new org.telegram.messenger.yi(qnVar, left, i17, z49, dl0Var);
                                             if (atomicBoolean.get()) {
                                             }
                                             qnVar.x0.B0();
@@ -15635,7 +15635,7 @@ public class qn extends org.telegram.ui.ActionBar.n2 implements NotificationCent
                                         if (dp < height) {
                                         }
                                         ebVar222222.setMaxHeight((dp7222222 + dp) - i17);
-                                        org.telegram.messenger.xi xiVar222222 = new org.telegram.messenger.xi(qnVar, left, i17, z49, dl0Var);
+                                        org.telegram.messenger.yi yiVar222222 = new org.telegram.messenger.yi(qnVar, left, i17, z49, dl0Var);
                                         if (atomicBoolean.get()) {
                                         }
                                         qnVar.x0.B0();
@@ -17705,7 +17705,7 @@ public class qn extends org.telegram.ui.ActionBar.n2 implements NotificationCent
                                         hjVar4.h(removeRTL3, user4.scam, user4.fake, user4.verified, getMessagesController().isPremiumUser(this.f), this.f.emoji_status, z10);
                                     } else {
                                         hj hjVar5 = this.a1;
-                                        String g10 = org.telegram.messenger.mk.g(new StringBuilder("+"), this.f.phone, jf.b.c());
+                                        String g10 = org.telegram.messenger.nk.g(new StringBuilder("+"), this.f.phone, jf.b.c());
                                         TLRPC.User user5 = this.f;
                                         hjVar5.h(g10, user5.scam, user5.fake, user5.verified, getMessagesController().isPremiumUser(this.f), this.f.emoji_status, z10);
                                     }
@@ -26682,7 +26682,7 @@ public class qn extends org.telegram.ui.ActionBar.n2 implements NotificationCent
         int h = dmVar.h();
         int i15 = z10 ? 25 : 5;
         if (this.R3 != 7) {
-            AndroidUtilities.runOnUIThread(new org.telegram.messenger.ef(this, h, i12, i10, i15, 1));
+            AndroidUtilities.runOnUIThread(new org.telegram.messenger.gf(this, h, i12, i10, i15, 1));
             return;
         }
         if ((h - i12) - i10 > i15 || this.G6 || this.C6[0]) {
@@ -31840,7 +31840,7 @@ public class qn extends org.telegram.ui.ActionBar.n2 implements NotificationCent
         if (f0Var != null && f0Var.d()) {
             this.Y9.setHiddenByScroll(true);
         }
-        Bundle d = org.telegram.messenger.mk.d(3, "onlySelect", "dialogsType", true);
+        Bundle d = org.telegram.messenger.nk.d(3, "onlySelect", "dialogsType", true);
         d.putInt("messagesCount", this.c6);
         d.putInt("hasPoll", i10);
         d.putBoolean("hasInvoice", z11);
@@ -34654,7 +34654,7 @@ public class qn extends org.telegram.ui.ActionBar.n2 implements NotificationCent
                     }
                 }
                 if (uri == null) {
-                    org.telegram.messenger.mk.q(R.string.UnsupportedAttachment, new org.telegram.ui.Components.xc(foVar.b.container, d6Var), d6Var);
+                    org.telegram.messenger.nk.q(R.string.UnsupportedAttachment, new org.telegram.ui.Components.xc(foVar.b.container, d6Var), d6Var);
                     return;
                 }
                 foVar.h0(foVar.k1, new sh.c(uri));
@@ -40034,7 +40034,7 @@ public class qn extends org.telegram.ui.ActionBar.n2 implements NotificationCent
             b2Var.T = LocaleController.getString(R.string.AreYouSureShareMyContactInfoBot);
         } else {
             int i11 = R.string.AreYouSureShareMyContactInfoUser;
-            String g10 = org.telegram.messenger.mk.g(new StringBuilder("+"), getUserConfig().getCurrentUser().phone, jf.b.c());
+            String g10 = org.telegram.messenger.nk.g(new StringBuilder("+"), getUserConfig().getCurrentUser().phone, jf.b.c());
             TLRPC.User user2 = this.f;
             b2Var.T = AndroidUtilities.replaceTags(LocaleController.formatString("AreYouSureShareMyContactInfoUser", i11, g10, ContactsController.formatName(user2.first_name, user2.last_name)));
         }
@@ -40379,7 +40379,7 @@ public class qn extends org.telegram.ui.ActionBar.n2 implements NotificationCent
         if (k1Var == null || (b3Var = this.J1) == null) {
             return k1Var;
         }
-        if (!b3Var.isShowing() && !this.J1.x0) {
+        if ((!b3Var.isShowing() || this.J1.isDismissed()) && !this.J1.x0) {
             return k1Var;
         }
         int i10 = Build.VERSION.SDK_INT;

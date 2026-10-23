@@ -63,7 +63,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class x71 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.Components.d50, mg0, ne.d {
     public org.telegram.ui.Components.h9 E;
@@ -523,7 +523,7 @@ public final class x71 extends org.telegram.ui.ActionBar.n2 implements Notificat
             arrayList.add(v71.a(LocaleController.getString(R.string.GraceSuggestionTitle), LocaleController.getString(R.string.GraceSuggestionMessage), null, null, LocaleController.getString(R.string.GraceSuggestionButton), new l71(x71Var, i11)));
             arrayList.add(org.telegram.ui.Components.h61.B(null));
         } else if (set.contains("VALIDATE_PHONE_NUMBER") && x71Var.getUserConfig().getCurrentUser() != null) {
-            arrayList.add(v71.a(LocaleController.formatString(R.string.CheckPhoneNumber, org.telegram.messenger.mk.g(new StringBuilder("+"), x71Var.getUserConfig().getCurrentUser().phone, jf.b.c())), AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.CheckPhoneNumberInfo), new j71(x71Var, i23)), LocaleController.getString(R.string.CheckPhoneNumberNo), new l71(x71Var, i23), ai.l7.I2(LocaleController.getString(R.string.CheckPhoneNumberYes2)), new l71(x71Var, 2)));
+            arrayList.add(v71.a(LocaleController.formatString(R.string.CheckPhoneNumber, org.telegram.messenger.nk.g(new StringBuilder("+"), x71Var.getUserConfig().getCurrentUser().phone, jf.b.c())), AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.CheckPhoneNumberInfo), new j71(x71Var, i23)), LocaleController.getString(R.string.CheckPhoneNumberNo), new l71(x71Var, i23), ai.l7.I2(LocaleController.getString(R.string.CheckPhoneNumberYes2)), new l71(x71Var, 2)));
             arrayList.add(org.telegram.ui.Components.h61.B(null));
         } else if (set.contains("VALIDATE_PASSWORD")) {
             arrayList.add(v71.a(LocaleController.getString(R.string.YourPasswordHeader), LocaleController.getString(R.string.YourPasswordRemember), LocaleController.getString(R.string.YourPasswordRememberNo), new l71(x71Var, 3), LocaleController.getString(R.string.YourPasswordRememberYes), new l71(x71Var, i10)));

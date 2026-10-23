@@ -40,7 +40,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.mk;
+import org.telegram.messenger.nk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.jm0;
@@ -54,7 +54,7 @@ import org.telegram.ui.Components.x00;
 import org.telegram.ui.Components.xo0;
 import org.telegram.ui.qy0;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public class k extends FrameLayout implements ne.d, y5 {
     public CharSequence A0;
@@ -408,7 +408,7 @@ public class k extends FrameLayout implements ne.d, y5 {
                 this.r.setVisibility(0);
                 this.r.setAlpha(0.0f);
             }
-            mk.s(this.r.animate(), z10 ? 0.0f : 1.0f, 220L);
+            nk.s(this.r.animate(), z10 ? 0.0f : 1.0f, 220L);
         }
         j5 j5Var = j5VarArr[1];
         if (j5Var != null) {
@@ -1585,7 +1585,7 @@ public class k extends FrameLayout implements ne.d, y5 {
                 } else if (AndroidUtilities.isTablet()) {
                     f7 = 74.0f;
                 }
-                makeMeasureSpec = mk.c(f7, size, TLObject.FLAG_30);
+                makeMeasureSpec = nk.c(f7, size, TLObject.FLAG_30);
                 if (!kVar.y) {
                     kVar.E.r(0.0f);
                 }

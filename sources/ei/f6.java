@@ -55,7 +55,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.VideoEditedInfo;
-import org.telegram.messenger.mk;
+import org.telegram.messenger.nk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
@@ -74,7 +74,7 @@ import org.telegram.ui.Components.wh;
 import org.telegram.ui.Components.yg;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes4.dex */
 public abstract class f6 extends mw0 implements rg.q1, rg.h, rg.m1, kw0, rb {
     public final rg.f1 A0;
@@ -2584,16 +2584,16 @@ public abstract class f6 extends mw0 implements rg.q1, rg.h, rg.m1, kw0, rb {
                                                     mediaAreaCoordinates2.y = ((mediaEntity.height / 2.0f) + mediaEntity.y) * 100.0f;
                                                     if (z19) {
                                                         rg.s0 s0Var3 = ((rg.t0) jVar).q0;
-                                                        mediaAreaCoordinates2.w = mk.z(s0Var3.I * 2 * scaleX, z5Var.getMeasuredWidth(), f14, 100.0f);
-                                                        mediaEntity.mediaArea.coordinates.h = mk.z(s0Var3.J * 2 * scaleY, z5Var.getMeasuredHeight(), mediaEntity.height, 100.0f);
+                                                        mediaAreaCoordinates2.w = nk.z(s0Var3.I * 2 * scaleX, z5Var.getMeasuredWidth(), f14, 100.0f);
+                                                        mediaEntity.mediaArea.coordinates.h = nk.z(s0Var3.J * 2 * scaleY, z5Var.getMeasuredHeight(), mediaEntity.height, 100.0f);
                                                     } else if (jVar instanceof rg.w2) {
                                                         rg.s0 s0Var4 = ((rg.w2) jVar).q0;
-                                                        mediaAreaCoordinates2.w = mk.z(s0Var4.I * 2 * scaleX, z5Var.getMeasuredWidth(), f14, 100.0f);
-                                                        mediaEntity.mediaArea.coordinates.h = mk.z(s0Var4.J * 2 * scaleY, z5Var.getMeasuredHeight(), mediaEntity.height, 100.0f);
+                                                        mediaAreaCoordinates2.w = nk.z(s0Var4.I * 2 * scaleX, z5Var.getMeasuredWidth(), f14, 100.0f);
+                                                        mediaEntity.mediaArea.coordinates.h = nk.z(s0Var4.J * 2 * scaleY, z5Var.getMeasuredHeight(), mediaEntity.height, 100.0f);
                                                     } else if (jVar instanceof rg.q0) {
                                                         rg.o0 o0Var = ((rg.q0) jVar).q0;
-                                                        mediaAreaCoordinates2.w = mk.z(o0Var.f * 2 * scaleX, z5Var.getMeasuredWidth(), f14, 100.0f);
-                                                        mediaEntity.mediaArea.coordinates.h = mk.z(o0Var.h * 2 * scaleY, z5Var.getMeasuredHeight(), mediaEntity.height, 100.0f);
+                                                        mediaAreaCoordinates2.w = nk.z(o0Var.f * 2 * scaleX, z5Var.getMeasuredWidth(), f14, 100.0f);
+                                                        mediaEntity.mediaArea.coordinates.h = nk.z(o0Var.h * 2 * scaleY, z5Var.getMeasuredHeight(), mediaEntity.height, 100.0f);
                                                     } else if (jVar instanceof rg.b2) {
                                                         rg.b2 b2Var = (rg.b2) jVar;
                                                         float padding = ((b2Var.getPadding() * 2) * scaleX) / z5Var.getMeasuredWidth();
@@ -2623,8 +2623,8 @@ public abstract class f6 extends mw0 implements rg.q1, rg.h, rg.m1, kw0, rb {
                                             double r10 = e1Var2.r(rectF);
                                             rectF.offset(o5Var2.getX(), o5Var2.getY());
                                             rectF.offset(x0Var.getX(), x0Var.getY());
-                                            mediaEntity.mediaArea.coordinates.x = (((rectF.centerX() * scaleX) + mk.x(view.getWidth(), 2.0f, scaleX, (view.getWidth() / 2.0f) + x10)) / z5Var.getMeasuredWidth()) * 100.0f;
-                                            mediaEntity.mediaArea.coordinates.y = (((rectF.centerY() * scaleY) + mk.x(view.getHeight(), 2.0f, scaleY, (view.getHeight() / 2.0f) + y3)) / z5Var.getMeasuredHeight()) * 100.0f;
+                                            mediaEntity.mediaArea.coordinates.x = (((rectF.centerX() * scaleX) + nk.x(view.getWidth(), 2.0f, scaleX, (view.getWidth() / 2.0f) + x10)) / z5Var.getMeasuredWidth()) * 100.0f;
+                                            mediaEntity.mediaArea.coordinates.y = (((rectF.centerY() * scaleY) + nk.x(view.getHeight(), 2.0f, scaleY, (view.getHeight() / 2.0f) + y3)) / z5Var.getMeasuredHeight()) * 100.0f;
                                             mediaEntity.mediaArea.coordinates.w = ((rectF.width() * scaleX) / z5Var.getMeasuredWidth()) * 100.0f;
                                             mediaEntity.mediaArea.coordinates.h = ((rectF.height() * scaleY) / z5Var.getMeasuredHeight()) * 100.0f;
                                             mediaEntity.mediaArea.coordinates.rotation = ((-mediaEntity.rotation) / 3.141592653589793d) * 180.0d;
@@ -2853,8 +2853,8 @@ public abstract class f6 extends mw0 implements rg.q1, rg.h, rg.m1, kw0, rb {
                                                                 mediaEntity2.x = (childAt.getWidth() / 2.0f) + x11;
                                                                 mediaEntity2.y = (childAt.getHeight() / 2.0f) + y10;
                                                                 i12 = i15;
-                                                                float x12 = mk.x(childAt.getWidth(), 2.0f, scaleX2, centerX * scaleX2);
-                                                                float x13 = mk.x(childAt.getHeight(), 2.0f, scaleY3, centerY * scaleY3);
+                                                                float x12 = nk.x(childAt.getWidth(), 2.0f, scaleX2, centerX * scaleX2);
+                                                                float x13 = nk.x(childAt.getHeight(), 2.0f, scaleY3, centerY * scaleY3);
                                                                 o5Var = o5Var3;
                                                                 view = childAt;
                                                                 double d10 = mediaEntity2.x;

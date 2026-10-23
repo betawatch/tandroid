@@ -20,7 +20,7 @@ import org.telegram.messenger.GiftAuctionController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.mk;
+import org.telegram.messenger.nk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.d6;
@@ -40,7 +40,7 @@ import org.telegram.ui.yv0;
 import w7.b6;
 import w7.z5;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes4.dex */
 public final class v extends bb implements GiftAuctionController.OnAuctionUpdateListener {
     public static final zc[] p0 = new zc[1];
@@ -384,7 +384,7 @@ public final class v extends bb implements GiftAuctionController.OnAuctionUpdate
         if (context == null || starGift == null) {
             return;
         }
-        org.telegram.ui.ActionBar.f3 i10 = mk.i(1, context, null, false);
+        org.telegram.ui.ActionBar.f3 i10 = nk.i(1, context, null, false);
         runnable = i10.dismissRunnable;
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
@@ -400,13 +400,13 @@ public final class v extends bb implements GiftAuctionController.OnAuctionUpdate
         TextView textView = new TextView(context);
         textView.setTypeface(AndroidUtilities.bold());
         textView.setGravity(17);
-        mk.j(20.0f, R.string.GiftAuctionInfoHeader, 1, textView);
+        nk.j(20.0f, R.string.GiftAuctionInfoHeader, 1, textView);
         int i11 = h6.G6;
         textView.setTextColor(h6.w0(i11, d6Var));
         linearLayout.addView(textView, z5.t(-1, -2, 17, 20, 0, 20, 6));
         TextView textView2 = new TextView(context);
         textView2.setGravity(17);
-        mk.j(14.0f, R.string.GiftAuctionInfoText, 1, textView2);
+        nk.j(14.0f, R.string.GiftAuctionInfoText, 1, textView2);
         textView2.setTextColor(h6.w0(i11, d6Var));
         linearLayout.addView(textView2, z5.t(-1, -2, 17, 20, 0, 20, 16));
         yv0 yv0Var = new yv0(context, d6Var);

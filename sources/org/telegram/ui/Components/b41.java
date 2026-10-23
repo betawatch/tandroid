@@ -8,7 +8,7 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-54f46d3192cfcf06f3cb7093cda92e459a80ef6ed91a766593a44d0f1cb126c7 */
+/* compiled from: r8-map-id-5c4d11c5a4a3c3963e49de090c9ebed761f6fe8b7d1fb1bb05822f03003d35b5 */
 /* loaded from: classes3.dex */
 public final class b41 extends View {
     public float a;
@@ -78,7 +78,7 @@ public final class b41 extends View {
         if (i10 == 0) {
             float max = (Math.max(0.4f, this.a) - 0.4f) / 0.6f;
             if (max != 0.0f) {
-                float B = (org.telegram.messenger.mk.B(21.0f, 2, getWidth()) * max) + AndroidUtilities.dp(21.0f);
+                float B = (org.telegram.messenger.nk.B(21.0f, 2, getWidth()) * max) + AndroidUtilities.dp(21.0f);
                 float height2 = getHeight() / 2.0f;
                 canvas.drawLine(AndroidUtilities.dp(21.0f), height2, B, height2, paint);
                 double dp2 = AndroidUtilities.dp(9.0f) * max;
