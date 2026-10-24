@@ -14,13 +14,16 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.VideoEditedInfo;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+/* compiled from: r8-map-id-c4ea88e67dc56e5703ce3374834c68c9442b4bb60a0bad99fe22591c5d324222 */
 /* loaded from: classes.dex */
 public class MediaCodecVideoConvertor {
+    private static final int MAX_DECODER_INPUTS_PER_LOOP = 8;
     private static final int MEDIACODEC_TIMEOUT_DEFAULT = 2500;
     private static final int MEDIACODEC_TIMEOUT_INCREASED = 22000;
     private static final int PROCESSOR_TYPE_INTEL = 2;
@@ -35,14 +38,14 @@ public class MediaCodecVideoConvertor {
     private Muxer muxer;
     private String outputMimeType;
 
-    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+    /* compiled from: r8-map-id-c4ea88e67dc56e5703ce3374834c68c9442b4bb60a0bad99fe22591c5d324222 */
     public class ConversionCanceledException extends RuntimeException {
         public ConversionCanceledException() {
             super("canceled conversion");
         }
     }
 
-    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+    /* compiled from: r8-map-id-c4ea88e67dc56e5703ce3374834c68c9442b4bb60a0bad99fe22591c5d324222 */
     public static class ConvertVideoParams {
         int account;
         long avatarStartTime;
@@ -135,7 +138,131 @@ public class MediaCodecVideoConvertor {
         }
     }
 
-    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+    /* compiled from: r8-map-id-c4ea88e67dc56e5703ce3374834c68c9442b4bb60a0bad99fe22591c5d324222 */
+    public class DecoderFeeder extends Thread {
+        private ByteBuffer audioBuffer;
+        private final int audioIndex;
+        private final int audioTrackIndex;
+        private final MediaCodec decoder;
+        private final float durationS;
+        private final long endTime;
+        volatile Throwable error;
+        private final MediaExtractor extractor;
+        private int maxBufferSize;
+        private final Muxer muxer;
+        private final long startTime;
+        volatile boolean stopFeeding;
+        private final int videoIndex;
+
+        public DecoderFeeder(MediaExtractor mediaExtractor, MediaCodec mediaCodec, int i10, int i11, Muxer muxer, int i12, long j10, long j11, float f7, ByteBuffer byteBuffer, int i13) {
+            super("DecoderFeeder");
+            this.extractor = mediaExtractor;
+            this.decoder = mediaCodec;
+            this.videoIndex = i10;
+            this.audioIndex = i11;
+            this.muxer = muxer;
+            this.audioTrackIndex = i12;
+            this.startTime = j10;
+            this.endTime = j11;
+            this.durationS = f7;
+            this.audioBuffer = byteBuffer;
+            this.maxBufferSize = i13;
+        }
+
+        public void finish() {
+            this.stopFeeding = true;
+            try {
+                join();
+            } catch (InterruptedException e) {
+                FileLog.e(e);
+            }
+        }
+
+        @Override // java.lang.Thread, java.lang.Runnable
+        public void run() {
+            MediaCodec.BufferInfo bufferInfo = new MediaCodec.BufferInfo();
+            long j10 = 0;
+            while (!this.stopFeeding) {
+                try {
+                    if (MediaCodecVideoConvertor.this.callback != null && MediaCodecVideoConvertor.this.callback.checkConversionCanceled()) {
+                        return;
+                    }
+                    int sampleTrackIndex = this.extractor.getSampleTrackIndex();
+                    if (sampleTrackIndex == this.videoIndex) {
+                        int dequeueInputBuffer = this.decoder.dequeueInputBuffer(2500L);
+                        if (dequeueInputBuffer >= 0) {
+                            int readSampleData = this.extractor.readSampleData(this.decoder.getInputBuffer(dequeueInputBuffer), 0);
+                            if (readSampleData < 0) {
+                                this.decoder.queueInputBuffer(dequeueInputBuffer, 0, 0, 0L, 4);
+                                return;
+                            } else {
+                                this.decoder.queueInputBuffer(dequeueInputBuffer, 0, readSampleData, this.extractor.getSampleTime(), 0);
+                                this.extractor.advance();
+                            }
+                        }
+                    } else {
+                        int i10 = this.audioIndex;
+                        if (i10 == -1 || sampleTrackIndex != i10) {
+                            if (sampleTrackIndex == -1) {
+                                while (!this.stopFeeding) {
+                                    int dequeueInputBuffer2 = this.decoder.dequeueInputBuffer(2500L);
+                                    if (dequeueInputBuffer2 >= 0) {
+                                        this.decoder.queueInputBuffer(dequeueInputBuffer2, 0, 0, 0L, 4);
+                                        return;
+                                    }
+                                }
+                                return;
+                            }
+                            return;
+                        }
+                        if (Build.VERSION.SDK_INT >= 28) {
+                            long sampleSize = this.extractor.getSampleSize();
+                            if (sampleSize > this.maxBufferSize) {
+                                int i11 = (int) (sampleSize + 1024);
+                                this.maxBufferSize = i11;
+                                this.audioBuffer = ByteBuffer.allocateDirect(i11);
+                            }
+                        }
+                        int readSampleData2 = this.extractor.readSampleData(this.audioBuffer, 0);
+                        bufferInfo.size = readSampleData2;
+                        if (readSampleData2 < 0) {
+                            return;
+                        }
+                        bufferInfo.presentationTimeUs = this.extractor.getSampleTime();
+                        this.extractor.advance();
+                        if (bufferInfo.size > 0) {
+                            long j11 = this.endTime;
+                            if (j11 < 0 || bufferInfo.presentationTimeUs < j11) {
+                                bufferInfo.offset = 0;
+                                bufferInfo.flags = this.extractor.getSampleFlags();
+                                synchronized (this.muxer) {
+                                    try {
+                                        long writeSampleData = this.muxer.writeSampleData(this.audioTrackIndex, this.audioBuffer, bufferInfo, false);
+                                        if (writeSampleData != 0 && MediaCodecVideoConvertor.this.callback != null) {
+                                            long j12 = bufferInfo.presentationTimeUs;
+                                            long j13 = this.startTime;
+                                            if (j12 - j13 > j10) {
+                                                j10 = j12 - j13;
+                                            }
+                                            MediaCodecVideoConvertor.this.callback.didWriteData(writeSampleData, (j10 / 1000.0f) / this.durationS);
+                                        }
+                                    } finally {
+                                    }
+                                }
+                            }
+                        } else {
+                            continue;
+                        }
+                    }
+                } catch (Throwable th2) {
+                    this.error = th2;
+                    return;
+                }
+            }
+        }
+    }
+
+    /* compiled from: r8-map-id-c4ea88e67dc56e5703ce3374834c68c9442b4bb60a0bad99fe22591c5d324222 */
     public static class MixedSoundInfo {
         final String audioFile;
         public long audioOffset;
@@ -197,10 +324,11 @@ public class MediaCodecVideoConvertor {
         	at jadx.core.dex.visitors.typeinference.TypeInferenceVisitor.visit(TypeInferenceVisitor.java:77)
         */
     /* JADX WARN: Finally extract failed */
-    /* JADX WARN: Unreachable blocks removed: 2, instructions: 9 */
-    private boolean convertVideoInternal(org.telegram.messenger.video.MediaCodecVideoConvertor.ConvertVideoParams r127, boolean r128, int r129) {
+    /* JADX WARN: Unreachable blocks removed: 2, instructions: 7 */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:1053:? -> B:1048:0x152c). Please report as a decompilation issue!!! */
+    private boolean convertVideoInternal(org.telegram.messenger.video.MediaCodecVideoConvertor.ConvertVideoParams r115, boolean r116, int r117) {
         /*
-            Method dump skipped, instructions count: 8398
+            Method dump skipped, instructions count: 7709
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.video.MediaCodecVideoConvertor.convertVideoInternal(org.telegram.messenger.video.MediaCodecVideoConvertor$ConvertVideoParams, boolean, int):boolean");
@@ -430,6 +558,20 @@ public class MediaCodecVideoConvertor {
         return mediaCodec.getName().equals("c2.mtk.avc.encoder");
     }
 
+    private static boolean isSocModel(String... strArr) {
+        String str;
+        if (Build.VERSION.SDK_INT < 31) {
+            return false;
+        }
+        for (String str2 : strArr) {
+            str = Build.SOC_MODEL;
+            if (str2.equals(str)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     /* JADX WARN: Code restructure failed: missing block: B:50:0x0117, code lost:
     
         if (r14[r4 + 3] != 1) goto L75;
@@ -638,6 +780,32 @@ public class MediaCodecVideoConvertor {
         return j14;
     }
 
+    private static void setDecoderOperatingRate(MediaFormat mediaFormat) {
+        int i10 = Build.VERSION.SDK_INT;
+        if (i10 < 25) {
+            return;
+        }
+        if (i10 >= 31 && isSocModel("s5e8835", "SA8155P")) {
+            mediaFormat.setInteger("priority", 1);
+        }
+        mediaFormat.setInteger("operating-rate", 10000);
+    }
+
+    private static void setEncoderOperatingRate(MediaFormat mediaFormat) {
+        int i10 = Build.VERSION.SDK_INT;
+        if (i10 < 25) {
+            return;
+        }
+        mediaFormat.setInteger("priority", 1);
+        if (i10 == 26) {
+            mediaFormat.setInteger("operating-rate", 30);
+        } else if (i10 < 31 || i10 > 34 || !isSocModel("SM8550", "SM7450", "SM6450", "SC9863A", "T612", "T606", "T603")) {
+            mediaFormat.setInteger("operating-rate", ConnectionsManager.DEFAULT_DATACENTER_ID);
+        } else {
+            mediaFormat.setInteger("operating-rate", MediaDataController.MAX_STYLE_RUNS_COUNT);
+        }
+    }
+
     public boolean convertVideo(ConvertVideoParams convertVideoParams) {
         if (convertVideoParams.isSticker) {
             return WebmEncoder.convert(convertVideoParams, 0);
@@ -650,7 +818,7 @@ public class MediaCodecVideoConvertor {
         return this.endPresentationTime;
     }
 
-    /* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+    /* compiled from: r8-map-id-c4ea88e67dc56e5703ce3374834c68c9442b4bb60a0bad99fe22591c5d324222 */
     public static class Muxer {
         public final MediaMuxer mediaMuxer;
         public final MP4Builder mp4Builder;
@@ -705,21 +873,25 @@ public class MediaCodecVideoConvertor {
             }
         }
 
-        public long writeSampleData(int i10, ByteBuffer byteBuffer, MediaCodec.BufferInfo bufferInfo, boolean z10) {
-            MediaMuxer mediaMuxer = this.mediaMuxer;
-            if (mediaMuxer == null) {
-                MP4Builder mP4Builder = this.mp4Builder;
-                if (mP4Builder != null) {
-                    return mP4Builder.writeSampleData(i10, byteBuffer, bufferInfo, z10);
+        public synchronized long writeSampleData(int i10, ByteBuffer byteBuffer, MediaCodec.BufferInfo bufferInfo, boolean z10) {
+            try {
+                MediaMuxer mediaMuxer = this.mediaMuxer;
+                if (mediaMuxer != null) {
+                    if (!this.started) {
+                        mediaMuxer.start();
+                        this.started = true;
+                    }
+                    this.mediaMuxer.writeSampleData(i10, byteBuffer, bufferInfo);
+                    return 0L;
                 }
-                return 0L;
+                MP4Builder mP4Builder = this.mp4Builder;
+                if (mP4Builder == null) {
+                    return 0L;
+                }
+                return mP4Builder.writeSampleData(i10, byteBuffer, bufferInfo, z10);
+            } catch (Throwable th2) {
+                throw th2;
             }
-            if (!this.started) {
-                mediaMuxer.start();
-                this.started = true;
-            }
-            this.mediaMuxer.writeSampleData(i10, byteBuffer, bufferInfo);
-            return 0L;
         }
 
         public Muxer(MediaMuxer mediaMuxer) {

@@ -3,7 +3,7 @@ package yh;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.ns0;
 
-/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+/* compiled from: r8-map-id-c4ea88e67dc56e5703ce3374834c68c9442b4bb60a0bad99fe22591c5d324222 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t1 implements ne.d, Utilities.Callback2Return {
     public final /* synthetic */ ns0 a;

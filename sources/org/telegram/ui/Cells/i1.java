@@ -3,7 +3,7 @@ package org.telegram.ui.Cells;
 import org.telegram.ui.Components.e41;
 import org.telegram.ui.Components.kp0;
 
-/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+/* compiled from: r8-map-id-c4ea88e67dc56e5703ce3374834c68c9442b4bb60a0bad99fe22591c5d324222 */
 /* loaded from: classes3.dex */
 public final class i1 extends e41 {
     public final /* synthetic */ t1 R;

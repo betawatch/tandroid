@@ -6,6 +6,8 @@ import android.opengl.EGLContext;
 import android.opengl.EGLDisplay;
 import android.opengl.EGLSurface;
 import android.opengl.GLES20;
+import android.os.Handler;
+import android.os.HandlerThread;
 import android.view.Surface;
 import ei.z7;
 import java.util.ArrayList;
@@ -16,11 +18,12 @@ import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.messenger.video.MediaCodecVideoConvertor;
 import si.o0;
 
-/* compiled from: r8-map-id-6bb23a39fe2d1bb2dc6cc69f606436ba751c240cf93e0ff97ff041cb9f09a305 */
+/* compiled from: r8-map-id-c4ea88e67dc56e5703ce3374834c68c9442b4bb60a0bad99fe22591c5d324222 */
 /* loaded from: classes.dex */
 public class OutputSurface implements SurfaceTexture.OnFrameAvailableListener {
     private static final int EGL_CONTEXT_CLIENT_VERSION = 12440;
     private static final int EGL_OPENGL_ES2_BIT = 4;
+    private HandlerThread frameAvailableThread;
     private EGL10 mEGL;
     private boolean mFrameAvailable;
     private Surface mSurface;
@@ -35,9 +38,11 @@ public class OutputSurface implements SurfaceTexture.OnFrameAvailableListener {
         TextureRenderer textureRenderer = new TextureRenderer(savedFilterState, str, str2, str3, arrayList, cropState, i10, i11, i12, i13, i14, f7, z10, num, num2, z7Var, convertVideoParams);
         this.mTextureRender = textureRenderer;
         textureRenderer.surfaceCreated();
-        SurfaceTexture surfaceTexture = new SurfaceTexture(this.mTextureRender.getTextureId());
-        this.mSurfaceTexture = surfaceTexture;
-        surfaceTexture.setOnFrameAvailableListener(this);
+        this.mSurfaceTexture = new SurfaceTexture(this.mTextureRender.getTextureId());
+        HandlerThread handlerThread = new HandlerThread("VideoFrameAvailable");
+        this.frameAvailableThread = handlerThread;
+        handlerThread.start();
+        this.mSurfaceTexture.setOnFrameAvailableListener(this, new Handler(this.frameAvailableThread.getLooper()));
         this.mSurface = new Surface(this.mSurfaceTexture);
     }
 
@@ -98,6 +103,11 @@ public class OutputSurface implements SurfaceTexture.OnFrameAvailableListener {
             textureRenderer.release();
         }
         this.mSurface.release();
+        HandlerThread handlerThread = this.frameAvailableThread;
+        if (handlerThread != null) {
+            handlerThread.quitSafely();
+            this.frameAvailableThread = null;
+        }
         this.mEGLDisplay = null;
         this.mEGLContext = null;
         this.mEGLSurface = null;
