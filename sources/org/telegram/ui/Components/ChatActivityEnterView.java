@@ -111,7 +111,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-c4ea88e67dc56e5703ce3374834c68c9442b4bb60a0bad99fe22591c5d324222 */
+/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
 /* loaded from: classes3.dex */
 public class ChatActivityEnterView extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, nw0, qy0, jz0, ne.d, org.telegram.ui.ActionBar.b6 {
     public static final /* synthetic */ int r5 = 0;
@@ -426,7 +426,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     public boolean z3;
     public boolean z4;
 
-    /* compiled from: r8-map-id-c4ea88e67dc56e5703ce3374834c68c9442b4bb60a0bad99fe22591c5d324222 */
+    /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
     public class RecordCircle extends View {
         public final float E;
         public float F;
@@ -1030,7 +1030,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         }
     }
 
-    /* compiled from: r8-map-id-c4ea88e67dc56e5703ce3374834c68c9442b4bb60a0bad99fe22591c5d324222 */
+    /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
     public class SlideTextView extends View {
         public final int E;
         public final Path F;
@@ -5970,18 +5970,11 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:233:0x055f  */
-    /* JADX WARN: Removed duplicated region for block: B:249:0x05e8  */
-    /* JADX WARN: Removed duplicated region for block: B:255:0x066d A[LOOP:1: B:196:0x03fd->B:255:0x066d, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:256:0x061d A[EDGE_INSN: B:256:0x061d->B:257:0x061d BREAK  A[LOOP:1: B:196:0x03fd->B:255:0x066d], SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:275:0x05b4  */
-    /* JADX WARN: Removed duplicated region for block: B:276:0x05ba  */
-    /* JADX WARN: Removed duplicated region for block: B:296:0x0564  */
     /* JADX WARN: Type inference failed for: r0v0 */
     /* JADX WARN: Type inference failed for: r0v1 */
-    /* JADX WARN: Type inference failed for: r0v12 */
-    /* JADX WARN: Type inference failed for: r0v13, types: [boolean] */
-    /* JADX WARN: Type inference failed for: r0v14 */
+    /* JADX WARN: Type inference failed for: r0v11 */
+    /* JADX WARN: Type inference failed for: r0v12, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r0v13 */
     /* JADX WARN: Type inference failed for: r0v75 */
     /* JADX WARN: Type inference failed for: r17v0 */
     /* JADX WARN: Type inference failed for: r17v1 */
@@ -5994,17 +5987,14 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     /* JADX WARN: Type inference failed for: r3v34 */
     /* JADX WARN: Type inference failed for: r3v5 */
     /* JADX WARN: Type inference failed for: r3v6, types: [org.telegram.messenger.MessageObject, org.telegram.tgnet.TLRPC$WebPage] */
-    /* JADX WARN: Type inference failed for: r5v20 */
-    /* JADX WARN: Type inference failed for: r5v21, types: [boolean] */
-    /* JADX WARN: Type inference failed for: r5v38 */
+    /* JADX WARN: Type inference failed for: r5v18 */
+    /* JADX WARN: Type inference failed for: r5v19, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r5v35 */
     /* JADX WARN: Type inference failed for: r7v10 */
     /* JADX WARN: Type inference failed for: r7v17 */
     /* JADX WARN: Type inference failed for: r7v6 */
     /* JADX WARN: Type inference failed for: r7v7 */
     /* JADX WARN: Type inference failed for: r7v8, types: [boolean] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public boolean R0(final int i10, final boolean z10, final int i11, boolean z11, long j10) {
         ChatActivityEnterView chatActivityEnterView;
         ChatActivityEnterView chatActivityEnterView2;
@@ -6016,16 +6006,10 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         CharSequence charSequence;
         CharSequence charSequence2;
         int i16;
-        CharSequence charSequence3;
         MessageObject.SendAnimationData sendAnimationData;
-        MessageObject threadMessage;
         String str;
-        int i17;
-        CharSequence charSequence4;
-        CharSequence charSequence5;
-        org.telegram.ui.sn snVar;
+        CharSequence charSequence3;
         ?? r32;
-        TLRPC.WebPage webPage;
         ?? r72;
         MessagePreviewParams messagePreviewParams;
         MessagePreviewParams messagePreviewParams2;
@@ -6043,7 +6027,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             boolean b02 = f5.b0(this.Q, this.Q2, getMessagesCount(), new Utilities.Callback() { // from class: org.telegram.ui.Components.ge
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
-                    int i18 = ChatActivityEnterView.r5;
+                    int i17 = ChatActivityEnterView.r5;
                     ChatActivityEnterView chatActivityEnterView5 = ChatActivityEnterView.this;
                     chatActivityEnterView5.getClass();
                     chatActivityEnterView5.R0(i10, z10, i11, false, ((Long) obj).longValue());
@@ -6074,10 +6058,10 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             return b02;
         }
         if (this.G0 != Integer.MAX_VALUE || c()) {
-            org.telegram.ui.sn snVar2 = this.P2;
-            if (snVar2 != null) {
-                TLRPC.Chat chat3 = snVar2.e;
-                if (snVar2.i() != null || ((ChatObject.isChannel(chat3) && chat3.megagroup) || !ChatObject.isChannel(chat3))) {
+            org.telegram.ui.sn snVar = this.P2;
+            if (snVar != null) {
+                TLRPC.Chat chat3 = snVar.e;
+                if (snVar.i() != null || ((ChatObject.isChannel(chat3) && chat3.megagroup) || !ChatObject.isChannel(chat3))) {
                     MessagesController.getNotificationsSettings(this.Q).edit().putBoolean(NotificationsSettingsFacade.PROPERTY_SILENT + this.Q2, !z10).commit();
                 }
             }
@@ -6115,7 +6099,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                     MediaController.getInstance().cleanupPlayer(true, true);
                 }
                 MediaController.getInstance().cleanRecording(false);
-                MediaDataController.getInstance(chatActivityEnterView.Q).pushDraftVoiceMessage(chatActivityEnterView.Q2, (snVar2 == null || !snVar2.t4) ? 0L : snVar2.d(), null);
+                MediaDataController.getInstance(chatActivityEnterView.Q).pushDraftVoiceMessage(chatActivityEnterView.Q2, (snVar == null || !snVar.t4) ? 0L : snVar.d(), null);
                 hl0 hl0Var = chatActivityEnterView.h1;
                 if (hl0Var != null && (hl0Var.s > 0.0f || hl0Var.v < 1.0f)) {
                     hl0Var.setPlaying(false);
@@ -6131,23 +6115,23 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                         } catch (Exception e7) {
                             FileLog.e(e7);
                         }
-                        int i18 = 0;
+                        int i17 = 0;
                         while (true) {
-                            if (i18 >= chatActivityEnterView.b3.attributes.size()) {
+                            if (i17 >= chatActivityEnterView.b3.attributes.size()) {
                                 break;
                             }
-                            TLRPC.DocumentAttribute documentAttribute = chatActivityEnterView.b3.attributes.get(i18);
+                            TLRPC.DocumentAttribute documentAttribute = chatActivityEnterView.b3.attributes.get(i17);
                             if (documentAttribute instanceof TLRPC.TL_documentAttributeAudio) {
                                 documentAttribute.waveform = MediaController.getWaveform(chatActivityEnterView.c3);
                                 documentAttribute.duration = chatActivityEnterView.h1.getNewDuration();
                                 break;
                             }
-                            i18++;
+                            i17++;
                         }
                     }
                 }
                 SendMessagesHelper.SendMessageParams of2 = SendMessagesHelper.SendMessageParams.of(chatActivityEnterView.b3, null, chatActivityEnterView.c3, chatActivityEnterView.Q2, chatActivityEnterView.T2, chatActivityEnterView.getThreadMessage(), null, null, null, null, z10, i10, 0, chatActivityEnterView.O ? Integer.MAX_VALUE : 0, null, null, false);
-                of2.sendMessageChatArguments = snVar2 != null ? snVar2.H8() : null;
+                of2.sendMessageChatArguments = snVar != null ? snVar.H8() : null;
                 of2.effect_id = this.S4;
                 of2.payStars = j10;
                 of2.monoForumPeer = getSendMonoForumPeerId();
@@ -6172,286 +6156,249 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 chatActivityEnterView4.F(true);
                 AndroidUtilities.runOnUIThread(new rd(chatActivityEnterView4, 3), 100L);
                 chatActivityEnterView4.i1 = 0L;
-            } else {
-                ChatActivityEnterView chatActivityEnterView5 = chatActivityEnterView;
-                long j11 = 200;
-                String str2 = "";
-                if (!chatActivityEnterView5.D1 || (richMessage = chatActivityEnterView5.E1) == null) {
-                    org.telegram.ui.sn snVar3 = snVar2;
-                    int i19 = 1;
-                    xe xeVar2 = xeVar;
-                    chatActivityEnterView2 = chatActivityEnterView5;
-                    pf pfVar = chatActivityEnterView2.E0;
-                    CharSequence textToUse = pfVar == null ? "" : pfVar.getTextToUse();
-                    if (snVar3 != null && (chat2 = snVar3.e) != null && chat2.slowmode_enabled && !ChatObject.hasAdminRights(chat2)) {
-                        int length = textToUse.length();
-                        int maxMessageLength = chatActivityEnterView2.R.getMessagesController().getMaxMessageLength();
-                        org.telegram.ui.ActionBar.g6 g6Var = chatActivityEnterView2.W3;
-                        if (length > maxMessageLength) {
-                            f5.u0(snVar3, LocaleController.getString("Slowmode", R.string.Slowmode), LocaleController.getString("SlowmodeSendErrorTooLong", R.string.SlowmodeSendErrorTooLong), g6Var);
-                        } else if (chatActivityEnterView2.H2 && textToUse.length() > 0) {
-                            f5.u0(snVar3, LocaleController.getString("Slowmode", R.string.Slowmode), LocaleController.getString("SlowmodeSendError", R.string.SlowmodeSendError), g6Var);
-                        }
+                return false;
+            }
+            ChatActivityEnterView chatActivityEnterView5 = chatActivityEnterView;
+            long j11 = 200;
+            String str2 = "";
+            if (!chatActivityEnterView5.D1 || (richMessage = chatActivityEnterView5.E1) == null) {
+                org.telegram.ui.sn snVar2 = snVar;
+                int i18 = 1;
+                xe xeVar2 = xeVar;
+                chatActivityEnterView2 = chatActivityEnterView5;
+                pf pfVar = chatActivityEnterView2.E0;
+                CharSequence textToUse = pfVar == null ? "" : pfVar.getTextToUse();
+                if (snVar2 != null && (chat2 = snVar2.e) != null && chat2.slowmode_enabled && !ChatObject.hasAdminRights(chat2)) {
+                    int length = textToUse.length();
+                    int maxMessageLength = chatActivityEnterView2.R.getMessagesController().getMaxMessageLength();
+                    org.telegram.ui.ActionBar.g6 g6Var = chatActivityEnterView2.W3;
+                    if (length > maxMessageLength) {
+                        f5.u0(snVar2, LocaleController.getString("Slowmode", R.string.Slowmode), LocaleController.getString("SlowmodeSendErrorTooLong", R.string.SlowmodeSendErrorTooLong), g6Var);
+                    } else if (chatActivityEnterView2.H2 && textToUse.length() > 0) {
+                        f5.u0(snVar2, LocaleController.getString("Slowmode", R.string.Slowmode), LocaleController.getString("SlowmodeSendError", R.string.SlowmodeSendError), g6Var);
                     }
-                    if (!D(chatActivityEnterView2.Q, chatActivityEnterView2.Q2, snVar3, textToUse)) {
-                        org.telegram.ui.in inVar = chatActivityEnterView2.V2;
-                        if (inVar == null || snVar3 == null || !inVar.f) {
-                            int[] iArr = new int[1];
-                            Emoji.parseEmojis(textToUse, iArr);
-                            ?? r28 = 0;
-                            ?? r17 = iArr[0] > 0;
-                            CharSequence trimmedString = r17 == false ? AndroidUtilities.getTrimmedString(textToUse) : textToUse;
-                            boolean v12 = chatActivityEnterView2.v1();
-                            int maxMessageLength2 = chatActivityEnterView2.R.getMessagesController().getMaxMessageLength();
-                            if (trimmedString.length() != 0) {
-                                if (chatActivityEnterView2.Z2 != null && snVar3 != null) {
-                                    if ((i10 != 0) == snVar3.c()) {
-                                        chatActivityEnterView2.Z2.F0();
-                                    }
+                }
+                if (!D(chatActivityEnterView2.Q, chatActivityEnterView2.Q2, snVar2, textToUse)) {
+                    org.telegram.ui.in inVar = chatActivityEnterView2.V2;
+                    if (inVar == null || snVar2 == null || !inVar.f) {
+                        int[] iArr = new int[1];
+                        Emoji.parseEmojis(textToUse, iArr);
+                        ?? r28 = 0;
+                        ?? r17 = iArr[0] > 0;
+                        CharSequence trimmedString = r17 == false ? AndroidUtilities.getTrimmedString(textToUse) : textToUse;
+                        boolean v12 = chatActivityEnterView2.v1();
+                        int maxMessageLength2 = chatActivityEnterView2.R.getMessagesController().getMaxMessageLength();
+                        if (trimmedString.length() != 0) {
+                            if (chatActivityEnterView2.Z2 != null && snVar2 != null) {
+                                if ((i10 != 0) == snVar2.c()) {
+                                    chatActivityEnterView2.Z2.F0();
                                 }
-                                int i20 = 0;
-                                while (true) {
-                                    int i21 = i20 + maxMessageLength2;
-                                    if (trimmedString.length() > i21) {
-                                        int i22 = i21 - 1;
-                                        i13 = -1;
-                                        i14 = -1;
-                                        i15 = -1;
-                                        for (int i23 = r28; i22 > i20 && i23 < 300; i23++) {
-                                            char charAt = trimmedString.charAt(i22);
-                                            char charAt2 = i22 > 0 ? trimmedString.charAt(i22 - 1) : ' ';
-                                            if (charAt == '\n' && charAt2 == '\n') {
-                                                i12 = i22;
-                                                break;
-                                            }
-                                            if (charAt == '\n') {
-                                                i15 = i22;
-                                            } else if (i13 < 0 && Character.isWhitespace(charAt) && charAt2 == '.') {
-                                                i13 = i22;
-                                            } else if (i14 < 0 && Character.isWhitespace(charAt)) {
-                                                i14 = i22;
-                                            }
-                                            i22--;
+                            }
+                            int i19 = 0;
+                            while (true) {
+                                int i20 = i19 + maxMessageLength2;
+                                if (trimmedString.length() > i20) {
+                                    int i21 = i20 - 1;
+                                    i13 = -1;
+                                    i14 = -1;
+                                    i15 = -1;
+                                    for (int i22 = r28; i21 > i19 && i22 < 300; i22++) {
+                                        char charAt = trimmedString.charAt(i21);
+                                        char charAt2 = i21 > 0 ? trimmedString.charAt(i21 - 1) : ' ';
+                                        if (charAt == '\n' && charAt2 == '\n') {
+                                            i12 = i21;
+                                            break;
                                         }
-                                        i12 = -1;
-                                    } else {
-                                        i12 = -1;
-                                        i13 = -1;
-                                        i14 = -1;
-                                        i15 = -1;
-                                    }
-                                    int min = Math.min(i21, trimmedString.length());
-                                    if (i12 > 0) {
-                                        min = i12;
-                                    } else if (i15 > 0) {
-                                        min = i15;
-                                    } else if (i13 > 0) {
-                                        min = i13;
-                                    } else if (i14 > 0) {
-                                        min = i14;
-                                    }
-                                    CharSequence subSequence = trimmedString.subSequence(i20, min);
-                                    if (r17 == false) {
-                                        subSequence = AndroidUtilities.getTrimmedString(subSequence);
-                                    }
-                                    CharSequence[] charSequenceArr = new CharSequence[i19];
-                                    charSequenceArr[r28] = subSequence;
-                                    ArrayList<TLRPC.MessageEntity> entities = MediaDataController.getInstance(chatActivityEnterView2.Q).getEntities(charSequenceArr, v12);
-                                    if (chatActivityEnterView2.Z2.r1()) {
-                                        int i24 = i19;
-                                        charSequence = trimmedString;
-                                        if (chatActivityEnterView2.L0 != null) {
-                                            sendAnimationData = new MessageObject.SendAnimationData();
-                                            charSequence2 = textToUse;
-                                            i16 = min;
-                                            sendAnimationData.fromPreview = System.currentTimeMillis() - chatActivityEnterView2.M0 < j11 ? i24 : r28;
-                                        } else {
-                                            charSequence2 = textToUse;
-                                            i16 = min;
-                                            charSequence3 = charSequence;
-                                            sendAnimationData = null;
-                                            boolean checkUpdateStickersOrder = SendMessagesHelper.checkUpdateStickersOrder(charSequence3);
-                                            threadMessage = chatActivityEnterView2.getThreadMessage();
-                                            if (threadMessage == null && (messageObject = chatActivityEnterView2.U2) != null) {
-                                                threadMessage = messageObject;
-                                            }
-                                            str = str2;
-                                            xe xeVar3 = xeVar2;
-                                            i17 = i16;
-                                            charSequence4 = charSequence2;
-                                            boolean z13 = v12;
-                                            charSequence5 = charSequence3;
-                                            snVar = snVar3;
-                                            SendMessagesHelper.SendMessageParams of3 = SendMessagesHelper.SendMessageParams.of(charSequenceArr[r28].toString(), chatActivityEnterView2.Q2, chatActivityEnterView2.T2, threadMessage, chatActivityEnterView2.X2, chatActivityEnterView2.Y2, entities, null, null, z10, i10, i11, sendAnimationData, checkUpdateStickersOrder);
-                                            of3.sendMessageChatArguments = snVar == null ? snVar.H8() : null;
-                                            of3.effect_id = this.S4;
-                                            of3.payStars = j10;
-                                            of3.monoForumPeer = getSendMonoForumPeerId();
-                                            of3.suggestionParams = getSendMessageSuggestionParams();
-                                            this.S4 = 0L;
-                                            xeVar3.setEffect(0L);
-                                            q(of3);
-                                            of3.invert_media = snVar == null && (messagePreviewParams3 = snVar.r5) != null && messagePreviewParams3.webpageTop;
-                                            if (snVar != null || (chat = snVar.e) == null || ChatObject.canSendEmbed(chat)) {
-                                                r32 = 0;
-                                                r32 = 0;
-                                                r32 = 0;
-                                                z12 = false;
-                                                webPage = this.X2;
-                                                if (webPage instanceof TLRPC.TL_webPagePending) {
-                                                    r72 = 1;
-                                                    r72 = 1;
-                                                    if (webPage != null) {
-                                                        TLRPC.TL_messageMediaWebPage tL_messageMediaWebPage = new TLRPC.TL_messageMediaWebPage();
-                                                        of3.mediaWebPage = tL_messageMediaWebPage;
-                                                        tL_messageMediaWebPage.webpage = this.X2;
-                                                        tL_messageMediaWebPage.force_large_media = (snVar == null || (messagePreviewParams2 = snVar.r5) == null || messagePreviewParams2.webpageSmall) ? false : true;
-                                                        tL_messageMediaWebPage.force_small_media = (snVar == null || (messagePreviewParams = snVar.r5) == null || !messagePreviewParams.webpageSmall) ? false : true;
-                                                    }
-                                                } else {
-                                                    r72 = 1;
-                                                    of3.searchLinks = true;
-                                                    of3.mediaWebPage = null;
-                                                }
-                                            } else {
-                                                z12 = false;
-                                                of3.searchLinks = false;
-                                                r32 = 0;
-                                                of3.mediaWebPage = null;
-                                                r72 = 1;
-                                            }
-                                            if (snVar != null) {
-                                                snVar.B5 = r32;
-                                                snVar.S5 = r32;
-                                                MessagePreviewParams messagePreviewParams4 = snVar.r5;
-                                                if (messagePreviewParams4 != null) {
-                                                    messagePreviewParams4.updateLink(this.Q, null, "", null, null, null);
-                                                }
-                                                this.X2 = r32;
-                                                this.Y2 = r72;
-                                                snVar.m8();
-                                            }
-                                            SendMessagesHelper.getInstance(this.Q).sendMessage(of3);
-                                            i20 = i17 + 1;
-                                            if (i17 != charSequence5.length()) {
-                                                break;
-                                            }
-                                            xeVar2 = xeVar3;
-                                            i19 = r72;
-                                            r28 = z12;
-                                            snVar3 = snVar;
-                                            textToUse = charSequence4;
-                                            v12 = z13;
-                                            trimmedString = charSequence5;
-                                            str2 = str;
-                                            j11 = 200;
-                                            chatActivityEnterView2 = this;
+                                        if (charAt == '\n') {
+                                            i15 = i21;
+                                        } else if (i13 < 0 && Character.isWhitespace(charAt) && charAt2 == '.') {
+                                            i13 = i21;
+                                        } else if (i14 < 0 && Character.isWhitespace(charAt)) {
+                                            i14 = i21;
                                         }
-                                    } else {
+                                        i21--;
+                                    }
+                                    i12 = -1;
+                                } else {
+                                    i12 = -1;
+                                    i13 = -1;
+                                    i14 = -1;
+                                    i15 = -1;
+                                }
+                                int min = Math.min(i20, trimmedString.length());
+                                if (i12 > 0) {
+                                    min = i12;
+                                } else if (i15 > 0) {
+                                    min = i15;
+                                } else if (i13 > 0) {
+                                    min = i13;
+                                } else if (i14 > 0) {
+                                    min = i14;
+                                }
+                                CharSequence subSequence = trimmedString.subSequence(i19, min);
+                                if (r17 == false) {
+                                    subSequence = AndroidUtilities.getTrimmedString(subSequence);
+                                }
+                                CharSequence[] charSequenceArr = new CharSequence[i18];
+                                charSequenceArr[r28] = subSequence;
+                                ArrayList<TLRPC.MessageEntity> entities = MediaDataController.getInstance(chatActivityEnterView2.Q).getEntities(charSequenceArr, v12);
+                                if (chatActivityEnterView2.Z2.r1()) {
+                                    int i23 = i18;
+                                    charSequence = trimmedString;
+                                    if (chatActivityEnterView2.L0 != null) {
                                         MessageObject.SendAnimationData sendAnimationData3 = new MessageObject.SendAnimationData();
-                                        charSequence = trimmedString;
-                                        sendAnimationData3.fromPreview = System.currentTimeMillis() - chatActivityEnterView2.M0 < j11 ? i19 : r28;
-                                        float dp = AndroidUtilities.dp(22.0f);
-                                        sendAnimationData3.height = dp;
-                                        sendAnimationData3.width = dp;
-                                        pf pfVar2 = chatActivityEnterView2.E0;
-                                        if (pfVar2 != null) {
-                                            pfVar2.getLocationInWindow(chatActivityEnterView2.N2);
-                                            sendAnimationData3.x = AndroidUtilities.dp(11.0f) + r12[r28];
-                                            sendAnimationData3.y = AndroidUtilities.dp(19.0f) + r12[r27];
-                                        } else {
-                                            sendAnimationData3.x = AndroidUtilities.dp(55.0f);
-                                            sendAnimationData3.y = AndroidUtilities.displaySize.y - AndroidUtilities.dp(19.0f);
-                                        }
                                         charSequence2 = textToUse;
                                         i16 = min;
+                                        sendAnimationData3.fromPreview = System.currentTimeMillis() - chatActivityEnterView2.M0 < j11 ? i23 : r28;
                                         sendAnimationData = sendAnimationData3;
+                                    } else {
+                                        charSequence2 = textToUse;
+                                        i16 = min;
+                                        sendAnimationData = null;
                                     }
-                                    charSequence3 = charSequence;
-                                    boolean checkUpdateStickersOrder2 = SendMessagesHelper.checkUpdateStickersOrder(charSequence3);
-                                    threadMessage = chatActivityEnterView2.getThreadMessage();
-                                    if (threadMessage == null) {
-                                        threadMessage = messageObject;
+                                } else {
+                                    MessageObject.SendAnimationData sendAnimationData4 = new MessageObject.SendAnimationData();
+                                    charSequence = trimmedString;
+                                    sendAnimationData4.fromPreview = System.currentTimeMillis() - chatActivityEnterView2.M0 < j11 ? i18 : r28;
+                                    float dp = AndroidUtilities.dp(22.0f);
+                                    sendAnimationData4.height = dp;
+                                    sendAnimationData4.width = dp;
+                                    pf pfVar2 = chatActivityEnterView2.E0;
+                                    if (pfVar2 != null) {
+                                        pfVar2.getLocationInWindow(chatActivityEnterView2.N2);
+                                        sendAnimationData4.x = AndroidUtilities.dp(11.0f) + r13[r28];
+                                        sendAnimationData4.y = AndroidUtilities.dp(19.0f) + r13[r27];
+                                    } else {
+                                        sendAnimationData4.x = AndroidUtilities.dp(55.0f);
+                                        sendAnimationData4.y = AndroidUtilities.displaySize.y - AndroidUtilities.dp(19.0f);
                                     }
-                                    str = str2;
-                                    xe xeVar32 = xeVar2;
-                                    i17 = i16;
-                                    charSequence4 = charSequence2;
-                                    boolean z132 = v12;
-                                    charSequence5 = charSequence3;
-                                    snVar = snVar3;
-                                    SendMessagesHelper.SendMessageParams of32 = SendMessagesHelper.SendMessageParams.of(charSequenceArr[r28].toString(), chatActivityEnterView2.Q2, chatActivityEnterView2.T2, threadMessage, chatActivityEnterView2.X2, chatActivityEnterView2.Y2, entities, null, null, z10, i10, i11, sendAnimationData, checkUpdateStickersOrder2);
-                                    of32.sendMessageChatArguments = snVar == null ? snVar.H8() : null;
-                                    of32.effect_id = this.S4;
-                                    of32.payStars = j10;
-                                    of32.monoForumPeer = getSendMonoForumPeerId();
-                                    of32.suggestionParams = getSendMessageSuggestionParams();
-                                    this.S4 = 0L;
-                                    xeVar32.setEffect(0L);
-                                    q(of32);
-                                    of32.invert_media = snVar == null && (messagePreviewParams3 = snVar.r5) != null && messagePreviewParams3.webpageTop;
-                                    if (snVar != null) {
-                                    }
+                                    charSequence2 = textToUse;
+                                    sendAnimationData = sendAnimationData4;
+                                    i16 = min;
+                                }
+                                boolean checkUpdateStickersOrder = SendMessagesHelper.checkUpdateStickersOrder(charSequence);
+                                MessageObject threadMessage = chatActivityEnterView2.getThreadMessage();
+                                if (threadMessage == null && (messageObject = chatActivityEnterView2.U2) != null) {
+                                    threadMessage = messageObject;
+                                }
+                                str = str2;
+                                xe xeVar3 = xeVar2;
+                                charSequence3 = charSequence2;
+                                boolean z13 = v12;
+                                int i24 = i16;
+                                CharSequence charSequence4 = charSequence;
+                                org.telegram.ui.sn snVar3 = snVar2;
+                                SendMessagesHelper.SendMessageParams of3 = SendMessagesHelper.SendMessageParams.of(charSequenceArr[r28].toString(), chatActivityEnterView2.Q2, chatActivityEnterView2.T2, threadMessage, chatActivityEnterView2.X2, chatActivityEnterView2.Y2, entities, null, null, z10, i10, i11, sendAnimationData, checkUpdateStickersOrder);
+                                of3.sendMessageChatArguments = snVar3 != null ? snVar3.H8() : null;
+                                of3.effect_id = this.S4;
+                                of3.payStars = j10;
+                                of3.monoForumPeer = getSendMonoForumPeerId();
+                                of3.suggestionParams = getSendMessageSuggestionParams();
+                                this.S4 = 0L;
+                                xeVar3.setEffect(0L);
+                                q(of3);
+                                of3.invert_media = (snVar3 == null || (messagePreviewParams3 = snVar3.r5) == null || !messagePreviewParams3.webpageTop) ? false : true;
+                                if (snVar3 == null || (chat = snVar3.e) == null || ChatObject.canSendEmbed(chat)) {
                                     r32 = 0;
                                     r32 = 0;
                                     r32 = 0;
                                     z12 = false;
-                                    webPage = this.X2;
+                                    TLRPC.WebPage webPage = this.X2;
                                     if (webPage instanceof TLRPC.TL_webPagePending) {
-                                    }
-                                    if (snVar != null) {
-                                    }
-                                    SendMessagesHelper.getInstance(this.Q).sendMessage(of32);
-                                    i20 = i17 + 1;
-                                    if (i17 != charSequence5.length()) {
-                                    }
-                                }
-                                if (this.Z2.r1() || (!(i10 == 0 || c()) || c())) {
-                                    chatActivityEnterView3 = this;
-                                    pf pfVar3 = chatActivityEnterView3.E0;
-                                    if (pfVar3 != null) {
-                                        pfVar3.setText(str);
-                                    }
-                                    og ogVar3 = chatActivityEnterView3.Z2;
-                                    if (ogVar3 != null) {
-                                        ogVar3.L(charSequence4, z10, i10, i11, j10);
+                                        r72 = 1;
+                                        of3.searchLinks = true;
+                                        of3.mediaWebPage = null;
+                                    } else {
+                                        r72 = 1;
+                                        r72 = 1;
+                                        if (webPage != null) {
+                                            TLRPC.TL_messageMediaWebPage tL_messageMediaWebPage = new TLRPC.TL_messageMediaWebPage();
+                                            of3.mediaWebPage = tL_messageMediaWebPage;
+                                            tL_messageMediaWebPage.webpage = this.X2;
+                                            tL_messageMediaWebPage.force_large_media = (snVar3 == null || (messagePreviewParams2 = snVar3.r5) == null || messagePreviewParams2.webpageSmall) ? false : true;
+                                            tL_messageMediaWebPage.force_small_media = (snVar3 == null || (messagePreviewParams = snVar3.r5) == null || !messagePreviewParams.webpageSmall) ? false : true;
+                                        }
                                     }
                                 } else {
-                                    this.g0 = z12;
-                                    org.telegram.messenger.sf sfVar = new org.telegram.messenger.sf(this, charSequence4, z10, i10, i11, j10);
-                                    chatActivityEnterView3 = this;
-                                    chatActivityEnterView3.f0 = sfVar;
-                                    AndroidUtilities.runOnUIThread(sfVar, 200L);
+                                    z12 = false;
+                                    of3.searchLinks = false;
+                                    r32 = 0;
+                                    of3.mediaWebPage = null;
+                                    r72 = 1;
                                 }
-                                chatActivityEnterView3.C2 = 0L;
-                                chatActivityEnterView3.O1();
-                                return z12;
+                                if (snVar3 != null) {
+                                    snVar3.B5 = r32;
+                                    snVar3.S5 = r32;
+                                    MessagePreviewParams messagePreviewParams4 = snVar3.r5;
+                                    if (messagePreviewParams4 != null) {
+                                        messagePreviewParams4.updateLink(this.Q, null, "", null, null, null);
+                                    }
+                                    this.X2 = r32;
+                                    this.Y2 = r72;
+                                    snVar3.m8();
+                                }
+                                SendMessagesHelper.getInstance(this.Q).sendMessage(of3);
+                                int i25 = i24 + 1;
+                                if (i24 == charSequence4.length()) {
+                                    break;
+                                }
+                                i19 = i25;
+                                xeVar2 = xeVar3;
+                                i18 = r72;
+                                r28 = z12;
+                                chatActivityEnterView2 = this;
+                                snVar2 = snVar3;
+                                trimmedString = charSequence4;
+                                textToUse = charSequence3;
+                                v12 = z13;
+                                str2 = str;
+                                j11 = 200;
                             }
-                            z12 = false;
-                        } else {
-                            snVar3.Xb();
-                            z12 = false;
+                            if (this.Z2.r1() || (!(i10 == 0 || c()) || c())) {
+                                chatActivityEnterView3 = this;
+                                pf pfVar3 = chatActivityEnterView3.E0;
+                                if (pfVar3 != null) {
+                                    pfVar3.setText(str);
+                                }
+                                og ogVar3 = chatActivityEnterView3.Z2;
+                                if (ogVar3 != null) {
+                                    ogVar3.L(charSequence3, z10, i10, i11, j10);
+                                }
+                            } else {
+                                this.g0 = z12;
+                                org.telegram.messenger.sf sfVar = new org.telegram.messenger.sf(this, charSequence3, z10, i10, i11, j10);
+                                chatActivityEnterView3 = this;
+                                chatActivityEnterView3.f0 = sfVar;
+                                AndroidUtilities.runOnUIThread(sfVar, 200L);
+                            }
+                            chatActivityEnterView3.C2 = 0L;
+                            chatActivityEnterView3.O1();
+                            return z12;
                         }
-                        chatActivityEnterView3 = chatActivityEnterView2;
-                        if (chatActivityEnterView3.H2 && (ogVar = chatActivityEnterView3.Z2) != null) {
-                            ogVar.L(null, z10, i10, i11, j10);
-                        }
-                        chatActivityEnterView3.O1();
-                        return z12;
+                        z12 = false;
+                    } else {
+                        snVar2.Xb();
+                        z12 = false;
                     }
-                } else {
-                    SendMessagesHelper.prepareSendingArticle(chatActivityEnterView5.R, richMessage.blocks, richMessage.photos, richMessage.documents, null, false, chatActivityEnterView5.Q2, chatActivityEnterView5.T2, chatActivityEnterView5.getThreadMessage(), z10, i10, i11, snVar2 != null ? snVar2.H8() : null, chatActivityEnterView5.S4, chatActivityEnterView5.getSendMonoForumPeerId(), j10);
-                    chatActivityEnterView2 = this;
-                    chatActivityEnterView2.S4 = 0L;
-                    xeVar.setEffect(0L);
-                    chatActivityEnterView2.E0.setText("");
-                    chatActivityEnterView2.L();
-                    og ogVar4 = chatActivityEnterView2.Z2;
-                    if (ogVar4 != null) {
-                        ogVar4.L(null, z10, i10, i11, j10);
+                    chatActivityEnterView3 = chatActivityEnterView2;
+                    if (chatActivityEnterView3.H2 && (ogVar = chatActivityEnterView3.Z2) != null) {
+                        ogVar.L(null, z10, i10, i11, j10);
                     }
-                    chatActivityEnterView2.F(true);
+                    chatActivityEnterView3.O1();
+                    return z12;
                 }
+            } else {
+                SendMessagesHelper.prepareSendingArticle(chatActivityEnterView5.R, richMessage.blocks, richMessage.photos, richMessage.documents, null, false, chatActivityEnterView5.Q2, chatActivityEnterView5.T2, chatActivityEnterView5.getThreadMessage(), chatActivityEnterView5.V2, z10, i10, i11, snVar != null ? snVar.H8() : null, chatActivityEnterView5.S4, chatActivityEnterView5.getSendMonoForumPeerId(), j10);
+                chatActivityEnterView2 = this;
+                chatActivityEnterView2.S4 = 0L;
+                xeVar.setEffect(0L);
+                chatActivityEnterView2.E0.setText("");
+                chatActivityEnterView2.L();
+                og ogVar4 = chatActivityEnterView2.Z2;
+                if (ogVar4 != null) {
+                    ogVar4.L(null, z10, i10, i11, j10);
+                }
+                chatActivityEnterView2.F(true);
             }
         } else {
             og ogVar5 = this.Z2;

@@ -43,6 +43,7 @@ import org.telegram.ui.Cells.o9;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.j80;
 import org.telegram.ui.Components.li;
+import org.telegram.ui.Components.og;
 import org.telegram.ui.Components.ph;
 import org.telegram.ui.Components.ti;
 import org.telegram.ui.Components.tz;
@@ -50,10 +51,11 @@ import org.telegram.ui.Components.vg;
 import org.telegram.ui.Components.wh;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.gk;
+import org.telegram.ui.in;
 import org.telegram.ui.qi0;
 import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-c4ea88e67dc56e5703ce3374834c68c9442b4bb60a0bad99fe22591c5d324222 */
+/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
 /* loaded from: classes4.dex */
 public final class q extends li implements NotificationCenter.NotificationCenterDelegate {
     public static final int[] Q = {1, 2, 16, 8, 256, 4, 16384, 32768};
@@ -360,8 +362,11 @@ public final class q extends li implements NotificationCenter.NotificationCenter
         long j11;
         MessageObject messageObject;
         MessageObject messageObject2;
+        in inVar;
         SendMessageChatArguments sendMessageChatArguments;
         gk gkVar;
+        og ogVar;
+        gk gkVar2;
         int i12 = this.n;
         boolean richEditorAllowed = MessagesController.getInstance(i12).richEditorAllowed();
         w3 w3Var = this.r;
@@ -384,24 +389,31 @@ public final class q extends li implements NotificationCenter.NotificationCenter
                             sn snVar = (sn) o2Var;
                             MessageObject messageObject3 = snVar.z5;
                             MessageObject messageObject4 = snVar.j4;
+                            in inVar2 = snVar.x5;
                             j11 = snVar.S8();
                             sendMessageChatArguments = snVar.H8();
                             messageObject = messageObject3;
                             messageObject2 = messageObject4;
+                            inVar = inVar2;
                         } else {
                             j11 = 0;
                             messageObject = null;
                             messageObject2 = null;
+                            inVar = null;
                             sendMessageChatArguments = null;
                         }
-                        SendMessagesHelper.prepareSendingArticle(AccountInstance.getInstance(tiVar.M1), f32, H2, E2, a2, false, tiVar.s1(), messageObject, messageObject2, z10, i10, i11, sendMessageChatArguments, j10, j11, 0L);
+                        SendMessagesHelper.prepareSendingArticle(AccountInstance.getInstance(tiVar.M1), f32, H2, E2, a2, false, tiVar.s1(), messageObject, messageObject2, inVar, z10, i10, i11, sendMessageChatArguments, j10, j11, 0L);
+                        org.telegram.ui.ActionBar.o2 o2Var2 = tiVar.f0;
+                        if ((o2Var2 instanceof sn) && (gkVar = ((sn) o2Var2).Y) != null && (ogVar = gkVar.Z2) != null) {
+                            ogVar.L(null, z10, i10, i11, 0L);
+                        }
                         tiVar.dismiss(true);
                         return true;
                     }
                 } else {
-                    org.telegram.ui.ActionBar.o2 o2Var2 = tiVar.f0;
-                    if ((o2Var2 instanceof sn) && (gkVar = ((sn) o2Var2).Y) != null) {
-                        gkVar.P0(c5.k(w3Var.m3), z10, i10, i11);
+                    org.telegram.ui.ActionBar.o2 o2Var3 = tiVar.f0;
+                    if ((o2Var3 instanceof sn) && (gkVar2 = ((sn) o2Var3).Y) != null) {
+                        gkVar2.P0(c5.k(w3Var.m3), z10, i10, i11);
                         tiVar.dismiss(true);
                         return true;
                     }

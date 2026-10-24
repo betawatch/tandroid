@@ -7,7 +7,7 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-c4ea88e67dc56e5703ce3374834c68c9442b4bb60a0bad99fe22591c5d324222 */
+/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
 /* loaded from: classes.dex */
 final class AudioRecorderV2Controller {
     private boolean finishRequested;
@@ -20,7 +20,7 @@ final class AudioRecorderV2Controller {
     private final HashSet<Long> deliveredOutputIds = new HashSet<>();
     private ri.m previousState = ri.m.a;
 
-    /* compiled from: r8-map-id-c4ea88e67dc56e5703ce3374834c68c9442b4bb60a0bad99fe22591c5d324222 */
+    /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
     public interface Listener {
         void onCompleted(ri.l lVar);
 
@@ -301,7 +301,7 @@ final class AudioRecorderV2Controller {
         return false;
     }
 
-    /* compiled from: r8-map-id-c4ea88e67dc56e5703ce3374834c68c9442b4bb60a0bad99fe22591c5d324222 */
+    /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
     public class 2 implements ri.k {
         final /* synthetic */ Listener val$listener;
 

@@ -114,7 +114,7 @@ import org.telegram.ui.yu0;
 import org.webrtc.SurfaceViewRenderer;
 import org.webrtc.TextureViewRenderer;
 
-/* compiled from: r8-map-id-c4ea88e67dc56e5703ce3374834c68c9442b4bb60a0bad99fe22591c5d324222 */
+/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
 /* loaded from: classes4.dex */
 public abstract class p4 extends ow0 implements NotificationCenter.NotificationCenterDelegate {
     public final ImageView A0;
@@ -984,7 +984,7 @@ public abstract class p4 extends ow0 implements NotificationCenter.NotificationC
         ((q9) i4Var).h(r9Var);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:107:0x0192, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:107:0x0196, code lost:
     
         if (r3 == r10.f2) goto L102;
      */
@@ -994,7 +994,6 @@ public abstract class p4 extends ow0 implements NotificationCenter.NotificationC
     public final boolean F0(ViewGroup viewGroup, float f7, float f10, boolean z10) {
         ei.x3 x3Var;
         o4 o4Var;
-        org.telegram.ui.n4 n4Var;
         if (viewGroup != null) {
             ei.x3 x3Var2 = this.F0;
             if ((x3Var2 == null || !x3Var2.V) && ((x3Var = this.G0) == null || !x3Var.V)) {
@@ -1016,7 +1015,12 @@ public abstract class p4 extends ow0 implements NotificationCenter.NotificationC
                         }
                         Rect rect2 = AndroidUtilities.rectTmp2;
                         childAt.getHitRect(rect2);
-                        if ((childAt != this.c1 || (o4Var = this.M2) == null || (n4Var = (org.telegram.ui.n4) o4Var.e) == null || !F0(n4Var, f7 - childAt.getX(), f10 - childAt.getY(), z10)) && (!childAt.isClickable() || !rect2.contains((int) f7, (int) f10))) {
+                        if (childAt == this.c1 && (o4Var = this.M2) != null) {
+                            org.telegram.ui.n4 n4Var = (org.telegram.ui.n4) o4Var.e;
+                            if (com.google.android.gms.internal.play_billing.k3.s(n4Var) && F0(n4Var, f7 - childAt.getX(), f10 - childAt.getY(), z10)) {
+                            }
+                        }
+                        if (!childAt.isClickable() || !rect2.contains((int) f7, (int) f10)) {
                             m3 m3Var = this.j1;
                             if (childAt == m3Var && m3Var.b == null && (f7 < AndroidUtilities.dp(60.0f) || f7 > viewGroup.getMeasuredWidth() - AndroidUtilities.dp(60.0f))) {
                                 Matrix matrix = m3Var.e;

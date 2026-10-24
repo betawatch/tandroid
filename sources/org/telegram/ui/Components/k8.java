@@ -58,7 +58,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-c4ea88e67dc56e5703ce3374834c68c9442b4bb60a0bad99fe22591c5d324222 */
+/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
 /* loaded from: classes3.dex */
 public final class k8 extends org.telegram.ui.ActionBar.h3 implements NotificationCenter.NotificationCenterDelegate, DownloadController.FileDownloadProgressListener {
     public static k8 Y0;
@@ -2219,9 +2219,10 @@ public final class k8 extends org.telegram.ui.ActionBar.h3 implements Notificati
         ArrayList arrayList = new ArrayList();
         z6 z6Var = new z6(this, 0);
         int i10 = org.telegram.ui.ActionBar.k6.Oi;
-        arrayList.add(new org.telegram.ui.ActionBar.t6(this.c, 1024, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.s6) null, i10));
+        z7 z7Var = this.c;
+        arrayList.add(new org.telegram.ui.ActionBar.t6(z7Var, 1024, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.s6) null, i10));
         int i11 = org.telegram.ui.ActionBar.k6.Si;
-        arrayList.add(new org.telegram.ui.ActionBar.t6(this.c, 67108864, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.s6) null, i11));
+        arrayList.add(new org.telegram.ui.ActionBar.t6(z7Var, 67108864, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.s6) null, i11));
         arrayList.add(new org.telegram.ui.ActionBar.t6(this.containerView, 0, (Class[]) null, (Paint) null, new Drawable[]{this.shadowDrawable}, (org.telegram.ui.ActionBar.s6) null, org.telegram.ui.ActionBar.k6.h5));
         arrayList.add(new org.telegram.ui.ActionBar.t6(this.R, 0, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.s6) null, org.telegram.ui.ActionBar.k6.Vi));
         int i12 = org.telegram.ui.ActionBar.k6.w7;
@@ -2245,13 +2246,13 @@ public final class k8 extends org.telegram.ui.ActionBar.h3 implements Notificati
         arrayList.add(new org.telegram.ui.ActionBar.t6(s7Var, new yj0[]{s7Var.getAnimatedDrawable()}, "Triangle 4", i13));
         arrayList.add(new org.telegram.ui.ActionBar.t6(s7Var, new yj0[]{s7Var.getAnimatedDrawable()}, "Rectangle 4", i13));
         int i16 = org.telegram.ui.ActionBar.k6.i6;
-        arrayList.add(new org.telegram.ui.ActionBar.t6(this.J, 131080, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.s6) null, i16));
+        arrayList.add(new org.telegram.ui.ActionBar.t6(s7Var, 131080, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.s6) null, i16));
         arrayList.add(new org.telegram.ui.ActionBar.t6(this.f0, 131080, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.s6) null, i16));
         t7 t7Var = this.K;
         arrayList.add(new org.telegram.ui.ActionBar.t6(t7Var, new yj0[]{t7Var.getAnimatedDrawable()}, "Triangle 3", i13));
         arrayList.add(new org.telegram.ui.ActionBar.t6(t7Var, new yj0[]{t7Var.getAnimatedDrawable()}, "Triangle 4", i13));
         arrayList.add(new org.telegram.ui.ActionBar.t6(t7Var, new yj0[]{t7Var.getAnimatedDrawable()}, "Rectangle 4", i13));
-        arrayList.add(new org.telegram.ui.ActionBar.t6(this.K, 131080, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.s6) null, i16));
+        arrayList.add(new org.telegram.ui.ActionBar.t6(t7Var, 131080, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.s6) null, i16));
         int i17 = org.telegram.ui.ActionBar.k6.X5;
         arrayList.add(new org.telegram.ui.ActionBar.t6(this.w, 8, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.s6) null, i17));
         arrayList.add(new org.telegram.ui.ActionBar.t6(this.x, 8, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.s6) null, i17));

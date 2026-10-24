@@ -83,7 +83,7 @@ import org.telegram.ui.Components.ww0;
 import org.telegram.ui.Components.yc0;
 import org.telegram.ui.Components.yj0;
 
-/* compiled from: r8-map-id-c4ea88e67dc56e5703ce3374834c68c9442b4bb60a0bad99fe22591c5d324222 */
+/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
 /* loaded from: classes.dex */
 public class ImageLoader {
     public static final String AUTOPLAY_FILTER = "g";
@@ -134,7 +134,7 @@ public class ImageLoader {
     private LinkedList<HttpImageTask> httpTasks = new LinkedList<>();
     private LinkedList<ArtworkLoadTask> artworkTasks = new LinkedList<>();
 
-    /* compiled from: r8-map-id-c4ea88e67dc56e5703ce3374834c68c9442b4bb60a0bad99fe22591c5d324222 */
+    /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
     public class 5 implements FileLoader.FileLoaderDelegate {
         final /* synthetic */ int val$currentAccount;
 
@@ -312,7 +312,7 @@ public class ImageLoader {
         }
     }
 
-    /* compiled from: r8-map-id-c4ea88e67dc56e5703ce3374834c68c9442b4bb60a0bad99fe22591c5d324222 */
+    /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
     public class 6 extends BroadcastReceiver {
         public 6() {
         }
@@ -336,7 +336,7 @@ public class ImageLoader {
         }
     }
 
-    /* compiled from: r8-map-id-c4ea88e67dc56e5703ce3374834c68c9442b4bb60a0bad99fe22591c5d324222 */
+    /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
     public static /* synthetic */ class 7 {
         static final /* synthetic */ int[] $SwitchMap$android$graphics$Bitmap$CompressFormat;
 
@@ -361,7 +361,7 @@ public class ImageLoader {
         }
     }
 
-    /* compiled from: r8-map-id-c4ea88e67dc56e5703ce3374834c68c9442b4bb60a0bad99fe22591c5d324222 */
+    /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
     public class ArtworkLoadTask extends AsyncTask<Void, Void, String> {
         private CacheImage cacheImage;
         private boolean canRetry = true;
@@ -579,7 +579,7 @@ public class ImageLoader {
         }
     }
 
-    /* compiled from: r8-map-id-c4ea88e67dc56e5703ce3374834c68c9442b4bb60a0bad99fe22591c5d324222 */
+    /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
     public class CacheImage {
         protected ArtworkLoadTask artworkTask;
         protected CacheOutTask cacheTask;
@@ -912,7 +912,7 @@ public class ImageLoader {
         }
     }
 
-    /* compiled from: r8-map-id-c4ea88e67dc56e5703ce3374834c68c9442b4bb60a0bad99fe22591c5d324222 */
+    /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
     public class CacheOutTask implements Runnable {
         private CacheImage cacheImage;
         private boolean isCancelled;
@@ -1086,19 +1086,6 @@ public class ImageLoader {
             AndroidUtilities.runOnUIThread(new i3(3, this, drawable));
         }
 
-        public void cancel() {
-            synchronized (this.sync) {
-                try {
-                    this.isCancelled = true;
-                    Thread thread = this.runningThread;
-                    if (thread != null) {
-                        thread.interrupt();
-                    }
-                } catch (Exception unused) {
-                }
-            }
-        }
-
         /* JADX WARN: Can't wrap try/catch for region: R(14:903|(2:905|(12:907|908|909|(1:911)(1:933)|912|913|914|915|(2:921|(1:923))|(1:925)(1:928)|926|927))|936|908|909|(0)(0)|912|913|914|915|(4:917|919|921|(0))|(0)(0)|926|927) */
         /* JADX WARN: Can't wrap try/catch for region: R(18:73|(6:74|75|76|77|(1:79)(1:125)|80)|(3:82|83|(9:85|86|87|(1:119)|(3:104|(1:118)(4:107|(1:111)|112|(1:116))|117)(1:93)|94|(1:103)(1:98)|(1:100)(1:102)|101))|124|86|87|(0)|119|(0)|104|(0)|118|117|94|(1:96)|103|(0)(0)|101) */
         /* JADX WARN: Can't wrap try/catch for region: R(24:346|(1:902)(1:353)|354|(2:356|(1:900)(1:360))(1:901)|361|(15:363|(3:365|(1:367)(1:887)|368)(2:888|(3:890|(1:892)(1:894)|893)(2:895|(2:897|898)))|369|370|371|(15:373|374|375|(6:838|839|840|841|842|843)(1:377)|378|379|(1:381)(2:823|(1:825)(2:826|(1:828)(2:829|(1:831)(1:832))))|382|383|384|385|(1:387)(2:814|(1:816))|388|(1:813)(9:392|393|(2:778|(11:780|(1:800)(1:784)|(1:786)|787|788|789|(4:794|795|796|(1:798))|799|795|796|(0))(4:801|(1:803)(1:806)|804|805))(2:(3:397|398|399)(1:777)|400)|401|(1:775)(1:405)|406|(1:408)|409|(1:774)(3:415|(2:416|(1:419)(1:418))|420))|421)(3:854|(11:856|857|858|(1:860)(1:880)|861|863|864|(1:866)|867|(3:869|(2:870|(1:873)(1:872))|874)(1:877)|875)(1:883)|876)|422|423|424|(3:681|682|899)(4:426|427|428|a3b)|464|(3:467|(1:469)(1:471)|470)|(2:477|(1:479))|480|(3:(1:495)(1:498)|496|497)(3:(1:487)(1:490)|488|489))|899|898|369|370|371|(0)(0)|422|423|424|(0)(0)|464|(3:467|(0)(0)|470)|(4:473|475|477|(0))|480|(1:482)|(0)(0)|496|497) */
@@ -1226,11 +1213,10 @@ public class ImageLoader {
         /* JADX WARN: Type inference failed for: r9v51 */
         /* JADX WARN: Type inference failed for: r9v53 */
         /* JADX WARN: Type inference failed for: r9v79 */
-        @Override // java.lang.Runnable
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
-        public void run() {
+        private void runInternal() {
             s21 s21Var;
             boolean z10;
             boolean z11;
@@ -2956,8 +2942,8 @@ public class ImageLoader {
                                 return;
                             }
                             Bitmap q6 = e6Var.q(0L, false);
-                            e6Var.u();
                             Thread.interrupted();
+                            e6Var.u();
                             if (q6 == null) {
                                 onPostExecute(null);
                                 return;
@@ -3015,9 +3001,39 @@ public class ImageLoader {
                 }
             }
         }
+
+        public void cancel() {
+            synchronized (this.sync) {
+                try {
+                    this.isCancelled = true;
+                    Thread thread = this.runningThread;
+                    if (thread != null) {
+                        thread.interrupt();
+                    }
+                } catch (Exception unused) {
+                }
+            }
+        }
+
+        @Override // java.lang.Runnable
+        public void run() {
+            try {
+                runInternal();
+                synchronized (this.sync) {
+                    this.runningThread = null;
+                }
+                Thread.interrupted();
+            } catch (Throwable th2) {
+                synchronized (this.sync) {
+                    this.runningThread = null;
+                    Thread.interrupted();
+                    throw th2;
+                }
+            }
+        }
     }
 
-    /* compiled from: r8-map-id-c4ea88e67dc56e5703ce3374834c68c9442b4bb60a0bad99fe22591c5d324222 */
+    /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
     public class HttpFileTask extends AsyncTask<Void, Void, Boolean> {
         private int currentAccount;
         private String ext;
@@ -3247,7 +3263,7 @@ public class ImageLoader {
         }
     }
 
-    /* compiled from: r8-map-id-c4ea88e67dc56e5703ce3374834c68c9442b4bb60a0bad99fe22591c5d324222 */
+    /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
     public class HttpImageTask extends AsyncTask<Void, Void, Boolean> {
         private CacheImage cacheImage;
         private boolean canRetry = true;
@@ -3621,7 +3637,7 @@ public class ImageLoader {
         }
     }
 
-    /* compiled from: r8-map-id-c4ea88e67dc56e5703ce3374834c68c9442b4bb60a0bad99fe22591c5d324222 */
+    /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
     public static class MessageThumb {
         BitmapDrawable drawable;
         String key;
@@ -3632,7 +3648,7 @@ public class ImageLoader {
         }
     }
 
-    /* compiled from: r8-map-id-c4ea88e67dc56e5703ce3374834c68c9442b4bb60a0bad99fe22591c5d324222 */
+    /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
     public static class PhotoSizeFromPhoto extends TLRPC.PhotoSize {
         public final TLRPC.InputPhoto inputPhoto;
         public final TLRPC.Photo photo;
@@ -3647,7 +3663,7 @@ public class ImageLoader {
         }
     }
 
-    /* compiled from: r8-map-id-c4ea88e67dc56e5703ce3374834c68c9442b4bb60a0bad99fe22591c5d324222 */
+    /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
     public static class ThumbGenerateInfo {
         private boolean big;
         private String filter;
@@ -3661,7 +3677,7 @@ public class ImageLoader {
         }
     }
 
-    /* compiled from: r8-map-id-c4ea88e67dc56e5703ce3374834c68c9442b4bb60a0bad99fe22591c5d324222 */
+    /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
     public class ThumbGenerateTask implements Runnable {
         private ThumbGenerateInfo info;
         private int mediaType;

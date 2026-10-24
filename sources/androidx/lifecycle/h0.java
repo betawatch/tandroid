@@ -6,13 +6,13 @@ import android.app.Fragment;
 import android.os.Build;
 import android.os.Bundle;
 
-/* compiled from: r8-map-id-c4ea88e67dc56e5703ce3374834c68c9442b4bb60a0bad99fe22591c5d324222 */
+/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
 /* loaded from: classes.dex */
 public class h0 extends Fragment {
     public static final /* synthetic */ int b = 0;
     public ya.c a;
 
-    /* compiled from: r8-map-id-c4ea88e67dc56e5703ce3374834c68c9442b4bb60a0bad99fe22591c5d324222 */
+    /* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
     public static final class a implements Application.ActivityLifecycleCallbacks {
         public static final g0 Companion = new g0();
 

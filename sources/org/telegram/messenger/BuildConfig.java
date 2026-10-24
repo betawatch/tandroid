@@ -1,11 +1,11 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-c4ea88e67dc56e5703ce3374834c68c9442b4bb60a0bad99fe22591c5d324222 */
+/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
 /* loaded from: classes.dex */
 public final class BuildConfig {
     public static final String BETA_URL = "https://telegram.org/dl/android/apk-public-beta.json";
     public static final String BUILD_TYPE = "HA_public";
-    public static final String BUILD_VERSION_STRING = "13.1.1";
+    public static final String BUILD_VERSION_STRING = "13.1.2";
     public static final boolean BUNDLE = false;
     public static final boolean DEBUG = false;
     public static final boolean DEBUG_PRIVATE_VERSION = false;

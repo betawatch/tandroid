@@ -30,7 +30,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-c4ea88e67dc56e5703ce3374834c68c9442b4bb60a0bad99fe22591c5d324222 */
+/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
 /* loaded from: classes3.dex */
 public final class e6 extends BitmapDrawable implements Animatable, zf.c {
     public static final float[] V0 = new float[8];
@@ -370,7 +370,7 @@ public final class e6 extends BitmapDrawable implements Animatable, zf.c {
         }
         boolean isEmpty = this.t0.isEmpty();
         if (isEmpty && this.J0 == null) {
-            c6 c6Var2 = new c6(this, 1);
+            c6 c6Var2 = new c6(this, 3);
             this.J0 = c6Var2;
             AndroidUtilities.runOnUIThread(c6Var2, 600L);
         } else {
@@ -852,7 +852,7 @@ public final class e6 extends BitmapDrawable implements Animatable, zf.c {
             animatedFileDrawableStream.cancel(true);
             this.u0 = null;
         }
-        t();
+        AndroidUtilities.executeOnUIThread(new c6(this, 2));
     }
 
     public final void v(ImageReceiver imageReceiver) {
@@ -960,7 +960,7 @@ public final class e6 extends BitmapDrawable implements Animatable, zf.c {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x0183  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x0184  */
     /* JADX WARN: Removed duplicated region for block: B:51:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Type inference failed for: r13v0 */
     /* JADX WARN: Type inference failed for: r13v1, types: [boolean] */
@@ -994,12 +994,12 @@ public final class e6 extends BitmapDrawable implements Animatable, zf.c {
         this.s0 = new re.b(true, true);
         this.t0 = new re.b(true, true);
         this.w0 = true;
-        this.B0 = new c6(this, 2);
-        this.E0 = new c6(this, 3);
-        this.F0 = new c6(this, 4);
+        this.B0 = new c6(this, 4);
+        this.E0 = new c6(this, 5);
+        this.F0 = new c6(this, 6);
         this.G0 = 0;
-        this.H0 = new c6(this, 5);
-        this.I0 = new c6(this, 6);
+        this.H0 = new c6(this, 7);
+        this.I0 = new c6(this, 8);
         this.S0 = new d6(this, 0);
         this.G = file;
         this.b = SharedConfig.deviceIsAboveAverage();

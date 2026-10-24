@@ -58,6 +58,7 @@ import org.telegram.ui.Components.ah;
 import org.telegram.ui.Components.bk0;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.j80;
+import org.telegram.ui.Components.og;
 import org.telegram.ui.Components.ti;
 import org.telegram.ui.Components.tj0;
 import org.telegram.ui.Components.tz;
@@ -65,12 +66,13 @@ import org.telegram.ui.Components.vg;
 import org.telegram.ui.Components.yg;
 import org.telegram.ui.Components.yj0;
 import org.telegram.ui.gk;
+import org.telegram.ui.in;
 import org.telegram.ui.qi0;
 import org.telegram.ui.sn;
 import org.telegram.ui.va1;
 import org.telegram.ui.vt0;
 
-/* compiled from: r8-map-id-c4ea88e67dc56e5703ce3374834c68c9442b4bb60a0bad99fe22591c5d324222 */
+/* compiled from: r8-map-id-c2fac2ff6f25604a37f332f14748b89ed7ba229f932f7975631b3a2c3d1bec2f */
 /* loaded from: classes4.dex */
 public final class d2 extends org.telegram.ui.ActionBar.o2 implements NotificationCenter.NotificationCenterDelegate {
     public tz A0;
@@ -275,15 +277,7 @@ public final class d2 extends org.telegram.ui.ActionBar.o2 implements Notificati
         return false;
     }
 
-    public static /* synthetic */ void X(d2 d2Var, MessageObject messageObject, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3, ArrayList arrayList4, long j10, MessageObject messageObject2, MessageObject messageObject3, boolean z10, int i10, int i11, SendMessageChatArguments sendMessageChatArguments, long j11) {
-        if (messageObject != null) {
-            SendMessagesHelper.prepareEditingArticle(AccountInstance.getInstance(d2Var.currentAccount), messageObject, arrayList, arrayList2, arrayList3, arrayList4, false, d2Var.J);
-        } else {
-            SendMessagesHelper.prepareSendingArticle(AccountInstance.getInstance(d2Var.currentAccount), arrayList, arrayList2, arrayList3, arrayList4, false, j10, messageObject2, messageObject3, z10, i10, i11, sendMessageChatArguments, 0L, j11, 0L);
-        }
-    }
-
-    public static void Y(final d2 d2Var, Context context, View view) {
+    public static void X(final d2 d2Var, Context context, View view) {
         j80 j80Var;
         boolean z10;
         j80 j80Var2 = d2Var.x0;
@@ -569,6 +563,14 @@ public final class d2 extends org.telegram.ui.ActionBar.o2 implements Notificati
         I.y().setPadding(AndroidUtilities.dp(LocaleController.isRTL ? 18.0f : 9.0f), 0, AndroidUtilities.dp(LocaleController.isRTL ? 9.0f : 18.0f), 0);
         I.Z();
         d2Var.x0 = I;
+    }
+
+    public static /* synthetic */ void Y(d2 d2Var, MessageObject messageObject, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3, ArrayList arrayList4, long j10, MessageObject messageObject2, MessageObject messageObject3, in inVar, boolean z10, int i10, int i11, SendMessageChatArguments sendMessageChatArguments, long j11) {
+        if (messageObject != null) {
+            SendMessagesHelper.prepareEditingArticle(AccountInstance.getInstance(d2Var.currentAccount), messageObject, arrayList, arrayList2, arrayList3, arrayList4, false, d2Var.J);
+        } else {
+            SendMessagesHelper.prepareSendingArticle(AccountInstance.getInstance(d2Var.currentAccount), arrayList, arrayList2, arrayList3, arrayList4, false, j10, messageObject2, messageObject3, inVar, z10, i10, i11, sendMessageChatArguments, 0L, j11, 0L);
+        }
     }
 
     public static void Z(d2 d2Var, boolean z10, boolean z11) {
@@ -1616,6 +1618,8 @@ public final class d2 extends org.telegram.ui.ActionBar.o2 implements Notificati
 
     /* JADX WARN: Type inference failed for: r0v19, types: [ki.o1] */
     public final void s0(final int i10, final int i11, final boolean z10) {
+        gk gkVar;
+        og ogVar;
         if (m0()) {
             Activity parentActivity = getParentActivity();
             w3 w3Var = this.P;
@@ -1631,8 +1635,8 @@ public final class d2 extends org.telegram.ui.ActionBar.o2 implements Notificati
             return;
         }
         if (!MessagesController.getInstance(this.currentAccount).richEditorAllowed()) {
-            gk gkVar = this.J.Y;
-            if (gkVar == null) {
+            gk gkVar2 = this.J.Y;
+            if (gkVar2 == null) {
                 return;
             }
             this.M = true;
@@ -1640,7 +1644,7 @@ public final class d2 extends org.telegram.ui.ActionBar.o2 implements Notificati
             if (runnable != null) {
                 runnable.run();
             }
-            gkVar.P0(c5.k(this.P.m3), z10, i10, i11);
+            gkVar2.P0(c5.k(this.P.m3), z10, i10, i11);
             finishFragment();
             return;
         }
@@ -1656,18 +1660,22 @@ public final class d2 extends org.telegram.ui.ActionBar.o2 implements Notificati
         sn snVar = this.J;
         final MessageObject messageObject = snVar.z5;
         final MessageObject messageObject2 = snVar.j4;
+        final in inVar = snVar.x5;
         final long S8 = snVar.S8();
         final SendMessageChatArguments H8 = this.J.H8();
         final MessageObject messageObject3 = this.r;
         ?? r02 = new Runnable() { // from class: ki.o1
             @Override // java.lang.Runnable
             public final void run() {
-                d2.X(d2.this, messageObject3, f32, H2, E2, a2, a10, messageObject, messageObject2, z10, i10, i11, H8, S8);
+                d2.Y(d2.this, messageObject3, f32, H2, E2, a2, a10, messageObject, messageObject2, inVar, z10, i10, i11, H8, S8);
             }
         };
         Runnable runnable2 = this.K;
         if (runnable2 != null) {
             runnable2.run();
+        }
+        if (messageObject3 == null && (gkVar = this.J.Y) != null && (ogVar = gkVar.Z2) != null) {
+            ogVar.L(null, z10, i10, i11, 0L);
         }
         if (i10 == 0 || messageObject3 != null) {
             r02.run();
